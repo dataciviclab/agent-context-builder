@@ -106,7 +106,10 @@ def test_render_workspace_triage_git_state_reason():
         repos=["repo1"],
     )
     repos_state = {
-        "repo1": GitState(available=True, reason=None, dirty=True, current_branch="main", branches_ahead=["main"], untracked_files=2)
+        "repo1": GitState(
+            available=True, reason=None, dirty=True,
+            current_branch="main", branches_ahead=["main"], untracked_files=2,
+        )
     }
     renderer = Renderer(config, _make_github_mock(), _make_git_mock(repos_state))
     triage = renderer.render_workspace_triage()
@@ -134,7 +137,10 @@ def test_render_bootstrap_with_discussions():
         )
     ]
 
-    renderer = Renderer(config, _make_github_mock(), _make_git_mock(repos_state), discussion_collector=disc_collector)
+    renderer = Renderer(
+        config, _make_github_mock(), _make_git_mock(repos_state),
+        discussion_collector=disc_collector,
+    )
     bootstrap = renderer.render_session_bootstrap()
 
     assert "Open Discussions" in bootstrap
@@ -158,7 +164,10 @@ def test_render_triage_with_discussions():
         )
     ]
 
-    renderer = Renderer(config, _make_github_mock(), _make_git_mock(repos_state), discussion_collector=disc_collector)
+    renderer = Renderer(
+        config, _make_github_mock(), _make_git_mock(repos_state),
+        discussion_collector=disc_collector,
+    )
     triage = renderer.render_workspace_triage()
 
     assert triage["open_discussions"] == 1

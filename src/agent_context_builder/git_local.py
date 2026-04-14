@@ -35,7 +35,9 @@ class GitLocalCollector:
             GitState object (available=False if local collection disabled or not a git repo)
         """
         if self.workspace_root is None:
-            return GitState(available=False, reason="local_disabled", dirty=None, current_branch=None)
+            return GitState(
+                available=False, reason="local_disabled", dirty=None, current_branch=None
+            )
         return self._get_repo_state(self.workspace_root)
 
     def get_repos_state(self, repos: list[str]) -> dict[str, GitState]:
@@ -49,7 +51,9 @@ class GitLocalCollector:
         """
         if self.workspace_root is None:
             return {
-                repo: GitState(available=False, reason="local_disabled", dirty=None, current_branch=None)
+                repo: GitState(
+                    available=False, reason="local_disabled", dirty=None, current_branch=None
+                )
                 for repo in repos
             }
         states = {}
@@ -68,7 +72,9 @@ class GitLocalCollector:
             GitState — always returned; check available and reason fields
         """
         if not repo_path.exists():
-            return GitState(available=False, reason="path_not_found", dirty=None, current_branch=None)
+            return GitState(
+                available=False, reason="path_not_found", dirty=None, current_branch=None
+            )
 
         try:
             # Check if it's a git repo

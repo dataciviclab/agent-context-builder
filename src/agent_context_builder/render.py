@@ -1,13 +1,11 @@
 """Render output artifacts."""
 
-import json
 from datetime import datetime
-from pathlib import Path
 from typing import Any
 
 from .config import Config
 from .discussions import Discussion, DiscussionCollector
-from .github import GitHubCollector, Issue, PR
+from .github import GitHubCollector, PR
 from .git_local import GitLocalCollector, GitState
 
 
@@ -64,7 +62,10 @@ class Renderer:
         prs = self.github_collector.get_prs(self.config.repos)
         github_errors = self.github_collector.fetch_errors
         if github_errors:
-            lines.append(f"> **GitHub unavailable** — {len(github_errors)} fetch error(s); PR/issue counts may be incomplete")
+            lines.append(
+                f"> **GitHub unavailable** — {len(github_errors)} fetch error(s);"
+                " PR/issue counts may be incomplete"
+            )
         if prs:
             for pr in prs[:10]:  # Limit to first 10
                 lines.append(f"- [{pr.repo}#{pr.number}]({pr.url}): {pr.title}")
@@ -133,7 +134,9 @@ class Renderer:
         github_errors = self.github_collector.fetch_errors
         triage = {
             "generated_at": self.fixed_timestamp,
-            "workspace_root": str(self.config.workspace_root) if self.config.workspace_root else None,
+            "workspace_root": (
+                str(self.config.workspace_root) if self.config.workspace_root else None
+            ),
             "repos": self.config.repos,
             "open_prs": len(prs) if not github_errors else None,
             "prs": [
@@ -155,7 +158,11 @@ class Renderer:
                 }
                 for issue in issues
             ],
-            "open_discussions": len(discussions) if self.discussion_collector is not None and not disc_errors else None,
+            "open_discussions": (
+                len(discussions)
+                if self.discussion_collector is not None and not disc_errors
+                else None
+            ),
             "discussions": [
                 {
                     "number": d.number,

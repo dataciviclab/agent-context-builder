@@ -49,7 +49,13 @@ def cli():
     default=None,
     help="Fixed timestamp for deterministic output (ISO format, for testing)",
 )
-def build(config: str, out: str, github_token: str | None, workspace_root: str | None, generated_at: str | None):
+def build(
+    config: str,
+    out: str,
+    github_token: str | None,
+    workspace_root: str | None,
+    generated_at: str | None,
+):
     """Build context artifacts.
 
     Generates session_bootstrap.md, workspace_triage.json, and topic_index.json.
@@ -64,20 +70,23 @@ def build(config: str, out: str, github_token: str | None, workspace_root: str |
 
     # Resolve workspace root: CLI/env overrides config; None = GitHub-only mode
     resolved_root = Path(workspace_root) if workspace_root else cfg.workspace_root
+    cfg.workspace_root = resolved_root  # propagate to renderer output
     if resolved_root:
         click.echo(f"Local workspace: {resolved_root}")
     else:
         click.echo("Local workspace: not configured (GitHub-only mode)")
 
-    click.echo(f"Initializing collectors")
+    click.echo("Initializing collectors")
     github_collector = GitHubCollector(cfg.github_org, token=github_token)
     git_collector = GitLocalCollector(resolved_root)
     # Discussions require a token (GraphQL API); silently skip if not available
-    discussion_collector = DiscussionCollector(cfg.github_org, token=github_token) if github_token else None
+    discussion_collector = (
+        DiscussionCollector(cfg.github_org, token=github_token) if github_token else None
+    )
     if not github_token:
-        click.echo("  Note: --github-token not set; discussions will be skipped (GraphQL requires auth)")
+        click.echo("  Note: --github-token not set; discussions skipped (GraphQL requires auth)")
 
-    click.echo(f"Creating renderer")
+    click.echo("Creating renderer")
     renderer = Renderer(
         cfg, github_collector, git_collector,
         discussion_collector=discussion_collector,
