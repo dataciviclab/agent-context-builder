@@ -1,9 +1,14 @@
-# Agent Context Builder configuration for DataCivicLab
+# Agent Context Builder — DataCivicLab configuration
 #
-# Workspace root, GitHub organization, and list of repos to monitor.
-# Topics provide semantic grouping for faster agent orientation.
-
-workspace_root: /home/gabry/dev/dataciviclab-workspace
+# Generates compact context for Lab agents from GitHub.
+# Local git state is optional: set DATACIVICLAB_WORKSPACE or pass --workspace-root.
+#
+# Usage (GitHub-only, no local checkout required):
+#   agent-context build --config examples/dataciviclab.config.yml --out generated/
+#
+# Usage (with local checkout):
+#   agent-context build --config examples/dataciviclab.config.yml --out generated/ \
+#     --workspace-root ~/dev/dataciviclab-workspace
 
 github_org: dataciviclab
 

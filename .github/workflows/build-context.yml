@@ -1,0 +1,54 @@
+name: Build context artifacts
+
+on:
+  schedule:
+    # Every 6 hours — keeps artifacts fresh without hammering the API
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'examples/dataciviclab.config.yml'
+      - 'src/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install
+        run: pip install -e .
+
+      - name: Build context artifacts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          agent-context build \
+            --config examples/dataciviclab.config.yml \
+            --out generated/ \
+            --github-token "$GITHUB_TOKEN"
+
+      - name: Publish to context branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Push generated/ as an isolated commit on the context branch.
+          # Agents and the dataciviclab-state MCP can read from:
+          #   https://raw.githubusercontent.com/dataciviclab/agent-context-builder/context/session_bootstrap.md
+          cd generated
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "context: $(date -u +%Y-%m-%dT%H:%M:%SZ) [skip ci]"
+          git push --force \
+            "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" \
+            HEAD:context

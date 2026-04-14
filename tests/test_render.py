@@ -4,9 +4,25 @@ from pathlib import Path
 from unittest.mock import MagicMock
 
 from agent_context_builder.config import Config
+from agent_context_builder.git_local import GitLocalCollector, GitState
 from agent_context_builder.github import GitHubCollector
-from agent_context_builder.git_local import GitLocalCollector
 from agent_context_builder.render import Renderer
+
+_UNAVAILABLE = GitState(available=False, reason="path_not_found", dirty=None, current_branch=None)
+
+
+def _make_github_mock(prs=None, issues=None, fetch_errors=None):
+    m = MagicMock(spec=GitHubCollector)
+    m.get_prs.return_value = prs or []
+    m.get_issues.return_value = issues or []
+    m.fetch_errors = fetch_errors or {}
+    return m
+
+
+def _make_git_mock(repos_state=None):
+    m = MagicMock(spec=GitLocalCollector)
+    m.get_repos_state.return_value = repos_state or {}
+    return m
 
 
 def test_render_session_bootstrap():
@@ -16,15 +32,8 @@ def test_render_session_bootstrap():
         github_org="test-org",
         repos=["repo1", "repo2"],
     )
-
-    github_collector = MagicMock(spec=GitHubCollector)
-    github_collector.get_prs.return_value = []
-    github_collector.get_issues.return_value = []
-
-    git_collector = MagicMock(spec=GitLocalCollector)
-    git_collector.get_state.return_value = None
-
-    renderer = Renderer(config, github_collector, git_collector)
+    repos_state = {"repo1": _UNAVAILABLE, "repo2": _UNAVAILABLE}
+    renderer = Renderer(config, _make_github_mock(), _make_git_mock(repos_state))
     bootstrap = renderer.render_session_bootstrap()
 
     assert "Session Bootstrap" in bootstrap
@@ -33,27 +42,79 @@ def test_render_session_bootstrap():
     assert len(bootstrap.split("\n")) > 10
 
 
-def test_render_workspace_triage():
-    """Test workspace_triage.json rendering."""
+def test_render_session_bootstrap_github_error():
+    """Bootstrap shows warning when GitHub fetch fails."""
     config = Config(
         workspace_root=Path("/tmp/test"),
         github_org="test-org",
         repos=["repo1"],
     )
+    repos_state = {"repo1": _UNAVAILABLE}
+    renderer = Renderer(
+        config,
+        _make_github_mock(fetch_errors={"repo1:prs": "403 rate limit exceeded"}),
+        _make_git_mock(repos_state),
+    )
+    bootstrap = renderer.render_session_bootstrap()
 
-    github_collector = MagicMock(spec=GitHubCollector)
-    github_collector.get_prs.return_value = []
-    github_collector.get_issues.return_value = []
+    assert "GitHub unavailable" in bootstrap
+    assert "No open PRs" not in bootstrap
 
-    git_collector = MagicMock(spec=GitLocalCollector)
-    git_collector.get_state.return_value = None
 
-    renderer = Renderer(config, github_collector, git_collector)
+def test_render_workspace_triage():
+    """Test workspace_triage.json rendering with no errors."""
+    config = Config(
+        workspace_root=Path("/tmp/test"),
+        github_org="test-org",
+        repos=["repo1"],
+    )
+    repos_state = {"repo1": _UNAVAILABLE}
+    renderer = Renderer(config, _make_github_mock(), _make_git_mock(repos_state))
     triage = renderer.render_workspace_triage()
 
     assert "generated_at" in triage
-    assert "open_prs" in triage
     assert triage["open_prs"] == 0
+    assert triage["github_fetch_errors"] == {}
+    assert triage["git_state"]["repo1"]["available"] is False
+    assert triage["git_state"]["repo1"]["reason"] == "path_not_found"
+
+
+def test_render_workspace_triage_github_error():
+    """Triage shows null counts and errors when GitHub fetch fails."""
+    config = Config(
+        workspace_root=Path("/tmp/test"),
+        github_org="test-org",
+        repos=["repo1"],
+    )
+    repos_state = {"repo1": _UNAVAILABLE}
+    errors = {"repo1:prs": "403 rate limit exceeded"}
+    renderer = Renderer(config, _make_github_mock(fetch_errors=errors), _make_git_mock(repos_state))
+    triage = renderer.render_workspace_triage()
+
+    assert triage["open_prs"] is None
+    assert triage["open_issues"] is None
+    assert triage["github_fetch_errors"] == errors
+    assert any("GitHub fetch failed" in w for w in triage["warnings"])
+
+
+def test_render_workspace_triage_git_state_reason():
+    """Git state includes available and reason for unavailable repos."""
+    config = Config(
+        workspace_root=Path("/tmp/test"),
+        github_org="test-org",
+        repos=["repo1"],
+    )
+    repos_state = {
+        "repo1": GitState(available=True, reason=None, dirty=True, current_branch="main", branches_ahead=["main"], untracked_files=2)
+    }
+    renderer = Renderer(config, _make_github_mock(), _make_git_mock(repos_state))
+    triage = renderer.render_workspace_triage()
+
+    r1 = triage["git_state"]["repo1"]
+    assert r1["available"] is True
+    assert r1["reason"] is None
+    assert r1["dirty"] is True
+    assert r1["current_branch"] == "main"
 
 
 def test_render_topic_index():
@@ -69,10 +130,7 @@ def test_render_topic_index():
         },
     )
 
-    github_collector = MagicMock(spec=GitHubCollector)
-    git_collector = MagicMock(spec=GitLocalCollector)
-
-    renderer = Renderer(config, github_collector, git_collector)
+    renderer = Renderer(config, _make_github_mock(), _make_git_mock())
     topics = renderer.render_topic_index()
 
     assert "topics" in topics

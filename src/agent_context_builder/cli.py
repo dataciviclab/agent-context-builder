@@ -38,14 +38,21 @@ def cli():
     help="GitHub API token (optional)",
 )
 @click.option(
+    "--workspace-root",
+    envvar="DATACIVICLAB_WORKSPACE",
+    default=None,
+    help="Local workspace root for git state collection (optional; overrides config)",
+)
+@click.option(
     "--generated-at",
     default=None,
     help="Fixed timestamp for deterministic output (ISO format, for testing)",
 )
-def build(config: str, out: str, github_token: str | None, generated_at: str | None):
+def build(config: str, out: str, github_token: str | None, workspace_root: str | None, generated_at: str | None):
     """Build context artifacts.
 
     Generates session_bootstrap.md, workspace_triage.json, and topic_index.json.
+    Local git state is collected only when --workspace-root (or DATACIVICLAB_WORKSPACE) is set.
     """
     config_path = Path(config)
     out_dir = Path(out)
@@ -54,9 +61,16 @@ def build(config: str, out: str, github_token: str | None, generated_at: str | N
     click.echo(f"Loading config from {config_path}")
     cfg = load_config(config_path)
 
+    # Resolve workspace root: CLI/env overrides config; None = GitHub-only mode
+    resolved_root = Path(workspace_root) if workspace_root else cfg.workspace_root
+    if resolved_root:
+        click.echo(f"Local workspace: {resolved_root}")
+    else:
+        click.echo("Local workspace: not configured (GitHub-only mode)")
+
     click.echo(f"Initializing collectors")
     github_collector = GitHubCollector(cfg.github_org, token=github_token)
-    git_collector = GitLocalCollector(cfg.workspace_root)
+    git_collector = GitLocalCollector(resolved_root)
 
     click.echo(f"Creating renderer")
     renderer = Renderer(

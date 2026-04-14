@@ -1,7 +1,6 @@
 # Session Bootstrap
 
 **Generated**: 2026-04-14T20:00:00
-**Workspace**: /home/gabry/dev/dataciviclab-workspace
 
 ## Repos
 
@@ -15,19 +14,12 @@
 
 ## Open PRs
 
-*No open PRs*
+- [dataset-incubator#137](https://github.com/dataciviclab/dataset-incubator/pull/137): feat: bdap-lea clean respect raw schema
+- [dataset-incubator#136](https://github.com/dataciviclab/dataset-incubator/pull/136): fix: ispra-ru-costi-kg mart layer join
 
 ## Local State
 
-**agent-context-builder**: `main`
-  - dirty (0 untracked)
-  - ahead: main
-**dataset-incubator**: `feat/bdap-lea-clean-respect-raw`
-**dataciviclab**: `main`
-**toolkit**: `main`
-**data-explorer**: `main`
-**source-observatory**: `main`
-**lab-ops**: `main`
+*No local git repos found*
 
 ## Topics
 

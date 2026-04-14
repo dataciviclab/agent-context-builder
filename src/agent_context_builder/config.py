@@ -22,7 +22,7 @@ class Config(BaseModel):
 
     model_config = ConfigDict(arbitrary_types_allowed=True)
 
-    workspace_root: Path = Field(..., description="Root of workspace")
+    workspace_root: Optional[Path] = Field(None, description="Root of local workspace (optional; set via --workspace-root or DATACIVICLAB_WORKSPACE env var)")
     github_org: str = Field(..., description="GitHub organization")
     repos: list[str] = Field(
         default_factory=list, description="Primary repos to monitor"

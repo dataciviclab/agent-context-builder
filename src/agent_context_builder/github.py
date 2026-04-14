@@ -1,6 +1,5 @@
 """GitHub API interactions for context collection."""
 
-import subprocess
 from dataclasses import dataclass
 from typing import Optional
 
@@ -37,11 +36,13 @@ class GitHubCollector:
 
         Args:
             org: GitHub organization
-            token: GitHub API token (optional, uses gh CLI fallback)
+            token: GitHub API token (optional)
         """
         self.org = org
         self.token = token
         self.base_url = "https://api.github.com"
+        # Populated by get_prs/get_issues — maps "<repo>:prs" or "<repo>:issues" to error message
+        self.fetch_errors: dict[str, str] = {}
 
     def get_prs(self, repos: list[str], state: str = "open") -> list[PR]:
         """Get open PRs across repos.
@@ -51,16 +52,14 @@ class GitHubCollector:
             state: PR state (open, closed, all)
 
         Returns:
-            List of PR objects
+            List of PR objects. Repos that failed are recorded in self.fetch_errors.
         """
         prs = []
         for repo in repos:
             try:
                 prs.extend(self._get_repo_prs(repo, state))
             except Exception as e:
-                # Gracefully degrade on API errors
-                print(f"Warning: Failed to fetch PRs for {repo}: {e}")
-                continue
+                self.fetch_errors[f"{repo}:prs"] = str(e)
         return prs
 
     def get_issues(self, repos: list[str], state: str = "open") -> list[Issue]:
@@ -71,15 +70,14 @@ class GitHubCollector:
             state: Issue state (open, closed, all)
 
         Returns:
-            List of Issue objects
+            List of Issue objects. Repos that failed are recorded in self.fetch_errors.
         """
         issues = []
         for repo in repos:
             try:
                 issues.extend(self._get_repo_issues(repo, state))
             except Exception as e:
-                print(f"Warning: Failed to fetch issues for {repo}: {e}")
-                continue
+                self.fetch_errors[f"{repo}:issues"] = str(e)
         return issues
 
     def _get_repo_prs(self, repo: str, state: str = "open") -> list[PR]:

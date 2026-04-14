@@ -43,7 +43,8 @@ class Renderer:
         lines.append("# Session Bootstrap")
         lines.append("")
         lines.append(f"**Generated**: {self.fixed_timestamp}")
-        lines.append(f"**Workspace**: {self.config.workspace_root}")
+        if self.config.workspace_root:
+            lines.append(f"**Workspace**: {self.config.workspace_root}")
         lines.append("")
 
         # Active repos
@@ -57,10 +58,13 @@ class Renderer:
         lines.append("## Open PRs")
         lines.append("")
         prs = self.github_collector.get_prs(self.config.repos)
+        github_errors = self.github_collector.fetch_errors
+        if github_errors:
+            lines.append(f"> **GitHub unavailable** — {len(github_errors)} fetch error(s); PR/issue counts may be incomplete")
         if prs:
             for pr in prs[:10]:  # Limit to first 10
                 lines.append(f"- [{pr.repo}#{pr.number}]({pr.url}): {pr.title}")
-        else:
+        elif not github_errors:
             lines.append("*No open PRs*")
         lines.append("")
 
@@ -70,7 +74,7 @@ class Renderer:
         repos_state = self.git_collector.get_repos_state(self.config.repos)
         has_local_state = False
         for repo, state in repos_state.items():
-            if state:
+            if state.available:
                 has_local_state = True
                 lines.append(f"**{repo}**: `{state.current_branch}`")
                 if state.dirty:
@@ -101,11 +105,12 @@ class Renderer:
         issues = self.github_collector.get_issues(self.config.repos)
         repos_state = self.git_collector.get_repos_state(self.config.repos)
 
+        github_errors = self.github_collector.fetch_errors
         triage = {
             "generated_at": self.fixed_timestamp,
-            "workspace_root": str(self.config.workspace_root),
+            "workspace_root": str(self.config.workspace_root) if self.config.workspace_root else None,
             "repos": self.config.repos,
-            "open_prs": len(prs),
+            "open_prs": len(prs) if not github_errors else None,
             "prs": [
                 {
                     "number": pr.number,
@@ -115,7 +120,7 @@ class Renderer:
                 }
                 for pr in prs
             ],
-            "open_issues": len(issues),
+            "open_issues": len(issues) if not github_errors else None,
             "issues": [
                 {
                     "number": issue.number,
@@ -125,12 +130,15 @@ class Renderer:
                 }
                 for issue in issues
             ],
+            "github_fetch_errors": github_errors,
             "git_state": {
                 repo: {
-                    "dirty": state.dirty if state else None,
-                    "current_branch": state.current_branch if state else None,
-                    "branches_ahead": state.branches_ahead if state else [],
-                    "untracked_files": state.untracked_files if state else 0,
+                    "available": state.available,
+                    "reason": state.reason,
+                    "dirty": state.dirty,
+                    "current_branch": state.current_branch,
+                    "branches_ahead": state.branches_ahead,
+                    "untracked_files": state.untracked_files,
                 }
                 for repo, state in repos_state.items()
             },
@@ -139,24 +147,29 @@ class Renderer:
         return triage
 
     def _collect_warnings(
-        self, prs: list[PR], repos_state: dict[str, GitState | None]
+        self, prs: list[PR], repos_state: dict[str, GitState]
     ) -> list[str]:
         """Collect warnings for triage.
 
         Args:
             prs: List of PRs
-            repos_state: Dict mapping repo name to GitState or None
+            repos_state: Dict mapping repo name to GitState
 
         Returns:
             List of warning messages
         """
         warnings = []
+
+        # GitHub fetch failures
+        for key, err in self.github_collector.fetch_errors.items():
+            warnings.append(f"GitHub fetch failed — {key}: {err}")
+
         if len(prs) > 5:
             warnings.append(f"Many open PRs: {len(prs)}")
 
         # Check for dirty or ahead repos
         for repo, state in repos_state.items():
-            if state:
+            if state.available:
                 if state.dirty:
                     warnings.append(f"{repo}: dirty ({state.untracked_files} untracked)")
                 if state.branches_ahead:
