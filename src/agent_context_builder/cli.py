@@ -6,6 +6,7 @@ from pathlib import Path
 import click
 
 from .config import load_config
+from .discussions import DiscussionCollector
 from .github import GitHubCollector
 from .git_local import GitLocalCollector
 from .render import Renderer
@@ -71,10 +72,16 @@ def build(config: str, out: str, github_token: str | None, workspace_root: str |
     click.echo(f"Initializing collectors")
     github_collector = GitHubCollector(cfg.github_org, token=github_token)
     git_collector = GitLocalCollector(resolved_root)
+    # Discussions require a token (GraphQL API); silently skip if not available
+    discussion_collector = DiscussionCollector(cfg.github_org, token=github_token) if github_token else None
+    if not github_token:
+        click.echo("  Note: --github-token not set; discussions will be skipped (GraphQL requires auth)")
 
     click.echo(f"Creating renderer")
     renderer = Renderer(
-        cfg, github_collector, git_collector, fixed_timestamp=generated_at
+        cfg, github_collector, git_collector,
+        discussion_collector=discussion_collector,
+        fixed_timestamp=generated_at,
     )
 
     # Generate session_bootstrap.md

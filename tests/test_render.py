@@ -4,6 +4,7 @@ from pathlib import Path
 from unittest.mock import MagicMock
 
 from agent_context_builder.config import Config
+from agent_context_builder.discussions import Discussion, DiscussionCollector
 from agent_context_builder.git_local import GitLocalCollector, GitState
 from agent_context_builder.github import GitHubCollector
 from agent_context_builder.render import Renderer
@@ -115,6 +116,66 @@ def test_render_workspace_triage_git_state_reason():
     assert r1["reason"] is None
     assert r1["dirty"] is True
     assert r1["current_branch"] == "main"
+
+
+def test_render_bootstrap_with_discussions():
+    """Bootstrap includes discussions section when collector is present."""
+    config = Config(workspace_root=None, github_org="dataciviclab", repos=["dataset-incubator"])
+    repos_state = {"dataset-incubator": _UNAVAILABLE}
+
+    disc_collector = MagicMock(spec=DiscussionCollector)
+    disc_collector.fetch_errors = {}
+    disc_collector.get_discussions.return_value = [
+        Discussion(
+            number=42, title="IRPEF: cosa ci dice?",
+            repo="dataset-incubator",
+            url="https://github.com/dataciviclab/dataset-incubator/discussions/42",
+            category="Civic Questions", author="gabry", updated_at="2026-04-14T20:00:00Z",
+        )
+    ]
+
+    renderer = Renderer(config, _make_github_mock(), _make_git_mock(repos_state), discussion_collector=disc_collector)
+    bootstrap = renderer.render_session_bootstrap()
+
+    assert "Open Discussions" in bootstrap
+    assert "IRPEF" in bootstrap
+    assert "Civic Questions" in bootstrap
+
+
+def test_render_triage_with_discussions():
+    """Triage includes open_discussions count and discussions list."""
+    config = Config(workspace_root=None, github_org="dataciviclab", repos=["dataset-incubator"])
+    repos_state = {"dataset-incubator": _UNAVAILABLE}
+
+    disc_collector = MagicMock(spec=DiscussionCollector)
+    disc_collector.fetch_errors = {}
+    disc_collector.get_discussions.return_value = [
+        Discussion(
+            number=42, title="IRPEF: cosa ci dice?",
+            repo="dataset-incubator",
+            url="https://github.com/dataciviclab/dataset-incubator/discussions/42",
+            category="Civic Questions", author="gabry", updated_at="2026-04-14T20:00:00Z",
+        )
+    ]
+
+    renderer = Renderer(config, _make_github_mock(), _make_git_mock(repos_state), discussion_collector=disc_collector)
+    triage = renderer.render_workspace_triage()
+
+    assert triage["open_discussions"] == 1
+    assert triage["discussions"][0]["number"] == 42
+    assert triage["discussions"][0]["category"] == "Civic Questions"
+
+
+def test_render_triage_without_discussion_collector():
+    """Triage omits discussions when no collector provided."""
+    config = Config(workspace_root=None, github_org="dataciviclab", repos=["repo1"])
+    repos_state = {"repo1": _UNAVAILABLE}
+
+    renderer = Renderer(config, _make_github_mock(), _make_git_mock(repos_state))
+    triage = renderer.render_workspace_triage()
+
+    assert triage["open_discussions"] is None
+    assert triage["discussions"] == []
 
 
 def test_render_topic_index():

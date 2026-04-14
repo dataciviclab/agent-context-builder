@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from .config import Config
+from .discussions import Discussion, DiscussionCollector
 from .github import GitHubCollector, Issue, PR
 from .git_local import GitLocalCollector, GitState
 
@@ -18,6 +19,7 @@ class Renderer:
         config: Config,
         github_collector: GitHubCollector,
         git_collector: GitLocalCollector,
+        discussion_collector: DiscussionCollector | None = None,
         fixed_timestamp: str | None = None,
     ):
         """Initialize renderer.
@@ -26,11 +28,13 @@ class Renderer:
             config: Configuration object
             github_collector: GitHub collector instance
             git_collector: Git local collector instance
+            discussion_collector: Discussion collector instance (optional; requires token)
             fixed_timestamp: Fixed ISO timestamp for deterministic output (optional, for testing)
         """
         self.config = config
         self.github_collector = github_collector
         self.git_collector = git_collector
+        self.discussion_collector = discussion_collector
         self.fixed_timestamp = fixed_timestamp or datetime.now().isoformat()
 
     def render_session_bootstrap(self) -> str:
@@ -67,6 +71,21 @@ class Renderer:
         elif not github_errors:
             lines.append("*No open PRs*")
         lines.append("")
+
+        # Open Discussions
+        if self.discussion_collector is not None:
+            lines.append("## Open Discussions")
+            lines.append("")
+            discussions = self.discussion_collector.get_discussions(self.config.repos)
+            disc_errors = self.discussion_collector.fetch_errors
+            if disc_errors:
+                lines.append(f"> **Discussions unavailable** — {len(disc_errors)} fetch error(s)")
+            if discussions:
+                for d in discussions[:10]:
+                    lines.append(f"- [{d.repo}#{d.number}]({d.url}) [{d.category}]: {d.title}")
+            elif not disc_errors:
+                lines.append("*No open discussions*")
+            lines.append("")
 
         # Local git state per repo
         lines.append("## Local State")
@@ -105,6 +124,12 @@ class Renderer:
         issues = self.github_collector.get_issues(self.config.repos)
         repos_state = self.git_collector.get_repos_state(self.config.repos)
 
+        discussions: list[Discussion] = []
+        disc_errors: dict[str, str] = {}
+        if self.discussion_collector is not None:
+            discussions = self.discussion_collector.get_discussions(self.config.repos)
+            disc_errors = self.discussion_collector.fetch_errors
+
         github_errors = self.github_collector.fetch_errors
         triage = {
             "generated_at": self.fixed_timestamp,
@@ -130,7 +155,18 @@ class Renderer:
                 }
                 for issue in issues
             ],
-            "github_fetch_errors": github_errors,
+            "open_discussions": len(discussions) if self.discussion_collector is not None and not disc_errors else None,
+            "discussions": [
+                {
+                    "number": d.number,
+                    "title": d.title,
+                    "repo": d.repo,
+                    "url": d.url,
+                    "category": d.category,
+                }
+                for d in discussions
+            ],
+            "github_fetch_errors": {**github_errors, **disc_errors},
             "git_state": {
                 repo: {
                     "available": state.available,
