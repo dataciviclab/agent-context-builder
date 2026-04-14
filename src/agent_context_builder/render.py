@@ -18,6 +18,7 @@ class Renderer:
         config: Config,
         github_collector: GitHubCollector,
         git_collector: GitLocalCollector,
+        fixed_timestamp: str | None = None,
     ):
         """Initialize renderer.
 
@@ -25,10 +26,12 @@ class Renderer:
             config: Configuration object
             github_collector: GitHub collector instance
             git_collector: Git local collector instance
+            fixed_timestamp: Fixed ISO timestamp for deterministic output (optional, for testing)
         """
         self.config = config
         self.github_collector = github_collector
         self.git_collector = git_collector
+        self.fixed_timestamp = fixed_timestamp or datetime.now().isoformat()
 
     def render_session_bootstrap(self) -> str:
         """Render session_bootstrap.md.
@@ -39,7 +42,7 @@ class Renderer:
         lines = []
         lines.append("# Session Bootstrap")
         lines.append("")
-        lines.append(f"**Generated**: {datetime.now().isoformat()}")
+        lines.append(f"**Generated**: {self.fixed_timestamp}")
         lines.append(f"**Workspace**: {self.config.workspace_root}")
         lines.append("")
 
@@ -61,16 +64,22 @@ class Renderer:
             lines.append("*No open PRs*")
         lines.append("")
 
-        # Local git state
+        # Local git state per repo
         lines.append("## Local State")
         lines.append("")
-        git_state = self.git_collector.get_state()
-        if git_state:
-            lines.append(f"**Branch**: {git_state.current_branch}")
-            lines.append(f"**Dirty**: {git_state.dirty}")
-            if git_state.branches_ahead:
-                lines.append(f"**Ahead**: {', '.join(git_state.branches_ahead)}")
-            lines.append("")
+        repos_state = self.git_collector.get_repos_state(self.config.repos)
+        has_local_state = False
+        for repo, state in repos_state.items():
+            if state:
+                has_local_state = True
+                lines.append(f"**{repo}**: `{state.current_branch}`")
+                if state.dirty:
+                    lines.append(f"  - dirty ({state.untracked_files} untracked)")
+                if state.branches_ahead:
+                    lines.append(f"  - ahead: {', '.join(state.branches_ahead)}")
+        if not has_local_state:
+            lines.append("*No local git repos found*")
+        lines.append("")
 
         # Topics
         if self.config.topics:
@@ -90,10 +99,10 @@ class Renderer:
         """
         prs = self.github_collector.get_prs(self.config.repos)
         issues = self.github_collector.get_issues(self.config.repos)
-        git_state = self.git_collector.get_state()
+        repos_state = self.git_collector.get_repos_state(self.config.repos)
 
         triage = {
-            "generated_at": datetime.now().isoformat(),
+            "generated_at": self.fixed_timestamp,
             "workspace_root": str(self.config.workspace_root),
             "repos": self.config.repos,
             "open_prs": len(prs),
@@ -117,23 +126,26 @@ class Renderer:
                 for issue in issues
             ],
             "git_state": {
-                "dirty": git_state.dirty if git_state else None,
-                "current_branch": git_state.current_branch if git_state else None,
-                "branches_ahead": git_state.branches_ahead if git_state else [],
-                "untracked_files": git_state.untracked_files if git_state else 0,
-            }
-            if git_state
-            else None,
-            "warnings": self._collect_warnings(prs, git_state),
+                repo: {
+                    "dirty": state.dirty if state else None,
+                    "current_branch": state.current_branch if state else None,
+                    "branches_ahead": state.branches_ahead if state else [],
+                    "untracked_files": state.untracked_files if state else 0,
+                }
+                for repo, state in repos_state.items()
+            },
+            "warnings": self._collect_warnings(prs, repos_state),
         }
         return triage
 
-    def _collect_warnings(self, prs: list[PR], git_state: GitState | None) -> list[str]:
+    def _collect_warnings(
+        self, prs: list[PR], repos_state: dict[str, GitState | None]
+    ) -> list[str]:
         """Collect warnings for triage.
 
         Args:
             prs: List of PRs
-            git_state: Git state or None
+            repos_state: Dict mapping repo name to GitState or None
 
         Returns:
             List of warning messages
@@ -141,12 +153,15 @@ class Renderer:
         warnings = []
         if len(prs) > 5:
             warnings.append(f"Many open PRs: {len(prs)}")
-        if git_state and git_state.dirty:
-            warnings.append("Workspace is dirty")
-        if git_state and git_state.branches_ahead:
-            warnings.append(
-                f"Branches ahead of remote: {', '.join(git_state.branches_ahead)}"
-            )
+
+        # Check for dirty or ahead repos
+        for repo, state in repos_state.items():
+            if state:
+                if state.dirty:
+                    warnings.append(f"{repo}: dirty ({state.untracked_files} untracked)")
+                if state.branches_ahead:
+                    warnings.append(f"{repo}: ahead on {', '.join(state.branches_ahead)}")
+
         return warnings
 
     def render_topic_index(self) -> dict[str, Any]:
@@ -159,10 +174,12 @@ class Renderer:
         for topic_name, topic in self.config.topics.items():
             topics[topic_name] = {
                 "name": topic_name,
+                "summary": topic.summary,
                 "repos": topic.repos,
                 "paths": topic.paths,
+                "next": topic.next,
             }
         return {
-            "generated_at": datetime.now().isoformat(),
+            "generated_at": self.fixed_timestamp,
             "topics": topics,
         }

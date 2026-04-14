@@ -18,29 +18,37 @@ repos:
 
 topics:
   agent-context-builder:
+    summary: Autonomous context generation for agents — bootstrap, triage, topic index
     repos:
       - agent-context-builder
     paths:
       - agent-context-builder/README.md
       - agent-context-builder/pyproject.toml
+    next: Review P1 roadmap (telemetry summarizer, JSON schema, API backend)
 
   toolkit:
+    summary: Core data pipeline engine — RAW → CLEAN → MART layer
     repos:
       - toolkit
     paths:
       - toolkit/docs/
       - toolkit/src/
+    next: Check toolkit/docs/config-schema.md for dataset config contract
 
   datasets:
+    summary: Dataset incubation and published analyses
     repos:
       - dataset-incubator
       - dataciviclab
     paths:
       - dataset-incubator/
       - dataciviclab/analisi/
+    next: Review dataset-incubator/PROMOTION_CHECKLIST.md
 
   analytics:
+    summary: Published analytical findings and documentation
     repos:
       - dataciviclab
     paths:
       - dataciviclab/docs/
+    next: Check dataciviclab/docs/workflows.md for publication flow

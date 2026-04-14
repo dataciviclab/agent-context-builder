@@ -13,6 +13,8 @@ class Topic(BaseModel):
     name: str = Field(..., description="Topic name")
     repos: list[str] = Field(default_factory=list, description="Relevant repos")
     paths: list[str] = Field(default_factory=list, description="Relevant file paths")
+    summary: str = Field(default="", description="Brief description of topic")
+    next: str = Field(default="", description="Suggested next action or read")
 
 
 class Config(BaseModel):

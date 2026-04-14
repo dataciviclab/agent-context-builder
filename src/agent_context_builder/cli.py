@@ -35,9 +35,14 @@ def cli():
     "--github-token",
     envvar="GITHUB_TOKEN",
     default=None,
-    help="GitHub API token (optional, uses gh CLI fallback)",
+    help="GitHub API token (optional)",
 )
-def build(config: str, out: str, github_token: str | None):
+@click.option(
+    "--generated-at",
+    default=None,
+    help="Fixed timestamp for deterministic output (ISO format, for testing)",
+)
+def build(config: str, out: str, github_token: str | None, generated_at: str | None):
     """Build context artifacts.
 
     Generates session_bootstrap.md, workspace_triage.json, and topic_index.json.
@@ -54,7 +59,9 @@ def build(config: str, out: str, github_token: str | None):
     git_collector = GitLocalCollector(cfg.workspace_root)
 
     click.echo(f"Creating renderer")
-    renderer = Renderer(cfg, github_collector, git_collector)
+    renderer = Renderer(
+        cfg, github_collector, git_collector, fixed_timestamp=generated_at
+    )
 
     # Generate session_bootstrap.md
     click.echo("Generating session_bootstrap.md")

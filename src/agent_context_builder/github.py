@@ -107,7 +107,11 @@ class GitHubCollector:
         return prs
 
     def _get_repo_issues(self, repo: str, state: str = "open") -> list[Issue]:
-        """Get issues for a specific repo."""
+        """Get issues for a specific repo (excluding pull requests).
+
+        GitHub's /issues endpoint returns both issues and PRs.
+        Filter out PRs by checking for pull_request field.
+        """
         url = f"{self.base_url}/repos/{self.org}/{repo}/issues"
         params = {"state": state, "per_page": 50}
         headers = {}
@@ -119,6 +123,9 @@ class GitHubCollector:
 
         issues = []
         for item in response.json():
+            # Skip pull requests: they have a pull_request field
+            if "pull_request" in item:
+                continue
             issues.append(
                 Issue(
                     number=item["number"],
