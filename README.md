@@ -1,29 +1,29 @@
 # agent-context-builder
 
-Build compact operational context for [DataCivicLab](https://github.com/dataciviclab) agents from GitHub and optional local checkouts.
+Genera contesto operativo compatto per gli agenti di [DataCivicLab](https://github.com/dataciviclab) a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.
 
-Replaces broad file reads at session start with three focused artifacts:
+Sostituisce le letture larghe a inizio sessione con tre artifact mirati:
 
-| Artifact | Target size | Used by |
+| Artifact | Dimensione target | Consumato da |
 |---|---|---|
-| `session_bootstrap.md` | ~40 lines | agents, humans |
-| `workspace_triage.json` | compact JSON | agents, MCP |
-| `topic_index.json` | compact JSON | agents, MCP |
+| `session_bootstrap.md` | ~40 righe | agenti, umani |
+| `workspace_triage.json` | JSON compatto | agenti, MCP |
+| `topic_index.json` | JSON compatto | agenti, MCP |
 
-## How it works
+## Come funziona
 
-The builder pulls from two sources:
+Il builder raccoglie da due fonti:
 
-- **GitHub** (always): open PRs, issues, and discussions per repo; no local checkout needed
-- **Local git** (optional): current branch, dirty state, commits ahead per repo
+- **GitHub** (sempre): PR, issue e discussion aperte per repo; non richiede checkout locale
+- **Git locale** (opzionale): branch corrente, stato dirty, commit non pushati per repo
 
-GitHub-based artifacts are generated automatically every 6 hours by CI and published to the [`context` branch](../../tree/context). Anyone with repo access can consume them without running the builder locally.
+Gli artifact basati su GitHub vengono generati automaticamente ogni 6 ore dalla CI e pubblicati sul [branch `context`](../../tree/context). Chiunque abbia accesso al repo può consumarli senza eseguire il builder localmente.
 
-## Artifacts
+## Artifact
 
 ### `session_bootstrap.md`
 
-Quick orientation for agents and humans:
+Orientamento rapido per agenti e umani:
 
 ```markdown
 # Session Bootstrap
@@ -46,7 +46,7 @@ Quick orientation for agents and humans:
 
 ### `workspace_triage.json`
 
-Machine-readable summary consumed by agents and the `dataciviclab-state` MCP:
+Riepilogo machine-readable consumato da agenti e dall'MCP `dataciviclab-state`:
 
 ```json
 {
@@ -65,41 +65,41 @@ Machine-readable summary consumed by agents and the `dataciviclab-state` MCP:
 
 ### `topic_index.json`
 
-Semantic lookup by topic — repos, relevant paths, suggested next step:
+Lookup semantico per topic — repo rilevanti, path, prossimo passo suggerito:
 
 ```json
 {
   "topics": {
     "datasets": {
-      "summary": "Dataset incubation and published analyses",
+      "summary": "Incubazione dataset e analisi pubblicate",
       "repos": ["dataset-incubator", "dataciviclab"],
       "paths": ["dataset-incubator/", "dataciviclab/analisi/"],
-      "next": "Review dataset-incubator/PROMOTION_CHECKLIST.md"
+      "next": "Consulta dataset-incubator/PROMOTION_CHECKLIST.md"
     }
   }
 }
 ```
 
-## Usage
+## Utilizzo
 
-### GitHub-only (no local checkout required)
+### Solo GitHub (senza checkout locale)
 
 ```bash
 pip install -e .
 agent-context build --config dataciviclab.config.yml --out generated/
 ```
 
-PR and issue data comes from the GitHub REST API (unauthenticated, public repos only).
-Discussions require a token (GitHub GraphQL API always requires auth).
+PR e issue vengono dalla REST API di GitHub (accesso non autenticato, solo repo pubblici).
+Le discussion richiedono un token (la GraphQL API di GitHub richiede sempre autenticazione).
 
-### With local checkout
+### Con checkout locale
 
 ```bash
 export DATACIVICLAB_WORKSPACE=~/dev/dataciviclab-workspace
 agent-context build --config dataciviclab.config.yml --out generated/
 ```
 
-Or pass it directly:
+Oppure passato direttamente:
 
 ```bash
 agent-context build \
@@ -108,20 +108,20 @@ agent-context build \
   --workspace-root ~/dev/dataciviclab-workspace
 ```
 
-### With discussions
+### Con discussion
 
 ```bash
 export GITHUB_TOKEN=ghp_...
 agent-context build --config dataciviclab.config.yml --out generated/
 ```
 
-When `GITHUB_TOKEN` is set, discussions are collected automatically alongside PRs and issues.
+Quando `GITHUB_TOKEN` è impostato, le discussion vengono raccolte automaticamente insieme a PR e issue.
 
-## CI — automatic artifact publishing
+## CI — pubblicazione automatica degli artifact
 
-The [`build-context` workflow](.github/workflows/build-context.yml) runs every 6 hours and on push to `main`. It generates GitHub-only artifacts and force-pushes them to the `context` branch.
+Il workflow [`build-context`](.github/workflows/build-context.yml) gira ogni 6 ore e a ogni push su `main`. Genera gli artifact in modalità GitHub-only e li pubblica con un force-push sul branch `context`.
 
-Artifacts are available at:
+Gli artifact sono disponibili a:
 
 ```
 https://raw.githubusercontent.com/dataciviclab/agent-context-builder/context/session_bootstrap.md
@@ -129,15 +129,15 @@ https://raw.githubusercontent.com/dataciviclab/agent-context-builder/context/wor
 https://raw.githubusercontent.com/dataciviclab/agent-context-builder/context/topic_index.json
 ```
 
-The `dataciviclab-state` MCP reads from these URLs to serve context to agents without requiring local execution.
+L'MCP `dataciviclab-state` legge da questi URL per servire il contesto agli agenti senza richiedere esecuzione locale.
 
-## Configuration
+## Configurazione
 
-`dataciviclab.config.yml` at the root is the Lab's live config. It defines which repos and topics to monitor.
+`dataciviclab.config.yml` alla root è la config attiva del Lab. Definisce quali repo e topic monitorare.
 
-To use the builder for a different org, copy `examples/config.template.yml` and adapt it.
+Per usare il builder con un'altra organizzazione, copia `examples/config.template.yml` e adattalo.
 
-Key fields:
+Campi principali:
 
 ```yaml
 github_org: dataciviclab
@@ -148,28 +148,28 @@ repos:
 
 topics:
   datasets:
-    summary: Dataset incubation and published analyses
+    summary: Incubazione dataset e analisi pubblicate
     repos: [dataset-incubator, dataciviclab]
     paths: [dataset-incubator/, dataciviclab/analisi/]
-    next: Review PROMOTION_CHECKLIST.md
+    next: Consulta PROMOTION_CHECKLIST.md
 ```
 
-`workspace_root` is intentionally absent — set it via `--workspace-root` or `DATACIVICLAB_WORKSPACE` env var per machine.
+`workspace_root` è volutamente assente dalla config — si imposta via `--workspace-root` o env var `DATACIVICLAB_WORKSPACE`, per macchina.
 
-## Graceful degradation
+## Degradazione controllata
 
-The builder never fails hard on missing data:
+Il builder non crasha mai per dati mancanti:
 
-| Condition | Behavior |
+| Condizione | Comportamento |
 |---|---|
-| GitHub rate limit / 403 | `open_prs: null`, errors in `github_fetch_errors` |
-| Private repo (404, no token) | repo skipped, error recorded |
-| No token | discussions skipped with notice |
-| Repo not cloned locally | `available: false, reason: path_not_found` |
-| Local path not a git repo | `available: false, reason: not_git_repo` |
-| `--workspace-root` not set | `available: false, reason: local_disabled` |
+| Rate limit GitHub / 403 | `open_prs: null`, errori in `github_fetch_errors` |
+| Repo privato (404, senza token) | repo saltato, errore registrato |
+| Nessun token | discussion saltate con avviso |
+| Repo non clonato localmente | `available: false, reason: path_not_found` |
+| Path locale non è un repo git | `available: false, reason: not_git_repo` |
+| `--workspace-root` non impostato | `available: false, reason: local_disabled` |
 
-## Development
+## Sviluppo
 
 ```bash
 pip install -e ".[dev]"
@@ -180,9 +180,9 @@ ruff check .
 ## Roadmap
 
 - **P0** — MVP: bootstrap, triage, topic index, git collector, GitHub Actions ✓
-- **P1** — JSON schemas for output stability; `dataciviclab-state` MCP integration
-- **P2** — Local wrapper script; `AGENTS.md` fast path
+- **P1** — Schema JSON per stabilità output; integrazione MCP `dataciviclab-state`
+- **P2** — Script wrapper locale; fast path in `AGENTS.md`
 
-## License
+## Licenza
 
 MIT
