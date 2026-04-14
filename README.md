@@ -169,6 +169,55 @@ Il builder non crasha mai per dati mancanti:
 | Path locale non è un repo git | `available: false, reason: not_git_repo` |
 | `--workspace-root` non impostato | `available: false, reason: local_disabled` |
 
+## MCP Server
+
+Il repo include un server MCP pubblico che espone i tre artifact come risorse leggibili dagli agenti senza richiedere esecuzione locale del builder.
+
+### Installazione
+
+```bash
+pip install -e ".[mcp]"
+```
+
+### Avvio
+
+```bash
+agent-context-mcp
+```
+
+### Risorse esposte
+
+| URI | Contenuto |
+|---|---|
+| `context://session_bootstrap` | `session_bootstrap.md` dal branch `context` |
+| `context://workspace_triage` | `workspace_triage.json` dal branch `context` |
+| `context://topic_index` | `topic_index.json` dal branch `context` |
+
+### Tool
+
+| Tool | Descrizione |
+|---|---|
+| `refresh_context` | Triggera un nuovo build CI (richiede `GITHUB_TOKEN` con scope `workflow`) |
+
+### Configurazione Claude Code
+
+```json
+{
+  "mcpServers": {
+    "dataciviclab-context": {
+      "command": "agent-context-mcp",
+      "env": {
+        "GITHUB_TOKEN": "<token-opzionale-per-refresh>"
+      }
+    }
+  }
+}
+```
+
+Le risorse sono aggiornate automaticamente ogni 6 ore dalla CI. Il token è opzionale per la sola lettura; serve solo per `refresh_context`.
+
+Le variabili d'ambiente `ACB_REPO` e `ACB_BRANCH` permettono di puntare a un fork o a un branch diverso.
+
 ## Sviluppo
 
 ```bash
@@ -180,7 +229,8 @@ ruff check .
 ## Roadmap
 
 - **P0** — MVP: bootstrap, triage, topic index, git collector, GitHub Actions ✓
-- **P1** — Schema JSON per stabilità output; integrazione MCP `dataciviclab-state`
+- **P0.5** — MCP server pubblico: risorse read-only + tool refresh ✓
+- **P1** — Schema JSON per stabilità output; integrazione `dataciviclab-state` MCP locale
 - **P2** — Script wrapper locale; fast path in `AGENTS.md`
 
 ## Licenza
