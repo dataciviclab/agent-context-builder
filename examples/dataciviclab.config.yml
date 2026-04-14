@@ -1,0 +1,46 @@
+# Agent Context Builder configuration for DataCivicLab
+#
+# Workspace root, GitHub organization, and list of repos to monitor.
+# Topics provide semantic grouping for faster agent orientation.
+
+workspace_root: /home/gabry/dev/dataciviclab-workspace
+
+github_org: dataciviclab
+
+repos:
+  - agent-context-builder
+  - dataset-incubator
+  - dataciviclab
+  - toolkit
+  - data-explorer
+  - source-observatory
+  - lab-ops
+
+topics:
+  agent-context-builder:
+    repos:
+      - agent-context-builder
+    paths:
+      - agent-context-builder/README.md
+      - agent-context-builder/pyproject.toml
+
+  toolkit:
+    repos:
+      - toolkit
+    paths:
+      - toolkit/docs/
+      - toolkit/src/
+
+  datasets:
+    repos:
+      - dataset-incubator
+      - dataciviclab
+    paths:
+      - dataset-incubator/
+      - dataciviclab/analisi/
+
+  analytics:
+    repos:
+      - dataciviclab
+    paths:
+      - dataciviclab/docs/
