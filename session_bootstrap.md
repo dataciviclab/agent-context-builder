@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-15T19:19:09.102771
+**Generated**: 2026-04-15T23:26:51.050791
 
 ## Repos
 
@@ -15,7 +15,6 @@
 
 - [dataset-incubator#138](https://github.com/dataciviclab/dataset-incubator/pull/138): Aggiunge registry clean e MCP clean-query
 - [dataset-incubator#137](https://github.com/dataciviclab/dataset-incubator/pull/137): Feat/istat delitti 2024
-- [source-observatory#99](https://github.com/dataciviclab/source-observatory/pull/99): docs: consolidate radar runbook and add catalog-inventory-scout workflow
 
 ## Open Discussions
 
