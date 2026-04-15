@@ -279,7 +279,7 @@ def test_render_triage_source_health_unavailable():
 
 
 def test_render_signals_cached_across_bootstrap_and_triage():
-    """get_raw_file is called only once even if bootstrap and triage both render."""
+    """Each remote file is fetched exactly once across bootstrap + triage."""
     config = Config(workspace_root=None, github_org="test-org", repos=["repo1"])
     gh = _make_github_mock(raw_file=_sample_so_json(regression=False))
     renderer = Renderer(config, gh, _make_git_mock())
@@ -287,7 +287,11 @@ def test_render_signals_cached_across_bootstrap_and_triage():
     renderer.render_session_bootstrap()
     renderer.render_workspace_triage()
 
-    assert gh.get_raw_file.call_count == 1
+    # Two distinct files (SO catalog_signals + DI pipeline_signals), each fetched once
+    assert gh.get_raw_file.call_count == 2
+    paths_fetched = [call.args[1] for call in gh.get_raw_file.call_args_list]
+    assert "data/catalog/catalog_signals.json" in paths_fetched
+    assert "registry/pipeline_signals.json" in paths_fetched
 
 
 def test_render_topic_index():

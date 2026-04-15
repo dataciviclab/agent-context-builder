@@ -36,6 +36,72 @@ class SourceObservatorySignals:
         return [s for s in self.signals if s.signal_type not in ("no signal", "")]
 
 
+@dataclass
+class RepoSignal:
+    """Single signal entry following the repo-signals standard v1."""
+
+    id: str
+    status: str  # ok | warn | error
+    label: str
+    detail: str
+    action: str
+
+
+@dataclass
+class RepoSignals:
+    """Aggregated signals from a repo following the repo-signals standard v1."""
+
+    schema_version: str
+    generated_at: str
+    repo: str
+    topic: str
+    signals: list[RepoSignal] = field(default_factory=list)
+    summary: dict[str, Any] = field(default_factory=dict)
+
+    @property
+    def actionable(self) -> list[RepoSignal]:
+        """Signals that are warn or error (shown in bootstrap)."""
+        return [s for s in self.signals if s.status in ("warn", "error")]
+
+
+def parse_repo_signals(raw: str) -> RepoSignals:
+    """Parse a repo-signals standard v1 JSON string.
+
+    Args:
+        raw: Raw JSON content of a pipeline_signals.json (or compatible)
+
+    Returns:
+        Parsed RepoSignals instance
+
+    Raises:
+        ValueError: If the JSON is invalid
+    """
+    try:
+        data: dict[str, Any] = json.loads(raw)
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"Invalid JSON: {exc}") from exc
+
+    signals = [
+        RepoSignal(
+            id=s.get("id", ""),
+            status=s.get("status", "ok"),
+            label=s.get("label", s.get("id", "")),
+            detail=s.get("detail", ""),
+            action=s.get("action", ""),
+        )
+        for s in data.get("signals", [])
+    ]
+
+    return RepoSignals(
+        schema_version=str(data.get("schema_version", "1")),
+        generated_at=data.get("generated_at", "unknown"),
+        repo=data.get("repo", ""),
+        topic=data.get("topic", ""),
+        signals=signals,
+        summary=data.get("summary", {}),
+    )
+
+
 def parse_source_observatory_signals(raw: str) -> SourceObservatorySignals:
     """Parse raw JSON string into SourceObservatorySignals.
 
