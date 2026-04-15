@@ -1,9 +1,9 @@
 """Public MCP server — serves DataCivicLab context artifacts from the context branch.
 
-Exposes three read-only resources built by the CI workflow:
-  context://session_bootstrap  — session_bootstrap.md
-  context://workspace_triage   — workspace_triage.json
-  context://topic_index        — topic_index.json
+Exposes three read-only tools built by the CI workflow:
+  session_bootstrap — session_bootstrap.md
+  workspace_triage  — workspace_triage.json
+  topic_index       — topic_index.json
 
 One optional tool:
   refresh_context — triggers a new CI build (requires GITHUB_TOKEN with workflow scope)
@@ -44,19 +44,19 @@ def _fetch(path: str) -> str:
     return response.text
 
 
-@mcp.resource("context://session_bootstrap")
+@mcp.tool()
 def session_bootstrap() -> str:
     """Orientamento rapido: repo attivi, PR aperte, discussion, stato locale, topic."""
     return _fetch("session_bootstrap.md")
 
 
-@mcp.resource("context://workspace_triage")
+@mcp.tool()
 def workspace_triage() -> str:
     """Triage machine-readable: PR, issue, discussion, stato git per repo, warning."""
     return _fetch("workspace_triage.json")
 
 
-@mcp.resource("context://topic_index")
+@mcp.tool()
 def topic_index() -> str:
     """Lookup per topic: repo rilevanti, path, prossimo passo suggerito."""
     return _fetch("topic_index.json")
