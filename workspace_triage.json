@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-15T07:48:09.991393",
+  "generated_at": "2026-04-15T08:58:05.328101",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,7 +9,7 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": null,
+  "open_prs": 2,
   "prs": [
     {
       "number": 137,
@@ -24,8 +24,26 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/136"
     }
   ],
-  "open_issues": null,
+  "open_issues": 37,
   "issues": [
+    {
+      "number": 4,
+      "title": "feat: frontmatter-driven indexing \u2014 leggi metadati strutturati dai markdown del Lab",
+      "repo": "agent-context-builder",
+      "url": "https://github.com/dataciviclab/agent-context-builder/issues/4"
+    },
+    {
+      "number": 3,
+      "title": "feat: JSON Schema per workspace_triage e topic_index \u2014 contratto stabile per i consumer",
+      "repo": "agent-context-builder",
+      "url": "https://github.com/dataciviclab/agent-context-builder/issues/3"
+    },
+    {
+      "number": 2,
+      "title": "feat: CandidateCollector \u2014 tracking end-to-end dei candidati da dataset-incubator",
+      "repo": "agent-context-builder",
+      "url": "https://github.com/dataciviclab/agent-context-builder/issues/2"
+    },
     {
       "number": 128,
       "title": "intake: istat-delitti-denunciati",
@@ -388,10 +406,7 @@
       "category": "Q&A"
     }
   ],
-  "github_fetch_errors": {
-    "agent-context-builder:prs": "403 Client Error: Forbidden for url: https://api.github.com/repos/dataciviclab/agent-context-builder/pulls?state=open&per_page=50",
-    "agent-context-builder:issues": "403 Client Error: Forbidden for url: https://api.github.com/repos/dataciviclab/agent-context-builder/issues?state=open&per_page=50"
-  },
+  "github_fetch_errors": {},
   "git_state": {
     "agent-context-builder": {
       "available": false,
@@ -442,8 +457,5 @@
       "untracked_files": 0
     }
   },
-  "warnings": [
-    "GitHub fetch failed \u2014 agent-context-builder:prs: 403 Client Error: Forbidden for url: https://api.github.com/repos/dataciviclab/agent-context-builder/pulls?state=open&per_page=50",
-    "GitHub fetch failed \u2014 agent-context-builder:issues: 403 Client Error: Forbidden for url: https://api.github.com/repos/dataciviclab/agent-context-builder/issues?state=open&per_page=50"
-  ]
+  "warnings": []
 }
