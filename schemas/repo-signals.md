@@ -116,6 +116,12 @@ per coordinare il parser ACB.
 ACB mostra nel `session_bootstrap.md` solo i segnali `warn` e `error`.
 I segnali `ok` appaiono solo nei conteggi di `summary`.
 
+**Nota per i consumer**: il significato di `ok` dipende dal `topic` del file.
+Per `pipeline_state` (dataset-incubator), `ok` significa **struttura candidate
+coerente e layer mart presente** — non implica che la pipeline abbia girato,
+che i dati siano freschi o che il candidate sia pronto per la promozione.
+Leggere sempre il campo `detail` per il contesto specifico del segnale.
+
 ---
 
 ## Legacy: source-observatory
