@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-16T09:10:14.664378
+**Generated**: 2026-04-16T10:14:48.455845
 
 ## Repos
 
@@ -14,10 +14,15 @@
 ## Open PRs
 
 - [agent-context-builder#6](https://github.com/dataciviclab/agent-context-builder/pull/6): docs: aggiungi workflow canonico lab-check
-- [agent-context-builder#5](https://github.com/dataciviclab/agent-context-builder/pull/5): feat: integra segnali cross-repo (SO catalog_signals + DI pipeline_signals)
 - [dataset-incubator#137](https://github.com/dataciviclab/dataset-incubator/pull/137): Feat/istat delitti 2024
 - [dataciviclab#219](https://github.com/dataciviclab/dataciviclab/pull/219): feat: automazione discussion → intake issue in dataset-incubator
-- [source-observatory#100](https://github.com/dataciviclab/source-observatory/pull/100): feat: catalog inventory diff e alert automatico su variazioni
+- [toolkit#136](https://github.com/dataciviclab/toolkit/pull/136): chore(deps): bump actions/setup-python from 5 to 6
+- [data-explorer#55](https://github.com/dataciviclab/data-explorer/pull/55): chore(deps-dev): bump @sveltejs/vite-plugin-svelte from 3.1.2 to 7.0.0
+- [data-explorer#54](https://github.com/dataciviclab/data-explorer/pull/54): chore(deps-dev): bump tailwindcss from 3.4.18 to 4.2.2
+- [data-explorer#53](https://github.com/dataciviclab/data-explorer/pull/53): chore(deps-dev): bump autoprefixer from 10.4.24 to 10.5.0
+- [data-explorer#52](https://github.com/dataciviclab/data-explorer/pull/52): chore(deps-dev): bump postcss from 8.5.6 to 8.5.10
+- [data-explorer#51](https://github.com/dataciviclab/data-explorer/pull/51): chore(deps): bump actions/upload-pages-artifact from 3 to 5
+- [data-explorer#49](https://github.com/dataciviclab/data-explorer/pull/49): chore(deps): bump actions/checkout from 4 to 6
 
 ## Open Discussions
 
@@ -42,3 +47,14 @@
 - toolkit
 - datasets
 - analytics
+
+## Source Health
+
+- **anac** (ckan): regressione — WAF 'Request Rejected' torna attivo. L'endpoint restituisce HTML invece di JSON CKAN. Regressione rispetto al run 2026-04-10 che mostrava JSON valido.
+  - azione: monitorare nei prossimi run; valutare declassamento a radar-only se persiste
+  *(captured 2026-04-12, 11 sources checked)*
+
+## Pipeline State
+
+*16 candidates, tutti ok*
+  *(as of 2026-04-16 — 16 ok)*

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-16T09:10:14.664378",
+  "generated_at": "2026-04-16T10:14:48.455845",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,19 +9,13 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 5,
+  "open_prs": 13,
   "prs": [
     {
       "number": 6,
       "title": "docs: aggiungi workflow canonico lab-check",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/pull/6"
-    },
-    {
-      "number": 5,
-      "title": "feat: integra segnali cross-repo (SO catalog_signals + DI pipeline_signals)",
-      "repo": "agent-context-builder",
-      "url": "https://github.com/dataciviclab/agent-context-builder/pull/5"
     },
     {
       "number": 137,
@@ -34,6 +28,60 @@
       "title": "feat: automazione discussion \u2192 intake issue in dataset-incubator",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/pull/219"
+    },
+    {
+      "number": 136,
+      "title": "chore(deps): bump actions/setup-python from 5 to 6",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/136"
+    },
+    {
+      "number": 55,
+      "title": "chore(deps-dev): bump @sveltejs/vite-plugin-svelte from 3.1.2 to 7.0.0",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/55"
+    },
+    {
+      "number": 54,
+      "title": "chore(deps-dev): bump tailwindcss from 3.4.18 to 4.2.2",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/54"
+    },
+    {
+      "number": 53,
+      "title": "chore(deps-dev): bump autoprefixer from 10.4.24 to 10.5.0",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/53"
+    },
+    {
+      "number": 52,
+      "title": "chore(deps-dev): bump postcss from 8.5.6 to 8.5.10",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/52"
+    },
+    {
+      "number": 51,
+      "title": "chore(deps): bump actions/upload-pages-artifact from 3 to 5",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/51"
+    },
+    {
+      "number": 49,
+      "title": "chore(deps): bump actions/checkout from 4 to 6",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/49"
+    },
+    {
+      "number": 50,
+      "title": "chore(deps): bump actions/deploy-pages from 4 to 5",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/50"
+    },
+    {
+      "number": 48,
+      "title": "chore(deps): bump actions/setup-node from 4 to 6",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/48"
     },
     {
       "number": 100,
@@ -475,5 +523,34 @@
       "untracked_files": 0
     }
   },
-  "warnings": []
+  "warnings": [
+    "Many open PRs: 13"
+  ],
+  "source_health": {
+    "available": true,
+    "captured_at": "2026-04-12",
+    "sources_checked": 11,
+    "regressions": [
+      {
+        "source": "anac",
+        "protocol": "ckan",
+        "detail": "WAF 'Request Rejected' torna attivo. L'endpoint restituisce HTML invece di JSON CKAN. Regressione rispetto al run 2026-04-10 che mostrava JSON valido.",
+        "suggested_action": "monitorare nei prossimi run; valutare declassamento a radar-only se persiste"
+      }
+    ],
+    "alerts": []
+  },
+  "pipeline_state": {
+    "available": true,
+    "generated_at": "2026-04-16",
+    "summary": {
+      "total": 16,
+      "by_status": {
+        "ok": 16,
+        "warn": 0,
+        "error": 0
+      }
+    },
+    "actionable": []
+  }
 }
