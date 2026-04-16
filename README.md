@@ -94,13 +94,15 @@ Per Claude, la configurazione MCP consigliata è quella del server `agent-contex
 Per Codex, il comando quotidiano consigliato su Windows è:
 
 ```powershell
-.\codex-context.ps1
+.\codex-context.ps1 -WorkspaceRoot "C:\path\to\dataciviclab-workspace"
 ```
 
 Lo script:
 
 - imposta `PYTHONIOENCODING=utf-8`
 - neutralizza `CURL_CA_BUNDLE` se ereditato dall'ambiente
+- richiede un `WorkspaceRoot` esplicito
+- prova a usare `.venv314`, poi `.venv`, se presenti nella repo
 - esegue `agent-context build`
 - scrive gli artifact in `generated-local/`
 

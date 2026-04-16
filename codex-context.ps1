@@ -1,23 +1,53 @@
+<#
+.SYNOPSIS
+Build locale del contesto per Codex su Windows.
+
+.DESCRIPTION
+Wrapper operativo per `agent-context build` in local mode.
+Richiede un workspace root esplicito e prova a usare prima `.venv314`,
+poi `.venv`, se presenti nella repo.
+#>
+
 param(
-    [string]$WorkspaceRoot = "C:\Users\matt\OneDrive\Desktop\Data_Projects\DataCivicLab",
+    [Parameter(Mandatory = $true)]
+    [string]$WorkspaceRoot,
     [string]$OutDir = "generated-local",
-    [string]$ConfigPath = "dataciviclab.config.yml"
+    [string]$ConfigPath = "dataciviclab.config.yml",
+    [string]$VenvName = ""
 )
 
 $ErrorActionPreference = "Stop"
 
 $repoRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
-$python = Join-Path $repoRoot ".venv314\Scripts\python.exe"
-$agentContext = Join-Path $repoRoot ".venv314\Scripts\agent-context.exe"
 $resolvedOutDir = Join-Path $repoRoot $OutDir
 $resolvedConfig = Join-Path $repoRoot $ConfigPath
 
-if (-not (Test-Path $python)) {
-    throw "Python non trovato: $python"
+$candidateVenvs = @()
+if ($VenvName) {
+    $candidateVenvs += $VenvName
+}
+$candidateVenvs += @(".venv314", ".venv")
+
+$python = $null
+$agentContext = $null
+$resolvedVenv = $null
+foreach ($candidate in $candidateVenvs | Select-Object -Unique) {
+    $candidatePython = Join-Path $repoRoot "$candidate\Scripts\python.exe"
+    $candidateCli = Join-Path $repoRoot "$candidate\Scripts\agent-context.exe"
+    if ((Test-Path $candidatePython) -and (Test-Path $candidateCli)) {
+        $python = $candidatePython
+        $agentContext = $candidateCli
+        $resolvedVenv = $candidate
+        break
+    }
 }
 
-if (-not (Test-Path $agentContext)) {
-    throw "CLI non trovata: $agentContext"
+if (-not (Test-Path $WorkspaceRoot)) {
+    throw "Workspace root non trovato: $WorkspaceRoot"
+}
+
+if (-not (Test-Path $python)) {
+    throw "Nessun venv compatibile trovato. Attesi: .venv314 o .venv, oppure passa -VenvName."
 }
 
 if (-not (Test-Path $resolvedConfig)) {
@@ -30,6 +60,7 @@ $env:CURL_CA_BUNDLE = ""
 
 Write-Host "Building agent context for Codex..." -ForegroundColor Cyan
 Write-Host "  repo: $repoRoot"
+Write-Host "  venv: $resolvedVenv"
 Write-Host "  workspace: $WorkspaceRoot"
 Write-Host "  out: $resolvedOutDir"
 
