@@ -11,7 +11,7 @@ poi `.venv`, se presenti nella repo.
 param(
     [Parameter(Mandatory = $true)]
     [string]$WorkspaceRoot,
-    [string]$OutDir = "generated-local",
+    [string]$OutDir = "generated",
     [string]$ConfigPath = "dataciviclab.config.yml",
     [string]$VenvName = ""
 )
