@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-16T07:48:25.560133
+**Generated**: 2026-04-16T09:10:14.664378
 
 ## Repos
 
@@ -13,9 +13,10 @@
 
 ## Open PRs
 
-- [dataset-incubator#139](https://github.com/dataciviclab/dataset-incubator/pull/139): feat: genera pipeline_signals.json per integrazione ACB
-- [dataset-incubator#138](https://github.com/dataciviclab/dataset-incubator/pull/138): Aggiunge registry clean e MCP clean-query
+- [agent-context-builder#6](https://github.com/dataciviclab/agent-context-builder/pull/6): docs: aggiungi workflow canonico lab-check
+- [agent-context-builder#5](https://github.com/dataciviclab/agent-context-builder/pull/5): feat: integra segnali cross-repo (SO catalog_signals + DI pipeline_signals)
 - [dataset-incubator#137](https://github.com/dataciviclab/dataset-incubator/pull/137): Feat/istat delitti 2024
+- [dataciviclab#219](https://github.com/dataciviclab/dataciviclab/pull/219): feat: automazione discussion → intake issue in dataset-incubator
 - [source-observatory#100](https://github.com/dataciviclab/source-observatory/pull/100): feat: catalog inventory diff e alert automatico su variazioni
 
 ## Open Discussions
