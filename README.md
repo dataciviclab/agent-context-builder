@@ -82,6 +82,36 @@ Lookup semantico per topic — repo rilevanti, path, prossimo passo suggerito:
 
 ## Utilizzo
 
+### Profili operativi
+
+Il workflow è stato verificato in due modalità distinte:
+
+- **Claude = shared mode**: usa `agent-context-mcp` e legge gli artifact pubblicati sul branch `context`
+- **Codex = local mode**: esegue il builder in locale con `--workspace-root` e legge gli artifact appena generati
+
+Per Claude, la configurazione MCP consigliata è quella del server `agent-context-mcp`.
+
+Per Codex, il comando quotidiano consigliato su Windows è:
+
+```powershell
+.\codex-context.ps1 -WorkspaceRoot "C:\path\to\dataciviclab-workspace"
+```
+
+Lo script:
+
+- imposta `PYTHONIOENCODING=utf-8`
+- neutralizza `CURL_CA_BUNDLE` se ereditato dall'ambiente
+- richiede un `WorkspaceRoot` esplicito
+- prova a usare `.venv314`, poi `.venv`, se presenti nella repo
+- esegue `agent-context build`
+- scrive gli artifact in `generated-local/`
+
+I file da leggere in ordine sono:
+
+1. `generated-local/session_bootstrap.md`
+2. `generated-local/workspace_triage.json`
+3. `generated-local/topic_index.json`
+
 ### Solo GitHub (senza checkout locale)
 
 ```bash
