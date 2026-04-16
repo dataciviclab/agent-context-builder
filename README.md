@@ -84,14 +84,14 @@ Lookup semantico per topic — repo rilevanti, path, prossimo passo suggerito:
 
 ### Profili operativi
 
-Il workflow e' stato verificato in due modalita' distinte:
+Il workflow è stato verificato in due modalità distinte:
 
 - **Claude = shared mode**: usa `agent-context-mcp` e legge gli artifact pubblicati sul branch `context`
 - **Codex = local mode**: esegue il builder in locale con `--workspace-root` e legge gli artifact appena generati
 
-Per Claude, la configurazione MCP consigliata e' quella del server `agent-context-mcp`.
+Per Claude, la configurazione MCP consigliata è quella del server `agent-context-mcp`.
 
-Per Codex, il comando quotidiano consigliato su Windows e':
+Per Codex, il comando quotidiano consigliato su Windows è:
 
 ```powershell
 .\codex-context.ps1
