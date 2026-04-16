@@ -3,10 +3,6 @@
 from datetime import datetime
 from typing import Any
 
-
-class _UNSET:
-    """Sentinel for uninitialized cache values."""
-
 from .config import Config
 from .discussions import Discussion, DiscussionCollector
 from .github import GitHubCollector, PR
@@ -17,6 +13,10 @@ from .signals import (
     parse_repo_signals,
     parse_source_observatory_signals,
 )
+
+
+class _UNSET:
+    """Sentinel for uninitialized cache values."""
 
 
 class Renderer:
@@ -172,7 +172,8 @@ class Renderer:
             lines.append("")
             return lines
 
-        issues = so.alerts
+        # Show regressions first, then other alerts (mutually exclusive sets)
+        issues = so.regressions + so.alerts
         if issues:
             for s in issues:
                 lines.append(f"- **{s.source}** ({s.protocol}): {s.result} — {s.detail}")

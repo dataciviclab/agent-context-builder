@@ -278,10 +278,39 @@ def test_render_triage_source_health_unavailable():
     assert triage["source_health"]["available"] is False
 
 
+def _sample_di_json() -> str:
+    return json.dumps({
+        "schema_version": "1",
+        "generated_at": "2026-04-16T10:00:00",
+        "repo": "dataciviclab/dataset-incubator",
+        "topic": "pipeline_state",
+        "signals": [
+            {"id": "irpef-comunale", "status": "ok", "label": "irpef-comunale", "detail": "", "action": ""},
+        ],
+        "summary": {"ok": 1, "warn": 0, "error": 0},
+    })
+
+
 def test_render_signals_cached_across_bootstrap_and_triage():
-    """Each remote file is fetched exactly once across bootstrap + triage."""
+    """Each remote file is fetched exactly once across bootstrap + triage.
+
+    Uses side_effect so SO and DI fetches return their respective realistic JSON,
+    validating parse_repo_signals on real DI-shaped data.
+    """
     config = Config(workspace_root=None, github_org="test-org", repos=["repo1"])
-    gh = _make_github_mock(raw_file=_sample_so_json(regression=False))
+    gh = _make_github_mock()
+
+    so_json = _sample_so_json(regression=False)
+    di_json = _sample_di_json()
+
+    def _raw_file_side_effect(repo, path, ref="main"):
+        if path == "data/catalog/catalog_signals.json":
+            return so_json
+        if path == "registry/pipeline_signals.json":
+            return di_json
+        return None
+
+    gh.get_raw_file.side_effect = _raw_file_side_effect
     renderer = Renderer(config, gh, _make_git_mock())
 
     renderer.render_session_bootstrap()

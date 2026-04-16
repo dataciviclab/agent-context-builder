@@ -29,11 +29,21 @@ class SourceObservatorySignals:
 
     @property
     def regressions(self) -> list[SourceSignal]:
+        """Signals where result == 'regressione' (status degraded from previous run)."""
         return [s for s in self.signals if s.result == "regressione"]
 
     @property
     def alerts(self) -> list[SourceSignal]:
-        return [s for s in self.signals if s.signal_type not in ("no signal", "")]
+        """Non-stable signals that are NOT regressions (e.g. warnings, anomalies).
+
+        Mutually exclusive with regressions: each signal appears in at most one list.
+        """
+        regression_sources = {s.source for s in self.regressions}
+        return [
+            s for s in self.signals
+            if s.signal_type not in ("no signal", "")
+            and s.source not in regression_sources
+        ]
 
 
 @dataclass
