@@ -7,6 +7,16 @@ from .config import Config
 from .discussions import Discussion, DiscussionCollector
 from .github import GitHubCollector, PR
 from .git_local import GitLocalCollector, GitState
+from .signals import (
+    RepoSignals,
+    SourceObservatorySignals,
+    parse_repo_signals,
+    parse_source_observatory_signals,
+)
+
+
+class _UNSET:
+    """Sentinel for uninitialized cache values."""
 
 
 class Renderer:
@@ -34,6 +44,9 @@ class Renderer:
         self.git_collector = git_collector
         self.discussion_collector = discussion_collector
         self.fixed_timestamp = fixed_timestamp or datetime.now().isoformat()
+        # Cache for remote signal fetches — avoids double requests within one build
+        self._so_signals_cache: SourceObservatorySignals | None | type[_UNSET] = _UNSET
+        self._di_signals_cache: RepoSignals | None | type[_UNSET] = _UNSET
 
     def render_session_bootstrap(self) -> str:
         """Render session_bootstrap.md.
@@ -113,7 +126,64 @@ class Renderer:
                 lines.append(f"- {topic_name}")
             lines.append("")
 
+        # Source health (only issues — skip stable sources)
+        so = self._fetch_source_observatory_signals()
+        lines += self._render_source_health_section(so)
+
+        # Pipeline state (only warn/error candidates)
+        di = self._fetch_di_pipeline_signals()
+        lines += self._render_pipeline_state_section(di)
+
         return "\n".join(lines)
+
+    def _fetch_source_observatory_signals(self) -> SourceObservatorySignals | None:
+        if self._so_signals_cache is not _UNSET:
+            return self._so_signals_cache  # type: ignore[return-value]
+        raw = self.github_collector.get_raw_file(
+            "source-observatory", "data/catalog/catalog_signals.json"
+        )
+        if raw is None:
+            self._so_signals_cache = None
+            return None
+        try:
+            result = parse_source_observatory_signals(raw)
+        except ValueError as exc:
+            self.github_collector.fetch_errors["source-observatory:catalog_signals"] = str(exc)
+            result = None
+        self._so_signals_cache = result
+        return result
+
+    def _render_source_health_section(
+        self, so: SourceObservatorySignals | None
+    ) -> list[str]:
+        lines = []
+        lines.append("## Source Health")
+        lines.append("")
+        if so is None:
+            err = self.github_collector.fetch_errors.get(
+                "source-observatory:data/catalog/catalog_signals.json"
+            ) or self.github_collector.fetch_errors.get(
+                "source-observatory:catalog_signals"
+            )
+            if err:
+                lines.append(f"> *catalog_signals unavailable — {err}*")
+            else:
+                lines.append("> *catalog_signals unavailable*")
+            lines.append("")
+            return lines
+
+        # Show regressions first, then other alerts (mutually exclusive sets)
+        issues = so.regressions + so.alerts
+        if issues:
+            for s in issues:
+                lines.append(f"- **{s.source}** ({s.protocol}): {s.result} — {s.detail}")
+                if s.suggested_action and s.suggested_action != "nessuna":
+                    lines.append(f"  - azione: {s.suggested_action}")
+        else:
+            lines.append(f"*All {so.sources_checked} sources stable* (as of {so.captured_at})")
+        lines.append(f"  *(captured {so.captured_at}, {so.sources_checked} sources checked)*")
+        lines.append("")
+        return lines
 
     def render_workspace_triage(self) -> dict[str, Any]:
         """Render workspace_triage.json.
@@ -186,8 +256,119 @@ class Renderer:
                 for repo, state in repos_state.items()
             },
             "warnings": self._collect_warnings(prs, repos_state),
+            "source_health": self._build_source_health_dict(),
+            "pipeline_state": self._build_pipeline_state_dict(),
         }
         return triage
+
+    def _build_source_health_dict(self) -> dict[str, Any]:
+        so = self._fetch_source_observatory_signals()
+        if so is None:
+            return {
+                "available": False,
+                "errors": {
+                    k: v for k, v in self.github_collector.fetch_errors.items()
+                    if "source-observatory" in k
+                },
+            }
+        return {
+            "available": True,
+            "captured_at": so.captured_at,
+            "sources_checked": so.sources_checked,
+            "regressions": [
+                {
+                    "source": s.source,
+                    "protocol": s.protocol,
+                    "detail": s.detail,
+                    "suggested_action": s.suggested_action,
+                }
+                for s in so.regressions
+            ],
+            "alerts": [
+                {
+                    "source": s.source,
+                    "protocol": s.protocol,
+                    "signal_type": s.signal_type,
+                    "result": s.result,
+                    "detail": s.detail,
+                    "suggested_action": s.suggested_action,
+                }
+                for s in so.alerts
+            ],
+        }
+
+    def _fetch_di_pipeline_signals(self) -> RepoSignals | None:
+        if self._di_signals_cache is not _UNSET:
+            return self._di_signals_cache  # type: ignore[return-value]
+        raw = self.github_collector.get_raw_file(
+            "dataset-incubator", "registry/pipeline_signals.json"
+        )
+        if raw is None:
+            self._di_signals_cache = None
+            return None
+        try:
+            result = parse_repo_signals(raw)
+        except ValueError as exc:
+            self.github_collector.fetch_errors["dataset-incubator:pipeline_signals"] = str(exc)
+            result = None
+        self._di_signals_cache = result
+        return result
+
+    def _render_pipeline_state_section(self, di: RepoSignals | None) -> list[str]:
+        lines = []
+        lines.append("## Pipeline State")
+        lines.append("")
+        if di is None:
+            err = self.github_collector.fetch_errors.get(
+                "dataset-incubator:registry/pipeline_signals.json"
+            ) or self.github_collector.fetch_errors.get(
+                "dataset-incubator:pipeline_signals"
+            )
+            if err:
+                lines.append(f"> *pipeline_signals unavailable — {err}*")
+            else:
+                lines.append("> *pipeline_signals unavailable*")
+            lines.append("")
+            return lines
+
+        summary = di.summary
+        total = summary.get("total", len(di.signals))
+        by_status = summary.get("by_status", {})
+        actionable = di.actionable
+        if actionable:
+            for s in actionable:
+                lines.append(f"- **{s.label}** [{s.status}]: {s.detail}")
+                if s.action:
+                    lines.append(f"  - azione: {s.action}")
+        else:
+            lines.append(f"*{total} candidates, tutti ok*")
+        lines.append(
+            f"  *(as of {di.generated_at} — "
+            + ", ".join(f"{v} {k}" for k, v in sorted(by_status.items()) if v)
+            + ")*"
+        )
+        lines.append("")
+        return lines
+
+    def _build_pipeline_state_dict(self) -> dict[str, Any]:
+        di = self._fetch_di_pipeline_signals()
+        if di is None:
+            return {
+                "available": False,
+                "errors": {
+                    k: v for k, v in self.github_collector.fetch_errors.items()
+                    if "dataset-incubator" in k
+                },
+            }
+        return {
+            "available": True,
+            "generated_at": di.generated_at,
+            "summary": di.summary,
+            "actionable": [
+                {"id": s.id, "status": s.status, "detail": s.detail, "action": s.action}
+                for s in di.actionable
+            ],
+        }
 
     def _collect_warnings(
         self, prs: list[PR], repos_state: dict[str, GitState]

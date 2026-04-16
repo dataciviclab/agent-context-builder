@@ -104,6 +104,32 @@ class GitHubCollector:
             )
         return prs
 
+    def get_raw_file(self, repo: str, path: str, ref: str = "main") -> str | None:
+        """Fetch raw file content from GitHub.
+
+        Uses raw.githubusercontent.com — works without token on public repos.
+        On failure, records the error in self.fetch_errors and returns None.
+
+        Args:
+            repo: Repository name (under self.org)
+            path: File path within the repo
+            ref: Branch or tag (default: main)
+
+        Returns:
+            Raw file content as string, or None on failure.
+        """
+        url = f"https://raw.githubusercontent.com/{self.org}/{repo}/{ref}/{path}"
+        headers = {}
+        if self.token:
+            headers["Authorization"] = f"token {self.token}"
+        try:
+            response = requests.get(url, headers=headers, timeout=10)
+            response.raise_for_status()
+            return response.text
+        except Exception as exc:
+            self.fetch_errors[f"{repo}:{path}"] = str(exc)
+            return None
+
     def _get_repo_issues(self, repo: str, state: str = "open") -> list[Issue]:
         """Get issues for a specific repo (excluding pull requests).
 
