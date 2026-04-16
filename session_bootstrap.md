@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-16T19:16:31.758893
+**Generated**: 2026-04-16T22:48:58.542032
 
 ## Repos
 
@@ -14,7 +14,6 @@
 ## Open PRs
 
 - [dataset-incubator#137](https://github.com/dataciviclab/dataset-incubator/pull/137): Feat/istat delitti 2024
-- [dataciviclab#219](https://github.com/dataciviclab/dataciviclab/pull/219): feat: automazione discussion → intake issue in dataset-incubator
 - [toolkit#136](https://github.com/dataciviclab/toolkit/pull/136): chore(deps): bump actions/setup-python from 5 to 6
 - [data-explorer#55](https://github.com/dataciviclab/data-explorer/pull/55): chore(deps-dev): bump @sveltejs/vite-plugin-svelte from 3.1.2 to 7.0.0
 - [data-explorer#54](https://github.com/dataciviclab/data-explorer/pull/54): chore(deps-dev): bump tailwindcss from 3.4.18 to 4.2.2
@@ -23,11 +22,13 @@
 - [data-explorer#51](https://github.com/dataciviclab/data-explorer/pull/51): chore(deps): bump actions/upload-pages-artifact from 3 to 5
 - [data-explorer#49](https://github.com/dataciviclab/data-explorer/pull/49): chore(deps): bump actions/checkout from 4 to 6
 - [data-explorer#50](https://github.com/dataciviclab/data-explorer/pull/50): chore(deps): bump actions/deploy-pages from 4 to 5
+- [data-explorer#48](https://github.com/dataciviclab/data-explorer/pull/48): chore(deps): bump actions/setup-node from 4 to 6
 
 ## Open Discussions
 
 - [dataset-incubator#77](https://github.com/dataciviclab/dataset-incubator/discussions/77) [Datasets]: [Dataset] Pensioni della PA per tipo e territorio – MEF DAG 2017-2026
 - [dataset-incubator#75](https://github.com/dataciviclab/dataset-incubator/discussions/75) [Datasets]: [Dataset] Fondo di Solidarieta Comunale 2025 - OpenCivitas/Sogei (comuni RSO)
+- [dataciviclab#149](https://github.com/orgs/dataciviclab/discussions/149) [Datasets]: ISTAT Ciclo dell'acqua - prelievo vs distribuzione, perdite idriche per distretto
 - [dataciviclab#218](https://github.com/orgs/dataciviclab/discussions/218) [Analisi]: [Analisi] Entrate dello Stato 2008-2024: nelle crisi cresce il peso dei prestiti?
 - [dataciviclab#217](https://github.com/orgs/dataciviclab/discussions/217) [Datasets]: RdC INPS - Nuclei con disabili: distribuzione provinciale dei beneficiari (2019-2020)
 - [dataciviclab#216](https://github.com/orgs/dataciviclab/discussions/216) [Datasets]: ANF INPS - Assegni al nucleo familiare, beneficiari e importi (2016-2020)
@@ -35,7 +36,6 @@
 - [dataciviclab#212](https://github.com/orgs/dataciviclab/discussions/212) [Datasets]: Consip consumi in convenzione: geografia della spesa delle PA
 - [dataciviclab#213](https://github.com/orgs/dataciviclab/discussions/213) [Datasets]: Incentivi.gov: anagrafica degli incentivi alle imprese per regione, ambito e forma di agevolazione
 - [dataciviclab#214](https://github.com/orgs/dataciviclab/discussions/214) [Datasets]: ISTAT povertà assoluta e relativa: incidenze, intensità e soglie (2014-2024)
-- [dataciviclab#210](https://github.com/orgs/dataciviclab/discussions/210) [Domande]: La geografia del calo iscrizioni nelle scuole primarie (2015-2024)
 
 ## Local State
 

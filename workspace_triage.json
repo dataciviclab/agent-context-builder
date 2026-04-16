@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-16T19:16:31.758893",
+  "generated_at": "2026-04-16T22:48:58.542032",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,19 +9,13 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 12,
+  "open_prs": 10,
   "prs": [
     {
       "number": 137,
       "title": "Feat/istat delitti 2024",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/137"
-    },
-    {
-      "number": 219,
-      "title": "feat: automazione discussion \u2192 intake issue in dataset-incubator",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/pull/219"
     },
     {
       "number": 136,
@@ -76,15 +70,9 @@
       "title": "chore(deps): bump actions/setup-node from 4 to 6",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/48"
-    },
-    {
-      "number": 107,
-      "title": "refactor: split catalog inventory builder in collector modulari",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/107"
     }
   ],
-  "open_issues": 39,
+  "open_issues": 40,
   "issues": [
     {
       "number": 4,
@@ -103,6 +91,12 @@
       "title": "feat: CandidateCollector \u2014 tracking end-to-end dei candidati da dataset-incubator",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/issues/2"
+    },
+    {
+      "number": 143,
+      "title": "intake: ISTAT Ciclo dell'acqua - prelievo vs distribuzione, perdite idriche per distretto",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/143"
     },
     {
       "number": 128,
@@ -145,6 +139,12 @@
       "title": "Estendere il perimetro del candidate MIM oltre il v0 2024/25",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/108"
+    },
+    {
+      "number": 221,
+      "title": "Rendere compatto il body generato dal workflow discussion \u2192 intake",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/221"
     },
     {
       "number": 215,
@@ -255,12 +255,6 @@
       "url": "https://github.com/dataciviclab/source-observatory/issues/109"
     },
     {
-      "number": 106,
-      "title": "refactor: split catalog inventory builder in collector modulari",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/106"
-    },
-    {
       "number": 81,
       "title": "source-check: INPS CKAN - Assegni nucleo familiare (ANF), beneficiari e importi per regione",
       "repo": "source-observatory",
@@ -335,6 +329,13 @@
       "title": "[Dataset] Fondo di Solidarieta Comunale 2025 - OpenCivitas/Sogei (comuni RSO)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/discussions/75",
+      "category": "Datasets"
+    },
+    {
+      "number": 149,
+      "title": "ISTAT Ciclo dell'acqua - prelievo vs distribuzione, perdite idriche per distretto",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/149",
       "category": "Datasets"
     },
     {
@@ -469,13 +470,6 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/194",
       "category": "Domande"
-    },
-    {
-      "number": 208,
-      "title": "Q&A - Come orientarsi nel Lab",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/208",
-      "category": "Q&A"
     }
   ],
   "github_fetch_errors": {},
@@ -530,7 +524,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 12"
+    "Many open PRs: 10"
   ],
   "source_health": {
     "available": true,
