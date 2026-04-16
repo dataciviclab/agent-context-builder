@@ -3,7 +3,7 @@ name: lab-check
 description: Skill invocabile come /lab-check per controllare le novità e lo stato del DataCivicLab tramite il server MCP dataciviclab-context.
 license: MIT
 metadata:
-  version: "0.1"
+  version: "0.2"
   owner: "DataCivicLab"
   tags: [context, triage, check, mcp]
 ---
@@ -11,7 +11,7 @@ metadata:
 # Workflow: lab-check
 
 Workflow canonico di `agent-context-builder`.
-Versione: 0.1 - 2026-04-15
+Versione: 0.2 - 2026-04-16
 
 ## Obiettivo di fase
 
@@ -28,6 +28,17 @@ Non serve a:
 - estrarre repository o dataset per l'elaborazione diretta dal workspace (è puramente per contesto)
 - sostituire skill operative di PR e file editing
 - ispezionare il contenuto dettagliato del codice di una determinata applicazione
+
+## Profilo operativo coperto
+
+Questo workflow copre il profilo **shared-mode via MCP** (`dataciviclab-context`).
+
+Il Lab ha due profili operativi distinti:
+
+- **Shared-mode (MCP)** — Claude Code e agenti che leggono il contesto via server MCP. Questo è il profilo che questo workflow descrive.
+- **Local-mode** — Codex o agenti con accesso diretto al git workspace locale. In questo caso il check dello stato parte dal git state reale, non dai tool MCP.
+
+Se stai lavorando in local-mode, questo workflow non è il tuo percorso primario.
 
 ## Quando usarlo
 
@@ -88,9 +99,15 @@ Attenzione: questo step impiegherà ~1 minuto prima di produrre un output aggior
 
 ## Output minimo atteso
 
-- L'agente deve aver selezionato **1 artifact di ingresso** (PR, issue o discussion) su cui operare nella sessione.
-- Un modello mentale chiaro o breve summary sullo stato ("Cosa richiede attenzione adesso?").
-- Inquadramento formale di "wait" o "runnable" documentato per l'artifact scelto.
+L'esito del workflow è considerato completo se l'agente o il contributor ha ottenuto un quadro chiaro sullo stato del Lab e sa cosa fare (o non fare) nella sessione.
+
+Gli esiti validi sono tutti questi:
+
+- Ha identificato un artifact (PR, issue, discussion) su cui concentrarsi.
+- Ha constatato che non ci sono novità critiche e può proseguire sul task già in corso.
+- Ha deciso di non fare nulla ora e ha una motivazione chiara.
+
+Non è richiesta una classificazione formale dell'artifact né la selezione obbligatoria di un "prossimo passo".
 
 ## Definition of done
 
