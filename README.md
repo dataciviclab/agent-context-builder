@@ -104,13 +104,13 @@ Lo script:
 - richiede un `WorkspaceRoot` esplicito
 - prova a usare `.venv314`, poi `.venv`, se presenti nella repo
 - esegue `agent-context build`
-- scrive gli artifact in `generated-local/`
+- scrive gli artifact in `generated/`
 
 I file da leggere in ordine sono:
 
-1. `generated-local/session_bootstrap.md`
-2. `generated-local/workspace_triage.json`
-3. `generated-local/topic_index.json`
+1. `generated/session_bootstrap.md`
+2. `generated/workspace_triage.json`
+3. `generated/topic_index.json`
 
 ### Solo GitHub (senza checkout locale)
 
