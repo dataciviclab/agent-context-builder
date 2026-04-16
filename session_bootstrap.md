@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-16T02:43:25.077299
+**Generated**: 2026-04-16T07:48:25.560133
 
 ## Repos
 
@@ -13,8 +13,10 @@
 
 ## Open PRs
 
+- [dataset-incubator#139](https://github.com/dataciviclab/dataset-incubator/pull/139): feat: genera pipeline_signals.json per integrazione ACB
 - [dataset-incubator#138](https://github.com/dataciviclab/dataset-incubator/pull/138): Aggiunge registry clean e MCP clean-query
 - [dataset-incubator#137](https://github.com/dataciviclab/dataset-incubator/pull/137): Feat/istat delitti 2024
+- [source-observatory#100](https://github.com/dataciviclab/source-observatory/pull/100): feat: catalog inventory diff e alert automatico su variazioni
 
 ## Open Discussions
 
