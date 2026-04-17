@@ -15,6 +15,7 @@ Configuration via environment variables:
 """
 
 import os
+from pathlib import Path
 
 import requests
 from mcp.server.fastmcp import FastMCP
@@ -35,9 +36,86 @@ mcp = FastMCP(
 )
 
 
+_ENV_LOADED = False
+
+
+def _parse_env_line(line: str) -> tuple[str, str] | None:
+    stripped = line.strip()
+    if not stripped or stripped.startswith("#") or "=" not in stripped:
+        return None
+    key, value = stripped.split("=", 1)
+    key = key.strip()
+    if not key:
+        return None
+    value = value.strip().strip('"').strip("'")
+    return key, value
+
+
+def _candidate_env_paths() -> list[Path]:
+    """Return .env candidates, from explicit config to nearby parent directories."""
+    explicit = os.environ.get("ACB_ENV_FILE", "").strip()
+    paths: list[Path] = []
+    if explicit:
+        paths.append(Path(explicit).expanduser())
+
+    starts = [Path.cwd(), Path(__file__).resolve()]
+    for start in starts:
+        current = start if start.is_dir() else start.parent
+        paths.extend(parent / ".env" for parent in [current] + list(current.parents))
+
+    seen: set[Path] = set()
+    unique: list[Path] = []
+    for path in paths:
+        resolved = path.resolve()
+        if resolved not in seen:
+            seen.add(resolved)
+            unique.append(resolved)
+    return unique
+
+
+def _load_dotenv_if_present() -> bool:
+    """Load local .env files without overriding variables already set by the host.
+
+    Lookup order:
+    1. `ACB_ENV_FILE`, when set.
+    2. `.env` from the current working directory upward.
+    3. `.env` from this module directory upward.
+
+    Partial `.env` files are allowed: the loader keeps checking later candidates
+    until at least one missing or blank variable has been filled.
+    """
+    global _ENV_LOADED
+    if _ENV_LOADED:
+        return True
+
+    loaded_any = False
+    for env_path in _candidate_env_paths():
+        if not env_path.exists():
+            continue
+        for line in env_path.read_text(encoding="utf-8").splitlines():
+            parsed = _parse_env_line(line)
+            if not parsed:
+                continue
+            key, value = parsed
+            if not os.environ.get(key):
+                os.environ[key] = value
+                loaded_any = True
+    if loaded_any:
+        _ENV_LOADED = True
+    return loaded_any
+
+
+def _get_env(name: str) -> str | None:
+    value = os.environ.get(name)
+    if value:
+        return value
+    _load_dotenv_if_present()
+    return os.environ.get(name)
+
+
 def _fetch(path: str) -> str:
     """Fetch a file from the context branch."""
-    token = os.environ.get("GITHUB_TOKEN")
+    token = _get_env("GITHUB_TOKEN")
     headers = {"Authorization": f"token {token}"} if token else {}
     response = requests.get(f"{_RAW_BASE}/{path}", headers=headers, timeout=10)
     response.raise_for_status()
@@ -69,7 +147,7 @@ def refresh_context() -> str:
     Richiede GITHUB_TOKEN con scope workflow.
     Gli artifact aggiornati saranno disponibili entro ~1 minuto.
     """
-    token = os.environ.get("GITHUB_TOKEN")
+    token = _get_env("GITHUB_TOKEN")
     if not token:
         return (
             "Errore: GITHUB_TOKEN non impostato. "
