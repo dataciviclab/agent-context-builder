@@ -47,6 +47,21 @@ Tool:
 |---|---|
 | `refresh_context` | triggera build CI; richiede `GITHUB_TOKEN` con scope `workflow` |
 
+Esempio `settings.json`:
+
+```json
+{
+  "mcpServers": {
+    "dataciviclab-context": {
+      "command": "agent-context-mcp",
+      "env": {
+        "GITHUB_TOKEN": "<opzionale-per-refresh>"
+      }
+    }
+  }
+}
+```
+
 ### Local mode
 
 Esegue il builder localmente per includere lo stato git (branch, dirty).
