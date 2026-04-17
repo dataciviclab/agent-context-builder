@@ -74,14 +74,21 @@ class Renderer:
         lines.append("")
         prs = self.github_collector.get_prs(self.config.repos)
         github_errors = self.github_collector.fetch_errors
-        if github_errors:
-            lines.append(
-                f"> **GitHub unavailable** — {len(github_errors)} fetch error(s);"
-                " PR/issue counts may be incomplete"
-            )
+        collector_warn = self.github_collector.collector_warning()
+        if collector_warn:
+            lines.append(f"> **Warning**: {collector_warn}")
         if prs:
-            for pr in prs[:10]:  # Limit to first 10
+            _DEPENDABOT = {"dependabot[bot]", "dependabot"}
+            feature_prs = [pr for pr in prs if pr.author not in _DEPENDABOT]
+            dep_prs = [pr for pr in prs if pr.author in _DEPENDABOT]
+            for pr in feature_prs[:10]:
                 lines.append(f"- [{pr.repo}#{pr.number}]({pr.url}): {pr.title}")
+            if dep_prs:
+                lines.append(
+                    f"- **Dependabot**: {len(dep_prs)} bump PR(s) - "
+                    + ", ".join(f"[#{pr.number}]({pr.url})" for pr in dep_prs[:2])
+                    + (" ..." if len(dep_prs) > 2 else "")
+                )
         elif not github_errors:
             lines.append("*No open PRs*")
         lines.append("")
