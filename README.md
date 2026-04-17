@@ -127,6 +127,6 @@ ruff check .
 
 ## Roadmap & Licenza
 
-- **P1**: schema JSON stabile e integrazione `dataciviclab-state`.
+- **P1**: schema JSON stabile per artifact consumabili da MCP e agenti.
 - **P2**: session brief/local health più compatti.
 - **Licenza**: MIT
