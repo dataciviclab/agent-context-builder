@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-17T10:16:53.159151
+**Generated**: 2026-04-17T13:20:15.617215
 
 ## Repos
 
@@ -14,6 +14,8 @@
 ## Open PRs
 
 - [dataset-incubator#137](https://github.com/dataciviclab/dataset-incubator/pull/137): Feat/istat delitti 2024
+- [dataciviclab#222](https://github.com/dataciviclab/dataciviclab/pull/222): fix: compact intake issue body and fix UTF-8 encoding
+- [toolkit#139](https://github.com/dataciviclab/toolkit/pull/139): Compatta documentazione toolkit
 - [toolkit#136](https://github.com/dataciviclab/toolkit/pull/136): chore(deps): bump actions/setup-python from 5 to 6
 - [data-explorer#55](https://github.com/dataciviclab/data-explorer/pull/55): chore(deps-dev): bump @sveltejs/vite-plugin-svelte from 3.1.2 to 7.0.0
 - [data-explorer#54](https://github.com/dataciviclab/data-explorer/pull/54): chore(deps-dev): bump tailwindcss from 3.4.18 to 4.2.2
@@ -21,8 +23,6 @@
 - [data-explorer#52](https://github.com/dataciviclab/data-explorer/pull/52): chore(deps-dev): bump postcss from 8.5.6 to 8.5.10
 - [data-explorer#51](https://github.com/dataciviclab/data-explorer/pull/51): chore(deps): bump actions/upload-pages-artifact from 3 to 5
 - [data-explorer#49](https://github.com/dataciviclab/data-explorer/pull/49): chore(deps): bump actions/checkout from 4 to 6
-- [data-explorer#50](https://github.com/dataciviclab/data-explorer/pull/50): chore(deps): bump actions/deploy-pages from 4 to 5
-- [data-explorer#48](https://github.com/dataciviclab/data-explorer/pull/48): chore(deps): bump actions/setup-node from 4 to 6
 
 ## Open Discussions
 
