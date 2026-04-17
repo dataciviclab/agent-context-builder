@@ -1,6 +1,6 @@
 ---
 name: lab-check
-description: Skill invocabile come /lab-check per controllare le novità e lo stato del DataCivicLab tramite il server MCP dataciviclab-context.
+description: Check rapido delle novità e dello stato del Lab tramite MCP dataciviclab-context.
 license: MIT
 metadata:
   version: "0.2"
@@ -10,117 +10,49 @@ metadata:
 
 # Workflow: lab-check
 
-Workflow canonico di `agent-context-builder`.
-Versione: 0.2 - 2026-04-16
-
-## Obiettivo di fase
-
-Fornire agli agenti e ai contributor umani una procedura rapida per leggere lo stato strutturato del Lab (novità, blocchi, PR aperte, issue rilevanti) usando i tool MCP del builder di contesto.
-
-Questo workflow serve a:
-
-- orientarsi rapidamente nel Lab e nei task aperti
-- individuare i repository o le discussion che richiedono attenzione prima di lavorare
-- fare il punto e definire le priorità della sessione
-
-Non serve a:
-
-- estrarre repository o dataset per l'elaborazione diretta dal workspace (è puramente per contesto)
-- sostituire skill operative di PR e file editing
-- ispezionare il contenuto dettagliato del codice di una determinata applicazione
-
-## Profilo operativo coperto
-
-Questo workflow copre il profilo **shared-mode via MCP** (`dataciviclab-context`).
-
-Il Lab ha due profili operativi distinti:
-
-- **Shared-mode (MCP)** — Claude Code e agenti che leggono il contesto via server MCP. Questo è il profilo che questo workflow descrive.
-- **Local-mode** — Codex o agenti con accesso diretto al git workspace locale. In questo caso il check dello stato parte dal git state reale, non dai tool MCP.
-
-Se stai lavorando in local-mode, questo workflow non è il tuo percorso primario.
+Obiettivo: orientarsi rapidamente su PR, issue, discussion, topic e blocchi operativi via MCP.
 
 ## Quando usarlo
 
-Usalo quando hai già:
+- Inizio sessione senza quadro chiaro.
+- Controllo warning, PR, issue o discussion per una macro-area.
+- Triage tematico prima di aprire file o repo specifici.
+- **Non usare** per task tecnici isolati, build dati o editing di codice.
 
-- iniziato una nuova sessione e non hai chiaro il contesto generale
-- devi controllare se ci sono issue aperte, discussion o warning per una macro-area del Lab
-- l'MCP server `dataciviclab-context` attivo e vuoi un quadro aggiornato
+## Profilo operativo
 
-Non usarlo quando:
+- **Shared-mode MCP**: percorso primario di questo workflow.
+- **Local-mode git**: se hai il workspace locale, leggi stato git direttamente (`git status`, branch, dirty) — il triage MCP resta utile per PR/issue/discussion, non per lo stato dei branch locali. Non invocare `refresh_context` se il tuo quadro viene già dal git locale.
 
-- sei già inquadrato su un task operativo piccolo in un singolo repo (es. fix di uno script in `toolkit`)
-- devi compilare layer puliti o mart (usa le skill specifiche o tool in `toolkit`)
-
-## Preconditions minime
-
-- Server MCP `dataciviclab-context` avviato e accessibile all'agente.
-- Intento esplorativo / di status check ben definito.
-
-Nel dubbio:
-- se sai già su che problema lavorare, salta questo check e vai dritto al file/issue.
-
-## Stop rules
-
-Fermati e non forzare il workflow quando:
-
-- l'agente o il server non riescono a ottenere i json o le dipendenze per rispondere ai tool
-- il `session_bootstrap` restituisce un contesto obsoleto per motivi tecnici
+Precondizione: server MCP `dataciviclab-context` accessibile.
 
 ## Passi canonici
 
-### 1. Avvio sessione di base
+1. **session_bootstrap**: prima chiamata. Leggi repo attivi, PR, issue, discussion e warning.
+2. **topic_index**: usalo se la sessione è tematica e serve capire dove guardare.
+3. **workspace_triage**: usalo se il problema riguarda stato incrociato di repo o issue.
+4. **refresh_context**: solo se i dati sono palesemente obsoleti dopo merge/push. Attendere la CI.
 
-Usa il tool `mcp__dataciviclab-context__session_bootstrap`.
-- **Cosa fare:** Chiamare il tool via MCP.
-- **Cosa controllare:** Leggere l'elenco dei repo attivi, le PR aperte, le discussion recenti e lo stato locale rilevante. 
-- **Cosa evitare:** Ignorare blocchi di stato chiari segnalati nell'output.
+## Stop rules ed errori
 
-### 2. Ispezione dei Topic e Triage
+- Fermati se i tool MCP falliscono o restituiscono JSON non leggibile.
+- Non usare `refresh_context` a ogni sessione: e' eccezione, non default.
+- Non scrivere commenti o aprire issue solo da triage: valida l'attualità.
+- Ricorda il lag fisiologico tra GitHub/CI e stato git locale.
 
-In base all'obiettivo operativo ci sono due percorsi:
+## Output minimo
 
-- Se la sessione è tematica (es. "scouting su appalti" o topic affine):
-  Usa `mcp__dataciviclab-context__topic_index` per capire dove guardare e valutare le path specifiche pertinenti in giro per il lab.
-- Se si deve gestire lo stato incrociato di un repository:
-  Usa `mcp__dataciviclab-context__workspace_triage` per ottenere le informazioni su git status, issue e le discussioni aggregate.
+Il workflow è completo quando hai uno di questi esiti:
 
-## Azioni opzionali e Troubleshooting
+- artifact identificato: PR, issue, discussion o topic;
+- nessuna novità critica: puoi continuare il task già noto;
+- contesto bloccato: serve refresh o debug MCP.
 
-Se il contesto restituito è palesemente obsoleto rispetto a merge o push appena effettuati, puoi invocare `mcp__dataciviclab-context__refresh_context` per triggerare una rebuild della CI.
-Attenzione: questo step impiegherà ~1 minuto prima di produrre un output aggiornato e **non** deve essere eseguito di default ogni volta, ma solo come eccezione.
+## Stati finali
+- `checked`: Orientamento completato, pronto al lavoro.
+- `waiting-for-refresh`: Rebuild CI in corso.
+- `blocked-on-context`: Errore tecnico dei tool context.
 
-## Errori tipici
-
-- Entrare in una catena esplorativa lunga senza aver prima richiesto il `session_bootstrap`.
-- Confondere triage su issue con la scrittura di commenti diretti sulle issue prima di validarne l'attualità.
-- Ignorare la cache di GitHub in cui pesca il contesto; ricordati che può laggare rispetto allo stato git locale ultimissimo.
-
-## Output minimo atteso
-
-L'esito del workflow è considerato completo se l'agente o il contributor ha ottenuto un quadro chiaro sullo stato del Lab e sa cosa fare (o non fare) nella sessione.
-
-Gli esiti validi sono tutti questi:
-
-- Ha identificato un artifact (PR, issue, discussion) su cui concentrarsi.
-- Ha constatato che non ci sono novità critiche e può proseguire sul task già in corso.
-- Ha deciso di non fare nulla ora e ha una motivazione chiara.
-
-Non è richiesta una classificazione formale dell'artifact né la selezione obbligatoria di un "prossimo passo".
-
-## Definition of done
-
-- Il report dello stato Lab è stato interpretato correttamente.
-- Il focus della sessione è stato sbloccato o ristretto al passo immediatamente successivo da farsi nel workspace di interesse.
-
-## Stati finali ammessi
-
-- `checked` (l'orientamento è completato)
-- `waiting-for-refresh` (trigger di aggiornamento fatto, serve attendere la CI)
-- `blocked-on-context` (tool fallisce)
-
-## Dove orientarsi
-
-- README del repo `/agent-context-builder`
-- [dataciviclab-context MCP] per il backend esecutivo legato all'esposizione
+## Riferimenti
+- README `agent-context-builder`
+- MCP `dataciviclab-context`

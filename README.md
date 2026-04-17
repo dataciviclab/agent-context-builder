@@ -1,235 +1,53 @@
 # agent-context-builder
 
-Genera contesto operativo compatto per gli agenti di [DataCivicLab](https://github.com/dataciviclab) a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.
-
-Sostituisce le letture larghe a inizio sessione con tre artifact mirati:
-
-| Artifact | Dimensione target | Consumato da |
-|---|---|---|
-| `session_bootstrap.md` | ~40 righe | agenti, umani |
-| `workspace_triage.json` | JSON compatto | agenti, MCP |
-| `topic_index.json` | JSON compatto | agenti, MCP |
-
-## Come funziona
-
-Il builder raccoglie da due fonti:
-
-- **GitHub** (sempre): PR, issue e discussion aperte per repo; non richiede checkout locale
-- **Git locale** (opzionale): branch corrente, stato dirty, commit non pushati per repo
-
-Gli artifact basati su GitHub vengono generati automaticamente ogni 6 ore dalla CI e pubblicati sul [branch `context`](../../tree/context). Chiunque abbia accesso al repo può consumarli senza eseguire il builder localmente.
+Genera contesto operativo compatto per agenti [DataCivicLab](https://github.com/dataciviclab)
+da GitHub e, se disponibile, dai checkout locali dei repo Lab.
 
 ## Artifact
 
-### `session_bootstrap.md`
+| Artifact | Target | Ruolo |
+|---|---|---|
+| `session_bootstrap.md` | ~40 righe | orientamento rapido per agenti e umani |
+| `workspace_triage.json` | JSON | PR, issue, discussion, warning, git state |
+| `topic_index.json` | JSON | lookup semantico per topic, repo e path |
 
-Orientamento rapido per agenti e umani:
+La CI aggiorna gli artifact GitHub-only ogni 6 ore sul branch `context`.
 
-```markdown
-# Session Bootstrap
+URL raw:
 
-**Generated**: 2026-04-14T20:00:00
-
-## Open PRs
-- [dataset-incubator#137](...): feat: bdap-lea clean respect raw schema
-
-## Open Discussions
-- [dataciviclab#42](...) [Civic Questions]: IRPEF comunale — cosa ci dice?
-
-## Local State
-**dataset-incubator**: `feat/bdap-lea-clean-respect-raw`
-
-## Topics
-- datasets
-- toolkit
-```
-
-### `workspace_triage.json`
-
-Riepilogo machine-readable consumato da agenti e dall'MCP `dataciviclab-state`:
-
-```json
-{
-  "open_prs": 2,
-  "prs": [...],
-  "open_issues": 14,
-  "issues": [...],
-  "open_discussions": 3,
-  "discussions": [...],
-  "git_state": {
-    "dataset-incubator": { "available": true, "current_branch": "feat/...", "dirty": false }
-  },
-  "warnings": [...]
-}
-```
-
-### `topic_index.json`
-
-Lookup semantico per topic — repo rilevanti, path, prossimo passo suggerito:
-
-```json
-{
-  "topics": {
-    "datasets": {
-      "summary": "Incubazione dataset e analisi pubblicate",
-      "repos": ["dataset-incubator", "dataciviclab"],
-      "paths": ["dataset-incubator/", "dataciviclab/analisi/"],
-      "next": "Consulta dataset-incubator/PROMOTION_CHECKLIST.md"
-    }
-  }
-}
-```
-
-## Utilizzo
-
-### Profili operativi
-
-Il workflow è stato verificato in due modalità distinte:
-
-- **Claude = shared mode**: usa `agent-context-mcp` e legge gli artifact pubblicati sul branch `context`
-- **Codex = local mode**: esegue il builder in locale con `--workspace-root` e legge gli artifact appena generati
-
-Per Claude, la configurazione MCP consigliata è quella del server `agent-context-mcp`.
-
-Per Codex, il comando quotidiano consigliato su Windows è:
-
-```powershell
-.\codex-context.ps1 -WorkspaceRoot "C:\path\to\dataciviclab-workspace"
-```
-
-Lo script:
-
-- imposta `PYTHONIOENCODING=utf-8`
-- neutralizza `CURL_CA_BUNDLE` se ereditato dall'ambiente
-- richiede un `WorkspaceRoot` esplicito
-- prova a usare `.venv314`, poi `.venv`, se presenti nella repo
-- esegue `agent-context build`
-- scrive gli artifact in `generated/`
-
-I file da leggere in ordine sono:
-
-1. `generated/session_bootstrap.md`
-2. `generated/workspace_triage.json`
-3. `generated/topic_index.json`
-
-### Solo GitHub (senza checkout locale)
-
-```bash
-pip install -e .
-agent-context build --config dataciviclab.config.yml --out generated/
-```
-
-PR e issue vengono dalla REST API di GitHub (accesso non autenticato, solo repo pubblici).
-Le discussion richiedono un token (la GraphQL API di GitHub richiede sempre autenticazione).
-
-### Con checkout locale
-
-```bash
-export DATACIVICLAB_WORKSPACE=~/dev/dataciviclab-workspace
-agent-context build --config dataciviclab.config.yml --out generated/
-```
-
-Oppure passato direttamente:
-
-```bash
-agent-context build \
-  --config dataciviclab.config.yml \
-  --out generated/ \
-  --workspace-root ~/dev/dataciviclab-workspace
-```
-
-### Con discussion
-
-```bash
-export GITHUB_TOKEN=ghp_...
-agent-context build --config dataciviclab.config.yml --out generated/
-```
-
-Quando `GITHUB_TOKEN` è impostato, le discussion vengono raccolte automaticamente insieme a PR e issue.
-
-## CI — pubblicazione automatica degli artifact
-
-Il workflow [`build-context`](.github/workflows/build-context.yml) gira ogni 6 ore e a ogni push su `main`. Genera gli artifact in modalità GitHub-only e li pubblica con un force-push sul branch `context`.
-
-Gli artifact sono disponibili a:
-
-```
+```text
 https://raw.githubusercontent.com/dataciviclab/agent-context-builder/context/session_bootstrap.md
 https://raw.githubusercontent.com/dataciviclab/agent-context-builder/context/workspace_triage.json
 https://raw.githubusercontent.com/dataciviclab/agent-context-builder/context/topic_index.json
 ```
 
-L'MCP `dataciviclab-state` legge da questi URL per servire il contesto agli agenti senza richiedere esecuzione locale.
+## Utilizzo
 
-## Configurazione
+### Shared mode via MCP
 
-`dataciviclab.config.yml` alla root è la config attiva del Lab. Definisce quali repo e topic monitorare.
-
-Per usare il builder con un'altra organizzazione, copia `examples/config.template.yml` e adattalo.
-
-Campi principali:
-
-```yaml
-github_org: dataciviclab
-
-repos:
-  - dataset-incubator
-  - dataciviclab
-
-topics:
-  datasets:
-    summary: Incubazione dataset e analisi pubblicate
-    repos: [dataset-incubator, dataciviclab]
-    paths: [dataset-incubator/, dataciviclab/analisi/]
-    next: Consulta PROMOTION_CHECKLIST.md
-```
-
-`workspace_root` è volutamente assente dalla config — si imposta via `--workspace-root` o env var `DATACIVICLAB_WORKSPACE`, per macchina.
-
-## Degradazione controllata
-
-Il builder non crasha mai per dati mancanti:
-
-| Condizione | Comportamento |
-|---|---|
-| Rate limit GitHub / 403 | `open_prs: null`, errori in `github_fetch_errors` |
-| Repo privato (404, senza token) | repo saltato, errore registrato |
-| Nessun token | discussion saltate con avviso |
-| Repo non clonato localmente | `available: false, reason: path_not_found` |
-| Path locale non è un repo git | `available: false, reason: not_git_repo` |
-| `--workspace-root` non impostato | `available: false, reason: local_disabled` |
-
-## MCP Server
-
-Il repo include un server MCP pubblico che espone i tre artifact come risorse leggibili dagli agenti senza richiedere esecuzione locale del builder.
-
-### Installazione
+Usa `agent-context-mcp` / `dataciviclab-context` per leggere gli artifact remoti.
+Non richiede checkout locale.
 
 ```bash
 pip install -e ".[mcp]"
-```
-
-### Avvio
-
-```bash
 agent-context-mcp
 ```
 
-### Risorse esposte
+Risorse MCP:
 
 | URI | Contenuto |
 |---|---|
-| `context://session_bootstrap` | `session_bootstrap.md` dal branch `context` |
-| `context://workspace_triage` | `workspace_triage.json` dal branch `context` |
-| `context://topic_index` | `topic_index.json` dal branch `context` |
+| `context://session_bootstrap` | markdown di avvio sessione |
+| `context://workspace_triage` | triage machine-readable |
+| `context://topic_index` | indice topic |
 
-### Tool
+Tool:
 
-| Tool | Descrizione |
+| Tool | Uso |
 |---|---|
-| `refresh_context` | Triggera un nuovo build CI (richiede `GITHUB_TOKEN` con scope `workflow`) |
+| `refresh_context` | triggera build CI; richiede `GITHUB_TOKEN` con scope `workflow` |
 
-### Configurazione Claude Code
+Esempio `settings.json`:
 
 ```json
 {
@@ -237,16 +55,67 @@ agent-context-mcp
     "dataciviclab-context": {
       "command": "agent-context-mcp",
       "env": {
-        "GITHUB_TOKEN": "<token-opzionale-per-refresh>"
+        "GITHUB_TOKEN": "<opzionale-per-refresh>"
       }
     }
   }
 }
 ```
 
-Le risorse sono aggiornate automaticamente ogni 6 ore dalla CI. Il token è opzionale per la sola lettura; serve solo per `refresh_context`.
+### Local mode
 
-Le variabili d'ambiente `ACB_REPO` e `ACB_BRANCH` permettono di puntare a un fork o a un branch diverso.
+Esegue il builder localmente per includere lo stato git (branch, dirty).
+
+```bash
+pip install -e .
+agent-context build \
+  --config dataciviclab.config.yml \
+  --out generated/ \
+  --workspace-root ~/dev/dataciviclab-workspace
+```
+
+Windows:
+
+```powershell
+.\codex-context.ps1 -WorkspaceRoot "C:\path\to\dataciviclab-workspace"
+```
+
+Il wrapper imposta UTF-8, neutralizza `CURL_CA_BUNDLE` ereditato e usa `.venv314`
+o `.venv` se presenti.
+
+## Configurazione (`dataciviclab.config.yml`)
+
+Definisce organizzazione, repo e topic da monitorare.
+
+```yaml
+github_org: dataciviclab
+repos:
+  - dataset-incubator
+  - dataciviclab
+topics:
+  datasets:
+    summary: Incubazione dataset
+    repos: [dataset-incubator, dataciviclab]
+    paths: [dataset-incubator/, dataciviclab/analisi/]
+```
+
+`workspace_root` resta fuori dalla config: usare `--workspace-root` o
+`DATACIVICLAB_WORKSPACE`. `GITHUB_TOKEN` serve per GitHub Discussions e refresh CI.
+
+Variabili MCP utili: `ACB_REPO`, `ACB_BRANCH`.
+
+## Degradazione controllata
+
+Il builder non deve crashare per contesto parziale:
+
+| Condizione | Comportamento |
+|---|---|
+| rate limit / 403 GitHub | campi `null`, errore in JSON |
+| repo privato senza token | repo saltato, warning registrato |
+| nessun token | discussion saltate |
+| repo locale assente | `available: false`, `reason: path_not_found` |
+| path non git | `available: false`, `reason: not_git_repo` |
+| local mode non attivo | `available: false`, `reason: local_disabled` |
 
 ## Sviluppo
 
@@ -256,13 +125,8 @@ pytest
 ruff check .
 ```
 
-## Roadmap
+## Roadmap & Licenza
 
-- **P0** — MVP: bootstrap, triage, topic index, git collector, GitHub Actions ✓
-- **P0.5** — MCP server pubblico: risorse read-only + tool refresh ✓
-- **P1** — Schema JSON per stabilità output; integrazione `dataciviclab-state` MCP locale
-- **P2** — Script wrapper locale; fast path in `AGENTS.md`
-
-## Licenza
-
-MIT
+- **P1**: schema JSON stabile per artifact consumabili da MCP e agenti.
+- **P2**: session brief/local health più compatti.
+- **Licenza**: MIT
