@@ -102,7 +102,7 @@ topics:
 `workspace_root` resta fuori dalla config: usare `--workspace-root` o
 `DATACIVICLAB_WORKSPACE`. `GITHUB_TOKEN` serve per GitHub Discussions e refresh CI.
 
-Variabili MCP utili: `ACB_REPO`, `ACB_BRANCH`, `ACB_ENV_FILE`.
+Variabili MCP utili: `ACB_REPO`, `ACB_BRANCH`.
 
 ## Degradazione controllata
 

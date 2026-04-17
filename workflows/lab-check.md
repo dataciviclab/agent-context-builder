@@ -22,7 +22,7 @@ Obiettivo: orientarsi rapidamente su PR, issue, discussion, topic e blocchi oper
 ## Profilo operativo
 
 - **Shared-mode MCP**: percorso primario di questo workflow.
-- **Local-mode git**: se hai il workspace locale, usa anche stato git reale e report locali.
+- **Local-mode git**: se hai il workspace locale, leggi stato git direttamente (`git status`, branch, dirty) — il triage MCP resta utile per PR/issue/discussion, non per lo stato dei branch locali. Non invocare `refresh_context` se il tuo quadro viene già dal git locale.
 
 Precondizione: server MCP `dataciviclab-context` accessibile.
 
