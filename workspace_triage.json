@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T13:21:57.812323",
+  "generated_at": "2026-04-17T19:02:13.535230",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,19 +9,25 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 12,
+  "open_prs": 13,
   "prs": [
+    {
+      "number": 15,
+      "title": "Migliora bootstrap PR e warning GitHub",
+      "repo": "agent-context-builder",
+      "url": "https://github.com/dataciviclab/agent-context-builder/pull/15"
+    },
+    {
+      "number": 146,
+      "title": "Aggiunge scaffold candidate da template",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/146"
+    },
     {
       "number": 137,
       "title": "Feat/istat delitti 2024",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/137"
-    },
-    {
-      "number": 222,
-      "title": "fix: compact intake issue body and fix UTF-8 encoding",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/pull/222"
     },
     {
       "number": 139,
@@ -84,7 +90,7 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/48"
     }
   ],
-  "open_issues": 40,
+  "open_issues": 38,
   "issues": [
     {
       "number": 4,
@@ -103,6 +109,18 @@
       "title": "feat: CandidateCollector \u2014 tracking end-to-end dei candidati da dataset-incubator",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/issues/2"
+    },
+    {
+      "number": 145,
+      "title": "intake: ISTAT Terzo Settore: istituzioni non-profit per comune (2011, 2015, 2017, 2020)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/145"
+    },
+    {
+      "number": 144,
+      "title": "intake: [Dataset] Partecipazioni pubbliche dichiarate \u2013 MEF 2023",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/144"
     },
     {
       "number": 143,
@@ -151,12 +169,6 @@
       "title": "Estendere il perimetro del candidate MIM oltre il v0 2024/25",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/108"
-    },
-    {
-      "number": 221,
-      "title": "Rendere compatto il body generato dal workflow discussion \u2192 intake",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/221"
     },
     {
       "number": 215,
@@ -267,24 +279,6 @@
       "url": "https://github.com/dataciviclab/source-observatory/issues/109"
     },
     {
-      "number": 81,
-      "title": "source-check: INPS CKAN - Assegni nucleo familiare (ANF), beneficiari e importi per regione",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/81"
-    },
-    {
-      "number": 80,
-      "title": "source-check: INPS CKAN - Reddito di inclusione (nuclei percettori, importi mensili)",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/80"
-    },
-    {
-      "number": 79,
-      "title": "source-check: INPS CKAN - Reddito di cittadinanza (disabili nel nucleo, importo medio)",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/79"
-    },
-    {
       "number": 66,
       "title": "feat: add dati_cultura (MiC ArCo) to sources registry as SPARQL catalog-watch",
       "repo": "source-observatory",
@@ -341,6 +335,27 @@
       "title": "[Dataset] Fondo di Solidarieta Comunale 2025 - OpenCivitas/Sogei (comuni RSO)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/discussions/75",
+      "category": "Datasets"
+    },
+    {
+      "number": 223,
+      "title": "INPS ReI \u2014 evoluzione spesa e platea beneficiari 2018-2019",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/223",
+      "category": "Datasets"
+    },
+    {
+      "number": 182,
+      "title": "ISTAT Terzo Settore: istituzioni non-profit per comune (2011, 2015, 2017, 2020)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/182",
+      "category": "Datasets"
+    },
+    {
+      "number": 165,
+      "title": "[Dataset] Partecipazioni pubbliche dichiarate \u2013 MEF 2023",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/165",
       "category": "Datasets"
     },
     {
@@ -461,27 +476,6 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/204",
       "category": "Domande"
-    },
-    {
-      "number": 209,
-      "title": "MEF Finanze \u2014 Ventili di reddito IRPEF (persone fisiche, 2016-2023)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/209",
-      "category": "Datasets"
-    },
-    {
-      "number": 206,
-      "title": "Disuguaglianza di reddito nelle regioni italiane: quali aree sono rimaste piu' indietro?",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/206",
-      "category": "Domande"
-    },
-    {
-      "number": 194,
-      "title": "BDAP LEA: quanto pesa la prevenzione nelle ASL italiane?",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/194",
-      "category": "Domande"
     }
   ],
   "github_fetch_errors": {},
@@ -536,7 +530,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 12"
+    "Many open PRs: 13"
   ],
   "source_health": {
     "available": true,
