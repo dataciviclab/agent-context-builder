@@ -41,7 +41,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # Publish generated/ to the context branch via a regular (non-force) push.
-          # Agents and the dataciviclab-state MCP can read from:
+          # Agents and the lab-workspace MCP can read from:
           #   https://raw.githubusercontent.com/dataciviclab/agent-context-builder/context/session_bootstrap.md
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
