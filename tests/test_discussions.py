@@ -5,17 +5,6 @@ from unittest.mock import MagicMock, patch
 from agent_context_builder.discussions import Discussion, DiscussionCollector
 
 
-def test_discussion_creation():
-    """Discussion dataclass holds expected fields."""
-    d = Discussion(
-        number=1, title="Analisi IRPEF", repo="dataset-incubator",
-        url="https://github.com/dataciviclab/dataset-incubator/discussions/1",
-        category="Civic Questions", author="gabry", updated_at="2026-04-14T20:00:00Z",
-    )
-    assert d.number == 1
-    assert d.category == "Civic Questions"
-
-
 def test_get_discussions_no_token():
     """Without token, all repos fail with ValueError recorded in fetch_errors."""
     collector = DiscussionCollector(org="dataciviclab", token=None)

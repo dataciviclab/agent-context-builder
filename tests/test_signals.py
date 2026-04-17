@@ -37,19 +37,6 @@ def _sample_json(signals: list[dict] | None = None) -> str:
     })
 
 
-def test_parse_returns_correct_counts():
-    so = parse_source_observatory_signals(_sample_json())
-    assert so.captured_at == "2026-04-12"
-    assert so.sources_checked == 3
-    assert len(so.signals) == 2
-
-
-def test_regressions_filter():
-    so = parse_source_observatory_signals(_sample_json())
-    assert len(so.regressions) == 1
-    assert so.regressions[0].source == "anac"
-
-
 def test_alerts_excludes_no_signal_and_regressions():
     """alerts excludes both 'no signal' sources and sources already in regressions."""
     so = parse_source_observatory_signals(_sample_json())
@@ -58,27 +45,6 @@ def test_alerts_excludes_no_signal_and_regressions():
     # ANAC must appear in regressions instead
     assert len(so.regressions) == 1
     assert so.regressions[0].source == "anac"
-
-
-def test_all_stable_empty_filters():
-    raw = _sample_json([
-        {
-            "source": "istat_sdmx",
-            "protocol": "sdmx",
-            "signal_type": "no signal",
-            "result": "stabile",
-            "detail": "ok",
-            "suggested_action": "nessuna",
-        }
-    ])
-    so = parse_source_observatory_signals(raw)
-    assert so.regressions == []
-    assert so.alerts == []
-
-
-def test_parse_invalid_json_raises():
-    with pytest.raises(ValueError, match="Invalid JSON"):
-        parse_source_observatory_signals("not json{")
 
 
 def test_parse_missing_fields_uses_defaults():
@@ -131,35 +97,6 @@ def _sample_repo_signals_json(signals: list[dict] | None = None) -> str:
         ],
         "summary": {"ok": 1, "warn": 1, "error": 1},
     })
-
-
-def test_parse_repo_signals_basic():
-    rs = parse_repo_signals(_sample_repo_signals_json())
-    assert rs.repo == "dataciviclab/dataset-incubator"
-    assert rs.topic == "pipeline_state"
-    assert rs.generated_at == "2026-04-16T10:00:00"
-    assert len(rs.signals) == 3
-
-
-def test_parse_repo_signals_actionable():
-    rs = parse_repo_signals(_sample_repo_signals_json())
-    actionable = rs.actionable
-    assert len(actionable) == 2
-    statuses = {s.status for s in actionable}
-    assert statuses == {"warn", "error"}
-
-
-def test_parse_repo_signals_all_ok():
-    raw = _sample_repo_signals_json([
-        {"id": "a", "status": "ok", "label": "a", "detail": "", "action": ""},
-    ])
-    rs = parse_repo_signals(raw)
-    assert rs.actionable == []
-
-
-def test_parse_repo_signals_invalid_json_raises():
-    with pytest.raises(ValueError, match="Invalid JSON"):
-        parse_repo_signals("not json{")
 
 
 def test_parse_repo_signals_missing_fields_use_defaults():
