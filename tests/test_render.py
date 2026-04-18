@@ -8,7 +8,7 @@ import json
 from agent_context_builder.config import Config
 from agent_context_builder.discussions import Discussion, DiscussionCollector
 from agent_context_builder.git_local import GitLocalCollector, GitState
-from agent_context_builder.github import GitHubCollector
+from agent_context_builder.github import GitHubCollector, PR
 from agent_context_builder.render import Renderer
 
 _UNAVAILABLE = GitState(available=False, reason="path_not_found", dirty=None, current_branch=None)
@@ -36,6 +36,21 @@ def _make_github_mock(prs=None, issues=None, fetch_errors=None, raw_file=None):
     m.get_issues.return_value = issues or []
     m.fetch_errors = fetch_errors or {}
     m.get_raw_file.return_value = raw_file  # None by default = signal fetch fails gracefully
+    errors = fetch_errors or {}
+    if errors:
+        msgs = " ".join(errors.values()).lower()
+        if "403" in msgs or "rate limit" in msgs:
+            m.collector_warning.return_value = (
+                "GitHub rate-limit or auth error "
+                f"({len(errors)} collector(s) affected) - data may be incomplete"
+            )
+        else:
+            m.collector_warning.return_value = (
+                f"GitHub fetch error ({len(errors)} collector(s) affected) "
+                "- data may be incomplete"
+            )
+    else:
+        m.collector_warning.return_value = None
     return m
 
 
@@ -77,8 +92,32 @@ def test_render_session_bootstrap_github_error():
     )
     bootstrap = renderer.render_session_bootstrap()
 
-    assert "GitHub unavailable" in bootstrap
+    assert "rate-limit" in bootstrap
     assert "No open PRs" not in bootstrap
+
+
+def test_render_session_bootstrap_groups_dependabot_prs():
+    """Bootstrap keeps Dependabot PRs compact and leaves feature PRs visible."""
+    config = Config(
+        workspace_root=Path("/tmp/test"),
+        github_org="test-org",
+        repos=["repo1"],
+    )
+    prs = [
+        PR(1, "feat: improve context", "repo1", "https://example.test/pr/1", author="gabry"),
+        PR(2, "chore(deps): bump package", "repo1", "https://example.test/pr/2", author="dependabot[bot]"),
+        PR(3, "chore(deps): bump action", "repo1", "https://example.test/pr/3", author="dependabot[bot]"),
+    ]
+    renderer = Renderer(
+        config,
+        _make_github_mock(prs=prs),
+        _make_git_mock({"repo1": _UNAVAILABLE}),
+    )
+    bootstrap = renderer.render_session_bootstrap()
+
+    assert "feat: improve context" in bootstrap
+    assert "**Dependabot**: 2 bump PR(s)" in bootstrap
+    assert "chore(deps): bump package" not in bootstrap
 
 
 def test_render_workspace_triage():

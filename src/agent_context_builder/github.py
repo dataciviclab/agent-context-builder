@@ -15,6 +15,7 @@ class PR:
     repo: str
     url: str
     state: str = "open"
+    author: str = ""
 
 
 @dataclass
@@ -43,6 +44,21 @@ class GitHubCollector:
         self.base_url = "https://api.github.com"
         # Populated by get_prs/get_issues — maps "<repo>:prs" or "<repo>:issues" to error message
         self.fetch_errors: dict[str, str] = {}
+
+    def collector_warning(self) -> str | None:
+        """Return a human-readable warning if fetch errors suggest rate-limit or auth degradation."""
+        if not self.fetch_errors:
+            return None
+        msgs = " ".join(self.fetch_errors.values()).lower()
+        if "403" in msgs or "rate limit" in msgs or "secondary rate" in msgs:
+            return (
+                "GitHub rate-limit or auth error "
+                f"({len(self.fetch_errors)} collector(s) affected) - data may be incomplete"
+            )
+        return (
+            f"GitHub fetch error ({len(self.fetch_errors)} collector(s) affected) "
+            "- data may be incomplete"
+        )
 
     def get_prs(self, repos: list[str], state: str = "open") -> list[PR]:
         """Get open PRs across repos.
@@ -100,6 +116,7 @@ class GitHubCollector:
                     repo=repo,
                     url=item["html_url"],
                     state=item["state"],
+                    author=item.get("user", {}).get("login", ""),
                 )
             )
         return prs
