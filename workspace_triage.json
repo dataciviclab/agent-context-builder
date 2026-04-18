@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-18T14:27:52.150839",
+  "generated_at": "2026-04-18T18:53:05.479780",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,7 +9,7 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 15,
+  "open_prs": 17,
   "prs": [
     {
       "number": 20,
@@ -28,6 +28,12 @@
       "title": "test(acb): audit suite \u2014 rimozione test banali",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/pull/16"
+    },
+    {
+      "number": 149,
+      "title": "feat: workflow post-merge per run locale e push GCS candidati",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/149"
     },
     {
       "number": 146,
@@ -96,13 +102,19 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/48"
     },
     {
+      "number": 118,
+      "title": "feat: generate radar_summary.json for ACB consumption",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/118"
+    },
+    {
       "number": 113,
       "title": "test(so): audit suite \u2014 rimozione test banali",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/pull/113"
     }
   ],
-  "open_issues": 44,
+  "open_issues": 46,
   "issues": [
     {
       "number": 18,
@@ -307,6 +319,18 @@
       "title": "[Seed] Rendere pi\u00f9 chiara una sezione specifica di README o guida breve",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/issues/100"
+    },
+    {
+      "number": 140,
+      "title": "refactor: separa orchestrazione e I/O in clean/run.py",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/140"
+    },
+    {
+      "number": 56,
+      "title": "feat: unifica catalogo da dataset-incubator, routing dinamico per slug",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/56"
     },
     {
       "number": 117,
@@ -578,7 +602,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 15"
+    "Many open PRs: 17"
   ],
   "source_health": {
     "available": true,

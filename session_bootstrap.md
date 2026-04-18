@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-18T14:27:52.150839
+**Generated**: 2026-04-18T18:53:05.479780
 
 ## Repos
 
@@ -16,8 +16,10 @@
 - [agent-context-builder#20](https://github.com/dataciviclab/agent-context-builder/pull/20): Consuma il clean catalog di dataset-incubator
 - [agent-context-builder#19](https://github.com/dataciviclab/agent-context-builder/pull/19): Consume Source Observatory inventory summary
 - [agent-context-builder#16](https://github.com/dataciviclab/agent-context-builder/pull/16): test(acb): audit suite — rimozione test banali
+- [dataset-incubator#149](https://github.com/dataciviclab/dataset-incubator/pull/149): feat: workflow post-merge per run locale e push GCS candidati
 - [dataset-incubator#146](https://github.com/dataciviclab/dataset-incubator/pull/146): Aggiunge scaffold candidate da template
 - [dataset-incubator#137](https://github.com/dataciviclab/dataset-incubator/pull/137): Feat/istat delitti 2024
+- [source-observatory#118](https://github.com/dataciviclab/source-observatory/pull/118): feat: generate radar_summary.json for ACB consumption
 - [source-observatory#113](https://github.com/dataciviclab/source-observatory/pull/113): test(so): audit suite — rimozione test banali
 - **Dependabot**: 9 bump PR(s) - [#136](https://github.com/dataciviclab/toolkit/pull/136), [#55](https://github.com/dataciviclab/data-explorer/pull/55) ...
 
