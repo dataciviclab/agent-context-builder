@@ -97,10 +97,17 @@ topics:
     summary: Incubazione dataset
     repos: [dataset-incubator, dataciviclab]
     paths: [dataset-incubator/, dataciviclab/analisi/]
+
+# Optional: enable only after source-observatory publishes a stable summary artifact.
+# source_catalog_summary_path: data/catalog_inventory/generated/source_catalog_summary.json
 ```
 
 `workspace_root` resta fuori dalla config: usare `--workspace-root` o
 `DATACIVICLAB_WORKSPACE`. `GITHUB_TOKEN` serve per GitHub Discussions e refresh CI.
+
+`source_catalog_summary_path` è un opt-in verso `source-observatory`: se non è
+configurato, ACB non prova a leggere inventari sorgenti e non aggiunge la sezione
+`Source Inventory` agli artifact generati.
 
 Variabili MCP utili: `ACB_REPO`, `ACB_BRANCH`.
 

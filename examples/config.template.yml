@@ -13,6 +13,10 @@ repos:
   - repo-two
   - repo-three
 
+# Optional source-observatory inventory artifact. Leave unset until your org publishes
+# a stable source_catalog_summary.json and wants Source Inventory in generated outputs.
+# source_catalog_summary_path: data/catalog_inventory/generated/source_catalog_summary.json
+
 # Topics provide semantic grouping for faster agent orientation.
 # Each topic maps to a set of repos and paths, with a summary and suggested next step.
 topics:

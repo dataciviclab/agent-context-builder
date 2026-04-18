@@ -291,6 +291,44 @@ def _sample_di_json() -> str:
     })
 
 
+def _sample_source_catalog_summary_json() -> str:
+    return json.dumps({
+        "captured_at": "2026-04-17T10:00:00",
+        "summary": {"sources": 2, "candidates": 1},
+        "sources": [
+            {
+                "source_id": "inps",
+                "protocol": "ckan",
+                "items": 2323,
+                "titled": 500,
+                "inventory_method": "package_list",
+                "api_base_url": "https://dati.inps.it/api/3/action",
+                "status": "ok",
+            },
+            {
+                "source_id": "mur_ustat",
+                "protocol": "sdmx",
+                "items": 83,
+                "titled": 83,
+                "inventory_method": "dataflow_count",
+                "api_base_url": "https://dati.ustat.miur.it/SDMXWS/rest",
+                "status": "ok",
+            },
+        ],
+        "intake_candidates": [
+            {
+                "source_id": "mur_ustat",
+                "item_name": "iscrizioni",
+                "title": "Iscrizioni universitarie",
+                "granularity": "nazionale",
+                "year_min": 2011,
+                "year_max": 2011,
+                "intake_score": 47,
+            }
+        ],
+    })
+
+
 def test_render_signals_cached_across_bootstrap_and_triage():
     """Each remote file is fetched exactly once across bootstrap + triage.
 
@@ -302,7 +340,6 @@ def test_render_signals_cached_across_bootstrap_and_triage():
 
     so_json = _sample_so_json(regression=False)
     di_json = _sample_di_json()
-
     def _raw_file_side_effect(repo, path, ref="main"):
         if path == "data/catalog/catalog_signals.json":
             return so_json
@@ -316,7 +353,7 @@ def test_render_signals_cached_across_bootstrap_and_triage():
     renderer.render_session_bootstrap()
     renderer.render_workspace_triage()
 
-    # Two distinct files (SO catalog_signals + DI pipeline_signals), each fetched once
+    # Two enabled summaries (SO catalog_signals + DI pipeline_signals), each fetched once.
     assert gh.get_raw_file.call_count == 2
     paths_fetched = [call.args[1] for call in gh.get_raw_file.call_args_list]
     assert "data/catalog/catalog_signals.json" in paths_fetched
@@ -341,3 +378,77 @@ def test_render_topic_index():
 
     assert "topics" in topics
     assert "topic1" in topics["topics"]
+
+
+def test_render_bootstrap_source_inventory_section():
+    """Bootstrap includes compact Source Inventory summary when available."""
+    config = Config(
+        workspace_root=None,
+        github_org="test-org",
+        repos=["repo1"],
+        source_catalog_summary_path="data/catalog_inventory/generated/source_catalog_summary.json",
+    )
+    gh = _make_github_mock()
+
+    source_catalog_json = _sample_source_catalog_summary_json()
+
+    def _raw_file_side_effect(repo, path, ref="main"):
+        if path == "data/catalog_inventory/generated/source_catalog_summary.json":
+            return source_catalog_json
+        return None
+
+    gh.get_raw_file.side_effect = _raw_file_side_effect
+    renderer = Renderer(config, gh, _make_git_mock())
+
+    bootstrap = renderer.render_session_bootstrap()
+    triage = renderer.render_workspace_triage()
+
+    assert "Source Inventory" in bootstrap
+    assert "inps" in bootstrap
+    assert "mur_ustat" in bootstrap
+    assert triage["source_inventory"]["available"] is True
+    assert triage["source_inventory"]["sources"][0]["source_id"] == "inps"
+    assert triage["source_inventory"]["intake_candidates"][0]["intake_score"] == 47
+    assert "data/catalog_inventory/generated/source_catalog_summary.json" in [
+        call.args[1] for call in gh.get_raw_file.call_args_list
+    ]
+
+
+def test_render_source_inventory_disabled_by_default():
+    """Source Inventory is not rendered unless an artifact path is configured."""
+    config = Config(workspace_root=None, github_org="test-org", repos=["repo1"])
+    renderer = Renderer(config, _make_github_mock(), _make_git_mock())
+
+    bootstrap = renderer.render_session_bootstrap()
+    triage = renderer.render_workspace_triage()
+    topic_index = renderer.render_topic_index()
+
+    assert "Source Inventory" not in bootstrap
+    assert "source_inventory" not in triage
+    assert "source_inventory" not in topic_index
+
+
+def test_render_topic_index_includes_source_inventory():
+    """Topic index carries the source inventory summary for downstream consumers."""
+    config = Config(
+        workspace_root=None,
+        github_org="test-org",
+        repos=["repo1"],
+        source_catalog_summary_path="data/catalog_inventory/generated/source_catalog_summary.json",
+    )
+    gh = _make_github_mock()
+
+    source_catalog_json = _sample_source_catalog_summary_json()
+
+    def _raw_file_side_effect(repo, path, ref="main"):
+        if path == "data/catalog_inventory/generated/source_catalog_summary.json":
+            return source_catalog_json
+        return None
+
+    gh.get_raw_file.side_effect = _raw_file_side_effect
+    renderer = Renderer(config, gh, _make_git_mock())
+
+    topic_index = renderer.render_topic_index()
+
+    assert topic_index["source_inventory"]["available"] is True
+    assert topic_index["source_inventory"]["captured_at"] == "2026-04-17T10:00:00"

@@ -9,9 +9,11 @@ from .github import GitHubCollector, PR
 from .git_local import GitLocalCollector, GitState
 from .signals import (
     RepoSignals,
+    SourceCatalogSummary,
     SourceObservatorySignals,
     parse_repo_signals,
     parse_source_observatory_signals,
+    parse_source_catalog_summary,
 )
 
 
@@ -46,6 +48,7 @@ class Renderer:
         self.fixed_timestamp = fixed_timestamp or datetime.now().isoformat()
         # Cache for remote signal fetches — avoids double requests within one build
         self._so_signals_cache: SourceObservatorySignals | None | type[_UNSET] = _UNSET
+        self._source_catalog_cache: SourceCatalogSummary | None | type[_UNSET] = _UNSET
         self._di_signals_cache: RepoSignals | None | type[_UNSET] = _UNSET
 
     def render_session_bootstrap(self) -> str:
@@ -126,6 +129,11 @@ class Renderer:
                 lines.append(f"- {topic_name}")
             lines.append("")
 
+        # Source inventory is opt-in until source-observatory publishes a stable artifact.
+        if self.config.source_catalog_summary_path:
+            source_catalog = self._fetch_source_catalog_summary()
+            lines += self._render_source_inventory_section(source_catalog)
+
         # Source health (only issues — skip stable sources)
         so = self._fetch_source_observatory_signals()
         lines += self._render_source_health_section(so)
@@ -152,6 +160,93 @@ class Renderer:
             result = None
         self._so_signals_cache = result
         return result
+
+    def _fetch_source_catalog_summary(self) -> SourceCatalogSummary | None:
+        if self._source_catalog_cache is not _UNSET:
+            return self._source_catalog_cache  # type: ignore[return-value]
+
+        path = self.config.source_catalog_summary_path
+        if not path:
+            self._source_catalog_cache = None
+            return None
+
+        raw = self.github_collector.get_raw_file("source-observatory", path)
+        if raw is None:
+            self._source_catalog_cache = None
+            return None
+        try:
+            result = parse_source_catalog_summary(raw)
+        except ValueError as exc:
+            self.github_collector.fetch_errors[
+                "source-observatory:source_catalog_summary"
+            ] = (
+                f"{path}: {exc}"
+            )
+            result = None
+        self._source_catalog_cache = result
+        return result
+
+    def _render_source_inventory_section(
+        self, source_catalog: SourceCatalogSummary | None
+    ) -> list[str]:
+        lines = []
+        lines.append("## Source Inventory")
+        lines.append("")
+        if source_catalog is None:
+            err = self.github_collector.fetch_errors.get(
+                "source-observatory:source_catalog_summary"
+            )
+            if err:
+                lines.append(f"> *source catalog summary unavailable — {err}*")
+            else:
+                lines.append("> *source catalog summary unavailable*")
+            lines.append("")
+            return lines
+
+        source_count = len(source_catalog.sources)
+        candidate_count = len(source_catalog.intake_candidates)
+        if source_count == 0 and candidate_count == 0:
+            lines.append(f"*No source inventory entries* (as of {source_catalog.captured_at})")
+            lines.append("")
+            return lines
+
+        for src in source_catalog.sources[:5]:
+            parts = [f"- **{src.source_id}**"]
+            if src.protocol:
+                parts.append(f"[{src.protocol}]")
+            if src.items is not None:
+                item_text = f"{src.items} items"
+                if src.titled is not None:
+                    item_text += f", {src.titled} titled"
+                parts.append(f": {item_text}")
+            elif src.titled is not None:
+                parts.append(f": {src.titled} titled")
+            if src.inventory_method:
+                parts.append(f"(`{src.inventory_method}`)")
+            if src.status:
+                parts.append(f"status: {src.status}")
+            if src.api_base_url:
+                parts.append(f"<{src.api_base_url}>")
+            lines.append(" ".join(parts))
+
+        if source_count > 5:
+            lines.append(f"- *…and {source_count - 5} more sources*")
+
+        if candidate_count:
+            lines.append(f"  *{candidate_count} intake candidate(s); top entries:*")
+            for candidate in source_catalog.intake_candidates[:3]:
+                span = ""
+                if candidate.year_min is not None or candidate.year_max is not None:
+                    span = f" ({candidate.year_min or '?'}-{candidate.year_max or '?'})"
+                score = candidate.intake_score if candidate.intake_score is not None else "n/d"
+                lines.append(
+                    f"  - **{candidate.source_id}**: {candidate.title}"
+                    f" [{score}]{span}"
+                )
+
+        lines.append(f"  *(captured {source_catalog.captured_at})*")
+        lines.append("")
+        return lines
 
     def _render_source_health_section(
         self, so: SourceObservatorySignals | None
@@ -259,6 +354,8 @@ class Renderer:
             "source_health": self._build_source_health_dict(),
             "pipeline_state": self._build_pipeline_state_dict(),
         }
+        if self.config.source_catalog_summary_path:
+            triage["source_inventory"] = self._build_source_inventory_dict()
         return triage
 
     def _build_source_health_dict(self) -> dict[str, Any]:
@@ -295,6 +392,46 @@ class Renderer:
                 }
                 for s in so.alerts
             ],
+        }
+
+    def _build_source_inventory_dict(self) -> dict[str, Any]:
+        source_catalog = self._fetch_source_catalog_summary()
+        if source_catalog is None:
+            return {
+                "available": False,
+                "errors": {
+                    k: v for k, v in self.github_collector.fetch_errors.items()
+                    if "source_catalog_summary" in k
+                },
+            }
+        return {
+            "available": True,
+            "captured_at": source_catalog.captured_at,
+            "sources": [
+                {
+                    "source_id": s.source_id,
+                    "protocol": s.protocol,
+                    "items": s.items,
+                    "titled": s.titled,
+                    "inventory_method": s.inventory_method,
+                    "api_base_url": s.api_base_url,
+                    "status": s.status,
+                }
+                for s in source_catalog.sources
+            ],
+            "intake_candidates": [
+                {
+                    "source_id": c.source_id,
+                    "item_name": c.item_name,
+                    "title": c.title,
+                    "granularity": c.granularity,
+                    "year_min": c.year_min,
+                    "year_max": c.year_max,
+                    "intake_score": c.intake_score,
+                }
+                for c in source_catalog.intake_candidates[:10]
+            ],
+            "summary": source_catalog.summary,
         }
 
     def _fetch_di_pipeline_signals(self) -> RepoSignals | None:
@@ -416,7 +553,10 @@ class Renderer:
                 "paths": topic.paths,
                 "next": topic.next,
             }
-        return {
+        result = {
             "generated_at": self.fixed_timestamp,
             "topics": topics,
         }
+        if self.config.source_catalog_summary_path:
+            result["source_inventory"] = self._build_source_inventory_dict()
+        return result

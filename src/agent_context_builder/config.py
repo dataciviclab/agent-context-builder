@@ -31,6 +31,13 @@ class Config(BaseModel):
         default_factory=list, description="Primary repos to monitor"
     )
     topics: dict[str, Topic] = Field(default_factory=dict, description="Topic index")
+    source_catalog_summary_path: Optional[str] = Field(
+        None,
+        description=(
+            "Optional source-observatory raw artifact path for source inventory. "
+            "When unset, source inventory rendering is disabled."
+        ),
+    )
 
     @classmethod
     def from_yaml(cls, path: Path) -> "Config":

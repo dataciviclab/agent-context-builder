@@ -47,6 +47,42 @@ class SourceObservatorySignals:
 
 
 @dataclass
+class SourceCatalogSource:
+    """Compact inventory summary for a single source from source-observatory."""
+
+    source_id: str
+    protocol: str
+    items: int | None
+    titled: int | None
+    inventory_method: str
+    api_base_url: str
+    status: str
+
+
+@dataclass
+class IntakeCandidate:
+    """Compact intake candidate summary from source-observatory."""
+
+    source_id: str
+    item_name: str
+    title: str
+    granularity: str
+    year_min: int | None
+    year_max: int | None
+    intake_score: int | float | None
+
+
+@dataclass
+class SourceCatalogSummary:
+    """Aggregated source inventory summary from source-observatory."""
+
+    captured_at: str
+    sources: list[SourceCatalogSource] = field(default_factory=list)
+    intake_candidates: list[IntakeCandidate] = field(default_factory=list)
+    summary: dict[str, Any] = field(default_factory=dict)
+
+
+@dataclass
 class RepoSignal:
     """Single signal entry following the repo-signals standard v1."""
 
@@ -145,4 +181,59 @@ def parse_source_observatory_signals(raw: str) -> SourceObservatorySignals:
         captured_at=data.get("captured_at", "unknown"),
         sources_checked=data.get("sources_checked", len(signals)),
         signals=signals,
+    )
+
+
+def parse_source_catalog_summary(raw: str) -> SourceCatalogSummary:
+    """Parse a lightweight source catalog summary JSON string.
+
+    Args:
+        raw: Raw JSON content of a source catalog summary file
+
+    Returns:
+        Parsed SourceCatalogSummary instance
+
+    Raises:
+        ValueError: If the JSON is invalid
+    """
+    try:
+        data: dict[str, Any] = json.loads(raw)
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"Invalid JSON: {exc}") from exc
+
+    sources = [
+        SourceCatalogSource(
+            source_id=s.get("source_id", s.get("source", "")),
+            protocol=s.get("protocol", ""),
+            items=s.get("items", s.get("rows")),
+            titled=s.get("titled", s.get("items_with_title")),
+            inventory_method=s.get("inventory_method", s.get("method", "")),
+            api_base_url=s.get("api_base_url", ""),
+            status=s.get("status", ""),
+        )
+        for s in data.get("sources", [])
+    ]
+
+    intake_candidates = [
+        IntakeCandidate(
+            source_id=c.get("source_id", c.get("source", "")),
+            item_name=c.get("item_name", c.get("item", "")),
+            title=c.get("title", ""),
+            granularity=c.get("granularity", ""),
+            year_min=c.get("year_min"),
+            year_max=c.get("year_max"),
+            intake_score=c.get("intake_score"),
+        )
+        for c in data.get("intake_candidates", [])
+    ]
+
+    summary = data.get("summary", {})
+    if not isinstance(summary, dict):
+        summary = {}
+
+    return SourceCatalogSummary(
+        captured_at=data.get("captured_at", "unknown"),
+        sources=sources,
+        intake_candidates=intake_candidates,
+        summary=summary,
     )

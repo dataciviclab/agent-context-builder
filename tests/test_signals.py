@@ -5,9 +5,11 @@ import pytest
 
 from agent_context_builder.signals import (
     RepoSignals,
+    SourceCatalogSummary,
     SourceObservatorySignals,
     SourceSignal,
     parse_repo_signals,
+    parse_source_catalog_summary,
     parse_source_observatory_signals,
 )
 
@@ -168,3 +170,18 @@ def test_parse_repo_signals_missing_fields_use_defaults():
     assert rs.generated_at == "unknown"
     assert rs.signals[0].status == "ok"
     assert rs.signals[0].label == "test"
+
+
+def test_parse_source_catalog_summary_uses_defaults():
+    raw = json.dumps({
+        "captured_at": "2026-04-17",
+        "sources": [{"source_id": "inps"}],
+        "intake_candidates": [{"source_id": "mur_ustat", "title": "Test"}],
+    })
+    summary = parse_source_catalog_summary(raw)
+    assert isinstance(summary, SourceCatalogSummary)
+    assert summary.captured_at == "2026-04-17"
+    assert summary.sources[0].source_id == "inps"
+    assert summary.sources[0].protocol == ""
+    assert summary.intake_candidates[0].item_name == ""
+    assert summary.intake_candidates[0].title == "Test"

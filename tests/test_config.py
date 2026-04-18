@@ -31,6 +31,7 @@ def test_config_without_workspace_root():
     """workspace_root is optional — GitHub-only mode."""
     config = Config(github_org="test-org", repos=["repo1"])
     assert config.workspace_root is None
+    assert config.source_catalog_summary_path is None
 
 
 def test_load_config_yaml_without_workspace_root(tmp_path):
@@ -72,6 +73,25 @@ topics:
     assert config.repos == ["repo1", "repo2"]
     assert "test-topic" in config.topics
     assert config.topics["test-topic"].repos == ["repo1"]
+
+
+def test_load_config_yaml_source_catalog_summary_path(tmp_path):
+    """YAML config can opt in to a source-observatory inventory artifact."""
+    config_file = tmp_path / "test.yml"
+    config_file.write_text(
+        """
+github_org: test-org
+repos:
+  - repo1
+source_catalog_summary_path: data/catalog_inventory/generated/source_catalog_summary.json
+"""
+    )
+
+    config = load_config(config_file)
+    assert (
+        config.source_catalog_summary_path
+        == "data/catalog_inventory/generated/source_catalog_summary.json"
+    )
 
 
 def test_load_config_missing_file():
