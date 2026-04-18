@@ -13,6 +13,17 @@ da GitHub e, se disponibile, dai checkout locali dei repo Lab.
 
 La CI aggiorna gli artifact GitHub-only ogni 6 ore sul branch `context`.
 
+## Artifact Consumati
+
+ACB preferisce artifact JSON generati e versionati dai repo Lab rispetto a
+frontmatter o README manuali. Oggi consuma:
+
+| Repo | Path | Uso |
+|---|---|---|
+| `source-observatory` | `data/catalog/catalog_signals.json` | health e regressioni sorgenti |
+| `dataset-incubator` | `registry/pipeline_signals.json` | stato operativo candidate |
+| `dataset-incubator` | `registry/clean_catalog.json` | dataset clean/queryable disponibili |
+
 URL raw:
 
 ```text

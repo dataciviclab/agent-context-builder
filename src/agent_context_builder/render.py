@@ -8,9 +8,11 @@ from .discussions import Discussion, DiscussionCollector
 from .github import GitHubCollector, PR
 from .git_local import GitLocalCollector, GitState
 from .signals import (
+    DICleanCatalog,
     RadarSummary,
     RepoSignals,
     SourceObservatorySignals,
+    parse_di_clean_catalog,
     parse_radar_summary,
     parse_repo_signals,
     parse_source_observatory_signals,
@@ -50,6 +52,7 @@ class Renderer:
         self._so_signals_cache: SourceObservatorySignals | None | type[_UNSET] = _UNSET
         self._radar_cache: RadarSummary | None | type[_UNSET] = _UNSET
         self._di_signals_cache: RepoSignals | None | type[_UNSET] = _UNSET
+        self._di_clean_catalog_cache: DICleanCatalog | None | type[_UNSET] = _UNSET
 
     def render_session_bootstrap(self) -> str:
         """Render session_bootstrap.md.
@@ -147,6 +150,10 @@ class Renderer:
         # Pipeline state (only warn/error candidates)
         di = self._fetch_di_pipeline_signals()
         lines += self._render_pipeline_state_section(di)
+
+        # Dataset catalog (clean/queryable datasets)
+        catalog = self._fetch_di_clean_catalog()
+        lines += self._render_dataset_catalog_section(catalog)
 
         return "\n".join(lines)
 
@@ -308,6 +315,7 @@ class Renderer:
             "radar": self._build_radar_dict(),
             "source_health": self._build_source_health_dict(),
             "pipeline_state": self._build_pipeline_state_dict(),
+            "dataset_catalog": self._build_dataset_catalog_dict(),
         }
         return triage
 
@@ -381,6 +389,23 @@ class Renderer:
         self._di_signals_cache = result
         return result
 
+    def _fetch_di_clean_catalog(self) -> DICleanCatalog | None:
+        if self._di_clean_catalog_cache is not _UNSET:
+            return self._di_clean_catalog_cache  # type: ignore[return-value]
+        raw = self.github_collector.get_raw_file(
+            "dataset-incubator", "registry/clean_catalog.json"
+        )
+        if raw is None:
+            self._di_clean_catalog_cache = None
+            return None
+        try:
+            result = parse_di_clean_catalog(raw)
+        except ValueError as exc:
+            self.github_collector.fetch_errors["dataset-incubator:clean_catalog"] = str(exc)
+            result = None
+        self._di_clean_catalog_cache = result
+        return result
+
     def _render_pipeline_state_section(self, di: RepoSignals | None) -> list[str]:
         lines = []
         lines.append("## Pipeline State")
@@ -416,6 +441,96 @@ class Renderer:
         )
         lines.append("")
         return lines
+
+    def _render_dataset_catalog_section(
+        self, catalog: DICleanCatalog | None
+    ) -> list[str]:
+        lines = []
+        lines.append("## Dataset Catalog")
+        lines.append("")
+        if catalog is None:
+            err = self.github_collector.fetch_errors.get(
+                "dataset-incubator:clean_catalog"
+            ) or self.github_collector.fetch_errors.get(
+                "dataset-incubator:registry/clean_catalog.json"
+            )
+            if err:
+                lines.append(f"> *clean_catalog unavailable — {err}*")
+            else:
+                lines.append("> *clean_catalog unavailable*")
+            lines.append("")
+            return lines
+
+        clean_ready = catalog.clean_ready
+        public_count = sum(1 for d in clean_ready if d.visibility == "public")
+        lines.append(
+            f"*{len(clean_ready)} clean_ready dataset(s), "
+            f"{public_count} public* (updated {catalog.updated_at})"
+        )
+        for dataset in clean_ready[:8]:
+            period = self._format_period(dataset.period)
+            location = dataset.location.get("path", "")
+            line = f"- **{dataset.slug}** ({dataset.status}, {dataset.visibility}): "
+            line += dataset.name
+            if period:
+                line += f" [{period}]"
+            line += (
+                f" - {dataset.metric_columns} metric, "
+                f"{dataset.dimension_columns} dimension columns"
+            )
+            if location:
+                line += f" - `{location}`"
+            lines.append(line)
+        if len(clean_ready) > 8:
+            lines.append(f"- *...and {len(clean_ready) - 8} more clean_ready datasets*")
+        lines.append("")
+        return lines
+
+    def _build_dataset_catalog_dict(self) -> dict[str, Any]:
+        catalog = self._fetch_di_clean_catalog()
+        if catalog is None:
+            return {
+                "available": False,
+                "errors": {
+                    k: v for k, v in self.github_collector.fetch_errors.items()
+                    if "clean_catalog" in k
+                },
+            }
+        return {
+            "available": True,
+            "schema_version": catalog.schema_version,
+            "name": catalog.name,
+            "updated_at": catalog.updated_at,
+            "summary": {
+                "total": len(catalog.datasets),
+                "clean_ready": len(catalog.clean_ready),
+                "public": sum(1 for d in catalog.clean_ready if d.visibility == "public"),
+            },
+            "datasets": [
+                {
+                    "slug": d.slug,
+                    "name": d.name,
+                    "status": d.status,
+                    "visibility": d.visibility,
+                    "period": d.period,
+                    "location": d.location,
+                    "metric_columns": d.metric_columns,
+                    "dimension_columns": d.dimension_columns,
+                    "column_count": d.column_count,
+                }
+                for d in catalog.datasets
+            ],
+        }
+
+    @staticmethod
+    def _format_period(period: dict[str, Any]) -> str:
+        start = period.get("start")
+        end = period.get("end")
+        if start is None and end is None:
+            return ""
+        if start == end:
+            return str(start)
+        return f"{start or '?'}-{end or '?'}"
 
     def _build_pipeline_state_dict(self) -> dict[str, Any]:
         di = self._fetch_di_pipeline_signals()

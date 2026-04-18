@@ -330,6 +330,39 @@ def _sample_di_json() -> str:
     })
 
 
+def _sample_di_clean_catalog_json() -> str:
+    return json.dumps({
+        "schema_version": 1,
+        "name": "Lab Clean Registry",
+        "updated_at": "2026-04-14",
+        "datasets": [
+            {
+                "slug": "irpef_comunale",
+                "name": "IRPEF Comunale",
+                "status": "clean_ready",
+                "visibility": "public",
+                "period": {"start": 2022, "end": 2023},
+                "location": {
+                    "type": "gcs",
+                    "path": "gs://dataciviclab-clean/irpef/irpef.parquet",
+                },
+                "columns": [
+                    {"name": "anno", "role": "dimension"},
+                    {"name": "comune", "role": "dimension"},
+                    {"name": "imposta", "role": "metric"},
+                ],
+            },
+            {
+                "slug": "draft_dataset",
+                "name": "Draft Dataset",
+                "status": "draft",
+                "visibility": "private",
+                "columns": [],
+            },
+        ],
+    })
+
+
 def test_render_signals_cached_across_bootstrap_and_triage():
     """Each remote file is fetched exactly once across bootstrap + triage.
 
@@ -341,12 +374,15 @@ def test_render_signals_cached_across_bootstrap_and_triage():
 
     so_json = _sample_so_json(regression=False)
     di_json = _sample_di_json()
+    clean_catalog_json = _sample_di_clean_catalog_json()
 
     def _raw_file_side_effect(repo, path, ref="main"):
         if path == "data/catalog/catalog_signals.json":
             return so_json
         if path == "registry/pipeline_signals.json":
             return di_json
+        if path == "registry/clean_catalog.json":
+            return clean_catalog_json
         return None
 
     gh.get_raw_file.side_effect = _raw_file_side_effect
@@ -355,12 +391,14 @@ def test_render_signals_cached_across_bootstrap_and_triage():
     renderer.render_session_bootstrap()
     renderer.render_workspace_triage()
 
-    # Three distinct files (radar_summary + catalog_signals + DI pipeline_signals), each fetched once
-    assert gh.get_raw_file.call_count == 3
+    # Four distinct files (radar_summary + catalog_signals + DI pipeline_signals + DI clean catalog), each fetched once
+    assert gh.get_raw_file.call_count == 4
     paths_fetched = [call.args[1] for call in gh.get_raw_file.call_args_list]
+    assert "data/radar/radar_summary.json" in paths_fetched
     assert "data/radar/radar_summary.json" in paths_fetched
     assert "data/catalog/catalog_signals.json" in paths_fetched
     assert "registry/pipeline_signals.json" in paths_fetched
+    assert "registry/clean_catalog.json" in paths_fetched
 
 
 def test_render_topic_index():
@@ -381,3 +419,58 @@ def test_render_topic_index():
 
     assert "topics" in topics
     assert "topic1" in topics["topics"]
+
+
+def test_render_bootstrap_dataset_catalog_section():
+    """Bootstrap includes clean dataset catalog summary when available."""
+    config = Config(workspace_root=None, github_org="test-org", repos=["repo1"])
+    gh = _make_github_mock()
+
+    def _raw_file_side_effect(repo, path, ref="main"):
+        if path == "registry/clean_catalog.json":
+            return _sample_di_clean_catalog_json()
+        return None
+
+    gh.get_raw_file.side_effect = _raw_file_side_effect
+    renderer = Renderer(config, gh, _make_git_mock())
+
+    bootstrap = renderer.render_session_bootstrap()
+
+    assert "Dataset Catalog" in bootstrap
+    assert "1 clean_ready dataset(s), 1 public" in bootstrap
+    assert "irpef_comunale" in bootstrap
+    assert "1 metric, 2 dimension columns" in bootstrap
+    assert "draft_dataset" not in bootstrap
+
+
+def test_render_triage_dataset_catalog_available():
+    """Triage includes machine-readable clean catalog entries."""
+    config = Config(workspace_root=None, github_org="test-org", repos=["repo1"])
+    gh = _make_github_mock()
+
+    def _raw_file_side_effect(repo, path, ref="main"):
+        if path == "registry/clean_catalog.json":
+            return _sample_di_clean_catalog_json()
+        return None
+
+    gh.get_raw_file.side_effect = _raw_file_side_effect
+    renderer = Renderer(config, gh, _make_git_mock())
+
+    catalog = renderer.render_workspace_triage()["dataset_catalog"]
+
+    assert catalog["available"] is True
+    assert catalog["updated_at"] == "2026-04-14"
+    assert catalog["summary"] == {"total": 2, "clean_ready": 1, "public": 1}
+    assert catalog["datasets"][0]["slug"] == "irpef_comunale"
+    assert catalog["datasets"][0]["metric_columns"] == 1
+    assert catalog["datasets"][0]["dimension_columns"] == 2
+
+
+def test_render_triage_dataset_catalog_unavailable():
+    """Triage marks dataset catalog unavailable when clean_catalog fetch fails."""
+    config = Config(workspace_root=None, github_org="test-org", repos=["repo1"])
+    renderer = Renderer(config, _make_github_mock(raw_file=None), _make_git_mock())
+
+    catalog = renderer.render_workspace_triage()["dataset_catalog"]
+
+    assert catalog["available"] is False
