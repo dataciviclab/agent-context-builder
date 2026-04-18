@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-18T07:09:44.235234
+**Generated**: 2026-04-18T08:54:15.125198
 
 ## Repos
 
@@ -14,15 +14,11 @@
 ## Open PRs
 
 - [agent-context-builder#16](https://github.com/dataciviclab/agent-context-builder/pull/16): test(acb): audit suite — rimozione test banali
-- [agent-context-builder#15](https://github.com/dataciviclab/agent-context-builder/pull/15): Migliora bootstrap PR e warning GitHub
 - [dataset-incubator#146](https://github.com/dataciviclab/dataset-incubator/pull/146): Aggiunge scaffold candidate da template
 - [dataset-incubator#137](https://github.com/dataciviclab/dataset-incubator/pull/137): Feat/istat delitti 2024
 - [toolkit#139](https://github.com/dataciviclab/toolkit/pull/139): Compatta documentazione toolkit
-- [toolkit#136](https://github.com/dataciviclab/toolkit/pull/136): chore(deps): bump actions/setup-python from 5 to 6
-- [data-explorer#55](https://github.com/dataciviclab/data-explorer/pull/55): chore(deps-dev): bump @sveltejs/vite-plugin-svelte from 3.1.2 to 7.0.0
-- [data-explorer#54](https://github.com/dataciviclab/data-explorer/pull/54): chore(deps-dev): bump tailwindcss from 3.4.18 to 4.2.2
-- [data-explorer#53](https://github.com/dataciviclab/data-explorer/pull/53): chore(deps-dev): bump autoprefixer from 10.4.24 to 10.5.0
-- [data-explorer#52](https://github.com/dataciviclab/data-explorer/pull/52): chore(deps-dev): bump postcss from 8.5.6 to 8.5.10
+- [source-observatory#113](https://github.com/dataciviclab/source-observatory/pull/113): test(so): audit suite — rimozione test banali
+- **Dependabot**: 9 bump PR(s) - [#136](https://github.com/dataciviclab/toolkit/pull/136), [#55](https://github.com/dataciviclab/data-explorer/pull/55) ...
 
 ## Open Discussions
 

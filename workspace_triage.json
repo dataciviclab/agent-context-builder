@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-18T07:09:44.235234",
+  "generated_at": "2026-04-18T08:54:15.125198",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,19 +9,13 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 15,
+  "open_prs": 14,
   "prs": [
     {
       "number": 16,
       "title": "test(acb): audit suite \u2014 rimozione test banali",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/pull/16"
-    },
-    {
-      "number": 15,
-      "title": "Migliora bootstrap PR e warning GitHub",
-      "repo": "agent-context-builder",
-      "url": "https://github.com/dataciviclab/agent-context-builder/pull/15"
     },
     {
       "number": 146,
@@ -102,8 +96,14 @@
       "url": "https://github.com/dataciviclab/source-observatory/pull/113"
     }
   ],
-  "open_issues": 39,
+  "open_issues": 40,
   "issues": [
+    {
+      "number": 17,
+      "title": "Consumare registry DI invece del frontmatter README",
+      "repo": "agent-context-builder",
+      "url": "https://github.com/dataciviclab/agent-context-builder/issues/17"
+    },
     {
       "number": 4,
       "title": "feat: frontmatter-driven indexing \u2014 leggi metadati strutturati dai markdown del Lab",
@@ -548,7 +548,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 15"
+    "Many open PRs: 14"
   ],
   "source_health": {
     "available": true,
