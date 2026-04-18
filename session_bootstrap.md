@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-17T19:02:13.535230
+**Generated**: 2026-04-18T02:29:26.968576
 
 ## Repos
 
@@ -13,6 +13,7 @@
 
 ## Open PRs
 
+- [agent-context-builder#16](https://github.com/dataciviclab/agent-context-builder/pull/16): test(acb): audit suite — rimozione test banali
 - [agent-context-builder#15](https://github.com/dataciviclab/agent-context-builder/pull/15): Migliora bootstrap PR e warning GitHub
 - [dataset-incubator#146](https://github.com/dataciviclab/dataset-incubator/pull/146): Aggiunge scaffold candidate da template
 - [dataset-incubator#137](https://github.com/dataciviclab/dataset-incubator/pull/137): Feat/istat delitti 2024
@@ -22,7 +23,6 @@
 - [data-explorer#54](https://github.com/dataciviclab/data-explorer/pull/54): chore(deps-dev): bump tailwindcss from 3.4.18 to 4.2.2
 - [data-explorer#53](https://github.com/dataciviclab/data-explorer/pull/53): chore(deps-dev): bump autoprefixer from 10.4.24 to 10.5.0
 - [data-explorer#52](https://github.com/dataciviclab/data-explorer/pull/52): chore(deps-dev): bump postcss from 8.5.6 to 8.5.10
-- [data-explorer#51](https://github.com/dataciviclab/data-explorer/pull/51): chore(deps): bump actions/upload-pages-artifact from 3 to 5
 
 ## Open Discussions
 
@@ -50,9 +50,12 @@
 
 ## Source Health
 
-- **anac** (ckan): regressione — WAF 'Request Rejected' torna attivo. L'endpoint restituisce HTML invece di JSON CKAN. Regressione rispetto al run 2026-04-10 che mostrava JSON valido.
-  - azione: monitorare nei prossimi run; valutare declassamento a radar-only se persiste
-  *(captured 2026-04-12, 11 sources checked)*
+- **mur_ustat** (ckan): regressione — Errore: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /api/3/action/package_list (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7fce229b9d60>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=60)'))
+  - azione: monitorare nei prossimi run
+- **istat_sdmx** (sdmx): recovery — Tornato ok. 4821 item (dataflow_count).
+- **openbdap** (ckan): recovery — Tornato ok. 3772 item (package_list).
+- **consip_open_data** (ckan): recovery — Tornato ok. 17 item (package_list).
+  *(captured 2026-04-17T22:28:15+00:00, 9 sources checked)*
 
 ## Pipeline State
 

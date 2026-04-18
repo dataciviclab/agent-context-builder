@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T19:02:13.535230",
+  "generated_at": "2026-04-18T02:29:26.968576",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,8 +9,14 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 13,
+  "open_prs": 15,
   "prs": [
+    {
+      "number": 16,
+      "title": "test(acb): audit suite \u2014 rimozione test banali",
+      "repo": "agent-context-builder",
+      "url": "https://github.com/dataciviclab/agent-context-builder/pull/16"
+    },
     {
       "number": 15,
       "title": "Migliora bootstrap PR e warning GitHub",
@@ -88,9 +94,15 @@
       "title": "chore(deps): bump actions/setup-node from 4 to 6",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/48"
+    },
+    {
+      "number": 113,
+      "title": "test(so): audit suite \u2014 rimozione test banali",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/113"
     }
   ],
-  "open_issues": 38,
+  "open_issues": 39,
   "issues": [
     {
       "number": 4,
@@ -271,6 +283,12 @@
       "title": "[Seed] Rendere pi\u00f9 chiara una sezione specifica di README o guida breve",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/issues/100"
+    },
+    {
+      "number": 114,
+      "title": "[Catalog] Variazioni rilevate nell'inventario",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/114"
     },
     {
       "number": 109,
@@ -530,21 +548,46 @@
     }
   },
   "warnings": [
-    "Many open PRs: 13"
+    "Many open PRs: 15"
   ],
   "source_health": {
     "available": true,
-    "captured_at": "2026-04-12",
-    "sources_checked": 11,
+    "captured_at": "2026-04-17T22:28:15+00:00",
+    "sources_checked": 9,
     "regressions": [
       {
-        "source": "anac",
+        "source": "mur_ustat",
         "protocol": "ckan",
-        "detail": "WAF 'Request Rejected' torna attivo. L'endpoint restituisce HTML invece di JSON CKAN. Regressione rispetto al run 2026-04-10 che mostrava JSON valido.",
-        "suggested_action": "monitorare nei prossimi run; valutare declassamento a radar-only se persiste"
+        "detail": "Errore: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /api/3/action/package_list (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7fce229b9d60>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=60)'))",
+        "suggested_action": "monitorare nei prossimi run"
       }
     ],
-    "alerts": []
+    "alerts": [
+      {
+        "source": "istat_sdmx",
+        "protocol": "sdmx",
+        "signal_type": "health",
+        "result": "recovery",
+        "detail": "Tornato ok. 4821 item (dataflow_count).",
+        "suggested_action": "nessuna"
+      },
+      {
+        "source": "openbdap",
+        "protocol": "ckan",
+        "signal_type": "health",
+        "result": "recovery",
+        "detail": "Tornato ok. 3772 item (package_list).",
+        "suggested_action": "nessuna"
+      },
+      {
+        "source": "consip_open_data",
+        "protocol": "ckan",
+        "signal_type": "health",
+        "result": "recovery",
+        "detail": "Tornato ok. 17 item (package_list).",
+        "suggested_action": "nessuna"
+      }
+    ]
   },
   "pipeline_state": {
     "available": true,
