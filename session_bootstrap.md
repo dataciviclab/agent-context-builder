@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-18T08:54:15.125198
+**Generated**: 2026-04-18T09:49:13.229237
 
 ## Repos
 
@@ -16,7 +16,7 @@
 - [agent-context-builder#16](https://github.com/dataciviclab/agent-context-builder/pull/16): test(acb): audit suite — rimozione test banali
 - [dataset-incubator#146](https://github.com/dataciviclab/dataset-incubator/pull/146): Aggiunge scaffold candidate da template
 - [dataset-incubator#137](https://github.com/dataciviclab/dataset-incubator/pull/137): Feat/istat delitti 2024
-- [toolkit#139](https://github.com/dataciviclab/toolkit/pull/139): Compatta documentazione toolkit
+- [source-observatory#115](https://github.com/dataciviclab/source-observatory/pull/115): feat(so): bulk source-check — enrichment, scoring, upsert incrementale
 - [source-observatory#113](https://github.com/dataciviclab/source-observatory/pull/113): test(so): audit suite — rimozione test banali
 - **Dependabot**: 9 bump PR(s) - [#136](https://github.com/dataciviclab/toolkit/pull/136), [#55](https://github.com/dataciviclab/data-explorer/pull/55) ...
 
