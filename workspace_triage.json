@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-18T13:04:05.001031",
+  "generated_at": "2026-04-18T14:27:52.150839",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -102,7 +102,7 @@
       "url": "https://github.com/dataciviclab/source-observatory/pull/113"
     }
   ],
-  "open_issues": 41,
+  "open_issues": 44,
   "issues": [
     {
       "number": 18,
@@ -133,6 +133,12 @@
       "title": "feat: CandidateCollector \u2014 tracking end-to-end dei candidati da dataset-incubator",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/issues/2"
+    },
+    {
+      "number": 148,
+      "title": "feat: GitHub Action per aggiornare pipeline_signals.json + docs workflow run-candidate",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/148"
     },
     {
       "number": 147,
@@ -303,6 +309,18 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/100"
     },
     {
+      "number": 117,
+      "title": "refactor: catalog_signals.json si concentra su drift/inventory, health delegata a radar_summary.json",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/117"
+    },
+    {
+      "number": 116,
+      "title": "feat: radar daily action produce radar_summary.json per consumer esterni (ACB)",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/116"
+    },
+    {
       "number": 114,
       "title": "[Catalog] Variazioni rilevate nell'inventario",
       "repo": "source-observatory",
@@ -366,6 +384,13 @@
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/discussions/75",
       "category": "Datasets"
+    },
+    {
+      "number": 224,
+      "title": "Come funziona il flusso tra repo Lab \u2014 e cosa manca?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/224",
+      "category": "Metodo"
     },
     {
       "number": 223,
@@ -499,13 +524,6 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/148",
       "category": "Datasets"
-    },
-    {
-      "number": 204,
-      "title": "Prezzi delle abitazioni per macro-area: le nuove costruzioni si stanno staccando dall'esistente?",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/204",
-      "category": "Domande"
     }
   ],
   "github_fetch_errors": {},

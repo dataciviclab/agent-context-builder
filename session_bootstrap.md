@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-18T13:04:05.001031
+**Generated**: 2026-04-18T14:27:52.150839
 
 ## Repos
 
@@ -25,6 +25,7 @@
 
 - [dataset-incubator#77](https://github.com/dataciviclab/dataset-incubator/discussions/77) [Datasets]: [Dataset] Pensioni della PA per tipo e territorio – MEF DAG 2017-2026
 - [dataset-incubator#75](https://github.com/dataciviclab/dataset-incubator/discussions/75) [Datasets]: [Dataset] Fondo di Solidarieta Comunale 2025 - OpenCivitas/Sogei (comuni RSO)
+- [dataciviclab#224](https://github.com/orgs/dataciviclab/discussions/224) [Metodo]: Come funziona il flusso tra repo Lab — e cosa manca?
 - [dataciviclab#223](https://github.com/orgs/dataciviclab/discussions/223) [Datasets]: INPS ReI — evoluzione spesa e platea beneficiari 2018-2019
 - [dataciviclab#182](https://github.com/orgs/dataciviclab/discussions/182) [Datasets]: ISTAT Terzo Settore: istituzioni non-profit per comune (2011, 2015, 2017, 2020)
 - [dataciviclab#165](https://github.com/orgs/dataciviclab/discussions/165) [Datasets]: [Dataset] Partecipazioni pubbliche dichiarate – MEF 2023
@@ -32,7 +33,6 @@
 - [dataciviclab#218](https://github.com/orgs/dataciviclab/discussions/218) [Analisi]: [Analisi] Entrate dello Stato 2008-2024: nelle crisi cresce il peso dei prestiti?
 - [dataciviclab#217](https://github.com/orgs/dataciviclab/discussions/217) [Datasets]: RdC INPS - Nuclei con disabili: distribuzione provinciale dei beneficiari (2019-2020)
 - [dataciviclab#216](https://github.com/orgs/dataciviclab/discussions/216) [Datasets]: ANF INPS - Assegni al nucleo familiare, beneficiari e importi (2016-2020)
-- [dataciviclab#211](https://github.com/orgs/dataciviclab/discussions/211) [Datasets]: MUR contribuzione universitaria: tasse, esoneri e diritto allo studio per ateneo (2009-2024)
 
 ## Local State
 
