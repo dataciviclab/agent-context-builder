@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-18T09:49:13.229237
+**Generated**: 2026-04-18T13:04:05.001031
 
 ## Repos
 
@@ -13,10 +13,11 @@
 
 ## Open PRs
 
+- [agent-context-builder#20](https://github.com/dataciviclab/agent-context-builder/pull/20): Consuma il clean catalog di dataset-incubator
+- [agent-context-builder#19](https://github.com/dataciviclab/agent-context-builder/pull/19): Consume Source Observatory inventory summary
 - [agent-context-builder#16](https://github.com/dataciviclab/agent-context-builder/pull/16): test(acb): audit suite — rimozione test banali
 - [dataset-incubator#146](https://github.com/dataciviclab/dataset-incubator/pull/146): Aggiunge scaffold candidate da template
 - [dataset-incubator#137](https://github.com/dataciviclab/dataset-incubator/pull/137): Feat/istat delitti 2024
-- [source-observatory#115](https://github.com/dataciviclab/source-observatory/pull/115): feat(so): bulk source-check — enrichment, scoring, upsert incrementale
 - [source-observatory#113](https://github.com/dataciviclab/source-observatory/pull/113): test(so): audit suite — rimozione test banali
 - **Dependabot**: 9 bump PR(s) - [#136](https://github.com/dataciviclab/toolkit/pull/136), [#55](https://github.com/dataciviclab/data-explorer/pull/55) ...
 
@@ -46,12 +47,15 @@
 
 ## Source Health
 
-- **mur_ustat** (ckan): regressione — Errore: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /api/3/action/package_list (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7fce229b9d60>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=60)'))
+- **istat_sdmx** (sdmx): regressione — Errore: SDMX fetch failed after 3 attempts for istat_sdmx on https://esploradati.istat.it/SDMXWS/rest/dataflow/IT1: tentativo 1: ConnectTimeout (https://esploradati.istat.it/SDMXWS/rest/dataflow/IT1), tentativo 2: ConnectTimeout (https://esploradati.istat.it/SDMXWS/rest/dataflow/IT1), tentativo 3: ConnectTimeout (https://esploradati.istat.it/SDMXWS/rest/dataflow/IT1)
   - azione: monitorare nei prossimi run
-- **istat_sdmx** (sdmx): recovery — Tornato ok. 4821 item (dataflow_count).
-- **openbdap** (ckan): recovery — Tornato ok. 3772 item (package_list).
-- **consip_open_data** (ckan): recovery — Tornato ok. 17 item (package_list).
-  *(captured 2026-04-17T22:28:15+00:00, 9 sources checked)*
+- **openbdap** (ckan): regressione — Errore: HTTPSConnectionPool(host='bdap-opendata.rgs.mef.gov.it', port=443): Max retries exceeded with url: /SpodCkanApi/api/3/action/package_list (Caused by ConnectTimeoutError(<HTTPSConnection(host='bdap-opendata.rgs.mef.gov.it', port=443) at 0x7f658ce00d10>, 'Connection to bdap-opendata.rgs.mef.gov.it timed out. (connect timeout=60)'))
+  - azione: monitorare nei prossimi run
+- **consip_open_data** (ckan): regressione — Errore: HTTPSConnectionPool(host='dati.consip.it', port=443): Max retries exceeded with url: /api/3/action/package_list (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati.consip.it', port=443) at 0x7f658cd450d0>, 'Connection to dati.consip.it timed out. (connect timeout=60)'))
+  - azione: monitorare nei prossimi run
+- **mur_ustat** (ckan): regressione — Errore persistente: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /api/3/action/package_list (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7f658cd48470>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=60)')) (messaggio cambiato rispetto al run precedente)
+  - azione: valutare declassamento a radar-only se persiste
+  *(captured 2026-04-18T10:39:20+00:00, 9 sources checked)*
 
 ## Pipeline State
 
