@@ -275,7 +275,7 @@ class Renderer:
         issues = so.regressions + so.alerts
         if issues:
             for s in issues:
-                lines.append(f"- **{s.source}** ({s.protocol}): {s.result} — {s.detail}")
+                lines.append(f"- **{s.source}** ({s.protocol}): {s.result}")
                 if s.suggested_action and s.suggested_action != "nessuna":
                     lines.append(f"  - azione: {s.suggested_action}")
         else:
@@ -513,17 +513,9 @@ class Renderer:
         )
         for dataset in clean_ready[:8]:
             period = self._format_period(dataset.period)
-            location = dataset.location.get("path", "")
-            line = f"- **{dataset.slug}** ({dataset.status}, {dataset.visibility}): "
-            line += dataset.name
+            line = f"- **{dataset.slug}** ({dataset.visibility}): {dataset.name}"
             if period:
                 line += f" [{period}]"
-            line += (
-                f" - {dataset.metric_columns} metric, "
-                f"{dataset.dimension_columns} dimension columns"
-            )
-            if location:
-                line += f" - `{location}`"
             lines.append(line)
         if len(clean_ready) > 8:
             lines.append(f"- *...and {len(clean_ready) - 8} more clean_ready datasets*")
