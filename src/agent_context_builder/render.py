@@ -8,8 +8,10 @@ from .discussions import Discussion, DiscussionCollector
 from .github import GitHubCollector, PR
 from .git_local import GitLocalCollector, GitState
 from .signals import (
+    RadarSummary,
     RepoSignals,
     SourceObservatorySignals,
+    parse_radar_summary,
     parse_repo_signals,
     parse_source_observatory_signals,
 )
@@ -46,6 +48,7 @@ class Renderer:
         self.fixed_timestamp = fixed_timestamp or datetime.now().isoformat()
         # Cache for remote signal fetches — avoids double requests within one build
         self._so_signals_cache: SourceObservatorySignals | None | type[_UNSET] = _UNSET
+        self._radar_cache: RadarSummary | None | type[_UNSET] = _UNSET
         self._di_signals_cache: RepoSignals | None | type[_UNSET] = _UNSET
 
     def render_session_bootstrap(self) -> str:
@@ -133,6 +136,10 @@ class Renderer:
                 lines.append(f"- {topic_name}")
             lines.append("")
 
+        # Radar health (GREEN/YELLOW/RED per fonte)
+        radar = self._fetch_radar_summary()
+        lines += self._render_radar_section(radar)
+
         # Source health (only issues — skip stable sources)
         so = self._fetch_source_observatory_signals()
         lines += self._render_source_health_section(so)
@@ -142,6 +149,41 @@ class Renderer:
         lines += self._render_pipeline_state_section(di)
 
         return "\n".join(lines)
+
+    def _fetch_radar_summary(self) -> RadarSummary | None:
+        if self._radar_cache is not _UNSET:
+            return self._radar_cache  # type: ignore[return-value]
+        raw = self.github_collector.get_raw_file(
+            "source-observatory", "data/radar/radar_summary.json"
+        )
+        if raw is None:
+            self._radar_cache = None
+            return None
+        try:
+            result = parse_radar_summary(raw)
+        except ValueError as exc:
+            self.github_collector.fetch_errors["source-observatory:radar_summary"] = str(exc)
+            result = None
+        self._radar_cache = result
+        return result
+
+    def _render_radar_section(self, radar: RadarSummary | None) -> list[str]:
+        lines = ["## Radar Status", ""]
+        if radar is None:
+            lines.append("> *radar_summary unavailable*")
+            lines.append("")
+            return lines
+        lines.append(
+            f"Fonti: {radar.sources_total} — "
+            f"GREEN {radar.green} · YELLOW {radar.yellow} · RED {radar.red} "
+            f"(probe: {radar.probe_date})"
+        )
+        if radar.unhealthy:
+            lines.append("")
+            for s in radar.unhealthy:
+                lines.append(f"- **{s.id}** ({s.protocol}): {s.status} [HTTP {s.http_code}]")
+        lines.append("")
+        return lines
 
     def _fetch_source_observatory_signals(self) -> SourceObservatorySignals | None:
         if self._so_signals_cache is not _UNSET:
@@ -263,10 +305,28 @@ class Renderer:
                 for repo, state in repos_state.items()
             },
             "warnings": self._collect_warnings(prs, repos_state),
+            "radar": self._build_radar_dict(),
             "source_health": self._build_source_health_dict(),
             "pipeline_state": self._build_pipeline_state_dict(),
         }
         return triage
+
+    def _build_radar_dict(self) -> dict[str, Any]:
+        radar = self._fetch_radar_summary()
+        if radar is None:
+            return {"available": False}
+        return {
+            "available": True,
+            "probe_date": radar.probe_date,
+            "sources_total": radar.sources_total,
+            "green": radar.green,
+            "yellow": radar.yellow,
+            "red": radar.red,
+            "unhealthy": [
+                {"id": s.id, "status": s.status, "protocol": s.protocol, "http_code": s.http_code}
+                for s in radar.unhealthy
+            ],
+        }
 
     def _build_source_health_dict(self) -> dict[str, Any]:
         so = self._fetch_source_observatory_signals()

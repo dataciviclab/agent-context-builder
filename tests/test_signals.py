@@ -168,3 +168,32 @@ def test_parse_repo_signals_missing_fields_use_defaults():
     assert rs.generated_at == "unknown"
     assert rs.signals[0].status == "ok"
     assert rs.signals[0].label == "test"
+
+
+def test_parse_radar_summary():
+    from agent_context_builder.signals import parse_radar_summary
+
+    raw = json.dumps({
+        "generated_at": "2026-04-19T09:00:00+00:00",
+        "probe_date": "2026-04-19",
+        "sources_total": 3,
+        "status_counts": {"GREEN": 2, "YELLOW": 1, "RED": 0},
+        "sources": [
+            {"id": "inps", "status": "GREEN", "protocol": "ckan",
+             "observation_mode": "catalog-watch", "http_code": "200",
+             "last_check": "2026-04-19", "datasets_in_use": ["ds1"]},
+            {"id": "anac", "status": "YELLOW", "protocol": "ckan",
+             "observation_mode": "radar-only", "http_code": "200",
+             "last_check": "2026-04-19", "datasets_in_use": []},
+            {"id": "istat", "status": "GREEN", "protocol": "sdmx",
+             "observation_mode": "catalog-watch", "http_code": "200",
+             "last_check": "2026-04-19", "datasets_in_use": []},
+        ],
+    })
+    summary = parse_radar_summary(raw)
+    assert summary.sources_total == 3
+    assert summary.green == 2
+    assert summary.yellow == 1
+    assert summary.red == 0
+    assert len(summary.unhealthy) == 1
+    assert summary.unhealthy[0].id == "anac"
