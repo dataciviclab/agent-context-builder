@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-19T09:55:52.155620
+**Generated**: 2026-04-19T11:32:13.214068
 
 ## Repos
 
@@ -13,13 +13,12 @@
 
 ## Open PRs
 
-- [agent-context-builder#16](https://github.com/dataciviclab/agent-context-builder/pull/16): test(acb): audit suite — rimozione test banali
+- [agent-context-builder#22](https://github.com/dataciviclab/agent-context-builder/pull/22): feat: consuma discovered_portals_summary.json (portal scout)
 - [dataset-incubator#149](https://github.com/dataciviclab/dataset-incubator/pull/149): feat: workflow post-merge per run locale e push GCS candidati
 - [dataset-incubator#146](https://github.com/dataciviclab/dataset-incubator/pull/146): Aggiunge scaffold candidate da template
 - [dataset-incubator#137](https://github.com/dataciviclab/dataset-incubator/pull/137): Feat/istat delitti 2024
 - [source-observatory#119](https://github.com/dataciviclab/source-observatory/pull/119): feat: portal-scout — discovery, scout strutturale e workflow agente
-- [source-observatory#113](https://github.com/dataciviclab/source-observatory/pull/113): test(so): audit suite — rimozione test banali
-- **Dependabot**: 9 bump PR(s) - [#136](https://github.com/dataciviclab/toolkit/pull/136), [#55](https://github.com/dataciviclab/data-explorer/pull/55) ...
+- **Dependabot**: 1 bump PR(s) - [#52](https://github.com/dataciviclab/data-explorer/pull/52)
 
 ## Open Discussions
 

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-19T09:55:52.155620",
+  "generated_at": "2026-04-19T11:32:13.214068",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,13 +9,13 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 15,
+  "open_prs": 6,
   "prs": [
     {
-      "number": 16,
-      "title": "test(acb): audit suite \u2014 rimozione test banali",
+      "number": 22,
+      "title": "feat: consuma discovered_portals_summary.json (portal scout)",
       "repo": "agent-context-builder",
-      "url": "https://github.com/dataciviclab/agent-context-builder/pull/16"
+      "url": "https://github.com/dataciviclab/agent-context-builder/pull/22"
     },
     {
       "number": 149,
@@ -36,74 +36,26 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/137"
     },
     {
-      "number": 136,
-      "title": "chore(deps): bump actions/setup-python from 5 to 6",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/136"
-    },
-    {
-      "number": 55,
-      "title": "chore(deps-dev): bump @sveltejs/vite-plugin-svelte from 3.1.2 to 7.0.0",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/55"
-    },
-    {
-      "number": 54,
-      "title": "chore(deps-dev): bump tailwindcss from 3.4.18 to 4.2.2",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/54"
-    },
-    {
-      "number": 53,
-      "title": "chore(deps-dev): bump autoprefixer from 10.4.24 to 10.5.0",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/53"
-    },
-    {
       "number": 52,
       "title": "chore(deps-dev): bump postcss from 8.5.6 to 8.5.10",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/52"
     },
     {
-      "number": 51,
-      "title": "chore(deps): bump actions/upload-pages-artifact from 3 to 5",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/51"
-    },
-    {
-      "number": 49,
-      "title": "chore(deps): bump actions/checkout from 4 to 6",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/49"
-    },
-    {
-      "number": 50,
-      "title": "chore(deps): bump actions/deploy-pages from 4 to 5",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/50"
-    },
-    {
-      "number": 48,
-      "title": "chore(deps): bump actions/setup-node from 4 to 6",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/48"
-    },
-    {
       "number": 119,
       "title": "feat: portal-scout \u2014 discovery, scout strutturale e workflow agente",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/pull/119"
-    },
-    {
-      "number": 113,
-      "title": "test(so): audit suite \u2014 rimozione test banali",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/113"
     }
   ],
-  "open_issues": 44,
+  "open_issues": 47,
   "issues": [
+    {
+      "number": 23,
+      "title": "refactor: struttura src/ per dominio funzionale (sources/so, sources/di)",
+      "repo": "agent-context-builder",
+      "url": "https://github.com/dataciviclab/agent-context-builder/issues/23"
+    },
     {
       "number": 18,
       "title": "feat: consumare inventory SO come source catalog sintetico",
@@ -307,6 +259,18 @@
       "title": "refactor: separa orchestrazione e I/O in clean/run.py",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/140"
+    },
+    {
+      "number": 58,
+      "title": "chore: aggiornare @sveltejs/vite-plugin-svelte v3 \u2192 v7",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/58"
+    },
+    {
+      "number": 57,
+      "title": "chore: aggiornare Tailwind CSS v3 \u2192 v4",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/57"
     },
     {
       "number": 56,
@@ -578,7 +542,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 15"
+    "Many open PRs: 6"
   ],
   "radar": {
     "available": true,
