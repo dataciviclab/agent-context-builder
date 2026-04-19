@@ -146,3 +146,64 @@ def parse_source_observatory_signals(raw: str) -> SourceObservatorySignals:
         sources_checked=data.get("sources_checked", len(signals)),
         signals=signals,
     )
+
+
+@dataclass
+class RadarSource:
+    """Single source entry from radar_summary.json."""
+
+    id: str
+    status: str
+    protocol: str
+    observation_mode: str
+    http_code: str
+    last_check: str
+    datasets_in_use: list[str] = field(default_factory=list)
+
+
+@dataclass
+class RadarSummary:
+    """Radar health summary from source-observatory radar_summary.json."""
+
+    generated_at: str
+    probe_date: str
+    sources_total: int
+    green: int
+    yellow: int
+    red: int
+    sources: list[RadarSource] = field(default_factory=list)
+
+    @property
+    def unhealthy(self) -> list[RadarSource]:
+        return [s for s in self.sources if s.status in ("YELLOW", "RED")]
+
+
+def parse_radar_summary(raw: str) -> RadarSummary:
+    try:
+        data: dict[str, Any] = json.loads(raw)
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"Invalid JSON: {exc}") from exc
+
+    counts = data.get("status_counts", {})
+    sources = [
+        RadarSource(
+            id=s.get("id", ""),
+            status=s.get("status", ""),
+            protocol=s.get("protocol", ""),
+            observation_mode=s.get("observation_mode", ""),
+            http_code=s.get("http_code", "-"),
+            last_check=s.get("last_check", ""),
+            datasets_in_use=s.get("datasets_in_use") or [],
+        )
+        for s in data.get("sources", [])
+    ]
+
+    return RadarSummary(
+        generated_at=data.get("generated_at", "unknown"),
+        probe_date=data.get("probe_date", "unknown"),
+        sources_total=data.get("sources_total", len(sources)),
+        green=counts.get("GREEN", 0),
+        yellow=counts.get("YELLOW", 0),
+        red=counts.get("RED", 0),
+        sources=sources,
+    )
