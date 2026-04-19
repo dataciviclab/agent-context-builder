@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-19T09:45:33.731992
+**Generated**: 2026-04-19T09:54:59.877123
 
 ## Repos
 
@@ -13,7 +13,6 @@
 
 ## Open PRs
 
-- [agent-context-builder#20](https://github.com/dataciviclab/agent-context-builder/pull/20): Consuma il clean catalog di dataset-incubator
 - [agent-context-builder#16](https://github.com/dataciviclab/agent-context-builder/pull/16): test(acb): audit suite — rimozione test banali
 - [dataset-incubator#149](https://github.com/dataciviclab/dataset-incubator/pull/149): feat: workflow post-merge per run locale e push GCS candidati
 - [dataset-incubator#146](https://github.com/dataciviclab/dataset-incubator/pull/146): Aggiunge scaffold candidate da template
@@ -71,3 +70,14 @@ Fonti: 13 — GREEN 9 · YELLOW 3 · RED 1 (probe: 2026-04-19)
 
 *16 candidates, tutti ok*
   *(as of 2026-04-16 — 16 ok)*
+
+## Dataset Catalog
+
+*7 clean_ready dataset(s), 7 public* (updated 2026-04-14)
+- **bdap_entrate_stato** (clean_ready, public): BDAP Entrate Stato - Serie Storica [2008-2024] - 2 metric, 9 dimension columns - `gs://dataciviclab-clean/bdap_entrate_stato/2024/bdap_entrate_stato_2024_clean.parquet`
+- **civile_flussi_2014_2024** (clean_ready, public): Giustizia Civile - Flussi 2014-2024 [2014-2024] - 3 metric, 7 dimension columns - `gs://dataciviclab-clean/civile_flussi_2014_2024/2024/civile_flussi_2014_2024_2024_clean.parquet`
+- **dipendenti_pubblici** (clean_ready, public): Dipendenti Pubblici - Occupazione e Turnover [2010-2023] - 14 metric, 13 dimension columns - `gs://dataciviclab-clean/dipendenti_pubblici/*/dipendenti_pubblici_*_clean.parquet`
+- **ispra_consumo_suolo** (clean_ready, public): ISPRA - Consumo di Suolo 2024 [2024] - 3 metric, 4 dimension columns - `gs://dataciviclab-clean/ispra_consumo_suolo/2024/ispra_consumo_suolo_2024_clean.parquet`
+- **ispra_ru_base** (clean_ready, public): ISPRA - Rifiuti Urbani (dati base) [2020-2024] - 3 metric, 6 dimension columns - `gs://dataciviclab-clean/ispra_ru_base/*/ispra_ru_base_*_clean.parquet`
+- **ispra_ru_costi_kg** (clean_ready, public): ISPRA - Costi gestione rifiuti (EUR/kg) [2020-2024] - 6 metric, 5 dimension columns - `gs://dataciviclab-clean/ispra_ru_costi_kg/*/ispra_ru_costi_kg_*_clean.parquet`
+- **ispra_ru_costi_procapite** (clean_ready, public): ISPRA - Costi gestione rifiuti (EUR/abitante) [2020-2024] - 9 metric, 5 dimension columns - `gs://dataciviclab-clean/ispra_ru_costi_procapite/*/ispra_ru_costi_procapite_*_clean.parquet`

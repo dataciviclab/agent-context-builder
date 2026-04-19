@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-19T09:45:33.731992",
+  "generated_at": "2026-04-19T09:54:59.877123",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,14 +9,8 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 16,
+  "open_prs": 15,
   "prs": [
-    {
-      "number": 20,
-      "title": "Consuma il clean catalog di dataset-incubator",
-      "repo": "agent-context-builder",
-      "url": "https://github.com/dataciviclab/agent-context-builder/pull/20"
-    },
     {
       "number": 16,
       "title": "test(acb): audit suite \u2014 rimozione test banali",
@@ -108,19 +102,13 @@
       "url": "https://github.com/dataciviclab/source-observatory/pull/113"
     }
   ],
-  "open_issues": 45,
+  "open_issues": 44,
   "issues": [
     {
       "number": 18,
       "title": "feat: consumare inventory SO come source catalog sintetico",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/issues/18"
-    },
-    {
-      "number": 17,
-      "title": "Consumare registry DI invece del frontmatter README",
-      "repo": "agent-context-builder",
-      "url": "https://github.com/dataciviclab/agent-context-builder/issues/17"
     },
     {
       "number": 4,
@@ -590,7 +578,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 16"
+    "Many open PRs: 15"
   ],
   "radar": {
     "available": true,
@@ -670,5 +658,141 @@
       }
     },
     "actionable": []
+  },
+  "dataset_catalog": {
+    "available": true,
+    "schema_version": "1",
+    "name": "Lab Clean Registry",
+    "updated_at": "2026-04-14",
+    "summary": {
+      "total": 7,
+      "clean_ready": 7,
+      "public": 7
+    },
+    "datasets": [
+      {
+        "slug": "bdap_entrate_stato",
+        "name": "BDAP Entrate Stato - Serie Storica",
+        "status": "clean_ready",
+        "visibility": "public",
+        "period": {
+          "start": 2008,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bdap_entrate_stato/2024/bdap_entrate_stato_2024_clean.parquet"
+        },
+        "metric_columns": 2,
+        "dimension_columns": 9,
+        "column_count": 11
+      },
+      {
+        "slug": "civile_flussi_2014_2024",
+        "name": "Giustizia Civile - Flussi 2014-2024",
+        "status": "clean_ready",
+        "visibility": "public",
+        "period": {
+          "start": 2014,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/civile_flussi_2014_2024/2024/civile_flussi_2014_2024_2024_clean.parquet"
+        },
+        "metric_columns": 3,
+        "dimension_columns": 7,
+        "column_count": 10
+      },
+      {
+        "slug": "dipendenti_pubblici",
+        "name": "Dipendenti Pubblici - Occupazione e Turnover",
+        "status": "clean_ready",
+        "visibility": "public",
+        "period": {
+          "start": 2010,
+          "end": 2023
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/dipendenti_pubblici/*/dipendenti_pubblici_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 14,
+        "dimension_columns": 13,
+        "column_count": 27
+      },
+      {
+        "slug": "ispra_consumo_suolo",
+        "name": "ISPRA - Consumo di Suolo 2024",
+        "status": "clean_ready",
+        "visibility": "public",
+        "period": {
+          "start": 2024,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/ispra_consumo_suolo/2024/ispra_consumo_suolo_2024_clean.parquet"
+        },
+        "metric_columns": 3,
+        "dimension_columns": 4,
+        "column_count": 7
+      },
+      {
+        "slug": "ispra_ru_base",
+        "name": "ISPRA - Rifiuti Urbani (dati base)",
+        "status": "clean_ready",
+        "visibility": "public",
+        "period": {
+          "start": 2020,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/ispra_ru_base/*/ispra_ru_base_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 3,
+        "dimension_columns": 6,
+        "column_count": 9
+      },
+      {
+        "slug": "ispra_ru_costi_kg",
+        "name": "ISPRA - Costi gestione rifiuti (EUR/kg)",
+        "status": "clean_ready",
+        "visibility": "public",
+        "period": {
+          "start": 2020,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/ispra_ru_costi_kg/*/ispra_ru_costi_kg_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 6,
+        "dimension_columns": 5,
+        "column_count": 11
+      },
+      {
+        "slug": "ispra_ru_costi_procapite",
+        "name": "ISPRA - Costi gestione rifiuti (EUR/abitante)",
+        "status": "clean_ready",
+        "visibility": "public",
+        "period": {
+          "start": 2020,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/ispra_ru_costi_procapite/*/ispra_ru_costi_procapite_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 9,
+        "dimension_columns": 5,
+        "column_count": 14
+      }
+    ]
   }
 }
