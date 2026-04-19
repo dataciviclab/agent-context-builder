@@ -285,3 +285,54 @@ def parse_radar_summary(raw: str) -> RadarSummary:
         red=counts.get("RED", 0),
         sources=sources,
     )
+
+
+@dataclass
+class PortalCandidate:
+    """Single portal candidate from discovered_portals_summary.json."""
+
+    domain: str
+    protocol: str
+    probe_url: str
+
+
+@dataclass
+class PortalScoutSummary:
+    """Portal discovery summary from source-observatory discovered_portals_summary.json."""
+
+    generated_at: str
+    total_portals: int
+    new_candidates: int
+    new_confirmed_protocol: int
+    known_registry_seen: int
+    by_protocol: dict[str, int]
+    new_structured: list[PortalCandidate] = field(default_factory=list)
+    known_registry_healthcheck: list[PortalCandidate] = field(default_factory=list)
+
+
+def parse_portal_scout_summary(raw: str) -> PortalScoutSummary:
+    try:
+        data: dict[str, Any] = json.loads(raw)
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"Invalid JSON: {exc}") from exc
+
+    def _parse_candidates(items: list[dict[str, Any]]) -> list[PortalCandidate]:
+        return [
+            PortalCandidate(
+                domain=c.get("domain", ""),
+                protocol=c.get("protocol", ""),
+                probe_url=c.get("probe_url", ""),
+            )
+            for c in items
+        ]
+
+    return PortalScoutSummary(
+        generated_at=data.get("generated_at", "unknown"),
+        total_portals=data.get("total_portals", 0),
+        new_candidates=data.get("new_candidates", 0),
+        new_confirmed_protocol=data.get("new_confirmed_protocol", 0),
+        known_registry_seen=data.get("known_registry_seen", 0),
+        by_protocol=data.get("by_protocol", {}),
+        new_structured=_parse_candidates(data.get("new_structured", [])),
+        known_registry_healthcheck=_parse_candidates(data.get("known_registry_healthcheck", [])),
+    )
