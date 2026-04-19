@@ -74,6 +74,36 @@ class RepoSignals:
         return [s for s in self.signals if s.status in ("warn", "error")]
 
 
+@dataclass
+class DICleanDataset:
+    """Single clean dataset entry from dataset-incubator clean_catalog.json."""
+
+    slug: str
+    name: str
+    status: str
+    visibility: str
+    period: dict[str, Any] = field(default_factory=dict)
+    location: dict[str, Any] = field(default_factory=dict)
+    metric_columns: int = 0
+    dimension_columns: int = 0
+    column_count: int = 0
+
+
+@dataclass
+class DICleanCatalog:
+    """Clean dataset catalog from dataset-incubator registry."""
+
+    schema_version: str
+    name: str
+    updated_at: str
+    datasets: list[DICleanDataset] = field(default_factory=list)
+
+    @property
+    def clean_ready(self) -> list[DICleanDataset]:
+        """Datasets with status clean_ready."""
+        return [d for d in self.datasets if d.status == "clean_ready"]
+
+
 def parse_repo_signals(raw: str) -> RepoSignals:
     """Parse a repo-signals standard v1 JSON string.
 
@@ -109,6 +139,54 @@ def parse_repo_signals(raw: str) -> RepoSignals:
         topic=data.get("topic", ""),
         signals=signals,
         summary=data.get("summary", {}),
+    )
+
+
+def parse_di_clean_catalog(raw: str) -> DICleanCatalog:
+    """Parse dataset-incubator registry/clean_catalog.json.
+
+    ACB keeps the fields needed for agent orientation and triage. Descriptive
+    metadata such as description, source, and registry_source remains in the
+    upstream catalog and is intentionally omitted from this compact model.
+
+    Args:
+        raw: Raw JSON content of clean_catalog.json
+
+    Returns:
+        Parsed DICleanCatalog instance
+
+    Raises:
+        ValueError: If the JSON is invalid
+    """
+    try:
+        data: dict[str, Any] = json.loads(raw)
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"Invalid JSON: {exc}") from exc
+
+    datasets = []
+    for item in data.get("datasets", []):
+        columns = item.get("columns", [])
+        metric_columns = sum(1 for c in columns if c.get("role") == "metric")
+        dimension_columns = sum(1 for c in columns if c.get("role") == "dimension")
+        datasets.append(
+            DICleanDataset(
+                slug=item.get("slug", ""),
+                name=item.get("name", item.get("slug", "")),
+                status=item.get("status", ""),
+                visibility=item.get("visibility", ""),
+                period=item.get("period", {}),
+                location=item.get("location", {}),
+                metric_columns=metric_columns,
+                dimension_columns=dimension_columns,
+                column_count=len(columns),
+            )
+        )
+
+    return DICleanCatalog(
+        schema_version=str(data.get("schema_version", "1")),
+        name=data.get("name", ""),
+        updated_at=data.get("updated_at", "unknown"),
+        datasets=datasets,
     )
 
 

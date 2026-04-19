@@ -4,9 +4,11 @@ import json
 import pytest
 
 from agent_context_builder.signals import (
+    DICleanCatalog,
     RepoSignals,
     SourceObservatorySignals,
     SourceSignal,
+    parse_di_clean_catalog,
     parse_repo_signals,
     parse_source_observatory_signals,
 )
@@ -197,3 +199,50 @@ def test_parse_radar_summary():
     assert summary.red == 0
     assert len(summary.unhealthy) == 1
     assert summary.unhealthy[0].id == "anac"
+
+
+def test_parse_di_clean_catalog_basic():
+    raw = json.dumps({
+        "schema_version": 1,
+        "name": "Lab Clean Registry",
+        "updated_at": "2026-04-14",
+        "datasets": [
+            {
+                "slug": "irpef_comunale",
+                "name": "IRPEF Comunale",
+                "status": "clean_ready",
+                "visibility": "public",
+                "period": {"start": 2022, "end": 2023},
+                "location": {"type": "gcs", "path": "gs://bucket/irpef.parquet"},
+                "columns": [
+                    {"name": "anno", "role": "dimension"},
+                    {"name": "comune", "role": "dimension"},
+                    {"name": "imposta", "role": "metric"},
+                ],
+            }
+        ],
+    })
+
+    catalog = parse_di_clean_catalog(raw)
+
+    assert isinstance(catalog, DICleanCatalog)
+    assert catalog.schema_version == "1"
+    assert catalog.updated_at == "2026-04-14"
+    assert len(catalog.clean_ready) == 1
+    dataset = catalog.datasets[0]
+    assert dataset.slug == "irpef_comunale"
+    assert dataset.metric_columns == 1
+    assert dataset.dimension_columns == 2
+    assert dataset.column_count == 3
+
+
+def test_parse_di_clean_catalog_missing_fields_use_defaults():
+    raw = json.dumps({"datasets": [{"slug": "minimal"}]})
+
+    catalog = parse_di_clean_catalog(raw)
+
+    assert catalog.name == ""
+    assert catalog.updated_at == "unknown"
+    assert catalog.datasets[0].name == "minimal"
+    assert catalog.datasets[0].status == ""
+    assert catalog.datasets[0].location == {}
