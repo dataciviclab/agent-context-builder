@@ -20,8 +20,10 @@ frontmatter o README manuali. Oggi consuma:
 
 | Repo | Path | Uso |
 |---|---|---|
-| `source-observatory` | `data/catalog/catalog_signals.json` | health e regressioni sorgenti |
-| `dataset-incubator` | `registry/pipeline_signals.json` | stato operativo candidate |
+| `source-observatory` | `data/radar/radar_summary.json` | health complessivo delle fonti nel registry |
+| `source-observatory` | `data/catalog/catalog_signals.json` | segnali di regressione per singola fonte |
+| `source-observatory` | `data/portal_scout/discovered_portals_summary.json` | nuovi portali PA scoperti da portal-scout |
+| `dataset-incubator` | `registry/pipeline_signals.json` | stato operativo dei dataset candidate |
 | `dataset-incubator` | `registry/clean_catalog.json` | dataset clean/queryable disponibili |
 
 URL raw:
