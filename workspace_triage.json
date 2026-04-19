@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-19T07:21:08.714009",
+  "generated_at": "2026-04-19T09:45:33.731992",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,19 +9,13 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 17,
+  "open_prs": 16,
   "prs": [
     {
       "number": 20,
       "title": "Consuma il clean catalog di dataset-incubator",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/pull/20"
-    },
-    {
-      "number": 19,
-      "title": "Consume Source Observatory inventory summary",
-      "repo": "agent-context-builder",
-      "url": "https://github.com/dataciviclab/agent-context-builder/pull/19"
     },
     {
       "number": 16,
@@ -102,10 +96,10 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/48"
     },
     {
-      "number": 118,
-      "title": "feat: generate radar_summary.json for ACB consumption",
+      "number": 119,
+      "title": "feat: portal-scout \u2014 discovery, scout strutturale e workflow agente",
       "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/118"
+      "url": "https://github.com/dataciviclab/source-observatory/pull/119"
     },
     {
       "number": 113,
@@ -114,7 +108,7 @@
       "url": "https://github.com/dataciviclab/source-observatory/pull/113"
     }
   ],
-  "open_issues": 46,
+  "open_issues": 45,
   "issues": [
     {
       "number": 18,
@@ -337,12 +331,6 @@
       "title": "refactor: catalog_signals.json si concentra su drift/inventory, health delegata a radar_summary.json",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/117"
-    },
-    {
-      "number": 116,
-      "title": "feat: radar daily action produce radar_summary.json per consumer esterni (ACB)",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/116"
     },
     {
       "number": 114,
@@ -602,8 +590,42 @@
     }
   },
   "warnings": [
-    "Many open PRs: 17"
+    "Many open PRs: 16"
   ],
+  "radar": {
+    "available": true,
+    "probe_date": "2026-04-19",
+    "sources_total": 13,
+    "green": 9,
+    "yellow": 3,
+    "red": 1,
+    "unhealthy": [
+      {
+        "id": "anac",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "403"
+      },
+      {
+        "id": "dati_salute",
+        "status": "RED",
+        "protocol": "html",
+        "http_code": "-"
+      },
+      {
+        "id": "mur_ustat",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-"
+      },
+      {
+        "id": "opencoesione",
+        "status": "YELLOW",
+        "protocol": "rest",
+        "http_code": "403"
+      }
+    ]
+  },
   "source_health": {
     "available": true,
     "captured_at": "2026-04-18T10:39:20+00:00",

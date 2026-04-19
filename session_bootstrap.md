@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-19T07:21:08.714009
+**Generated**: 2026-04-19T09:45:33.731992
 
 ## Repos
 
@@ -14,12 +14,11 @@
 ## Open PRs
 
 - [agent-context-builder#20](https://github.com/dataciviclab/agent-context-builder/pull/20): Consuma il clean catalog di dataset-incubator
-- [agent-context-builder#19](https://github.com/dataciviclab/agent-context-builder/pull/19): Consume Source Observatory inventory summary
 - [agent-context-builder#16](https://github.com/dataciviclab/agent-context-builder/pull/16): test(acb): audit suite — rimozione test banali
 - [dataset-incubator#149](https://github.com/dataciviclab/dataset-incubator/pull/149): feat: workflow post-merge per run locale e push GCS candidati
 - [dataset-incubator#146](https://github.com/dataciviclab/dataset-incubator/pull/146): Aggiunge scaffold candidate da template
 - [dataset-incubator#137](https://github.com/dataciviclab/dataset-incubator/pull/137): Feat/istat delitti 2024
-- [source-observatory#118](https://github.com/dataciviclab/source-observatory/pull/118): feat: generate radar_summary.json for ACB consumption
+- [source-observatory#119](https://github.com/dataciviclab/source-observatory/pull/119): feat: portal-scout — discovery, scout strutturale e workflow agente
 - [source-observatory#113](https://github.com/dataciviclab/source-observatory/pull/113): test(so): audit suite — rimozione test banali
 - **Dependabot**: 9 bump PR(s) - [#136](https://github.com/dataciviclab/toolkit/pull/136), [#55](https://github.com/dataciviclab/data-explorer/pull/55) ...
 
@@ -46,6 +45,15 @@
 - toolkit
 - datasets
 - analytics
+
+## Radar Status
+
+Fonti: 13 — GREEN 9 · YELLOW 3 · RED 1 (probe: 2026-04-19)
+
+- **anac** (ckan): YELLOW [HTTP 403]
+- **dati_salute** (html): RED [HTTP -]
+- **mur_ustat** (ckan): YELLOW [HTTP -]
+- **opencoesione** (rest): YELLOW [HTTP 403]
 
 ## Source Health
 
