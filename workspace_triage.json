@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-19T13:03:11.540102",
+  "generated_at": "2026-04-19T17:46:42.589396",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,7 +9,7 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 7,
+  "open_prs": 6,
   "prs": [
     {
       "number": 22,
@@ -37,7 +37,7 @@
     },
     {
       "number": 142,
-      "title": "[codex] Aggiunge validate promotion raw-clean",
+      "title": "[feat] Aggiunge validate promotion raw-clean",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/pull/142"
     },
@@ -46,27 +46,15 @@
       "title": "chore(deps-dev): bump postcss from 8.5.6 to 8.5.10",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/52"
-    },
-    {
-      "number": 119,
-      "title": "feat: portal-scout \u2014 discovery, scout strutturale e workflow agente",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/119"
     }
   ],
-  "open_issues": 48,
+  "open_issues": 49,
   "issues": [
     {
       "number": 23,
       "title": "refactor: struttura src/ per dominio funzionale (sources/so, sources/di)",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/issues/23"
-    },
-    {
-      "number": 18,
-      "title": "feat: consumare inventory SO come source catalog sintetico",
-      "repo": "agent-context-builder",
-      "url": "https://github.com/dataciviclab/agent-context-builder/issues/18"
     },
     {
       "number": 4,
@@ -261,6 +249,12 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/100"
     },
     {
+      "number": 143,
+      "title": "refactor: consolida manifest+metadata per layer e unifica validation artifacts",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/143"
+    },
+    {
       "number": 141,
       "title": "feat(validate): promotion QA raw-to-clean",
       "repo": "toolkit",
@@ -289,6 +283,12 @@
       "title": "feat: unifica catalogo da dataset-incubator, routing dinamico per slug",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/issues/56"
+    },
+    {
+      "number": 120,
+      "title": "feat: split portal-scout workflow \u2014 discovery e scout come job separati",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/120"
     },
     {
       "number": 117,
@@ -554,7 +554,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 7"
+    "Many open PRs: 6"
   ],
   "radar": {
     "available": true,

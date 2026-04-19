@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-19T13:03:11.540102
+**Generated**: 2026-04-19T17:46:42.589396
 
 ## Repos
 
@@ -17,8 +17,7 @@
 - [dataset-incubator#149](https://github.com/dataciviclab/dataset-incubator/pull/149): feat: workflow post-merge per run locale e push GCS candidati
 - [dataset-incubator#146](https://github.com/dataciviclab/dataset-incubator/pull/146): Aggiunge scaffold candidate da template
 - [dataset-incubator#137](https://github.com/dataciviclab/dataset-incubator/pull/137): Feat/istat delitti 2024
-- [toolkit#142](https://github.com/dataciviclab/toolkit/pull/142): [codex] Aggiunge validate promotion raw-clean
-- [source-observatory#119](https://github.com/dataciviclab/source-observatory/pull/119): feat: portal-scout — discovery, scout strutturale e workflow agente
+- [toolkit#142](https://github.com/dataciviclab/toolkit/pull/142): [feat] Aggiunge validate promotion raw-clean
 - **Dependabot**: 1 bump PR(s) - [#52](https://github.com/dataciviclab/data-explorer/pull/52)
 
 ## Open Discussions
