@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-20T08:37:46.263810
+**Generated**: 2026-04-20T11:56:32.311225
 
 ## Repos
 
@@ -13,25 +13,24 @@
 
 ## Open PRs
 
-- [agent-context-builder#22](https://github.com/dataciviclab/agent-context-builder/pull/22): feat: consuma discovered_portals_summary.json (portal scout)
 - [dataset-incubator#149](https://github.com/dataciviclab/dataset-incubator/pull/149): feat: workflow post-merge per run locale e push GCS candidati
 - [dataset-incubator#146](https://github.com/dataciviclab/dataset-incubator/pull/146): Aggiunge scaffold candidate da template
 - [dataset-incubator#137](https://github.com/dataciviclab/dataset-incubator/pull/137): Feat/istat delitti 2024
 - [toolkit#142](https://github.com/dataciviclab/toolkit/pull/142): feat: redesign validate pipeline v1.2.0
-- **Dependabot**: 1 bump PR(s) - [#52](https://github.com/dataciviclab/data-explorer/pull/52)
+- **Dependabot**: 2 bump PR(s) - [#52](https://github.com/dataciviclab/data-explorer/pull/52), [#123](https://github.com/dataciviclab/source-observatory/pull/123)
 
 ## Open Discussions
 
 - [dataset-incubator#77](https://github.com/dataciviclab/dataset-incubator/discussions/77) [Datasets]: [Dataset] Pensioni della PA per tipo e territorio – MEF DAG 2017-2026
 - [dataset-incubator#75](https://github.com/dataciviclab/dataset-incubator/discussions/75) [Datasets]: [Dataset] Fondo di Solidarieta Comunale 2025 - OpenCivitas/Sogei (comuni RSO)
+- [dataciviclab#214](https://github.com/orgs/dataciviclab/discussions/214) [Datasets]: ISTAT povertà assoluta e relativa: incidenze, intensità e soglie (2014-2024)
+- [dataciviclab#211](https://github.com/orgs/dataciviclab/discussions/211) [Datasets]: MUR contribuzione universitaria: tasse, esoneri e diritto allo studio per ateneo (2009-2024)
 - [dataciviclab#210](https://github.com/orgs/dataciviclab/discussions/210) [Domande]: La geografia del calo iscrizioni nelle scuole primarie (2015-2024)
 - [dataciviclab#218](https://github.com/orgs/dataciviclab/discussions/218) [Analisi]: [Analisi] Entrate dello Stato 2008-2024: nelle crisi cresce il peso dei prestiti?
 - [dataciviclab#224](https://github.com/orgs/dataciviclab/discussions/224) [Metodo]: Come funziona il flusso tra repo Lab — e cosa manca?
 - [dataciviclab#223](https://github.com/orgs/dataciviclab/discussions/223) [Datasets]: INPS ReI — evoluzione spesa e platea beneficiari 2018-2019
 - [dataciviclab#182](https://github.com/orgs/dataciviclab/discussions/182) [Datasets]: ISTAT Terzo Settore: istituzioni non-profit per comune (2011, 2015, 2017, 2020)
 - [dataciviclab#165](https://github.com/orgs/dataciviclab/discussions/165) [Datasets]: [Dataset] Partecipazioni pubbliche dichiarate – MEF 2023
-- [dataciviclab#149](https://github.com/orgs/dataciviclab/discussions/149) [Datasets]: ISTAT Ciclo dell'acqua - prelievo vs distribuzione, perdite idriche per distretto
-- [dataciviclab#217](https://github.com/orgs/dataciviclab/discussions/217) [Datasets]: RdC INPS - Nuclei con disabili: distribuzione provinciale dei beneficiari (2019-2020)
 
 ## Local State
 
@@ -58,11 +57,11 @@ Fonti: 13 — GREEN 6 · YELLOW 7 · RED 0 (probe: 2026-04-20)
 
 ## Source Health
 
-- **mur_ustat** (ckan): regressione — Errore persistente: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /api/3/action/package_list (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7f3efd10b620>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=60)')) (messaggio cambiato rispetto al run precedente)
+- **mur_ustat** (ckan): regressione
   - azione: valutare declassamento a radar-only se persiste
-- **istat_sdmx** (sdmx): recovery — Tornato ok. 4821 item (dataflow_count).
-- **openbdap** (ckan): recovery — Tornato ok. 3772 item (package_list).
-- **consip_open_data** (ckan): recovery — Tornato ok. 17 item (package_list).
+- **istat_sdmx** (sdmx): recovery
+- **openbdap** (ckan): recovery
+- **consip_open_data** (ckan): recovery
   *(captured 2026-04-20T05:49:12+00:00, 9 sources checked)*
 
 ## Pipeline State
@@ -73,10 +72,21 @@ Fonti: 13 — GREEN 6 · YELLOW 7 · RED 0 (probe: 2026-04-20)
 ## Dataset Catalog
 
 *7 clean_ready dataset(s), 7 public* (updated 2026-04-14)
-- **bdap_entrate_stato** (clean_ready, public): BDAP Entrate Stato - Serie Storica [2008-2024] - 2 metric, 9 dimension columns - `gs://dataciviclab-clean/bdap_entrate_stato/2024/bdap_entrate_stato_2024_clean.parquet`
-- **civile_flussi_2014_2024** (clean_ready, public): Giustizia Civile - Flussi 2014-2024 [2014-2024] - 3 metric, 7 dimension columns - `gs://dataciviclab-clean/civile_flussi_2014_2024/2024/civile_flussi_2014_2024_2024_clean.parquet`
-- **dipendenti_pubblici** (clean_ready, public): Dipendenti Pubblici - Occupazione e Turnover [2010-2023] - 14 metric, 13 dimension columns - `gs://dataciviclab-clean/dipendenti_pubblici/*/dipendenti_pubblici_*_clean.parquet`
-- **ispra_consumo_suolo** (clean_ready, public): ISPRA - Consumo di Suolo 2024 [2024] - 3 metric, 4 dimension columns - `gs://dataciviclab-clean/ispra_consumo_suolo/2024/ispra_consumo_suolo_2024_clean.parquet`
-- **ispra_ru_base** (clean_ready, public): ISPRA - Rifiuti Urbani (dati base) [2020-2024] - 3 metric, 6 dimension columns - `gs://dataciviclab-clean/ispra_ru_base/*/ispra_ru_base_*_clean.parquet`
-- **ispra_ru_costi_kg** (clean_ready, public): ISPRA - Costi gestione rifiuti (EUR/kg) [2020-2024] - 6 metric, 5 dimension columns - `gs://dataciviclab-clean/ispra_ru_costi_kg/*/ispra_ru_costi_kg_*_clean.parquet`
-- **ispra_ru_costi_procapite** (clean_ready, public): ISPRA - Costi gestione rifiuti (EUR/abitante) [2020-2024] - 9 metric, 5 dimension columns - `gs://dataciviclab-clean/ispra_ru_costi_procapite/*/ispra_ru_costi_procapite_*_clean.parquet`
+- **bdap_entrate_stato** (public): BDAP Entrate Stato - Serie Storica [2008-2024]
+- **civile_flussi_2014_2024** (public): Giustizia Civile - Flussi 2014-2024 [2014-2024]
+- **dipendenti_pubblici** (public): Dipendenti Pubblici - Occupazione e Turnover [2010-2023]
+- **ispra_consumo_suolo** (public): ISPRA - Consumo di Suolo 2024 [2024]
+- **ispra_ru_base** (public): ISPRA - Rifiuti Urbani (dati base) [2020-2024]
+- **ispra_ru_costi_kg** (public): ISPRA - Costi gestione rifiuti (EUR/kg) [2020-2024]
+- **ispra_ru_costi_procapite** (public): ISPRA - Costi gestione rifiuti (EUR/abitante) [2020-2024]
+
+## Portal Scout
+
+Portali rilevati: 47 — nuovi candidati: 32 — strutturati confermati: 5
+
+**Nuovi candidati strutturati:**
+- `dati.lazio.it` — CKAN
+- `dati.toscana.it` — CKAN
+- `dati.mit.gov.it` — CKAN
+- `indicepa.gov.it` — CKAN
+- `opendata-ercolano.cultura.gov.it` — CKAN

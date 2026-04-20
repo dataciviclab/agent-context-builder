@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-20T08:37:46.263810",
+  "generated_at": "2026-04-20T11:56:32.311225",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -11,12 +11,6 @@
   ],
   "open_prs": 6,
   "prs": [
-    {
-      "number": 22,
-      "title": "feat: consuma discovered_portals_summary.json (portal scout)",
-      "repo": "agent-context-builder",
-      "url": "https://github.com/dataciviclab/agent-context-builder/pull/22"
-    },
     {
       "number": 149,
       "title": "feat: workflow post-merge per run locale e push GCS candidati",
@@ -46,9 +40,15 @@
       "title": "chore(deps-dev): bump postcss from 8.5.6 to 8.5.10",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/52"
+    },
+    {
+      "number": 123,
+      "title": "chore(deps): update pyarrow requirement from <20.0,>=14.0 to >=14.0,<24.0",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/123"
     }
   ],
-  "open_issues": 52,
+  "open_issues": 55,
   "issues": [
     {
       "number": 23,
@@ -73,6 +73,18 @@
       "title": "feat: CandidateCollector \u2014 tracking end-to-end dei candidati da dataset-incubator",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/issues/2"
+    },
+    {
+      "number": 151,
+      "title": "intake: ISTAT povert\u00e0 assoluta e relativa: incidenze, intensit\u00e0 e soglie (2014-2024)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/151"
+    },
+    {
+      "number": 150,
+      "title": "intake: MUR contribuzione universitaria: tasse, esoneri e diritto allo studio per ateneo (2009-2024)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/150"
     },
     {
       "number": 148,
@@ -145,6 +157,12 @@
       "title": "Estendere il perimetro del candidate MIM oltre il v0 2024/25",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/108"
+    },
+    {
+      "number": 225,
+      "title": "review: aggiornare i workflow per le seed issue",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/225"
     },
     {
       "number": 215,
@@ -380,6 +398,20 @@
       "category": "Datasets"
     },
     {
+      "number": 214,
+      "title": "ISTAT povert\u00e0 assoluta e relativa: incidenze, intensit\u00e0 e soglie (2014-2024)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/214",
+      "category": "Datasets"
+    },
+    {
+      "number": 211,
+      "title": "MUR contribuzione universitaria: tasse, esoneri e diritto allo studio per ateneo (2009-2024)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/211",
+      "category": "Datasets"
+    },
+    {
       "number": 210,
       "title": "La geografia del calo iscrizioni nelle scuole primarie (2015-2024)",
       "repo": "dataciviclab",
@@ -443,13 +475,6 @@
       "category": "Datasets"
     },
     {
-      "number": 211,
-      "title": "MUR contribuzione universitaria: tasse, esoneri e diritto allo studio per ateneo (2009-2024)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/211",
-      "category": "Datasets"
-    },
-    {
       "number": 212,
       "title": "Consip consumi in convenzione: geografia della spesa delle PA",
       "repo": "dataciviclab",
@@ -461,13 +486,6 @@
       "title": "Incentivi.gov: anagrafica degli incentivi alle imprese per regione, ambito e forma di agevolazione",
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/213",
-      "category": "Datasets"
-    },
-    {
-      "number": 214,
-      "title": "ISTAT povert\u00e0 assoluta e relativa: incidenze, intensit\u00e0 e soglie (2014-2024)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/214",
       "category": "Datasets"
     },
     {
@@ -811,6 +829,39 @@
         "metric_columns": 9,
         "dimension_columns": 5,
         "column_count": 14
+      }
+    ]
+  },
+  "portal_scout": {
+    "available": true,
+    "generated_at": "2026-04-19T17:28:50.591176+00:00",
+    "total_portals": 47,
+    "new_candidates": 32,
+    "new_confirmed_protocol": 5,
+    "by_protocol": {
+      "html": 42,
+      "ckan": 5
+    },
+    "new_structured": [
+      {
+        "domain": "dati.lazio.it",
+        "protocol": "ckan"
+      },
+      {
+        "domain": "dati.toscana.it",
+        "protocol": "ckan"
+      },
+      {
+        "domain": "dati.mit.gov.it",
+        "protocol": "ckan"
+      },
+      {
+        "domain": "indicepa.gov.it",
+        "protocol": "ckan"
+      },
+      {
+        "domain": "opendata-ercolano.cultura.gov.it",
+        "protocol": "ckan"
       }
     ]
   }
