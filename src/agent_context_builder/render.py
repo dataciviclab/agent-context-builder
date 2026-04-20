@@ -681,6 +681,7 @@ class Renderer:
             }
 
         return {
+            "schema_version": 2,
             "generated_at": self.fixed_timestamp,
             "repos": repos_section,
             "datasets_by_source": datasets_by_source,
