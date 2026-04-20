@@ -20,39 +20,26 @@ repos:
   - data-explorer
   - source-observatory
 
+# Hint operativi per agenti — descrivono flussi, non repo o dataset
+# (repo descriptions vengono da GitHub API, dataset da clean_catalog)
 topics:
-  agent-context-builder:
-    summary: Autonomous context generation for agents — bootstrap, triage, topic index
-    repos:
-      - agent-context-builder
-    paths:
-      - agent-context-builder/README.md
-      - agent-context-builder/pyproject.toml
-    next: Review P1 roadmap (telemetry summarizer, JSON schema, API backend)
-
-  toolkit:
-    summary: Core data pipeline engine — RAW → CLEAN → MART layer
+  pipeline:
+    summary: Ciclo di vita del dato — RAW → CLEAN → MART con toolkit
     repos:
       - toolkit
+      - dataset-incubator
     paths:
       - toolkit/docs/
-      - toolkit/src/
-    next: Check toolkit/docs/config-schema.md for dataset config contract
+      - dataset-incubator/workflows/post-merge-candidate.md
+    next: Vedi post-merge-candidate.md per il flusso completo run + push GCS
 
-  datasets:
-    summary: Dataset incubation and published analyses
+  governance:
+    summary: Flusso operativo del Lab — intake, promozione, issues, PR, discussions
     repos:
+      - dataciviclab
       - dataset-incubator
-      - dataciviclab
     paths:
-      - dataset-incubator/
-      - dataciviclab/analisi/
-    next: Review dataset-incubator/PROMOTION_CHECKLIST.md
-
-  analytics:
-    summary: Published analytical findings and documentation
-    repos:
-      - dataciviclab
-    paths:
-      - dataciviclab/docs/
-    next: Check dataciviclab/docs/workflows.md for publication flow
+      - dataciviclab/docs/workflows.md
+      - dataciviclab/docs/dataset-project-flow.md
+      - dataset-incubator/PROMOTION_CHECKLIST.md
+    next: Vedi dataset-project-flow.md per il ciclo intake → promozione
