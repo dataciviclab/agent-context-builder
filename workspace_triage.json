@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-20T11:56:32.311225",
+  "generated_at": "2026-04-20T13:44:24.720382",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,31 +9,13 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 6,
+  "open_prs": 3,
   "prs": [
     {
-      "number": 149,
-      "title": "feat: workflow post-merge per run locale e push GCS candidati",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/149"
-    },
-    {
-      "number": 146,
-      "title": "Aggiunge scaffold candidate da template",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/146"
-    },
-    {
-      "number": 137,
-      "title": "Feat/istat delitti 2024",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/137"
-    },
-    {
-      "number": 142,
-      "title": "feat: redesign validate pipeline v1.2.0",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/142"
+      "number": 24,
+      "title": "feat: topic_index auto-generato da GitHub API e clean_catalog",
+      "repo": "agent-context-builder",
+      "url": "https://github.com/dataciviclab/agent-context-builder/pull/24"
     },
     {
       "number": 52,
@@ -48,7 +30,7 @@
       "url": "https://github.com/dataciviclab/source-observatory/pull/123"
     }
   ],
-  "open_issues": 55,
+  "open_issues": 52,
   "issues": [
     {
       "number": 23,
@@ -87,12 +69,6 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/150"
     },
     {
-      "number": 148,
-      "title": "feat: GitHub Action per aggiornare pipeline_signals.json + docs workflow run-candidate",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/148"
-    },
-    {
       "number": 147,
       "title": "follow-up scaffold intake: naming notebook, default SDMX, documentazione adapter",
       "repo": "dataset-incubator",
@@ -115,12 +91,6 @@
       "title": "intake: ISTAT Ciclo dell'acqua - prelievo vs distribuzione, perdite idriche per distretto",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/143"
-    },
-    {
-      "number": 128,
-      "title": "intake: istat-delitti-denunciati",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/128"
     },
     {
       "number": 124,
@@ -307,12 +277,6 @@
       "title": "feat: unifica catalogo da dataset-incubator, routing dinamico per slug",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/issues/56"
-    },
-    {
-      "number": 122,
-      "title": "source-check: indicepa.gov.it",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/122"
     },
     {
       "number": 121,
@@ -589,9 +553,7 @@
       "untracked_files": 0
     }
   },
-  "warnings": [
-    "Many open PRs: 6"
-  ],
+  "warnings": [],
   "radar": {
     "available": true,
     "probe_date": "2026-04-20",

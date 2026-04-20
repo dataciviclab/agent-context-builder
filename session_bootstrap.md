@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-20T11:56:32.311225
+**Generated**: 2026-04-20T13:44:24.720382
 
 ## Repos
 
@@ -13,10 +13,7 @@
 
 ## Open PRs
 
-- [dataset-incubator#149](https://github.com/dataciviclab/dataset-incubator/pull/149): feat: workflow post-merge per run locale e push GCS candidati
-- [dataset-incubator#146](https://github.com/dataciviclab/dataset-incubator/pull/146): Aggiunge scaffold candidate da template
-- [dataset-incubator#137](https://github.com/dataciviclab/dataset-incubator/pull/137): Feat/istat delitti 2024
-- [toolkit#142](https://github.com/dataciviclab/toolkit/pull/142): feat: redesign validate pipeline v1.2.0
+- [agent-context-builder#24](https://github.com/dataciviclab/agent-context-builder/pull/24): feat: topic_index auto-generato da GitHub API e clean_catalog
 - **Dependabot**: 2 bump PR(s) - [#52](https://github.com/dataciviclab/data-explorer/pull/52), [#123](https://github.com/dataciviclab/source-observatory/pull/123)
 
 ## Open Discussions
