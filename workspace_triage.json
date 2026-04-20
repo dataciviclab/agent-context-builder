@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-20T14:52:35.936525",
+  "generated_at": "2026-04-20T17:59:58.212111",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,28 +9,9 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 3,
-  "prs": [
-    {
-      "number": 52,
-      "title": "chore(deps-dev): bump postcss from 8.5.6 to 8.5.10",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/52"
-    },
-    {
-      "number": 124,
-      "title": "[codex] separa il workflow portal scout",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/124"
-    },
-    {
-      "number": 123,
-      "title": "chore(deps): update pyarrow requirement from <20.0,>=14.0 to >=14.0,<24.0",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/123"
-    }
-  ],
-  "open_issues": 52,
+  "open_prs": 0,
+  "prs": [],
+  "open_issues": 49,
   "issues": [
     {
       "number": 23,
@@ -49,12 +30,6 @@
       "title": "feat: JSON Schema per workspace_triage e topic_index \u2014 contratto stabile per i consumer",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/issues/3"
-    },
-    {
-      "number": 2,
-      "title": "feat: CandidateCollector \u2014 tracking end-to-end dei candidati da dataset-incubator",
-      "repo": "agent-context-builder",
-      "url": "https://github.com/dataciviclab/agent-context-builder/issues/2"
     },
     {
       "number": 151,
@@ -145,12 +120,6 @@
       "title": "[Seed] Aggiungere una nota metodologica minima a un output preciso",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/issues/187"
-    },
-    {
-      "number": 186,
-      "title": "[Seed] Verificare una fonte pubblica e lasciare una nota breve riusabile",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/186"
     },
     {
       "number": 185,
@@ -279,28 +248,22 @@
       "url": "https://github.com/dataciviclab/data-explorer/issues/56"
     },
     {
+      "number": 125,
+      "title": "feat: discovery incrementale \u2014 aggiungi nuovi domini al parquet esistente invece di rifare da zero",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/125"
+    },
+    {
       "number": 121,
       "title": "source-check: dati.mit.gov.it",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/121"
     },
     {
-      "number": 120,
-      "title": "feat: split portal-scout workflow \u2014 discovery e scout come job separati",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/120"
-    },
-    {
       "number": 117,
       "title": "refactor: catalog_signals.json si concentra su drift/inventory, health delegata a radar_summary.json",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/117"
-    },
-    {
-      "number": 114,
-      "title": "[Catalog] Variazioni rilevate nell'inventario",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/114"
     },
     {
       "number": 109,
@@ -796,29 +759,26 @@
   },
   "portal_scout": {
     "available": true,
-    "generated_at": "2026-04-19T17:28:50.591176+00:00",
+    "generated_at": "2026-04-20T17:53:47.088520+00:00",
     "total_portals": 47,
-    "new_candidates": 32,
-    "new_confirmed_protocol": 5,
+    "new_candidates": 33,
+    "new_confirmed_protocol": 4,
     "by_protocol": {
       "html": 42,
-      "ckan": 5
+      "ckan": 4,
+      "sdmx": 1
     },
     "new_structured": [
       {
-        "domain": "dati.lazio.it",
-        "protocol": "ckan"
-      },
-      {
-        "domain": "dati.toscana.it",
-        "protocol": "ckan"
-      },
-      {
-        "domain": "dati.mit.gov.it",
+        "domain": "dati-coll.dfp.gov.it",
         "protocol": "ckan"
       },
       {
         "domain": "indicepa.gov.it",
+        "protocol": "ckan"
+      },
+      {
+        "domain": "dati.mit.gov.it",
         "protocol": "ckan"
       },
       {

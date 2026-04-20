@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-20T14:52:35.936525
+**Generated**: 2026-04-20T17:59:58.212111
 
 ## Repos
 
@@ -13,8 +13,7 @@
 
 ## Open PRs
 
-- [source-observatory#124](https://github.com/dataciviclab/source-observatory/pull/124): [codex] separa il workflow portal scout
-- **Dependabot**: 2 bump PR(s) - [#52](https://github.com/dataciviclab/data-explorer/pull/52), [#123](https://github.com/dataciviclab/source-observatory/pull/123)
+*No open PRs*
 
 ## Open Discussions
 
@@ -77,11 +76,10 @@ Fonti: 13 — GREEN 6 · YELLOW 7 · RED 0 (probe: 2026-04-20)
 
 ## Portal Scout
 
-Portali rilevati: 47 — nuovi candidati: 32 — strutturati confermati: 5
+Portali rilevati: 47 — nuovi candidati: 33 — strutturati confermati: 4
 
 **Nuovi candidati strutturati:**
-- `dati.lazio.it` — CKAN
-- `dati.toscana.it` — CKAN
-- `dati.mit.gov.it` — CKAN
+- `dati-coll.dfp.gov.it` — CKAN
 - `indicepa.gov.it` — CKAN
+- `dati.mit.gov.it` — CKAN
 - `opendata-ercolano.cultura.gov.it` — CKAN
