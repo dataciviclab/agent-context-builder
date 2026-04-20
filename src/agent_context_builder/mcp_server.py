@@ -136,7 +136,7 @@ def workspace_triage() -> str:
 
 @mcp.tool()
 def topic_index() -> str:
-    """Lookup per topic: repo rilevanti, path, prossimo passo suggerito."""
+    """Topic index v2 — repos, datasets_by_source, operational_topics."""
     return _fetch("topic_index.json")
 
 

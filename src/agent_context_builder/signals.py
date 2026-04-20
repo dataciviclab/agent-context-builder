@@ -82,6 +82,7 @@ class DICleanDataset:
     name: str
     status: str
     visibility: str
+    source: str = ""
     period: dict[str, Any] = field(default_factory=dict)
     location: dict[str, Any] = field(default_factory=dict)
     metric_columns: int = 0
@@ -174,6 +175,7 @@ def parse_di_clean_catalog(raw: str) -> DICleanCatalog:
                 name=item.get("name", item.get("slug", "")),
                 status=item.get("status", ""),
                 visibility=item.get("visibility", ""),
+                source=item.get("source", ""),
                 period=item.get("period", {}),
                 location=item.get("location", {}),
                 metric_columns=metric_columns,
