@@ -71,11 +71,16 @@ class Renderer:
             lines.append(f"**Workspace**: {self.config.workspace_root}")
         lines.append("")
 
-        # Active repos
+        # Active repos with GitHub description
         lines.append("## Repos")
         lines.append("")
+        repos_info = self.github_collector.get_repos_info(self.config.repos)
         for repo in self.config.repos:
-            lines.append(f"- {repo}")
+            info = repos_info.get(repo)
+            if info and info.description:
+                lines.append(f"- **{repo}**: {info.description}")
+            else:
+                lines.append(f"- {repo}")
         lines.append("")
 
         # Open PRs
@@ -640,18 +645,44 @@ class Renderer:
         """Render topic_index.json.
 
         Returns:
-            Dictionary with topic index
+            - repos: GitHub description per repo (auto from API)
+            - datasets_by_source: clean_ready datasets grouped by source (auto from catalog)
+            - operational_topics: YAML-defined topics for agent navigation
         """
-        topics = {}
+        # Repos with description from GitHub
+        repos_info = self.github_collector.get_repos_info(self.config.repos)
+        repos_section = {
+            name: {"description": info.description, "url": info.url}
+            for name, info in repos_info.items()
+        }
+
+        # Datasets grouped by source from clean_catalog
+        catalog = self._fetch_di_clean_catalog()
+        datasets_by_source: dict[str, list[dict[str, Any]]] = {}
+        if catalog:
+            for ds in catalog.clean_ready:
+                source = ds.source or "unknown"
+                datasets_by_source.setdefault(source, []).append({
+                    "slug": ds.slug,
+                    "name": ds.name,
+                    "period": ds.period,
+                    "visibility": ds.visibility,
+                })
+
+        # YAML-defined operational topics (agent navigation hints)
+        operational_topics = {}
         for topic_name, topic in self.config.topics.items():
-            topics[topic_name] = {
+            operational_topics[topic_name] = {
                 "name": topic_name,
                 "summary": topic.summary,
                 "repos": topic.repos,
                 "paths": topic.paths,
                 "next": topic.next,
             }
+
         return {
             "generated_at": self.fixed_timestamp,
-            "topics": topics,
+            "repos": repos_section,
+            "datasets_by_source": datasets_by_source,
+            "operational_topics": operational_topics,
         }
