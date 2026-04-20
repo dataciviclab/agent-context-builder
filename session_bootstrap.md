@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-20T13:44:24.720382
+**Generated**: 2026-04-20T14:31:15.097268
 
 ## Repos
 
@@ -14,6 +14,7 @@
 ## Open PRs
 
 - [agent-context-builder#24](https://github.com/dataciviclab/agent-context-builder/pull/24): feat: topic_index auto-generato da GitHub API e clean_catalog
+- [source-observatory#124](https://github.com/dataciviclab/source-observatory/pull/124): [codex] separa il workflow portal scout
 - **Dependabot**: 2 bump PR(s) - [#52](https://github.com/dataciviclab/data-explorer/pull/52), [#123](https://github.com/dataciviclab/source-observatory/pull/123)
 
 ## Open Discussions
