@@ -27,7 +27,7 @@ Paths per repo attivi:
 
 | Repo | Path nel repo | Nota |
 |------|--------------|------|
-| `source-observatory` | `data/catalog/catalog_signals.json` | formato legacy (vedi §Legacy) |
+| `source-observatory` | `data/catalog/catalog_signals.json` | formato legacy drift/inventory (vedi §Legacy) |
 | `dataset-incubator` | `registry/pipeline_signals.json` | adotta questo standard |
 
 ---
@@ -130,7 +130,8 @@ Leggere sempre il campo `detail` per il contesto specifico del segnale.
 ACB mantiene un parser dedicato (`signals.py::parse_source_observatory_signals`)
 che mappa il vecchio formato sul modello interno.
 
-Migrazione pianificata con SO #117 (refactor `catalog_signals.json` → drift/inventory only).
+Migrazione pianificata con SO #117: `catalog_signals.json` resta solo drift/inventory,
+mentre la salute pura della connettività vive in `radar_summary.json`.
 Fino ad allora il parser legacy rimane.
 
 ---

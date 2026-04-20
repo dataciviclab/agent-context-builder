@@ -14,13 +14,14 @@ from agent_context_builder.render import Renderer
 _UNAVAILABLE = GitState(available=False, reason="path_not_found", dirty=None, current_branch=None)
 
 
-def _sample_so_json(regression: bool = False) -> str:
+def _sample_so_json(drift: bool = False) -> str:
     signals = []
-    if regression:
+    if drift:
         signals.append({
-            "source": "anac", "protocol": "ckan",
-            "signal_type": "health", "result": "regressione",
-            "detail": "WAF attivo.", "suggested_action": "monitorare",
+            "source": "inps", "protocol": "ckan",
+            "signal_type": "inventory change", "result": "inventory change",
+            "detail": "Delta inventario +8 rispetto alla baseline.",
+            "suggested_action": "verificare se variazione attesa",
         })
     signals.append({
         "source": "istat_sdmx", "protocol": "sdmx",
@@ -246,37 +247,37 @@ def test_render_triage_without_discussion_collector():
     assert triage["discussions"] == []
 
 
-def test_render_bootstrap_with_source_health_regression():
-    """Bootstrap includes Source Health section with regression detail."""
+def test_render_bootstrap_with_catalog_drift():
+    """Bootstrap includes the catalog drift section with inventory detail."""
     config = Config(workspace_root=None, github_org="test-org", repos=["repo1"])
     renderer = Renderer(
         config,
-        _make_github_mock(raw_file=_sample_so_json(regression=True)),
+        _make_github_mock(raw_file=_sample_so_json(drift=True)),
         _make_git_mock(),
     )
     bootstrap = renderer.render_session_bootstrap()
 
-    assert "Source Health" in bootstrap
-    assert "anac" in bootstrap
-    assert "regressione" in bootstrap
+    assert "Catalog Drift" in bootstrap
+    assert "inps" in bootstrap
+    assert "inventory change" in bootstrap
 
 
-def test_render_bootstrap_source_health_all_stable():
-    """Bootstrap Source Health shows 'all stable' when no alerts."""
+def test_render_bootstrap_catalog_drift_all_stable():
+    """Bootstrap catalog drift shows no drift when there are no alerts."""
     config = Config(workspace_root=None, github_org="test-org", repos=["repo1"])
     renderer = Renderer(
         config,
-        _make_github_mock(raw_file=_sample_so_json(regression=False)),
+        _make_github_mock(raw_file=_sample_so_json(drift=False)),
         _make_git_mock(),
     )
     bootstrap = renderer.render_session_bootstrap()
 
-    assert "Source Health" in bootstrap
-    assert "stable" in bootstrap
+    assert "Catalog Drift" in bootstrap
+    assert "No catalog drift signals" in bootstrap
 
 
-def test_render_bootstrap_source_health_unavailable():
-    """Bootstrap Source Health shows unavailable message when fetch fails."""
+def test_render_bootstrap_catalog_drift_unavailable():
+    """Bootstrap catalog drift shows unavailable message when fetch fails."""
     config = Config(workspace_root=None, github_org="test-org", repos=["repo1"])
     renderer = Renderer(
         config,
@@ -285,24 +286,24 @@ def test_render_bootstrap_source_health_unavailable():
     )
     bootstrap = renderer.render_session_bootstrap()
 
-    assert "Source Health" in bootstrap
+    assert "Catalog Drift" in bootstrap
     assert "unavailable" in bootstrap
 
 
 def test_render_triage_source_health_available():
-    """Triage includes source_health with regressions when signals fetched."""
+    """Triage includes source_health with drift alerts when signals fetched."""
     config = Config(workspace_root=None, github_org="test-org", repos=["repo1"])
     renderer = Renderer(
         config,
-        _make_github_mock(raw_file=_sample_so_json(regression=True)),
+        _make_github_mock(raw_file=_sample_so_json(drift=True)),
         _make_git_mock(),
     )
     triage = renderer.render_workspace_triage()
 
     sh = triage["source_health"]
     assert sh["available"] is True
-    assert len(sh["regressions"]) == 1
-    assert sh["regressions"][0]["source"] == "anac"
+    assert len(sh["alerts"]) == 1
+    assert sh["alerts"][0]["source"] == "inps"
 
 
 def test_render_triage_source_health_unavailable():
@@ -373,7 +374,7 @@ def test_render_signals_cached_across_bootstrap_and_triage():
     config = Config(workspace_root=None, github_org="test-org", repos=["repo1"])
     gh = _make_github_mock()
 
-    so_json = _sample_so_json(regression=False)
+    so_json = _sample_so_json(drift=False)
     di_json = _sample_di_json()
     clean_catalog_json = _sample_di_clean_catalog_json()
 

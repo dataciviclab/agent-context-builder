@@ -151,7 +151,7 @@ class Renderer:
         radar = self._fetch_radar_summary()
         lines += self._render_radar_section(radar)
 
-        # Source health (only issues — skip stable sources)
+        # Catalog drift (only issues — skip stable sources)
         so = self._fetch_source_observatory_signals()
         lines += self._render_source_health_section(so)
 
@@ -261,7 +261,7 @@ class Renderer:
         self, so: SourceObservatorySignals | None
     ) -> list[str]:
         lines = []
-        lines.append("## Source Health")
+        lines.append("## Catalog Drift")
         lines.append("")
         if so is None:
             err = self.github_collector.fetch_errors.get(
@@ -276,16 +276,16 @@ class Renderer:
             lines.append("")
             return lines
 
-        # Show regressions first, then other alerts (mutually exclusive sets)
-        issues = so.regressions + so.alerts
+        issues = so.drift_alerts
         if issues:
             for s in issues:
-                lines.append(f"- **{s.source}** ({s.protocol}): {s.result}")
+                lines.append(f"- **{s.source}** ({s.protocol}): {s.signal_type}")
                 if s.suggested_action and s.suggested_action != "nessuna":
                     lines.append(f"  - azione: {s.suggested_action}")
         else:
-            lines.append(f"*All {so.sources_checked} sources stable* (as of {so.captured_at})")
-        lines.append(f"  *(captured {so.captured_at}, {so.sources_checked} sources checked)*")
+            lines.append(f"*No catalog drift signals* (as of {so.captured_at}, {so.sources_checked} sources checked)")
+        if issues:
+            lines.append(f"  *(captured {so.captured_at}, {so.sources_checked} sources checked)*")
         lines.append("")
         return lines
 
@@ -399,15 +399,6 @@ class Renderer:
             "available": True,
             "captured_at": so.captured_at,
             "sources_checked": so.sources_checked,
-            "regressions": [
-                {
-                    "source": s.source,
-                    "protocol": s.protocol,
-                    "detail": s.detail,
-                    "suggested_action": s.suggested_action,
-                }
-                for s in so.regressions
-            ],
             "alerts": [
                 {
                     "source": s.source,
@@ -417,7 +408,7 @@ class Renderer:
                     "detail": s.detail,
                     "suggested_action": s.suggested_action,
                 }
-                for s in so.alerts
+                for s in so.drift_alerts
             ],
         }
 

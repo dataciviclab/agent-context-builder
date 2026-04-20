@@ -37,7 +37,7 @@ Contiene stato incrociato di PR, issue, discussion, git e segnali operativi.
   },
   "warnings": ["dataset-incubator: branch feat/xyz ahead of main"],
   "radar": { "generated_at": "...", "green": 20, "yellow": 2, "red": 0, "unhealthy": [] },
-  "source_health": { "captured_at": "...", "regressions": [], "alerts": [] },
+  "source_health": { "captured_at": "...", "alerts": [] },
   "pipeline_state": { "generated_at": "...", "actionable": [] },
   "dataset_catalog": { "schema_version": "1", "updated_at": "...", "clean_ready": [] },
   "portal_scout": { "generated_at": "...", "new_candidates": 0, "new_structured": [] }
@@ -63,7 +63,7 @@ Contiene stato incrociato di PR, issue, discussion, git e segnali operativi.
 | `git_state` | object | Stato git per repo (vedi sotto) |
 | `warnings` | array | Warning testuali su branch dirty/ahead |
 | `radar` | object \| null | Health fonti da `radar_summary.json` |
-| `source_health` | object \| null | Segnali drift da `catalog_signals.json` |
+| `source_health` | object \| null | Segnali drift/inventory da `catalog_signals.json` |
 | `pipeline_state` | object \| null | Stato candidati da `pipeline_signals.json` |
 | `dataset_catalog` | object \| null | Dataset clean-ready da `clean_catalog.json` |
 | `portal_scout` | object \| null | Portali scoperti da `discovered_portals_summary.json` |
