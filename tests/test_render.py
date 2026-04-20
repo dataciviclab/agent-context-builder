@@ -428,6 +428,7 @@ def test_render_topic_index():
     renderer = Renderer(config, gh, _make_git_mock())
     result = renderer.render_topic_index()
 
+    assert result.get("schema_version") == 2
     assert "repos" in result
     assert result["repos"]["repo1"]["description"] == "Test repo"
 
