@@ -130,8 +130,8 @@ Leggere sempre il campo `detail` per il contesto specifico del segnale.
 ACB mantiene un parser dedicato (`signals.py::parse_source_observatory_signals`)
 che mappa il vecchio formato sul modello interno.
 
-Migrazione pianificata: quando SO adotterà questo schema, il parser legacy
-verrà rimosso. Non c'è urgenza — il formato SO è stabile e ben definito.
+Migrazione pianificata con SO #117 (refactor `catalog_signals.json` → drift/inventory only).
+Fino ad allora il parser legacy rimane.
 
 ---
 

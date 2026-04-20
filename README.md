@@ -5,11 +5,11 @@ da GitHub e, se disponibile, dai checkout locali dei repo Lab.
 
 ## Artifact
 
-| Artifact | Target | Ruolo |
+| Artifact | Versione | Ruolo |
 |---|---|---|
-| `session_bootstrap.md` | ~40 righe | orientamento rapido per agenti e umani |
-| `workspace_triage.json` | JSON | PR, issue, discussion, warning, git state |
-| `topic_index.json` | JSON | lookup semantico per topic, repo e path |
+| `session_bootstrap.md` | — | orientamento rapido per agenti e umani (~40 righe) |
+| `workspace_triage.json` | v1 | PR, issue, discussion, warning, git state |
+| `topic_index.json` | v2 | repos attivi, dataset per fonte, topic operativi |
 
 La CI aggiorna gli artifact GitHub-only ogni 6 ore sul branch `context`.
 
@@ -46,18 +46,13 @@ pip install -e ".[mcp]"
 agent-context-mcp
 ```
 
-Risorse MCP:
-
-| URI | Contenuto |
-|---|---|
-| `context://session_bootstrap` | markdown di avvio sessione |
-| `context://workspace_triage` | triage machine-readable |
-| `context://topic_index` | indice topic |
-
-Tool:
+Tool MCP:
 
 | Tool | Uso |
 |---|---|
+| `session_bootstrap` | orientamento rapido: repo attivi, PR, issue, discussion |
+| `workspace_triage` | triage machine-readable: PR, issue, warning, git state |
+| `topic_index` | indice v2: repos, datasets per fonte, topic operativi |
 | `refresh_context` | triggera build CI; richiede `GITHUB_TOKEN` con scope `workflow` |
 
 Esempio `settings.json`:
@@ -138,8 +133,6 @@ pytest
 ruff check .
 ```
 
-## Roadmap & Licenza
+## Licenza
 
-- **P1**: schema JSON stabile per artifact consumabili da MCP e agenti.
-- **P2**: session brief/local health più compatti.
-- **Licenza**: MIT
+MIT
