@@ -9,10 +9,12 @@ from .github import GitHubCollector, PR
 from .git_local import GitLocalCollector, GitState
 from .signals import (
     DICleanCatalog,
+    PortalScoutSummary,
     RadarSummary,
     RepoSignals,
     SourceObservatorySignals,
     parse_di_clean_catalog,
+    parse_portal_scout_summary,
     parse_radar_summary,
     parse_repo_signals,
     parse_source_observatory_signals,
@@ -51,6 +53,7 @@ class Renderer:
         # Cache for remote signal fetches — avoids double requests within one build
         self._so_signals_cache: SourceObservatorySignals | None | type[_UNSET] = _UNSET
         self._radar_cache: RadarSummary | None | type[_UNSET] = _UNSET
+        self._portal_scout_cache: PortalScoutSummary | None | type[_UNSET] = _UNSET
         self._di_signals_cache: RepoSignals | None | type[_UNSET] = _UNSET
         self._di_clean_catalog_cache: DICleanCatalog | None | type[_UNSET] = _UNSET
 
@@ -155,6 +158,10 @@ class Renderer:
         catalog = self._fetch_di_clean_catalog()
         lines += self._render_dataset_catalog_section(catalog)
 
+        # Portal scout (nuovi candidati strutturati)
+        scout = self._fetch_portal_scout()
+        lines += self._render_portal_scout_section(scout)
+
         return "\n".join(lines)
 
     def _fetch_radar_summary(self) -> RadarSummary | None:
@@ -189,6 +196,42 @@ class Renderer:
             lines.append("")
             for s in radar.unhealthy:
                 lines.append(f"- **{s.id}** ({s.protocol}): {s.status} [HTTP {s.http_code}]")
+        lines.append("")
+        return lines
+
+    def _fetch_portal_scout(self) -> PortalScoutSummary | None:
+        if self._portal_scout_cache is not _UNSET:
+            return self._portal_scout_cache  # type: ignore[return-value]
+        raw = self.github_collector.get_raw_file(
+            "source-observatory", "data/portal_scout/discovered_portals_summary.json"
+        )
+        if raw is None:
+            self._portal_scout_cache = None
+            return None
+        try:
+            result = parse_portal_scout_summary(raw)
+        except ValueError as exc:
+            self.github_collector.fetch_errors["source-observatory:portal_scout"] = str(exc)
+            result = None
+        self._portal_scout_cache = result
+        return result
+
+    def _render_portal_scout_section(self, scout: PortalScoutSummary | None) -> list[str]:
+        lines = ["## Portal Scout", ""]
+        if scout is None:
+            lines.append("> *discovered_portals_summary unavailable*")
+            lines.append("")
+            return lines
+        lines.append(
+            f"Portali rilevati: {scout.total_portals} — "
+            f"nuovi candidati: {scout.new_candidates} — "
+            f"strutturati confermati: {scout.new_confirmed_protocol}"
+        )
+        if scout.new_structured:
+            lines.append("")
+            lines.append("**Nuovi candidati strutturati:**")
+            for c in scout.new_structured:
+                lines.append(f"- `{c.domain}` — {c.protocol.upper()}")
         lines.append("")
         return lines
 
@@ -232,7 +275,7 @@ class Renderer:
         issues = so.regressions + so.alerts
         if issues:
             for s in issues:
-                lines.append(f"- **{s.source}** ({s.protocol}): {s.result} — {s.detail}")
+                lines.append(f"- **{s.source}** ({s.protocol}): {s.result}")
                 if s.suggested_action and s.suggested_action != "nessuna":
                     lines.append(f"  - azione: {s.suggested_action}")
         else:
@@ -316,6 +359,7 @@ class Renderer:
             "source_health": self._build_source_health_dict(),
             "pipeline_state": self._build_pipeline_state_dict(),
             "dataset_catalog": self._build_dataset_catalog_dict(),
+            "portal_scout": self._build_portal_scout_dict(),
         }
         return triage
 
@@ -469,17 +513,9 @@ class Renderer:
         )
         for dataset in clean_ready[:8]:
             period = self._format_period(dataset.period)
-            location = dataset.location.get("path", "")
-            line = f"- **{dataset.slug}** ({dataset.status}, {dataset.visibility}): "
-            line += dataset.name
+            line = f"- **{dataset.slug}** ({dataset.visibility}): {dataset.name}"
             if period:
                 line += f" [{period}]"
-            line += (
-                f" - {dataset.metric_columns} metric, "
-                f"{dataset.dimension_columns} dimension columns"
-            )
-            if location:
-                line += f" - `{location}`"
             lines.append(line)
         if len(clean_ready) > 8:
             lines.append(f"- *...and {len(clean_ready) - 8} more clean_ready datasets*")
@@ -531,6 +567,23 @@ class Renderer:
         if start == end:
             return str(start)
         return f"{start or '?'}-{end or '?'}"
+
+    def _build_portal_scout_dict(self) -> dict[str, Any]:
+        scout = self._fetch_portal_scout()
+        if scout is None:
+            return {"available": False}
+        return {
+            "available": True,
+            "generated_at": scout.generated_at,
+            "total_portals": scout.total_portals,
+            "new_candidates": scout.new_candidates,
+            "new_confirmed_protocol": scout.new_confirmed_protocol,
+            "by_protocol": scout.by_protocol,
+            "new_structured": [
+                {"domain": c.domain, "protocol": c.protocol}
+                for c in scout.new_structured
+            ],
+        }
 
     def _build_pipeline_state_dict(self) -> dict[str, Any]:
         di = self._fetch_di_pipeline_signals()
