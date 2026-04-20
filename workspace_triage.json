@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-20T08:09:17.309804",
+  "generated_at": "2026-04-20T08:37:46.263810",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -576,12 +576,18 @@
   ],
   "radar": {
     "available": true,
-    "probe_date": "2026-04-19",
+    "probe_date": "2026-04-20",
     "sources_total": 13,
-    "green": 9,
-    "yellow": 3,
-    "red": 1,
+    "green": 6,
+    "yellow": 7,
+    "red": 0,
     "unhealthy": [
+      {
+        "id": "istat_sdmx",
+        "status": "YELLOW",
+        "protocol": "sdmx",
+        "http_code": "-"
+      },
       {
         "id": "anac",
         "status": "YELLOW",
@@ -589,9 +595,21 @@
         "http_code": "403"
       },
       {
+        "id": "openbdap",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-"
+      },
+      {
         "id": "dati_salute",
-        "status": "RED",
+        "status": "YELLOW",
         "protocol": "html",
+        "http_code": "-"
+      },
+      {
+        "id": "consip_open_data",
+        "status": "YELLOW",
+        "protocol": "ckan",
         "http_code": "-"
       },
       {

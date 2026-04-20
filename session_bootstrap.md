@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-20T08:09:17.309804
+**Generated**: 2026-04-20T08:37:46.263810
 
 ## Repos
 
@@ -46,10 +46,13 @@
 
 ## Radar Status
 
-Fonti: 13 — GREEN 9 · YELLOW 3 · RED 1 (probe: 2026-04-19)
+Fonti: 13 — GREEN 6 · YELLOW 7 · RED 0 (probe: 2026-04-20)
 
+- **istat_sdmx** (sdmx): YELLOW [HTTP -]
 - **anac** (ckan): YELLOW [HTTP 403]
-- **dati_salute** (html): RED [HTTP -]
+- **openbdap** (ckan): YELLOW [HTTP -]
+- **dati_salute** (html): YELLOW [HTTP -]
+- **consip_open_data** (ckan): YELLOW [HTTP -]
 - **mur_ustat** (ckan): YELLOW [HTTP -]
 - **opencoesione** (rest): YELLOW [HTTP 403]
 
