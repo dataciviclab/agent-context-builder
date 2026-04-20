@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-20T02:46:01.570898
+**Generated**: 2026-04-20T08:09:17.309804
 
 ## Repos
 
@@ -55,15 +55,12 @@ Fonti: 13 — GREEN 9 · YELLOW 3 · RED 1 (probe: 2026-04-19)
 
 ## Source Health
 
-- **istat_sdmx** (sdmx): regressione — Errore: SDMX fetch failed after 3 attempts for istat_sdmx on https://esploradati.istat.it/SDMXWS/rest/dataflow/IT1: tentativo 1: ConnectTimeout (https://esploradati.istat.it/SDMXWS/rest/dataflow/IT1), tentativo 2: ConnectTimeout (https://esploradati.istat.it/SDMXWS/rest/dataflow/IT1), tentativo 3: ConnectTimeout (https://esploradati.istat.it/SDMXWS/rest/dataflow/IT1)
-  - azione: monitorare nei prossimi run
-- **openbdap** (ckan): regressione — Errore: HTTPSConnectionPool(host='bdap-opendata.rgs.mef.gov.it', port=443): Max retries exceeded with url: /SpodCkanApi/api/3/action/package_list (Caused by ConnectTimeoutError(<HTTPSConnection(host='bdap-opendata.rgs.mef.gov.it', port=443) at 0x7f658ce00d10>, 'Connection to bdap-opendata.rgs.mef.gov.it timed out. (connect timeout=60)'))
-  - azione: monitorare nei prossimi run
-- **consip_open_data** (ckan): regressione — Errore: HTTPSConnectionPool(host='dati.consip.it', port=443): Max retries exceeded with url: /api/3/action/package_list (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati.consip.it', port=443) at 0x7f658cd450d0>, 'Connection to dati.consip.it timed out. (connect timeout=60)'))
-  - azione: monitorare nei prossimi run
-- **mur_ustat** (ckan): regressione — Errore persistente: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /api/3/action/package_list (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7f658cd48470>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=60)')) (messaggio cambiato rispetto al run precedente)
+- **mur_ustat** (ckan): regressione — Errore persistente: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /api/3/action/package_list (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7f3efd10b620>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=60)')) (messaggio cambiato rispetto al run precedente)
   - azione: valutare declassamento a radar-only se persiste
-  *(captured 2026-04-18T10:39:20+00:00, 9 sources checked)*
+- **istat_sdmx** (sdmx): recovery — Tornato ok. 4821 item (dataflow_count).
+- **openbdap** (ckan): recovery — Tornato ok. 3772 item (package_list).
+- **consip_open_data** (ckan): recovery — Tornato ok. 17 item (package_list).
+  *(captured 2026-04-20T05:49:12+00:00, 9 sources checked)*
 
 ## Pipeline State
 
