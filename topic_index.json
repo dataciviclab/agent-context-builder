@@ -1,53 +1,130 @@
 {
-  "generated_at": "2026-04-20T14:31:15.097268",
-  "topics": {
+  "schema_version": 2,
+  "generated_at": "2026-04-20T14:52:35.936525",
+  "repos": {
     "agent-context-builder": {
-      "name": "agent-context-builder",
-      "summary": "Autonomous context generation for agents \u2014 bootstrap, triage, topic index",
-      "repos": [
-        "agent-context-builder"
-      ],
-      "paths": [
-        "agent-context-builder/README.md",
-        "agent-context-builder/pyproject.toml"
-      ],
-      "next": "Review P1 roadmap (telemetry summarizer, JSON schema, API backend)"
+      "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
+      "url": "https://github.com/dataciviclab/agent-context-builder"
+    },
+    "dataset-incubator": {
+      "description": "dataset-incubator \u00e8 il repo dove il Lab fa intake, verifica e incubazione leggera dei filoni dataset prima della promozione verso dataciviclab o una repo progetto dedicata.",
+      "url": "https://github.com/dataciviclab/dataset-incubator"
+    },
+    "dataciviclab": {
+      "description": "dataciviclab\u00a0\u00e8 l\u2019hub pubblico dell\u2019ecosistema, pensato per spiegare chi siamo, cosa facciamo e come orientarsi tra le repo.",
+      "url": "https://github.com/dataciviclab/dataciviclab"
     },
     "toolkit": {
-      "name": "toolkit",
-      "summary": "Core data pipeline engine \u2014 RAW \u2192 CLEAN \u2192 MART layer",
+      "description": "Toolkit \u00e8 il motore tecnico di DataCivicLab per eseguire pipeline dati riproducibili da\u00a0dataset.yml, da RAW a CLEAN e MART, con validazione, tracking e output leggibili dai notebook.",
+      "url": "https://github.com/dataciviclab/toolkit"
+    },
+    "data-explorer": {
+      "description": "Frontend pubblico dati civici - Evidence.dev + DuckDB + GCS",
+      "url": "https://github.com/dataciviclab/data-explorer"
+    },
+    "source-observatory": {
+      "description": "Piccolo intelligence layer per fonti pubbliche: radar, catalog-watch, monitoraggio risorse e workflow di source-check.",
+      "url": "https://github.com/dataciviclab/source-observatory"
+    }
+  },
+  "datasets_by_source": {
+    "MEF-BDAP": [
+      {
+        "slug": "bdap_entrate_stato",
+        "name": "BDAP Entrate Stato - Serie Storica",
+        "period": {
+          "start": 2008,
+          "end": 2024
+        },
+        "visibility": "public"
+      },
+      {
+        "slug": "dipendenti_pubblici",
+        "name": "Dipendenti Pubblici - Occupazione e Turnover",
+        "period": {
+          "start": 2010,
+          "end": 2023
+        },
+        "visibility": "public"
+      }
+    ],
+    "Ministero Giustizia": [
+      {
+        "slug": "civile_flussi_2014_2024",
+        "name": "Giustizia Civile - Flussi 2014-2024",
+        "period": {
+          "start": 2014,
+          "end": 2024
+        },
+        "visibility": "public"
+      }
+    ],
+    "ISPRA": [
+      {
+        "slug": "ispra_consumo_suolo",
+        "name": "ISPRA - Consumo di Suolo 2024",
+        "period": {
+          "start": 2024,
+          "end": 2024
+        },
+        "visibility": "public"
+      },
+      {
+        "slug": "ispra_ru_base",
+        "name": "ISPRA - Rifiuti Urbani (dati base)",
+        "period": {
+          "start": 2020,
+          "end": 2024
+        },
+        "visibility": "public"
+      },
+      {
+        "slug": "ispra_ru_costi_kg",
+        "name": "ISPRA - Costi gestione rifiuti (EUR/kg)",
+        "period": {
+          "start": 2020,
+          "end": 2024
+        },
+        "visibility": "public"
+      },
+      {
+        "slug": "ispra_ru_costi_procapite",
+        "name": "ISPRA - Costi gestione rifiuti (EUR/abitante)",
+        "period": {
+          "start": 2020,
+          "end": 2024
+        },
+        "visibility": "public"
+      }
+    ]
+  },
+  "operational_topics": {
+    "pipeline": {
+      "name": "pipeline",
+      "summary": "Ciclo di vita del dato \u2014 RAW \u2192 CLEAN \u2192 MART con toolkit",
       "repos": [
-        "toolkit"
+        "toolkit",
+        "dataset-incubator"
       ],
       "paths": [
         "toolkit/docs/",
-        "toolkit/src/"
+        "dataset-incubator/workflows/post-merge-candidate.md"
       ],
-      "next": "Check toolkit/docs/config-schema.md for dataset config contract"
+      "next": "Vedi post-merge-candidate.md per il flusso completo run + push GCS"
     },
-    "datasets": {
-      "name": "datasets",
-      "summary": "Dataset incubation and published analyses",
+    "governance": {
+      "name": "governance",
+      "summary": "Flusso operativo del Lab \u2014 intake, promozione, issues, PR, discussions",
       "repos": [
-        "dataset-incubator",
-        "dataciviclab"
+        "dataciviclab",
+        "dataset-incubator"
       ],
       "paths": [
-        "dataset-incubator/",
-        "dataciviclab/analisi/"
+        "dataciviclab/docs/workflows.md",
+        "dataciviclab/docs/dataset-project-flow.md",
+        "dataset-incubator/PROMOTION_CHECKLIST.md"
       ],
-      "next": "Review dataset-incubator/PROMOTION_CHECKLIST.md"
-    },
-    "analytics": {
-      "name": "analytics",
-      "summary": "Published analytical findings and documentation",
-      "repos": [
-        "dataciviclab"
-      ],
-      "paths": [
-        "dataciviclab/docs/"
-      ],
-      "next": "Check dataciviclab/docs/workflows.md for publication flow"
+      "next": "Vedi dataset-project-flow.md per il ciclo intake \u2192 promozione"
     }
   }
 }

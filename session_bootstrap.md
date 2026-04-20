@@ -1,19 +1,18 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-20T14:31:15.097268
+**Generated**: 2026-04-20T14:52:35.936525
 
 ## Repos
 
-- agent-context-builder
-- dataset-incubator
-- dataciviclab
-- toolkit
-- data-explorer
-- source-observatory
+- **agent-context-builder**: Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.
+- **dataset-incubator**: dataset-incubator è il repo dove il Lab fa intake, verifica e incubazione leggera dei filoni dataset prima della promozione verso dataciviclab o una repo progetto dedicata.
+- **dataciviclab**: dataciviclab è l’hub pubblico dell’ecosistema, pensato per spiegare chi siamo, cosa facciamo e come orientarsi tra le repo.
+- **toolkit**: Toolkit è il motore tecnico di DataCivicLab per eseguire pipeline dati riproducibili da dataset.yml, da RAW a CLEAN e MART, con validazione, tracking e output leggibili dai notebook.
+- **data-explorer**: Frontend pubblico dati civici - Evidence.dev + DuckDB + GCS
+- **source-observatory**: Piccolo intelligence layer per fonti pubbliche: radar, catalog-watch, monitoraggio risorse e workflow di source-check.
 
 ## Open PRs
 
-- [agent-context-builder#24](https://github.com/dataciviclab/agent-context-builder/pull/24): feat: topic_index auto-generato da GitHub API e clean_catalog
 - [source-observatory#124](https://github.com/dataciviclab/source-observatory/pull/124): [codex] separa il workflow portal scout
 - **Dependabot**: 2 bump PR(s) - [#52](https://github.com/dataciviclab/data-explorer/pull/52), [#123](https://github.com/dataciviclab/source-observatory/pull/123)
 
@@ -36,10 +35,8 @@
 
 ## Topics
 
-- agent-context-builder
-- toolkit
-- datasets
-- analytics
+- pipeline
+- governance
 
 ## Radar Status
 
