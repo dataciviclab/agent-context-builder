@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-19T18:53:13.485925",
+  "generated_at": "2026-04-20T02:46:01.570898",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -37,7 +37,7 @@
     },
     {
       "number": 142,
-      "title": "[feat] Aggiunge validate promotion raw-clean",
+      "title": "feat: redesign validate pipeline v1.2.0",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/pull/142"
     },
@@ -48,7 +48,7 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/52"
     }
   ],
-  "open_issues": 51,
+  "open_issues": 52,
   "issues": [
     {
       "number": 23,
@@ -249,16 +249,22 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/100"
     },
     {
+      "number": 145,
+      "title": "bug: raw_col_count errato in validate clean \u2014 _profile_raw_input legge col con nomi placeholder",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/145"
+    },
+    {
+      "number": 144,
+      "title": "feat: accorpa profile raw in run raw, aggiungi run init e validate intermedi in run all",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/144"
+    },
+    {
       "number": 143,
       "title": "refactor: consolida manifest+metadata per layer e unifica validation artifacts",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/143"
-    },
-    {
-      "number": 141,
-      "title": "feat(validate): promotion QA raw-to-clean",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/141"
     },
     {
       "number": 140,
