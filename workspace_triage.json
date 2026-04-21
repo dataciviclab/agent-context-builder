@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-21T07:52:21.997615",
+  "generated_at": "2026-04-21T11:10:44.665153",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,13 +9,13 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 5,
+  "open_prs": 4,
   "prs": [
     {
-      "number": 25,
-      "title": "chore: allinea ACB al boundary drift/inventory di SO #117",
-      "repo": "agent-context-builder",
-      "url": "https://github.com/dataciviclab/agent-context-builder/pull/25"
+      "number": 153,
+      "title": "feat(intake): MUR contribuzione universitaria \u2014 gettito per ateneo (2009-2024)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/153"
     },
     {
       "number": 152,
@@ -34,15 +34,9 @@
       "title": "chore(deps): bump actions/configure-pages from 5 to 6",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/59"
-    },
-    {
-      "number": 126,
-      "title": "refactor: catalog_signals drift/inventory only + CATALOG_WATCH_REPORT auto-generato (SO #117)",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/126"
     }
   ],
-  "open_issues": 51,
+  "open_issues": 50,
   "issues": [
     {
       "number": 23,
@@ -237,12 +231,6 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/100"
     },
     {
-      "number": 145,
-      "title": "bug: raw_col_count errato in validate clean \u2014 _profile_raw_input legge col con nomi placeholder",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/145"
-    },
-    {
       "number": 144,
       "title": "feat: accorpa profile raw in run raw, aggiungi run init e validate intermedi in run all",
       "repo": "toolkit",
@@ -279,6 +267,12 @@
       "url": "https://github.com/dataciviclab/data-explorer/issues/56"
     },
     {
+      "number": 129,
+      "title": "[Catalog] Variazioni rilevate nell'inventario",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/129"
+    },
+    {
       "number": 128,
       "title": "feat: check freschezza report GCS prima del run source-check",
       "repo": "source-observatory",
@@ -301,12 +295,6 @@
       "title": "source-check: dati.mit.gov.it",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/121"
-    },
-    {
-      "number": 117,
-      "title": "refactor: catalog_signals.json si concentra su drift/inventory, health delegata a radar_summary.json",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/117"
     },
     {
       "number": 109,
@@ -366,6 +354,13 @@
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/discussions/75",
       "category": "Datasets"
+    },
+    {
+      "number": 175,
+      "title": "Nuove categorie, stesso obiettivo: rendere piu' chiaro il passaggio da fonte a lettura pubblica",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/175",
+      "category": "Annunci"
     },
     {
       "number": 214,
@@ -499,13 +494,6 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/91",
       "category": "Domande"
-    },
-    {
-      "number": 148,
-      "title": "Indice prezzi abitazioni ISTAT (IPAB) - case nuove vs esistenti, livello regionale",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/148",
-      "category": "Datasets"
     }
   ],
   "github_fetch_errors": {},
@@ -562,11 +550,11 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-04-20",
+    "probe_date": "2026-04-21",
     "sources_total": 13,
-    "green": 6,
-    "yellow": 7,
-    "red": 0,
+    "green": 7,
+    "yellow": 5,
+    "red": 1,
     "unhealthy": [
       {
         "id": "istat_sdmx",
@@ -581,22 +569,16 @@
         "http_code": "403"
       },
       {
-        "id": "openbdap",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "-"
-      },
-      {
         "id": "dati_salute",
-        "status": "YELLOW",
+        "status": "RED",
         "protocol": "html",
         "http_code": "-"
       },
       {
-        "id": "consip_open_data",
+        "id": "lavoro_opendata",
         "status": "YELLOW",
         "protocol": "ckan",
-        "http_code": "-"
+        "http_code": "200"
       },
       {
         "id": "mur_ustat",
@@ -614,40 +596,16 @@
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-04-20T05:49:12+00:00",
+    "captured_at": "2026-04-21T10:18:46+00:00",
     "sources_checked": 9,
-    "regressions": [
-      {
-        "source": "mur_ustat",
-        "protocol": "ckan",
-        "detail": "Errore persistente: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /api/3/action/package_list (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7f3efd10b620>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=60)')) (messaggio cambiato rispetto al run precedente)",
-        "suggested_action": "valutare declassamento a radar-only se persiste"
-      }
-    ],
     "alerts": [
-      {
-        "source": "istat_sdmx",
-        "protocol": "sdmx",
-        "signal_type": "health",
-        "result": "recovery",
-        "detail": "Tornato ok. 4821 item (dataflow_count).",
-        "suggested_action": "nessuna"
-      },
       {
         "source": "openbdap",
         "protocol": "ckan",
-        "signal_type": "health",
-        "result": "recovery",
-        "detail": "Tornato ok. 3772 item (package_list).",
-        "suggested_action": "nessuna"
-      },
-      {
-        "source": "consip_open_data",
-        "protocol": "ckan",
-        "signal_type": "health",
-        "result": "recovery",
-        "detail": "Tornato ok. 17 item (package_list).",
-        "suggested_action": "nessuna"
+        "signal_type": "inventory change",
+        "result": "inventory change",
+        "detail": "3773 item (package_list), delta +1 rispetto al run precedente (3772).",
+        "suggested_action": "verificare se variazione attesa; avviare catalog-inventory-scout se nuovi dataset"
       }
     ]
   },
