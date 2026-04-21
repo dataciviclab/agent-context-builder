@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-20T19:07:15.989110",
+  "generated_at": "2026-04-21T02:39:14.329074",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,9 +9,40 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 0,
-  "prs": [],
-  "open_issues": 49,
+  "open_prs": 5,
+  "prs": [
+    {
+      "number": 25,
+      "title": "chore: allinea ACB al boundary drift/inventory di SO #117",
+      "repo": "agent-context-builder",
+      "url": "https://github.com/dataciviclab/agent-context-builder/pull/25"
+    },
+    {
+      "number": 152,
+      "title": "chore(deps): bump actions/github-script from 7 to 9",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/152"
+    },
+    {
+      "number": 60,
+      "title": "chore(deps-dev): bump tailwindcss from 3.4.18 to 4.2.3",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/60"
+    },
+    {
+      "number": 59,
+      "title": "chore(deps): bump actions/configure-pages from 5 to 6",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/59"
+    },
+    {
+      "number": 126,
+      "title": "refactor: catalog_signals drift/inventory only + CATALOG_WATCH_REPORT auto-generato (SO #117)",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/126"
+    }
+  ],
+  "open_issues": 51,
   "issues": [
     {
       "number": 23,
@@ -246,6 +277,18 @@
       "title": "feat: unifica catalogo da dataset-incubator, routing dinamico per slug",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/issues/56"
+    },
+    {
+      "number": 128,
+      "title": "feat: check freschezza report GCS prima del run source-check",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/128"
+    },
+    {
+      "number": 127,
+      "title": "feat: apri issue automatica dai segnali drift attivi in catalog_signals.json",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/127"
     },
     {
       "number": 125,

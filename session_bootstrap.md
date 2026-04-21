@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-20T19:07:15.989110
+**Generated**: 2026-04-21T02:39:14.329074
 
 ## Repos
 
@@ -13,7 +13,9 @@
 
 ## Open PRs
 
-*No open PRs*
+- [agent-context-builder#25](https://github.com/dataciviclab/agent-context-builder/pull/25): chore: allinea ACB al boundary drift/inventory di SO #117
+- [source-observatory#126](https://github.com/dataciviclab/source-observatory/pull/126): refactor: catalog_signals drift/inventory only + CATALOG_WATCH_REPORT auto-generato (SO #117)
+- **Dependabot**: 3 bump PR(s) - [#152](https://github.com/dataciviclab/dataset-incubator/pull/152), [#60](https://github.com/dataciviclab/data-explorer/pull/60) ...
 
 ## Open Discussions
 
