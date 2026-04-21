@@ -1,6 +1,6 @@
 # topic_index.json — Schema v2
 
-Artifact generato da ACB.
+Artifact generato da ACB e pubblicato sul branch `context` di `agent-context-builder`.
 Sostituisce la struttura v1 (campo `topics` flat).
 
 ---
