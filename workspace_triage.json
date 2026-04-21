@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-21T13:28:59.787894",
+  "generated_at": "2026-04-21T19:13:30.064703",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,7 +9,7 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 5,
+  "open_prs": 7,
   "prs": [
     {
       "number": 153,
@@ -22,6 +22,12 @@
       "title": "chore(deps): bump actions/github-script from 7 to 9",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/152"
+    },
+    {
+      "number": 148,
+      "title": "refactor: metadata.json canonico, manifest.json solo compat",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/148"
     },
     {
       "number": 147,
@@ -40,9 +46,15 @@
       "title": "chore(deps): bump actions/configure-pages from 5 to 6",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/59"
+    },
+    {
+      "number": 131,
+      "title": "chore: harden source-observatory workflows",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/131"
     }
   ],
-  "open_issues": 50,
+  "open_issues": 51,
   "issues": [
     {
       "number": 23,
@@ -51,16 +63,10 @@
       "url": "https://github.com/dataciviclab/agent-context-builder/issues/23"
     },
     {
-      "number": 4,
-      "title": "feat: frontmatter-driven indexing \u2014 leggi metadati strutturati dai markdown del Lab",
-      "repo": "agent-context-builder",
-      "url": "https://github.com/dataciviclab/agent-context-builder/issues/4"
-    },
-    {
-      "number": 3,
-      "title": "feat: JSON Schema per workspace_triage e topic_index \u2014 contratto stabile per i consumer",
-      "repo": "agent-context-builder",
-      "url": "https://github.com/dataciviclab/agent-context-builder/issues/3"
+      "number": 154,
+      "title": "Aggiungere sample run GitHub per candidate usando toolkit",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/154"
     },
     {
       "number": 151,
@@ -117,22 +123,16 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/112"
     },
     {
-      "number": 110,
-      "title": "Apri candidate ispra-balneazione",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/110"
-    },
-    {
-      "number": 109,
-      "title": "Apri candidate ispra-pesticidi",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/109"
-    },
-    {
       "number": 108,
       "title": "Estendere il perimetro del candidate MIM oltre il v0 2024/25",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/108"
+    },
+    {
+      "number": 226,
+      "title": "Allineare la documentazione del repo hub allo stato reale del Lab",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/226"
     },
     {
       "number": 225,
@@ -237,6 +237,24 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/100"
     },
     {
+      "number": 151,
+      "title": "feat: aggiungi toolkit scaffold candidate --protocol ...",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/151"
+    },
+    {
+      "number": 150,
+      "title": "feat: aggiungi toolkit run init per bootstrap raw -> scaffold clean",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/150"
+    },
+    {
+      "number": 149,
+      "title": "feat: valutare source plugin SPARQL minimale",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/149"
+    },
+    {
       "number": 144,
       "title": "feat: accorpa profile raw in run raw, aggiungi run init e validate intermedi in run all",
       "repo": "toolkit",
@@ -273,16 +291,22 @@
       "url": "https://github.com/dataciviclab/data-explorer/issues/56"
     },
     {
+      "number": 133,
+      "title": "perf: valutare pooling e incrementalit\u00e0 per source-check",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/133"
+    },
+    {
+      "number": 132,
+      "title": "refactor: unificare il layer HTTP tra radar e collectors",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/132"
+    },
+    {
       "number": 129,
       "title": "[Catalog] Variazioni rilevate nell'inventario",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/129"
-    },
-    {
-      "number": 128,
-      "title": "feat: check freschezza report GCS prima del run source-check",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/128"
     },
     {
       "number": 127,
@@ -295,12 +319,6 @@
       "title": "feat: discovery incrementale \u2014 aggiungi nuovi domini al parquet esistente invece di rifare da zero",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/125"
-    },
-    {
-      "number": 121,
-      "title": "source-check: dati.mit.gov.it",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/121"
     },
     {
       "number": 109,
@@ -359,6 +377,20 @@
       "title": "[Dataset] Fondo di Solidarieta Comunale 2025 - OpenCivitas/Sogei (comuni RSO)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/discussions/75",
+      "category": "Datasets"
+    },
+    {
+      "number": 228,
+      "title": "Consip partecipazioni \u2014 geografia delle imprese nelle gare pubbliche (2023-2025)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/228",
+      "category": "Datasets"
+    },
+    {
+      "number": 227,
+      "title": "MUR DSU Regionale \u2014 posti alloggio e borse per regione e ateneo (2024-2025)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/227",
       "category": "Datasets"
     },
     {
@@ -486,20 +518,6 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/193",
       "category": "Datasets"
-    },
-    {
-      "number": 114,
-      "title": "Quali comuni dipendono di piu dai trasferimenti rispetto ai tributi propri?",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/114",
-      "category": "Domande"
-    },
-    {
-      "number": 91,
-      "title": "Come si finanziano davvero i grandi comuni italiani?",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/91",
-      "category": "Domande"
     }
   ],
   "github_fetch_errors": {},
@@ -553,7 +571,9 @@
       "untracked_files": 0
     }
   },
-  "warnings": [],
+  "warnings": [
+    "Many open PRs: 7"
+  ],
   "radar": {
     "available": true,
     "probe_date": "2026-04-21",
