@@ -8,19 +8,20 @@ import json
 from agent_context_builder.config import Config
 from agent_context_builder.discussions import Discussion, DiscussionCollector
 from agent_context_builder.git_local import GitLocalCollector, GitState
-from agent_context_builder.github import GitHubCollector, PR
+from agent_context_builder.github import GitHubCollector, PR, RepoInfo
 from agent_context_builder.render import Renderer
 
 _UNAVAILABLE = GitState(available=False, reason="path_not_found", dirty=None, current_branch=None)
 
 
-def _sample_so_json(regression: bool = False) -> str:
+def _sample_so_json(drift: bool = False) -> str:
     signals = []
-    if regression:
+    if drift:
         signals.append({
-            "source": "anac", "protocol": "ckan",
-            "signal_type": "health", "result": "regressione",
-            "detail": "WAF attivo.", "suggested_action": "monitorare",
+            "source": "inps", "protocol": "ckan",
+            "signal_type": "inventory change", "result": "inventory change",
+            "detail": "Delta inventario +8 rispetto alla baseline.",
+            "suggested_action": "verificare se variazione attesa",
         })
     signals.append({
         "source": "istat_sdmx", "protocol": "sdmx",
@@ -30,12 +31,13 @@ def _sample_so_json(regression: bool = False) -> str:
     return json.dumps({"captured_at": "2026-04-12", "sources_checked": len(signals), "signals": signals})
 
 
-def _make_github_mock(prs=None, issues=None, fetch_errors=None, raw_file=None):
+def _make_github_mock(prs=None, issues=None, fetch_errors=None, raw_file=None, repos_info=None):
     m = MagicMock(spec=GitHubCollector)
     m.get_prs.return_value = prs or []
     m.get_issues.return_value = issues or []
     m.fetch_errors = fetch_errors or {}
     m.get_raw_file.return_value = raw_file  # None by default = signal fetch fails gracefully
+    m.get_repos_info.return_value = repos_info or {}
     errors = fetch_errors or {}
     if errors:
         msgs = " ".join(errors.values()).lower()
@@ -245,37 +247,37 @@ def test_render_triage_without_discussion_collector():
     assert triage["discussions"] == []
 
 
-def test_render_bootstrap_with_source_health_regression():
-    """Bootstrap includes Source Health section with regression detail."""
+def test_render_bootstrap_with_catalog_drift():
+    """Bootstrap includes the catalog drift section with inventory detail."""
     config = Config(workspace_root=None, github_org="test-org", repos=["repo1"])
     renderer = Renderer(
         config,
-        _make_github_mock(raw_file=_sample_so_json(regression=True)),
+        _make_github_mock(raw_file=_sample_so_json(drift=True)),
         _make_git_mock(),
     )
     bootstrap = renderer.render_session_bootstrap()
 
-    assert "Source Health" in bootstrap
-    assert "anac" in bootstrap
-    assert "WAF attivo" in bootstrap
+    assert "Catalog Drift" in bootstrap
+    assert "inps" in bootstrap
+    assert "inventory change" in bootstrap
 
 
-def test_render_bootstrap_source_health_all_stable():
-    """Bootstrap Source Health shows 'all stable' when no alerts."""
+def test_render_bootstrap_catalog_drift_all_stable():
+    """Bootstrap catalog drift shows no drift when there are no alerts."""
     config = Config(workspace_root=None, github_org="test-org", repos=["repo1"])
     renderer = Renderer(
         config,
-        _make_github_mock(raw_file=_sample_so_json(regression=False)),
+        _make_github_mock(raw_file=_sample_so_json(drift=False)),
         _make_git_mock(),
     )
     bootstrap = renderer.render_session_bootstrap()
 
-    assert "Source Health" in bootstrap
-    assert "stable" in bootstrap
+    assert "Catalog Drift" in bootstrap
+    assert "No catalog drift signals" in bootstrap
 
 
-def test_render_bootstrap_source_health_unavailable():
-    """Bootstrap Source Health shows unavailable message when fetch fails."""
+def test_render_bootstrap_catalog_drift_unavailable():
+    """Bootstrap catalog drift shows unavailable message when fetch fails."""
     config = Config(workspace_root=None, github_org="test-org", repos=["repo1"])
     renderer = Renderer(
         config,
@@ -284,24 +286,24 @@ def test_render_bootstrap_source_health_unavailable():
     )
     bootstrap = renderer.render_session_bootstrap()
 
-    assert "Source Health" in bootstrap
+    assert "Catalog Drift" in bootstrap
     assert "unavailable" in bootstrap
 
 
 def test_render_triage_source_health_available():
-    """Triage includes source_health with regressions when signals fetched."""
+    """Triage includes source_health with drift alerts when signals fetched."""
     config = Config(workspace_root=None, github_org="test-org", repos=["repo1"])
     renderer = Renderer(
         config,
-        _make_github_mock(raw_file=_sample_so_json(regression=True)),
+        _make_github_mock(raw_file=_sample_so_json(drift=True)),
         _make_git_mock(),
     )
     triage = renderer.render_workspace_triage()
 
     sh = triage["source_health"]
     assert sh["available"] is True
-    assert len(sh["regressions"]) == 1
-    assert sh["regressions"][0]["source"] == "anac"
+    assert len(sh["alerts"]) == 1
+    assert sh["alerts"][0]["source"] == "inps"
 
 
 def test_render_triage_source_health_unavailable():
@@ -372,7 +374,7 @@ def test_render_signals_cached_across_bootstrap_and_triage():
     config = Config(workspace_root=None, github_org="test-org", repos=["repo1"])
     gh = _make_github_mock()
 
-    so_json = _sample_so_json(regression=False)
+    so_json = _sample_so_json(drift=False)
     di_json = _sample_di_json()
     clean_catalog_json = _sample_di_clean_catalog_json()
 
@@ -402,7 +404,7 @@ def test_render_signals_cached_across_bootstrap_and_triage():
 
 
 def test_render_topic_index():
-    """Test topic_index.json rendering."""
+    """Topic index includes repos (from GitHub), datasets_by_source (from catalog), operational_topics (from YAML)."""
     from agent_context_builder.config import Topic
 
     config = Config(
@@ -410,15 +412,36 @@ def test_render_topic_index():
         github_org="test-org",
         repos=["repo1"],
         topics={
-            "topic1": Topic(name="topic1", repos=["repo1"], paths=["path1"]),
+            "toolkit": Topic(name="toolkit", repos=["repo1"], paths=["src/"], summary="Pipeline engine", next="check docs"),
         },
     )
+    gh = _make_github_mock(
+        repos_info={"repo1": RepoInfo(name="repo1", description="Test repo", url="https://github.com/test-org/repo1")},
+    )
 
-    renderer = Renderer(config, _make_github_mock(), _make_git_mock())
-    topics = renderer.render_topic_index()
+    def _raw_file_side_effect(repo, path, ref="main"):
+        if path == "registry/clean_catalog.json":
+            return _sample_di_clean_catalog_json()
+        return None
 
-    assert "topics" in topics
-    assert "topic1" in topics["topics"]
+    gh.get_raw_file.side_effect = _raw_file_side_effect
+
+    renderer = Renderer(config, gh, _make_git_mock())
+    result = renderer.render_topic_index()
+
+    assert "repos" in result
+    assert result["repos"]["repo1"]["description"] == "Test repo"
+
+    assert "datasets_by_source" in result
+    # irpef_comunale has no source field in sample → grouped under "unknown"
+    assert any(
+        any(d["slug"] == "irpef_comunale" for d in slugs)
+        for slugs in result["datasets_by_source"].values()
+    )
+
+    assert "operational_topics" in result
+    assert "toolkit" in result["operational_topics"]
+    assert result["operational_topics"]["toolkit"]["summary"] == "Pipeline engine"
 
 
 def test_render_bootstrap_dataset_catalog_section():
@@ -439,7 +462,7 @@ def test_render_bootstrap_dataset_catalog_section():
     assert "Dataset Catalog" in bootstrap
     assert "1 clean_ready dataset(s), 1 public" in bootstrap
     assert "irpef_comunale" in bootstrap
-    assert "1 metric, 2 dimension columns" in bootstrap
+    assert "2022-2023" in bootstrap
     assert "draft_dataset" not in bootstrap
 
 

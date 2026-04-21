@@ -71,11 +71,16 @@ class Renderer:
             lines.append(f"**Workspace**: {self.config.workspace_root}")
         lines.append("")
 
-        # Active repos
+        # Active repos with GitHub description
         lines.append("## Repos")
         lines.append("")
+        repos_info = self.github_collector.get_repos_info(self.config.repos)
         for repo in self.config.repos:
-            lines.append(f"- {repo}")
+            info = repos_info.get(repo)
+            if info and info.description:
+                lines.append(f"- **{repo}**: {info.description}")
+            else:
+                lines.append(f"- {repo}")
         lines.append("")
 
         # Open PRs
@@ -146,7 +151,7 @@ class Renderer:
         radar = self._fetch_radar_summary()
         lines += self._render_radar_section(radar)
 
-        # Source health (only issues — skip stable sources)
+        # Catalog drift (only issues — skip stable sources)
         so = self._fetch_source_observatory_signals()
         lines += self._render_source_health_section(so)
 
@@ -256,7 +261,7 @@ class Renderer:
         self, so: SourceObservatorySignals | None
     ) -> list[str]:
         lines = []
-        lines.append("## Source Health")
+        lines.append("## Catalog Drift")
         lines.append("")
         if so is None:
             err = self.github_collector.fetch_errors.get(
@@ -271,16 +276,16 @@ class Renderer:
             lines.append("")
             return lines
 
-        # Show regressions first, then other alerts (mutually exclusive sets)
-        issues = so.regressions + so.alerts
+        issues = so.drift_alerts
         if issues:
             for s in issues:
-                lines.append(f"- **{s.source}** ({s.protocol}): {s.result}")
+                lines.append(f"- **{s.source}** ({s.protocol}): {s.signal_type}")
                 if s.suggested_action and s.suggested_action != "nessuna":
                     lines.append(f"  - azione: {s.suggested_action}")
         else:
-            lines.append(f"*All {so.sources_checked} sources stable* (as of {so.captured_at})")
-        lines.append(f"  *(captured {so.captured_at}, {so.sources_checked} sources checked)*")
+            lines.append(f"*No catalog drift signals* (as of {so.captured_at}, {so.sources_checked} sources checked)")
+        if issues:
+            lines.append(f"  *(captured {so.captured_at}, {so.sources_checked} sources checked)*")
         lines.append("")
         return lines
 
@@ -394,15 +399,6 @@ class Renderer:
             "available": True,
             "captured_at": so.captured_at,
             "sources_checked": so.sources_checked,
-            "regressions": [
-                {
-                    "source": s.source,
-                    "protocol": s.protocol,
-                    "detail": s.detail,
-                    "suggested_action": s.suggested_action,
-                }
-                for s in so.regressions
-            ],
             "alerts": [
                 {
                     "source": s.source,
@@ -412,7 +408,7 @@ class Renderer:
                     "detail": s.detail,
                     "suggested_action": s.suggested_action,
                 }
-                for s in so.alerts
+                for s in so.drift_alerts
             ],
         }
 
@@ -640,18 +636,45 @@ class Renderer:
         """Render topic_index.json.
 
         Returns:
-            Dictionary with topic index
+            - repos: GitHub description per repo (auto from API)
+            - datasets_by_source: clean_ready datasets grouped by source (auto from catalog)
+            - operational_topics: YAML-defined topics for agent navigation
         """
-        topics = {}
+        # Repos with description from GitHub
+        repos_info = self.github_collector.get_repos_info(self.config.repos)
+        repos_section = {
+            name: {"description": info.description, "url": info.url}
+            for name, info in repos_info.items()
+        }
+
+        # Datasets grouped by source from clean_catalog
+        catalog = self._fetch_di_clean_catalog()
+        datasets_by_source: dict[str, list[dict[str, Any]]] = {}
+        if catalog:
+            for ds in catalog.clean_ready:
+                source = ds.source or "unknown"
+                datasets_by_source.setdefault(source, []).append({
+                    "slug": ds.slug,
+                    "name": ds.name,
+                    "period": ds.period,
+                    "visibility": ds.visibility,
+                })
+
+        # YAML-defined operational topics (agent navigation hints)
+        operational_topics = {}
         for topic_name, topic in self.config.topics.items():
-            topics[topic_name] = {
+            operational_topics[topic_name] = {
                 "name": topic_name,
                 "summary": topic.summary,
                 "repos": topic.repos,
                 "paths": topic.paths,
                 "next": topic.next,
             }
+
         return {
+            "schema_version": 2,
             "generated_at": self.fixed_timestamp,
-            "topics": topics,
+            "repos": repos_section,
+            "datasets_by_source": datasets_by_source,
+            "operational_topics": operational_topics,
         }

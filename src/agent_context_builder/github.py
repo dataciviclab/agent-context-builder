@@ -29,6 +29,15 @@ class Issue:
     state: str = "open"
 
 
+@dataclass
+class RepoInfo:
+    """Repository metadata."""
+
+    name: str
+    description: str
+    url: str
+
+
 class GitHubCollector:
     """Collect context from GitHub API."""
 
@@ -146,6 +155,30 @@ class GitHubCollector:
         except Exception as exc:
             self.fetch_errors[f"{repo}:{path}"] = str(exc)
             return None
+
+    def get_repos_info(self, repos: list[str]) -> dict[str, RepoInfo]:
+        """Get metadata (description, url) for each repo.
+
+        Returns a dict keyed by repo name. Missing/failed repos are skipped silently.
+        """
+        result: dict[str, RepoInfo] = {}
+        headers = {}
+        if self.token:
+            headers["Authorization"] = f"token {self.token}"
+        for repo in repos:
+            try:
+                url = f"{self.base_url}/repos/{self.org}/{repo}"
+                response = requests.get(url, headers=headers, timeout=10)
+                response.raise_for_status()
+                data = response.json()
+                result[repo] = RepoInfo(
+                    name=repo,
+                    description=data.get("description") or "",
+                    url=data.get("html_url", ""),
+                )
+            except Exception as exc:
+                self.fetch_errors[f"{repo}:info"] = str(exc)
+        return result
 
     def _get_repo_issues(self, repo: str, state: str = "open") -> list[Issue]:
         """Get issues for a specific repo (excluding pull requests).
