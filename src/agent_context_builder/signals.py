@@ -21,7 +21,7 @@ class SourceSignal:
 
 @dataclass
 class SourceObservatorySignals:
-    """Aggregated signals from source-observatory catalog_signals.json."""
+    """Aggregated drift/inventory signals from source-observatory catalog_signals.json."""
 
     captured_at: str
     sources_checked: int
@@ -34,15 +34,20 @@ class SourceObservatorySignals:
 
     @property
     def alerts(self) -> list[SourceSignal]:
-        """Non-stable signals that are NOT regressions (e.g. warnings, anomalies).
+        """Legacy alias for drift alerts.
 
-        Mutually exclusive with regressions: each signal appears in at most one list.
+        Kept for compatibility with older call sites. Use `drift_alerts` for
+        the new catalog-only boundary.
         """
-        regression_sources = {s.source for s in self.regressions}
+        return self.drift_alerts
+
+    @property
+    def drift_alerts(self) -> list[SourceSignal]:
+        """Signals that should surface in the catalog drift section."""
         return [
             s for s in self.signals
-            if s.signal_type not in ("no signal", "")
-            and s.source not in regression_sources
+            if s.signal_type
+            in ("inventory change", "structural drift", "missing_data", "follow-up candidate")
         ]
 
 

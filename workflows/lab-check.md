@@ -29,7 +29,7 @@ Precondizione: server MCP `dataciviclab-context` accessibile.
 ## Passi canonici
 
 1. **session_bootstrap**: prima chiamata. Leggi repo attivi, PR, issue, discussion e warning.
-2. **topic_index**: usalo se la sessione è tematica e serve capire dove guardare.
+2. **topic_index**: usalo se la sessione è tematica e serve capire dove guardare. Struttura v2: `repos`, `datasets_by_source`, `operational_topics`.
 3. **workspace_triage**: usalo se il problema riguarda stato incrociato di repo o issue.
 4. **refresh_context**: solo se i dati sono palesemente obsoleti dopo merge/push. Attendere la CI.
 
