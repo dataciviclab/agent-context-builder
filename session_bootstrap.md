@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-21T11:10:44.665153
+**Generated**: 2026-04-21T12:09:18.925406
 
 ## Repos
 
@@ -13,7 +13,8 @@
 
 ## Open PRs
 
-- [dataset-incubator#153](https://github.com/dataciviclab/dataset-incubator/pull/153): feat(intake): MUR contribuzione universitaria — gettito per ateneo (2009-2024)
+- [dataset-incubator#153](https://github.com/dataciviclab/dataset-incubator/pull/153): feat(intake): MUR contribuzione universitaria — gettito per ateneo (2017-2024)
+- [toolkit#147](https://github.com/dataciviclab/toolkit/pull/147): feat(ckan): supporta la selezione della resource per nome
 - **Dependabot**: 3 bump PR(s) - [#152](https://github.com/dataciviclab/dataset-incubator/pull/152), [#60](https://github.com/dataciviclab/data-explorer/pull/60) ...
 
 ## Open Discussions
