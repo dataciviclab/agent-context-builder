@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-22T15:34:48.301226",
+  "generated_at": "2026-04-22T16:58:12.222006",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,14 +9,8 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 6,
+  "open_prs": 5,
   "prs": [
-    {
-      "number": 26,
-      "title": "refactor: separa fetch segnali e triage dal renderer",
-      "repo": "agent-context-builder",
-      "url": "https://github.com/dataciviclab/agent-context-builder/pull/26"
-    },
     {
       "number": 153,
       "title": "feat(intake): MUR contribuzione universitaria \u2014 gettito per ateneo (2017-2024)",
@@ -48,14 +42,8 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/59"
     }
   ],
-  "open_issues": 49,
+  "open_issues": 47,
   "issues": [
-    {
-      "number": 23,
-      "title": "refactor: struttura src/ per dominio funzionale (sources/so, sources/di)",
-      "repo": "agent-context-builder",
-      "url": "https://github.com/dataciviclab/agent-context-builder/issues/23"
-    },
     {
       "number": 154,
       "title": "Aggiungere sample run GitHub per candidate usando toolkit",
@@ -229,12 +217,6 @@
       "title": "[Seed] Rendere pi\u00f9 chiara una sezione specifica di README o guida breve",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/issues/100"
-    },
-    {
-      "number": 158,
-      "title": "refactor: separa adapter diagnostico, path safety e helper in mcp/toolkit_client.py",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/158"
     },
     {
       "number": 151,
@@ -539,9 +521,7 @@
       "untracked_files": 0
     }
   },
-  "warnings": [
-    "Many open PRs: 6"
-  ],
+  "warnings": [],
   "radar": {
     "available": true,
     "probe_date": "2026-04-22",
@@ -604,6 +584,7 @@
     "available": true,
     "captured_at": "2026-04-21T10:18:46+00:00",
     "sources_checked": 9,
+    "regressions": [],
     "alerts": [
       {
         "source": "openbdap",

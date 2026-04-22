@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-22T15:34:48.301226
+**Generated**: 2026-04-22T16:58:12.222006
 
 ## Repos
 
@@ -13,7 +13,6 @@
 
 ## Open PRs
 
-- [agent-context-builder#26](https://github.com/dataciviclab/agent-context-builder/pull/26): refactor: separa fetch segnali e triage dal renderer
 - [dataset-incubator#153](https://github.com/dataciviclab/dataset-incubator/pull/153): feat(intake): MUR contribuzione universitaria — gettito per ateneo (2017-2024)
 - [toolkit#147](https://github.com/dataciviclab/toolkit/pull/147): feat(ckan): supporta la selezione della resource per nome
 - **Dependabot**: 3 bump PR(s) - [#152](https://github.com/dataciviclab/dataset-incubator/pull/152), [#60](https://github.com/dataciviclab/data-explorer/pull/60) ...
