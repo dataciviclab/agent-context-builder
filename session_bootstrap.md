@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-22T07:49:06.560374
+**Generated**: 2026-04-22T13:41:54.318097
 
 ## Repos
 
@@ -15,9 +15,7 @@
 
 - [agent-context-builder#26](https://github.com/dataciviclab/agent-context-builder/pull/26): refactor: separa fetch segnali e triage dal renderer
 - [dataset-incubator#153](https://github.com/dataciviclab/dataset-incubator/pull/153): feat(intake): MUR contribuzione universitaria — gettito per ateneo (2017-2024)
-- [toolkit#148](https://github.com/dataciviclab/toolkit/pull/148): refactor: metadata.json canonico, manifest.json solo compat
 - [toolkit#147](https://github.com/dataciviclab/toolkit/pull/147): feat(ckan): supporta la selezione della resource per nome
-- [source-observatory#131](https://github.com/dataciviclab/source-observatory/pull/131): chore: harden source-observatory workflows
 - **Dependabot**: 3 bump PR(s) - [#152](https://github.com/dataciviclab/dataset-incubator/pull/152), [#60](https://github.com/dataciviclab/data-explorer/pull/60) ...
 
 ## Open Discussions
@@ -44,11 +42,13 @@
 
 ## Radar Status
 
-Fonti: 13 — GREEN 7 · YELLOW 5 · RED 1 (probe: 2026-04-21)
+Fonti: 13 — GREEN 5 · YELLOW 8 · RED 0 (probe: 2026-04-22)
 
 - **istat_sdmx** (sdmx): YELLOW [HTTP -]
 - **anac** (ckan): YELLOW [HTTP 403]
-- **dati_salute** (html): RED [HTTP -]
+- **openbdap** (ckan): YELLOW [HTTP -]
+- **dati_salute** (html): YELLOW [HTTP -]
+- **consip_open_data** (ckan): YELLOW [HTTP -]
 - **lavoro_opendata** (ckan): YELLOW [HTTP 200]
 - **mur_ustat** (ckan): YELLOW [HTTP -]
 - **opencoesione** (rest): YELLOW [HTTP 403]

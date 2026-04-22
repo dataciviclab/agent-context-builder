@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-22T07:49:06.560374",
+  "generated_at": "2026-04-22T13:41:54.318097",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,7 +9,7 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 8,
+  "open_prs": 6,
   "prs": [
     {
       "number": 26,
@@ -30,12 +30,6 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/152"
     },
     {
-      "number": 148,
-      "title": "refactor: metadata.json canonico, manifest.json solo compat",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/148"
-    },
-    {
       "number": 147,
       "title": "feat(ckan): supporta la selezione della resource per nome",
       "repo": "toolkit",
@@ -52,15 +46,9 @@
       "title": "chore(deps): bump actions/configure-pages from 5 to 6",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/59"
-    },
-    {
-      "number": 131,
-      "title": "chore: harden source-observatory workflows",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/131"
     }
   ],
-  "open_issues": 51,
+  "open_issues": 50,
   "issues": [
     {
       "number": 23,
@@ -243,34 +231,28 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/100"
     },
     {
+      "number": 155,
+      "title": "refactor: separa lifecycle, storage e portability in core/run_context",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/155"
+    },
+    {
+      "number": 154,
+      "title": "refactor: separa responsabilita' nel cluster core/config_models",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/154"
+    },
+    {
       "number": 151,
       "title": "feat: aggiungi toolkit scaffold candidate --protocol ...",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/151"
     },
     {
-      "number": 150,
-      "title": "feat: aggiungi toolkit run init per bootstrap raw -> scaffold clean",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/150"
-    },
-    {
       "number": 149,
       "title": "feat: valutare source plugin SPARQL minimale",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/149"
-    },
-    {
-      "number": 144,
-      "title": "feat: accorpa profile raw in run raw, aggiungi run init e validate intermedi in run all",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/144"
-    },
-    {
-      "number": 143,
-      "title": "refactor: consolida manifest+metadata per layer e unifica validation artifacts",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/143"
     },
     {
       "number": 140,
@@ -564,15 +546,15 @@
     }
   },
   "warnings": [
-    "Many open PRs: 8"
+    "Many open PRs: 6"
   ],
   "radar": {
     "available": true,
-    "probe_date": "2026-04-21",
+    "probe_date": "2026-04-22",
     "sources_total": 13,
-    "green": 7,
-    "yellow": 5,
-    "red": 1,
+    "green": 5,
+    "yellow": 8,
+    "red": 0,
     "unhealthy": [
       {
         "id": "istat_sdmx",
@@ -587,9 +569,21 @@
         "http_code": "403"
       },
       {
+        "id": "openbdap",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-"
+      },
+      {
         "id": "dati_salute",
-        "status": "RED",
+        "status": "YELLOW",
         "protocol": "html",
+        "http_code": "-"
+      },
+      {
+        "id": "consip_open_data",
+        "status": "YELLOW",
+        "protocol": "ckan",
         "http_code": "-"
       },
       {
