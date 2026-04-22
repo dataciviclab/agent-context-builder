@@ -4,21 +4,19 @@ from datetime import datetime
 from typing import Any
 
 from .config import Config
-from .discussions import Discussion, DiscussionCollector
+from .discussions import DiscussionCollector
 from .github import GitHubCollector, PR
 from .git_local import GitLocalCollector, GitState
+from .sources.di import DatasetIncubatorFetcher
+from .sources.so import SourceObservatoryFetcher
 from .signals import (
     DICleanCatalog,
     PortalScoutSummary,
     RadarSummary,
     RepoSignals,
     SourceObservatorySignals,
-    parse_di_clean_catalog,
-    parse_portal_scout_summary,
-    parse_radar_summary,
-    parse_repo_signals,
-    parse_source_observatory_signals,
 )
+from .triage import build_workspace_triage
 
 
 class _UNSET:
@@ -50,6 +48,8 @@ class Renderer:
         self.git_collector = git_collector
         self.discussion_collector = discussion_collector
         self.fixed_timestamp = fixed_timestamp or datetime.now().isoformat()
+        self._so_fetcher = SourceObservatoryFetcher(self.github_collector)
+        self._di_fetcher = DatasetIncubatorFetcher(self.github_collector)
         # Cache for remote signal fetches — avoids double requests within one build
         self._so_signals_cache: SourceObservatorySignals | None | type[_UNSET] = _UNSET
         self._radar_cache: RadarSummary | None | type[_UNSET] = _UNSET
@@ -170,21 +170,7 @@ class Renderer:
         return "\n".join(lines)
 
     def _fetch_radar_summary(self) -> RadarSummary | None:
-        if self._radar_cache is not _UNSET:
-            return self._radar_cache  # type: ignore[return-value]
-        raw = self.github_collector.get_raw_file(
-            "source-observatory", "data/radar/radar_summary.json"
-        )
-        if raw is None:
-            self._radar_cache = None
-            return None
-        try:
-            result = parse_radar_summary(raw)
-        except ValueError as exc:
-            self.github_collector.fetch_errors["source-observatory:radar_summary"] = str(exc)
-            result = None
-        self._radar_cache = result
-        return result
+        return self._so_fetcher.fetch_radar_summary()
 
     def _render_radar_section(self, radar: RadarSummary | None) -> list[str]:
         lines = ["## Radar Status", ""]
@@ -205,21 +191,7 @@ class Renderer:
         return lines
 
     def _fetch_portal_scout(self) -> PortalScoutSummary | None:
-        if self._portal_scout_cache is not _UNSET:
-            return self._portal_scout_cache  # type: ignore[return-value]
-        raw = self.github_collector.get_raw_file(
-            "source-observatory", "data/portal_scout/discovered_portals_summary.json"
-        )
-        if raw is None:
-            self._portal_scout_cache = None
-            return None
-        try:
-            result = parse_portal_scout_summary(raw)
-        except ValueError as exc:
-            self.github_collector.fetch_errors["source-observatory:portal_scout"] = str(exc)
-            result = None
-        self._portal_scout_cache = result
-        return result
+        return self._so_fetcher.fetch_portal_scout()
 
     def _render_portal_scout_section(self, scout: PortalScoutSummary | None) -> list[str]:
         lines = ["## Portal Scout", ""]
@@ -241,21 +213,7 @@ class Renderer:
         return lines
 
     def _fetch_source_observatory_signals(self) -> SourceObservatorySignals | None:
-        if self._so_signals_cache is not _UNSET:
-            return self._so_signals_cache  # type: ignore[return-value]
-        raw = self.github_collector.get_raw_file(
-            "source-observatory", "data/catalog/catalog_signals.json"
-        )
-        if raw is None:
-            self._so_signals_cache = None
-            return None
-        try:
-            result = parse_source_observatory_signals(raw)
-        except ValueError as exc:
-            self.github_collector.fetch_errors["source-observatory:catalog_signals"] = str(exc)
-            result = None
-        self._so_signals_cache = result
-        return result
+        return self._so_fetcher.fetch_catalog_signals()
 
     def _render_source_health_section(
         self, so: SourceObservatorySignals | None
@@ -283,7 +241,10 @@ class Renderer:
                 if s.suggested_action and s.suggested_action != "nessuna":
                     lines.append(f"  - azione: {s.suggested_action}")
         else:
-            lines.append(f"*No catalog drift signals* (as of {so.captured_at}, {so.sources_checked} sources checked)")
+            lines.append(
+                f"*No catalog drift signals* "
+                f"(as of {so.captured_at}, {so.sources_checked} sources checked)"
+            )
         if issues:
             lines.append(f"  *(captured {so.captured_at}, {so.sources_checked} sources checked)*")
         lines.append("")
@@ -295,81 +256,18 @@ class Renderer:
         Returns:
             Dictionary with triage data
         """
-        prs = self.github_collector.get_prs(self.config.repos)
-        issues = self.github_collector.get_issues(self.config.repos)
-        repos_state = self.git_collector.get_repos_state(self.config.repos)
-
-        discussions: list[Discussion] = []
-        disc_errors: dict[str, str] = {}
-        if self.discussion_collector is not None:
-            discussions = self.discussion_collector.get_discussions(self.config.repos)
-            disc_errors = self.discussion_collector.fetch_errors
-
-        github_errors = self.github_collector.fetch_errors
-        triage = {
-            "generated_at": self.fixed_timestamp,
-            "workspace_root": (
-                str(self.config.workspace_root) if self.config.workspace_root else None
-            ),
-            "repos": self.config.repos,
-            "open_prs": len(prs) if not github_errors else None,
-            "prs": [
-                {
-                    "number": pr.number,
-                    "title": pr.title,
-                    "repo": pr.repo,
-                    "url": pr.url,
-                }
-                for pr in prs
-            ],
-            "open_issues": len(issues) if not github_errors else None,
-            "issues": [
-                {
-                    "number": issue.number,
-                    "title": issue.title,
-                    "repo": issue.repo,
-                    "url": issue.url,
-                }
-                for issue in issues
-            ],
-            "open_discussions": (
-                len(discussions)
-                if self.discussion_collector is not None and not disc_errors
-                else None
-            ),
-            "discussions": [
-                {
-                    "number": d.number,
-                    "title": d.title,
-                    "repo": d.repo,
-                    "url": d.url,
-                    "category": d.category,
-                }
-                for d in discussions
-            ],
-            "github_fetch_errors": {**github_errors, **disc_errors},
-            "git_state": {
-                repo: {
-                    "available": state.available,
-                    "reason": state.reason,
-                    "dirty": state.dirty,
-                    "current_branch": state.current_branch,
-                    "branches_ahead": state.branches_ahead,
-                    "untracked_files": state.untracked_files,
-                }
-                for repo, state in repos_state.items()
-            },
-            "warnings": self._collect_warnings(prs, repos_state),
-            "radar": self._build_radar_dict(),
-            "source_health": self._build_source_health_dict(),
-            "pipeline_state": self._build_pipeline_state_dict(),
-            "dataset_catalog": self._build_dataset_catalog_dict(),
-            "portal_scout": self._build_portal_scout_dict(),
-        }
-        return triage
+        return build_workspace_triage(
+            self.config,
+            self.github_collector,
+            self.git_collector,
+            self.discussion_collector,
+            self.fixed_timestamp,
+            so_fetcher=self._so_fetcher,
+            di_fetcher=self._di_fetcher,
+        )
 
     def _build_radar_dict(self) -> dict[str, Any]:
-        radar = self._fetch_radar_summary()
+        radar = self._so_fetcher.fetch_radar_summary()
         if radar is None:
             return {"available": False}
         return {
@@ -386,7 +284,7 @@ class Renderer:
         }
 
     def _build_source_health_dict(self) -> dict[str, Any]:
-        so = self._fetch_source_observatory_signals()
+        so = self._so_fetcher.fetch_catalog_signals()
         if so is None:
             return {
                 "available": False,
@@ -413,38 +311,10 @@ class Renderer:
         }
 
     def _fetch_di_pipeline_signals(self) -> RepoSignals | None:
-        if self._di_signals_cache is not _UNSET:
-            return self._di_signals_cache  # type: ignore[return-value]
-        raw = self.github_collector.get_raw_file(
-            "dataset-incubator", "registry/pipeline_signals.json"
-        )
-        if raw is None:
-            self._di_signals_cache = None
-            return None
-        try:
-            result = parse_repo_signals(raw)
-        except ValueError as exc:
-            self.github_collector.fetch_errors["dataset-incubator:pipeline_signals"] = str(exc)
-            result = None
-        self._di_signals_cache = result
-        return result
+        return self._di_fetcher.fetch_pipeline_signals()
 
     def _fetch_di_clean_catalog(self) -> DICleanCatalog | None:
-        if self._di_clean_catalog_cache is not _UNSET:
-            return self._di_clean_catalog_cache  # type: ignore[return-value]
-        raw = self.github_collector.get_raw_file(
-            "dataset-incubator", "registry/clean_catalog.json"
-        )
-        if raw is None:
-            self._di_clean_catalog_cache = None
-            return None
-        try:
-            result = parse_di_clean_catalog(raw)
-        except ValueError as exc:
-            self.github_collector.fetch_errors["dataset-incubator:clean_catalog"] = str(exc)
-            result = None
-        self._di_clean_catalog_cache = result
-        return result
+        return self._di_fetcher.fetch_clean_catalog()
 
     def _render_pipeline_state_section(self, di: RepoSignals | None) -> list[str]:
         lines = []
@@ -519,7 +389,7 @@ class Renderer:
         return lines
 
     def _build_dataset_catalog_dict(self) -> dict[str, Any]:
-        catalog = self._fetch_di_clean_catalog()
+        catalog = self._di_fetcher.fetch_clean_catalog()
         if catalog is None:
             return {
                 "available": False,
@@ -565,7 +435,7 @@ class Renderer:
         return f"{start or '?'}-{end or '?'}"
 
     def _build_portal_scout_dict(self) -> dict[str, Any]:
-        scout = self._fetch_portal_scout()
+        scout = self._so_fetcher.fetch_portal_scout()
         if scout is None:
             return {"available": False}
         return {
