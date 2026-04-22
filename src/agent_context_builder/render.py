@@ -1,5 +1,7 @@
 """Render output artifacts."""
 
+from __future__ import annotations
+
 from datetime import datetime
 from typing import Any
 
@@ -17,11 +19,6 @@ from .signals import (
     SourceObservatorySignals,
 )
 from .triage import build_workspace_triage
-
-
-class _UNSET:
-    """Sentinel for uninitialized cache values."""
-
 
 class Renderer:
     """Render context artifacts."""
@@ -50,12 +47,6 @@ class Renderer:
         self.fixed_timestamp = fixed_timestamp or datetime.now().isoformat()
         self._so_fetcher = SourceObservatoryFetcher(self.github_collector)
         self._di_fetcher = DatasetIncubatorFetcher(self.github_collector)
-        # Cache for remote signal fetches — avoids double requests within one build
-        self._so_signals_cache: SourceObservatorySignals | None | type[_UNSET] = _UNSET
-        self._radar_cache: RadarSummary | None | type[_UNSET] = _UNSET
-        self._portal_scout_cache: PortalScoutSummary | None | type[_UNSET] = _UNSET
-        self._di_signals_cache: RepoSignals | None | type[_UNSET] = _UNSET
-        self._di_clean_catalog_cache: DICleanCatalog | None | type[_UNSET] = _UNSET
 
     def render_session_bootstrap(self) -> str:
         """Render session_bootstrap.md.
