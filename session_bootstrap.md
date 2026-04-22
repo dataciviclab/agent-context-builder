@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-21T19:13:38.298322
+**Generated**: 2026-04-22T02:37:47.491633
 
 ## Repos
 
@@ -13,6 +13,7 @@
 
 ## Open PRs
 
+- [agent-context-builder#26](https://github.com/dataciviclab/agent-context-builder/pull/26): refactor: separa fetch segnali e triage dal renderer
 - [dataset-incubator#153](https://github.com/dataciviclab/dataset-incubator/pull/153): feat(intake): MUR contribuzione universitaria — gettito per ateneo (2017-2024)
 - [toolkit#148](https://github.com/dataciviclab/toolkit/pull/148): refactor: metadata.json canonico, manifest.json solo compat
 - [toolkit#147](https://github.com/dataciviclab/toolkit/pull/147): feat(ckan): supporta la selezione della resource per nome
@@ -21,8 +22,6 @@
 
 ## Open Discussions
 
-- [dataset-incubator#77](https://github.com/dataciviclab/dataset-incubator/discussions/77) [Datasets]: [Dataset] Pensioni della PA per tipo e territorio – MEF DAG 2017-2026
-- [dataset-incubator#75](https://github.com/dataciviclab/dataset-incubator/discussions/75) [Datasets]: [Dataset] Fondo di Solidarieta Comunale 2025 - OpenCivitas/Sogei (comuni RSO)
 - [dataciviclab#228](https://github.com/orgs/dataciviclab/discussions/228) [Datasets]: Consip partecipazioni — geografia delle imprese nelle gare pubbliche (2023-2025)
 - [dataciviclab#227](https://github.com/orgs/dataciviclab/discussions/227) [Datasets]: MUR DSU Regionale — posti alloggio e borse per regione e ateneo (2024-2025)
 - [dataciviclab#175](https://github.com/orgs/dataciviclab/discussions/175) [Annunci]: Nuove categorie, stesso obiettivo: rendere piu' chiaro il passaggio da fonte a lettura pubblica
@@ -31,6 +30,8 @@
 - [dataciviclab#210](https://github.com/orgs/dataciviclab/discussions/210) [Domande]: La geografia del calo iscrizioni nelle scuole primarie (2015-2024)
 - [dataciviclab#218](https://github.com/orgs/dataciviclab/discussions/218) [Analisi]: [Analisi] Entrate dello Stato 2008-2024: nelle crisi cresce il peso dei prestiti?
 - [dataciviclab#224](https://github.com/orgs/dataciviclab/discussions/224) [Metodo]: Come funziona il flusso tra repo Lab — e cosa manca?
+- [dataciviclab#223](https://github.com/orgs/dataciviclab/discussions/223) [Datasets]: INPS ReI — evoluzione spesa e platea beneficiari 2018-2019
+- [dataciviclab#182](https://github.com/orgs/dataciviclab/discussions/182) [Datasets]: ISTAT Terzo Settore: istituzioni non-profit per comune (2011, 2015, 2017, 2020)
 
 ## Local State
 

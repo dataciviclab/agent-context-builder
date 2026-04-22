@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-21T19:13:38.298322",
+  "generated_at": "2026-04-22T02:37:47.491633",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,8 +9,14 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 7,
+  "open_prs": 8,
   "prs": [
+    {
+      "number": 26,
+      "title": "refactor: separa fetch segnali e triage dal renderer",
+      "repo": "agent-context-builder",
+      "url": "https://github.com/dataciviclab/agent-context-builder/pull/26"
+    },
     {
       "number": 153,
       "title": "feat(intake): MUR contribuzione universitaria \u2014 gettito per ateneo (2017-2024)",
@@ -363,22 +369,8 @@
       "url": "https://github.com/dataciviclab/source-observatory/issues/30"
     }
   ],
-  "open_discussions": 22,
+  "open_discussions": 20,
   "discussions": [
-    {
-      "number": 77,
-      "title": "[Dataset] Pensioni della PA per tipo e territorio \u2013 MEF DAG 2017-2026",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/discussions/77",
-      "category": "Datasets"
-    },
-    {
-      "number": 75,
-      "title": "[Dataset] Fondo di Solidarieta Comunale 2025 - OpenCivitas/Sogei (comuni RSO)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/discussions/75",
-      "category": "Datasets"
-    },
     {
       "number": 228,
       "title": "Consip partecipazioni \u2014 geografia delle imprese nelle gare pubbliche (2023-2025)",
@@ -572,7 +564,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 7"
+    "Many open PRs: 8"
   ],
   "radar": {
     "available": true,
