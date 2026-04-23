@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-04-22T19:16:45.783281",
+  "generated_at": "2026-04-23T02:41:44.969992",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -92,6 +92,17 @@
         "name": "ISPRA - Costi gestione rifiuti (EUR/abitante)",
         "period": {
           "start": 2020,
+          "end": 2024
+        },
+        "visibility": "public"
+      }
+    ],
+    "MUR / USTAT CKAN": [
+      {
+        "slug": "mur_contribuzione_universitaria",
+        "name": "MUR - Gettito della contribuzione universitaria",
+        "period": {
+          "start": 2017,
           "end": 2024
         },
         "visibility": "public"

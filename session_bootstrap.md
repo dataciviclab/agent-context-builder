@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-22T19:16:45.783281
+**Generated**: 2026-04-23T02:41:44.969992
 
 ## Repos
 
@@ -13,6 +13,8 @@
 
 ## Open PRs
 
+- [toolkit#162](https://github.com/dataciviclab/toolkit/pull/162): feat: aggiungi supporto datastore al plugin CKAN
+- [source-observatory#134](https://github.com/dataciviclab/source-observatory/pull/134): feat: arricchisci inventory CKAN con segnali risorsa
 - **Dependabot**: 3 bump PR(s) - [#152](https://github.com/dataciviclab/dataset-incubator/pull/152), [#60](https://github.com/dataciviclab/data-explorer/pull/60) ...
 
 ## Open Discussions
@@ -63,7 +65,7 @@ Fonti: 13 — GREEN 5 · YELLOW 8 · RED 0 (probe: 2026-04-22)
 
 ## Dataset Catalog
 
-*7 clean_ready dataset(s), 7 public* (updated 2026-04-14)
+*8 clean_ready dataset(s), 8 public* (updated 2026-04-22)
 - **bdap_entrate_stato** (public): BDAP Entrate Stato - Serie Storica [2008-2024]
 - **civile_flussi_2014_2024** (public): Giustizia Civile - Flussi 2014-2024 [2014-2024]
 - **dipendenti_pubblici** (public): Dipendenti Pubblici - Occupazione e Turnover [2010-2023]
@@ -71,6 +73,7 @@ Fonti: 13 — GREEN 5 · YELLOW 8 · RED 0 (probe: 2026-04-22)
 - **ispra_ru_base** (public): ISPRA - Rifiuti Urbani (dati base) [2020-2024]
 - **ispra_ru_costi_kg** (public): ISPRA - Costi gestione rifiuti (EUR/kg) [2020-2024]
 - **ispra_ru_costi_procapite** (public): ISPRA - Costi gestione rifiuti (EUR/abitante) [2020-2024]
+- **mur_contribuzione_universitaria** (public): MUR - Gettito della contribuzione universitaria [2017-2024]
 
 ## Portal Scout
 

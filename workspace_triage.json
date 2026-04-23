@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-22T19:16:45.783281",
+  "generated_at": "2026-04-23T02:41:44.969992",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,13 +9,19 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 3,
+  "open_prs": 5,
   "prs": [
     {
       "number": 152,
       "title": "chore(deps): bump actions/github-script from 7 to 9",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/152"
+    },
+    {
+      "number": 162,
+      "title": "feat: aggiungi supporto datastore al plugin CKAN",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/162"
     },
     {
       "number": 60,
@@ -28,6 +34,12 @@
       "title": "chore(deps): bump actions/configure-pages from 5 to 6",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/59"
+    },
+    {
+      "number": 134,
+      "title": "feat: arricchisci inventory CKAN con segnali risorsa",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/134"
     }
   ],
   "open_issues": 45,
@@ -589,11 +601,11 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-04-14",
+    "updated_at": "2026-04-22",
     "summary": {
-      "total": 7,
-      "clean_ready": 7,
-      "public": 7
+      "total": 8,
+      "clean_ready": 8,
+      "public": 8
     },
     "datasets": [
       {
@@ -718,6 +730,24 @@
         "metric_columns": 9,
         "dimension_columns": 5,
         "column_count": 14
+      },
+      {
+        "slug": "mur_contribuzione_universitaria",
+        "name": "MUR - Gettito della contribuzione universitaria",
+        "status": "clean_ready",
+        "visibility": "public",
+        "period": {
+          "start": 2017,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/mur_contribuzione_universitaria/*/mur_contribuzione_universitaria_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 1,
+        "dimension_columns": 5,
+        "column_count": 6
       }
     ]
   },
