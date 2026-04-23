@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-23T07:55:18.273282
+**Generated**: 2026-04-23T13:45:04.336101
 
 ## Repos
 
@@ -13,8 +13,7 @@
 
 ## Open PRs
 
-- [toolkit#162](https://github.com/dataciviclab/toolkit/pull/162): feat: aggiungi supporto datastore al plugin CKAN
-- [source-observatory#134](https://github.com/dataciviclab/source-observatory/pull/134): feat: arricchisci inventory CKAN con segnali risorsa
+- [source-observatory#137](https://github.com/dataciviclab/source-observatory/pull/137): test: aggiungi copertura portal_scout sui rami load-bearing
 - **Dependabot**: 3 bump PR(s) - [#152](https://github.com/dataciviclab/dataset-incubator/pull/152), [#60](https://github.com/dataciviclab/data-explorer/pull/60) ...
 
 ## Open Discussions
@@ -41,13 +40,10 @@
 
 ## Radar Status
 
-Fonti: 13 — GREEN 5 · YELLOW 8 · RED 0 (probe: 2026-04-22)
+Fonti: 13 — GREEN 8 · YELLOW 4 · RED 1 (probe: 2026-04-23)
 
-- **istat_sdmx** (sdmx): YELLOW [HTTP -]
 - **anac** (ckan): YELLOW [HTTP 403]
-- **openbdap** (ckan): YELLOW [HTTP -]
-- **dati_salute** (html): YELLOW [HTTP -]
-- **consip_open_data** (ckan): YELLOW [HTTP -]
+- **dati_salute** (html): RED [HTTP -]
 - **lavoro_opendata** (ckan): YELLOW [HTTP 200]
 - **mur_ustat** (ckan): YELLOW [HTTP -]
 - **opencoesione** (rest): YELLOW [HTTP 403]

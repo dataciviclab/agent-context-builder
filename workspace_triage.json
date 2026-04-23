@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-23T07:55:18.273282",
+  "generated_at": "2026-04-23T13:45:04.336101",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,19 +9,13 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 5,
+  "open_prs": 4,
   "prs": [
     {
       "number": 152,
       "title": "chore(deps): bump actions/github-script from 7 to 9",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/152"
-    },
-    {
-      "number": 162,
-      "title": "feat: aggiungi supporto datastore al plugin CKAN",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/162"
     },
     {
       "number": 60,
@@ -36,14 +30,32 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/59"
     },
     {
-      "number": 134,
-      "title": "feat: arricchisci inventory CKAN con segnali risorsa",
+      "number": 137,
+      "title": "test: aggiungi copertura portal_scout sui rami load-bearing",
       "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/134"
+      "url": "https://github.com/dataciviclab/source-observatory/pull/137"
     }
   ],
-  "open_issues": 45,
+  "open_issues": 56,
   "issues": [
+    {
+      "number": 162,
+      "title": "build_pipeline_signals: estrai has_mart_sql e layout detection in helpers condivisi",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/162"
+    },
+    {
+      "number": 161,
+      "title": "clean-query-mcp: validate parquet paths before building read_parquet expression",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/161"
+    },
+    {
+      "number": 160,
+      "title": "build_pipeline_signals: ambiguous layout error non \u00e8 actionable",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/160"
+    },
     {
       "number": 154,
       "title": "Aggiungere sample run GitHub per candidate usando toolkit",
@@ -103,6 +115,18 @@
       "title": "Estendere il perimetro del candidate MIM oltre il v0 2024/25",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/108"
+    },
+    {
+      "number": 233,
+      "title": "seed-issues: rendere il parsing per-file resilient",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/233"
+    },
+    {
+      "number": 232,
+      "title": "test_parse_discussion: aggiungere test su main() per failure mode exit codes",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/232"
     },
     {
       "number": 226,
@@ -213,6 +237,18 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/100"
     },
     {
+      "number": 167,
+      "title": "[toolkit] _toolkit_json: errore ambiguo quando CLI fallisce senza output",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/167"
+    },
+    {
+      "number": 166,
+      "title": "[toolkit] _metadata_candidates: JSON parse senza error handling su metadata.json",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/166"
+    },
+    {
       "number": 151,
       "title": "feat: aggiungi toolkit scaffold candidate --protocol ...",
       "repo": "toolkit",
@@ -241,6 +277,30 @@
       "title": "feat: unifica catalogo da dataset-incubator, routing dinamico per slug",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/issues/56"
+    },
+    {
+      "number": 140,
+      "title": "_http_head: rimuovere encoding custom, lasciare che requests gestisca l'URL",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/140"
+    },
+    {
+      "number": 139,
+      "title": "bulk_source_check: documentare lo schema dell'output parquet",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/139"
+    },
+    {
+      "number": 136,
+      "title": "portal-scout: estrarre dal workflow la logica batch candidate->status",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/136"
+    },
+    {
+      "number": 135,
+      "title": "portal-scout: rendere affidabile la semantica degraded/failed",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/135"
     },
     {
       "number": 133,
@@ -512,18 +572,12 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-04-22",
+    "probe_date": "2026-04-23",
     "sources_total": 13,
-    "green": 5,
-    "yellow": 8,
-    "red": 0,
+    "green": 8,
+    "yellow": 4,
+    "red": 1,
     "unhealthy": [
-      {
-        "id": "istat_sdmx",
-        "status": "YELLOW",
-        "protocol": "sdmx",
-        "http_code": "-"
-      },
       {
         "id": "anac",
         "status": "YELLOW",
@@ -531,21 +585,9 @@
         "http_code": "403"
       },
       {
-        "id": "openbdap",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "-"
-      },
-      {
         "id": "dati_salute",
-        "status": "YELLOW",
+        "status": "RED",
         "protocol": "html",
-        "http_code": "-"
-      },
-      {
-        "id": "consip_open_data",
-        "status": "YELLOW",
-        "protocol": "ckan",
         "http_code": "-"
       },
       {
