@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-23T13:45:04.336101
+**Generated**: 2026-04-23T19:10:44.072692
 
 ## Repos
 
@@ -13,6 +13,7 @@
 
 ## Open PRs
 
+- [toolkit#168](https://github.com/dataciviclab/toolkit/pull/168): feat: code graph minimale per visibility della struttura toolkit
 - [source-observatory#137](https://github.com/dataciviclab/source-observatory/pull/137): test: aggiungi copertura portal_scout sui rami load-bearing
 - **Dependabot**: 3 bump PR(s) - [#152](https://github.com/dataciviclab/dataset-incubator/pull/152), [#60](https://github.com/dataciviclab/data-explorer/pull/60) ...
 
