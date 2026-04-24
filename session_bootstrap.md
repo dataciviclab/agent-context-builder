@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-24T12:49:29.937757
+**Generated**: 2026-04-24T13:25:55.151175
 
 ## Repos
 
@@ -20,12 +20,12 @@
 
 ## Open Discussions
 
+- [dataciviclab#210](https://github.com/orgs/dataciviclab/discussions/210) [Domande]: La geografia del calo iscrizioni nelle scuole primarie (2015-2024)
 - [dataciviclab#228](https://github.com/orgs/dataciviclab/discussions/228) [Datasets]: Consip partecipazioni — geografia delle imprese nelle gare pubbliche (2023-2025)
 - [dataciviclab#227](https://github.com/orgs/dataciviclab/discussions/227) [Datasets]: MUR DSU Regionale — posti alloggio e borse per regione e ateneo (2024-2025)
 - [dataciviclab#175](https://github.com/orgs/dataciviclab/discussions/175) [Annunci]: Nuove categorie, stesso obiettivo: rendere piu' chiaro il passaggio da fonte a lettura pubblica
 - [dataciviclab#214](https://github.com/orgs/dataciviclab/discussions/214) [Datasets]: ISTAT povertà assoluta e relativa: incidenze, intensità e soglie (2014-2024)
 - [dataciviclab#211](https://github.com/orgs/dataciviclab/discussions/211) [Datasets]: MUR contribuzione universitaria: tasse, esoneri e diritto allo studio per ateneo (2009-2024)
-- [dataciviclab#210](https://github.com/orgs/dataciviclab/discussions/210) [Domande]: La geografia del calo iscrizioni nelle scuole primarie (2015-2024)
 - [dataciviclab#218](https://github.com/orgs/dataciviclab/discussions/218) [Analisi]: [Analisi] Entrate dello Stato 2008-2024: nelle crisi cresce il peso dei prestiti?
 - [dataciviclab#224](https://github.com/orgs/dataciviclab/discussions/224) [Metodo]: Come funziona il flusso tra repo Lab — e cosa manca?
 - [dataciviclab#223](https://github.com/orgs/dataciviclab/discussions/223) [Datasets]: INPS ReI — evoluzione spesa e platea beneficiari 2018-2019
