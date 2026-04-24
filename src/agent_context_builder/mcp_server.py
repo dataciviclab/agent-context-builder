@@ -125,19 +125,28 @@ def _fetch(path: str) -> str:
 @mcp.tool()
 def session_bootstrap() -> str:
     """Orientamento rapido: repo attivi, PR aperte, discussion, stato locale, topic."""
-    return _fetch("session_bootstrap.md")
+    try:
+        return _fetch("session_bootstrap.md")
+    except requests.HTTPError as e:
+        return f"session_bootstrap: {e}"
 
 
 @mcp.tool()
 def workspace_triage() -> str:
     """Triage machine-readable: PR, issue, discussion, stato git per repo, warning."""
-    return _fetch("workspace_triage.json")
+    try:
+        return _fetch("workspace_triage.json")
+    except requests.HTTPError as e:
+        return f"workspace_triage: {e}"
 
 
 @mcp.tool()
 def topic_index() -> str:
     """Topic index v2 — repos, datasets_by_source, operational_topics."""
-    return _fetch("topic_index.json")
+    try:
+        return _fetch("topic_index.json")
+    except requests.HTTPError as e:
+        return f"topic_index: {e}"
 
 
 @mcp.tool()
