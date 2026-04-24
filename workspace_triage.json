@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-24T13:25:55.151175",
+  "generated_at": "2026-04-24T18:27:15.220744",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,8 +9,14 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 6,
+  "open_prs": 9,
   "prs": [
+    {
+      "number": 165,
+      "title": "feat(civile-flussi): aggiorna al 2025, slug semplificato, aggiungi notebook v0",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/165"
+    },
     {
       "number": 163,
       "title": "enhancement(mim): 4 mart per ordine scolastico + notebook da template",
@@ -46,9 +52,21 @@
       "title": "chore(deps): bump actions/configure-pages from 5 to 6",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/59"
+    },
+    {
+      "number": 149,
+      "title": "refactor(http layer): estrai SSL fallback in base.py, unifica radar_check (#132)",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/149"
+    },
+    {
+      "number": 147,
+      "title": "feat(sources_registry): aggiungi dati_cultura (MiC ArCo) come catalog-watch SPARQL",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/147"
     }
   ],
-  "open_issues": 53,
+  "open_issues": 55,
   "issues": [
     {
       "number": 162,
@@ -249,12 +267,6 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/100"
     },
     {
-      "number": 173,
-      "title": "[xlsx] audit: gap .xls, fallback CKAN, documentazione Excel",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/173"
-    },
-    {
       "number": 151,
       "title": "feat: aggiungi toolkit scaffold candidate --protocol ...",
       "repo": "toolkit",
@@ -265,6 +277,12 @@
       "title": "feat: valutare source plugin SPARQL minimale",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/149"
+    },
+    {
+      "number": 61,
+      "title": "fix(civile-flussi): aggiorna path parquet a /2025/ dopo passaggio candidate DI",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/61"
     },
     {
       "number": 58,
@@ -285,10 +303,22 @@
       "url": "https://github.com/dataciviclab/data-explorer/issues/56"
     },
     {
-      "number": 145,
-      "title": "[bulk_source_check] CKAN parser non riconosce `Periodo di riferimento` \u2014 year mancante su tutti i dataset Consip",
+      "number": 151,
+      "title": "[audit] except Exception silenziati \u2014 collector che fallisce senza segnale",
       "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/145"
+      "url": "https://github.com/dataciviclab/source-observatory/issues/151"
+    },
+    {
+      "number": 150,
+      "title": "[audit] sostituire print() con logging strutturato",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/150"
+    },
+    {
+      "number": 148,
+      "title": "[scouting] ISTAT SDMX \u2014 6 dataflow ad alta priorit\u00e0 per source-check",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/148"
     },
     {
       "number": 141,
@@ -564,7 +594,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 6"
+    "Many open PRs: 9"
   ],
   "radar": {
     "available": true,

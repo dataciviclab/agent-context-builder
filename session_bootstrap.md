@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-24T13:25:55.151175
+**Generated**: 2026-04-24T18:27:15.220744
 
 ## Repos
 
@@ -13,9 +13,12 @@
 
 ## Open PRs
 
+- [dataset-incubator#165](https://github.com/dataciviclab/dataset-incubator/pull/165): feat(civile-flussi): aggiorna al 2025, slug semplificato, aggiungi notebook v0
 - [dataset-incubator#163](https://github.com/dataciviclab/dataset-incubator/pull/163): enhancement(mim): 4 mart per ordine scolastico + notebook da template
 - [toolkit#171](https://github.com/dataciviclab/toolkit/pull/171): feat(mcp): aggiungi tool toolkit_raw_profile
 - [toolkit#169](https://github.com/dataciviclab/toolkit/pull/169): feat(scout-url): scaffold YAML dataset+raw da URL
+- [source-observatory#149](https://github.com/dataciviclab/source-observatory/pull/149): refactor(http layer): estrai SSL fallback in base.py, unifica radar_check (#132)
+- [source-observatory#147](https://github.com/dataciviclab/source-observatory/pull/147): feat(sources_registry): aggiungi dati_cultura (MiC ArCo) come catalog-watch SPARQL
 - **Dependabot**: 3 bump PR(s) - [#152](https://github.com/dataciviclab/dataset-incubator/pull/152), [#60](https://github.com/dataciviclab/data-explorer/pull/60) ...
 
 ## Open Discussions
