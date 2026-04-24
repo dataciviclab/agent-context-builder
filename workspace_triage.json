@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-24T08:05:24.337228",
+  "generated_at": "2026-04-24T12:49:29.937757",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,8 +9,14 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 5,
+  "open_prs": 6,
   "prs": [
+    {
+      "number": 163,
+      "title": "enhancement(mim): 4 mart per ordine scolastico + notebook da template",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/163"
+    },
     {
       "number": 152,
       "title": "chore(deps): bump actions/github-script from 7 to 9",
@@ -18,10 +24,16 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/152"
     },
     {
-      "number": 168,
-      "title": "feat: code graph minimale per visibility della struttura toolkit",
+      "number": 171,
+      "title": "feat(mcp): aggiungi tool toolkit_raw_profile",
       "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/168"
+      "url": "https://github.com/dataciviclab/toolkit/pull/171"
+    },
+    {
+      "number": 169,
+      "title": "feat(scout-url): scaffold YAML dataset+raw da URL",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/169"
     },
     {
       "number": 60,
@@ -34,15 +46,9 @@
       "title": "chore(deps): bump actions/configure-pages from 5 to 6",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/59"
-    },
-    {
-      "number": 137,
-      "title": "test: aggiungi copertura portal_scout sui rami load-bearing",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/137"
     }
   ],
-  "open_issues": 57,
+  "open_issues": 52,
   "issues": [
     {
       "number": 162,
@@ -249,12 +255,6 @@
       "url": "https://github.com/dataciviclab/toolkit/issues/167"
     },
     {
-      "number": 166,
-      "title": "[toolkit] _metadata_candidates: JSON parse senza error handling su metadata.json",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/166"
-    },
-    {
       "number": 151,
       "title": "feat: aggiungi toolkit scaffold candidate --protocol ...",
       "repo": "toolkit",
@@ -289,30 +289,6 @@
       "title": "catalog-scout: catalog inventory 2026-04-18 (6509 item)",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/141"
-    },
-    {
-      "number": 140,
-      "title": "_http_head: rimuovere encoding custom, lasciare che requests gestisca l'URL",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/140"
-    },
-    {
-      "number": 139,
-      "title": "bulk_source_check: documentare lo schema dell'output parquet",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/139"
-    },
-    {
-      "number": 136,
-      "title": "portal-scout: estrarre dal workflow la logica batch candidate->status",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/136"
-    },
-    {
-      "number": 135,
-      "title": "portal-scout: rendere affidabile la semantica degraded/failed",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/135"
     },
     {
       "number": 133,
@@ -581,15 +557,23 @@
       "untracked_files": 0
     }
   },
-  "warnings": [],
+  "warnings": [
+    "Many open PRs: 6"
+  ],
   "radar": {
     "available": true,
-    "probe_date": "2026-04-23",
+    "probe_date": "2026-04-24",
     "sources_total": 13,
-    "green": 8,
-    "yellow": 4,
-    "red": 1,
+    "green": 6,
+    "yellow": 5,
+    "red": 2,
     "unhealthy": [
+      {
+        "id": "istat_sdmx",
+        "status": "YELLOW",
+        "protocol": "sdmx",
+        "http_code": "-"
+      },
       {
         "id": "anac",
         "status": "YELLOW",
@@ -601,6 +585,12 @@
         "status": "RED",
         "protocol": "html",
         "http_code": "-"
+      },
+      {
+        "id": "dati_camera",
+        "status": "RED",
+        "protocol": "sparql",
+        "http_code": "503"
       },
       {
         "id": "lavoro_opendata",

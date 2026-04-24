@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-24T08:05:24.337228
+**Generated**: 2026-04-24T12:49:29.937757
 
 ## Repos
 
@@ -13,8 +13,9 @@
 
 ## Open PRs
 
-- [toolkit#168](https://github.com/dataciviclab/toolkit/pull/168): feat: code graph minimale per visibility della struttura toolkit
-- [source-observatory#137](https://github.com/dataciviclab/source-observatory/pull/137): test: aggiungi copertura portal_scout sui rami load-bearing
+- [dataset-incubator#163](https://github.com/dataciviclab/dataset-incubator/pull/163): enhancement(mim): 4 mart per ordine scolastico + notebook da template
+- [toolkit#171](https://github.com/dataciviclab/toolkit/pull/171): feat(mcp): aggiungi tool toolkit_raw_profile
+- [toolkit#169](https://github.com/dataciviclab/toolkit/pull/169): feat(scout-url): scaffold YAML dataset+raw da URL
 - **Dependabot**: 3 bump PR(s) - [#152](https://github.com/dataciviclab/dataset-incubator/pull/152), [#60](https://github.com/dataciviclab/data-explorer/pull/60) ...
 
 ## Open Discussions
@@ -41,10 +42,12 @@
 
 ## Radar Status
 
-Fonti: 13 — GREEN 8 · YELLOW 4 · RED 1 (probe: 2026-04-23)
+Fonti: 13 — GREEN 6 · YELLOW 5 · RED 2 (probe: 2026-04-24)
 
+- **istat_sdmx** (sdmx): YELLOW [HTTP -]
 - **anac** (ckan): YELLOW [HTTP 403]
 - **dati_salute** (html): RED [HTTP -]
+- **dati_camera** (sparql): RED [HTTP 503]
 - **lavoro_opendata** (ckan): YELLOW [HTTP 200]
 - **mur_ustat** (ckan): YELLOW [HTTP -]
 - **opencoesione** (rest): YELLOW [HTTP 403]
