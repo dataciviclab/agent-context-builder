@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-25T18:54:59.954358",
+  "generated_at": "2026-04-25T22:28:28.834419",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,8 +9,14 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 3,
+  "open_prs": 6,
   "prs": [
+    {
+      "number": 176,
+      "title": "fix(pensioni-pa-dag): clean raw-faithful multi-year, filtri spostati in mart",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/176"
+    },
     {
       "number": 175,
       "title": "feat(irpef-comunale): clean.sql raw-faithful, 52 colonne, senza logica interpretativa",
@@ -28,9 +34,21 @@
       "title": "chore(deps): bump actions/configure-pages from 5 to 6",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/59"
+    },
+    {
+      "number": 156,
+      "title": "feat(discover_portals): registry sync + non-standard CKAN paths",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/156"
+    },
+    {
+      "number": 155,
+      "title": "feat: preserva item quando source \u00e8 down \u2014 merge invece di replace",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/155"
     }
   ],
-  "open_issues": 53,
+  "open_issues": 54,
   "issues": [
     {
       "number": 162,
@@ -217,6 +235,12 @@
       "title": "[Seed] Rendere pi\u00f9 chiara una sezione specifica di README o guida breve",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/issues/100"
+    },
+    {
+      "number": 180,
+      "title": "[enhancement] Supporto per file raw multi-anno senza loop ridondante",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/180"
     },
     {
       "number": 179,
@@ -545,7 +569,9 @@
       "untracked_files": 0
     }
   },
-  "warnings": [],
+  "warnings": [
+    "Many open PRs: 6"
+  ],
   "radar": {
     "available": true,
     "probe_date": "2026-04-24",

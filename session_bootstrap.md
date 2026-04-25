@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-25T18:54:59.954358
+**Generated**: 2026-04-25T22:28:28.834419
 
 ## Repos
 
@@ -13,7 +13,10 @@
 
 ## Open PRs
 
+- [dataset-incubator#176](https://github.com/dataciviclab/dataset-incubator/pull/176): fix(pensioni-pa-dag): clean raw-faithful multi-year, filtri spostati in mart
 - [dataset-incubator#175](https://github.com/dataciviclab/dataset-incubator/pull/175): feat(irpef-comunale): clean.sql raw-faithful, 52 colonne, senza logica interpretativa
+- [source-observatory#156](https://github.com/dataciviclab/source-observatory/pull/156): feat(discover_portals): registry sync + non-standard CKAN paths
+- [source-observatory#155](https://github.com/dataciviclab/source-observatory/pull/155): feat: preserva item quando source è down — merge invece di replace
 - **Dependabot**: 2 bump PR(s) - [#60](https://github.com/dataciviclab/data-explorer/pull/60), [#59](https://github.com/dataciviclab/data-explorer/pull/59)
 
 ## Open Discussions
