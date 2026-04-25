@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-25T13:06:49.800302
+**Generated**: 2026-04-25T18:54:59.954358
 
 ## Repos
 
@@ -13,7 +13,7 @@
 
 ## Open PRs
 
-- [toolkit#171](https://github.com/dataciviclab/toolkit/pull/171): feat(mcp): aggiungi tool toolkit_raw_profile
+- [dataset-incubator#175](https://github.com/dataciviclab/dataset-incubator/pull/175): feat(irpef-comunale): clean.sql raw-faithful, 52 colonne, senza logica interpretativa
 - **Dependabot**: 2 bump PR(s) - [#60](https://github.com/dataciviclab/data-explorer/pull/60), [#59](https://github.com/dataciviclab/data-explorer/pull/59)
 
 ## Open Discussions
@@ -52,9 +52,7 @@ Fonti: 13 — GREEN 6 · YELLOW 5 · RED 2 (probe: 2026-04-24)
 
 ## Catalog Drift
 
-- **openbdap** (ckan): inventory change
-  - azione: verificare se variazione attesa; avviare catalog-inventory-scout se nuovi dataset
-  *(captured 2026-04-21T10:18:46+00:00, 9 sources checked)*
+*No catalog drift signals* (as of 2026-04-25T17:03:18+00:00, 10 sources checked)
 
 ## Pipeline State
 

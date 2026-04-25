@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-25T13:06:49.800302",
+  "generated_at": "2026-04-25T18:54:59.954358",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -12,10 +12,10 @@
   "open_prs": 3,
   "prs": [
     {
-      "number": 171,
-      "title": "feat(mcp): aggiungi tool toolkit_raw_profile",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/171"
+      "number": 175,
+      "title": "feat(irpef-comunale): clean.sql raw-faithful, 52 colonne, senza logica interpretativa",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/175"
     },
     {
       "number": 60,
@@ -30,7 +30,7 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/59"
     }
   ],
-  "open_issues": 50,
+  "open_issues": 53,
   "issues": [
     {
       "number": 162,
@@ -219,10 +219,16 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/100"
     },
     {
-      "number": 151,
-      "title": "feat: aggiungi toolkit scaffold candidate --protocol ...",
+      "number": 179,
+      "title": "fix: clean_validation riporti actual_raw_cols dal raw parquet, non dalla config",
       "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/151"
+      "url": "https://github.com/dataciviclab/toolkit/issues/179"
+    },
+    {
+      "number": 178,
+      "title": "feat: aggiungere cross_year validation gate",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/178"
     },
     {
       "number": 61,
@@ -247,6 +253,18 @@
       "title": "feat: unifica catalogo da dataset-incubator, routing dinamico per slug",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/issues/56"
+    },
+    {
+      "number": 153,
+      "title": "[bug] radar_check.py \u2014 exception isolation mancante, probe timeout crasha CI",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/153"
+    },
+    {
+      "number": 152,
+      "title": "[gap] discover_portals.py \u2014 miglioramenti strutturali (dedup, retry, detection)",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/152"
     },
     {
       "number": 151,
@@ -582,19 +600,10 @@
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-04-21T10:18:46+00:00",
-    "sources_checked": 9,
+    "captured_at": "2026-04-25T17:03:18+00:00",
+    "sources_checked": 10,
     "regressions": [],
-    "alerts": [
-      {
-        "source": "openbdap",
-        "protocol": "ckan",
-        "signal_type": "inventory change",
-        "result": "inventory change",
-        "detail": "3773 item (package_list), delta +1 rispetto al run precedente (3772).",
-        "suggested_action": "verificare se variazione attesa; avviare catalog-inventory-scout se nuovi dataset"
-      }
-    ]
+    "alerts": []
   },
   "pipeline_state": {
     "available": true,
