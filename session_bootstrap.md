@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-25T07:18:41.201796
+**Generated**: 2026-04-25T13:06:49.800302
 
 ## Repos
 
@@ -13,13 +13,8 @@
 
 ## Open PRs
 
-- [dataset-incubator#166](https://github.com/dataciviclab/dataset-incubator/pull/166): chore: aggiorna pipeline_signals.json
-- [dataset-incubator#165](https://github.com/dataciviclab/dataset-incubator/pull/165): feat(civile-flussi): aggiorna al 2025, slug semplificato, aggiungi notebook v0
-- [toolkit#176](https://github.com/dataciviclab/toolkit/pull/176): feat: source plugin sparql + inspect probe SPARQL
 - [toolkit#171](https://github.com/dataciviclab/toolkit/pull/171): feat(mcp): aggiungi tool toolkit_raw_profile
-- [source-observatory#149](https://github.com/dataciviclab/source-observatory/pull/149): refactor(http layer): estrai SSL fallback in base.py, unifica radar_check (#132)
-- [source-observatory#147](https://github.com/dataciviclab/source-observatory/pull/147): feat(sources_registry): aggiungi dati_cultura (MiC ArCo) come catalog-watch SPARQL
-- **Dependabot**: 3 bump PR(s) - [#152](https://github.com/dataciviclab/dataset-incubator/pull/152), [#60](https://github.com/dataciviclab/data-explorer/pull/60) ...
+- **Dependabot**: 2 bump PR(s) - [#60](https://github.com/dataciviclab/data-explorer/pull/60), [#59](https://github.com/dataciviclab/data-explorer/pull/59)
 
 ## Open Discussions
 
@@ -64,13 +59,12 @@ Fonti: 13 — GREEN 6 · YELLOW 5 · RED 2 (probe: 2026-04-24)
 ## Pipeline State
 
 *17 candidates, tutti ok*
-  *(as of 2026-04-22 — 17 ok)*
+  *(as of 2026-04-25 — 17 ok)*
 
 ## Dataset Catalog
 
-*8 clean_ready dataset(s), 8 public* (updated 2026-04-22)
+*7 clean_ready dataset(s), 7 public* (updated 2026-04-25)
 - **bdap_entrate_stato** (public): BDAP Entrate Stato - Serie Storica [2008-2024]
-- **civile_flussi_2014_2024** (public): Giustizia Civile - Flussi 2014-2024 [2014-2024]
 - **dipendenti_pubblici** (public): Dipendenti Pubblici - Occupazione e Turnover [2010-2023]
 - **ispra_consumo_suolo** (public): ISPRA - Consumo di Suolo 2024 [2024]
 - **ispra_ru_base** (public): ISPRA - Rifiuti Urbani (dati base) [2020-2024]

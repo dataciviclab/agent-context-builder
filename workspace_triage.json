@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-25T07:18:41.201796",
+  "generated_at": "2026-04-25T13:06:49.800302",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,32 +9,8 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 9,
+  "open_prs": 3,
   "prs": [
-    {
-      "number": 166,
-      "title": "chore: aggiorna pipeline_signals.json",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/166"
-    },
-    {
-      "number": 165,
-      "title": "feat(civile-flussi): aggiorna al 2025, slug semplificato, aggiungi notebook v0",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/165"
-    },
-    {
-      "number": 152,
-      "title": "chore(deps): bump actions/github-script from 7 to 9",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/152"
-    },
-    {
-      "number": 176,
-      "title": "feat: source plugin sparql + inspect probe SPARQL",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/176"
-    },
     {
       "number": 171,
       "title": "feat(mcp): aggiungi tool toolkit_raw_profile",
@@ -52,21 +28,9 @@
       "title": "chore(deps): bump actions/configure-pages from 5 to 6",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/59"
-    },
-    {
-      "number": 149,
-      "title": "refactor(http layer): estrai SSL fallback in base.py, unifica radar_check (#132)",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/149"
-    },
-    {
-      "number": 147,
-      "title": "feat(sources_registry): aggiungi dati_cultura (MiC ArCo) come catalog-watch SPARQL",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/147"
     }
   ],
-  "open_issues": 53,
+  "open_issues": 50,
   "issues": [
     {
       "number": 162,
@@ -261,12 +225,6 @@
       "url": "https://github.com/dataciviclab/toolkit/issues/151"
     },
     {
-      "number": 149,
-      "title": "feat: valutare source plugin SPARQL minimale",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/149"
-    },
-    {
       "number": 61,
       "title": "fix(civile-flussi): aggiorna path parquet a /2025/ dopo passaggio candidate DI",
       "repo": "data-explorer",
@@ -321,12 +279,6 @@
       "url": "https://github.com/dataciviclab/source-observatory/issues/133"
     },
     {
-      "number": 132,
-      "title": "refactor: unificare il layer HTTP tra radar e collectors",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/132"
-    },
-    {
       "number": 129,
       "title": "[Catalog] Variazioni rilevate nell'inventario",
       "repo": "source-observatory",
@@ -349,12 +301,6 @@
       "title": "Aggiungere collector HTML sitemap per catalog inventory",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/109"
-    },
-    {
-      "number": 66,
-      "title": "feat: add dati_cultura (MiC ArCo) to sources registry as SPARQL catalog-watch",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/66"
     },
     {
       "number": 61,
@@ -581,9 +527,7 @@
       "untracked_files": 0
     }
   },
-  "warnings": [
-    "Many open PRs: 9"
-  ],
+  "warnings": [],
   "radar": {
     "available": true,
     "probe_date": "2026-04-24",
@@ -654,7 +598,7 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-04-22",
+    "generated_at": "2026-04-25",
     "summary": {
       "total": 17,
       "by_status": {
@@ -669,11 +613,11 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-04-22",
+    "updated_at": "2026-04-25",
     "summary": {
-      "total": 8,
-      "clean_ready": 8,
-      "public": 8
+      "total": 9,
+      "clean_ready": 7,
+      "public": 7
     },
     "datasets": [
       {
@@ -694,17 +638,18 @@
         "column_count": 11
       },
       {
-        "slug": "civile_flussi_2014_2024",
-        "name": "Giustizia Civile - Flussi 2014-2024",
-        "status": "clean_ready",
+        "slug": "civile_flussi",
+        "name": "Flussi Civile \u2014 Giustizia civile italiana",
+        "status": "candidate",
         "visibility": "public",
         "period": {
           "start": 2014,
-          "end": 2024
+          "end": 2025
         },
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/civile_flussi_2014_2024/2024/civile_flussi_2014_2024_2024_clean.parquet"
+          "path": "gs://dataciviclab-clean/civile_flussi/2025/civile_flussi_2025_clean.parquet",
+          "multi_file": false
         },
         "metric_columns": 3,
         "dimension_columns": 7,
@@ -798,6 +743,24 @@
         "metric_columns": 9,
         "dimension_columns": 5,
         "column_count": 14
+      },
+      {
+        "slug": "mim_alunni_corso_eta",
+        "name": "Alunni per corso ed et\u00e0 \u2014 MIM",
+        "status": "candidate",
+        "visibility": "public",
+        "period": {
+          "start": 2024,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/mim_alunni_corso_eta/*/mim_alunni_corso_eta_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 1,
+        "dimension_columns": 5,
+        "column_count": 6
       },
       {
         "slug": "mur_contribuzione_universitaria",
