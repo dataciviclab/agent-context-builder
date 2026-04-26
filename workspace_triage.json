@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-26T16:33:39.023693",
+  "generated_at": "2026-04-26T18:56:50.196246",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -11,6 +11,12 @@
   ],
   "open_prs": 7,
   "prs": [
+    {
+      "number": 185,
+      "title": "feat(camera-deputati-legislature): candidate runnable \u2014 SPARQL fix, clean raw-faithful",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/185"
+    },
     {
       "number": 179,
       "title": "feat(aifa-spesa-consumo): clean raw-faithful, mart, notebook v0, url_suffix_by_year",
@@ -28,12 +34,6 @@
       "title": "fix(bdap-entrate-stato): clean raw-faithful, filtri spostati in mart",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/177"
-    },
-    {
-      "number": 184,
-      "title": "fix: actual_raw_cols e raw_missing_columns in clean_validation (+ CSV)",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/184"
     },
     {
       "number": 60,
@@ -56,6 +56,12 @@
   ],
   "open_issues": 51,
   "issues": [
+    {
+      "number": 184,
+      "title": "fix(build_clean_catalog): skip missing_period_years check quando multi_file: false",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/184"
+    },
     {
       "number": 162,
       "title": "build_pipeline_signals: estrai has_mart_sql e layout detection in helpers condivisi",
@@ -253,12 +259,6 @@
       "title": "[enhancement] Supporto per file raw multi-anno senza loop ridondante",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/180"
-    },
-    {
-      "number": 179,
-      "title": "fix: clean_validation riporti actual_raw_cols dal raw parquet, non dalla config",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/179"
     },
     {
       "number": 178,
