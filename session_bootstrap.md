@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-26T18:56:50.196246
+**Generated**: 2026-04-26T19:59:50.904690
 
 ## Repos
 
@@ -15,8 +15,6 @@
 
 - [dataset-incubator#185](https://github.com/dataciviclab/dataset-incubator/pull/185): feat(camera-deputati-legislature): candidate runnable — SPARQL fix, clean raw-faithful
 - [dataset-incubator#179](https://github.com/dataciviclab/dataset-incubator/pull/179): feat(aifa-spesa-consumo): clean raw-faithful, mart, notebook v0, url_suffix_by_year
-- [dataset-incubator#178](https://github.com/dataciviclab/dataset-incubator/pull/178): fix(bdap-lea): clean raw-faithful, filtro spostato in mart, notebook v0
-- [dataset-incubator#177](https://github.com/dataciviclab/dataset-incubator/pull/177): fix(bdap-entrate-stato): clean raw-faithful, filtri spostati in mart
 - [source-observatory#159](https://github.com/dataciviclab/source-observatory/pull/159): docs: audit fix — stale semantics, catalog_signals structure
 - **Dependabot**: 2 bump PR(s) - [#60](https://github.com/dataciviclab/data-explorer/pull/60), [#59](https://github.com/dataciviclab/data-explorer/pull/59)
 
