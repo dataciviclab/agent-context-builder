@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-26T07:41:19.663438",
+  "generated_at": "2026-04-26T13:09:10.017969",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -11,6 +11,12 @@
   ],
   "open_prs": 6,
   "prs": [
+    {
+      "number": 177,
+      "title": "fix(bdap-entrate-stato): clean raw-faithful, filtri spostati in mart",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/177"
+    },
     {
       "number": 176,
       "title": "fix(pensioni-pa-dag): clean raw-faithful multi-year, filtri spostati in mart",
@@ -36,19 +42,13 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/59"
     },
     {
-      "number": 156,
-      "title": "feat(discover_portals): registry sync + non-standard CKAN paths",
+      "number": 159,
+      "title": "docs: audit fix \u2014 stale semantics, catalog_signals structure",
       "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/156"
-    },
-    {
-      "number": 155,
-      "title": "feat: preserva item quando source \u00e8 down \u2014 merge invece di replace",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/155"
+      "url": "https://github.com/dataciviclab/source-observatory/pull/159"
     }
   ],
-  "open_issues": 54,
+  "open_issues": 51,
   "issues": [
     {
       "number": 162,
@@ -237,6 +237,12 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/100"
     },
     {
+      "number": 181,
+      "title": "feat: supporto url_suffix_by_year per URL con suffisso data per-anno",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/181"
+    },
+    {
       "number": 180,
       "title": "[enhancement] Supporto per file raw multi-anno senza loop ridondante",
       "repo": "toolkit",
@@ -279,18 +285,6 @@
       "url": "https://github.com/dataciviclab/data-explorer/issues/56"
     },
     {
-      "number": 153,
-      "title": "[bug] radar_check.py \u2014 exception isolation mancante, probe timeout crasha CI",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/153"
-    },
-    {
-      "number": 152,
-      "title": "[gap] discover_portals.py \u2014 miglioramenti strutturali (dedup, retry, detection)",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/152"
-    },
-    {
       "number": 151,
       "title": "[audit] except Exception silenziati \u2014 collector che fallisce senza segnale",
       "repo": "source-observatory",
@@ -321,12 +315,6 @@
       "url": "https://github.com/dataciviclab/source-observatory/issues/133"
     },
     {
-      "number": 129,
-      "title": "[Catalog] Variazioni rilevate nell'inventario",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/129"
-    },
-    {
       "number": 127,
       "title": "feat: apri issue automatica dai segnali drift attivi in catalog_signals.json",
       "repo": "source-observatory",
@@ -343,12 +331,6 @@
       "title": "Aggiungere collector HTML sitemap per catalog inventory",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/109"
-    },
-    {
-      "number": 61,
-      "title": "Catalog-watch: aggiungere Corte Costituzionale Open Data",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/61"
     },
     {
       "number": 50,
@@ -574,15 +556,15 @@
   ],
   "radar": {
     "available": true,
-    "probe_date": "2026-04-24",
-    "sources_total": 13,
-    "green": 6,
-    "yellow": 5,
-    "red": 2,
+    "probe_date": "2026-04-26",
+    "sources_total": 14,
+    "green": 7,
+    "yellow": 3,
+    "red": 4,
     "unhealthy": [
       {
         "id": "istat_sdmx",
-        "status": "YELLOW",
+        "status": "RED",
         "protocol": "sdmx",
         "http_code": "-"
       },
@@ -612,7 +594,7 @@
       },
       {
         "id": "mur_ustat",
-        "status": "YELLOW",
+        "status": "RED",
         "protocol": "ckan",
         "http_code": "-"
       },
@@ -819,14 +801,13 @@
   },
   "portal_scout": {
     "available": true,
-    "generated_at": "2026-04-20T17:53:47.088520+00:00",
-    "total_portals": 47,
-    "new_candidates": 33,
-    "new_confirmed_protocol": 4,
+    "generated_at": "2026-04-26T09:22:35.038008+00:00",
+    "total_portals": 51,
+    "new_candidates": 37,
+    "new_confirmed_protocol": 6,
     "by_protocol": {
       "html": 42,
-      "ckan": 4,
-      "sdmx": 1
+      "ckan": 9
     },
     "new_structured": [
       {
@@ -834,11 +815,19 @@
         "protocol": "ckan"
       },
       {
-        "domain": "indicepa.gov.it",
+        "domain": "dati.comune.mt.it",
+        "protocol": "ckan"
+      },
+      {
+        "domain": "dati.toscana.it",
         "protocol": "ckan"
       },
       {
         "domain": "dati.mit.gov.it",
+        "protocol": "ckan"
+      },
+      {
+        "domain": "indicepa.gov.it",
         "protocol": "ckan"
       },
       {

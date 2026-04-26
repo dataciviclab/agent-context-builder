@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-26T07:41:19.663438
+**Generated**: 2026-04-26T13:09:10.017969
 
 ## Repos
 
@@ -13,10 +13,10 @@
 
 ## Open PRs
 
+- [dataset-incubator#177](https://github.com/dataciviclab/dataset-incubator/pull/177): fix(bdap-entrate-stato): clean raw-faithful, filtri spostati in mart
 - [dataset-incubator#176](https://github.com/dataciviclab/dataset-incubator/pull/176): fix(pensioni-pa-dag): clean raw-faithful multi-year, filtri spostati in mart
 - [dataset-incubator#175](https://github.com/dataciviclab/dataset-incubator/pull/175): feat(irpef-comunale): clean.sql raw-faithful, 52 colonne, senza logica interpretativa
-- [source-observatory#156](https://github.com/dataciviclab/source-observatory/pull/156): feat(discover_portals): registry sync + non-standard CKAN paths
-- [source-observatory#155](https://github.com/dataciviclab/source-observatory/pull/155): feat: preserva item quando source è down — merge invece di replace
+- [source-observatory#159](https://github.com/dataciviclab/source-observatory/pull/159): docs: audit fix — stale semantics, catalog_signals structure
 - **Dependabot**: 2 bump PR(s) - [#60](https://github.com/dataciviclab/data-explorer/pull/60), [#59](https://github.com/dataciviclab/data-explorer/pull/59)
 
 ## Open Discussions
@@ -43,14 +43,14 @@
 
 ## Radar Status
 
-Fonti: 13 — GREEN 6 · YELLOW 5 · RED 2 (probe: 2026-04-24)
+Fonti: 14 — GREEN 7 · YELLOW 3 · RED 4 (probe: 2026-04-26)
 
-- **istat_sdmx** (sdmx): YELLOW [HTTP -]
+- **istat_sdmx** (sdmx): RED [HTTP -]
 - **anac** (ckan): YELLOW [HTTP 403]
 - **dati_salute** (html): RED [HTTP -]
 - **dati_camera** (sparql): RED [HTTP 503]
 - **lavoro_opendata** (ckan): YELLOW [HTTP 200]
-- **mur_ustat** (ckan): YELLOW [HTTP -]
+- **mur_ustat** (ckan): RED [HTTP -]
 - **opencoesione** (rest): YELLOW [HTTP 403]
 
 ## Catalog Drift
@@ -75,10 +75,12 @@ Fonti: 13 — GREEN 6 · YELLOW 5 · RED 2 (probe: 2026-04-24)
 
 ## Portal Scout
 
-Portali rilevati: 47 — nuovi candidati: 33 — strutturati confermati: 4
+Portali rilevati: 51 — nuovi candidati: 37 — strutturati confermati: 6
 
 **Nuovi candidati strutturati:**
 - `dati-coll.dfp.gov.it` — CKAN
-- `indicepa.gov.it` — CKAN
+- `dati.comune.mt.it` — CKAN
+- `dati.toscana.it` — CKAN
 - `dati.mit.gov.it` — CKAN
+- `indicepa.gov.it` — CKAN
 - `opendata-ercolano.cultura.gov.it` — CKAN
