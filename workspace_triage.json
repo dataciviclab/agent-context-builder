@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-26T13:09:10.017969",
+  "generated_at": "2026-04-26T16:33:39.023693",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,8 +9,20 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 6,
+  "open_prs": 7,
   "prs": [
+    {
+      "number": 179,
+      "title": "feat(aifa-spesa-consumo): clean raw-faithful, mart, notebook v0, url_suffix_by_year",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/179"
+    },
+    {
+      "number": 178,
+      "title": "fix(bdap-lea): clean raw-faithful, filtro spostato in mart, notebook v0",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/178"
+    },
     {
       "number": 177,
       "title": "fix(bdap-entrate-stato): clean raw-faithful, filtri spostati in mart",
@@ -18,16 +30,10 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/177"
     },
     {
-      "number": 176,
-      "title": "fix(pensioni-pa-dag): clean raw-faithful multi-year, filtri spostati in mart",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/176"
-    },
-    {
-      "number": 175,
-      "title": "feat(irpef-comunale): clean.sql raw-faithful, 52 colonne, senza logica interpretativa",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/175"
+      "number": 184,
+      "title": "fix: actual_raw_cols e raw_missing_columns in clean_validation (+ CSV)",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/184"
     },
     {
       "number": 60,
@@ -237,10 +243,10 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/100"
     },
     {
-      "number": 181,
-      "title": "feat: supporto url_suffix_by_year per URL con suffisso data per-anno",
+      "number": 183,
+      "title": "Feature: source type http_post_file per download via POST",
       "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/181"
+      "url": "https://github.com/dataciviclab/toolkit/issues/183"
     },
     {
       "number": 180,
@@ -552,7 +558,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 6"
+    "Many open PRs: 7"
   ],
   "radar": {
     "available": true,
@@ -630,9 +636,9 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-04-25",
+    "updated_at": "2026-04-26",
     "summary": {
-      "total": 9,
+      "total": 11,
       "clean_ready": 7,
       "public": 7
     },
@@ -689,6 +695,24 @@
         "metric_columns": 14,
         "dimension_columns": 13,
         "column_count": 27
+      },
+      {
+        "slug": "irpef_comunale",
+        "name": "Irpef Comunale",
+        "status": "candidate",
+        "visibility": "public",
+        "period": {
+          "start": 2019,
+          "end": 2023
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/irpef_comunale/*/irpef_comunale_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 43,
+        "dimension_columns": 9,
+        "column_count": 52
       },
       {
         "slug": "ispra_consumo_suolo",
@@ -796,6 +820,24 @@
         "metric_columns": 1,
         "dimension_columns": 5,
         "column_count": 6
+      },
+      {
+        "slug": "pensioni_pa_dag",
+        "name": "Pensioni Pa Dag",
+        "status": "candidate",
+        "visibility": "public",
+        "period": {
+          "start": 2024,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/pensioni_pa_dag/*/pensioni_pa_dag_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 0,
+        "dimension_columns": 18,
+        "column_count": 18
       }
     ]
   },

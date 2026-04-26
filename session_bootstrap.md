@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-26T13:09:10.017969
+**Generated**: 2026-04-26T16:33:39.023693
 
 ## Repos
 
@@ -13,9 +13,10 @@
 
 ## Open PRs
 
+- [dataset-incubator#179](https://github.com/dataciviclab/dataset-incubator/pull/179): feat(aifa-spesa-consumo): clean raw-faithful, mart, notebook v0, url_suffix_by_year
+- [dataset-incubator#178](https://github.com/dataciviclab/dataset-incubator/pull/178): fix(bdap-lea): clean raw-faithful, filtro spostato in mart, notebook v0
 - [dataset-incubator#177](https://github.com/dataciviclab/dataset-incubator/pull/177): fix(bdap-entrate-stato): clean raw-faithful, filtri spostati in mart
-- [dataset-incubator#176](https://github.com/dataciviclab/dataset-incubator/pull/176): fix(pensioni-pa-dag): clean raw-faithful multi-year, filtri spostati in mart
-- [dataset-incubator#175](https://github.com/dataciviclab/dataset-incubator/pull/175): feat(irpef-comunale): clean.sql raw-faithful, 52 colonne, senza logica interpretativa
+- [toolkit#184](https://github.com/dataciviclab/toolkit/pull/184): fix: actual_raw_cols e raw_missing_columns in clean_validation (+ CSV)
 - [source-observatory#159](https://github.com/dataciviclab/source-observatory/pull/159): docs: audit fix — stale semantics, catalog_signals structure
 - **Dependabot**: 2 bump PR(s) - [#60](https://github.com/dataciviclab/data-explorer/pull/60), [#59](https://github.com/dataciviclab/data-explorer/pull/59)
 
@@ -64,7 +65,7 @@ Fonti: 14 — GREEN 7 · YELLOW 3 · RED 4 (probe: 2026-04-26)
 
 ## Dataset Catalog
 
-*7 clean_ready dataset(s), 7 public* (updated 2026-04-25)
+*7 clean_ready dataset(s), 7 public* (updated 2026-04-26)
 - **bdap_entrate_stato** (public): BDAP Entrate Stato - Serie Storica [2008-2024]
 - **dipendenti_pubblici** (public): Dipendenti Pubblici - Occupazione e Turnover [2010-2023]
 - **ispra_consumo_suolo** (public): ISPRA - Consumo di Suolo 2024 [2024]
