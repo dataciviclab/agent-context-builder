@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-27T13:55:41.368149
+**Generated**: 2026-04-27T18:22:21.629074
 
 ## Repos
 
@@ -13,7 +13,6 @@
 
 ## Open PRs
 
-- [dataset-incubator#201](https://github.com/dataciviclab/dataset-incubator/pull/201): fix(civile-flussi): preserva tutte le 12 colonne raw in clean
 - [dataset-incubator#200](https://github.com/dataciviclab/dataset-incubator/pull/200): chore(camera-deputati-legislature): compila entry clean catalog
 - [dataset-incubator#199](https://github.com/dataciviclab/dataset-incubator/pull/199): chore: aggiungi support dataset bdap-anagrafe-enti
 - [source-observatory#159](https://github.com/dataciviclab/source-observatory/pull/159): docs: audit fix — stale semantics, catalog_signals structure
