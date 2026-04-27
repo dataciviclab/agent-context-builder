@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-26T19:59:50.904690
+**Generated**: 2026-04-27T02:50:59.699388
 
 ## Repos
 
@@ -20,6 +20,7 @@
 
 ## Open Discussions
 
+- [dataciviclab#234](https://github.com/orgs/dataciviclab/discussions/234) [Datasets]: BDAP Anagrafe Enti — copertura open data dei portali PA
 - [dataciviclab#210](https://github.com/orgs/dataciviclab/discussions/210) [Domande]: La geografia del calo iscrizioni nelle scuole primarie (2015-2024)
 - [dataciviclab#228](https://github.com/orgs/dataciviclab/discussions/228) [Datasets]: Consip partecipazioni — geografia delle imprese nelle gare pubbliche (2023-2025)
 - [dataciviclab#227](https://github.com/orgs/dataciviclab/discussions/227) [Datasets]: MUR DSU Regionale — posti alloggio e borse per regione e ateneo (2024-2025)
@@ -29,7 +30,6 @@
 - [dataciviclab#218](https://github.com/orgs/dataciviclab/discussions/218) [Analisi]: [Analisi] Entrate dello Stato 2008-2024: nelle crisi cresce il peso dei prestiti?
 - [dataciviclab#224](https://github.com/orgs/dataciviclab/discussions/224) [Metodo]: Come funziona il flusso tra repo Lab — e cosa manca?
 - [dataciviclab#223](https://github.com/orgs/dataciviclab/discussions/223) [Datasets]: INPS ReI — evoluzione spesa e platea beneficiari 2018-2019
-- [dataciviclab#182](https://github.com/orgs/dataciviclab/discussions/182) [Datasets]: ISTAT Terzo Settore: istituzioni non-profit per comune (2011, 2015, 2017, 2020)
 
 ## Local State
 
