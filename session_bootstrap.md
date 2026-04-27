@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-27T02:50:59.699388
+**Generated**: 2026-04-27T08:28:00.263481
 
 ## Repos
 
@@ -54,7 +54,7 @@ Fonti: 14 — GREEN 7 · YELLOW 3 · RED 4 (probe: 2026-04-26)
 
 ## Catalog Drift
 
-*No catalog drift signals* (as of 2026-04-25T17:03:18+00:00, 10 sources checked)
+*No catalog drift signals* (as of 2026-04-27T06:09:57+00:00, 10 sources checked)
 
 ## Pipeline State
 
