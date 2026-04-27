@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-27T08:28:00.263481
+**Generated**: 2026-04-27T13:55:41.368149
 
 ## Repos
 
@@ -13,10 +13,11 @@
 
 ## Open PRs
 
-- [dataset-incubator#185](https://github.com/dataciviclab/dataset-incubator/pull/185): feat(camera-deputati-legislature): candidate runnable — SPARQL fix, clean raw-faithful
-- [dataset-incubator#179](https://github.com/dataciviclab/dataset-incubator/pull/179): feat(aifa-spesa-consumo): clean raw-faithful, mart, notebook v0, url_suffix_by_year
+- [dataset-incubator#201](https://github.com/dataciviclab/dataset-incubator/pull/201): fix(civile-flussi): preserva tutte le 12 colonne raw in clean
+- [dataset-incubator#200](https://github.com/dataciviclab/dataset-incubator/pull/200): chore(camera-deputati-legislature): compila entry clean catalog
+- [dataset-incubator#199](https://github.com/dataciviclab/dataset-incubator/pull/199): chore: aggiungi support dataset bdap-anagrafe-enti
 - [source-observatory#159](https://github.com/dataciviclab/source-observatory/pull/159): docs: audit fix — stale semantics, catalog_signals structure
-- **Dependabot**: 2 bump PR(s) - [#60](https://github.com/dataciviclab/data-explorer/pull/60), [#59](https://github.com/dataciviclab/data-explorer/pull/59)
+- **Dependabot**: 3 bump PR(s) - [#29](https://github.com/dataciviclab/agent-context-builder/pull/29), [#60](https://github.com/dataciviclab/data-explorer/pull/60) ...
 
 ## Open Discussions
 
@@ -42,12 +43,11 @@
 
 ## Radar Status
 
-Fonti: 14 — GREEN 7 · YELLOW 3 · RED 4 (probe: 2026-04-26)
+Fonti: 14 — GREEN 8 · YELLOW 3 · RED 3 (probe: 2026-04-27)
 
 - **istat_sdmx** (sdmx): RED [HTTP -]
 - **anac** (ckan): YELLOW [HTTP 403]
 - **dati_salute** (html): RED [HTTP -]
-- **dati_camera** (sparql): RED [HTTP 503]
 - **lavoro_opendata** (ckan): YELLOW [HTTP 200]
 - **mur_ustat** (ckan): RED [HTTP -]
 - **opencoesione** (rest): YELLOW [HTTP 403]
@@ -63,7 +63,7 @@ Fonti: 14 — GREEN 7 · YELLOW 3 · RED 4 (probe: 2026-04-26)
 
 ## Dataset Catalog
 
-*7 clean_ready dataset(s), 7 public* (updated 2026-04-26)
+*7 clean_ready dataset(s), 7 public* (updated 2026-04-27)
 - **bdap_entrate_stato** (public): BDAP Entrate Stato - Serie Storica [2008-2024]
 - **dipendenti_pubblici** (public): Dipendenti Pubblici - Occupazione e Turnover [2010-2023]
 - **ispra_consumo_suolo** (public): ISPRA - Consumo di Suolo 2024 [2024]

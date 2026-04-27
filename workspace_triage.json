@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-27T08:28:00.263481",
+  "generated_at": "2026-04-27T13:55:41.368149",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,19 +9,31 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 5,
+  "open_prs": 7,
   "prs": [
     {
-      "number": 185,
-      "title": "feat(camera-deputati-legislature): candidate runnable \u2014 SPARQL fix, clean raw-faithful",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/185"
+      "number": 29,
+      "title": "chore(deps): bump codecov/codecov-action from 4 to 6",
+      "repo": "agent-context-builder",
+      "url": "https://github.com/dataciviclab/agent-context-builder/pull/29"
     },
     {
-      "number": 179,
-      "title": "feat(aifa-spesa-consumo): clean raw-faithful, mart, notebook v0, url_suffix_by_year",
+      "number": 201,
+      "title": "fix(civile-flussi): preserva tutte le 12 colonne raw in clean",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/179"
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/201"
+    },
+    {
+      "number": 200,
+      "title": "chore(camera-deputati-legislature): compila entry clean catalog",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/200"
+    },
+    {
+      "number": 199,
+      "title": "chore: aggiungi support dataset bdap-anagrafe-enti",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/199"
     },
     {
       "number": 60,
@@ -42,31 +54,19 @@
       "url": "https://github.com/dataciviclab/source-observatory/pull/159"
     }
   ],
-  "open_issues": 51,
+  "open_issues": 49,
   "issues": [
+    {
+      "number": 197,
+      "title": "post-merge: run + push GCS \u2014 camera-deputati-legislature",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/197"
+    },
     {
       "number": 190,
       "title": "intake: BDAP Anagrafe Enti \u2014 copertura open data dei portali PA",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/190"
-    },
-    {
-      "number": 189,
-      "title": "post-merge: run + push GCS \u2014 bdap-lea",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/189"
-    },
-    {
-      "number": 186,
-      "title": "post-merge: run + push GCS \u2014 bdap-entrate-stato",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/186"
-    },
-    {
-      "number": 184,
-      "title": "fix(build_clean_catalog): skip missing_period_years check quando multi_file: false",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/184"
     },
     {
       "number": 162,
@@ -79,12 +79,6 @@
       "title": "clean-query-mcp: validate parquet paths before building read_parquet expression",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/161"
-    },
-    {
-      "number": 160,
-      "title": "build_pipeline_signals: ambiguous layout error non \u00e8 actionable",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/160"
     },
     {
       "number": 154,
@@ -129,10 +123,10 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/123"
     },
     {
-      "number": 108,
-      "title": "Estendere il perimetro del candidate MIM oltre il v0 2024/25",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/108"
+      "number": 235,
+      "title": "[Seed] Verificare una fonte pubblica e lasciare una nota breve riusabile",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/235"
     },
     {
       "number": 233,
@@ -295,6 +289,12 @@
       "title": "feat: unifica catalogo da dataset-incubator, routing dinamico per slug",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/issues/56"
+    },
+    {
+      "number": 171,
+      "title": "[scout] ISTAT SDMX: 5 dataflow rilevanti per priorita civiche Lab",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/171"
     },
     {
       "number": 163,
@@ -545,14 +545,16 @@
       "untracked_files": 0
     }
   },
-  "warnings": [],
+  "warnings": [
+    "Many open PRs: 7"
+  ],
   "radar": {
     "available": true,
-    "probe_date": "2026-04-26",
+    "probe_date": "2026-04-27",
     "sources_total": 14,
-    "green": 7,
+    "green": 8,
     "yellow": 3,
-    "red": 4,
+    "red": 3,
     "unhealthy": [
       {
         "id": "istat_sdmx",
@@ -571,12 +573,6 @@
         "status": "RED",
         "protocol": "html",
         "http_code": "-"
-      },
-      {
-        "id": "dati_camera",
-        "status": "RED",
-        "protocol": "sparql",
-        "http_code": "503"
       },
       {
         "id": "lavoro_opendata",
@@ -622,13 +618,31 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-04-26",
+    "updated_at": "2026-04-27",
     "summary": {
-      "total": 11,
+      "total": 13,
       "clean_ready": 7,
       "public": 7
     },
     "datasets": [
+      {
+        "slug": "aifa_spesa_consumo",
+        "name": "AIFA Spesa Farmaceutica Convenzionata",
+        "status": "candidate",
+        "visibility": "public",
+        "period": {
+          "start": 2018,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/aifa_spesa_consumo/*/aifa_spesa_consumo_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 4,
+        "dimension_columns": 13,
+        "column_count": 17
+      },
       {
         "slug": "bdap_entrate_stato",
         "name": "BDAP Entrate Stato - Serie Storica",
@@ -824,6 +838,24 @@
         "metric_columns": 0,
         "dimension_columns": 18,
         "column_count": 18
+      },
+      {
+        "slug": "popolazione_istat_comunale_2019_2025",
+        "name": "Popolazione ISTAT Comunale",
+        "status": "candidate",
+        "visibility": "public",
+        "period": {
+          "start": 2019,
+          "end": 2025
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/popolazione_istat_comunale_2019_2025/*/popolazione_istat_comunale_2019_2025_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 17,
+        "dimension_columns": 3,
+        "column_count": 20
       }
     ]
   },
