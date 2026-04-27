@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-27T18:36:53.635385
+**Generated**: 2026-04-27T19:24:14.868562
 
 ## Repos
 
@@ -15,6 +15,7 @@
 
 - [dataset-incubator#200](https://github.com/dataciviclab/dataset-incubator/pull/200): chore(camera-deputati-legislature): compila entry clean catalog
 - [dataset-incubator#199](https://github.com/dataciviclab/dataset-incubator/pull/199): chore: aggiungi support dataset bdap-anagrafe-enti
+- [source-observatory#175](https://github.com/dataciviclab/source-observatory/pull/175): feat(bulk_source_check): CSV content preview enrichment for HTML protocol
 - [source-observatory#159](https://github.com/dataciviclab/source-observatory/pull/159): docs: audit fix — stale semantics, catalog_signals structure
 - **Dependabot**: 3 bump PR(s) - [#29](https://github.com/dataciviclab/agent-context-builder/pull/29), [#60](https://github.com/dataciviclab/data-explorer/pull/60) ...
 

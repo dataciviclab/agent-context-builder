@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-27T18:36:53.635385",
+  "generated_at": "2026-04-27T19:24:14.868562",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,7 +9,7 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 6,
+  "open_prs": 7,
   "prs": [
     {
       "number": 29,
@@ -42,211 +42,43 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/59"
     },
     {
+      "number": 175,
+      "title": "feat(bulk_source_check): CSV content preview enrichment for HTML protocol",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/175"
+    },
+    {
       "number": 159,
       "title": "docs: audit fix \u2014 stale semantics, catalog_signals structure",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/pull/159"
     }
   ],
-  "open_issues": 33,
+  "open_issues": 4,
   "issues": [
     {
-      "number": 204,
-      "title": "post-merge: run + push GCS \u2014 civile-flussi",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/204"
+      "number": 61,
+      "title": "fix(civile-flussi): aggiorna path parquet a /2025/ dopo passaggio candidate DI",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/61"
     },
     {
-      "number": 197,
-      "title": "post-merge: run + push GCS \u2014 camera-deputati-legislature",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/197"
+      "number": 58,
+      "title": "chore: aggiornare @sveltejs/vite-plugin-svelte v3 \u2192 v7",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/58"
     },
     {
-      "number": 190,
-      "title": "intake: BDAP Anagrafe Enti \u2014 copertura open data dei portali PA",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/190"
+      "number": 57,
+      "title": "chore: aggiornare Tailwind CSS v3 \u2192 v4",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/57"
     },
     {
-      "number": 162,
-      "title": "build_pipeline_signals: estrai has_mart_sql e layout detection in helpers condivisi",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/162"
-    },
-    {
-      "number": 161,
-      "title": "clean-query-mcp: validate parquet paths before building read_parquet expression",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/161"
-    },
-    {
-      "number": 154,
-      "title": "Aggiungere sample run GitHub per candidate usando toolkit",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/154"
-    },
-    {
-      "number": 151,
-      "title": "intake: ISTAT povert\u00e0 assoluta e relativa: incidenze, intensit\u00e0 e soglie (2014-2024)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/151"
-    },
-    {
-      "number": 147,
-      "title": "follow-up scaffold intake: naming notebook, default SDMX, documentazione adapter",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/147"
-    },
-    {
-      "number": 144,
-      "title": "intake: [Dataset] Partecipazioni pubbliche dichiarate \u2013 MEF 2023",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/144"
-    },
-    {
-      "number": 143,
-      "title": "intake: ISTAT Ciclo dell'acqua - prelievo vs distribuzione, perdite idriche per distretto",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/143"
-    },
-    {
-      "number": 124,
-      "title": "Apri candidate camera-votazioni",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/124"
-    },
-    {
-      "number": 123,
-      "title": "Apri candidate inps-cig",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/123"
-    },
-    {
-      "number": 235,
-      "title": "[Seed] Verificare una fonte pubblica e lasciare una nota breve riusabile",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/235"
-    },
-    {
-      "number": 233,
-      "title": "seed-issues: rendere il parsing per-file resilient",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/233"
-    },
-    {
-      "number": 232,
-      "title": "test_parse_discussion: aggiungere test su main() per failure mode exit codes",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/232"
-    },
-    {
-      "number": 226,
-      "title": "Allineare la documentazione del repo hub allo stato reale del Lab",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/226"
-    },
-    {
-      "number": 225,
-      "title": "review: aggiornare i workflow per le seed issue",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/225"
-    },
-    {
-      "number": 215,
-      "title": "[Seed] Rendere esplicito un debito gi\u00e0 emerso senza aprire un refactor largo",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/215"
-    },
-    {
-      "number": 187,
-      "title": "[Seed] Aggiungere una nota metodologica minima a un output preciso",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/187"
-    },
-    {
-      "number": 185,
-      "title": "[Seed] Sintetizzare una Discussion attiva in 6-8 righe operative",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/185"
-    },
-    {
-      "number": 159,
-      "title": "[Seed] Valutare se una analisi va promossa, tenuta o congelata",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/159"
-    },
-    {
-      "number": 158,
-      "title": "[Seed] Fare una review rapida di un filone gi\u00e0 vivo e scegliere un solo prossimo passo",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/158"
-    },
-    {
-      "number": 145,
-      "title": "[Seed] Scegliere il prossimo output pubblico minimo da un filone gi\u00e0 attivo",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/145"
-    },
-    {
-      "number": 127,
-      "title": "[Roadmap 2026] 12 output pubblici pubblicati",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/127"
-    },
-    {
-      "number": 126,
-      "title": "[Roadmap 2026] 3 repo progetto nate dal Lab",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/126"
-    },
-    {
-      "number": 124,
-      "title": "[Roadmap 2026] 5 dataset giustizia puliti e analizzati",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/124"
-    },
-    {
-      "number": 123,
-      "title": "[Roadmap 2026] 5 dataset welfare e lavoro puliti e analizzati",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/123"
-    },
-    {
-      "number": 122,
-      "title": "[Roadmap 2026] 5 dataset sanita puliti e analizzati",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/122"
-    },
-    {
-      "number": 121,
-      "title": "[Roadmap 2026] 5 dataset finanza pubblica puliti e analizzati",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/121"
-    },
-    {
-      "number": 113,
-      "title": "[Roadmap 2026] 5 dataset territorio e ambiente puliti e analizzati",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/113"
-    },
-    {
-      "number": 106,
-      "title": "[Seed] Trasformare una Discussion matura in 1-2 issue davvero prendibili",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/106"
-    },
-    {
-      "number": 101,
-      "title": "[Seed] Verificare link e riferimenti in un file o sezione precisa",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/101"
-    },
-    {
-      "number": 100,
-      "title": "[Seed] Rendere pi\u00f9 chiara una sezione specifica di README o guida breve",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/100"
+      "number": 56,
+      "title": "feat: unifica catalogo da dataset-incubator, routing dinamico per slug",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/56"
     }
   ],
   "open_discussions": 20,
@@ -444,7 +276,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 6"
+    "Many open PRs: 7"
   ],
   "radar": {
     "available": true,
