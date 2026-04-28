@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-28T14:09:05.569002",
+  "generated_at": "2026-04-28T19:43:20.970551",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,19 +9,13 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 8,
+  "open_prs": 7,
   "prs": [
     {
       "number": 29,
       "title": "chore(deps): bump codecov/codecov-action from 4 to 6",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/pull/29"
-    },
-    {
-      "number": 219,
-      "title": "fix: aggiungi entry corretta istat_gini_regionale nel clean catalog",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/219"
     },
     {
       "number": 200,
@@ -60,7 +54,7 @@
       "url": "https://github.com/dataciviclab/source-observatory/pull/159"
     }
   ],
-  "open_issues": 50,
+  "open_issues": 46,
   "issues": [
     {
       "number": 197,
@@ -73,24 +67,6 @@
       "title": "intake: BDAP Anagrafe Enti \u2014 copertura open data dei portali PA",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/190"
-    },
-    {
-      "number": 162,
-      "title": "build_pipeline_signals: estrai has_mart_sql e layout detection in helpers condivisi",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/162"
-    },
-    {
-      "number": 161,
-      "title": "clean-query-mcp: validate parquet paths before building read_parquet expression",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/161"
-    },
-    {
-      "number": 154,
-      "title": "Aggiungere sample run GitHub per candidate usando toolkit",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/154"
     },
     {
       "number": 151,
@@ -297,16 +273,16 @@
       "url": "https://github.com/dataciviclab/data-explorer/issues/56"
     },
     {
+      "number": 179,
+      "title": "[scout] consip_open_data \u2014 filone MEPA, 10+ candidati subappalti",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/179"
+    },
+    {
       "number": 178,
       "title": "[source] finanze.gov.it \u2014 dichiarazioni fiscali CSV regionali, go Discussion",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/178"
-    },
-    {
-      "number": 177,
-      "title": "[source] sparql-noipa.mef.gov.it \u2014 NOIPA PA stipend data, evaluate catalog-watch",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/177"
     },
     {
       "number": 176,
@@ -339,12 +315,6 @@
       "url": "https://github.com/dataciviclab/source-observatory/issues/148"
     },
     {
-      "number": 141,
-      "title": "catalog-scout: catalog inventory 2026-04-18 (6509 item)",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/141"
-    },
-    {
       "number": 133,
       "title": "perf: valutare pooling e incrementalit\u00e0 per source-check",
       "repo": "source-observatory",
@@ -365,6 +335,20 @@
   ],
   "open_discussions": 20,
   "discussions": [
+    {
+      "number": 237,
+      "title": "BDAP MOP \u2014 soggetti titolari di Opere Pubbliche, per CUP e codice fiscale (2026)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/237",
+      "category": "Datasets"
+    },
+    {
+      "number": 236,
+      "title": "CONSIP MEPA \u2014 acquisti e appalti stipulati della PA, per provincia (2023-2025)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/236",
+      "category": "Datasets"
+    },
     {
       "number": 234,
       "title": "BDAP Anagrafe Enti \u2014 copertura open data dei portali PA",
@@ -490,20 +474,6 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/200",
       "category": "Datasets"
-    },
-    {
-      "number": 177,
-      "title": "MIM - Iscrizioni nelle scuole statali: 10 anni di dati per singolo istituto",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/177",
-      "category": "Datasets"
-    },
-    {
-      "number": 197,
-      "title": "Quando una fonte puo' passare da radar-only a catalog-watch?",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/197",
-      "category": "Q&A"
     }
   ],
   "github_fetch_errors": {},
@@ -558,7 +528,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 8"
+    "Many open PRs: 7"
   ],
   "radar": {
     "available": true,
@@ -615,16 +585,23 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-04-25",
+    "generated_at": "2026-04-28",
     "summary": {
-      "total": 17,
+      "total": 27,
       "by_status": {
-        "ok": 17,
+        "ok": 26,
         "warn": 0,
-        "error": 0
+        "error": 1
       }
     },
-    "actionable": []
+    "actionable": [
+      {
+        "id": "istat-ciclo-acqua-prelievo-distribuzione",
+        "status": "error",
+        "detail": "anni: ? \u2014 fonte: ? \u2014 mart: no \u2014 \u26a0 no dataset.yml and no sources/ directory",
+        "action": "correggere la struttura del candidato"
+      }
+    ]
   },
   "dataset_catalog": {
     "available": true,
@@ -632,7 +609,7 @@
     "name": "Lab Clean Registry",
     "updated_at": "2026-04-28",
     "summary": {
-      "total": 14,
+      "total": 16,
       "clean_ready": 5,
       "public": 5
     },
@@ -815,6 +792,42 @@
         "metric_columns": 9,
         "dimension_columns": 5,
         "column_count": 14
+      },
+      {
+        "slug": "istat_gini_regionale",
+        "name": "ISTAT - Indice di Gini regionale",
+        "status": "candidate",
+        "visibility": "public",
+        "period": {
+          "start": 2003,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/istat_gini_regionale/2023/istat_gini_regionale_2023_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 1,
+        "dimension_columns": 4,
+        "column_count": 5
+      },
+      {
+        "slug": "istat_housing_crowding",
+        "name": "Istat Housing Crowding",
+        "status": "candidate",
+        "visibility": "public",
+        "period": {
+          "start": 2004,
+          "end": 2025
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/istat_housing_crowding/2024/istat_housing_crowding_2024_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 1,
+        "dimension_columns": 27,
+        "column_count": 28
       },
       {
         "slug": "mim_alunni_corso_eta",

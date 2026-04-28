@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-28T14:09:05.569002
+**Generated**: 2026-04-28T19:43:20.970551
 
 ## Repos
 
@@ -13,7 +13,6 @@
 
 ## Open PRs
 
-- [dataset-incubator#219](https://github.com/dataciviclab/dataset-incubator/pull/219): fix: aggiungi entry corretta istat_gini_regionale nel clean catalog
 - [dataset-incubator#200](https://github.com/dataciviclab/dataset-incubator/pull/200): chore(camera-deputati-legislature): compila entry clean catalog
 - [dataset-incubator#199](https://github.com/dataciviclab/dataset-incubator/pull/199): chore: aggiungi support dataset bdap-anagrafe-enti
 - [source-observatory#159](https://github.com/dataciviclab/source-observatory/pull/159): docs: audit fix — stale semantics, catalog_signals structure
@@ -21,6 +20,8 @@
 
 ## Open Discussions
 
+- [dataciviclab#237](https://github.com/orgs/dataciviclab/discussions/237) [Datasets]: BDAP MOP — soggetti titolari di Opere Pubbliche, per CUP e codice fiscale (2026)
+- [dataciviclab#236](https://github.com/orgs/dataciviclab/discussions/236) [Datasets]: CONSIP MEPA — acquisti e appalti stipulati della PA, per provincia (2023-2025)
 - [dataciviclab#234](https://github.com/orgs/dataciviclab/discussions/234) [Datasets]: BDAP Anagrafe Enti — copertura open data dei portali PA
 - [dataciviclab#210](https://github.com/orgs/dataciviclab/discussions/210) [Domande]: La geografia del calo iscrizioni nelle scuole primarie (2015-2024)
 - [dataciviclab#228](https://github.com/orgs/dataciviclab/discussions/228) [Datasets]: Consip partecipazioni — geografia delle imprese nelle gare pubbliche (2023-2025)
@@ -29,8 +30,6 @@
 - [dataciviclab#214](https://github.com/orgs/dataciviclab/discussions/214) [Datasets]: ISTAT povertà assoluta e relativa: incidenze, intensità e soglie (2014-2024)
 - [dataciviclab#211](https://github.com/orgs/dataciviclab/discussions/211) [Datasets]: MUR contribuzione universitaria: tasse, esoneri e diritto allo studio per ateneo (2009-2024)
 - [dataciviclab#218](https://github.com/orgs/dataciviclab/discussions/218) [Analisi]: [Analisi] Entrate dello Stato 2008-2024: nelle crisi cresce il peso dei prestiti?
-- [dataciviclab#224](https://github.com/orgs/dataciviclab/discussions/224) [Metodo]: Come funziona il flusso tra repo Lab — e cosa manca?
-- [dataciviclab#223](https://github.com/orgs/dataciviclab/discussions/223) [Datasets]: INPS ReI — evoluzione spesa e platea beneficiari 2018-2019
 
 ## Local State
 
@@ -58,8 +57,9 @@ Fonti: 14 — GREEN 8 · YELLOW 3 · RED 3 (probe: 2026-04-28)
 
 ## Pipeline State
 
-*17 candidates, tutti ok*
-  *(as of 2026-04-25 — 17 ok)*
+- **istat-ciclo-acqua-prelievo-distribuzione** [error]: anni: ? — fonte: ? — mart: no — ⚠ no dataset.yml and no sources/ directory
+  - azione: correggere la struttura del candidato
+  *(as of 2026-04-28 — 1 error, 26 ok)*
 
 ## Dataset Catalog
 
