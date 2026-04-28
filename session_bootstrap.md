@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-27T19:24:14.868562
+**Generated**: 2026-04-28T02:58:12.983056
 
 ## Repos
 
@@ -15,9 +15,8 @@
 
 - [dataset-incubator#200](https://github.com/dataciviclab/dataset-incubator/pull/200): chore(camera-deputati-legislature): compila entry clean catalog
 - [dataset-incubator#199](https://github.com/dataciviclab/dataset-incubator/pull/199): chore: aggiungi support dataset bdap-anagrafe-enti
-- [source-observatory#175](https://github.com/dataciviclab/source-observatory/pull/175): feat(bulk_source_check): CSV content preview enrichment for HTML protocol
 - [source-observatory#159](https://github.com/dataciviclab/source-observatory/pull/159): docs: audit fix — stale semantics, catalog_signals structure
-- **Dependabot**: 3 bump PR(s) - [#29](https://github.com/dataciviclab/agent-context-builder/pull/29), [#60](https://github.com/dataciviclab/data-explorer/pull/60) ...
+- **Dependabot**: 8 bump PR(s) - [#29](https://github.com/dataciviclab/agent-context-builder/pull/29), [#210](https://github.com/dataciviclab/dataset-incubator/pull/210) ...
 
 ## Open Discussions
 
@@ -43,11 +42,12 @@
 
 ## Radar Status
 
-Fonti: 14 — GREEN 8 · YELLOW 3 · RED 3 (probe: 2026-04-27)
+Fonti: 14 — GREEN 7 · YELLOW 3 · RED 4 (probe: 2026-04-27)
 
 - **istat_sdmx** (sdmx): RED [HTTP -]
 - **anac** (ckan): YELLOW [HTTP 403]
 - **dati_salute** (html): RED [HTTP -]
+- **dati_cultura** (sparql): RED [HTTP -]
 - **lavoro_opendata** (ckan): YELLOW [HTTP 200]
 - **mur_ustat** (ckan): RED [HTTP -]
 - **opencoesione** (rest): YELLOW [HTTP 403]
