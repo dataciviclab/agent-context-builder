@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-28T08:26:39.771153
+**Generated**: 2026-04-28T14:09:05.569002
 
 ## Repos
 
@@ -13,10 +13,11 @@
 
 ## Open PRs
 
+- [dataset-incubator#219](https://github.com/dataciviclab/dataset-incubator/pull/219): fix: aggiungi entry corretta istat_gini_regionale nel clean catalog
 - [dataset-incubator#200](https://github.com/dataciviclab/dataset-incubator/pull/200): chore(camera-deputati-legislature): compila entry clean catalog
 - [dataset-incubator#199](https://github.com/dataciviclab/dataset-incubator/pull/199): chore: aggiungi support dataset bdap-anagrafe-enti
 - [source-observatory#159](https://github.com/dataciviclab/source-observatory/pull/159): docs: audit fix — stale semantics, catalog_signals structure
-- **Dependabot**: 8 bump PR(s) - [#29](https://github.com/dataciviclab/agent-context-builder/pull/29), [#210](https://github.com/dataciviclab/dataset-incubator/pull/210) ...
+- **Dependabot**: 4 bump PR(s) - [#29](https://github.com/dataciviclab/agent-context-builder/pull/29), [#63](https://github.com/dataciviclab/data-explorer/pull/63) ...
 
 ## Open Discussions
 
@@ -42,12 +43,11 @@
 
 ## Radar Status
 
-Fonti: 14 — GREEN 7 · YELLOW 3 · RED 4 (probe: 2026-04-27)
+Fonti: 14 — GREEN 8 · YELLOW 3 · RED 3 (probe: 2026-04-28)
 
 - **istat_sdmx** (sdmx): RED [HTTP -]
 - **anac** (ckan): YELLOW [HTTP 403]
 - **dati_salute** (html): RED [HTTP -]
-- **dati_cultura** (sparql): RED [HTTP -]
 - **lavoro_opendata** (ckan): YELLOW [HTTP 200]
 - **mur_ustat** (ckan): RED [HTTP -]
 - **opencoesione** (rest): YELLOW [HTTP 403]
@@ -63,10 +63,8 @@ Fonti: 14 — GREEN 7 · YELLOW 3 · RED 4 (probe: 2026-04-27)
 
 ## Dataset Catalog
 
-*7 clean_ready dataset(s), 7 public* (updated 2026-04-27)
+*5 clean_ready dataset(s), 5 public* (updated 2026-04-28)
 - **bdap_entrate_stato** (public): BDAP Entrate Stato - Serie Storica [2008-2024]
-- **dipendenti_pubblici** (public): Dipendenti Pubblici - Occupazione e Turnover [2010-2023]
-- **ispra_consumo_suolo** (public): ISPRA - Consumo di Suolo 2024 [2024]
 - **ispra_ru_base** (public): ISPRA - Rifiuti Urbani (dati base) [2020-2024]
 - **ispra_ru_costi_kg** (public): ISPRA - Costi gestione rifiuti (EUR/kg) [2020-2024]
 - **ispra_ru_costi_procapite** (public): ISPRA - Costi gestione rifiuti (EUR/abitante) [2020-2024]

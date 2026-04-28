@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-28T08:26:39.771153",
+  "generated_at": "2026-04-28T14:09:05.569002",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,7 +9,7 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 11,
+  "open_prs": 8,
   "prs": [
     {
       "number": 29,
@@ -18,28 +18,10 @@
       "url": "https://github.com/dataciviclab/agent-context-builder/pull/29"
     },
     {
-      "number": 210,
-      "title": "chore(deps): update pyarrow requirement from >=14.0 to >=24.0.0",
+      "number": 219,
+      "title": "fix: aggiungi entry corretta istat_gini_regionale nel clean catalog",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/210"
-    },
-    {
-      "number": 209,
-      "title": "chore(deps): update google-cloud-storage requirement from >=2.0 to >=3.10.1",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/209"
-    },
-    {
-      "number": 208,
-      "title": "chore(deps): update pandas requirement from >=2.0 to >=3.0.2",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/208"
-    },
-    {
-      "number": 207,
-      "title": "chore(deps): update google-cloud-bigquery requirement from >=3.0 to >=3.41.0",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/207"
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/219"
     },
     {
       "number": 200,
@@ -78,20 +60,8 @@
       "url": "https://github.com/dataciviclab/source-observatory/pull/159"
     }
   ],
-  "open_issues": 52,
+  "open_issues": 50,
   "issues": [
-    {
-      "number": 205,
-      "title": "post-merge: run + push GCS \u2014 dipendenti-pubblici",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/205"
-    },
-    {
-      "number": 204,
-      "title": "post-merge: run + push GCS \u2014 civile-flussi",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/204"
-    },
     {
       "number": 197,
       "title": "post-merge: run + push GCS \u2014 camera-deputati-legislature",
@@ -588,15 +558,15 @@
     }
   },
   "warnings": [
-    "Many open PRs: 11"
+    "Many open PRs: 8"
   ],
   "radar": {
     "available": true,
-    "probe_date": "2026-04-27",
+    "probe_date": "2026-04-28",
     "sources_total": 14,
-    "green": 7,
+    "green": 8,
     "yellow": 3,
-    "red": 4,
+    "red": 3,
     "unhealthy": [
       {
         "id": "istat_sdmx",
@@ -614,12 +584,6 @@
         "id": "dati_salute",
         "status": "RED",
         "protocol": "html",
-        "http_code": "-"
-      },
-      {
-        "id": "dati_cultura",
-        "status": "RED",
-        "protocol": "sparql",
         "http_code": "-"
       },
       {
@@ -666,11 +630,11 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-04-27",
+    "updated_at": "2026-04-28",
     "summary": {
       "total": 14,
-      "clean_ready": 7,
-      "public": 7
+      "clean_ready": 5,
+      "public": 5
     },
     "datasets": [
       {
@@ -729,7 +693,7 @@
       {
         "slug": "dipendenti_pubblici",
         "name": "Dipendenti Pubblici - Occupazione e Turnover",
-        "status": "clean_ready",
+        "status": "candidate",
         "visibility": "public",
         "period": {
           "start": 2010,
@@ -740,9 +704,9 @@
           "path": "gs://dataciviclab-clean/dipendenti_pubblici/*/dipendenti_pubblici_*_clean.parquet",
           "multi_file": true
         },
-        "metric_columns": 14,
+        "metric_columns": 10,
         "dimension_columns": 13,
-        "column_count": 27
+        "column_count": 23
       },
       {
         "slug": "inps_pensioni_2017_2024",
@@ -783,7 +747,7 @@
       {
         "slug": "ispra_consumo_suolo",
         "name": "ISPRA - Consumo di Suolo 2024",
-        "status": "clean_ready",
+        "status": "candidate",
         "visibility": "public",
         "period": {
           "start": 2024,
@@ -791,11 +755,12 @@
         },
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/ispra_consumo_suolo/2024/ispra_consumo_suolo_2024_clean.parquet"
+          "path": "gs://dataciviclab-clean/ispra_consumo_suolo/2024/ispra_consumo_suolo_2024_clean.parquet",
+          "multi_file": false
         },
-        "metric_columns": 3,
+        "metric_columns": 36,
         "dimension_columns": 4,
-        "column_count": 7
+        "column_count": 40
       },
       {
         "slug": "ispra_ru_base",

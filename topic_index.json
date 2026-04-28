@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-04-28T08:26:39.771153",
+  "generated_at": "2026-04-28T14:09:05.569002",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -37,27 +37,9 @@
           "end": 2024
         },
         "visibility": "public"
-      },
-      {
-        "slug": "dipendenti_pubblici",
-        "name": "Dipendenti Pubblici - Occupazione e Turnover",
-        "period": {
-          "start": 2010,
-          "end": 2023
-        },
-        "visibility": "public"
       }
     ],
     "ISPRA": [
-      {
-        "slug": "ispra_consumo_suolo",
-        "name": "ISPRA - Consumo di Suolo 2024",
-        "period": {
-          "start": 2024,
-          "end": 2024
-        },
-        "visibility": "public"
-      },
       {
         "slug": "ispra_ru_base",
         "name": "ISPRA - Rifiuti Urbani (dati base)",
