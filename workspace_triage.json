@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-29T08:21:21.681808",
+  "generated_at": "2026-04-29T13:59:16.662976",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -54,7 +54,7 @@
       "url": "https://github.com/dataciviclab/source-observatory/pull/159"
     }
   ],
-  "open_issues": 46,
+  "open_issues": 45,
   "issues": [
     {
       "number": 197,
@@ -79,12 +79,6 @@
       "title": "follow-up scaffold intake: naming notebook, default SDMX, documentazione adapter",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/147"
-    },
-    {
-      "number": 144,
-      "title": "intake: [Dataset] Partecipazioni pubbliche dichiarate \u2013 MEF 2023",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/144"
     },
     {
       "number": 143,
@@ -336,6 +330,27 @@
   "open_discussions": 20,
   "discussions": [
     {
+      "number": 240,
+      "title": "Dove si accumulano pi\u00f9 cause pendenti in rapporto alla popolazione?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/240",
+      "category": "Domanda"
+    },
+    {
+      "number": 239,
+      "title": "Quanta parte delle entrate tributarie dipende da poche voci e quanto \u00e8 diffuso?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/239",
+      "category": "Domanda"
+    },
+    {
+      "number": 238,
+      "title": "La spesa farmaceutica regionale \u00e8 proporzionale alla popolazione o ci sono regioni che spendono molto di pi\u00f9 per abitante?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/238",
+      "category": "Domanda"
+    },
+    {
       "number": 237,
       "title": "BDAP MOP \u2014 soggetti titolari di Opere Pubbliche, per CUP e codice fiscale (2026)",
       "repo": "dataciviclab",
@@ -361,7 +376,7 @@
       "title": "La geografia del calo iscrizioni nelle scuole primarie (2015-2024)",
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/210",
-      "category": "Domande"
+      "category": "Domanda"
     },
     {
       "number": 228,
@@ -453,27 +468,6 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/216",
       "category": "Datasets"
-    },
-    {
-      "number": 212,
-      "title": "Consip consumi in convenzione: geografia della spesa delle PA",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/212",
-      "category": "Datasets"
-    },
-    {
-      "number": 213,
-      "title": "Incentivi.gov: anagrafica degli incentivi alle imprese per regione, ambito e forma di agevolazione",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/213",
-      "category": "Datasets"
-    },
-    {
-      "number": 200,
-      "title": "ISTAT Delitti denunciati: serie storica per tipo di reato e territorio (2004-2023)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/200",
-      "category": "Datasets"
     }
   ],
   "github_fetch_errors": {},
@@ -532,7 +526,7 @@
   ],
   "radar": {
     "available": true,
-    "probe_date": "2026-04-28",
+    "probe_date": "2026-04-29",
     "sources_total": 14,
     "green": 8,
     "yellow": 3,
@@ -609,7 +603,7 @@
     "name": "Lab Clean Registry",
     "updated_at": "2026-04-28",
     "summary": {
-      "total": 16,
+      "total": 17,
       "clean_ready": 5,
       "public": 5
     },
@@ -828,6 +822,24 @@
         "metric_columns": 1,
         "dimension_columns": 27,
         "column_count": 28
+      },
+      {
+        "slug": "mef_partecipazioni",
+        "name": "MEF Partecipazioni Pubbliche",
+        "status": "candidate",
+        "visibility": "public",
+        "period": {
+          "start": 2020,
+          "end": 2023
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/mef_partecipazioni/*/mef_partecipazioni_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 24,
+        "dimension_columns": 60,
+        "column_count": 84
       },
       {
         "slug": "mim_alunni_corso_eta",

@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-29T08:21:21.681808
+**Generated**: 2026-04-29T13:59:16.662976
 
 ## Repos
 
@@ -20,16 +20,16 @@
 
 ## Open Discussions
 
+- [dataciviclab#240](https://github.com/orgs/dataciviclab/discussions/240) [Domanda]: Dove si accumulano più cause pendenti in rapporto alla popolazione?
+- [dataciviclab#239](https://github.com/orgs/dataciviclab/discussions/239) [Domanda]: Quanta parte delle entrate tributarie dipende da poche voci e quanto è diffuso?
+- [dataciviclab#238](https://github.com/orgs/dataciviclab/discussions/238) [Domanda]: La spesa farmaceutica regionale è proporzionale alla popolazione o ci sono regioni che spendono molto di più per abitante?
 - [dataciviclab#237](https://github.com/orgs/dataciviclab/discussions/237) [Datasets]: BDAP MOP — soggetti titolari di Opere Pubbliche, per CUP e codice fiscale (2026)
 - [dataciviclab#236](https://github.com/orgs/dataciviclab/discussions/236) [Datasets]: CONSIP MEPA — acquisti e appalti stipulati della PA, per provincia (2023-2025)
 - [dataciviclab#234](https://github.com/orgs/dataciviclab/discussions/234) [Datasets]: BDAP Anagrafe Enti — copertura open data dei portali PA
-- [dataciviclab#210](https://github.com/orgs/dataciviclab/discussions/210) [Domande]: La geografia del calo iscrizioni nelle scuole primarie (2015-2024)
+- [dataciviclab#210](https://github.com/orgs/dataciviclab/discussions/210) [Domanda]: La geografia del calo iscrizioni nelle scuole primarie (2015-2024)
 - [dataciviclab#228](https://github.com/orgs/dataciviclab/discussions/228) [Datasets]: Consip partecipazioni — geografia delle imprese nelle gare pubbliche (2023-2025)
 - [dataciviclab#227](https://github.com/orgs/dataciviclab/discussions/227) [Datasets]: MUR DSU Regionale — posti alloggio e borse per regione e ateneo (2024-2025)
 - [dataciviclab#175](https://github.com/orgs/dataciviclab/discussions/175) [Annunci]: Nuove categorie, stesso obiettivo: rendere piu' chiaro il passaggio da fonte a lettura pubblica
-- [dataciviclab#214](https://github.com/orgs/dataciviclab/discussions/214) [Datasets]: ISTAT povertà assoluta e relativa: incidenze, intensità e soglie (2014-2024)
-- [dataciviclab#211](https://github.com/orgs/dataciviclab/discussions/211) [Datasets]: MUR contribuzione universitaria: tasse, esoneri e diritto allo studio per ateneo (2009-2024)
-- [dataciviclab#218](https://github.com/orgs/dataciviclab/discussions/218) [Analisi]: [Analisi] Entrate dello Stato 2008-2024: nelle crisi cresce il peso dei prestiti?
 
 ## Local State
 
@@ -42,7 +42,7 @@
 
 ## Radar Status
 
-Fonti: 14 — GREEN 8 · YELLOW 3 · RED 3 (probe: 2026-04-28)
+Fonti: 14 — GREEN 8 · YELLOW 3 · RED 3 (probe: 2026-04-29)
 
 - **istat_sdmx** (sdmx): RED [HTTP -]
 - **anac** (ckan): YELLOW [HTTP 403]
