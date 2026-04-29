@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-29T13:59:16.662976",
+  "generated_at": "2026-04-29T19:27:47.284812",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,7 +9,7 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 7,
+  "open_prs": 8,
   "prs": [
     {
       "number": 29,
@@ -18,16 +18,22 @@
       "url": "https://github.com/dataciviclab/agent-context-builder/pull/29"
     },
     {
+      "number": 233,
+      "title": "chore(post-merge): aggiorna registry per PR #232",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/233"
+    },
+    {
+      "number": 230,
+      "title": "chore(post-merge): aggiorna registry per PR #199",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/230"
+    },
+    {
       "number": 200,
       "title": "chore(camera-deputati-legislature): compila entry clean catalog",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/200"
-    },
-    {
-      "number": 199,
-      "title": "chore: aggiungi support dataset bdap-anagrafe-enti",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/199"
     },
     {
       "number": 63,
@@ -54,19 +60,13 @@
       "url": "https://github.com/dataciviclab/source-observatory/pull/159"
     }
   ],
-  "open_issues": 45,
+  "open_issues": 44,
   "issues": [
     {
       "number": 197,
       "title": "post-merge: run + push GCS \u2014 camera-deputati-legislature",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/197"
-    },
-    {
-      "number": 190,
-      "title": "intake: BDAP Anagrafe Enti \u2014 copertura open data dei portali PA",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/190"
     },
     {
       "number": 151,
@@ -330,17 +330,17 @@
   "open_discussions": 20,
   "discussions": [
     {
-      "number": 240,
-      "title": "Dove si accumulano pi\u00f9 cause pendenti in rapporto alla popolazione?",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/240",
-      "category": "Domanda"
-    },
-    {
       "number": 239,
       "title": "Quanta parte delle entrate tributarie dipende da poche voci e quanto \u00e8 diffuso?",
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/239",
+      "category": "Domanda"
+    },
+    {
+      "number": 240,
+      "title": "Dove si accumulano pi\u00f9 cause pendenti in rapporto alla popolazione?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/240",
       "category": "Domanda"
     },
     {
@@ -522,7 +522,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 7"
+    "Many open PRs: 8"
   ],
   "radar": {
     "available": true,

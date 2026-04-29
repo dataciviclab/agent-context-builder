@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-29T13:59:16.662976
+**Generated**: 2026-04-29T19:27:47.284812
 
 ## Repos
 
@@ -13,15 +13,16 @@
 
 ## Open PRs
 
+- [dataset-incubator#233](https://github.com/dataciviclab/dataset-incubator/pull/233): chore(post-merge): aggiorna registry per PR #232
+- [dataset-incubator#230](https://github.com/dataciviclab/dataset-incubator/pull/230): chore(post-merge): aggiorna registry per PR #199
 - [dataset-incubator#200](https://github.com/dataciviclab/dataset-incubator/pull/200): chore(camera-deputati-legislature): compila entry clean catalog
-- [dataset-incubator#199](https://github.com/dataciviclab/dataset-incubator/pull/199): chore: aggiungi support dataset bdap-anagrafe-enti
 - [source-observatory#159](https://github.com/dataciviclab/source-observatory/pull/159): docs: audit fix — stale semantics, catalog_signals structure
 - **Dependabot**: 4 bump PR(s) - [#29](https://github.com/dataciviclab/agent-context-builder/pull/29), [#63](https://github.com/dataciviclab/data-explorer/pull/63) ...
 
 ## Open Discussions
 
-- [dataciviclab#240](https://github.com/orgs/dataciviclab/discussions/240) [Domanda]: Dove si accumulano più cause pendenti in rapporto alla popolazione?
 - [dataciviclab#239](https://github.com/orgs/dataciviclab/discussions/239) [Domanda]: Quanta parte delle entrate tributarie dipende da poche voci e quanto è diffuso?
+- [dataciviclab#240](https://github.com/orgs/dataciviclab/discussions/240) [Domanda]: Dove si accumulano più cause pendenti in rapporto alla popolazione?
 - [dataciviclab#238](https://github.com/orgs/dataciviclab/discussions/238) [Domanda]: La spesa farmaceutica regionale è proporzionale alla popolazione o ci sono regioni che spendono molto di più per abitante?
 - [dataciviclab#237](https://github.com/orgs/dataciviclab/discussions/237) [Datasets]: BDAP MOP — soggetti titolari di Opere Pubbliche, per CUP e codice fiscale (2026)
 - [dataciviclab#236](https://github.com/orgs/dataciviclab/discussions/236) [Datasets]: CONSIP MEPA — acquisti e appalti stipulati della PA, per provincia (2023-2025)
