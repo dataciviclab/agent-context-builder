@@ -203,6 +203,10 @@ def _build_dataset_catalog_dict(
                 "metric_columns": d.metric_columns,
                 "dimension_columns": d.dimension_columns,
                 "column_count": d.column_count,
+                "columns": [
+                    {"name": c.name, "role": c.role}
+                    for c in d.columns
+                ] if d.status == "clean_ready" else [],
             }
             for d in catalog.datasets
         ],

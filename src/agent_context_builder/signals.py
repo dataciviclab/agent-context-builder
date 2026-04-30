@@ -52,6 +52,18 @@ class SourceObservatorySignals:
 
 
 @dataclass
+class RepoSignalSampleRun:
+    """Sample run metadata for a pipeline signal."""
+
+    status: str  # passed | failed
+    run_id: str
+    run_url: str
+    checked_at: str
+    year: int
+    config_path: str
+
+
+@dataclass
 class RepoSignal:
     """Single signal entry following the repo-signals standard v1."""
 
@@ -60,6 +72,7 @@ class RepoSignal:
     label: str
     detail: str
     action: str
+    sample_run: RepoSignalSampleRun | None = None
 
 
 @dataclass
@@ -78,6 +91,22 @@ class RepoSignals:
         """Signals that are warn or error (shown in bootstrap)."""
         return [s for s in self.signals if s.status in ("warn", "error")]
 
+    @property
+    def failed_runs(self) -> list[RepoSignal]:
+        """Signals with a failed sample_run (shown in bootstrap)."""
+        return [
+            s for s in self.signals
+            if s.sample_run is not None and s.sample_run.status == "failed"
+        ]
+
+
+@dataclass
+class DICleanDatasetColumn:
+    """Simplified column descriptor for triage."""
+
+    name: str
+    role: str  # metric | dimension
+
 
 @dataclass
 class DICleanDataset:
@@ -93,6 +122,7 @@ class DICleanDataset:
     metric_columns: int = 0
     dimension_columns: int = 0
     column_count: int = 0
+    columns: list[DICleanDatasetColumn] = field(default_factory=list)
 
 
 @dataclass
@@ -108,6 +138,25 @@ class DICleanCatalog:
     def clean_ready(self) -> list[DICleanDataset]:
         """Datasets with status clean_ready."""
         return [d for d in self.datasets if d.status == "clean_ready"]
+
+    @property
+    def candidates(self) -> list[DICleanDataset]:
+        """Datasets with status candidate (not yet clean_ready)."""
+        return [d for d in self.datasets if d.status == "candidate"]
+
+
+def _parse_sample_run(raw: dict[str, Any] | None) -> RepoSignalSampleRun | None:
+    """Parse a sample_run dict into a RepoSignalSampleRun instance."""
+    if raw is None:
+        return None
+    return RepoSignalSampleRun(
+        status=raw.get("status", ""),
+        run_id=raw.get("run_id", ""),
+        run_url=raw.get("run_url", ""),
+        checked_at=raw.get("checked_at", ""),
+        year=raw.get("year", 0),
+        config_path=raw.get("config_path", ""),
+    )
 
 
 def parse_repo_signals(raw: str) -> RepoSignals:
@@ -134,6 +183,7 @@ def parse_repo_signals(raw: str) -> RepoSignals:
             label=s.get("label", s.get("id", "")),
             detail=s.get("detail", ""),
             action=s.get("action", ""),
+            sample_run=_parse_sample_run(s.get("sample_run")),
         )
         for s in data.get("signals", [])
     ]
@@ -186,6 +236,10 @@ def parse_di_clean_catalog(raw: str) -> DICleanCatalog:
                 metric_columns=metric_columns,
                 dimension_columns=dimension_columns,
                 column_count=len(columns),
+                columns=[
+                    DICleanDatasetColumn(name=c.get("name", ""), role=c.get("role", ""))
+                    for c in columns
+                ],
             )
         )
 

@@ -177,7 +177,12 @@ class Renderer:
         if radar.unhealthy:
             lines.append("")
             for s in radar.unhealthy:
-                lines.append(f"- **{s.id}** ({s.protocol}): {s.status} [HTTP {s.http_code}]")
+                datasets_info = ""
+                if s.datasets_in_use:
+                    datasets_info = " — ↳ " + ", ".join(s.datasets_in_use)
+                lines.append(
+                    f"- **{s.id}** ({s.protocol}): {s.status} [HTTP {s.http_code}]{datasets_info}"
+                )
         lines.append("")
         return lines
 
@@ -340,6 +345,16 @@ class Renderer:
             + ", ".join(f"{v} {k}" for k, v in sorted(by_status.items()) if v)
             + ")*"
         )
+        # Surface failed sample runs inline with the run URL
+        failed_runs = di.failed_runs
+        if failed_runs:
+            lines.append("")
+            for s in failed_runs:
+                run = s.sample_run
+                lines.append(
+                    f"- ⚠️ **{s.label}** — run fallito "
+                    f"[{run.year}]({run.run_url})"
+                )
         lines.append("")
         return lines
 
@@ -410,6 +425,10 @@ class Renderer:
                     "metric_columns": d.metric_columns,
                     "dimension_columns": d.dimension_columns,
                     "column_count": d.column_count,
+                    "columns": [
+                        {"name": c.name, "role": c.role}
+                        for c in d.columns
+                    ] if d.status == "clean_ready" else [],
                 }
                 for d in catalog.datasets
             ],
@@ -511,10 +530,19 @@ class Renderer:
         # Datasets grouped by source from clean_catalog
         catalog = self._fetch_di_clean_catalog()
         datasets_by_source: dict[str, list[dict[str, Any]]] = {}
+        candidates_by_source: dict[str, list[dict[str, Any]]] = {}
         if catalog:
             for ds in catalog.clean_ready:
                 source = ds.source or "unknown"
                 datasets_by_source.setdefault(source, []).append({
+                    "slug": ds.slug,
+                    "name": ds.name,
+                    "period": ds.period,
+                    "visibility": ds.visibility,
+                })
+            for ds in catalog.candidates:
+                source = ds.source or "unknown"
+                candidates_by_source.setdefault(source, []).append({
                     "slug": ds.slug,
                     "name": ds.name,
                     "period": ds.period,
@@ -537,5 +565,6 @@ class Renderer:
             "generated_at": self.fixed_timestamp,
             "repos": repos_section,
             "datasets_by_source": datasets_by_source,
+            "candidates_by_source": candidates_by_source,
             "operational_topics": operational_topics,
         }
