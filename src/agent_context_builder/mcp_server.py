@@ -38,7 +38,14 @@ _log = logging.getLogger(__name__)
 
 
 def _configure_logging() -> None:
-    """Configure structured logging from ACB_LOG_LEVEL env var."""
+    """Configure structured JSON logging from ACB_LOG_LEVEL env var.
+
+    Only calls basicConfig if the root logger has no handlers configured.
+    This avoids overriding logging setup from pytest --log-level or other
+    environments that pre-configure the root logger.
+    """
+    if logging.root.handlers:
+        return  # already configured — don't override
     level_name = os.environ.get("ACB_LOG_LEVEL", "INFO").upper()
     level = getattr(logging, level_name, logging.INFO)
     logging.basicConfig(

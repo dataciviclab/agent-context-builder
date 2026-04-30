@@ -216,8 +216,6 @@ class Renderer:
         lines.append("")
         return "\n".join(lines)
 
-        return "\n".join(lines)
-
     def _fetch_radar_summary(self) -> RadarSummary | None:
         return self._so_fetcher.fetch_radar_summary()
 
