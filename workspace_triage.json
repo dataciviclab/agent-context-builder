@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-30T19:23:44.193144",
+  "generated_at": "2026-04-30T20:41:27.226082",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -593,7 +593,8 @@
         },
         "metric_columns": 4,
         "dimension_columns": 13,
-        "column_count": 17
+        "column_count": 17,
+        "columns": []
       },
       {
         "slug": "bdap_entrate_stato",
@@ -610,7 +611,53 @@
         },
         "metric_columns": 2,
         "dimension_columns": 9,
-        "column_count": 11
+        "column_count": 11,
+        "columns": [
+          {
+            "name": "esercizio_finanziario",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_titolo",
+            "role": "dimension"
+          },
+          {
+            "name": "titolo",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_natura",
+            "role": "dimension"
+          },
+          {
+            "name": "natura",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_tipologia",
+            "role": "dimension"
+          },
+          {
+            "name": "tipologia",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_provento",
+            "role": "dimension"
+          },
+          {
+            "name": "provento",
+            "role": "dimension"
+          },
+          {
+            "name": "previsioni_definitive_cp",
+            "role": "metric"
+          },
+          {
+            "name": "previsioni_definitive_cs",
+            "role": "metric"
+          }
+        ]
       },
       {
         "slug": "civile_flussi",
@@ -628,7 +675,8 @@
         },
         "metric_columns": 3,
         "dimension_columns": 7,
-        "column_count": 10
+        "column_count": 10,
+        "columns": []
       },
       {
         "slug": "dipendenti_pubblici",
@@ -646,7 +694,8 @@
         },
         "metric_columns": 10,
         "dimension_columns": 13,
-        "column_count": 23
+        "column_count": 23,
+        "columns": []
       },
       {
         "slug": "inps_pensioni_2017_2024",
@@ -664,7 +713,8 @@
         },
         "metric_columns": 1,
         "dimension_columns": 10,
-        "column_count": 11
+        "column_count": 11,
+        "columns": []
       },
       {
         "slug": "irpef_comunale",
@@ -682,7 +732,8 @@
         },
         "metric_columns": 43,
         "dimension_columns": 9,
-        "column_count": 52
+        "column_count": 52,
+        "columns": []
       },
       {
         "slug": "ispra_consumo_suolo",
@@ -700,7 +751,8 @@
         },
         "metric_columns": 36,
         "dimension_columns": 4,
-        "column_count": 40
+        "column_count": 40,
+        "columns": []
       },
       {
         "slug": "ispra_ru_base",
@@ -718,7 +770,45 @@
         },
         "metric_columns": 3,
         "dimension_columns": 6,
-        "column_count": 9
+        "column_count": 9,
+        "columns": [
+          {
+            "name": "codice_comune_istat",
+            "role": "dimension"
+          },
+          {
+            "name": "regione",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "comune",
+            "role": "dimension"
+          },
+          {
+            "name": "popolazione",
+            "role": "dimension"
+          },
+          {
+            "name": "dato_riferito_a",
+            "role": "dimension"
+          },
+          {
+            "name": "totale_ru_tonnellate",
+            "role": "metric"
+          },
+          {
+            "name": "totale_rd_tonnellate",
+            "role": "metric"
+          },
+          {
+            "name": "percentuale_rd",
+            "role": "metric"
+          }
+        ]
       },
       {
         "slug": "ispra_ru_costi_kg",
@@ -736,7 +826,53 @@
         },
         "metric_columns": 6,
         "dimension_columns": 5,
-        "column_count": 11
+        "column_count": 11,
+        "columns": [
+          {
+            "name": "codice_comune_istat",
+            "role": "dimension"
+          },
+          {
+            "name": "comune_o_aggregazione",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "numero_comuni",
+            "role": "dimension"
+          },
+          {
+            "name": "popolazione",
+            "role": "dimension"
+          },
+          {
+            "name": "crt_cent_kg",
+            "role": "metric"
+          },
+          {
+            "name": "crd_cent_kg",
+            "role": "metric"
+          },
+          {
+            "name": "csl_cent_kg",
+            "role": "metric"
+          },
+          {
+            "name": "cc_cent_kg",
+            "role": "metric"
+          },
+          {
+            "name": "ck_cent_kg",
+            "role": "metric"
+          },
+          {
+            "name": "ctot_cent_kg",
+            "role": "metric"
+          }
+        ]
       },
       {
         "slug": "ispra_ru_costi_procapite",
@@ -754,7 +890,65 @@
         },
         "metric_columns": 9,
         "dimension_columns": 5,
-        "column_count": 14
+        "column_count": 14,
+        "columns": [
+          {
+            "name": "codice_comune_istat",
+            "role": "dimension"
+          },
+          {
+            "name": "comune_o_aggregazione",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "numero_comuni",
+            "role": "dimension"
+          },
+          {
+            "name": "popolazione",
+            "role": "dimension"
+          },
+          {
+            "name": "crt_euro_ab",
+            "role": "metric"
+          },
+          {
+            "name": "cts_euro_ab",
+            "role": "metric"
+          },
+          {
+            "name": "crd_euro_ab",
+            "role": "metric"
+          },
+          {
+            "name": "ctr_euro_ab",
+            "role": "metric"
+          },
+          {
+            "name": "csl_euro_ab",
+            "role": "metric"
+          },
+          {
+            "name": "cc_euro_ab",
+            "role": "metric"
+          },
+          {
+            "name": "ck_euro_ab",
+            "role": "metric"
+          },
+          {
+            "name": "altri_costi_euro_ab",
+            "role": "metric"
+          },
+          {
+            "name": "ctot_euro_ab",
+            "role": "metric"
+          }
+        ]
       },
       {
         "slug": "istat_gini_regionale",
@@ -772,7 +966,8 @@
         },
         "metric_columns": 1,
         "dimension_columns": 4,
-        "column_count": 5
+        "column_count": 5,
+        "columns": []
       },
       {
         "slug": "istat_housing_crowding",
@@ -790,7 +985,8 @@
         },
         "metric_columns": 1,
         "dimension_columns": 27,
-        "column_count": 28
+        "column_count": 28,
+        "columns": []
       },
       {
         "slug": "mef_partecipazioni",
@@ -808,7 +1004,8 @@
         },
         "metric_columns": 24,
         "dimension_columns": 60,
-        "column_count": 84
+        "column_count": 84,
+        "columns": []
       },
       {
         "slug": "mim_alunni_corso_eta",
@@ -826,7 +1023,8 @@
         },
         "metric_columns": 1,
         "dimension_columns": 5,
-        "column_count": 6
+        "column_count": 6,
+        "columns": []
       },
       {
         "slug": "mit_incidentalita_mensile",
@@ -844,7 +1042,69 @@
         },
         "metric_columns": 13,
         "dimension_columns": 2,
-        "column_count": 15
+        "column_count": 15,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "mese",
+            "role": "dimension"
+          },
+          {
+            "name": "incidenti",
+            "role": "metric"
+          },
+          {
+            "name": "morti",
+            "role": "metric"
+          },
+          {
+            "name": "feriti",
+            "role": "metric"
+          },
+          {
+            "name": "incidenti_mortali",
+            "role": "metric"
+          },
+          {
+            "name": "perc_incidenti",
+            "role": "metric"
+          },
+          {
+            "name": "perc_incidenti_mortali",
+            "role": "metric"
+          },
+          {
+            "name": "perc_morti",
+            "role": "metric"
+          },
+          {
+            "name": "perc_feriti",
+            "role": "metric"
+          },
+          {
+            "name": "indice_mortalita",
+            "role": "metric"
+          },
+          {
+            "name": "indice_gravita",
+            "role": "metric"
+          },
+          {
+            "name": "indice_lesivita",
+            "role": "metric"
+          },
+          {
+            "name": "indice_mortalita_spec",
+            "role": "metric"
+          },
+          {
+            "name": "indice_incidentalita_spec",
+            "role": "metric"
+          }
+        ]
       },
       {
         "slug": "mit_opere_incompiute_2020",
@@ -862,7 +1122,101 @@
         },
         "metric_columns": 5,
         "dimension_columns": 18,
-        "column_count": 23
+        "column_count": 23,
+        "columns": [
+          {
+            "name": "codice_cup",
+            "role": "dimension"
+          },
+          {
+            "name": "anno_di_riferimento",
+            "role": "dimension"
+          },
+          {
+            "name": "stato_opera",
+            "role": "dimension"
+          },
+          {
+            "name": "ambito_soggettivo",
+            "role": "dimension"
+          },
+          {
+            "name": "ambito_oggettivo",
+            "role": "dimension"
+          },
+          {
+            "name": "stazione_appaltante",
+            "role": "dimension"
+          },
+          {
+            "name": "localizzazione_codice_istat",
+            "role": "dimension"
+          },
+          {
+            "name": "titolo_opera_incompiuta",
+            "role": "dimension"
+          },
+          {
+            "name": "livello_sviluppo",
+            "role": "dimension"
+          },
+          {
+            "name": "importo_complessivo_qe",
+            "role": "metric"
+          },
+          {
+            "name": "importo_lavori_qe",
+            "role": "metric"
+          },
+          {
+            "name": "importo_lavori_sal",
+            "role": "metric"
+          },
+          {
+            "name": "importo_oneri_ultimazione",
+            "role": "metric"
+          },
+          {
+            "name": "perc_avanzamento_lavori",
+            "role": "metric"
+          },
+          {
+            "name": "flag_mancanza_fondi",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_cause_tecniche",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_sopravvenienza_norme",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_fallimento_liquidazione",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_mancato_interesse",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_opera_fruibile",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_uso_ridimensionato",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_infrastruttura_rete",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_discontinuita_rete",
+            "role": "dimension"
+          }
+        ]
       },
       {
         "slug": "mur_contribuzione_universitaria",
@@ -880,7 +1234,33 @@
         },
         "metric_columns": 1,
         "dimension_columns": 5,
-        "column_count": 6
+        "column_count": 6,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "cod_ateneo",
+            "role": "dimension"
+          },
+          {
+            "name": "nome_ateneo",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_gettito",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_gettito",
+            "role": "dimension"
+          },
+          {
+            "name": "euro_contributo",
+            "role": "metric"
+          }
+        ]
       },
       {
         "slug": "pensioni_pa_dag",
@@ -898,7 +1278,8 @@
         },
         "metric_columns": 0,
         "dimension_columns": 18,
-        "column_count": 18
+        "column_count": 18,
+        "columns": []
       },
       {
         "slug": "popolazione_istat_comunale_2019_2025",
@@ -916,7 +1297,8 @@
         },
         "metric_columns": 17,
         "dimension_columns": 3,
-        "column_count": 20
+        "column_count": 20,
+        "columns": []
       }
     ]
   },

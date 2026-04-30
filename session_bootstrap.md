@@ -1,84 +1,39 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-30T19:23:44.193144
+**Generated**: 2026-04-30T20:41:27.226082
 
-## Repos
+## 🔍 SCOUTING
 
-- **agent-context-builder**: Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.
-- **dataset-incubator**: dataset-incubator è il repo dove il Lab fa intake, verifica e incubazione leggera dei filoni dataset prima della promozione verso dataciviclab o una repo progetto dedicata.
-- **dataciviclab**: dataciviclab è l’hub pubblico dell’ecosistema, pensato per spiegare chi siamo, cosa facciamo e come orientarsi tra le repo.
-- **toolkit**: Toolkit è il motore tecnico di DataCivicLab per eseguire pipeline dati riproducibili da dataset.yml, da RAW a CLEAN e MART, con validazione, tracking e output leggibili dai notebook.
-- **data-explorer**: Frontend pubblico dati civici - Evidence.dev + DuckDB + GCS
-- **source-observatory**: Piccolo intelligence layer per fonti pubbliche: radar, catalog-watch, monitoraggio risorse e workflow di source-check.
+**Radar**: 14 fonti — GREEN 8 · YELLOW 3 · RED 3 (probe: 2026-04-30)
+  · **istat_sdmx** RED [-] — ↳ istat-gini-regionale, istat-housing-crowding, istat-ipab-aree
+  · **anac** YELLOW [403]
+  · **dati_salute** RED [-]
+  · **lavoro_opendata** YELLOW [200]
+  · **mur_ustat** RED [-]
+  · **opencoesione** YELLOW [403] — ↳ opencoesione-pagamenti-ue-2014-2020
+**Catalog Drift**: no drift signals (12 sources checked)
+**Portal Scout**: 51 portali · 37 nuovi candidati · 6 strutturati
+  · **Nuovi CKAN**: dati-coll.dfp.gov.it, dati.comune.mt.it, dati.toscana.it + 3 altri
 
-## Open PRs
+## 📥 INTAKE
+
+**Pipeline**: 27 candidates — 27 ok
+  ⚠️ **mit-incidentalita-mensile-2001-2018** — run fallito [2001](https://github.com/dataciviclab/dataset-incubator/actions/runs/25156933674)
+**Dataset Catalog**: 7 clean_ready · 7 public · updated 2026-04-30
+
+## 🔗 OPEN
 
 - [dataset-incubator#234](https://github.com/dataciviclab/dataset-incubator/pull/234): refactor(ispra-ru-costi-kg): sostituisce path hardcoded cross-fonte con support dichiarativo
 - [dataset-incubator#233](https://github.com/dataciviclab/dataset-incubator/pull/233): chore(post-merge): aggiorna registry per PR #232
 - [dataset-incubator#200](https://github.com/dataciviclab/dataset-incubator/pull/200): chore(camera-deputati-legislature): compila entry clean catalog
-- **Dependabot**: 3 bump PR(s) - [#29](https://github.com/dataciviclab/agent-context-builder/pull/29), [#63](https://github.com/dataciviclab/data-explorer/pull/63) ...
+- **Dependabot**: 3 bump PR(s)
+**Discussions**: 20 open
+  · [Domanda] Quanta parte delle entrate tributarie dipende da poche voci e quanto è diffuso?
+  · [Domanda] Dove si accumulano più cause pendenti in rapporto alla popolazione?
+  · [Domanda] La spesa farmaceutica regionale è proporzionale alla popolazione o ci sono regioni che spendono molto di più per abitante?
+**Topics**: pipeline · governance
 
-## Open Discussions
+## 🛠 INFRA
 
-- [dataciviclab#239](https://github.com/orgs/dataciviclab/discussions/239) [Domanda]: Quanta parte delle entrate tributarie dipende da poche voci e quanto è diffuso?
-- [dataciviclab#240](https://github.com/orgs/dataciviclab/discussions/240) [Domanda]: Dove si accumulano più cause pendenti in rapporto alla popolazione?
-- [dataciviclab#238](https://github.com/orgs/dataciviclab/discussions/238) [Domanda]: La spesa farmaceutica regionale è proporzionale alla popolazione o ci sono regioni che spendono molto di più per abitante?
-- [dataciviclab#237](https://github.com/orgs/dataciviclab/discussions/237) [Datasets]: BDAP MOP — soggetti titolari di Opere Pubbliche, per CUP e codice fiscale (2026)
-- [dataciviclab#236](https://github.com/orgs/dataciviclab/discussions/236) [Datasets]: CONSIP MEPA — acquisti e appalti stipulati della PA, per provincia (2023-2025)
-- [dataciviclab#234](https://github.com/orgs/dataciviclab/discussions/234) [Datasets]: BDAP Anagrafe Enti — copertura open data dei portali PA
-- [dataciviclab#210](https://github.com/orgs/dataciviclab/discussions/210) [Domanda]: La geografia del calo iscrizioni nelle scuole primarie (2015-2024)
-- [dataciviclab#228](https://github.com/orgs/dataciviclab/discussions/228) [Datasets]: Consip partecipazioni — geografia delle imprese nelle gare pubbliche (2023-2025)
-- [dataciviclab#227](https://github.com/orgs/dataciviclab/discussions/227) [Datasets]: MUR DSU Regionale — posti alloggio e borse per regione e ateneo (2024-2025)
-- [dataciviclab#175](https://github.com/orgs/dataciviclab/discussions/175) [Annunci]: Nuove categorie, stesso obiettivo: rendere piu' chiaro il passaggio da fonte a lettura pubblica
-
-## Local State
-
-*No local git repos found*
-
-## Topics
-
-- pipeline
-- governance
-
-## Radar Status
-
-Fonti: 14 — GREEN 8 · YELLOW 3 · RED 3 (probe: 2026-04-30)
-
-- **istat_sdmx** (sdmx): RED [HTTP -]
-- **anac** (ckan): YELLOW [HTTP 403]
-- **dati_salute** (html): RED [HTTP -]
-- **lavoro_opendata** (ckan): YELLOW [HTTP 200]
-- **mur_ustat** (ckan): RED [HTTP -]
-- **opencoesione** (rest): YELLOW [HTTP 403]
-
-## Catalog Drift
-
-*No catalog drift signals* (as of 2026-04-30T14:49:31+00:00, 12 sources checked)
-
-## Pipeline State
-
-*27 candidates, tutti ok*
-  *(as of 2026-04-30 — 27 ok)*
-
-## Dataset Catalog
-
-*7 clean_ready dataset(s), 7 public* (updated 2026-04-30)
-- **bdap_entrate_stato** (public): BDAP Entrate Stato - Serie Storica [2008-2024]
-- **ispra_ru_base** (public): ISPRA - Rifiuti Urbani (dati base) [2020-2024]
-- **ispra_ru_costi_kg** (public): ISPRA - Costi gestione rifiuti (EUR/kg) [2020-2024]
-- **ispra_ru_costi_procapite** (public): ISPRA - Costi gestione rifiuti (EUR/abitante) [2020-2024]
-- **mit_incidentalita_mensile** (public): MIT Incidentalità Stradale Mensile [2001-2018]
-- **mit_opere_incompiute_2020** (public): MIT Opere Pubbliche Incompiute [2020]
-- **mur_contribuzione_universitaria** (public): MUR - Gettito della contribuzione universitaria [2017-2024]
-
-## Portal Scout
-
-Portali rilevati: 51 — nuovi candidati: 37 — strutturati confermati: 6
-
-**Nuovi candidati strutturati:**
-- `dati-coll.dfp.gov.it` — CKAN
-- `dati.comune.mt.it` — CKAN
-- `dati.toscana.it` — CKAN
-- `dati.mit.gov.it` — CKAN
-- `indicepa.gov.it` — CKAN
-- `opendata-ercolano.cultura.gov.it` — CKAN
+**Repos**: 6 attivi
+**Local git**: no workspace
