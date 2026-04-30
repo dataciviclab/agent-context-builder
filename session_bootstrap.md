@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-29T20:25:50.190526
+**Generated**: 2026-04-30T02:57:33.734494
 
 ## Repos
 
@@ -14,7 +14,6 @@
 ## Open PRs
 
 - [dataset-incubator#233](https://github.com/dataciviclab/dataset-incubator/pull/233): chore(post-merge): aggiorna registry per PR #232
-- [dataset-incubator#230](https://github.com/dataciviclab/dataset-incubator/pull/230): chore(post-merge): aggiorna registry per PR #199
 - [dataset-incubator#200](https://github.com/dataciviclab/dataset-incubator/pull/200): chore(camera-deputati-legislature): compila entry clean catalog
 - [source-observatory#159](https://github.com/dataciviclab/source-observatory/pull/159): docs: audit fix — stale semantics, catalog_signals structure
 - **Dependabot**: 4 bump PR(s) - [#29](https://github.com/dataciviclab/agent-context-builder/pull/29), [#63](https://github.com/dataciviclab/data-explorer/pull/63) ...
