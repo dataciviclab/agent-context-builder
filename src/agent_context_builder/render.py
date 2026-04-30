@@ -51,8 +51,8 @@ class Renderer:
     def render_session_bootstrap(self) -> str:
         """Render session_bootstrap.md.
 
-        Returns:
-            Markdown content (target: 80-120 lines)
+        Organized by Lab phase: SCOUTING → INTAKE → OPEN → INFRA.
+        Target: ~40 lines. Details live in workspace_triage.json.
         """
         lines = []
         lines.append("# Session Bootstrap")
@@ -62,184 +62,171 @@ class Renderer:
             lines.append(f"**Workspace**: {self.config.workspace_root}")
         lines.append("")
 
-        # Active repos with GitHub description
-        lines.append("## Repos")
-        lines.append("")
-        repos_info = self.github_collector.get_repos_info(self.config.repos)
-        for repo in self.config.repos:
-            info = repos_info.get(repo)
-            if info and info.description:
-                lines.append(f"- **{repo}**: {info.description}")
+        # ── SCOUTING ────────────────────────────────────────────────────
+        radar = self._fetch_radar_summary()
+        so = self._fetch_source_observatory_signals()
+        scout = self._fetch_portal_scout()
+        has_scouting = radar is not None or so is not None or scout is not None
+
+        if has_scouting:
+            lines.append("## 🔍 SCOUTING")
+            lines.append("")
+
+            # Radar
+            if radar is not None:
+                lines.append(
+                    f"**Radar**: {radar.sources_total} fonti — "
+                    f"GREEN {radar.green} · YELLOW {radar.yellow} · RED {radar.red} "
+                    f"(probe: {radar.probe_date})"
+                )
+                if radar.unhealthy:
+                    for s in radar.unhealthy:
+                        di = f" — ↳ {', '.join(s.datasets_in_use)}" if s.datasets_in_use else ""
+                        lines.append(
+                            f"  · **{s.id}** {s.status} [{s.http_code}]{di}"
+                        )
             else:
-                lines.append(f"- {repo}")
+                lines.append("**Radar**: unavailable")
+
+            # Catalog drift
+            if so is None:
+                lines.append("**Catalog Drift**: unavailable")
+            else:
+                issues = so.drift_alerts
+                if issues:
+                    for s in issues:
+                        action = f" — azione: {s.suggested_action}" if s.suggested_action not in ("nessuna", "") else ""
+                        lines.append(f"  · **{s.source}** ({s.protocol}): {s.signal_type}{action}")
+                else:
+                    lines.append(
+                        f"**Catalog Drift**: no drift signals "
+                        f"({so.sources_checked} sources checked)"
+                    )
+
+            # Portal scout
+            if scout is not None:
+                lines.append(
+                    f"**Portal Scout**: {scout.total_portals} portali · "
+                    f"{scout.new_candidates} nuovi candidati · "
+                    f"{scout.new_confirmed_protocol} strutturati"
+                )
+                if scout.new_structured:
+                    domains = [c.domain for c in scout.new_structured[:3]]
+                    extra = f" + {len(scout.new_structured) - 3} altri" if len(scout.new_structured) > 3 else ""
+                    lines.append(f"  · **Nuovi CKAN**: {', '.join(domains)}{extra}")
+            else:
+                lines.append("**Portal Scout**: unavailable")
+            lines.append("")
+
+        # ── INTAKE ────────────────────────────────────────────────────────
+        di = self._fetch_di_pipeline_signals()
+        catalog = self._fetch_di_clean_catalog()
+
+        lines.append("## 📥 INTAKE")
         lines.append("")
 
-        # Open PRs
-        lines.append("## Open PRs")
+        if di is not None:
+            summary = di.summary
+            total = summary.get("total", len(di.signals))
+            by_status = summary.get("by_status", {})
+            status_str = " · ".join(f"{v} {k}" for k, v in sorted(by_status.items()) if v)
+            lines.append(f"**Pipeline**: {total} candidates — {status_str}")
+            for s in di.failed_runs:
+                run = s.sample_run
+                lines.append(
+                    f"  ⚠️ **{s.label}** — run fallito [{run.year}]({run.run_url})"
+                )
+        else:
+            lines.append("**Pipeline**: unavailable")
+
+        if catalog is not None:
+            clean_ready = catalog.clean_ready
+            public_count = sum(1 for d in clean_ready if d.visibility == "public")
+            lines.append(
+                f"**Dataset Catalog**: {len(clean_ready)} clean_ready · "
+                f"{public_count} public · updated {catalog.updated_at}"
+            )
+        else:
+            lines.append("**Dataset Catalog**: unavailable")
         lines.append("")
+
+        # ── OPEN ─────────────────────────────────────────────────────────
         prs = self.github_collector.get_prs(self.config.repos)
         github_errors = self.github_collector.fetch_errors
         collector_warn = self.github_collector.collector_warning()
-        if collector_warn:
-            lines.append(f"> **Warning**: {collector_warn}")
-        if prs:
-            _DEPENDABOT = {"dependabot[bot]", "dependabot"}
-            feature_prs = [pr for pr in prs if pr.author not in _DEPENDABOT]
-            dep_prs = [pr for pr in prs if pr.author in _DEPENDABOT]
-            for pr in feature_prs[:10]:
-                lines.append(f"- [{pr.repo}#{pr.number}]({pr.url}): {pr.title}")
-            if dep_prs:
-                lines.append(
-                    f"- **Dependabot**: {len(dep_prs)} bump PR(s) - "
-                    + ", ".join(f"[#{pr.number}]({pr.url})" for pr in dep_prs[:2])
-                    + (" ..." if len(dep_prs) > 2 else "")
-                )
-        elif not github_errors:
-            lines.append("*No open PRs*")
-        lines.append("")
+        discussions = self.discussion_collector.get_discussions(self.config.repos) if self.discussion_collector else []
+        disc_errors = self.discussion_collector.fetch_errors if self.discussion_collector else {}
 
-        # Open Discussions
-        if self.discussion_collector is not None:
-            lines.append("## Open Discussions")
+        has_open = bool(prs) or bool(discussions) or bool(self.config.topics)
+        if has_open:
+            lines.append("## 🔗 OPEN")
             lines.append("")
-            discussions = self.discussion_collector.get_discussions(self.config.repos)
-            disc_errors = self.discussion_collector.fetch_errors
+
+            # PRs
+            if collector_warn:
+                lines.append(f"> Warning: GitHub fetch error — dati incompleti")
+            if prs:
+                _DEPENDABOT = {"dependabot[bot]", "dependabot"}
+                feature_prs = [pr for pr in prs if pr.author not in _DEPENDABOT]
+                dep_prs = [pr for pr in prs if pr.author in _DEPENDABOT]
+                for pr in feature_prs[:5]:
+                    lines.append(f"- [{pr.repo}#{pr.number}]({pr.url}): {pr.title}")
+                if dep_prs:
+                    lines.append(f"- **Dependabot**: {len(dep_prs)} bump PR(s)")
+            elif not github_errors:
+                lines.append("**PRs**: none open")
+
+            # Discussions
             if disc_errors:
-                lines.append(f"> **Discussions unavailable** — {len(disc_errors)} fetch error(s)")
-            if discussions:
-                for d in discussions[:10]:
-                    lines.append(f"- [{d.repo}#{d.number}]({d.url}) [{d.category}]: {d.title}")
-            elif not disc_errors:
-                lines.append("*No open discussions*")
+                lines.append(f"**Discussions**: {len(disc_errors)} fetch error(s)")
+            elif discussions:
+                lines.append(f"**Discussions**: {len(discussions)} open")
+                for d in discussions[:3]:
+                    lines.append(f"  · [{d.category}] {d.title}")
+
+            # Topics
+            if self.config.topics:
+                topics = " · ".join(self.config.topics.keys())
+                lines.append(f"**Topics**: {topics}")
+
             lines.append("")
 
-        # Local git state per repo
-        lines.append("## Local State")
-        lines.append("")
+        # ── INFRA ─────────────────────────────────────────────────────────
         repos_state = self.git_collector.get_repos_state(self.config.repos)
-        has_local_state = False
-        for repo, state in repos_state.items():
-            if state.available:
-                has_local_state = True
-                lines.append(f"**{repo}**: `{state.current_branch}`")
-                if state.dirty:
-                    lines.append(f"  - dirty ({state.untracked_files} untracked)")
-                if state.branches_ahead:
-                    lines.append(f"  - ahead: {', '.join(state.branches_ahead)}")
-        if not has_local_state:
-            lines.append("*No local git repos found*")
+        local_available = any(s.available for s in repos_state.values())
+        repos_count = len(self.config.repos)
+
+        lines.append("## 🛠 INFRA")
         lines.append("")
+        lines.append(f"**Repos**: {repos_count} attivi")
 
-        # Topics
-        if self.config.topics:
-            lines.append("## Topics")
-            lines.append("")
-            for topic_name in self.config.topics:
-                lines.append(f"- {topic_name}")
-            lines.append("")
+        if local_available:
+            for repo, state in repos_state.items():
+                if state.available:
+                    flags = []
+                    if state.dirty:
+                        flags.append("dirty")
+                    if state.branches_ahead:
+                        flags.append(f"ahead: {', '.join(state.branches_ahead)}")
+                    flag_str = f" ({', '.join(flags)})" if flags else ""
+                    lines.append(f"  · **{repo}** `{state.current_branch}`{flag_str}")
+        else:
+            lines.append("**Local git**: no workspace")
 
-        # Radar health (GREEN/YELLOW/RED per fonte)
-        radar = self._fetch_radar_summary()
-        lines += self._render_radar_section(radar)
-
-        # Catalog drift (only issues — skip stable sources)
-        so = self._fetch_source_observatory_signals()
-        lines += self._render_source_health_section(so)
-
-        # Pipeline state (only warn/error candidates)
-        di = self._fetch_di_pipeline_signals()
-        lines += self._render_pipeline_state_section(di)
-
-        # Dataset catalog (clean/queryable datasets)
-        catalog = self._fetch_di_clean_catalog()
-        lines += self._render_dataset_catalog_section(catalog)
-
-        # Portal scout (nuovi candidati strutturati)
-        scout = self._fetch_portal_scout()
-        lines += self._render_portal_scout_section(scout)
-
+        lines.append("")
         return "\n".join(lines)
 
     def _fetch_radar_summary(self) -> RadarSummary | None:
         return self._so_fetcher.fetch_radar_summary()
 
-    def _render_radar_section(self, radar: RadarSummary | None) -> list[str]:
-        lines = ["## Radar Status", ""]
-        if radar is None:
-            lines.append("> *radar_summary unavailable*")
-            lines.append("")
-            return lines
-        lines.append(
-            f"Fonti: {radar.sources_total} — "
-            f"GREEN {radar.green} · YELLOW {radar.yellow} · RED {radar.red} "
-            f"(probe: {radar.probe_date})"
-        )
-        if radar.unhealthy:
-            lines.append("")
-            for s in radar.unhealthy:
-                lines.append(f"- **{s.id}** ({s.protocol}): {s.status} [HTTP {s.http_code}]")
-        lines.append("")
-        return lines
 
     def _fetch_portal_scout(self) -> PortalScoutSummary | None:
         return self._so_fetcher.fetch_portal_scout()
 
-    def _render_portal_scout_section(self, scout: PortalScoutSummary | None) -> list[str]:
-        lines = ["## Portal Scout", ""]
-        if scout is None:
-            lines.append("> *discovered_portals_summary unavailable*")
-            lines.append("")
-            return lines
-        lines.append(
-            f"Portali rilevati: {scout.total_portals} — "
-            f"nuovi candidati: {scout.new_candidates} — "
-            f"strutturati confermati: {scout.new_confirmed_protocol}"
-        )
-        if scout.new_structured:
-            lines.append("")
-            lines.append("**Nuovi candidati strutturati:**")
-            for c in scout.new_structured:
-                lines.append(f"- `{c.domain}` — {c.protocol.upper()}")
-        lines.append("")
-        return lines
 
     def _fetch_source_observatory_signals(self) -> SourceObservatorySignals | None:
         return self._so_fetcher.fetch_catalog_signals()
 
-    def _render_source_health_section(
-        self, so: SourceObservatorySignals | None
-    ) -> list[str]:
-        lines = []
-        lines.append("## Catalog Drift")
-        lines.append("")
-        if so is None:
-            err = self.github_collector.fetch_errors.get(
-                "source-observatory:data/catalog/catalog_signals.json"
-            ) or self.github_collector.fetch_errors.get(
-                "source-observatory:catalog_signals"
-            )
-            if err:
-                lines.append(f"> *catalog_signals unavailable — {err}*")
-            else:
-                lines.append("> *catalog_signals unavailable*")
-            lines.append("")
-            return lines
-
-        issues = so.drift_alerts
-        if issues:
-            for s in issues:
-                lines.append(f"- **{s.source}** ({s.protocol}): {s.signal_type}")
-                if s.suggested_action and s.suggested_action != "nessuna":
-                    lines.append(f"  - azione: {s.suggested_action}")
-        else:
-            lines.append(
-                f"*No catalog drift signals* "
-                f"(as of {so.captured_at}, {so.sources_checked} sources checked)"
-            )
-        if issues:
-            lines.append(f"  *(captured {so.captured_at}, {so.sources_checked} sources checked)*")
-        lines.append("")
-        return lines
 
     def render_workspace_triage(self) -> dict[str, Any]:
         """Render workspace_triage.json.
@@ -257,49 +244,7 @@ class Renderer:
             di_fetcher=self._di_fetcher,
         )
 
-    def _build_radar_dict(self) -> dict[str, Any]:
-        radar = self._so_fetcher.fetch_radar_summary()
-        if radar is None:
-            return {"available": False}
-        return {
-            "available": True,
-            "probe_date": radar.probe_date,
-            "sources_total": radar.sources_total,
-            "green": radar.green,
-            "yellow": radar.yellow,
-            "red": radar.red,
-            "unhealthy": [
-                {"id": s.id, "status": s.status, "protocol": s.protocol, "http_code": s.http_code}
-                for s in radar.unhealthy
-            ],
-        }
 
-    def _build_source_health_dict(self) -> dict[str, Any]:
-        so = self._so_fetcher.fetch_catalog_signals()
-        if so is None:
-            return {
-                "available": False,
-                "errors": {
-                    k: v for k, v in self.github_collector.fetch_errors.items()
-                    if "source-observatory" in k
-                },
-            }
-        return {
-            "available": True,
-            "captured_at": so.captured_at,
-            "sources_checked": so.sources_checked,
-            "alerts": [
-                {
-                    "source": s.source,
-                    "protocol": s.protocol,
-                    "signal_type": s.signal_type,
-                    "result": s.result,
-                    "detail": s.detail,
-                    "suggested_action": s.suggested_action,
-                }
-                for s in so.drift_alerts
-            ],
-        }
 
     def _fetch_di_pipeline_signals(self) -> RepoSignals | None:
         return self._di_fetcher.fetch_pipeline_signals()
@@ -307,113 +252,8 @@ class Renderer:
     def _fetch_di_clean_catalog(self) -> DICleanCatalog | None:
         return self._di_fetcher.fetch_clean_catalog()
 
-    def _render_pipeline_state_section(self, di: RepoSignals | None) -> list[str]:
-        lines = []
-        lines.append("## Pipeline State")
-        lines.append("")
-        if di is None:
-            err = self.github_collector.fetch_errors.get(
-                "dataset-incubator:registry/pipeline_signals.json"
-            ) or self.github_collector.fetch_errors.get(
-                "dataset-incubator:pipeline_signals"
-            )
-            if err:
-                lines.append(f"> *pipeline_signals unavailable — {err}*")
-            else:
-                lines.append("> *pipeline_signals unavailable*")
-            lines.append("")
-            return lines
 
-        summary = di.summary
-        total = summary.get("total", len(di.signals))
-        by_status = summary.get("by_status", {})
-        actionable = di.actionable
-        if actionable:
-            for s in actionable:
-                lines.append(f"- **{s.label}** [{s.status}]: {s.detail}")
-                if s.action:
-                    lines.append(f"  - azione: {s.action}")
-        else:
-            lines.append(f"*{total} candidates, tutti ok*")
-        lines.append(
-            f"  *(as of {di.generated_at} — "
-            + ", ".join(f"{v} {k}" for k, v in sorted(by_status.items()) if v)
-            + ")*"
-        )
-        lines.append("")
-        return lines
 
-    def _render_dataset_catalog_section(
-        self, catalog: DICleanCatalog | None
-    ) -> list[str]:
-        lines = []
-        lines.append("## Dataset Catalog")
-        lines.append("")
-        if catalog is None:
-            err = self.github_collector.fetch_errors.get(
-                "dataset-incubator:clean_catalog"
-            ) or self.github_collector.fetch_errors.get(
-                "dataset-incubator:registry/clean_catalog.json"
-            )
-            if err:
-                lines.append(f"> *clean_catalog unavailable — {err}*")
-            else:
-                lines.append("> *clean_catalog unavailable*")
-            lines.append("")
-            return lines
-
-        clean_ready = catalog.clean_ready
-        public_count = sum(1 for d in clean_ready if d.visibility == "public")
-        lines.append(
-            f"*{len(clean_ready)} clean_ready dataset(s), "
-            f"{public_count} public* (updated {catalog.updated_at})"
-        )
-        for dataset in clean_ready[:8]:
-            period = self._format_period(dataset.period)
-            line = f"- **{dataset.slug}** ({dataset.visibility}): {dataset.name}"
-            if period:
-                line += f" [{period}]"
-            lines.append(line)
-        if len(clean_ready) > 8:
-            lines.append(f"- *...and {len(clean_ready) - 8} more clean_ready datasets*")
-        lines.append("")
-        return lines
-
-    def _build_dataset_catalog_dict(self) -> dict[str, Any]:
-        catalog = self._di_fetcher.fetch_clean_catalog()
-        if catalog is None:
-            return {
-                "available": False,
-                "errors": {
-                    k: v for k, v in self.github_collector.fetch_errors.items()
-                    if "clean_catalog" in k
-                },
-            }
-        return {
-            "available": True,
-            "schema_version": catalog.schema_version,
-            "name": catalog.name,
-            "updated_at": catalog.updated_at,
-            "summary": {
-                "total": len(catalog.datasets),
-                "clean_ready": len(catalog.clean_ready),
-                "public": sum(1 for d in catalog.clean_ready if d.visibility == "public"),
-            },
-            "datasets": [
-                {
-                    "slug": d.slug,
-                    "name": d.name,
-                    "status": d.status,
-                    "visibility": d.visibility,
-                    "period": d.period,
-                    "location": d.location,
-                    "metric_columns": d.metric_columns,
-                    "dimension_columns": d.dimension_columns,
-                    "column_count": d.column_count,
-                }
-                for d in catalog.datasets
-            ],
-        }
 
     @staticmethod
     def _format_period(period: dict[str, Any]) -> str:
@@ -425,42 +265,7 @@ class Renderer:
             return str(start)
         return f"{start or '?'}-{end or '?'}"
 
-    def _build_portal_scout_dict(self) -> dict[str, Any]:
-        scout = self._so_fetcher.fetch_portal_scout()
-        if scout is None:
-            return {"available": False}
-        return {
-            "available": True,
-            "generated_at": scout.generated_at,
-            "total_portals": scout.total_portals,
-            "new_candidates": scout.new_candidates,
-            "new_confirmed_protocol": scout.new_confirmed_protocol,
-            "by_protocol": scout.by_protocol,
-            "new_structured": [
-                {"domain": c.domain, "protocol": c.protocol}
-                for c in scout.new_structured
-            ],
-        }
 
-    def _build_pipeline_state_dict(self) -> dict[str, Any]:
-        di = self._fetch_di_pipeline_signals()
-        if di is None:
-            return {
-                "available": False,
-                "errors": {
-                    k: v for k, v in self.github_collector.fetch_errors.items()
-                    if "dataset-incubator" in k
-                },
-            }
-        return {
-            "available": True,
-            "generated_at": di.generated_at,
-            "summary": di.summary,
-            "actionable": [
-                {"id": s.id, "status": s.status, "detail": s.detail, "action": s.action}
-                for s in di.actionable
-            ],
-        }
 
     def _collect_warnings(
         self, prs: list[PR], repos_state: dict[str, GitState]
@@ -511,10 +316,19 @@ class Renderer:
         # Datasets grouped by source from clean_catalog
         catalog = self._fetch_di_clean_catalog()
         datasets_by_source: dict[str, list[dict[str, Any]]] = {}
+        candidates_by_source: dict[str, list[dict[str, Any]]] = {}
         if catalog:
             for ds in catalog.clean_ready:
                 source = ds.source or "unknown"
                 datasets_by_source.setdefault(source, []).append({
+                    "slug": ds.slug,
+                    "name": ds.name,
+                    "period": ds.period,
+                    "visibility": ds.visibility,
+                })
+            for ds in catalog.candidates:
+                source = ds.source or "unknown"
+                candidates_by_source.setdefault(source, []).append({
                     "slug": ds.slug,
                     "name": ds.name,
                     "period": ds.period,
@@ -537,5 +351,6 @@ class Renderer:
             "generated_at": self.fixed_timestamp,
             "repos": repos_section,
             "datasets_by_source": datasets_by_source,
+            "candidates_by_source": candidates_by_source,
             "operational_topics": operational_topics,
         }

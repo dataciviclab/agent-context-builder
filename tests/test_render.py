@@ -74,8 +74,8 @@ def test_render_session_bootstrap():
     bootstrap = renderer.render_session_bootstrap()
 
     assert "Session Bootstrap" in bootstrap
-    assert "repo1" in bootstrap
-    assert "repo2" in bootstrap
+    assert "## 🛠 INFRA" in bootstrap
+    assert "6 attivi" not in bootstrap  # shows per-repo in INFRA
     assert len(bootstrap.split("\n")) > 10
 
 
@@ -94,8 +94,10 @@ def test_render_session_bootstrap_github_error():
     )
     bootstrap = renderer.render_session_bootstrap()
 
-    assert "rate-limit" in bootstrap
-    assert "No open PRs" not in bootstrap
+    # Warning appears in INTAKE when signals are unavailable due to fetch failure
+    assert "## 📥 INTAKE" in bootstrap
+    assert "Pipeline" in bootstrap
+    assert "unavailable" in bootstrap
 
 
 def test_render_session_bootstrap_groups_dependabot_prs():
@@ -203,9 +205,9 @@ def test_render_bootstrap_with_discussions():
     )
     bootstrap = renderer.render_session_bootstrap()
 
-    assert "Open Discussions" in bootstrap
+    assert "## 🔗 OPEN" in bootstrap
     assert "IRPEF" in bootstrap
-    assert "Civic Questions" in bootstrap
+    assert "[Civic Questions]" in bootstrap
 
 
 def test_render_triage_with_discussions():
@@ -257,13 +259,14 @@ def test_render_bootstrap_with_catalog_drift():
     )
     bootstrap = renderer.render_session_bootstrap()
 
-    assert "Catalog Drift" in bootstrap
+    assert "## 🔍 SCOUTING" in bootstrap
     assert "inps" in bootstrap
     assert "inventory change" in bootstrap
+    assert "verificare se variazione attesa" in bootstrap
 
 
 def test_render_bootstrap_catalog_drift_all_stable():
-    """Bootstrap catalog drift shows no drift when there are no alerts."""
+    """Bootstrap shows SCOUTING section with no drift when all sources are stable."""
     config = Config(workspace_root=None, github_org="test-org", repos=["repo1"])
     renderer = Renderer(
         config,
@@ -272,12 +275,12 @@ def test_render_bootstrap_catalog_drift_all_stable():
     )
     bootstrap = renderer.render_session_bootstrap()
 
-    assert "Catalog Drift" in bootstrap
-    assert "No catalog drift signals" in bootstrap
+    assert "## 🔍 SCOUTING" in bootstrap
+    assert "no drift signals" in bootstrap
 
 
 def test_render_bootstrap_catalog_drift_unavailable():
-    """Bootstrap catalog drift shows unavailable message when fetch fails."""
+    """Bootstrap shows unavailable when catalog signals fetch fails."""
     config = Config(workspace_root=None, github_org="test-org", repos=["repo1"])
     renderer = Renderer(
         config,
@@ -286,7 +289,9 @@ def test_render_bootstrap_catalog_drift_unavailable():
     )
     bootstrap = renderer.render_session_bootstrap()
 
-    assert "Catalog Drift" in bootstrap
+    # When no source observatory data, SCOUTING section is omitted entirely
+    assert "## 📥 INTAKE" in bootstrap
+    assert "Pipeline" in bootstrap
     assert "unavailable" in bootstrap
 
 
@@ -460,10 +465,9 @@ def test_render_bootstrap_dataset_catalog_section():
     bootstrap = renderer.render_session_bootstrap()
 
     assert "Dataset Catalog" in bootstrap
-    assert "1 clean_ready dataset(s), 1 public" in bootstrap
-    assert "irpef_comunale" in bootstrap
-    assert "2022-2023" in bootstrap
-    assert "draft_dataset" not in bootstrap
+    assert "**Dataset Catalog**: 1 clean_ready · 1 public · updated 2026-04-14" in bootstrap
+    # Dataset names/periods are in workspace_triage.json, not bootstrap
+    assert "irpef_comunale" not in bootstrap
 
 
 def test_render_triage_dataset_catalog_available():

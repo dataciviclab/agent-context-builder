@@ -72,12 +72,15 @@ def test_refresh_context_loads_token_from_env_file(monkeypatch, tmp_path):
     monkeypatch.delenv("GITHUB_TOKEN", raising=False)
     monkeypatch.setenv("ACB_ENV_FILE", str(env_file))
     monkeypatch.setattr(mcp_server, "_ENV_LOADED", False)
+    monkeypatch.setattr(mcp_server, "_last_refresh_attempt", None)
 
     with patch("agent_context_builder.mcp_server.requests.post") as mock_post:
         mock_post.return_value = _mock_response("", status=204)
         result = mcp_server.refresh_context()
 
-    assert "triggerato" in result.lower()
+    import json
+    data = json.loads(result)
+    assert data["ok"] is True
     assert mock_post.call_args.kwargs["headers"]["Authorization"] == "token file-token"
 
 
@@ -91,12 +94,15 @@ def test_refresh_context_loads_token_when_env_is_empty(monkeypatch, tmp_path):
     monkeypatch.setenv("GITHUB_TOKEN", "")
     monkeypatch.setenv("ACB_ENV_FILE", str(env_file))
     monkeypatch.setattr(mcp_server, "_ENV_LOADED", False)
+    monkeypatch.setattr(mcp_server, "_last_refresh_attempt", None)
 
     with patch("agent_context_builder.mcp_server.requests.post") as mock_post:
         mock_post.return_value = _mock_response("", status=204)
         result = mcp_server.refresh_context()
 
-    assert "triggerato" in result.lower()
+    import json
+    data = json.loads(result)
+    assert data["ok"] is True
     assert mock_post.call_args.kwargs["headers"]["Authorization"] == "token file-token"
 
 
@@ -113,37 +119,47 @@ def test_refresh_context_continues_after_partial_env(monkeypatch, tmp_path):
     monkeypatch.delenv("GITHUB_TOKEN", raising=False)
     monkeypatch.setenv("ACB_ENV_FILE", str(explicit_env))
     monkeypatch.setattr(mcp_server, "_ENV_LOADED", False)
+    monkeypatch.setattr(mcp_server, "_last_refresh_attempt", None)
 
     with patch("agent_context_builder.mcp_server.requests.post") as mock_post:
         mock_post.return_value = _mock_response("", status=204)
         result = mcp_server.refresh_context()
 
-    assert "triggerato" in result.lower()
+    import json
+    data = json.loads(result)
+    assert data["ok"] is True
     assert mock_post.call_args.kwargs["headers"]["Authorization"] == "token file-token"
 
 
 def test_refresh_context_success(monkeypatch):
     """refresh_context triggers workflow dispatch and reports success."""
-    from agent_context_builder.mcp_server import refresh_context
+    import agent_context_builder.mcp_server as mcp_server
 
     monkeypatch.setenv("GITHUB_TOKEN", "fake-token")
+    monkeypatch.setattr(mcp_server, "_last_refresh_attempt", None)
     with patch("agent_context_builder.mcp_server.requests.post") as mock_post:
         mock_post.return_value = _mock_response("", status=204)
-        result = refresh_context()
+        result = mcp_server.refresh_context()
 
-    assert "triggerato" in result.lower()
+    import json
+    data = json.loads(result)
+    assert data["ok"] is True
 
 
 def test_refresh_context_api_error(monkeypatch):
     """refresh_context reports API errors without raising."""
-    from agent_context_builder.mcp_server import refresh_context
+    import agent_context_builder.mcp_server as mcp_server
 
     monkeypatch.setenv("GITHUB_TOKEN", "fake-token")
+    monkeypatch.setattr(mcp_server, "_last_refresh_attempt", None)
     with patch("agent_context_builder.mcp_server.requests.post") as mock_post:
         mock_post.return_value = _mock_response("Forbidden", status=403)
-        result = refresh_context()
+        result = mcp_server.refresh_context()
 
-    assert "403" in result
+    import json
+    data = json.loads(result)
+    assert data["ok"] is False
+    assert data["status_code"] == 403
 
 
 def _mock_http_error(status: int):
@@ -155,36 +171,45 @@ def _mock_http_error(status: int):
 
 
 def test_session_bootstrap_http_error(monkeypatch):
-    """session_bootstrap returns error string on HTTP failure instead of raising."""
-    from agent_context_builder.mcp_server import session_bootstrap
+    """session_bootstrap returns JSON error on HTTP failure instead of raising."""
+    import agent_context_builder.mcp_server as mcp_server
 
     with patch("agent_context_builder.mcp_server.requests.get") as mock_get:
         mock_get.return_value = _mock_http_error(403)
-        result = session_bootstrap()
+        result = mcp_server.session_bootstrap()
 
-    assert "session_bootstrap" in result
-    assert "403" in result
+    import json
+    data = json.loads(result)
+    assert data["ok"] is False
+    assert data["tool"] == "session_bootstrap"
+    assert data["status_code"] == 403
 
 
 def test_workspace_triage_http_error(monkeypatch):
-    """workspace_triage returns error string on HTTP failure instead of raising."""
-    from agent_context_builder.mcp_server import workspace_triage
+    """workspace_triage returns JSON error on HTTP failure instead of raising."""
+    import agent_context_builder.mcp_server as mcp_server
 
     with patch("agent_context_builder.mcp_server.requests.get") as mock_get:
         mock_get.return_value = _mock_http_error(404)
-        result = workspace_triage()
+        result = mcp_server.workspace_triage()
 
-    assert "workspace_triage" in result
-    assert "404" in result
+    import json
+    data = json.loads(result)
+    assert data["ok"] is False
+    assert data["tool"] == "workspace_triage"
+    assert data["status_code"] == 404
 
 
 def test_topic_index_http_error(monkeypatch):
-    """topic_index returns error string on HTTP failure instead of raising."""
-    from agent_context_builder.mcp_server import topic_index
+    """topic_index returns JSON error on HTTP failure instead of raising."""
+    import agent_context_builder.mcp_server as mcp_server
 
     with patch("agent_context_builder.mcp_server.requests.get") as mock_get:
         mock_get.return_value = _mock_http_error(500)
-        result = topic_index()
+        result = mcp_server.topic_index()
 
-    assert "topic_index" in result
-    assert "500" in result
+    import json
+    data = json.loads(result)
+    assert data["ok"] is False
+    assert data["tool"] == "topic_index"
+    assert data["status_code"] == 500

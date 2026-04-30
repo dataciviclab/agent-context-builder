@@ -5,7 +5,9 @@ import pytest
 
 from agent_context_builder.signals import (
     DICleanCatalog,
+    DICleanDatasetColumn,
     RepoSignals,
+    RepoSignalSampleRun,
     SourceObservatorySignals,
     SourceSignal,
     parse_di_clean_catalog,
@@ -166,6 +168,124 @@ def test_parse_repo_signals_missing_fields_use_defaults():
     assert rs.signals[0].label == "test"
 
 
+def test_parse_repo_signals_sample_run_parsing():
+    """sample_run fields are parsed and exposed on RepoSignal."""
+    raw = json.dumps({
+        "schema_version": "1",
+        "generated_at": "2026-04-30",
+        "repo": "di",
+        "topic": "pipeline",
+        "signals": [
+            {
+                "id": "test-candidate",
+                "status": "ok",
+                "label": "test-candidate",
+                "detail": "ok",
+                "action": "",
+                "sample_run": {
+                    "status": "failed",
+                    "run_id": "12345",
+                    "run_url": "https://github.com/.../actions/runs/12345",
+                    "checked_at": "2026-04-30",
+                    "year": 2020,
+                    "config_path": "candidates/test-candidate/dataset.yml",
+                },
+            },
+        ],
+    })
+    rs = parse_repo_signals(raw)
+    assert len(rs.signals) == 1
+    sr = rs.signals[0]
+    assert sr.sample_run is not None
+    assert sr.sample_run.status == "failed"
+    assert sr.sample_run.run_id == "12345"
+    assert sr.sample_run.year == 2020
+
+
+def test_parse_repo_signals_no_sample_run():
+    """Signal without sample_run has None."""
+    raw = json.dumps({
+        "schema_version": "1",
+        "generated_at": "2026-04-30",
+        "repo": "di",
+        "topic": "pipeline",
+        "signals": [{"id": "a", "status": "ok", "label": "a", "detail": "", "action": ""}],
+    })
+    rs = parse_repo_signals(raw)
+    assert rs.signals[0].sample_run is None
+
+
+def test_failed_runs_property():
+    """failed_runs returns only signals with a failed sample_run."""
+    raw = json.dumps({
+        "schema_version": "1",
+        "generated_at": "2026-04-30",
+        "repo": "di",
+        "topic": "pipeline",
+        "signals": [
+            {"id": "ok-signal", "status": "ok", "label": "ok", "detail": "", "action": ""},
+            {
+                "id": "failed-signal",
+                "status": "ok",
+                "label": "failed-signal",
+                "detail": "",
+                "action": "",
+                "sample_run": {"status": "failed", "run_id": "1", "run_url": "x", "checked_at": "x", "year": 2020, "config_path": "x.yml"},
+            },
+            {"id": "ok-signal-2", "status": "ok", "label": "ok2", "detail": "", "action": ""},
+        ],
+    })
+    rs = parse_repo_signals(raw)
+    assert len(rs.failed_runs) == 1
+    assert rs.failed_runs[0].id == "failed-signal"
+
+
+def test_candidates_property():
+    """candidates returns datasets with status != clean_ready."""
+    raw = json.dumps({
+        "schema_version": "1",
+        "name": "Test",
+        "updated_at": "2026-04-30",
+        "datasets": [
+            {"slug": "ready", "name": "Ready", "status": "clean_ready", "visibility": "public", "columns": []},
+            {"slug": "cand", "name": "Candidate", "status": "candidate", "visibility": "public", "columns": []},
+            {"slug": "cand2", "name": "Candidate 2", "status": "candidate", "visibility": "public", "columns": []},
+        ],
+    })
+    catalog = parse_di_clean_catalog(raw)
+    assert len(catalog.clean_ready) == 1
+    assert len(catalog.candidates) == 2
+    assert {d.slug for d in catalog.candidates} == {"cand", "cand2"}
+
+
+def test_di_clean_catalog_columns_parsed():
+    """Column name and role are parsed; type and description are excluded."""
+    raw = json.dumps({
+        "schema_version": "1",
+        "name": "Test",
+        "updated_at": "2026-04-30",
+        "datasets": [
+            {
+                "slug": "test",
+                "name": "Test",
+                "status": "clean_ready",
+                "visibility": "public",
+                "columns": [
+                    {"name": "anno", "type": "INTEGER", "role": "dimension", "description": "Year"},
+                    {"name": "valore", "type": "FLOAT", "role": "metric", "description": "Value"},
+                ],
+            }
+        ],
+    })
+    catalog = parse_di_clean_catalog(raw)
+    ds = catalog.datasets[0]
+    assert len(ds.columns) == 2
+    assert ds.columns[0].name == "anno"
+    assert ds.columns[0].role == "dimension"
+    assert ds.columns[1].name == "valore"
+    assert ds.columns[1].role == "metric"
+
+
 def test_parse_radar_summary():
     from agent_context_builder.signals import parse_radar_summary
 
@@ -228,6 +348,12 @@ def test_parse_di_clean_catalog_basic():
     assert dataset.metric_columns == 1
     assert dataset.dimension_columns == 2
     assert dataset.column_count == 3
+    # Columns are parsed: name + role only (no type, no description)
+    assert len(dataset.columns) == 3
+    assert dataset.columns[0].name == "anno"
+    assert dataset.columns[0].role == "dimension"
+    assert dataset.columns[2].name == "imposta"
+    assert dataset.columns[2].role == "metric"
 
 
 def test_parse_di_clean_catalog_missing_fields_use_defaults():
@@ -240,3 +366,4 @@ def test_parse_di_clean_catalog_missing_fields_use_defaults():
     assert catalog.datasets[0].name == "minimal"
     assert catalog.datasets[0].status == ""
     assert catalog.datasets[0].location == {}
+    assert catalog.datasets[0].columns == []
