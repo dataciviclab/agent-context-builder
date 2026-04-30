@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-04-30T08:23:37.451102",
+  "generated_at": "2026-04-30T13:57:57.107594",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -64,6 +64,17 @@
         "period": {
           "start": 2020,
           "end": 2024
+        },
+        "visibility": "public"
+      }
+    ],
+    "MIT \u2014 Ministero delle Infrastrutture e dei Trasporti, portale open data": [
+      {
+        "slug": "mit_incidentalita_mensile",
+        "name": "MIT Incidentalit\u00e0 Stradale Mensile",
+        "period": {
+          "start": 2001,
+          "end": 2018
         },
         "visibility": "public"
       }

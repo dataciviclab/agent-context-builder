@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-30T08:23:37.451102",
+  "generated_at": "2026-04-30T13:57:57.107594",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -16,6 +16,18 @@
       "title": "chore(deps): bump codecov/codecov-action from 4 to 6",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/pull/29"
+    },
+    {
+      "number": 237,
+      "title": "fix(mit-opere-incompiute-2020): allinea README e notebook v0 col template canonico",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/237"
+    },
+    {
+      "number": 234,
+      "title": "refactor(ispra-ru-costi-kg): sostituisce path hardcoded cross-fonte con support dichiarativo",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/234"
     },
     {
       "number": 233,
@@ -40,21 +52,9 @@
       "title": "chore(deps-dev): bump tailwindcss from 3.4.18 to 4.2.4",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/62"
-    },
-    {
-      "number": 59,
-      "title": "chore(deps): bump actions/configure-pages from 5 to 6",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/59"
-    },
-    {
-      "number": 159,
-      "title": "docs: audit fix \u2014 stale semantics, catalog_signals structure",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/159"
     }
   ],
-  "open_issues": 44,
+  "open_issues": 42,
   "issues": [
     {
       "number": 197,
@@ -291,22 +291,10 @@
       "url": "https://github.com/dataciviclab/source-observatory/issues/163"
     },
     {
-      "number": 151,
-      "title": "[audit] except Exception silenziati \u2014 collector che fallisce senza segnale",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/151"
-    },
-    {
       "number": 148,
       "title": "[scouting] ISTAT SDMX \u2014 6 dataflow ad alta priorit\u00e0 per source-check",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/148"
-    },
-    {
-      "number": 133,
-      "title": "perf: valutare pooling e incrementalit\u00e0 per source-check",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/133"
     },
     {
       "number": 127,
@@ -520,7 +508,7 @@
   ],
   "radar": {
     "available": true,
-    "probe_date": "2026-04-29",
+    "probe_date": "2026-04-30",
     "sources_total": 14,
     "green": 8,
     "yellow": 3,
@@ -566,40 +554,42 @@
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-04-27T06:09:57+00:00",
-    "sources_checked": 10,
+    "captured_at": "2026-04-30T08:47:48+00:00",
+    "sources_checked": 12,
     "regressions": [],
-    "alerts": []
+    "alerts": [
+      {
+        "source": "istat_sdmx",
+        "protocol": "sdmx",
+        "signal_type": "inventory change",
+        "result": "inventory change",
+        "detail": "4834 item (dataflow_count), delta +6 rispetto al run precedente (4828).",
+        "suggested_action": "verificare se variazione attesa; avviare catalog-inventory-scout se nuovi dataset"
+      }
+    ]
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-04-28",
+    "generated_at": "2026-04-30",
     "summary": {
       "total": 27,
       "by_status": {
-        "ok": 26,
+        "ok": 27,
         "warn": 0,
-        "error": 1
+        "error": 0
       }
     },
-    "actionable": [
-      {
-        "id": "istat-ciclo-acqua-prelievo-distribuzione",
-        "status": "error",
-        "detail": "anni: ? \u2014 fonte: ? \u2014 mart: no \u2014 \u26a0 no dataset.yml and no sources/ directory",
-        "action": "correggere la struttura del candidato"
-      }
-    ]
+    "actionable": []
   },
   "dataset_catalog": {
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-04-28",
+    "updated_at": "2026-04-30",
     "summary": {
-      "total": 17,
-      "clean_ready": 5,
-      "public": 5
+      "total": 18,
+      "clean_ready": 6,
+      "public": 6
     },
     "datasets": [
       {
@@ -852,6 +842,24 @@
         "metric_columns": 1,
         "dimension_columns": 5,
         "column_count": 6
+      },
+      {
+        "slug": "mit_incidentalita_mensile",
+        "name": "MIT Incidentalit\u00e0 Stradale Mensile",
+        "status": "clean_ready",
+        "visibility": "public",
+        "period": {
+          "start": 2001,
+          "end": 2018
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/mit_incidentalita_mensile/2001/mit_incidentalita_mensile_2001_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 13,
+        "dimension_columns": 2,
+        "column_count": 15
       },
       {
         "slug": "mur_contribuzione_universitaria",
