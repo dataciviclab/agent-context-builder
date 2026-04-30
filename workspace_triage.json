@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-30T13:57:57.107594",
+  "generated_at": "2026-04-30T14:53:30.862192",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,19 +9,13 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 7,
+  "open_prs": 6,
   "prs": [
     {
       "number": 29,
       "title": "chore(deps): bump codecov/codecov-action from 4 to 6",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/pull/29"
-    },
-    {
-      "number": 237,
-      "title": "fix(mit-opere-incompiute-2020): allinea README e notebook v0 col template canonico",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/237"
     },
     {
       "number": 234,
@@ -504,7 +498,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 7"
+    "Many open PRs: 6"
   ],
   "radar": {
     "available": true,
@@ -554,19 +548,10 @@
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-04-30T08:47:48+00:00",
+    "captured_at": "2026-04-30T14:49:31+00:00",
     "sources_checked": 12,
     "regressions": [],
-    "alerts": [
-      {
-        "source": "istat_sdmx",
-        "protocol": "sdmx",
-        "signal_type": "inventory change",
-        "result": "inventory change",
-        "detail": "4834 item (dataflow_count), delta +6 rispetto al run precedente (4828).",
-        "suggested_action": "verificare se variazione attesa; avviare catalog-inventory-scout se nuovi dataset"
-      }
-    ]
+    "alerts": []
   },
   "pipeline_state": {
     "available": true,
@@ -587,9 +572,9 @@
     "name": "Lab Clean Registry",
     "updated_at": "2026-04-30",
     "summary": {
-      "total": 18,
-      "clean_ready": 6,
-      "public": 6
+      "total": 19,
+      "clean_ready": 7,
+      "public": 7
     },
     "datasets": [
       {
@@ -860,6 +845,24 @@
         "metric_columns": 13,
         "dimension_columns": 2,
         "column_count": 15
+      },
+      {
+        "slug": "mit_opere_incompiute_2020",
+        "name": "MIT Opere Pubbliche Incompiute",
+        "status": "clean_ready",
+        "visibility": "public",
+        "period": {
+          "start": 2020,
+          "end": 2020
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/mit_opere_incompiute_2020/2020/mit_opere_incompiute_2020_2020_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 5,
+        "dimension_columns": 18,
+        "column_count": 23
       },
       {
         "slug": "mur_contribuzione_universitaria",

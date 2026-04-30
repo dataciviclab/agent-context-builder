@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-04-30T13:57:57.107594
+**Generated**: 2026-04-30T14:53:30.862192
 
 ## Repos
 
@@ -13,7 +13,6 @@
 
 ## Open PRs
 
-- [dataset-incubator#237](https://github.com/dataciviclab/dataset-incubator/pull/237): fix(mit-opere-incompiute-2020): allinea README e notebook v0 col template canonico
 - [dataset-incubator#234](https://github.com/dataciviclab/dataset-incubator/pull/234): refactor(ispra-ru-costi-kg): sostituisce path hardcoded cross-fonte con support dichiarativo
 - [dataset-incubator#233](https://github.com/dataciviclab/dataset-incubator/pull/233): chore(post-merge): aggiorna registry per PR #232
 - [dataset-incubator#200](https://github.com/dataciviclab/dataset-incubator/pull/200): chore(camera-deputati-legislature): compila entry clean catalog
@@ -54,9 +53,7 @@ Fonti: 14 — GREEN 8 · YELLOW 3 · RED 3 (probe: 2026-04-30)
 
 ## Catalog Drift
 
-- **istat_sdmx** (sdmx): inventory change
-  - azione: verificare se variazione attesa; avviare catalog-inventory-scout se nuovi dataset
-  *(captured 2026-04-30T08:47:48+00:00, 12 sources checked)*
+*No catalog drift signals* (as of 2026-04-30T14:49:31+00:00, 12 sources checked)
 
 ## Pipeline State
 
@@ -65,12 +62,13 @@ Fonti: 14 — GREEN 8 · YELLOW 3 · RED 3 (probe: 2026-04-30)
 
 ## Dataset Catalog
 
-*6 clean_ready dataset(s), 6 public* (updated 2026-04-30)
+*7 clean_ready dataset(s), 7 public* (updated 2026-04-30)
 - **bdap_entrate_stato** (public): BDAP Entrate Stato - Serie Storica [2008-2024]
 - **ispra_ru_base** (public): ISPRA - Rifiuti Urbani (dati base) [2020-2024]
 - **ispra_ru_costi_kg** (public): ISPRA - Costi gestione rifiuti (EUR/kg) [2020-2024]
 - **ispra_ru_costi_procapite** (public): ISPRA - Costi gestione rifiuti (EUR/abitante) [2020-2024]
 - **mit_incidentalita_mensile** (public): MIT Incidentalità Stradale Mensile [2001-2018]
+- **mit_opere_incompiute_2020** (public): MIT Opere Pubbliche Incompiute [2020]
 - **mur_contribuzione_universitaria** (public): MUR - Gettito della contribuzione universitaria [2017-2024]
 
 ## Portal Scout

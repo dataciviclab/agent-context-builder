@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-04-30T13:57:57.107594",
+  "generated_at": "2026-04-30T14:53:30.862192",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -75,6 +75,15 @@
         "period": {
           "start": 2001,
           "end": 2018
+        },
+        "visibility": "public"
+      },
+      {
+        "slug": "mit_opere_incompiute_2020",
+        "name": "MIT Opere Pubbliche Incompiute",
+        "period": {
+          "start": 2020,
+          "end": 2020
         },
         "visibility": "public"
       }
