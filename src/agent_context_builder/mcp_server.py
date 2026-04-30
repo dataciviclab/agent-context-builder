@@ -9,12 +9,17 @@ One optional tool:
   refresh_context — triggers a new CI build (requires GITHUB_TOKEN with workflow scope)
 
 Configuration via environment variables:
-  ACB_REPO    GitHub repo (default: dataciviclab/agent-context-builder)
-  ACB_BRANCH  Branch where artifacts are published (default: context)
-  GITHUB_TOKEN  Required only for the refresh_context tool
+  ACB_REPO       GitHub repo (default: dataciviclab/agent-context-builder)
+  ACB_BRANCH     Branch where artifacts are published (default: context)
+  GITHUB_TOKEN   Required only for the refresh_context tool
+  ACB_LOG_LEVEL  Logging level, default INFO (options: DEBUG, INFO, WARNING, ERROR)
 """
 
+import json
+import logging
 import os
+import time
+from datetime import datetime, timezone
 from pathlib import Path
 
 import requests
@@ -24,6 +29,26 @@ _REPO = os.environ.get("ACB_REPO", "dataciviclab/agent-context-builder")
 _BRANCH = os.environ.get("ACB_BRANCH", "context")
 _RAW_BASE = f"https://raw.githubusercontent.com/{_REPO}/{_BRANCH}"
 _API_BASE = f"https://api.github.com/repos/{_REPO}"
+
+# Rate-limit guard: GitHub allows ~2 workflow dispatches per hour per repo/ref
+_REFRESH_MIN_INTERVAL = 60  # seconds — local guard before hitting GitHub limit
+_last_refresh_attempt: float | None = None
+
+_log = logging.getLogger(__name__)
+
+
+def _configure_logging() -> None:
+    """Configure structured logging from ACB_LOG_LEVEL env var."""
+    level_name = os.environ.get("ACB_LOG_LEVEL", "INFO").upper()
+    level = getattr(logging, level_name, logging.INFO)
+    logging.basicConfig(
+        level=level,
+        format='{"ts":"%(asctime)s","level":"%(levelname)s","name":"%(name)s","msg":"%(message)s"}',
+        datefmt="%Y-%m-%dT%H:%M:%S",
+    )
+
+
+_configure_logging()
 
 mcp = FastMCP(
     "dataciviclab-context",
@@ -113,13 +138,58 @@ def _get_env(name: str) -> str | None:
     return os.environ.get(name)
 
 
-def _fetch(path: str) -> str:
-    """Fetch a file from the context branch."""
+def _tool_error(tool: str, path: str, message: str, status_code: int | None = None) -> str:
+    """Return a structured JSON error string for tool failures."""
+    return json.dumps({
+        "ok": False,
+        "tool": tool,
+        "path": path,
+        "error": message,
+        "status_code": status_code,
+        "ts": datetime.now(timezone.utc).isoformat(),
+    })
+
+
+def _fetch(path: str, retries: int = 1, backoff: float = 1.0) -> str:
+    """Fetch a file from the context branch with optional retry on transient errors.
+
+    Args:
+        path: Path on the context branch (e.g. "session_bootstrap.md")
+        retries: Number of retries on 5xx or network errors (default 1, meaning one attempt + up to 1 retry)
+        backoff: Initial backoff seconds, doubled on each retry (default 1.0)
+    """
     token = _get_env("GITHUB_TOKEN")
     headers = {"Authorization": f"token {token}"} if token else {}
-    response = requests.get(f"{_RAW_BASE}/{path}", headers=headers, timeout=10)
-    response.raise_for_status()
-    return response.text
+    url = f"{_RAW_BASE}/{path}"
+    attempt = 0
+    last_err: Exception | None = None
+
+    while attempt <= retries:
+        try:
+            response = requests.get(url, headers=headers, timeout=10)
+            response.raise_for_status()
+            _log.info("fetch_success path=%s status=%d", path, response.status_code)
+            return response.text
+        except requests.HTTPError as e:
+            # Don't retry on 4xx — they won't become valid by retrying
+            if e.response is not None and 400 <= e.response.status_code < 500:
+                _log.warning("fetch_client_error path=%s status=%d", path, e.response.status_code)
+                raise
+            last_err = e
+        except requests.RequestException as e:
+            last_err = e
+
+        attempt += 1
+        if attempt <= retries:
+            sleep = backoff * (2 ** (attempt - 1))
+            _log.warning("fetch_retry path=%s attempt=%d sleep=%.1f error=%s", path, attempt, sleep, last_err)
+            time.sleep(sleep)
+        else:
+            _log.error("fetch_failed path=%s error=%s", path, last_err)
+            raise last_err
+
+    # Should never reach here, but mypy needs it
+    raise RuntimeError("unreachable")
 
 
 @mcp.tool()
@@ -127,8 +197,11 @@ def session_bootstrap() -> str:
     """Orientamento rapido: repo attivi, PR aperte, discussion, stato locale, topic."""
     try:
         return _fetch("session_bootstrap.md")
-    except requests.HTTPError as e:
-        return f"session_bootstrap: {e}"
+    except Exception as e:
+        return _tool_error(
+            "session_bootstrap", "session_bootstrap.md", str(e),
+            e.response.status_code if isinstance(e, requests.HTTPError) and e.response else None
+        )
 
 
 @mcp.tool()
@@ -136,8 +209,11 @@ def workspace_triage() -> str:
     """Triage machine-readable: PR, issue, discussion, stato git per repo, warning."""
     try:
         return _fetch("workspace_triage.json")
-    except requests.HTTPError as e:
-        return f"workspace_triage: {e}"
+    except Exception as e:
+        return _tool_error(
+            "workspace_triage", "workspace_triage.json", str(e),
+            e.response.status_code if isinstance(e, requests.HTTPError) and e.response else None
+        )
 
 
 @mcp.tool()
@@ -145,8 +221,11 @@ def topic_index() -> str:
     """Topic index v2 — repos, datasets_by_source, operational_topics."""
     try:
         return _fetch("topic_index.json")
-    except requests.HTTPError as e:
-        return f"topic_index: {e}"
+    except Exception as e:
+        return _tool_error(
+            "topic_index", "topic_index.json", str(e),
+            e.response.status_code if isinstance(e, requests.HTTPError) and e.response else None
+        )
 
 
 @mcp.tool()
@@ -155,30 +234,86 @@ def refresh_context() -> str:
 
     Richiede GITHUB_TOKEN con scope workflow.
     Gli artifact aggiornati saranno disponibili entro ~1 minuto.
+
+    Rate-limit: GitHub allows ~2 dispatches per hour per repo/ref.
+    This tool enforces a local guard of one dispatch per minute.
     """
+    global _last_refresh_attempt
+
     token = _get_env("GITHUB_TOKEN")
     if not token:
-        return (
-            "Errore: GITHUB_TOKEN non impostato. "
-            "Serve un token con scope 'workflow' per triggerare il build."
-        )
+        return json.dumps({
+            "ok": False,
+            "tool": "refresh_context",
+            "error": "GITHUB_TOKEN non impostato. Serve un token con scope 'workflow'.",
+            "ts": datetime.now(timezone.utc).isoformat(),
+        })
 
-    response = requests.post(
-        f"{_API_BASE}/actions/workflows/build-context.yml/dispatches",
-        json={"ref": "main"},
-        headers={
-            "Authorization": f"token {token}",
-            "Accept": "application/vnd.github+json",
-        },
-        timeout=10,
-    )
-    if response.status_code == 204:
-        return "Build triggerato. Gli artifact saranno aggiornati entro ~1 minuto."
-    return f"Errore: {response.status_code} — {response.text}"
+    now = time.monotonic()
+    if _last_refresh_attempt is not None:
+        elapsed = now - _last_refresh_attempt
+        if elapsed < _REFRESH_MIN_INTERVAL:
+            wait = _REFRESH_MIN_INTERVAL - elapsed
+            return json.dumps({
+                "ok": False,
+                "tool": "refresh_context",
+                "error": f"Troppo presto. Ultimo tentativo {int(elapsed)}s fa. "
+                         f"Aspetta ~{int(wait)}s prima di riprovare.",
+                "retry_after": int(wait),
+                "ts": datetime.now(timezone.utc).isoformat(),
+            })
+
+    _last_refresh_attempt = now
+    try:
+        response = requests.post(
+            f"{_API_BASE}/actions/workflows/build-context.yml/dispatches",
+            json={"ref": "main"},
+            headers={
+                "Authorization": f"token {token}",
+                "Accept": "application/vnd.github+json",
+            },
+            timeout=10,
+        )
+        if response.status_code == 204:
+            _log.info("refresh_triggered ref=main")
+            return json.dumps({
+                "ok": True,
+                "tool": "refresh_context",
+                "message": "Build triggerato. Artifact aggiornati entro ~1 minuto.",
+                "ts": datetime.now(timezone.utc).isoformat(),
+            })
+        elif response.status_code == 422:
+            # 422 = workflow disabled or ref not allowed — don't retry
+            _log.error("refresh_rejected status=%d body=%s", response.status_code, response.text)
+            return json.dumps({
+                "ok": False,
+                "tool": "refresh_context",
+                "error": "Build rifiutato (422). Verifica che il workflow sia abilitato su main.",
+                "status_code": 422,
+                "ts": datetime.now(timezone.utc).isoformat(),
+            })
+        else:
+            _log.error("refresh_failed status=%d body=%s", response.status_code, response.text)
+            return json.dumps({
+                "ok": False,
+                "tool": "refresh_context",
+                "error": f"Errore {response.status_code}: {response.text}",
+                "status_code": response.status_code,
+                "ts": datetime.now(timezone.utc).isoformat(),
+            })
+    except requests.RequestException as e:
+        _log.error("refresh_network_error error=%s", e)
+        return json.dumps({
+            "ok": False,
+            "tool": "refresh_context",
+            "error": f"Errore di rete: {e}",
+            "ts": datetime.now(timezone.utc).isoformat(),
+        })
 
 
 def main() -> None:
     """Entry point per l'MCP server."""
+    _log.info("starting mcp server repo=%s branch=%s", _REPO, _BRANCH)
     mcp.run()
 
 
