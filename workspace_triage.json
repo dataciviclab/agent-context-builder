@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-01T08:12:51.281034",
+  "generated_at": "2026-05-01T13:20:27.856487",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -18,10 +18,16 @@
       "url": "https://github.com/dataciviclab/agent-context-builder/pull/29"
     },
     {
-      "number": 239,
-      "title": "fix: toolkit MCP steps in run-candidate, workflow consolidation, new PR gate",
+      "number": 243,
+      "title": "feat: estrae detect_candidates in script condiviso",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/239"
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/243"
+    },
+    {
+      "number": 241,
+      "title": "chore(post-merge): aggiorna registry per PR #240",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/241"
     },
     {
       "number": 234,
@@ -30,22 +36,16 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/234"
     },
     {
-      "number": 233,
-      "title": "chore(post-merge): aggiorna registry per PR #232",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/233"
-    },
-    {
       "number": 200,
       "title": "chore(camera-deputati-legislature): compila entry clean catalog",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/200"
     },
     {
-      "number": 199,
-      "title": "fix: MCP tools consolidation, validation enrichment, parallel tests",
+      "number": 200,
+      "title": "feat(cli): aggiunge comando pubblico blocker-hints",
       "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/199"
+      "url": "https://github.com/dataciviclab/toolkit/pull/200"
     },
     {
       "number": 63,
@@ -508,11 +508,11 @@
   ],
   "radar": {
     "available": true,
-    "probe_date": "2026-04-30",
+    "probe_date": "2026-05-01",
     "sources_total": 14,
-    "green": 8,
+    "green": 7,
     "yellow": 3,
-    "red": 3,
+    "red": 4,
     "unhealthy": [
       {
         "id": "istat_sdmx",
@@ -531,6 +531,12 @@
         "status": "RED",
         "protocol": "html",
         "http_code": "-"
+      },
+      {
+        "id": "dati_camera",
+        "status": "RED",
+        "protocol": "sparql",
+        "http_code": "503"
       },
       {
         "id": "lavoro_opendata",

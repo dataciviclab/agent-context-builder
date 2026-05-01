@@ -1,13 +1,14 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-01T08:12:51.281034
+**Generated**: 2026-05-01T13:20:27.856487
 
 ## 🔍 SCOUTING
 
-**Radar**: 14 fonti — GREEN 8 · YELLOW 3 · RED 3 (probe: 2026-04-30)
+**Radar**: 14 fonti — GREEN 7 · YELLOW 3 · RED 4 (probe: 2026-05-01)
   · **istat_sdmx** RED [-] — ↳ istat-gini-regionale, istat-housing-crowding, istat-ipab-aree
   · **anac** YELLOW [403]
   · **dati_salute** RED [-]
+  · **dati_camera** RED [503]
   · **lavoro_opendata** YELLOW [200]
   · **mur_ustat** RED [-]
   · **opencoesione** YELLOW [403] — ↳ opencoesione-pagamenti-ue-2014-2020
@@ -23,11 +24,11 @@
 
 ## 🔗 OPEN
 
-- [dataset-incubator#239](https://github.com/dataciviclab/dataset-incubator/pull/239): fix: toolkit MCP steps in run-candidate, workflow consolidation, new PR gate
+- [dataset-incubator#243](https://github.com/dataciviclab/dataset-incubator/pull/243): feat: estrae detect_candidates in script condiviso
+- [dataset-incubator#241](https://github.com/dataciviclab/dataset-incubator/pull/241): chore(post-merge): aggiorna registry per PR #240
 - [dataset-incubator#234](https://github.com/dataciviclab/dataset-incubator/pull/234): refactor(ispra-ru-costi-kg): sostituisce path hardcoded cross-fonte con support dichiarativo
-- [dataset-incubator#233](https://github.com/dataciviclab/dataset-incubator/pull/233): chore(post-merge): aggiorna registry per PR #232
 - [dataset-incubator#200](https://github.com/dataciviclab/dataset-incubator/pull/200): chore(camera-deputati-legislature): compila entry clean catalog
-- [toolkit#199](https://github.com/dataciviclab/toolkit/pull/199): fix: MCP tools consolidation, validation enrichment, parallel tests
+- [toolkit#200](https://github.com/dataciviclab/toolkit/pull/200): feat(cli): aggiunge comando pubblico blocker-hints
 - **Dependabot**: 3 bump PR(s)
 **Discussions**: 20 open
   · [Domanda] Quanta parte delle entrate tributarie dipende da poche voci e quanto è diffuso?
