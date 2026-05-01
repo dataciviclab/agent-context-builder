@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-05-01T13:20:27.856487",
+  "generated_at": "2026-05-01T19:13:52.113100",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -94,6 +94,17 @@
         "name": "MUR - Gettito della contribuzione universitaria",
         "period": {
           "start": 2017,
+          "end": 2024
+        },
+        "visibility": "public"
+      }
+    ],
+    "Terna S.p.A. \u2014 dati pubblicati su terna.com": [
+      {
+        "slug": "terna_capacita_rinnovabile",
+        "name": "Terna Capacita Rinnovabile",
+        "period": {
+          "start": 2023,
           "end": 2024
         },
         "visibility": "public"

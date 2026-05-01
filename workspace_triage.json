@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-01T13:20:27.856487",
+  "generated_at": "2026-05-01T19:13:52.113100",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,19 +9,13 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 8,
+  "open_prs": 7,
   "prs": [
     {
       "number": 29,
       "title": "chore(deps): bump codecov/codecov-action from 4 to 6",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/pull/29"
-    },
-    {
-      "number": 243,
-      "title": "feat: estrae detect_candidates in script condiviso",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/243"
     },
     {
       "number": 241,
@@ -42,12 +36,6 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/200"
     },
     {
-      "number": 200,
-      "title": "feat(cli): aggiunge comando pubblico blocker-hints",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/200"
-    },
-    {
       "number": 63,
       "title": "chore(deps-dev): bump postcss from 8.5.10 to 8.5.12",
       "repo": "data-explorer",
@@ -58,6 +46,12 @@
       "title": "chore(deps-dev): bump tailwindcss from 3.4.18 to 4.2.4",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/62"
+    },
+    {
+      "number": 182,
+      "title": "fix(source-check): rimuovi skip automatico per max-age-days + cleanup portal-discovery",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/182"
     }
   ],
   "open_issues": 41,
@@ -504,7 +498,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 8"
+    "Many open PRs: 7"
   ],
   "radar": {
     "available": true,
@@ -567,7 +561,7 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-04-30",
+    "generated_at": "2026-05-01",
     "summary": {
       "total": 27,
       "by_status": {
@@ -582,11 +576,11 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-04-30",
+    "updated_at": "2026-05-01",
     "summary": {
-      "total": 19,
-      "clean_ready": 7,
-      "public": 7
+      "total": 20,
+      "clean_ready": 8,
+      "public": 8
     },
     "datasets": [
       {
@@ -1311,6 +1305,50 @@
         "dimension_columns": 3,
         "column_count": 20,
         "columns": []
+      },
+      {
+        "slug": "terna_capacita_rinnovabile",
+        "name": "Terna Capacita Rinnovabile",
+        "status": "clean_ready",
+        "visibility": "public",
+        "period": {
+          "start": 2023,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/terna_capacita_rinnovabile/*/terna_capacita_rinnovabile_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 1,
+        "dimension_columns": 5,
+        "column_count": 6,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_capacita",
+            "role": "dimension"
+          },
+          {
+            "name": "regione",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "fonti",
+            "role": "dimension"
+          },
+          {
+            "name": "potenza_mw",
+            "role": "metric"
+          }
+        ]
       }
     ]
   },
