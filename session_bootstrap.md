@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-01T03:29:18.544441
+**Generated**: 2026-05-01T08:12:51.281034
 
 ## 🔍 SCOUTING
 
@@ -23,9 +23,11 @@
 
 ## 🔗 OPEN
 
+- [dataset-incubator#239](https://github.com/dataciviclab/dataset-incubator/pull/239): fix: toolkit MCP steps in run-candidate, workflow consolidation, new PR gate
 - [dataset-incubator#234](https://github.com/dataciviclab/dataset-incubator/pull/234): refactor(ispra-ru-costi-kg): sostituisce path hardcoded cross-fonte con support dichiarativo
 - [dataset-incubator#233](https://github.com/dataciviclab/dataset-incubator/pull/233): chore(post-merge): aggiorna registry per PR #232
 - [dataset-incubator#200](https://github.com/dataciviclab/dataset-incubator/pull/200): chore(camera-deputati-legislature): compila entry clean catalog
+- [toolkit#199](https://github.com/dataciviclab/toolkit/pull/199): fix: MCP tools consolidation, validation enrichment, parallel tests
 - **Dependabot**: 3 bump PR(s)
 **Discussions**: 20 open
   · [Domanda] Quanta parte delle entrate tributarie dipende da poche voci e quanto è diffuso?

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-01T03:29:18.544441",
+  "generated_at": "2026-05-01T08:12:51.281034",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,13 +9,19 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 6,
+  "open_prs": 8,
   "prs": [
     {
       "number": 29,
       "title": "chore(deps): bump codecov/codecov-action from 4 to 6",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/pull/29"
+    },
+    {
+      "number": 239,
+      "title": "fix: toolkit MCP steps in run-candidate, workflow consolidation, new PR gate",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/239"
     },
     {
       "number": 234,
@@ -34,6 +40,12 @@
       "title": "chore(camera-deputati-legislature): compila entry clean catalog",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/200"
+    },
+    {
+      "number": 199,
+      "title": "fix: MCP tools consolidation, validation enrichment, parallel tests",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/199"
     },
     {
       "number": 63,
@@ -492,7 +504,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 6"
+    "Many open PRs: 8"
   ],
   "radar": {
     "available": true,
