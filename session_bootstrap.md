@@ -1,10 +1,10 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-02T07:46:22.706497
+**Generated**: 2026-05-02T13:13:57.552440
 
 ## 🔍 SCOUTING
 
-**Radar**: 14 fonti — GREEN 7 · YELLOW 3 · RED 4 (probe: 2026-05-01)
+**Radar**: 14 fonti — GREEN 7 · YELLOW 3 · RED 4 (probe: 2026-05-02)
   · **istat_sdmx** RED [-] — ↳ istat-gini-regionale, istat-housing-crowding, istat-ipab-aree
   · **anac** YELLOW [403]
   · **dati_salute** RED [-]
