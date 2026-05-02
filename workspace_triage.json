@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-02T13:13:57.552440",
+  "generated_at": "2026-05-02T19:01:07.355900",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,7 +9,7 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 7,
+  "open_prs": null,
   "prs": [
     {
       "number": 29,
@@ -46,15 +46,9 @@
       "title": "chore(deps-dev): bump tailwindcss from 3.4.18 to 4.2.4",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/62"
-    },
-    {
-      "number": 182,
-      "title": "fix(source-check): rimuovi skip automatico per max-age-days + cleanup portal-discovery",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/182"
     }
   ],
-  "open_issues": 41,
+  "open_issues": null,
   "issues": [
     {
       "number": 197,
@@ -225,12 +219,6 @@
       "url": "https://github.com/dataciviclab/toolkit/issues/183"
     },
     {
-      "number": 180,
-      "title": "[enhancement] Supporto per file raw multi-anno senza loop ridondante",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/180"
-    },
-    {
       "number": 61,
       "title": "fix(civile-flussi): aggiorna path parquet a /2025/ dopo passaggio candidate DI",
       "repo": "data-explorer",
@@ -255,6 +243,18 @@
       "url": "https://github.com/dataciviclab/data-explorer/issues/56"
     },
     {
+      "number": 188,
+      "title": "[Catalog] Variazioni rilevate nell'inventario",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/188"
+    },
+    {
+      "number": 187,
+      "title": "refactor: split bulk_source_check.py (1254 righe) in moduli separati",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/187"
+    },
+    {
       "number": 179,
       "title": "[scout] consip_open_data \u2014 filone MEPA, 10+ candidati subappalti",
       "repo": "source-observatory",
@@ -277,12 +277,6 @@
       "title": "[scout] ISTAT SDMX: 5 dataflow rilevanti per priorita civiche Lab",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/171"
-    },
-    {
-      "number": 163,
-      "title": "[Catalog] Variazioni rilevate nell'inventario",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/163"
     },
     {
       "number": 148,
@@ -446,7 +440,9 @@
       "category": "Datasets"
     }
   ],
-  "github_fetch_errors": {},
+  "github_fetch_errors": {
+    "source-observatory:data/portal_scout/discovered_portals_summary.json": "404 Client Error: Not Found for url: https://raw.githubusercontent.com/dataciviclab/source-observatory/main/data/portal_scout/discovered_portals_summary.json"
+  },
   "git_state": {
     "agent-context-builder": {
       "available": false,
@@ -498,15 +494,16 @@
     }
   },
   "warnings": [
-    "Many open PRs: 7"
+    "GitHub fetch failed \u2014 source-observatory:data/portal_scout/discovered_portals_summary.json: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/dataciviclab/source-observatory/main/data/portal_scout/discovered_portals_summary.json",
+    "Many open PRs: 6"
   ],
   "radar": {
     "available": true,
     "probe_date": "2026-05-02",
     "sources_total": 14,
-    "green": 7,
+    "green": 6,
     "yellow": 3,
-    "red": 4,
+    "red": 5,
     "unhealthy": [
       {
         "id": "istat_sdmx",
@@ -533,6 +530,12 @@
         "http_code": "503"
       },
       {
+        "id": "dati_cultura",
+        "status": "RED",
+        "protocol": "sparql",
+        "http_code": "-"
+      },
+      {
         "id": "lavoro_opendata",
         "status": "YELLOW",
         "protocol": "ckan",
@@ -554,7 +557,7 @@
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-04-30T14:49:31+00:00",
+    "captured_at": "2026-05-02T18:26:58+00:00",
     "sources_checked": 12,
     "regressions": [],
     "alerts": []
@@ -1353,40 +1356,6 @@
     ]
   },
   "portal_scout": {
-    "available": true,
-    "generated_at": "2026-04-26T09:22:35.038008+00:00",
-    "total_portals": 51,
-    "new_candidates": 37,
-    "new_confirmed_protocol": 6,
-    "by_protocol": {
-      "html": 42,
-      "ckan": 9
-    },
-    "new_structured": [
-      {
-        "domain": "dati-coll.dfp.gov.it",
-        "protocol": "ckan"
-      },
-      {
-        "domain": "dati.comune.mt.it",
-        "protocol": "ckan"
-      },
-      {
-        "domain": "dati.toscana.it",
-        "protocol": "ckan"
-      },
-      {
-        "domain": "dati.mit.gov.it",
-        "protocol": "ckan"
-      },
-      {
-        "domain": "indicepa.gov.it",
-        "protocol": "ckan"
-      },
-      {
-        "domain": "opendata-ercolano.cultura.gov.it",
-        "protocol": "ckan"
-      }
-    ]
+    "available": false
   }
 }
