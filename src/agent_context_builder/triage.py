@@ -101,8 +101,16 @@ def _build_radar_dict(fetcher: SourceObservatoryFetcher) -> dict[str, Any]:
         "green": radar.green,
         "yellow": radar.yellow,
         "red": radar.red,
+        "persistent_red": radar.persistent_red,
         "unhealthy": [
-            {"id": s.id, "status": s.status, "protocol": s.protocol, "http_code": s.http_code}
+            {
+                "id": s.id,
+                "status": s.status,
+                "protocol": s.protocol,
+                "http_code": s.http_code,
+                "note": s.note,
+                "red_streak": s.red_streak,
+            }
             for s in radar.unhealthy
         ],
     }

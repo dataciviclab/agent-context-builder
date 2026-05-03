@@ -294,6 +294,7 @@ def test_parse_radar_summary():
         "probe_date": "2026-04-19",
         "sources_total": 3,
         "status_counts": {"GREEN": 2, "YELLOW": 1, "RED": 0},
+        "persistent_red": 1,
         "sources": [
             {"id": "inps", "status": "GREEN", "protocol": "ckan",
              "observation_mode": "catalog-watch", "http_code": "200",
@@ -301,6 +302,10 @@ def test_parse_radar_summary():
             {"id": "anac", "status": "YELLOW", "protocol": "ckan",
              "observation_mode": "radar-only", "http_code": "200",
              "last_check": "2026-04-19", "datasets_in_use": []},
+            {"id": "dati_salute", "status": "RED", "protocol": "html",
+             "observation_mode": "radar-only", "http_code": "-",
+             "last_check": "2026-04-19", "datasets_in_use": [],
+             "note": "SSL verify failed", "red_streak": 2},
             {"id": "istat", "status": "GREEN", "protocol": "sdmx",
              "observation_mode": "catalog-watch", "http_code": "200",
              "last_check": "2026-04-19", "datasets_in_use": []},
@@ -311,8 +316,12 @@ def test_parse_radar_summary():
     assert summary.green == 2
     assert summary.yellow == 1
     assert summary.red == 0
-    assert len(summary.unhealthy) == 1
+    assert summary.persistent_red == 1
+    assert len(summary.unhealthy) == 2
     assert summary.unhealthy[0].id == "anac"
+    assert summary.unhealthy[1].id == "dati_salute"
+    assert summary.unhealthy[1].note == "SSL verify failed"
+    assert summary.unhealthy[1].red_streak == 2
 
 
 def test_parse_di_clean_catalog_basic():

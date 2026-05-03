@@ -298,6 +298,8 @@ class RadarSource:
     http_code: str
     last_check: str
     datasets_in_use: list[str] = field(default_factory=list)
+    note: str | None = None
+    red_streak: int = 0
 
 
 @dataclass
@@ -310,6 +312,7 @@ class RadarSummary:
     green: int
     yellow: int
     red: int
+    persistent_red: int = 0
     sources: list[RadarSource] = field(default_factory=list)
 
     @property
@@ -333,6 +336,8 @@ def parse_radar_summary(raw: str) -> RadarSummary:
             http_code=s.get("http_code", "-"),
             last_check=s.get("last_check", ""),
             datasets_in_use=s.get("datasets_in_use") or [],
+            note=s.get("note"),
+            red_streak=s.get("red_streak", 0),
         )
         for s in data.get("sources", [])
     ]
@@ -344,6 +349,7 @@ def parse_radar_summary(raw: str) -> RadarSummary:
         green=counts.get("GREEN", 0),
         yellow=counts.get("YELLOW", 0),
         red=counts.get("RED", 0),
+        persistent_red=data.get("persistent_red", 0),
         sources=sources,
     )
 
