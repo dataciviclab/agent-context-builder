@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-03T13:12:59.476035",
+  "generated_at": "2026-05-03T19:01:32.542869",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -11,6 +11,12 @@
   ],
   "open_prs": null,
   "prs": [
+    {
+      "number": 32,
+      "title": "chore: remove orphan portal_scout code (SO no longer produces it)",
+      "repo": "agent-context-builder",
+      "url": "https://github.com/dataciviclab/agent-context-builder/pull/32"
+    },
     {
       "number": 241,
       "title": "chore(post-merge): aggiorna registry per PR #240",
@@ -85,12 +91,6 @@
       "title": "Apri candidate camera-votazioni",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/124"
-    },
-    {
-      "number": 123,
-      "title": "Apri candidate inps-cig",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/123"
     },
     {
       "number": 235,
@@ -259,12 +259,6 @@
       "title": "[scout] consip_open_data \u2014 filone MEPA, 10+ candidati subappalti",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/179"
-    },
-    {
-      "number": 178,
-      "title": "[source] finanze.gov.it \u2014 dichiarazioni fiscali CSV regionali, go Discussion",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/178"
     },
     {
       "number": 176,
@@ -494,7 +488,8 @@
     }
   },
   "warnings": [
-    "GitHub fetch failed \u2014 source-observatory:data/portal_scout/discovered_portals_summary.json: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/dataciviclab/source-observatory/main/data/portal_scout/discovered_portals_summary.json"
+    "GitHub fetch failed \u2014 source-observatory:data/portal_scout/discovered_portals_summary.json: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/dataciviclab/source-observatory/main/data/portal_scout/discovered_portals_summary.json",
+    "Many open PRs: 6"
   ],
   "radar": {
     "available": true,

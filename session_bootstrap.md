@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-03T13:12:59.476035
+**Generated**: 2026-05-03T19:01:32.542869
 
 ## 🔍 SCOUTING
 
@@ -23,6 +23,7 @@
 ## 🔗 OPEN
 
 > Warning: GitHub fetch error — dati incompleti
+- [agent-context-builder#32](https://github.com/dataciviclab/agent-context-builder/pull/32): chore: remove orphan portal_scout code (SO no longer produces it)
 - [dataset-incubator#241](https://github.com/dataciviclab/dataset-incubator/pull/241): chore(post-merge): aggiorna registry per PR #240
 - [dataset-incubator#234](https://github.com/dataciviclab/dataset-incubator/pull/234): refactor(ispra-ru-costi-kg): sostituisce path hardcoded cross-fonte con support dichiarativo
 - [dataset-incubator#200](https://github.com/dataciviclab/dataset-incubator/pull/200): chore(camera-deputati-legislature): compila entry clean catalog
