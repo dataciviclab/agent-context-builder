@@ -12,10 +12,7 @@ from .git_local import GitLocalCollector, GitState
 from .sources.di import DatasetIncubatorFetcher
 from .sources.so import SourceObservatoryFetcher
 from .signals import (
-    DICleanCatalog,
-    PortalScoutSummary,
     RadarSummary,
-    RepoSignals,
     SourceObservatorySignals,
 )
 from .triage import build_workspace_triage
@@ -65,8 +62,7 @@ class Renderer:
         # ── SCOUTING ────────────────────────────────────────────────────
         radar = self._fetch_radar_summary()
         so = self._fetch_source_observatory_signals()
-        scout = self._fetch_portal_scout()
-        has_scouting = radar is not None or so is not None or scout is not None
+        has_scouting = radar is not None or so is not None
 
         if has_scouting:
             lines.append("## 🔍 SCOUTING")
@@ -107,19 +103,6 @@ class Renderer:
                         f"({so.sources_checked} sources checked)"
                     )
 
-            # Portal scout
-            if scout is not None:
-                lines.append(
-                    f"**Portal Scout**: {scout.total_portals} portali · "
-                    f"{scout.new_candidates} nuovi candidati · "
-                    f"{scout.new_confirmed_protocol} strutturati"
-                )
-                if scout.new_structured:
-                    domains = [c.domain for c in scout.new_structured[:3]]
-                    extra = f" + {len(scout.new_structured) - 3} altri" if len(scout.new_structured) > 3 else ""
-                    lines.append(f"  · **Nuovi CKAN**: {', '.join(domains)}{extra}")
-            else:
-                lines.append("**Portal Scout**: unavailable")
             lines.append("")
 
         # ── INTAKE ────────────────────────────────────────────────────────
@@ -222,10 +205,6 @@ class Renderer:
 
     def _fetch_radar_summary(self) -> RadarSummary | None:
         return self._so_fetcher.fetch_radar_summary()
-
-
-    def _fetch_portal_scout(self) -> PortalScoutSummary | None:
-        return self._so_fetcher.fetch_portal_scout()
 
 
     def _fetch_source_observatory_signals(self) -> SourceObservatorySignals | None:

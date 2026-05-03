@@ -54,7 +54,6 @@ def build_workspace_triage(
         "source_health": _build_source_health_dict(so_fetcher, github_collector),
         "pipeline_state": _build_pipeline_state_dict(di_fetcher, github_collector),
         "dataset_catalog": _build_dataset_catalog_dict(di_fetcher, github_collector),
-        "portal_scout": _build_portal_scout_dict(so_fetcher),
     }
 
 
@@ -217,23 +216,6 @@ def _build_dataset_catalog_dict(
                 ] if d.status == "clean_ready" else [],
             }
             for d in catalog.datasets
-        ],
-    }
-
-
-def _build_portal_scout_dict(fetcher: SourceObservatoryFetcher) -> dict[str, Any]:
-    scout = fetcher.fetch_portal_scout()
-    if scout is None:
-        return {"available": False}
-    return {
-        "available": True,
-        "generated_at": scout.generated_at,
-        "total_portals": scout.total_portals,
-        "new_candidates": scout.new_candidates,
-        "new_confirmed_protocol": scout.new_confirmed_protocol,
-        "by_protocol": scout.by_protocol,
-        "new_structured": [
-            {"domain": c.domain, "protocol": c.protocol} for c in scout.new_structured
         ],
     }
 
