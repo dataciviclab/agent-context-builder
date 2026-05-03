@@ -1,15 +1,12 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-03T02:58:14.020538
+**Generated**: 2026-05-03T08:02:39.789763
 
 ## 🔍 SCOUTING
 
-**Radar**: 14 fonti — GREEN 6 · YELLOW 3 · RED 5 (probe: 2026-05-02)
-  · **istat_sdmx** RED [-]
+**Radar**: 14 fonti — GREEN 9 · YELLOW 3 · RED 2 (probe: 2026-05-03)
   · **anac** YELLOW [403]
   · **dati_salute** RED [-]
-  · **dati_camera** RED [503]
-  · **dati_cultura** RED [-]
   · **lavoro_opendata** YELLOW [200]
   · **mur_ustat** RED [-]
   · **opencoesione** YELLOW [403]

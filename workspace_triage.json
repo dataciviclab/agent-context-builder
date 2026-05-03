@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-03T02:58:14.020538",
+  "generated_at": "2026-05-03T08:02:39.789763",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -499,18 +499,12 @@
   ],
   "radar": {
     "available": true,
-    "probe_date": "2026-05-02",
+    "probe_date": "2026-05-03",
     "sources_total": 14,
-    "green": 6,
+    "green": 9,
     "yellow": 3,
-    "red": 5,
+    "red": 2,
     "unhealthy": [
-      {
-        "id": "istat_sdmx",
-        "status": "RED",
-        "protocol": "sdmx",
-        "http_code": "-"
-      },
       {
         "id": "anac",
         "status": "YELLOW",
@@ -521,18 +515,6 @@
         "id": "dati_salute",
         "status": "RED",
         "protocol": "html",
-        "http_code": "-"
-      },
-      {
-        "id": "dati_camera",
-        "status": "RED",
-        "protocol": "sparql",
-        "http_code": "503"
-      },
-      {
-        "id": "dati_cultura",
-        "status": "RED",
-        "protocol": "sparql",
         "http_code": "-"
       },
       {
@@ -557,7 +539,7 @@
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-05-02T22:01:19+00:00",
+    "captured_at": "2026-05-03T07:47:07+00:00",
     "sources_checked": 12,
     "regressions": [],
     "alerts": []
