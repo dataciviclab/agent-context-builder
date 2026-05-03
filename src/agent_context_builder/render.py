@@ -79,11 +79,15 @@ class Renderer:
                     f"GREEN {radar.green} · YELLOW {radar.yellow} · RED {radar.red} "
                     f"(probe: {radar.probe_date})"
                 )
+                if radar.persistent_red:
+                    lines.append(f"  ⚠ **{radar.persistent_red} persistent RED**")
                 if radar.unhealthy:
                     for s in radar.unhealthy:
                         di = f" — ↳ {', '.join(s.datasets_in_use)}" if s.datasets_in_use else ""
+                        streak = f" (streak {s.red_streak})" if s.red_streak else ""
+                        note = f" — {s.note}" if s.note else ""
                         lines.append(
-                            f"  · **{s.id}** {s.status} [{s.http_code}]{di}"
+                            f"  · **{s.id}** {s.status} [{s.http_code}]{note}{streak}{di}"
                         )
             else:
                 lines.append("**Radar**: unavailable")
