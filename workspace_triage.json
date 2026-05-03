@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-03T08:07:54.766816",
+  "generated_at": "2026-05-03T13:11:42.598194",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -11,12 +11,6 @@
   ],
   "open_prs": null,
   "prs": [
-    {
-      "number": 29,
-      "title": "chore(deps): bump codecov/codecov-action from 4 to 6",
-      "repo": "agent-context-builder",
-      "url": "https://github.com/dataciviclab/agent-context-builder/pull/29"
-    },
     {
       "number": 241,
       "title": "chore(post-merge): aggiorna registry per PR #240",
@@ -50,6 +44,18 @@
   ],
   "open_issues": null,
   "issues": [
+    {
+      "number": 250,
+      "title": "intake: CONSIP MEPA \u2014 acquisti e appalti stipulati della PA, per provincia (2023-2025)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/250"
+    },
+    {
+      "number": 249,
+      "title": "intake: BDAP MOP \u2014 soggetti titolari di Opere Pubbliche, per CUP e codice fiscale (2026)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/249"
+    },
     {
       "number": 197,
       "title": "post-merge: run + push GCS \u2014 camera-deputati-legislature",
@@ -241,12 +247,6 @@
       "title": "feat: unifica catalogo da dataset-incubator, routing dinamico per slug",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/issues/56"
-    },
-    {
-      "number": 188,
-      "title": "[Catalog] Variazioni rilevate nell'inventario",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/188"
     },
     {
       "number": 187,
@@ -494,8 +494,7 @@
     }
   },
   "warnings": [
-    "GitHub fetch failed \u2014 source-observatory:data/portal_scout/discovered_portals_summary.json: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/dataciviclab/source-observatory/main/data/portal_scout/discovered_portals_summary.json",
-    "Many open PRs: 6"
+    "GitHub fetch failed \u2014 source-observatory:data/portal_scout/discovered_portals_summary.json: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/dataciviclab/source-observatory/main/data/portal_scout/discovered_portals_summary.json"
   ],
   "radar": {
     "available": true,
@@ -504,36 +503,47 @@
     "green": 9,
     "yellow": 3,
     "red": 2,
+    "persistent_red": 2,
     "unhealthy": [
       {
         "id": "anac",
         "status": "YELLOW",
         "protocol": "ckan",
-        "http_code": "403"
+        "http_code": "403",
+        "note": null,
+        "red_streak": 0
       },
       {
         "id": "dati_salute",
         "status": "RED",
         "protocol": "html",
-        "http_code": "-"
+        "http_code": "-",
+        "note": "SSL verify failed; fallback connection error (SSLError)",
+        "red_streak": 2
       },
       {
         "id": "lavoro_opendata",
         "status": "YELLOW",
         "protocol": "ckan",
-        "http_code": "200"
+        "http_code": "200",
+        "note": "CKAN API returned non-JSON content",
+        "red_streak": 0
       },
       {
         "id": "mur_ustat",
         "status": "RED",
         "protocol": "ckan",
-        "http_code": "-"
+        "http_code": "-",
+        "note": "Probe exception non gestita: ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /api/3/action/package_list?limit=1 (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7f66b6271070>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)'))",
+        "red_streak": 2
       },
       {
         "id": "opencoesione",
         "status": "YELLOW",
         "protocol": "rest",
-        "http_code": "403"
+        "http_code": "403",
+        "note": null,
+        "red_streak": 0
       }
     ]
   },
@@ -546,11 +556,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-05-01",
+    "generated_at": "2026-05-03",
     "summary": {
-      "total": 27,
+      "total": 28,
       "by_status": {
-        "ok": 27,
+        "ok": 28,
         "warn": 0,
         "error": 0
       }
@@ -561,11 +571,11 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-05-01",
+    "updated_at": "2026-05-03",
     "summary": {
-      "total": 20,
-      "clean_ready": 8,
-      "public": 8
+      "total": 21,
+      "clean_ready": 9,
+      "public": 9
     },
     "datasets": [
       {
@@ -687,6 +697,54 @@
         "dimension_columns": 13,
         "column_count": 23,
         "columns": []
+      },
+      {
+        "slug": "inps_cig_serie_storiche_annuali",
+        "name": "INPS Cassa Integrazione Guadagni \u2014 Serie storiche annuali",
+        "status": "clean_ready",
+        "visibility": "public",
+        "period": {
+          "start": 2005,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/inps_cig_serie_storiche_annuali/2024/inps_cig_serie_storiche_annuali_2024_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 3,
+        "dimension_columns": 4,
+        "column_count": 7,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "prestazione",
+            "role": "dimension"
+          },
+          {
+            "name": "settore",
+            "role": "dimension"
+          },
+          {
+            "name": "settore_specifiche",
+            "role": "dimension"
+          },
+          {
+            "name": "ore_operai",
+            "role": "metric"
+          },
+          {
+            "name": "ore_impiegati",
+            "role": "metric"
+          },
+          {
+            "name": "totale_ore",
+            "role": "metric"
+          }
+        ]
       },
       {
         "slug": "inps_pensioni_2017_2024",

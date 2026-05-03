@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-05-03T08:07:54.766816",
+  "generated_at": "2026-05-03T13:11:42.598194",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -34,6 +34,17 @@
         "name": "BDAP Entrate Stato - Serie Storica",
         "period": {
           "start": 2008,
+          "end": 2024
+        },
+        "visibility": "public"
+      }
+    ],
+    "INPS Open Data, CC BY 4.0, dati.gov.it (bef11a2c-300b-4578-8143-c1ce08f46fff)": [
+      {
+        "slug": "inps_cig_serie_storiche_annuali",
+        "name": "INPS Cassa Integrazione Guadagni \u2014 Serie storiche annuali",
+        "period": {
+          "start": 2005,
           "end": 2024
         },
         "visibility": "public"
