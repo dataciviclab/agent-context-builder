@@ -1,15 +1,16 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-04T02:56:10.164938
+**Generated**: 2026-05-04T08:20:37.041491
 
 ## 🔍 SCOUTING
 
-**Radar**: 14 fonti — GREEN 9 · YELLOW 3 · RED 2 (probe: 2026-05-03)
-  ⚠ **2 persistent RED**
+**Radar**: 15 fonti — GREEN 9 · YELLOW 3 · RED 3 (probe: 2026-05-04)
+  ⚠ **3 persistent RED**
+  · **istat_sdmx** RED [-] — Probe exception non gestita: ReadTimeout: HTTPSConnectionPool(host='esploradati.istat.it', port=443): Read timed out. (read timeout=10) (streak 2)
   · **anac** YELLOW [403]
-  · **dati_salute** RED [-] — SSL verify failed; fallback connection error (SSLError) (streak 2)
+  · **dati_salute** RED [-] — SSL verify failed; fallback connection error (SSLError) (streak 4)
   · **lavoro_opendata** YELLOW [200] — CKAN API returned non-JSON content
-  · **mur_ustat** RED [-] — Probe exception non gestita: ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /api/3/action/package_list?limit=1 (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7f66b6271070>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)')) (streak 2)
+  · **mur_ustat** RED [-] — Probe exception non gestita: ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /api/3/action/package_list?limit=1 (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7f258eefef90>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)')) (streak 4)
   · **opencoesione** YELLOW [403]
 **Catalog Drift**: no drift signals (12 sources checked)
 **Portal Scout**: unavailable

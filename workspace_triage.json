@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-04T02:56:10.164938",
+  "generated_at": "2026-05-04T08:20:37.041491",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -249,6 +249,12 @@
       "url": "https://github.com/dataciviclab/data-explorer/issues/56"
     },
     {
+      "number": 194,
+      "title": "[Catalog] 2026-05-04 \u2014 1 nuova fonte, 1 rimossa",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/194"
+    },
+    {
       "number": 187,
       "title": "refactor: split bulk_source_check.py (1254 righe) in moduli separati",
       "repo": "source-observatory",
@@ -493,13 +499,21 @@
   ],
   "radar": {
     "available": true,
-    "probe_date": "2026-05-03",
-    "sources_total": 14,
+    "probe_date": "2026-05-04",
+    "sources_total": 15,
     "green": 9,
     "yellow": 3,
-    "red": 2,
-    "persistent_red": 2,
+    "red": 3,
+    "persistent_red": 3,
     "unhealthy": [
+      {
+        "id": "istat_sdmx",
+        "status": "RED",
+        "protocol": "sdmx",
+        "http_code": "-",
+        "note": "Probe exception non gestita: ReadTimeout: HTTPSConnectionPool(host='esploradati.istat.it', port=443): Read timed out. (read timeout=10)",
+        "red_streak": 2
+      },
       {
         "id": "anac",
         "status": "YELLOW",
@@ -514,7 +528,7 @@
         "protocol": "html",
         "http_code": "-",
         "note": "SSL verify failed; fallback connection error (SSLError)",
-        "red_streak": 2
+        "red_streak": 4
       },
       {
         "id": "lavoro_opendata",
@@ -529,8 +543,8 @@
         "status": "RED",
         "protocol": "ckan",
         "http_code": "-",
-        "note": "Probe exception non gestita: ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /api/3/action/package_list?limit=1 (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7f66b6271070>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)'))",
-        "red_streak": 2
+        "note": "Probe exception non gestita: ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /api/3/action/package_list?limit=1 (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7f258eefef90>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)'))",
+        "red_streak": 4
       },
       {
         "id": "opencoesione",
@@ -544,7 +558,7 @@
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-05-03T07:47:07+00:00",
+    "captured_at": "2026-05-04T07:59:47+00:00",
     "sources_checked": 12,
     "regressions": [],
     "alerts": []
