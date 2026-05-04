@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-04T14:03:15.444525
+**Generated**: 2026-05-04T19:42:02.165061
 
 ## 🔍 SCOUTING
 
@@ -19,15 +19,12 @@
 
 **Pipeline**: 28 candidates — 28 ok
   ⚠️ **mit-incidentalita-mensile-2001-2018** — run fallito [2001](https://github.com/dataciviclab/dataset-incubator/actions/runs/25156933674)
-**Dataset Catalog**: 9 clean_ready · 9 public · updated 2026-05-03
+**Dataset Catalog**: 9 clean_ready · 9 public · updated 2026-05-04
 
 ## 🔗 OPEN
 
 > Warning: GitHub fetch error — dati incompleti
 - [agent-context-builder#32](https://github.com/dataciviclab/agent-context-builder/pull/32): chore: remove orphan portal_scout code (SO no longer produces it)
-- [dataset-incubator#252](https://github.com/dataciviclab/dataset-incubator/pull/252): chore(post-merge): aggiorna registry per PR #234
-- [dataset-incubator#241](https://github.com/dataciviclab/dataset-incubator/pull/241): chore(post-merge): aggiorna registry per PR #240
-- [dataset-incubator#200](https://github.com/dataciviclab/dataset-incubator/pull/200): chore(camera-deputati-legislature): compila entry clean catalog
 - **Dependabot**: 2 bump PR(s)
 **Discussions**: 20 open
   · [Domanda] Quanta parte delle entrate tributarie dipende da poche voci e quanto è diffuso?

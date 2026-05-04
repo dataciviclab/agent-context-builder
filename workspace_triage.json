@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-04T14:03:15.444525",
+  "generated_at": "2026-05-04T19:42:02.165061",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -16,24 +16,6 @@
       "title": "chore: remove orphan portal_scout code (SO no longer produces it)",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/pull/32"
-    },
-    {
-      "number": 252,
-      "title": "chore(post-merge): aggiorna registry per PR #234",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/252"
-    },
-    {
-      "number": 241,
-      "title": "chore(post-merge): aggiorna registry per PR #240",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/241"
-    },
-    {
-      "number": 200,
-      "title": "chore(camera-deputati-legislature): compila entry clean catalog",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/200"
     },
     {
       "number": 63,
@@ -61,12 +43,6 @@
       "title": "intake: BDAP MOP \u2014 soggetti titolari di Opere Pubbliche, per CUP e codice fiscale (2026)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/249"
-    },
-    {
-      "number": 197,
-      "title": "post-merge: run + push GCS \u2014 camera-deputati-legislature",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/197"
     },
     {
       "number": 151,
@@ -193,6 +169,12 @@
       "title": "feat: unifica catalogo da dataset-incubator, routing dinamico per slug",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/issues/56"
+    },
+    {
+      "number": 201,
+      "title": "catalog-scout: mef_irpef \u2014 IRPEF regionale MEF (147 item, 2010-2025)",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/201"
     },
     {
       "number": 194,
@@ -440,8 +422,7 @@
     }
   },
   "warnings": [
-    "GitHub fetch failed \u2014 source-observatory:data/portal_scout/discovered_portals_summary.json: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/dataciviclab/source-observatory/main/data/portal_scout/discovered_portals_summary.json",
-    "Many open PRs: 6"
+    "GitHub fetch failed \u2014 source-observatory:data/portal_scout/discovered_portals_summary.json: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/dataciviclab/source-observatory/main/data/portal_scout/discovered_portals_summary.json"
   ],
   "radar": {
     "available": true,
@@ -511,7 +492,7 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-05-03",
+    "generated_at": "2026-05-04",
     "summary": {
       "total": 28,
       "by_status": {
@@ -526,7 +507,7 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-05-03",
+    "updated_at": "2026-05-04",
     "summary": {
       "total": 21,
       "clean_ready": 9,
