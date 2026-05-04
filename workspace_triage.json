@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-04T08:30:50.012236",
+  "generated_at": "2026-05-04T12:19:22.429769",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -18,16 +18,16 @@
       "url": "https://github.com/dataciviclab/agent-context-builder/pull/32"
     },
     {
+      "number": 252,
+      "title": "chore(post-merge): aggiorna registry per PR #234",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/252"
+    },
+    {
       "number": 241,
       "title": "chore(post-merge): aggiorna registry per PR #240",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/241"
-    },
-    {
-      "number": 234,
-      "title": "refactor(ispra-ru-costi-kg): sostituisce path hardcoded cross-fonte con support dichiarativo",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/234"
     },
     {
       "number": 200,
@@ -46,6 +46,36 @@
       "title": "chore(deps-dev): bump tailwindcss from 3.4.18 to 4.2.4",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/62"
+    },
+    {
+      "number": 199,
+      "title": "chore(deps-dev): update pytest requirement from <10.0,>=7.0 to >=9.0.3,<10.0",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/199"
+    },
+    {
+      "number": 198,
+      "title": "chore(deps): update ddgs requirement from <10.0,>=9.0 to >=9.14.2,<10.0",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/198"
+    },
+    {
+      "number": 197,
+      "title": "chore(deps): update fastmcp requirement from >=0.1.0 to >=3.2.4",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/197"
+    },
+    {
+      "number": 196,
+      "title": "chore(deps-dev): update mypy requirement from <2.0.0,>=1.0.0 to >=1.20.2,<2.0.0",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/196"
+    },
+    {
+      "number": 195,
+      "title": "chore(deps): update mcp requirement from >=1.0.0 to >=1.27.0",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/195"
     }
   ],
   "open_issues": null,
@@ -495,7 +525,7 @@
   },
   "warnings": [
     "GitHub fetch failed \u2014 source-observatory:data/portal_scout/discovered_portals_summary.json: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/dataciviclab/source-observatory/main/data/portal_scout/discovered_portals_summary.json",
-    "Many open PRs: 6"
+    "Many open PRs: 11"
   ],
   "radar": {
     "available": true,

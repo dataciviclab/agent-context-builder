@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-04T08:30:50.012236
+**Generated**: 2026-05-04T12:19:22.429769
 
 ## 🔍 SCOUTING
 
@@ -25,10 +25,10 @@
 
 > Warning: GitHub fetch error — dati incompleti
 - [agent-context-builder#32](https://github.com/dataciviclab/agent-context-builder/pull/32): chore: remove orphan portal_scout code (SO no longer produces it)
+- [dataset-incubator#252](https://github.com/dataciviclab/dataset-incubator/pull/252): chore(post-merge): aggiorna registry per PR #234
 - [dataset-incubator#241](https://github.com/dataciviclab/dataset-incubator/pull/241): chore(post-merge): aggiorna registry per PR #240
-- [dataset-incubator#234](https://github.com/dataciviclab/dataset-incubator/pull/234): refactor(ispra-ru-costi-kg): sostituisce path hardcoded cross-fonte con support dichiarativo
 - [dataset-incubator#200](https://github.com/dataciviclab/dataset-incubator/pull/200): chore(camera-deputati-legislature): compila entry clean catalog
-- **Dependabot**: 2 bump PR(s)
+- **Dependabot**: 7 bump PR(s)
 **Discussions**: 20 open
   · [Domanda] Quanta parte delle entrate tributarie dipende da poche voci e quanto è diffuso?
   · [Domanda] Dove si accumulano più cause pendenti in rapporto alla popolazione?
