@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-04T12:19:22.429769
+**Generated**: 2026-05-04T14:03:15.444525
 
 ## 🔍 SCOUTING
 
@@ -28,7 +28,7 @@
 - [dataset-incubator#252](https://github.com/dataciviclab/dataset-incubator/pull/252): chore(post-merge): aggiorna registry per PR #234
 - [dataset-incubator#241](https://github.com/dataciviclab/dataset-incubator/pull/241): chore(post-merge): aggiorna registry per PR #240
 - [dataset-incubator#200](https://github.com/dataciviclab/dataset-incubator/pull/200): chore(camera-deputati-legislature): compila entry clean catalog
-- **Dependabot**: 7 bump PR(s)
+- **Dependabot**: 2 bump PR(s)
 **Discussions**: 20 open
   · [Domanda] Quanta parte delle entrate tributarie dipende da poche voci e quanto è diffuso?
   · [Domanda] Dove si accumulano più cause pendenti in rapporto alla popolazione?
