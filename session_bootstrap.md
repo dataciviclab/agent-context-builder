@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-05T08:11:24.542402
+**Generated**: 2026-05-05T19:21:09.717482
 
 ## 🔍 SCOUTING
 
@@ -26,11 +26,12 @@
 
 > Warning: GitHub fetch error — dati incompleti
 - [agent-context-builder#32](https://github.com/dataciviclab/agent-context-builder/pull/32): chore: remove orphan portal_scout code (SO no longer produces it)
+- [dataset-incubator#259](https://github.com/dataciviclab/dataset-incubator/pull/259): intake: MEF IRPEF regionale — redditi per regione e classe, 2017-2025
 - **Dependabot**: 4 bump PR(s)
 **Discussions**: 20 open
+  · [Analisi] AIFA Spesa Farmaceutica — il cardiovascolare traina il 63% della spesa, il divario Nord-Sud si allarga
   · [Domanda] Quanta parte delle entrate tributarie dipende da poche voci e quanto è diffuso?
   · [Domanda] Dove si accumulano più cause pendenti in rapporto alla popolazione?
-  · [Domanda] La spesa farmaceutica regionale è proporzionale alla popolazione o ci sono regioni che spendono molto di più per abitante?
 **Topics**: pipeline · governance
 
 ## 🛠 INFRA

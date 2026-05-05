@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-05T08:11:24.542402",
+  "generated_at": "2026-05-05T19:21:09.717482",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -16,6 +16,12 @@
       "title": "chore: remove orphan portal_scout code (SO no longer produces it)",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/pull/32"
+    },
+    {
+      "number": 259,
+      "title": "intake: MEF IRPEF regionale \u2014 redditi per regione e classe, 2017-2025",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/259"
     },
     {
       "number": 255,
@@ -46,7 +52,7 @@
   "issues": [
     {
       "number": 253,
-      "title": "intake: MEF IRPEF \u2014 redditi regionali per classe e sesso, 2010-2025",
+      "title": "intake: MEF IRPEF \u2014 redditi regionali per classe e sesso, 2017-2025",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/253"
     },
@@ -246,6 +252,13 @@
   "open_discussions": 20,
   "discussions": [
     {
+      "number": 242,
+      "title": "AIFA Spesa Farmaceutica \u2014 il cardiovascolare traina il 63% della spesa, il divario Nord-Sud si allarga",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/242",
+      "category": "Analisi"
+    },
+    {
       "number": 239,
       "title": "Quanta parte delle entrate tributarie dipende da poche voci e quanto \u00e8 diffuso?",
       "repo": "dataciviclab",
@@ -377,13 +390,6 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/217",
       "category": "Datasets"
-    },
-    {
-      "number": 216,
-      "title": "ANF INPS - Assegni al nucleo familiare, beneficiari e importi (2016-2020)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/216",
-      "category": "Datasets"
     }
   ],
   "github_fetch_errors": {
@@ -440,7 +446,8 @@
     }
   },
   "warnings": [
-    "GitHub fetch failed \u2014 source-observatory:data/portal_scout/discovered_portals_summary.json: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/dataciviclab/source-observatory/main/data/portal_scout/discovered_portals_summary.json"
+    "GitHub fetch failed \u2014 source-observatory:data/portal_scout/discovered_portals_summary.json: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/dataciviclab/source-observatory/main/data/portal_scout/discovered_portals_summary.json",
+    "Many open PRs: 6"
   ],
   "radar": {
     "available": true,
@@ -518,7 +525,7 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-05-04",
+    "generated_at": "2026-05-05",
     "summary": {
       "total": 28,
       "by_status": {
