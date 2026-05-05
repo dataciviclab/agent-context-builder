@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-04T19:42:02.165061
+**Generated**: 2026-05-05T02:47:49.693383
 
 ## 🔍 SCOUTING
 
@@ -25,7 +25,7 @@
 
 > Warning: GitHub fetch error — dati incompleti
 - [agent-context-builder#32](https://github.com/dataciviclab/agent-context-builder/pull/32): chore: remove orphan portal_scout code (SO no longer produces it)
-- **Dependabot**: 2 bump PR(s)
+- **Dependabot**: 4 bump PR(s)
 **Discussions**: 20 open
   · [Domanda] Quanta parte delle entrate tributarie dipende da poche voci e quanto è diffuso?
   · [Domanda] Dove si accumulano più cause pendenti in rapporto alla popolazione?
