@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-06T02:54:03.011135",
+  "generated_at": "2026-05-06T14:13:38.168460",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -93,12 +93,6 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/124"
     },
     {
-      "number": 215,
-      "title": "[Seed] Rendere esplicito un debito gi\u00e0 emerso senza aprire un refactor largo",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/215"
-    },
-    {
       "number": 185,
       "title": "[Seed] Sintetizzare una Discussion attiva in 6-8 righe operative",
       "repo": "dataciviclab",
@@ -157,12 +151,6 @@
       "title": "[Roadmap 2026] 5 dataset territorio e ambiente puliti e analizzati",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/issues/113"
-    },
-    {
-      "number": 101,
-      "title": "[Seed] Verificare link e riferimenti in un file o sezione precisa",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/101"
     },
     {
       "number": 183,
@@ -451,21 +439,13 @@
   ],
   "radar": {
     "available": true,
-    "probe_date": "2026-05-05",
+    "probe_date": "2026-05-06",
     "sources_total": 15,
-    "green": 8,
+    "green": 10,
     "yellow": 3,
-    "red": 4,
-    "persistent_red": 3,
+    "red": 2,
+    "persistent_red": 2,
     "unhealthy": [
-      {
-        "id": "istat_sdmx",
-        "status": "RED",
-        "protocol": "sdmx",
-        "http_code": "-",
-        "note": "Probe exception non gestita: ReadTimeout: HTTPSConnectionPool(host='esploradati.istat.it', port=443): Read timed out. (read timeout=10)",
-        "red_streak": 3
-      },
       {
         "id": "anac",
         "status": "YELLOW",
@@ -475,20 +455,12 @@
         "red_streak": 0
       },
       {
-        "id": "openbdap",
-        "status": "RED",
-        "protocol": "ckan",
-        "http_code": "-",
-        "note": "Probe exception non gestita: ReadTimeout: HTTPSConnectionPool(host='bdap-opendata.rgs.mef.gov.it', port=443): Read timed out. (read timeout=10)",
-        "red_streak": 0
-      },
-      {
         "id": "dati_salute",
         "status": "RED",
         "protocol": "html",
         "http_code": "-",
         "note": "SSL verify failed; fallback connection error (SSLError)",
-        "red_streak": 5
+        "red_streak": 6
       },
       {
         "id": "lavoro_opendata",
@@ -503,8 +475,8 @@
         "status": "RED",
         "protocol": "ckan",
         "http_code": "-",
-        "note": "Probe exception non gestita: ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /api/3/action/package_list?limit=1 (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7f4d88636c90>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)'))",
-        "red_streak": 5
+        "note": "Probe exception non gestita: ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /api/3/action/package_list?limit=1 (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7f2b9e829250>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)'))",
+        "red_streak": 6
       },
       {
         "id": "opencoesione",
