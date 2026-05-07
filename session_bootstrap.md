@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-07T14:11:02.891643
+**Generated**: 2026-05-07T19:44:11.684111
 
 ## 🔍 SCOUTING
 
@@ -17,7 +17,10 @@
 ## 📥 INTAKE
 
 **Pipeline**: 28 candidates — 28 ok
-  ⚠️ **mit-incidentalita-mensile-2001-2018** — run fallito [2001](https://github.com/dataciviclab/dataset-incubator/actions/runs/25156933674)
+  ⚠️ **camera-deputati-legislature** — run fallito [2024](https://github.com/dataciviclab/dataset-incubator/actions/runs/25509412527)
+  ⚠️ **mur-contribuzione-universitaria** — run fallito [2024](https://github.com/dataciviclab/dataset-incubator/actions/runs/25509412527)
+  ⚠️ **opencivitas-fsc-rso** — run fallito [0](https://github.com/dataciviclab/dataset-incubator/actions/runs/25509412527)
+  ⚠️ **pensioni-pa-dag** — run fallito [2024](https://github.com/dataciviclab/dataset-incubator/actions/runs/25509412527)
 **Dataset Catalog**: 9 clean_ready · 9 public · updated 2026-05-04
 
 ## 🔗 OPEN
@@ -25,6 +28,7 @@
 > Warning: GitHub fetch error — dati incompleti
 - [agent-context-builder#32](https://github.com/dataciviclab/agent-context-builder/pull/32): chore: remove orphan portal_scout code (SO no longer produces it)
 - [dataset-incubator#259](https://github.com/dataciviclab/dataset-incubator/pull/259): intake: MEF IRPEF regionale — redditi per regione e classe, 2017-2025
+- [toolkit#230](https://github.com/dataciviclab/toolkit/pull/230): feat: TypedDict contracts per blocker-hints, review-readiness, schema-diff
 - **Dependabot**: 4 bump PR(s)
 **Discussions**: 20 open
   · [Analisi] AIFA Spesa Farmaceutica — il cardiovascolare traina il 63% della spesa, il divario Nord-Sud si allarga
