@@ -39,8 +39,7 @@ Contiene stato incrociato di PR, issue, discussion, git e segnali operativi.
   "radar": { "generated_at": "...", "green": 20, "yellow": 2, "red": 0, "unhealthy": [] },
   "source_health": { "captured_at": "...", "alerts": [] },
   "pipeline_state": { "generated_at": "...", "actionable": [] },
-  "dataset_catalog": { "schema_version": "1", "updated_at": "...", "clean_ready": [] },
-  "portal_scout": { "generated_at": "...", "new_candidates": 0, "new_structured": [] }
+  "dataset_catalog": { "schema_version": "1", "updated_at": "...", "clean_ready": [] }
 }
 ```
 
@@ -66,7 +65,6 @@ Contiene stato incrociato di PR, issue, discussion, git e segnali operativi.
 | `source_health` | object \| null | Segnali drift/inventory da `catalog_signals.json` |
 | `pipeline_state` | object \| null | Stato candidati da `pipeline_signals.json` |
 | `dataset_catalog` | object \| null | Dataset clean-ready da `clean_catalog.json` |
-| `portal_scout` | object \| null | Portali scoperti da `discovered_portals_summary.json` |
 
 ## `git_state[repo]`
 
@@ -82,5 +80,5 @@ Contiene stato incrociato di PR, issue, discussion, git e segnali operativi.
 ## Valori null
 
 I campi `open_prs`, `open_issues`, `open_discussions` sono `null` in caso di errore fetch.
-Le sezioni `radar`, `source_health`, `pipeline_state`, `dataset_catalog`, `portal_scout`
+Le sezioni `radar`, `source_health`, `pipeline_state`, `dataset_catalog`
 sono `null` se l'artifact upstream non è disponibile o non è stato ancora prodotto.
