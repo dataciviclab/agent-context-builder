@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-08T07:43:47.335661
+**Generated**: 2026-05-08T13:50:17.648348
 
 ## 🔍 SCOUTING
 
@@ -18,10 +18,9 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 28 candidates — 28 ok
+**Pipeline**: 29 candidates — 29 ok
   ⚠️ **camera-deputati-legislature** — run fallito [2024](https://github.com/dataciviclab/dataset-incubator/actions/runs/25509412527)
   ⚠️ **mur-contribuzione-universitaria** — run fallito [2024](https://github.com/dataciviclab/dataset-incubator/actions/runs/25509412527)
-  ⚠️ **opencivitas-fsc-rso** — run fallito [0](https://github.com/dataciviclab/dataset-incubator/actions/runs/25509412527)
   ⚠️ **pensioni-pa-dag** — run fallito [2024](https://github.com/dataciviclab/dataset-incubator/actions/runs/25509412527)
 **Dataset Catalog**: 9 clean_ready · 9 public · updated 2026-05-04
 
@@ -29,7 +28,6 @@
 
 > Warning: GitHub fetch error — dati incompleti
 - [agent-context-builder#32](https://github.com/dataciviclab/agent-context-builder/pull/32): chore: remove orphan portal_scout code (SO no longer produces it)
-- [dataset-incubator#263](https://github.com/dataciviclab/dataset-incubator/pull/263): refactor: opencivitas-fsc-rso — nested multi-source a candidato singolo con support
 - [dataset-incubator#259](https://github.com/dataciviclab/dataset-incubator/pull/259): intake: MEF IRPEF regionale — redditi per regione e classe, 2017-2025
 - **Dependabot**: 4 bump PR(s)
 **Discussions**: 20 open
