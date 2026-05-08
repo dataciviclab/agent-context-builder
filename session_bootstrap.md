@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-08T19:19:52.304936
+**Generated**: 2026-05-08T20:02:37.929824
 
 ## 🔍 SCOUTING
 
@@ -14,7 +14,6 @@
   · **opencoesione** YELLOW [403]
   · **istat_sdmx** (sdmx): inventory change — azione: verificare se variazione attesa; avviare catalog-inventory-scout se nuovi dataset
   · **consip_open_data** (ckan): inventory change — azione: verificare se variazione attesa; avviare catalog-inventory-scout se nuovi dataset
-**Portal Scout**: unavailable
 
 ## 📥 INTAKE
 
@@ -26,8 +25,6 @@
 
 ## 🔗 OPEN
 
-> Warning: GitHub fetch error — dati incompleti
-- [agent-context-builder#32](https://github.com/dataciviclab/agent-context-builder/pull/32): chore: remove orphan portal_scout code (SO no longer produces it)
 - [dataset-incubator#259](https://github.com/dataciviclab/dataset-incubator/pull/259): intake: MEF IRPEF regionale — redditi per regione e classe, 2017-2025
 - **Dependabot**: 4 bump PR(s)
 **Discussions**: 20 open
