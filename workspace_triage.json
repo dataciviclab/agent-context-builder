@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-08T13:50:17.648348",
+  "generated_at": "2026-05-08T19:19:52.304936",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -441,19 +441,11 @@
     "available": true,
     "probe_date": "2026-05-08",
     "sources_total": 16,
-    "green": 9,
-    "yellow": 3,
-    "red": 4,
-    "persistent_red": 2,
+    "green": 10,
+    "yellow": 5,
+    "red": 1,
+    "persistent_red": 1,
     "unhealthy": [
-      {
-        "id": "istat_sdmx",
-        "status": "RED",
-        "protocol": "sdmx",
-        "http_code": "-",
-        "note": "Probe exception non gestita: ReadTimeout: HTTPSConnectionPool(host='esploradati.istat.it', port=443): Read timed out. (read timeout=10)",
-        "red_streak": 0
-      },
       {
         "id": "anac",
         "status": "YELLOW",
@@ -468,14 +460,14 @@
         "protocol": "html",
         "http_code": "-",
         "note": "SSL verify failed; fallback connection error (SSLError)",
-        "red_streak": 8
+        "red_streak": 9
       },
       {
-        "id": "dati_camera",
-        "status": "RED",
+        "id": "dati_cultura",
+        "status": "YELLOW",
         "protocol": "sparql",
-        "http_code": "503",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
         "red_streak": 0
       },
       {
@@ -488,11 +480,11 @@
       },
       {
         "id": "mur_ustat",
-        "status": "RED",
+        "status": "YELLOW",
         "protocol": "ckan",
         "http_code": "-",
-        "note": "Probe exception non gestita: ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /api/3/action/package_list?limit=1 (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7fa7de546840>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)'))",
-        "red_streak": 8
+        "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
+        "red_streak": 0
       },
       {
         "id": "opencoesione",
@@ -506,10 +498,27 @@
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-05-04T07:59:47+00:00",
-    "sources_checked": 12,
+    "captured_at": "2026-05-08T18:15:59+00:00",
+    "sources_checked": 13,
     "regressions": [],
-    "alerts": []
+    "alerts": [
+      {
+        "source": "istat_sdmx",
+        "protocol": "sdmx",
+        "signal_type": "inventory change",
+        "result": "inventory change",
+        "detail": "4836 item (dataflow_count), delta +1 rispetto al run precedente (4835).",
+        "suggested_action": "verificare se variazione attesa; avviare catalog-inventory-scout se nuovi dataset"
+      },
+      {
+        "source": "consip_open_data",
+        "protocol": "ckan",
+        "signal_type": "inventory change",
+        "result": "inventory change",
+        "detail": "16 item (package_list), delta -1 rispetto al run precedente (17).",
+        "suggested_action": "verificare se variazione attesa; avviare catalog-inventory-scout se nuovi dataset"
+      }
+    ]
   },
   "pipeline_state": {
     "available": true,

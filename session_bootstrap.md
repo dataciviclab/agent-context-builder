@@ -1,19 +1,19 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-08T13:50:17.648348
+**Generated**: 2026-05-08T19:19:52.304936
 
 ## 🔍 SCOUTING
 
-**Radar**: 16 fonti — GREEN 9 · YELLOW 3 · RED 4 (probe: 2026-05-08)
-  ⚠ **2 persistent RED**
-  · **istat_sdmx** RED [-] — Probe exception non gestita: ReadTimeout: HTTPSConnectionPool(host='esploradati.istat.it', port=443): Read timed out. (read timeout=10)
+**Radar**: 16 fonti — GREEN 10 · YELLOW 5 · RED 1 (probe: 2026-05-08)
+  ⚠ **1 persistent RED**
   · **anac** YELLOW [403]
-  · **dati_salute** RED [-] — SSL verify failed; fallback connection error (SSLError) (streak 8)
-  · **dati_camera** RED [503]
+  · **dati_salute** RED [-] — SSL verify failed; fallback connection error (SSLError) (streak 9)
+  · **dati_cultura** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
   · **lavoro_opendata** YELLOW [200] — CKAN API returned non-JSON content
-  · **mur_ustat** RED [-] — Probe exception non gestita: ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /api/3/action/package_list?limit=1 (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7fa7de546840>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)')) (streak 8)
+  · **mur_ustat** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
   · **opencoesione** YELLOW [403]
-**Catalog Drift**: no drift signals (12 sources checked)
+  · **istat_sdmx** (sdmx): inventory change — azione: verificare se variazione attesa; avviare catalog-inventory-scout se nuovi dataset
+  · **consip_open_data** (ckan): inventory change — azione: verificare se variazione attesa; avviare catalog-inventory-scout se nuovi dataset
 **Portal Scout**: unavailable
 
 ## 📥 INTAKE
