@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-07T19:44:11.684111
+**Generated**: 2026-05-08T02:57:01.063692
 
 ## 🔍 SCOUTING
 
@@ -27,8 +27,8 @@
 
 > Warning: GitHub fetch error — dati incompleti
 - [agent-context-builder#32](https://github.com/dataciviclab/agent-context-builder/pull/32): chore: remove orphan portal_scout code (SO no longer produces it)
+- [dataset-incubator#263](https://github.com/dataciviclab/dataset-incubator/pull/263): refactor: opencivitas-fsc-rso — nested multi-source a candidato singolo con support
 - [dataset-incubator#259](https://github.com/dataciviclab/dataset-incubator/pull/259): intake: MEF IRPEF regionale — redditi per regione e classe, 2017-2025
-- [toolkit#230](https://github.com/dataciviclab/toolkit/pull/230): feat: TypedDict contracts per blocker-hints, review-readiness, schema-diff
 - **Dependabot**: 4 bump PR(s)
 **Discussions**: 20 open
   · [Analisi] AIFA Spesa Farmaceutica — il cardiovascolare traina il 63% della spesa, il divario Nord-Sud si allarga
