@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-08T02:57:01.063692",
+  "generated_at": "2026-05-08T07:43:47.335661",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -583,13 +583,21 @@
   ],
   "radar": {
     "available": true,
-    "probe_date": "2026-05-07",
-    "sources_total": 15,
-    "green": 10,
+    "probe_date": "2026-05-08",
+    "sources_total": 16,
+    "green": 9,
     "yellow": 3,
-    "red": 2,
+    "red": 4,
     "persistent_red": 2,
     "unhealthy": [
+      {
+        "id": "istat_sdmx",
+        "status": "RED",
+        "protocol": "sdmx",
+        "http_code": "-",
+        "note": "Probe exception non gestita: ReadTimeout: HTTPSConnectionPool(host='esploradati.istat.it', port=443): Read timed out. (read timeout=10)",
+        "red_streak": 0
+      },
       {
         "id": "anac",
         "status": "YELLOW",
@@ -604,7 +612,15 @@
         "protocol": "html",
         "http_code": "-",
         "note": "SSL verify failed; fallback connection error (SSLError)",
-        "red_streak": 7
+        "red_streak": 8
+      },
+      {
+        "id": "dati_camera",
+        "status": "RED",
+        "protocol": "sparql",
+        "http_code": "503",
+        "note": null,
+        "red_streak": 0
       },
       {
         "id": "lavoro_opendata",
@@ -619,8 +635,8 @@
         "status": "RED",
         "protocol": "ckan",
         "http_code": "-",
-        "note": "Probe exception non gestita: ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /api/3/action/package_list?limit=1 (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7f4589662ae0>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)'))",
-        "red_streak": 7
+        "note": "Probe exception non gestita: ConnectTimeout: HTTPSConnectionPool(host='dati-ustat.mur.gov.it', port=443): Max retries exceeded with url: /api/3/action/package_list?limit=1 (Caused by ConnectTimeoutError(<HTTPSConnection(host='dati-ustat.mur.gov.it', port=443) at 0x7fa7de546840>, 'Connection to dati-ustat.mur.gov.it timed out. (connect timeout=10)'))",
+        "red_streak": 8
       },
       {
         "id": "opencoesione",
