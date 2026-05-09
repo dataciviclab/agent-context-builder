@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-09T13:19:33.563505
+**Generated**: 2026-05-09T19:03:14.724827
 
 ## 🔍 SCOUTING
 
@@ -15,16 +15,17 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 29 candidates — 29 ok
+**Pipeline**: 30 candidates — 30 ok
   ⚠️ **camera-deputati-legislature** — run fallito [2024](https://github.com/dataciviclab/dataset-incubator/actions/runs/25509412527)
   ⚠️ **mur-contribuzione-universitaria** — run fallito [2024](https://github.com/dataciviclab/dataset-incubator/actions/runs/25509412527)
   ⚠️ **pensioni-pa-dag** — run fallito [2024](https://github.com/dataciviclab/dataset-incubator/actions/runs/25509412527)
-**Dataset Catalog**: 9 clean_ready · 9 public · updated 2026-05-04
+**Dataset Catalog**: 10 clean_ready · 10 public · updated 2026-05-09
 
 ## 🔗 OPEN
 
-- [dataset-incubator#259](https://github.com/dataciviclab/dataset-incubator/pull/259): intake: MEF IRPEF regionale — redditi per regione e classe, 2017-2025
-- **Dependabot**: 4 bump PR(s)
+- [dataset-incubator#272](https://github.com/dataciviclab/dataset-incubator/pull/272): intake: giustizia penale — clearance rate e disposition time
+- [dataset-incubator#271](https://github.com/dataciviclab/dataset-incubator/pull/271): docs(skills): intake v0.5 + post-merge v0.4 — venv, new init, BQ separate
+- **Dependabot**: 2 bump PR(s)
 **Discussions**: 20 open
   · [Analisi] AIFA Spesa Farmaceutica — il cardiovascolare traina il 63% della spesa, il divario Nord-Sud si allarga
   · [Domanda] Quanta parte delle entrate tributarie dipende da poche voci e quanto è diffuso?

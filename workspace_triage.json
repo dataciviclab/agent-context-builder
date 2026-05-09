@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-09T13:19:33.563505",
+  "generated_at": "2026-05-09T19:03:14.724827",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,25 +9,19 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 5,
+  "open_prs": 4,
   "prs": [
     {
-      "number": 259,
-      "title": "intake: MEF IRPEF regionale \u2014 redditi per regione e classe, 2017-2025",
+      "number": 272,
+      "title": "intake: giustizia penale \u2014 clearance rate e disposition time",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/259"
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/272"
     },
     {
-      "number": 255,
-      "title": "chore(deps): bump actions/download-artifact from 4 to 8",
+      "number": 271,
+      "title": "docs(skills): intake v0.5 + post-merge v0.4 \u2014 venv, new init, BQ separate",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/255"
-    },
-    {
-      "number": 254,
-      "title": "chore(deps): bump actions/upload-artifact from 4 to 7",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/254"
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/271"
     },
     {
       "number": 64,
@@ -45,10 +39,16 @@
   "open_issues": 30,
   "issues": [
     {
-      "number": 253,
-      "title": "intake: MEF IRPEF \u2014 redditi regionali per classe, 2017-2025",
+      "number": 267,
+      "title": "intake: Consip consumi in convenzione: geografia della spesa delle PA",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/253"
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/267"
+    },
+    {
+      "number": 266,
+      "title": "intake: [Dataset] Giustizia penale - clearance rate e disposition time",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/266"
     },
     {
       "number": 250,
@@ -67,12 +67,6 @@
       "title": "intake: ISTAT povert\u00e0 assoluta e relativa: incidenze, intensit\u00e0 e soglie (2014-2024)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/151"
-    },
-    {
-      "number": 147,
-      "title": "follow-up scaffold intake: naming notebook, default SDMX, documentazione adapter",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/147"
     },
     {
       "number": 143,
@@ -480,11 +474,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-05-08",
+    "generated_at": "2026-05-09",
     "summary": {
-      "total": 29,
+      "total": 30,
       "by_status": {
-        "ok": 29,
+        "ok": 30,
         "warn": 0,
         "error": 0
       }
@@ -495,11 +489,11 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-05-04",
+    "updated_at": "2026-05-09",
     "summary": {
-      "total": 21,
-      "clean_ready": 9,
-      "public": 9
+      "total": 22,
+      "clean_ready": 10,
+      "public": 10
     },
     "datasets": [
       {
@@ -960,6 +954,194 @@
         "dimension_columns": 27,
         "column_count": 28,
         "columns": []
+      },
+      {
+        "slug": "mef_irpef_regionale",
+        "name": "MEF - Irpef Regionale",
+        "status": "clean_ready",
+        "visibility": "public",
+        "period": {
+          "start": 2017,
+          "end": 2025
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/mef_irpef_regionale/*/mef_irpef_regionale_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 39,
+        "dimension_columns": 3,
+        "column_count": 42,
+        "columns": [
+          {
+            "name": "anno_di_imposta",
+            "role": "dimension"
+          },
+          {
+            "name": "classe_reddito",
+            "role": "dimension"
+          },
+          {
+            "name": "regione",
+            "role": "dimension"
+          },
+          {
+            "name": "numero_contribuenti",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_dominicale_freq",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_dominicale_eur",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_agrario_freq",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_agrario_eur",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_allevamento_freq",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_allevamento_eur",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_fabbricati_freq",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_fabbricati_eur",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_lavoro_dipendente_freq",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_lavoro_dipendente_eur",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_pensione_freq",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_pensione_eur",
+            "role": "metric"
+          },
+          {
+            "name": "altri_assimilati_ld_freq",
+            "role": "metric"
+          },
+          {
+            "name": "altri_assimilati_ld_eur",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_lavoro_autonomo_freq",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_lavoro_autonomo_eur",
+            "role": "metric"
+          },
+          {
+            "name": "perdita_lavoro_autonomo_freq",
+            "role": "metric"
+          },
+          {
+            "name": "perdita_lavoro_autonomo_eur",
+            "role": "metric"
+          },
+          {
+            "name": "provvigioni_770_freq",
+            "role": "metric"
+          },
+          {
+            "name": "provvigioni_770_eur",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_cont_ordinaria_freq",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_cont_ordinaria_eur",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_cont_semplificata_freq",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_cont_semplificata_eur",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_partecipazione_freq",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_partecipazione_eur",
+            "role": "metric"
+          },
+          {
+            "name": "perdita_partecipazione_freq",
+            "role": "metric"
+          },
+          {
+            "name": "perdita_partecipazione_eur",
+            "role": "metric"
+          },
+          {
+            "name": "plusvalenze_freq",
+            "role": "metric"
+          },
+          {
+            "name": "plusvalenze_eur",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_capitale_freq",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_capitale_eur",
+            "role": "metric"
+          },
+          {
+            "name": "redditi_diversi_freq",
+            "role": "metric"
+          },
+          {
+            "name": "redditi_diversi_eur",
+            "role": "metric"
+          },
+          {
+            "name": "altri_la_startup_freq",
+            "role": "metric"
+          },
+          {
+            "name": "altri_la_startup_eur",
+            "role": "metric"
+          },
+          {
+            "name": "tassazione_separata_freq",
+            "role": "metric"
+          },
+          {
+            "name": "tassazione_separata_eur",
+            "role": "metric"
+          }
+        ]
       },
       {
         "slug": "mef_partecipazioni",

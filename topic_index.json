@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-05-09T13:19:33.563505",
+  "generated_at": "2026-05-09T19:03:14.724827",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -75,6 +75,17 @@
         "period": {
           "start": 2020,
           "end": 2024
+        },
+        "visibility": "public"
+      }
+    ],
+    "https://www.mef.gov.it/": [
+      {
+        "slug": "mef_irpef_regionale",
+        "name": "MEF - Irpef Regionale",
+        "period": {
+          "start": 2017,
+          "end": 2025
         },
         "visibility": "public"
       }
