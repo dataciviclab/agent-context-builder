@@ -16,14 +16,14 @@ Configuration via environment variables:
 """
 
 import json
-import logging
 import os
 import time
 from datetime import datetime, timezone
 from pathlib import Path
 
 import requests
-from mcp.server.fastmcp import FastMCP
+from lab_connectors.mcp import create_mcp_server, get_mcp_logger, guard_timed
+from lab_connectors.mcp.errors import McpError, ErrorCode
 
 _REPO = os.environ.get("ACB_REPO", "dataciviclab/agent-context-builder")
 _BRANCH = os.environ.get("ACB_BRANCH", "context")
@@ -34,31 +34,10 @@ _API_BASE = f"https://api.github.com/repos/{_REPO}"
 _REFRESH_MIN_INTERVAL = 60  # seconds — local guard before hitting GitHub limit
 _last_refresh_attempt: float | None = None
 
-_log = logging.getLogger(__name__)
+_log = get_mcp_logger("agent-context-builder")
 
-
-def _configure_logging() -> None:
-    """Configure structured JSON logging from ACB_LOG_LEVEL env var.
-
-    Only calls basicConfig if the root logger has no handlers configured.
-    This avoids overriding logging setup from pytest --log-level or other
-    environments that pre-configure the root logger.
-    """
-    if logging.root.handlers:
-        return  # already configured — don't override
-    level_name = os.environ.get("ACB_LOG_LEVEL", "INFO").upper()
-    level = getattr(logging, level_name, logging.INFO)
-    logging.basicConfig(
-        level=level,
-        format='{"ts":"%(asctime)s","level":"%(levelname)s","name":"%(name)s","msg":"%(message)s"}',
-        datefmt="%Y-%m-%dT%H:%M:%S",
-    )
-
-
-_configure_logging()
-
-mcp = FastMCP(
-    "dataciviclab-context",
+mcp = create_mcp_server(
+    name="dataciviclab-context",
     instructions=(
         "DataCivicLab context artifacts, generated from GitHub every 6 hours. "
         "Start with session_bootstrap for a quick orientation, then use "
@@ -175,12 +154,12 @@ def _fetch(path: str, retries: int = 1, backoff: float = 1.0) -> str:
         try:
             response = requests.get(url, headers=headers, timeout=10)
             response.raise_for_status()
-            _log.info("fetch_success path=%s status=%d", path, response.status_code)
+            _log.info("fetch", "success", path=path, status=response.status_code)
             return response.text
         except requests.HTTPError as e:
             # Don't retry on 4xx — they won't become valid by retrying
             if e.response is not None and 400 <= e.response.status_code < 500:
-                _log.warning("fetch_client_error path=%s status=%d", path, e.response.status_code)
+                _log.warning("fetch", "client_error", path=path, status=e.response.status_code)
                 raise
             last_err = e
         except requests.RequestException as e:
@@ -189,10 +168,10 @@ def _fetch(path: str, retries: int = 1, backoff: float = 1.0) -> str:
         attempt += 1
         if attempt <= retries:
             sleep = backoff * (2 ** (attempt - 1))
-            _log.warning("fetch_retry path=%s attempt=%d sleep=%.1f error=%s", path, attempt, sleep, last_err)
+            _log.warning("fetch", "retry", path=path, attempt=attempt, sleep=round(sleep, 1), error=str(last_err))
             time.sleep(sleep)
         else:
-            _log.error("fetch_failed path=%s error=%s", path, last_err)
+            _log.error("fetch", "failed", path=path, error=str(last_err))
             raise last_err
 
     # Should never reach here, but mypy needs it
@@ -282,7 +261,7 @@ def refresh_context() -> str:
             timeout=10,
         )
         if response.status_code == 204:
-            _log.info("refresh_triggered ref=main")
+            _log.info("refresh_context", "triggered", ref="main")
             return json.dumps({
                 "ok": True,
                 "tool": "refresh_context",
@@ -290,8 +269,7 @@ def refresh_context() -> str:
                 "ts": datetime.now(timezone.utc).isoformat(),
             })
         elif response.status_code == 422:
-            # 422 = workflow disabled or ref not allowed — don't retry
-            _log.error("refresh_rejected status=%d body=%s", response.status_code, response.text)
+            _log.error("refresh_context", "rejected", status=response.status_code, body=response.text)
             return json.dumps({
                 "ok": False,
                 "tool": "refresh_context",
@@ -300,7 +278,7 @@ def refresh_context() -> str:
                 "ts": datetime.now(timezone.utc).isoformat(),
             })
         else:
-            _log.error("refresh_failed status=%d body=%s", response.status_code, response.text)
+            _log.error("refresh_context", "failed", status=response.status_code, body=response.text)
             return json.dumps({
                 "ok": False,
                 "tool": "refresh_context",
@@ -309,7 +287,7 @@ def refresh_context() -> str:
                 "ts": datetime.now(timezone.utc).isoformat(),
             })
     except requests.RequestException as e:
-        _log.error("refresh_network_error error=%s", e)
+        _log.error("refresh_context", "network_error", error=str(e))
         return json.dumps({
             "ok": False,
             "tool": "refresh_context",
@@ -320,7 +298,7 @@ def refresh_context() -> str:
 
 def main() -> None:
     """Entry point per l'MCP server."""
-    _log.info("starting mcp server repo=%s branch=%s", _REPO, _BRANCH)
+    _log.info("main", "starting", repo=_REPO, branch=_BRANCH)
     mcp.run()
 
 
