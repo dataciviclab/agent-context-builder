@@ -1,14 +1,14 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-09T02:52:48.482730
+**Generated**: 2026-05-09T07:58:20.771625
 
 ## 🔍 SCOUTING
 
-**Radar**: 16 fonti — GREEN 10 · YELLOW 5 · RED 1 (probe: 2026-05-08)
+**Radar**: 16 fonti — GREEN 10 · YELLOW 5 · RED 1 (probe: 2026-05-09)
   ⚠ **1 persistent RED**
+  · **istat_sdmx** YELLOW [-] — Timeout (ReadTimeout)
   · **anac** YELLOW [403]
-  · **dati_salute** RED [-] — SSL verify failed; fallback connection error (SSLError) (streak 9)
-  · **dati_cultura** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
+  · **dati_salute** RED [-] — SSL verify failed; fallback connection error (SSLError) (streak 10)
   · **lavoro_opendata** YELLOW [200] — CKAN API returned non-JSON content
   · **mur_ustat** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
   · **opencoesione** YELLOW [403]
@@ -26,6 +26,7 @@
 ## 🔗 OPEN
 
 - [dataset-incubator#259](https://github.com/dataciviclab/dataset-incubator/pull/259): intake: MEF IRPEF regionale — redditi per regione e classe, 2017-2025
+- [source-observatory#209](https://github.com/dataciviclab/source-observatory/pull/209): feat: arricchisce source-check con preview dati reali (file_size, row_count, col_types)
 - **Dependabot**: 4 bump PR(s)
 **Discussions**: 20 open
   · [Analisi] AIFA Spesa Farmaceutica — il cardiovascolare traina il 63% della spesa, il divario Nord-Sud si allarga

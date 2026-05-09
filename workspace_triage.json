@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-09T02:52:48.482730",
+  "generated_at": "2026-05-09T07:58:20.771625",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,7 +9,7 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 5,
+  "open_prs": 6,
   "prs": [
     {
       "number": 259,
@@ -40,9 +40,15 @@
       "title": "chore(deps-dev): bump tailwindcss from 3.4.18 to 4.2.4",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/62"
+    },
+    {
+      "number": 209,
+      "title": "feat: arricchisce source-check con preview dati reali (file_size, row_count, col_types)",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/209"
     }
   ],
-  "open_issues": 29,
+  "open_issues": 30,
   "issues": [
     {
       "number": 253,
@@ -175,6 +181,12 @@
       "title": "feat: unifica catalogo da dataset-incubator, routing dinamico per slug",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/issues/56"
+    },
+    {
+      "number": 210,
+      "title": "valutare deprecazione intake_score",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/210"
     },
     {
       "number": 201,
@@ -413,16 +425,26 @@
       "untracked_files": 0
     }
   },
-  "warnings": [],
+  "warnings": [
+    "Many open PRs: 6"
+  ],
   "radar": {
     "available": true,
-    "probe_date": "2026-05-08",
+    "probe_date": "2026-05-09",
     "sources_total": 16,
     "green": 10,
     "yellow": 5,
     "red": 1,
     "persistent_red": 1,
     "unhealthy": [
+      {
+        "id": "istat_sdmx",
+        "status": "YELLOW",
+        "protocol": "sdmx",
+        "http_code": "-",
+        "note": "Timeout (ReadTimeout)",
+        "red_streak": 0
+      },
       {
         "id": "anac",
         "status": "YELLOW",
@@ -437,15 +459,7 @@
         "protocol": "html",
         "http_code": "-",
         "note": "SSL verify failed; fallback connection error (SSLError)",
-        "red_streak": 9
-      },
-      {
-        "id": "dati_cultura",
-        "status": "YELLOW",
-        "protocol": "sparql",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
-        "red_streak": 0
+        "red_streak": 10
       },
       {
         "id": "lavoro_opendata",
