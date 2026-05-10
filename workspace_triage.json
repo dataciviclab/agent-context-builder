@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-10T03:23:04.920103",
+  "generated_at": "2026-05-10T08:09:09.316459",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,7 +9,7 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 4,
+  "open_prs": 5,
   "prs": [
     {
       "number": 272,
@@ -22,6 +22,12 @@
       "title": "docs(skills): intake v0.5 + post-merge v0.4 \u2014 venv, new init, BQ separate",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/271"
+    },
+    {
+      "number": 238,
+      "title": "refactor(mcp): migra a lab_connectors.mcp",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/238"
     },
     {
       "number": 64,
@@ -416,11 +422,11 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-05-09",
+    "probe_date": "2026-05-10",
     "sources_total": 16,
-    "green": 11,
+    "green": 10,
     "yellow": 4,
-    "red": 1,
+    "red": 2,
     "persistent_red": 1,
     "unhealthy": [
       {
@@ -438,6 +444,14 @@
         "http_code": "-",
         "note": "SSL verify failed; fallback connection error (SSLError)",
         "red_streak": 14
+      },
+      {
+        "id": "dati_camera",
+        "status": "RED",
+        "protocol": "sparql",
+        "http_code": "503",
+        "note": null,
+        "red_streak": 0
       },
       {
         "id": "lavoro_opendata",

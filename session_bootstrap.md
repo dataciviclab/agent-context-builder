@@ -1,13 +1,14 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-10T03:23:04.920103
+**Generated**: 2026-05-10T08:09:09.316459
 
 ## 🔍 SCOUTING
 
-**Radar**: 16 fonti — GREEN 11 · YELLOW 4 · RED 1 (probe: 2026-05-09)
+**Radar**: 16 fonti — GREEN 10 · YELLOW 4 · RED 2 (probe: 2026-05-10)
   ⚠ **1 persistent RED**
   · **anac** YELLOW [403]
   · **dati_salute** RED [-] — SSL verify failed; fallback connection error (SSLError) (streak 14)
+  · **dati_camera** RED [503]
   · **lavoro_opendata** YELLOW [200] — CKAN API returned non-JSON content
   · **mur_ustat** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
   · **opencoesione** YELLOW [403]
@@ -25,6 +26,7 @@
 
 - [dataset-incubator#272](https://github.com/dataciviclab/dataset-incubator/pull/272): intake: giustizia penale — clearance rate e disposition time
 - [dataset-incubator#271](https://github.com/dataciviclab/dataset-incubator/pull/271): docs(skills): intake v0.5 + post-merge v0.4 — venv, new init, BQ separate
+- [toolkit#238](https://github.com/dataciviclab/toolkit/pull/238): refactor(mcp): migra a lab_connectors.mcp
 - **Dependabot**: 2 bump PR(s)
 **Discussions**: 20 open
   · [Analisi] AIFA Spesa Farmaceutica — il cardiovascolare traina il 63% della spesa, il divario Nord-Sud si allarga
