@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-10T13:44:35.382219
+**Generated**: 2026-05-10T19:05:52.398844
 
 ## 🔍 SCOUTING
 
@@ -26,6 +26,7 @@
 
 - [dataset-incubator#272](https://github.com/dataciviclab/dataset-incubator/pull/272): intake: giustizia penale — clearance rate e disposition time
 - [dataset-incubator#271](https://github.com/dataciviclab/dataset-incubator/pull/271): docs(skills): intake v0.5 + post-merge v0.4 — venv, new init, BQ separate
+- [toolkit#239](https://github.com/dataciviclab/toolkit/pull/239): fix(profile): missingness in singola query DuckDB + unifica csv_read_option_strings
 - **Dependabot**: 2 bump PR(s)
 **Discussions**: 20 open
   · [Analisi] AIFA Spesa Farmaceutica — il cardiovascolare traina il 63% della spesa, il divario Nord-Sud si allarga
