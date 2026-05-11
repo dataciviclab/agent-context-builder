@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-11T03:35:36.556154",
+  "generated_at": "2026-05-11T09:41:22.431532",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -36,10 +36,10 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/62"
     },
     {
-      "number": 216,
-      "title": "feat(source-check): integra profiler toolkit in _fetch_data_preview",
+      "number": 217,
+      "title": "feat: integrazione toolkit profiler + cross-phase encoding handoff + scoring reale",
       "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/216"
+      "url": "https://github.com/dataciviclab/source-observatory/pull/217"
     }
   ],
   "open_issues": 30,
@@ -422,11 +422,11 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-05-10",
+    "probe_date": "2026-05-11",
     "sources_total": 16,
-    "green": 10,
+    "green": 11,
     "yellow": 4,
-    "red": 2,
+    "red": 1,
     "persistent_red": 1,
     "unhealthy": [
       {
@@ -444,14 +444,6 @@
         "http_code": "-",
         "note": "SSL verify failed; fallback connection error (SSLError)",
         "red_streak": 14
-      },
-      {
-        "id": "dati_camera",
-        "status": "RED",
-        "protocol": "sparql",
-        "http_code": "503",
-        "note": null,
-        "red_streak": 0
       },
       {
         "id": "lavoro_opendata",
@@ -481,7 +473,7 @@
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-05-09T13:03:54+00:00",
+    "captured_at": "2026-05-11T06:49:42+00:00",
     "sources_checked": 13,
     "regressions": [],
     "alerts": []
