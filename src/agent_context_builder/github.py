@@ -5,10 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Optional
 
-try:
-    from lab_connectors.http import HttpClient
-except ImportError:
-    HttpClient = None  # type: ignore[assignment,misc]
+from lab_connectors.http import HttpClient
 
 
 @dataclass
@@ -52,15 +49,7 @@ class GitHubCollector:
         Args:
             org: GitHub organization
             token: GitHub API token (optional)
-
-        Raises:
-            RuntimeError: If lab_connectors.http is not installed.
         """
-        if HttpClient is None:
-            raise RuntimeError(
-                "lab_connectors.http is required. Install with: "
-                "pip install agent-context-builder[mcp]"
-            )
         self.org = org
         self.token = token
         self.base_url = "https://api.github.com"
