@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-11T14:54:15.384229",
+  "generated_at": "2026-05-11T19:49:10.673404",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,13 +9,13 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 8,
+  "open_prs": 5,
   "prs": [
     {
-      "number": 272,
-      "title": "intake: giustizia penale \u2014 clearance rate e disposition time",
+      "number": 280,
+      "title": "chore(post-merge): aggiorna registry per PR #272",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/272"
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/280"
     },
     {
       "number": 271,
@@ -36,43 +36,25 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/62"
     },
     {
-      "number": 220,
-      "title": "chore(deps): update pyarrow requirement from <24.0,>=14.0 to >=24.0.0,<25.0",
+      "number": 223,
+      "title": "feat(workflow): sdoppia observatory in radar.yml (daily) + observatory.yml (weekly)",
       "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/220"
-    },
-    {
-      "number": 219,
-      "title": "chore(deps): update mcp requirement from >=1.27.0 to >=1.27.1",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/219"
-    },
-    {
-      "number": 218,
-      "title": "chore(deps-dev): update mypy requirement from <2.0.0,>=1.20.2 to >=2.0.0,<3.0.0",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/218"
-    },
-    {
-      "number": 217,
-      "title": "feat: integrazione toolkit profiler + cross-phase encoding handoff + scoring reale",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/217"
+      "url": "https://github.com/dataciviclab/source-observatory/pull/223"
     }
   ],
-  "open_issues": 32,
+  "open_issues": 33,
   "issues": [
+    {
+      "number": 279,
+      "title": "post-merge: full run all years + push clean a GCS automatico",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/279"
+    },
     {
       "number": 267,
       "title": "intake: Consip consumi in convenzione: geografia della spesa delle PA",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/267"
-    },
-    {
-      "number": 266,
-      "title": "intake: [Dataset] Giustizia penale - clearance rate e disposition time",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/266"
     },
     {
       "number": 250,
@@ -207,10 +189,16 @@
       "url": "https://github.com/dataciviclab/data-explorer/issues/56"
     },
     {
-      "number": 211,
-      "title": "[Catalog] 2026-05-09 \u2014 1 recovery",
+      "number": 222,
+      "title": "Ristrutturare workflow: radar daily + observatory weekly (inventory+source-check)",
       "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/211"
+      "url": "https://github.com/dataciviclab/source-observatory/issues/222"
+    },
+    {
+      "number": 221,
+      "title": "refactor: migrare operazioni GCS a lab_connectors.gcs",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/221"
     },
     {
       "number": 210,
@@ -449,9 +437,7 @@
       "untracked_files": 0
     }
   },
-  "warnings": [
-    "Many open PRs: 8"
-  ],
+  "warnings": [],
   "radar": {
     "available": true,
     "probe_date": "2026-05-11",
