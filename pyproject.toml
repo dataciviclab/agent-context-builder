@@ -27,12 +27,12 @@ dependencies = [
     "pydantic>=2.0",
     "pyyaml>=6.0",
     "requests>=2.28",
+    "lab-connectors @ git+https://github.com/dataciviclab/lab-connectors.git@v0.2.0",
 ]
 
 [project.optional-dependencies]
 mcp = [
     "mcp>=1.0",
-    "lab-connectors @ git+https://github.com/dataciviclab/lab-connectors.git@v0.2.0",
 ]
 dev = [
     "pytest>=7.0",
