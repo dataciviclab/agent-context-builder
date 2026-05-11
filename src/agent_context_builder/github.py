@@ -1,9 +1,14 @@
 """GitHub API interactions for context collection."""
 
+from __future__ import annotations
+
 from dataclasses import dataclass
 from typing import Optional
 
-import requests
+try:
+    from lab_connectors.http import HttpClient
+except ImportError:
+    HttpClient = None  # type: ignore[assignment,misc]
 
 
 @dataclass
@@ -47,15 +52,24 @@ class GitHubCollector:
         Args:
             org: GitHub organization
             token: GitHub API token (optional)
+
+        Raises:
+            RuntimeError: If lab_connectors.http is not installed.
         """
+        if HttpClient is None:
+            raise RuntimeError(
+                "lab_connectors.http is required. Install with: "
+                "pip install agent-context-builder[mcp]"
+            )
         self.org = org
         self.token = token
         self.base_url = "https://api.github.com"
+        self._http = HttpClient(timeout=10)
         # Populated by get_prs/get_issues — maps "<repo>:prs" or "<repo>:issues" to error message
         self.fetch_errors: dict[str, str] = {}
 
     def collector_warning(self) -> str | None:
-        """Return a human-readable warning if fetch errors suggest rate-limit or auth degradation."""
+        """Return a warning if fetch errors suggest rate-limit or auth degradation."""
         if not self.fetch_errors:
             return None
         msgs = " ".join(self.fetch_errors.values()).lower()
@@ -105,19 +119,22 @@ class GitHubCollector:
                 self.fetch_errors[f"{repo}:issues"] = str(e)
         return issues
 
+    def _headers(self) -> dict[str, str]:
+        """Build Authorization headers if token is set."""
+        if self.token:
+            return {"Authorization": f"token {self.token}"}
+        return {}
+
     def _get_repo_prs(self, repo: str, state: str = "open") -> list[PR]:
         """Get PRs for a specific repo."""
         url = f"{self.base_url}/repos/{self.org}/{repo}/pulls"
         params = {"state": state, "per_page": 50}
-        headers = {}
-        if self.token:
-            headers["Authorization"] = f"token {self.token}"
-
-        response = requests.get(url, params=params, headers=headers, timeout=10)
-        response.raise_for_status()
+        result = self._http.get(url, params=params, headers=self._headers())
+        if not result.is_ok:
+            raise RuntimeError(str(result.err))
 
         prs = []
-        for item in response.json():
+        for item in result.response.json():  # type: ignore[union-attr]
             prs.append(
                 PR(
                     number=item["number"],
@@ -145,40 +162,33 @@ class GitHubCollector:
             Raw file content as string, or None on failure.
         """
         url = f"https://raw.githubusercontent.com/{self.org}/{repo}/{ref}/{path}"
-        headers = {}
-        if self.token:
-            headers["Authorization"] = f"token {self.token}"
-        try:
-            response = requests.get(url, headers=headers, timeout=10)
-            response.raise_for_status()
-            return response.text
-        except Exception as exc:
-            self.fetch_errors[f"{repo}:{path}"] = str(exc)
-            return None
+        result = self._http.get(url, headers=self._headers())
+        if result.is_ok:
+            return result.response.text  # type: ignore[union-attr]
+        self.fetch_errors[f"{repo}:{path}"] = str(result.err or "unknown error")
+        return None
 
     def get_repos_info(self, repos: list[str]) -> dict[str, RepoInfo]:
         """Get metadata (description, url) for each repo.
 
         Returns a dict keyed by repo name. Missing/failed repos are skipped silently.
         """
-        result: dict[str, RepoInfo] = {}
-        headers = {}
-        if self.token:
-            headers["Authorization"] = f"token {self.token}"
+        result_map: dict[str, RepoInfo] = {}
         for repo in repos:
             try:
                 url = f"{self.base_url}/repos/{self.org}/{repo}"
-                response = requests.get(url, headers=headers, timeout=10)
-                response.raise_for_status()
-                data = response.json()
-                result[repo] = RepoInfo(
+                result = self._http.get(url, headers=self._headers())
+                if not result.is_ok:
+                    raise RuntimeError(str(result.err))
+                data = result.response.json()  # type: ignore[union-attr]
+                result_map[repo] = RepoInfo(
                     name=repo,
                     description=data.get("description") or "",
                     url=data.get("html_url", ""),
                 )
             except Exception as exc:
                 self.fetch_errors[f"{repo}:info"] = str(exc)
-        return result
+        return result_map
 
     def _get_repo_issues(self, repo: str, state: str = "open") -> list[Issue]:
         """Get issues for a specific repo (excluding pull requests).
@@ -188,15 +198,12 @@ class GitHubCollector:
         """
         url = f"{self.base_url}/repos/{self.org}/{repo}/issues"
         params = {"state": state, "per_page": 50}
-        headers = {}
-        if self.token:
-            headers["Authorization"] = f"token {self.token}"
-
-        response = requests.get(url, params=params, headers=headers, timeout=10)
-        response.raise_for_status()
+        result = self._http.get(url, params=params, headers=self._headers())
+        if not result.is_ok:
+            raise RuntimeError(str(result.err))
 
         issues = []
-        for item in response.json():
+        for item in result.response.json():  # type: ignore[union-attr]
             # Skip pull requests: they have a pull_request field
             if "pull_request" in item:
                 continue
