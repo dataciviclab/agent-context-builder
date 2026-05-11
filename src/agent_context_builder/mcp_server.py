@@ -22,8 +22,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import requests
-from lab_connectors.mcp import create_mcp_server, get_mcp_logger, guard_timed
-from lab_connectors.mcp.errors import McpError, ErrorCode
+from lab_connectors.mcp import create_mcp_server, get_mcp_logger
 
 _REPO = os.environ.get("ACB_REPO", "dataciviclab/agent-context-builder")
 _BRANCH = os.environ.get("ACB_BRANCH", "context")
@@ -34,7 +33,10 @@ _API_BASE = f"https://api.github.com/repos/{_REPO}"
 _REFRESH_MIN_INTERVAL = 60  # seconds — local guard before hitting GitHub limit
 _last_refresh_attempt: float | None = None
 
-_log = get_mcp_logger("agent-context-builder")
+_log = get_mcp_logger(
+    "agent-context-builder",
+    level=os.environ.get("ACB_LOG_LEVEL", "INFO"),
+)
 
 mcp = create_mcp_server(
     name="dataciviclab-context",
@@ -141,7 +143,8 @@ def _fetch(path: str, retries: int = 1, backoff: float = 1.0) -> str:
 
     Args:
         path: Path on the context branch (e.g. "session_bootstrap.md")
-        retries: Number of retries on 5xx or network errors (default 1, meaning one attempt + up to 1 retry)
+        retries: Number of retries on 5xx or network errors
+            (default 1, meaning one attempt + up to 1 retry)
         backoff: Initial backoff seconds, doubled on each retry (default 1.0)
     """
     token = _get_env("GITHUB_TOKEN")
@@ -168,7 +171,10 @@ def _fetch(path: str, retries: int = 1, backoff: float = 1.0) -> str:
         attempt += 1
         if attempt <= retries:
             sleep = backoff * (2 ** (attempt - 1))
-            _log.warning("fetch", "retry", path=path, attempt=attempt, sleep=round(sleep, 1), error=str(last_err))
+            _log.warning(
+                "fetch", "retry", path=path, attempt=attempt,
+                sleep=round(sleep, 1), error=str(last_err),
+            )
             time.sleep(sleep)
         else:
             _log.error("fetch", "failed", path=path, error=str(last_err))
@@ -269,7 +275,10 @@ def refresh_context() -> str:
                 "ts": datetime.now(timezone.utc).isoformat(),
             })
         elif response.status_code == 422:
-            _log.error("refresh_context", "rejected", status=response.status_code, body=response.text)
+            _log.error(
+                "refresh_context", "rejected",
+                status=response.status_code, body=response.text,
+            )
             return json.dumps({
                 "ok": False,
                 "tool": "refresh_context",
