@@ -31,7 +31,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install
-        run: pip install -e ".[dev]"
+        run: pip install -e ".[dev,mcp]"
 
       - name: Test
         run: pytest --cov=src/agent_context_builder --cov-report=xml

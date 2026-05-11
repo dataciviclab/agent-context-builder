@@ -32,6 +32,7 @@ dependencies = [
 [project.optional-dependencies]
 mcp = [
     "mcp>=1.0",
+    "lab-connectors @ git+https://github.com/dataciviclab/lab-connectors.git@v0.2.0",
 ]
 dev = [
     "pytest>=7.0",
@@ -44,6 +45,9 @@ dev = [
 [project.scripts]
 agent-context = "agent_context_builder.cli:main"
 agent-context-mcp = "agent_context_builder.mcp_server:main"
+
+[tool.hatch.metadata]
+allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/agent_context_builder"]
