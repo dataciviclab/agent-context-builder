@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-11T11:45:33.628601
+**Generated**: 2026-05-11T14:54:15.384229
 
 ## 🔍 SCOUTING
 
@@ -26,7 +26,7 @@
 - [dataset-incubator#272](https://github.com/dataciviclab/dataset-incubator/pull/272): intake: giustizia penale — clearance rate e disposition time
 - [dataset-incubator#271](https://github.com/dataciviclab/dataset-incubator/pull/271): docs(skills): intake v0.5 + post-merge v0.4 — venv, new init, BQ separate
 - [source-observatory#217](https://github.com/dataciviclab/source-observatory/pull/217): feat: integrazione toolkit profiler + cross-phase encoding handoff + scoring reale
-- **Dependabot**: 2 bump PR(s)
+- **Dependabot**: 5 bump PR(s)
 **Discussions**: 20 open
   · [Analisi] AIFA Spesa Farmaceutica — il cardiovascolare traina il 63% della spesa, il divario Nord-Sud si allarga
   · [Domanda] Quanta parte delle entrate tributarie dipende da poche voci e quanto è diffuso?

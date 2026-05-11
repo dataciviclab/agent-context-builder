@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-11T11:45:33.628601",
+  "generated_at": "2026-05-11T14:54:15.384229",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,7 +9,7 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 5,
+  "open_prs": 8,
   "prs": [
     {
       "number": 272,
@@ -34,6 +34,24 @@
       "title": "chore(deps-dev): bump tailwindcss from 3.4.18 to 4.2.4",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/62"
+    },
+    {
+      "number": 220,
+      "title": "chore(deps): update pyarrow requirement from <24.0,>=14.0 to >=24.0.0,<25.0",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/220"
+    },
+    {
+      "number": 219,
+      "title": "chore(deps): update mcp requirement from >=1.27.0 to >=1.27.1",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/219"
+    },
+    {
+      "number": 218,
+      "title": "chore(deps-dev): update mypy requirement from <2.0.0,>=1.20.2 to >=2.0.0,<3.0.0",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/218"
     },
     {
       "number": 217,
@@ -431,7 +449,9 @@
       "untracked_files": 0
     }
   },
-  "warnings": [],
+  "warnings": [
+    "Many open PRs: 8"
+  ],
   "radar": {
     "available": true,
     "probe_date": "2026-05-11",
