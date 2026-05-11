@@ -108,6 +108,14 @@ class GitHubCollector:
                 self.fetch_errors[f"{repo}:issues"] = str(e)
         return issues
 
+    def _raise_on_bad_status(self, result, url_desc: str) -> None:
+        """Raise RuntimeError if result is error or response status >= 400."""
+        if not result.is_ok:
+            raise RuntimeError(f"{url_desc}: {result.err}")
+        status = result.response.status_code  # type: ignore[union-attr]
+        if status >= 400:
+            raise RuntimeError(f"{url_desc}: HTTP {status}")
+
     def _headers(self) -> dict[str, str]:
         """Build Authorization headers if token is set."""
         if self.token:
@@ -119,8 +127,7 @@ class GitHubCollector:
         url = f"{self.base_url}/repos/{self.org}/{repo}/pulls"
         params = {"state": state, "per_page": 50}
         result = self._http.get(url, params=params, headers=self._headers())
-        if not result.is_ok:
-            raise RuntimeError(str(result.err))
+        self._raise_on_bad_status(result, url)
 
         prs = []
         for item in result.response.json():  # type: ignore[union-attr]
@@ -152,10 +159,12 @@ class GitHubCollector:
         """
         url = f"https://raw.githubusercontent.com/{self.org}/{repo}/{ref}/{path}"
         result = self._http.get(url, headers=self._headers())
-        if result.is_ok:
+        try:
+            self._raise_on_bad_status(result, url)
             return result.response.text  # type: ignore[union-attr]
-        self.fetch_errors[f"{repo}:{path}"] = str(result.err or "unknown error")
-        return None
+        except Exception as exc:
+            self.fetch_errors[f"{repo}:{path}"] = str(exc)
+            return None
 
     def get_repos_info(self, repos: list[str]) -> dict[str, RepoInfo]:
         """Get metadata (description, url) for each repo.
@@ -167,8 +176,7 @@ class GitHubCollector:
             try:
                 url = f"{self.base_url}/repos/{self.org}/{repo}"
                 result = self._http.get(url, headers=self._headers())
-                if not result.is_ok:
-                    raise RuntimeError(str(result.err))
+                self._raise_on_bad_status(result, url)
                 data = result.response.json()  # type: ignore[union-attr]
                 result_map[repo] = RepoInfo(
                     name=repo,
@@ -188,8 +196,7 @@ class GitHubCollector:
         url = f"{self.base_url}/repos/{self.org}/{repo}/issues"
         params = {"state": state, "per_page": 50}
         result = self._http.get(url, params=params, headers=self._headers())
-        if not result.is_ok:
-            raise RuntimeError(str(result.err))
+        self._raise_on_bad_status(result, url)
 
         issues = []
         for item in result.response.json():  # type: ignore[union-attr]
