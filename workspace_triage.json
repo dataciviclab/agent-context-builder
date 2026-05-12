@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-12T03:23:04.242025",
+  "generated_at": "2026-05-12T08:41:41.791065",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,7 +9,7 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 5,
+  "open_prs": 2,
   "prs": [
     {
       "number": 281,
@@ -22,24 +22,6 @@
       "title": "docs(skills): intake v0.5 + post-merge v0.4 \u2014 venv, new init, BQ separate",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/271"
-    },
-    {
-      "number": 64,
-      "title": "chore(deps-dev): bump postcss from 8.5.10 to 8.5.14",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/64"
-    },
-    {
-      "number": 62,
-      "title": "chore(deps-dev): bump tailwindcss from 3.4.18 to 4.2.4",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/62"
-    },
-    {
-      "number": 225,
-      "title": "refactor(inventory): pure discovery, niente sniff. Profiling tutto al source-check",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/225"
     }
   ],
   "open_issues": 33,
@@ -440,10 +422,10 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-05-11",
+    "probe_date": "2026-05-12",
     "sources_total": 16,
-    "green": 10,
-    "yellow": 5,
+    "green": 11,
+    "yellow": 4,
     "red": 1,
     "persistent_red": 1,
     "unhealthy": [
@@ -462,14 +444,6 @@
         "http_code": "-",
         "note": "SSL verify failed; fallback connection error (SSLError)",
         "red_streak": 14
-      },
-      {
-        "id": "dati_cultura",
-        "status": "YELLOW",
-        "protocol": "sparql",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
-        "red_streak": 0
       },
       {
         "id": "lavoro_opendata",
