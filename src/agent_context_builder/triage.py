@@ -232,6 +232,7 @@ def _build_explorer_dict(
 
     Cross-references data-explorer themes.json with DI clean_catalog.json
     to surface gap analysis (clean_ready datasets not yet on explorer).
+    Includes last deploy status from GitHub Actions API.
     """
     themes = de_fetcher.fetch_themes()
     if themes is None:
@@ -251,6 +252,19 @@ def _build_explorer_dict(
 
     clean_ready_not_published = sorted(clean_ready_slugs - themed_slugs)
 
+    # Deploy status (operativo — GitHub Actions API)
+    deploy: dict[str, Any] | None = None
+    raw_deploy = de_fetcher.fetch_deploy_status()
+    if raw_deploy is not None:
+        deploy = {
+            "run_id": raw_deploy.get("run_id"),
+            "name": raw_deploy.get("name", ""),
+            "status": raw_deploy.get("status", ""),
+            "conclusion": raw_deploy.get("conclusion"),
+            "completed_at": raw_deploy.get("completed_at", ""),
+            "html_url": raw_deploy.get("html_url", ""),
+        }
+
     return {
         "available": True,
         "themes": [
@@ -259,6 +273,7 @@ def _build_explorer_dict(
         ],
         "published_count": len(themed_slugs),
         "clean_ready_not_published": clean_ready_not_published,
+        "last_deploy": deploy,
     }
 
 

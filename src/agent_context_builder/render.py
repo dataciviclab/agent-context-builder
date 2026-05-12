@@ -171,6 +171,18 @@ class Renderer:
                     lines.append(f"    · {slug}")
                 if len(gap) > 5:
                     lines.append(f"    · ... e altri {len(gap) - 5}")
+
+            # Deploy status
+            last_deploy = self._de_fetcher.fetch_deploy_status()
+            if last_deploy is not None:
+                conclusion = last_deploy.get("conclusion", "unknown")
+                icon = "✅" if conclusion == "success" else "❌"
+                completed = (last_deploy.get("completed_at", "")[:10]
+                             if last_deploy.get("completed_at") else "?")
+                lines.append(f"  **Deploy**: {icon} {conclusion} ({completed})")
+            else:
+                lines.append(f"  **Deploy**: dati non disponibili")
+
             lines.append("")
 
         # ── OPEN ─────────────────────────────────────────────────────────
