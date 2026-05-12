@@ -188,20 +188,36 @@ class GitHubCollector:
         return result_map
 
     def get_latest_workflow_run(
-        self, repo: str, event: str = "push", status: str = "completed"
+        self,
+        repo: str,
+        event: str = "push",
+        status: str = "completed",
+        workflow_id: str | None = None,
     ) -> dict[str, Any] | None:
         """Fetch the latest workflow run for a repo.
+
+        If workflow_id is provided, uses the workflow-specific endpoint
+        (e.g. ``deploy.yml``) to avoid ambiguity when multiple workflows
+        trigger on the same event.
 
         Args:
             repo: Repository name (under self.org)
             event: Event type filter (e.g. push, workflow_dispatch)
             status: Status filter (e.g. completed, success)
+            workflow_id: Workflow filename (e.g. ``deploy.yml``) for
+                         precise targeting. Optional.
 
         Returns:
             Dict with run_id, name, status, conclusion, started_at, completed_at, html_url,
             or None if no runs found or on error.
         """
-        url = f"{self.base_url}/repos/{self.org}/{repo}/actions/runs"
+        if workflow_id:
+            url = (
+                f"{self.base_url}/repos/{self.org}/{repo}"
+                f"/actions/workflows/{workflow_id}/runs"
+            )
+        else:
+            url = f"{self.base_url}/repos/{self.org}/{repo}/actions/runs"
         params = {
             "event": event,
             "status": status,

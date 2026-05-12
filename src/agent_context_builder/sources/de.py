@@ -64,7 +64,7 @@ class DataExplorerFetcher:
         """
         if self._deploy_cache is not _UNSET:
             return self._deploy_cache  # type: ignore[return-value]
-        result = self.collector.get_latest_workflow_run("data-explorer")
+        result = self.collector.get_latest_workflow_run("data-explorer", workflow_id="deploy.yml")
         self._deploy_cache = result
         return result
 
