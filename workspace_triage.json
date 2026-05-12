@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-12T19:53:43.207570",
+  "generated_at": "2026-05-12T21:36:42.776132",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -12,10 +12,10 @@
   "open_prs": 1,
   "prs": [
     {
-      "number": 68,
-      "title": "fix(civile-flussi): aggiorna path parquet a /2025/ dopo passaggio DI",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/68"
+      "number": 284,
+      "title": "feat: full run su tutti gli anni + GCS push + catalog update + dispatch DE",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/284"
     }
   ],
   "open_issues": 32,
@@ -1542,5 +1542,55 @@
         ]
       }
     ]
+  },
+  "explorer": {
+    "available": true,
+    "themes": [
+      {
+        "slug": "territorio-ambiente",
+        "name": "Territorio e ambiente",
+        "dataset_count": 2
+      },
+      {
+        "slug": "finanza-pubblica",
+        "name": "Finanza pubblica",
+        "dataset_count": 1
+      },
+      {
+        "slug": "sanita",
+        "name": "Sanit\u00e0",
+        "dataset_count": 1
+      },
+      {
+        "slug": "welfare-lavoro",
+        "name": "Welfare e lavoro",
+        "dataset_count": 1
+      },
+      {
+        "slug": "giustizia",
+        "name": "Giustizia",
+        "dataset_count": 1
+      }
+    ],
+    "published_count": 6,
+    "clean_ready_not_published": [
+      "bdap_entrate_stato",
+      "giustizia_penale_indicatori",
+      "inps_cig_serie_storiche_annuali",
+      "ispra_ru_costi_kg",
+      "ispra_ru_costi_procapite",
+      "mef_irpef_regionale",
+      "mit_incidentalita_mensile",
+      "mit_opere_incompiute_2020",
+      "mur_contribuzione_universitaria"
+    ],
+    "last_deploy": {
+      "run_id": 25752777719,
+      "name": "Deploy to GitHub Pages",
+      "status": "completed",
+      "conclusion": "success",
+      "completed_at": "2026-05-12T18:06:04Z",
+      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/25752777719"
+    }
   }
 }
