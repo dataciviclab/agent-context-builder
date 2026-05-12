@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-11T19:49:10.673404",
+  "generated_at": "2026-05-12T03:23:04.242025",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -12,10 +12,10 @@
   "open_prs": 5,
   "prs": [
     {
-      "number": 280,
-      "title": "chore(post-merge): aggiorna registry per PR #272",
+      "number": 281,
+      "title": "chore(deps): update pandas requirement from >=3.0.2 to >=3.0.3",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/280"
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/281"
     },
     {
       "number": 271,
@@ -36,10 +36,10 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/62"
     },
     {
-      "number": 223,
-      "title": "feat(workflow): sdoppia observatory in radar.yml (daily) + observatory.yml (weekly)",
+      "number": 225,
+      "title": "refactor(inventory): pure discovery, niente sniff. Profiling tutto al source-check",
       "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/223"
+      "url": "https://github.com/dataciviclab/source-observatory/pull/225"
     }
   ],
   "open_issues": 33,
@@ -189,10 +189,10 @@
       "url": "https://github.com/dataciviclab/data-explorer/issues/56"
     },
     {
-      "number": 222,
-      "title": "Ristrutturare workflow: radar daily + observatory weekly (inventory+source-check)",
+      "number": 224,
+      "title": "[Catalog] 2026-05-11 \u2014 1 regressionee, 1 recovery",
       "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/222"
+      "url": "https://github.com/dataciviclab/source-observatory/issues/224"
     },
     {
       "number": 221,
@@ -442,8 +442,8 @@
     "available": true,
     "probe_date": "2026-05-11",
     "sources_total": 16,
-    "green": 11,
-    "yellow": 4,
+    "green": 10,
+    "yellow": 5,
     "red": 1,
     "persistent_red": 1,
     "unhealthy": [
@@ -462,6 +462,14 @@
         "http_code": "-",
         "note": "SSL verify failed; fallback connection error (SSLError)",
         "red_streak": 14
+      },
+      {
+        "id": "dati_cultura",
+        "status": "YELLOW",
+        "protocol": "sparql",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
+        "red_streak": 0
       },
       {
         "id": "lavoro_opendata",
@@ -491,18 +499,18 @@
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-05-11T06:49:42+00:00",
+    "captured_at": "2026-05-11T20:35:03+00:00",
     "sources_checked": 13,
     "regressions": [],
     "alerts": []
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-05-09",
+    "generated_at": "2026-05-11",
     "summary": {
-      "total": 30,
+      "total": 31,
       "by_status": {
-        "ok": 30,
+        "ok": 31,
         "warn": 0,
         "error": 0
       }
@@ -513,11 +521,11 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-05-09",
+    "updated_at": "2026-05-11",
     "summary": {
-      "total": 22,
-      "clean_ready": 10,
-      "public": 10
+      "total": 23,
+      "clean_ready": 11,
+      "public": 11
     },
     "datasets": [
       {
@@ -639,6 +647,54 @@
         "dimension_columns": 13,
         "column_count": 23,
         "columns": []
+      },
+      {
+        "slug": "giustizia_penale_indicatori",
+        "name": "Giustizia Penale \u2014 Clearance Rate e Disposition Time",
+        "status": "clean_ready",
+        "visibility": "public",
+        "period": {
+          "start": 2014,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia_penale_indicatori/2024/giustizia_penale_indicatori_2024_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 2,
+        "dimension_columns": 5,
+        "column_count": 7,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_ufficio",
+            "role": "dimension"
+          },
+          {
+            "name": "distretto",
+            "role": "dimension"
+          },
+          {
+            "name": "sede",
+            "role": "dimension"
+          },
+          {
+            "name": "sezione",
+            "role": "dimension"
+          },
+          {
+            "name": "clearance_rate",
+            "role": "metric"
+          },
+          {
+            "name": "disposition_time_gg",
+            "role": "metric"
+          }
+        ]
       },
       {
         "slug": "inps_cig_serie_storiche_annuali",

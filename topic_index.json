@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-05-11T19:49:10.673404",
+  "generated_at": "2026-05-12T03:23:04.242025",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -34,6 +34,17 @@
         "name": "BDAP Entrate Stato - Serie Storica",
         "period": {
           "start": 2008,
+          "end": 2024
+        },
+        "visibility": "public"
+      }
+    ],
+    "Ministero della Giustizia \u2014 Direzione Generale di Statistica e Analisi Organizzativa": [
+      {
+        "slug": "giustizia_penale_indicatori",
+        "name": "Giustizia Penale \u2014 Clearance Rate e Disposition Time",
+        "period": {
+          "start": 2014,
           "end": 2024
         },
         "visibility": "public"
