@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-12T15:57:09.067666
+**Generated**: 2026-05-12T19:53:43.207570
 
 ## 🔍 SCOUTING
 
@@ -23,7 +23,7 @@
 
 ## 🔗 OPEN
 
-- [data-explorer#67](https://github.com/dataciviclab/data-explorer/pull/67): feat: aggiungi AIFA spesa farmaceutica al Data Explorer
+- [data-explorer#68](https://github.com/dataciviclab/data-explorer/pull/68): fix(civile-flussi): aggiorna path parquet a /2025/ dopo passaggio DI
 **Discussions**: 20 open
   · [Analisi] AIFA Spesa Farmaceutica — il cardiovascolare traina il 63% della spesa, il divario Nord-Sud si allarga
   · [Domanda] Quanta parte delle entrate tributarie dipende da poche voci e quanto è diffuso?
