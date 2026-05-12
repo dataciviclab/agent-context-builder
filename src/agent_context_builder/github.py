@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Optional
+from typing import Any, Optional
 
 from lab_connectors.http import HttpClient
 
@@ -186,6 +186,63 @@ class GitHubCollector:
             except Exception as exc:
                 self.fetch_errors[f"{repo}:info"] = str(exc)
         return result_map
+
+    def get_latest_workflow_run(
+        self,
+        repo: str,
+        event: str = "push",
+        status: str = "completed",
+        workflow_id: str | None = None,
+    ) -> dict[str, Any] | None:
+        """Fetch the latest workflow run for a repo.
+
+        If workflow_id is provided, uses the workflow-specific endpoint
+        (e.g. ``deploy.yml``) to avoid ambiguity when multiple workflows
+        trigger on the same event.
+
+        Args:
+            repo: Repository name (under self.org)
+            event: Event type filter (e.g. push, workflow_dispatch)
+            status: Status filter (e.g. completed, success)
+            workflow_id: Workflow filename (e.g. ``deploy.yml``) for
+                         precise targeting. Optional.
+
+        Returns:
+            Dict with run_id, name, status, conclusion, started_at, completed_at, html_url,
+            or None if no runs found or on error.
+        """
+        if workflow_id:
+            url = (
+                f"{self.base_url}/repos/{self.org}/{repo}"
+                f"/actions/workflows/{workflow_id}/runs"
+            )
+        else:
+            url = f"{self.base_url}/repos/{self.org}/{repo}/actions/runs"
+        params = {
+            "event": event,
+            "status": status,
+            "per_page": 1,
+        }
+        try:
+            result = self._http.get(url, params=params, headers=self._headers())
+            self._raise_on_bad_status(result, url)
+            data = result.response.json()  # type: ignore[union-attr]
+            runs = data.get("workflow_runs", [])
+            if not runs:
+                return None
+            run = runs[0]
+            return {
+                "run_id": run.get("id"),
+                "name": run.get("name", ""),
+                "status": run.get("status", ""),
+                "conclusion": run.get("conclusion"),
+                "started_at": run.get("run_started_at", ""),
+                "completed_at": run.get("updated_at", ""),
+                "html_url": run.get("html_url", ""),
+            }
+        except Exception as exc:
+            self.fetch_errors[f"{repo}:workflow_runs"] = str(exc)
+            return None
 
     def _get_repo_issues(self, repo: str, state: str = "open") -> list[Issue]:
         """Get issues for a specific repo (excluding pull requests).

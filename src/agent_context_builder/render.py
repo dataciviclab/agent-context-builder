@@ -9,9 +9,11 @@ from .config import Config
 from .discussions import DiscussionCollector
 from .github import GitHubCollector, PR
 from .git_local import GitLocalCollector, GitState
+from .sources.de import DataExplorerFetcher
 from .sources.di import DatasetIncubatorFetcher
 from .sources.so import SourceObservatoryFetcher
 from .signals import (
+    ExplorerTheme,
     RadarSummary,
     SourceObservatorySignals,
 )
@@ -44,6 +46,7 @@ class Renderer:
         self.fixed_timestamp = fixed_timestamp or datetime.now().isoformat()
         self._so_fetcher = SourceObservatoryFetcher(self.github_collector)
         self._di_fetcher = DatasetIncubatorFetcher(self.github_collector)
+        self._de_fetcher = DataExplorerFetcher(self.github_collector)
 
     def render_session_bootstrap(self) -> str:
         """Render session_bootstrap.md.
@@ -137,6 +140,51 @@ class Renderer:
             lines.append("**Dataset Catalog**: unavailable")
         lines.append("")
 
+        # ── EXPLORER ──────────────────────────────────────────────────────
+        explorer_themes = self._fetch_explorer_themes()
+        if explorer_themes is not None:
+            lines.append("## 🗂 EXPLORER")
+            lines.append("")
+
+            # Count themed datasets
+            themed_slugs: set[str] = set()
+            for t in explorer_themes:
+                themed_slugs.update(t.datasets)
+
+            # Gap analysis
+            catalog = self._fetch_di_clean_catalog()
+            clean_ready_slugs: set[str] = set()
+            if catalog is not None:
+                for ds in catalog.clean_ready:
+                    clean_ready_slugs.add(ds.slug)
+            gap = sorted(clean_ready_slugs - themed_slugs)
+
+            lines.append(
+                f"**Pubblicati**: {len(themed_slugs)} dataset · "
+                f"{len(explorer_themes)} temi"
+            )
+            for t in explorer_themes:
+                lines.append(f"  · **{t.name}**: {len(t.datasets)} dataset")
+            if gap:
+                lines.append(f"  ⚠ {len(gap)} dataset clean_ready non ancora su explorer:")
+                for slug in gap[:5]:
+                    lines.append(f"    · {slug}")
+                if len(gap) > 5:
+                    lines.append(f"    · ... e altri {len(gap) - 5}")
+
+            # Deploy status
+            last_deploy = self._de_fetcher.fetch_deploy_status()
+            if last_deploy is not None:
+                conclusion = last_deploy.get("conclusion", "unknown")
+                icon = "✅" if conclusion == "success" else "❌"
+                completed = (last_deploy.get("completed_at", "")[:10]
+                             if last_deploy.get("completed_at") else "?")
+                lines.append(f"  **Deploy**: {icon} {conclusion} ({completed})")
+            else:
+                lines.append(f"  **Deploy**: dati non disponibili")
+
+            lines.append("")
+
         # ── OPEN ─────────────────────────────────────────────────────────
         prs = self.github_collector.get_prs(self.config.repos)
         github_errors = self.github_collector.fetch_errors
@@ -225,9 +273,13 @@ class Renderer:
             self.fixed_timestamp,
             so_fetcher=self._so_fetcher,
             di_fetcher=self._di_fetcher,
+            de_fetcher=self._de_fetcher,
         )
 
 
+
+    def _fetch_explorer_themes(self) -> list[ExplorerTheme] | None:
+        return self._de_fetcher.fetch_themes()
 
     def _fetch_di_pipeline_signals(self) -> RepoSignals | None:
         return self._di_fetcher.fetch_pipeline_signals()
@@ -329,6 +381,19 @@ class Renderer:
                 "next": topic.next,
             }
 
+        # Explorer themes from data-explorer
+        explorer_themes_list: list[dict[str, Any]] = []
+        explorer_themes = self._fetch_explorer_themes()
+        if explorer_themes is not None:
+            explorer_themes_list = [
+                {
+                    "slug": t.slug,
+                    "name": t.name,
+                    "datasets": t.datasets,
+                }
+                for t in explorer_themes
+            ]
+
         return {
             "schema_version": 2,
             "generated_at": self.fixed_timestamp,
@@ -336,4 +401,5 @@ class Renderer:
             "datasets_by_source": datasets_by_source,
             "candidates_by_source": candidates_by_source,
             "operational_topics": operational_topics,
+            "explorer_themes": explorer_themes_list,
         }

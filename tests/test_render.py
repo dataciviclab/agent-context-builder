@@ -398,13 +398,14 @@ def test_render_signals_cached_across_bootstrap_and_triage():
     renderer.render_session_bootstrap()
     renderer.render_workspace_triage()
 
-    # Four distinct files fetched once each (portal_scout removed — SO no longer produces it)
-    assert gh.get_raw_file.call_count == 4
+    # Five distinct files fetched once each (SO 2 + DI 2 + data-explorer 1)
+    assert gh.get_raw_file.call_count == 5
     paths_fetched = [call.args[1] for call in gh.get_raw_file.call_args_list]
     assert "data/radar/radar_summary.json" in paths_fetched
     assert "data/catalog/catalog_signals.json" in paths_fetched
     assert "registry/pipeline_signals.json" in paths_fetched
     assert "registry/clean_catalog.json" in paths_fetched
+    assert "catalog/themes.json" in paths_fetched
 
 
 def test_render_topic_index():

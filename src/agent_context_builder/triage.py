@@ -8,6 +8,7 @@ from .config import Config
 from .discussions import Discussion, DiscussionCollector
 from .git_local import GitLocalCollector, GitState
 from .github import GitHubCollector, PR
+from .sources.de import DataExplorerFetcher
 from .sources.di import DatasetIncubatorFetcher
 from .sources.so import SourceObservatoryFetcher
 
@@ -20,6 +21,7 @@ def build_workspace_triage(
     fixed_timestamp: str,
     so_fetcher: SourceObservatoryFetcher | None = None,
     di_fetcher: DatasetIncubatorFetcher | None = None,
+    de_fetcher: DataExplorerFetcher | None = None,
 ) -> dict[str, Any]:
     """Build the workspace_triage.json payload."""
     prs = github_collector.get_prs(config.repos)
@@ -34,6 +36,7 @@ def build_workspace_triage(
 
     so_fetcher = so_fetcher or SourceObservatoryFetcher(github_collector)
     di_fetcher = di_fetcher or DatasetIncubatorFetcher(github_collector)
+    de_fetcher = de_fetcher or DataExplorerFetcher(github_collector)
 
     return {
         "generated_at": fixed_timestamp,
@@ -54,6 +57,7 @@ def build_workspace_triage(
         "source_health": _build_source_health_dict(so_fetcher, github_collector),
         "pipeline_state": _build_pipeline_state_dict(di_fetcher, github_collector),
         "dataset_catalog": _build_dataset_catalog_dict(di_fetcher, github_collector),
+        "explorer": _build_explorer_dict(de_fetcher, di_fetcher),
     }
 
 
@@ -217,6 +221,59 @@ def _build_dataset_catalog_dict(
             }
             for d in catalog.datasets
         ],
+    }
+
+
+def _build_explorer_dict(
+    de_fetcher: DataExplorerFetcher,
+    di_fetcher: DatasetIncubatorFetcher,
+) -> dict[str, Any]:
+    """Build explorer state block for workspace_triage.json.
+
+    Cross-references data-explorer themes.json with DI clean_catalog.json
+    to surface gap analysis (clean_ready datasets not yet on explorer).
+    Includes last deploy status from GitHub Actions API.
+    """
+    themes = de_fetcher.fetch_themes()
+    if themes is None:
+        return {"available": False}
+
+    # Collect all dataset slugs referenced in themes
+    themed_slugs: set[str] = set()
+    for theme in themes:
+        themed_slugs.update(theme.datasets)
+
+    # Gap analysis: clean_ready datasets not in any theme
+    catalog = di_fetcher.fetch_clean_catalog()
+    clean_ready_slugs: set[str] = set()
+    if catalog is not None:
+        for ds in catalog.clean_ready:
+            clean_ready_slugs.add(ds.slug)
+
+    clean_ready_not_published = sorted(clean_ready_slugs - themed_slugs)
+
+    # Deploy status (operativo — GitHub Actions API)
+    deploy: dict[str, Any] | None = None
+    raw_deploy = de_fetcher.fetch_deploy_status()
+    if raw_deploy is not None:
+        deploy = {
+            "run_id": raw_deploy.get("run_id"),
+            "name": raw_deploy.get("name", ""),
+            "status": raw_deploy.get("status", ""),
+            "conclusion": raw_deploy.get("conclusion"),
+            "completed_at": raw_deploy.get("completed_at", ""),
+            "html_url": raw_deploy.get("html_url", ""),
+        }
+
+    return {
+        "available": True,
+        "themes": [
+            {"slug": t.slug, "name": t.name, "dataset_count": len(t.datasets)}
+            for t in themes
+        ],
+        "published_count": len(themed_slugs),
+        "clean_ready_not_published": clean_ready_not_published,
+        "last_deploy": deploy,
     }
 
 
