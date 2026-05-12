@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-12T14:27:24.235156",
+  "generated_at": "2026-05-12T15:17:10.814648",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,8 +9,14 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 2,
+  "open_prs": 4,
   "prs": [
+    {
+      "number": 282,
+      "title": "chore: migrate duckdb.connect() \u2192 lab_connectors.duckdb.safe_connect()",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/282"
+    },
     {
       "number": 240,
       "title": "chore: migrate duckdb.connect() \u2192 lab_connectors.duckdb.safe_connect()",
@@ -22,6 +28,12 @@
       "title": "feat: aggiungi AIFA spesa farmaceutica al Data Explorer",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/67"
+    },
+    {
+      "number": 226,
+      "title": "chore: migrate duckdb.connect() \u2192 lab_connectors.duckdb.safe_connect()",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/226"
     }
   ],
   "open_issues": 33,
