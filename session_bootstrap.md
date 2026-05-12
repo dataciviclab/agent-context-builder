@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-12T08:41:41.791065
+**Generated**: 2026-05-12T14:27:24.235156
 
 ## 🔍 SCOUTING
 
@@ -23,8 +23,8 @@
 
 ## 🔗 OPEN
 
-- [dataset-incubator#271](https://github.com/dataciviclab/dataset-incubator/pull/271): docs(skills): intake v0.5 + post-merge v0.4 — venv, new init, BQ separate
-- **Dependabot**: 1 bump PR(s)
+- [toolkit#240](https://github.com/dataciviclab/toolkit/pull/240): chore: migrate duckdb.connect() → lab_connectors.duckdb.safe_connect()
+- [data-explorer#67](https://github.com/dataciviclab/data-explorer/pull/67): feat: aggiungi AIFA spesa farmaceutica al Data Explorer
 **Discussions**: 20 open
   · [Analisi] AIFA Spesa Farmaceutica — il cardiovascolare traina il 63% della spesa, il divario Nord-Sud si allarga
   · [Domanda] Quanta parte delle entrate tributarie dipende da poche voci e quanto è diffuso?
