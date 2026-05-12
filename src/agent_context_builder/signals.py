@@ -320,6 +320,45 @@ class RadarSummary:
         return [s for s in self.sources if s.status in ("YELLOW", "RED")]
 
 
+@dataclass
+class ExplorerTheme:
+    """Single theme entry from data-explorer catalog/themes.json."""
+
+    slug: str
+    name: str
+    datasets: list[str]
+
+
+def parse_explorer_themes(raw: str) -> list[ExplorerTheme]:
+    """Parse data-explorer catalog/themes.json into ExplorerTheme instances.
+
+    Args:
+        raw: Raw JSON content of themes.json
+
+    Returns:
+        List of ExplorerTheme instances
+
+    Raises:
+        ValueError: If the JSON is invalid
+    """
+    try:
+        data: list[dict[str, Any]] = json.loads(raw)
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"Invalid JSON: {exc}") from exc
+
+    if not isinstance(data, list):
+        raise ValueError("Expected JSON array at root")
+
+    return [
+        ExplorerTheme(
+            slug=item.get("slug", ""),
+            name=item.get("name", ""),
+            datasets=item.get("datasets", []),
+        )
+        for item in data
+    ]
+
+
 def parse_radar_summary(raw: str) -> RadarSummary:
     try:
         data: dict[str, Any] = json.loads(raw)
