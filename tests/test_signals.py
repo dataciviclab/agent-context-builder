@@ -241,15 +241,15 @@ def test_failed_runs_property():
 
 
 def test_candidates_property():
-    """candidates returns datasets with status != clean_ready."""
+    """candidates returns datasets with stage != published."""
     raw = json.dumps({
         "schema_version": "1",
         "name": "Test",
         "updated_at": "2026-04-30",
         "datasets": [
-            {"slug": "ready", "name": "Ready", "status": "clean_ready", "visibility": "public", "columns": []},
-            {"slug": "cand", "name": "Candidate", "status": "candidate", "visibility": "public", "columns": []},
-            {"slug": "cand2", "name": "Candidate 2", "status": "candidate", "visibility": "public", "columns": []},
+            {"slug": "ready", "name": "Ready", "stage": "published", "columns": []},
+            {"slug": "cand", "name": "Candidate", "stage": "incubating", "columns": []},
+            {"slug": "cand2", "name": "Candidate 2", "stage": "incubating", "columns": []},
         ],
     })
     catalog = parse_di_clean_catalog(raw)
@@ -268,8 +268,7 @@ def test_di_clean_catalog_columns_parsed():
             {
                 "slug": "test",
                 "name": "Test",
-                "status": "clean_ready",
-                "visibility": "public",
+                "stage": "published",
                 "columns": [
                     {"name": "anno", "type": "INTEGER", "role": "dimension", "description": "Year"},
                     {"name": "valore", "type": "FLOAT", "role": "metric", "description": "Value"},
@@ -333,8 +332,7 @@ def test_parse_di_clean_catalog_basic():
             {
                 "slug": "irpef_comunale",
                 "name": "IRPEF Comunale",
-                "status": "clean_ready",
-                "visibility": "public",
+                "stage": "published",
                 "period": {"start": 2022, "end": 2023},
                 "location": {"type": "gcs", "path": "gs://bucket/irpef.parquet"},
                 "columns": [
@@ -373,6 +371,6 @@ def test_parse_di_clean_catalog_missing_fields_use_defaults():
     assert catalog.name == ""
     assert catalog.updated_at == "unknown"
     assert catalog.datasets[0].name == "minimal"
-    assert catalog.datasets[0].status == ""
+    assert catalog.datasets[0].stage == "incubating"
     assert catalog.datasets[0].location == {}
     assert catalog.datasets[0].columns == []

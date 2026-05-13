@@ -114,8 +114,7 @@ class DICleanDataset:
 
     slug: str
     name: str
-    status: str
-    visibility: str
+    stage: str
     source: str = ""
     period: dict[str, Any] = field(default_factory=dict)
     location: dict[str, Any] = field(default_factory=dict)
@@ -136,13 +135,13 @@ class DICleanCatalog:
 
     @property
     def clean_ready(self) -> list[DICleanDataset]:
-        """Datasets with status clean_ready."""
-        return [d for d in self.datasets if d.status == "clean_ready"]
+        """Datasets with stage published (formerly clean_ready)."""
+        return [d for d in self.datasets if d.stage == "published"]
 
     @property
     def candidates(self) -> list[DICleanDataset]:
-        """Datasets with status candidate (not yet clean_ready)."""
-        return [d for d in self.datasets if d.status == "candidate"]
+        """Datasets with stage incubating (formerly candidate)."""
+        return [d for d in self.datasets if d.stage == "incubating"]
 
 
 def _parse_sample_run(raw: dict[str, Any] | None) -> RepoSignalSampleRun | None:
@@ -228,8 +227,7 @@ def parse_di_clean_catalog(raw: str) -> DICleanCatalog:
             DICleanDataset(
                 slug=item.get("slug", ""),
                 name=item.get("name", item.get("slug", "")),
-                status=item.get("status", ""),
-                visibility=item.get("visibility", ""),
+                stage=item.get("stage", "incubating"),
                 source=item.get("source", ""),
                 period=item.get("period", {}),
                 location=item.get("location", {}),

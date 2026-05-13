@@ -200,15 +200,13 @@ def _build_dataset_catalog_dict(
         "updated_at": catalog.updated_at,
         "summary": {
             "total": len(catalog.datasets),
-            "clean_ready": len(catalog.clean_ready),
-            "public": sum(1 for d in catalog.clean_ready if d.visibility == "public"),
+            "published": len(catalog.clean_ready),
         },
         "datasets": [
             {
                 "slug": d.slug,
                 "name": d.name,
-                "status": d.status,
-                "visibility": d.visibility,
+                "stage": d.stage,
                 "period": d.period,
                 "location": d.location,
                 "metric_columns": d.metric_columns,
@@ -217,7 +215,7 @@ def _build_dataset_catalog_dict(
                 "columns": [
                     {"name": c.name, "role": c.role}
                     for c in d.columns
-                ] if d.status == "clean_ready" else [],
+                ] if d.stage == "published" else [],
             }
             for d in catalog.datasets
         ],

@@ -131,9 +131,9 @@ class Renderer:
 
         if catalog is not None:
             clean_ready = catalog.clean_ready
-            public_count = sum(1 for d in clean_ready if d.visibility == "public")
+            public_count = len(clean_ready)  # tutti pubblici (visibility rimosso)
             lines.append(
-                f"**Dataset Catalog**: {len(clean_ready)} clean_ready · "
+                f"**Dataset Catalog**: {len(clean_ready)} published · "
                 f"{public_count} public · updated {catalog.updated_at}"
             )
         else:
@@ -158,15 +158,8 @@ class Renderer:
                 for ds in catalog.clean_ready:
                     clean_ready_slugs.add(ds.slug)
             gap = sorted(clean_ready_slugs - themed_slugs)
-
-            lines.append(
-                f"**Pubblicati**: {len(themed_slugs)} dataset · "
-                f"{len(explorer_themes)} temi"
-            )
-            for t in explorer_themes:
-                lines.append(f"  · **{t.name}**: {len(t.datasets)} dataset")
             if gap:
-                lines.append(f"  ⚠ {len(gap)} dataset clean_ready non ancora su explorer:")
+                lines.append(f"  ⚠ {len(gap)} dataset published non ancora su explorer:")
                 for slug in gap[:5]:
                     lines.append(f"    · {slug}")
                 if len(gap) > 5:
@@ -359,7 +352,6 @@ class Renderer:
                     "slug": ds.slug,
                     "name": ds.name,
                     "period": ds.period,
-                    "visibility": ds.visibility,
                 })
             for ds in catalog.candidates:
                 source = ds.source or "unknown"
@@ -367,7 +359,6 @@ class Renderer:
                     "slug": ds.slug,
                     "name": ds.name,
                     "period": ds.period,
-                    "visibility": ds.visibility,
                 })
 
         # YAML-defined operational topics (agent navigation hints)

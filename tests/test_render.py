@@ -346,8 +346,7 @@ def _sample_di_clean_catalog_json() -> str:
             {
                 "slug": "irpef_comunale",
                 "name": "IRPEF Comunale",
-                "status": "clean_ready",
-                "visibility": "public",
+                "stage": "published",
                 "period": {"start": 2022, "end": 2023},
                 "location": {
                     "type": "gcs",
@@ -362,8 +361,7 @@ def _sample_di_clean_catalog_json() -> str:
             {
                 "slug": "draft_dataset",
                 "name": "Draft Dataset",
-                "status": "draft",
-                "visibility": "private",
+                "stage": "incubating",
                 "columns": [],
             },
         ],
@@ -465,7 +463,7 @@ def test_render_bootstrap_dataset_catalog_section():
     bootstrap = renderer.render_session_bootstrap()
 
     assert "Dataset Catalog" in bootstrap
-    assert "**Dataset Catalog**: 1 clean_ready · 1 public · updated 2026-04-14" in bootstrap
+    assert "**Dataset Catalog**: 1 published · 1 public · updated" in bootstrap
     # Dataset names/periods are in workspace_triage.json, not bootstrap
     assert "irpef_comunale" not in bootstrap
 
@@ -487,7 +485,7 @@ def test_render_triage_dataset_catalog_available():
 
     assert catalog["available"] is True
     assert catalog["updated_at"] == "2026-04-14"
-    assert catalog["summary"] == {"total": 2, "clean_ready": 1, "public": 1}
+    assert catalog["summary"] == {"total": 2, "published": 1}
     assert catalog["datasets"][0]["slug"] == "irpef_comunale"
     assert catalog["datasets"][0]["metric_columns"] == 1
     assert catalog["datasets"][0]["dimension_columns"] == 2
