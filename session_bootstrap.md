@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-13T12:01:30.095406
+**Generated**: 2026-05-13T12:09:48.294055
 
 ## 🔍 SCOUTING
 
@@ -23,6 +23,12 @@
 
 ## 🗂 EXPLORER
 
+**Pubblicati**: 6 dataset · 5 temi · [data-explorer](https://dataciviclab.github.io/data-explorer/)
+  · **Territorio e ambiente**: ispra_ru_base, terna_capacita_rinnovabile
+  · **Finanza pubblica**: irpef_comunale
+  · **Sanità**: aifa_spesa_consumo
+  · **Welfare e lavoro**: dipendenti_pubblici
+  · **Giustizia**: civile_flussi
   **Deploy**: ✅ success (2026-05-13)
 
 ## 🔗 OPEN
