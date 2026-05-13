@@ -116,6 +116,7 @@ class DICleanDataset:
     slug: str
     name: str
     stage: str
+    source_id: str = ""
     source: str = ""
     period: dict[str, Any] = field(default_factory=dict)
     location: dict[str, Any] = field(default_factory=dict)
@@ -230,6 +231,7 @@ def parse_di_clean_catalog(raw: str) -> DICleanCatalog:
                 slug=item.get("slug", ""),
                 name=item.get("name", item.get("slug", "")),
                 stage=item.get("stage", "incubating"),
+                source_id=item.get("source_id", ""),
                 source=item.get("source", ""),
                 period=item.get("period", {}),
                 location=item.get("location", {}),
