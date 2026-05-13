@@ -68,6 +68,7 @@ class RepoSignal:
     """Single signal entry following the repo-signals standard v1."""
 
     id: str
+    source_id: str = ""
     status: str  # ok | warn | error
     label: str
     detail: str
@@ -178,6 +179,7 @@ def parse_repo_signals(raw: str) -> RepoSignals:
     signals = [
         RepoSignal(
             id=s.get("id", ""),
+            source_id=s.get("source_id", ""),
             status=s.get("status", "ok"),
             label=s.get("label", s.get("id", "")),
             detail=s.get("detail", ""),
