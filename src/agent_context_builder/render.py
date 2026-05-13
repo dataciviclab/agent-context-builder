@@ -151,15 +151,27 @@ class Renderer:
             for t in explorer_themes:
                 themed_slugs.update(t.datasets)
 
-            # Gap analysis
+            # Link all'explorer
+            lines.append(
+                f"**Pubblicati**: {len(themed_slugs)} dataset · "
+                f"{len(explorer_themes)} temi · "
+                f"[data-explorer](https://dataciviclab.github.io/data-explorer/)"
+            )
+            for t in explorer_themes:
+                datasets_str = ", ".join(t.datasets)
+                lines.append(f"  · **{t.name}**: {datasets_str}")
+
+            # Gap analysis: published datasets without a theme
             catalog = self._fetch_di_clean_catalog()
-            clean_ready_slugs: set[str] = set()
+            catalog_published_slugs: set[str] = set()
             if catalog is not None:
                 for ds in catalog.clean_ready:
-                    clean_ready_slugs.add(ds.slug)
-            gap = sorted(clean_ready_slugs - themed_slugs)
+                    catalog_published_slugs.add(ds.slug)
+            gap = sorted(catalog_published_slugs - themed_slugs)
             if gap:
-                lines.append(f"  ⚠ {len(gap)} dataset published non ancora su explorer:")
+                lines.append(
+                    f"  ⚠ {len(gap)} dataset published non ancora su explorer:"
+                )
                 for slug in gap[:5]:
                     lines.append(f"    · {slug}")
                 if len(gap) > 5:
