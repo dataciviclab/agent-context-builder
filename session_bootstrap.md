@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-13T08:46:00.940541
+**Generated**: 2026-05-13T10:03:28.265183
 
 ## 🔍 SCOUTING
 
@@ -27,7 +27,7 @@
 
 ## 🔗 OPEN
 
-- [dataset-incubator#284](https://github.com/dataciviclab/dataset-incubator/pull/284): feat: full run su tutti gli anni + GCS push + catalog update + dispatch DE
+**PRs**: none open
 **Discussions**: 20 open
   · [Analisi] AIFA Spesa Farmaceutica — il cardiovascolare traina il 63% della spesa, il divario Nord-Sud si allarga
   · [Domanda] Quanta parte delle entrate tributarie dipende da poche voci e quanto è diffuso?
