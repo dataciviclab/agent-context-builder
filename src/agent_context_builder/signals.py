@@ -72,6 +72,7 @@ class RepoSignal:
     label: str
     detail: str
     action: str
+    source_id: str = ""
     sample_run: RepoSignalSampleRun | None = None
 
 
@@ -178,6 +179,7 @@ def parse_repo_signals(raw: str) -> RepoSignals:
     signals = [
         RepoSignal(
             id=s.get("id", ""),
+            source_id=s.get("source_id", ""),
             status=s.get("status", "ok"),
             label=s.get("label", s.get("id", "")),
             detail=s.get("detail", ""),
