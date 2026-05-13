@@ -68,11 +68,11 @@ class RepoSignal:
     """Single signal entry following the repo-signals standard v1."""
 
     id: str
-    source_id: str = ""
     status: str  # ok | warn | error
     label: str
     detail: str
     action: str
+    source_id: str = ""
     sample_run: RepoSignalSampleRun | None = None
 
 
