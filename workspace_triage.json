@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-13T14:35:56.145742",
+  "generated_at": "2026-05-13T19:56:08.283099",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,9 +9,22 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 0,
-  "prs": [],
-  "open_issues": 32,
+  "open_prs": 2,
+  "prs": [
+    {
+      "number": 307,
+      "title": "fix(post-merge): full-run robustness + clean_catalog in registry PR",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/307"
+    },
+    {
+      "number": 80,
+      "title": "feat(bdap-entrate-stato): aggiungi dataset explorer e catalogo",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/80"
+    }
+  ],
+  "open_issues": 30,
   "issues": [
     {
       "number": 267,
@@ -128,28 +141,16 @@
       "url": "https://github.com/dataciviclab/toolkit/issues/183"
     },
     {
-      "number": 79,
-      "title": "follow-up: pagina e tema per irpef-comunale",
+      "number": 81,
+      "title": "follow-up: pagina e tema per bdap-entrate-stato",
       "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/issues/79"
+      "url": "https://github.com/dataciviclab/data-explorer/issues/81"
     },
     {
-      "number": 78,
-      "title": "follow-up: pagina e tema per irpef-comunale",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/issues/78"
-    },
-    {
-      "number": 77,
-      "title": "follow-up: pagina e tema per irpef-comunale",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/issues/77"
-    },
-    {
-      "number": 76,
-      "title": "follow-up: pagina e tema per inps-cig",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/issues/76"
+      "number": 229,
+      "title": "[Catalog] 2026-05-13 \u2014 1 recovery, +6 item",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/229"
     },
     {
       "number": 227,
@@ -454,10 +455,19 @@
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-05-11T20:35:03+00:00",
-    "sources_checked": 13,
+    "captured_at": "2026-05-13T19:16:07+00:00",
+    "sources_checked": 12,
     "regressions": [],
-    "alerts": []
+    "alerts": [
+      {
+        "source": "istat_sdmx",
+        "protocol": "sdmx",
+        "signal_type": "inventory change",
+        "result": "inventory change",
+        "detail": "4845 item (dataflow_count), delta +6 rispetto al run precedente (4839).",
+        "suggested_action": "verificare se variazione attesa; avviare catalog-inventory-scout se nuovi dataset"
+      }
+    ]
   },
   "pipeline_state": {
     "available": true,

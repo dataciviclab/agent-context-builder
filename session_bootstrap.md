@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-13T14:35:56.145742
+**Generated**: 2026-05-13T19:56:08.283099
 
 ## 🔍 SCOUTING
 
@@ -11,7 +11,7 @@
   · **lavoro_opendata** YELLOW [200] — CKAN API returned non-JSON content
   · **mur_ustat** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
   · **opencoesione** YELLOW [403]
-**Catalog Drift**: no drift signals (13 sources checked)
+  · **istat_sdmx** (sdmx): inventory change — azione: verificare se variazione attesa; avviare catalog-inventory-scout se nuovi dataset
 
 ## 📥 INTAKE
 
@@ -33,7 +33,8 @@
 
 ## 🔗 OPEN
 
-**PRs**: none open
+- [dataset-incubator#307](https://github.com/dataciviclab/dataset-incubator/pull/307): fix(post-merge): full-run robustness + clean_catalog in registry PR
+- [data-explorer#80](https://github.com/dataciviclab/data-explorer/pull/80): feat(bdap-entrate-stato): aggiungi dataset explorer e catalogo
 **Discussions**: 20 open
   · [Analisi] AIFA Spesa Farmaceutica — il cardiovascolare traina il 63% della spesa, il divario Nord-Sud si allarga
   · [Domanda] Quanta parte delle entrate tributarie dipende da poche voci e quanto è diffuso?
