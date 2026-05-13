@@ -352,7 +352,6 @@ class Renderer:
                     "slug": ds.slug,
                     "name": ds.name,
                     "period": ds.period,
-                    "visibility": ds.visibility,
                 })
             for ds in catalog.candidates:
                 source = ds.source or "unknown"
@@ -360,7 +359,6 @@ class Renderer:
                     "slug": ds.slug,
                     "name": ds.name,
                     "period": ds.period,
-                    "visibility": ds.visibility,
                 })
 
         # YAML-defined operational topics (agent navigation hints)
