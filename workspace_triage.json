@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-13T03:30:48.681298",
+  "generated_at": "2026-05-13T08:36:27.717643",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,13 +9,19 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 1,
+  "open_prs": 2,
   "prs": [
     {
       "number": 284,
       "title": "feat: full run su tutti gli anni + GCS push + catalog update + dispatch DE",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/284"
+    },
+    {
+      "number": 228,
+      "title": "feat: sync datasets_in_use da DI catalog nel radar daily",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/228"
     }
   ],
   "open_issues": 31,
@@ -404,7 +410,7 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-05-12",
+    "probe_date": "2026-05-13",
     "sources_total": 16,
     "green": 11,
     "yellow": 4,
@@ -477,18 +483,16 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-05-11",
+    "updated_at": "2026-05-12",
     "summary": {
       "total": 23,
-      "clean_ready": 11,
-      "public": 11
+      "published": 6
     },
     "datasets": [
       {
         "slug": "aifa_spesa_consumo",
         "name": "AIFA Spesa Farmaceutica Convenzionata",
-        "status": "candidate",
-        "visibility": "public",
+        "stage": "published",
         "period": {
           "start": 2018,
           "end": 2024
@@ -501,13 +505,81 @@
         "metric_columns": 4,
         "dimension_columns": 13,
         "column_count": 17,
-        "columns": []
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "mese",
+            "role": "dimension"
+          },
+          {
+            "name": "codreg",
+            "role": "dimension"
+          },
+          {
+            "name": "regione",
+            "role": "dimension"
+          },
+          {
+            "name": "classe",
+            "role": "dimension"
+          },
+          {
+            "name": "atc1",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_atc1",
+            "role": "dimension"
+          },
+          {
+            "name": "atc2",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_atc2",
+            "role": "dimension"
+          },
+          {
+            "name": "atc3",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_atc3",
+            "role": "dimension"
+          },
+          {
+            "name": "atc4",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_atc4",
+            "role": "dimension"
+          },
+          {
+            "name": "numero_confezioni_traccia",
+            "role": "metric"
+          },
+          {
+            "name": "spesa_flusso_tracciabilita",
+            "role": "metric"
+          },
+          {
+            "name": "numero_confezioni_convenzionata",
+            "role": "metric"
+          },
+          {
+            "name": "spesa_convenzionata",
+            "role": "metric"
+          }
+        ]
       },
       {
         "slug": "bdap_entrate_stato",
         "name": "BDAP Entrate Stato - Serie Storica",
-        "status": "clean_ready",
-        "visibility": "public",
+        "stage": "incubating",
         "period": {
           "start": 2008,
           "end": 2024
@@ -519,58 +591,12 @@
         "metric_columns": 2,
         "dimension_columns": 9,
         "column_count": 11,
-        "columns": [
-          {
-            "name": "esercizio_finanziario",
-            "role": "dimension"
-          },
-          {
-            "name": "codice_titolo",
-            "role": "dimension"
-          },
-          {
-            "name": "titolo",
-            "role": "dimension"
-          },
-          {
-            "name": "codice_natura",
-            "role": "dimension"
-          },
-          {
-            "name": "natura",
-            "role": "dimension"
-          },
-          {
-            "name": "codice_tipologia",
-            "role": "dimension"
-          },
-          {
-            "name": "tipologia",
-            "role": "dimension"
-          },
-          {
-            "name": "codice_provento",
-            "role": "dimension"
-          },
-          {
-            "name": "provento",
-            "role": "dimension"
-          },
-          {
-            "name": "previsioni_definitive_cp",
-            "role": "metric"
-          },
-          {
-            "name": "previsioni_definitive_cs",
-            "role": "metric"
-          }
-        ]
+        "columns": []
       },
       {
         "slug": "civile_flussi",
         "name": "Flussi Civile \u2014 Giustizia civile italiana",
-        "status": "candidate",
-        "visibility": "public",
+        "stage": "published",
         "period": {
           "start": 2014,
           "end": 2025
@@ -583,47 +609,13 @@
         "metric_columns": 3,
         "dimension_columns": 7,
         "column_count": 10,
-        "columns": []
-      },
-      {
-        "slug": "dipendenti_pubblici",
-        "name": "Dipendenti Pubblici - Occupazione e Turnover",
-        "status": "candidate",
-        "visibility": "public",
-        "period": {
-          "start": 2010,
-          "end": 2023
-        },
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/dipendenti_pubblici/*/dipendenti_pubblici_*_clean.parquet",
-          "multi_file": true
-        },
-        "metric_columns": 10,
-        "dimension_columns": 13,
-        "column_count": 23,
-        "columns": []
-      },
-      {
-        "slug": "giustizia_penale_indicatori",
-        "name": "Giustizia Penale \u2014 Clearance Rate e Disposition Time",
-        "status": "clean_ready",
-        "visibility": "public",
-        "period": {
-          "start": 2014,
-          "end": 2024
-        },
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/giustizia_penale_indicatori/2024/giustizia_penale_indicatori_2024_clean.parquet",
-          "multi_file": false
-        },
-        "metric_columns": 2,
-        "dimension_columns": 5,
-        "column_count": 7,
         "columns": [
           {
             "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "fonte",
             "role": "dimension"
           },
           {
@@ -639,24 +631,160 @@
             "role": "dimension"
           },
           {
-            "name": "sezione",
+            "name": "macromateria",
             "role": "dimension"
           },
           {
-            "name": "clearance_rate",
+            "name": "materia",
+            "role": "dimension"
+          },
+          {
+            "name": "sopravvenuti",
             "role": "metric"
           },
           {
-            "name": "disposition_time_gg",
+            "name": "definiti_totale",
+            "role": "metric"
+          },
+          {
+            "name": "pendenti_finali",
             "role": "metric"
           }
         ]
       },
       {
+        "slug": "dipendenti_pubblici",
+        "name": "Dipendenti Pubblici - Occupazione e Turnover",
+        "stage": "published",
+        "period": {
+          "start": 2010,
+          "end": 2023
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/dipendenti_pubblici/*/dipendenti_pubblici_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 10,
+        "dimension_columns": 13,
+        "column_count": 23,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_istituzione",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_istituzione",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_ente_bdap",
+            "role": "dimension"
+          },
+          {
+            "name": "ente",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_comparto",
+            "role": "dimension"
+          },
+          {
+            "name": "comparto",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_contratto",
+            "role": "dimension"
+          },
+          {
+            "name": "contratto_lavoro",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_macrocategoria",
+            "role": "dimension"
+          },
+          {
+            "name": "macrocategoria",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_categoria",
+            "role": "dimension"
+          },
+          {
+            "name": "categoria",
+            "role": "dimension"
+          },
+          {
+            "name": "donne_tempo_pieno",
+            "role": "metric"
+          },
+          {
+            "name": "uomini_tempo_pieno",
+            "role": "metric"
+          },
+          {
+            "name": "donne_part_time_inf_50",
+            "role": "metric"
+          },
+          {
+            "name": "uomini_part_time_inf_50",
+            "role": "metric"
+          },
+          {
+            "name": "donne_part_time_sup_50",
+            "role": "metric"
+          },
+          {
+            "name": "uomini_part_time_sup_50",
+            "role": "metric"
+          },
+          {
+            "name": "donne_assunte",
+            "role": "metric"
+          },
+          {
+            "name": "uomini_assunti",
+            "role": "metric"
+          },
+          {
+            "name": "donne_cessate",
+            "role": "metric"
+          },
+          {
+            "name": "uomini_cessati",
+            "role": "metric"
+          }
+        ]
+      },
+      {
+        "slug": "giustizia_penale_indicatori",
+        "name": "Giustizia Penale \u2014 Clearance Rate e Disposition Time",
+        "stage": "incubating",
+        "period": {
+          "start": 2014,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia_penale_indicatori/2024/giustizia_penale_indicatori_2024_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 2,
+        "dimension_columns": 5,
+        "column_count": 7,
+        "columns": []
+      },
+      {
         "slug": "inps_cig_serie_storiche_annuali",
         "name": "INPS Cassa Integrazione Guadagni \u2014 Serie storiche annuali",
-        "status": "clean_ready",
-        "visibility": "public",
+        "stage": "incubating",
         "period": {
           "start": 2005,
           "end": 2024
@@ -669,42 +797,12 @@
         "metric_columns": 3,
         "dimension_columns": 4,
         "column_count": 7,
-        "columns": [
-          {
-            "name": "anno",
-            "role": "dimension"
-          },
-          {
-            "name": "prestazione",
-            "role": "dimension"
-          },
-          {
-            "name": "settore",
-            "role": "dimension"
-          },
-          {
-            "name": "settore_specifiche",
-            "role": "dimension"
-          },
-          {
-            "name": "ore_operai",
-            "role": "metric"
-          },
-          {
-            "name": "ore_impiegati",
-            "role": "metric"
-          },
-          {
-            "name": "totale_ore",
-            "role": "metric"
-          }
-        ]
+        "columns": []
       },
       {
         "slug": "inps_pensioni_2017_2024",
         "name": "INPS Pensioni",
-        "status": "candidate",
-        "visibility": "public",
+        "stage": "incubating",
         "period": {
           "start": 2017,
           "end": 2024
@@ -722,8 +820,7 @@
       {
         "slug": "irpef_comunale",
         "name": "Irpef Comunale",
-        "status": "candidate",
-        "visibility": "public",
+        "stage": "published",
         "period": {
           "start": 2019,
           "end": 2023
@@ -736,13 +833,221 @@
         "metric_columns": 43,
         "dimension_columns": 9,
         "column_count": 52,
-        "columns": []
+        "columns": [
+          {
+            "name": "anno_di_imposta",
+            "role": "metric"
+          },
+          {
+            "name": "codice_catastale",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_istat_comune",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione_comune",
+            "role": "dimension"
+          },
+          {
+            "name": "sigla_provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "regione",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_istat_regione",
+            "role": "dimension"
+          },
+          {
+            "name": "numero_contribuenti",
+            "role": "dimension"
+          },
+          {
+            "name": "reddito_da_fabbricati_freq",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_da_fabbricati_eur",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_da_lavoro_dipendente_e_assimilati_freq",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_da_lavoro_dipendente_e_assimilati_eur",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_da_pensione_freq",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_da_pensione_eur",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_da_lavoro_autonomo_comprensivo_valori_nulli_freq",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_da_lavoro_autonomo_comprensivo_valori_nulli_eur",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_di_spettanza_imprenditore_contabilita_ordinaria_freq",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_di_spettanza_imprenditore_contabilita_ordinaria_eur",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_di_spettanza_imprenditore_contabilita_semplificata_freq",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_di_spettanza_imprenditore_contabilita_semplificata_eur",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_da_partecipazione_freq",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_da_partecipazione_eur",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_imponibile_freq",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_imponibile_eur",
+            "role": "metric"
+          },
+          {
+            "name": "imposta_netta_freq",
+            "role": "metric"
+          },
+          {
+            "name": "imposta_netta_eur",
+            "role": "metric"
+          },
+          {
+            "name": "trattamento_spettante_freq",
+            "role": "dimension"
+          },
+          {
+            "name": "trattamento_spettante_eur",
+            "role": "dimension"
+          },
+          {
+            "name": "reddito_imponibile_addizionale_freq",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_imponibile_addizionale_eur",
+            "role": "metric"
+          },
+          {
+            "name": "addizionale_regionale_dovuta_freq",
+            "role": "metric"
+          },
+          {
+            "name": "addizionale_regionale_dovuta_eur",
+            "role": "metric"
+          },
+          {
+            "name": "addizionale_comunale_dovuta_freq",
+            "role": "metric"
+          },
+          {
+            "name": "addizionale_comunale_dovuta_eur",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_complessivo_freq",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_complessivo_eur",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_complessivo_minore_o_uguale_a_zero_euro_freq",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_complessivo_minore_o_uguale_a_zero_euro_eur",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_complessivo_da_0_a_10000_euro_freq",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_complessivo_da_0_a_10000_euro_eur",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_complessivo_da_10000_a_15000_euro_freq",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_complessivo_da_10000_a_15000_euro_eur",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_complessivo_da_15000_a_26000_euro_freq",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_complessivo_da_15000_a_26000_euro_eur",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_complessivo_da_26000_a_55000_euro_freq",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_complessivo_da_26000_a_55000_euro_eur",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_complessivo_da_55000_a_75000_euro_freq",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_complessivo_da_55000_a_75000_euro_eur",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_complessivo_da_75000_a_120000_euro_freq",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_complessivo_da_75000_a_120000_euro_eur",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_complessivo_oltre_120000_euro_freq",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_complessivo_oltre_120000_euro_eur",
+            "role": "metric"
+          }
+        ]
       },
       {
         "slug": "ispra_consumo_suolo",
         "name": "ISPRA - Consumo di Suolo 2024",
-        "status": "candidate",
-        "visibility": "public",
+        "stage": "incubating",
         "period": {
           "start": 2024,
           "end": 2024
@@ -760,8 +1065,7 @@
       {
         "slug": "ispra_ru_base",
         "name": "ISPRA - Rifiuti Urbani (dati base)",
-        "status": "clean_ready",
-        "visibility": "public",
+        "stage": "published",
         "period": {
           "start": 2020,
           "end": 2024
@@ -816,8 +1120,7 @@
       {
         "slug": "ispra_ru_costi_kg",
         "name": "ISPRA - Costi gestione rifiuti (EUR/kg)",
-        "status": "clean_ready",
-        "visibility": "public",
+        "stage": "incubating",
         "period": {
           "start": 2020,
           "end": 2024
@@ -830,58 +1133,12 @@
         "metric_columns": 6,
         "dimension_columns": 5,
         "column_count": 11,
-        "columns": [
-          {
-            "name": "codice_comune_istat",
-            "role": "dimension"
-          },
-          {
-            "name": "comune_o_aggregazione",
-            "role": "dimension"
-          },
-          {
-            "name": "provincia",
-            "role": "dimension"
-          },
-          {
-            "name": "numero_comuni",
-            "role": "dimension"
-          },
-          {
-            "name": "popolazione",
-            "role": "dimension"
-          },
-          {
-            "name": "crt_cent_kg",
-            "role": "metric"
-          },
-          {
-            "name": "crd_cent_kg",
-            "role": "metric"
-          },
-          {
-            "name": "csl_cent_kg",
-            "role": "metric"
-          },
-          {
-            "name": "cc_cent_kg",
-            "role": "metric"
-          },
-          {
-            "name": "ck_cent_kg",
-            "role": "metric"
-          },
-          {
-            "name": "ctot_cent_kg",
-            "role": "metric"
-          }
-        ]
+        "columns": []
       },
       {
         "slug": "ispra_ru_costi_procapite",
         "name": "ISPRA - Costi gestione rifiuti (EUR/abitante)",
-        "status": "clean_ready",
-        "visibility": "public",
+        "stage": "incubating",
         "period": {
           "start": 2020,
           "end": 2024
@@ -894,70 +1151,12 @@
         "metric_columns": 9,
         "dimension_columns": 5,
         "column_count": 14,
-        "columns": [
-          {
-            "name": "codice_comune_istat",
-            "role": "dimension"
-          },
-          {
-            "name": "comune_o_aggregazione",
-            "role": "dimension"
-          },
-          {
-            "name": "provincia",
-            "role": "dimension"
-          },
-          {
-            "name": "numero_comuni",
-            "role": "dimension"
-          },
-          {
-            "name": "popolazione",
-            "role": "dimension"
-          },
-          {
-            "name": "crt_euro_ab",
-            "role": "metric"
-          },
-          {
-            "name": "cts_euro_ab",
-            "role": "metric"
-          },
-          {
-            "name": "crd_euro_ab",
-            "role": "metric"
-          },
-          {
-            "name": "ctr_euro_ab",
-            "role": "metric"
-          },
-          {
-            "name": "csl_euro_ab",
-            "role": "metric"
-          },
-          {
-            "name": "cc_euro_ab",
-            "role": "metric"
-          },
-          {
-            "name": "ck_euro_ab",
-            "role": "metric"
-          },
-          {
-            "name": "altri_costi_euro_ab",
-            "role": "metric"
-          },
-          {
-            "name": "ctot_euro_ab",
-            "role": "metric"
-          }
-        ]
+        "columns": []
       },
       {
         "slug": "istat_gini_regionale",
         "name": "ISTAT - Indice di Gini regionale",
-        "status": "candidate",
-        "visibility": "public",
+        "stage": "incubating",
         "period": {
           "start": 2003,
           "end": 2024
@@ -975,8 +1174,7 @@
       {
         "slug": "istat_housing_crowding",
         "name": "Istat Housing Crowding",
-        "status": "candidate",
-        "visibility": "public",
+        "stage": "incubating",
         "period": {
           "start": 2004,
           "end": 2025
@@ -994,8 +1192,7 @@
       {
         "slug": "mef_irpef_regionale",
         "name": "MEF - Irpef Regionale",
-        "status": "clean_ready",
-        "visibility": "public",
+        "stage": "incubating",
         "period": {
           "start": 2017,
           "end": 2025
@@ -1008,182 +1205,12 @@
         "metric_columns": 39,
         "dimension_columns": 3,
         "column_count": 42,
-        "columns": [
-          {
-            "name": "anno_di_imposta",
-            "role": "dimension"
-          },
-          {
-            "name": "classe_reddito",
-            "role": "dimension"
-          },
-          {
-            "name": "regione",
-            "role": "dimension"
-          },
-          {
-            "name": "numero_contribuenti",
-            "role": "metric"
-          },
-          {
-            "name": "reddito_dominicale_freq",
-            "role": "metric"
-          },
-          {
-            "name": "reddito_dominicale_eur",
-            "role": "metric"
-          },
-          {
-            "name": "reddito_agrario_freq",
-            "role": "metric"
-          },
-          {
-            "name": "reddito_agrario_eur",
-            "role": "metric"
-          },
-          {
-            "name": "reddito_allevamento_freq",
-            "role": "metric"
-          },
-          {
-            "name": "reddito_allevamento_eur",
-            "role": "metric"
-          },
-          {
-            "name": "reddito_fabbricati_freq",
-            "role": "metric"
-          },
-          {
-            "name": "reddito_fabbricati_eur",
-            "role": "metric"
-          },
-          {
-            "name": "reddito_lavoro_dipendente_freq",
-            "role": "metric"
-          },
-          {
-            "name": "reddito_lavoro_dipendente_eur",
-            "role": "metric"
-          },
-          {
-            "name": "reddito_pensione_freq",
-            "role": "metric"
-          },
-          {
-            "name": "reddito_pensione_eur",
-            "role": "metric"
-          },
-          {
-            "name": "altri_assimilati_ld_freq",
-            "role": "metric"
-          },
-          {
-            "name": "altri_assimilati_ld_eur",
-            "role": "metric"
-          },
-          {
-            "name": "reddito_lavoro_autonomo_freq",
-            "role": "metric"
-          },
-          {
-            "name": "reddito_lavoro_autonomo_eur",
-            "role": "metric"
-          },
-          {
-            "name": "perdita_lavoro_autonomo_freq",
-            "role": "metric"
-          },
-          {
-            "name": "perdita_lavoro_autonomo_eur",
-            "role": "metric"
-          },
-          {
-            "name": "provvigioni_770_freq",
-            "role": "metric"
-          },
-          {
-            "name": "provvigioni_770_eur",
-            "role": "metric"
-          },
-          {
-            "name": "reddito_cont_ordinaria_freq",
-            "role": "metric"
-          },
-          {
-            "name": "reddito_cont_ordinaria_eur",
-            "role": "metric"
-          },
-          {
-            "name": "reddito_cont_semplificata_freq",
-            "role": "metric"
-          },
-          {
-            "name": "reddito_cont_semplificata_eur",
-            "role": "metric"
-          },
-          {
-            "name": "reddito_partecipazione_freq",
-            "role": "metric"
-          },
-          {
-            "name": "reddito_partecipazione_eur",
-            "role": "metric"
-          },
-          {
-            "name": "perdita_partecipazione_freq",
-            "role": "metric"
-          },
-          {
-            "name": "perdita_partecipazione_eur",
-            "role": "metric"
-          },
-          {
-            "name": "plusvalenze_freq",
-            "role": "metric"
-          },
-          {
-            "name": "plusvalenze_eur",
-            "role": "metric"
-          },
-          {
-            "name": "reddito_capitale_freq",
-            "role": "metric"
-          },
-          {
-            "name": "reddito_capitale_eur",
-            "role": "metric"
-          },
-          {
-            "name": "redditi_diversi_freq",
-            "role": "metric"
-          },
-          {
-            "name": "redditi_diversi_eur",
-            "role": "metric"
-          },
-          {
-            "name": "altri_la_startup_freq",
-            "role": "metric"
-          },
-          {
-            "name": "altri_la_startup_eur",
-            "role": "metric"
-          },
-          {
-            "name": "tassazione_separata_freq",
-            "role": "metric"
-          },
-          {
-            "name": "tassazione_separata_eur",
-            "role": "metric"
-          }
-        ]
+        "columns": []
       },
       {
         "slug": "mef_partecipazioni",
         "name": "MEF Partecipazioni Pubbliche",
-        "status": "candidate",
-        "visibility": "public",
+        "stage": "incubating",
         "period": {
           "start": 2020,
           "end": 2023
@@ -1201,8 +1228,7 @@
       {
         "slug": "mim_alunni_corso_eta",
         "name": "Alunni per corso ed et\u00e0 \u2014 MIM",
-        "status": "candidate",
-        "visibility": "public",
+        "stage": "incubating",
         "period": {
           "start": 2024,
           "end": 2024
@@ -1220,8 +1246,7 @@
       {
         "slug": "mit_incidentalita_mensile",
         "name": "MIT Incidentalit\u00e0 Stradale Mensile",
-        "status": "clean_ready",
-        "visibility": "public",
+        "stage": "incubating",
         "period": {
           "start": 2001,
           "end": 2018
@@ -1234,74 +1259,12 @@
         "metric_columns": 13,
         "dimension_columns": 2,
         "column_count": 15,
-        "columns": [
-          {
-            "name": "anno",
-            "role": "dimension"
-          },
-          {
-            "name": "mese",
-            "role": "dimension"
-          },
-          {
-            "name": "incidenti",
-            "role": "metric"
-          },
-          {
-            "name": "morti",
-            "role": "metric"
-          },
-          {
-            "name": "feriti",
-            "role": "metric"
-          },
-          {
-            "name": "incidenti_mortali",
-            "role": "metric"
-          },
-          {
-            "name": "perc_incidenti",
-            "role": "metric"
-          },
-          {
-            "name": "perc_incidenti_mortali",
-            "role": "metric"
-          },
-          {
-            "name": "perc_morti",
-            "role": "metric"
-          },
-          {
-            "name": "perc_feriti",
-            "role": "metric"
-          },
-          {
-            "name": "indice_mortalita",
-            "role": "metric"
-          },
-          {
-            "name": "indice_gravita",
-            "role": "metric"
-          },
-          {
-            "name": "indice_lesivita",
-            "role": "metric"
-          },
-          {
-            "name": "indice_mortalita_spec",
-            "role": "metric"
-          },
-          {
-            "name": "indice_incidentalita_spec",
-            "role": "metric"
-          }
-        ]
+        "columns": []
       },
       {
         "slug": "mit_opere_incompiute_2020",
         "name": "MIT Opere Pubbliche Incompiute",
-        "status": "clean_ready",
-        "visibility": "public",
+        "stage": "incubating",
         "period": {
           "start": 2020,
           "end": 2020
@@ -1314,106 +1277,12 @@
         "metric_columns": 5,
         "dimension_columns": 18,
         "column_count": 23,
-        "columns": [
-          {
-            "name": "codice_cup",
-            "role": "dimension"
-          },
-          {
-            "name": "anno_di_riferimento",
-            "role": "dimension"
-          },
-          {
-            "name": "stato_opera",
-            "role": "dimension"
-          },
-          {
-            "name": "ambito_soggettivo",
-            "role": "dimension"
-          },
-          {
-            "name": "ambito_oggettivo",
-            "role": "dimension"
-          },
-          {
-            "name": "stazione_appaltante",
-            "role": "dimension"
-          },
-          {
-            "name": "localizzazione_codice_istat",
-            "role": "dimension"
-          },
-          {
-            "name": "titolo_opera_incompiuta",
-            "role": "dimension"
-          },
-          {
-            "name": "livello_sviluppo",
-            "role": "dimension"
-          },
-          {
-            "name": "importo_complessivo_qe",
-            "role": "metric"
-          },
-          {
-            "name": "importo_lavori_qe",
-            "role": "metric"
-          },
-          {
-            "name": "importo_lavori_sal",
-            "role": "metric"
-          },
-          {
-            "name": "importo_oneri_ultimazione",
-            "role": "metric"
-          },
-          {
-            "name": "perc_avanzamento_lavori",
-            "role": "metric"
-          },
-          {
-            "name": "flag_mancanza_fondi",
-            "role": "dimension"
-          },
-          {
-            "name": "flag_cause_tecniche",
-            "role": "dimension"
-          },
-          {
-            "name": "flag_sopravvenienza_norme",
-            "role": "dimension"
-          },
-          {
-            "name": "flag_fallimento_liquidazione",
-            "role": "dimension"
-          },
-          {
-            "name": "flag_mancato_interesse",
-            "role": "dimension"
-          },
-          {
-            "name": "flag_opera_fruibile",
-            "role": "dimension"
-          },
-          {
-            "name": "flag_uso_ridimensionato",
-            "role": "dimension"
-          },
-          {
-            "name": "flag_infrastruttura_rete",
-            "role": "dimension"
-          },
-          {
-            "name": "flag_discontinuita_rete",
-            "role": "dimension"
-          }
-        ]
+        "columns": []
       },
       {
         "slug": "mur_contribuzione_universitaria",
         "name": "MUR - Gettito della contribuzione universitaria",
-        "status": "clean_ready",
-        "visibility": "public",
+        "stage": "incubating",
         "period": {
           "start": 2017,
           "end": 2024
@@ -1426,38 +1295,12 @@
         "metric_columns": 1,
         "dimension_columns": 5,
         "column_count": 6,
-        "columns": [
-          {
-            "name": "anno",
-            "role": "dimension"
-          },
-          {
-            "name": "cod_ateneo",
-            "role": "dimension"
-          },
-          {
-            "name": "nome_ateneo",
-            "role": "dimension"
-          },
-          {
-            "name": "codice_gettito",
-            "role": "dimension"
-          },
-          {
-            "name": "descrizione_gettito",
-            "role": "dimension"
-          },
-          {
-            "name": "euro_contributo",
-            "role": "metric"
-          }
-        ]
+        "columns": []
       },
       {
         "slug": "pensioni_pa_dag",
         "name": "Pensioni Pa Dag",
-        "status": "candidate",
-        "visibility": "public",
+        "stage": "incubating",
         "period": {
           "start": 2024,
           "end": 2024
@@ -1475,8 +1318,7 @@
       {
         "slug": "popolazione_istat_comunale_2019_2025",
         "name": "Popolazione ISTAT Comunale",
-        "status": "candidate",
-        "visibility": "public",
+        "stage": "incubating",
         "period": {
           "start": 2019,
           "end": 2025
@@ -1494,8 +1336,7 @@
       {
         "slug": "terna_capacita_rinnovabile",
         "name": "Terna Capacita Rinnovabile",
-        "status": "clean_ready",
-        "visibility": "public",
+        "stage": "published",
         "period": {
           "start": 2023,
           "end": 2024
@@ -1567,17 +1408,7 @@
       }
     ],
     "published_count": 6,
-    "clean_ready_not_published": [
-      "bdap_entrate_stato",
-      "giustizia_penale_indicatori",
-      "inps_cig_serie_storiche_annuali",
-      "ispra_ru_costi_kg",
-      "ispra_ru_costi_procapite",
-      "mef_irpef_regionale",
-      "mit_incidentalita_mensile",
-      "mit_opere_incompiute_2020",
-      "mur_contribuzione_universitaria"
-    ],
+    "clean_ready_not_published": [],
     "last_deploy": {
       "run_id": 25766485781,
       "name": "Deploy to GitHub Pages",

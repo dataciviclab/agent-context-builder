@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-05-13T03:30:48.681298",
+  "generated_at": "2026-05-13T08:36:27.717643",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -28,123 +28,6 @@
     }
   },
   "datasets_by_source": {
-    "MEF-BDAP": [
-      {
-        "slug": "bdap_entrate_stato",
-        "name": "BDAP Entrate Stato - Serie Storica",
-        "period": {
-          "start": 2008,
-          "end": 2024
-        },
-        "visibility": "public"
-      }
-    ],
-    "Ministero della Giustizia \u2014 Direzione Generale di Statistica e Analisi Organizzativa": [
-      {
-        "slug": "giustizia_penale_indicatori",
-        "name": "Giustizia Penale \u2014 Clearance Rate e Disposition Time",
-        "period": {
-          "start": 2014,
-          "end": 2024
-        },
-        "visibility": "public"
-      }
-    ],
-    "INPS Open Data, CC BY 4.0, dati.gov.it (bef11a2c-300b-4578-8143-c1ce08f46fff)": [
-      {
-        "slug": "inps_cig_serie_storiche_annuali",
-        "name": "INPS Cassa Integrazione Guadagni \u2014 Serie storiche annuali",
-        "period": {
-          "start": 2005,
-          "end": 2024
-        },
-        "visibility": "public"
-      }
-    ],
-    "ISPRA": [
-      {
-        "slug": "ispra_ru_base",
-        "name": "ISPRA - Rifiuti Urbani (dati base)",
-        "period": {
-          "start": 2020,
-          "end": 2024
-        },
-        "visibility": "public"
-      },
-      {
-        "slug": "ispra_ru_costi_kg",
-        "name": "ISPRA - Costi gestione rifiuti (EUR/kg)",
-        "period": {
-          "start": 2020,
-          "end": 2024
-        },
-        "visibility": "public"
-      },
-      {
-        "slug": "ispra_ru_costi_procapite",
-        "name": "ISPRA - Costi gestione rifiuti (EUR/abitante)",
-        "period": {
-          "start": 2020,
-          "end": 2024
-        },
-        "visibility": "public"
-      }
-    ],
-    "https://www.mef.gov.it/": [
-      {
-        "slug": "mef_irpef_regionale",
-        "name": "MEF - Irpef Regionale",
-        "period": {
-          "start": 2017,
-          "end": 2025
-        },
-        "visibility": "public"
-      }
-    ],
-    "MIT \u2014 Ministero delle Infrastrutture e dei Trasporti, portale open data": [
-      {
-        "slug": "mit_incidentalita_mensile",
-        "name": "MIT Incidentalit\u00e0 Stradale Mensile",
-        "period": {
-          "start": 2001,
-          "end": 2018
-        },
-        "visibility": "public"
-      },
-      {
-        "slug": "mit_opere_incompiute_2020",
-        "name": "MIT Opere Pubbliche Incompiute",
-        "period": {
-          "start": 2020,
-          "end": 2020
-        },
-        "visibility": "public"
-      }
-    ],
-    "MUR / USTAT CKAN": [
-      {
-        "slug": "mur_contribuzione_universitaria",
-        "name": "MUR - Gettito della contribuzione universitaria",
-        "period": {
-          "start": 2017,
-          "end": 2024
-        },
-        "visibility": "public"
-      }
-    ],
-    "Terna S.p.A. \u2014 dati pubblicati su terna.com": [
-      {
-        "slug": "terna_capacita_rinnovabile",
-        "name": "Terna Capacita Rinnovabile",
-        "period": {
-          "start": 2023,
-          "end": 2024
-        },
-        "visibility": "public"
-      }
-    ]
-  },
-  "candidates_by_source": {
     "AIFA \u2014 Open Data Spesa e Consumo Farmaceutico": [
       {
         "slug": "aifa_spesa_consumo",
@@ -152,8 +35,7 @@
         "period": {
           "start": 2018,
           "end": 2024
-        },
-        "visibility": "public"
+        }
       }
     ],
     "https://datiestatistiche.giustizia.it/ (Ministero della Giustizia \u2014 Direzione Generale di Statistica)": [
@@ -163,8 +45,7 @@
         "period": {
           "start": 2014,
           "end": 2025
-        },
-        "visibility": "public"
+        }
       }
     ],
     "MEF-BDAP": [
@@ -174,19 +55,7 @@
         "period": {
           "start": 2010,
           "end": 2023
-        },
-        "visibility": "public"
-      }
-    ],
-    "https://www.inps.it/gestione-previdenziale": [
-      {
-        "slug": "inps_pensioni_2017_2024",
-        "name": "INPS Pensioni",
-        "period": {
-          "start": 2017,
-          "end": 2024
-        },
-        "visibility": "public"
+        }
       }
     ],
     "Ministero dell'Economia e delle Finanze - OpenData": [
@@ -196,8 +65,69 @@
         "period": {
           "start": 2019,
           "end": 2023
-        },
-        "visibility": "public"
+        }
+      }
+    ],
+    "ISPRA": [
+      {
+        "slug": "ispra_ru_base",
+        "name": "ISPRA - Rifiuti Urbani (dati base)",
+        "period": {
+          "start": 2020,
+          "end": 2024
+        }
+      }
+    ],
+    "Terna S.p.A. \u2014 dati pubblicati su terna.com": [
+      {
+        "slug": "terna_capacita_rinnovabile",
+        "name": "Terna Capacita Rinnovabile",
+        "period": {
+          "start": 2023,
+          "end": 2024
+        }
+      }
+    ]
+  },
+  "candidates_by_source": {
+    "MEF-BDAP": [
+      {
+        "slug": "bdap_entrate_stato",
+        "name": "BDAP Entrate Stato - Serie Storica",
+        "period": {
+          "start": 2008,
+          "end": 2024
+        }
+      }
+    ],
+    "Ministero della Giustizia \u2014 Direzione Generale di Statistica e Analisi Organizzativa": [
+      {
+        "slug": "giustizia_penale_indicatori",
+        "name": "Giustizia Penale \u2014 Clearance Rate e Disposition Time",
+        "period": {
+          "start": 2014,
+          "end": 2024
+        }
+      }
+    ],
+    "INPS Open Data, CC BY 4.0, dati.gov.it (bef11a2c-300b-4578-8143-c1ce08f46fff)": [
+      {
+        "slug": "inps_cig_serie_storiche_annuali",
+        "name": "INPS Cassa Integrazione Guadagni \u2014 Serie storiche annuali",
+        "period": {
+          "start": 2005,
+          "end": 2024
+        }
+      }
+    ],
+    "https://www.inps.it/gestione-previdenziale": [
+      {
+        "slug": "inps_pensioni_2017_2024",
+        "name": "INPS Pensioni",
+        "period": {
+          "start": 2017,
+          "end": 2024
+        }
       }
     ],
     "ISPRA": [
@@ -207,8 +137,23 @@
         "period": {
           "start": 2024,
           "end": 2024
-        },
-        "visibility": "public"
+        }
+      },
+      {
+        "slug": "ispra_ru_costi_kg",
+        "name": "ISPRA - Costi gestione rifiuti (EUR/kg)",
+        "period": {
+          "start": 2020,
+          "end": 2024
+        }
+      },
+      {
+        "slug": "ispra_ru_costi_procapite",
+        "name": "ISPRA - Costi gestione rifiuti (EUR/abitante)",
+        "period": {
+          "start": 2020,
+          "end": 2024
+        }
       }
     ],
     "ISTAT \u2014 Dataflow 32_221 (Omogeneita del reddito regionale), SDMX-CSV": [
@@ -218,8 +163,7 @@
         "period": {
           "start": 2003,
           "end": 2024
-        },
-        "visibility": "public"
+        }
       }
     ],
     "ISTAT \u2014 Dataflow 33_179 (Housing conditions), SDMX-CSV": [
@@ -229,8 +173,17 @@
         "period": {
           "start": 2004,
           "end": 2025
-        },
-        "visibility": "public"
+        }
+      }
+    ],
+    "https://www.mef.gov.it/": [
+      {
+        "slug": "mef_irpef_regionale",
+        "name": "MEF - Irpef Regionale",
+        "period": {
+          "start": 2017,
+          "end": 2025
+        }
       }
     ],
     "MEF \u2014 Dipartimento dell'Economia, Open Data Partecipazioni Pubbliche": [
@@ -240,8 +193,7 @@
         "period": {
           "start": 2020,
           "end": 2023
-        },
-        "visibility": "public"
+        }
       }
     ],
     "https://dati.istruzione.it/opendata/ \u2014 Ministero dell'Istruzione e del Merito (MIM)": [
@@ -251,8 +203,35 @@
         "period": {
           "start": 2024,
           "end": 2024
-        },
-        "visibility": "public"
+        }
+      }
+    ],
+    "MIT \u2014 Ministero delle Infrastrutture e dei Trasporti, portale open data": [
+      {
+        "slug": "mit_incidentalita_mensile",
+        "name": "MIT Incidentalit\u00e0 Stradale Mensile",
+        "period": {
+          "start": 2001,
+          "end": 2018
+        }
+      },
+      {
+        "slug": "mit_opere_incompiute_2020",
+        "name": "MIT Opere Pubbliche Incompiute",
+        "period": {
+          "start": 2020,
+          "end": 2020
+        }
+      }
+    ],
+    "MUR / USTAT CKAN": [
+      {
+        "slug": "mur_contribuzione_universitaria",
+        "name": "MUR - Gettito della contribuzione universitaria",
+        "period": {
+          "start": 2017,
+          "end": 2024
+        }
       }
     ],
     "INPS - OpenData": [
@@ -262,8 +241,7 @@
         "period": {
           "start": 2024,
           "end": 2024
-        },
-        "visibility": "public"
+        }
       }
     ],
     "ISTAT - demo.posas (Popolazione residente per sesso, et\u00e0 e comune)": [
@@ -273,8 +251,7 @@
         "period": {
           "start": 2019,
           "end": 2025
-        },
-        "visibility": "public"
+        }
       }
     ]
   },
