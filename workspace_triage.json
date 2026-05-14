@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-14T08:38:56.466904",
+  "generated_at": "2026-05-14T14:13:48.154761",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -12,20 +12,26 @@
   "open_prs": 2,
   "prs": [
     {
-      "number": 307,
-      "title": "fix(post-merge): full-run robustness + clean_catalog in registry PR",
+      "number": 314,
+      "title": "fix(detect): usa dataset.name come push_slug per allineare GCS push",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/307"
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/314"
     },
     {
-      "number": 80,
-      "title": "feat(bdap-entrate-stato): aggiungi dataset explorer e catalogo",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/80"
+      "number": 230,
+      "title": "source-check: circuit breaker host-level e inferenza preview via HEAD",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/230"
     }
   ],
-  "open_issues": 30,
+  "open_issues": 31,
   "issues": [
+    {
+      "number": 308,
+      "title": "clean: mef_partecipazioni \u2014 manca colonna anno nei parquet multi-anno",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/308"
+    },
     {
       "number": 267,
       "title": "intake: Consip consumi in convenzione: geografia della spesa delle PA",
@@ -141,10 +147,10 @@
       "url": "https://github.com/dataciviclab/toolkit/issues/183"
     },
     {
-      "number": 81,
-      "title": "follow-up: pagina e tema per bdap-entrate-stato",
+      "number": 82,
+      "title": "follow-up: pagina e tema per inps-pensioni",
       "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/issues/81"
+      "url": "https://github.com/dataciviclab/data-explorer/issues/82"
     },
     {
       "number": 229,
@@ -210,11 +216,39 @@
   "open_discussions": 20,
   "discussions": [
     {
-      "number": 242,
-      "title": "AIFA Spesa Farmaceutica \u2014 il cardiovascolare traina il 63% della spesa, il divario Nord-Sud si allarga",
+      "number": 165,
+      "title": "[Dataset] Partecipazioni pubbliche dichiarate \u2013 MEF 2023",
       "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/242",
-      "category": "Analisi"
+      "url": "https://github.com/orgs/dataciviclab/discussions/165",
+      "category": "Datasets"
+    },
+    {
+      "number": 211,
+      "title": "MUR contribuzione universitaria: tasse, esoneri e diritto allo studio per ateneo (2009-2024)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/211",
+      "category": "Datasets"
+    },
+    {
+      "number": 201,
+      "title": "INPS Cassa Integrazione Guadagni (CIG): ore autorizzate per provincia e settore (2010-2024)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/201",
+      "category": "Datasets"
+    },
+    {
+      "number": 151,
+      "title": "Indice di Gini regionale ISTAT - disuguaglianze di reddito, serie storica",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/151",
+      "category": "Datasets"
+    },
+    {
+      "number": 240,
+      "title": "Dove si accumulano pi\u00f9 cause pendenti in rapporto alla popolazione?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/240",
+      "category": "Domanda"
     },
     {
       "number": 239,
@@ -224,11 +258,18 @@
       "category": "Domanda"
     },
     {
-      "number": 240,
-      "title": "Dove si accumulano pi\u00f9 cause pendenti in rapporto alla popolazione?",
+      "number": 218,
+      "title": "[Analisi] Entrate dello Stato 2008-2024: nelle crisi cresce il peso dei prestiti?",
       "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/240",
-      "category": "Domanda"
+      "url": "https://github.com/orgs/dataciviclab/discussions/218",
+      "category": "Analisi"
+    },
+    {
+      "number": 242,
+      "title": "AIFA Spesa Farmaceutica \u2014 il cardiovascolare traina il 63% della spesa, il divario Nord-Sud si allarga",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/242",
+      "category": "Analisi"
     },
     {
       "number": 238,
@@ -294,20 +335,6 @@
       "category": "Datasets"
     },
     {
-      "number": 211,
-      "title": "MUR contribuzione universitaria: tasse, esoneri e diritto allo studio per ateneo (2009-2024)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/211",
-      "category": "Datasets"
-    },
-    {
-      "number": 218,
-      "title": "[Analisi] Entrate dello Stato 2008-2024: nelle crisi cresce il peso dei prestiti?",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/218",
-      "category": "Analisi"
-    },
-    {
       "number": 224,
       "title": "Come funziona il flusso tra repo Lab \u2014 e cosa manca?",
       "repo": "dataciviclab",
@@ -326,27 +353,6 @@
       "title": "ISTAT Terzo Settore: istituzioni non-profit per comune (2011, 2015, 2017, 2020)",
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/182",
-      "category": "Datasets"
-    },
-    {
-      "number": 165,
-      "title": "[Dataset] Partecipazioni pubbliche dichiarate \u2013 MEF 2023",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/165",
-      "category": "Datasets"
-    },
-    {
-      "number": 149,
-      "title": "ISTAT Ciclo dell'acqua - prelievo vs distribuzione, perdite idriche per distretto",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/149",
-      "category": "Datasets"
-    },
-    {
-      "number": 217,
-      "title": "RdC INPS - Nuclei con disabili: distribuzione provinciale dei beneficiari (2019-2020)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/217",
       "category": "Datasets"
     }
   ],
@@ -479,11 +485,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-05-13",
+    "generated_at": "2026-05-14",
     "summary": {
-      "total": 31,
+      "total": 30,
       "by_status": {
-        "ok": 31,
+        "ok": 30,
         "warn": 0,
         "error": 0
       }
@@ -494,9 +500,9 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-05-12",
+    "updated_at": "2026-05-14",
     "summary": {
-      "total": 23,
+      "total": 22,
       "published": 6
     },
     "datasets": [
@@ -505,7 +511,7 @@
         "name": "AIFA Spesa Farmaceutica Convenzionata",
         "stage": "published",
         "period": {
-          "start": 2018,
+          "start": 2020,
           "end": 2024
         },
         "location": {
@@ -793,34 +799,16 @@
         "columns": []
       },
       {
-        "slug": "inps_cig_serie_storiche_annuali",
-        "name": "INPS Cassa Integrazione Guadagni \u2014 Serie storiche annuali",
+        "slug": "inps_pensioni_trimestrale",
+        "name": "INPS Pensioni \u2014 trimestrale",
         "stage": "incubating",
         "period": {
-          "start": 2005,
+          "start": 2020,
           "end": 2024
         },
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/inps_cig_serie_storiche_annuali/2024/inps_cig_serie_storiche_annuali_2024_clean.parquet",
-          "multi_file": false
-        },
-        "metric_columns": 3,
-        "dimension_columns": 4,
-        "column_count": 7,
-        "columns": []
-      },
-      {
-        "slug": "inps_pensioni_2017_2024",
-        "name": "INPS Pensioni",
-        "stage": "incubating",
-        "period": {
-          "start": 2017,
-          "end": 2024
-        },
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/inps_pensioni_2017_2024/2024/inps_pensioni_2017_2024_2024_clean.parquet",
+          "path": "gs://dataciviclab-clean/inps_pensioni_trimestrale/2024/inps_pensioni_trimestrale_2024_clean.parquet",
           "multi_file": false
         },
         "metric_columns": 1,
@@ -1400,7 +1388,7 @@
       {
         "slug": "finanza-pubblica",
         "name": "Finanza pubblica",
-        "dataset_count": 1
+        "dataset_count": 2
       },
       {
         "slug": "sanita",
@@ -1418,15 +1406,15 @@
         "dataset_count": 1
       }
     ],
-    "published_count": 6,
+    "published_count": 7,
     "clean_ready_not_published": [],
     "last_deploy": {
-      "run_id": 25792908187,
+      "run_id": 25858407272,
       "name": "Deploy to GitHub Pages",
       "status": "completed",
       "conclusion": "success",
-      "completed_at": "2026-05-13T10:20:39Z",
-      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/25792908187"
+      "completed_at": "2026-05-14T11:53:25Z",
+      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/25858407272"
     }
   }
 }

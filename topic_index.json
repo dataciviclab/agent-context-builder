@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-05-14T08:38:56.466904",
+  "generated_at": "2026-05-14T14:13:48.154761",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -33,7 +33,7 @@
         "slug": "aifa_spesa_consumo",
         "name": "AIFA Spesa Farmaceutica Convenzionata",
         "period": {
-          "start": 2018,
+          "start": 2020,
           "end": 2024
         }
       }
@@ -110,22 +110,12 @@
         }
       }
     ],
-    "INPS Open Data, CC BY 4.0, dati.gov.it (bef11a2c-300b-4578-8143-c1ce08f46fff)": [
-      {
-        "slug": "inps_cig_serie_storiche_annuali",
-        "name": "INPS Cassa Integrazione Guadagni \u2014 Serie storiche annuali",
-        "period": {
-          "start": 2005,
-          "end": 2024
-        }
-      }
-    ],
     "https://www.inps.it/gestione-previdenziale": [
       {
-        "slug": "inps_pensioni_2017_2024",
-        "name": "INPS Pensioni",
+        "slug": "inps_pensioni_trimestrale",
+        "name": "INPS Pensioni \u2014 trimestrale",
         "period": {
-          "start": 2017,
+          "start": 2020,
           "end": 2024
         }
       }
@@ -297,7 +287,8 @@
       "slug": "finanza-pubblica",
       "name": "Finanza pubblica",
       "datasets": [
-        "irpef_comunale"
+        "irpef_comunale",
+        "bdap_entrate_stato"
       ]
     },
     {

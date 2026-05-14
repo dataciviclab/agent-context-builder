@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-14T08:38:56.466904
+**Generated**: 2026-05-14T14:13:48.154761
 
 ## 🔍 SCOUTING
 
@@ -16,30 +16,30 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 31 candidates — 31 ok
+**Pipeline**: 30 candidates — 30 ok
   ⚠️ **camera-deputati-legislature** — run fallito [2024](https://github.com/dataciviclab/dataset-incubator/actions/runs/25509412527)
   ⚠️ **mur-contribuzione-universitaria** — run fallito [2024](https://github.com/dataciviclab/dataset-incubator/actions/runs/25509412527)
   ⚠️ **pensioni-pa-dag** — run fallito [2024](https://github.com/dataciviclab/dataset-incubator/actions/runs/25509412527)
-**Dataset Catalog**: 6 published · 6 public · updated 2026-05-12
+**Dataset Catalog**: 6 published · 6 public · updated 2026-05-14
 
 ## 🗂 EXPLORER
 
-**Pubblicati**: 6 dataset · 5 temi · [data-explorer](https://dataciviclab.github.io/data-explorer/)
+**Pubblicati**: 7 dataset · 5 temi · [data-explorer](https://dataciviclab.github.io/data-explorer/)
   · **Territorio e ambiente**: ispra_ru_base, terna_capacita_rinnovabile
-  · **Finanza pubblica**: irpef_comunale
+  · **Finanza pubblica**: irpef_comunale, bdap_entrate_stato
   · **Sanità**: aifa_spesa_consumo
   · **Welfare e lavoro**: dipendenti_pubblici
   · **Giustizia**: civile_flussi
-  **Deploy**: ✅ success (2026-05-13)
+  **Deploy**: ✅ success (2026-05-14)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#307](https://github.com/dataciviclab/dataset-incubator/pull/307): fix(post-merge): full-run robustness + clean_catalog in registry PR
-- [data-explorer#80](https://github.com/dataciviclab/data-explorer/pull/80): feat(bdap-entrate-stato): aggiungi dataset explorer e catalogo
+- [dataset-incubator#314](https://github.com/dataciviclab/dataset-incubator/pull/314): fix(detect): usa dataset.name come push_slug per allineare GCS push
+- [source-observatory#230](https://github.com/dataciviclab/source-observatory/pull/230): source-check: circuit breaker host-level e inferenza preview via HEAD
 **Discussions**: 20 open
-  · [Analisi] AIFA Spesa Farmaceutica — il cardiovascolare traina il 63% della spesa, il divario Nord-Sud si allarga
-  · [Domanda] Quanta parte delle entrate tributarie dipende da poche voci e quanto è diffuso?
-  · [Domanda] Dove si accumulano più cause pendenti in rapporto alla popolazione?
+  · [Datasets] [Dataset] Partecipazioni pubbliche dichiarate – MEF 2023
+  · [Datasets] MUR contribuzione universitaria: tasse, esoneri e diritto allo studio per ateneo (2009-2024)
+  · [Datasets] INPS Cassa Integrazione Guadagni (CIG): ore autorizzate per provincia e settore (2010-2024)
 **Topics**: pipeline · governance
 
 ## 🛠 INFRA
