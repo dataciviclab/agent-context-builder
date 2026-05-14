@@ -1,11 +1,12 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-14T03:30:32.828756
+**Generated**: 2026-05-14T08:38:56.466904
 
 ## 🔍 SCOUTING
 
-**Radar**: 16 fonti — GREEN 11 · YELLOW 4 · RED 1 (probe: 2026-05-13)
+**Radar**: 16 fonti — GREEN 10 · YELLOW 5 · RED 1 (probe: 2026-05-14)
   ⚠ **1 persistent RED**
+  · **istat_sdmx** YELLOW [-] — Timeout (ReadTimeout)
   · **anac** YELLOW [403]
   · **dati_salute** RED [-] — SSL verify failed; fallback connection error (SSLError) (streak 14)
   · **lavoro_opendata** YELLOW [200] — CKAN API returned non-JSON content
