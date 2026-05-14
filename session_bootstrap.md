@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-14T17:04:44.877679
+**Generated**: 2026-05-14T19:01:55.994820
 
 ## 🔍 SCOUTING
 
@@ -34,7 +34,6 @@
 
 ## 🔗 OPEN
 
-- [dataset-incubator#321](https://github.com/dataciviclab/dataset-incubator/pull/321): chore(post-merge): aggiorna registry per PR #320
 - [source-observatory#230](https://github.com/dataciviclab/source-observatory/pull/230): source-check: circuit breaker host-level e inferenza preview via HEAD
 **Discussions**: 20 open
   · [Datasets] [Dataset] Partecipazioni pubbliche dichiarate – MEF 2023
