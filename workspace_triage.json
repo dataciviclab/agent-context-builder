@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-14T19:01:55.994820",
+  "generated_at": "2026-05-14T19:47:17.022810",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -641,9 +641,9 @@
           "path": "gs://dataciviclab-clean/civile_flussi/2025/civile_flussi_2025_clean.parquet",
           "multi_file": false
         },
-        "metric_columns": 3,
-        "dimension_columns": 7,
-        "column_count": 10,
+        "metric_columns": 4,
+        "dimension_columns": 8,
+        "column_count": 12,
         "columns": [
           {
             "name": "anno",
@@ -674,11 +674,19 @@
             "role": "dimension"
           },
           {
+            "name": "dettaglio",
+            "role": "dimension"
+          },
+          {
             "name": "sopravvenuti",
             "role": "metric"
           },
           {
             "name": "definiti_totale",
+            "role": "metric"
+          },
+          {
+            "name": "definiti_con_sentenza",
             "role": "metric"
           },
           {
@@ -847,13 +855,13 @@
           "path": "gs://dataciviclab-clean/irpef_comunale/*/irpef_comunale_*_clean.parquet",
           "multi_file": true
         },
-        "metric_columns": 43,
-        "dimension_columns": 9,
+        "metric_columns": 42,
+        "dimension_columns": 10,
         "column_count": 52,
         "columns": [
           {
             "name": "anno_di_imposta",
-            "role": "metric"
+            "role": "dimension"
           },
           {
             "name": "codice_catastale",
@@ -1327,8 +1335,8 @@
           "path": "gs://dataciviclab-clean/pensioni_pa_dag/*/pensioni_pa_dag_*_clean.parquet",
           "multi_file": true
         },
-        "metric_columns": 0,
-        "dimension_columns": 18,
+        "metric_columns": 5,
+        "dimension_columns": 13,
         "column_count": 18,
         "columns": []
       },
