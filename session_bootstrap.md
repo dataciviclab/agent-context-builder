@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-15T08:50:01.078004
+**Generated**: 2026-05-15T13:21:27.268736
 
 ## 🔍 SCOUTING
 
@@ -34,11 +34,13 @@
 
 ## 🔗 OPEN
 
-- [source-observatory#230](https://github.com/dataciviclab/source-observatory/pull/230): source-check: circuit breaker host-level e inferenza preview via HEAD
+- [dataset-incubator#328](https://github.com/dataciviclab/dataset-incubator/pull/328): feat(pensioni-pa-dag): allinea a source type http_post_file
+- [dataset-incubator#326](https://github.com/dataciviclab/dataset-incubator/pull/326): intake: Consip consumi in convenzione — geografia della spesa delle PA (2023-2025)
+- [data-explorer#87](https://github.com/dataciviclab/data-explorer/pull/87): fix(inps-pensioni): DataTable trend, commento multi-anno, homepage aggiornata
 **Discussions**: 20 open
-  · [Datasets] [Dataset] Partecipazioni pubbliche dichiarate – MEF 2023
-  · [Datasets] MUR contribuzione universitaria: tasse, esoneri e diritto allo studio per ateneo (2009-2024)
-  · [Datasets] INPS Cassa Integrazione Guadagni (CIG): ore autorizzate per provincia e settore (2010-2024)
+  · [Datasets] [Dataset] MIM — Alunni con cittadinanza non italiana per scuola e ordine (2015-2025)
+  · [Datasets] [Dataset] MIM — Edilizia scolastica: consistenza edifici e ambienti per scuola (2016-2025)
+  · [Datasets] [Dataset] MIM — Scuola dell'infanzia: bambini italiani e non italiani per scuola (2017-2025)
 **Topics**: pipeline · governance
 
 ## 🛠 INFRA

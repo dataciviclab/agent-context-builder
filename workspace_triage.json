@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-15T08:50:01.078004",
+  "generated_at": "2026-05-15T13:21:27.268736",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,17 +9,35 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 1,
+  "open_prs": 3,
   "prs": [
     {
-      "number": 230,
-      "title": "source-check: circuit breaker host-level e inferenza preview via HEAD",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/230"
+      "number": 328,
+      "title": "feat(pensioni-pa-dag): allinea a source type http_post_file",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/328"
+    },
+    {
+      "number": 326,
+      "title": "intake: Consip consumi in convenzione \u2014 geografia della spesa delle PA (2023-2025)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/326"
+    },
+    {
+      "number": 87,
+      "title": "fix(inps-pensioni): DataTable trend, commento multi-anno, homepage aggiornata",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/87"
     }
   ],
   "open_issues": 31,
   "issues": [
+    {
+      "number": 327,
+      "title": "intake: Incentivi.gov: anagrafica degli incentivi alle imprese per regione, ambito e forma di agevolazione",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/327"
+    },
     {
       "number": 322,
       "title": "proposta: separare compose da candidate nested (directory compose/)",
@@ -135,12 +153,6 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/113"
     },
     {
-      "number": 183,
-      "title": "Feature: source type http_post_file per download via POST",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/183"
-    },
-    {
       "number": 86,
       "title": "follow-up: pagina e tema per 3 nuovi dataset",
       "repo": "data-explorer",
@@ -210,6 +222,27 @@
   "open_discussions": 20,
   "discussions": [
     {
+      "number": 270,
+      "title": "[Dataset] MIM \u2014 Alunni con cittadinanza non italiana per scuola e ordine (2015-2025)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/270",
+      "category": "Datasets"
+    },
+    {
+      "number": 272,
+      "title": "[Dataset] MIM \u2014 Edilizia scolastica: consistenza edifici e ambienti per scuola (2016-2025)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/272",
+      "category": "Datasets"
+    },
+    {
+      "number": 271,
+      "title": "[Dataset] MIM \u2014 Scuola dell'infanzia: bambini italiani e non italiani per scuola (2017-2025)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/271",
+      "category": "Datasets"
+    },
+    {
       "number": 165,
       "title": "[Dataset] Partecipazioni pubbliche dichiarate \u2013 MEF 2023",
       "repo": "dataciviclab",
@@ -221,13 +254,6 @@
       "title": "MUR contribuzione universitaria: tasse, esoneri e diritto allo studio per ateneo (2009-2024)",
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/211",
-      "category": "Datasets"
-    },
-    {
-      "number": 201,
-      "title": "INPS Cassa Integrazione Guadagni (CIG): ore autorizzate per provincia e settore (2010-2024)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/201",
       "category": "Datasets"
     },
     {
@@ -334,20 +360,6 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/224",
       "category": "Metodo"
-    },
-    {
-      "number": 223,
-      "title": "INPS ReI \u2014 evoluzione spesa e platea beneficiari 2018-2019",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/223",
-      "category": "Datasets"
-    },
-    {
-      "number": 182,
-      "title": "ISTAT Terzo Settore: istituzioni non-profit per comune (2011, 2015, 2017, 2020)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/182",
-      "category": "Datasets"
     }
   ],
   "github_fetch_errors": {},
