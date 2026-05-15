@@ -1,10 +1,10 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-15T03:34:20.206730
+**Generated**: 2026-05-15T08:50:01.078004
 
 ## 🔍 SCOUTING
 
-**Radar**: 16 fonti — GREEN 10 · YELLOW 5 · RED 1 (probe: 2026-05-14)
+**Radar**: 16 fonti — GREEN 10 · YELLOW 5 · RED 1 (probe: 2026-05-15)
   ⚠ **1 persistent RED**
   · **istat_sdmx** YELLOW [-] — Timeout (ReadTimeout)
   · **anac** YELLOW [403]
