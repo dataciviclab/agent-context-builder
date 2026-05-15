@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-15T13:21:27.268736
+**Generated**: 2026-05-15T14:08:42.487082
 
 ## 🔍 SCOUTING
 
@@ -34,7 +34,7 @@
 
 ## 🔗 OPEN
 
-- [dataset-incubator#328](https://github.com/dataciviclab/dataset-incubator/pull/328): feat(pensioni-pa-dag): allinea a source type http_post_file
+- [dataset-incubator#330](https://github.com/dataciviclab/dataset-incubator/pull/330): chore(post-merge): aggiorna registry per PR #328
 - [dataset-incubator#326](https://github.com/dataciviclab/dataset-incubator/pull/326): intake: Consip consumi in convenzione — geografia della spesa delle PA (2023-2025)
 - [data-explorer#87](https://github.com/dataciviclab/data-explorer/pull/87): fix(inps-pensioni): DataTable trend, commento multi-anno, homepage aggiornata
 **Discussions**: 20 open
