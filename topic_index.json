@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-05-16T08:05:53.124919",
+  "generated_at": "2026-05-16T13:23:51.755509",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -34,6 +34,16 @@
         "name": "AIFA Spesa Farmaceutica Convenzionata",
         "period": {
           "start": 2020,
+          "end": 2024
+        }
+      }
+    ],
+    "BDAP LEA \u2014 Ragioneria Generale dello Stato (MEF)": [
+      {
+        "slug": "bdap_lea",
+        "name": "Bdap Lea",
+        "period": {
+          "start": 2024,
           "end": 2024
         }
       }

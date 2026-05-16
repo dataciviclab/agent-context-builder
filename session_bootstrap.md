@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-16T08:05:53.124919
+**Generated**: 2026-05-16T13:23:51.755509
 
 ## 🔍 SCOUTING
 
@@ -18,7 +18,7 @@
 **Pipeline**: 30 candidates — 30 ok
   ⚠️ **camera-deputati-legislature** — run fallito [2024](https://github.com/dataciviclab/dataset-incubator/actions/runs/25509412527)
   ⚠️ **mur-contribuzione-universitaria** — run fallito [2024](https://github.com/dataciviclab/dataset-incubator/actions/runs/25509412527)
-**Dataset Catalog**: 6 published · 6 public · updated 2026-05-14
+**Dataset Catalog**: 7 published · 7 public · updated 2026-05-16
 
 ## 🗂 EXPLORER
 
@@ -28,13 +28,13 @@
   · **Sanità**: aifa_spesa_consumo
   · **Welfare e lavoro**: dipendenti_pubblici
   · **Giustizia**: civile_flussi
+  ⚠ 1 dataset published non ancora su explorer:
+    · bdap_lea
   **Deploy**: ✅ success (2026-05-14)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#332](https://github.com/dataciviclab/dataset-incubator/pull/332): feat(template): notebook v1 — review-readiness, inspect schema -c, skill docs
-- [dataset-incubator#326](https://github.com/dataciviclab/dataset-incubator/pull/326): intake: Consip consumi in convenzione — geografia della spesa delle PA (2023-2025)
-- [toolkit#245](https://github.com/dataciviclab/toolkit/pull/245): feat: CLI review-readiness + deprecazione blocker-hints
+- [dataset-incubator#337](https://github.com/dataciviclab/dataset-incubator/pull/337): chore(post-merge): aggiorna registry per PR #326
 - [data-explorer#87](https://github.com/dataciviclab/data-explorer/pull/87): fix(inps-pensioni): DataTable trend, commento multi-anno, homepage aggiornata
 **Discussions**: 20 open
   · [Datasets] [Dataset] MIM — Alunni con cittadinanza non italiana per scuola e ordine (2015-2025)

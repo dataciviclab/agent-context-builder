@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-16T08:05:53.124919",
+  "generated_at": "2026-05-16T13:23:51.755509",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,25 +9,13 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 4,
+  "open_prs": 2,
   "prs": [
     {
-      "number": 332,
-      "title": "feat(template): notebook v1 \u2014 review-readiness, inspect schema -c, skill docs",
+      "number": 337,
+      "title": "chore(post-merge): aggiorna registry per PR #326",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/332"
-    },
-    {
-      "number": 326,
-      "title": "intake: Consip consumi in convenzione \u2014 geografia della spesa delle PA (2023-2025)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/326"
-    },
-    {
-      "number": 245,
-      "title": "feat: CLI review-readiness + deprecazione blocker-hints",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/245"
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/337"
     },
     {
       "number": 87,
@@ -36,7 +24,7 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/87"
     }
   ],
-  "open_issues": 34,
+  "open_issues": 36,
   "issues": [
     {
       "number": 327,
@@ -49,12 +37,6 @@
       "title": "proposta: separare compose da candidate nested (directory compose/)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/322"
-    },
-    {
-      "number": 267,
-      "title": "intake: Consip consumi in convenzione: geografia della spesa delle PA",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/267"
     },
     {
       "number": 250,
@@ -159,10 +141,28 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/113"
     },
     {
+      "number": 246,
+      "title": "Nuovo comando `toolkit run support` per sostituire `run_support_datasets.py` in DI",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/246"
+    },
+    {
       "number": 244,
       "title": "Esporre costanti path come API pubblica per eliminare duplicazione contratti impliciti",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/244"
+    },
+    {
+      "number": 92,
+      "title": "follow-up: pagina e tema per consip-consumi-convenzione",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/92"
+    },
+    {
+      "number": 91,
+      "title": "follow-up: pagina e tema per bdap-lea",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/91"
     },
     {
       "number": 89,
@@ -507,7 +507,7 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-05-15",
+    "generated_at": "2026-05-16",
     "summary": {
       "total": 30,
       "by_status": {
@@ -522,10 +522,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-05-14",
+    "updated_at": "2026-05-16",
     "summary": {
-      "total": 22,
-      "published": 6
+      "total": 23,
+      "published": 7
     },
     "datasets": [
       {
@@ -631,6 +631,117 @@
         "dimension_columns": 9,
         "column_count": 11,
         "columns": []
+      },
+      {
+        "slug": "bdap_lea",
+        "name": "Bdap Lea",
+        "stage": "published",
+        "period": {
+          "start": 2024,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bdap_lea/*/bdap_lea_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 14,
+        "dimension_columns": 9,
+        "column_count": 23,
+        "columns": [
+          {
+            "name": "anno_riferimento",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_regione",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_regione",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_ente_ssn",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_ente_bdap",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_ente",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_voce_contabile",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_voce_contabile",
+            "role": "dimension"
+          },
+          {
+            "name": "oneri_finanziari",
+            "role": "metric"
+          },
+          {
+            "name": "data_aggiornamento",
+            "role": "dimension"
+          },
+          {
+            "name": "consumi_sanitari",
+            "role": "metric"
+          },
+          {
+            "name": "consumi_non_sanitari",
+            "role": "metric"
+          },
+          {
+            "name": "prestazioni_sanitarie",
+            "role": "metric"
+          },
+          {
+            "name": "servizi_sanitari",
+            "role": "metric"
+          },
+          {
+            "name": "servizi_non_sanitari",
+            "role": "metric"
+          },
+          {
+            "name": "personale_sanitario",
+            "role": "metric"
+          },
+          {
+            "name": "personale_professionale",
+            "role": "metric"
+          },
+          {
+            "name": "personale_tecnico",
+            "role": "metric"
+          },
+          {
+            "name": "personale_amministrativo",
+            "role": "metric"
+          },
+          {
+            "name": "ammortamenti",
+            "role": "metric"
+          },
+          {
+            "name": "sopravvenienze_e_insussistenze",
+            "role": "metric"
+          },
+          {
+            "name": "altri_costi",
+            "role": "metric"
+          },
+          {
+            "name": "importo_totale",
+            "role": "metric"
+          }
+        ]
       },
       {
         "slug": "civile_flussi",
@@ -1437,7 +1548,9 @@
       }
     ],
     "published_count": 7,
-    "clean_ready_not_published": [],
+    "clean_ready_not_published": [
+      "bdap_lea"
+    ],
     "last_deploy": {
       "run_id": 25858407272,
       "name": "Deploy to GitHub Pages",
