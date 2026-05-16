@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-05-16T13:23:51.755509",
+  "generated_at": "2026-05-16T15:10:34.963597",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -54,6 +54,16 @@
         "name": "Flussi Civile \u2014 Giustizia civile italiana",
         "period": {
           "start": 2014,
+          "end": 2025
+        }
+      }
+    ],
+    "Consip SpA / MEF \u2014 dati.consip.it (CKAN)": [
+      {
+        "slug": "consip_consumi_convenzione",
+        "name": "Consip Consumi Convenzione",
+        "period": {
+          "start": 2023,
           "end": 2025
         }
       }

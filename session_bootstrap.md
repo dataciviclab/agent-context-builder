@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-16T13:23:51.755509
+**Generated**: 2026-05-16T15:10:34.963597
 
 ## 🔍 SCOUTING
 
@@ -15,10 +15,10 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 30 candidates — 30 ok
+**Pipeline**: 31 candidates — 31 ok
   ⚠️ **camera-deputati-legislature** — run fallito [2024](https://github.com/dataciviclab/dataset-incubator/actions/runs/25509412527)
   ⚠️ **mur-contribuzione-universitaria** — run fallito [2024](https://github.com/dataciviclab/dataset-incubator/actions/runs/25509412527)
-**Dataset Catalog**: 7 published · 7 public · updated 2026-05-16
+**Dataset Catalog**: 8 published · 8 public · updated 2026-05-16
 
 ## 🗂 EXPLORER
 
@@ -28,13 +28,13 @@
   · **Sanità**: aifa_spesa_consumo
   · **Welfare e lavoro**: dipendenti_pubblici
   · **Giustizia**: civile_flussi
-  ⚠ 1 dataset published non ancora su explorer:
+  ⚠ 2 dataset published non ancora su explorer:
     · bdap_lea
+    · consip_consumi_convenzione
   **Deploy**: ✅ success (2026-05-14)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#337](https://github.com/dataciviclab/dataset-incubator/pull/337): chore(post-merge): aggiorna registry per PR #326
 - [data-explorer#87](https://github.com/dataciviclab/data-explorer/pull/87): fix(inps-pensioni): DataTable trend, commento multi-anno, homepage aggiornata
 **Discussions**: 20 open
   · [Datasets] [Dataset] MIM — Alunni con cittadinanza non italiana per scuola e ordine (2015-2025)

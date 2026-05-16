@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-16T13:23:51.755509",
+  "generated_at": "2026-05-16T15:10:34.963597",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,14 +9,8 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 2,
+  "open_prs": 1,
   "prs": [
-    {
-      "number": 337,
-      "title": "chore(post-merge): aggiorna registry per PR #326",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/337"
-    },
     {
       "number": 87,
       "title": "fix(inps-pensioni): DataTable trend, commento multi-anno, homepage aggiornata",
@@ -24,7 +18,7 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/87"
     }
   ],
-  "open_issues": 36,
+  "open_issues": 37,
   "issues": [
     {
       "number": 327,
@@ -205,6 +199,12 @@
       "title": "follow-up: pagina e tema per inps-pensioni",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/issues/82"
+    },
+    {
+      "number": 231,
+      "title": "Radar alerting automatico \u2014 issue da RED streak persistenti",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/231"
     },
     {
       "number": 229,
@@ -509,9 +509,9 @@
     "available": true,
     "generated_at": "2026-05-16",
     "summary": {
-      "total": 30,
+      "total": 31,
       "by_status": {
-        "ok": 30,
+        "ok": 31,
         "warn": 0,
         "error": 0
       }
@@ -524,8 +524,8 @@
     "name": "Lab Clean Registry",
     "updated_at": "2026-05-16",
     "summary": {
-      "total": 23,
-      "published": 7
+      "total": 24,
+      "published": 8
     },
     "datasets": [
       {
@@ -806,6 +806,73 @@
           },
           {
             "name": "pendenti_finali",
+            "role": "metric"
+          }
+        ]
+      },
+      {
+        "slug": "consip_consumi_convenzione",
+        "name": "Consip Consumi Convenzione",
+        "stage": "published",
+        "period": {
+          "start": 2023,
+          "end": 2025
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/consip_consumi_convenzione/*/consip_consumi_convenzione_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 4,
+        "dimension_columns": 8,
+        "column_count": 12,
+        "columns": [
+          {
+            "name": "anno_riferimento",
+            "role": "dimension"
+          },
+          {
+            "name": "tipologia_amministrazione",
+            "role": "dimension"
+          },
+          {
+            "name": "regione_pa",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia_pa",
+            "role": "dimension"
+          },
+          {
+            "name": "sigla_provincia_pa",
+            "role": "dimension"
+          },
+          {
+            "name": "regione_fornitore",
+            "role": "dimension"
+          },
+          {
+            "name": "convenzione",
+            "role": "dimension"
+          },
+          {
+            "name": "lotto",
+            "role": "dimension"
+          },
+          {
+            "name": "valore_economico_consumi",
+            "role": "metric"
+          },
+          {
+            "name": "numero_ordini_con_consumi",
+            "role": "metric"
+          },
+          {
+            "name": "n_pa_con_consumi",
+            "role": "metric"
+          },
+          {
+            "name": "n_po_con_consumi",
             "role": "metric"
           }
         ]
@@ -1549,7 +1616,8 @@
     ],
     "published_count": 7,
     "clean_ready_not_published": [
-      "bdap_lea"
+      "bdap_lea",
+      "consip_consumi_convenzione"
     ],
     "last_deploy": {
       "run_id": 25858407272,
