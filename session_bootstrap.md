@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-15T19:39:31.091807
+**Generated**: 2026-05-16T02:56:56.722672
 
 ## 🔍 SCOUTING
 
@@ -33,7 +33,9 @@
 
 ## 🔗 OPEN
 
+- [dataset-incubator#332](https://github.com/dataciviclab/dataset-incubator/pull/332): feat(template): notebook v1 — review-readiness, inspect schema -c, skill docs
 - [dataset-incubator#326](https://github.com/dataciviclab/dataset-incubator/pull/326): intake: Consip consumi in convenzione — geografia della spesa delle PA (2023-2025)
+- [toolkit#245](https://github.com/dataciviclab/toolkit/pull/245): feat: CLI review-readiness + deprecazione blocker-hints
 - [data-explorer#87](https://github.com/dataciviclab/data-explorer/pull/87): fix(inps-pensioni): DataTable trend, commento multi-anno, homepage aggiornata
 **Discussions**: 20 open
   · [Datasets] [Dataset] MIM — Alunni con cittadinanza non italiana per scuola e ordine (2015-2025)
