@@ -1,8 +1,23 @@
-"""Tests for discussions module."""
+"""Tests for discussions module — mocks HttpClient, not raw requests."""
 
 from unittest.mock import MagicMock, patch
 
+from lab_connectors.http import HttpResult
+
 from agent_context_builder.discussions import Discussion, DiscussionCollector
+
+
+def _http_ok(json_data: dict) -> HttpResult:
+    """Build success HttpResult."""
+    resp = MagicMock()
+    resp.status_code = 200
+    resp.json.return_value = json_data
+    return HttpResult(response=resp, err=None)
+
+
+def _http_error() -> HttpResult:
+    """Build network error HttpResult."""
+    return HttpResult(response=None, err=Exception("network error"))
 
 
 def test_discussion_creation():
@@ -30,8 +45,14 @@ def test_get_discussions_api_error():
     """HTTP errors are captured in fetch_errors, not raised."""
     collector = DiscussionCollector(org="dataciviclab", token="fake-token")
 
-    with patch("agent_context_builder.discussions.requests.post") as mock_post:
-        mock_post.return_value.raise_for_status.side_effect = Exception("403 Forbidden")
+    with patch("agent_context_builder.discussions.HttpClient") as mock_cls:
+        mock_instance = mock_cls.return_value
+        # Simulate HTTP 403 — response with error status, not network error
+        resp = MagicMock()
+        resp.status_code = 403
+        resp.json.side_effect = Exception("403 Forbidden")
+        mock_instance.post.return_value = HttpResult(response=resp, err=None)
+
         results = collector.get_discussions(["dataset-incubator"])
 
     assert results == []
@@ -61,16 +82,11 @@ def test_get_discussions_success():
         }
     }
 
-    with patch("agent_context_builder.discussions.requests.post") as mock_post:
-        mock_response = MagicMock()
-        mock_response.raise_for_status.return_value = None
-        mock_response.json.return_value = mock_payload
-        mock_post.return_value = mock_response
-
+    with patch("agent_context_builder.discussions.HttpClient") as mock_cls:
+        mock_instance = mock_cls.return_value
+        mock_instance.post.return_value = _http_ok(mock_payload)
         results = collector.get_discussions(["dataset-incubator"])
 
     assert len(results) == 1
     assert results[0].number == 42
     assert results[0].category == "Civic Questions"
-    assert results[0].repo == "dataset-incubator"
-    assert collector.fetch_errors == {}

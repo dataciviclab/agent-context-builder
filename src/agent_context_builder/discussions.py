@@ -3,7 +3,7 @@
 from dataclasses import dataclass
 from typing import Optional
 
-import requests
+from lab_connectors.http import HttpClient
 
 _GRAPHQL_URL = "https://api.github.com/graphql"
 
@@ -76,14 +76,17 @@ class DiscussionCollector:
         if not self.token:
             raise ValueError("GitHub token required for GraphQL Discussions API")
 
-        response = requests.post(
+        client = HttpClient(timeout=10)
+        result = client.post(
             _GRAPHQL_URL,
             json={"query": _QUERY, "variables": {"owner": self.org, "repo": repo, "first": first}},
             headers={"Authorization": f"bearer {self.token}"},
-            timeout=10,
+            retries=0,
         )
-        response.raise_for_status()
+        if result.is_error:
+            raise result.err
 
+        response = result.response
         payload = response.json()
         if "errors" in payload:
             raise ValueError(f"GraphQL errors: {payload['errors']}")

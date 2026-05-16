@@ -22,6 +22,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import requests
+from lab_connectors.http import HttpClient
 from lab_connectors.mcp import create_mcp_server, get_mcp_logger
 
 _REPO = os.environ.get("ACB_REPO", "dataciviclab/agent-context-builder")
@@ -139,49 +140,27 @@ def _tool_error(tool: str, path: str, message: str, status_code: int | None = No
 
 
 def _fetch(path: str, retries: int = 1, backoff: float = 1.0) -> str:
-    """Fetch a file from the context branch with optional retry on transient errors.
+    """Fetch a file from the context branch with retry/backoff via HttpClient.
 
     Args:
         path: Path on the context branch (e.g. "session_bootstrap.md")
-        retries: Number of retries on 5xx or network errors
-            (default 1, meaning one attempt + up to 1 retry)
-        backoff: Initial backoff seconds, doubled on each retry (default 1.0)
+        retries: Number of retry attempts (default 1)
+        backoff: Base backoff delay in seconds (default 1.0)
     """
     token = _get_env("GITHUB_TOKEN")
     headers = {"Authorization": f"token {token}"} if token else {}
     url = f"{_RAW_BASE}/{path}"
-    attempt = 0
-    last_err: Exception | None = None
 
-    while attempt <= retries:
-        try:
-            response = requests.get(url, headers=headers, timeout=10)
-            response.raise_for_status()
-            _log.info("fetch", "success", path=path, status=response.status_code)
-            return response.text
-        except requests.HTTPError as e:
-            # Don't retry on 4xx — they won't become valid by retrying
-            if e.response is not None and 400 <= e.response.status_code < 500:
-                _log.warning("fetch", "client_error", path=path, status=e.response.status_code)
-                raise
-            last_err = e
-        except requests.RequestException as e:
-            last_err = e
+    client = HttpClient(max_retries=retries, retry_backoff=backoff, timeout=10)
+    result = client.get(url, headers=headers)
 
-        attempt += 1
-        if attempt <= retries:
-            sleep = backoff * (2 ** (attempt - 1))
-            _log.warning(
-                "fetch", "retry", path=path, attempt=attempt,
-                sleep=round(sleep, 1), error=str(last_err),
-            )
-            time.sleep(sleep)
-        else:
-            _log.error("fetch", "failed", path=path, error=str(last_err))
-            raise last_err
+    if result.is_error:
+        _log.error("fetch", "failed", path=path, error=str(result.err))
+        raise result.err
 
-    # Should never reach here, but mypy needs it
-    raise RuntimeError("unreachable")
+    result.response.raise_for_status()
+    _log.info("fetch", "success", path=path, status=result.response.status_code)
+    return result.response.text
 
 
 @mcp.tool()
