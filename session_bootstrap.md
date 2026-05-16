@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-16T15:10:34.963597
+**Generated**: 2026-05-16T16:28:23.977245
 
 ## 🔍 SCOUTING
 
@@ -36,6 +36,7 @@
 ## 🔗 OPEN
 
 - [data-explorer#87](https://github.com/dataciviclab/data-explorer/pull/87): fix(inps-pensioni): DataTable trend, commento multi-anno, homepage aggiornata
+- [source-observatory#233](https://github.com/dataciviclab/source-observatory/pull/233): chore: centralizzato retry HTTP in HttpClient (SDMX + radar + dead code)
 **Discussions**: 20 open
   · [Datasets] [Dataset] MIM — Alunni con cittadinanza non italiana per scuola e ordine (2015-2025)
   · [Datasets] [Dataset] MIM — Edilizia scolastica: consistenza edifici e ambienti per scuola (2016-2025)
