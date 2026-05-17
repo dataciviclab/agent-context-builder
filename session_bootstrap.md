@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-17T19:11:23.466391
+**Generated**: 2026-05-17T22:08:41.586846
 
 ## 🔍 SCOUTING
 
@@ -36,9 +36,7 @@
 ## 🔗 OPEN
 
 - [dataset-incubator#339](https://github.com/dataciviclab/dataset-incubator/pull/339): feat: compose/ come root di prima classe + ispra-ru-costi-kg rifattorizzato
-- [toolkit#255](https://github.com/dataciviclab/toolkit/pull/255): feat: inspect profile --csv-path + MCP csv_preview come thin wrapper
 - [data-explorer#87](https://github.com/dataciviclab/data-explorer/pull/87): fix(inps-pensioni): DataTable trend, commento multi-anno, homepage aggiornata
-- [source-observatory#234](https://github.com/dataciviclab/source-observatory/pull/234): feat(so): aggiungi AIFA al sources registry
 **Discussions**: 20 open
   · [Datasets] [Dataset] MIM — Alunni con cittadinanza non italiana per scuola e ordine (2015-2025)
   · [Datasets] [Dataset] MIM — Edilizia scolastica: consistenza edifici e ambienti per scuola (2016-2025)
