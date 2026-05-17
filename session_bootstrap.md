@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-17T17:01:49.790486
+**Generated**: 2026-05-17T18:21:08.680244
 
 ## 🔍 SCOUTING
 
@@ -36,6 +36,7 @@
 ## 🔗 OPEN
 
 - [dataset-incubator#339](https://github.com/dataciviclab/dataset-incubator/pull/339): feat: compose/ come root di prima classe + ispra-ru-costi-kg rifattorizzato
+- [toolkit#255](https://github.com/dataciviclab/toolkit/pull/255): feat: inspect profile --csv-path + MCP csv_preview come thin wrapper
 - [data-explorer#87](https://github.com/dataciviclab/data-explorer/pull/87): fix(inps-pensioni): DataTable trend, commento multi-anno, homepage aggiornata
 - [source-observatory#234](https://github.com/dataciviclab/source-observatory/pull/234): feat(so): aggiungi AIFA al sources registry
 **Discussions**: 20 open
