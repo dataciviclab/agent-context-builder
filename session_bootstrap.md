@@ -1,10 +1,10 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-17T03:31:36.586708
+**Generated**: 2026-05-17T08:22:45.139848
 
 ## 🔍 SCOUTING
 
-**Radar**: 16 fonti — GREEN 11 · YELLOW 4 · RED 1 (probe: 2026-05-16)
+**Radar**: 16 fonti — GREEN 11 · YELLOW 4 · RED 1 (probe: 2026-05-17)
   ⚠ **1 persistent RED**
   · **anac** YELLOW [403]
   · **dati_salute** RED [-] — SSL verify failed; fallback connection error (SSLError) (streak 14)
