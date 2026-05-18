@@ -1,10 +1,10 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-18T03:43:45.806124
+**Generated**: 2026-05-18T10:05:43.303097
 
 ## 🔍 SCOUTING
 
-**Radar**: 16 fonti — GREEN 11 · YELLOW 4 · RED 1 (probe: 2026-05-17)
+**Radar**: 17 fonti — GREEN 12 · YELLOW 4 · RED 1 (probe: 2026-05-18)
   ⚠ **1 persistent RED**
   · **anac** YELLOW [403]
   · **dati_salute** RED [-] — SSL verify failed; fallback connection error (SSLError) (streak 14)
@@ -37,6 +37,7 @@
 
 - [dataset-incubator#339](https://github.com/dataciviclab/dataset-incubator/pull/339): feat: compose/ come root di prima classe + ispra-ru-costi-kg rifattorizzato
 - [data-explorer#87](https://github.com/dataciviclab/data-explorer/pull/87): fix(inps-pensioni): DataTable trend, commento multi-anno, homepage aggiornata
+- [source-observatory#246](https://github.com/dataciviclab/source-observatory/pull/246): fix: ottimizzazione tempi observatory + timing per-source reali
 **Discussions**: 20 open
   · [Datasets] [Dataset] MIM — Alunni con cittadinanza non italiana per scuola e ordine (2015-2025)
   · [Datasets] [Dataset] MIM — Edilizia scolastica: consistenza edifici e ambienti per scuola (2016-2025)

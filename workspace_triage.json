@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-18T03:43:45.806124",
+  "generated_at": "2026-05-18T10:05:43.303097",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,7 +9,7 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 2,
+  "open_prs": 3,
   "prs": [
     {
       "number": 339,
@@ -22,9 +22,15 @@
       "title": "fix(inps-pensioni): DataTable trend, commento multi-anno, homepage aggiornata",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/87"
+    },
+    {
+      "number": 246,
+      "title": "fix: ottimizzazione tempi observatory + timing per-source reali",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/246"
     }
   ],
-  "open_issues": 39,
+  "open_issues": 40,
   "issues": [
     {
       "number": 327,
@@ -193,6 +199,12 @@
       "title": "follow-up: pagina e tema per inps-pensioni",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/issues/82"
+    },
+    {
+      "number": 244,
+      "title": "[Catalog] 2026-05-18 \u2014 1 nuova fonte, 1 recovery, +4 item",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/244"
     },
     {
       "number": 243,
@@ -458,9 +470,9 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-05-17",
-    "sources_total": 16,
-    "green": 11,
+    "probe_date": "2026-05-18",
+    "sources_total": 17,
+    "green": 12,
     "yellow": 4,
     "red": 1,
     "persistent_red": 1,
@@ -509,8 +521,8 @@
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-05-13T19:16:07+00:00",
-    "sources_checked": 12,
+    "captured_at": "2026-05-18T07:09:06+00:00",
+    "sources_checked": 13,
     "regressions": [],
     "alerts": [
       {
@@ -518,7 +530,7 @@
         "protocol": "sdmx",
         "signal_type": "inventory change",
         "result": "inventory change",
-        "detail": "4845 item (dataflow_count), delta +6 rispetto al run precedente (4839).",
+        "detail": "4849 item (dataflow_count), delta +4 rispetto al run precedente (4845).",
         "suggested_action": "verificare se variazione attesa; avviare catalog-inventory-scout se nuovi dataset"
       }
     ]
