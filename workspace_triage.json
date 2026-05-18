@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-18T10:05:43.303097",
+  "generated_at": "2026-05-18T15:34:13.608398",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,40 +9,15 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 3,
-  "prs": [
-    {
-      "number": 339,
-      "title": "feat: compose/ come root di prima classe + ispra-ru-costi-kg rifattorizzato",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/339"
-    },
-    {
-      "number": 87,
-      "title": "fix(inps-pensioni): DataTable trend, commento multi-anno, homepage aggiornata",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/87"
-    },
-    {
-      "number": 246,
-      "title": "fix: ottimizzazione tempi observatory + timing per-source reali",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/246"
-    }
-  ],
-  "open_issues": 40,
+  "open_prs": 0,
+  "prs": [],
+  "open_issues": 33,
   "issues": [
     {
       "number": 327,
       "title": "intake: Incentivi.gov: anagrafica degli incentivi alle imprese per regione, ambito e forma di agevolazione",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/327"
-    },
-    {
-      "number": 322,
-      "title": "proposta: separare compose da candidate nested (directory compose/)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/322"
     },
     {
       "number": 250,
@@ -195,46 +170,10 @@
       "url": "https://github.com/dataciviclab/data-explorer/issues/83"
     },
     {
-      "number": 82,
-      "title": "follow-up: pagina e tema per inps-pensioni",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/issues/82"
-    },
-    {
       "number": 244,
       "title": "[Catalog] 2026-05-18 \u2014 1 nuova fonte, 1 recovery, +4 item",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/244"
-    },
-    {
-      "number": 243,
-      "title": "[source] dati.cortecostituzionale.it \u2014 Corte Costituzionale (open data)",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/243"
-    },
-    {
-      "number": 242,
-      "title": "[source] datiestatistiche.giustizia.it \u2014 Ministero Giustizia (statistiche)",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/242"
-    },
-    {
-      "number": 241,
-      "title": "[source] openga.giustizia-amministrativa.it \u2014 Giustizia Amministrativa (CKAN)",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/241"
-    },
-    {
-      "number": 240,
-      "title": "[source] dati.mit.gov.it \u2014 Ministero Infrastrutture e Trasporti (CKAN)",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/240"
-    },
-    {
-      "number": 239,
-      "title": "[source] dait.interno.gov.it \u2014 Anagrafe Amministratori locali e regionali",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/239"
     },
     {
       "number": 231,
@@ -275,6 +214,13 @@
   ],
   "open_discussions": 20,
   "discussions": [
+    {
+      "number": 273,
+      "title": "[Analisi] MIT Incidentalit\u00e0: l'andamento della mortalit\u00e0 stradale in Italia (2001\u20112018)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/273",
+      "category": "Analisi"
+    },
     {
       "number": 270,
       "title": "[Dataset] MIM \u2014 Alunni con cittadinanza non italiana per scuola e ordine (2015-2025)",
@@ -407,13 +353,6 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/214",
       "category": "Datasets"
-    },
-    {
-      "number": 224,
-      "title": "Come funziona il flusso tra repo Lab \u2014 e cosa manca?",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/224",
-      "category": "Metodo"
     }
   ],
   "github_fetch_errors": {},
@@ -471,8 +410,8 @@
   "radar": {
     "available": true,
     "probe_date": "2026-05-18",
-    "sources_total": 17,
-    "green": 12,
+    "sources_total": 23,
+    "green": 18,
     "yellow": 4,
     "red": 1,
     "persistent_red": 1,
@@ -521,27 +460,18 @@
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-05-18T07:09:06+00:00",
-    "sources_checked": 13,
+    "captured_at": "2026-05-18T10:24:52+00:00",
+    "sources_checked": 15,
     "regressions": [],
-    "alerts": [
-      {
-        "source": "istat_sdmx",
-        "protocol": "sdmx",
-        "signal_type": "inventory change",
-        "result": "inventory change",
-        "detail": "4849 item (dataflow_count), delta +4 rispetto al run precedente (4845).",
-        "suggested_action": "verificare se variazione attesa; avviare catalog-inventory-scout se nuovi dataset"
-      }
-    ]
+    "alerts": []
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-05-16",
+    "generated_at": "2026-05-18",
     "summary": {
-      "total": 31,
+      "total": 32,
       "by_status": {
-        "ok": 31,
+        "ok": 32,
         "warn": 0,
         "error": 0
       }
@@ -552,7 +482,7 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-05-16",
+    "updated_at": "2026-05-18",
     "summary": {
       "total": 24,
       "published": 8
@@ -1636,7 +1566,7 @@
       {
         "slug": "welfare-lavoro",
         "name": "Welfare e lavoro",
-        "dataset_count": 1
+        "dataset_count": 2
       },
       {
         "slug": "giustizia",
@@ -1644,18 +1574,18 @@
         "dataset_count": 1
       }
     ],
-    "published_count": 7,
+    "published_count": 8,
     "clean_ready_not_published": [
       "bdap_lea",
       "consip_consumi_convenzione"
     ],
     "last_deploy": {
-      "run_id": 25858407272,
+      "run_id": 26033639423,
       "name": "Deploy to GitHub Pages",
       "status": "completed",
       "conclusion": "success",
-      "completed_at": "2026-05-14T11:53:25Z",
-      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/25858407272"
+      "completed_at": "2026-05-18T12:35:17Z",
+      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26033639423"
     }
   }
 }
