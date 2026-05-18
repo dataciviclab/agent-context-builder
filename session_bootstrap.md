@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-18T15:34:13.608398
+**Generated**: 2026-05-18T19:45:29.726960
 
 ## 🔍 SCOUTING
 
@@ -35,11 +35,11 @@
 
 ## 🔗 OPEN
 
-**PRs**: none open
+- **Dependabot**: 5 bump PR(s)
 **Discussions**: 20 open
+  · [Domanda] Processo penale: a Cagliari 864 giorni, a Messina 261. E la fase GIP GUP è già in affanno in 101 tribunali su 140
+  · [Domanda] 405 opere pubbliche incomplete, 2,7 miliardi di euro fermati. Dove sono finite le nostre infrastrutture?
   · [Analisi] [Analisi] MIT Incidentalità: l'andamento della mortalità stradale in Italia (2001‑2018)
-  · [Datasets] [Dataset] MIM — Alunni con cittadinanza non italiana per scuola e ordine (2015-2025)
-  · [Datasets] [Dataset] MIM — Edilizia scolastica: consistenza edifici e ambienti per scuola (2016-2025)
 **Topics**: pipeline · governance
 
 ## 🛠 INFRA
