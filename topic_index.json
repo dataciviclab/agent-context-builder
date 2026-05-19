@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-05-19T03:37:20.300907",
+  "generated_at": "2026-05-19T09:44:01.952569",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -95,6 +95,16 @@
         "period": {
           "start": 2020,
           "end": 2024
+        }
+      }
+    ],
+    "ISTAT \u2014 Dataflow 33_292 (IPAB trimestrale), SDMX-CSV": [
+      {
+        "slug": "istat_ipab_aree",
+        "name": "Istat Ipab Aree",
+        "period": {
+          "start": 2010,
+          "end": 2025
         }
       }
     ],

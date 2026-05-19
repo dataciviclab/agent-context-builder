@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-19T03:37:20.300907",
+  "generated_at": "2026-05-19T09:44:01.952569",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -42,7 +42,7 @@
       "url": "https://github.com/dataciviclab/source-observatory/pull/250"
     }
   ],
-  "open_issues": 33,
+  "open_issues": 34,
   "issues": [
     {
       "number": 327,
@@ -157,6 +157,12 @@
       "title": "Esporre costanti path come API pubblica per eliminare duplicazione contratti impliciti",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/244"
+    },
+    {
+      "number": 95,
+      "title": "follow-up: pagina e tema per istat-ipab-aree",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/95"
     },
     {
       "number": 92,
@@ -440,11 +446,11 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-05-18",
+    "probe_date": "2026-05-19",
     "sources_total": 23,
-    "green": 18,
+    "green": 17,
     "yellow": 4,
-    "red": 1,
+    "red": 2,
     "persistent_red": 1,
     "unhealthy": [
       {
@@ -462,6 +468,14 @@
         "http_code": "-",
         "note": "SSL verify failed; fallback connection error (SSLError)",
         "red_streak": 14
+      },
+      {
+        "id": "dati_camera",
+        "status": "RED",
+        "protocol": "sparql",
+        "http_code": "503",
+        "note": null,
+        "red_streak": 0
       },
       {
         "id": "lavoro_opendata",
@@ -498,7 +512,7 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-05-18",
+    "generated_at": "2026-05-19",
     "summary": {
       "total": 32,
       "by_status": {
@@ -513,10 +527,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-05-18",
+    "updated_at": "2026-05-19",
     "summary": {
-      "total": 24,
-      "published": 8
+      "total": 25,
+      "published": 9
     },
     "datasets": [
       {
@@ -1388,6 +1402,53 @@
         "columns": []
       },
       {
+        "slug": "istat_ipab_aree",
+        "name": "Istat Ipab Aree",
+        "stage": "published",
+        "period": {
+          "start": 2010,
+          "end": 2025
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/istat_ipab_aree/2024/istat_ipab_aree_2024_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 1,
+        "dimension_columns": 6,
+        "column_count": 7,
+        "columns": [
+          {
+            "name": "area_codice",
+            "role": "dimension"
+          },
+          {
+            "name": "area",
+            "role": "dimension"
+          },
+          {
+            "name": "livello_geografico",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_abitazione",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_abitazione_label",
+            "role": "dimension"
+          },
+          {
+            "name": "trimestre",
+            "role": "dimension"
+          },
+          {
+            "name": "indice_prezzi",
+            "role": "metric"
+          }
+        ]
+      },
+      {
         "slug": "mef_irpef_regionale",
         "name": "MEF - Irpef Regionale",
         "stage": "incubating",
@@ -1608,7 +1669,8 @@
     "published_count": 8,
     "clean_ready_not_published": [
       "bdap_lea",
-      "consip_consumi_convenzione"
+      "consip_consumi_convenzione",
+      "istat_ipab_aree"
     ],
     "last_deploy": {
       "run_id": 26033639423,

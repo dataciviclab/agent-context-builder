@@ -1,13 +1,14 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-19T03:37:20.300907
+**Generated**: 2026-05-19T09:44:01.952569
 
 ## 🔍 SCOUTING
 
-**Radar**: 23 fonti — GREEN 18 · YELLOW 4 · RED 1 (probe: 2026-05-18)
+**Radar**: 23 fonti — GREEN 17 · YELLOW 4 · RED 2 (probe: 2026-05-19)
   ⚠ **1 persistent RED**
   · **anac** YELLOW [403]
   · **dati_salute** RED [-] — SSL verify failed; fallback connection error (SSLError) (streak 14)
+  · **dati_camera** RED [503]
   · **lavoro_opendata** YELLOW [200] — CKAN API returned non-JSON content
   · **mur_ustat** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
   · **opencoesione** YELLOW [403]
@@ -18,7 +19,7 @@
 **Pipeline**: 32 candidates — 32 ok
   ⚠️ **camera-deputati-legislature** — run fallito [2024](https://github.com/dataciviclab/dataset-incubator/actions/runs/25509412527)
   ⚠️ **mur-contribuzione-universitaria** — run fallito [2024](https://github.com/dataciviclab/dataset-incubator/actions/runs/25509412527)
-**Dataset Catalog**: 8 published · 8 public · updated 2026-05-18
+**Dataset Catalog**: 9 published · 9 public · updated 2026-05-19
 
 ## 🗂 EXPLORER
 
@@ -28,9 +29,10 @@
   · **Sanità**: aifa_spesa_consumo
   · **Welfare e lavoro**: dipendenti_pubblici, inps_pensioni_trimestrale
   · **Giustizia**: civile_flussi
-  ⚠ 2 dataset published non ancora su explorer:
+  ⚠ 3 dataset published non ancora su explorer:
     · bdap_lea
     · consip_consumi_convenzione
+    · istat_ipab_aree
   **Deploy**: ✅ success (2026-05-18)
 
 ## 🔗 OPEN
