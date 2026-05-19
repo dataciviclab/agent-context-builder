@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-19T09:44:01.952569",
+  "generated_at": "2026-05-19T15:24:03.199393",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,40 +9,22 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 5,
+  "open_prs": 2,
   "prs": [
     {
-      "number": 254,
-      "title": "chore(deps): update ruamel-yaml requirement from <1.0,>=0.18.10 to >=0.19.1,<1.0",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/254"
+      "number": 98,
+      "title": "Migrazione: da Evidence a Observable Framework (feat/observable-framework)",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/98"
     },
     {
-      "number": 253,
-      "title": "chore(deps-dev): update ruff requirement from <1.0.0,>=0.15.12 to >=0.15.13,<1.0.0",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/253"
-    },
-    {
-      "number": 252,
-      "title": "chore(deps): update ddgs requirement from <10.0,>=9.14.2 to >=9.14.4,<10.0",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/252"
-    },
-    {
-      "number": 251,
-      "title": "chore(deps): update pandas requirement from <4.0,>=3.0.2 to >=3.0.3,<4.0",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/251"
-    },
-    {
-      "number": 250,
-      "title": "chore(deps): update jsonschema requirement from <5.0,>=4.20.0 to >=4.26.0,<5.0",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/250"
+      "number": 96,
+      "title": "chore(deps-dev): bump postcss-load-config from 5.1.0 to 6.0.1",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/96"
     }
   ],
-  "open_issues": 34,
+  "open_issues": 35,
   "issues": [
     {
       "number": 327,
@@ -157,6 +139,12 @@
       "title": "Esporre costanti path come API pubblica per eliminare duplicazione contratti impliciti",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/244"
+    },
+    {
+      "number": 97,
+      "title": "follow-up: pagina e tema per 2 nuovi dataset",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/97"
     },
     {
       "number": 95,
@@ -529,8 +517,8 @@
     "name": "Lab Clean Registry",
     "updated_at": "2026-05-19",
     "summary": {
-      "total": 25,
-      "published": 9
+      "total": 26,
+      "published": 10
     },
     "datasets": [
       {
@@ -1634,6 +1622,49 @@
             "role": "metric"
           }
         ]
+      },
+      {
+        "slug": "terna_electricity_by_source",
+        "name": "Terna Electricity By Source",
+        "stage": "published",
+        "period": {
+          "start": 2023,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/terna_electricity_by_source/*/terna_electricity_by_source_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 1,
+        "dimension_columns": 5,
+        "column_count": 6,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_produzione",
+            "role": "dimension"
+          },
+          {
+            "name": "regione",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "fonte",
+            "role": "dimension"
+          },
+          {
+            "name": "produzione_gwh",
+            "role": "metric"
+          }
+        ]
       }
     ]
   },
@@ -1670,7 +1701,8 @@
     "clean_ready_not_published": [
       "bdap_lea",
       "consip_consumi_convenzione",
-      "istat_ipab_aree"
+      "istat_ipab_aree",
+      "terna_electricity_by_source"
     ],
     "last_deploy": {
       "run_id": 26033639423,

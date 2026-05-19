@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-05-19T09:44:01.952569",
+  "generated_at": "2026-05-19T15:24:03.199393",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -112,6 +112,16 @@
       {
         "slug": "terna_capacita_rinnovabile",
         "name": "Terna Capacita Rinnovabile",
+        "period": {
+          "start": 2023,
+          "end": 2024
+        }
+      }
+    ],
+    "Terna S.p.A. - dati.terna.it": [
+      {
+        "slug": "terna_electricity_by_source",
+        "name": "Terna Electricity By Source",
         "period": {
           "start": 2023,
           "end": 2024
