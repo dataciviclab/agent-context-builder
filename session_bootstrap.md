@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-19T15:24:03.199393
+**Generated**: 2026-05-19T19:53:26.861408
 
 ## 🔍 SCOUTING
 
@@ -18,8 +18,8 @@
 
 **Pipeline**: 32 candidates — 32 ok
   ⚠️ **camera-deputati-legislature** — run fallito [2024](https://github.com/dataciviclab/dataset-incubator/actions/runs/25509412527)
-  ⚠️ **mur-contribuzione-universitaria** — run fallito [2024](https://github.com/dataciviclab/dataset-incubator/actions/runs/25509412527)
-**Dataset Catalog**: 10 published · 10 public · updated 2026-05-19
+  ⚠️ **mur-contribuzione-universitaria** — run fallito [0](https://github.com/dataciviclab/dataset-incubator/actions/runs/26106467223)
+**Dataset Catalog**: 11 published · 11 public · updated 2026-05-19
 
 ## 🗂 EXPLORER
 
@@ -29,10 +29,11 @@
   · **Sanità**: aifa_spesa_consumo
   · **Welfare e lavoro**: dipendenti_pubblici, inps_pensioni_trimestrale
   · **Giustizia**: civile_flussi
-  ⚠ 4 dataset published non ancora su explorer:
+  ⚠ 5 dataset published non ancora su explorer:
     · bdap_lea
     · consip_consumi_convenzione
     · istat_ipab_aree
+    · mim_anagrafica_scuole_statali
     · terna_electricity_by_source
   **Deploy**: ✅ success (2026-05-18)
 

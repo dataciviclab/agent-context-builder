@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-05-19T15:24:03.199393",
+  "generated_at": "2026-05-19T19:53:26.861408",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -105,6 +105,16 @@
         "period": {
           "start": 2010,
           "end": 2025
+        }
+      }
+    ],
+    "MIM - dati.istruzione.it": [
+      {
+        "slug": "mim_anagrafica_scuole_statali",
+        "name": "Mim Anagrafica Scuole Statali",
+        "period": {
+          "start": 2024,
+          "end": 2024
         }
       }
     ],
@@ -231,8 +241,8 @@
         "slug": "mim_alunni_corso_eta",
         "name": "Alunni per corso ed et\u00e0 \u2014 MIM",
         "period": {
-          "start": 2024,
-          "end": 2024
+          "start": 2016,
+          "end": 2025
         }
       }
     ],

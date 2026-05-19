@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-19T15:24:03.199393",
+  "generated_at": "2026-05-19T19:53:26.861408",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -24,7 +24,7 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/96"
     }
   ],
-  "open_issues": 35,
+  "open_issues": 37,
   "issues": [
     {
       "number": 327,
@@ -135,10 +135,22 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/113"
     },
     {
+      "number": 258,
+      "title": "feat: run smoke \u2014 flag --sample-rows e --sample-bytes per alleggerire CI toolkit-pr",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/258"
+    },
+    {
       "number": 244,
       "title": "Esporre costanti path come API pubblica per eliminare duplicazione contratti impliciti",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/244"
+    },
+    {
+      "number": 99,
+      "title": "follow-up: pagina e tema per mim-anagrafica-scuole-statali",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/99"
     },
     {
       "number": 97,
@@ -517,8 +529,8 @@
     "name": "Lab Clean Registry",
     "updated_at": "2026-05-19",
     "summary": {
-      "total": 26,
-      "published": 10
+      "total": 27,
+      "published": 11
     },
     "datasets": [
       {
@@ -1477,8 +1489,8 @@
         "name": "Alunni per corso ed et\u00e0 \u2014 MIM",
         "stage": "incubating",
         "period": {
-          "start": 2024,
-          "end": 2024
+          "start": 2016,
+          "end": 2025
         },
         "location": {
           "type": "gcs",
@@ -1489,6 +1501,81 @@
         "dimension_columns": 5,
         "column_count": 6,
         "columns": []
+      },
+      {
+        "slug": "mim_anagrafica_scuole_statali",
+        "name": "Mim Anagrafica Scuole Statali",
+        "stage": "published",
+        "period": {
+          "start": 2024,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/mim_anagrafica_scuole_statali/2024/mim_anagrafica_scuole_statali_2024_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 0,
+        "dimension_columns": 14,
+        "column_count": 14,
+        "columns": [
+          {
+            "name": "anno_scolastico",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_scuola",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_istituto_riferimento",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione_istituto_riferimento",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione_scuola",
+            "role": "dimension"
+          },
+          {
+            "name": "area_geografica",
+            "role": "dimension"
+          },
+          {
+            "name": "regione",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_comune_scuola",
+            "role": "dimension"
+          },
+          {
+            "name": "comune",
+            "role": "dimension"
+          },
+          {
+            "name": "cap_scuola",
+            "role": "dimension"
+          },
+          {
+            "name": "indirizzo_scuola",
+            "role": "dimension"
+          },
+          {
+            "name": "caratteristica_scuola",
+            "role": "dimension"
+          },
+          {
+            "name": "grado_istruzione_scuola",
+            "role": "dimension"
+          }
+        ]
       },
       {
         "slug": "mit_incidentalita_mensile",
@@ -1554,8 +1641,8 @@
         },
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/pensioni_pa_dag/*/pensioni_pa_dag_*_clean.parquet",
-          "multi_file": true
+          "path": "gs://dataciviclab-clean/pensioni_pa_dag/2024/pensioni_pa_dag_2024_clean.parquet",
+          "multi_file": false
         },
         "metric_columns": 5,
         "dimension_columns": 13,
@@ -1702,6 +1789,7 @@
       "bdap_lea",
       "consip_consumi_convenzione",
       "istat_ipab_aree",
+      "mim_anagrafica_scuole_statali",
       "terna_electricity_by_source"
     ],
     "last_deploy": {
