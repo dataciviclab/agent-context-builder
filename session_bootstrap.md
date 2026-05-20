@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-20T15:22:09.244600
+**Generated**: 2026-05-20T20:16:14.847094
 
 ## 🔍 SCOUTING
 
@@ -24,8 +24,7 @@
 ## 🔗 OPEN
 
 > Warning: GitHub fetch error — dati incompleti
-- [dataset-incubator#358](https://github.com/dataciviclab/dataset-incubator/pull/358): fix: aggiorna riferimento da catalog/themes.json a src/data/themes.json.py
-- [dataciviclab#279](https://github.com/dataciviclab/dataciviclab/pull/279): Civile flussi: v2 con separazione README/notebook, figure (2014-2025)
+- [dataciviclab#282](https://github.com/dataciviclab/dataciviclab/pull/282): Terna elettricità: v2 con separazione README/notebook, figure
 **Discussions**: 20 open
   · [Domanda] Processo penale: a Cagliari 864 giorni, a Messina 261. E la fase GIP GUP è già in affanno in 101 tribunali su 140
   · [Domanda] 405 opere pubbliche incomplete, 2,7 miliardi di euro fermati. Dove sono finite le nostre infrastrutture?
