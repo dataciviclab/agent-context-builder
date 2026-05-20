@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-19T19:53:26.861408",
+  "generated_at": "2026-05-20T03:38:20.170953",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,22 +9,9 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": 2,
-  "prs": [
-    {
-      "number": 98,
-      "title": "Migrazione: da Evidence a Observable Framework (feat/observable-framework)",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/98"
-    },
-    {
-      "number": 96,
-      "title": "chore(deps-dev): bump postcss-load-config from 5.1.0 to 6.0.1",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/96"
-    }
-  ],
-  "open_issues": 37,
+  "open_prs": null,
+  "prs": [],
+  "open_issues": null,
   "issues": [
     {
       "number": 327,
@@ -392,7 +379,9 @@
       "category": "Datasets"
     }
   ],
-  "github_fetch_errors": {},
+  "github_fetch_errors": {
+    "data-explorer:catalog/themes.json": "https://raw.githubusercontent.com/dataciviclab/data-explorer/main/catalog/themes.json: HTTP 404"
+  },
   "git_state": {
     "agent-context-builder": {
       "available": false,
@@ -443,7 +432,9 @@
       "untracked_files": 0
     }
   },
-  "warnings": [],
+  "warnings": [
+    "GitHub fetch failed \u2014 data-explorer:catalog/themes.json: https://raw.githubusercontent.com/dataciviclab/data-explorer/main/catalog/themes.json: HTTP 404"
+  ],
   "radar": {
     "available": true,
     "probe_date": "2026-05-19",
@@ -1756,49 +1747,6 @@
     ]
   },
   "explorer": {
-    "available": true,
-    "themes": [
-      {
-        "slug": "territorio-ambiente",
-        "name": "Territorio e ambiente",
-        "dataset_count": 2
-      },
-      {
-        "slug": "finanza-pubblica",
-        "name": "Finanza pubblica",
-        "dataset_count": 2
-      },
-      {
-        "slug": "sanita",
-        "name": "Sanit\u00e0",
-        "dataset_count": 1
-      },
-      {
-        "slug": "welfare-lavoro",
-        "name": "Welfare e lavoro",
-        "dataset_count": 2
-      },
-      {
-        "slug": "giustizia",
-        "name": "Giustizia",
-        "dataset_count": 1
-      }
-    ],
-    "published_count": 8,
-    "clean_ready_not_published": [
-      "bdap_lea",
-      "consip_consumi_convenzione",
-      "istat_ipab_aree",
-      "mim_anagrafica_scuole_statali",
-      "terna_electricity_by_source"
-    ],
-    "last_deploy": {
-      "run_id": 26033639423,
-      "name": "Deploy to GitHub Pages",
-      "status": "completed",
-      "conclusion": "success",
-      "completed_at": "2026-05-18T12:35:17Z",
-      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26033639423"
-    }
+    "available": false
   }
 }
