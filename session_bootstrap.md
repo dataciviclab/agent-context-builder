@@ -1,14 +1,14 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-20T03:38:20.170953
+**Generated**: 2026-05-20T09:35:26.460705
 
 ## 🔍 SCOUTING
 
-**Radar**: 23 fonti — GREEN 17 · YELLOW 4 · RED 2 (probe: 2026-05-19)
+**Radar**: 23 fonti — GREEN 17 · YELLOW 5 · RED 1 (probe: 2026-05-20)
   ⚠ **1 persistent RED**
+  · **istat_sdmx** YELLOW [-] — Timeout (ReadTimeout)
   · **anac** YELLOW [403]
   · **dati_salute** RED [-] — SSL verify failed; fallback connection error (SSLError) (streak 14)
-  · **dati_camera** RED [503]
   · **lavoro_opendata** YELLOW [200] — CKAN API returned non-JSON content
   · **mur_ustat** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
   · **opencoesione** YELLOW [403]
