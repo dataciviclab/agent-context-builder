@@ -1,23 +1,12 @@
-"""Tests for discussions module — mocks HttpClient, not raw requests."""
-
-from unittest.mock import MagicMock, patch
+"""Tests for discussions module — uses FakeHttpClient for HTTP boundary."""
+from __future__ import annotations
 
 from lab_connectors.http import HttpResult
+from lab_connectors.testing import fake_response
 
 from agent_context_builder.discussions import Discussion, DiscussionCollector
 
-
-def _http_ok(json_data: dict) -> HttpResult:
-    """Build success HttpResult."""
-    resp = MagicMock()
-    resp.status_code = 200
-    resp.json.return_value = json_data
-    return HttpResult(response=resp, err=None)
-
-
-def _http_error() -> HttpResult:
-    """Build network error HttpResult."""
-    return HttpResult(response=None, err=Exception("network error"))
+_GRAPHQL_URL = "https://api.github.com/graphql"
 
 
 def test_discussion_creation():
@@ -33,7 +22,8 @@ def test_discussion_creation():
 
 def test_get_discussions_no_token():
     """Without token, all repos fail with ValueError recorded in fetch_errors."""
-    collector = DiscussionCollector(org="dataciviclab", token=None)
+    collector = DiscussionCollector(org="dataciviclab", token=None,
+                                    http_client=None)
     results = collector.get_discussions(["dataset-incubator"])
 
     assert results == []
@@ -41,51 +31,48 @@ def test_get_discussions_no_token():
     assert "token" in collector.fetch_errors["dataset-incubator:discussions"].lower()
 
 
-def test_get_discussions_api_error():
+def test_get_discussions_api_error(fake_http):
     """HTTP errors are captured in fetch_errors, not raised."""
-    collector = DiscussionCollector(org="dataciviclab", token="fake-token")
+    fake_http.responses[_GRAPHQL_URL] = HttpResult(
+        response=fake_response(403, text="Forbidden"),
+        err=None,
+    )
+    collector = DiscussionCollector(org="dataciviclab", token="fake-token",
+                                    http_client=fake_http)
 
-    with patch("agent_context_builder.discussions.HttpClient") as mock_cls:
-        mock_instance = mock_cls.return_value
-        # Simulate HTTP 403 — response with error status, not network error
-        resp = MagicMock()
-        resp.status_code = 403
-        resp.json.side_effect = Exception("403 Forbidden")
-        mock_instance.post.return_value = HttpResult(response=resp, err=None)
-
-        results = collector.get_discussions(["dataset-incubator"])
+    results = collector.get_discussions(["dataset-incubator"])
 
     assert results == []
     assert "dataset-incubator:discussions" in collector.fetch_errors
 
 
-def test_get_discussions_success():
+def test_get_discussions_success(fake_http):
     """Successful GraphQL response is parsed into Discussion objects."""
-    collector = DiscussionCollector(org="dataciviclab", token="fake-token")
-
-    mock_payload = {
-        "data": {
-            "repository": {
-                "discussions": {
-                    "nodes": [
-                        {
-                            "number": 42,
-                            "title": "IRPEF comunale: cosa ci dice?",
-                            "url": "https://github.com/dataciviclab/dataset-incubator/discussions/42",
-                            "category": {"name": "Civic Questions"},
-                            "author": {"login": "gabry"},
-                            "updatedAt": "2026-04-14T20:00:00Z",
-                        }
-                    ]
+    fake_http.responses[_GRAPHQL_URL] = HttpResult(
+        response=fake_response(200, json_data={
+            "data": {
+                "repository": {
+                    "discussions": {
+                        "nodes": [
+                            {
+                                "number": 42,
+                                "title": "IRPEF comunale: cosa ci dice?",
+                                "url": "https://github.com/dataciviclab/dataset-incubator/discussions/42",
+                                "category": {"name": "Civic Questions"},
+                                "author": {"login": "gabry"},
+                                "updatedAt": "2026-04-14T20:00:00Z",
+                            }
+                        ]
+                    }
                 }
             }
-        }
-    }
+        }),
+        err=None,
+    )
+    collector = DiscussionCollector(org="dataciviclab", token="fake-token",
+                                    http_client=fake_http)
 
-    with patch("agent_context_builder.discussions.HttpClient") as mock_cls:
-        mock_instance = mock_cls.return_value
-        mock_instance.post.return_value = _http_ok(mock_payload)
-        results = collector.get_discussions(["dataset-incubator"])
+    results = collector.get_discussions(["dataset-incubator"])
 
     assert len(results) == 1
     assert results[0].number == 42

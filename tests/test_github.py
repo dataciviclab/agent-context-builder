@@ -1,47 +1,48 @@
-"""Tests for github module HTTP boundary."""
+"""Tests for github module HTTP boundary — uses FakeHttpClient."""
+from __future__ import annotations
 
-from unittest.mock import MagicMock, patch
+from lab_connectors.http import HttpResult
+from lab_connectors.testing import fake_response
 
 from agent_context_builder.github import GitHubCollector
 
 
-def _make_http_result(status_code: int, body: str = ""):
-    """Build a mock HttpResult with the given status code."""
-    mock_resp = MagicMock()
-    mock_resp.status_code = status_code
-    mock_resp.text = body
-    mock_resp.json.return_value = {}
-    result = MagicMock()
-    result.is_ok = status_code < 500  # come HttpClient reale
-    result.response = mock_resp
-    result.err = None
-    return result
+def _register_get(fake_http, url: str, status: int = 200, body: str = "", json_data=None):
+    """Register a GET response for *url* on *fake_http*."""
+    fake_http.responses[url] = HttpResult(
+        response=fake_response(status, text=body, json_data=json_data),
+        err=None,
+    )
+
+
+def _make_collector(fake_http, token: str = "fake") -> GitHubCollector:
+    return GitHubCollector("test-org", token=token, http_client=fake_http)
 
 
 class TestGetRawFile:
     """get_raw_file deve gestire 4xx come errori, non restituire body di errore."""
 
-    def test_404_returns_none(self):
+    def test_404_returns_none(self, fake_http):
         """404 su get_raw_file → None + fetch_errors popolato."""
-        collector = GitHubCollector("test-org", token="fake")
-        with patch.object(collector._http, "get", return_value=_make_http_result(404)):
-            result = collector.get_raw_file("some-repo", "data/file.json")
+        _register_get(fake_http, "https://raw.githubusercontent.com/test-org/some-repo/main/data/file.json", status=404)
+        collector = _make_collector(fake_http)
+        result = collector.get_raw_file("some-repo", "data/file.json")
         assert result is None
         assert "some-repo:data/file.json" in collector.fetch_errors
         assert "HTTP 404" in collector.fetch_errors["some-repo:data/file.json"]
 
-    def test_200_returns_text(self):
+    def test_200_returns_text(self, fake_http):
         """200 su get_raw_file → body restituito."""
-        collector = GitHubCollector("test-org", token="fake")
-        with patch.object(collector._http, "get", return_value=_make_http_result(200, "ok")):
-            result = collector.get_raw_file("some-repo", "data/file.json")
+        _register_get(fake_http, "https://raw.githubusercontent.com/test-org/some-repo/main/data/file.json", status=200, body="ok")
+        collector = _make_collector(fake_http)
+        result = collector.get_raw_file("some-repo", "data/file.json")
         assert result == "ok"
 
-    def test_403_records_error(self):
+    def test_403_records_error(self, fake_http):
         """403 su get_raw_file → None + errore tracciato."""
-        collector = GitHubCollector("test-org", token="fake")
-        with patch.object(collector._http, "get", return_value=_make_http_result(403)):
-            result = collector.get_raw_file("some-repo", "data/file.json")
+        _register_get(fake_http, "https://raw.githubusercontent.com/test-org/some-repo/main/data/file.json", status=403)
+        collector = _make_collector(fake_http)
+        result = collector.get_raw_file("some-repo", "data/file.json")
         assert result is None
         assert "HTTP 403" in collector.fetch_errors["some-repo:data/file.json"]
 
@@ -49,11 +50,11 @@ class TestGetRawFile:
 class TestGetReposInfo:
     """get_repos_info deve segnalare 4xx come errori, non dati vuoti."""
 
-    def test_403_skips_and_records_error(self):
+    def test_403_skips_and_records_error(self, fake_http):
         """403 su get_repos_info → repo skippato + errore tracciato."""
-        collector = GitHubCollector("test-org", token="fake")
-        with patch.object(collector._http, "get", return_value=_make_http_result(403)):
-            result = collector.get_repos_info(["some-repo"])
+        _register_get(fake_http, "https://api.github.com/repos/test-org/some-repo", status=403)
+        collector = _make_collector(fake_http)
+        result = collector.get_repos_info(["some-repo"])
         assert "some-repo" not in result
         assert "some-repo:info" in collector.fetch_errors
         assert "HTTP 403" in collector.fetch_errors["some-repo:info"]
@@ -62,11 +63,11 @@ class TestGetReposInfo:
 class TestGetRepoPrs:
     """get_prs deve propagare 4xx come errori."""
 
-    def test_403_records_error(self):
+    def test_403_records_error(self, fake_http):
         """403 su get_prs → lista vuota + errore tracciato."""
-        collector = GitHubCollector("test-org", token="fake")
-        with patch.object(collector._http, "get", return_value=_make_http_result(403)):
-            result = collector.get_prs(["some-repo"])
+        _register_get(fake_http, "https://api.github.com/repos/test-org/some-repo/pulls", status=403)
+        collector = _make_collector(fake_http)
+        result = collector.get_prs(["some-repo"])
         assert result == []
         assert "some-repo:prs" in collector.fetch_errors
         assert "HTTP 403" in collector.fetch_errors["some-repo:prs"]
@@ -75,11 +76,11 @@ class TestGetRepoPrs:
 class TestGetIssues:
     """get_issues deve propagare 4xx come errori."""
 
-    def test_403_records_error(self):
+    def test_403_records_error(self, fake_http):
         """403 su get_issues → lista vuota + errore tracciato."""
-        collector = GitHubCollector("test-org", token="fake")
-        with patch.object(collector._http, "get", return_value=_make_http_result(403)):
-            result = collector.get_issues(["some-repo"])
+        _register_get(fake_http, "https://api.github.com/repos/test-org/some-repo/issues", status=403)
+        collector = _make_collector(fake_http)
+        result = collector.get_issues(["some-repo"])
         assert result == []
         assert "some-repo:issues" in collector.fetch_errors
         assert "HTTP 403" in collector.fetch_errors["some-repo:issues"]

@@ -43,17 +43,19 @@ class RepoInfo:
 class GitHubCollector:
     """Collect context from GitHub API."""
 
-    def __init__(self, org: str, token: Optional[str] = None):
+    def __init__(self, org: str, token: Optional[str] = None,
+                 http_client: Optional[HttpClient] = None):
         """Initialize GitHub collector.
 
         Args:
             org: GitHub organization
             token: GitHub API token (optional)
+            http_client: Optional pre-configured HttpClient (for testing).
         """
         self.org = org
         self.token = token
         self.base_url = "https://api.github.com"
-        self._http = HttpClient(timeout=10)
+        self._http = http_client or HttpClient(timeout=10)
         # Populated by get_prs/get_issues — maps "<repo>:prs" or "<repo>:issues" to error message
         self.fetch_errors: dict[str, str] = {}
 
