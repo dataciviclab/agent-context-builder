@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-20T20:16:14.847094
+**Generated**: 2026-05-21T03:45:51.219479
 
 ## 🔍 SCOUTING
 
@@ -24,11 +24,11 @@
 ## 🔗 OPEN
 
 > Warning: GitHub fetch error — dati incompleti
-- [dataciviclab#282](https://github.com/dataciviclab/dataciviclab/pull/282): Terna elettricità: v2 con separazione README/notebook, figure
+- [dataset-incubator#360](https://github.com/dataciviclab/dataset-incubator/pull/360): chore: aggiunta directory figures per candidate MIT
 **Discussions**: 20 open
+  · [Analisi] AIFA Spesa Farmaceutica — il cardiovascolare traina il 63% della spesa, il divario Nord-Sud si allarga
   · [Domanda] Processo penale: a Cagliari 864 giorni, a Messina 261. E la fase GIP GUP è già in affanno in 101 tribunali su 140
   · [Domanda] 405 opere pubbliche incomplete, 2,7 miliardi di euro fermati. Dove sono finite le nostre infrastrutture?
-  · [Analisi] [Analisi] MIT Incidentalità: l'andamento della mortalità stradale in Italia (2001‑2018)
 **Topics**: pipeline · governance
 
 ## 🛠 INFRA
