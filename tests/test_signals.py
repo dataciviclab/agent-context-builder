@@ -1,15 +1,11 @@
 """Tests for signals module (parsing and data models)."""
 
 import json
+
 import pytest
 
 from agent_context_builder.signals import (
     DICleanCatalog,
-    DICleanDatasetColumn,
-    RepoSignals,
-    RepoSignalSampleRun,
-    SourceObservatorySignals,
-    SourceSignal,
     parse_di_clean_catalog,
     parse_repo_signals,
     parse_source_observatory_signals,
@@ -230,7 +226,10 @@ def test_failed_runs_property():
                 "label": "failed-signal",
                 "detail": "",
                 "action": "",
-                "sample_run": {"status": "failed", "run_id": "1", "run_url": "x", "checked_at": "x", "year": 2020, "config_path": "x.yml"},
+                "sample_run": {
+                    "status": "failed", "run_id": "1", "run_url": "x",
+                    "checked_at": "x", "year": 2020, "config_path": "x.yml",
+                },
             },
             {"id": "ok-signal-2", "status": "ok", "label": "ok2", "detail": "", "action": ""},
         ],

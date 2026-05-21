@@ -7,17 +7,20 @@ from typing import Any
 
 from .config import Config
 from .discussions import DiscussionCollector
-from .github import GitHubCollector, PR
 from .git_local import GitLocalCollector, GitState
+from .github import PR, GitHubCollector
+from .signals import (
+    DICleanCatalog,
+    ExplorerTheme,
+    RadarSummary,
+    RepoSignals,
+    SourceObservatorySignals,
+)
 from .sources.de import DataExplorerFetcher
 from .sources.di import DatasetIncubatorFetcher
 from .sources.so import SourceObservatoryFetcher
-from .signals import (
-    ExplorerTheme,
-    RadarSummary,
-    SourceObservatorySignals,
-)
 from .triage import build_workspace_triage
+
 
 class Renderer:
     """Render context artifacts."""
@@ -98,7 +101,10 @@ class Renderer:
                 issues = so.drift_alerts
                 if issues:
                     for s in issues:
-                        action = f" — azione: {s.suggested_action}" if s.suggested_action not in ("nessuna", "") else ""
+                        action = (
+                            f" — azione: {s.suggested_action}"
+                            if s.suggested_action not in ("nessuna", "") else ""
+                        )
                         lines.append(f"  · **{s.source}** ({s.protocol}): {s.signal_type}{action}")
                 else:
                     lines.append(
@@ -186,7 +192,7 @@ class Renderer:
                              if last_deploy.get("completed_at") else "?")
                 lines.append(f"  **Deploy**: {icon} {conclusion} ({completed})")
             else:
-                lines.append(f"  **Deploy**: dati non disponibili")
+                lines.append("  **Deploy**: dati non disponibili")
 
             lines.append("")
 
@@ -194,8 +200,12 @@ class Renderer:
         prs = self.github_collector.get_prs(self.config.repos)
         github_errors = self.github_collector.fetch_errors
         collector_warn = self.github_collector.collector_warning()
-        discussions = self.discussion_collector.get_discussions(self.config.repos) if self.discussion_collector else []
-        disc_errors = self.discussion_collector.fetch_errors if self.discussion_collector else {}
+        if self.discussion_collector:
+            discussions = self.discussion_collector.get_discussions(self.config.repos)
+            disc_errors = self.discussion_collector.fetch_errors
+        else:
+            discussions = []
+            disc_errors = {}
 
         has_open = bool(prs) or bool(discussions) or bool(self.config.topics)
         if has_open:
@@ -204,7 +214,7 @@ class Renderer:
 
             # PRs
             if collector_warn:
-                lines.append(f"> Warning: GitHub fetch error — dati incompleti")
+                lines.append("> Warning: GitHub fetch error — dati incompleti")
             if prs:
                 _DEPENDABOT = {"dependabot[bot]", "dependabot"}
                 feature_prs = [pr for pr in prs if pr.author not in _DEPENDABOT]

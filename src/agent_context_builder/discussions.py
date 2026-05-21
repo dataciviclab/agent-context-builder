@@ -41,15 +41,18 @@ class Discussion:
 class DiscussionCollector:
     """Collect open discussions from GitHub via GraphQL."""
 
-    def __init__(self, org: str, token: Optional[str] = None):
+    def __init__(self, org: str, token: Optional[str] = None,
+                 http_client: Optional[HttpClient] = None):
         """Initialize discussion collector.
 
         Args:
             org: GitHub organization
             token: GitHub API token. GraphQL requires authentication.
+            http_client: Optional pre-configured HttpClient (for testing).
         """
         self.org = org
         self.token = token
+        self._http = http_client
         # Maps "<repo>:discussions" to error message — populated during collection
         self.fetch_errors: dict[str, str] = {}
 
@@ -76,7 +79,7 @@ class DiscussionCollector:
         if not self.token:
             raise ValueError("GitHub token required for GraphQL Discussions API")
 
-        client = HttpClient(timeout=10)
+        client = self._http or HttpClient(timeout=10)
         result = client.post(
             _GRAPHQL_URL,
             json={"query": _QUERY, "variables": {"owner": self.org, "repo": repo, "first": first}},
