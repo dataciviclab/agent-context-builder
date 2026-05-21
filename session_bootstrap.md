@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-21T15:28:46.075916
+**Generated**: 2026-05-21T16:07:23.547178
 
 ## 🔍 SCOUTING
 
@@ -25,9 +25,7 @@
 ## 🔗 OPEN
 
 > Warning: GitHub fetch error — dati incompleti
-- [agent-context-builder#42](https://github.com/dataciviclab/agent-context-builder/pull/42): feat: repository test a standard — FakeHttpClient, conftest, CLI tests, -164 righe in render
 - [dataset-incubator#360](https://github.com/dataciviclab/dataset-incubator/pull/360): chore: aggiunta directory figures per candidate MIT
-- [source-observatory#259](https://github.com/dataciviclab/source-observatory/pull/259): feat: conftest arricchito, -21 righe di sys.path ridondanti
 **Discussions**: 20 open
   · [Analisi] AIFA Spesa Farmaceutica — il cardiovascolare traina il 63% della spesa, il divario Nord-Sud si allarga
   · [Domanda] Processo penale: a Cagliari 864 giorni, a Messina 261. E la fase GIP GUP è già in affanno in 101 tribunali su 140
