@@ -5,6 +5,7 @@ from pathlib import Path
 from unittest.mock import MagicMock
 
 import pytest
+
 from agent_context_builder.config import Config
 from agent_context_builder.discussions import Discussion, DiscussionCollector
 from agent_context_builder.github import PR, RepoInfo
