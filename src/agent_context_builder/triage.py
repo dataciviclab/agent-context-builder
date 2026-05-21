@@ -7,7 +7,7 @@ from typing import Any
 from .config import Config
 from .discussions import Discussion, DiscussionCollector
 from .git_local import GitLocalCollector, GitState
-from .github import GitHubCollector, PR
+from .github import PR, GitHubCollector
 from .sources.de import DataExplorerFetcher
 from .sources.di import DatasetIncubatorFetcher
 from .sources.so import SourceObservatoryFetcher

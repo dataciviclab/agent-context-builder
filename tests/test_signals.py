@@ -1,15 +1,11 @@
 """Tests for signals module (parsing and data models)."""
 
 import json
+
 import pytest
 
 from agent_context_builder.signals import (
     DICleanCatalog,
-    DICleanDatasetColumn,
-    RepoSignals,
-    RepoSignalSampleRun,
-    SourceObservatorySignals,
-    SourceSignal,
     parse_di_clean_catalog,
     parse_repo_signals,
     parse_source_observatory_signals,

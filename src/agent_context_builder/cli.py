@@ -7,8 +7,8 @@ import click
 
 from .config import load_config
 from .discussions import DiscussionCollector
-from .github import GitHubCollector
 from .git_local import GitLocalCollector
+from .github import GitHubCollector
 from .render import Renderer
 
 

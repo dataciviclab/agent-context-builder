@@ -25,8 +25,15 @@ def _mock_renderer():
     """Build a MagicMock that mimics Renderer's output methods."""
     m = MagicMock()
     m.render_session_bootstrap.return_value = "# Session Bootstrap\n"
-    m.render_workspace_triage.return_value = {"open_prs": 0, "open_issues": 0, "open_discussions": 0, "warnings": [], "github_fetch_errors": {}, "git_state": {}, "source_health": {"available": False}, "dataset_catalog": {"available": False}, "discussions": []}
-    m.render_topic_index.return_value = {"repos": {}, "datasets_by_source": {}, "operational_topics": {}}
+    m.render_workspace_triage.return_value = {
+        "open_prs": 0, "open_issues": 0, "open_discussions": 0,
+        "warnings": [], "github_fetch_errors": {}, "git_state": {},
+        "source_health": {"available": False},
+        "dataset_catalog": {"available": False}, "discussions": [],
+    }
+    m.render_topic_index.return_value = {
+        "repos": {}, "datasets_by_source": {}, "operational_topics": {},
+    }
     return m
 
 

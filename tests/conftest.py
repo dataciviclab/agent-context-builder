@@ -10,17 +10,13 @@ they are importable from conftest (``from tests.conftest import ...``).
 from __future__ import annotations
 
 import json
-from pathlib import Path
 from unittest.mock import MagicMock
 
 import pytest
 
 from agent_context_builder.config import Config
-from agent_context_builder.github import GitHubCollector, RepoInfo
 from agent_context_builder.git_local import GitLocalCollector, GitState
-from agent_context_builder.render import Renderer
-from agent_context_builder.discussions import DiscussionCollector
-
+from agent_context_builder.github import GitHubCollector
 
 # ------------------------------------------------------------------
 # Fake HTTP client
@@ -187,7 +183,10 @@ def sample_di_json() -> str:
         "repo": "dataciviclab/dataset-incubator",
         "topic": "pipeline_state",
         "signals": [
-            {"id": "irpef-comunale", "status": "ok", "label": "irpef-comunale", "detail": "", "action": ""},
+            {
+                "id": "irpef-comunale", "status": "ok",
+                "label": "irpef-comunale", "detail": "", "action": "",
+            },
         ],
         "summary": {"ok": 1, "warn": 0, "error": 0},
     })

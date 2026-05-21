@@ -7,17 +7,18 @@ from typing import Any
 
 from .config import Config
 from .discussions import DiscussionCollector
-from .github import GitHubCollector, PR
 from .git_local import GitLocalCollector, GitState
-from .sources.de import DataExplorerFetcher
-from .sources.di import DatasetIncubatorFetcher
-from .sources.so import SourceObservatoryFetcher
+from .github import PR, GitHubCollector
 from .signals import (
     ExplorerTheme,
     RadarSummary,
     SourceObservatorySignals,
 )
+from .sources.de import DataExplorerFetcher
+from .sources.di import DatasetIncubatorFetcher
+from .sources.so import SourceObservatoryFetcher
 from .triage import build_workspace_triage
+
 
 class Renderer:
     """Render context artifacts."""
@@ -186,7 +187,7 @@ class Renderer:
                              if last_deploy.get("completed_at") else "?")
                 lines.append(f"  **Deploy**: {icon} {conclusion} ({completed})")
             else:
-                lines.append(f"  **Deploy**: dati non disponibili")
+                lines.append("  **Deploy**: dati non disponibili")
 
             lines.append("")
 
@@ -204,7 +205,7 @@ class Renderer:
 
             # PRs
             if collector_warn:
-                lines.append(f"> Warning: GitHub fetch error — dati incompleti")
+                lines.append("> Warning: GitHub fetch error — dati incompleti")
             if prs:
                 _DEPENDABOT = {"dependabot[bot]", "dependabot"}
                 feature_prs = [pr for pr in prs if pr.author not in _DEPENDABOT]
