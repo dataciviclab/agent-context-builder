@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-21T03:45:51.219479",
+  "generated_at": "2026-05-21T09:42:11.873788",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -139,12 +139,6 @@
       "title": "Esporre costanti path come API pubblica per eliminare duplicazione contratti impliciti",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/244"
-    },
-    {
-      "number": 99,
-      "title": "follow-up: pagina e tema per mim-anagrafica-scuole-statali",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/issues/99"
     },
     {
       "number": 97,
@@ -444,11 +438,11 @@
   ],
   "radar": {
     "available": true,
-    "probe_date": "2026-05-20",
+    "probe_date": "2026-05-21",
     "sources_total": 23,
-    "green": 17,
+    "green": 16,
     "yellow": 5,
-    "red": 1,
+    "red": 2,
     "persistent_red": 1,
     "unhealthy": [
       {
@@ -474,6 +468,14 @@
         "http_code": "-",
         "note": "SSL verify failed; fallback connection error (SSLError)",
         "red_streak": 14
+      },
+      {
+        "id": "dati_camera",
+        "status": "RED",
+        "protocol": "sparql",
+        "http_code": "503",
+        "note": null,
+        "red_streak": 0
       },
       {
         "id": "lavoro_opendata",
