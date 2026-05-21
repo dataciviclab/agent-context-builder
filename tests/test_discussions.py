@@ -1,6 +1,7 @@
 """Tests for discussions module — uses FakeHttpClient for HTTP boundary."""
 from __future__ import annotations
 
+import pytest
 from lab_connectors.http import HttpResult
 from lab_connectors.testing import fake_response
 
@@ -9,6 +10,7 @@ from agent_context_builder.discussions import Discussion, DiscussionCollector
 _GRAPHQL_URL = "https://api.github.com/graphql"
 
 
+@pytest.mark.pure_unit
 def test_discussion_creation():
     """Discussion dataclass holds expected fields."""
     d = Discussion(
@@ -20,6 +22,7 @@ def test_discussion_creation():
     assert d.category == "Civic Questions"
 
 
+@pytest.mark.adapter
 def test_get_discussions_no_token():
     """Without token, all repos fail with ValueError recorded in fetch_errors."""
     collector = DiscussionCollector(org="dataciviclab", token=None,
@@ -31,6 +34,7 @@ def test_get_discussions_no_token():
     assert "token" in collector.fetch_errors["dataset-incubator:discussions"].lower()
 
 
+@pytest.mark.adapter
 def test_get_discussions_api_error(fake_http):
     """HTTP errors are captured in fetch_errors, not raised."""
     fake_http.responses[_GRAPHQL_URL] = HttpResult(
@@ -46,6 +50,7 @@ def test_get_discussions_api_error(fake_http):
     assert "dataset-incubator:discussions" in collector.fetch_errors
 
 
+@pytest.mark.adapter
 def test_get_discussions_success(fake_http):
     """Successful GraphQL response is parsed into Discussion objects."""
     fake_http.responses[_GRAPHQL_URL] = HttpResult(

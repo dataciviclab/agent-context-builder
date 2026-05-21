@@ -1,8 +1,11 @@
 """Tests for github module HTTP boundary — uses FakeHttpClient."""
 from __future__ import annotations
 
+import pytest
 from lab_connectors.http import HttpResult
 from lab_connectors.testing import fake_response
+
+pytestmark = pytest.mark.adapter
 
 from agent_context_builder.github import GitHubCollector
 

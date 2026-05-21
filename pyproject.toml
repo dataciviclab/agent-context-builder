@@ -55,6 +55,14 @@ packages = ["src/agent_context_builder"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-v --cov=src/agent_context_builder"
+markers = [
+    "contract: public interface, artifact format, API contract, CLI stable output",
+    "policy: Lab non-obvious rule or cross-component behavior",
+    "regression: documented bug fix (link to issue/PR)",
+    "adapter: adapter to external service (our wrappers, not library internals)",
+    "pure_unit: non-trivial pure logic, zero side effects",
+    "smoke: end-to-end golden path only",
+]
 
 [tool.ruff]
 line-length = 100

@@ -4,6 +4,7 @@ from __future__ import annotations
 from pathlib import Path
 from unittest.mock import MagicMock
 
+import pytest
 from agent_context_builder.config import Config
 from agent_context_builder.discussions import Discussion, DiscussionCollector
 from agent_context_builder.github import PR, RepoInfo
@@ -16,6 +17,8 @@ from tests.conftest import (
     sample_di_json,
     sample_so_json,
 )
+
+pytestmark = pytest.mark.contract
 
 
 def _r(config, gh=None, git_state=None, disc=None):

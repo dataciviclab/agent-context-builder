@@ -5,7 +5,10 @@ import json
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
+import pytest
 from click.testing import CliRunner
+
+pytestmark = pytest.mark.contract
 
 from agent_context_builder.cli import cli
 from agent_context_builder.config import Config

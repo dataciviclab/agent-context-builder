@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 from unittest.mock import MagicMock, patch
 
+import pytest
 from lab_connectors.http import HttpResult
 from lab_connectors.testing import FakeHttpClient, fake_response
 
@@ -29,6 +30,7 @@ def _patch_fetch(fake: FakeHttpClient, path: str, text: str = "",
     )
 
 
+@pytest.mark.contract
 def test_session_bootstrap_resource():
     """session_bootstrap fetches session_bootstrap.md from context branch."""
     fake = FakeHttpClient()
@@ -41,6 +43,7 @@ def test_session_bootstrap_resource():
     assert "Session Bootstrap" in result
 
 
+@pytest.mark.contract
 def test_workspace_triage_resource():
     """workspace_triage fetches workspace_triage.json from context branch."""
     fake = FakeHttpClient()
@@ -53,6 +56,7 @@ def test_workspace_triage_resource():
     assert "open_prs" in result
 
 
+@pytest.mark.contract
 def test_topic_index_resource():
     """topic_index fetches topic_index.json from context branch."""
     fake = FakeHttpClient()
@@ -65,6 +69,7 @@ def test_topic_index_resource():
     assert "topics" in result
 
 
+@pytest.mark.contract
 def test_session_bootstrap_http_error():
     """session_bootstrap returns JSON error on HTTP failure instead of raising."""
     fake = FakeHttpClient()
@@ -80,6 +85,7 @@ def test_session_bootstrap_http_error():
     assert data["status_code"] == 403
 
 
+@pytest.mark.contract
 def test_workspace_triage_http_error():
     """workspace_triage returns JSON error on HTTP failure instead of raising."""
     fake = FakeHttpClient()
@@ -95,6 +101,7 @@ def test_workspace_triage_http_error():
     assert data["status_code"] == 404
 
 
+@pytest.mark.contract
 def test_topic_index_http_error():
     """topic_index returns JSON error on HTTP failure instead of raising."""
     fake = FakeHttpClient()
@@ -131,6 +138,7 @@ def _mock_post_response(status: int = 204):
     return resp
 
 
+@pytest.mark.adapter
 def test_refresh_context_no_token(monkeypatch):
     """refresh_context returns error message when GITHUB_TOKEN not set."""
     monkeypatch.delenv("GITHUB_TOKEN", raising=False)
@@ -141,6 +149,7 @@ def test_refresh_context_no_token(monkeypatch):
     assert "GITHUB_TOKEN" in result
 
 
+@pytest.mark.adapter
 def test_refresh_context_loads_token_from_env_file(monkeypatch, tmp_path):
     """refresh_context can use a local .env when the host does not export env vars."""
     env_file = tmp_path / ".env"
@@ -159,6 +168,7 @@ def test_refresh_context_loads_token_from_env_file(monkeypatch, tmp_path):
     assert mock_post.call_args.kwargs["headers"]["Authorization"] == "token file-token"
 
 
+@pytest.mark.adapter
 def test_refresh_context_loads_token_when_env_is_empty(monkeypatch, tmp_path):
     """A blank inherited value should not block the local .env fallback."""
     env_file = tmp_path / ".env"
@@ -177,6 +187,7 @@ def test_refresh_context_loads_token_when_env_is_empty(monkeypatch, tmp_path):
     assert mock_post.call_args.kwargs["headers"]["Authorization"] == "token file-token"
 
 
+@pytest.mark.adapter
 def test_refresh_context_continues_after_partial_env(monkeypatch, tmp_path):
     """A partial explicit .env should not prevent later candidates from filling tokens."""
     explicit_env = tmp_path / "partial.env"
@@ -198,6 +209,7 @@ def test_refresh_context_continues_after_partial_env(monkeypatch, tmp_path):
     assert mock_post.call_args.kwargs["headers"]["Authorization"] == "token file-token"
 
 
+@pytest.mark.adapter
 def test_refresh_context_success(monkeypatch):
     """refresh_context triggers workflow dispatch and reports success."""
     monkeypatch.setenv("GITHUB_TOKEN", "fake-token")
@@ -211,6 +223,7 @@ def test_refresh_context_success(monkeypatch):
     assert data["ok"] is True
 
 
+@pytest.mark.adapter
 def test_refresh_context_api_error(monkeypatch):
     """refresh_context reports API errors without raising."""
     monkeypatch.setenv("GITHUB_TOKEN", "fake-token")
