@@ -4,9 +4,9 @@ from pathlib import Path
 
 import pytest
 
-pytestmark = pytest.mark.pure_unit
-
 from agent_context_builder.config import Config, Topic, load_config
+
+pytestmark = pytest.mark.pure_unit
 
 
 def test_topic_creation():
