@@ -10,8 +10,10 @@ from .discussions import DiscussionCollector
 from .git_local import GitLocalCollector, GitState
 from .github import PR, GitHubCollector
 from .signals import (
+    DICleanCatalog,
     ExplorerTheme,
     RadarSummary,
+    RepoSignals,
     SourceObservatorySignals,
 )
 from .sources.de import DataExplorerFetcher
@@ -99,7 +101,10 @@ class Renderer:
                 issues = so.drift_alerts
                 if issues:
                     for s in issues:
-                        action = f" — azione: {s.suggested_action}" if s.suggested_action not in ("nessuna", "") else ""
+                        action = (
+                            f" — azione: {s.suggested_action}"
+                            if s.suggested_action not in ("nessuna", "") else ""
+                        )
                         lines.append(f"  · **{s.source}** ({s.protocol}): {s.signal_type}{action}")
                 else:
                     lines.append(
@@ -195,8 +200,12 @@ class Renderer:
         prs = self.github_collector.get_prs(self.config.repos)
         github_errors = self.github_collector.fetch_errors
         collector_warn = self.github_collector.collector_warning()
-        discussions = self.discussion_collector.get_discussions(self.config.repos) if self.discussion_collector else []
-        disc_errors = self.discussion_collector.fetch_errors if self.discussion_collector else {}
+        if self.discussion_collector:
+            discussions = self.discussion_collector.get_discussions(self.config.repos)
+            disc_errors = self.discussion_collector.fetch_errors
+        else:
+            discussions = []
+            disc_errors = {}
 
         has_open = bool(prs) or bool(discussions) or bool(self.config.topics)
         if has_open:

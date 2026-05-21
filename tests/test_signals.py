@@ -226,7 +226,10 @@ def test_failed_runs_property():
                 "label": "failed-signal",
                 "detail": "",
                 "action": "",
-                "sample_run": {"status": "failed", "run_id": "1", "run_url": "x", "checked_at": "x", "year": 2020, "config_path": "x.yml"},
+                "sample_run": {
+                    "status": "failed", "run_id": "1", "run_url": "x",
+                    "checked_at": "x", "year": 2020, "config_path": "x.yml",
+                },
             },
             {"id": "ok-signal-2", "status": "ok", "label": "ok2", "detail": "", "action": ""},
         ],
