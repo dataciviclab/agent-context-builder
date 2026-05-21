@@ -37,6 +37,7 @@ def _sample_json(signals: list[dict] | None = None) -> str:
     })
 
 
+@pytest.mark.pure_unit
 def test_parse_returns_correct_counts():
     so = parse_source_observatory_signals(_sample_json())
     assert so.captured_at == "2026-04-12"
@@ -44,11 +45,13 @@ def test_parse_returns_correct_counts():
     assert len(so.signals) == 2
 
 
+@pytest.mark.pure_unit
 def test_regressions_filter():
     so = parse_source_observatory_signals(_sample_json())
     assert len(so.regressions) == 0
 
 
+@pytest.mark.policy
 def test_drift_alerts_excludes_no_signal():
     """drift_alerts excludes stable sources and keeps catalog drift entries."""
     so = parse_source_observatory_signals(_sample_json())
@@ -57,6 +60,7 @@ def test_drift_alerts_excludes_no_signal():
     assert len(so.alerts) == 1
 
 
+@pytest.mark.pure_unit
 def test_all_stable_empty_filters():
     raw = _sample_json([
         {
@@ -74,11 +78,13 @@ def test_all_stable_empty_filters():
     assert so.drift_alerts == []
 
 
+@pytest.mark.pure_unit
 def test_parse_invalid_json_raises():
     with pytest.raises(ValueError, match="Invalid JSON"):
         parse_source_observatory_signals("not json{")
 
 
+@pytest.mark.policy
 def test_parse_missing_fields_uses_defaults():
     raw = json.dumps({"signals": [{"source": "test"}]})
     so = parse_source_observatory_signals(raw)
@@ -86,6 +92,7 @@ def test_parse_missing_fields_uses_defaults():
     assert so.signals[0].result == ""
 
 
+@pytest.mark.contract
 def test_alerts_alias_matches_drift_alerts():
     """Legacy alerts alias now maps to the catalog drift alerts."""
     so = parse_source_observatory_signals(_sample_json())
@@ -127,6 +134,7 @@ def _sample_repo_signals_json(signals: list[dict] | None = None) -> str:
     })
 
 
+@pytest.mark.pure_unit
 def test_parse_repo_signals_basic():
     rs = parse_repo_signals(_sample_repo_signals_json())
     assert rs.repo == "dataciviclab/dataset-incubator"
@@ -135,6 +143,7 @@ def test_parse_repo_signals_basic():
     assert len(rs.signals) == 3
 
 
+@pytest.mark.pure_unit
 def test_parse_repo_signals_actionable():
     rs = parse_repo_signals(_sample_repo_signals_json())
     actionable = rs.actionable
@@ -143,6 +152,7 @@ def test_parse_repo_signals_actionable():
     assert statuses == {"warn", "error"}
 
 
+@pytest.mark.pure_unit
 def test_parse_repo_signals_all_ok():
     raw = _sample_repo_signals_json([
         {"id": "a", "status": "ok", "label": "a", "detail": "", "action": ""},
@@ -151,11 +161,13 @@ def test_parse_repo_signals_all_ok():
     assert rs.actionable == []
 
 
+@pytest.mark.pure_unit
 def test_parse_repo_signals_invalid_json_raises():
     with pytest.raises(ValueError, match="Invalid JSON"):
         parse_repo_signals("not json{")
 
 
+@pytest.mark.policy
 def test_parse_repo_signals_missing_fields_use_defaults():
     raw = json.dumps({"signals": [{"id": "test"}]})
     rs = parse_repo_signals(raw)
@@ -164,6 +176,7 @@ def test_parse_repo_signals_missing_fields_use_defaults():
     assert rs.signals[0].label == "test"
 
 
+@pytest.mark.contract
 def test_parse_repo_signals_sample_run_parsing():
     """sample_run fields are parsed and exposed on RepoSignal."""
     raw = json.dumps({
@@ -198,6 +211,7 @@ def test_parse_repo_signals_sample_run_parsing():
     assert sr.sample_run.year == 2020
 
 
+@pytest.mark.pure_unit
 def test_parse_repo_signals_no_sample_run():
     """Signal without sample_run has None."""
     raw = json.dumps({
@@ -211,6 +225,7 @@ def test_parse_repo_signals_no_sample_run():
     assert rs.signals[0].sample_run is None
 
 
+@pytest.mark.pure_unit
 def test_failed_runs_property():
     """failed_runs returns only signals with a failed sample_run."""
     raw = json.dumps({
@@ -239,6 +254,7 @@ def test_failed_runs_property():
     assert rs.failed_runs[0].id == "failed-signal"
 
 
+@pytest.mark.pure_unit
 def test_candidates_property():
     """candidates returns datasets with stage != published."""
     raw = json.dumps({
@@ -257,6 +273,7 @@ def test_candidates_property():
     assert {d.slug for d in catalog.candidates} == {"cand", "cand2"}
 
 
+@pytest.mark.contract
 def test_di_clean_catalog_columns_parsed():
     """Column name and role are parsed; type and description are excluded."""
     raw = json.dumps({
@@ -284,6 +301,7 @@ def test_di_clean_catalog_columns_parsed():
     assert ds.columns[1].role == "metric"
 
 
+@pytest.mark.contract
 def test_parse_radar_summary():
     from agent_context_builder.signals import parse_radar_summary
 
@@ -322,6 +340,7 @@ def test_parse_radar_summary():
     assert summary.unhealthy[1].red_streak == 2
 
 
+@pytest.mark.contract
 def test_parse_di_clean_catalog_basic():
     raw = json.dumps({
         "schema_version": 1,
@@ -362,6 +381,7 @@ def test_parse_di_clean_catalog_basic():
     assert dataset.columns[2].role == "metric"
 
 
+@pytest.mark.policy
 def test_parse_di_clean_catalog_missing_fields_use_defaults():
     raw = json.dumps({"datasets": [{"slug": "minimal"}]})
 

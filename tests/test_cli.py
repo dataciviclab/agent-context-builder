@@ -5,10 +5,13 @@ import json
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
+import pytest
 from click.testing import CliRunner
 
 from agent_context_builder.cli import cli
 from agent_context_builder.config import Config
+
+pytestmark = pytest.mark.contract
 
 
 def _minimal_config(tmp_path: Path) -> tuple[Path, Config]:

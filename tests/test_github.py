@@ -1,10 +1,13 @@
 """Tests for github module HTTP boundary — uses FakeHttpClient."""
 from __future__ import annotations
 
+import pytest
 from lab_connectors.http import HttpResult
 from lab_connectors.testing import fake_response
 
 from agent_context_builder.github import GitHubCollector
+
+pytestmark = pytest.mark.adapter
 
 _GITHUB_RAW = "https://raw.githubusercontent.com/test-org/some-repo/main/data/file.json"
 _GITHUB_API = "https://api.github.com/repos/test-org/some-repo"

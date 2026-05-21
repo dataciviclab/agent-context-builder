@@ -6,6 +6,8 @@ import pytest
 
 from agent_context_builder.config import Config, Topic, load_config
 
+pytestmark = pytest.mark.pure_unit
+
 
 def test_topic_creation():
     """Test Topic creation."""
