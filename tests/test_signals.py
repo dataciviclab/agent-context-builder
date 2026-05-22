@@ -7,6 +7,7 @@ import pytest
 from agent_context_builder.signals import (
     DICleanCatalog,
     parse_di_clean_catalog,
+    parse_explorer_themes_from_py,
     parse_repo_signals,
     parse_source_observatory_signals,
 )
@@ -393,3 +394,155 @@ def test_parse_di_clean_catalog_missing_fields_use_defaults():
     assert catalog.datasets[0].stage == "incubating"
     assert catalog.datasets[0].location == {}
     assert catalog.datasets[0].columns == []
+
+
+# ── parse_explorer_themes_from_py ──────────────────────────────────────────
+
+_THEMES_PY_SAMPLE = '''#!/usr/bin/env python3
+"""Data loader: temi editoriali."""
+import json, sys
+
+themes = [
+    {
+        "slug": "territorio-ambiente",
+        "name": "Territorio e ambiente",
+        "description": "Descrizione",
+        "datasets": ["rifiuti-urbani", "capacita-rinnovabile"],
+        "questions": ["Domanda 1?"],
+    },
+    {
+        "slug": "finanza-pubblica",
+        "name": "Finanza pubblica",
+        "datasets": ["irpef-comunale", "entrate-stato"],
+    },
+]
+json.dump(themes, sys.stdout, ensure_ascii=False)
+'''
+
+
+@pytest.mark.pure_unit
+def test_parse_themes_from_py_basic():
+    """Parsing themes.json.py returns correct ExplorerTheme instances."""
+    themes = parse_explorer_themes_from_py(_THEMES_PY_SAMPLE)
+    assert len(themes) == 2
+    assert themes[0].slug == "territorio-ambiente"
+    assert themes[0].name == "Territorio e ambiente"
+    assert themes[0].datasets == ["rifiuti-urbani", "capacita-rinnovabile"]
+    assert themes[1].slug == "finanza-pubblica"
+    assert themes[1].datasets == ["irpef-comunale", "entrate-stato"]
+
+
+@pytest.mark.pure_unit
+def test_parse_themes_from_py_empty_list():
+    """Empty themes list returns empty list."""
+    themes = parse_explorer_themes_from_py('themes = []')
+    assert themes == []
+
+
+@pytest.mark.pure_unit
+def test_parse_themes_from_py_invalid_syntax_raises():
+    """Malformed Python raises ValueError via ast.literal_eval."""
+    with pytest.raises(ValueError, match="Failed to evaluate"):
+        parse_explorer_themes_from_py("themes = [not valid]")
+
+
+@pytest.mark.policy
+def test_parse_themes_from_py_unmatched_brackets_raises():
+    """Unmatched bracket raises ValueError via SyntaxError from ast.parse."""
+    with pytest.raises(ValueError, match="Failed to parse themes.json.py as Python"):
+        parse_explorer_themes_from_py("themes = [not closed")
+
+
+@pytest.mark.policy
+def test_parse_themes_from_py_no_themes_var_raises():
+    """Missing 'themes' variable raises ValueError."""
+    with pytest.raises(ValueError, match="No top-level 'themes' variable found"):
+        parse_explorer_themes_from_py("print('hello')")
+
+
+@pytest.mark.contract
+def test_parse_themes_from_py_brackets_before_themes():
+    """Brackets in docstring or before 'themes =' do not confuse the parser.
+
+    The old naive bracket-matching approach would pick the first '[' in the
+    file. The AST-based approach correctly skips brackets in docstrings,
+    imports and other code.
+    """
+    py_src = '''#!/usr/bin/env python3
+"""Docstring with [brackets] inside."""
+import json, sys
+
+SOME_CONSTANT = [1, 2, 3]
+
+themes = [
+    {"slug": "test", "name": "Test", "datasets": ["ds1"]},
+]
+json.dump(themes, sys.stdout, ensure_ascii=False)
+'''
+    themes = parse_explorer_themes_from_py(py_src)
+    assert len(themes) == 1
+    assert themes[0].slug == "test"
+    assert themes[0].datasets == ["ds1"]
+    """Parse the actual themes.json.py from data-explorer (real content)."""
+    py_src = '''#!/usr/bin/env python3
+"""Data loader: temi editoriali. Mappa slug tema \u2192 slug dataset."""
+import json, sys
+
+themes = [
+    {
+        "slug": "territorio-ambiente",
+        "name": "Territorio e ambiente",
+        "description": "Trasformazioni territoriali, ambiente, energia e rifiuti",
+        "datasets": ["rifiuti-urbani", "capacita-rinnovabile"],
+        "questions": [
+            "Come varia la raccolta differenziata tra territori?",
+            "Come cambia il mix elettrico regionale tra fonti fossili e rinnovabili?",
+        ],
+    },
+    {
+        "slug": "finanza-pubblica",
+        "name": "Finanza pubblica",
+        "description": "Entrate dello Stato, capacit\u00e0 fiscale e tributi locali",
+        "datasets": ["irpef-comunale", "entrate-stato"],
+        "questions": [
+            "Come si distribuisce la capacit\u00e0 fiscale tra regioni?",
+            "Quali sono le principali voci di entrata dello Stato?",
+        ],
+    },
+    {
+        "slug": "sanita",
+        "name": "Sanit\u00e0",
+        "description": "Spesa farmaceutica, consumi sanitari e prevenzione",
+        "datasets": ["spesa-farmaceutica"],
+        "questions": ["Come cambia tra regioni la spesa farmaceutica per classi terapeutiche?"],
+    },
+    {
+        "slug": "welfare-lavoro",
+        "name": "Welfare e lavoro",
+        "description": "Pubblico impiego, pensioni e previdenza",
+        "datasets": ["dipendenti-pubblici", "pensioni-inps"],
+        "questions": [
+            "La crescita del pubblico impiego \u00e8 diffusa o concentrata in pochi comparti?",
+            "Come sono distribuite le pensioni tra gestioni previdenziali?",
+        ],
+    },
+    {
+        "slug": "giustizia",
+        "name": "Giustizia",
+        "description": "Flussi civili, tempi e carichi dei tribunali",
+        "datasets": ["flussi-giustizia-civile"],
+        "questions": ["Come si distribuisce il carico civile tra i distretti italiani?"],
+    },
+]
+
+json.dump(themes, sys.stdout, ensure_ascii=False)
+'''
+    themes = parse_explorer_themes_from_py(py_src)
+    assert len(themes) == 5
+    slugs = [t.slug for t in themes]
+    assert slugs == [
+        "territorio-ambiente", "finanza-pubblica",
+        "sanita", "welfare-lavoro", "giustizia",
+    ]
+    assert themes[2].datasets == ["spesa-farmaceutica"]
+    assert themes[3].name == "Welfare e lavoro"

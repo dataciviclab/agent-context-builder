@@ -6,7 +6,7 @@ from dataclasses import dataclass
 from typing import Any
 
 from ..github import GitHubCollector
-from ..signals import ExplorerTheme, parse_explorer_themes
+from ..signals import ExplorerTheme, parse_explorer_themes_from_py
 
 
 @dataclass
@@ -21,7 +21,7 @@ class DataExplorerFetcher:
     """Fetch data-explorer artifacts from GitHub raw URLs + API.
 
     Consumes:
-      - catalog/themes.json (editorial theme assignments)
+      - src/data/themes.json.py (editorial theme assignments, parsed statically)
       - GitHub Actions API (deploy status, operativo)
     """
 
@@ -38,18 +38,23 @@ class DataExplorerFetcher:
         )
 
     def fetch_themes(self) -> list[ExplorerTheme] | None:
-        """Fetch and parse catalog/themes.json from data-explorer.
+        """Fetch and parse themes from data-explorer's ``themes.json.py``.
 
-        Returns None if the artifact is unavailable or malformed.
+        After the Observable Framework migration, themes no longer live as a
+        static JSON file. They are defined in ``src/data/themes.json.py`` as a
+        Python list literal. This method fetches that source file and extracts
+        the list via static analysis (``ast.literal_eval``).
+
+        Returns None if the file is unavailable or malformed.
         """
         if self._themes_cache is not _UNSET:
             return self._themes_cache  # type: ignore[return-value]
-        raw = self.collector.get_raw_file("data-explorer", "catalog/themes.json")
+        raw = self.collector.get_raw_file("data-explorer", "src/data/themes.json.py")
         if raw is None:
             self._themes_cache = None
             return None
         try:
-            result = parse_explorer_themes(raw)
+            result = parse_explorer_themes_from_py(raw)
         except ValueError as exc:
             self.collector.fetch_errors["data-explorer:themes"] = str(exc)
             result = None
