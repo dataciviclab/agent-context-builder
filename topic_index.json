@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-05-22T09:25:37.347336",
+  "generated_at": "2026-05-22T09:38:52.127714",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -324,5 +324,44 @@
       "next": "Vedi dataset-project-flow.md per il ciclo intake \u2192 promozione"
     }
   },
-  "explorer_themes": []
+  "explorer_themes": [
+    {
+      "slug": "territorio-ambiente",
+      "name": "Territorio e ambiente",
+      "datasets": [
+        "rifiuti-urbani",
+        "capacita-rinnovabile"
+      ]
+    },
+    {
+      "slug": "finanza-pubblica",
+      "name": "Finanza pubblica",
+      "datasets": [
+        "irpef-comunale",
+        "entrate-stato"
+      ]
+    },
+    {
+      "slug": "sanita",
+      "name": "Sanit\u00e0",
+      "datasets": [
+        "spesa-farmaceutica"
+      ]
+    },
+    {
+      "slug": "welfare-lavoro",
+      "name": "Welfare e lavoro",
+      "datasets": [
+        "dipendenti-pubblici",
+        "pensioni-inps"
+      ]
+    },
+    {
+      "slug": "giustizia",
+      "name": "Giustizia",
+      "datasets": [
+        "flussi-giustizia-civile"
+      ]
+    }
+  ]
 }

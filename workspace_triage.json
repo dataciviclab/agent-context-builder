@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-22T09:25:37.347336",
+  "generated_at": "2026-05-22T09:38:52.127714",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -9,35 +9,17 @@
     "data-explorer",
     "source-observatory"
   ],
-  "open_prs": null,
+  "open_prs": 1,
   "prs": [
-    {
-      "number": 45,
-      "title": "fix: ripristina sezione EXPLORER in ACB leggendo themes.json.py da data-explorer",
-      "repo": "agent-context-builder",
-      "url": "https://github.com/dataciviclab/agent-context-builder/pull/45"
-    },
     {
       "number": 360,
       "title": "chore: aggiunta directory figures per candidate MIT",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/360"
-    },
-    {
-      "number": 265,
-      "title": "feat: upload GCS via lab_connectors.gcs (upload #221)",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/265"
     }
   ],
-  "open_issues": null,
+  "open_issues": 34,
   "issues": [
-    {
-      "number": 41,
-      "title": "valutazione: ripristinare gap analysis temi \u2194 dataset (themes.json)",
-      "repo": "agent-context-builder",
-      "url": "https://github.com/dataciviclab/agent-context-builder/issues/41"
-    },
     {
       "number": 327,
       "title": "intake: Incentivi.gov: anagrafica degli incentivi alle imprese per regione, ambito e forma di agevolazione",
@@ -225,12 +207,6 @@
       "url": "https://github.com/dataciviclab/source-observatory/issues/227"
     },
     {
-      "number": 221,
-      "title": "refactor: migrare operazioni GCS a lab_connectors.gcs",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/221"
-    },
-    {
       "number": 210,
       "title": "valutare deprecazione intake_score",
       "repo": "source-observatory",
@@ -392,9 +368,7 @@
       "category": "Datasets"
     }
   ],
-  "github_fetch_errors": {
-    "data-explorer:catalog/themes.json": "https://raw.githubusercontent.com/dataciviclab/data-explorer/main/catalog/themes.json: HTTP 404"
-  },
+  "github_fetch_errors": {},
   "git_state": {
     "agent-context-builder": {
       "available": false,
@@ -445,9 +419,7 @@
       "untracked_files": 0
     }
   },
-  "warnings": [
-    "GitHub fetch failed \u2014 data-explorer:catalog/themes.json: https://raw.githubusercontent.com/dataciviclab/data-explorer/main/catalog/themes.json: HTTP 404"
-  ],
+  "warnings": [],
   "radar": {
     "available": true,
     "probe_date": "2026-05-22",
@@ -1752,6 +1724,55 @@
     ]
   },
   "explorer": {
-    "available": false
+    "available": true,
+    "themes": [
+      {
+        "slug": "territorio-ambiente",
+        "name": "Territorio e ambiente",
+        "dataset_count": 2
+      },
+      {
+        "slug": "finanza-pubblica",
+        "name": "Finanza pubblica",
+        "dataset_count": 2
+      },
+      {
+        "slug": "sanita",
+        "name": "Sanit\u00e0",
+        "dataset_count": 1
+      },
+      {
+        "slug": "welfare-lavoro",
+        "name": "Welfare e lavoro",
+        "dataset_count": 2
+      },
+      {
+        "slug": "giustizia",
+        "name": "Giustizia",
+        "dataset_count": 1
+      }
+    ],
+    "published_count": 8,
+    "clean_ready_not_published": [
+      "aifa_spesa_consumo",
+      "bdap_lea",
+      "civile_flussi",
+      "consip_consumi_convenzione",
+      "dipendenti_pubblici",
+      "irpef_comunale",
+      "ispra_ru_base",
+      "istat_ipab_aree",
+      "mim_anagrafica_scuole_statali",
+      "terna_capacita_rinnovabile",
+      "terna_electricity_by_source"
+    ],
+    "last_deploy": {
+      "run_id": 26244188422,
+      "name": "Deploy to GitHub Pages (Observable Framework)",
+      "status": "completed",
+      "conclusion": "success",
+      "completed_at": "2026-05-21T18:08:43Z",
+      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26244188422"
+    }
   }
 }
