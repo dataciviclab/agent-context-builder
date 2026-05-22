@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import ast
 import json
 from dataclasses import dataclass, field
 from typing import Any
@@ -324,32 +325,68 @@ class RadarSummary:
 
 @dataclass
 class ExplorerTheme:
-    """Single theme entry from data-explorer catalog/themes.json."""
+    """Single theme entry from data-explorer editorial themes."""
 
     slug: str
     name: str
     datasets: list[str]
 
 
-def parse_explorer_themes(raw: str) -> list[ExplorerTheme]:
-    """Parse data-explorer catalog/themes.json into ExplorerTheme instances.
+def parse_explorer_themes_from_py(raw_py: str) -> list[ExplorerTheme]:
+    """Parse themes list from ``src/data/themes.json.py`` source file.
+
+    Instead of fetching a static JSON (which no longer exists after the
+    Observable Framework migration), this function reads the Python data
+    loader file and extracts the ``themes`` variable via ``ast.parse`` +
+    ``ast.literal_eval``.
+
+    The file ``themes.json.py`` in data-explorer has a stable structure:
+    a top-level ``themes`` variable assigned to a list of dicts with
+    ``slug``, ``name``, ``datasets`` (and optional ``description``,
+    ``questions``) keys.
+
+    Uses full AST parsing rather than naive bracket matching so that
+    brackets in docstrings, imports, or other code before ``themes =``
+    do not cause false positives.
 
     Args:
-        raw: Raw JSON content of themes.json
+        raw_py: Raw content of ``src/data/themes.json.py``
 
     Returns:
         List of ExplorerTheme instances
 
     Raises:
-        ValueError: If the JSON is invalid
+        ValueError: If the ``themes`` variable cannot be found or evaluated
     """
     try:
-        data: list[dict[str, Any]] = json.loads(raw)
-    except json.JSONDecodeError as exc:
-        raise ValueError(f"Invalid JSON: {exc}") from exc
+        tree = ast.parse(raw_py)
+    except SyntaxError as exc:
+        raise ValueError(f"Failed to parse themes.json.py as Python: {exc}") from exc
+
+    themes_value = None
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Assign):
+            for target in node.targets:
+                if isinstance(target, ast.Name) and target.id == "themes":
+                    themes_value = node.value
+                    break
+        if themes_value is not None:
+            break
+
+    if themes_value is None:
+        raise ValueError(
+            "No top-level 'themes' variable found in themes.json.py"
+        )
+
+    try:
+        data: list[dict[str, Any]] = ast.literal_eval(themes_value)
+    except (ValueError, SyntaxError) as exc:
+        raise ValueError(f"Failed to evaluate themes literal: {exc}") from exc
 
     if not isinstance(data, list):
-        raise ValueError("Expected JSON array at root")
+        raise ValueError(
+            f"Expected list literal for themes, got {type(data).__name__}"
+        )
 
     return [
         ExplorerTheme(

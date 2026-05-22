@@ -267,7 +267,7 @@ def test_render_signals_cached_across_bootstrap_and_triage():
     assert "data/catalog/catalog_signals.json" in paths_fetched
     assert "registry/pipeline_signals.json" in paths_fetched
     assert "registry/clean_catalog.json" in paths_fetched
-    assert "catalog/themes.json" in paths_fetched
+    assert "src/data/themes.json.py" in paths_fetched
 
 
 # ── Topic index ───────────────────────────────────────────────────────────
