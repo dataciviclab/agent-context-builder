@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-22T09:38:52.127714
+**Generated**: 2026-05-22T11:34:12.347262
 
 ## 🔍 SCOUTING
 
@@ -44,9 +44,9 @@
   · [Analisi] AIFA Spesa Farmaceutica — il cardiovascolare traina il 63% della spesa, il divario Nord-Sud si allarga
   · [Domanda] Processo penale: a Cagliari 864 giorni, a Messina 261. E la fase GIP GUP è già in affanno in 101 tribunali su 140
   · [Domanda] 405 opere pubbliche incomplete, 2,7 miliardi di euro fermati. Dove sono finite le nostre infrastrutture?
-**Topics**: pipeline · governance
+**Topics**: pipeline · governance · infrastructure
 
 ## 🛠 INFRA
 
-**Repos**: 6 attivi
+**Repos**: 7 attivi
 **Local git**: no workspace

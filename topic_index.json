@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-05-22T09:38:52.127714",
+  "generated_at": "2026-05-22T11:34:12.347262",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -25,6 +25,10 @@
     "source-observatory": {
       "description": "Piccolo intelligence layer per fonti pubbliche: radar, catalog-watch, monitoraggio risorse e workflow di source-check.",
       "url": "https://github.com/dataciviclab/source-observatory"
+    },
+    "lab-connectors": {
+      "description": "Package Python condiviso per i repo del DataCivicLab.",
+      "url": "https://github.com/dataciviclab/lab-connectors"
     }
   },
   "datasets_by_source": {
@@ -322,6 +326,21 @@
         "dataset-incubator/PROMOTION_CHECKLIST.md"
       ],
       "next": "Vedi dataset-project-flow.md per il ciclo intake \u2192 promozione"
+    },
+    "infrastructure": {
+      "name": "infrastructure",
+      "summary": "Foundation tecnica condivisa \u2014 HTTP client, GCS paths, MCP core",
+      "repos": [
+        "lab-connectors",
+        "toolkit",
+        "data-explorer"
+      ],
+      "paths": [
+        "lab-connectors/lab_connectors/http/",
+        "lab-connectors/lab_connectors/gcs/paths.py",
+        "lab-connectors/lab_connectors/mcp/"
+      ],
+      "next": "lab-connectors \u00e8 dipendenza pip di toolkit, data-explorer e ACB"
     }
   },
   "explorer_themes": [
