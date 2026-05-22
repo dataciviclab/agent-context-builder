@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-22T14:41:04.338118
+**Generated**: 2026-05-22T19:46:41.879906
 
 ## 🔍 SCOUTING
 
@@ -40,13 +40,12 @@
 ## 🔗 OPEN
 
 - [dataset-incubator#360](https://github.com/dataciviclab/dataset-incubator/pull/360): chore: aggiunta directory figures per candidate MIT
-- [data-explorer#106](https://github.com/dataciviclab/data-explorer/pull/106): docs: CONTRIBUTING.md, espansione README e README naming loader
 - [data-explorer#105](https://github.com/dataciviclab/data-explorer/pull/105): feat(consip-consumi-convenzione): aggiungi dataset explorer e catalogo
 - [data-explorer#104](https://github.com/dataciviclab/data-explorer/pull/104): feat(bdap-lea): aggiungi dataset explorer e catalogo
 **Discussions**: 20 open
-  · [Analisi] AIFA Spesa Farmaceutica — il cardiovascolare traina il 63% della spesa, il divario Nord-Sud si allarga
-  · [Domanda] Processo penale: a Cagliari 864 giorni, a Messina 261. E la fase GIP GUP è già in affanno in 101 tribunali su 140
+  · [Analisi] [Analisi] MIT Incidentalità: l'andamento della mortalità stradale in Italia (2001‑2018)
   · [Domanda] 405 opere pubbliche incomplete, 2,7 miliardi di euro fermati. Dove sono finite le nostre infrastrutture?
+  · [Domanda] Processo penale: a Cagliari 864 giorni, a Messina 261. E la fase GIP GUP è già in affanno in 101 tribunali su 140
 **Topics**: pipeline · governance · infrastructure
 
 ## 🛠 INFRA
