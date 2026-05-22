@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-22T11:34:12.347262",
+  "generated_at": "2026-05-22T14:41:04.338118",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,13 +10,31 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 1,
+  "open_prs": 4,
   "prs": [
     {
       "number": 360,
       "title": "chore: aggiunta directory figures per candidate MIT",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/360"
+    },
+    {
+      "number": 106,
+      "title": "docs: CONTRIBUTING.md, espansione README e README naming loader",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/106"
+    },
+    {
+      "number": 105,
+      "title": "feat(consip-consumi-convenzione): aggiungi dataset explorer e catalogo",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/105"
+    },
+    {
+      "number": 104,
+      "title": "feat(bdap-lea): aggiungi dataset explorer e catalogo",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/104"
     }
   ],
   "open_issues": 34,
@@ -482,7 +500,7 @@
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-05-18T10:24:52+00:00",
+    "captured_at": "2026-05-22T12:27:45+00:00",
     "sources_checked": 15,
     "regressions": [],
     "alerts": []
@@ -1776,12 +1794,12 @@
       "terna_electricity_by_source"
     ],
     "last_deploy": {
-      "run_id": 26244188422,
+      "run_id": 26294172713,
       "name": "Deploy to GitHub Pages (Observable Framework)",
       "status": "completed",
       "conclusion": "success",
-      "completed_at": "2026-05-21T18:08:43Z",
-      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26244188422"
+      "completed_at": "2026-05-22T14:40:45Z",
+      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26294172713"
     }
   }
 }
