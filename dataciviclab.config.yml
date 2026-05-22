@@ -19,6 +19,7 @@ repos:
   - toolkit
   - data-explorer
   - source-observatory
+  - lab-connectors
 
 # Hint operativi per agenti — descrivono flussi, non repo o dataset
 # (repo descriptions vengono da GitHub API, dataset da clean_catalog)
@@ -43,3 +44,15 @@ topics:
       - dataciviclab/docs/dataset-project-flow.md
       - dataset-incubator/PROMOTION_CHECKLIST.md
     next: Vedi dataset-project-flow.md per il ciclo intake → promozione
+
+  infrastructure:
+    summary: Foundation tecnica condivisa — HTTP client, GCS paths, MCP core
+    repos:
+      - lab-connectors
+      - toolkit
+      - data-explorer
+    paths:
+      - lab-connectors/lab_connectors/http/
+      - lab-connectors/lab_connectors/gcs/paths.py
+      - lab-connectors/lab_connectors/mcp/
+    next: lab-connectors è dipendenza pip di toolkit, data-explorer e ACB
