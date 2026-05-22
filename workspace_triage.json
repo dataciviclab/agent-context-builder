@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-22T03:42:37.979802",
+  "generated_at": "2026-05-22T09:25:37.347336",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -12,10 +12,22 @@
   "open_prs": null,
   "prs": [
     {
+      "number": 45,
+      "title": "fix: ripristina sezione EXPLORER in ACB leggendo themes.json.py da data-explorer",
+      "repo": "agent-context-builder",
+      "url": "https://github.com/dataciviclab/agent-context-builder/pull/45"
+    },
+    {
       "number": 360,
       "title": "chore: aggiunta directory figures per candidate MIT",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/360"
+    },
+    {
+      "number": 265,
+      "title": "feat: upload GCS via lab_connectors.gcs (upload #221)",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/265"
     }
   ],
   "open_issues": null,
@@ -438,21 +450,13 @@
   ],
   "radar": {
     "available": true,
-    "probe_date": "2026-05-21",
+    "probe_date": "2026-05-22",
     "sources_total": 23,
-    "green": 16,
-    "yellow": 5,
-    "red": 2,
+    "green": 18,
+    "yellow": 4,
+    "red": 1,
     "persistent_red": 1,
     "unhealthy": [
-      {
-        "id": "istat_sdmx",
-        "status": "YELLOW",
-        "protocol": "sdmx",
-        "http_code": "-",
-        "note": "Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
       {
         "id": "anac",
         "status": "YELLOW",
@@ -468,14 +472,6 @@
         "http_code": "-",
         "note": "SSL verify failed; fallback connection error (SSLError)",
         "red_streak": 14
-      },
-      {
-        "id": "dati_camera",
-        "status": "RED",
-        "protocol": "sparql",
-        "http_code": "503",
-        "note": null,
-        "red_streak": 0
       },
       {
         "id": "lavoro_opendata",
