@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-23T13:26:32.398899
+**Generated**: 2026-05-23T19:11:45.043718
 
 ## 🔍 SCOUTING
 
@@ -12,7 +12,7 @@
   · **lavoro_opendata** YELLOW [200] — CKAN API returned non-JSON content
   · **mur_ustat** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
   · **opencoesione** YELLOW [403]
-**Catalog Drift**: unavailable
+**Catalog Drift**: no drift signals (15 sources checked)
 
 ## 📥 INTAKE
 
@@ -40,15 +40,14 @@
 
 ## 🔗 OPEN
 
-> Warning: GitHub fetch error — dati incompleti
+- [dataset-incubator#380](https://github.com/dataciviclab/dataset-incubator/pull/380): allinea flusso intake: go intake, scout --scaffold, new-analysis
 - [dataset-incubator#360](https://github.com/dataciviclab/dataset-incubator/pull/360): chore: aggiunta directory figures per candidate MIT
-- [toolkit#272](https://github.com/dataciviclab/toolkit/pull/272): feat: smoke flags, contracts API, --root override
 - [data-explorer#105](https://github.com/dataciviclab/data-explorer/pull/105): feat(consip-consumi-convenzione): aggiungi dataset explorer e catalogo
 - [data-explorer#104](https://github.com/dataciviclab/data-explorer/pull/104): feat(bdap-lea): aggiungi dataset explorer e catalogo
 **Discussions**: 20 open
-  · [Analisi] [Analisi] MIT Incidentalità: l'andamento della mortalità stradale in Italia (2001‑2018)
-  · [Domanda] 405 opere pubbliche incomplete, 2,7 miliardi di euro fermati. Dove sono finite le nostre infrastrutture?
-  · [Domanda] Processo penale: a Cagliari 864 giorni, a Messina 261. E la fase GIP GUP è già in affanno in 101 tribunali su 140
+  · [Datasets] Giustizia Amministrativa — Quanto durano i ricorsi al CdS?
+  · [Datasets] Corte Costituzionale — Come decide la Consulta?
+  · [Datasets] Consip — Chi vince le gare pubbliche?
 **Topics**: pipeline · governance · infrastructure
 
 ## 🛠 INFRA

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-23T13:26:32.398899",
+  "generated_at": "2026-05-23T19:11:45.043718",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,19 +10,19 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": null,
+  "open_prs": 4,
   "prs": [
+    {
+      "number": 380,
+      "title": "allinea flusso intake: go intake, scout --scaffold, new-analysis",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/380"
+    },
     {
       "number": 360,
       "title": "chore: aggiunta directory figures per candidate MIT",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/360"
-    },
-    {
-      "number": 272,
-      "title": "feat: smoke flags, contracts API, --root override",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/272"
     },
     {
       "number": 105,
@@ -37,8 +37,44 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/104"
     }
   ],
-  "open_issues": null,
+  "open_issues": 40,
   "issues": [
+    {
+      "number": 379,
+      "title": "Proposta intake: Ricorsi Pendenti Consiglio di Stato (openga)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/379"
+    },
+    {
+      "number": 378,
+      "title": "Proposta intake: Indicatori Fabbisogno Standard Comuni (opencivitas.it)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/378"
+    },
+    {
+      "number": 377,
+      "title": "Proposta intake: Anagrafe Biblioteche Italiane (dati.cultura.gov.it)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/377"
+    },
+    {
+      "number": 376,
+      "title": "Proposta intake: Archivio Pronunce Corte Costituzionale (dati.cortecostituzionale.it)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/376"
+    },
+    {
+      "number": 375,
+      "title": "Proposta intake: Operatori Economici Consip (dati.consip.it)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/375"
+    },
+    {
+      "number": 374,
+      "title": "Proposta intake: SILOS Infrastrutture strategiche (dati.camera.it)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/374"
+    },
     {
       "number": 369,
       "title": "Proposta: mart dimensionale \u2014 aggregazioni per gerarchia naturale del dato",
@@ -148,12 +184,6 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/113"
     },
     {
-      "number": 258,
-      "title": "feat: run smoke \u2014 flag --sample-rows e --sample-bytes per alleggerire CI toolkit-pr",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/258"
-    },
-    {
       "number": 244,
       "title": "Esporre costanti path come API pubblica per eliminare duplicazione contratti impliciti",
       "repo": "toolkit",
@@ -252,6 +282,34 @@
   ],
   "open_discussions": 20,
   "discussions": [
+    {
+      "number": 289,
+      "title": "Giustizia Amministrativa \u2014 Quanto durano i ricorsi al CdS?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/289",
+      "category": "Datasets"
+    },
+    {
+      "number": 288,
+      "title": "Corte Costituzionale \u2014 Come decide la Consulta?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/288",
+      "category": "Datasets"
+    },
+    {
+      "number": 287,
+      "title": "Consip \u2014 Chi vince le gare pubbliche?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/287",
+      "category": "Datasets"
+    },
+    {
+      "number": 286,
+      "title": "SILOS Camera \u2014 Dove sono finite le infrastrutture strategiche?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/286",
+      "category": "Datasets"
+    },
     {
       "number": 273,
       "title": "[Analisi] MIT Incidentalit\u00e0: l'andamento della mortalit\u00e0 stradale in Italia (2001\u20112018)",
@@ -363,39 +421,9 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/236",
       "category": "Datasets"
-    },
-    {
-      "number": 234,
-      "title": "BDAP Anagrafe Enti \u2014 copertura open data dei portali PA",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/234",
-      "category": "Datasets"
-    },
-    {
-      "number": 210,
-      "title": "La geografia del calo iscrizioni nelle scuole primarie (2015-2024)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/210",
-      "category": "Domanda"
-    },
-    {
-      "number": 228,
-      "title": "Consip partecipazioni \u2014 geografia delle imprese nelle gare pubbliche (2023-2025)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/228",
-      "category": "Datasets"
-    },
-    {
-      "number": 227,
-      "title": "MUR DSU Regionale \u2014 posti alloggio e borse per regione e ateneo (2024-2025)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/227",
-      "category": "Datasets"
     }
   ],
-  "github_fetch_errors": {
-    "source-observatory:data/catalog/catalog_signals.json": "https://raw.githubusercontent.com/dataciviclab/source-observatory/main/data/catalog/catalog_signals.json: HTTP 404"
-  },
+  "github_fetch_errors": {},
   "git_state": {
     "agent-context-builder": {
       "available": false,
@@ -454,9 +482,7 @@
       "untracked_files": 0
     }
   },
-  "warnings": [
-    "GitHub fetch failed \u2014 source-observatory:data/catalog/catalog_signals.json: https://raw.githubusercontent.com/dataciviclab/source-observatory/main/data/catalog/catalog_signals.json: HTTP 404"
-  ],
+  "warnings": [],
   "radar": {
     "available": true,
     "probe_date": "2026-05-23",
@@ -517,10 +543,11 @@
     ]
   },
   "source_health": {
-    "available": false,
-    "errors": {
-      "source-observatory:data/catalog/catalog_signals.json": "https://raw.githubusercontent.com/dataciviclab/source-observatory/main/data/catalog/catalog_signals.json: HTTP 404"
-    }
+    "available": true,
+    "captured_at": "2026-05-22T12:27:45+00:00",
+    "sources_checked": 15,
+    "regressions": [],
+    "alerts": []
   },
   "pipeline_state": {
     "available": true,
