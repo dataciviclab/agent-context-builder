@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-23T19:11:45.043718
+**Generated**: 2026-05-23T19:51:09.057785
 
 ## 🔍 SCOUTING
 
@@ -40,7 +40,6 @@
 
 ## 🔗 OPEN
 
-- [dataset-incubator#380](https://github.com/dataciviclab/dataset-incubator/pull/380): allinea flusso intake: go intake, scout --scaffold, new-analysis
 - [dataset-incubator#360](https://github.com/dataciviclab/dataset-incubator/pull/360): chore: aggiunta directory figures per candidate MIT
 - [data-explorer#105](https://github.com/dataciviclab/data-explorer/pull/105): feat(consip-consumi-convenzione): aggiungi dataset explorer e catalogo
 - [data-explorer#104](https://github.com/dataciviclab/data-explorer/pull/104): feat(bdap-lea): aggiungi dataset explorer e catalogo
