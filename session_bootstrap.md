@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-23T10:52:02.626903
+**Generated**: 2026-05-23T13:26:32.398899
 
 ## 🔍 SCOUTING
 
@@ -12,7 +12,7 @@
   · **lavoro_opendata** YELLOW [200] — CKAN API returned non-JSON content
   · **mur_ustat** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
   · **opencoesione** YELLOW [403]
-**Catalog Drift**: no drift signals (15 sources checked)
+**Catalog Drift**: unavailable
 
 ## 📥 INTAKE
 
@@ -40,7 +40,9 @@
 
 ## 🔗 OPEN
 
+> Warning: GitHub fetch error — dati incompleti
 - [dataset-incubator#360](https://github.com/dataciviclab/dataset-incubator/pull/360): chore: aggiunta directory figures per candidate MIT
+- [toolkit#272](https://github.com/dataciviclab/toolkit/pull/272): feat: smoke flags, contracts API, --root override
 - [data-explorer#105](https://github.com/dataciviclab/data-explorer/pull/105): feat(consip-consumi-convenzione): aggiungi dataset explorer e catalogo
 - [data-explorer#104](https://github.com/dataciviclab/data-explorer/pull/104): feat(bdap-lea): aggiungi dataset explorer e catalogo
 **Discussions**: 20 open

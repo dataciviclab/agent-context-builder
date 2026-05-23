@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-23T10:52:02.626903",
+  "generated_at": "2026-05-23T13:26:32.398899",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,13 +10,19 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 3,
+  "open_prs": null,
   "prs": [
     {
       "number": 360,
       "title": "chore: aggiunta directory figures per candidate MIT",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/360"
+    },
+    {
+      "number": 272,
+      "title": "feat: smoke flags, contracts API, --root override",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/272"
     },
     {
       "number": 105,
@@ -31,7 +37,7 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/104"
     }
   ],
-  "open_issues": 35,
+  "open_issues": null,
   "issues": [
     {
       "number": 369,
@@ -387,7 +393,9 @@
       "category": "Datasets"
     }
   ],
-  "github_fetch_errors": {},
+  "github_fetch_errors": {
+    "source-observatory:data/catalog/catalog_signals.json": "https://raw.githubusercontent.com/dataciviclab/source-observatory/main/data/catalog/catalog_signals.json: HTTP 404"
+  },
   "git_state": {
     "agent-context-builder": {
       "available": false,
@@ -446,7 +454,9 @@
       "untracked_files": 0
     }
   },
-  "warnings": [],
+  "warnings": [
+    "GitHub fetch failed \u2014 source-observatory:data/catalog/catalog_signals.json: https://raw.githubusercontent.com/dataciviclab/source-observatory/main/data/catalog/catalog_signals.json: HTTP 404"
+  ],
   "radar": {
     "available": true,
     "probe_date": "2026-05-23",
@@ -507,11 +517,10 @@
     ]
   },
   "source_health": {
-    "available": true,
-    "captured_at": "2026-05-22T12:27:45+00:00",
-    "sources_checked": 15,
-    "regressions": [],
-    "alerts": []
+    "available": false,
+    "errors": {
+      "source-observatory:data/catalog/catalog_signals.json": "https://raw.githubusercontent.com/dataciviclab/source-observatory/main/data/catalog/catalog_signals.json: HTTP 404"
+    }
   },
   "pipeline_state": {
     "available": true,
