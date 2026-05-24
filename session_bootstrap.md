@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-24T13:27:41.420285
+**Generated**: 2026-05-24T19:18:11.103600
 
 ## 🔍 SCOUTING
 
@@ -22,10 +22,10 @@
 
 ## 🗂 EXPLORER
 
-**Pubblicati**: 8 dataset · 5 temi · [data-explorer](https://dataciviclab.github.io/data-explorer/)
+**Pubblicati**: 10 dataset · 5 temi · [data-explorer](https://dataciviclab.github.io/data-explorer/)
   · **Territorio e ambiente**: rifiuti-urbani, capacita-rinnovabile
-  · **Finanza pubblica**: irpef-comunale, entrate-stato
-  · **Sanità**: spesa-farmaceutica
+  · **Finanza pubblica**: irpef-comunale, entrate-stato, consip-consumi-convenzione
+  · **Sanità**: spesa-farmaceutica, bdap-lea
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps
   · **Giustizia**: flussi-giustizia-civile
   ⚠ 11 dataset published non ancora su explorer:
@@ -39,15 +39,15 @@
 
 ## 🔗 OPEN
 
+- [dataset-incubator#384](https://github.com/dataciviclab/dataset-incubator/pull/384): fix: mur cross_year → mart multi-year + hierarchy + bump TOOLKIT_VERSION
 - [dataset-incubator#381](https://github.com/dataciviclab/dataset-incubator/pull/381): feat: candidate openga-ricorsi-cds — Ricorsi Pendenti Consiglio di Stato
 - [dataset-incubator#360](https://github.com/dataciviclab/dataset-incubator/pull/360): chore: aggiunta directory figures per candidate MIT
-- [dataciviclab#291](https://github.com/dataciviclab/dataciviclab/pull/291): AIFA spesa farmaceutica: analisi completa README + notebook + figure
-- [data-explorer#105](https://github.com/dataciviclab/data-explorer/pull/105): feat(consip-consumi-convenzione): aggiungi dataset explorer e catalogo
-- [data-explorer#104](https://github.com/dataciviclab/data-explorer/pull/104): feat(bdap-lea): aggiungi dataset explorer e catalogo
+- [toolkit#277](https://github.com/dataciviclab/toolkit/pull/277): feat: source args prefer_datastore per CKAN (consistenza CSV)
+- [toolkit#276](https://github.com/dataciviclab/toolkit/pull/276): fix: probe usa HEAD diretto (3s) senza retry — CI non impiega 3 minuti
 **Discussions**: 20 open
+  · [Proposte] MCP adapters and source-check patterns for public data — cross-country comparison (FR/IT)
   · [Datasets] INPS ReI — evoluzione spesa e platea beneficiari 2018-2019
   · [Datasets] Indice prezzi abitazioni ISTAT (IPAB) - case nuove vs esistenti, livello regionale
-  · [Datasets] Consip partecipazioni — geografia delle imprese nelle gare pubbliche (2023-2025)
 **Topics**: pipeline · governance · infrastructure
 
 ## 🛠 INFRA

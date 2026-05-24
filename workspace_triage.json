@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-24T13:27:41.420285",
+  "generated_at": "2026-05-24T19:18:11.103600",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -13,6 +13,12 @@
   "open_prs": 5,
   "prs": [
     {
+      "number": 384,
+      "title": "fix: mur cross_year \u2192 mart multi-year + hierarchy + bump TOOLKIT_VERSION",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/384"
+    },
+    {
       "number": 381,
       "title": "feat: candidate openga-ricorsi-cds \u2014 Ricorsi Pendenti Consiglio di Stato",
       "repo": "dataset-incubator",
@@ -25,26 +31,26 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/360"
     },
     {
-      "number": 291,
-      "title": "AIFA spesa farmaceutica: analisi completa README + notebook + figure",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/pull/291"
+      "number": 277,
+      "title": "feat: source args prefer_datastore per CKAN (consistenza CSV)",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/277"
     },
     {
-      "number": 105,
-      "title": "feat(consip-consumi-convenzione): aggiungi dataset explorer e catalogo",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/105"
-    },
-    {
-      "number": 104,
-      "title": "feat(bdap-lea): aggiungi dataset explorer e catalogo",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/104"
+      "number": 276,
+      "title": "fix: probe usa HEAD diretto (3s) senza retry \u2014 CI non impiega 3 minuti",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/276"
     }
   ],
-  "open_issues": 48,
+  "open_issues": 44,
   "issues": [
+    {
+      "number": 383,
+      "title": "aggiungere time_coverage ai candidati single-year",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/383"
+    },
     {
       "number": 379,
       "title": "Proposta intake: Ricorsi Pendenti Consiglio di Stato (openga)",
@@ -232,18 +238,6 @@
       "url": "https://github.com/dataciviclab/data-explorer/issues/95"
     },
     {
-      "number": 92,
-      "title": "follow-up: pagina e tema per consip-consumi-convenzione",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/issues/92"
-    },
-    {
-      "number": 91,
-      "title": "follow-up: pagina e tema per bdap-lea",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/issues/91"
-    },
-    {
       "number": 89,
       "title": "follow-up: pagina e tema per pensioni-pa-dag",
       "repo": "data-explorer",
@@ -274,18 +268,6 @@
       "url": "https://github.com/dataciviclab/data-explorer/issues/83"
     },
     {
-      "number": 279,
-      "title": "scouting: AgID \u2014 IPA e digitalizzazione PA (40 dataset su dati.gov.it)",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/279"
-    },
-    {
-      "number": 278,
-      "title": "scouting: Ministero dell'Interno \u2014 elezioni e ANPR (38 dataset su dati.gov.it)",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/278"
-    },
-    {
       "number": 275,
       "title": "scouting: Banca d'Italia (80 dataset su dati.gov.it)",
       "repo": "source-observatory",
@@ -296,12 +278,6 @@
       "title": "scouting: Unioncamere \u2014 dati imprese (344 dataset su dati.gov.it)",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/274"
-    },
-    {
-      "number": 273,
-      "title": "scouting: MIMIT \u2014 RNA Aiuti di Stato (370 dataset su dati.gov.it)",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/273"
     },
     {
       "number": 231,
@@ -336,6 +312,13 @@
   ],
   "open_discussions": 20,
   "discussions": [
+    {
+      "number": 297,
+      "title": "MCP adapters and source-check patterns for public data \u2014 cross-country comparison (FR/IT)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/297",
+      "category": "Proposte"
+    },
     {
       "number": 223,
       "title": "INPS ReI \u2014 evoluzione spesa e platea beneficiari 2018-2019",
@@ -468,13 +451,6 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/239",
       "category": "Domanda"
-    },
-    {
-      "number": 218,
-      "title": "[Analisi] Entrate dello Stato 2008-2024: nelle crisi cresce il peso dei prestiti?",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/218",
-      "category": "Analisi"
     }
   ],
   "github_fetch_errors": {},
@@ -1851,12 +1827,12 @@
       {
         "slug": "finanza-pubblica",
         "name": "Finanza pubblica",
-        "dataset_count": 2
+        "dataset_count": 3
       },
       {
         "slug": "sanita",
         "name": "Sanit\u00e0",
-        "dataset_count": 1
+        "dataset_count": 2
       },
       {
         "slug": "welfare-lavoro",
@@ -1869,7 +1845,7 @@
         "dataset_count": 1
       }
     ],
-    "published_count": 8,
+    "published_count": 10,
     "clean_ready_not_published": [
       "aifa_spesa_consumo",
       "bdap_lea",
@@ -1884,12 +1860,12 @@
       "terna_electricity_by_source"
     ],
     "last_deploy": {
-      "run_id": 26358836665,
+      "run_id": 26364427636,
       "name": "Deploy to GitHub Pages (Observable Framework)",
       "status": "completed",
       "conclusion": "success",
-      "completed_at": "2026-05-24T10:33:46Z",
-      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26358836665"
+      "completed_at": "2026-05-24T14:53:51Z",
+      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26364427636"
     }
   }
 }

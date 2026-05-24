@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-05-24T13:27:41.420285",
+  "generated_at": "2026-05-24T19:18:11.103600",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -357,14 +357,16 @@
       "name": "Finanza pubblica",
       "datasets": [
         "irpef-comunale",
-        "entrate-stato"
+        "entrate-stato",
+        "consip-consumi-convenzione"
       ]
     },
     {
       "slug": "sanita",
       "name": "Sanit\u00e0",
       "datasets": [
-        "spesa-farmaceutica"
+        "spesa-farmaceutica",
+        "bdap-lea"
       ]
     },
     {
