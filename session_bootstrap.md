@@ -1,12 +1,11 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-24T03:39:41.853347
+**Generated**: 2026-05-24T08:30:17.899519
 
 ## 🔍 SCOUTING
 
-**Radar**: 23 fonti — GREEN 17 · YELLOW 5 · RED 1 (probe: 2026-05-23)
+**Radar**: 23 fonti — GREEN 18 · YELLOW 4 · RED 1 (probe: 2026-05-24)
   ⚠ **1 persistent RED**
-  · **istat_sdmx** YELLOW [-] — Timeout (ReadTimeout)
   · **anac** YELLOW [403]
   · **dati_salute** RED [-] — SSL verify failed; fallback connection error (SSLError) (streak 14)
   · **lavoro_opendata** YELLOW [200] — CKAN API returned non-JSON content
@@ -40,7 +39,9 @@
 
 ## 🔗 OPEN
 
+- [dataset-incubator#381](https://github.com/dataciviclab/dataset-incubator/pull/381): feat: candidate openga-ricorsi-cds — Ricorsi Pendenti Consiglio di Stato
 - [dataset-incubator#360](https://github.com/dataciviclab/dataset-incubator/pull/360): chore: aggiunta directory figures per candidate MIT
+- [dataciviclab#291](https://github.com/dataciviclab/dataciviclab/pull/291): AIFA spesa farmaceutica: analisi completa README + notebook + figure
 - [data-explorer#105](https://github.com/dataciviclab/data-explorer/pull/105): feat(consip-consumi-convenzione): aggiungi dataset explorer e catalogo
 - [data-explorer#104](https://github.com/dataciviclab/data-explorer/pull/104): feat(bdap-lea): aggiungi dataset explorer e catalogo
 **Discussions**: 20 open

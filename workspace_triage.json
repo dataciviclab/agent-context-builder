@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-24T03:39:41.853347",
+  "generated_at": "2026-05-24T08:30:17.899519",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,13 +10,25 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 3,
+  "open_prs": 5,
   "prs": [
+    {
+      "number": 381,
+      "title": "feat: candidate openga-ricorsi-cds \u2014 Ricorsi Pendenti Consiglio di Stato",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/381"
+    },
     {
       "number": 360,
       "title": "chore: aggiunta directory figures per candidate MIT",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/360"
+    },
+    {
+      "number": 291,
+      "title": "AIFA spesa farmaceutica: analisi completa README + notebook + figure",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/pull/291"
     },
     {
       "number": 105,
@@ -479,21 +491,13 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-05-23",
+    "probe_date": "2026-05-24",
     "sources_total": 23,
-    "green": 17,
-    "yellow": 5,
+    "green": 18,
+    "yellow": 4,
     "red": 1,
     "persistent_red": 1,
     "unhealthy": [
-      {
-        "id": "istat_sdmx",
-        "status": "YELLOW",
-        "protocol": "sdmx",
-        "http_code": "-",
-        "note": "Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
       {
         "id": "anac",
         "status": "YELLOW",
