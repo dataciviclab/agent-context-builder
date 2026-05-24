@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-24T08:30:17.899519
+**Generated**: 2026-05-24T13:27:41.420285
 
 ## 🔍 SCOUTING
 
@@ -35,7 +35,7 @@
     · consip_consumi_convenzione
     · dipendenti_pubblici
     · ... e altri 6
-  **Deploy**: ✅ success (2026-05-22)
+  **Deploy**: ✅ success (2026-05-24)
 
 ## 🔗 OPEN
 
@@ -45,9 +45,9 @@
 - [data-explorer#105](https://github.com/dataciviclab/data-explorer/pull/105): feat(consip-consumi-convenzione): aggiungi dataset explorer e catalogo
 - [data-explorer#104](https://github.com/dataciviclab/data-explorer/pull/104): feat(bdap-lea): aggiungi dataset explorer e catalogo
 **Discussions**: 20 open
-  · [Datasets] Giustizia Amministrativa — Quanto durano i ricorsi al CdS?
-  · [Datasets] Corte Costituzionale — Come decide la Consulta?
-  · [Datasets] Consip — Chi vince le gare pubbliche?
+  · [Datasets] INPS ReI — evoluzione spesa e platea beneficiari 2018-2019
+  · [Datasets] Indice prezzi abitazioni ISTAT (IPAB) - case nuove vs esistenti, livello regionale
+  · [Datasets] Consip partecipazioni — geografia delle imprese nelle gare pubbliche (2023-2025)
 **Topics**: pipeline · governance · infrastructure
 
 ## 🛠 INFRA
