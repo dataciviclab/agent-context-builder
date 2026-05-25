@@ -33,7 +33,7 @@ ruff check src/
 
 - [ ] `pytest tests/` passa
 - [ ] `ruff check src/` passa
-- [ ] Build manuale verificata: `python src/build_context.py`
+- [ ] Build manuale verificata: `agent-context build --config dataciviclab.config.yml --out generated/`
 
 ## Checklist PR
 
