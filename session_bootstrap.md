@@ -1,17 +1,16 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-25T03:54:16.680826
+**Generated**: 2026-05-25T10:07:32.559986
 
 ## 🔍 SCOUTING
 
-**Radar**: 23 fonti — GREEN 18 · YELLOW 4 · RED 1 (probe: 2026-05-24)
+**Radar**: 27 fonti — GREEN 23 · YELLOW 3 · RED 1 (probe: 2026-05-25)
   ⚠ **1 persistent RED**
-  · **anac** YELLOW [403]
+  · **istat_sdmx** YELLOW [-] — Timeout (ReadTimeout)
   · **dati_salute** RED [-] — SSL verify failed; fallback connection error (SSLError) (streak 14)
-  · **lavoro_opendata** YELLOW [200] — CKAN API returned non-JSON content
-  · **mur_ustat** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
+  · **inail_opendata** YELLOW [403]
   · **opencoesione** YELLOW [403]
-**Catalog Drift**: no drift signals (15 sources checked)
+**Catalog Drift**: no drift signals (22 sources checked)
 
 ## 📥 INTAKE
 
@@ -39,6 +38,7 @@
 
 ## 🔗 OPEN
 
+- [dataset-incubator#389](https://github.com/dataciviclab/dataset-incubator/pull/389): chore(post-merge): aggiorna registry per PR #
 - [dataset-incubator#381](https://github.com/dataciviclab/dataset-incubator/pull/381): feat: candidate openga-ricorsi-cds — Ricorsi Pendenti Consiglio di Stato
 - [dataset-incubator#360](https://github.com/dataciviclab/dataset-incubator/pull/360): chore: aggiunta directory figures per candidate MIT
 **Discussions**: 20 open

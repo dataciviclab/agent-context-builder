@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-25T03:54:16.680826",
+  "generated_at": "2026-05-25T10:07:32.559986",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,8 +10,14 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 2,
+  "open_prs": 3,
   "prs": [
+    {
+      "number": 389,
+      "title": "chore(post-merge): aggiorna registry per PR #",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/389"
+    },
     {
       "number": 381,
       "title": "feat: candidate openga-ricorsi-cds \u2014 Ricorsi Pendenti Consiglio di Stato",
@@ -25,7 +31,7 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/360"
     }
   ],
-  "open_issues": 43,
+  "open_issues": 45,
   "issues": [
     {
       "number": 383,
@@ -244,6 +250,12 @@
       "url": "https://github.com/dataciviclab/data-explorer/issues/83"
     },
     {
+      "number": 282,
+      "title": "[Catalog] 2026-05-25 \u2014 1 regressionee, 7 nuova fonte",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/282"
+    },
+    {
       "number": 275,
       "title": "scouting: Banca d'Italia (80 dataset su dati.gov.it)",
       "repo": "source-observatory",
@@ -284,6 +296,12 @@
       "title": "feat: apri issue automatica dai segnali drift attivi in catalog_signals.json",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/127"
+    },
+    {
+      "number": 29,
+      "title": "\u26a0\ufe0f HTTP smoke test failed \u2014 upstream endpoint may have changed",
+      "repo": "lab-connectors",
+      "url": "https://github.com/dataciviclab/lab-connectors/issues/29"
     }
   ],
   "open_discussions": 20,
@@ -491,19 +509,19 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-05-24",
-    "sources_total": 23,
-    "green": 18,
-    "yellow": 4,
+    "probe_date": "2026-05-25",
+    "sources_total": 27,
+    "green": 23,
+    "yellow": 3,
     "red": 1,
     "persistent_red": 1,
     "unhealthy": [
       {
-        "id": "anac",
+        "id": "istat_sdmx",
         "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "403",
-        "note": null,
+        "protocol": "sdmx",
+        "http_code": "-",
+        "note": "Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
@@ -515,19 +533,11 @@
         "red_streak": 14
       },
       {
-        "id": "lavoro_opendata",
+        "id": "inail_opendata",
         "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "200",
-        "note": "CKAN API returned non-JSON content",
-        "red_streak": 0
-      },
-      {
-        "id": "mur_ustat",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
+        "protocol": "aem",
+        "http_code": "403",
+        "note": null,
         "red_streak": 0
       },
       {
@@ -542,8 +552,8 @@
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-05-22T12:27:45+00:00",
-    "sources_checked": 15,
+    "captured_at": "2026-05-25T08:00:44+00:00",
+    "sources_checked": 22,
     "regressions": [],
     "alerts": []
   },
