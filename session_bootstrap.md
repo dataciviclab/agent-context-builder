@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-25T14:55:08.708029
+**Generated**: 2026-05-25T19:41:03.688897
 
 ## 🔍 SCOUTING
 
@@ -38,11 +38,11 @@
 
 ## 🔗 OPEN
 
-- [dataset-incubator#381](https://github.com/dataciviclab/dataset-incubator/pull/381): feat: candidate openga-ricorsi-cds — Ricorsi Pendenti Consiglio di Stato
+- [dataset-incubator#395](https://github.com/dataciviclab/dataset-incubator/pull/395): Feat/analisi popolazione istat
+- [dataset-incubator#394](https://github.com/dataciviclab/dataset-incubator/pull/394): Feat/candidate popolazione istat
+- [dataset-incubator#393](https://github.com/dataciviclab/dataset-incubator/pull/393): chore(post-merge): aggiorna registry per PR #381
 - [dataset-incubator#360](https://github.com/dataciviclab/dataset-incubator/pull/360): chore: aggiunta directory figures per candidate MIT
-- [dataciviclab#300](https://github.com/dataciviclab/dataciviclab/pull/300): Consip consumi convenzione: analisi completa README + notebook + figure
 - [data-explorer#113](https://github.com/dataciviclab/data-explorer/pull/113): feat(istat-ipab-aree): aggiungi dataset explorer e catalogo
-- **Dependabot**: 5 bump PR(s)
 **Discussions**: 20 open
   · [Proposte] MCP adapters and source-check patterns for public data — cross-country comparison (FR/IT)
   · [Datasets] INPS ReI — evoluzione spesa e platea beneficiari 2018-2019

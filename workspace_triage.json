@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-25T14:55:08.708029",
+  "generated_at": "2026-05-25T19:41:03.688897",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,13 +10,25 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 9,
+  "open_prs": 5,
   "prs": [
     {
-      "number": 381,
-      "title": "feat: candidate openga-ricorsi-cds \u2014 Ricorsi Pendenti Consiglio di Stato",
+      "number": 395,
+      "title": "Feat/analisi popolazione istat",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/381"
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/395"
+    },
+    {
+      "number": 394,
+      "title": "Feat/candidate popolazione istat",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/394"
+    },
+    {
+      "number": 393,
+      "title": "chore(post-merge): aggiorna registry per PR #381",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/393"
     },
     {
       "number": 360,
@@ -25,61 +37,19 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/360"
     },
     {
-      "number": 300,
-      "title": "Consip consumi convenzione: analisi completa README + notebook + figure",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/pull/300"
-    },
-    {
       "number": 113,
       "title": "feat(istat-ipab-aree): aggiungi dataset explorer e catalogo",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/113"
-    },
-    {
-      "number": 287,
-      "title": "chore(deps): update duckdb requirement from <2.0,>=1.5.2 to >=1.5.3,<2.0",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/287"
-    },
-    {
-      "number": 286,
-      "title": "chore(deps): update fastmcp requirement from >=3.2.4 to >=3.3.1",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/286"
-    },
-    {
-      "number": 285,
-      "title": "chore(deps): update requests requirement from <3.0,>=2.33.1 to >=2.34.2,<3.0",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/285"
-    },
-    {
-      "number": 284,
-      "title": "chore(deps-dev): update ruff requirement from <1.0.0,>=0.15.13 to >=0.15.14,<1.0.0",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/284"
-    },
-    {
-      "number": 283,
-      "title": "chore(deps-dev): update pytest-timeout requirement from >=2.3.0 to >=2.4.0",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/283"
     }
   ],
-  "open_issues": 48,
+  "open_issues": 44,
   "issues": [
     {
       "number": 383,
       "title": "aggiungere time_coverage ai candidati single-year",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/383"
-    },
-    {
-      "number": 379,
-      "title": "Proposta intake: Ricorsi Pendenti Consiglio di Stato (openga)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/379"
     },
     {
       "number": 378,
@@ -164,12 +134,6 @@
       "title": "analisi: camera_deputati_legislature \u2014 nuovo dataset pubblicato",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/issues/298"
-    },
-    {
-      "number": 296,
-      "title": "[Seed] Analisi pubblica per Consip Consumi Convenzione",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/296"
     },
     {
       "number": 295,
@@ -344,18 +308,6 @@
       "title": "feat: apri issue automatica dai segnali drift attivi in catalog_signals.json",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/127"
-    },
-    {
-      "number": 30,
-      "title": "smoke test HTTP: sostituire httpbin.org con endpoint pi\u00f9 stabile",
-      "repo": "lab-connectors",
-      "url": "https://github.com/dataciviclab/lab-connectors/issues/30"
-    },
-    {
-      "number": 29,
-      "title": "\u26a0\ufe0f HTTP smoke test failed \u2014 upstream endpoint may have changed",
-      "repo": "lab-connectors",
-      "url": "https://github.com/dataciviclab/lab-connectors/issues/29"
     }
   ],
   "open_discussions": 20,
@@ -560,9 +512,7 @@
       "untracked_files": 0
     }
   },
-  "warnings": [
-    "Many open PRs: 9"
-  ],
+  "warnings": [],
   "radar": {
     "available": true,
     "probe_date": "2026-05-25",
@@ -1947,12 +1897,12 @@
       "terna_electricity_by_source"
     ],
     "last_deploy": {
-      "run_id": 26398760191,
+      "run_id": 26414437179,
       "name": "Deploy to GitHub Pages (Observable Framework)",
       "status": "completed",
       "conclusion": "success",
-      "completed_at": "2026-05-25T11:46:11Z",
-      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26398760191"
+      "completed_at": "2026-05-25T18:30:14Z",
+      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26414437179"
     }
   }
 }
