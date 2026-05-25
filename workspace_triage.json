@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-25T10:07:32.559986",
+  "generated_at": "2026-05-25T14:55:08.708029",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,14 +10,8 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 3,
+  "open_prs": 9,
   "prs": [
-    {
-      "number": 389,
-      "title": "chore(post-merge): aggiorna registry per PR #",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/389"
-    },
     {
       "number": 381,
       "title": "feat: candidate openga-ricorsi-cds \u2014 Ricorsi Pendenti Consiglio di Stato",
@@ -29,9 +23,51 @@
       "title": "chore: aggiunta directory figures per candidate MIT",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/360"
+    },
+    {
+      "number": 300,
+      "title": "Consip consumi convenzione: analisi completa README + notebook + figure",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/pull/300"
+    },
+    {
+      "number": 113,
+      "title": "feat(istat-ipab-aree): aggiungi dataset explorer e catalogo",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/113"
+    },
+    {
+      "number": 287,
+      "title": "chore(deps): update duckdb requirement from <2.0,>=1.5.2 to >=1.5.3,<2.0",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/287"
+    },
+    {
+      "number": 286,
+      "title": "chore(deps): update fastmcp requirement from >=3.2.4 to >=3.3.1",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/286"
+    },
+    {
+      "number": 285,
+      "title": "chore(deps): update requests requirement from <3.0,>=2.33.1 to >=2.34.2,<3.0",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/285"
+    },
+    {
+      "number": 284,
+      "title": "chore(deps-dev): update ruff requirement from <1.0.0,>=0.15.13 to >=0.15.14,<1.0.0",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/284"
+    },
+    {
+      "number": 283,
+      "title": "chore(deps-dev): update pytest-timeout requirement from >=2.3.0 to >=2.4.0",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/283"
     }
   ],
-  "open_issues": 45,
+  "open_issues": 48,
   "issues": [
     {
       "number": 383,
@@ -116,6 +152,18 @@
       "title": "Apri candidate camera-votazioni",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/124"
+    },
+    {
+      "number": 299,
+      "title": "[Seed] Verificare link e riferimenti in un file o sezione precisa",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/299"
+    },
+    {
+      "number": 298,
+      "title": "analisi: camera_deputati_legislature \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/298"
     },
     {
       "number": 296,
@@ -208,6 +256,12 @@
       "url": "https://github.com/dataciviclab/toolkit/issues/244"
     },
     {
+      "number": 110,
+      "title": "follow-up: pagina e tema per camera_deputati_legislature",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/110"
+    },
+    {
       "number": 97,
       "title": "follow-up: pagina e tema per 2 nuovi dataset",
       "repo": "data-explorer",
@@ -250,12 +304,6 @@
       "url": "https://github.com/dataciviclab/data-explorer/issues/83"
     },
     {
-      "number": 282,
-      "title": "[Catalog] 2026-05-25 \u2014 1 regressionee, 7 nuova fonte",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/282"
-    },
-    {
       "number": 275,
       "title": "scouting: Banca d'Italia (80 dataset su dati.gov.it)",
       "repo": "source-observatory",
@@ -296,6 +344,12 @@
       "title": "feat: apri issue automatica dai segnali drift attivi in catalog_signals.json",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/127"
+    },
+    {
+      "number": 30,
+      "title": "smoke test HTTP: sostituire httpbin.org con endpoint pi\u00f9 stabile",
+      "repo": "lab-connectors",
+      "url": "https://github.com/dataciviclab/lab-connectors/issues/30"
     },
     {
       "number": 29,
@@ -506,7 +560,9 @@
       "untracked_files": 0
     }
   },
-  "warnings": [],
+  "warnings": [
+    "Many open PRs: 9"
+  ],
   "radar": {
     "available": true,
     "probe_date": "2026-05-25",
@@ -559,7 +615,7 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-05-19",
+    "generated_at": "2026-05-25",
     "summary": {
       "total": 32,
       "by_status": {
@@ -574,10 +630,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-05-19",
+    "updated_at": "2026-05-25",
     "summary": {
-      "total": 27,
-      "published": 11
+      "total": 28,
+      "published": 12
     },
     "datasets": [
       {
@@ -585,7 +641,7 @@
         "name": "AIFA Spesa Farmaceutica Convenzionata",
         "stage": "published",
         "period": {
-          "start": 2020,
+          "start": 2018,
           "end": 2024
         },
         "location": {
@@ -677,7 +733,8 @@
         },
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/bdap_entrate_stato/2024/bdap_entrate_stato_2024_clean.parquet"
+          "path": "gs://dataciviclab-clean/bdap_entrate_stato/2024/bdap_entrate_stato_2024_clean.parquet",
+          "multi_file": false
         },
         "metric_columns": 2,
         "dimension_columns": 9,
@@ -694,8 +751,8 @@
         },
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/bdap_lea/*/bdap_lea_*_clean.parquet",
-          "multi_file": true
+          "path": "gs://dataciviclab-clean/bdap_lea/2024/bdap_lea_2024_clean.parquet",
+          "multi_file": false
         },
         "metric_columns": 14,
         "dimension_columns": 9,
@@ -792,6 +849,45 @@
           {
             "name": "importo_totale",
             "role": "metric"
+          }
+        ]
+      },
+      {
+        "slug": "camera_deputati_legislature",
+        "name": "Camera Deputati Legislature",
+        "stage": "published",
+        "period": {
+          "start": 2024,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/camera_deputati_legislature/2024/camera_deputati_legislature_2024_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 0,
+        "dimension_columns": 5,
+        "column_count": 5,
+        "columns": [
+          {
+            "name": "deputato",
+            "role": "dimension"
+          },
+          {
+            "name": "cogn",
+            "role": "dimension"
+          },
+          {
+            "name": "nome",
+            "role": "dimension"
+          },
+          {
+            "name": "legislatura",
+            "role": "dimension"
+          },
+          {
+            "name": "gender",
+            "role": "dimension"
           }
         ]
       },
@@ -1045,7 +1141,7 @@
         "name": "Giustizia Penale \u2014 Clearance Rate e Disposition Time",
         "stage": "incubating",
         "period": {
-          "start": 2014,
+          "start": 2024,
           "end": 2024
         },
         "location": {
@@ -1063,7 +1159,7 @@
         "name": "INPS Pensioni \u2014 trimestrale",
         "stage": "incubating",
         "period": {
-          "start": 2020,
+          "start": 2024,
           "end": 2024
         },
         "location": {
@@ -1316,9 +1412,9 @@
           "path": "gs://dataciviclab-clean/ispra_consumo_suolo/2024/ispra_consumo_suolo_2024_clean.parquet",
           "multi_file": false
         },
-        "metric_columns": 36,
+        "metric_columns": 35,
         "dimension_columns": 4,
-        "column_count": 40,
+        "column_count": 39,
         "columns": []
       },
       {
@@ -1334,10 +1430,14 @@
           "path": "gs://dataciviclab-clean/ispra_ru_base/*/ispra_ru_base_*_clean.parquet",
           "multi_file": true
         },
-        "metric_columns": 3,
+        "metric_columns": 4,
         "dimension_columns": 6,
-        "column_count": 9,
+        "column_count": 10,
         "columns": [
+          {
+            "name": "anno",
+            "role": "metric"
+          },
           {
             "name": "codice_comune_istat",
             "role": "dimension"
@@ -1389,9 +1489,9 @@
           "path": "gs://dataciviclab-clean/ispra_ru_costi_kg/*/ispra_ru_costi_kg_*_clean.parquet",
           "multi_file": true
         },
-        "metric_columns": 6,
+        "metric_columns": 7,
         "dimension_columns": 5,
-        "column_count": 11,
+        "column_count": 12,
         "columns": []
       },
       {
@@ -1407,9 +1507,9 @@
           "path": "gs://dataciviclab-clean/ispra_ru_costi_procapite/*/ispra_ru_costi_procapite_*_clean.parquet",
           "multi_file": true
         },
-        "metric_columns": 9,
+        "metric_columns": 10,
         "dimension_columns": 5,
-        "column_count": 14,
+        "column_count": 15,
         "columns": []
       },
       {
@@ -1426,8 +1526,8 @@
           "multi_file": false
         },
         "metric_columns": 1,
-        "dimension_columns": 4,
-        "column_count": 5,
+        "dimension_columns": 5,
+        "column_count": 6,
         "columns": []
       },
       {
@@ -1526,9 +1626,9 @@
           "path": "gs://dataciviclab-clean/mef_partecipazioni/*/mef_partecipazioni_*_clean.parquet",
           "multi_file": true
         },
-        "metric_columns": 24,
+        "metric_columns": 25,
         "dimension_columns": 60,
-        "column_count": 84,
+        "column_count": 85,
         "columns": []
       },
       {
@@ -1637,9 +1737,9 @@
           "path": "gs://dataciviclab-clean/mit_incidentalita_mensile/2001/mit_incidentalita_mensile_2001_clean.parquet",
           "multi_file": false
         },
-        "metric_columns": 13,
+        "metric_columns": 14,
         "dimension_columns": 2,
-        "column_count": 15,
+        "column_count": 16,
         "columns": []
       },
       {
@@ -1656,8 +1756,8 @@
           "multi_file": false
         },
         "metric_columns": 5,
-        "dimension_columns": 18,
-        "column_count": 23,
+        "dimension_columns": 22,
+        "column_count": 27,
         "columns": []
       },
       {
@@ -1709,9 +1809,9 @@
           "path": "gs://dataciviclab-clean/popolazione_istat_comunale_2019_2025/*/popolazione_istat_comunale_2019_2025_*_clean.parquet",
           "multi_file": true
         },
-        "metric_columns": 17,
+        "metric_columns": 18,
         "dimension_columns": 3,
-        "column_count": 20,
+        "column_count": 21,
         "columns": []
       },
       {
@@ -1835,6 +1935,7 @@
     "clean_ready_not_published": [
       "aifa_spesa_consumo",
       "bdap_lea",
+      "camera_deputati_legislature",
       "civile_flussi",
       "consip_consumi_convenzione",
       "dipendenti_pubblici",
@@ -1846,12 +1947,12 @@
       "terna_electricity_by_source"
     ],
     "last_deploy": {
-      "run_id": 26364427636,
+      "run_id": 26398760191,
       "name": "Deploy to GitHub Pages (Observable Framework)",
       "status": "completed",
       "conclusion": "success",
-      "completed_at": "2026-05-24T14:53:51Z",
-      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26364427636"
+      "completed_at": "2026-05-25T11:46:11Z",
+      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26398760191"
     }
   }
 }

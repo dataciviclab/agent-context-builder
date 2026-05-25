@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-05-25T10:07:32.559986",
+  "generated_at": "2026-05-25T14:55:08.708029",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -37,7 +37,7 @@
         "slug": "aifa_spesa_consumo",
         "name": "AIFA Spesa Farmaceutica Convenzionata",
         "period": {
-          "start": 2020,
+          "start": 2018,
           "end": 2024
         }
       }
@@ -46,6 +46,16 @@
       {
         "slug": "bdap_lea",
         "name": "Bdap Lea",
+        "period": {
+          "start": 2024,
+          "end": 2024
+        }
+      }
+    ],
+    "Camera dei Deputati \u2014 OpenData SPARQL endpoint": [
+      {
+        "slug": "camera_deputati_legislature",
+        "name": "Camera Deputati Legislature",
         "period": {
           "start": 2024,
           "end": 2024
@@ -159,7 +169,7 @@
         "slug": "giustizia_penale_indicatori",
         "name": "Giustizia Penale \u2014 Clearance Rate e Disposition Time",
         "period": {
-          "start": 2014,
+          "start": 2024,
           "end": 2024
         }
       }
@@ -169,7 +179,7 @@
         "slug": "inps_pensioni_trimestrale",
         "name": "INPS Pensioni \u2014 trimestrale",
         "period": {
-          "start": 2020,
+          "start": 2024,
           "end": 2024
         }
       }
