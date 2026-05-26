@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-26T09:57:50.744679
+**Generated**: 2026-05-26T15:31:28.209174
 
 ## 🔍 SCOUTING
 
@@ -13,9 +13,8 @@
 ## 📥 INTAKE
 
 **Pipeline**: 33 candidates — 33 ok
-  ⚠️ **camera-deputati-legislature** — run fallito [2024](https://github.com/dataciviclab/dataset-incubator/actions/runs/25509412527)
   ⚠️ **mur-contribuzione-universitaria** — run fallito [0](https://github.com/dataciviclab/dataset-incubator/actions/runs/26106467223)
-**Dataset Catalog**: 13 published · 13 public · updated 2026-05-25
+**Dataset Catalog**: 13 published · 13 public · updated 2026-05-26
 
 ## 🗂 EXPLORER
 
@@ -36,7 +35,6 @@
 
 ## 🔗 OPEN
 
-- [dataset-incubator#397](https://github.com/dataciviclab/dataset-incubator/pull/397): fix: candidate pipeline — trim(BIGINT), consip quote, mur cross_year, camera sparql
 - [dataset-incubator#396](https://github.com/dataciviclab/dataset-incubator/pull/396): feat(popolazione): mart hierarchy fasce d'età con exclude_metrics
 - [dataset-incubator#394](https://github.com/dataciviclab/dataset-incubator/pull/394): Feat/candidate popolazione istat
 - [dataset-incubator#360](https://github.com/dataciviclab/dataset-incubator/pull/360): chore: aggiunta directory figures per candidate MIT
