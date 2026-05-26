@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-05-26T15:31:28.209174",
+  "generated_at": "2026-05-26T20:09:36.983968",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -42,20 +42,28 @@
         }
       }
     ],
+    "MEF-BDAP": [
+      {
+        "slug": "bdap_entrate_stato",
+        "name": "BDAP Entrate Stato - Serie Storica",
+        "period": {
+          "start": 2008,
+          "end": 2024
+        }
+      },
+      {
+        "slug": "dipendenti_pubblici",
+        "name": "Dipendenti Pubblici - Occupazione e Turnover",
+        "period": {
+          "start": 2010,
+          "end": 2023
+        }
+      }
+    ],
     "BDAP LEA \u2014 Ragioneria Generale dello Stato (MEF)": [
       {
         "slug": "bdap_lea",
         "name": "Bdap Lea",
-        "period": {
-          "start": 2024,
-          "end": 2024
-        }
-      }
-    ],
-    "Camera dei Deputati \u2014 OpenData SPARQL endpoint": [
-      {
-        "slug": "camera_deputati_legislature",
-        "name": "Camera Deputati Legislature",
         "period": {
           "start": 2024,
           "end": 2024
@@ -82,13 +90,13 @@
         }
       }
     ],
-    "MEF-BDAP": [
+    "https://www.inps.it/gestione-previdenziale": [
       {
-        "slug": "dipendenti_pubblici",
-        "name": "Dipendenti Pubblici - Occupazione e Turnover",
+        "slug": "inps_pensioni_trimestrale",
+        "name": "INPS Pensioni \u2014 trimestrale",
         "period": {
-          "start": 2010,
-          "end": 2023
+          "start": 2024,
+          "end": 2024
         }
       }
     ],
@@ -119,16 +127,6 @@
         "period": {
           "start": 2010,
           "end": 2025
-        }
-      }
-    ],
-    "MIM - dati.istruzione.it": [
-      {
-        "slug": "mim_anagrafica_scuole_statali",
-        "name": "Mim Anagrafica Scuole Statali",
-        "period": {
-          "start": 2024,
-          "end": 2024
         }
       }
     ],
@@ -164,12 +162,12 @@
     ]
   },
   "candidates_by_source": {
-    "MEF-BDAP": [
+    "Camera dei Deputati \u2014 OpenData SPARQL endpoint": [
       {
-        "slug": "bdap_entrate_stato",
-        "name": "BDAP Entrate Stato - Serie Storica",
+        "slug": "camera_deputati_legislature",
+        "name": "Camera Deputati Legislature",
         "period": {
-          "start": 2008,
+          "start": 2024,
           "end": 2024
         }
       }
@@ -178,16 +176,6 @@
       {
         "slug": "giustizia_penale_indicatori",
         "name": "Giustizia Penale \u2014 Clearance Rate e Disposition Time",
-        "period": {
-          "start": 2024,
-          "end": 2024
-        }
-      }
-    ],
-    "https://www.inps.it/gestione-previdenziale": [
-      {
-        "slug": "inps_pensioni_trimestrale",
-        "name": "INPS Pensioni \u2014 trimestrale",
         "period": {
           "start": 2024,
           "end": 2024
@@ -267,6 +255,16 @@
         "period": {
           "start": 2016,
           "end": 2025
+        }
+      }
+    ],
+    "MIM - dati.istruzione.it": [
+      {
+        "slug": "mim_anagrafica_scuole_statali",
+        "name": "Mim Anagrafica Scuole Statali",
+        "period": {
+          "start": 2024,
+          "end": 2024
         }
       }
     ],
@@ -394,7 +392,8 @@
       "name": "Welfare e lavoro",
       "datasets": [
         "dipendenti-pubblici",
-        "pensioni-inps"
+        "pensioni-inps",
+        "istat-ipab-aree"
       ]
     },
     {

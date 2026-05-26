@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-26T15:31:28.209174",
+  "generated_at": "2026-05-26T20:09:36.983968",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,8 +10,20 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 6,
+  "open_prs": 5,
   "prs": [
+    {
+      "number": 406,
+      "title": "Fix/ca cert pipeline path",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/406"
+    },
+    {
+      "number": 405,
+      "title": "Feat/popolazione istat comunale v2",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/405"
+    },
     {
       "number": 396,
       "title": "feat(popolazione): mart hierarchy fasce d'et\u00e0 con exclude_metrics",
@@ -29,27 +41,9 @@
       "title": "chore: aggiunta directory figures per candidate MIT",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/360"
-    },
-    {
-      "number": 117,
-      "title": "chore(deps-dev): bump eslint from 9.39.4 to 10.4.0",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/117"
-    },
-    {
-      "number": 116,
-      "title": "chore(deps): bump esbuild from 0.25.1 to 0.28.0",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/116"
-    },
-    {
-      "number": 113,
-      "title": "feat(istat-ipab-aree): aggiungi dataset explorer e catalogo",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/113"
     }
   ],
-  "open_issues": 41,
+  "open_issues": 40,
   "issues": [
     {
       "number": 383,
@@ -218,12 +212,6 @@
       "title": "follow-up: pagina e tema per 2 nuovi dataset",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/issues/97"
-    },
-    {
-      "number": 95,
-      "title": "follow-up: pagina e tema per istat-ipab-aree",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/issues/95"
     },
     {
       "number": 89,
@@ -500,9 +488,7 @@
       "untracked_files": 0
     }
   },
-  "warnings": [
-    "Many open PRs: 6"
-  ],
+  "warnings": [],
   "radar": {
     "available": true,
     "probe_date": "2026-05-26",
@@ -650,7 +636,7 @@
       {
         "slug": "bdap_entrate_stato",
         "name": "BDAP Entrate Stato - Serie Storica",
-        "stage": "incubating",
+        "stage": "published",
         "period": {
           "start": 2008,
           "end": 2024
@@ -663,7 +649,52 @@
         "metric_columns": 2,
         "dimension_columns": 9,
         "column_count": 11,
-        "columns": []
+        "columns": [
+          {
+            "name": "esercizio_finanziario",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_titolo",
+            "role": "dimension"
+          },
+          {
+            "name": "titolo",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_natura",
+            "role": "dimension"
+          },
+          {
+            "name": "natura",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_tipologia",
+            "role": "dimension"
+          },
+          {
+            "name": "tipologia",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_provento",
+            "role": "dimension"
+          },
+          {
+            "name": "provento",
+            "role": "dimension"
+          },
+          {
+            "name": "previsioni_definitive_cp",
+            "role": "metric"
+          },
+          {
+            "name": "previsioni_definitive_cs",
+            "role": "metric"
+          }
+        ]
       },
       {
         "slug": "bdap_lea",
@@ -779,7 +810,7 @@
       {
         "slug": "camera_deputati_legislature",
         "name": "Camera Deputati Legislature",
-        "stage": "published",
+        "stage": "incubating",
         "period": {
           "start": 2024,
           "end": 2024
@@ -792,28 +823,7 @@
         "metric_columns": 0,
         "dimension_columns": 5,
         "column_count": 5,
-        "columns": [
-          {
-            "name": "deputato",
-            "role": "dimension"
-          },
-          {
-            "name": "cogn",
-            "role": "dimension"
-          },
-          {
-            "name": "nome",
-            "role": "dimension"
-          },
-          {
-            "name": "legislatura",
-            "role": "dimension"
-          },
-          {
-            "name": "gender",
-            "role": "dimension"
-          }
-        ]
+        "columns": []
       },
       {
         "slug": "civile_flussi",
@@ -1081,7 +1091,7 @@
       {
         "slug": "inps_pensioni_trimestrale",
         "name": "INPS Pensioni \u2014 trimestrale",
-        "stage": "incubating",
+        "stage": "published",
         "period": {
           "start": 2024,
           "end": 2024
@@ -1094,7 +1104,52 @@
         "metric_columns": 1,
         "dimension_columns": 10,
         "column_count": 11,
-        "columns": []
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "trimestre",
+            "role": "dimension"
+          },
+          {
+            "name": "sesso",
+            "role": "dimension"
+          },
+          {
+            "name": "classe_eta",
+            "role": "dimension"
+          },
+          {
+            "name": "classe_importo",
+            "role": "dimension"
+          },
+          {
+            "name": "area_geografica",
+            "role": "dimension"
+          },
+          {
+            "name": "gestione",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_gestione",
+            "role": "dimension"
+          },
+          {
+            "name": "categoria",
+            "role": "dimension"
+          },
+          {
+            "name": "regione",
+            "role": "dimension"
+          },
+          {
+            "name": "numero_pensioni",
+            "role": "metric"
+          }
+        ]
       },
       {
         "slug": "irpef_comunale",
@@ -1576,7 +1631,7 @@
       {
         "slug": "mim_anagrafica_scuole_statali",
         "name": "Mim Anagrafica Scuole Statali",
-        "stage": "published",
+        "stage": "incubating",
         "period": {
           "start": 2024,
           "end": 2024
@@ -1589,64 +1644,7 @@
         "metric_columns": 0,
         "dimension_columns": 14,
         "column_count": 14,
-        "columns": [
-          {
-            "name": "anno_scolastico",
-            "role": "dimension"
-          },
-          {
-            "name": "codice_scuola",
-            "role": "dimension"
-          },
-          {
-            "name": "codice_istituto_riferimento",
-            "role": "dimension"
-          },
-          {
-            "name": "denominazione_istituto_riferimento",
-            "role": "dimension"
-          },
-          {
-            "name": "denominazione_scuola",
-            "role": "dimension"
-          },
-          {
-            "name": "area_geografica",
-            "role": "dimension"
-          },
-          {
-            "name": "regione",
-            "role": "dimension"
-          },
-          {
-            "name": "provincia",
-            "role": "dimension"
-          },
-          {
-            "name": "codice_comune_scuola",
-            "role": "dimension"
-          },
-          {
-            "name": "comune",
-            "role": "dimension"
-          },
-          {
-            "name": "cap_scuola",
-            "role": "dimension"
-          },
-          {
-            "name": "indirizzo_scuola",
-            "role": "dimension"
-          },
-          {
-            "name": "caratteristica_scuola",
-            "role": "dimension"
-          },
-          {
-            "name": "grado_istruzione_scuola",
-            "role": "dimension"
-          }
-        ]
+        "columns": []
       },
       {
         "slug": "mit_incidentalita_mensile",
@@ -1890,7 +1888,7 @@
       {
         "slug": "welfare-lavoro",
         "name": "Welfare e lavoro",
-        "dataset_count": 2
+        "dataset_count": 3
       },
       {
         "slug": "giustizia",
@@ -1898,29 +1896,29 @@
         "dataset_count": 1
       }
     ],
-    "published_count": 10,
+    "published_count": 11,
     "clean_ready_not_published": [
       "aifa_spesa_consumo",
+      "bdap_entrate_stato",
       "bdap_lea",
-      "camera_deputati_legislature",
       "civile_flussi",
       "consip_consumi_convenzione",
       "dipendenti_pubblici",
+      "inps_pensioni_trimestrale",
       "irpef_comunale",
       "ispra_ru_base",
       "istat_ipab_aree",
-      "mim_anagrafica_scuole_statali",
       "openga_ricorsi_cds",
       "terna_capacita_rinnovabile",
       "terna_electricity_by_source"
     ],
     "last_deploy": {
-      "run_id": 26414437179,
+      "run_id": 26465518227,
       "name": "Deploy to GitHub Pages (Observable Framework)",
       "status": "completed",
       "conclusion": "success",
-      "completed_at": "2026-05-25T18:30:14Z",
-      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26414437179"
+      "completed_at": "2026-05-26T17:55:36Z",
+      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26465518227"
     }
   }
 }
