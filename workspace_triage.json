@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-26T03:36:49.946289",
+  "generated_at": "2026-05-26T09:57:50.744679",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,8 +10,14 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 4,
+  "open_prs": 7,
   "prs": [
+    {
+      "number": 397,
+      "title": "fix: candidate pipeline \u2014 trim(BIGINT), consip quote, mur cross_year, camera sparql",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/397"
+    },
     {
       "number": 396,
       "title": "feat(popolazione): mart hierarchy fasce d'et\u00e0 con exclude_metrics",
@@ -29,6 +35,18 @@
       "title": "chore: aggiunta directory figures per candidate MIT",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/360"
+    },
+    {
+      "number": 117,
+      "title": "chore(deps-dev): bump eslint from 9.39.4 to 10.4.0",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/117"
+    },
+    {
+      "number": 116,
+      "title": "chore(deps): bump esbuild from 0.25.1 to 0.28.0",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/116"
     },
     {
       "number": 113,
@@ -518,24 +536,18 @@
       "untracked_files": 0
     }
   },
-  "warnings": [],
+  "warnings": [
+    "Many open PRs: 7"
+  ],
   "radar": {
     "available": true,
-    "probe_date": "2026-05-25",
+    "probe_date": "2026-05-26",
     "sources_total": 27,
-    "green": 23,
-    "yellow": 3,
+    "green": 25,
+    "yellow": 1,
     "red": 1,
     "persistent_red": 1,
     "unhealthy": [
-      {
-        "id": "istat_sdmx",
-        "status": "YELLOW",
-        "protocol": "sdmx",
-        "http_code": "-",
-        "note": "Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
       {
         "id": "dati_salute",
         "status": "RED",
@@ -545,19 +557,11 @@
         "red_streak": 14
       },
       {
-        "id": "inail_opendata",
-        "status": "YELLOW",
-        "protocol": "aem",
-        "http_code": "403",
-        "note": null,
-        "red_streak": 0
-      },
-      {
         "id": "opencoesione",
         "status": "YELLOW",
         "protocol": "rest",
-        "http_code": "403",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       }
     ]

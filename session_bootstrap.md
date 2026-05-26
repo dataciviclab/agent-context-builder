@@ -1,15 +1,13 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-26T03:36:49.946289
+**Generated**: 2026-05-26T09:57:50.744679
 
 ## 🔍 SCOUTING
 
-**Radar**: 27 fonti — GREEN 23 · YELLOW 3 · RED 1 (probe: 2026-05-25)
+**Radar**: 27 fonti — GREEN 25 · YELLOW 1 · RED 1 (probe: 2026-05-26)
   ⚠ **1 persistent RED**
-  · **istat_sdmx** YELLOW [-] — Timeout (ReadTimeout)
   · **dati_salute** RED [-] — SSL verify failed; fallback connection error (SSLError) (streak 14)
-  · **inail_opendata** YELLOW [403]
-  · **opencoesione** YELLOW [403]
+  · **opencoesione** YELLOW [-] — Retry timeout/connection: Timeout (ReadTimeout)
 **Catalog Drift**: no drift signals (22 sources checked)
 
 ## 📥 INTAKE
@@ -38,10 +36,12 @@
 
 ## 🔗 OPEN
 
+- [dataset-incubator#397](https://github.com/dataciviclab/dataset-incubator/pull/397): fix: candidate pipeline — trim(BIGINT), consip quote, mur cross_year, camera sparql
 - [dataset-incubator#396](https://github.com/dataciviclab/dataset-incubator/pull/396): feat(popolazione): mart hierarchy fasce d'età con exclude_metrics
 - [dataset-incubator#394](https://github.com/dataciviclab/dataset-incubator/pull/394): Feat/candidate popolazione istat
 - [dataset-incubator#360](https://github.com/dataciviclab/dataset-incubator/pull/360): chore: aggiunta directory figures per candidate MIT
 - [data-explorer#113](https://github.com/dataciviclab/data-explorer/pull/113): feat(istat-ipab-aree): aggiungi dataset explorer e catalogo
+- **Dependabot**: 2 bump PR(s)
 **Discussions**: 20 open
   · [Proposte] MCP adapters and source-check patterns for public data — cross-country comparison (FR/IT)
   · [Datasets] INPS ReI — evoluzione spesa e platea beneficiari 2018-2019
