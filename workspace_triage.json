@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-25T19:41:03.688897",
+  "generated_at": "2026-05-26T03:36:49.946289",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,25 +10,19 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 5,
+  "open_prs": 4,
   "prs": [
     {
-      "number": 395,
-      "title": "Feat/analisi popolazione istat",
+      "number": 396,
+      "title": "feat(popolazione): mart hierarchy fasce d'et\u00e0 con exclude_metrics",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/395"
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/396"
     },
     {
       "number": 394,
       "title": "Feat/candidate popolazione istat",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/394"
-    },
-    {
-      "number": 393,
-      "title": "chore(post-merge): aggiorna registry per PR #381",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/393"
     },
     {
       "number": 360,
@@ -43,7 +37,7 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/113"
     }
   ],
-  "open_issues": 44,
+  "open_issues": 46,
   "issues": [
     {
       "number": 383,
@@ -122,6 +116,12 @@
       "title": "Apri candidate camera-votazioni",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/124"
+    },
+    {
+      "number": 302,
+      "title": "analisi: openga_ricorsi_cds \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/302"
     },
     {
       "number": 299,
@@ -218,6 +218,12 @@
       "title": "Esporre costanti path come API pubblica per eliminare duplicazione contratti impliciti",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/244"
+    },
+    {
+      "number": 115,
+      "title": "follow-up: pagina e tema per openga_ricorsi_cds",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/115"
     },
     {
       "number": 110,
@@ -567,9 +573,9 @@
     "available": true,
     "generated_at": "2026-05-25",
     "summary": {
-      "total": 32,
+      "total": 33,
       "by_status": {
-        "ok": 32,
+        "ok": 33,
         "warn": 0,
         "error": 0
       }
@@ -582,8 +588,8 @@
     "name": "Lab Clean Registry",
     "updated_at": "2026-05-25",
     "summary": {
-      "total": 28,
-      "published": 12
+      "total": 29,
+      "published": 13
     },
     "datasets": [
       {
@@ -1729,6 +1735,49 @@
         "columns": []
       },
       {
+        "slug": "openga_ricorsi_cds",
+        "name": "Openga Ricorsi Cds",
+        "stage": "published",
+        "period": {
+          "start": 2023,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/openga_ricorsi_cds/*/openga_ricorsi_cds_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 1,
+        "dimension_columns": 5,
+        "column_count": 6,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "anno_mese_riferimento",
+            "role": "dimension"
+          },
+          {
+            "name": "mese",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_sede",
+            "role": "dimension"
+          },
+          {
+            "name": "nome_sede",
+            "role": "dimension"
+          },
+          {
+            "name": "numero_ricorsi_pendenti",
+            "role": "metric"
+          }
+        ]
+      },
+      {
         "slug": "pensioni_pa_dag",
         "name": "Pensioni Pa Dag",
         "stage": "incubating",
@@ -1893,6 +1942,7 @@
       "ispra_ru_base",
       "istat_ipab_aree",
       "mim_anagrafica_scuole_statali",
+      "openga_ricorsi_cds",
       "terna_capacita_rinnovabile",
       "terna_electricity_by_source"
     ],

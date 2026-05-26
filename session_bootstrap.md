@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-25T19:41:03.688897
+**Generated**: 2026-05-26T03:36:49.946289
 
 ## 🔍 SCOUTING
 
@@ -14,10 +14,10 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 32 candidates — 32 ok
+**Pipeline**: 33 candidates — 33 ok
   ⚠️ **camera-deputati-legislature** — run fallito [2024](https://github.com/dataciviclab/dataset-incubator/actions/runs/25509412527)
   ⚠️ **mur-contribuzione-universitaria** — run fallito [0](https://github.com/dataciviclab/dataset-incubator/actions/runs/26106467223)
-**Dataset Catalog**: 12 published · 12 public · updated 2026-05-25
+**Dataset Catalog**: 13 published · 13 public · updated 2026-05-25
 
 ## 🗂 EXPLORER
 
@@ -27,20 +27,19 @@
   · **Sanità**: spesa-farmaceutica, bdap-lea
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps
   · **Giustizia**: flussi-giustizia-civile
-  ⚠ 12 dataset published non ancora su explorer:
+  ⚠ 13 dataset published non ancora su explorer:
     · aifa_spesa_consumo
     · bdap_lea
     · camera_deputati_legislature
     · civile_flussi
     · consip_consumi_convenzione
-    · ... e altri 7
+    · ... e altri 8
   **Deploy**: ✅ success (2026-05-25)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#395](https://github.com/dataciviclab/dataset-incubator/pull/395): Feat/analisi popolazione istat
+- [dataset-incubator#396](https://github.com/dataciviclab/dataset-incubator/pull/396): feat(popolazione): mart hierarchy fasce d'età con exclude_metrics
 - [dataset-incubator#394](https://github.com/dataciviclab/dataset-incubator/pull/394): Feat/candidate popolazione istat
-- [dataset-incubator#393](https://github.com/dataciviclab/dataset-incubator/pull/393): chore(post-merge): aggiorna registry per PR #381
 - [dataset-incubator#360](https://github.com/dataciviclab/dataset-incubator/pull/360): chore: aggiunta directory figures per candidate MIT
 - [data-explorer#113](https://github.com/dataciviclab/data-explorer/pull/113): feat(istat-ipab-aree): aggiungi dataset explorer e catalogo
 **Discussions**: 20 open
