@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-27T03:54:15.961954",
+  "generated_at": "2026-05-27T09:51:42.248013",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,7 +10,7 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 5,
+  "open_prs": 6,
   "prs": [
     {
       "number": 406,
@@ -41,6 +41,12 @@
       "title": "chore: aggiunta directory figures per candidate MIT",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/360"
+    },
+    {
+      "number": 120,
+      "title": "feat(terna-elettricita-fonti): aggiungi dataset explorer e catalogo",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/120"
     }
   ],
   "open_issues": 40,
@@ -488,14 +494,16 @@
       "untracked_files": 0
     }
   },
-  "warnings": [],
+  "warnings": [
+    "Many open PRs: 6"
+  ],
   "radar": {
     "available": true,
-    "probe_date": "2026-05-26",
+    "probe_date": "2026-05-27",
     "sources_total": 27,
-    "green": 25,
+    "green": 24,
     "yellow": 1,
-    "red": 1,
+    "red": 2,
     "persistent_red": 1,
     "unhealthy": [
       {
@@ -507,11 +515,19 @@
         "red_streak": 14
       },
       {
+        "id": "dati_camera",
+        "status": "RED",
+        "protocol": "sparql",
+        "http_code": "503",
+        "note": null,
+        "red_streak": 0
+      },
+      {
         "id": "opencoesione",
         "status": "YELLOW",
         "protocol": "rest",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "403",
+        "note": null,
         "red_streak": 0
       }
     ]

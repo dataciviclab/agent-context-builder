@@ -1,13 +1,14 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-27T03:54:15.961954
+**Generated**: 2026-05-27T09:51:42.248013
 
 ## 🔍 SCOUTING
 
-**Radar**: 27 fonti — GREEN 25 · YELLOW 1 · RED 1 (probe: 2026-05-26)
+**Radar**: 27 fonti — GREEN 24 · YELLOW 1 · RED 2 (probe: 2026-05-27)
   ⚠ **1 persistent RED**
   · **dati_salute** RED [-] — SSL verify failed; fallback connection error (SSLError) (streak 14)
-  · **opencoesione** YELLOW [-] — Retry timeout/connection: Timeout (ReadTimeout)
+  · **dati_camera** RED [503]
+  · **opencoesione** YELLOW [403]
 **Catalog Drift**: no drift signals (22 sources checked)
 
 ## 📥 INTAKE
