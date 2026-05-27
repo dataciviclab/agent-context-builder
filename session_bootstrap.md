@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-27T15:43:14.166559
+**Generated**: 2026-05-27T20:19:20.353609
 
 ## 🔍 SCOUTING
 
@@ -40,7 +40,6 @@
 - [dataset-incubator#405](https://github.com/dataciviclab/dataset-incubator/pull/405): Feat/popolazione istat comunale v2
 - [dataset-incubator#396](https://github.com/dataciviclab/dataset-incubator/pull/396): feat(popolazione): mart hierarchy fasce d'età con exclude_metrics
 - [dataset-incubator#394](https://github.com/dataciviclab/dataset-incubator/pull/394): Feat/candidate popolazione istat
-- [dataciviclab#303](https://github.com/dataciviclab/dataciviclab/pull/303): BDAP Entrate Stato: analisi completa README + notebook + figure
 **Discussions**: 20 open
   · [Proposte] MCP adapters and source-check patterns for public data — cross-country comparison (FR/IT)
   · [Datasets] INPS ReI — evoluzione spesa e platea beneficiari 2018-2019
