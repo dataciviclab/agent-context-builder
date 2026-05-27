@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-27T09:51:42.248013
+**Generated**: 2026-05-27T15:43:14.166559
 
 ## 🔍 SCOUTING
 
@@ -15,12 +15,12 @@
 
 **Pipeline**: 33 candidates — 33 ok
   ⚠️ **mur-contribuzione-universitaria** — run fallito [0](https://github.com/dataciviclab/dataset-incubator/actions/runs/26106467223)
-**Dataset Catalog**: 13 published · 13 public · updated 2026-05-26
+**Dataset Catalog**: 13 published · 13 public · updated 2026-05-27
 
 ## 🗂 EXPLORER
 
-**Pubblicati**: 11 dataset · 5 temi · [data-explorer](https://dataciviclab.github.io/data-explorer/)
-  · **Territorio e ambiente**: rifiuti-urbani, capacita-rinnovabile
+**Pubblicati**: 12 dataset · 5 temi · [data-explorer](https://dataciviclab.github.io/data-explorer/)
+  · **Territorio e ambiente**: rifiuti-urbani, capacita-rinnovabile, produzione-elettrica-fonti
   · **Finanza pubblica**: irpef-comunale, entrate-stato, consip-consumi-convenzione
   · **Sanità**: spesa-farmaceutica, bdap-lea
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, istat-ipab-aree
@@ -32,7 +32,7 @@
     · civile_flussi
     · consip_consumi_convenzione
     · ... e altri 8
-  **Deploy**: ✅ success (2026-05-26)
+  **Deploy**: ✅ success (2026-05-27)
 
 ## 🔗 OPEN
 
@@ -40,7 +40,7 @@
 - [dataset-incubator#405](https://github.com/dataciviclab/dataset-incubator/pull/405): Feat/popolazione istat comunale v2
 - [dataset-incubator#396](https://github.com/dataciviclab/dataset-incubator/pull/396): feat(popolazione): mart hierarchy fasce d'età con exclude_metrics
 - [dataset-incubator#394](https://github.com/dataciviclab/dataset-incubator/pull/394): Feat/candidate popolazione istat
-- [dataset-incubator#360](https://github.com/dataciviclab/dataset-incubator/pull/360): chore: aggiunta directory figures per candidate MIT
+- [dataciviclab#303](https://github.com/dataciviclab/dataciviclab/pull/303): BDAP Entrate Stato: analisi completa README + notebook + figure
 **Discussions**: 20 open
   · [Proposte] MCP adapters and source-check patterns for public data — cross-country comparison (FR/IT)
   · [Datasets] INPS ReI — evoluzione spesa e platea beneficiari 2018-2019
