@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-27T20:19:20.353609
+**Generated**: 2026-05-28T03:40:01.188866
 
 ## 🔍 SCOUTING
 
@@ -36,6 +36,7 @@
 
 ## 🔗 OPEN
 
+- [dataset-incubator#409](https://github.com/dataciviclab/dataset-incubator/pull/409): refactor: sposta pivot+join da MART a CLEAN su opencivitas-fsc-rso
 - [dataset-incubator#406](https://github.com/dataciviclab/dataset-incubator/pull/406): Fix/ca cert pipeline path
 - [dataset-incubator#405](https://github.com/dataciviclab/dataset-incubator/pull/405): Feat/popolazione istat comunale v2
 - [dataset-incubator#396](https://github.com/dataciviclab/dataset-incubator/pull/396): feat(popolazione): mart hierarchy fasce d'età con exclude_metrics

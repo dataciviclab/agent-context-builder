@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-27T20:19:20.353609",
+  "generated_at": "2026-05-28T03:40:01.188866",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,8 +10,14 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 4,
+  "open_prs": 6,
   "prs": [
+    {
+      "number": 409,
+      "title": "refactor: sposta pivot+join da MART a CLEAN su opencivitas-fsc-rso",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/409"
+    },
     {
       "number": 406,
       "title": "Fix/ca cert pipeline path",
@@ -35,6 +41,12 @@
       "title": "Feat/candidate popolazione istat",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/394"
+    },
+    {
+      "number": 121,
+      "title": "feat(istat-gini-regionale): aggiungi dataset explorer \u2014 indice di Gini per regione",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/121"
     }
   ],
   "open_issues": 40,
@@ -482,7 +494,9 @@
       "untracked_files": 0
     }
   },
-  "warnings": [],
+  "warnings": [
+    "Many open PRs: 6"
+  ],
   "radar": {
     "available": true,
     "probe_date": "2026-05-27",
