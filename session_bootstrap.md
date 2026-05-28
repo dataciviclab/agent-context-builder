@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-28T10:03:14.692522
+**Generated**: 2026-05-28T15:57:25.396005
 
 ## 🔍 SCOUTING
 
@@ -35,7 +35,7 @@
 
 ## 🔗 OPEN
 
-**PRs**: none open
+- [toolkit#293](https://github.com/dataciviclab/toolkit/pull/293): feat(contracts): espandi API pubblica — CLEAN_PARQUET_SUFFIX, resolve_root, __all__
 **Discussions**: 20 open
   · [Proposte] MCP adapters and source-check patterns for public data — cross-country comparison (FR/IT)
   · [Datasets] INPS ReI — evoluzione spesa e platea beneficiari 2018-2019
