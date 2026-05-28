@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-28T03:40:01.188866",
+  "generated_at": "2026-05-28T10:03:14.692522",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,45 +10,8 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 6,
-  "prs": [
-    {
-      "number": 409,
-      "title": "refactor: sposta pivot+join da MART a CLEAN su opencivitas-fsc-rso",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/409"
-    },
-    {
-      "number": 406,
-      "title": "Fix/ca cert pipeline path",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/406"
-    },
-    {
-      "number": 405,
-      "title": "Feat/popolazione istat comunale v2",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/405"
-    },
-    {
-      "number": 396,
-      "title": "feat(popolazione): mart hierarchy fasce d'et\u00e0 con exclude_metrics",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/396"
-    },
-    {
-      "number": 394,
-      "title": "Feat/candidate popolazione istat",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/394"
-    },
-    {
-      "number": 121,
-      "title": "feat(istat-gini-regionale): aggiungi dataset explorer \u2014 indice di Gini per regione",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/121"
-    }
-  ],
+  "open_prs": 0,
+  "prs": [],
   "open_issues": 40,
   "issues": [
     {
@@ -202,6 +165,12 @@
       "url": "https://github.com/dataciviclab/toolkit/issues/244"
     },
     {
+      "number": 122,
+      "title": "follow-up: pagina e tema per 2 nuovi dataset",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/122"
+    },
+    {
       "number": 115,
       "title": "follow-up: pagina e tema per openga_ricorsi_cds",
       "repo": "data-explorer",
@@ -224,12 +193,6 @@
       "title": "follow-up: pagina e tema per pensioni-pa-dag",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/issues/89"
-    },
-    {
-      "number": 88,
-      "title": "follow-up: pagina e tema per camera-deputati-legislature",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/issues/88"
     },
     {
       "number": 86,
@@ -494,16 +457,14 @@
       "untracked_files": 0
     }
   },
-  "warnings": [
-    "Many open PRs: 6"
-  ],
+  "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-05-27",
+    "probe_date": "2026-05-28",
     "sources_total": 27,
-    "green": 24,
+    "green": 25,
     "yellow": 1,
-    "red": 2,
+    "red": 1,
     "persistent_red": 1,
     "unhealthy": [
       {
@@ -513,14 +474,6 @@
         "http_code": "-",
         "note": "SSL verify failed; fallback connection error (SSLError)",
         "red_streak": 14
-      },
-      {
-        "id": "dati_camera",
-        "status": "RED",
-        "protocol": "sparql",
-        "http_code": "503",
-        "note": null,
-        "red_streak": 0
       },
       {
         "id": "opencoesione",
@@ -541,7 +494,7 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-05-27",
+    "generated_at": "2026-05-28",
     "summary": {
       "total": 33,
       "by_status": {
@@ -556,10 +509,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-05-27",
+    "updated_at": "2026-05-28",
     "summary": {
-      "total": 29,
-      "published": 13
+      "total": 31,
+      "published": 15
     },
     "datasets": [
       {
@@ -1510,7 +1463,7 @@
       {
         "slug": "istat_gini_regionale",
         "name": "ISTAT - Indice di Gini regionale",
-        "stage": "incubating",
+        "stage": "published",
         "period": {
           "start": 2003,
           "end": 2024
@@ -1523,7 +1476,32 @@
         "metric_columns": 1,
         "dimension_columns": 5,
         "column_count": 6,
-        "columns": []
+        "columns": [
+          {
+            "name": "regione_codice",
+            "role": "dimension"
+          },
+          {
+            "name": "regione",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_dato",
+            "role": "dimension"
+          },
+          {
+            "name": "pres_aff_imp",
+            "role": "dimension"
+          },
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "gini",
+            "role": "metric"
+          }
+        ]
       },
       {
         "slug": "istat_housing_crowding",
@@ -1717,6 +1695,91 @@
         "columns": []
       },
       {
+        "slug": "opencivitas_fsc_2025_rso",
+        "name": "Opencivitas Fsc 2025 Rso",
+        "stage": "published",
+        "period": {
+          "start": 2025,
+          "end": 2025
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/opencivitas_fsc_2025_rso/2025/opencivitas_fsc_2025_rso_2025_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 6,
+        "dimension_columns": 6,
+        "column_count": 12,
+        "columns": [
+          {
+            "name": "username",
+            "role": "dimension"
+          },
+          {
+            "name": "comune",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "regione",
+            "role": "dimension"
+          },
+          {
+            "name": "regione_istat_cod",
+            "role": "dimension"
+          },
+          {
+            "name": "popolazione",
+            "role": "metric"
+          },
+          {
+            "name": "capacita_fiscale",
+            "role": "metric"
+          },
+          {
+            "name": "fondo_perequativo",
+            "role": "metric"
+          },
+          {
+            "name": "dotazione_finale_fsc",
+            "role": "metric"
+          },
+          {
+            "name": "imu_tasi_standard",
+            "role": "metric"
+          },
+          {
+            "name": "totale_risorse_storiche",
+            "role": "metric"
+          },
+          {
+            "name": "join_enti_ok",
+            "role": "dimension"
+          }
+        ]
+      },
+      {
+        "slug": "opencivitas_fsc_enti_rso",
+        "name": "Opencivitas Fsc Enti Rso",
+        "stage": "incubating",
+        "period": {
+          "start": 2025,
+          "end": 2025
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/opencivitas_fsc_enti_rso/2025/opencivitas_fsc_enti_rso_2025_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 1,
+        "dimension_columns": 4,
+        "column_count": 5,
+        "columns": []
+      },
+      {
         "slug": "openga_ricorsi_cds",
         "name": "Openga Ricorsi Cds",
         "stage": "published",
@@ -1790,9 +1853,9 @@
           "path": "gs://dataciviclab-clean/popolazione_istat_comunale_2019_2025/*/popolazione_istat_comunale_2019_2025_*_clean.parquet",
           "multi_file": true
         },
-        "metric_columns": 18,
-        "dimension_columns": 3,
-        "column_count": 21,
+        "metric_columns": 17,
+        "dimension_columns": 5,
+        "column_count": 22,
         "columns": []
       },
       {
@@ -1894,7 +1957,7 @@
       {
         "slug": "finanza-pubblica",
         "name": "Finanza pubblica",
-        "dataset_count": 3
+        "dataset_count": 4
       },
       {
         "slug": "sanita",
@@ -1912,7 +1975,7 @@
         "dataset_count": 1
       }
     ],
-    "published_count": 12,
+    "published_count": 13,
     "clean_ready_not_published": [
       "aifa_spesa_consumo",
       "bdap_entrate_stato",
@@ -1923,18 +1986,20 @@
       "inps_pensioni_trimestrale",
       "irpef_comunale",
       "ispra_ru_base",
+      "istat_gini_regionale",
       "istat_ipab_aree",
+      "opencivitas_fsc_2025_rso",
       "openga_ricorsi_cds",
       "terna_capacita_rinnovabile",
       "terna_electricity_by_source"
     ],
     "last_deploy": {
-      "run_id": 26511134339,
+      "run_id": 26564092276,
       "name": "Deploy to GitHub Pages (Observable Framework)",
       "status": "completed",
       "conclusion": "success",
-      "completed_at": "2026-05-27T12:32:20Z",
-      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26511134339"
+      "completed_at": "2026-05-28T08:39:31Z",
+      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26564092276"
     }
   }
 }

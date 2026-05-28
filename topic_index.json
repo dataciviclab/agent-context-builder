@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-05-28T03:40:01.188866",
+  "generated_at": "2026-05-28T10:03:14.692522",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -120,12 +120,32 @@
         }
       }
     ],
+    "ISTAT \u2014 Dataflow 32_221 (Omogeneita del reddito regionale), SDMX-CSV": [
+      {
+        "slug": "istat_gini_regionale",
+        "name": "ISTAT - Indice di Gini regionale",
+        "period": {
+          "start": 2003,
+          "end": 2024
+        }
+      }
+    ],
     "ISTAT \u2014 Dataflow 33_292 (IPAB trimestrale), SDMX-CSV": [
       {
         "slug": "istat_ipab_aree",
         "name": "Istat Ipab Aree",
         "period": {
           "start": 2010,
+          "end": 2025
+        }
+      }
+    ],
+    "OpenCivitas / Sogei": [
+      {
+        "slug": "opencivitas_fsc_2025_rso",
+        "name": "Opencivitas Fsc 2025 Rso",
+        "period": {
+          "start": 2025,
           "end": 2025
         }
       }
@@ -208,16 +228,6 @@
         }
       }
     ],
-    "ISTAT \u2014 Dataflow 32_221 (Omogeneita del reddito regionale), SDMX-CSV": [
-      {
-        "slug": "istat_gini_regionale",
-        "name": "ISTAT - Indice di Gini regionale",
-        "period": {
-          "start": 2003,
-          "end": 2024
-        }
-      }
-    ],
     "ISTAT \u2014 Dataflow 33_179 (Housing conditions), SDMX-CSV": [
       {
         "slug": "istat_housing_crowding",
@@ -293,6 +303,16 @@
         "period": {
           "start": 2017,
           "end": 2024
+        }
+      }
+    ],
+    "unknown": [
+      {
+        "slug": "opencivitas_fsc_enti_rso",
+        "name": "Opencivitas Fsc Enti Rso",
+        "period": {
+          "start": 2025,
+          "end": 2025
         }
       }
     ],
@@ -377,7 +397,8 @@
       "datasets": [
         "irpef-comunale",
         "entrate-stato",
-        "consip-consumi-convenzione"
+        "consip-consumi-convenzione",
+        "istat-gini-regionale"
       ]
     },
     {
