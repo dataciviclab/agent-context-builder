@@ -15,6 +15,8 @@ from agent_context_builder.sources.dcl import (
     _slug_to_datasets,
 )
 
+pytestmark = pytest.mark.pure_unit
+
 # ── _parse_active_md ────────────────────────────────────────────────────────
 
 
@@ -153,6 +155,7 @@ def _mock_collector(
     return m
 
 
+@pytest.mark.contract
 def test_fetch_analyses_basic():
     """Fetch analyses parses registry + README frontmatter."""
     registry = """| filone | discussion | issue | stato |
@@ -182,6 +185,7 @@ status: active
     assert a.status == "active"
 
 
+@pytest.mark.contract
 def test_fetch_analyses_registry_unavailable():
     """When registry is not fetchable, returns empty list."""
     collector = _mock_collector(registry=None)
@@ -189,6 +193,7 @@ def test_fetch_analyses_registry_unavailable():
     assert fetcher.fetch_analyses() == []
 
 
+@pytest.mark.contract
 def test_fetch_analyses_readme_unavailable():
     """When an analysis README is not found, uses slug as name."""
     registry = """| filone | discussion | issue | stato |

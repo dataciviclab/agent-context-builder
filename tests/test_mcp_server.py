@@ -1,4 +1,5 @@
 """Tests for MCP server resources — uses FakeHttpClient for HTTP boundary."""
+
 from __future__ import annotations
 
 import json
@@ -15,8 +16,7 @@ import agent_context_builder.mcp_server as mcp_server
 # ---------------------------------------------------------------------------
 
 
-def _patch_fetch(fake: FakeHttpClient, path: str, text: str = "",
-                 status: int = 200) -> None:
+def _patch_fetch(fake: FakeHttpClient, path: str, text: str = "", status: int = 200) -> None:
     """Register a response for one of the context-branch artifact URLs.
 
     For error status codes (>= 400), ``_FakeResponse.raise_for_status()``
@@ -115,6 +115,130 @@ def test_topic_index_http_error():
     assert data["ok"] is False
     assert data["tool"] == "topic_index"
     assert data["status_code"] == 500
+
+
+# ---------------------------------------------------------------------------
+# topic_index(resolve=...) — sub-graph traversal
+# ---------------------------------------------------------------------------
+
+
+_SAMPLE_V3_INDEX = json.dumps(
+    {
+        "schema_version": 3,
+        "datasets_by_source": {
+            "ISPRA": [
+                {
+                    "slug": "ispra_ru_base",
+                    "name": "Rifiuti Urbani",
+                    "period": {"start": 2020, "end": 2024},
+                },
+            ],
+            "MEF": [
+                {
+                    "slug": "irpef_comunale",
+                    "name": "IRPEF Comunale",
+                    "period": {"start": 2019, "end": 2023},
+                },
+            ],
+        },
+        "candidates_by_source": {
+            "ISPRA": [
+                {
+                    "slug": "ispra_consumo_suolo",
+                    "name": "Consumo Suolo",
+                    "period": {"start": 2024, "end": 2024},
+                },
+            ],
+        },
+        "analyses": [
+            {
+                "slug": "irpef-comunale",
+                "name": "IRPEF Comunale 2019-2023",
+                "datasets": ["irpef_comunale"],
+                "path": "analisi/irpef-comunale/README.md",
+                "status": "active",
+                "discussion": 88,
+            },
+        ],
+        "analyses_by_dataset": {
+            "irpef_comunale": ["irpef-comunale"],
+        },
+        "explorer_themes": [
+            {
+                "slug": "finanza-pubblica",
+                "name": "Finanza pubblica",
+                "datasets": ["irpef-comunale", "entrate-stato"],
+            },
+        ],
+    }
+)
+
+
+@pytest.mark.contract
+def test_topic_index_resolve_by_dataset_slug():
+    """resolve finds a published dataset and its related analyses."""
+    fake = FakeHttpClient()
+    _patch_fetch(fake, "topic_index.json", text=_SAMPLE_V3_INDEX)
+
+    with patch("agent_context_builder.mcp_server.HttpClient") as mock_cls:
+        mock_cls.return_value = fake
+        result = mcp_server.topic_index(resolve="irpef_comunale")
+
+    data = json.loads(result)
+    assert data["resolve"] == "irpef_comunale"
+    assert data["found"] is True
+    # Published dataset found
+    assert len(data["datasets"]) == 1
+    assert data["datasets"][0]["slug"] == "irpef_comunale"
+    assert data["datasets"][0]["stage"] == "published"
+    # Analysis found via datasets list match (irpef_comunale in analysis.datasets)
+    assert len(data["analyses"]) == 1
+    assert data["analyses"][0]["slug"] == "irpef-comunale"
+    # No duplicates in analyses
+    assert len(data["analyses"]) == 1
+
+
+@pytest.mark.contract
+def test_topic_index_resolve_by_source_dedup():
+    """resolve by source name deduplicates datasets and sources across sections."""
+    fake = FakeHttpClient()
+    _patch_fetch(fake, "topic_index.json", text=_SAMPLE_V3_INDEX)
+
+    with patch("agent_context_builder.mcp_server.HttpClient") as mock_cls:
+        mock_cls.return_value = fake
+        result = mcp_server.topic_index(resolve="ISPRA")
+
+    data = json.loads(result)
+    assert data["resolve"] == "ISPRA"
+    assert data["found"] is True
+
+    # sources should appear exactly once
+    assert len(data["sources"]) == 1
+    assert data["sources"] == ["ISPRA"]
+
+    # datasets should include both published and incubating, deduped
+    slugs = [d["slug"] for d in data["datasets"]]
+    assert len(slugs) == 2
+    assert "ispra_ru_base" in slugs
+    assert "ispra_consumo_suolo" in slugs
+    stages = {d["slug"]: d["stage"] for d in data["datasets"]}
+    assert stages["ispra_ru_base"] == "published"
+    assert stages["ispra_consumo_suolo"] == "incubating"
+
+
+@pytest.mark.contract
+def test_topic_index_resolve_not_found():
+    """resolve returns found=False when nothing matches."""
+    fake = FakeHttpClient()
+    _patch_fetch(fake, "topic_index.json", text=_SAMPLE_V3_INDEX)
+
+    with patch("agent_context_builder.mcp_server.HttpClient") as mock_cls:
+        mock_cls.return_value = fake
+        result = mcp_server.topic_index(resolve="nonexistent")
+
+    data = json.loads(result)
+    assert data["resolve"] == "nonexistent"
+    assert data["found"] is False
 
 
 # ---------------------------------------------------------------------------

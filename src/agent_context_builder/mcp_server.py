@@ -224,13 +224,30 @@ def topic_index(resolve: str | None = None) -> str:
     resolve_lower = resolve.lower()
     result = {"resolve": resolve, "found": False}
 
+    # Dedup helpers: track seen slugs to avoid duplicates across sections
+    seen_sources: set[str] = set()
+    seen_datasets: set[str] = set()
+    seen_analyses: set[str] = set()
+    seen_themes: set[str] = set()
+
+    def _add_source(source: str) -> None:
+        if source not in seen_sources:
+            seen_sources.add(source)
+            result.setdefault("sources", []).append(source)
+
+    def _add_dataset(entry: dict) -> None:
+        slug = entry["slug"]
+        if slug not in seen_datasets:
+            seen_datasets.add(slug)
+            result.setdefault("datasets", []).append(entry)
+
     # Search in datasets (both clean_ready and candidates)
     for section in ("datasets_by_source", "candidates_by_source"):
         entries = data.get(section, {})
         for source, datasets in entries.items():
             for ds in datasets:
                 if ds.get("slug", "").lower() == resolve_lower:
-                    result.setdefault("datasets", []).append(
+                    _add_dataset(
                         {
                             "slug": ds["slug"],
                             "name": ds.get("name", ""),
@@ -242,36 +259,43 @@ def topic_index(resolve: str | None = None) -> str:
                         }
                     )
                     result["found"] = True
-                    result.setdefault("sources", []).append(source)
+                    _add_source(source)
 
     # Search in analyses
     for analysis in data.get("analyses", []):
-        if analysis.get("slug", "").lower() == resolve_lower:
-            result.setdefault("analyses", []).append(analysis)
-            result["found"] = True
-        elif resolve_lower in [d.lower() for d in analysis.get("datasets", [])]:
-            result.setdefault("analyses", []).append(analysis)
-            result["found"] = True
+        a_slug = analysis.get("slug", "")
+        if a_slug.lower() == resolve_lower or resolve_lower in [
+            d.lower() for d in analysis.get("datasets", [])
+        ]:
+            if a_slug not in seen_analyses:
+                seen_analyses.add(a_slug)
+                result.setdefault("analyses", []).append(analysis)
+                result["found"] = True
 
     # Add analyses_by_dataset reverse lookup for this entity
     abd = data.get("analyses_by_dataset", {})
     if resolve_lower in {k.lower() for k in abd}:
         for k, v in abd.items():
             if k.lower() == resolve_lower:
-                result.setdefault("analyses_for_dataset", []).extend(v)
+                result.setdefault("analyses_for_dataset", []).extend(
+                    s for s in v if s not in seen_analyses
+                )
                 result["found"] = True
 
     # Search in explorer themes
     for theme in data.get("explorer_themes", []):
         ds_list = [d.lower() for d in theme.get("datasets", [])]
         if resolve_lower in ds_list:
-            result.setdefault("explorer_themes", []).append(
-                {
-                    "slug": theme.get("slug"),
-                    "name": theme.get("name"),
-                }
-            )
-            result["found"] = True
+            t_slug = theme.get("slug", "")
+            if t_slug not in seen_themes:
+                seen_themes.add(t_slug)
+                result.setdefault("explorer_themes", []).append(
+                    {
+                        "slug": t_slug,
+                        "name": theme.get("name"),
+                    }
+                )
+                result["found"] = True
 
     # Search in sources (by source name)
     for section in ("datasets_by_source", "candidates_by_source"):
@@ -279,17 +303,19 @@ def topic_index(resolve: str | None = None) -> str:
         for source in entries:
             if source.lower() == resolve_lower:
                 result["found"] = True
-                result.setdefault("sources", []).append(source)
-                result.setdefault("datasets", []).extend(
-                    {
-                        "slug": ds["slug"],
-                        "name": ds.get("name", ""),
-                        "source": source,
-                        "period": ds.get("period"),
-                        "stage": "published" if section == "datasets_by_source" else "incubating",
-                    }
-                    for ds in entries[source]
-                )
+                _add_source(source)
+                for ds in entries[source]:
+                    _add_dataset(
+                        {
+                            "slug": ds["slug"],
+                            "name": ds.get("name", ""),
+                            "source": source,
+                            "period": ds.get("period"),
+                            "stage": "published"
+                            if section == "datasets_by_source"
+                            else "incubating",
+                        }
+                    )
 
     result["ts"] = datetime.now(timezone.utc).isoformat()
     return json.dumps(result, indent=2, ensure_ascii=False)
