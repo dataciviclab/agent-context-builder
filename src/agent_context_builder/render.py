@@ -146,6 +146,32 @@ class Renderer:
             lines.append("**Dataset Catalog**: unavailable")
         lines.append("")
 
+        # ── ANALYSES ──────────────────────────────────────────────────────
+        analyses = self._fetch_dcl_analyses()
+        if analyses:
+            active = [a for a in analyses if a.status == "active"]
+            archived = [a for a in analyses if a.status == "archived"]
+            lines.append("## 📊 ANALYSES")
+            lines.append("")
+            if active:
+                lines.append(f"**Attive**: {len(active)}")
+                for a in active:
+                    datasets_str = ", ".join(a.datasets) if a.datasets else ""
+                    parts = [f"**{a.name}**"]
+                    if datasets_str:
+                        parts.append(f"→ {datasets_str}")
+                    if a.discussion is not None:
+                        parts.append(
+                            f"[discussion #{a.discussion}]"
+                            f"(https://github.com/orgs/dataciviclab/discussions/{a.discussion})"
+                        )
+                    lines.append(f"  · {' · '.join(parts)}")
+            if archived:
+                lines.append(f"**Archiviate**: {len(archived)}")
+                for a in archived:
+                    lines.append(f"  · **{a.name}**")
+            lines.append("")
+
         # ── EXPLORER ──────────────────────────────────────────────────────
         explorer_themes = self._fetch_explorer_themes()
         if explorer_themes is not None:

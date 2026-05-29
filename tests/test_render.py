@@ -289,13 +289,14 @@ def test_render_signals_cached_across_bootstrap_and_triage():
     renderer.render_session_bootstrap()
     renderer.render_workspace_triage()
 
-    assert gh.get_raw_file.call_count == 5
+    assert gh.get_raw_file.call_count == 6
     paths_fetched = [call.args[1] for call in gh.get_raw_file.call_args_list]
     assert "data/radar/radar_summary.json" in paths_fetched
     assert "data/catalog/catalog_signals.json" in paths_fetched
     assert "registry/pipeline_signals.json" in paths_fetched
     assert "registry/clean_catalog.json" in paths_fetched
     assert "src/data/themes.json.py" in paths_fetched
+    assert "analisi/registry/active.md" in paths_fetched
 
 
 # ── Topic index ───────────────────────────────────────────────────────────
