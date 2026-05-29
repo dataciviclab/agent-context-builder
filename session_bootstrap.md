@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-29T15:35:24.507394
+**Generated**: 2026-05-29T20:26:44.646420
 
 ## 🔍 SCOUTING
 
@@ -44,7 +44,6 @@
 
 ## 🔗 OPEN
 
-- [toolkit#304](https://github.com/dataciviclab/toolkit/pull/304): refactor: rimuovere --strict-config da tutti i comandi CLI
 - [data-explorer#124](https://github.com/dataciviclab/data-explorer/pull/124): feat(opencivitas-fsc-2025): aggiungi dataset explorer — Fondo Solidarietà Comunale
 **Discussions**: 20 open
   · [Domanda] ASIA ISTAT — Quante imprese e addetti ci sono nel mio comune?
