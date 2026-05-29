@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-29T03:40:16.689054",
+  "generated_at": "2026-05-29T09:55:32.743808",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,8 +10,21 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 0,
-  "prs": [],
+  "open_prs": 2,
+  "prs": [
+    {
+      "number": 49,
+      "title": "feat: topic_index v3 \u2014 analyses da dataciviclab + sezione ANALYSES in bootstrap + MCP resolve",
+      "repo": "agent-context-builder",
+      "url": "https://github.com/dataciviclab/agent-context-builder/pull/49"
+    },
+    {
+      "number": 297,
+      "title": "fix: list_candidates MCP ora usa root reale da dataset.yml invece di hardcoded",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/297"
+    }
+  ],
   "open_issues": 39,
   "issues": [
     {
@@ -454,7 +467,7 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-05-28",
+    "probe_date": "2026-05-29",
     "sources_total": 27,
     "green": 25,
     "yellow": 1,

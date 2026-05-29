@@ -1,10 +1,10 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-29T03:40:16.689054
+**Generated**: 2026-05-29T09:55:32.743808
 
 ## 🔍 SCOUTING
 
-**Radar**: 27 fonti — GREEN 25 · YELLOW 1 · RED 1 (probe: 2026-05-28)
+**Radar**: 27 fonti — GREEN 25 · YELLOW 1 · RED 1 (probe: 2026-05-29)
   ⚠ **1 persistent RED**
   · **dati_salute** RED [-] — SSL verify failed; fallback connection error (SSLError) (streak 14)
   · **opencoesione** YELLOW [403]
@@ -35,7 +35,8 @@
 
 ## 🔗 OPEN
 
-**PRs**: none open
+- [agent-context-builder#49](https://github.com/dataciviclab/agent-context-builder/pull/49): feat: topic_index v3 — analyses da dataciviclab + sezione ANALYSES in bootstrap + MCP resolve
+- [toolkit#297](https://github.com/dataciviclab/toolkit/pull/297): fix: list_candidates MCP ora usa root reale da dataset.yml invece di hardcoded
 **Discussions**: 20 open
   · [Proposte] MCP adapters and source-check patterns for public data — cross-country comparison (FR/IT)
   · [Datasets] INPS ReI — evoluzione spesa e platea beneficiari 2018-2019
