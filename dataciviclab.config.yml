@@ -56,3 +56,11 @@ topics:
       - lab-connectors/lab_connectors/gcs/paths.py
       - lab-connectors/lab_connectors/mcp/
     next: lab-connectors è dipendenza pip di toolkit, data-explorer e ACB
+
+  analyses:
+    summary: Analisi pubbliche su dati civici — dal dataset al racconto
+    repos:
+      - dataciviclab
+    paths:
+      - dataciviclab/analisi/
+    next: Vedi analisi/registry/active.md per filoni attivi

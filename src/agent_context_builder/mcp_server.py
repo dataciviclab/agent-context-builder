@@ -129,14 +129,16 @@ def _get_env(name: str) -> str | None:
 
 def _tool_error(tool: str, path: str, message: str, status_code: int | None = None) -> str:
     """Return a structured JSON error string for tool failures."""
-    return json.dumps({
-        "ok": False,
-        "tool": tool,
-        "path": path,
-        "error": message,
-        "status_code": status_code,
-        "ts": datetime.now(timezone.utc).isoformat(),
-    })
+    return json.dumps(
+        {
+            "ok": False,
+            "tool": tool,
+            "path": path,
+            "error": message,
+            "status_code": status_code,
+            "ts": datetime.now(timezone.utc).isoformat(),
+        }
+    )
 
 
 def _fetch(path: str, retries: int = 1, backoff: float = 1.0) -> str:
@@ -170,8 +172,10 @@ def session_bootstrap() -> str:
         return _fetch("session_bootstrap.md")
     except Exception as e:
         return _tool_error(
-            "session_bootstrap", "session_bootstrap.md", str(e),
-            e.response.status_code if isinstance(e, requests.HTTPError) and e.response else None
+            "session_bootstrap",
+            "session_bootstrap.md",
+            str(e),
+            e.response.status_code if isinstance(e, requests.HTTPError) and e.response else None,
         )
 
 
@@ -182,21 +186,113 @@ def workspace_triage() -> str:
         return _fetch("workspace_triage.json")
     except Exception as e:
         return _tool_error(
-            "workspace_triage", "workspace_triage.json", str(e),
-            e.response.status_code if isinstance(e, requests.HTTPError) and e.response else None
+            "workspace_triage",
+            "workspace_triage.json",
+            str(e),
+            e.response.status_code if isinstance(e, requests.HTTPError) and e.response else None,
         )
 
 
 @mcp.tool()
-def topic_index() -> str:
-    """Topic index v2 — repos, datasets_by_source, operational_topics."""
+def topic_index(resolve: str | None = None) -> str:
+    """Topic index — repos, datasets_by_source, operational_topics, analyses.
+
+    Quando ``resolve`` (dataset slug, analysis slug, o source name) è
+    specificato, restituisce un sub-graph compatto con tutte le entità
+    correlate (dataset, analyses, source, explorer themes). Senza ``resolve``
+    restituisce l'index completo (schema v3).
+    """
     try:
-        return _fetch("topic_index.json")
+        raw = _fetch("topic_index.json")
     except Exception as e:
         return _tool_error(
-            "topic_index", "topic_index.json", str(e),
-            e.response.status_code if isinstance(e, requests.HTTPError) and e.response else None
+            "topic_index",
+            "topic_index.json",
+            str(e),
+            e.response.status_code if isinstance(e, requests.HTTPError) and e.response else None,
         )
+
+    if not resolve:
+        return raw
+
+    # Resolve: extract sub-graph for a single entity
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError:
+        return raw
+
+    resolve_lower = resolve.lower()
+    result = {"resolve": resolve, "found": False}
+
+    # Search in datasets (both clean_ready and candidates)
+    for section in ("datasets_by_source", "candidates_by_source"):
+        entries = data.get(section, {})
+        for source, datasets in entries.items():
+            for ds in datasets:
+                if ds.get("slug", "").lower() == resolve_lower:
+                    result.setdefault("datasets", []).append(
+                        {
+                            "slug": ds["slug"],
+                            "name": ds.get("name", ""),
+                            "source": source,
+                            "period": ds.get("period"),
+                            "stage": "published"
+                            if section == "datasets_by_source"
+                            else "incubating",
+                        }
+                    )
+                    result["found"] = True
+                    result.setdefault("sources", []).append(source)
+
+    # Search in analyses
+    for analysis in data.get("analyses", []):
+        if analysis.get("slug", "").lower() == resolve_lower:
+            result.setdefault("analyses", []).append(analysis)
+            result["found"] = True
+        elif resolve_lower in [d.lower() for d in analysis.get("datasets", [])]:
+            result.setdefault("analyses", []).append(analysis)
+            result["found"] = True
+
+    # Add analyses_by_dataset reverse lookup for this entity
+    abd = data.get("analyses_by_dataset", {})
+    if resolve_lower in {k.lower() for k in abd}:
+        for k, v in abd.items():
+            if k.lower() == resolve_lower:
+                result.setdefault("analyses_for_dataset", []).extend(v)
+                result["found"] = True
+
+    # Search in explorer themes
+    for theme in data.get("explorer_themes", []):
+        ds_list = [d.lower() for d in theme.get("datasets", [])]
+        if resolve_lower in ds_list:
+            result.setdefault("explorer_themes", []).append(
+                {
+                    "slug": theme.get("slug"),
+                    "name": theme.get("name"),
+                }
+            )
+            result["found"] = True
+
+    # Search in sources (by source name)
+    for section in ("datasets_by_source", "candidates_by_source"):
+        entries = data.get(section, {})
+        for source in entries:
+            if source.lower() == resolve_lower:
+                result["found"] = True
+                result.setdefault("sources", []).append(source)
+                result.setdefault("datasets", []).extend(
+                    {
+                        "slug": ds["slug"],
+                        "name": ds.get("name", ""),
+                        "source": source,
+                        "period": ds.get("period"),
+                        "stage": "published" if section == "datasets_by_source" else "incubating",
+                    }
+                    for ds in entries[source]
+                )
+
+    result["ts"] = datetime.now(timezone.utc).isoformat()
+    return json.dumps(result, indent=2, ensure_ascii=False)
 
 
 @mcp.tool()
@@ -213,26 +309,30 @@ def refresh_context() -> str:
 
     token = _get_env("GITHUB_TOKEN")
     if not token:
-        return json.dumps({
-            "ok": False,
-            "tool": "refresh_context",
-            "error": "GITHUB_TOKEN non impostato. Serve un token con scope 'workflow'.",
-            "ts": datetime.now(timezone.utc).isoformat(),
-        })
+        return json.dumps(
+            {
+                "ok": False,
+                "tool": "refresh_context",
+                "error": "GITHUB_TOKEN non impostato. Serve un token con scope 'workflow'.",
+                "ts": datetime.now(timezone.utc).isoformat(),
+            }
+        )
 
     now = time.monotonic()
     if _last_refresh_attempt is not None:
         elapsed = now - _last_refresh_attempt
         if elapsed < _REFRESH_MIN_INTERVAL:
             wait = _REFRESH_MIN_INTERVAL - elapsed
-            return json.dumps({
-                "ok": False,
-                "tool": "refresh_context",
-                "error": f"Troppo presto. Ultimo tentativo {int(elapsed)}s fa. "
-                         f"Aspetta ~{int(wait)}s prima di riprovare.",
-                "retry_after": int(wait),
-                "ts": datetime.now(timezone.utc).isoformat(),
-            })
+            return json.dumps(
+                {
+                    "ok": False,
+                    "tool": "refresh_context",
+                    "error": f"Troppo presto. Ultimo tentativo {int(elapsed)}s fa. "
+                    f"Aspetta ~{int(wait)}s prima di riprovare.",
+                    "retry_after": int(wait),
+                    "ts": datetime.now(timezone.utc).isoformat(),
+                }
+            )
 
     _last_refresh_attempt = now
     try:
@@ -247,41 +347,51 @@ def refresh_context() -> str:
         )
         if response.status_code == 204:
             _log.info("refresh_context", "triggered", ref="main")
-            return json.dumps({
-                "ok": True,
-                "tool": "refresh_context",
-                "message": "Build triggerato. Artifact aggiornati entro ~1 minuto.",
-                "ts": datetime.now(timezone.utc).isoformat(),
-            })
+            return json.dumps(
+                {
+                    "ok": True,
+                    "tool": "refresh_context",
+                    "message": "Build triggerato. Artifact aggiornati entro ~1 minuto.",
+                    "ts": datetime.now(timezone.utc).isoformat(),
+                }
+            )
         elif response.status_code == 422:
             _log.error(
-                "refresh_context", "rejected",
-                status=response.status_code, body=response.text,
+                "refresh_context",
+                "rejected",
+                status=response.status_code,
+                body=response.text,
             )
-            return json.dumps({
-                "ok": False,
-                "tool": "refresh_context",
-                "error": "Build rifiutato (422). Verifica che il workflow sia abilitato su main.",
-                "status_code": 422,
-                "ts": datetime.now(timezone.utc).isoformat(),
-            })
+            return json.dumps(
+                {
+                    "ok": False,
+                    "tool": "refresh_context",
+                    "error": "Build rifiutato (422). Verifica che il workflow sia su main.",
+                    "status_code": 422,
+                    "ts": datetime.now(timezone.utc).isoformat(),
+                }
+            )
         else:
             _log.error("refresh_context", "failed", status=response.status_code, body=response.text)
-            return json.dumps({
-                "ok": False,
-                "tool": "refresh_context",
-                "error": f"Errore {response.status_code}: {response.text}",
-                "status_code": response.status_code,
-                "ts": datetime.now(timezone.utc).isoformat(),
-            })
+            return json.dumps(
+                {
+                    "ok": False,
+                    "tool": "refresh_context",
+                    "error": f"Errore {response.status_code}: {response.text}",
+                    "status_code": response.status_code,
+                    "ts": datetime.now(timezone.utc).isoformat(),
+                }
+            )
     except requests.RequestException as e:
         _log.error("refresh_context", "network_error", error=str(e))
-        return json.dumps({
-            "ok": False,
-            "tool": "refresh_context",
-            "error": f"Errore di rete: {e}",
-            "ts": datetime.now(timezone.utc).isoformat(),
-        })
+        return json.dumps(
+            {
+                "ok": False,
+                "tool": "refresh_context",
+                "error": f"Errore di rete: {e}",
+                "ts": datetime.now(timezone.utc).isoformat(),
+            }
+        )
 
 
 def main() -> None:

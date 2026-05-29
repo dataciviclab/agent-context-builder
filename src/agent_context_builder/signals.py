@@ -46,7 +46,8 @@ class SourceObservatorySignals:
     def drift_alerts(self) -> list[SourceSignal]:
         """Signals that should surface in the catalog drift section."""
         return [
-            s for s in self.signals
+            s
+            for s in self.signals
             if s.signal_type
             in ("inventory change", "structural drift", "missing_data", "follow-up candidate")
         ]
@@ -97,8 +98,7 @@ class RepoSignals:
     def failed_runs(self) -> list[RepoSignal]:
         """Signals with a failed sample_run (shown in bootstrap)."""
         return [
-            s for s in self.signals
-            if s.sample_run is not None and s.sample_run.status == "failed"
+            s for s in self.signals if s.sample_run is not None and s.sample_run.status == "failed"
         ]
 
 
@@ -324,6 +324,22 @@ class RadarSummary:
 
 
 @dataclass
+class Analysis:
+    """Analysis entry from dataciviclab/analisi/.
+
+    Parsed from the analysis README.md frontmatter and registry/active.md.
+    """
+
+    slug: str
+    name: str
+    datasets: list[str] = field(default_factory=list)
+    discussion: int | None = None
+    issue: int | None = None
+    path: str = ""
+    status: str = "active"
+
+
+@dataclass
 class ExplorerTheme:
     """Single theme entry from data-explorer editorial themes."""
 
@@ -374,9 +390,7 @@ def parse_explorer_themes_from_py(raw_py: str) -> list[ExplorerTheme]:
             break
 
     if themes_value is None:
-        raise ValueError(
-            "No top-level 'themes' variable found in themes.json.py"
-        )
+        raise ValueError("No top-level 'themes' variable found in themes.json.py")
 
     try:
         data: list[dict[str, Any]] = ast.literal_eval(themes_value)
@@ -384,9 +398,7 @@ def parse_explorer_themes_from_py(raw_py: str) -> list[ExplorerTheme]:
         raise ValueError(f"Failed to evaluate themes literal: {exc}") from exc
 
     if not isinstance(data, list):
-        raise ValueError(
-            f"Expected list literal for themes, got {type(data).__name__}"
-        )
+        raise ValueError(f"Expected list literal for themes, got {type(data).__name__}")
 
     return [
         ExplorerTheme(
