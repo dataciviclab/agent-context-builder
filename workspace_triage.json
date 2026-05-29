@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-29T10:10:39.886632",
+  "generated_at": "2026-05-29T15:35:24.507394",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,17 +10,29 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 1,
+  "open_prs": 2,
   "prs": [
     {
-      "number": 297,
-      "title": "fix: list_candidates MCP ora usa root reale da dataset.yml invece di hardcoded",
+      "number": 304,
+      "title": "refactor: rimuovere --strict-config da tutti i comandi CLI",
       "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/297"
+      "url": "https://github.com/dataciviclab/toolkit/pull/304"
+    },
+    {
+      "number": 124,
+      "title": "feat(opencivitas-fsc-2025): aggiungi dataset explorer \u2014 Fondo Solidariet\u00e0 Comunale",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/124"
     }
   ],
-  "open_issues": 39,
+  "open_issues": 40,
   "issues": [
+    {
+      "number": 413,
+      "title": "intake: istat_asia_ul \u2014 Unit\u00e0 locali e addetti ASIA per comune",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/413"
+    },
     {
       "number": 383,
       "title": "aggiungere time_coverage ai candidati single-year",
@@ -259,6 +271,13 @@
   "open_discussions": 20,
   "discussions": [
     {
+      "number": 307,
+      "title": "ASIA ISTAT \u2014 Quante imprese e addetti ci sono nel mio comune?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/307",
+      "category": "Domanda"
+    },
+    {
       "number": 297,
       "title": "MCP adapters and source-check patterns for public data \u2014 cross-country comparison (FR/IT)",
       "repo": "dataciviclab",
@@ -390,13 +409,6 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/240",
       "category": "Domanda"
-    },
-    {
-      "number": 239,
-      "title": "Quanta parte delle entrate tributarie dipende da poche voci e quanto \u00e8 diffuso?",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/239",
-      "category": "Domanda"
     }
   ],
   "github_fetch_errors": {},
@@ -495,7 +507,7 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-05-28",
+    "generated_at": "2026-05-29",
     "summary": {
       "total": 33,
       "by_status": {
@@ -510,7 +522,7 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-05-28",
+    "updated_at": "2026-05-29",
     "summary": {
       "total": 31,
       "published": 15
@@ -1995,12 +2007,12 @@
       "terna_electricity_by_source"
     ],
     "last_deploy": {
-      "run_id": 26564092276,
+      "run_id": 26634697183,
       "name": "Deploy to GitHub Pages (Observable Framework)",
       "status": "completed",
       "conclusion": "success",
-      "completed_at": "2026-05-28T08:39:31Z",
-      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26564092276"
+      "completed_at": "2026-05-29T11:31:04Z",
+      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26634697183"
     }
   }
 }

@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-29T10:10:39.886632
+**Generated**: 2026-05-29T15:35:24.507394
 
 ## 🔍 SCOUTING
 
@@ -14,7 +14,7 @@
 
 **Pipeline**: 33 candidates — 33 ok
   ⚠️ **mur-contribuzione-universitaria** — run fallito [0](https://github.com/dataciviclab/dataset-incubator/actions/runs/26106467223)
-**Dataset Catalog**: 15 published · 15 public · updated 2026-05-28
+**Dataset Catalog**: 15 published · 15 public · updated 2026-05-29
 
 ## 📊 ANALYSES
 
@@ -40,15 +40,16 @@
     · civile_flussi
     · consip_consumi_convenzione
     · ... e altri 10
-  **Deploy**: ✅ success (2026-05-28)
+  **Deploy**: ✅ success (2026-05-29)
 
 ## 🔗 OPEN
 
-- [toolkit#297](https://github.com/dataciviclab/toolkit/pull/297): fix: list_candidates MCP ora usa root reale da dataset.yml invece di hardcoded
+- [toolkit#304](https://github.com/dataciviclab/toolkit/pull/304): refactor: rimuovere --strict-config da tutti i comandi CLI
+- [data-explorer#124](https://github.com/dataciviclab/data-explorer/pull/124): feat(opencivitas-fsc-2025): aggiungi dataset explorer — Fondo Solidarietà Comunale
 **Discussions**: 20 open
+  · [Domanda] ASIA ISTAT — Quante imprese e addetti ci sono nel mio comune?
   · [Proposte] MCP adapters and source-check patterns for public data — cross-country comparison (FR/IT)
   · [Datasets] INPS ReI — evoluzione spesa e platea beneficiari 2018-2019
-  · [Datasets] Indice prezzi abitazioni ISTAT (IPAB) - case nuove vs esistenti, livello regionale
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
