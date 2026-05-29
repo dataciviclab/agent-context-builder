@@ -10,12 +10,14 @@ from .discussions import DiscussionCollector
 from .git_local import GitLocalCollector, GitState
 from .github import PR, GitHubCollector
 from .signals import (
+    Analysis,
     DICleanCatalog,
     ExplorerTheme,
     RadarSummary,
     RepoSignals,
     SourceObservatorySignals,
 )
+from .sources.dcl import DataciviclabFetcher
 from .sources.de import DataExplorerFetcher
 from .sources.di import DatasetIncubatorFetcher
 from .sources.so import SourceObservatoryFetcher
@@ -50,6 +52,7 @@ class Renderer:
         self._so_fetcher = SourceObservatoryFetcher(self.github_collector)
         self._di_fetcher = DatasetIncubatorFetcher(self.github_collector)
         self._de_fetcher = DataExplorerFetcher(self.github_collector)
+        self._dcl_fetcher = DataciviclabFetcher(self.github_collector)
 
     def render_session_bootstrap(self) -> str:
         """Render session_bootstrap.md.
@@ -88,9 +91,7 @@ class Renderer:
                         di = f" — ↳ {', '.join(s.datasets_in_use)}" if s.datasets_in_use else ""
                         streak = f" (streak {s.red_streak})" if s.red_streak else ""
                         note = f" — {s.note}" if s.note else ""
-                        lines.append(
-                            f"  · **{s.id}** {s.status} [{s.http_code}]{note}{streak}{di}"
-                        )
+                        lines.append(f"  · **{s.id}** {s.status} [{s.http_code}]{note}{streak}{di}")
             else:
                 lines.append("**Radar**: unavailable")
 
@@ -103,7 +104,8 @@ class Renderer:
                     for s in issues:
                         action = (
                             f" — azione: {s.suggested_action}"
-                            if s.suggested_action not in ("nessuna", "") else ""
+                            if s.suggested_action not in ("nessuna", "")
+                            else ""
                         )
                         lines.append(f"  · **{s.source}** ({s.protocol}): {s.signal_type}{action}")
                 else:
@@ -129,9 +131,7 @@ class Renderer:
             lines.append(f"**Pipeline**: {total} candidates — {status_str}")
             for s in di.failed_runs:
                 run = s.sample_run
-                lines.append(
-                    f"  ⚠️ **{s.label}** — run fallito [{run.year}]({run.run_url})"
-                )
+                lines.append(f"  ⚠️ **{s.label}** — run fallito [{run.year}]({run.run_url})")
         else:
             lines.append("**Pipeline**: unavailable")
 
@@ -145,6 +145,32 @@ class Renderer:
         else:
             lines.append("**Dataset Catalog**: unavailable")
         lines.append("")
+
+        # ── ANALYSES ──────────────────────────────────────────────────────
+        analyses = self._fetch_dcl_analyses()
+        if analyses:
+            active = [a for a in analyses if a.status == "active"]
+            archived = [a for a in analyses if a.status == "archived"]
+            lines.append("## 📊 ANALYSES")
+            lines.append("")
+            if active:
+                lines.append(f"**Attive**: {len(active)}")
+                for a in active:
+                    datasets_str = ", ".join(a.datasets) if a.datasets else ""
+                    parts = [f"**{a.name}**"]
+                    if datasets_str:
+                        parts.append(f"→ {datasets_str}")
+                    if a.discussion is not None:
+                        parts.append(
+                            f"[discussion #{a.discussion}]"
+                            f"(https://github.com/orgs/dataciviclab/discussions/{a.discussion})"
+                        )
+                    lines.append(f"  · {' · '.join(parts)}")
+            if archived:
+                lines.append(f"**Archiviate**: {len(archived)}")
+                for a in archived:
+                    lines.append(f"  · **{a.name}**")
+            lines.append("")
 
         # ── EXPLORER ──────────────────────────────────────────────────────
         explorer_themes = self._fetch_explorer_themes()
@@ -175,9 +201,7 @@ class Renderer:
                     catalog_published_slugs.add(ds.slug)
             gap = sorted(catalog_published_slugs - themed_slugs)
             if gap:
-                lines.append(
-                    f"  ⚠ {len(gap)} dataset published non ancora su explorer:"
-                )
+                lines.append(f"  ⚠ {len(gap)} dataset published non ancora su explorer:")
                 for slug in gap[:5]:
                     lines.append(f"    · {slug}")
                 if len(gap) > 5:
@@ -188,8 +212,11 @@ class Renderer:
             if last_deploy is not None:
                 conclusion = last_deploy.get("conclusion", "unknown")
                 icon = "✅" if conclusion == "success" else "❌"
-                completed = (last_deploy.get("completed_at", "")[:10]
-                             if last_deploy.get("completed_at") else "?")
+                completed = (
+                    last_deploy.get("completed_at", "")[:10]
+                    if last_deploy.get("completed_at")
+                    else "?"
+                )
                 lines.append(f"  **Deploy**: {icon} {conclusion} ({completed})")
             else:
                 lines.append("  **Deploy**: dati non disponibili")
@@ -269,10 +296,8 @@ class Renderer:
     def _fetch_radar_summary(self) -> RadarSummary | None:
         return self._so_fetcher.fetch_radar_summary()
 
-
     def _fetch_source_observatory_signals(self) -> SourceObservatorySignals | None:
         return self._so_fetcher.fetch_catalog_signals()
-
 
     def render_workspace_triage(self) -> dict[str, Any]:
         """Render workspace_triage.json.
@@ -291,8 +316,6 @@ class Renderer:
             de_fetcher=self._de_fetcher,
         )
 
-
-
     def _fetch_explorer_themes(self) -> list[ExplorerTheme] | None:
         return self._de_fetcher.fetch_themes()
 
@@ -301,9 +324,6 @@ class Renderer:
 
     def _fetch_di_clean_catalog(self) -> DICleanCatalog | None:
         return self._di_fetcher.fetch_clean_catalog()
-
-
-
 
     @staticmethod
     def _format_period(period: dict[str, Any]) -> str:
@@ -315,11 +335,7 @@ class Renderer:
             return str(start)
         return f"{start or '?'}-{end or '?'}"
 
-
-
-    def _collect_warnings(
-        self, prs: list[PR], repos_state: dict[str, GitState]
-    ) -> list[str]:
+    def _collect_warnings(self, prs: list[PR], repos_state: dict[str, GitState]) -> list[str]:
         """Collect warnings for triage.
 
         Args:
@@ -349,12 +365,16 @@ class Renderer:
         return warnings
 
     def render_topic_index(self) -> dict[str, Any]:
-        """Render topic_index.json.
+        """Render topic_index.json (schema v3).
 
         Returns:
             - repos: GitHub description per repo (auto from API)
             - datasets_by_source: clean_ready datasets grouped by source (auto from catalog)
+            - candidates_by_source: incubating datasets grouped by source
             - operational_topics: YAML-defined topics for agent navigation
+            - explorer_themes: editorial themes from data-explorer (v2)
+            - analyses: list of analyses from dataciviclab/analisi/ (v3)
+            - analyses_by_dataset: reverse lookup dataset → analyses (v3)
         """
         # Repos with description from GitHub
         repos_info = self.github_collector.get_repos_info(self.config.repos)
@@ -367,21 +387,27 @@ class Renderer:
         catalog = self._fetch_di_clean_catalog()
         datasets_by_source: dict[str, list[dict[str, Any]]] = {}
         candidates_by_source: dict[str, list[dict[str, Any]]] = {}
+        all_dataset_slugs: set[str] = set()
         if catalog:
             for ds in catalog.clean_ready:
                 source = ds.source or "unknown"
-                datasets_by_source.setdefault(source, []).append({
-                    "slug": ds.slug,
-                    "name": ds.name,
-                    "period": ds.period,
-                })
+                datasets_by_source.setdefault(source, []).append(
+                    {
+                        "slug": ds.slug,
+                        "name": ds.name,
+                        "period": ds.period,
+                    }
+                )
+                all_dataset_slugs.add(ds.slug)
             for ds in catalog.candidates:
                 source = ds.source or "unknown"
-                candidates_by_source.setdefault(source, []).append({
-                    "slug": ds.slug,
-                    "name": ds.name,
-                    "period": ds.period,
-                })
+                candidates_by_source.setdefault(source, []).append(
+                    {
+                        "slug": ds.slug,
+                        "name": ds.name,
+                        "period": ds.period,
+                    }
+                )
 
         # YAML-defined operational topics (agent navigation hints)
         operational_topics = {}
@@ -407,8 +433,34 @@ class Renderer:
                 for t in explorer_themes
             ]
 
-        return {
-            "schema_version": 2,
+        # ── v3: Analyses from dataciviclab ──────────────────────────────
+        analyses_list: list[dict[str, Any]] = []
+        analyses_by_dataset: dict[str, list[str]] = {}
+        analyses = self._fetch_dcl_analyses()
+        if analyses:
+            for a in analyses:
+                entry: dict[str, Any] = {
+                    "slug": a.slug,
+                    "name": a.name,
+                    "datasets": a.datasets,
+                    "path": a.path,
+                    "status": a.status,
+                }
+                if a.discussion is not None:
+                    entry["discussion"] = a.discussion
+                if a.issue is not None:
+                    entry["issue"] = a.issue
+                analyses_list.append(entry)
+
+                # Build reverse lookup: dataset_slug → [analysis_slug, ...]
+                for ds in a.datasets:
+                    analyses_by_dataset.setdefault(ds, []).append(a.slug)
+
+        # Determine schema version: 3 if we have analyses, 2 otherwise
+        schema_version = 3 if analyses_list else 2
+
+        result: dict[str, Any] = {
+            "schema_version": schema_version,
             "generated_at": self.fixed_timestamp,
             "repos": repos_section,
             "datasets_by_source": datasets_by_source,
@@ -416,3 +468,14 @@ class Renderer:
             "operational_topics": operational_topics,
             "explorer_themes": explorer_themes_list,
         }
+
+        if analyses_list:
+            result["analyses"] = analyses_list
+            result["analyses_by_dataset"] = analyses_by_dataset
+
+        return result
+
+    def _fetch_dcl_analyses(self) -> list[Analysis]:
+        """Fetch analyses from dataciviclab via DCL fetcher."""
+        data = self._dcl_fetcher.fetch()
+        return data.analyses
