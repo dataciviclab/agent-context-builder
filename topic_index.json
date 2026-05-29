@@ -1,6 +1,6 @@
 {
-  "schema_version": 2,
-  "generated_at": "2026-05-29T09:55:32.743808",
+  "schema_version": 3,
+  "generated_at": "2026-05-29T10:10:39.886632",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -379,6 +379,17 @@
         "lab-connectors/lab_connectors/mcp/"
       ],
       "next": "lab-connectors \u00e8 dipendenza pip di toolkit, data-explorer e ACB"
+    },
+    "analyses": {
+      "name": "analyses",
+      "summary": "Analisi pubbliche su dati civici \u2014 dal dataset al racconto",
+      "repos": [
+        "dataciviclab"
+      ],
+      "paths": [
+        "dataciviclab/analisi/"
+      ],
+      "next": "Vedi analisi/registry/active.md per filoni attivi"
     }
   },
   "explorer_themes": [
@@ -425,5 +436,75 @@
         "flussi-giustizia-civile"
       ]
     }
-  ]
+  ],
+  "analyses": [
+    {
+      "slug": "irpef-comunale",
+      "name": "IRPEF comunale 2019-2023",
+      "datasets": [
+        "irpef_comunale"
+      ],
+      "path": "analisi/irpef-comunale/README.md",
+      "status": "active",
+      "discussion": 88
+    },
+    {
+      "slug": "civile-flussi",
+      "name": "Flussi giustizia civile 2014-2025",
+      "datasets": [
+        "civile_flussi"
+      ],
+      "path": "analisi/civile-flussi/README.md",
+      "status": "active"
+    },
+    {
+      "slug": "malasanita-struttura-mortalita",
+      "name": "\"Malasanit\u00e0 2022: mortalit\u00e0 evitabile e dotazione sanitaria regionale\"",
+      "datasets": [
+        "malasanita_struttura_mortalita"
+      ],
+      "path": "analisi/malasanita-struttura-mortalita/README.md",
+      "status": "active",
+      "discussion": 99,
+      "issue": 110
+    },
+    {
+      "slug": "terna-electricity-by-source",
+      "name": "Terna mix elettrico 2023-2024",
+      "datasets": [
+        "terna_electricity_by_source"
+      ],
+      "path": "analisi/terna-electricity-by-source/README.md",
+      "status": "active",
+      "discussion": 115,
+      "issue": 133
+    },
+    {
+      "slug": "dipendenti-pubblici",
+      "name": "Dipendenti pubblici 2010-2023",
+      "datasets": [
+        "dipendenti_pubblici"
+      ],
+      "path": "analisi/dipendenti-pubblici/README.md",
+      "status": "active",
+      "issue": 131
+    }
+  ],
+  "analyses_by_dataset": {
+    "irpef_comunale": [
+      "irpef-comunale"
+    ],
+    "civile_flussi": [
+      "civile-flussi"
+    ],
+    "malasanita_struttura_mortalita": [
+      "malasanita-struttura-mortalita"
+    ],
+    "terna_electricity_by_source": [
+      "terna-electricity-by-source"
+    ],
+    "dipendenti_pubblici": [
+      "dipendenti-pubblici"
+    ]
+  }
 }

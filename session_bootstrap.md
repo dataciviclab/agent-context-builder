@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-29T09:55:32.743808
+**Generated**: 2026-05-29T10:10:39.886632
 
 ## 🔍 SCOUTING
 
@@ -15,6 +15,15 @@
 **Pipeline**: 33 candidates — 33 ok
   ⚠️ **mur-contribuzione-universitaria** — run fallito [0](https://github.com/dataciviclab/dataset-incubator/actions/runs/26106467223)
 **Dataset Catalog**: 15 published · 15 public · updated 2026-05-28
+
+## 📊 ANALYSES
+
+**Attive**: 5
+  · **IRPEF comunale 2019-2023** · → irpef_comunale · [discussion #88](https://github.com/orgs/dataciviclab/discussions/88)
+  · **Flussi giustizia civile 2014-2025** · → civile_flussi
+  · **"Malasanità 2022: mortalità evitabile e dotazione sanitaria regionale"** · → malasanita_struttura_mortalita · [discussion #99](https://github.com/orgs/dataciviclab/discussions/99)
+  · **Terna mix elettrico 2023-2024** · → terna_electricity_by_source · [discussion #115](https://github.com/orgs/dataciviclab/discussions/115)
+  · **Dipendenti pubblici 2010-2023** · → dipendenti_pubblici
 
 ## 🗂 EXPLORER
 
@@ -35,13 +44,12 @@
 
 ## 🔗 OPEN
 
-- [agent-context-builder#49](https://github.com/dataciviclab/agent-context-builder/pull/49): feat: topic_index v3 — analyses da dataciviclab + sezione ANALYSES in bootstrap + MCP resolve
 - [toolkit#297](https://github.com/dataciviclab/toolkit/pull/297): fix: list_candidates MCP ora usa root reale da dataset.yml invece di hardcoded
 **Discussions**: 20 open
   · [Proposte] MCP adapters and source-check patterns for public data — cross-country comparison (FR/IT)
   · [Datasets] INPS ReI — evoluzione spesa e platea beneficiari 2018-2019
   · [Datasets] Indice prezzi abitazioni ISTAT (IPAB) - case nuove vs esistenti, livello regionale
-**Topics**: pipeline · governance · infrastructure
+**Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
 
