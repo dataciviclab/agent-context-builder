@@ -1,11 +1,12 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-30T03:28:57.392435
+**Generated**: 2026-05-30T08:29:00.604548
 
 ## 🔍 SCOUTING
 
-**Radar**: 27 fonti — GREEN 25 · YELLOW 1 · RED 1 (probe: 2026-05-29)
+**Radar**: 27 fonti — GREEN 24 · YELLOW 2 · RED 1 (probe: 2026-05-30)
   ⚠ **1 persistent RED**
+  · **istat_sdmx** YELLOW [-] — Timeout (ReadTimeout)
   · **dati_salute** RED [-] — SSL verify failed; fallback connection error (SSLError) (streak 14)
   · **opencoesione** YELLOW [403]
 **Catalog Drift**: no drift signals (22 sources checked)
@@ -44,7 +45,9 @@
 
 ## 🔗 OPEN
 
+- [toolkit#308](https://github.com/dataciviclab/toolkit/pull/308): feat: routing SPARQL in probe_url_routed + scaffold + fix _format_args
 - [data-explorer#124](https://github.com/dataciviclab/data-explorer/pull/124): feat(opencivitas-fsc-2025): aggiungi dataset explorer — Fondo Solidarietà Comunale
+- [source-observatory#302](https://github.com/dataciviclab/source-observatory/pull/302): feat: dataset grouping, enrich refactor con dispatch per protocollo, dead code removal
 **Discussions**: 20 open
   · [Domanda] ASIA ISTAT — Quante imprese e addetti ci sono nel mio comune?
   · [Proposte] MCP adapters and source-check patterns for public data — cross-country comparison (FR/IT)

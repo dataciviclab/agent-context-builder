@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-30T03:28:57.392435",
+  "generated_at": "2026-05-30T08:29:00.604548",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,13 +10,25 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 1,
+  "open_prs": 3,
   "prs": [
+    {
+      "number": 308,
+      "title": "feat: routing SPARQL in probe_url_routed + scaffold + fix _format_args",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/308"
+    },
     {
       "number": 124,
       "title": "feat(opencivitas-fsc-2025): aggiungi dataset explorer \u2014 Fondo Solidariet\u00e0 Comunale",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/124"
+    },
+    {
+      "number": 302,
+      "title": "feat: dataset grouping, enrich refactor con dispatch per protocollo, dead code removal",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/302"
     }
   ],
   "open_issues": 40,
@@ -467,13 +479,21 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-05-29",
+    "probe_date": "2026-05-30",
     "sources_total": 27,
-    "green": 25,
-    "yellow": 1,
+    "green": 24,
+    "yellow": 2,
     "red": 1,
     "persistent_red": 1,
     "unhealthy": [
+      {
+        "id": "istat_sdmx",
+        "status": "YELLOW",
+        "protocol": "sdmx",
+        "http_code": "-",
+        "note": "Timeout (ReadTimeout)",
+        "red_streak": 0
+      },
       {
         "id": "dati_salute",
         "status": "RED",
