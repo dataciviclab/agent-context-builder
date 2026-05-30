@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-30T13:40:13.988259
+**Generated**: 2026-05-30T17:37:21.941129
 
 ## 🔍 SCOUTING
 
@@ -45,7 +45,8 @@
 
 ## 🔗 OPEN
 
-**PRs**: none open
+- [dataciviclab#309](https://github.com/dataciviclab/dataciviclab/pull/309): Camera votazioni 2018-2025: analisi completa README + notebook + figure
+- [data-explorer#126](https://github.com/dataciviclab/data-explorer/pull/126): feat(votazioni-camera): aggiungi dataset explorer
 **Discussions**: 20 open
   · [Domanda] ASIA ISTAT — Quante imprese e addetti ci sono nel mio comune?
   · [Proposte] MCP adapters and source-check patterns for public data — cross-country comparison (FR/IT)
