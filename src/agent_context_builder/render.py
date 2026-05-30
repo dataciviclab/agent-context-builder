@@ -88,10 +88,14 @@ class Renderer:
                     lines.append(f"  ⚠ **{radar.persistent_red} persistent RED**")
                 if radar.unhealthy:
                     for rs in radar.unhealthy:
-                        detail_str = f" — ↳ {', '.join(rs.datasets_in_use)}" if rs.datasets_in_use else ""
+                        _d = (
+                            f" — ↳ {', '.join(rs.datasets_in_use)}"
+                            if rs.datasets_in_use else ""
+                        )
                         streak = f" (streak {rs.red_streak})" if rs.red_streak else ""
                         note = f" — {rs.note}" if rs.note else ""
-                        lines.append(f"  · **{rs.id}** {rs.status} [{rs.http_code}]{note}{streak}{detail_str}")
+                        _row = f"  · **{rs.id}** {rs.status} [{rs.http_code}]{note}{streak}{_d}"
+                        lines.append(_row)
             else:
                 lines.append("**Radar**: unavailable")
 
@@ -107,7 +111,11 @@ class Renderer:
                             if alert.suggested_action not in ("nessuna", "")
                             else ""
                         )
-                        lines.append(f"  · **{alert.source}** ({alert.protocol}): {alert.signal_type}{action}")
+                        _row = (
+                            f"  · **{alert.source}** ({alert.protocol}):"
+                            f" {alert.signal_type}{action}"
+                        )
+                        lines.append(_row)
                 else:
                     lines.append(
                         f"**Catalog Drift**: no drift signals "
