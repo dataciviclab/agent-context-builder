@@ -87,11 +87,15 @@ class Renderer:
                 if radar.persistent_red:
                     lines.append(f"  ⚠ **{radar.persistent_red} persistent RED**")
                 if radar.unhealthy:
-                    for s in radar.unhealthy:
-                        di = f" — ↳ {', '.join(s.datasets_in_use)}" if s.datasets_in_use else ""
-                        streak = f" (streak {s.red_streak})" if s.red_streak else ""
-                        note = f" — {s.note}" if s.note else ""
-                        lines.append(f"  · **{s.id}** {s.status} [{s.http_code}]{note}{streak}{di}")
+                    for rs in radar.unhealthy:
+                        _d = (
+                            f" — ↳ {', '.join(rs.datasets_in_use)}"
+                            if rs.datasets_in_use else ""
+                        )
+                        streak = f" (streak {rs.red_streak})" if rs.red_streak else ""
+                        note = f" — {rs.note}" if rs.note else ""
+                        _row = f"  · **{rs.id}** {rs.status} [{rs.http_code}]{note}{streak}{_d}"
+                        lines.append(_row)
             else:
                 lines.append("**Radar**: unavailable")
 
@@ -101,13 +105,17 @@ class Renderer:
             else:
                 issues = so.drift_alerts
                 if issues:
-                    for s in issues:
+                    for alert in issues:
                         action = (
-                            f" — azione: {s.suggested_action}"
-                            if s.suggested_action not in ("nessuna", "")
+                            f" — azione: {alert.suggested_action}"
+                            if alert.suggested_action not in ("nessuna", "")
                             else ""
                         )
-                        lines.append(f"  · **{s.source}** ({s.protocol}): {s.signal_type}{action}")
+                        _row = (
+                            f"  · **{alert.source}** ({alert.protocol}):"
+                            f" {alert.signal_type}{action}"
+                        )
+                        lines.append(_row)
                 else:
                     lines.append(
                         f"**Catalog Drift**: no drift signals "
@@ -131,7 +139,8 @@ class Renderer:
             lines.append(f"**Pipeline**: {total} candidates — {status_str}")
             for s in di.failed_runs:
                 run = s.sample_run
-                lines.append(f"  ⚠️ **{s.label}** — run fallito [{run.year}]({run.run_url})")
+                if run is not None:
+                    lines.append(f"  ⚠️ **{s.label}** — run fallito [{run.year}]({run.run_url})")
         else:
             lines.append("**Pipeline**: unavailable")
 
@@ -453,8 +462,8 @@ class Renderer:
                 analyses_list.append(entry)
 
                 # Build reverse lookup: dataset_slug → [analysis_slug, ...]
-                for ds in a.datasets:
-                    analyses_by_dataset.setdefault(ds, []).append(a.slug)
+                for ds_slug in a.datasets:
+                    analyses_by_dataset.setdefault(ds_slug, []).append(a.slug)
 
         # Determine schema version: 3 if we have analyses, 2 otherwise
         schema_version = 3 if analyses_list else 2

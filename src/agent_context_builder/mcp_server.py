@@ -222,7 +222,7 @@ def topic_index(resolve: str | None = None) -> str:
         return raw
 
     resolve_lower = resolve.lower()
-    result = {"resolve": resolve, "found": False}
+    result: dict = {"resolve": resolve, "found": False}
 
     # Dedup helpers: track seen slugs to avoid duplicates across sections
     seen_sources: set[str] = set()

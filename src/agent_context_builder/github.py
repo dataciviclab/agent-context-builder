@@ -114,7 +114,7 @@ class GitHubCollector:
         """Raise RuntimeError if result is error or response status >= 400."""
         if not result.is_ok:
             raise RuntimeError(f"{url_desc}: {result.err}")
-        status = result.response.status_code  # type: ignore[union-attr]
+        status = result.response.status_code
         if status >= 400:
             raise RuntimeError(f"{url_desc}: HTTP {status}")
 
@@ -132,7 +132,7 @@ class GitHubCollector:
         self._raise_on_bad_status(result, url)
 
         prs = []
-        for item in result.response.json():  # type: ignore[union-attr]
+        for item in result.response.json():
             prs.append(
                 PR(
                     number=item["number"],
@@ -163,7 +163,7 @@ class GitHubCollector:
         result = self._http.get(url, headers=self._headers())
         try:
             self._raise_on_bad_status(result, url)
-            return result.response.text  # type: ignore[union-attr]
+            return result.response.text
         except Exception as exc:
             self.fetch_errors[f"{repo}:{path}"] = str(exc)
             return None
@@ -179,7 +179,7 @@ class GitHubCollector:
                 url = f"{self.base_url}/repos/{self.org}/{repo}"
                 result = self._http.get(url, headers=self._headers())
                 self._raise_on_bad_status(result, url)
-                data = result.response.json()  # type: ignore[union-attr]
+                data = result.response.json()
                 result_map[repo] = RepoInfo(
                     name=repo,
                     description=data.get("description") or "",
@@ -228,7 +228,7 @@ class GitHubCollector:
         try:
             result = self._http.get(url, params=params, headers=self._headers())
             self._raise_on_bad_status(result, url)
-            data = result.response.json()  # type: ignore[union-attr]
+            data = result.response.json()
             runs = data.get("workflow_runs", [])
             if not runs:
                 return None
@@ -258,7 +258,7 @@ class GitHubCollector:
         self._raise_on_bad_status(result, url)
 
         issues = []
-        for item in result.response.json():  # type: ignore[union-attr]
+        for item in result.response.json():
             # Skip pull requests: they have a pull_request field
             if "pull_request" in item:
                 continue

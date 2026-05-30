@@ -21,7 +21,7 @@ def _minimal_config(tmp_path: Path) -> tuple[Path, Config]:
         "github_org: test-org\nrepos:\n  - repo1\n",
         encoding="utf-8",
     )
-    return config_path, Config(github_org="test-org", repos=["repo1"])
+    return config_path, Config(workspace_root=None, github_org="test-org", repos=["repo1"])
 
 
 def _mock_renderer():
