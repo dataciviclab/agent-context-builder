@@ -1,0 +1,25 @@
+name: Bug — Agent Context Builder
+description: Segnala un problema con il contesto generato (bootstrap, triage, topic index)
+labels: [bug]
+body:
+  - type: textarea
+    id: desc
+    attributes:
+      label: Descrizione
+      description: Cosa non funziona o è errato?
+    validations:
+      required: true
+  - type: dropdown
+    id: artifact
+    attributes:
+      label: Artifact
+      options:
+        - session_bootstrap
+        - workspace_triage
+        - topic_index
+        - refresh_context
+        - Altro
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamento atteso

@@ -1,0 +1,21 @@
+name: Feature — ACB
+description: Proposta di miglioramento per l'agent-context-builder
+labels: [enhancement]
+body:
+  - type: textarea
+    id: desc
+    attributes:
+      label: Cosa vorresti vedere
+      description: Descrivi la funzionalità che manca o il miglioramento
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Nuovo tool MCP
+        - Miglioramento artifact
+        - Performance / caching
+        - Documentazione
+        - Altro
