@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-30T08:29:00.604548
+**Generated**: 2026-05-30T12:41:12.743701
 
 ## 🔍 SCOUTING
 
@@ -13,9 +13,9 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 33 candidates — 33 ok
+**Pipeline**: 34 candidates — 34 ok
   ⚠️ **mur-contribuzione-universitaria** — run fallito [0](https://github.com/dataciviclab/dataset-incubator/actions/runs/26106467223)
-**Dataset Catalog**: 15 published · 15 public · updated 2026-05-29
+**Dataset Catalog**: 16 published · 16 public · updated 2026-05-30
 
 ## 📊 ANALYSES
 
@@ -28,26 +28,24 @@
 
 ## 🗂 EXPLORER
 
-**Pubblicati**: 13 dataset · 5 temi · [data-explorer](https://dataciviclab.github.io/data-explorer/)
+**Pubblicati**: 14 dataset · 5 temi · [data-explorer](https://dataciviclab.github.io/data-explorer/)
   · **Territorio e ambiente**: rifiuti-urbani, capacita-rinnovabile, produzione-elettrica-fonti
-  · **Finanza pubblica**: irpef-comunale, entrate-stato, consip-consumi-convenzione, istat-gini-regionale
+  · **Finanza pubblica**: irpef-comunale, entrate-stato, consip-consumi-convenzione, istat-gini-regionale, opencivitas-fsc-2025
   · **Sanità**: spesa-farmaceutica, bdap-lea
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, istat-ipab-aree
   · **Giustizia**: flussi-giustizia-civile
-  ⚠ 15 dataset published non ancora su explorer:
+  ⚠ 16 dataset published non ancora su explorer:
     · aifa_spesa_consumo
     · bdap_entrate_stato
     · bdap_lea
+    · camera_votazioni_sparql
     · civile_flussi
-    · consip_consumi_convenzione
-    · ... e altri 10
-  **Deploy**: ✅ success (2026-05-29)
+    · ... e altri 11
+  **Deploy**: ✅ success (2026-05-30)
 
 ## 🔗 OPEN
 
-- [toolkit#308](https://github.com/dataciviclab/toolkit/pull/308): feat: routing SPARQL in probe_url_routed + scaffold + fix _format_args
-- [data-explorer#124](https://github.com/dataciviclab/data-explorer/pull/124): feat(opencivitas-fsc-2025): aggiungi dataset explorer — Fondo Solidarietà Comunale
-- [source-observatory#302](https://github.com/dataciviclab/source-observatory/pull/302): feat: dataset grouping, enrich refactor con dispatch per protocollo, dead code removal
+**PRs**: none open
 **Discussions**: 20 open
   · [Domanda] ASIA ISTAT — Quante imprese e addetti ci sono nel mio comune?
   · [Proposte] MCP adapters and source-check patterns for public data — cross-country comparison (FR/IT)

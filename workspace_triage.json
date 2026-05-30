@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-30T08:29:00.604548",
+  "generated_at": "2026-05-30T12:41:12.743701",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,29 +10,16 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 3,
-  "prs": [
-    {
-      "number": 308,
-      "title": "feat: routing SPARQL in probe_url_routed + scaffold + fix _format_args",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/308"
-    },
-    {
-      "number": 124,
-      "title": "feat(opencivitas-fsc-2025): aggiungi dataset explorer \u2014 Fondo Solidariet\u00e0 Comunale",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/124"
-    },
-    {
-      "number": 302,
-      "title": "feat: dataset grouping, enrich refactor con dispatch per protocollo, dead code removal",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/302"
-    }
-  ],
-  "open_issues": 40,
+  "open_prs": 0,
+  "prs": [],
+  "open_issues": 43,
   "issues": [
+    {
+      "number": 417,
+      "title": "Valutare se i notebook template in candidates/ portano ancora valore o sono solo volume",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/417"
+    },
     {
       "number": 413,
       "title": "intake: istat_asia_ul \u2014 Unit\u00e0 locali e addetti ASIA per comune",
@@ -118,6 +105,12 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/124"
     },
     {
+      "number": 308,
+      "title": "analisi: camera_votazioni_sparql \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/308"
+    },
+    {
       "number": 302,
       "title": "analisi: openga_ricorsi_cds \u2014 nuovo dataset pubblicato",
       "repo": "dataciviclab",
@@ -182,6 +175,12 @@
       "title": "[Roadmap 2026] 5 dataset territorio e ambiente puliti e analizzati",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/issues/113"
+    },
+    {
+      "number": 125,
+      "title": "follow-up: pagina e tema per camera_votazioni_sparql",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/125"
     },
     {
       "number": 122,
@@ -521,11 +520,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-05-29",
+    "generated_at": "2026-05-30",
     "summary": {
-      "total": 33,
+      "total": 34,
       "by_status": {
-        "ok": 33,
+        "ok": 34,
         "warn": 0,
         "error": 0
       }
@@ -536,10 +535,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-05-29",
+    "updated_at": "2026-05-30",
     "summary": {
-      "total": 31,
-      "published": 15
+      "total": 32,
+      "published": 16
     },
     "datasets": [
       {
@@ -820,6 +819,89 @@
         "dimension_columns": 5,
         "column_count": 5,
         "columns": []
+      },
+      {
+        "slug": "camera_votazioni_sparql",
+        "name": "Votazioni Camera dei Deputati",
+        "stage": "published",
+        "period": {
+          "start": 2018,
+          "end": 2025
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/camera_votazioni_sparql/*/camera_votazioni_sparql_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 11,
+        "dimension_columns": 5,
+        "column_count": 16,
+        "columns": [
+          {
+            "name": "votazione",
+            "role": "dimension"
+          },
+          {
+            "name": "favorevoli",
+            "role": "metric"
+          },
+          {
+            "name": "contrari",
+            "role": "metric"
+          },
+          {
+            "name": "astenuti",
+            "role": "metric"
+          },
+          {
+            "name": "votanti",
+            "role": "metric"
+          },
+          {
+            "name": "presenti",
+            "role": "metric"
+          },
+          {
+            "name": "approvato",
+            "role": "metric"
+          },
+          {
+            "name": "votazione_finale",
+            "role": "metric"
+          },
+          {
+            "name": "votazione_segreta",
+            "role": "metric"
+          },
+          {
+            "name": "richiesta_fiducia",
+            "role": "metric"
+          },
+          {
+            "name": "titolo",
+            "role": "dimension"
+          },
+          {
+            "name": "maggioranza",
+            "role": "metric"
+          },
+          {
+            "name": "data",
+            "role": "metric"
+          },
+          {
+            "name": "legislatura",
+            "role": "dimension"
+          },
+          {
+            "name": "seduta",
+            "role": "dimension"
+          },
+          {
+            "name": "atto_camera",
+            "role": "dimension"
+          }
+        ]
       },
       {
         "slug": "civile_flussi",
@@ -1645,8 +1727,8 @@
           "multi_file": true
         },
         "metric_columns": 1,
-        "dimension_columns": 5,
-        "column_count": 6,
+        "dimension_columns": 15,
+        "column_count": 16,
         "columns": []
       },
       {
@@ -1984,7 +2066,7 @@
       {
         "slug": "finanza-pubblica",
         "name": "Finanza pubblica",
-        "dataset_count": 4
+        "dataset_count": 5
       },
       {
         "slug": "sanita",
@@ -2002,11 +2084,12 @@
         "dataset_count": 1
       }
     ],
-    "published_count": 13,
+    "published_count": 14,
     "clean_ready_not_published": [
       "aifa_spesa_consumo",
       "bdap_entrate_stato",
       "bdap_lea",
+      "camera_votazioni_sparql",
       "civile_flussi",
       "consip_consumi_convenzione",
       "dipendenti_pubblici",
@@ -2021,12 +2104,12 @@
       "terna_electricity_by_source"
     ],
     "last_deploy": {
-      "run_id": 26634697183,
+      "run_id": 26682081012,
       "name": "Deploy to GitHub Pages (Observable Framework)",
       "status": "completed",
       "conclusion": "success",
-      "completed_at": "2026-05-29T11:31:04Z",
-      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26634697183"
+      "completed_at": "2026-05-30T11:01:10Z",
+      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26682081012"
     }
   }
 }
