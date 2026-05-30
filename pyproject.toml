@@ -73,6 +73,12 @@ target-version = "py310"
 select = ["E", "F", "W", "I"]
 
 [tool.mypy]
-python_version = "3.10"
-warn_return_any = true
+python_version = "3.12"
+warn_unused_configs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_return_any = false
+no_implicit_optional = true
+ignore_missing_imports = true
 disallow_untyped_defs = false

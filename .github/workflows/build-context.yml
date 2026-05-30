@@ -36,8 +36,11 @@ jobs:
       - name: Lint
         run: ruff check src/ tests/
 
+      - name: Type check
+        run: mypy src/ tests/
+
       - name: Test
-        run: pytest --cov=src/agent_context_builder --cov-report=xml
+        run: pytest --cov=src/agent_context_builder --cov-report=xml --cov-fail-under=70
 
       - name: Upload coverage
         uses: codecov/codecov-action@v6

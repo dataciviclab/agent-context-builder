@@ -53,7 +53,7 @@ def fake_http():
 @pytest.fixture
 def minimal_config() -> Config:
     """A ``Config`` with minimal required fields."""
-    return Config(github_org="test-org", repos=["repo1"])
+    return Config(workspace_root=None, github_org="test-org", repos=["repo1"])
 
 
 @pytest.fixture
