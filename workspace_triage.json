@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-31T03:55:57.606742",
+  "generated_at": "2026-05-31T08:46:39.693633",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -479,21 +479,13 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-05-30",
+    "probe_date": "2026-05-31",
     "sources_total": 27,
     "green": 24,
-    "yellow": 2,
-    "red": 1,
+    "yellow": 1,
+    "red": 2,
     "persistent_red": 1,
     "unhealthy": [
-      {
-        "id": "istat_sdmx",
-        "status": "YELLOW",
-        "protocol": "sdmx",
-        "http_code": "-",
-        "note": "Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
       {
         "id": "dati_salute",
         "status": "RED",
@@ -501,6 +493,14 @@
         "http_code": "-",
         "note": "SSL verify failed; fallback connection error (SSLError)",
         "red_streak": 14
+      },
+      {
+        "id": "dati_camera",
+        "status": "RED",
+        "protocol": "sparql",
+        "http_code": "503",
+        "note": null,
+        "red_streak": 0
       },
       {
         "id": "opencoesione",
