@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-31T08:46:39.693633",
+  "generated_at": "2026-05-31T13:46:25.284558",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -13,20 +13,26 @@
   "open_prs": 2,
   "prs": [
     {
-      "number": 309,
-      "title": "Camera votazioni 2018-2025: analisi completa README + notebook + figure",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/pull/309"
+      "number": 127,
+      "title": "feat(mim-alunni-corso-eta): aggiungi dataset explorer",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/127"
     },
     {
-      "number": 126,
-      "title": "feat(votazioni-camera): aggiungi dataset explorer",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/126"
+      "number": 36,
+      "title": "feat: modulo HTTP condiviso per SPARQL \u2014 execute, fetch_csv, discover, infer",
+      "repo": "lab-connectors",
+      "url": "https://github.com/dataciviclab/lab-connectors/pull/36"
     }
   ],
-  "open_issues": 41,
+  "open_issues": 43,
   "issues": [
+    {
+      "number": 427,
+      "title": "intake: dait_amministratori_locali \u2014 Anagrafe degli Amministratori Locali e Regionali (DAIT)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/427"
+    },
     {
       "number": 417,
       "title": "Valutare se i notebook template in candidates/ portano ancora valore o sono solo volume",
@@ -230,6 +236,12 @@
       "title": "follow-up: pagina e tema per mef-partecipazioni",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/issues/83"
+    },
+    {
+      "number": 305,
+      "title": "[source] dati.senato.it \u2014 Portale Open Data del Senato (SPARQL + HTML download)",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/305"
     },
     {
       "number": 275,
@@ -2105,12 +2117,12 @@
       "terna_electricity_by_source"
     ],
     "last_deploy": {
-      "run_id": 26688626422,
+      "run_id": 26711473074,
       "name": "Deploy to GitHub Pages (Observable Framework)",
       "status": "completed",
       "conclusion": "success",
-      "completed_at": "2026-05-30T16:15:49Z",
-      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26688626422"
+      "completed_at": "2026-05-31T11:36:21Z",
+      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26711473074"
     }
   }
 }

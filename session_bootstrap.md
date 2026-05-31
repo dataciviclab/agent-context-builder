@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-31T08:46:39.693633
+**Generated**: 2026-05-31T13:46:25.284558
 
 ## 🔍 SCOUTING
 
@@ -41,12 +41,12 @@
     · camera_votazioni_sparql
     · civile_flussi
     · ... e altri 11
-  **Deploy**: ✅ success (2026-05-30)
+  **Deploy**: ✅ success (2026-05-31)
 
 ## 🔗 OPEN
 
-- [dataciviclab#309](https://github.com/dataciviclab/dataciviclab/pull/309): Camera votazioni 2018-2025: analisi completa README + notebook + figure
-- [data-explorer#126](https://github.com/dataciviclab/data-explorer/pull/126): feat(votazioni-camera): aggiungi dataset explorer
+- [data-explorer#127](https://github.com/dataciviclab/data-explorer/pull/127): feat(mim-alunni-corso-eta): aggiungi dataset explorer
+- [lab-connectors#36](https://github.com/dataciviclab/lab-connectors/pull/36): feat: modulo HTTP condiviso per SPARQL — execute, fetch_csv, discover, infer
 **Discussions**: 20 open
   · [Domanda] ASIA ISTAT — Quante imprese e addetti ci sono nel mio comune?
   · [Proposte] MCP adapters and source-check patterns for public data — cross-country comparison (FR/IT)
