@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-05-31T13:46:25.284558
+**Generated**: 2026-05-31T19:18:53.177376
 
 ## 🔍 SCOUTING
 
@@ -46,7 +46,6 @@
 ## 🔗 OPEN
 
 - [data-explorer#127](https://github.com/dataciviclab/data-explorer/pull/127): feat(mim-alunni-corso-eta): aggiungi dataset explorer
-- [lab-connectors#36](https://github.com/dataciviclab/lab-connectors/pull/36): feat: modulo HTTP condiviso per SPARQL — execute, fetch_csv, discover, infer
 **Discussions**: 20 open
   · [Domanda] ASIA ISTAT — Quante imprese e addetti ci sono nel mio comune?
   · [Proposte] MCP adapters and source-check patterns for public data — cross-country comparison (FR/IT)
