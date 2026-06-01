@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-01T08:55:26.241597",
+  "generated_at": "2026-06-01T11:35:52.237613",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -19,7 +19,7 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/127"
     }
   ],
-  "open_issues": 41,
+  "open_issues": 42,
   "issues": [
     {
       "number": 427,
@@ -224,6 +224,12 @@
       "title": "follow-up: pagina e tema per mef-partecipazioni",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/issues/83"
+    },
+    {
+      "number": 311,
+      "title": "[Catalog] 2026-06-01 \u2014 1 regressionee, 1 nuova fonte, 1 recovery, +28 item",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/311"
     },
     {
       "number": 275,
@@ -500,10 +506,19 @@
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-05-25T08:00:44+00:00",
-    "sources_checked": 22,
+    "captured_at": "2026-06-01T08:48:05+00:00",
+    "sources_checked": 23,
     "regressions": [],
-    "alerts": []
+    "alerts": [
+      {
+        "source": "openbdap",
+        "protocol": "ckan",
+        "signal_type": "inventory change",
+        "result": "inventory change",
+        "detail": "3809 item (package_list), delta +28 rispetto al run precedente (3781).",
+        "suggested_action": "verificare se variazione attesa; avviare inventory-triage se nuovi dataset"
+      }
+    ]
   },
   "pipeline_state": {
     "available": true,

@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-01T08:55:26.241597
+**Generated**: 2026-06-01T11:35:52.237613
 
 ## 🔍 SCOUTING
 
@@ -8,7 +8,7 @@
   ⚠ **1 persistent RED**
   · **dati_salute** RED [-] — SSL verify failed; fallback connection error (SSLError) (streak 14)
   · **opencoesione** YELLOW [403]
-**Catalog Drift**: no drift signals (22 sources checked)
+  · **openbdap** (ckan): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
 
 ## 📥 INTAKE
 
