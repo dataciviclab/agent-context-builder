@@ -145,6 +145,46 @@ class GitHubCollector:
             )
         return prs
 
+    def list_directory(self, repo: str, path: str, ref: str = "main") -> list[str] | None:
+        """List directories inside a GitHub repo path.
+
+        Uses the GitHub Contents API::
+
+            GET /repos/{org}/{repo}/contents/{path}?ref={ref}
+
+        Returns a list of directory (folder) names, or None on failure.
+        Useful for discovering analysis slugs or other directory-structured
+        content without a separate registry file.
+
+        Args:
+            repo: Repository name (under self.org)
+            path: Directory path within the repo
+            ref: Branch or tag (default: main)
+
+        Returns:
+            List of subdirectory names, or None on failure.
+            Skips hidden directories (starting with ``_`` or ``.``).
+        """
+        url = f"{self.base_url}/repos/{self.org}/{repo}/contents/{path}"
+        params: dict[str, str] = {"ref": ref}
+        try:
+            result = self._http.get(url, params=params, headers=self._headers())
+            self._raise_on_bad_status(result, url)
+            items = result.response.json()
+            if not isinstance(items, list):
+                # GitHub returns a single object if path is a file, not a directory
+                raise RuntimeError(f"{url}: path is not a directory")
+            dirs: list[str] = []
+            for item in items:
+                if item.get("type") == "dir":
+                    name = item["name"]
+                    if not name.startswith(("_", ".")):
+                        dirs.append(name)
+            return sorted(dirs)
+        except Exception as exc:
+            self.fetch_errors[f"{repo}:{path}"] = str(exc)
+            return None
+
     def get_raw_file(self, repo: str, path: str, ref: str = "main") -> str | None:
         """Fetch raw file content from GitHub.
 

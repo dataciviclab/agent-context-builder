@@ -289,14 +289,17 @@ def test_render_signals_cached_across_bootstrap_and_triage():
     renderer.render_session_bootstrap()
     renderer.render_workspace_triage()
 
-    assert gh.get_raw_file.call_count == 6
+    # 6 files fetched: radar_summary + catalog_signals + pipeline_signals
+    # + clean_catalog + themes.json.py = 5 via get_raw_file
+    # + 1 directory listing call via list_directory (analisi/)
+    assert gh.get_raw_file.call_count == 5
+    assert gh.list_directory.call_count == 1
     paths_fetched = [call.args[1] for call in gh.get_raw_file.call_args_list]
     assert "data/radar/radar_summary.json" in paths_fetched
     assert "data/catalog/catalog_signals.json" in paths_fetched
     assert "registry/pipeline_signals.json" in paths_fetched
     assert "registry/clean_catalog.json" in paths_fetched
     assert "src/data/themes.json.py" in paths_fetched
-    assert "analisi/registry/active.md" in paths_fetched
 
 
 # ── Topic index ───────────────────────────────────────────────────────────
@@ -398,25 +401,17 @@ def test_render_triage_dataset_catalog_unavailable():
 # ── Topic index v3: analyses ───────────────────────────────────────────────
 
 
-def _sample_active_md() -> str:
-    """Simulate dataciviclab/analisi/registry/active.md."""
-    return """| filone | discussion | issue | stato |
-|--------|------------|-------|-------|
-| irpef-comunale | [#88](https://github.com/orgs/dataciviclab/discussions/88) | --- | active |
-| aifa-spesa-consumo | --- | --- | active |
-"""
-
-
-def _sample_analysis_readme(slug: str) -> str:
+def _sample_analysis_readme(slug: str, discussion: int | None = None) -> str:
     """Simulate an analysis README.md with frontmatter."""
     if slug == "irpef-comunale":
-        return """---
+        return f"""---
 title: IRPEF Comunale 2019-2023
 description: Analisi IRPEF
 date: 2026-05-24
 topics: economia, finanza-pubblica
 status: active
 dataset_slug: irpef_comunale
+discussion: {discussion or 88}
 ---
 # IRPEF Comunale
 Content...
@@ -441,14 +436,16 @@ def test_render_topic_index_v3_with_analyses():
     config = _cfg(repos=["repo1", "dataciviclab"])
     gh = make_github_mock()
 
+    # Discovery via directory listing (no active.md needed)
+    gh.list_directory.return_value = ["irpef-comunale", "aifa-spesa-consumo"]
+
     def _raw_file_side_effect(repo, path, ref="main"):
         if path == "registry/clean_catalog.json":
             return sample_di_clean_catalog_json()
-        if repo == "dataciviclab" and path == "analisi/registry/active.md":
-            return _sample_active_md()
         if repo == "dataciviclab" and path.startswith("analisi/") and path.endswith("/README.md"):
             slug = path.split("/")[1]
-            return _sample_analysis_readme(slug)
+            disc = 88 if slug == "irpef-comunale" else None
+            return _sample_analysis_readme(slug, discussion=disc)
         return None
 
     gh.get_raw_file.side_effect = _raw_file_side_effect
@@ -467,7 +464,7 @@ def test_render_topic_index_v3_with_analyses():
     assert irpef["datasets"] == ["irpef_comunale"]
     assert irpef["discussion"] == 88
     assert irpef["status"] == "active"
-    assert "issue" not in irpef  # --- → None → omitted
+    assert "issue" not in irpef  # None → omitted
 
     aifa = next(a for a in analyses if a["slug"] == "aifa-spesa-consumo")
     assert aifa["name"] == "AIFA Spesa farmaceutica 2018-2024"
