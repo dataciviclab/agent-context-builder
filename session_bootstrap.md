@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-01T11:35:52.237613
+**Generated**: 2026-06-01T17:40:39.544140
 
 ## 🔍 SCOUTING
 
@@ -32,11 +32,11 @@
 
 ## 🗂 EXPLORER
 
-**Pubblicati**: 14 dataset · 5 temi · [data-explorer](https://dataciviclab.github.io/data-explorer/)
+**Pubblicati**: 15 dataset · 5 temi · [data-explorer](https://dataciviclab.github.io/data-explorer/)
   · **Territorio e ambiente**: rifiuti-urbani, capacita-rinnovabile, produzione-elettrica-fonti
   · **Finanza pubblica**: irpef-comunale, entrate-stato, consip-consumi-convenzione, istat-gini-regionale, opencivitas-fsc-2025
   · **Sanità**: spesa-farmaceutica, bdap-lea
-  · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, istat-ipab-aree
+  · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, istat-ipab-aree, mim-alunni-corso-eta
   · **Giustizia**: flussi-giustizia-civile
   ⚠ 16 dataset published non ancora su explorer:
     · aifa_spesa_consumo
@@ -45,11 +45,11 @@
     · camera_votazioni_sparql
     · civile_flussi
     · ... e altri 11
-  **Deploy**: ✅ success (2026-05-31)
+  **Deploy**: ✅ success (2026-06-01)
 
 ## 🔗 OPEN
 
-- [data-explorer#127](https://github.com/dataciviclab/data-explorer/pull/127): feat(mim-alunni-corso-eta): aggiungi dataset explorer
+- [data-explorer#128](https://github.com/dataciviclab/data-explorer/pull/128): feat: mappa coropletica regioni Italia con Plot.geo + integrazione in Gini
 **Discussions**: 20 open
   · [Domanda] ASIA ISTAT — Quante imprese e addetti ci sono nel mio comune?
   · [Proposte] MCP adapters and source-check patterns for public data — cross-country comparison (FR/IT)

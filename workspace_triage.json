@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-01T11:35:52.237613",
+  "generated_at": "2026-06-01T17:40:39.544140",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -13,13 +13,13 @@
   "open_prs": 1,
   "prs": [
     {
-      "number": 127,
-      "title": "feat(mim-alunni-corso-eta): aggiungi dataset explorer",
+      "number": 128,
+      "title": "feat: mappa coropletica regioni Italia con Plot.geo + integrazione in Gini",
       "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/127"
+      "url": "https://github.com/dataciviclab/data-explorer/pull/128"
     }
   ],
-  "open_issues": 42,
+  "open_issues": 46,
   "issues": [
     {
       "number": 427,
@@ -112,10 +112,34 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/143"
     },
     {
-      "number": 308,
-      "title": "analisi: camera_votazioni_sparql \u2014 nuovo dataset pubblicato",
+      "number": 315,
+      "title": "[Seed] Rendere esplicito un debito gi\u00e0 emerso senza aprire un refactor largo",
       "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/308"
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/315"
+    },
+    {
+      "number": 314,
+      "title": "[Seed] Scegliere il prossimo output pubblico minimo da un filone gi\u00e0 attivo",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/314"
+    },
+    {
+      "number": 313,
+      "title": "[Seed] Fare una review rapida di un filone gi\u00e0 vivo e scegliere un solo prossimo passo",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/313"
+    },
+    {
+      "number": 312,
+      "title": "[Seed] Sintetizzare una Discussion attiva in 6-8 righe operative",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/312"
+    },
+    {
+      "number": 311,
+      "title": "[Seed] Verificare link e riferimenti in un file o sezione precisa",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/311"
     },
     {
       "number": 302,
@@ -2078,7 +2102,7 @@
       {
         "slug": "welfare-lavoro",
         "name": "Welfare e lavoro",
-        "dataset_count": 3
+        "dataset_count": 4
       },
       {
         "slug": "giustizia",
@@ -2086,7 +2110,7 @@
         "dataset_count": 1
       }
     ],
-    "published_count": 14,
+    "published_count": 15,
     "clean_ready_not_published": [
       "aifa_spesa_consumo",
       "bdap_entrate_stato",
@@ -2106,12 +2130,12 @@
       "terna_electricity_by_source"
     ],
     "last_deploy": {
-      "run_id": 26711473074,
+      "run_id": 26756059757,
       "name": "Deploy to GitHub Pages (Observable Framework)",
       "status": "completed",
       "conclusion": "success",
-      "completed_at": "2026-05-31T11:36:21Z",
-      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26711473074"
+      "completed_at": "2026-06-01T12:54:52Z",
+      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26756059757"
     }
   }
 }
