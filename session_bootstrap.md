@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-01T17:40:39.544140
+**Generated**: 2026-06-01T21:34:06.539572
 
 ## 🔍 SCOUTING
 
@@ -51,9 +51,9 @@
 
 - [data-explorer#128](https://github.com/dataciviclab/data-explorer/pull/128): feat: mappa coropletica regioni Italia con Plot.geo + integrazione in Gini
 **Discussions**: 20 open
+  · [Domanda] Terzo settore — quante istituzioni non profit ci sono, dove operano e quanti ci lavorano?
   · [Domanda] ASIA ISTAT — Quante imprese e addetti ci sono nel mio comune?
   · [Proposte] MCP adapters and source-check patterns for public data — cross-country comparison (FR/IT)
-  · [Datasets] INPS ReI — evoluzione spesa e platea beneficiari 2018-2019
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
