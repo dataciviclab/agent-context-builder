@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-01T04:09:12.151388",
+  "generated_at": "2026-06-01T08:55:26.241597",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -19,7 +19,7 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/127"
     }
   ],
-  "open_issues": 42,
+  "open_issues": 41,
   "issues": [
     {
       "number": 427,
@@ -110,12 +110,6 @@
       "title": "intake: ISTAT Ciclo dell'acqua - prelievo vs distribuzione, perdite idriche per distretto",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/143"
-    },
-    {
-      "number": 124,
-      "title": "Apri candidate camera-votazioni",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/124"
     },
     {
       "number": 308,
@@ -479,11 +473,11 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-05-31",
-    "sources_total": 27,
-    "green": 24,
+    "probe_date": "2026-06-01",
+    "sources_total": 29,
+    "green": 27,
     "yellow": 1,
-    "red": 2,
+    "red": 1,
     "persistent_red": 1,
     "unhealthy": [
       {
@@ -493,14 +487,6 @@
         "http_code": "-",
         "note": "SSL verify failed; fallback connection error (SSLError)",
         "red_streak": 14
-      },
-      {
-        "id": "dati_camera",
-        "status": "RED",
-        "protocol": "sparql",
-        "http_code": "503",
-        "note": null,
-        "red_streak": 0
       },
       {
         "id": "opencoesione",

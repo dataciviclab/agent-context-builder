@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-06-01T04:09:12.151388",
+  "generated_at": "2026-06-01T08:55:26.241597",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -450,14 +450,23 @@
   ],
   "analyses": [
     {
-      "slug": "irpef-comunale",
-      "name": "IRPEF comunale 2019-2023",
+      "slug": "aifa-spesa-consumo",
+      "name": "AIFA Spesa farmaceutica convenzionata 2018-2024",
       "datasets": [
-        "irpef_comunale"
+        "aifa_spesa_consumo"
       ],
-      "path": "analisi/irpef-comunale/README.md",
+      "path": "analisi/aifa-spesa-consumo/README.md",
       "status": "active",
-      "discussion": 88
+      "discussion": 242
+    },
+    {
+      "slug": "camera-votazioni",
+      "name": "Camera votazioni 2018-2025",
+      "datasets": [
+        "camera_votazioni_sparql"
+      ],
+      "path": "analisi/camera-votazioni/README.md",
+      "status": "active"
     },
     {
       "slug": "civile-flussi",
@@ -469,8 +478,47 @@
       "status": "active"
     },
     {
+      "slug": "consip-consumi-convenzione",
+      "name": "Consip Consumi Convenzione 2023-2025",
+      "datasets": [
+        "consip_consumi_convenzione"
+      ],
+      "path": "analisi/consip-consumi-convenzione/README.md",
+      "status": "active"
+    },
+    {
+      "slug": "dipendenti-pubblici",
+      "name": "Dipendenti pubblici 2010-2023",
+      "datasets": [
+        "dipendenti_pubblici"
+      ],
+      "path": "analisi/dipendenti-pubblici/README.md",
+      "status": "active",
+      "issue": 131
+    },
+    {
+      "slug": "entrate-stato",
+      "name": "BDAP Entrate Stato 2008-2024",
+      "datasets": [
+        "bdap_entrate_stato"
+      ],
+      "path": "analisi/entrate-stato/README.md",
+      "status": "active",
+      "discussion": 218
+    },
+    {
+      "slug": "irpef-comunale",
+      "name": "IRPEF comunale 2019-2023",
+      "datasets": [
+        "irpef_comunale"
+      ],
+      "path": "analisi/irpef-comunale/README.md",
+      "status": "active",
+      "discussion": 88
+    },
+    {
       "slug": "malasanita-struttura-mortalita",
-      "name": "\"Malasanit\u00e0 2022: mortalit\u00e0 evitabile e dotazione sanitaria regionale\"",
+      "name": "Malasanit\u00e0 2022: mortalit\u00e0 evitabile e dotazione sanitaria regionale",
       "datasets": [
         "malasanita_struttura_mortalita"
       ],
@@ -478,6 +526,15 @@
       "status": "active",
       "discussion": 99,
       "issue": 110
+    },
+    {
+      "slug": "opencivitas-fsc-rso",
+      "name": "OpenCivitas FSC 2025 RSO",
+      "datasets": [
+        "opencivitas_fsc_2025_rso"
+      ],
+      "path": "analisi/opencivitas-fsc-rso/README.md",
+      "status": "active"
     },
     {
       "slug": "terna-electricity-by-source",
@@ -489,33 +546,38 @@
       "status": "active",
       "discussion": 115,
       "issue": 133
-    },
-    {
-      "slug": "dipendenti-pubblici",
-      "name": "Dipendenti pubblici 2010-2023",
-      "datasets": [
-        "dipendenti_pubblici"
-      ],
-      "path": "analisi/dipendenti-pubblici/README.md",
-      "status": "active",
-      "issue": 131
     }
   ],
   "analyses_by_dataset": {
-    "irpef_comunale": [
-      "irpef-comunale"
+    "aifa_spesa_consumo": [
+      "aifa-spesa-consumo"
+    ],
+    "camera_votazioni_sparql": [
+      "camera-votazioni"
     ],
     "civile_flussi": [
       "civile-flussi"
     ],
-    "malasanita_struttura_mortalita": [
-      "malasanita-struttura-mortalita"
-    ],
-    "terna_electricity_by_source": [
-      "terna-electricity-by-source"
+    "consip_consumi_convenzione": [
+      "consip-consumi-convenzione"
     ],
     "dipendenti_pubblici": [
       "dipendenti-pubblici"
+    ],
+    "bdap_entrate_stato": [
+      "entrate-stato"
+    ],
+    "irpef_comunale": [
+      "irpef-comunale"
+    ],
+    "malasanita_struttura_mortalita": [
+      "malasanita-struttura-mortalita"
+    ],
+    "opencivitas_fsc_2025_rso": [
+      "opencivitas-fsc-rso"
+    ],
+    "terna_electricity_by_source": [
+      "terna-electricity-by-source"
     ]
   }
 }

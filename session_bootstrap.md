@@ -1,13 +1,12 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-01T04:09:12.151388
+**Generated**: 2026-06-01T08:55:26.241597
 
 ## 🔍 SCOUTING
 
-**Radar**: 27 fonti — GREEN 24 · YELLOW 1 · RED 2 (probe: 2026-05-31)
+**Radar**: 29 fonti — GREEN 27 · YELLOW 1 · RED 1 (probe: 2026-06-01)
   ⚠ **1 persistent RED**
   · **dati_salute** RED [-] — SSL verify failed; fallback connection error (SSLError) (streak 14)
-  · **dati_camera** RED [503]
   · **opencoesione** YELLOW [403]
 **Catalog Drift**: no drift signals (22 sources checked)
 
@@ -19,12 +18,17 @@
 
 ## 📊 ANALYSES
 
-**Attive**: 5
-  · **IRPEF comunale 2019-2023** · → irpef_comunale · [discussion #88](https://github.com/orgs/dataciviclab/discussions/88)
+**Attive**: 10
+  · **AIFA Spesa farmaceutica convenzionata 2018-2024** · → aifa_spesa_consumo · [discussion #242](https://github.com/orgs/dataciviclab/discussions/242)
+  · **Camera votazioni 2018-2025** · → camera_votazioni_sparql
   · **Flussi giustizia civile 2014-2025** · → civile_flussi
-  · **"Malasanità 2022: mortalità evitabile e dotazione sanitaria regionale"** · → malasanita_struttura_mortalita · [discussion #99](https://github.com/orgs/dataciviclab/discussions/99)
-  · **Terna mix elettrico 2023-2024** · → terna_electricity_by_source · [discussion #115](https://github.com/orgs/dataciviclab/discussions/115)
+  · **Consip Consumi Convenzione 2023-2025** · → consip_consumi_convenzione
   · **Dipendenti pubblici 2010-2023** · → dipendenti_pubblici
+  · **BDAP Entrate Stato 2008-2024** · → bdap_entrate_stato · [discussion #218](https://github.com/orgs/dataciviclab/discussions/218)
+  · **IRPEF comunale 2019-2023** · → irpef_comunale · [discussion #88](https://github.com/orgs/dataciviclab/discussions/88)
+  · **Malasanità 2022: mortalità evitabile e dotazione sanitaria regionale** · → malasanita_struttura_mortalita · [discussion #99](https://github.com/orgs/dataciviclab/discussions/99)
+  · **OpenCivitas FSC 2025 RSO** · → opencivitas_fsc_2025_rso
+  · **Terna mix elettrico 2023-2024** · → terna_electricity_by_source · [discussion #115](https://github.com/orgs/dataciviclab/discussions/115)
 
 ## 🗂 EXPLORER
 
