@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-02T10:24:45.472277",
+  "generated_at": "2026-06-02T16:26:23.300906",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,8 +10,14 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 2,
+  "open_prs": 3,
   "prs": [
+    {
+      "number": 430,
+      "title": "fix: promote mim_alunni_corso_eta e popolazione_istat a published",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/430"
+    },
     {
       "number": 429,
       "title": "intake: istat_nonprofit \u2014 Censimento permanente Istituzioni non profit",
@@ -19,13 +25,13 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/429"
     },
     {
-      "number": 129,
-      "title": "feat(popolazione-istat): piramide demografica + sidebar per tema",
+      "number": 131,
+      "title": "feat(housing-crowding): densit\u00e0 abitativa per titolo di godimento",
       "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/129"
+      "url": "https://github.com/dataciviclab/data-explorer/pull/131"
     }
   ],
-  "open_issues": 48,
+  "open_issues": 46,
   "issues": [
     {
       "number": 428,
@@ -110,18 +116,6 @@
       "title": "intake: BDAP MOP \u2014 soggetti titolari di Opere Pubbliche, per CUP e codice fiscale (2026)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/249"
-    },
-    {
-      "number": 151,
-      "title": "intake: ISTAT povert\u00e0 assoluta e relativa: incidenze, intensit\u00e0 e soglie (2014-2024)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/151"
-    },
-    {
-      "number": 143,
-      "title": "intake: ISTAT Ciclo dell'acqua - prelievo vs distribuzione, perdite idriche per distretto",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/143"
     },
     {
       "number": 318,
@@ -319,6 +313,48 @@
   "open_discussions": 20,
   "discussions": [
     {
+      "number": 297,
+      "title": "MCP adapters and source-check patterns for public data \u2014 cross-country comparison (FR/IT)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/297",
+      "category": "Proposte"
+    },
+    {
+      "number": 275,
+      "title": "Processo penale: a Cagliari 864 giorni, a Messina 261. E la fase GIP GUP \u00e8 gi\u00e0 in affanno in 101 tribunali su 140",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/275",
+      "category": "Domanda"
+    },
+    {
+      "number": 274,
+      "title": "405 opere pubbliche incomplete, 2,7 miliardi di euro fermati. Dove sono finite le nostre infrastrutture?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/274",
+      "category": "Domanda"
+    },
+    {
+      "number": 289,
+      "title": "Giustizia Amministrativa \u2014 Quanto durano i ricorsi al CdS?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/289",
+      "category": "Domanda"
+    },
+    {
+      "number": 287,
+      "title": "Consip \u2014 Chi vince le gare pubbliche?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/287",
+      "category": "Domanda"
+    },
+    {
+      "number": 238,
+      "title": "La spesa farmaceutica regionale \u00e8 proporzionale alla popolazione o ci sono regioni che spendono molto di pi\u00f9 per abitante?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/238",
+      "category": "Domanda"
+    },
+    {
       "number": 316,
       "title": "Terzo settore \u2014 quante istituzioni non profit ci sono, dove operano e quanti ci lavorano?",
       "repo": "dataciviclab",
@@ -333,24 +369,10 @@
       "category": "Domanda"
     },
     {
-      "number": 297,
-      "title": "MCP adapters and source-check patterns for public data \u2014 cross-country comparison (FR/IT)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/297",
-      "category": "Proposte"
-    },
-    {
       "number": 223,
       "title": "INPS ReI \u2014 evoluzione spesa e platea beneficiari 2018-2019",
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/223",
-      "category": "Datasets"
-    },
-    {
-      "number": 148,
-      "title": "Indice prezzi abitazioni ISTAT (IPAB) - case nuove vs esistenti, livello regionale",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/148",
       "category": "Datasets"
     },
     {
@@ -361,24 +383,10 @@
       "category": "Datasets"
     },
     {
-      "number": 289,
-      "title": "Giustizia Amministrativa \u2014 Quanto durano i ricorsi al CdS?",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/289",
-      "category": "Domanda"
-    },
-    {
       "number": 288,
       "title": "Corte Costituzionale \u2014 Come decide la Consulta?",
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/288",
-      "category": "Domanda"
-    },
-    {
-      "number": 287,
-      "title": "Consip \u2014 Chi vince le gare pubbliche?",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/287",
       "category": "Domanda"
     },
     {
@@ -396,39 +404,11 @@
       "category": "Analisi"
     },
     {
-      "number": 274,
-      "title": "405 opere pubbliche incomplete, 2,7 miliardi di euro fermati. Dove sono finite le nostre infrastrutture?",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/274",
-      "category": "Domanda"
-    },
-    {
-      "number": 275,
-      "title": "Processo penale: a Cagliari 864 giorni, a Messina 261. E la fase GIP GUP \u00e8 gi\u00e0 in affanno in 101 tribunali su 140",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/275",
-      "category": "Domanda"
-    },
-    {
       "number": 242,
       "title": "AIFA Spesa Farmaceutica \u2014 il cardiovascolare traina il 63% della spesa, il divario Nord-Sud si allarga",
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/242",
       "category": "Analisi"
-    },
-    {
-      "number": 270,
-      "title": "[Dataset] MIM \u2014 Alunni con cittadinanza non italiana per scuola e ordine (2015-2025)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/270",
-      "category": "Datasets"
-    },
-    {
-      "number": 272,
-      "title": "[Dataset] MIM \u2014 Edilizia scolastica: consistenza edifici e ambienti per scuola (2016-2025)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/272",
-      "category": "Datasets"
     },
     {
       "number": 271,
@@ -438,24 +418,38 @@
       "category": "Datasets"
     },
     {
-      "number": 165,
-      "title": "[Dataset] Partecipazioni pubbliche dichiarate \u2013 MEF 2023",
+      "number": 240,
+      "title": "Dove si accumulano pi\u00f9 cause pendenti in rapporto alla popolazione?",
       "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/165",
-      "category": "Datasets"
+      "url": "https://github.com/orgs/dataciviclab/discussions/240",
+      "category": "Domanda"
     },
     {
-      "number": 211,
-      "title": "MUR contribuzione universitaria: tasse, esoneri e diritto allo studio per ateneo (2009-2024)",
+      "number": 239,
+      "title": "Quanta parte delle entrate tributarie dipende da poche voci e quanto \u00e8 diffuso?",
       "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/211",
-      "category": "Datasets"
+      "url": "https://github.com/orgs/dataciviclab/discussions/239",
+      "category": "Domanda"
     },
     {
-      "number": 151,
-      "title": "Indice di Gini regionale ISTAT - disuguaglianze di reddito, serie storica",
+      "number": 218,
+      "title": "[Analisi] Entrate dello Stato 2008-2024: nelle crisi cresce il peso dei prestiti?",
       "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/151",
+      "url": "https://github.com/orgs/dataciviclab/discussions/218",
+      "category": "Analisi"
+    },
+    {
+      "number": 210,
+      "title": "La geografia del calo iscrizioni nelle scuole primarie (2015-2024)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/210",
+      "category": "Domanda"
+    },
+    {
+      "number": 227,
+      "title": "MUR DSU Regionale \u2014 posti alloggio e borse per regione e ateneo (2024-2025)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/227",
       "category": "Datasets"
     }
   ],
@@ -2128,7 +2122,7 @@
       {
         "slug": "welfare-lavoro",
         "name": "Welfare e lavoro",
-        "dataset_count": 4
+        "dataset_count": 5
       },
       {
         "slug": "giustizia",
@@ -2136,7 +2130,7 @@
         "dataset_count": 1
       }
     ],
-    "published_count": 15,
+    "published_count": 16,
     "clean_ready_not_published": [
       "aifa_spesa_consumo",
       "bdap_entrate_stato",
@@ -2156,12 +2150,12 @@
       "terna_electricity_by_source"
     ],
     "last_deploy": {
-      "run_id": 26810772666,
+      "run_id": 26819217043,
       "name": "Deploy to GitHub Pages (Observable Framework)",
       "status": "completed",
       "conclusion": "success",
-      "completed_at": "2026-06-02T09:28:01Z",
-      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26810772666"
+      "completed_at": "2026-06-02T12:23:20Z",
+      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26819217043"
     }
   }
 }
