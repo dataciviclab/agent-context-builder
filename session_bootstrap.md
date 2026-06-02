@@ -1,12 +1,13 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-02T04:02:25.260616
+**Generated**: 2026-06-02T10:24:45.472277
 
 ## 🔍 SCOUTING
 
-**Radar**: 29 fonti — GREEN 27 · YELLOW 1 · RED 1 (probe: 2026-06-01)
+**Radar**: 29 fonti — GREEN 26 · YELLOW 1 · RED 2 (probe: 2026-06-02)
   ⚠ **1 persistent RED**
   · **dati_salute** RED [-] — SSL verify failed; fallback connection error (SSLError) (streak 14)
+  · **dati_camera** RED [503]
   · **opencoesione** YELLOW [403]
   · **openbdap** (ckan): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
 
@@ -45,11 +46,12 @@
     · camera_votazioni_sparql
     · civile_flussi
     · ... e altri 11
-  **Deploy**: ✅ success (2026-06-01)
+  **Deploy**: ✅ success (2026-06-02)
 
 ## 🔗 OPEN
 
-- [data-explorer#128](https://github.com/dataciviclab/data-explorer/pull/128): feat: mappa coropletica regioni Italia con Plot.geo + integrazione in Gini
+- [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
+- [data-explorer#129](https://github.com/dataciviclab/data-explorer/pull/129): feat(popolazione-istat): piramide demografica + sidebar per tema
 **Discussions**: 20 open
   · [Domanda] Terzo settore — quante istituzioni non profit ci sono, dove operano e quanti ci lavorano?
   · [Domanda] ASIA ISTAT — Quante imprese e addetti ci sono nel mio comune?

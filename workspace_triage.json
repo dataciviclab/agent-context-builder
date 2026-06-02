@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-02T04:02:25.260616",
+  "generated_at": "2026-06-02T10:24:45.472277",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,16 +10,22 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 1,
+  "open_prs": 2,
   "prs": [
     {
-      "number": 128,
-      "title": "feat: mappa coropletica regioni Italia con Plot.geo + integrazione in Gini",
+      "number": 429,
+      "title": "intake: istat_nonprofit \u2014 Censimento permanente Istituzioni non profit",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/429"
+    },
+    {
+      "number": 129,
+      "title": "feat(popolazione-istat): piramide demografica + sidebar per tema",
       "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/128"
+      "url": "https://github.com/dataciviclab/data-explorer/pull/129"
     }
   ],
-  "open_issues": 47,
+  "open_issues": 48,
   "issues": [
     {
       "number": 428,
@@ -116,6 +122,12 @@
       "title": "intake: ISTAT Ciclo dell'acqua - prelievo vs distribuzione, perdite idriche per distretto",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/143"
+    },
+    {
+      "number": 318,
+      "title": "dataset: istat_nonprofit \u2014 Censimento permanente delle Istituzioni non profit",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/318"
     },
     {
       "number": 315,
@@ -509,11 +521,11 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-06-01",
+    "probe_date": "2026-06-02",
     "sources_total": 29,
-    "green": 27,
+    "green": 26,
     "yellow": 1,
-    "red": 1,
+    "red": 2,
     "persistent_red": 1,
     "unhealthy": [
       {
@@ -523,6 +535,14 @@
         "http_code": "-",
         "note": "SSL verify failed; fallback connection error (SSLError)",
         "red_streak": 14
+      },
+      {
+        "id": "dati_camera",
+        "status": "RED",
+        "protocol": "sparql",
+        "http_code": "503",
+        "note": null,
+        "red_streak": 0
       },
       {
         "id": "opencoesione",
@@ -2136,12 +2156,12 @@
       "terna_electricity_by_source"
     ],
     "last_deploy": {
-      "run_id": 26756059757,
+      "run_id": 26810772666,
       "name": "Deploy to GitHub Pages (Observable Framework)",
       "status": "completed",
       "conclusion": "success",
-      "completed_at": "2026-06-01T12:54:52Z",
-      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26756059757"
+      "completed_at": "2026-06-02T09:28:01Z",
+      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26810772666"
     }
   }
 }
