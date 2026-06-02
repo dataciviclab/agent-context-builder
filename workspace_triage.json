@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-02T16:26:23.300906",
+  "generated_at": "2026-06-02T20:50:18.911356",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,7 +10,7 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 3,
+  "open_prs": 4,
   "prs": [
     {
       "number": 430,
@@ -29,9 +29,15 @@
       "title": "feat(housing-crowding): densit\u00e0 abitativa per titolo di godimento",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/131"
+    },
+    {
+      "number": 312,
+      "title": "feat: joinability_scan \u2014 analisi chiavi di join da source_check_results",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/312"
     }
   ],
-  "open_issues": 46,
+  "open_issues": 48,
   "issues": [
     {
       "number": 428,
@@ -116,6 +122,12 @@
       "title": "intake: BDAP MOP \u2014 soggetti titolari di Opere Pubbliche, per CUP e codice fiscale (2026)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/249"
+    },
+    {
+      "number": 320,
+      "title": "analisi: bdap_anagrafe_enti \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/320"
     },
     {
       "number": 318,
@@ -220,6 +232,12 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/113"
     },
     {
+      "number": 132,
+      "title": "follow-up: pagina e tema per bdap_anagrafe_enti",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/132"
+    },
+    {
       "number": 125,
       "title": "follow-up: pagina e tema per camera_votazioni_sparql",
       "repo": "data-explorer",
@@ -312,6 +330,13 @@
   ],
   "open_discussions": 20,
   "discussions": [
+    {
+      "number": 319,
+      "title": "Senato Akoma Ntoso \u2014 corpus legislativo in formato XML strutturato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/319",
+      "category": "Datasets"
+    },
     {
       "number": 297,
       "title": "MCP adapters and source-check patterns for public data \u2014 cross-country comparison (FR/IT)",
@@ -444,13 +469,6 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/210",
       "category": "Domanda"
-    },
-    {
-      "number": 227,
-      "title": "MUR DSU Regionale \u2014 posti alloggio e borse per regione e ateneo (2024-2025)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/227",
-      "category": "Datasets"
     }
   ],
   "github_fetch_errors": {},
@@ -566,7 +584,7 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-05-30",
+    "generated_at": "2026-06-02",
     "summary": {
       "total": 34,
       "by_status": {
@@ -581,10 +599,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-05-30",
+    "updated_at": "2026-06-02",
     "summary": {
-      "total": 32,
-      "published": 16
+      "total": 33,
+      "published": 17
     },
     "datasets": [
       {
@@ -671,6 +689,277 @@
           {
             "name": "spesa_convenzionata",
             "role": "metric"
+          }
+        ]
+      },
+      {
+        "slug": "bdap_anagrafe_enti",
+        "name": "BDAP Anagrafe Enti Pubblici",
+        "stage": "published",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bdap_anagrafe_enti/2026/bdap_anagrafe_enti_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 0,
+        "dimension_columns": 63,
+        "column_count": 63,
+        "columns": [
+          {
+            "name": "id_ente",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione",
+            "role": "dimension"
+          },
+          {
+            "name": "cf",
+            "role": "dimension"
+          },
+          {
+            "name": "piva",
+            "role": "dimension"
+          },
+          {
+            "name": "data_istituzione",
+            "role": "dimension"
+          },
+          {
+            "name": "data_cessazione",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_ateco",
+            "role": "dimension"
+          },
+          {
+            "name": "descr_codice_ateco",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_forma_giuridica",
+            "role": "dimension"
+          },
+          {
+            "name": "descr_forma_giuridica",
+            "role": "dimension"
+          },
+          {
+            "name": "telefono",
+            "role": "dimension"
+          },
+          {
+            "name": "fax",
+            "role": "dimension"
+          },
+          {
+            "name": "url",
+            "role": "dimension"
+          },
+          {
+            "name": "nome_resp",
+            "role": "dimension"
+          },
+          {
+            "name": "cogn_resp",
+            "role": "dimension"
+          },
+          {
+            "name": "titolo_resp",
+            "role": "dimension"
+          },
+          {
+            "name": "indirizzo",
+            "role": "dimension"
+          },
+          {
+            "name": "cap",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_istat_comune",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_comune",
+            "role": "dimension"
+          },
+          {
+            "name": "dizione_comune",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_catastale",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "dizione_provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "sigla_provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_regione",
+            "role": "dimension"
+          },
+          {
+            "name": "dizione_regione",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_zona",
+            "role": "dimension"
+          },
+          {
+            "name": "dizione_zona",
+            "role": "dimension"
+          },
+          {
+            "name": "stato_partecipazione",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_ente_siope",
+            "role": "dimension"
+          },
+          {
+            "name": "id_tipologia_siope",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_tipologia_siope",
+            "role": "dimension"
+          },
+          {
+            "name": "descr_tipologia_siope",
+            "role": "dimension"
+          },
+          {
+            "name": "data_inclusione_siope",
+            "role": "dimension"
+          },
+          {
+            "name": "data_esclusione_siope",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_ente_ipa",
+            "role": "dimension"
+          },
+          {
+            "name": "id_categoria_ipa",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_categoria_ipa",
+            "role": "dimension"
+          },
+          {
+            "name": "descr_categoria_ipa",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_tipologia_ipa",
+            "role": "dimension"
+          },
+          {
+            "name": "descr_tipologia_ipa",
+            "role": "dimension"
+          },
+          {
+            "name": "data_inclusione_ipa",
+            "role": "dimension"
+          },
+          {
+            "name": "data_esclusione_ipa",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_ente_miur",
+            "role": "dimension"
+          },
+          {
+            "name": "id_tipologia_miur",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_tipologia_miur",
+            "role": "dimension"
+          },
+          {
+            "name": "descr_tipologia_miur",
+            "role": "dimension"
+          },
+          {
+            "name": "id_tipologia_dt",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_tipologia_dt",
+            "role": "dimension"
+          },
+          {
+            "name": "descr_tipologia_dt",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_ente_ssn",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_ente_istat_s13",
+            "role": "dimension"
+          },
+          {
+            "name": "id_tipologia_istat_s13",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_tipologia_istat_s13",
+            "role": "dimension"
+          },
+          {
+            "name": "descr_tipologia_istat_s13",
+            "role": "dimension"
+          },
+          {
+            "name": "data_inclusione_istat_s13",
+            "role": "dimension"
+          },
+          {
+            "name": "data_esclusione_istat_s13",
+            "role": "dimension"
+          },
+          {
+            "name": "id_tipologia_dlgs_118_2011",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_tipologia_dlgs_118_2011",
+            "role": "dimension"
+          },
+          {
+            "name": "descr_tipologia_dlgs_118_2011",
+            "role": "dimension"
+          },
+          {
+            "name": "data_inclusione_dlgs_118_2011",
+            "role": "dimension"
+          },
+          {
+            "name": "data_esclusione_dlgs_118_2011",
+            "role": "dimension"
           }
         ]
       },
@@ -2133,6 +2422,7 @@
     "published_count": 16,
     "clean_ready_not_published": [
       "aifa_spesa_consumo",
+      "bdap_anagrafe_enti",
       "bdap_entrate_stato",
       "bdap_lea",
       "camera_votazioni_sparql",

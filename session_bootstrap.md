@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-02T16:26:23.300906
+**Generated**: 2026-06-02T20:50:18.911356
 
 ## 🔍 SCOUTING
 
@@ -15,7 +15,7 @@
 
 **Pipeline**: 34 candidates — 34 ok
   ⚠️ **mur-contribuzione-universitaria** — run fallito [0](https://github.com/dataciviclab/dataset-incubator/actions/runs/26106467223)
-**Dataset Catalog**: 16 published · 16 public · updated 2026-05-30
+**Dataset Catalog**: 17 published · 17 public · updated 2026-06-02
 
 ## 📊 ANALYSES
 
@@ -39,13 +39,13 @@
   · **Sanità**: spesa-farmaceutica, bdap-lea
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat
   · **Giustizia**: flussi-giustizia-civile
-  ⚠ 16 dataset published non ancora su explorer:
+  ⚠ 17 dataset published non ancora su explorer:
     · aifa_spesa_consumo
+    · bdap_anagrafe_enti
     · bdap_entrate_stato
     · bdap_lea
     · camera_votazioni_sparql
-    · civile_flussi
-    · ... e altri 11
+    · ... e altri 12
   **Deploy**: ✅ success (2026-06-02)
 
 ## 🔗 OPEN
@@ -53,10 +53,11 @@
 - [dataset-incubator#430](https://github.com/dataciviclab/dataset-incubator/pull/430): fix: promote mim_alunni_corso_eta e popolazione_istat a published
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
 - [data-explorer#131](https://github.com/dataciviclab/data-explorer/pull/131): feat(housing-crowding): densità abitativa per titolo di godimento
+- [source-observatory#312](https://github.com/dataciviclab/source-observatory/pull/312): feat: joinability_scan — analisi chiavi di join da source_check_results
 **Discussions**: 20 open
+  · [Datasets] Senato Akoma Ntoso — corpus legislativo in formato XML strutturato
   · [Proposte] MCP adapters and source-check patterns for public data — cross-country comparison (FR/IT)
   · [Domanda] Processo penale: a Cagliari 864 giorni, a Messina 261. E la fase GIP GUP è già in affanno in 101 tribunali su 140
-  · [Domanda] 405 opere pubbliche incomplete, 2,7 miliardi di euro fermati. Dove sono finite le nostre infrastrutture?
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA

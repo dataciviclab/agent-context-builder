@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-06-02T16:26:23.300906",
+  "generated_at": "2026-06-02T20:50:18.911356",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -39,6 +39,16 @@
         "period": {
           "start": 2018,
           "end": 2024
+        }
+      }
+    ],
+    "MEF \u2014 Ragioneria Generale dello Stato / OpenBDAP": [
+      {
+        "slug": "bdap_anagrafe_enti",
+        "name": "BDAP Anagrafe Enti Pubblici",
+        "period": {
+          "start": 2026,
+          "end": 2026
         }
       }
     ],
