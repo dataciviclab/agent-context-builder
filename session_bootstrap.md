@@ -1,13 +1,15 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-03T04:11:15.874416
+**Generated**: 2026-06-03T11:00:39.724052
 
 ## 🔍 SCOUTING
 
-**Radar**: 29 fonti — GREEN 26 · YELLOW 1 · RED 2 (probe: 2026-06-02)
-  ⚠ **1 persistent RED**
+**Radar**: 29 fonti — GREEN 24 · YELLOW 2 · RED 3 (probe: 2026-06-03)
+  ⚠ **2 persistent RED**
+  · **istat_sdmx** YELLOW [-] — Timeout (ReadTimeout)
   · **dati_salute** RED [-] — SSL verify failed; fallback connection error (SSLError) (streak 14)
-  · **dati_camera** RED [503]
+  · **dati_camera** RED [503] (streak 2)
+  · **dati_senato** RED [503]
   · **opencoesione** YELLOW [403]
   · **openbdap** (ckan): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
 
@@ -15,7 +17,7 @@
 
 **Pipeline**: 34 candidates — 34 ok
   ⚠️ **mur-contribuzione-universitaria** — run fallito [0](https://github.com/dataciviclab/dataset-incubator/actions/runs/26106467223)
-**Dataset Catalog**: 17 published · 17 public · updated 2026-06-02
+**Dataset Catalog**: 20 published · 20 public · updated 2026-06-02
 
 ## 📊 ANALYSES
 
@@ -33,28 +35,26 @@
 
 ## 🗂 EXPLORER
 
-**Pubblicati**: 16 dataset · 5 temi · [data-explorer](https://dataciviclab.github.io/data-explorer/)
-  · **Territorio e ambiente**: rifiuti-urbani, capacita-rinnovabile, produzione-elettrica-fonti
+**Pubblicati**: 18 dataset · 5 temi · [data-explorer](https://dataciviclab.github.io/data-explorer/)
+  · **Territorio e ambiente**: rifiuti-urbani, capacita-rinnovabile, produzione-elettrica-fonti, mit-incidentalita
   · **Finanza pubblica**: irpef-comunale, entrate-stato, consip-consumi-convenzione, istat-gini-regionale, opencivitas-fsc-2025
   · **Sanità**: spesa-farmaceutica, bdap-lea
-  · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat
+  · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
-  ⚠ 17 dataset published non ancora su explorer:
+  ⚠ 20 dataset published non ancora su explorer:
     · aifa_spesa_consumo
     · bdap_anagrafe_enti
     · bdap_entrate_stato
     · bdap_lea
     · camera_votazioni_sparql
-    · ... e altri 12
-  **Deploy**: ✅ success (2026-06-02)
+    · ... e altri 15
+  **Deploy**: ✅ success (2026-06-03)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#430](https://github.com/dataciviclab/dataset-incubator/pull/430): fix: promote mim_alunni_corso_eta e popolazione_istat a published
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
-- [data-explorer#131](https://github.com/dataciviclab/data-explorer/pull/131): feat(housing-crowding): densità abitativa per titolo di godimento
 **Discussions**: 20 open
-  · [Domanda] RDC/PDC — dove si concentrano i nuclei percettori rispetto al reddito medio e alla popolazione?
+  · [Domanda] INPS stipendi — come sono cambiati per comune in 10 anni? C'è un divario Nord-Sud per operai, impiegati e dirigenti?
   · [Datasets] Senato Akoma Ntoso — corpus legislativo in formato XML strutturato
   · [Proposte] MCP adapters and source-check patterns for public data — cross-country comparison (FR/IT)
 **Topics**: pipeline · governance · infrastructure · analyses

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-03T04:11:15.874416",
+  "generated_at": "2026-06-03T11:00:39.724052",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,29 +10,35 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 3,
+  "open_prs": 1,
   "prs": [
-    {
-      "number": 430,
-      "title": "fix: promote mim_alunni_corso_eta e popolazione_istat a published",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/430"
-    },
     {
       "number": 429,
       "title": "intake: istat_nonprofit \u2014 Censimento permanente Istituzioni non profit",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/429"
-    },
-    {
-      "number": 131,
-      "title": "feat(housing-crowding): densit\u00e0 abitativa per titolo di godimento",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/131"
     }
   ],
-  "open_issues": 49,
+  "open_issues": 52,
   "issues": [
+    {
+      "number": 438,
+      "title": "intake: bdap_mop_totale \u2014 Progetti Opere Pubbliche MOP - Totale",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/438"
+    },
+    {
+      "number": 437,
+      "title": "intake: bdap_spese_stato \u2014 Spese Stato per Amministrazione, Missione, Programma e Macroaggregato (2008-2024)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/437"
+    },
+    {
+      "number": 436,
+      "title": "intake: inps_stipendi_comune \u2014 Stipendi lavoratori dipendenti per comune (2009-2018)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/436"
+    },
     {
       "number": 435,
       "title": "intake: inps_rdc_pdc \u2014 Nuclei percettori RDC/PDC per comune ISTAT (2020)",
@@ -331,10 +337,10 @@
   "open_discussions": 20,
   "discussions": [
     {
-      "number": 321,
-      "title": "RDC/PDC \u2014 dove si concentrano i nuclei percettori rispetto al reddito medio e alla popolazione?",
+      "number": 322,
+      "title": "INPS stipendi \u2014 come sono cambiati per comune in 10 anni? C'\u00e8 un divario Nord-Sud per operai, impiegati e dirigenti?",
       "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/321",
+      "url": "https://github.com/orgs/dataciviclab/discussions/322",
       "category": "Domanda"
     },
     {
@@ -533,13 +539,21 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-06-02",
+    "probe_date": "2026-06-03",
     "sources_total": 29,
-    "green": 26,
-    "yellow": 1,
-    "red": 2,
-    "persistent_red": 1,
+    "green": 24,
+    "yellow": 2,
+    "red": 3,
+    "persistent_red": 2,
     "unhealthy": [
+      {
+        "id": "istat_sdmx",
+        "status": "YELLOW",
+        "protocol": "sdmx",
+        "http_code": "-",
+        "note": "Timeout (ReadTimeout)",
+        "red_streak": 0
+      },
       {
         "id": "dati_salute",
         "status": "RED",
@@ -550,6 +564,14 @@
       },
       {
         "id": "dati_camera",
+        "status": "RED",
+        "protocol": "sparql",
+        "http_code": "503",
+        "note": null,
+        "red_streak": 2
+      },
+      {
+        "id": "dati_senato",
         "status": "RED",
         "protocol": "sparql",
         "http_code": "503",
@@ -602,7 +624,7 @@
     "updated_at": "2026-06-02",
     "summary": {
       "total": 33,
-      "published": 17
+      "published": 20
     },
     "datasets": [
       {
@@ -1950,7 +1972,7 @@
       {
         "slug": "istat_housing_crowding",
         "name": "Istat Housing Crowding",
-        "stage": "incubating",
+        "stage": "published",
         "period": {
           "start": 2004,
           "end": 2025
@@ -1963,7 +1985,120 @@
         "metric_columns": 1,
         "dimension_columns": 27,
         "column_count": 28,
-        "columns": []
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "ref_area_codice",
+            "role": "dimension"
+          },
+          {
+            "name": "ref_area",
+            "role": "dimension"
+          },
+          {
+            "name": "indicatore_codice",
+            "role": "dimension"
+          },
+          {
+            "name": "indicatore",
+            "role": "dimension"
+          },
+          {
+            "name": "misura_codice",
+            "role": "dimension"
+          },
+          {
+            "name": "misura",
+            "role": "dimension"
+          },
+          {
+            "name": "titolo_godimento_codice",
+            "role": "dimension"
+          },
+          {
+            "name": "titolo_godimento",
+            "role": "dimension"
+          },
+          {
+            "name": "numero_componenti_nucleo",
+            "role": "dimension"
+          },
+          {
+            "name": "numero_componenti_nucleo_label",
+            "role": "dimension"
+          },
+          {
+            "name": "tipologia_nucleo_codice",
+            "role": "dimension"
+          },
+          {
+            "name": "tipologia_nucleo_label",
+            "role": "dimension"
+          },
+          {
+            "name": "numero_figli",
+            "role": "dimension"
+          },
+          {
+            "name": "numero_figli_label",
+            "role": "dimension"
+          },
+          {
+            "name": "numero_anziani",
+            "role": "dimension"
+          },
+          {
+            "name": "numero_anziani_label",
+            "role": "dimension"
+          },
+          {
+            "name": "quintile_reddito_codice",
+            "role": "dimension"
+          },
+          {
+            "name": "quintile_reddito_label",
+            "role": "dimension"
+          },
+          {
+            "name": "sesso_percettore_principale_codice",
+            "role": "dimension"
+          },
+          {
+            "name": "sesso_percettore_principale_label",
+            "role": "dimension"
+          },
+          {
+            "name": "eta_percettore_principale_codice",
+            "role": "dimension"
+          },
+          {
+            "name": "eta_percettore_principale_label",
+            "role": "dimension"
+          },
+          {
+            "name": "titolo_studio_percettore_codice",
+            "role": "dimension"
+          },
+          {
+            "name": "titolo_studio_percettore_label",
+            "role": "dimension"
+          },
+          {
+            "name": "condizione_professionale_percettore_codice",
+            "role": "dimension"
+          },
+          {
+            "name": "condizione_professionale_percettore_label",
+            "role": "dimension"
+          },
+          {
+            "name": "componenti_per_100mq",
+            "role": "metric"
+          }
+        ]
       },
       {
         "slug": "istat_ipab_aree",
@@ -2051,7 +2186,7 @@
       {
         "slug": "mim_alunni_corso_eta",
         "name": "Alunni per corso ed et\u00e0 \u2014 MIM",
-        "stage": "incubating",
+        "stage": "published",
         "period": {
           "start": 2016,
           "end": 2025
@@ -2064,7 +2199,72 @@
         "metric_columns": 1,
         "dimension_columns": 15,
         "column_count": 16,
-        "columns": []
+        "columns": [
+          {
+            "name": "anno_scolastico",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_scuola",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione_scuola",
+            "role": "dimension"
+          },
+          {
+            "name": "ordine_scuola",
+            "role": "dimension"
+          },
+          {
+            "name": "grado_istruzione_scuola",
+            "role": "dimension"
+          },
+          {
+            "name": "caratteristica_scuola",
+            "role": "dimension"
+          },
+          {
+            "name": "anno_corso",
+            "role": "dimension"
+          },
+          {
+            "name": "fascia_eta",
+            "role": "dimension"
+          },
+          {
+            "name": "alunni",
+            "role": "metric"
+          },
+          {
+            "name": "area_geografica",
+            "role": "dimension"
+          },
+          {
+            "name": "regione",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "comune",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_comune_scuola",
+            "role": "dimension"
+          },
+          {
+            "name": "cap_scuola",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione_istituto_riferimento",
+            "role": "dimension"
+          }
+        ]
       },
       {
         "slug": "mim_anagrafica_scuole_statali",
@@ -2287,7 +2487,7 @@
       {
         "slug": "popolazione_istat_comunale_2019_2025",
         "name": "Popolazione ISTAT Comunale",
-        "stage": "incubating",
+        "stage": "published",
         "period": {
           "start": 2019,
           "end": 2025
@@ -2300,7 +2500,96 @@
         "metric_columns": 17,
         "dimension_columns": 5,
         "column_count": 22,
-        "columns": []
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_comune",
+            "role": "dimension"
+          },
+          {
+            "name": "comune",
+            "role": "dimension"
+          },
+          {
+            "name": "eta",
+            "role": "dimension"
+          },
+          {
+            "name": "fascia_eta",
+            "role": "dimension"
+          },
+          {
+            "name": "celibi",
+            "role": "metric"
+          },
+          {
+            "name": "coniugati",
+            "role": "metric"
+          },
+          {
+            "name": "divorziati",
+            "role": "metric"
+          },
+          {
+            "name": "vedovi",
+            "role": "metric"
+          },
+          {
+            "name": "uniti_civilmente_maschi",
+            "role": "metric"
+          },
+          {
+            "name": "maschi_gia_unione_civile_scioglimento",
+            "role": "metric"
+          },
+          {
+            "name": "maschi_gia_unione_civile_decesso",
+            "role": "metric"
+          },
+          {
+            "name": "totale_maschi",
+            "role": "metric"
+          },
+          {
+            "name": "nubili",
+            "role": "metric"
+          },
+          {
+            "name": "coniugate",
+            "role": "metric"
+          },
+          {
+            "name": "divorziate",
+            "role": "metric"
+          },
+          {
+            "name": "vedove",
+            "role": "metric"
+          },
+          {
+            "name": "unite_civilmente_femmine",
+            "role": "metric"
+          },
+          {
+            "name": "femmine_gia_unione_civile_scioglimento",
+            "role": "metric"
+          },
+          {
+            "name": "femmine_gia_unione_civile_decesso",
+            "role": "metric"
+          },
+          {
+            "name": "totale_femmine",
+            "role": "metric"
+          },
+          {
+            "name": "popolazione_residente",
+            "role": "metric"
+          }
+        ]
       },
       {
         "slug": "terna_capacita_rinnovabile",
@@ -2396,7 +2685,7 @@
       {
         "slug": "territorio-ambiente",
         "name": "Territorio e ambiente",
-        "dataset_count": 3
+        "dataset_count": 4
       },
       {
         "slug": "finanza-pubblica",
@@ -2411,7 +2700,7 @@
       {
         "slug": "welfare-lavoro",
         "name": "Welfare e lavoro",
-        "dataset_count": 5
+        "dataset_count": 6
       },
       {
         "slug": "giustizia",
@@ -2419,7 +2708,7 @@
         "dataset_count": 1
       }
     ],
-    "published_count": 16,
+    "published_count": 18,
     "clean_ready_not_published": [
       "aifa_spesa_consumo",
       "bdap_anagrafe_enti",
@@ -2433,19 +2722,22 @@
       "irpef_comunale",
       "ispra_ru_base",
       "istat_gini_regionale",
+      "istat_housing_crowding",
       "istat_ipab_aree",
+      "mim_alunni_corso_eta",
       "opencivitas_fsc_2025_rso",
       "openga_ricorsi_cds",
+      "popolazione_istat_comunale_2019_2025",
       "terna_capacita_rinnovabile",
       "terna_electricity_by_source"
     ],
     "last_deploy": {
-      "run_id": 26819217043,
+      "run_id": 26876241618,
       "name": "Deploy to GitHub Pages (Observable Framework)",
       "status": "completed",
       "conclusion": "success",
-      "completed_at": "2026-06-02T12:23:20Z",
-      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26819217043"
+      "completed_at": "2026-06-03T09:36:12Z",
+      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26876241618"
     }
   }
 }

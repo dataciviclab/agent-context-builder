@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-06-03T04:11:15.874416",
+  "generated_at": "2026-06-03T11:00:39.724052",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -150,12 +150,32 @@
         }
       }
     ],
+    "ISTAT \u2014 Dataflow 33_179 (Housing conditions), SDMX-CSV": [
+      {
+        "slug": "istat_housing_crowding",
+        "name": "Istat Housing Crowding",
+        "period": {
+          "start": 2004,
+          "end": 2025
+        }
+      }
+    ],
     "ISTAT \u2014 Dataflow 33_292 (IPAB trimestrale), SDMX-CSV": [
       {
         "slug": "istat_ipab_aree",
         "name": "Istat Ipab Aree",
         "period": {
           "start": 2010,
+          "end": 2025
+        }
+      }
+    ],
+    "https://dati.istruzione.it/opendata/ \u2014 Ministero dell'Istruzione e del Merito (MIM)": [
+      {
+        "slug": "mim_alunni_corso_eta",
+        "name": "Alunni per corso ed et\u00e0 \u2014 MIM",
+        "period": {
+          "start": 2016,
           "end": 2025
         }
       }
@@ -177,6 +197,16 @@
         "period": {
           "start": 2023,
           "end": 2026
+        }
+      }
+    ],
+    "ISTAT - demo.posas (Popolazione residente per sesso, et\u00e0 e comune)": [
+      {
+        "slug": "popolazione_istat_comunale_2019_2025",
+        "name": "Popolazione ISTAT Comunale",
+        "period": {
+          "start": 2019,
+          "end": 2025
         }
       }
     ],
@@ -248,16 +278,6 @@
         }
       }
     ],
-    "ISTAT \u2014 Dataflow 33_179 (Housing conditions), SDMX-CSV": [
-      {
-        "slug": "istat_housing_crowding",
-        "name": "Istat Housing Crowding",
-        "period": {
-          "start": 2004,
-          "end": 2025
-        }
-      }
-    ],
     "https://www.mef.gov.it/": [
       {
         "slug": "mef_irpef_regionale",
@@ -275,16 +295,6 @@
         "period": {
           "start": 2020,
           "end": 2023
-        }
-      }
-    ],
-    "https://dati.istruzione.it/opendata/ \u2014 Ministero dell'Istruzione e del Merito (MIM)": [
-      {
-        "slug": "mim_alunni_corso_eta",
-        "name": "Alunni per corso ed et\u00e0 \u2014 MIM",
-        "period": {
-          "start": 2016,
-          "end": 2025
         }
       }
     ],
@@ -343,16 +353,6 @@
         "period": {
           "start": 2024,
           "end": 2024
-        }
-      }
-    ],
-    "ISTAT - demo.posas (Popolazione residente per sesso, et\u00e0 e comune)": [
-      {
-        "slug": "popolazione_istat_comunale_2019_2025",
-        "name": "Popolazione ISTAT Comunale",
-        "period": {
-          "start": 2019,
-          "end": 2025
         }
       }
     ]
@@ -419,7 +419,8 @@
       "datasets": [
         "rifiuti-urbani",
         "capacita-rinnovabile",
-        "produzione-elettrica-fonti"
+        "produzione-elettrica-fonti",
+        "mit-incidentalita"
       ]
     },
     {
@@ -449,7 +450,8 @@
         "pensioni-inps",
         "istat-ipab-aree",
         "mim-alunni-corso-eta",
-        "popolazione-istat"
+        "popolazione-istat",
+        "housing-crowding"
       ]
     },
     {
