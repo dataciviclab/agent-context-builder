@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-03T11:00:39.724052",
+  "generated_at": "2026-06-03T16:50:41.270692",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,17 +10,59 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 1,
+  "open_prs": 5,
   "prs": [
+    {
+      "number": 443,
+      "title": "feat(opencoesione): nuovo candidato progetti \u2014 parquet, multi-ciclo",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/443"
+    },
+    {
+      "number": 439,
+      "title": "feat(bdap-spese-stato): candidate intake #437 \u2014 spese Stato per missione 2008-2024",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/439"
+    },
     {
       "number": 429,
       "title": "intake: istat_nonprofit \u2014 Censimento permanente Istituzioni non profit",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/429"
+    },
+    {
+      "number": 136,
+      "title": "feat(consumo-suolo): stock cementificazione per regione \u2014 ISPRA 2024",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/136"
+    },
+    {
+      "number": 313,
+      "title": "fix(so): migra opencoesione a dati.gov.it CKAN",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/313"
     }
   ],
-  "open_issues": 52,
+  "open_issues": 55,
   "issues": [
+    {
+      "number": 442,
+      "title": "intake: opencoesione-pagamenti \u2014 Pagamenti progetti coesione (5.6M righe, serie temporale)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/442"
+    },
+    {
+      "number": 441,
+      "title": "intake: opencoesione-soggetti \u2014 Soggetti collegati ai progetti coesione (7.4M righe)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/441"
+    },
+    {
+      "number": 440,
+      "title": "intake: opencoesione-progetti \u2014 Progetti politiche di coesione (2007-2027, 2.3M righe)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/440"
+    },
     {
       "number": 438,
       "title": "intake: bdap_mop_totale \u2014 Progetti Opere Pubbliche MOP - Totale",
@@ -337,6 +379,13 @@
   "open_discussions": 20,
   "discussions": [
     {
+      "number": 323,
+      "title": "Contenuti audio dalle analisi: usare NotebookLM per podcast e social?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/323",
+      "category": "Proposte"
+    },
+    {
       "number": 322,
       "title": "INPS stipendi \u2014 come sono cambiati per comune in 10 anni? C'\u00e8 un divario Nord-Sud per operai, impiegati e dirigenti?",
       "repo": "dataciviclab",
@@ -468,13 +517,6 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/239",
       "category": "Domanda"
-    },
-    {
-      "number": 218,
-      "title": "[Analisi] Entrate dello Stato 2008-2024: nelle crisi cresce il peso dei prestiti?",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/218",
-      "category": "Analisi"
     }
   ],
   "github_fetch_errors": {},
@@ -2732,12 +2774,12 @@
       "terna_electricity_by_source"
     ],
     "last_deploy": {
-      "run_id": 26876241618,
+      "run_id": 26894287054,
       "name": "Deploy to GitHub Pages (Observable Framework)",
       "status": "completed",
       "conclusion": "success",
-      "completed_at": "2026-06-03T09:36:12Z",
-      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26876241618"
+      "completed_at": "2026-06-03T15:18:26Z",
+      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26894287054"
     }
   }
 }

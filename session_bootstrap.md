@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-03T11:00:39.724052
+**Generated**: 2026-06-03T16:50:41.270692
 
 ## 🔍 SCOUTING
 
@@ -52,11 +52,15 @@
 
 ## 🔗 OPEN
 
+- [dataset-incubator#443](https://github.com/dataciviclab/dataset-incubator/pull/443): feat(opencoesione): nuovo candidato progetti — parquet, multi-ciclo
+- [dataset-incubator#439](https://github.com/dataciviclab/dataset-incubator/pull/439): feat(bdap-spese-stato): candidate intake #437 — spese Stato per missione 2008-2024
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
+- [data-explorer#136](https://github.com/dataciviclab/data-explorer/pull/136): feat(consumo-suolo): stock cementificazione per regione — ISPRA 2024
+- [source-observatory#313](https://github.com/dataciviclab/source-observatory/pull/313): fix(so): migra opencoesione a dati.gov.it CKAN
 **Discussions**: 20 open
+  · [Proposte] Contenuti audio dalle analisi: usare NotebookLM per podcast e social?
   · [Domanda] INPS stipendi — come sono cambiati per comune in 10 anni? C'è un divario Nord-Sud per operai, impiegati e dirigenti?
   · [Datasets] Senato Akoma Ntoso — corpus legislativo in formato XML strutturato
-  · [Proposte] MCP adapters and source-check patterns for public data — cross-country comparison (FR/IT)
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
