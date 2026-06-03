@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-02T21:07:37.817018
+**Generated**: 2026-06-03T04:11:15.874416
 
 ## 🔍 SCOUTING
 
@@ -54,9 +54,9 @@
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
 - [data-explorer#131](https://github.com/dataciviclab/data-explorer/pull/131): feat(housing-crowding): densità abitativa per titolo di godimento
 **Discussions**: 20 open
+  · [Domanda] RDC/PDC — dove si concentrano i nuclei percettori rispetto al reddito medio e alla popolazione?
   · [Datasets] Senato Akoma Ntoso — corpus legislativo in formato XML strutturato
   · [Proposte] MCP adapters and source-check patterns for public data — cross-country comparison (FR/IT)
-  · [Domanda] Processo penale: a Cagliari 864 giorni, a Messina 261. E la fase GIP GUP è già in affanno in 101 tribunali su 140
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
