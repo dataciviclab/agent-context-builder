@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-03T18:13:35.191042
+**Generated**: 2026-06-03T20:56:32.310345
 
 ## 🔍 SCOUTING
 
@@ -17,7 +17,7 @@
 
 **Pipeline**: 34 candidates — 34 ok
   ⚠️ **mur-contribuzione-universitaria** — run fallito [0](https://github.com/dataciviclab/dataset-incubator/actions/runs/26106467223)
-**Dataset Catalog**: 20 published · 20 public · updated 2026-06-02
+**Dataset Catalog**: 20 published · 20 public · updated 2026-06-03
 
 ## 📊 ANALYSES
 
@@ -52,12 +52,10 @@
 
 ## 🔗 OPEN
 
-- [dataset-incubator#444](https://github.com/dataciviclab/dataset-incubator/pull/444): fix(dipendenti-pubblici): aggiunge quote e strict_mode per nuovo formato BDAP
 - [dataset-incubator#443](https://github.com/dataciviclab/dataset-incubator/pull/443): feat(opencoesione): nuovo candidato progetti — parquet, multi-ciclo
 - [dataset-incubator#439](https://github.com/dataciviclab/dataset-incubator/pull/439): feat(bdap-spese-stato): candidate intake #437 — spese Stato per missione 2008-2024
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
 - [data-explorer#136](https://github.com/dataciviclab/data-explorer/pull/136): feat(consumo-suolo): stock cementificazione per regione — ISPRA 2024
-- **Dependabot**: 1 bump PR(s)
 **Discussions**: 20 open
   · [Proposte] Contenuti audio dalle analisi: usare NotebookLM per podcast e social?
   · [Domanda] INPS stipendi — come sono cambiati per comune in 10 anni? C'è un divario Nord-Sud per operai, impiegati e dirigenti?
