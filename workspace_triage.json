@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-03T16:50:41.270692",
+  "generated_at": "2026-06-03T18:13:35.191042",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,8 +10,14 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 5,
+  "open_prs": 7,
   "prs": [
+    {
+      "number": 444,
+      "title": "fix(dipendenti-pubblici): aggiunge quote e strict_mode per nuovo formato BDAP",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/444"
+    },
     {
       "number": 443,
       "title": "feat(opencoesione): nuovo candidato progetti \u2014 parquet, multi-ciclo",
@@ -29,6 +35,12 @@
       "title": "intake: istat_nonprofit \u2014 Censimento permanente Istituzioni non profit",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/429"
+    },
+    {
+      "number": 137,
+      "title": "chore(deps-dev): bump eslint from 9.39.4 to 10.4.1",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/137"
     },
     {
       "number": 136,
@@ -578,7 +590,9 @@
       "untracked_files": 0
     }
   },
-  "warnings": [],
+  "warnings": [
+    "Many open PRs: 7"
+  ],
   "radar": {
     "available": true,
     "probe_date": "2026-06-03",
