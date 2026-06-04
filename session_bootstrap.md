@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-04T09:57:16.305630
+**Generated**: 2026-06-04T15:16:52.913816
 
 ## 🔍 SCOUTING
 
@@ -52,6 +52,8 @@
 
 - [dataset-incubator#439](https://github.com/dataciviclab/dataset-incubator/pull/439): feat(bdap-spese-stato): candidate intake #437 — spese Stato per missione 2008-2024
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
+- [toolkit#321](https://github.com/dataciviclab/toolkit/pull/321): refactor(core): allinea struttura fisica ai layer logici
+- [data-explorer#139](https://github.com/dataciviclab/data-explorer/pull/139): feat(mef-partecipazioni): partecipazioni PA per categoria — conteggio, oneri, addetti
 - [data-explorer#136](https://github.com/dataciviclab/data-explorer/pull/136): feat(consumo-suolo): stock cementificazione per regione — ISPRA 2024
 **Discussions**: 20 open
   · [Proposte] Contenuti audio dalle analisi: usare NotebookLM per podcast e social?

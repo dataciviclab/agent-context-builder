@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-04T09:57:16.305630",
+  "generated_at": "2026-06-04T15:16:52.913816",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,7 +10,7 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 3,
+  "open_prs": 7,
   "prs": [
     {
       "number": 439,
@@ -25,10 +25,34 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/429"
     },
     {
+      "number": 321,
+      "title": "refactor(core): allinea struttura fisica ai layer logici",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/321"
+    },
+    {
+      "number": 139,
+      "title": "feat(mef-partecipazioni): partecipazioni PA per categoria \u2014 conteggio, oneri, addetti",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/139"
+    },
+    {
       "number": 136,
       "title": "feat(consumo-suolo): stock cementificazione per regione \u2014 ISPRA 2024",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/136"
+    },
+    {
+      "number": 318,
+      "title": "feat(so): aggiunge agcm \u2014 rating di legalit\u00e0 da dati.gov.it",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/318"
+    },
+    {
+      "number": 317,
+      "title": "feat(so): aggiunge unioncamere \u2014 demografia d'impresa da dati.gov.it",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/317"
     }
   ],
   "open_issues": 55,
@@ -566,7 +590,9 @@
       "untracked_files": 0
     }
   },
-  "warnings": [],
+  "warnings": [
+    "Many open PRs: 7"
+  ],
   "radar": {
     "available": true,
     "probe_date": "2026-06-04",
