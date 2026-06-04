@@ -1,23 +1,21 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-04T04:04:53.985454
+**Generated**: 2026-06-04T09:57:16.305630
 
 ## 🔍 SCOUTING
 
-**Radar**: 29 fonti — GREEN 24 · YELLOW 2 · RED 3 (probe: 2026-06-03)
+**Radar**: 29 fonti — GREEN 26 · YELLOW 1 · RED 2 (probe: 2026-06-04)
   ⚠ **2 persistent RED**
   · **istat_sdmx** YELLOW [-] — Timeout (ReadTimeout)
   · **dati_salute** RED [-] — SSL verify failed; fallback connection error (SSLError) (streak 14)
-  · **dati_camera** RED [503] (streak 2)
-  · **dati_senato** RED [503]
-  · **opencoesione** YELLOW [403]
+  · **dati_senato** RED [503] (streak 2)
   · **openbdap** (ckan): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
 
 ## 📥 INTAKE
 
 **Pipeline**: 34 candidates — 34 ok
   ⚠️ **mur-contribuzione-universitaria** — run fallito [0](https://github.com/dataciviclab/dataset-incubator/actions/runs/26106467223)
-**Dataset Catalog**: 20 published · 20 public · updated 2026-06-03
+**Dataset Catalog**: 21 published · 21 public · updated 2026-06-04
 
 ## 📊 ANALYSES
 
@@ -41,18 +39,17 @@
   · **Sanità**: spesa-farmaceutica, bdap-lea
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
-  ⚠ 20 dataset published non ancora su explorer:
+  ⚠ 21 dataset published non ancora su explorer:
     · aifa_spesa_consumo
     · bdap_anagrafe_enti
     · bdap_entrate_stato
     · bdap_lea
     · camera_votazioni_sparql
-    · ... e altri 15
+    · ... e altri 16
   **Deploy**: ✅ success (2026-06-03)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#443](https://github.com/dataciviclab/dataset-incubator/pull/443): feat(opencoesione): nuovo candidato progetti — parquet, multi-ciclo
 - [dataset-incubator#439](https://github.com/dataciviclab/dataset-incubator/pull/439): feat(bdap-spese-stato): candidate intake #437 — spese Stato per missione 2008-2024
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
 - [data-explorer#136](https://github.com/dataciviclab/data-explorer/pull/136): feat(consumo-suolo): stock cementificazione per regione — ISPRA 2024

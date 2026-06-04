@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-04T04:04:53.985454",
+  "generated_at": "2026-06-04T09:57:16.305630",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,14 +10,8 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 4,
+  "open_prs": 3,
   "prs": [
-    {
-      "number": 443,
-      "title": "feat(opencoesione): nuovo candidato progetti \u2014 parquet, multi-ciclo",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/443"
-    },
     {
       "number": 439,
       "title": "feat(bdap-spese-stato): candidate intake #437 \u2014 spese Stato per missione 2008-2024",
@@ -37,7 +31,7 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/136"
     }
   ],
-  "open_issues": 53,
+  "open_issues": 55,
   "issues": [
     {
       "number": 442,
@@ -50,12 +44,6 @@
       "title": "intake: opencoesione-soggetti \u2014 Soggetti collegati ai progetti coesione (7.4M righe)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/441"
-    },
-    {
-      "number": 440,
-      "title": "intake: opencoesione-progetti \u2014 Progetti politiche di coesione (2007-2027, 2.3M righe)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/440"
     },
     {
       "number": 438,
@@ -166,6 +154,12 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/249"
     },
     {
+      "number": 324,
+      "title": "analisi: opencoesione_progetti \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/324"
+    },
+    {
       "number": 318,
       "title": "dataset: istat_nonprofit \u2014 Censimento permanente delle Istituzioni non profit",
       "repo": "dataciviclab",
@@ -262,6 +256,12 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/113"
     },
     {
+      "number": 138,
+      "title": "follow-up: pagina e tema per opencoesione_progetti",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/138"
+    },
+    {
       "number": 132,
       "title": "follow-up: pagina e tema per bdap_anagrafe_enti",
       "repo": "data-explorer",
@@ -308,6 +308,12 @@
       "title": "follow-up: pagina e tema per mef-partecipazioni",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/issues/83"
+    },
+    {
+      "number": 316,
+      "title": "scouting: AGCM \u2014 Autorit\u00e0 Garante Concorrenza e Mercato (53 dataset)",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/316"
     },
     {
       "number": 311,
@@ -563,11 +569,11 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-06-03",
+    "probe_date": "2026-06-04",
     "sources_total": 29,
-    "green": 24,
-    "yellow": 2,
-    "red": 3,
+    "green": 26,
+    "yellow": 1,
+    "red": 2,
     "persistent_red": 2,
     "unhealthy": [
       {
@@ -587,28 +593,12 @@
         "red_streak": 14
       },
       {
-        "id": "dati_camera",
-        "status": "RED",
-        "protocol": "sparql",
-        "http_code": "503",
-        "note": null,
-        "red_streak": 2
-      },
-      {
         "id": "dati_senato",
         "status": "RED",
         "protocol": "sparql",
         "http_code": "503",
         "note": null,
-        "red_streak": 0
-      },
-      {
-        "id": "opencoesione",
-        "status": "YELLOW",
-        "protocol": "rest",
-        "http_code": "403",
-        "note": null,
-        "red_streak": 0
+        "red_streak": 2
       }
     ]
   },
@@ -630,7 +620,7 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-06-03",
+    "generated_at": "2026-06-04",
     "summary": {
       "total": 34,
       "by_status": {
@@ -645,10 +635,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-06-03",
+    "updated_at": "2026-06-04",
     "summary": {
-      "total": 33,
-      "published": 20
+      "total": 34,
+      "published": 21
     },
     "datasets": [
       {
@@ -2448,6 +2438,125 @@
         "columns": []
       },
       {
+        "slug": "opencoesione_progetti",
+        "name": "Opencoesione Progetti",
+        "stage": "published",
+        "period": {
+          "start": 2007,
+          "end": 2027
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/opencoesione_progetti/2026/opencoesione_progetti_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 10,
+        "dimension_columns": 15,
+        "column_count": 25,
+        "columns": [
+          {
+            "name": "COD_LOCALE_PROGETTO",
+            "role": "dimension"
+          },
+          {
+            "name": "CUP",
+            "role": "dimension"
+          },
+          {
+            "name": "OC_COD_CICLO",
+            "role": "dimension"
+          },
+          {
+            "name": "OC_DESCR_CICLO",
+            "role": "dimension"
+          },
+          {
+            "name": "OC_TEMA_SINTETICO",
+            "role": "dimension"
+          },
+          {
+            "name": "OC_MACROAREA",
+            "role": "dimension"
+          },
+          {
+            "name": "OC_COD_SLL",
+            "role": "dimension"
+          },
+          {
+            "name": "OC_DENOMINAZIONE_SLL",
+            "role": "dimension"
+          },
+          {
+            "name": "COD_ATECO",
+            "role": "dimension"
+          },
+          {
+            "name": "DESCRIZIONE_ATECO",
+            "role": "dimension"
+          },
+          {
+            "name": "OC_STATO_PROGETTO",
+            "role": "dimension"
+          },
+          {
+            "name": "OC_STATO_PROCEDURALE",
+            "role": "dimension"
+          },
+          {
+            "name": "OC_DATA_INIZIO_PROGETTO",
+            "role": "dimension"
+          },
+          {
+            "name": "OC_DATA_FINE_PROGETTO_PREVISTA",
+            "role": "dimension"
+          },
+          {
+            "name": "OC_DATA_FINE_PROGETTO_EFFETTIVA",
+            "role": "dimension"
+          },
+          {
+            "name": "FINANZ_UE",
+            "role": "metric"
+          },
+          {
+            "name": "FINANZ_STATO_FSC",
+            "role": "metric"
+          },
+          {
+            "name": "FINANZ_REGIONE",
+            "role": "metric"
+          },
+          {
+            "name": "FINANZ_TOTALE_PUBBLICO",
+            "role": "metric"
+          },
+          {
+            "name": "OC_FINANZ_TOT_PUB_NETTO",
+            "role": "metric"
+          },
+          {
+            "name": "OC_COSTO_COESIONE",
+            "role": "metric"
+          },
+          {
+            "name": "IMPEGNI",
+            "role": "metric"
+          },
+          {
+            "name": "OC_IMPEGNI_COESIONE",
+            "role": "metric"
+          },
+          {
+            "name": "TOT_PAGAMENTI",
+            "role": "metric"
+          },
+          {
+            "name": "OC_PAGAMENTI_COESIONE",
+            "role": "metric"
+          }
+        ]
+      },
+      {
         "slug": "openga_ricorsi_cds",
         "name": "Openga Ricorsi Cds",
         "stage": "published",
@@ -2750,6 +2859,7 @@
       "istat_ipab_aree",
       "mim_alunni_corso_eta",
       "opencivitas_fsc_2025_rso",
+      "opencoesione_progetti",
       "openga_ricorsi_cds",
       "popolazione_istat_comunale_2019_2025",
       "terna_capacita_rinnovabile",
