@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-05T09:52:10.982285",
+  "generated_at": "2026-06-05T14:52:52.727935",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -13,10 +13,10 @@
   "open_prs": 7,
   "prs": [
     {
-      "number": 455,
-      "title": "fix: ristruttura malasanita in 4 candidate flat + compose puro (URL aggiornati, raw-faithful, fix decimali)",
+      "number": 462,
+      "title": "feat: aggiunge compose malasanita (v1/v2/v3)",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/455"
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/462"
     },
     {
       "number": 439,
@@ -55,7 +55,7 @@
       "url": "https://github.com/dataciviclab/source-observatory/pull/317"
     }
   ],
-  "open_issues": 58,
+  "open_issues": 63,
   "issues": [
     {
       "number": 454,
@@ -190,6 +190,24 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/249"
     },
     {
+      "number": 329,
+      "title": "analisi: reparti_ricovero \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/329"
+    },
+    {
+      "number": 328,
+      "title": "analisi: strutture_ricovero_asl \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/328"
+    },
+    {
+      "number": 327,
+      "title": "analisi: strutture_asl \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/327"
+    },
+    {
       "number": 324,
       "title": "analisi: opencoesione_progetti \u2014 nuovo dataset pubblicato",
       "repo": "dataciviclab",
@@ -296,6 +314,18 @@
       "title": "refactor: rinominare `inspect probe` in `inspect sparql` e valutare posizione",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/326"
+    },
+    {
+      "number": 141,
+      "title": "follow-up: pagina e tema per 2 nuovi dataset",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/141"
+    },
+    {
+      "number": 140,
+      "title": "follow-up: pagina e tema per strutture_asl",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/140"
     },
     {
       "number": 138,
@@ -409,6 +439,13 @@
   "open_discussions": 20,
   "discussions": [
     {
+      "number": 297,
+      "title": "MCP adapters and source-check patterns for public data \u2014 cross-country comparison (FR/IT)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/297",
+      "category": "Proposte"
+    },
+    {
       "number": 326,
       "title": "Quanto personale sanitario ha perso il SSN? Trend del personale dipendente ASL/AO/IRCCS per ruolo (2010-2021)",
       "repo": "dataciviclab",
@@ -442,13 +479,6 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/319",
       "category": "Datasets"
-    },
-    {
-      "number": 297,
-      "title": "MCP adapters and source-check patterns for public data \u2014 cross-country comparison (FR/IT)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/297",
-      "category": "Proposte"
     },
     {
       "number": 275,
@@ -664,11 +694,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-06-04",
+    "generated_at": "2026-06-05",
     "summary": {
-      "total": 34,
+      "total": 37,
       "by_status": {
-        "ok": 34,
+        "ok": 37,
         "warn": 0,
         "error": 0
       }
@@ -679,10 +709,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-06-04",
+    "updated_at": "2026-06-05",
     "summary": {
-      "total": 34,
-      "published": 21
+      "total": 37,
+      "published": 24
     },
     "datasets": [
       {
@@ -2769,6 +2799,419 @@
         ]
       },
       {
+        "slug": "reparti_ricovero",
+        "name": "Reparti Ricovero",
+        "stage": "published",
+        "period": {
+          "start": 2022,
+          "end": 2022
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/reparti_ricovero/2022/reparti_ricovero_2022_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 10,
+        "dimension_columns": 15,
+        "column_count": 25,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_regione",
+            "role": "dimension"
+          },
+          {
+            "name": "regione",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_asl",
+            "role": "dimension"
+          },
+          {
+            "name": "asl",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_struttura",
+            "role": "dimension"
+          },
+          {
+            "name": "struttura",
+            "role": "dimension"
+          },
+          {
+            "name": "indirizzo",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_tipo_struttura",
+            "role": "metric"
+          },
+          {
+            "name": "sottotipo_struttura",
+            "role": "metric"
+          },
+          {
+            "name": "tipo_struttura",
+            "role": "dimension"
+          },
+          {
+            "name": "comune",
+            "role": "dimension"
+          },
+          {
+            "name": "sigla_provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_disciplina",
+            "role": "dimension"
+          },
+          {
+            "name": "disciplina",
+            "role": "dimension"
+          },
+          {
+            "name": "posti_letto_day_hospital",
+            "role": "metric"
+          },
+          {
+            "name": "posti_letto_day_surgery",
+            "role": "metric"
+          },
+          {
+            "name": "posti_letto_degenza_ordinaria",
+            "role": "metric"
+          },
+          {
+            "name": "posti_letto_utilizzati",
+            "role": "metric"
+          },
+          {
+            "name": "num_dimessi",
+            "role": "dimension"
+          },
+          {
+            "name": "giornate_degenza",
+            "role": "dimension"
+          },
+          {
+            "name": "giornate_disponibili",
+            "role": "metric"
+          },
+          {
+            "name": "degenza_media_ordinaria",
+            "role": "metric"
+          },
+          {
+            "name": "icm",
+            "role": "metric"
+          },
+          {
+            "name": "tasso_utilizzo",
+            "role": "metric"
+          }
+        ]
+      },
+      {
+        "slug": "strutture_asl",
+        "name": "Strutture Asl",
+        "stage": "published",
+        "period": {
+          "start": 2022,
+          "end": 2022
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/strutture_asl/2022/strutture_asl_2022_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 27,
+        "dimension_columns": 11,
+        "column_count": 38,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_regione",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_asl",
+            "role": "dimension"
+          },
+          {
+            "name": "regione",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione_asl",
+            "role": "dimension"
+          },
+          {
+            "name": "indirizzo_asl",
+            "role": "dimension"
+          },
+          {
+            "name": "cap_asl",
+            "role": "dimension"
+          },
+          {
+            "name": "comune_asl",
+            "role": "dimension"
+          },
+          {
+            "name": "sigla_provincia_asl",
+            "role": "dimension"
+          },
+          {
+            "name": "residenti_eta_infantile",
+            "role": "metric"
+          },
+          {
+            "name": "residenti_eta_adulta",
+            "role": "metric"
+          },
+          {
+            "name": "residenti_anziani",
+            "role": "metric"
+          },
+          {
+            "name": "totale_residenti",
+            "role": "metric"
+          },
+          {
+            "name": "cup_tipo_1",
+            "role": "metric"
+          },
+          {
+            "name": "cup_tipo_2",
+            "role": "metric"
+          },
+          {
+            "name": "dipartimento_prevenzione",
+            "role": "metric"
+          },
+          {
+            "name": "dipartimento_materno_infantile",
+            "role": "metric"
+          },
+          {
+            "name": "dipartimento_salute_mentale",
+            "role": "metric"
+          },
+          {
+            "name": "servizio_trasporto_dialisi",
+            "role": "metric"
+          },
+          {
+            "name": "servizio_adi",
+            "role": "metric"
+          },
+          {
+            "name": "unita_mobile_rianimazione",
+            "role": "metric"
+          },
+          {
+            "name": "ambulanze_emergenza_neonato",
+            "role": "metric"
+          },
+          {
+            "name": "totale_medici",
+            "role": "metric"
+          },
+          {
+            "name": "medici_indennita_associativa",
+            "role": "metric"
+          },
+          {
+            "name": "totale_scelte",
+            "role": "metric"
+          },
+          {
+            "name": "totale_pediatri",
+            "role": "metric"
+          },
+          {
+            "name": "pediatri_indennita_associativa",
+            "role": "metric"
+          },
+          {
+            "name": "totale_scelte_pediatri",
+            "role": "metric"
+          },
+          {
+            "name": "ambulatori_laboratori",
+            "role": "metric"
+          },
+          {
+            "name": "ambulatori_laboratori_convenzionati",
+            "role": "metric"
+          },
+          {
+            "name": "num_medio_punti_guardia_medica",
+            "role": "metric"
+          },
+          {
+            "name": "num_medio_medici_titolari",
+            "role": "metric"
+          },
+          {
+            "name": "ore_totali_guardia_medica",
+            "role": "metric"
+          },
+          {
+            "name": "num_ricette_specialita_medicinali",
+            "role": "metric"
+          },
+          {
+            "name": "euro_importo_ricette",
+            "role": "metric"
+          },
+          {
+            "name": "adi_casi_trattati",
+            "role": "dimension"
+          },
+          {
+            "name": "adi_casi_trattati_anziani",
+            "role": "dimension"
+          },
+          {
+            "name": "adi_casi_trattati_terminali",
+            "role": "metric"
+          }
+        ]
+      },
+      {
+        "slug": "strutture_ricovero_asl",
+        "name": "Strutture Ricovero Asl",
+        "stage": "published",
+        "period": {
+          "start": 2022,
+          "end": 2022
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/strutture_ricovero_asl/2022/strutture_ricovero_asl_2022_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 16,
+        "dimension_columns": 10,
+        "column_count": 26,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_struttura",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione_struttura",
+            "role": "dimension"
+          },
+          {
+            "name": "comune",
+            "role": "dimension"
+          },
+          {
+            "name": "sigla_provincia_struttura",
+            "role": "dimension"
+          },
+          {
+            "name": "posti_letto_previsti",
+            "role": "metric"
+          },
+          {
+            "name": "posti_letto_utilizzati",
+            "role": "metric"
+          },
+          {
+            "name": "personale_uomini",
+            "role": "metric"
+          },
+          {
+            "name": "personale_donne",
+            "role": "metric"
+          },
+          {
+            "name": "totale_personale",
+            "role": "metric"
+          },
+          {
+            "name": "medici_uomini",
+            "role": "metric"
+          },
+          {
+            "name": "medici_donne",
+            "role": "metric"
+          },
+          {
+            "name": "medici",
+            "role": "metric"
+          },
+          {
+            "name": "infermieri_uomini",
+            "role": "metric"
+          },
+          {
+            "name": "infermieri_donne",
+            "role": "metric"
+          },
+          {
+            "name": "infermieri",
+            "role": "metric"
+          },
+          {
+            "name": "ricoveri",
+            "role": "metric"
+          },
+          {
+            "name": "giornate_degenza",
+            "role": "metric"
+          },
+          {
+            "name": "giornate_disponibili",
+            "role": "metric"
+          },
+          {
+            "name": "codice_tipo_struttura",
+            "role": "metric"
+          },
+          {
+            "name": "sottotipo_struttura",
+            "role": "metric"
+          },
+          {
+            "name": "tipo_struttura",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_regione",
+            "role": "dimension"
+          },
+          {
+            "name": "regione",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_asl",
+            "role": "dimension"
+          },
+          {
+            "name": "asl",
+            "role": "dimension"
+          }
+        ]
+      },
+      {
         "slug": "terna_capacita_rinnovabile",
         "name": "Terna Capacita Rinnovabile",
         "stage": "published",
@@ -2906,6 +3349,9 @@
       "opencoesione_progetti",
       "openga_ricorsi_cds",
       "popolazione_istat_comunale_2019_2025",
+      "reparti_ricovero",
+      "strutture_asl",
+      "strutture_ricovero_asl",
       "terna_capacita_rinnovabile",
       "terna_electricity_by_source"
     ],

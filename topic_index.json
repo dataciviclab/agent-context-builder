@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-06-05T09:52:10.982285",
+  "generated_at": "2026-06-05T14:52:52.727935",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -217,6 +217,36 @@
         "period": {
           "start": 2019,
           "end": 2025
+        }
+      }
+    ],
+    "Ministero della Salute \u2014 Open Data Dati di struttura e attivit\u00e0 dei reparti di ricovero": [
+      {
+        "slug": "reparti_ricovero",
+        "name": "Reparti Ricovero",
+        "period": {
+          "start": 2022,
+          "end": 2022
+        }
+      }
+    ],
+    "Ministero della Salute \u2014 Open Data Strutture e attivit\u00e0 ASL": [
+      {
+        "slug": "strutture_asl",
+        "name": "Strutture Asl",
+        "period": {
+          "start": 2022,
+          "end": 2022
+        }
+      }
+    ],
+    "Ministero della Salute \u2014 Open Data Strutture di ricovero per ASL": [
+      {
+        "slug": "strutture_ricovero_asl",
+        "name": "Strutture Ricovero Asl",
+        "period": {
+          "start": 2022,
+          "end": 2022
         }
       }
     ],

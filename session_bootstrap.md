@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-05T09:52:10.982285
+**Generated**: 2026-06-05T14:52:52.727935
 
 ## 🔍 SCOUTING
 
@@ -13,9 +13,9 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 34 candidates — 34 ok
+**Pipeline**: 37 candidates — 37 ok
   ⚠️ **mur-contribuzione-universitaria** — run fallito [0](https://github.com/dataciviclab/dataset-incubator/actions/runs/26106467223)
-**Dataset Catalog**: 21 published · 21 public · updated 2026-06-04
+**Dataset Catalog**: 24 published · 24 public · updated 2026-06-05
 
 ## 📊 ANALYSES
 
@@ -39,26 +39,26 @@
   · **Sanità**: spesa-farmaceutica, bdap-lea
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
-  ⚠ 21 dataset published non ancora su explorer:
+  ⚠ 24 dataset published non ancora su explorer:
     · aifa_spesa_consumo
     · bdap_anagrafe_enti
     · bdap_entrate_stato
     · bdap_lea
     · camera_votazioni_sparql
-    · ... e altri 16
+    · ... e altri 19
   **Deploy**: ✅ success (2026-06-03)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#455](https://github.com/dataciviclab/dataset-incubator/pull/455): fix: ristruttura malasanita in 4 candidate flat + compose puro (URL aggiornati, raw-faithful, fix decimali)
+- [dataset-incubator#462](https://github.com/dataciviclab/dataset-incubator/pull/462): feat: aggiunge compose malasanita (v1/v2/v3)
 - [dataset-incubator#439](https://github.com/dataciviclab/dataset-incubator/pull/439): feat(bdap-spese-stato): candidate intake #437 — spese Stato per missione 2008-2024
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
 - [data-explorer#139](https://github.com/dataciviclab/data-explorer/pull/139): feat(mef-partecipazioni): partecipazioni PA per categoria — conteggio, oneri, addetti
 - [data-explorer#136](https://github.com/dataciviclab/data-explorer/pull/136): feat(consumo-suolo): stock cementificazione per regione — ISPRA 2024
 **Discussions**: 20 open
+  · [Proposte] MCP adapters and source-check patterns for public data — cross-country comparison (FR/IT)
   · [Domanda] Quanto personale sanitario ha perso il SSN? Trend del personale dipendente ASL/AO/IRCCS per ruolo (2010-2021)
   · [Domanda] Dove sono i deserti farmaceutici? Distribuzione territoriale delle farmacie in Italia
-  · [Proposte] Contenuti audio dalle analisi: usare NotebookLM per podcast e social?
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
