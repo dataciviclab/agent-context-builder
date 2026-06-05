@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-05T14:52:52.727935",
+  "generated_at": "2026-06-05T19:56:01.500782",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,7 +10,7 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 7,
+  "open_prs": 8,
   "prs": [
     {
       "number": 462,
@@ -29,6 +29,12 @@
       "title": "intake: istat_nonprofit \u2014 Censimento permanente Istituzioni non profit",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/429"
+    },
+    {
+      "number": 329,
+      "title": "feat(core): aggiungi align_by_header per allineamento CSV per nome colonna",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/329"
     },
     {
       "number": 139,
@@ -55,7 +61,7 @@
       "url": "https://github.com/dataciviclab/source-observatory/pull/317"
     }
   ],
-  "open_issues": 63,
+  "open_issues": 62,
   "issues": [
     {
       "number": 454,
@@ -218,12 +224,6 @@
       "title": "dataset: istat_nonprofit \u2014 Censimento permanente delle Istituzioni non profit",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/issues/318"
-    },
-    {
-      "number": 315,
-      "title": "[Seed] Rendere esplicito un debito gi\u00e0 emerso senza aprire un refactor largo",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/315"
     },
     {
       "number": 314,
@@ -439,6 +439,34 @@
   "open_discussions": 20,
   "discussions": [
     {
+      "number": 194,
+      "title": "BDAP LEA: quanto pesa la prevenzione nelle ASL italiane?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/194",
+      "category": "Domanda"
+    },
+    {
+      "number": 190,
+      "title": "Pensioni PA a carico dello Stato: come si distribuiscono per regione?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/190",
+      "category": "Domanda"
+    },
+    {
+      "number": 128,
+      "title": "Come sta cambiando il pubblico impiego in Italia, e in quali comparti?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/128",
+      "category": "Domanda"
+    },
+    {
+      "number": 274,
+      "title": "405 opere pubbliche incomplete, 2,7 miliardi di euro fermati. Dove sono finite le nostre infrastrutture?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/274",
+      "category": "Domanda"
+    },
+    {
       "number": 297,
       "title": "MCP adapters and source-check patterns for public data \u2014 cross-country comparison (FR/IT)",
       "repo": "dataciviclab",
@@ -485,13 +513,6 @@
       "title": "Processo penale: a Cagliari 864 giorni, a Messina 261. E la fase GIP GUP \u00e8 gi\u00e0 in affanno in 101 tribunali su 140",
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/275",
-      "category": "Domanda"
-    },
-    {
-      "number": 274,
-      "title": "405 opere pubbliche incomplete, 2,7 miliardi di euro fermati. Dove sono finite le nostre infrastrutture?",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/274",
       "category": "Domanda"
     },
     {
@@ -556,27 +577,6 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/286",
       "category": "Domanda"
-    },
-    {
-      "number": 273,
-      "title": "[Analisi] MIT Incidentalit\u00e0: l'andamento della mortalit\u00e0 stradale in Italia (2001\u20112018)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/273",
-      "category": "Analisi"
-    },
-    {
-      "number": 242,
-      "title": "AIFA Spesa Farmaceutica \u2014 il cardiovascolare traina il 63% della spesa, il divario Nord-Sud si allarga",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/242",
-      "category": "Analisi"
-    },
-    {
-      "number": 271,
-      "title": "[Dataset] MIM \u2014 Scuola dell'infanzia: bambini italiani e non italiani per scuola (2017-2025)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/271",
-      "category": "Datasets"
     }
   ],
   "github_fetch_errors": {},
@@ -639,7 +639,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 7"
+    "Many open PRs: 8"
   ],
   "radar": {
     "available": true,
