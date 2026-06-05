@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-04T20:06:58.343554
+**Generated**: 2026-06-05T03:51:02.040134
 
 ## 🔍 SCOUTING
 
@@ -50,15 +50,15 @@
 
 ## 🔗 OPEN
 
+- [dataset-incubator#455](https://github.com/dataciviclab/dataset-incubator/pull/455): fix: ristruttura malasanita in 4 candidate flat + compose puro (URL aggiornati, raw-faithful, fix decimali)
 - [dataset-incubator#439](https://github.com/dataciviclab/dataset-incubator/pull/439): feat(bdap-spese-stato): candidate intake #437 — spese Stato per missione 2008-2024
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
 - [data-explorer#139](https://github.com/dataciviclab/data-explorer/pull/139): feat(mef-partecipazioni): partecipazioni PA per categoria — conteggio, oneri, addetti
 - [data-explorer#136](https://github.com/dataciviclab/data-explorer/pull/136): feat(consumo-suolo): stock cementificazione per regione — ISPRA 2024
-- [source-observatory#318](https://github.com/dataciviclab/source-observatory/pull/318): feat(so): aggiunge agcm — rating di legalità da dati.gov.it
 **Discussions**: 20 open
+  · [Domanda] Quanto personale sanitario ha perso il SSN? Trend del personale dipendente ASL/AO/IRCCS per ruolo (2010-2021)
+  · [Domanda] Dove sono i deserti farmaceutici? Distribuzione territoriale delle farmacie in Italia
   · [Proposte] Contenuti audio dalle analisi: usare NotebookLM per podcast e social?
-  · [Domanda] INPS stipendi — come sono cambiati per comune in 10 anni? C'è un divario Nord-Sud per operai, impiegati e dirigenti?
-  · [Datasets] Senato Akoma Ntoso — corpus legislativo in formato XML strutturato
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA

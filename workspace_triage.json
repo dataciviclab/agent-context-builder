@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-04T20:06:58.343554",
+  "generated_at": "2026-06-05T03:51:02.040134",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,8 +10,14 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 6,
+  "open_prs": 8,
   "prs": [
+    {
+      "number": 455,
+      "title": "fix: ristruttura malasanita in 4 candidate flat + compose puro (URL aggiornati, raw-faithful, fix decimali)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/455"
+    },
     {
       "number": 439,
       "title": "feat(bdap-spese-stato): candidate intake #437 \u2014 spese Stato per missione 2008-2024",
@@ -47,10 +53,28 @@
       "title": "feat(so): aggiunge unioncamere \u2014 demografia d'impresa da dati.gov.it",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/pull/317"
+    },
+    {
+      "number": 38,
+      "title": "HttpClient: supporto proxy HTTP/HTTPS da env vars (HTTP_PROXY, HTTPS_PROXY)",
+      "repo": "lab-connectors",
+      "url": "https://github.com/dataciviclab/lab-connectors/pull/38"
     }
   ],
-  "open_issues": 56,
+  "open_issues": 60,
   "issues": [
+    {
+      "number": 454,
+      "title": "intake: personale-ssn \u2014 Personale dipendente ASL/AO/IRCCS per ruolo 2010-2021",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/454"
+    },
+    {
+      "number": 453,
+      "title": "intake: farmacie \u2014 Anagrafica farmacie italiane (Ministero Salute)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/453"
+    },
     {
       "number": 442,
       "title": "intake: opencoesione-pagamenti \u2014 Pagamenti progetti coesione (5.6M righe, serie temporale)",
@@ -274,6 +298,12 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/113"
     },
     {
+      "number": 327,
+      "title": "Supporto proxy HTTP/HTTPS per probe e download (HTTP_PROXY env vars)",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/327"
+    },
+    {
       "number": 326,
       "title": "refactor: rinominare `inspect probe` in `inspect sparql` e valutare posizione",
       "repo": "toolkit",
@@ -386,10 +416,30 @@
       "title": "feat: apri issue automatica dai segnali drift attivi in catalog_signals.json",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/127"
+    },
+    {
+      "number": 37,
+      "title": "HttpClient: supporto proxy HTTP/HTTPS via env vars (HTTP_PROXY, HTTPS_PROXY)",
+      "repo": "lab-connectors",
+      "url": "https://github.com/dataciviclab/lab-connectors/issues/37"
     }
   ],
   "open_discussions": 20,
   "discussions": [
+    {
+      "number": 326,
+      "title": "Quanto personale sanitario ha perso il SSN? Trend del personale dipendente ASL/AO/IRCCS per ruolo (2010-2021)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/326",
+      "category": "Domanda"
+    },
+    {
+      "number": 325,
+      "title": "Dove sono i deserti farmaceutici? Distribuzione territoriale delle farmacie in Italia",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/325",
+      "category": "Domanda"
+    },
     {
       "number": 323,
       "title": "Contenuti audio dalle analisi: usare NotebookLM per podcast e social?",
@@ -515,20 +565,6 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/271",
       "category": "Datasets"
-    },
-    {
-      "number": 240,
-      "title": "Dove si accumulano pi\u00f9 cause pendenti in rapporto alla popolazione?",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/240",
-      "category": "Domanda"
-    },
-    {
-      "number": 239,
-      "title": "Quanta parte delle entrate tributarie dipende da poche voci e quanto \u00e8 diffuso?",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/239",
-      "category": "Domanda"
     }
   ],
   "github_fetch_errors": {},
@@ -591,7 +627,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 6"
+    "Many open PRs: 8"
   ],
   "radar": {
     "available": true,
