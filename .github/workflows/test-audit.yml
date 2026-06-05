@@ -24,7 +24,7 @@ jobs:
 
       - name: Audit test markers on changed files
         run: |
-          changed=$(git diff --name-only origin/${{ github.base_ref }}...HEAD -- 'tests/test_*.py' || true)
+          changed=$(git diff --name-only origin/${{ github.base_ref }}...HEAD -- 'tests/test_*.py' 'tests/**/test_*.py' || true)
           if [ -z "$changed" ]; then
             echo "No test files changed. OK."
             exit 0
