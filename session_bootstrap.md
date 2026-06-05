@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-05T19:56:01.500782
+**Generated**: 2026-06-05T22:58:01.260624
 
 ## 🔍 SCOUTING
 
@@ -53,8 +53,8 @@
 - [dataset-incubator#462](https://github.com/dataciviclab/dataset-incubator/pull/462): feat: aggiunge compose malasanita (v1/v2/v3)
 - [dataset-incubator#439](https://github.com/dataciviclab/dataset-incubator/pull/439): feat(bdap-spese-stato): candidate intake #437 — spese Stato per missione 2008-2024
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
-- [toolkit#329](https://github.com/dataciviclab/toolkit/pull/329): feat(core): aggiungi align_by_header per allineamento CSV per nome colonna
 - [data-explorer#139](https://github.com/dataciviclab/data-explorer/pull/139): feat(mef-partecipazioni): partecipazioni PA per categoria — conteggio, oneri, addetti
+- [data-explorer#136](https://github.com/dataciviclab/data-explorer/pull/136): feat(consumo-suolo): stock cementificazione per regione — ISPRA 2024
 **Discussions**: 20 open
   · [Domanda] BDAP LEA: quanto pesa la prevenzione nelle ASL italiane?
   · [Domanda] Pensioni PA a carico dello Stato: come si distribuiscono per regione?

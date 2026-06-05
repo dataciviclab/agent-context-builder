@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-05T19:56:01.500782",
+  "generated_at": "2026-06-05T22:58:01.260624",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,7 +10,7 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 8,
+  "open_prs": 7,
   "prs": [
     {
       "number": 462,
@@ -29,12 +29,6 @@
       "title": "intake: istat_nonprofit \u2014 Censimento permanente Istituzioni non profit",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/429"
-    },
-    {
-      "number": 329,
-      "title": "feat(core): aggiungi align_by_header per allineamento CSV per nome colonna",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/329"
     },
     {
       "number": 139,
@@ -639,7 +633,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 8"
+    "Many open PRs: 7"
   ],
   "radar": {
     "available": true,
@@ -1146,8 +1140,8 @@
         },
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/bdap_lea/2024/bdap_lea_2024_clean.parquet",
-          "multi_file": false
+          "path": "gs://dataciviclab-clean/bdap_lea/*/bdap_lea_*_clean.parquet",
+          "multi_file": true
         },
         "metric_columns": 14,
         "dimension_columns": 9,
