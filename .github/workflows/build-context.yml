@@ -26,12 +26,10 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - uses: actions/setup-python@v6
+      - name: Python setup
+        uses: dataciviclab/.github/actions/python-setup@main
         with:
-          python-version: '3.12'
-
-      - name: Install
-        run: pip install -e ".[dev]"
+          extra-packages: -e ".[dev]"
 
       - name: Lint
         run: ruff check src/ tests/
@@ -57,12 +55,10 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - uses: actions/setup-python@v6
+      - name: Python setup
+        uses: dataciviclab/.github/actions/python-setup@main
         with:
-          python-version: '3.12'
-
-      - name: Install
-        run: pip install -e .
+          extra-packages: -e .
 
       - name: Build context artifacts
         env:

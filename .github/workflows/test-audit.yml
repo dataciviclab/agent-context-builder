@@ -4,6 +4,8 @@ on:
   pull_request:
     paths:
       - "tests/test_*.py"
+      - "tests/**/test_*.py"
+      - ".github/workflows/test-audit.yml"
 
 jobs:
   audit-markers:
@@ -13,26 +15,19 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-python@v6
+      - uses: dataciviclab/.github/actions/python-setup@main
         with:
-          python-version: "3.12"
+          extra-packages: -e .
+
+      - name: Verify audit-test-markers CLI
+        run: audit-test-markers --help
 
       - name: Audit test markers on changed files
         run: |
-          # List test files changed in PR (vs base branch)
-          changed=$(git diff --name-only origin/${{ github.base_ref }}...HEAD -- 'tests/test_*.py' || true)
-
+          changed=$(git diff --name-only origin/${{ github.base_ref }}...HEAD -- 'tests/test_*.py' 'tests/**/test_*.py' || true)
           if [ -z "$changed" ]; then
             echo "No test files changed. OK."
             exit 0
           fi
-
-          echo "Changed test files:"
-          echo "$changed"
-
-          # Extract just filenames for the audit script
           files=$(echo "$changed" | xargs -n1 basename | tr '\n' ' ')
-
-          python .github/scripts/audit_test_markers.py tests/ \
-            --diff \
-            --files $files
+          audit-test-markers tests/ --diff --files $files
