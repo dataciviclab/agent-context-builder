@@ -1,14 +1,14 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-05T03:51:02.040134
+**Generated**: 2026-06-05T09:52:10.982285
 
 ## 🔍 SCOUTING
 
-**Radar**: 29 fonti — GREEN 26 · YELLOW 1 · RED 2 (probe: 2026-06-04)
-  ⚠ **2 persistent RED**
+**Radar**: 28 fonti — GREEN 25 · YELLOW 2 · RED 1 (probe: 2026-06-05)
+  ⚠ **1 persistent RED**
   · **istat_sdmx** YELLOW [-] — Timeout (ReadTimeout)
-  · **dati_salute** RED [-] — SSL verify failed; fallback connection error (SSLError) (streak 14)
-  · **dati_senato** RED [503] (streak 2)
+  · **dati_camera** YELLOW [404]
+  · **dati_senato** RED [503] (streak 3)
   · **openbdap** (ckan): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
 
 ## 📥 INTAKE

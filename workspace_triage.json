@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-05T03:51:02.040134",
+  "generated_at": "2026-06-05T09:52:10.982285",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,7 +10,7 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 8,
+  "open_prs": 7,
   "prs": [
     {
       "number": 455,
@@ -53,15 +53,9 @@
       "title": "feat(so): aggiunge unioncamere \u2014 demografia d'impresa da dati.gov.it",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/pull/317"
-    },
-    {
-      "number": 38,
-      "title": "HttpClient: supporto proxy HTTP/HTTPS da env vars (HTTP_PROXY, HTTPS_PROXY)",
-      "repo": "lab-connectors",
-      "url": "https://github.com/dataciviclab/lab-connectors/pull/38"
     }
   ],
-  "open_issues": 60,
+  "open_issues": 58,
   "issues": [
     {
       "number": 454,
@@ -298,12 +292,6 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/113"
     },
     {
-      "number": 327,
-      "title": "Supporto proxy HTTP/HTTPS per probe e download (HTTP_PROXY env vars)",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/327"
-    },
-    {
       "number": 326,
       "title": "refactor: rinominare `inspect probe` in `inspect sparql` e valutare posizione",
       "repo": "toolkit",
@@ -416,12 +404,6 @@
       "title": "feat: apri issue automatica dai segnali drift attivi in catalog_signals.json",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/127"
-    },
-    {
-      "number": 37,
-      "title": "HttpClient: supporto proxy HTTP/HTTPS via env vars (HTTP_PROXY, HTTPS_PROXY)",
-      "repo": "lab-connectors",
-      "url": "https://github.com/dataciviclab/lab-connectors/issues/37"
     }
   ],
   "open_discussions": 20,
@@ -627,16 +609,16 @@
     }
   },
   "warnings": [
-    "Many open PRs: 8"
+    "Many open PRs: 7"
   ],
   "radar": {
     "available": true,
-    "probe_date": "2026-06-04",
-    "sources_total": 29,
-    "green": 26,
-    "yellow": 1,
-    "red": 2,
-    "persistent_red": 2,
+    "probe_date": "2026-06-05",
+    "sources_total": 28,
+    "green": 25,
+    "yellow": 2,
+    "red": 1,
+    "persistent_red": 1,
     "unhealthy": [
       {
         "id": "istat_sdmx",
@@ -647,12 +629,12 @@
         "red_streak": 0
       },
       {
-        "id": "dati_salute",
-        "status": "RED",
-        "protocol": "html",
-        "http_code": "-",
-        "note": "SSL verify failed; fallback connection error (SSLError)",
-        "red_streak": 14
+        "id": "dati_camera",
+        "status": "YELLOW",
+        "protocol": "sparql",
+        "http_code": "404",
+        "note": null,
+        "red_streak": 0
       },
       {
         "id": "dati_senato",
@@ -660,7 +642,7 @@
         "protocol": "sparql",
         "http_code": "503",
         "note": null,
-        "red_streak": 2
+        "red_streak": 3
       }
     ]
   },
