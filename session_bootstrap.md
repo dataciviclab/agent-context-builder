@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-06T08:34:38.972004
+**Generated**: 2026-06-06T11:03:58.130913
 
 ## 🔍 SCOUTING
 
@@ -57,9 +57,9 @@
 - [data-explorer#139](https://github.com/dataciviclab/data-explorer/pull/139): feat(mef-partecipazioni): partecipazioni PA per categoria — conteggio, oneri, addetti
 - [data-explorer#136](https://github.com/dataciviclab/data-explorer/pull/136): feat(consumo-suolo): stock cementificazione per regione — ISPRA 2024
 **Discussions**: 20 open
+  · [Domanda] Pensioni pubbliche DAG: come si distribuisce la spesa per regione e tipo?
   · [Domanda] BDAP LEA: quanto pesa la prevenzione nelle ASL italiane?
   · [Domanda] Pensioni PA a carico dello Stato: come si distribuiscono per regione?
-  · [Domanda] Come sta cambiando il pubblico impiego in Italia, e in quali comparti?
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
