@@ -8,26 +8,7 @@ on:
       - ".github/workflows/test-audit.yml"
 
 jobs:
-  audit-markers:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
-
-      - uses: dataciviclab/.github/actions/python-setup@main
-        with:
-          extra-packages: -e .
-
-      - name: Verify audit-test-markers CLI
-        run: audit-test-markers --help
-
-      - name: Audit test markers on changed files
-        run: |
-          changed=$(git diff --name-only origin/${{ github.base_ref }}...HEAD -- 'tests/test_*.py' 'tests/**/test_*.py' || true)
-          if [ -z "$changed" ]; then
-            echo "No test files changed. OK."
-            exit 0
-          fi
-          files=$(echo "$changed" | xargs -n1 basename | tr '\n' ' ')
-          audit-test-markers tests/ --diff --files $files
+  audit:
+    uses: dataciviclab/.github/.github/workflows/test-audit-reusable.yml@main
+    with:
+      test-dirs: "tests"
