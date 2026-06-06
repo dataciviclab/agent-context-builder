@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-05T22:58:01.260624",
+  "generated_at": "2026-06-06T03:33:57.797965",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,7 +10,7 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 7,
+  "open_prs": 5,
   "prs": [
     {
       "number": 462,
@@ -41,21 +41,9 @@
       "title": "feat(consumo-suolo): stock cementificazione per regione \u2014 ISPRA 2024",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/136"
-    },
-    {
-      "number": 318,
-      "title": "feat(so): aggiunge agcm \u2014 rating di legalit\u00e0 da dati.gov.it",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/318"
-    },
-    {
-      "number": 317,
-      "title": "feat(so): aggiunge unioncamere \u2014 demografia d'impresa da dati.gov.it",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/317"
     }
   ],
-  "open_issues": 62,
+  "open_issues": 60,
   "issues": [
     {
       "number": 454,
@@ -376,12 +364,6 @@
       "url": "https://github.com/dataciviclab/data-explorer/issues/83"
     },
     {
-      "number": 316,
-      "title": "scouting: AGCM \u2014 Autorit\u00e0 Garante Concorrenza e Mercato (53 dataset)",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/316"
-    },
-    {
       "number": 311,
       "title": "[Catalog] 2026-06-01 \u2014 1 regressionee, 1 nuova fonte, 1 recovery, +28 item",
       "repo": "source-observatory",
@@ -392,12 +374,6 @@
       "title": "scouting: Banca d'Italia (80 dataset su dati.gov.it)",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/275"
-    },
-    {
-      "number": 274,
-      "title": "scouting: Unioncamere \u2014 dati imprese (344 dataset su dati.gov.it)",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/274"
     },
     {
       "number": 231,
@@ -632,9 +608,7 @@
       "untracked_files": 0
     }
   },
-  "warnings": [
-    "Many open PRs: 7"
-  ],
+  "warnings": [],
   "radar": {
     "available": true,
     "probe_date": "2026-06-05",
@@ -3350,12 +3324,12 @@
       "terna_electricity_by_source"
     ],
     "last_deploy": {
-      "run_id": 26894287054,
+      "run_id": 27044431175,
       "name": "Deploy to GitHub Pages (Observable Framework)",
       "status": "completed",
       "conclusion": "success",
-      "completed_at": "2026-06-03T15:18:26Z",
-      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/26894287054"
+      "completed_at": "2026-06-05T23:01:08Z",
+      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/27044431175"
     }
   }
 }

@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-05T22:58:01.260624
+**Generated**: 2026-06-06T03:33:57.797965
 
 ## 🔍 SCOUTING
 
@@ -46,7 +46,7 @@
     · bdap_lea
     · camera_votazioni_sparql
     · ... e altri 19
-  **Deploy**: ✅ success (2026-06-03)
+  **Deploy**: ✅ success (2026-06-05)
 
 ## 🔗 OPEN
 
