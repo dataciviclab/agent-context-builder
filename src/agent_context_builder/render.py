@@ -88,10 +88,7 @@ class Renderer:
                     lines.append(f"  ⚠ **{radar.persistent_red} persistent RED**")
                 if radar.unhealthy:
                     for rs in radar.unhealthy:
-                        _d = (
-                            f" — ↳ {', '.join(rs.datasets_in_use)}"
-                            if rs.datasets_in_use else ""
-                        )
+                        _d = f" — ↳ {', '.join(rs.datasets_in_use)}" if rs.datasets_in_use else ""
                         streak = f" (streak {rs.red_streak})" if rs.red_streak else ""
                         note = f" — {rs.note}" if rs.note else ""
                         _row = f"  · **{rs.id}** {rs.status} [{rs.http_code}]{note}{streak}{_d}"

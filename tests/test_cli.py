@@ -1,4 +1,5 @@
 """Tests for the CLI entry point (``cli.py``)."""
+
 from __future__ import annotations
 
 import json
@@ -29,13 +30,20 @@ def _mock_renderer():
     m = MagicMock()
     m.render_session_bootstrap.return_value = "# Session Bootstrap\n"
     m.render_workspace_triage.return_value = {
-        "open_prs": 0, "open_issues": 0, "open_discussions": 0,
-        "warnings": [], "github_fetch_errors": {}, "git_state": {},
+        "open_prs": 0,
+        "open_issues": 0,
+        "open_discussions": 0,
+        "warnings": [],
+        "github_fetch_errors": {},
+        "git_state": {},
         "source_health": {"available": False},
-        "dataset_catalog": {"available": False}, "discussions": [],
+        "dataset_catalog": {"available": False},
+        "discussions": [],
     }
     m.render_topic_index.return_value = {
-        "repos": {}, "datasets_by_source": {}, "operational_topics": {},
+        "repos": {},
+        "datasets_by_source": {},
+        "operational_topics": {},
     }
     return m
 
@@ -53,11 +61,16 @@ def test_build_creates_three_artifacts(tmp_path: Path):
     ):
         rdr_cls.return_value = _mock_renderer()
         runner = CliRunner()
-        result = runner.invoke(cli, [
-            "build",
-            "--config", str(config_path),
-            "--out", str(out),
-        ])
+        result = runner.invoke(
+            cli,
+            [
+                "build",
+                "--config",
+                str(config_path),
+                "--out",
+                str(out),
+            ],
+        )
 
     assert result.exit_code == 0, result.output
     assert (out / "session_bootstrap.md").exists()
@@ -81,11 +94,16 @@ def test_build_without_token_skips_discussions(tmp_path: Path):
     ):
         rdr_cls.return_value = _mock_renderer()
         runner = CliRunner()
-        result = runner.invoke(cli, [
-            "build",
-            "--config", str(config_path),
-            "--out", str(out),
-        ])
+        result = runner.invoke(
+            cli,
+            [
+                "build",
+                "--config",
+                str(config_path),
+                "--out",
+                str(out),
+            ],
+        )
 
     assert result.exit_code == 0, result.output
     assert "discussions skipped" in result.output
@@ -110,12 +128,18 @@ def test_build_with_token_passes_to_collectors(tmp_path: Path):
         rdr_cls.return_value = _mock_renderer()
 
         runner = CliRunner()
-        result = runner.invoke(cli, [
-            "build",
-            "--config", str(config_path),
-            "--out", str(out),
-            "--github-token", "my-token",
-        ])
+        result = runner.invoke(
+            cli,
+            [
+                "build",
+                "--config",
+                str(config_path),
+                "--out",
+                str(out),
+                "--github-token",
+                "my-token",
+            ],
+        )
 
     assert result.exit_code == 0, result.output
     gh_cls.assert_called_once_with("test-org", token="my-token")
@@ -137,12 +161,18 @@ def test_build_with_generated_at_produces_deterministic_output(tmp_path: Path):
     ):
         rdr_cls.return_value = _mock_renderer()
         runner = CliRunner()
-        result = runner.invoke(cli, [
-            "build",
-            "--config", str(config_path),
-            "--out", str(out),
-            "--generated-at", "2026-01-15T00:00:00Z",
-        ])
+        result = runner.invoke(
+            cli,
+            [
+                "build",
+                "--config",
+                str(config_path),
+                "--out",
+                str(out),
+                "--generated-at",
+                "2026-01-15T00:00:00Z",
+            ],
+        )
 
     assert result.exit_code == 0, result.output
     _, kwargs = rdr_cls.call_args
@@ -165,12 +195,18 @@ def test_build_with_workspace_root_overrides_config(tmp_path: Path):
         rdr_cls.return_value = _mock_renderer()
 
         runner = CliRunner()
-        result = runner.invoke(cli, [
-            "build",
-            "--config", str(config_path),
-            "--out", str(out),
-            "--workspace-root", str(ws_root),
-        ])
+        result = runner.invoke(
+            cli,
+            [
+                "build",
+                "--config",
+                str(config_path),
+                "--out",
+                str(out),
+                "--workspace-root",
+                str(ws_root),
+            ],
+        )
 
     assert result.exit_code == 0, result.output
     assert "my_workspace" in result.output
@@ -182,10 +218,15 @@ def test_build_with_workspace_root_overrides_config(tmp_path: Path):
 def test_build_fails_on_missing_config(tmp_path: Path):
     """Non-existent --config path → Click error."""
     runner = CliRunner()
-    result = runner.invoke(cli, [
-        "build",
-        "--config", str(tmp_path / "nonexistent.yml"),
-        "--out", str(tmp_path / "out"),
-    ])
+    result = runner.invoke(
+        cli,
+        [
+            "build",
+            "--config",
+            str(tmp_path / "nonexistent.yml"),
+            "--out",
+            str(tmp_path / "out"),
+        ],
+    )
     assert result.exit_code != 0
     assert "does not exist" in result.output

@@ -1,4 +1,5 @@
 """Tests for github module HTTP boundary — uses FakeHttpClient."""
+
 from __future__ import annotations
 
 import pytest
@@ -13,8 +14,7 @@ _GITHUB_RAW = "https://raw.githubusercontent.com/test-org/some-repo/main/data/fi
 _GITHUB_API = "https://api.github.com/repos/test-org/some-repo"
 
 
-def _register_get(fake_http, url: str, status: int = 200,
-                  body: str = "", json_data=None):
+def _register_get(fake_http, url: str, status: int = 200, body: str = "", json_data=None):
     """Register a GET response for *url* on *fake_http*."""
     fake_http.responses[url] = HttpResult(
         response=fake_response(status, text=body, json_data=json_data),

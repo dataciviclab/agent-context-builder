@@ -212,10 +212,9 @@ def _build_dataset_catalog_dict(
                 "metric_columns": d.metric_columns,
                 "dimension_columns": d.dimension_columns,
                 "column_count": d.column_count,
-                "columns": [
-                    {"name": c.name, "role": c.role}
-                    for c in d.columns
-                ] if d.stage == "published" else [],
+                "columns": [{"name": c.name, "role": c.role} for c in d.columns]
+                if d.stage == "published"
+                else [],
             }
             for d in catalog.datasets
         ],
@@ -266,8 +265,7 @@ def _build_explorer_dict(
     return {
         "available": True,
         "themes": [
-            {"slug": t.slug, "name": t.name, "dataset_count": len(t.datasets)}
-            for t in themes
+            {"slug": t.slug, "name": t.name, "dataset_count": len(t.datasets)} for t in themes
         ],
         "published_count": len(themed_slugs),
         "clean_ready_not_published": clean_ready_not_published,
@@ -281,8 +279,7 @@ def _collect_warnings(
     repos_state: dict[str, GitState],
 ) -> list[str]:
     warnings = [
-        f"GitHub fetch failed — {key}: {err}"
-        for key, err in github_collector.fetch_errors.items()
+        f"GitHub fetch failed — {key}: {err}" for key, err in github_collector.fetch_errors.items()
     ]
     if len(prs) > 5:
         warnings.append(f"Many open PRs: {len(prs)}")

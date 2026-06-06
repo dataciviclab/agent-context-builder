@@ -273,9 +273,7 @@ discussion: 88
 # Content
 """,
     }
-    collector = _mock_collector_with_listing(
-        slugs=["irpef-comunale"], readme_map=readme_map
-    )
+    collector = _mock_collector_with_listing(slugs=["irpef-comunale"], readme_map=readme_map)
     fetcher = DataciviclabFetcher(collector)
     analyses = fetcher.fetch_analyses()
 
@@ -359,9 +357,7 @@ status: active
 @pytest.mark.contract
 def test_fetch_analyses_readme_unavailable():
     """When an analysis README is not found, uses slug as name."""
-    collector = _mock_collector_with_listing(
-        slugs=["ghost-analysis"], readme_map={}
-    )
+    collector = _mock_collector_with_listing(slugs=["ghost-analysis"], readme_map={})
     fetcher = DataciviclabFetcher(collector)
     analyses = fetcher.fetch_analyses()
 
@@ -406,9 +402,7 @@ issue: 110
 # Content
 """,
     }
-    collector = _mock_collector_with_listing(
-        slugs=["malasanita"], readme_map=readme_map
-    )
+    collector = _mock_collector_with_listing(slugs=["malasanita"], readme_map=readme_map)
     fetcher = DataciviclabFetcher(collector)
     analyses = fetcher.fetch_analyses()
 
@@ -433,9 +427,7 @@ status: active
 ---
 """,
     }
-    collector = _mock_collector_with_listing(
-        slugs=["civile-flussi"], readme_map=readme_map
-    )
+    collector = _mock_collector_with_listing(slugs=["civile-flussi"], readme_map=readme_map)
     fetcher = DataciviclabFetcher(collector)
     analyses = fetcher.fetch_analyses()
 
@@ -455,9 +447,7 @@ status: active
 ---
 """,
     }
-    collector = _mock_collector_with_listing(
-        slugs=["test"], readme_map=readme_map
-    )
+    collector = _mock_collector_with_listing(slugs=["test"], readme_map=readme_map)
     fetcher = DataciviclabFetcher(collector)
     analyses1 = fetcher.fetch_analyses()
     analyses2 = fetcher.fetch_analyses()

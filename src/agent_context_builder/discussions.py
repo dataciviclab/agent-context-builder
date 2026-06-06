@@ -41,8 +41,9 @@ class Discussion:
 class DiscussionCollector:
     """Collect open discussions from GitHub via GraphQL."""
 
-    def __init__(self, org: str, token: Optional[str] = None,
-                 http_client: Optional[HttpClient] = None):
+    def __init__(
+        self, org: str, token: Optional[str] = None, http_client: Optional[HttpClient] = None
+    ):
         """Initialize discussion collector.
 
         Args:
@@ -95,10 +96,7 @@ class DiscussionCollector:
             raise ValueError(f"GraphQL errors: {payload['errors']}")
 
         nodes = (
-            payload.get("data", {})
-            .get("repository", {})
-            .get("discussions", {})
-            .get("nodes", [])
+            payload.get("data", {}).get("repository", {}).get("discussions", {}).get("nodes", [])
         )
         return [
             Discussion(
