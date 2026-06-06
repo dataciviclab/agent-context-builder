@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-06T03:33:57.797965",
+  "generated_at": "2026-06-06T08:34:38.972004",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -611,19 +611,27 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-06-05",
-    "sources_total": 28,
+    "probe_date": "2026-06-06",
+    "sources_total": 30,
     "green": 25,
-    "yellow": 2,
-    "red": 1,
-    "persistent_red": 1,
+    "yellow": 5,
+    "red": 0,
+    "persistent_red": 0,
     "unhealthy": [
       {
         "id": "istat_sdmx",
         "status": "YELLOW",
         "protocol": "sdmx",
         "http_code": "-",
-        "note": "Timeout (ReadTimeout)",
+        "note": "Timeout (ConnectTimeout)",
+        "red_streak": 0
+      },
+      {
+        "id": "openbdap",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
         "red_streak": 0
       },
       {
@@ -635,12 +643,20 @@
         "red_streak": 0
       },
       {
-        "id": "dati_senato",
-        "status": "RED",
-        "protocol": "sparql",
-        "http_code": "503",
-        "note": null,
-        "red_streak": 3
+        "id": "consip_open_data",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
+        "red_streak": 0
+      },
+      {
+        "id": "mef_irpef",
+        "status": "YELLOW",
+        "protocol": "html",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
+        "red_streak": 0
       }
     ]
   },
