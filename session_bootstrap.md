@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-06T19:24:10.855203
+**Generated**: 2026-06-06T23:13:27.996750
 
 ## 🔍 SCOUTING
 
@@ -51,11 +51,11 @@
 
 ## 🔗 OPEN
 
-- [dataset-incubator#472](https://github.com/dataciviclab/dataset-incubator/pull/472): feat: clean-query MCP legge parquet via S3 diretto (s3://) invece di HTTPS
 - [dataset-incubator#462](https://github.com/dataciviclab/dataset-incubator/pull/462): feat: aggiunge compose malasanita (v1/v2/v3)
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
 - [toolkit#339](https://github.com/dataciviclab/toolkit/pull/339): feat(inspect): rename PROBE command to SPARQL
 - [toolkit#336](https://github.com/dataciviclab/toolkit/pull/336): feat(core): espone dateformat, timestampformat, rejects_table in clean.read
+- [data-explorer#139](https://github.com/dataciviclab/data-explorer/pull/139): feat(mef-partecipazioni): partecipazioni PA per categoria — conteggio, oneri, addetti
 **Discussions**: 20 open
   · [Domanda] Pensioni pubbliche DAG: come si distribuisce la spesa per regione e tipo?
   · [Domanda] BDAP LEA: quanto pesa la prevenzione nelle ASL italiane?
