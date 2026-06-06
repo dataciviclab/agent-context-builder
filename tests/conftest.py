@@ -7,6 +7,7 @@ fixtures for config, git state, and mock collectors.
 Factory functions and sample data for render tests are also defined here —
 they are importable from conftest (``from tests.conftest import ...``).
 """
+
 from __future__ import annotations
 
 import json
@@ -113,7 +114,11 @@ def mock_git_collector():
 
 
 def make_github_mock(
-    prs=None, issues=None, fetch_errors=None, raw_file=None, repos_info=None,
+    prs=None,
+    issues=None,
+    fetch_errors=None,
+    raw_file=None,
+    repos_info=None,
 ):
     """Build a ``MagicMock(spec=GitHubCollector)`` with configured returns.
 
@@ -135,8 +140,7 @@ def make_github_mock(
             )
         else:
             m.collector_warning.return_value = (
-                f"GitHub fetch error ({len(errors)} collector(s) affected) "
-                "- data may be incomplete"
+                f"GitHub fetch error ({len(errors)} collector(s) affected) - data may be incomplete"
             )
     else:
         m.collector_warning.return_value = None
@@ -159,63 +163,86 @@ def sample_so_json(drift: bool = False) -> str:
     """Simulate ``catalog_signals.json`` from source-observatory."""
     signals = []
     if drift:
-        signals.append({
-            "source": "inps", "protocol": "ckan",
-            "signal_type": "inventory change", "result": "inventory change",
-            "detail": "Delta inventario +8 rispetto alla baseline.",
-            "suggested_action": "verificare se variazione attesa",
-        })
-    signals.append({
-        "source": "istat_sdmx", "protocol": "sdmx",
-        "signal_type": "no signal", "result": "stabile",
-        "detail": "ok", "suggested_action": "nessuna",
-    })
-    return json.dumps({
-        "captured_at": "2026-04-12", "sources_checked": len(signals), "signals": signals,
-    })
+        signals.append(
+            {
+                "source": "inps",
+                "protocol": "ckan",
+                "signal_type": "inventory change",
+                "result": "inventory change",
+                "detail": "Delta inventario +8 rispetto alla baseline.",
+                "suggested_action": "verificare se variazione attesa",
+            }
+        )
+    signals.append(
+        {
+            "source": "istat_sdmx",
+            "protocol": "sdmx",
+            "signal_type": "no signal",
+            "result": "stabile",
+            "detail": "ok",
+            "suggested_action": "nessuna",
+        }
+    )
+    return json.dumps(
+        {
+            "captured_at": "2026-04-12",
+            "sources_checked": len(signals),
+            "signals": signals,
+        }
+    )
 
 
 def sample_di_json() -> str:
     """Simulate ``pipeline_signals.json`` from dataset-incubator."""
-    return json.dumps({
-        "schema_version": "1",
-        "generated_at": "2026-04-16T10:00:00",
-        "repo": "dataciviclab/dataset-incubator",
-        "topic": "pipeline_state",
-        "signals": [
-            {
-                "id": "irpef-comunale", "status": "ok",
-                "label": "irpef-comunale", "detail": "", "action": "",
-            },
-        ],
-        "summary": {"ok": 1, "warn": 0, "error": 0},
-    })
+    return json.dumps(
+        {
+            "schema_version": "1",
+            "generated_at": "2026-04-16T10:00:00",
+            "repo": "dataciviclab/dataset-incubator",
+            "topic": "pipeline_state",
+            "signals": [
+                {
+                    "id": "irpef-comunale",
+                    "status": "ok",
+                    "label": "irpef-comunale",
+                    "detail": "",
+                    "action": "",
+                },
+            ],
+            "summary": {"ok": 1, "warn": 0, "error": 0},
+        }
+    )
 
 
 def sample_di_clean_catalog_json() -> str:
     """Simulate ``clean_catalog.json`` from dataset-incubator."""
-    return json.dumps({
-        "schema_version": 1,
-        "name": "Lab Clean Registry",
-        "updated_at": "2026-04-14",
-        "datasets": [
-            {
-                "slug": "irpef_comunale",
-                "name": "IRPEF Comunale",
-                "stage": "published",
-                "period": {"start": 2022, "end": 2023},
-                "location": {"type": "gcs", "path": "gs://dataciviclab-clean/irpef/irpef.parquet"},
-                "columns": [
-                    {"name": "anno", "role": "dimension"},
-                    {"name": "comune", "role": "dimension"},
-                    {"name": "imposta", "role": "metric"},
-                ],
-            },
-            {
-                "slug": "draft_dataset",
-                "name": "Draft Dataset",
-                "stage": "incubating",
-                "columns": [],
-            },
-        ],
-    })
+    return json.dumps(
+        {
+            "schema_version": 1,
+            "name": "Lab Clean Registry",
+            "updated_at": "2026-04-14",
+            "datasets": [
+                {
+                    "slug": "irpef_comunale",
+                    "name": "IRPEF Comunale",
+                    "stage": "published",
+                    "period": {"start": 2022, "end": 2023},
+                    "location": {
+                        "type": "gcs",
+                        "path": "gs://dataciviclab-clean/irpef/irpef.parquet",
+                    },
+                    "columns": [
+                        {"name": "anno", "role": "dimension"},
+                        {"name": "comune", "role": "dimension"},
+                        {"name": "imposta", "role": "metric"},
+                    ],
+                },
+                {
+                    "slug": "draft_dataset",
+                    "name": "Draft Dataset",
+                    "stage": "incubating",
+                    "columns": [],
+                },
+            ],
+        }
+    )

@@ -88,7 +88,9 @@ def build(
 
     click.echo("Creating renderer")
     renderer = Renderer(
-        cfg, github_collector, git_collector,
+        cfg,
+        github_collector,
+        git_collector,
         discussion_collector=discussion_collector,
         fixed_timestamp=generated_at,
     )

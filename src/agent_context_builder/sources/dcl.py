@@ -227,8 +227,9 @@ def _strip_yaml_quotes(value: str) -> str:
     Does NOT handle escaped quotes inside the value.
     """
     if len(value) >= 2:
-        if (value.startswith('"') and value.endswith('"')) or \
-           (value.startswith("'") and value.endswith("'")):
+        if (value.startswith('"') and value.endswith('"')) or (
+            value.startswith("'") and value.endswith("'")
+        ):
             return value[1:-1]
     return value
 

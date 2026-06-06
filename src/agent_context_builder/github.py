@@ -43,8 +43,9 @@ class RepoInfo:
 class GitHubCollector:
     """Collect context from GitHub API."""
 
-    def __init__(self, org: str, token: Optional[str] = None,
-                 http_client: Optional[HttpClient] = None):
+    def __init__(
+        self, org: str, token: Optional[str] = None, http_client: Optional[HttpClient] = None
+    ):
         """Initialize GitHub collector.
 
         Args:
@@ -254,10 +255,7 @@ class GitHubCollector:
             or None if no runs found or on error.
         """
         if workflow_id:
-            url = (
-                f"{self.base_url}/repos/{self.org}/{repo}"
-                f"/actions/workflows/{workflow_id}/runs"
-            )
+            url = f"{self.base_url}/repos/{self.org}/{repo}/actions/workflows/{workflow_id}/runs"
         else:
             url = f"{self.base_url}/repos/{self.org}/{repo}/actions/runs"
         params = {

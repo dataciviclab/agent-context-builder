@@ -27,9 +27,7 @@ class Config(BaseModel):
         description="Root of local workspace — set via --workspace-root or DATACIVICLAB_WORKSPACE",
     )
     github_org: str = Field(..., description="GitHub organization")
-    repos: list[str] = Field(
-        default_factory=list, description="Primary repos to monitor"
-    )
+    repos: list[str] = Field(default_factory=list, description="Primary repos to monitor")
     topics: dict[str, Topic] = Field(default_factory=dict, description="Topic index")
 
     @classmethod
