@@ -361,60 +361,62 @@ def refresh_context() -> str:
             )
 
     _last_refresh_attempt = now
-    try:
-        response = requests.post(
-            f"{_API_BASE}/actions/workflows/build-context.yml/dispatches",
-            json={"ref": "main"},
-            headers={
-                "Authorization": f"token {token}",
-                "Accept": "application/vnd.github+json",
-            },
-            timeout=10,
-        )
-        if response.status_code == 204:
-            _log.info("refresh_context", "triggered", ref="main")
-            return json.dumps(
-                {
-                    "ok": True,
-                    "tool": "refresh_context",
-                    "message": "Build triggerato. Artifact aggiornati entro ~1 minuto.",
-                    "ts": datetime.now(timezone.utc).isoformat(),
-                }
-            )
-        elif response.status_code == 422:
-            _log.error(
-                "refresh_context",
-                "rejected",
-                status=response.status_code,
-                body=response.text,
-            )
-            return json.dumps(
-                {
-                    "ok": False,
-                    "tool": "refresh_context",
-                    "error": "Build rifiutato (422). Verifica che il workflow sia su main.",
-                    "status_code": 422,
-                    "ts": datetime.now(timezone.utc).isoformat(),
-                }
-            )
-        else:
-            _log.error("refresh_context", "failed", status=response.status_code, body=response.text)
-            return json.dumps(
-                {
-                    "ok": False,
-                    "tool": "refresh_context",
-                    "error": f"Errore {response.status_code}: {response.text}",
-                    "status_code": response.status_code,
-                    "ts": datetime.now(timezone.utc).isoformat(),
-                }
-            )
-    except requests.RequestException as e:
-        _log.error("refresh_context", "network_error", error=str(e))
+    client = HttpClient(timeout=10)
+    result = client.post(
+        f"{_API_BASE}/actions/workflows/build-context.yml/dispatches",
+        json={"ref": "main"},
+        headers={
+            "Authorization": f"token {token}",
+            "Accept": "application/vnd.github+json",
+        },
+    )
+
+    if not result.is_ok or result.response is None:
+        _log.error("refresh_context", "network_error", error=str(result.err))
         return json.dumps(
             {
                 "ok": False,
                 "tool": "refresh_context",
-                "error": f"Errore di rete: {e}",
+                "error": f"Errore di rete: {result.err}",
+                "ts": datetime.now(timezone.utc).isoformat(),
+            }
+        )
+
+    response = result.response
+    if response.status_code == 204:
+        _log.info("refresh_context", "triggered", ref="main")
+        return json.dumps(
+            {
+                "ok": True,
+                "tool": "refresh_context",
+                "message": "Build triggerato. Artifact aggiornati entro ~1 minuto.",
+                "ts": datetime.now(timezone.utc).isoformat(),
+            }
+        )
+    elif response.status_code == 422:
+        _log.error(
+            "refresh_context",
+            "rejected",
+            status=response.status_code,
+            body=response.text,
+        )
+        return json.dumps(
+            {
+                "ok": False,
+                "tool": "refresh_context",
+                "error": "Build rifiutato (422). Verifica che il workflow sia su main.",
+                "status_code": 422,
+                "ts": datetime.now(timezone.utc).isoformat(),
+            }
+        )
+    else:
+        _log.error("refresh_context", "failed", status=response.status_code, body=response.text)
+        return json.dumps(
+            {
+                "ok": False,
+                "tool": "refresh_context",
+                "error": f"Errore {response.status_code}: {response.text}",
+                "status_code": response.status_code,
                 "ts": datetime.now(timezone.utc).isoformat(),
             }
         )
