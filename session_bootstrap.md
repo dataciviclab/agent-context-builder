@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-06T11:03:58.130913
+**Generated**: 2026-06-06T13:44:49.942693
 
 ## 🔍 SCOUTING
 
@@ -14,9 +14,9 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 37 candidates — 37 ok
+**Pipeline**: 38 candidates — 38 ok
   ⚠️ **mur-contribuzione-universitaria** — run fallito [0](https://github.com/dataciviclab/dataset-incubator/actions/runs/26106467223)
-**Dataset Catalog**: 24 published · 24 public · updated 2026-06-05
+**Dataset Catalog**: 25 published · 25 public · updated 2026-06-06
 
 ## 📊 ANALYSES
 
@@ -40,20 +40,20 @@
   · **Sanità**: spesa-farmaceutica, bdap-lea
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
-  ⚠ 24 dataset published non ancora su explorer:
+  ⚠ 25 dataset published non ancora su explorer:
     · aifa_spesa_consumo
     · bdap_anagrafe_enti
     · bdap_entrate_stato
     · bdap_lea
-    · camera_votazioni_sparql
-    · ... e altri 19
+    · bdap_spese_stato
+    · ... e altri 20
   **Deploy**: ✅ success (2026-06-05)
 
 ## 🔗 OPEN
 
 - [dataset-incubator#462](https://github.com/dataciviclab/dataset-incubator/pull/462): feat: aggiunge compose malasanita (v1/v2/v3)
-- [dataset-incubator#439](https://github.com/dataciviclab/dataset-incubator/pull/439): feat(bdap-spese-stato): candidate intake #437 — spese Stato per missione 2008-2024
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
+- [toolkit#333](https://github.com/dataciviclab/toolkit/pull/333): refactor: allineamento CLI↔MCP — schema_diff condiviso + sql= in parquet_preview
 - [data-explorer#139](https://github.com/dataciviclab/data-explorer/pull/139): feat(mef-partecipazioni): partecipazioni PA per categoria — conteggio, oneri, addetti
 - [data-explorer#136](https://github.com/dataciviclab/data-explorer/pull/136): feat(consumo-suolo): stock cementificazione per regione — ISPRA 2024
 **Discussions**: 20 open

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-06T11:03:58.130913",
+  "generated_at": "2026-06-06T13:44:49.942693",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -19,16 +19,16 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/462"
     },
     {
-      "number": 439,
-      "title": "feat(bdap-spese-stato): candidate intake #437 \u2014 spese Stato per missione 2008-2024",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/439"
-    },
-    {
       "number": 429,
       "title": "intake: istat_nonprofit \u2014 Censimento permanente Istituzioni non profit",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/429"
+    },
+    {
+      "number": 333,
+      "title": "refactor: allineamento CLI\u2194MCP \u2014 schema_diff condiviso + sql= in parquet_preview",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/333"
     },
     {
       "number": 139,
@@ -43,7 +43,7 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/136"
     }
   ],
-  "open_issues": 60,
+  "open_issues": 59,
   "issues": [
     {
       "number": 454,
@@ -74,12 +74,6 @@
       "title": "intake: bdap_mop_totale \u2014 Progetti Opere Pubbliche MOP - Totale",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/438"
-    },
-    {
-      "number": 437,
-      "title": "intake: bdap_spese_stato \u2014 Spese Stato per Amministrazione, Missione, Programma e Macroaggregato (2008-2024)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/437"
     },
     {
       "number": 436,
@@ -292,6 +286,12 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/113"
     },
     {
+      "number": 332,
+      "title": "feat: esporre parametri DuckDB mancanti in clean.read (dateformat, rejects_table, etc.)",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/332"
+    },
+    {
       "number": 326,
       "title": "refactor: rinominare `inspect probe` in `inspect sparql` e valutare posizione",
       "repo": "toolkit",
@@ -392,12 +392,6 @@
       "title": "valutare deprecazione intake_score",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/210"
-    },
-    {
-      "number": 176,
-      "title": "[source] lod.aci.it \u2014 radar-only, valutare futuro collector DCAT",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/176"
     },
     {
       "number": 127,
@@ -678,11 +672,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-06-05",
+    "generated_at": "2026-06-06",
     "summary": {
-      "total": 37,
+      "total": 38,
       "by_status": {
-        "ok": 37,
+        "ok": 38,
         "warn": 0,
         "error": 0
       }
@@ -693,10 +687,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-06-05",
+    "updated_at": "2026-06-06",
     "summary": {
-      "total": 37,
-      "published": 24
+      "total": 38,
+      "published": 25
     },
     "datasets": [
       {
@@ -1227,6 +1221,73 @@
           },
           {
             "name": "importo_totale",
+            "role": "metric"
+          }
+        ]
+      },
+      {
+        "slug": "bdap_spese_stato",
+        "name": "BDAP Spese Stato",
+        "stage": "published",
+        "period": {
+          "start": 2008,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bdap_spese_stato/2024/bdap_spese_stato_2024_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 2,
+        "dimension_columns": 10,
+        "column_count": 12,
+        "columns": [
+          {
+            "name": "esercizio_finanziario",
+            "role": "dimension"
+          },
+          {
+            "name": "stato_previsione",
+            "role": "dimension"
+          },
+          {
+            "name": "amministrazione",
+            "role": "dimension"
+          },
+          {
+            "name": "missione",
+            "role": "dimension"
+          },
+          {
+            "name": "programma",
+            "role": "dimension"
+          },
+          {
+            "name": "udv_livello_1",
+            "role": "dimension"
+          },
+          {
+            "name": "udv_livello_2",
+            "role": "dimension"
+          },
+          {
+            "name": "udv_livello_3",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_puntato_udv",
+            "role": "dimension"
+          },
+          {
+            "name": "macroaggregato",
+            "role": "dimension"
+          },
+          {
+            "name": "previsioni_definitive_cp",
+            "role": "metric"
+          },
+          {
+            "name": "previsioni_definitive_cs",
             "role": "metric"
           }
         ]
@@ -3318,6 +3379,7 @@
       "bdap_anagrafe_enti",
       "bdap_entrate_stato",
       "bdap_lea",
+      "bdap_spese_stato",
       "camera_votazioni_sparql",
       "civile_flussi",
       "consip_consumi_convenzione",
