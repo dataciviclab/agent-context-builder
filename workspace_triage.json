@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-06T13:44:49.942693",
+  "generated_at": "2026-06-06T19:24:10.855203",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,8 +10,14 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 5,
+  "open_prs": 8,
   "prs": [
+    {
+      "number": 472,
+      "title": "feat: clean-query MCP legge parquet via S3 diretto (s3://) invece di HTTPS",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/472"
+    },
     {
       "number": 462,
       "title": "feat: aggiunge compose malasanita (v1/v2/v3)",
@@ -25,10 +31,16 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/429"
     },
     {
-      "number": 333,
-      "title": "refactor: allineamento CLI\u2194MCP \u2014 schema_diff condiviso + sql= in parquet_preview",
+      "number": 339,
+      "title": "feat(inspect): rename PROBE command to SPARQL",
       "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/333"
+      "url": "https://github.com/dataciviclab/toolkit/pull/339"
+    },
+    {
+      "number": 336,
+      "title": "feat(core): espone dateformat, timestampformat, rejects_table in clean.read",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/336"
     },
     {
       "number": 139,
@@ -41,6 +53,12 @@
       "title": "feat(consumo-suolo): stock cementificazione per regione \u2014 ISPRA 2024",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/136"
+    },
+    {
+      "number": 322,
+      "title": "feat: parquet artifact letto via DuckDB S3 diretto \u2014 niente download GCS",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/322"
     }
   ],
   "open_issues": 59,
@@ -602,7 +620,9 @@
       "untracked_files": 0
     }
   },
-  "warnings": [],
+  "warnings": [
+    "Many open PRs: 8"
+  ],
   "radar": {
     "available": true,
     "probe_date": "2026-06-06",
