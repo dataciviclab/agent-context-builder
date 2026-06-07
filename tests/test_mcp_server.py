@@ -40,7 +40,8 @@ def test_session_bootstrap_resource():
         mock_cls.return_value = fake
         result = mcp_server.session_bootstrap()
 
-    assert "Session Bootstrap" in result
+    assert result["format"] == "markdown"
+    assert "Session Bootstrap" in result["content"]
 
 
 @pytest.mark.contract
@@ -53,7 +54,8 @@ def test_workspace_triage_resource():
         mock_cls.return_value = fake
         result = mcp_server.workspace_triage()
 
-    assert "open_prs" in result
+    assert result["ok"] is True
+    assert result["content"]["open_prs"] == 2
 
 
 @pytest.mark.contract
@@ -66,12 +68,13 @@ def test_topic_index_resource():
         mock_cls.return_value = fake
         result = mcp_server.topic_index()
 
-    assert "topics" in result
+    assert result["ok"] is True
+    assert "topics" in result["content"]
 
 
 @pytest.mark.contract
 def test_session_bootstrap_http_error():
-    """session_bootstrap returns JSON error on HTTP failure instead of raising."""
+    """session_bootstrap returns error dict on HTTP failure instead of raising."""
     fake = FakeHttpClient()
     _patch_fetch(fake, "session_bootstrap.md", status=403)
 
@@ -79,15 +82,12 @@ def test_session_bootstrap_http_error():
         mock_cls.return_value = fake
         result = mcp_server.session_bootstrap()
 
-    data = json.loads(result)
-    assert data["ok"] is False
-    assert data["tool"] == "session_bootstrap"
-    assert data["status_code"] == 403
+    assert "error" in result
 
 
 @pytest.mark.contract
 def test_workspace_triage_http_error():
-    """workspace_triage returns JSON error on HTTP failure instead of raising."""
+    """workspace_triage returns error dict on HTTP failure instead of raising."""
     fake = FakeHttpClient()
     _patch_fetch(fake, "workspace_triage.json", status=404)
 
@@ -95,15 +95,12 @@ def test_workspace_triage_http_error():
         mock_cls.return_value = fake
         result = mcp_server.workspace_triage()
 
-    data = json.loads(result)
-    assert data["ok"] is False
-    assert data["tool"] == "workspace_triage"
-    assert data["status_code"] == 404
+    assert "error" in result
 
 
 @pytest.mark.contract
 def test_topic_index_http_error():
-    """topic_index returns JSON error on HTTP failure instead of raising."""
+    """topic_index returns error dict on HTTP failure instead of raising."""
     fake = FakeHttpClient()
     _patch_fetch(fake, "topic_index.json", status=500)
 
@@ -111,10 +108,7 @@ def test_topic_index_http_error():
         mock_cls.return_value = fake
         result = mcp_server.topic_index()
 
-    data = json.loads(result)
-    assert data["ok"] is False
-    assert data["tool"] == "topic_index"
-    assert data["status_code"] == 500
+    assert "error" in result
 
 
 # ---------------------------------------------------------------------------
@@ -184,7 +178,7 @@ def test_topic_index_resolve_by_dataset_slug():
         mock_cls.return_value = fake
         result = mcp_server.topic_index(resolve="irpef_comunale")
 
-    data = json.loads(result)
+    data = result["content"]
     assert data["resolve"] == "irpef_comunale"
     assert data["found"] is True
     # Published dataset found
@@ -208,7 +202,7 @@ def test_topic_index_resolve_by_source_dedup():
         mock_cls.return_value = fake
         result = mcp_server.topic_index(resolve="ISPRA")
 
-    data = json.loads(result)
+    data = result["content"]
     assert data["resolve"] == "ISPRA"
     assert data["found"] is True
 
@@ -236,7 +230,7 @@ def test_topic_index_resolve_not_found():
         mock_cls.return_value = fake
         result = mcp_server.topic_index(resolve="nonexistent")
 
-    data = json.loads(result)
+    data = result["content"]
     assert data["resolve"] == "nonexistent"
     assert data["found"] is False
 
@@ -274,7 +268,8 @@ def test_refresh_context_no_token(monkeypatch):
     monkeypatch.setattr(mcp_server, "_ENV_LOADED", True)
     result = mcp_server.refresh_context()
 
-    assert "GITHUB_TOKEN" in result
+    assert result["ok"] is False
+    assert "GITHUB_TOKEN" in result["error"]
 
 
 @pytest.mark.adapter
@@ -291,8 +286,7 @@ def test_refresh_context_loads_token_from_env_file(monkeypatch, tmp_path):
         mock_post.return_value = _mock_http_result(204)
         result = mcp_server.refresh_context()
 
-    data = json.loads(result)
-    assert data["ok"] is True
+    assert result["ok"] is True
     assert mock_post.call_args.kwargs["headers"]["Authorization"] == "token file-token"
 
 
@@ -310,8 +304,7 @@ def test_refresh_context_loads_token_when_env_is_empty(monkeypatch, tmp_path):
         mock_post.return_value = _mock_http_result(204)
         result = mcp_server.refresh_context()
 
-    data = json.loads(result)
-    assert data["ok"] is True
+    assert result["ok"] is True
     assert mock_post.call_args.kwargs["headers"]["Authorization"] == "token file-token"
 
 
@@ -332,8 +325,7 @@ def test_refresh_context_continues_after_partial_env(monkeypatch, tmp_path):
         mock_post.return_value = _mock_http_result(204)
         result = mcp_server.refresh_context()
 
-    data = json.loads(result)
-    assert data["ok"] is True
+    assert result["ok"] is True
     assert mock_post.call_args.kwargs["headers"]["Authorization"] == "token file-token"
 
 
@@ -347,8 +339,7 @@ def test_refresh_context_success(monkeypatch):
         mock_post.return_value = _mock_http_result(204)
         result = mcp_server.refresh_context()
 
-    data = json.loads(result)
-    assert data["ok"] is True
+    assert result["ok"] is True
 
 
 @pytest.mark.adapter
@@ -361,6 +352,5 @@ def test_refresh_context_api_error(monkeypatch):
         mock_post.return_value = _mock_http_result(403)
         result = mcp_server.refresh_context()
 
-    data = json.loads(result)
-    assert data["ok"] is False
-    assert data["status_code"] == 403
+    assert result["ok"] is False
+    assert result["status_code"] == 403

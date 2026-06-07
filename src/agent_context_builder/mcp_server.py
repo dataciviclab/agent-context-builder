@@ -21,9 +21,8 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
-import requests
 from lab_connectors.http import HttpClient
-from lab_connectors.mcp import create_mcp_server, get_mcp_logger
+from lab_connectors.mcp import create_mcp_server, get_mcp_logger, guard_timed
 
 _REPO = os.environ.get("ACB_REPO", "dataciviclab/agent-context-builder")
 _BRANCH = os.environ.get("ACB_BRANCH", "context")
@@ -127,20 +126,6 @@ def _get_env(name: str) -> str | None:
     return os.environ.get(name)
 
 
-def _tool_error(tool: str, path: str, message: str, status_code: int | None = None) -> str:
-    """Return a structured JSON error string for tool failures."""
-    return json.dumps(
-        {
-            "ok": False,
-            "tool": tool,
-            "path": path,
-            "error": message,
-            "status_code": status_code,
-            "ts": datetime.now(timezone.utc).isoformat(),
-        }
-    )
-
-
 def _fetch(path: str, retries: int = 1, backoff: float = 1.0) -> str:
     """Fetch a file from the context branch with retry/backoff via HttpClient.
 
@@ -166,261 +151,213 @@ def _fetch(path: str, retries: int = 1, backoff: float = 1.0) -> str:
     return response.text
 
 
-@mcp.tool()
-def session_bootstrap() -> str:
-    """Orientamento rapido: repo attivi, PR aperte, discussion, stato locale, topic."""
-    try:
-        return _fetch("session_bootstrap.md")
-    except Exception as e:
-        return _tool_error(
-            "session_bootstrap",
-            "session_bootstrap.md",
-            str(e),
-            e.response.status_code if isinstance(e, requests.HTTPError) and e.response else None,
-        )
+@mcp.tool(
+    description="Orientamento rapido: repo attivi, PR aperte, discussion, stato locale, topic.",
+    structured_output=True,
+)
+def session_bootstrap() -> dict[str, object]:
+    def _exec() -> dict[str, object]:
+        content = _fetch("session_bootstrap.md")
+        return {"content": content, "format": "markdown", "ok": True}
+
+    return guard_timed(_exec, "session_bootstrap")
 
 
-@mcp.tool()
-def workspace_triage() -> str:
-    """Triage machine-readable: PR, issue, discussion, stato git per repo, warning."""
-    try:
-        return _fetch("workspace_triage.json")
-    except Exception as e:
-        return _tool_error(
-            "workspace_triage",
-            "workspace_triage.json",
-            str(e),
-            e.response.status_code if isinstance(e, requests.HTTPError) and e.response else None,
-        )
+@mcp.tool(
+    description="Triage machine-readable: PR, issue, discussion, stato git per repo, warning.",
+    structured_output=True,
+)
+def workspace_triage() -> dict[str, object]:
+    def _exec() -> dict[str, object]:
+        content = _fetch("workspace_triage.json")
+        return {"content": json.loads(content), "ok": True}
+
+    return guard_timed(_exec, "workspace_triage")
 
 
-@mcp.tool()
-def topic_index(resolve: str | None = None) -> str:
-    """Topic index — repos, datasets_by_source, operational_topics, analyses.
-
-    Quando ``resolve`` (dataset slug, analysis slug, o source name) è
-    specificato, restituisce un sub-graph compatto con tutte le entità
-    correlate (dataset, analyses, source, explorer themes). Senza ``resolve``
-    restituisce l'index completo (schema v3).
-    """
-    try:
+@mcp.tool(
+    description=(
+        "Topic index — repos, datasets_by_source, operational_topics, analyses. "
+        "Quando ``resolve`` (dataset slug, analysis slug, o source name) è "
+        "specificato, restituisce un sub-graph compatto con tutte le entità "
+        "correlate. Senza ``resolve`` restituisce l'index completo (schema v3)."
+    ),
+    structured_output=True,
+)
+def topic_index(resolve: str | None = None) -> dict[str, object]:
+    def _exec() -> dict[str, object]:
         raw = _fetch("topic_index.json")
-    except Exception as e:
-        return _tool_error(
-            "topic_index",
-            "topic_index.json",
-            str(e),
-            e.response.status_code if isinstance(e, requests.HTTPError) and e.response else None,
-        )
+        data: dict = json.loads(raw)
 
-    if not resolve:
-        return raw
+        if not resolve:
+            return {"content": data, "ok": True}
 
-    # Resolve: extract sub-graph for a single entity
-    try:
-        data = json.loads(raw)
-    except json.JSONDecodeError:
-        return raw
+        resolve_lower = resolve.lower()
+        result: dict = {"resolve": resolve, "found": False}
 
-    resolve_lower = resolve.lower()
-    result: dict = {"resolve": resolve, "found": False}
+        seen_sources: set[str] = set()
+        seen_datasets: set[str] = set()
+        seen_analyses: set[str] = set()
+        seen_themes: set[str] = set()
 
-    # Dedup helpers: track seen slugs to avoid duplicates across sections
-    seen_sources: set[str] = set()
-    seen_datasets: set[str] = set()
-    seen_analyses: set[str] = set()
-    seen_themes: set[str] = set()
+        def _add_source(source: str) -> None:
+            if source not in seen_sources:
+                seen_sources.add(source)
+                result.setdefault("sources", []).append(source)
 
-    def _add_source(source: str) -> None:
-        if source not in seen_sources:
-            seen_sources.add(source)
-            result.setdefault("sources", []).append(source)
+        def _add_dataset(entry: dict) -> None:
+            slug = entry["slug"]
+            if slug not in seen_datasets:
+                seen_datasets.add(slug)
+                result.setdefault("datasets", []).append(entry)
 
-    def _add_dataset(entry: dict) -> None:
-        slug = entry["slug"]
-        if slug not in seen_datasets:
-            seen_datasets.add(slug)
-            result.setdefault("datasets", []).append(entry)
+        for section in ("datasets_by_source", "candidates_by_source"):
+            entries = data.get(section, {})
+            for source, datasets in entries.items():
+                for ds in datasets:
+                    if ds.get("slug", "").lower() == resolve_lower:
+                        _add_dataset(
+                            {
+                                "slug": ds["slug"],
+                                "name": ds.get("name", ""),
+                                "source": source,
+                                "period": ds.get("period"),
+                                "stage": "published"
+                                if section == "datasets_by_source"
+                                else "incubating",
+                            }
+                        )
+                        result["found"] = True
+                        _add_source(source)
 
-    # Search in datasets (both clean_ready and candidates)
-    for section in ("datasets_by_source", "candidates_by_source"):
-        entries = data.get(section, {})
-        for source, datasets in entries.items():
-            for ds in datasets:
-                if ds.get("slug", "").lower() == resolve_lower:
-                    _add_dataset(
-                        {
-                            "slug": ds["slug"],
-                            "name": ds.get("name", ""),
-                            "source": source,
-                            "period": ds.get("period"),
-                            "stage": "published"
-                            if section == "datasets_by_source"
-                            else "incubating",
-                        }
+        for analysis in data.get("analyses", []):
+            a_slug = analysis.get("slug", "")
+            if a_slug.lower() == resolve_lower or resolve_lower in [
+                d.lower() for d in analysis.get("datasets", [])
+            ]:
+                if a_slug not in seen_analyses:
+                    seen_analyses.add(a_slug)
+                    result.setdefault("analyses", []).append(analysis)
+                    result["found"] = True
+
+        abd = data.get("analyses_by_dataset", {})
+        if resolve_lower in {k.lower() for k in abd}:
+            for k, v in abd.items():
+                if k.lower() == resolve_lower:
+                    result.setdefault("analyses_for_dataset", []).extend(
+                        s for s in v if s not in seen_analyses
                     )
                     result["found"] = True
-                    _add_source(source)
 
-    # Search in analyses
-    for analysis in data.get("analyses", []):
-        a_slug = analysis.get("slug", "")
-        if a_slug.lower() == resolve_lower or resolve_lower in [
-            d.lower() for d in analysis.get("datasets", [])
-        ]:
-            if a_slug not in seen_analyses:
-                seen_analyses.add(a_slug)
-                result.setdefault("analyses", []).append(analysis)
-                result["found"] = True
-
-    # Add analyses_by_dataset reverse lookup for this entity
-    abd = data.get("analyses_by_dataset", {})
-    if resolve_lower in {k.lower() for k in abd}:
-        for k, v in abd.items():
-            if k.lower() == resolve_lower:
-                result.setdefault("analyses_for_dataset", []).extend(
-                    s for s in v if s not in seen_analyses
-                )
-                result["found"] = True
-
-    # Search in explorer themes
-    for theme in data.get("explorer_themes", []):
-        ds_list = [d.lower() for d in theme.get("datasets", [])]
-        if resolve_lower in ds_list:
-            t_slug = theme.get("slug", "")
-            if t_slug not in seen_themes:
-                seen_themes.add(t_slug)
-                result.setdefault("explorer_themes", []).append(
-                    {
-                        "slug": t_slug,
-                        "name": theme.get("name"),
-                    }
-                )
-                result["found"] = True
-
-    # Search in sources (by source name)
-    for section in ("datasets_by_source", "candidates_by_source"):
-        entries = data.get(section, {})
-        for source in entries:
-            if source.lower() == resolve_lower:
-                result["found"] = True
-                _add_source(source)
-                for ds in entries[source]:
-                    _add_dataset(
-                        {
-                            "slug": ds["slug"],
-                            "name": ds.get("name", ""),
-                            "source": source,
-                            "period": ds.get("period"),
-                            "stage": "published"
-                            if section == "datasets_by_source"
-                            else "incubating",
-                        }
+        for theme in data.get("explorer_themes", []):
+            ds_list = [d.lower() for d in theme.get("datasets", [])]
+            if resolve_lower in ds_list:
+                t_slug = theme.get("slug", "")
+                if t_slug not in seen_themes:
+                    seen_themes.add(t_slug)
+                    result.setdefault("explorer_themes", []).append(
+                        {"slug": t_slug, "name": theme.get("name")}
                     )
+                    result["found"] = True
 
-    result["ts"] = datetime.now(timezone.utc).isoformat()
-    return json.dumps(result, indent=2, ensure_ascii=False)
+        for section in ("datasets_by_source", "candidates_by_source"):
+            entries = data.get(section, {})
+            for source in entries:
+                if source.lower() == resolve_lower:
+                    result["found"] = True
+                    _add_source(source)
+                    for ds in entries[source]:
+                        _add_dataset(
+                            {
+                                "slug": ds["slug"],
+                                "name": ds.get("name", ""),
+                                "source": source,
+                                "period": ds.get("period"),
+                                "stage": "published"
+                                if section == "datasets_by_source"
+                                else "incubating",
+                            }
+                        )
+
+        result["ts"] = datetime.now(timezone.utc).isoformat()
+        return {"content": result, "ok": True}
+
+    return guard_timed(_exec, "topic_index")
 
 
-@mcp.tool()
-def refresh_context() -> str:
-    """Triggera un nuovo build del contesto su CI.
+@mcp.tool(
+    description=(
+        "Triggera un nuovo build del contesto su CI. "
+        "Richiede GITHUB_TOKEN con scope workflow. "
+        "Gli artifact aggiornati saranno disponibili entro ~1 minuto. "
+        "Rate-limit: GitHub allow ~2 dispatches per hour. "
+        "Local guard: one dispatch per minute."
+    ),
+    structured_output=True,
+)
+def refresh_context() -> dict[str, object]:
+    def _exec() -> dict:
+        global _last_refresh_attempt
 
-    Richiede GITHUB_TOKEN con scope workflow.
-    Gli artifact aggiornati saranno disponibili entro ~1 minuto.
-
-    Rate-limit: GitHub allows ~2 dispatches per hour per repo/ref.
-    This tool enforces a local guard of one dispatch per minute.
-    """
-    global _last_refresh_attempt
-
-    token = _get_env("GITHUB_TOKEN")
-    if not token:
-        return json.dumps(
-            {
+        token = _get_env("GITHUB_TOKEN")
+        if not token:
+            return {
                 "ok": False,
-                "tool": "refresh_context",
                 "error": "GITHUB_TOKEN non impostato. Serve un token con scope 'workflow'.",
-                "ts": datetime.now(timezone.utc).isoformat(),
             }
-        )
 
-    now = time.monotonic()
-    if _last_refresh_attempt is not None:
-        elapsed = now - _last_refresh_attempt
-        if elapsed < _REFRESH_MIN_INTERVAL:
-            wait = _REFRESH_MIN_INTERVAL - elapsed
-            return json.dumps(
-                {
+        now = time.monotonic()
+        if _last_refresh_attempt is not None:
+            elapsed = now - _last_refresh_attempt
+            if elapsed < _REFRESH_MIN_INTERVAL:
+                wait = _REFRESH_MIN_INTERVAL - elapsed
+                return {
                     "ok": False,
-                    "tool": "refresh_context",
                     "error": f"Troppo presto. Ultimo tentativo {int(elapsed)}s fa. "
                     f"Aspetta ~{int(wait)}s prima di riprovare.",
                     "retry_after": int(wait),
-                    "ts": datetime.now(timezone.utc).isoformat(),
                 }
-            )
 
-    _last_refresh_attempt = now
-    client = HttpClient(timeout=10)
-    result = client.post(
-        f"{_API_BASE}/actions/workflows/build-context.yml/dispatches",
-        json={"ref": "main"},
-        headers={
-            "Authorization": f"token {token}",
-            "Accept": "application/vnd.github+json",
-        },
-    )
-
-    if not result.is_ok or result.response is None:
-        _log.error("refresh_context", "network_error", error=str(result.err))
-        return json.dumps(
-            {
-                "ok": False,
-                "tool": "refresh_context",
-                "error": f"Errore di rete: {result.err}",
-                "ts": datetime.now(timezone.utc).isoformat(),
-            }
+        _last_refresh_attempt = now
+        client = HttpClient(timeout=10)
+        result = client.post(
+            f"{_API_BASE}/actions/workflows/build-context.yml/dispatches",
+            json={"ref": "main"},
+            headers={
+                "Authorization": f"token {token}",
+                "Accept": "application/vnd.github+json",
+            },
         )
 
-    response = result.response
-    if response.status_code == 204:
-        _log.info("refresh_context", "triggered", ref="main")
-        return json.dumps(
-            {
+        if not result.is_ok or result.response is None:
+            _log.error("refresh_context", "network_error", error=str(result.err))
+            return {"ok": False, "error": f"Errore di rete: {result.err}"}
+
+        response = result.response
+        if response.status_code == 204:
+            _log.info("refresh_context", "triggered", ref="main")
+            return {
                 "ok": True,
-                "tool": "refresh_context",
                 "message": "Build triggerato. Artifact aggiornati entro ~1 minuto.",
-                "ts": datetime.now(timezone.utc).isoformat(),
             }
-        )
-    elif response.status_code == 422:
-        _log.error(
-            "refresh_context",
-            "rejected",
-            status=response.status_code,
-            body=response.text,
-        )
-        return json.dumps(
-            {
+        elif response.status_code == 422:
+            _log.error(
+                "refresh_context", "rejected", status=response.status_code, body=response.text
+            )
+            return {
                 "ok": False,
-                "tool": "refresh_context",
                 "error": "Build rifiutato (422). Verifica che il workflow sia su main.",
                 "status_code": 422,
-                "ts": datetime.now(timezone.utc).isoformat(),
             }
-        )
-    else:
-        _log.error("refresh_context", "failed", status=response.status_code, body=response.text)
-        return json.dumps(
-            {
+        else:
+            _log.error("refresh_context", "failed", status=response.status_code, body=response.text)
+            return {
                 "ok": False,
-                "tool": "refresh_context",
                 "error": f"Errore {response.status_code}: {response.text}",
                 "status_code": response.status_code,
-                "ts": datetime.now(timezone.utc).isoformat(),
             }
-        )
+
+    return guard_timed(_exec, "refresh_context")
 
 
 def main() -> None:
