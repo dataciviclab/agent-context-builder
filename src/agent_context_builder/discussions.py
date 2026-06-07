@@ -87,11 +87,10 @@ class DiscussionCollector:
             headers={"Authorization": f"bearer {self.token}"},
             retries=0,
         )
-        if result.is_error:
-            raise result.err
+        if not result.is_ok or result.response is None:
+            raise result.err if result.err else RuntimeError("GraphQL request failed")
 
-        response = result.response
-        payload = response.json()
+        payload = result.response.json()
         if "errors" in payload:
             raise ValueError(f"GraphQL errors: {payload['errors']}")
 

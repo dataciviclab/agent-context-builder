@@ -156,13 +156,14 @@ def _fetch(path: str, retries: int = 1, backoff: float = 1.0) -> str:
     client = HttpClient(max_retries=retries, retry_backoff=backoff, timeout=10)
     result = client.get(url, headers=headers)
 
-    if result.is_error:
+    if not result.is_ok or result.response is None:
         _log.error("fetch", "failed", path=path, error=str(result.err))
-        raise result.err
+        raise result.err if result.err else RuntimeError(f"Failed to fetch {path}")
 
-    result.response.raise_for_status()
-    _log.info("fetch", "success", path=path, status=result.response.status_code)
-    return result.response.text
+    response = result.response
+    response.raise_for_status()
+    _log.info("fetch", "success", path=path, status=response.status_code)
+    return response.text
 
 
 @mcp.tool()
