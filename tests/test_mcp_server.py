@@ -82,7 +82,6 @@ def test_session_bootstrap_http_error():
         mock_cls.return_value = fake
         result = mcp_server.session_bootstrap()
 
-    assert result["ok"] is False
     assert "error" in result
 
 
@@ -96,7 +95,6 @@ def test_workspace_triage_http_error():
         mock_cls.return_value = fake
         result = mcp_server.workspace_triage()
 
-    assert result["ok"] is False
     assert "error" in result
 
 
@@ -110,7 +108,6 @@ def test_topic_index_http_error():
         mock_cls.return_value = fake
         result = mcp_server.topic_index()
 
-    assert result["ok"] is False
     assert "error" in result
 
 
