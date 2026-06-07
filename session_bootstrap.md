@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-07T13:54:08.918133
+**Generated**: 2026-06-07T19:23:36.553550
 
 ## 🔍 SCOUTING
 
@@ -47,15 +47,15 @@
 
 ## 🔗 OPEN
 
-- [dataset-incubator#476](https://github.com/dataciviclab/dataset-incubator/pull/476): fix(mcp): dipendenza mcp in pyproject + main() per entry point
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
 - [toolkit#339](https://github.com/dataciviclab/toolkit/pull/339): feat(inspect): rename PROBE command to SPARQL
 - [toolkit#336](https://github.com/dataciviclab/toolkit/pull/336): feat(core): espone dateformat, timestampformat, rejects_table in clean.read
 - [data-explorer#139](https://github.com/dataciviclab/data-explorer/pull/139): feat(mef-partecipazioni): partecipazioni PA per categoria — conteggio, oneri, addetti
+- [data-explorer#136](https://github.com/dataciviclab/data-explorer/pull/136): feat(consumo-suolo): stock cementificazione per regione — ISPRA 2024
 **Discussions**: 20 open
+  · [Domanda] Come sta cambiando il pubblico impiego in Italia, e in quali comparti?
   · [Domanda] Pensioni pubbliche DAG: come si distribuisce la spesa per regione e tipo?
   · [Domanda] BDAP LEA: quanto pesa la prevenzione nelle ASL italiane?
-  · [Domanda] Pensioni PA a carico dello Stato: come si distribuiscono per regione?
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
