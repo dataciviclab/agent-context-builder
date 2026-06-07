@@ -242,7 +242,7 @@ def test_topic_index_resolve_not_found():
 
 
 # ---------------------------------------------------------------------------
-# refresh_context — still uses raw requests.post (separate concern)
+# refresh_context — via HttpClient.post
 # ---------------------------------------------------------------------------
 
 
@@ -256,10 +256,14 @@ def _reset_refresh_state(monkeypatch) -> None:
     monkeypatch.setattr(mcp_server, "_ENV_LOADED", False)
 
 
-def _mock_post_response(status: int = 204):
+def _mock_http_result(status: int = 204):
+    """Build an HttpResult-like object for mocking HttpClient.post."""
     resp = MagicMock()
     resp.status_code = status
-    return resp
+    resp.text = "mock response"
+    from lab_connectors.http import HttpResult
+
+    return HttpResult(response=resp, err=None, ssl_fallback_used=None)
 
 
 @pytest.mark.adapter
@@ -283,8 +287,8 @@ def test_refresh_context_loads_token_from_env_file(monkeypatch, tmp_path):
     monkeypatch.setenv("ACB_ENV_FILE", str(env_file))
     _reset_refresh_state(monkeypatch)
 
-    with patch("agent_context_builder.mcp_server.requests.post") as mock_post:
-        mock_post.return_value = _mock_post_response(204)
+    with patch("agent_context_builder.mcp_server.HttpClient.post") as mock_post:
+        mock_post.return_value = _mock_http_result(204)
         result = mcp_server.refresh_context()
 
     data = json.loads(result)
@@ -302,8 +306,8 @@ def test_refresh_context_loads_token_when_env_is_empty(monkeypatch, tmp_path):
     monkeypatch.setenv("ACB_ENV_FILE", str(env_file))
     _reset_refresh_state(monkeypatch)
 
-    with patch("agent_context_builder.mcp_server.requests.post") as mock_post:
-        mock_post.return_value = _mock_post_response(204)
+    with patch("agent_context_builder.mcp_server.HttpClient.post") as mock_post:
+        mock_post.return_value = _mock_http_result(204)
         result = mcp_server.refresh_context()
 
     data = json.loads(result)
@@ -324,8 +328,8 @@ def test_refresh_context_continues_after_partial_env(monkeypatch, tmp_path):
     monkeypatch.setenv("ACB_ENV_FILE", str(explicit_env))
     _reset_refresh_state(monkeypatch)
 
-    with patch("agent_context_builder.mcp_server.requests.post") as mock_post:
-        mock_post.return_value = _mock_post_response(204)
+    with patch("agent_context_builder.mcp_server.HttpClient.post") as mock_post:
+        mock_post.return_value = _mock_http_result(204)
         result = mcp_server.refresh_context()
 
     data = json.loads(result)
@@ -339,8 +343,8 @@ def test_refresh_context_success(monkeypatch):
     monkeypatch.setenv("GITHUB_TOKEN", "fake-token")
     _reset_refresh_state(monkeypatch)
 
-    with patch("agent_context_builder.mcp_server.requests.post") as mock_post:
-        mock_post.return_value = _mock_post_response(204)
+    with patch("agent_context_builder.mcp_server.HttpClient.post") as mock_post:
+        mock_post.return_value = _mock_http_result(204)
         result = mcp_server.refresh_context()
 
     data = json.loads(result)
@@ -353,8 +357,8 @@ def test_refresh_context_api_error(monkeypatch):
     monkeypatch.setenv("GITHUB_TOKEN", "fake-token")
     _reset_refresh_state(monkeypatch)
 
-    with patch("agent_context_builder.mcp_server.requests.post") as mock_post:
-        mock_post.return_value = _mock_post_response(403)
+    with patch("agent_context_builder.mcp_server.HttpClient.post") as mock_post:
+        mock_post.return_value = _mock_http_result(403)
         result = mcp_server.refresh_context()
 
     data = json.loads(result)
