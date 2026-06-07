@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-07T19:23:36.553550
+**Generated**: 2026-06-07T23:21:02.607530
 
 ## 🔍 SCOUTING
 
@@ -10,9 +10,8 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 38 candidates — 38 ok
-  ⚠️ **mur-contribuzione-universitaria** — run fallito [0](https://github.com/dataciviclab/dataset-incubator/actions/runs/26106467223)
-**Dataset Catalog**: 25 published · 25 public · updated 2026-06-06
+**Pipeline**: 39 candidates — 39 ok
+**Dataset Catalog**: 25 published · 25 public · updated 2026-06-07
 
 ## 📊 ANALYSES
 
@@ -43,15 +42,15 @@
     · bdap_lea
     · bdap_spese_stato
     · ... e altri 20
-  **Deploy**: ✅ success (2026-06-06)
+  **Deploy**: ✅ success (2026-06-07)
 
 ## 🔗 OPEN
 
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
-- [toolkit#339](https://github.com/dataciviclab/toolkit/pull/339): feat(inspect): rename PROBE command to SPARQL
 - [toolkit#336](https://github.com/dataciviclab/toolkit/pull/336): feat(core): espone dateformat, timestampformat, rejects_table in clean.read
 - [data-explorer#139](https://github.com/dataciviclab/data-explorer/pull/139): feat(mef-partecipazioni): partecipazioni PA per categoria — conteggio, oneri, addetti
 - [data-explorer#136](https://github.com/dataciviclab/data-explorer/pull/136): feat(consumo-suolo): stock cementificazione per regione — ISPRA 2024
+- [source-observatory#331](https://github.com/dataciviclab/source-observatory/pull/331): feat(so): joinabilità nativa nel source-check
 **Discussions**: 20 open
   · [Domanda] Come sta cambiando il pubblico impiego in Italia, e in quali comparti?
   · [Domanda] Pensioni pubbliche DAG: come si distribuisce la spesa per regione e tipo?

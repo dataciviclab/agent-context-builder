@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-07T19:23:36.553550",
+  "generated_at": "2026-06-07T23:21:02.607530",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -19,12 +19,6 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/429"
     },
     {
-      "number": 339,
-      "title": "feat(inspect): rename PROBE command to SPARQL",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/339"
-    },
-    {
       "number": 336,
       "title": "feat(core): espone dateformat, timestampformat, rejects_table in clean.read",
       "repo": "toolkit",
@@ -41,9 +35,15 @@
       "title": "feat(consumo-suolo): stock cementificazione per regione \u2014 ISPRA 2024",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/136"
+    },
+    {
+      "number": 331,
+      "title": "feat(so): joinabilit\u00e0 nativa nel source-check",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/331"
     }
   ],
-  "open_issues": 60,
+  "open_issues": 59,
   "issues": [
     {
       "number": 454,
@@ -290,12 +290,6 @@
       "title": "feat: esporre parametri DuckDB mancanti in clean.read (dateformat, rejects_table, etc.)",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/332"
-    },
-    {
-      "number": 326,
-      "title": "refactor: rinominare `inspect probe` in `inspect sparql` e valutare posizione",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/326"
     },
     {
       "number": 141,
@@ -646,11 +640,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-06-06",
+    "generated_at": "2026-06-07",
     "summary": {
-      "total": 38,
+      "total": 39,
       "by_status": {
-        "ok": 38,
+        "ok": 39,
         "warn": 0,
         "error": 0
       }
@@ -661,7 +655,7 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-06-06",
+    "updated_at": "2026-06-07",
     "summary": {
       "total": 38,
       "published": 25
@@ -3376,12 +3370,12 @@
       "terna_electricity_by_source"
     ],
     "last_deploy": {
-      "run_id": 27077132075,
+      "run_id": 27104912542,
       "name": "Deploy to GitHub Pages (Observable Framework)",
       "status": "completed",
       "conclusion": "success",
-      "completed_at": "2026-06-06T23:47:07Z",
-      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/27077132075"
+      "completed_at": "2026-06-07T21:14:39Z",
+      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/27104912542"
     }
   }
 }
