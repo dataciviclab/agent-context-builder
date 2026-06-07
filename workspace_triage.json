@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-07T08:57:05.090681",
+  "generated_at": "2026-06-07T13:43:43.064149",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,13 +10,13 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 6,
+  "open_prs": 7,
   "prs": [
     {
-      "number": 462,
-      "title": "feat: aggiunge compose malasanita (v1/v2/v3)",
+      "number": 476,
+      "title": "fix(mcp): dipendenza mcp in pyproject + main() per entry point",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/462"
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/476"
     },
     {
       "number": 429,
@@ -47,9 +47,15 @@
       "title": "feat(consumo-suolo): stock cementificazione per regione \u2014 ISPRA 2024",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/136"
+    },
+    {
+      "number": 327,
+      "title": "fix(mcp): entry point standard + rimuove fastmcp (mai usato)",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/327"
     }
   ],
-  "open_issues": 59,
+  "open_issues": 60,
   "issues": [
     {
       "number": 454,
@@ -404,6 +410,12 @@
       "title": "feat: apri issue automatica dai segnali drift attivi in catalog_signals.json",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/127"
+    },
+    {
+      "number": 45,
+      "title": "refactor: centralizzare proxy, curl fallback e CA bundle in HttpClient",
+      "repo": "lab-connectors",
+      "url": "https://github.com/dataciviclab/lab-connectors/issues/45"
     }
   ],
   "open_discussions": 20,
@@ -609,7 +621,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 6"
+    "Many open PRs: 7"
   ],
   "radar": {
     "available": true,

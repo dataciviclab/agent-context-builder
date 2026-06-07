@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-07T08:57:05.090681
+**Generated**: 2026-06-07T13:43:43.064149
 
 ## 🔍 SCOUTING
 
@@ -47,7 +47,7 @@
 
 ## 🔗 OPEN
 
-- [dataset-incubator#462](https://github.com/dataciviclab/dataset-incubator/pull/462): feat: aggiunge compose malasanita (v1/v2/v3)
+- [dataset-incubator#476](https://github.com/dataciviclab/dataset-incubator/pull/476): fix(mcp): dipendenza mcp in pyproject + main() per entry point
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
 - [toolkit#339](https://github.com/dataciviclab/toolkit/pull/339): feat(inspect): rename PROBE command to SPARQL
 - [toolkit#336](https://github.com/dataciviclab/toolkit/pull/336): feat(core): espone dateformat, timestampformat, rejects_table in clean.read
