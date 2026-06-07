@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-07T04:00:07.243201",
+  "generated_at": "2026-06-07T08:57:05.090681",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -613,10 +613,10 @@
   ],
   "radar": {
     "available": true,
-    "probe_date": "2026-06-06",
+    "probe_date": "2026-06-07",
     "sources_total": 30,
-    "green": 25,
-    "yellow": 5,
+    "green": 29,
+    "yellow": 1,
     "red": 0,
     "persistent_red": 0,
     "unhealthy": [
@@ -625,39 +625,7 @@
         "status": "YELLOW",
         "protocol": "sdmx",
         "http_code": "-",
-        "note": "Timeout (ConnectTimeout)",
-        "red_streak": 0
-      },
-      {
-        "id": "openbdap",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
-        "red_streak": 0
-      },
-      {
-        "id": "dati_camera",
-        "status": "YELLOW",
-        "protocol": "sparql",
-        "http_code": "404",
-        "note": null,
-        "red_streak": 0
-      },
-      {
-        "id": "consip_open_data",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
-        "red_streak": 0
-      },
-      {
-        "id": "mef_irpef",
-        "status": "YELLOW",
-        "protocol": "html",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
+        "note": "Timeout (ReadTimeout)",
         "red_streak": 0
       }
     ]

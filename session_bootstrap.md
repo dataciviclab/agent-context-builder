@@ -1,15 +1,11 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-07T04:00:07.243201
+**Generated**: 2026-06-07T08:57:05.090681
 
 ## 🔍 SCOUTING
 
-**Radar**: 30 fonti — GREEN 25 · YELLOW 5 · RED 0 (probe: 2026-06-06)
-  · **istat_sdmx** YELLOW [-] — Timeout (ConnectTimeout)
-  · **openbdap** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
-  · **dati_camera** YELLOW [404]
-  · **consip_open_data** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
-  · **mef_irpef** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
+**Radar**: 30 fonti — GREEN 29 · YELLOW 1 · RED 0 (probe: 2026-06-07)
+  · **istat_sdmx** YELLOW [-] — Timeout (ReadTimeout)
   · **openbdap** (ckan): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
 
 ## 📥 INTAKE
