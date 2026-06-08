@@ -41,7 +41,7 @@ jobs:
         run: pytest --cov=src/agent_context_builder --cov-report=xml --cov-fail-under=70
 
       - name: Upload coverage
-        uses: codecov/codecov-action@v6
+        uses: codecov/codecov-action@v7
         with:
           fail_ci_if_error: false
 
