@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-08T13:35:15.345367
+**Generated**: 2026-06-08T15:54:35.317157
 
 ## 🔍 SCOUTING
 
@@ -45,6 +45,7 @@
 
 ## 🔗 OPEN
 
+- [dataset-incubator#484](https://github.com/dataciviclab/dataset-incubator/pull/484): intake: posti_letto_stabilimento — Posti letto per stabilimento ospedaliero e disciplina (2020-2023)
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
 - [toolkit#336](https://github.com/dataciviclab/toolkit/pull/336): feat(core): espone dateformat, timestampformat, rejects_table in clean.read
 - [data-explorer#139](https://github.com/dataciviclab/data-explorer/pull/139): feat(mef-partecipazioni): partecipazioni PA per categoria — conteggio, oneri, addetti

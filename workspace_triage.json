@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-08T13:35:15.345367",
+  "generated_at": "2026-06-08T15:54:35.317157",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,13 +10,19 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 5,
+  "open_prs": 6,
   "prs": [
     {
       "number": 57,
       "title": "chore(deps): bump codecov/codecov-action from 6 to 7",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/pull/57"
+    },
+    {
+      "number": 484,
+      "title": "intake: posti_letto_stabilimento \u2014 Posti letto per stabilimento ospedaliero e disciplina (2020-2023)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/484"
     },
     {
       "number": 429,
@@ -43,8 +49,14 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/136"
     }
   ],
-  "open_issues": 65,
+  "open_issues": 66,
   "issues": [
+    {
+      "number": 483,
+      "title": "intake: posti_letto_stabilimento \u2014 Posti letto per stabilimento ospedaliero e disciplina (2020-2023)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/483"
+    },
     {
       "number": 454,
       "title": "intake: personale-ssn \u2014 Personale dipendente ASL/AO/IRCCS per ruolo 2010-2021",
@@ -298,12 +310,6 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/113"
     },
     {
-      "number": 332,
-      "title": "feat: esporre parametri DuckDB mancanti in clean.read (dateformat, rejects_table, etc.)",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/332"
-    },
-    {
       "number": 145,
       "title": "follow-up: pagina e tema per istat_pil_territoriale",
       "repo": "data-explorer",
@@ -374,6 +380,12 @@
       "title": "follow-up: pagina e tema per mef-partecipazioni",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/issues/83"
+    },
+    {
+      "number": 339,
+      "title": "source-check: Posti letto per stabilimento ospedaliero e disciplina \u2014 Ministero Salute (2020-2023)",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/339"
     },
     {
       "number": 335,
@@ -638,7 +650,9 @@
       "untracked_files": 0
     }
   },
-  "warnings": [],
+  "warnings": [
+    "Many open PRs: 6"
+  ],
   "radar": {
     "available": true,
     "probe_date": "2026-06-08",
