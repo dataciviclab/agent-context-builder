@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-08T15:54:35.317157
+**Generated**: 2026-06-08T20:18:47.661655
 
 ## 🔍 SCOUTING
 
@@ -47,9 +47,9 @@
 
 - [dataset-incubator#484](https://github.com/dataciviclab/dataset-incubator/pull/484): intake: posti_letto_stabilimento — Posti letto per stabilimento ospedaliero e disciplina (2020-2023)
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
+- [toolkit#350](https://github.com/dataciviclab/toolkit/pull/350): fix(scaffold): anni da CSV, header:true, mart scheletro, --slug flag
 - [toolkit#336](https://github.com/dataciviclab/toolkit/pull/336): feat(core): espone dateformat, timestampformat, rejects_table in clean.read
 - [data-explorer#139](https://github.com/dataciviclab/data-explorer/pull/139): feat(mef-partecipazioni): partecipazioni PA per categoria — conteggio, oneri, addetti
-- [data-explorer#136](https://github.com/dataciviclab/data-explorer/pull/136): feat(consumo-suolo): stock cementificazione per regione — ISPRA 2024
 - **Dependabot**: 1 bump PR(s)
 **Discussions**: 20 open
   · [Domanda] Come sta cambiando il pubblico impiego in Italia, e in quali comparti?

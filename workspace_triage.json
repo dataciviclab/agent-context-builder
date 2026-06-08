@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-08T15:54:35.317157",
+  "generated_at": "2026-06-08T20:18:47.661655",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,7 +10,7 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 6,
+  "open_prs": 7,
   "prs": [
     {
       "number": 57,
@@ -31,6 +31,12 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/429"
     },
     {
+      "number": 350,
+      "title": "fix(scaffold): anni da CSV, header:true, mart scheletro, --slug flag",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/350"
+    },
+    {
       "number": 336,
       "title": "feat(core): espone dateformat, timestampformat, rejects_table in clean.read",
       "repo": "toolkit",
@@ -49,7 +55,7 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/136"
     }
   ],
-  "open_issues": 66,
+  "open_issues": 65,
   "issues": [
     {
       "number": 483,
@@ -382,10 +388,10 @@
       "url": "https://github.com/dataciviclab/data-explorer/issues/83"
     },
     {
-      "number": 339,
-      "title": "source-check: Posti letto per stabilimento ospedaliero e disciplina \u2014 Ministero Salute (2020-2023)",
+      "number": 340,
+      "title": "Source check per fonti SPARQL senza distribuzione HTTP (dati_senato, ispra_linked_data)",
       "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/339"
+      "url": "https://github.com/dataciviclab/source-observatory/issues/340"
     },
     {
       "number": 335,
@@ -416,12 +422,6 @@
       "title": "scouting: Banca d'Italia (80 dataset su dati.gov.it)",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/275"
-    },
-    {
-      "number": 231,
-      "title": "Radar alerting automatico \u2014 issue da RED streak persistenti",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/231"
     },
     {
       "number": 227,
@@ -651,7 +651,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 6"
+    "Many open PRs: 7"
   ],
   "radar": {
     "available": true,
