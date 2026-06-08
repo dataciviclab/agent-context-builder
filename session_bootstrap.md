@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-08T13:28:48.745415
+**Generated**: 2026-06-08T13:35:15.345367
 
 ## 🔍 SCOUTING
 
@@ -49,7 +49,6 @@
 - [toolkit#336](https://github.com/dataciviclab/toolkit/pull/336): feat(core): espone dateformat, timestampformat, rejects_table in clean.read
 - [data-explorer#139](https://github.com/dataciviclab/data-explorer/pull/139): feat(mef-partecipazioni): partecipazioni PA per categoria — conteggio, oneri, addetti
 - [data-explorer#136](https://github.com/dataciviclab/data-explorer/pull/136): feat(consumo-suolo): stock cementificazione per regione — ISPRA 2024
-- [source-observatory#337](https://github.com/dataciviclab/source-observatory/pull/337): feat(so): notebook diagnostica fonti, cataloghi, dataset
 - **Dependabot**: 1 bump PR(s)
 **Discussions**: 20 open
   · [Domanda] Come sta cambiando il pubblico impiego in Italia, e in quali comparti?
