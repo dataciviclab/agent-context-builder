@@ -1,12 +1,11 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-08T04:04:15.221673
+**Generated**: 2026-06-08T10:57:20.581112
 
 ## 🔍 SCOUTING
 
-**Radar**: 30 fonti — GREEN 29 · YELLOW 1 · RED 0 (probe: 2026-06-07)
-  · **istat_sdmx** YELLOW [-] — Timeout (ReadTimeout)
-  · **openbdap** (ckan): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
+**Radar**: 30 fonti — GREEN 30 · YELLOW 0 · RED 0 (probe: 2026-06-08)
+  · **ispra_linked_data** (sparql): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
 
 ## 📥 INTAKE
 
@@ -46,6 +45,7 @@
 
 ## 🔗 OPEN
 
+- [dataset-incubator#480](https://github.com/dataciviclab/dataset-incubator/pull/480): intake: istat_pil_territoriale — PIL regionale e provinciale da ISTAT SDMX (support)
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
 - [toolkit#336](https://github.com/dataciviclab/toolkit/pull/336): feat(core): espone dateformat, timestampformat, rejects_table in clean.read
 - [data-explorer#139](https://github.com/dataciviclab/data-explorer/pull/139): feat(mef-partecipazioni): partecipazioni PA per categoria — conteggio, oneri, addetti

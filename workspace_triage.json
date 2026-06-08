@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-08T04:04:15.221673",
+  "generated_at": "2026-06-08T10:57:20.581112",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,8 +10,14 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 4,
+  "open_prs": 6,
   "prs": [
+    {
+      "number": 480,
+      "title": "intake: istat_pil_territoriale \u2014 PIL regionale e provinciale da ISTAT SDMX (support)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/480"
+    },
     {
       "number": 429,
       "title": "intake: istat_nonprofit \u2014 Censimento permanente Istituzioni non profit",
@@ -35,10 +41,22 @@
       "title": "feat(consumo-suolo): stock cementificazione per regione \u2014 ISPRA 2024",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/136"
+    },
+    {
+      "number": 336,
+      "title": "feat(so): notebook shortlist joinabilit\u00e0 per fonte",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/336"
     }
   ],
-  "open_issues": 59,
+  "open_issues": 63,
   "issues": [
+    {
+      "number": 479,
+      "title": "intake: istat_pil_territoriale \u2014 PIL regionale e provinciale da ISTAT SDMX (support)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/479"
+    },
     {
       "number": 454,
       "title": "intake: personale-ssn \u2014 Personale dipendente ASL/AO/IRCCS per ruolo 2010-2021",
@@ -352,6 +370,24 @@
       "url": "https://github.com/dataciviclab/data-explorer/issues/83"
     },
     {
+      "number": 335,
+      "title": "source-check: Superficie territoriale comuni + codici catastali (scouting watchlist)",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/335"
+    },
+    {
+      "number": 334,
+      "title": "source-check: FOI prezzi consumo + zona altimetrica comuni \u2014 ISTAT SDMX (support dataset)",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/334"
+    },
+    {
+      "number": 332,
+      "title": "[Catalog] 2026-06-08 \u2014 3 regressionei, 3 nuova fonte, 1 recovery, -146 item",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/332"
+    },
+    {
       "number": 328,
       "title": "inventory-triage: openbdap \u2014 +28 dataset, shortlist preliminare",
       "repo": "source-observatory",
@@ -596,38 +632,31 @@
       "untracked_files": 0
     }
   },
-  "warnings": [],
+  "warnings": [
+    "Many open PRs: 6"
+  ],
   "radar": {
     "available": true,
-    "probe_date": "2026-06-07",
+    "probe_date": "2026-06-08",
     "sources_total": 30,
-    "green": 29,
-    "yellow": 1,
+    "green": 30,
+    "yellow": 0,
     "red": 0,
     "persistent_red": 0,
-    "unhealthy": [
-      {
-        "id": "istat_sdmx",
-        "status": "YELLOW",
-        "protocol": "sdmx",
-        "http_code": "-",
-        "note": "Timeout (ReadTimeout)",
-        "red_streak": 0
-      }
-    ]
+    "unhealthy": []
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-06-01T08:48:05+00:00",
-    "sources_checked": 23,
+    "captured_at": "2026-06-08T08:25:35+00:00",
+    "sources_checked": 26,
     "regressions": [],
     "alerts": [
       {
-        "source": "openbdap",
-        "protocol": "ckan",
+        "source": "ispra_linked_data",
+        "protocol": "sparql",
         "signal_type": "inventory change",
         "result": "inventory change",
-        "detail": "3809 item (package_list), delta +28 rispetto al run precedente (3781).",
+        "detail": "67 item (sparql_query), delta +1 rispetto al run precedente (66).",
         "suggested_action": "verificare se variazione attesa; avviare inventory-triage se nuovi dataset"
       }
     ]
