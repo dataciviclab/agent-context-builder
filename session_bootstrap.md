@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-07T23:21:02.607530
+**Generated**: 2026-06-08T04:04:15.221673
 
 ## 🔍 SCOUTING
 
@@ -50,7 +50,6 @@
 - [toolkit#336](https://github.com/dataciviclab/toolkit/pull/336): feat(core): espone dateformat, timestampformat, rejects_table in clean.read
 - [data-explorer#139](https://github.com/dataciviclab/data-explorer/pull/139): feat(mef-partecipazioni): partecipazioni PA per categoria — conteggio, oneri, addetti
 - [data-explorer#136](https://github.com/dataciviclab/data-explorer/pull/136): feat(consumo-suolo): stock cementificazione per regione — ISPRA 2024
-- [source-observatory#331](https://github.com/dataciviclab/source-observatory/pull/331): feat(so): joinabilità nativa nel source-check
 **Discussions**: 20 open
   · [Domanda] Come sta cambiando il pubblico impiego in Italia, e in quali comparti?
   · [Domanda] Pensioni pubbliche DAG: come si distribuisce la spesa per regione e tipo?
