@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-08T10:57:20.581112",
+  "generated_at": "2026-06-08T13:28:48.745415",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,13 +10,13 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 6,
+  "open_prs": 7,
   "prs": [
     {
-      "number": 480,
-      "title": "intake: istat_pil_territoriale \u2014 PIL regionale e provinciale da ISTAT SDMX (support)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/480"
+      "number": 57,
+      "title": "chore(deps): bump codecov/codecov-action from 6 to 7",
+      "repo": "agent-context-builder",
+      "url": "https://github.com/dataciviclab/agent-context-builder/pull/57"
     },
     {
       "number": 429,
@@ -43,20 +43,20 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/136"
     },
     {
+      "number": 337,
+      "title": "feat(so): notebook diagnostica fonti, cataloghi, dataset",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/337"
+    },
+    {
       "number": 336,
       "title": "feat(so): notebook shortlist joinabilit\u00e0 per fonte",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/pull/336"
     }
   ],
-  "open_issues": 63,
+  "open_issues": 65,
   "issues": [
-    {
-      "number": 479,
-      "title": "intake: istat_pil_territoriale \u2014 PIL regionale e provinciale da ISTAT SDMX (support)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/479"
-    },
     {
       "number": 454,
       "title": "intake: personale-ssn \u2014 Personale dipendente ASL/AO/IRCCS per ruolo 2010-2021",
@@ -124,12 +124,6 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/413"
     },
     {
-      "number": 383,
-      "title": "aggiungere time_coverage ai candidati single-year",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/383"
-    },
-    {
       "number": 378,
       "title": "Proposta intake: Indicatori Fabbisogno Standard Comuni (opencivitas.it)",
       "repo": "dataset-incubator",
@@ -182,6 +176,24 @@
       "title": "intake: BDAP MOP \u2014 soggetti titolari di Opere Pubbliche, per CUP e codice fiscale (2026)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/249"
+    },
+    {
+      "number": 333,
+      "title": "analisi: istat_pil_territoriale \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/333"
+    },
+    {
+      "number": 332,
+      "title": "[Seed] Rendere esplicito un debito gi\u00e0 emerso senza aprire un refactor largo",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/332"
+    },
+    {
+      "number": 331,
+      "title": "[Seed] Fare una review rapida di un filone gi\u00e0 vivo e scegliere un solo prossimo passo",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/331"
     },
     {
       "number": 329,
@@ -302,6 +314,12 @@
       "title": "feat: esporre parametri DuckDB mancanti in clean.read (dateformat, rejects_table, etc.)",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/332"
+    },
+    {
+      "number": 145,
+      "title": "follow-up: pagina e tema per istat_pil_territoriale",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/145"
     },
     {
       "number": 141,
@@ -633,7 +651,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 6"
+    "Many open PRs: 7"
   ],
   "radar": {
     "available": true,
@@ -647,27 +665,18 @@
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-06-08T08:25:35+00:00",
+    "captured_at": "2026-06-08T13:11:31+00:00",
     "sources_checked": 26,
     "regressions": [],
-    "alerts": [
-      {
-        "source": "ispra_linked_data",
-        "protocol": "sparql",
-        "signal_type": "inventory change",
-        "result": "inventory change",
-        "detail": "67 item (sparql_query), delta +1 rispetto al run precedente (66).",
-        "suggested_action": "verificare se variazione attesa; avviare inventory-triage se nuovi dataset"
-      }
-    ]
+    "alerts": []
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-06-07",
+    "generated_at": "2026-06-08",
     "summary": {
-      "total": 39,
+      "total": 40,
       "by_status": {
-        "ok": 39,
+        "ok": 40,
         "warn": 0,
         "error": 0
       }
@@ -678,10 +687,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-06-07",
+    "updated_at": "2026-06-08",
     "summary": {
-      "total": 38,
-      "published": 25
+      "total": 39,
+      "published": 26
     },
     "datasets": [
       {
@@ -2272,6 +2281,61 @@
         ]
       },
       {
+        "slug": "istat_pil_territoriale",
+        "name": "PIL regionale e provinciale",
+        "stage": "published",
+        "period": {
+          "start": 1995,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/istat_pil_territoriale/2024/istat_pil_territoriale_2024_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 1,
+        "dimension_columns": 8,
+        "column_count": 9,
+        "columns": [
+          {
+            "name": "territorio_codice",
+            "role": "dimension"
+          },
+          {
+            "name": "territorio_nome",
+            "role": "dimension"
+          },
+          {
+            "name": "livello",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_dato_codice",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_dato",
+            "role": "dimension"
+          },
+          {
+            "name": "valutazione_codice",
+            "role": "dimension"
+          },
+          {
+            "name": "valutazione",
+            "role": "dimension"
+          },
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "valore_mln_eu",
+            "role": "metric"
+          }
+        ]
+      },
+      {
         "slug": "mef_irpef_regionale",
         "name": "MEF - Irpef Regionale",
         "stage": "incubating",
@@ -3381,6 +3445,7 @@
       "istat_gini_regionale",
       "istat_housing_crowding",
       "istat_ipab_aree",
+      "istat_pil_territoriale",
       "mim_alunni_corso_eta",
       "opencivitas_fsc_2025_rso",
       "opencoesione_progetti",

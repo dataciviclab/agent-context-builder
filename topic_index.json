@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-06-08T10:57:20.581112",
+  "generated_at": "2026-06-08T13:28:48.745415",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -175,6 +175,16 @@
         "period": {
           "start": 2010,
           "end": 2025
+        }
+      }
+    ],
+    "ISTAT \u2014 Conti economici territoriali": [
+      {
+        "slug": "istat_pil_territoriale",
+        "name": "PIL regionale e provinciale",
+        "period": {
+          "start": 1995,
+          "end": 2024
         }
       }
     ],

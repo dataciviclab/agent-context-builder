@@ -1,16 +1,16 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-08T10:57:20.581112
+**Generated**: 2026-06-08T13:28:48.745415
 
 ## 🔍 SCOUTING
 
 **Radar**: 30 fonti — GREEN 30 · YELLOW 0 · RED 0 (probe: 2026-06-08)
-  · **ispra_linked_data** (sparql): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
+**Catalog Drift**: no drift signals (26 sources checked)
 
 ## 📥 INTAKE
 
-**Pipeline**: 39 candidates — 39 ok
-**Dataset Catalog**: 25 published · 25 public · updated 2026-06-07
+**Pipeline**: 40 candidates — 40 ok
+**Dataset Catalog**: 26 published · 26 public · updated 2026-06-08
 
 ## 📊 ANALYSES
 
@@ -34,22 +34,23 @@
   · **Sanità**: spesa-farmaceutica, bdap-lea
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
-  ⚠ 25 dataset published non ancora su explorer:
+  ⚠ 26 dataset published non ancora su explorer:
     · aifa_spesa_consumo
     · bdap_anagrafe_enti
     · bdap_entrate_stato
     · bdap_lea
     · bdap_spese_stato
-    · ... e altri 20
+    · ... e altri 21
   **Deploy**: ✅ success (2026-06-07)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#480](https://github.com/dataciviclab/dataset-incubator/pull/480): intake: istat_pil_territoriale — PIL regionale e provinciale da ISTAT SDMX (support)
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
 - [toolkit#336](https://github.com/dataciviclab/toolkit/pull/336): feat(core): espone dateformat, timestampformat, rejects_table in clean.read
 - [data-explorer#139](https://github.com/dataciviclab/data-explorer/pull/139): feat(mef-partecipazioni): partecipazioni PA per categoria — conteggio, oneri, addetti
 - [data-explorer#136](https://github.com/dataciviclab/data-explorer/pull/136): feat(consumo-suolo): stock cementificazione per regione — ISPRA 2024
+- [source-observatory#337](https://github.com/dataciviclab/source-observatory/pull/337): feat(so): notebook diagnostica fonti, cataloghi, dataset
+- **Dependabot**: 1 bump PR(s)
 **Discussions**: 20 open
   · [Domanda] Come sta cambiando il pubblico impiego in Italia, e in quali comparti?
   · [Domanda] Pensioni pubbliche DAG: come si distribuisce la spesa per regione e tipo?
