@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-09T13:53:43.570738
+**Generated**: 2026-06-09T14:53:09.157636
 
 ## 🔍 SCOUTING
 
@@ -51,7 +51,6 @@
 - [toolkit#336](https://github.com/dataciviclab/toolkit/pull/336): feat(core): espone dateformat, timestampformat, rejects_table in clean.read
 - [data-explorer#139](https://github.com/dataciviclab/data-explorer/pull/139): feat(mef-partecipazioni): partecipazioni PA per categoria — conteggio, oneri, addetti
 - [data-explorer#136](https://github.com/dataciviclab/data-explorer/pull/136): feat(consumo-suolo): stock cementificazione per regione — ISPRA 2024
-- **Dependabot**: 1 bump PR(s)
 **Discussions**: 20 open
   · [Domanda] 405 opere pubbliche incomplete, 2,7 miliardi di euro fermati. Dove sono finite le nostre infrastrutture?
   · [Domanda] Come sta cambiando il pubblico impiego in Italia, e in quali comparti?
