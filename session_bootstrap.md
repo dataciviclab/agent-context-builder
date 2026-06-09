@@ -1,10 +1,11 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-09T03:34:46.095472
+**Generated**: 2026-06-09T09:45:08.321082
 
 ## 🔍 SCOUTING
 
-**Radar**: 30 fonti — GREEN 30 · YELLOW 0 · RED 0 (probe: 2026-06-08)
+**Radar**: 30 fonti — GREEN 29 · YELLOW 0 · RED 1 (probe: 2026-06-09)
+  · **dati_camera** RED [503]
 **Catalog Drift**: no drift signals (26 sources checked)
 
 ## 📥 INTAKE

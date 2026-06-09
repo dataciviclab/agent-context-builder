@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T03:34:46.095472",
+  "generated_at": "2026-06-09T09:45:08.321082",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -49,8 +49,14 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/136"
     }
   ],
-  "open_issues": 63,
+  "open_issues": 61,
   "issues": [
+    {
+      "number": 486,
+      "title": "intake: istat_elenco_comuni \u2014 Elenco dei comuni italiani (codici ISTAT, catastali, superficie km\u00b2)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/486"
+    },
     {
       "number": 485,
       "title": "intake: bdap_mop_gare \u2014 Gare Opere Pubbliche MOP per regione (2026)",
@@ -86,12 +92,6 @@
       "title": "intake: opencoesione-soggetti \u2014 Soggetti collegati ai progetti coesione (7.4M righe)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/441"
-    },
-    {
-      "number": 438,
-      "title": "intake: bdap_mop_totale \u2014 Progetti Opere Pubbliche MOP - Totale",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/438"
     },
     {
       "number": 436,
@@ -136,12 +136,6 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/378"
     },
     {
-      "number": 377,
-      "title": "Proposta intake: Anagrafe Biblioteche Italiane (dati.cultura.gov.it)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/377"
-    },
-    {
       "number": 376,
       "title": "Proposta intake: Archivio Pronunce Corte Costituzionale (dati.cortecostituzionale.it)",
       "repo": "dataset-incubator",
@@ -176,12 +170,6 @@
       "title": "intake: CONSIP MEPA \u2014 acquisti e appalti stipulati della PA, per provincia (2023-2025)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/250"
-    },
-    {
-      "number": 249,
-      "title": "intake: BDAP MOP \u2014 soggetti titolari di Opere Pubbliche, per CUP e codice fiscale (2026)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/249"
     },
     {
       "number": 333,
@@ -637,13 +625,22 @@
   ],
   "radar": {
     "available": true,
-    "probe_date": "2026-06-08",
+    "probe_date": "2026-06-09",
     "sources_total": 30,
-    "green": 30,
+    "green": 29,
     "yellow": 0,
-    "red": 0,
+    "red": 1,
     "persistent_red": 0,
-    "unhealthy": []
+    "unhealthy": [
+      {
+        "id": "dati_camera",
+        "status": "RED",
+        "protocol": "sparql",
+        "http_code": "503",
+        "note": null,
+        "red_streak": 0
+      }
+    ]
   },
   "source_health": {
     "available": true,
