@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T09:45:08.321082",
+  "generated_at": "2026-06-09T13:53:43.570738",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -19,10 +19,10 @@
       "url": "https://github.com/dataciviclab/agent-context-builder/pull/57"
     },
     {
-      "number": 484,
-      "title": "intake: posti_letto_stabilimento \u2014 Posti letto per stabilimento ospedaliero e disciplina (2020-2023)",
+      "number": 487,
+      "title": "intake: istat-elenco-comuni \u2014 Elenco dei comuni italiani (codici ISTAT, catastali, superficie km\u00b2)",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/484"
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/487"
     },
     {
       "number": 429,
@@ -49,8 +49,14 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/136"
     }
   ],
-  "open_issues": 61,
+  "open_issues": 62,
   "issues": [
+    {
+      "number": 489,
+      "title": "bug: compose (mart-only) fallisce GCS push in post-merge",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/489"
+    },
     {
       "number": 486,
       "title": "intake: istat_elenco_comuni \u2014 Elenco dei comuni italiani (codici ISTAT, catastali, superficie km\u00b2)",
@@ -62,12 +68,6 @@
       "title": "intake: bdap_mop_gare \u2014 Gare Opere Pubbliche MOP per regione (2026)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/485"
-    },
-    {
-      "number": 483,
-      "title": "intake: posti_letto_stabilimento \u2014 Posti letto per stabilimento ospedaliero e disciplina (2020-2023)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/483"
     },
     {
       "number": 454,
@@ -154,12 +154,6 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/374"
     },
     {
-      "number": 369,
-      "title": "Proposta: mart dimensionale \u2014 aggregazioni per gerarchia naturale del dato",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/369"
-    },
-    {
       "number": 327,
       "title": "intake: Incentivi.gov: anagrafica degli incentivi alle imprese per regione, ambito e forma di agevolazione",
       "repo": "dataset-incubator",
@@ -170,6 +164,12 @@
       "title": "intake: CONSIP MEPA \u2014 acquisti e appalti stipulati della PA, per provincia (2023-2025)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/250"
+    },
+    {
+      "number": 335,
+      "title": "analisi: posti_letto_stabilimento \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/335"
     },
     {
       "number": 333,
@@ -302,6 +302,12 @@
       "title": "[Roadmap 2026] 5 dataset territorio e ambiente puliti e analizzati",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/issues/113"
+    },
+    {
+      "number": 147,
+      "title": "follow-up: pagina e tema per posti_letto_stabilimento",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/147"
     },
     {
       "number": 145,
@@ -651,11 +657,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-06-08",
+    "generated_at": "2026-06-09",
     "summary": {
-      "total": 40,
+      "total": 41,
       "by_status": {
-        "ok": 40,
+        "ok": 41,
         "warn": 0,
         "error": 0
       }
@@ -666,10 +672,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-06-08",
+    "updated_at": "2026-06-09",
     "summary": {
-      "total": 39,
-      "published": 26
+      "total": 40,
+      "published": 27
     },
     "datasets": [
       {
@@ -1622,7 +1628,7 @@
         "name": "Giustizia Penale \u2014 Clearance Rate e Disposition Time",
         "stage": "incubating",
         "period": {
-          "start": 2024,
+          "start": 2014,
           "end": 2024
         },
         "location": {
@@ -2757,8 +2763,8 @@
         "name": "Pensioni Pa Dag",
         "stage": "incubating",
         "period": {
-          "start": 2024,
-          "end": 2024
+          "start": 2017,
+          "end": 2022
         },
         "location": {
           "type": "gcs",
@@ -2873,6 +2879,117 @@
           },
           {
             "name": "popolazione_residente",
+            "role": "metric"
+          }
+        ]
+      },
+      {
+        "slug": "posti_letto_stabilimento",
+        "name": "Posti Letto Stabilimento",
+        "stage": "published",
+        "period": {
+          "start": 2020,
+          "end": 2023
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/posti_letto_stabilimento/*/posti_letto_stabilimento_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 6,
+        "dimension_columns": 17,
+        "column_count": 23,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_regione",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_regione",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_azienda",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_azienda",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_struttura",
+            "role": "dimension"
+          },
+          {
+            "name": "subcodice",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione_struttura_stabilimento",
+            "role": "dimension"
+          },
+          {
+            "name": "indirizzo",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_comune",
+            "role": "dimension"
+          },
+          {
+            "name": "comune",
+            "role": "dimension"
+          },
+          {
+            "name": "sigla_provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_tipo_struttura",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_tipo_struttura",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_disciplina",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_disciplina",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_di_disciplina",
+            "role": "dimension"
+          },
+          {
+            "name": "n_reparti",
+            "role": "metric"
+          },
+          {
+            "name": "posti_letto_degenza_ordinaria",
+            "role": "metric"
+          },
+          {
+            "name": "posti_letto_degenza_a_pagamento",
+            "role": "metric"
+          },
+          {
+            "name": "posti_letto_day_hospital",
+            "role": "metric"
+          },
+          {
+            "name": "posti_letto_day_surgery",
+            "role": "metric"
+          },
+          {
+            "name": "totale_posti_letto",
             "role": "metric"
           }
         ]
@@ -3430,6 +3547,7 @@
       "opencoesione_progetti",
       "openga_ricorsi_cds",
       "popolazione_istat_comunale_2019_2025",
+      "posti_letto_stabilimento",
       "reparti_ricovero",
       "strutture_asl",
       "strutture_ricovero_asl",

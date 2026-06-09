@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-06-09T09:45:08.321082",
+  "generated_at": "2026-06-09T13:53:43.570738",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -238,6 +238,16 @@
         }
       }
     ],
+    "Ministero della Salute \u2014 Banca Dati Posti Letto": [
+      {
+        "slug": "posti_letto_stabilimento",
+        "name": "Posti Letto Stabilimento",
+        "period": {
+          "start": 2020,
+          "end": 2023
+        }
+      }
+    ],
     "Ministero della Salute \u2014 Open Data Dati di struttura e attivit\u00e0 dei reparti di ricovero": [
       {
         "slug": "reparti_ricovero",
@@ -305,7 +315,7 @@
         "slug": "giustizia_penale_indicatori",
         "name": "Giustizia Penale \u2014 Clearance Rate e Disposition Time",
         "period": {
-          "start": 2024,
+          "start": 2014,
           "end": 2024
         }
       }
@@ -409,8 +419,8 @@
         "slug": "pensioni_pa_dag",
         "name": "Pensioni Pa Dag",
         "period": {
-          "start": 2024,
-          "end": 2024
+          "start": 2017,
+          "end": 2022
         }
       }
     ]

@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-09T09:45:08.321082
+**Generated**: 2026-06-09T13:53:43.570738
 
 ## 🔍 SCOUTING
 
@@ -10,8 +10,8 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 40 candidates — 40 ok
-**Dataset Catalog**: 26 published · 26 public · updated 2026-06-08
+**Pipeline**: 41 candidates — 41 ok
+**Dataset Catalog**: 27 published · 27 public · updated 2026-06-09
 
 ## 📊 ANALYSES
 
@@ -35,18 +35,18 @@
   · **Sanità**: spesa-farmaceutica, bdap-lea
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
-  ⚠ 26 dataset published non ancora su explorer:
+  ⚠ 27 dataset published non ancora su explorer:
     · aifa_spesa_consumo
     · bdap_anagrafe_enti
     · bdap_entrate_stato
     · bdap_lea
     · bdap_spese_stato
-    · ... e altri 21
+    · ... e altri 22
   **Deploy**: ✅ success (2026-06-07)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#484](https://github.com/dataciviclab/dataset-incubator/pull/484): intake: posti_letto_stabilimento — Posti letto per stabilimento ospedaliero e disciplina (2020-2023)
+- [dataset-incubator#487](https://github.com/dataciviclab/dataset-incubator/pull/487): intake: istat-elenco-comuni — Elenco dei comuni italiani (codici ISTAT, catastali, superficie km²)
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
 - [toolkit#336](https://github.com/dataciviclab/toolkit/pull/336): feat(core): espone dateformat, timestampformat, rejects_table in clean.read
 - [data-explorer#139](https://github.com/dataciviclab/data-explorer/pull/139): feat(mef-partecipazioni): partecipazioni PA per categoria — conteggio, oneri, addetti
