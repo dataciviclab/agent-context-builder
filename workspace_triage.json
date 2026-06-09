@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-08T20:18:47.661655",
+  "generated_at": "2026-06-09T03:34:46.095472",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,7 +10,7 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 7,
+  "open_prs": 6,
   "prs": [
     {
       "number": 57,
@@ -31,12 +31,6 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/429"
     },
     {
-      "number": 350,
-      "title": "fix(scaffold): anni da CSV, header:true, mart scheletro, --slug flag",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/350"
-    },
-    {
       "number": 336,
       "title": "feat(core): espone dateformat, timestampformat, rejects_table in clean.read",
       "repo": "toolkit",
@@ -55,8 +49,14 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/136"
     }
   ],
-  "open_issues": 65,
+  "open_issues": 63,
   "issues": [
+    {
+      "number": 485,
+      "title": "intake: bdap_mop_gare \u2014 Gare Opere Pubbliche MOP per regione (2026)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/485"
+    },
     {
       "number": 483,
       "title": "intake: posti_letto_stabilimento \u2014 Posti letto per stabilimento ospedaliero e disciplina (2020-2023)",
@@ -388,12 +388,6 @@
       "url": "https://github.com/dataciviclab/data-explorer/issues/83"
     },
     {
-      "number": 340,
-      "title": "Source check per fonti SPARQL senza distribuzione HTTP (dati_senato, ispra_linked_data)",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/340"
-    },
-    {
       "number": 335,
       "title": "source-check: Superficie territoriale comuni + codici catastali (scouting watchlist)",
       "repo": "source-observatory",
@@ -404,18 +398,6 @@
       "title": "source-check: FOI prezzi consumo + zona altimetrica comuni \u2014 ISTAT SDMX (support dataset)",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/334"
-    },
-    {
-      "number": 332,
-      "title": "[Catalog] 2026-06-08 \u2014 3 regressionei, 3 nuova fonte, 1 recovery, -146 item",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/332"
-    },
-    {
-      "number": 328,
-      "title": "inventory-triage: openbdap \u2014 +28 dataset, shortlist preliminare",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/328"
     },
     {
       "number": 275,
@@ -451,6 +433,13 @@
   "open_discussions": 20,
   "discussions": [
     {
+      "number": 274,
+      "title": "405 opere pubbliche incomplete, 2,7 miliardi di euro fermati. Dove sono finite le nostre infrastrutture?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/274",
+      "category": "Domanda"
+    },
+    {
       "number": 128,
       "title": "Come sta cambiando il pubblico impiego in Italia, e in quali comparti?",
       "repo": "dataciviclab",
@@ -476,13 +465,6 @@
       "title": "Pensioni PA a carico dello Stato: come si distribuiscono per regione?",
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/190",
-      "category": "Domanda"
-    },
-    {
-      "number": 274,
-      "title": "405 opere pubbliche incomplete, 2,7 miliardi di euro fermati. Dove sono finite le nostre infrastrutture?",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/274",
       "category": "Domanda"
     },
     {
@@ -651,7 +633,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 7"
+    "Many open PRs: 6"
   ],
   "radar": {
     "available": true,
