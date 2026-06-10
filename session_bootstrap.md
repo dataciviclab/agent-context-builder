@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-10T10:01:47.154442
+**Generated**: 2026-06-10T15:36:25.447331
 
 ## 🔍 SCOUTING
 
@@ -29,9 +29,9 @@
 
 ## 🗂 EXPLORER
 
-**Pubblicati**: 18 dataset · 5 temi · [data-explorer](https://dataciviclab.github.io/data-explorer/)
+**Pubblicati**: 20 dataset · 5 temi · [data-explorer](https://dataciviclab.github.io/data-explorer/)
   · **Territorio e ambiente**: rifiuti-urbani, capacita-rinnovabile, produzione-elettrica-fonti, mit-incidentalita
-  · **Finanza pubblica**: irpef-comunale, entrate-stato, consip-consumi-convenzione, istat-gini-regionale, opencivitas-fsc-2025
+  · **Finanza pubblica**: irpef-comunale, entrate-stato, consip-consumi-convenzione, istat-gini-regionale, opencivitas-fsc-2025, mef-partecipazioni, bdap-spese-stato
   · **Sanità**: spesa-farmaceutica, bdap-lea
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
@@ -42,15 +42,13 @@
     · bdap_lea
     · bdap_spese_stato
     · ... e altri 22
-  **Deploy**: ✅ success (2026-06-07)
+  **Deploy**: ✅ success (2026-06-10)
 
 ## 🔗 OPEN
 
 - [dataset-incubator#487](https://github.com/dataciviclab/dataset-incubator/pull/487): intake: istat-elenco-comuni — Elenco dei comuni italiani (codici ISTAT, catastali, superficie km²)
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
 - [toolkit#336](https://github.com/dataciviclab/toolkit/pull/336): feat(core): espone dateformat, timestampformat, rejects_table in clean.read
-- [data-explorer#139](https://github.com/dataciviclab/data-explorer/pull/139): feat(mef-partecipazioni): partecipazioni PA per categoria — conteggio, oneri, addetti
-- [data-explorer#136](https://github.com/dataciviclab/data-explorer/pull/136): feat(consumo-suolo): stock cementificazione per regione — ISPRA 2024
 **Discussions**: 20 open
   · [Domanda] 405 opere pubbliche incomplete, 2,7 miliardi di euro fermati. Dove sono finite le nostre infrastrutture?
   · [Domanda] Come sta cambiando il pubblico impiego in Italia, e in quali comparti?

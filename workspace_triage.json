@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T10:01:47.154442",
+  "generated_at": "2026-06-10T15:36:25.447331",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,7 +10,7 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 5,
+  "open_prs": 3,
   "prs": [
     {
       "number": 487,
@@ -29,21 +29,9 @@
       "title": "feat(core): espone dateformat, timestampformat, rejects_table in clean.read",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/pull/336"
-    },
-    {
-      "number": 139,
-      "title": "feat(mef-partecipazioni): partecipazioni PA per categoria \u2014 conteggio, oneri, addetti",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/139"
-    },
-    {
-      "number": 136,
-      "title": "feat(consumo-suolo): stock cementificazione per regione \u2014 ISPRA 2024",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/136"
     }
   ],
-  "open_issues": 54,
+  "open_issues": 52,
   "issues": [
     {
       "number": 489,
@@ -304,28 +292,16 @@
       "url": "https://github.com/dataciviclab/data-explorer/issues/110"
     },
     {
-      "number": 97,
-      "title": "follow-up: pagina e tema per 2 nuovi dataset",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/issues/97"
-    },
-    {
       "number": 89,
       "title": "follow-up: pagina e tema per pensioni-pa-dag",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/issues/89"
     },
     {
-      "number": 86,
-      "title": "follow-up: pagina e tema per 3 nuovi dataset",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/issues/86"
-    },
-    {
-      "number": 83,
-      "title": "follow-up: pagina e tema per mef-partecipazioni",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/issues/83"
+      "number": 342,
+      "title": "source-check: ispra_indicatori_ambientali",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/342"
     },
     {
       "number": 335,
@@ -3450,7 +3426,7 @@
       {
         "slug": "finanza-pubblica",
         "name": "Finanza pubblica",
-        "dataset_count": 5
+        "dataset_count": 7
       },
       {
         "slug": "sanita",
@@ -3468,7 +3444,7 @@
         "dataset_count": 1
       }
     ],
-    "published_count": 18,
+    "published_count": 20,
     "clean_ready_not_published": [
       "aifa_spesa_consumo",
       "bdap_anagrafe_enti",
@@ -3499,12 +3475,12 @@
       "terna_electricity_by_source"
     ],
     "last_deploy": {
-      "run_id": 27104912542,
+      "run_id": 27285916208,
       "name": "Deploy to GitHub Pages (Observable Framework)",
       "status": "completed",
       "conclusion": "success",
-      "completed_at": "2026-06-07T21:14:39Z",
-      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/27104912542"
+      "completed_at": "2026-06-10T15:13:02Z",
+      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/27285916208"
     }
   }
 }
