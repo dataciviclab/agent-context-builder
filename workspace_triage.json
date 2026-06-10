@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T15:36:25.447331",
+  "generated_at": "2026-06-10T20:21:11.139017",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,14 +10,8 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 3,
+  "open_prs": 2,
   "prs": [
-    {
-      "number": 487,
-      "title": "intake: istat-elenco-comuni \u2014 Elenco dei comuni italiani (codici ISTAT, catastali, superficie km\u00b2)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/487"
-    },
     {
       "number": 429,
       "title": "intake: istat_nonprofit \u2014 Censimento permanente Istituzioni non profit",
@@ -34,16 +28,16 @@
   "open_issues": 52,
   "issues": [
     {
+      "number": 491,
+      "title": "intake: ispra_emissioni_ghg_settore",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/491"
+    },
+    {
       "number": 489,
       "title": "bug: compose (mart-only) fallisce GCS push in post-merge",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/489"
-    },
-    {
-      "number": 486,
-      "title": "intake: istat_elenco_comuni \u2014 Elenco dei comuni italiani (codici ISTAT, catastali, superficie km\u00b2)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/486"
     },
     {
       "number": 485,
@@ -349,6 +343,13 @@
   "open_discussions": 20,
   "discussions": [
     {
+      "number": 337,
+      "title": "[italia-corpus] 4 discussioni aperte su legislazione italiana",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/337",
+      "category": "Annunci"
+    },
+    {
       "number": 274,
       "title": "405 opere pubbliche incomplete, 2,7 miliardi di euro fermati. Dove sono finite le nostre infrastrutture?",
       "repo": "dataciviclab",
@@ -480,13 +481,6 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/228",
       "category": "Datasets"
-    },
-    {
-      "number": 288,
-      "title": "Corte Costituzionale \u2014 Come decide la Consulta?",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/288",
-      "category": "Domanda"
     }
   ],
   "github_fetch_errors": {},
@@ -577,11 +571,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-06-09",
+    "generated_at": "2026-06-10",
     "summary": {
-      "total": 41,
+      "total": 42,
       "by_status": {
-        "ok": 41,
+        "ok": 42,
         "warn": 0,
         "error": 0
       }
@@ -592,10 +586,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-06-09",
+    "updated_at": "2026-06-10",
     "summary": {
-      "total": 40,
-      "published": 27
+      "total": 41,
+      "published": 28
     },
     "datasets": [
       {
@@ -1963,6 +1957,77 @@
         "dimension_columns": 5,
         "column_count": 15,
         "columns": []
+      },
+      {
+        "slug": "istat_elenco_comuni",
+        "name": "Elenco comuni italiani (codici ISTAT, catastali, superficie km\u00b2)",
+        "stage": "published",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/istat_elenco_comuni/2026/istat_elenco_comuni_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 4,
+        "dimension_columns": 9,
+        "column_count": 13,
+        "columns": [
+          {
+            "name": "codice_istat",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_catastale",
+            "role": "dimension"
+          },
+          {
+            "name": "superficie_km2",
+            "role": "metric"
+          },
+          {
+            "name": "popolazione_residente",
+            "role": "metric"
+          },
+          {
+            "name": "popolazione_legale",
+            "role": "metric"
+          },
+          {
+            "name": "regione",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "sigla_provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "zona_altimetrica",
+            "role": "dimension"
+          },
+          {
+            "name": "altitudine",
+            "role": "metric"
+          },
+          {
+            "name": "comune_litoraneo",
+            "role": "dimension"
+          },
+          {
+            "name": "comune_isolano",
+            "role": "dimension"
+          }
+        ]
       },
       {
         "slug": "istat_gini_regionale",
@@ -3458,6 +3523,7 @@
       "inps_pensioni_trimestrale",
       "irpef_comunale",
       "ispra_ru_base",
+      "istat_elenco_comuni",
       "istat_gini_regionale",
       "istat_housing_crowding",
       "istat_ipab_aree",
@@ -3475,12 +3541,12 @@
       "terna_electricity_by_source"
     ],
     "last_deploy": {
-      "run_id": 27285916208,
+      "run_id": 27296028701,
       "name": "Deploy to GitHub Pages (Observable Framework)",
       "status": "completed",
       "conclusion": "success",
-      "completed_at": "2026-06-10T15:13:02Z",
-      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/27285916208"
+      "completed_at": "2026-06-10T18:10:36Z",
+      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/27296028701"
     }
   }
 }

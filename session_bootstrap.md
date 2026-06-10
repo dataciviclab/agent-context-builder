@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-10T15:36:25.447331
+**Generated**: 2026-06-10T20:21:11.139017
 
 ## 🔍 SCOUTING
 
@@ -10,8 +10,8 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 41 candidates — 41 ok
-**Dataset Catalog**: 27 published · 27 public · updated 2026-06-09
+**Pipeline**: 42 candidates — 42 ok
+**Dataset Catalog**: 28 published · 28 public · updated 2026-06-10
 
 ## 📊 ANALYSES
 
@@ -35,24 +35,23 @@
   · **Sanità**: spesa-farmaceutica, bdap-lea
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
-  ⚠ 27 dataset published non ancora su explorer:
+  ⚠ 28 dataset published non ancora su explorer:
     · aifa_spesa_consumo
     · bdap_anagrafe_enti
     · bdap_entrate_stato
     · bdap_lea
     · bdap_spese_stato
-    · ... e altri 22
+    · ... e altri 23
   **Deploy**: ✅ success (2026-06-10)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#487](https://github.com/dataciviclab/dataset-incubator/pull/487): intake: istat-elenco-comuni — Elenco dei comuni italiani (codici ISTAT, catastali, superficie km²)
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
 - [toolkit#336](https://github.com/dataciviclab/toolkit/pull/336): feat(core): espone dateformat, timestampformat, rejects_table in clean.read
 **Discussions**: 20 open
+  · [Annunci] [italia-corpus] 4 discussioni aperte su legislazione italiana
   · [Domanda] 405 opere pubbliche incomplete, 2,7 miliardi di euro fermati. Dove sono finite le nostre infrastrutture?
   · [Domanda] Come sta cambiando il pubblico impiego in Italia, e in quali comparti?
-  · [Domanda] Pensioni pubbliche DAG: come si distribuisce la spesa per regione e tipo?
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
