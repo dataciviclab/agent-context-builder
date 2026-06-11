@@ -1,11 +1,14 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-11T04:02:11.700265
+**Generated**: 2026-06-11T10:25:54.039411
 
 ## 🔍 SCOUTING
 
-**Radar**: 30 fonti — GREEN 29 · YELLOW 1 · RED 0 (probe: 2026-06-10)
-  · **dati_camera** YELLOW [403]
+**Radar**: 30 fonti — GREEN 26 · YELLOW 4 · RED 0 (probe: 2026-06-11)
+  · **istat_sdmx** YELLOW [-] — Timeout (ConnectTimeout)
+  · **openbdap** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
+  · **consip_open_data** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
+  · **mef_irpef** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
 **Catalog Drift**: no drift signals (26 sources checked)
 
 ## 📥 INTAKE
