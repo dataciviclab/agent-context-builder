@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-11T10:25:54.039411",
+  "generated_at": "2026-06-11T16:03:31.198198",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,13 +10,25 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 2,
+  "open_prs": 4,
   "prs": [
+    {
+      "number": 493,
+      "title": "intake: dait_amministratori_locali \u2014 Anagrafe Amministratori Locali DAIT",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/493"
+    },
     {
       "number": 429,
       "title": "intake: istat_nonprofit \u2014 Censimento permanente Istituzioni non profit",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/429"
+    },
+    {
+      "number": 353,
+      "title": "feat(clean): inject_column \u2014 colonne fisse per fonte multi-source",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/353"
     },
     {
       "number": 336,
@@ -25,7 +37,7 @@
       "url": "https://github.com/dataciviclab/toolkit/pull/336"
     }
   ],
-  "open_issues": 53,
+  "open_issues": 56,
   "issues": [
     {
       "number": 491,
@@ -298,6 +310,24 @@
       "url": "https://github.com/dataciviclab/data-explorer/issues/89"
     },
     {
+      "number": 346,
+      "title": "source-check: ansfisa",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/346"
+    },
+    {
+      "number": 345,
+      "title": "source-check: pcm_transizione_digitale",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/345"
+    },
+    {
+      "number": 344,
+      "title": "source-check: aci",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/344"
+    },
+    {
       "number": 342,
       "title": "source-check: ispra_indicatori_ambientali",
       "repo": "source-observatory",
@@ -349,11 +379,25 @@
   "open_discussions": 20,
   "discussions": [
     {
+      "number": 340,
+      "title": "Rifiuti: l'Italia supera l'obiettivo UE 65% di RD, ma il divario territoriale non si chiude. Colpa della legge o dell'attuazione?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/340",
+      "category": "Domanda"
+    },
+    {
       "number": 337,
       "title": "[italia-corpus] 4 discussioni aperte su legislazione italiana",
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/337",
       "category": "Annunci"
+    },
+    {
+      "number": 339,
+      "title": "La transizione energetica accelera? Dopo il recepimento RED II il fotovoltaico cresce 8 volte pi\u00f9 veloce",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/339",
+      "category": "Domanda"
     },
     {
       "number": 274,
@@ -473,20 +517,6 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/307",
       "category": "Domanda"
-    },
-    {
-      "number": 223,
-      "title": "INPS ReI \u2014 evoluzione spesa e platea beneficiari 2018-2019",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/223",
-      "category": "Datasets"
-    },
-    {
-      "number": 228,
-      "title": "Consip partecipazioni \u2014 geografia delle imprese nelle gare pubbliche (2023-2025)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/228",
-      "category": "Datasets"
     }
   ],
   "github_fetch_errors": {},

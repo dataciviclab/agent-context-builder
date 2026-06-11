@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-11T10:25:54.039411
+**Generated**: 2026-06-11T16:03:31.198198
 
 ## 🔍 SCOUTING
 
@@ -49,12 +49,14 @@
 
 ## 🔗 OPEN
 
+- [dataset-incubator#493](https://github.com/dataciviclab/dataset-incubator/pull/493): intake: dait_amministratori_locali — Anagrafe Amministratori Locali DAIT
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
+- [toolkit#353](https://github.com/dataciviclab/toolkit/pull/353): feat(clean): inject_column — colonne fisse per fonte multi-source
 - [toolkit#336](https://github.com/dataciviclab/toolkit/pull/336): feat(core): espone dateformat, timestampformat, rejects_table in clean.read
 **Discussions**: 20 open
+  · [Domanda] Rifiuti: l'Italia supera l'obiettivo UE 65% di RD, ma il divario territoriale non si chiude. Colpa della legge o dell'attuazione?
   · [Annunci] [italia-corpus] 4 discussioni aperte su legislazione italiana
-  · [Domanda] 405 opere pubbliche incomplete, 2,7 miliardi di euro fermati. Dove sono finite le nostre infrastrutture?
-  · [Domanda] Come sta cambiando il pubblico impiego in Italia, e in quali comparti?
+  · [Domanda] La transizione energetica accelera? Dopo il recepimento RED II il fotovoltaico cresce 8 volte più veloce
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
