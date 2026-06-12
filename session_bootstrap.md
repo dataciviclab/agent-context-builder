@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-12T10:14:21.424559
+**Generated**: 2026-06-12T15:16:11.861652
 
 ## 🔍 SCOUTING
 
@@ -52,7 +52,6 @@
 - [dataset-incubator#493](https://github.com/dataciviclab/dataset-incubator/pull/493): intake: dait_amministratori_locali — Anagrafe Amministratori Locali DAIT
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
 - [toolkit#336](https://github.com/dataciviclab/toolkit/pull/336): feat(core): espone dateformat, timestampformat, rejects_table in clean.read
-- [source-observatory#347](https://github.com/dataciviclab/source-observatory/pull/347): feat(registry): aggiungi ACI al sources registry
 **Discussions**: 20 open
   · [Domanda] Rifiuti: l'Italia supera l'obiettivo UE 65% di RD, ma il divario territoriale non si chiude. Colpa della legge o dell'attuazione?
   · [Annunci] [italia-corpus] 4 discussioni aperte su legislazione italiana
