@@ -1,10 +1,10 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-12T04:02:05.583647
+**Generated**: 2026-06-12T10:14:21.424559
 
 ## 🔍 SCOUTING
 
-**Radar**: 30 fonti — GREEN 26 · YELLOW 4 · RED 0 (probe: 2026-06-11)
+**Radar**: 31 fonti — GREEN 27 · YELLOW 4 · RED 0 (probe: 2026-06-12)
   · **istat_sdmx** YELLOW [-] — Timeout (ConnectTimeout)
   · **openbdap** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
   · **consip_open_data** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
@@ -51,7 +51,6 @@
 
 - [dataset-incubator#493](https://github.com/dataciviclab/dataset-incubator/pull/493): intake: dait_amministratori_locali — Anagrafe Amministratori Locali DAIT
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
-- [toolkit#353](https://github.com/dataciviclab/toolkit/pull/353): feat(clean): inject_column — colonne fisse per fonte multi-source
 - [toolkit#336](https://github.com/dataciviclab/toolkit/pull/336): feat(core): espone dateformat, timestampformat, rejects_table in clean.read
 - [source-observatory#347](https://github.com/dataciviclab/source-observatory/pull/347): feat(registry): aggiungi ACI al sources registry
 **Discussions**: 20 open
