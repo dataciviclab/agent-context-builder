@@ -1,10 +1,10 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-13T03:50:07.720766
+**Generated**: 2026-06-13T09:17:59.034702
 
 ## 🔍 SCOUTING
 
-**Radar**: 31 fonti — GREEN 27 · YELLOW 4 · RED 0 (probe: 2026-06-12)
+**Radar**: 32 fonti — GREEN 28 · YELLOW 4 · RED 0 (probe: 2026-06-13)
   · **istat_sdmx** YELLOW [-] — Timeout (ConnectTimeout)
   · **openbdap** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
   · **consip_open_data** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
