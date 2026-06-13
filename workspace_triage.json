@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-13T14:01:27.504568",
+  "generated_at": "2026-06-13T19:26:28.427183",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -12,12 +12,6 @@
   ],
   "open_prs": 4,
   "prs": [
-    {
-      "number": 497,
-      "title": "Intake: openga-ricorsi-appalto \u2014 Ricorsi in materia d'appalto (CDS)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/497"
-    },
     {
       "number": 493,
       "title": "intake: dait_amministratori_locali \u2014 Anagrafe Amministratori Locali DAIT",
@@ -35,16 +29,16 @@
       "title": "rifiuti-km2: analisi produzione rifiuti urbani per km\u00b2",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/pull/343"
+    },
+    {
+      "number": 351,
+      "title": "feat: integra PAQA score in source_check_results + filtro min_paqa_score in MCP",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/351"
     }
   ],
-  "open_issues": 56,
+  "open_issues": 57,
   "issues": [
-    {
-      "number": 496,
-      "title": "Intake: CDS - Ricorsi pervenuti in materia d'appalto (OpenGA)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/496"
-    },
     {
       "number": 494,
       "title": "intake: aci_prime_iscrizioni_autovetture",
@@ -164,6 +158,12 @@
       "title": "intake: CONSIP MEPA \u2014 acquisti e appalti stipulati della PA, per provincia (2023-2025)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/250"
+    },
+    {
+      "number": 344,
+      "title": "analisi: openga_ricorsi_appalto \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/344"
     },
     {
       "number": 338,
@@ -290,6 +290,12 @@
       "title": "feat(scaffold): scaffolding CKAN con schema DataStore per colonne e tipi precisi",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/363"
+    },
+    {
+      "number": 157,
+      "title": "follow-up: pagina e tema per openga_ricorsi_appalto",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/157"
     },
     {
       "number": 147,
@@ -631,11 +637,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-06-10",
+    "generated_at": "2026-06-13",
     "summary": {
-      "total": 42,
+      "total": 43,
       "by_status": {
-        "ok": 42,
+        "ok": 43,
         "warn": 0,
         "error": 0
       }
@@ -646,9 +652,9 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-06-10",
+    "updated_at": "2026-06-13",
     "summary": {
-      "total": 41,
+      "total": 42,
       "published": 28
     },
     "datasets": [
@@ -2759,6 +2765,24 @@
             "role": "metric"
           }
         ]
+      },
+      {
+        "slug": "openga_ricorsi_appalto",
+        "name": "Ricorsi Appalto Consiglio di Stato",
+        "stage": "incubating",
+        "period": {
+          "start": 2023,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/openga_ricorsi_appalto/*/openga_ricorsi_appalto_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 3,
+        "dimension_columns": 21,
+        "column_count": 24,
+        "columns": []
       },
       {
         "slug": "openga_ricorsi_cds",
