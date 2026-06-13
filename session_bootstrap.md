@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-13T09:17:59.034702
+**Generated**: 2026-06-13T14:01:27.504568
 
 ## 🔍 SCOUTING
 
@@ -49,10 +49,10 @@
 
 ## 🔗 OPEN
 
+- [dataset-incubator#497](https://github.com/dataciviclab/dataset-incubator/pull/497): Intake: openga-ricorsi-appalto — Ricorsi in materia d'appalto (CDS)
 - [dataset-incubator#493](https://github.com/dataciviclab/dataset-incubator/pull/493): intake: dait_amministratori_locali — Anagrafe Amministratori Locali DAIT
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
 - [dataciviclab#343](https://github.com/dataciviclab/dataciviclab/pull/343): rifiuti-km2: analisi produzione rifiuti urbani per km²
-- [toolkit#336](https://github.com/dataciviclab/toolkit/pull/336): feat(core): espone dateformat, timestampformat, rejects_table in clean.read
 **Discussions**: 20 open
   · [Domanda] Rifiuti: l'Italia supera l'obiettivo UE 65% di RD, ma il divario territoriale non si chiude. Colpa della legge o dell'attuazione?
   · [Annunci] [italia-corpus] 4 discussioni aperte su legislazione italiana
