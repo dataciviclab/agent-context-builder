@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-13T19:26:28.427183",
+  "generated_at": "2026-06-14T04:08:50.248024",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,7 +10,7 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 4,
+  "open_prs": 3,
   "prs": [
     {
       "number": 493,
@@ -29,15 +29,9 @@
       "title": "rifiuti-km2: analisi produzione rifiuti urbani per km\u00b2",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/pull/343"
-    },
-    {
-      "number": 351,
-      "title": "feat: integra PAQA score in source_check_results + filtro min_paqa_score in MCP",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/351"
     }
   ],
-  "open_issues": 57,
+  "open_issues": 58,
   "issues": [
     {
       "number": 494,
@@ -332,6 +326,12 @@
       "title": "follow-up: pagina e tema per pensioni-pa-dag",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/issues/89"
+    },
+    {
+      "number": 352,
+      "title": "[Catalog] 2026-06-13 \u2014 2 regressionei, 2 nuova fonte, +25 item",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/352"
     },
     {
       "number": 345,
@@ -630,10 +630,35 @@
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-06-08T13:11:31+00:00",
-    "sources_checked": 26,
+    "captured_at": "2026-06-13T20:22:48+00:00",
+    "sources_checked": 28,
     "regressions": [],
-    "alerts": []
+    "alerts": [
+      {
+        "source": "istat_sdmx",
+        "protocol": "sdmx",
+        "signal_type": "inventory change",
+        "result": "inventory change",
+        "detail": "4874 item (dataflow_count), delta +3 rispetto al run precedente (4871).",
+        "suggested_action": "verificare se variazione attesa; avviare inventory-triage se nuovi dataset"
+      },
+      {
+        "source": "ispra_linked_data",
+        "protocol": "sparql",
+        "signal_type": "inventory change",
+        "result": "inventory change",
+        "detail": "69 item (sparql_query), delta +2 rispetto al run precedente (67).",
+        "suggested_action": "verificare se variazione attesa; avviare inventory-triage se nuovi dataset"
+      },
+      {
+        "source": "unioncamere",
+        "protocol": "ckan",
+        "signal_type": "inventory change",
+        "result": "inventory change",
+        "detail": "371 item (package_search), delta +19 rispetto al run precedente (352).",
+        "suggested_action": "verificare se variazione attesa; avviare inventory-triage se nuovi dataset"
+      }
+    ]
   },
   "pipeline_state": {
     "available": true,
