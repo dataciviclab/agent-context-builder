@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-14T09:35:41.579065
+**Generated**: 2026-06-14T14:03:57.518523
 
 ## 🔍 SCOUTING
 
@@ -9,8 +9,7 @@
   · **openbdap** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
   · **consip_open_data** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
   · **mef_irpef** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
-  · **ispra_linked_data** (sparql): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
-  · **unioncamere** (ckan): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
+**Catalog Drift**: no drift signals (28 sources checked)
 
 ## 📥 INTAKE
 
@@ -53,6 +52,8 @@
 - [dataset-incubator#493](https://github.com/dataciviclab/dataset-incubator/pull/493): intake: dait_amministratori_locali — Anagrafe Amministratori Locali DAIT
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
 - [dataciviclab#343](https://github.com/dataciviclab/dataciviclab/pull/343): rifiuti-km2: analisi produzione rifiuti urbani per km²
+- [toolkit#371](https://github.com/dataciviclab/toolkit/pull/371): feat(smoke): smoke template arricchiti e test parametrizzati su 3 protocolli
+- [source-observatory#358](https://github.com/dataciviclab/source-observatory/pull/358): feat: sezioni PAQA nel notebook diagnostico
 **Discussions**: 20 open
   · [Domanda] Rifiuti: l'Italia supera l'obiettivo UE 65% di RD, ma il divario territoriale non si chiude. Colpa della legge o dell'attuazione?
   · [Annunci] [italia-corpus] 4 discussioni aperte su legislazione italiana

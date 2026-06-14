@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T09:35:41.579065",
+  "generated_at": "2026-06-14T14:03:57.518523",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,7 +10,7 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 3,
+  "open_prs": 5,
   "prs": [
     {
       "number": 493,
@@ -29,9 +29,21 @@
       "title": "rifiuti-km2: analisi produzione rifiuti urbani per km\u00b2",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/pull/343"
+    },
+    {
+      "number": 371,
+      "title": "feat(smoke): smoke template arricchiti e test parametrizzati su 3 protocolli",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/371"
+    },
+    {
+      "number": 358,
+      "title": "feat: sezioni PAQA nel notebook diagnostico",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/358"
     }
   ],
-  "open_issues": 58,
+  "open_issues": 57,
   "issues": [
     {
       "number": 494,
@@ -370,12 +382,6 @@
       "url": "https://github.com/dataciviclab/source-observatory/issues/210"
     },
     {
-      "number": 127,
-      "title": "feat: apri issue automatica dai segnali drift attivi in catalog_signals.json",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/127"
-    },
-    {
       "number": 45,
       "title": "refactor: centralizzare proxy, curl fallback e CA bundle in HttpClient",
       "repo": "lab-connectors",
@@ -630,27 +636,10 @@
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-06-14T09:21:11+00:00",
+    "captured_at": "2026-06-14T12:33:16+00:00",
     "sources_checked": 28,
     "regressions": [],
-    "alerts": [
-      {
-        "source": "ispra_linked_data",
-        "protocol": "sparql",
-        "signal_type": "inventory change",
-        "result": "inventory change",
-        "detail": "69 item (sparql_query), delta +2 rispetto al run precedente (67).",
-        "suggested_action": "verificare se variazione attesa; avviare inventory-triage se nuovi dataset"
-      },
-      {
-        "source": "unioncamere",
-        "protocol": "ckan",
-        "signal_type": "inventory change",
-        "result": "inventory change",
-        "detail": "371 item (package_search), delta +19 rispetto al run precedente (352).",
-        "suggested_action": "verificare se variazione attesa; avviare inventory-triage se nuovi dataset"
-      }
-    ]
+    "alerts": []
   },
   "pipeline_state": {
     "available": true,
