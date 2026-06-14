@@ -1,15 +1,14 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-14T04:08:50.248024
+**Generated**: 2026-06-14T09:35:41.579065
 
 ## 🔍 SCOUTING
 
-**Radar**: 32 fonti — GREEN 28 · YELLOW 4 · RED 0 (probe: 2026-06-13)
+**Radar**: 32 fonti — GREEN 28 · YELLOW 4 · RED 0 (probe: 2026-06-14)
   · **istat_sdmx** YELLOW [-] — Timeout (ConnectTimeout)
   · **openbdap** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
   · **consip_open_data** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
   · **mef_irpef** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
-  · **istat_sdmx** (sdmx): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
   · **ispra_linked_data** (sparql): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
   · **unioncamere** (ckan): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
 

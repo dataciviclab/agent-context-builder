@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T04:08:50.248024",
+  "generated_at": "2026-06-14T09:35:41.579065",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -587,7 +587,7 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-06-13",
+    "probe_date": "2026-06-14",
     "sources_total": 32,
     "green": 28,
     "yellow": 4,
@@ -630,18 +630,10 @@
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-06-13T20:22:48+00:00",
+    "captured_at": "2026-06-14T09:21:11+00:00",
     "sources_checked": 28,
     "regressions": [],
     "alerts": [
-      {
-        "source": "istat_sdmx",
-        "protocol": "sdmx",
-        "signal_type": "inventory change",
-        "result": "inventory change",
-        "detail": "4874 item (dataflow_count), delta +3 rispetto al run precedente (4871).",
-        "suggested_action": "verificare se variazione attesa; avviare inventory-triage se nuovi dataset"
-      },
       {
         "source": "ispra_linked_data",
         "protocol": "sparql",
