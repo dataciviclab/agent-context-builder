@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-15T12:15:52.841295
+**Generated**: 2026-06-15T20:56:07.472210
 
 ## 🔍 SCOUTING
 
@@ -29,9 +29,9 @@
 
 ## 🗂 EXPLORER
 
-**Pubblicati**: 20 dataset · 5 temi · [data-explorer](https://dataciviclab.github.io/data-explorer/)
+**Pubblicati**: 21 dataset · 5 temi · [data-explorer](https://dataciviclab.github.io/data-explorer/)
   · **Territorio e ambiente**: rifiuti-urbani, capacita-rinnovabile, produzione-elettrica-fonti, mit-incidentalita
-  · **Finanza pubblica**: irpef-comunale, entrate-stato, consip-consumi-convenzione, istat-gini-regionale, opencivitas-fsc-2025, mef-partecipazioni, bdap-spese-stato
+  · **Finanza pubblica**: irpef-comunale, entrate-stato, consip-consumi-convenzione, istat-gini-regionale, opencivitas-fsc-2025, opencoesione-progetti, mef-partecipazioni, bdap-spese-stato
   · **Sanità**: spesa-farmaceutica, bdap-lea
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
@@ -42,15 +42,13 @@
     · bdap_lea
     · bdap_spese_stato
     · ... e altri 23
-  **Deploy**: ✅ success (2026-06-12)
+  **Deploy**: ✅ success (2026-06-15)
 
 ## 🔗 OPEN
 
 - [dataset-incubator#493](https://github.com/dataciviclab/dataset-incubator/pull/493): intake: dait_amministratori_locali — Anagrafe Amministratori Locali DAIT
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
 - [dataciviclab#343](https://github.com/dataciviclab/dataciviclab/pull/343): rifiuti-km2: analisi produzione rifiuti urbani per km²
-- [toolkit#381](https://github.com/dataciviclab/toolkit/pull/381): refactor: test_http_post_file_plugin -> FakeHttpClient
-- [source-observatory#358](https://github.com/dataciviclab/source-observatory/pull/358): feat: sezioni PAQA nel notebook diagnostico
 **Discussions**: 20 open
   · [Domanda] Rifiuti: l'Italia supera l'obiettivo UE 65% di RD, ma il divario territoriale non si chiude. Colpa della legge o dell'attuazione?
   · [Annunci] [italia-corpus] 4 discussioni aperte su legislazione italiana

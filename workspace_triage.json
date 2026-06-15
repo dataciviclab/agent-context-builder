@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T12:15:52.841295",
+  "generated_at": "2026-06-15T20:56:07.472210",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,7 +10,7 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 5,
+  "open_prs": 3,
   "prs": [
     {
       "number": 493,
@@ -29,21 +29,9 @@
       "title": "rifiuti-km2: analisi produzione rifiuti urbani per km\u00b2",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/pull/343"
-    },
-    {
-      "number": 381,
-      "title": "refactor: test_http_post_file_plugin -> FakeHttpClient",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/381"
-    },
-    {
-      "number": 358,
-      "title": "feat: sezioni PAQA nel notebook diagnostico",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/358"
     }
   ],
-  "open_issues": 57,
+  "open_issues": 55,
   "issues": [
     {
       "number": 494,
@@ -322,12 +310,6 @@
       "url": "https://github.com/dataciviclab/data-explorer/issues/140"
     },
     {
-      "number": 138,
-      "title": "follow-up: pagina e tema per opencoesione_progetti",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/issues/138"
-    },
-    {
       "number": 110,
       "title": "follow-up: pagina e tema per camera_deputati_legislature",
       "repo": "data-explorer",
@@ -340,10 +322,10 @@
       "url": "https://github.com/dataciviclab/data-explorer/issues/89"
     },
     {
-      "number": 352,
-      "title": "[Catalog] 2026-06-13 \u2014 2 regressionei, 2 nuova fonte, +25 item",
+      "number": 362,
+      "title": "chore: centralizzare path artifact in unico source of truth",
       "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/352"
+      "url": "https://github.com/dataciviclab/source-observatory/issues/362"
     },
     {
       "number": 345,
@@ -368,12 +350,6 @@
       "title": "scouting: Banca d'Italia (80 dataset su dati.gov.it)",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/275"
-    },
-    {
-      "number": 227,
-      "title": "Pattern comparison from a French homologue",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/227"
     },
     {
       "number": 210,
@@ -3557,7 +3533,7 @@
       {
         "slug": "finanza-pubblica",
         "name": "Finanza pubblica",
-        "dataset_count": 7
+        "dataset_count": 8
       },
       {
         "slug": "sanita",
@@ -3575,7 +3551,7 @@
         "dataset_count": 1
       }
     ],
-    "published_count": 20,
+    "published_count": 21,
     "clean_ready_not_published": [
       "aifa_spesa_consumo",
       "bdap_anagrafe_enti",
@@ -3607,12 +3583,12 @@
       "terna_electricity_by_source"
     ],
     "last_deploy": {
-      "run_id": 27443679007,
+      "run_id": 27570188001,
       "name": "Deploy to GitHub Pages (Observable Framework)",
       "status": "completed",
       "conclusion": "success",
-      "completed_at": "2026-06-12T21:22:19Z",
-      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/27443679007"
+      "completed_at": "2026-06-15T19:19:41Z",
+      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/27570188001"
     }
   }
 }
