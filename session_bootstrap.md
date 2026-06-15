@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-15T20:56:07.472210
+**Generated**: 2026-06-15T22:33:19.188582
 
 ## 🔍 SCOUTING
 
@@ -49,6 +49,7 @@
 - [dataset-incubator#493](https://github.com/dataciviclab/dataset-incubator/pull/493): intake: dait_amministratori_locali — Anagrafe Amministratori Locali DAIT
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
 - [dataciviclab#343](https://github.com/dataciviclab/dataciviclab/pull/343): rifiuti-km2: analisi produzione rifiuti urbani per km²
+- [data-explorer#159](https://github.com/dataciviclab/data-explorer/pull/159): feat: add pensioni-pa-dag dataset with curated page and theme
 **Discussions**: 20 open
   · [Domanda] Rifiuti: l'Italia supera l'obiettivo UE 65% di RD, ma il divario territoriale non si chiude. Colpa della legge o dell'attuazione?
   · [Annunci] [italia-corpus] 4 discussioni aperte su legislazione italiana
