@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-16T16:56:47.724589",
+  "generated_at": "2026-06-16T20:41:34.181164",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,31 +10,13 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 5,
+  "open_prs": 2,
   "prs": [
-    {
-      "number": 493,
-      "title": "intake: dait_amministratori_locali \u2014 Anagrafe Amministratori Locali DAIT",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/493"
-    },
-    {
-      "number": 429,
-      "title": "intake: istat_nonprofit \u2014 Censimento permanente Istituzioni non profit",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/429"
-    },
     {
       "number": 346,
       "title": "terna-capacita-rinnovabile: nuova analisi capacit\u00e0 installata 2015-2024",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/pull/346"
-    },
-    {
-      "number": 343,
-      "title": "rifiuti-km2: analisi produzione rifiuti urbani per km\u00b2",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/pull/343"
     },
     {
       "number": 159,
@@ -112,12 +94,6 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/428"
     },
     {
-      "number": 427,
-      "title": "intake: dait_amministratori_locali \u2014 Anagrafe degli Amministratori Locali e Regionali (DAIT)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/427"
-    },
-    {
       "number": 417,
       "title": "Valutare se i notebook template in candidates/ portano ancora valore o sono solo volume",
       "repo": "dataset-incubator",
@@ -166,16 +142,16 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/250"
     },
     {
+      "number": 349,
+      "title": "analisi: dait_amministratori_locali \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/349"
+    },
+    {
       "number": 344,
       "title": "analisi: openga_ricorsi_appalto \u2014 nuovo dataset pubblicato",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/issues/344"
-    },
-    {
-      "number": 338,
-      "title": "Analisi: Rifiuti per km\u00b2 \u2014 dove si produce di pi\u00f9?",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/338"
     },
     {
       "number": 335,
@@ -296,6 +272,12 @@
       "title": "feat(scaffold): scaffolding CKAN con schema DataStore per colonne e tipi precisi",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/363"
+    },
+    {
+      "number": 162,
+      "title": "follow-up: pagina e tema per dait_amministratori_locali",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/162"
     },
     {
       "number": 157,
@@ -592,11 +574,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-06-13",
+    "generated_at": "2026-06-16",
     "summary": {
-      "total": 43,
+      "total": 46,
       "by_status": {
-        "ok": 43,
+        "ok": 46,
         "warn": 0,
         "error": 0
       }
@@ -607,10 +589,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-06-13",
+    "updated_at": "2026-06-16",
     "summary": {
-      "total": 42,
-      "published": 28
+      "total": 45,
+      "published": 30
     },
     "datasets": [
       {
@@ -1381,6 +1363,121 @@
         ]
       },
       {
+        "slug": "comuni_master",
+        "name": "Comuni Master",
+        "stage": "published",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/comuni_master/2026/comuni_master_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 5,
+        "dimension_columns": 19,
+        "column_count": 24,
+        "columns": [
+          {
+            "name": "codice_istat",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_catastale",
+            "role": "dimension"
+          },
+          {
+            "name": "sigla_provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "regione",
+            "role": "dimension"
+          },
+          {
+            "name": "superficie_km2",
+            "role": "metric"
+          },
+          {
+            "name": "popolazione_residente",
+            "role": "metric"
+          },
+          {
+            "name": "popolazione_legale",
+            "role": "metric"
+          },
+          {
+            "name": "zona_altimetrica",
+            "role": "metric"
+          },
+          {
+            "name": "altitudine",
+            "role": "metric"
+          },
+          {
+            "name": "comune_litoraneo",
+            "role": "dimension"
+          },
+          {
+            "name": "comune_isolano",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_ipa",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_fiscale",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_categoria",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_catastale_comune",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_regione",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_istat_ipa",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione_ipa",
+            "role": "dimension"
+          },
+          {
+            "name": "acronimo",
+            "role": "dimension"
+          },
+          {
+            "name": "indirizzo",
+            "role": "dimension"
+          },
+          {
+            "name": "cap",
+            "role": "dimension"
+          },
+          {
+            "name": "sito_istituzionale",
+            "role": "dimension"
+          }
+        ]
+      },
+      {
         "slug": "consip_consumi_convenzione",
         "name": "Consip Consumi Convenzione",
         "stage": "published",
@@ -1446,6 +1543,24 @@
             "role": "metric"
           }
         ]
+      },
+      {
+        "slug": "dait_amministratori_locali",
+        "name": "Amministratori Locali DAIT",
+        "stage": "incubating",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/dait_amministratori_locali/2026/dait_amministratori_locali_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 1,
+        "dimension_columns": 19,
+        "column_count": 20,
+        "columns": []
       },
       {
         "slug": "dipendenti_pubblici",
@@ -1636,6 +1751,89 @@
           {
             "name": "numero_pensioni",
             "role": "metric"
+          }
+        ]
+      },
+      {
+        "slug": "ipa_istat_mapping",
+        "name": "IPA\u2194ISTAT Mapping Comuni",
+        "stage": "published",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/ipa_istat_mapping/2026/ipa_istat_mapping_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 0,
+        "dimension_columns": 16,
+        "column_count": 16,
+        "columns": [
+          {
+            "name": "codice_istat",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione",
+            "role": "dimension"
+          },
+          {
+            "name": "regione",
+            "role": "dimension"
+          },
+          {
+            "name": "sigla_provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_regione",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_catastale_istat",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_ipa",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_fiscale",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione_ipa",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_categoria",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_catastale_comune",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_istat_ipa",
+            "role": "dimension"
+          },
+          {
+            "name": "acronimo",
+            "role": "dimension"
+          },
+          {
+            "name": "indirizzo",
+            "role": "dimension"
+          },
+          {
+            "name": "cap",
+            "role": "dimension"
+          },
+          {
+            "name": "sito_istituzionale",
+            "role": "dimension"
           }
         ]
       },
@@ -3557,9 +3755,11 @@
       "bdap_spese_stato",
       "camera_votazioni_sparql",
       "civile_flussi",
+      "comuni_master",
       "consip_consumi_convenzione",
       "dipendenti_pubblici",
       "inps_pensioni_trimestrale",
+      "ipa_istat_mapping",
       "irpef_comunale",
       "ispra_ru_base",
       "istat_elenco_comuni",
