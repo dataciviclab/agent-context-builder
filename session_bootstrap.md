@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-16T11:11:49.131928
+**Generated**: 2026-06-16T16:56:47.724589
 
 ## 🔍 SCOUTING
 
@@ -24,7 +24,7 @@
   · **IRPEF comunale 2019-2023** · → irpef_comunale · [discussion #88](https://github.com/orgs/dataciviclab/discussions/88)
   · **Malasanità 2022: mortalità evitabile e dotazione sanitaria regionale** · → malasanita_struttura_mortalita · [discussion #99](https://github.com/orgs/dataciviclab/discussions/99)
   · **OpenCivitas FSC 2025 RSO** · → opencivitas_fsc_2025_rso
-  · **Terna mix elettrico 2023-2024** · → terna_electricity_by_source · [discussion #115](https://github.com/orgs/dataciviclab/discussions/115)
+  · **Terna mix elettrico 2015-2024** · → terna_electricity_by_source
 
 ## 🗂 EXPLORER
 
@@ -47,13 +47,13 @@
 
 - [dataset-incubator#493](https://github.com/dataciviclab/dataset-incubator/pull/493): intake: dait_amministratori_locali — Anagrafe Amministratori Locali DAIT
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
-- [dataciviclab#345](https://github.com/dataciviclab/dataciviclab/pull/345): terna-electricity-by-source: espande analisi a serie storica 2015-2024
+- [dataciviclab#346](https://github.com/dataciviclab/dataciviclab/pull/346): terna-capacita-rinnovabile: nuova analisi capacità installata 2015-2024
 - [dataciviclab#343](https://github.com/dataciviclab/dataciviclab/pull/343): rifiuti-km2: analisi produzione rifiuti urbani per km²
 - [data-explorer#159](https://github.com/dataciviclab/data-explorer/pull/159): feat: add pensioni-pa-dag dataset with curated page and theme
 **Discussions**: 20 open
+  · [Domanda] [senato-akn] I decreti sono il 9% degli atti ma il 25% del testo — il peso nascosto dell'urgenza legislativa
+  · [Annunci] [open-siope] 6 discussioni aperte sulla spesa pubblica italiana
   · [Domanda] Rifiuti: l'Italia supera l'obiettivo UE 65% di RD, ma il divario territoriale non si chiude. Colpa della legge o dell'attuazione?
-  · [Annunci] [italia-corpus] 4 discussioni aperte su legislazione italiana
-  · [Domanda] La transizione energetica accelera? Dopo il recepimento RED II il fotovoltaico cresce 8 volte più veloce
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
