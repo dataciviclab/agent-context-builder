@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-16T04:12:01.483471",
+  "generated_at": "2026-06-16T11:11:49.131928",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,7 +10,7 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 6,
+  "open_prs": 5,
   "prs": [
     {
       "number": 493,
@@ -25,22 +25,16 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/429"
     },
     {
+      "number": 345,
+      "title": "terna-electricity-by-source: espande analisi a serie storica 2015-2024",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/pull/345"
+    },
+    {
       "number": 343,
       "title": "rifiuti-km2: analisi produzione rifiuti urbani per km\u00b2",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/pull/343"
-    },
-    {
-      "number": 161,
-      "title": "chore(deps-dev): bump eslint from 9.39.4 to 10.5.0",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/161"
-    },
-    {
-      "number": 160,
-      "title": "chore(deps): bump esbuild from 0.25.1 to 0.28.1",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/160"
     },
     {
       "number": 159,
@@ -584,27 +578,16 @@
       "untracked_files": 0
     }
   },
-  "warnings": [
-    "Many open PRs: 6"
-  ],
+  "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-06-15",
+    "probe_date": "2026-06-16",
     "sources_total": 32,
-    "green": 31,
-    "yellow": 1,
+    "green": 32,
+    "yellow": 0,
     "red": 0,
     "persistent_red": 0,
-    "unhealthy": [
-      {
-        "id": "istat_sdmx",
-        "status": "YELLOW",
-        "protocol": "sdmx",
-        "http_code": "-",
-        "note": "Timeout (ReadTimeout)",
-        "red_streak": 0
-      }
-    ]
+    "unhealthy": []
   },
   "source_health": {
     "available": true,
@@ -3603,12 +3586,12 @@
       "terna_electricity_by_source"
     ],
     "last_deploy": {
-      "run_id": 27570188001,
+      "run_id": 27609628931,
       "name": "Deploy to GitHub Pages (Observable Framework)",
       "status": "completed",
       "conclusion": "success",
-      "completed_at": "2026-06-15T19:19:41Z",
-      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/27570188001"
+      "completed_at": "2026-06-16T10:04:07Z",
+      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/27609628931"
     }
   }
 }

@@ -1,11 +1,10 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-16T04:12:01.483471
+**Generated**: 2026-06-16T11:11:49.131928
 
 ## 🔍 SCOUTING
 
-**Radar**: 32 fonti — GREEN 31 · YELLOW 1 · RED 0 (probe: 2026-06-15)
-  · **istat_sdmx** YELLOW [-] — Timeout (ReadTimeout)
+**Radar**: 32 fonti — GREEN 32 · YELLOW 0 · RED 0 (probe: 2026-06-16)
 **Catalog Drift**: no drift signals (28 sources checked)
 
 ## 📥 INTAKE
@@ -42,15 +41,15 @@
     · bdap_lea
     · bdap_spese_stato
     · ... e altri 23
-  **Deploy**: ✅ success (2026-06-15)
+  **Deploy**: ✅ success (2026-06-16)
 
 ## 🔗 OPEN
 
 - [dataset-incubator#493](https://github.com/dataciviclab/dataset-incubator/pull/493): intake: dait_amministratori_locali — Anagrafe Amministratori Locali DAIT
 - [dataset-incubator#429](https://github.com/dataciviclab/dataset-incubator/pull/429): intake: istat_nonprofit — Censimento permanente Istituzioni non profit
+- [dataciviclab#345](https://github.com/dataciviclab/dataciviclab/pull/345): terna-electricity-by-source: espande analisi a serie storica 2015-2024
 - [dataciviclab#343](https://github.com/dataciviclab/dataciviclab/pull/343): rifiuti-km2: analisi produzione rifiuti urbani per km²
 - [data-explorer#159](https://github.com/dataciviclab/data-explorer/pull/159): feat: add pensioni-pa-dag dataset with curated page and theme
-- **Dependabot**: 2 bump PR(s)
 **Discussions**: 20 open
   · [Domanda] Rifiuti: l'Italia supera l'obiettivo UE 65% di RD, ma il divario territoriale non si chiude. Colpa della legge o dell'attuazione?
   · [Annunci] [italia-corpus] 4 discussioni aperte su legislazione italiana
