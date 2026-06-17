@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-17T15:32:31.254662
+**Generated**: 2026-06-17T20:13:12.716512
 
 ## 🔍 SCOUTING
 
@@ -14,7 +14,7 @@
 
 ## 📊 ANALYSES
 
-**Attive**: 11
+**Attive**: 12
   · **AIFA Spesa farmaceutica convenzionata 2018-2024** · → aifa_spesa_consumo · [discussion #242](https://github.com/orgs/dataciviclab/discussions/242)
   · **Camera votazioni 2018-2025** · → camera_votazioni_sparql
   · **Flussi giustizia civile 2014-2025** · → civile_flussi
@@ -25,6 +25,7 @@
   · **Malasanità 2022: mortalità evitabile e dotazione sanitaria regionale** · → malasanita_struttura_mortalita · [discussion #99](https://github.com/orgs/dataciviclab/discussions/99)
   · **OpenCivitas FSC 2025 RSO** · → opencivitas_fsc_2025_rso
   · **Rifiuti per km² — dove si produce di più?** · → ispra_ru_base · [discussion #340](https://github.com/orgs/dataciviclab/discussions/340)
+  · **Dove vanno i soldi dei comuni italiani?** · → siope_uscite_comuni
   · **Terna mix elettrico 2015-2024** · → terna_electricity_by_source
 
 ## 🗂 EXPLORER
@@ -46,7 +47,8 @@
 
 ## 🔗 OPEN
 
-- [dataciviclab#351](https://github.com/dataciviclab/dataciviclab/pull/351): siope-comuni-spesa: Dove vanno i soldi dei comuni italiani? (2021-2025)
+- [dataset-incubator#516](https://github.com/dataciviclab/dataset-incubator/pull/516): intake: farmacie — Anagrafica farmacie italiane (Ministero Salute)
+- [dataset-incubator#515](https://github.com/dataciviclab/dataset-incubator/pull/515): intake: inps_rdc_pdc — Nuclei percettori RDC/PDC per comune (2020)
 - [dataciviclab#346](https://github.com/dataciviclab/dataciviclab/pull/346): terna-capacita-rinnovabile: nuova analisi capacità installata 2015-2024
 **Discussions**: 20 open
   · [Domanda] [senato-akn] I decreti sono il 9% degli atti ma il 25% del testo — il peso nascosto dell'urgenza legislativa

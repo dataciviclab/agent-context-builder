@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-06-17T15:32:31.254662",
+  "generated_at": "2026-06-17T20:13:12.716512",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -694,6 +694,15 @@
       "issue": 338
     },
     {
+      "slug": "siope-comuni-spesa",
+      "name": "Dove vanno i soldi dei comuni italiani?",
+      "datasets": [
+        "siope_uscite_comuni"
+      ],
+      "path": "analisi/siope-comuni-spesa/README.md",
+      "status": "active"
+    },
+    {
       "slug": "terna-electricity-by-source",
       "name": "Terna mix elettrico 2015-2024",
       "datasets": [
@@ -734,6 +743,9 @@
     ],
     "ispra_ru_base": [
       "rifiuti-km2"
+    ],
+    "siope_uscite_comuni": [
+      "siope-comuni-spesa"
     ],
     "terna_electricity_by_source": [
       "terna-electricity-by-source"
