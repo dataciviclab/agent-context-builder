@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-17T10:57:33.598408",
+  "generated_at": "2026-06-17T15:32:31.254662",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -13,20 +13,32 @@
   "open_prs": 2,
   "prs": [
     {
+      "number": 351,
+      "title": "siope-comuni-spesa: Dove vanno i soldi dei comuni italiani? (2021-2025)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/pull/351"
+    },
+    {
       "number": 346,
       "title": "terna-capacita-rinnovabile: nuova analisi capacit\u00e0 installata 2015-2024",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/pull/346"
-    },
-    {
-      "number": 386,
-      "title": "cleanup(mcp): rimossi 3 tool MCP senza consumatori (sdmx, ckan, dataset_info)",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/386"
     }
   ],
-  "open_issues": 53,
+  "open_issues": 57,
   "issues": [
+    {
+      "number": 514,
+      "title": "clean(anac-bandi-gara): colonne raw non mappate \u2014 valutare recupero",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/514"
+    },
+    {
+      "number": 512,
+      "title": "follow-up: verificare CIG con importi anomali in anac-bandi-gara",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/512"
+    },
     {
       "number": 494,
       "title": "intake: aci_prime_iscrizioni_autovetture",
@@ -140,6 +152,12 @@
       "title": "intake: CONSIP MEPA \u2014 acquisti e appalti stipulati della PA, per provincia (2023-2025)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/250"
+    },
+    {
+      "number": 350,
+      "title": "analisi: anac_bandi_gara \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/350"
     },
     {
       "number": 349,
@@ -272,6 +290,12 @@
       "title": "feat(scaffold): scaffolding CKAN con schema DataStore per colonne e tipi precisi",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/363"
+    },
+    {
+      "number": 163,
+      "title": "follow-up: pagina e tema per anac_bandi_gara",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/163"
     },
     {
       "number": 162,
@@ -568,11 +592,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-06-16",
+    "generated_at": "2026-06-17",
     "summary": {
-      "total": 46,
+      "total": 47,
       "by_status": {
-        "ok": 46,
+        "ok": 47,
         "warn": 0,
         "error": 0
       }
@@ -583,10 +607,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-06-16",
+    "updated_at": "2026-06-17",
     "summary": {
-      "total": 45,
-      "published": 30
+      "total": 46,
+      "published": 31
     },
     "datasets": [
       {
@@ -673,6 +697,237 @@
           {
             "name": "spesa_convenzionata",
             "role": "metric"
+          }
+        ]
+      },
+      {
+        "slug": "anac_bandi_gara",
+        "name": "ANAC Bandi di Gara (CIG)",
+        "stage": "published",
+        "period": {
+          "start": 2025,
+          "end": 2025
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/anac_bandi_gara/2025/anac_bandi_gara_2025_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 5,
+        "dimension_columns": 48,
+        "column_count": 53,
+        "columns": [
+          {
+            "name": "cig",
+            "role": "dimension"
+          },
+          {
+            "name": "cig_accordo_quadro",
+            "role": "dimension"
+          },
+          {
+            "name": "numero_gara",
+            "role": "dimension"
+          },
+          {
+            "name": "oggetto_gara",
+            "role": "dimension"
+          },
+          {
+            "name": "importo_complessivo_gara",
+            "role": "metric"
+          },
+          {
+            "name": "n_lotti_componenti",
+            "role": "metric"
+          },
+          {
+            "name": "oggetto_lotto",
+            "role": "dimension"
+          },
+          {
+            "name": "importo_lotto",
+            "role": "metric"
+          },
+          {
+            "name": "oggetto_principale_contratto",
+            "role": "dimension"
+          },
+          {
+            "name": "stato",
+            "role": "dimension"
+          },
+          {
+            "name": "settore",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_istat_luogo",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "data_pubblicazione",
+            "role": "dimension"
+          },
+          {
+            "name": "data_scadenza_offerta",
+            "role": "dimension"
+          },
+          {
+            "name": "cod_tipo_scelta_contraente",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_scelta_contraente",
+            "role": "dimension"
+          },
+          {
+            "name": "cod_modalita_realizzazione",
+            "role": "dimension"
+          },
+          {
+            "name": "modalita_realizzazione",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_ausa",
+            "role": "dimension"
+          },
+          {
+            "name": "cf_amministrazione_appaltante",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione_amministrazione_appaltante",
+            "role": "dimension"
+          },
+          {
+            "name": "sezione_regionale",
+            "role": "dimension"
+          },
+          {
+            "name": "id_centro_costo",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione_centro_costo",
+            "role": "dimension"
+          },
+          {
+            "name": "anno_pubblicazione",
+            "role": "dimension"
+          },
+          {
+            "name": "mese_pubblicazione",
+            "role": "dimension"
+          },
+          {
+            "name": "cod_cpv",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_cpv",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_pnrr",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_urgenza",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_delega",
+            "role": "dimension"
+          },
+          {
+            "name": "COD_MODALITA_INDIZIONE_SPECIALI",
+            "role": "dimension"
+          },
+          {
+            "name": "MODALITA_INDIZIONE_SPECIALI",
+            "role": "dimension"
+          },
+          {
+            "name": "COD_MODALITA_INDIZIONE_SERVIZI",
+            "role": "dimension"
+          },
+          {
+            "name": "MODALITA_INDIZIONE_SERVIZI",
+            "role": "dimension"
+          },
+          {
+            "name": "durata_prevista",
+            "role": "metric"
+          },
+          {
+            "name": "COD_STRUMENTO_SVOLGIMENTO",
+            "role": "dimension"
+          },
+          {
+            "name": "STRUMENTO_SVOLGIMENTO",
+            "role": "dimension"
+          },
+          {
+            "name": "COD_MOTIVO_URGENZA",
+            "role": "dimension"
+          },
+          {
+            "name": "MOTIVO_URGENZA",
+            "role": "dimension"
+          },
+          {
+            "name": "FUNZIONI_DELEGATE",
+            "role": "dimension"
+          },
+          {
+            "name": "CF_SA_DELEGANTE",
+            "role": "dimension"
+          },
+          {
+            "name": "DENOMINAZIONE_SA_DELEGANTE",
+            "role": "dimension"
+          },
+          {
+            "name": "CF_SA_DELEGATA",
+            "role": "dimension"
+          },
+          {
+            "name": "DENOMINAZIONE_SA_DELEGATA",
+            "role": "dimension"
+          },
+          {
+            "name": "importo_sicurezza",
+            "role": "metric"
+          },
+          {
+            "name": "COD_ESITO",
+            "role": "dimension"
+          },
+          {
+            "name": "ESITO",
+            "role": "dimension"
+          },
+          {
+            "name": "data_comunicazione_esito",
+            "role": "dimension"
+          },
+          {
+            "name": "data_cancellazione",
+            "role": "dimension"
+          },
+          {
+            "name": "MOTIVO_CANCELLAZIONE",
+            "role": "dimension"
+          },
+          {
+            "name": "data_ultimo_perfezionamento",
+            "role": "dimension"
           }
         ]
       },
@@ -3743,6 +3998,7 @@
     "published_count": 22,
     "clean_ready_not_published": [
       "aifa_spesa_consumo",
+      "anac_bandi_gara",
       "bdap_anagrafe_enti",
       "bdap_entrate_stato",
       "bdap_lea",

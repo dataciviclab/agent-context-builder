@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-17T10:57:33.598408
+**Generated**: 2026-06-17T15:32:31.254662
 
 ## 🔍 SCOUTING
 
@@ -9,8 +9,8 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 46 candidates — 46 ok
-**Dataset Catalog**: 30 published · 30 public · updated 2026-06-16
+**Pipeline**: 47 candidates — 47 ok
+**Dataset Catalog**: 31 published · 31 public · updated 2026-06-17
 
 ## 📊 ANALYSES
 
@@ -35,19 +35,19 @@
   · **Sanità**: spesa-farmaceutica, bdap-lea
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
-  ⚠ 30 dataset published non ancora su explorer:
+  ⚠ 31 dataset published non ancora su explorer:
     · aifa_spesa_consumo
+    · anac_bandi_gara
     · bdap_anagrafe_enti
     · bdap_entrate_stato
     · bdap_lea
-    · bdap_spese_stato
-    · ... e altri 25
+    · ... e altri 26
   **Deploy**: ✅ success (2026-06-16)
 
 ## 🔗 OPEN
 
+- [dataciviclab#351](https://github.com/dataciviclab/dataciviclab/pull/351): siope-comuni-spesa: Dove vanno i soldi dei comuni italiani? (2021-2025)
 - [dataciviclab#346](https://github.com/dataciviclab/dataciviclab/pull/346): terna-capacita-rinnovabile: nuova analisi capacità installata 2015-2024
-- [toolkit#386](https://github.com/dataciviclab/toolkit/pull/386): cleanup(mcp): rimossi 3 tool MCP senza consumatori (sdmx, ckan, dataset_info)
 **Discussions**: 20 open
   · [Domanda] [senato-akn] I decreti sono il 9% degli atti ma il 25% del testo — il peso nascosto dell'urgenza legislativa
   · [Annunci] [open-siope] 6 discussioni aperte sulla spesa pubblica italiana
