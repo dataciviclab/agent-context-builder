@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-16T20:55:29.280401
+**Generated**: 2026-06-17T04:11:44.134881
 
 ## 🔍 SCOUTING
 
@@ -29,11 +29,11 @@
 
 ## 🗂 EXPLORER
 
-**Pubblicati**: 21 dataset · 5 temi · [data-explorer](https://dataciviclab.github.io/data-explorer/)
+**Pubblicati**: 22 dataset · 5 temi · [data-explorer](https://dataciviclab.github.io/data-explorer/)
   · **Territorio e ambiente**: rifiuti-urbani, capacita-rinnovabile, produzione-elettrica-fonti, mit-incidentalita
   · **Finanza pubblica**: irpef-comunale, entrate-stato, consip-consumi-convenzione, istat-gini-regionale, opencivitas-fsc-2025, opencoesione-progetti, mef-partecipazioni, bdap-spese-stato
   · **Sanità**: spesa-farmaceutica, bdap-lea
-  · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
+  · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
   ⚠ 30 dataset published non ancora su explorer:
     · aifa_spesa_consumo
@@ -47,7 +47,6 @@
 ## 🔗 OPEN
 
 - [dataciviclab#346](https://github.com/dataciviclab/dataciviclab/pull/346): terna-capacita-rinnovabile: nuova analisi capacità installata 2015-2024
-- [data-explorer#159](https://github.com/dataciviclab/data-explorer/pull/159): feat: add pensioni-pa-dag dataset with curated page and theme
 **Discussions**: 20 open
   · [Domanda] [senato-akn] I decreti sono il 9% degli atti ma il 25% del testo — il peso nascosto dell'urgenza legislativa
   · [Annunci] [open-siope] 6 discussioni aperte sulla spesa pubblica italiana
