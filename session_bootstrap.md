@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-17T20:13:12.716512
+**Generated**: 2026-06-18T04:02:16.921031
 
 ## 🔍 SCOUTING
 
@@ -47,6 +47,7 @@
 
 ## 🔗 OPEN
 
+- [dataset-incubator#519](https://github.com/dataciviclab/dataset-incubator/pull/519): intake: ispra_emissioni_ghg — Emissioni GHG per settore 1990-2023
 - [dataset-incubator#516](https://github.com/dataciviclab/dataset-incubator/pull/516): intake: farmacie — Anagrafica farmacie italiane (Ministero Salute)
 - [dataset-incubator#515](https://github.com/dataciviclab/dataset-incubator/pull/515): intake: inps_rdc_pdc — Nuclei percettori RDC/PDC per comune (2020)
 - [dataciviclab#346](https://github.com/dataciviclab/dataciviclab/pull/346): terna-capacita-rinnovabile: nuova analisi capacità installata 2015-2024
