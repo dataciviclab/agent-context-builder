@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-06-19T04:21:42.814427",
+  "generated_at": "2026-06-19T10:27:23.703489",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -164,6 +164,16 @@
         "name": "Irpef Comunale",
         "period": {
           "start": 2019,
+          "end": 2023
+        }
+      }
+    ],
+    "ISPRA \u2014 Indicatori Ambientali": [
+      {
+        "slug": "ispra_emissioni_ghg",
+        "name": "ISPRA \u2014 Emissioni GHG da processi energetici per settore (1990-2023)",
+        "period": {
+          "start": 1990,
           "end": 2023
         }
       }

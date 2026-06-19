@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-19T04:21:42.814427",
+  "generated_at": "2026-06-19T10:27:23.703489",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,14 +10,8 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 4,
+  "open_prs": 3,
   "prs": [
-    {
-      "number": 519,
-      "title": "intake: ispra_emissioni_ghg \u2014 Emissioni GHG per settore 1990-2023",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/519"
-    },
     {
       "number": 516,
       "title": "intake: farmacie \u2014 Anagrafica farmacie italiane (Ministero Salute)",
@@ -37,7 +31,7 @@
       "url": "https://github.com/dataciviclab/dataciviclab/pull/346"
     }
   ],
-  "open_issues": 53,
+  "open_issues": 54,
   "issues": [
     {
       "number": 518,
@@ -68,12 +62,6 @@
       "title": "intake: aci_prime_iscrizioni_autovetture",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/494"
-    },
-    {
-      "number": 491,
-      "title": "intake: ispra_emissioni_ghg_settore",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/491"
     },
     {
       "number": 489,
@@ -164,6 +152,12 @@
       "title": "intake: Incentivi.gov: anagrafica degli incentivi alle imprese per regione, ambito e forma di agevolazione",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/327"
+    },
+    {
+      "number": 352,
+      "title": "analisi: ispra_emissioni_ghg \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/352"
     },
     {
       "number": 350,
@@ -278,6 +272,12 @@
       "title": "feat(scaffold): scaffolding CKAN con schema DataStore per colonne e tipi precisi",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/363"
+    },
+    {
+      "number": 164,
+      "title": "follow-up: pagina e tema per ispra_emissioni_ghg",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/164"
     },
     {
       "number": 163,
@@ -563,11 +563,11 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-06-18",
+    "probe_date": "2026-06-19",
     "sources_total": 32,
-    "green": 31,
+    "green": 30,
     "yellow": 1,
-    "red": 0,
+    "red": 1,
     "persistent_red": 0,
     "unhealthy": [
       {
@@ -576,6 +576,14 @@
         "protocol": "sdmx",
         "http_code": "-",
         "note": "Timeout (ReadTimeout)",
+        "red_streak": 0
+      },
+      {
+        "id": "mit_opendata",
+        "status": "RED",
+        "protocol": "ckan",
+        "http_code": "500",
+        "note": null,
         "red_streak": 0
       }
     ]
@@ -589,11 +597,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-06-17",
+    "generated_at": "2026-06-19",
     "summary": {
-      "total": 47,
+      "total": 48,
       "by_status": {
-        "ok": 47,
+        "ok": 48,
         "warn": 0,
         "error": 0
       }
@@ -604,10 +612,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-06-17",
+    "updated_at": "2026-06-19",
     "summary": {
-      "total": 46,
-      "published": 31
+      "total": 47,
+      "published": 32
     },
     "datasets": [
       {
@@ -2329,6 +2337,49 @@
         "columns": []
       },
       {
+        "slug": "ispra_emissioni_ghg",
+        "name": "ISPRA \u2014 Emissioni GHG da processi energetici per settore (1990-2023)",
+        "stage": "published",
+        "period": {
+          "start": 1990,
+          "end": 2023
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/ispra_emissioni_ghg/2023/ispra_emissioni_ghg_2023_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 5,
+        "dimension_columns": 1,
+        "column_count": 6,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "industrie_energetiche",
+            "role": "metric"
+          },
+          {
+            "name": "industrie_manifatturiere",
+            "role": "metric"
+          },
+          {
+            "name": "residenziale_e_servizi",
+            "role": "metric"
+          },
+          {
+            "name": "trasporti",
+            "role": "metric"
+          },
+          {
+            "name": "totale",
+            "role": "metric"
+          }
+        ]
+      },
+      {
         "slug": "ispra_ru_base",
         "name": "ISPRA - Rifiuti Urbani (dati base)",
         "stage": "published",
@@ -4008,6 +4059,7 @@
       "inps_pensioni_trimestrale",
       "ipa_istat_mapping",
       "irpef_comunale",
+      "ispra_emissioni_ghg",
       "ispra_ru_base",
       "istat_elenco_comuni",
       "istat_gini_regionale",

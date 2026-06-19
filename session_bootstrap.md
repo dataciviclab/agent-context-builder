@@ -1,17 +1,18 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-19T04:21:42.814427
+**Generated**: 2026-06-19T10:27:23.703489
 
 ## 🔍 SCOUTING
 
-**Radar**: 32 fonti — GREEN 31 · YELLOW 1 · RED 0 (probe: 2026-06-18)
+**Radar**: 32 fonti — GREEN 30 · YELLOW 1 · RED 1 (probe: 2026-06-19)
   · **istat_sdmx** YELLOW [-] — Timeout (ReadTimeout)
+  · **mit_opendata** RED [500]
 **Catalog Drift**: no drift signals (28 sources checked)
 
 ## 📥 INTAKE
 
-**Pipeline**: 47 candidates — 47 ok
-**Dataset Catalog**: 31 published · 31 public · updated 2026-06-17
+**Pipeline**: 48 candidates — 48 ok
+**Dataset Catalog**: 32 published · 32 public · updated 2026-06-19
 
 ## 📊 ANALYSES
 
@@ -37,18 +38,17 @@
   · **Sanità**: spesa-farmaceutica, bdap-lea
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
-  ⚠ 31 dataset published non ancora su explorer:
+  ⚠ 32 dataset published non ancora su explorer:
     · aifa_spesa_consumo
     · anac_bandi_gara
     · bdap_anagrafe_enti
     · bdap_entrate_stato
     · bdap_lea
-    · ... e altri 26
+    · ... e altri 27
   **Deploy**: ✅ success (2026-06-16)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#519](https://github.com/dataciviclab/dataset-incubator/pull/519): intake: ispra_emissioni_ghg — Emissioni GHG per settore 1990-2023
 - [dataset-incubator#516](https://github.com/dataciviclab/dataset-incubator/pull/516): intake: farmacie — Anagrafica farmacie italiane (Ministero Salute)
 - [dataset-incubator#515](https://github.com/dataciviclab/dataset-incubator/pull/515): intake: inps_rdc_pdc — Nuclei percettori RDC/PDC per comune (2020)
 - [dataciviclab#346](https://github.com/dataciviclab/dataciviclab/pull/346): terna-capacita-rinnovabile: nuova analisi capacità installata 2015-2024
