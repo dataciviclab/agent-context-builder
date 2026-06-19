@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-19T15:19:30.299758
+**Generated**: 2026-06-19T19:50:30.917306
 
 ## 🔍 SCOUTING
 
@@ -53,9 +53,9 @@
 - [dataset-incubator#515](https://github.com/dataciviclab/dataset-incubator/pull/515): intake: inps_rdc_pdc — Nuclei percettori RDC/PDC per comune (2020)
 - [dataciviclab#346](https://github.com/dataciviclab/dataciviclab/pull/346): terna-capacita-rinnovabile: nuova analisi capacità installata 2015-2024
 **Discussions**: 20 open
+  · [Annunci] [Annunci] Dati Eurostat NUTS3 puliti e queryabili — PIL, occupazione, crimine, demografia a livello provinciale
   · [Domanda] [senato-akn] I decreti sono il 9% degli atti ma il 25% del testo — il peso nascosto dell'urgenza legislativa
   · [Annunci] [open-siope] 6 discussioni aperte sulla spesa pubblica italiana
-  · [Domanda] Rifiuti: l'Italia supera l'obiettivo UE 65% di RD, ma il divario territoriale non si chiude. Colpa della legge o dell'attuazione?
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
