@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-19T10:27:23.703489
+**Generated**: 2026-06-19T14:16:52.007017
 
 ## 🔍 SCOUTING
 
@@ -45,7 +45,7 @@
     · bdap_entrate_stato
     · bdap_lea
     · ... e altri 27
-  **Deploy**: ✅ success (2026-06-16)
+  **Deploy**: ✅ success (2026-06-19)
 
 ## 🔗 OPEN
 
