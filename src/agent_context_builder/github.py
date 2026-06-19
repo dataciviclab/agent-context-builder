@@ -5,8 +5,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any, Optional
 
-import requests
 from lab_connectors.http import HttpClient, HttpResult
+from lab_connectors.http.types import ResponseLike
 
 
 @dataclass
@@ -112,7 +112,7 @@ class GitHubCollector:
                 self.fetch_errors[f"{repo}:issues"] = str(e)
         return issues
 
-    def _raise_on_bad_status(self, result: HttpResult, url_desc: str) -> requests.Response:
+    def _raise_on_bad_status(self, result: HttpResult, url_desc: str) -> ResponseLike:
         """Raise RuntimeError if result is error or response status >= 400.
         Returns the response if OK."""
         if not result.is_ok or result.response is None:
