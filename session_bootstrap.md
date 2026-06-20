@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-19T19:50:30.917306
+**Generated**: 2026-06-20T03:43:10.371256
 
 ## 🔍 SCOUTING
 
@@ -49,6 +49,7 @@
 
 ## 🔗 OPEN
 
+- [dataset-incubator#522](https://github.com/dataciviclab/dataset-incubator/pull/522): chore(post-merge): aggiorna registry per PR #521
 - [dataset-incubator#516](https://github.com/dataciviclab/dataset-incubator/pull/516): intake: farmacie — Anagrafica farmacie italiane (Ministero Salute)
 - [dataset-incubator#515](https://github.com/dataciviclab/dataset-incubator/pull/515): intake: inps_rdc_pdc — Nuclei percettori RDC/PDC per comune (2020)
 - [dataciviclab#346](https://github.com/dataciviclab/dataciviclab/pull/346): terna-capacita-rinnovabile: nuova analisi capacità installata 2015-2024
