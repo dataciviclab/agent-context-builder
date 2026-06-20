@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-06-20T08:57:40.544169",
+  "generated_at": "2026-06-20T14:05:31.639872",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -138,6 +138,16 @@
         }
       }
     ],
+    "Ministero della Salute \u2014 Open Data": [
+      {
+        "slug": "farmacie",
+        "name": "Farmacie \u2014 Anagrafica farmacie italiane (Ministero Salute)",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        }
+      }
+    ],
     "https://www.inps.it/gestione-previdenziale": [
       {
         "slug": "inps_pensioni_trimestrale",
@@ -145,6 +155,16 @@
         "period": {
           "start": 2024,
           "end": 2024
+        }
+      }
+    ],
+    "INPS \u2014 Open Data (opendata.inps.it)": [
+      {
+        "slug": "inps_rdc_pdc",
+        "name": "INPS RdC/PdC \u2014 Nuclei percettori per comune (2020)",
+        "period": {
+          "start": 2020,
+          "end": 2020
         }
       }
     ],
@@ -713,6 +733,16 @@
       "status": "active"
     },
     {
+      "slug": "terna-capacita-rinnovabile",
+      "name": "Terna capacit\u00e0 rinnovabile 2015-2024",
+      "datasets": [
+        "terna_capacita_rinnovabile"
+      ],
+      "path": "analisi/terna-capacita-rinnovabile/README.md",
+      "status": "active",
+      "discussion": 339
+    },
+    {
       "slug": "terna-electricity-by-source",
       "name": "Terna mix elettrico 2015-2024",
       "datasets": [
@@ -756,6 +786,9 @@
     ],
     "siope_uscite_comuni": [
       "siope-comuni-spesa"
+    ],
+    "terna_capacita_rinnovabile": [
+      "terna-capacita-rinnovabile"
     ],
     "terna_electricity_by_source": [
       "terna-electricity-by-source"

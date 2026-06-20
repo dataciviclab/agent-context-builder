@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-20T08:57:40.544169",
+  "generated_at": "2026-06-20T14:05:31.639872",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,28 +10,34 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 3,
+  "open_prs": 4,
   "prs": [
     {
-      "number": 516,
-      "title": "intake: farmacie \u2014 Anagrafica farmacie italiane (Ministero Salute)",
+      "number": 527,
+      "title": "feat(pnrr-progetti): intake PNRR Progetti \u2014 63 colonne, 222k righe",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/516"
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/527"
     },
     {
-      "number": 515,
-      "title": "intake: inps_rdc_pdc \u2014 Nuclei percettori RDC/PDC per comune (2020)",
+      "number": 526,
+      "title": "feat(elezioni-politiche-2022): intake Camera+Senato 2022 per comune",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/515"
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/526"
     },
     {
-      "number": 346,
-      "title": "terna-capacita-rinnovabile: nuova analisi capacit\u00e0 installata 2015-2024",
+      "number": 355,
+      "title": "chore: rimuovi workflow e template seed-issues",
       "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/pull/346"
+      "url": "https://github.com/dataciviclab/dataciviclab/pull/355"
+    },
+    {
+      "number": 354,
+      "title": "feat: analisi ANAC \u2014 81% affidamento diretto, come spende la PA italiana",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/pull/354"
     }
   ],
-  "open_issues": 54,
+  "open_issues": 49,
   "issues": [
     {
       "number": 523,
@@ -82,12 +88,6 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/454"
     },
     {
-      "number": 453,
-      "title": "intake: farmacie \u2014 Anagrafica farmacie italiane (Ministero Salute)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/453"
-    },
-    {
       "number": 442,
       "title": "intake: opencoesione-pagamenti \u2014 Pagamenti progetti coesione (5.6M righe, serie temporale)",
       "repo": "dataset-incubator",
@@ -104,12 +104,6 @@
       "title": "intake: inps_stipendi_comune \u2014 Stipendi lavoratori dipendenti per comune (2009-2018)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/436"
-    },
-    {
-      "number": 435,
-      "title": "intake: inps_rdc_pdc \u2014 Nuclei percettori RDC/PDC per comune ISTAT (2020)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/435"
     },
     {
       "number": 428,
@@ -154,6 +148,18 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/327"
     },
     {
+      "number": 357,
+      "title": "analisi: farmacie \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/357"
+    },
+    {
+      "number": 356,
+      "title": "analisi: inps_rdc_pdc \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/356"
+    },
+    {
       "number": 352,
       "title": "analisi: ispra_emissioni_ghg \u2014 nuovo dataset pubblicato",
       "repo": "dataciviclab",
@@ -184,18 +190,6 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/335"
     },
     {
-      "number": 332,
-      "title": "[Seed] Rendere esplicito un debito gi\u00e0 emerso senza aprire un refactor largo",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/332"
-    },
-    {
-      "number": 331,
-      "title": "[Seed] Fare una review rapida di un filone gi\u00e0 vivo e scegliere un solo prossimo passo",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/331"
-    },
-    {
       "number": 329,
       "title": "analisi: reparti_ricovero \u2014 nuovo dataset pubblicato",
       "repo": "dataciviclab",
@@ -220,40 +214,10 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/324"
     },
     {
-      "number": 314,
-      "title": "[Seed] Scegliere il prossimo output pubblico minimo da un filone gi\u00e0 attivo",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/314"
-    },
-    {
-      "number": 312,
-      "title": "[Seed] Sintetizzare una Discussion attiva in 6-8 righe operative",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/312"
-    },
-    {
-      "number": 311,
-      "title": "[Seed] Verificare link e riferimenti in un file o sezione precisa",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/311"
-    },
-    {
       "number": 298,
       "title": "analisi: camera_deputati_legislature \u2014 nuovo dataset pubblicato",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/issues/298"
-    },
-    {
-      "number": 295,
-      "title": "[Seed] Analisi pubblica per Terna Capacit\u00e0 Rinnovabile",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/295"
-    },
-    {
-      "number": 294,
-      "title": "[Seed] Analisi pubblica per ISPRA Rifiuti Urbani (dati base)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/294"
     },
     {
       "number": 124,
@@ -272,6 +236,18 @@
       "title": "feat(scaffold): scaffolding CKAN con schema DataStore per colonne e tipi precisi",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/363"
+    },
+    {
+      "number": 166,
+      "title": "follow-up: pagina e tema per farmacie",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/166"
+    },
+    {
+      "number": 165,
+      "title": "follow-up: pagina e tema per inps_rdc_pdc",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/165"
     },
     {
       "number": 164,
@@ -597,11 +573,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-06-19",
+    "generated_at": "2026-06-20",
     "summary": {
-      "total": 48,
+      "total": 50,
       "by_status": {
-        "ok": 48,
+        "ok": 50,
         "warn": 0,
         "error": 0
       }
@@ -612,10 +588,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-06-19",
+    "updated_at": "2026-06-20",
     "summary": {
-      "total": 47,
-      "published": 32
+      "total": 49,
+      "published": 34
     },
     "datasets": [
       {
@@ -1944,6 +1920,113 @@
         ]
       },
       {
+        "slug": "farmacie",
+        "name": "Farmacie \u2014 Anagrafica farmacie italiane (Ministero Salute)",
+        "stage": "published",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/farmacie/2026/farmacie_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 2,
+        "dimension_columns": 20,
+        "column_count": 22,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "cod_farmacia",
+            "role": "dimension"
+          },
+          {
+            "name": "cod_farmacia_asl",
+            "role": "dimension"
+          },
+          {
+            "name": "indirizzo",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_farmacia",
+            "role": "dimension"
+          },
+          {
+            "name": "p_iva",
+            "role": "dimension"
+          },
+          {
+            "name": "cap",
+            "role": "dimension"
+          },
+          {
+            "name": "cod_comune",
+            "role": "dimension"
+          },
+          {
+            "name": "comune",
+            "role": "dimension"
+          },
+          {
+            "name": "frazione",
+            "role": "dimension"
+          },
+          {
+            "name": "cod_provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "sigla_provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "cod_regione",
+            "role": "dimension"
+          },
+          {
+            "name": "regione",
+            "role": "dimension"
+          },
+          {
+            "name": "data_inizio_validita",
+            "role": "dimension"
+          },
+          {
+            "name": "data_fine_validita",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_tipologia",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_tipologia",
+            "role": "dimension"
+          },
+          {
+            "name": "latitudine",
+            "role": "metric"
+          },
+          {
+            "name": "longitudine",
+            "role": "metric"
+          },
+          {
+            "name": "localizzazione",
+            "role": "dimension"
+          }
+        ]
+      },
+      {
         "slug": "giustizia_penale_indicatori",
         "name": "Giustizia Penale \u2014 Clearance Rate e Disposition Time",
         "stage": "incubating",
@@ -2020,6 +2103,101 @@
           },
           {
             "name": "numero_pensioni",
+            "role": "metric"
+          }
+        ]
+      },
+      {
+        "slug": "inps_rdc_pdc",
+        "name": "INPS RdC/PdC \u2014 Nuclei percettori per comune (2020)",
+        "stage": "published",
+        "period": {
+          "start": 2020,
+          "end": 2020
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/inps_rdc_pdc/2020/inps_rdc_pdc_2020_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 14,
+        "dimension_columns": 5,
+        "column_count": 19,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_istat",
+            "role": "dimension"
+          },
+          {
+            "name": "comune",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_regione",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "nuclei_familiari_percettori_rdc_luglio_2020",
+            "role": "metric"
+          },
+          {
+            "name": "nuclei_familiari_percettori_pdc_luglio_2020",
+            "role": "metric"
+          },
+          {
+            "name": "individui_coinvolti_luglio_2020",
+            "role": "metric"
+          },
+          {
+            "name": "numero_componenti_per_famiglia",
+            "role": "metric"
+          },
+          {
+            "name": "numero_donne_per_famiglia",
+            "role": "metric"
+          },
+          {
+            "name": "numero_minori_18_anni_per_famiglia",
+            "role": "metric"
+          },
+          {
+            "name": "numero_anziani_75_anni_per_famiglia",
+            "role": "metric"
+          },
+          {
+            "name": "importo_medio_mensile",
+            "role": "metric"
+          },
+          {
+            "name": "dev_standard_importo_mensile",
+            "role": "metric"
+          },
+          {
+            "name": "uomini_residenti_al_1_1_2020",
+            "role": "metric"
+          },
+          {
+            "name": "donne_residenti_al_1_1_2020",
+            "role": "metric"
+          },
+          {
+            "name": "popolazione_residente_al_1_1_2020",
+            "role": "metric"
+          },
+          {
+            "name": "takeup",
+            "role": "metric"
+          },
+          {
+            "name": "takeup_donne",
             "role": "metric"
           }
         ]
@@ -4072,7 +4250,9 @@
       "comuni_master",
       "consip_consumi_convenzione",
       "dipendenti_pubblici",
+      "farmacie",
       "inps_pensioni_trimestrale",
+      "inps_rdc_pdc",
       "ipa_istat_mapping",
       "irpef_comunale",
       "ispra_emissioni_ghg",
