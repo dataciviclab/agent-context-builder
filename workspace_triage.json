@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-20T03:43:10.371256",
+  "generated_at": "2026-06-20T08:57:40.544169",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,14 +10,8 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 4,
+  "open_prs": 3,
   "prs": [
-    {
-      "number": 522,
-      "title": "chore(post-merge): aggiorna registry per PR #521",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/522"
-    },
     {
       "number": 516,
       "title": "intake: farmacie \u2014 Anagrafica farmacie italiane (Ministero Salute)",
@@ -569,12 +563,12 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-06-19",
+    "probe_date": "2026-06-20",
     "sources_total": 32,
     "green": 30,
     "yellow": 1,
     "red": 1,
-    "persistent_red": 0,
+    "persistent_red": 1,
     "unhealthy": [
       {
         "id": "istat_sdmx",
@@ -590,7 +584,7 @@
         "protocol": "ckan",
         "http_code": "500",
         "note": null,
-        "red_streak": 0
+        "red_streak": 2
       }
     ]
   },
@@ -716,17 +710,17 @@
         "name": "ANAC Bandi di Gara (CIG)",
         "stage": "published",
         "period": {
-          "start": 2025,
+          "start": 2023,
           "end": 2025
         },
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/anac_bandi_gara/2025/anac_bandi_gara_2025_clean.parquet",
-          "multi_file": false
+          "path": "gs://dataciviclab-clean/anac_bandi_gara/*/anac_bandi_gara_*_clean.parquet",
+          "multi_file": true
         },
         "metric_columns": 5,
-        "dimension_columns": 48,
-        "column_count": 53,
+        "dimension_columns": 52,
+        "column_count": 57,
         "columns": [
           {
             "name": "cig",
@@ -734,6 +728,14 @@
           },
           {
             "name": "cig_accordo_quadro",
+            "role": "dimension"
+          },
+          {
+            "name": "CIG_COLLEGAMENTO",
+            "role": "dimension"
+          },
+          {
+            "name": "CUI_PROGRAMMA",
             "role": "dimension"
           },
           {
@@ -889,11 +891,11 @@
             "role": "dimension"
           },
           {
-            "name": "MOTIVO_URGENZA",
+            "name": "motivo_urgenza",
             "role": "dimension"
           },
           {
-            "name": "FUNZIONI_DELEGATE",
+            "name": "funzioni_delegate",
             "role": "dimension"
           },
           {
@@ -933,7 +935,15 @@
             "role": "dimension"
           },
           {
+            "name": "COD_MOTIVO_CANCELLAZIONE",
+            "role": "dimension"
+          },
+          {
             "name": "MOTIVO_CANCELLAZIONE",
+            "role": "dimension"
+          },
+          {
+            "name": "TIPO_APPALTO_RISERVATO",
             "role": "dimension"
           },
           {
