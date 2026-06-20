@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-20T14:05:31.639872
+**Generated**: 2026-06-20T19:27:24.452882
 
 ## 🔍 SCOUTING
 
@@ -51,9 +51,10 @@
 
 ## 🔗 OPEN
 
+- [dataset-incubator#527](https://github.com/dataciviclab/dataset-incubator/pull/527): feat(pnrr-progetti): intake PNRR Progetti — 63 colonne, 280k righe
 - [dataset-incubator#526](https://github.com/dataciviclab/dataset-incubator/pull/526): feat(elezioni-politiche-2022): intake Camera+Senato 2022 per comune
-- [dataciviclab#355](https://github.com/dataciviclab/dataciviclab/pull/355): chore: rimuovi workflow e template seed-issues
 - [dataciviclab#354](https://github.com/dataciviclab/dataciviclab/pull/354): feat: analisi ANAC — 81% affidamento diretto, come spende la PA italiana
+- [toolkit#395](https://github.com/dataciviclab/toolkit/pull/395): refactor: riorganizza CLI inspect in 3 subcomandi (config, summary, runs)
 **Discussions**: 20 open
   · [Annunci] [Annunci] Dati Eurostat NUTS3 puliti e queryabili — PIL, occupazione, crimine, demografia a livello provinciale
   · [Domanda] [senato-akn] I decreti sono il 9% degli atti ma il 25% del testo — il peso nascosto dell'urgenza legislativa
