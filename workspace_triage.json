@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-21T04:16:55.224470",
+  "generated_at": "2026-06-21T09:51:37.272948",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -12,6 +12,12 @@
   ],
   "open_prs": 4,
   "prs": [
+    {
+      "number": 531,
+      "title": "feat(join-map): Join Map Registry + candidate unified-comuni",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/531"
+    },
     {
       "number": 527,
       "title": "feat(pnrr-progetti): intake PNRR Progetti \u2014 63 colonne, 280k righe",
@@ -29,12 +35,6 @@
       "title": "feat: analisi ANAC \u2014 81% affidamento diretto, come spende la PA italiana",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/pull/354"
-    },
-    {
-      "number": 395,
-      "title": "refactor: riorganizza CLI inspect in 3 subcomandi (config, summary, runs)",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/395"
     }
   ],
   "open_issues": 50,
@@ -545,10 +545,10 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-06-20",
-    "sources_total": 32,
-    "green": 30,
-    "yellow": 1,
+    "probe_date": "2026-06-21",
+    "sources_total": 33,
+    "green": 28,
+    "yellow": 4,
     "red": 1,
     "persistent_red": 1,
     "unhealthy": [
@@ -557,7 +557,31 @@
         "status": "YELLOW",
         "protocol": "sdmx",
         "http_code": "-",
-        "note": "Timeout (ReadTimeout)",
+        "note": "Timeout (ConnectTimeout)",
+        "red_streak": 0
+      },
+      {
+        "id": "openbdap",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
+        "red_streak": 0
+      },
+      {
+        "id": "consip_open_data",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
+        "red_streak": 0
+      },
+      {
+        "id": "mef_irpef",
+        "status": "YELLOW",
+        "protocol": "html",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
         "red_streak": 0
       },
       {
@@ -566,7 +590,7 @@
         "protocol": "ckan",
         "http_code": "500",
         "note": null,
-        "red_streak": 2
+        "red_streak": 3
       }
     ]
   },
@@ -579,7 +603,7 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-06-20",
+    "generated_at": "2026-06-21",
     "summary": {
       "total": 50,
       "by_status": {
@@ -594,7 +618,7 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-06-20",
+    "updated_at": "2026-06-21",
     "summary": {
       "total": 49,
       "published": 34
