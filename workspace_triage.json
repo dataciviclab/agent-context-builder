@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-21T09:51:37.272948",
+  "generated_at": "2026-06-21T14:12:22.969705",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,26 +10,8 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 4,
+  "open_prs": 1,
   "prs": [
-    {
-      "number": 531,
-      "title": "feat(join-map): Join Map Registry + candidate unified-comuni",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/531"
-    },
-    {
-      "number": 527,
-      "title": "feat(pnrr-progetti): intake PNRR Progetti \u2014 63 colonne, 280k righe",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/527"
-    },
-    {
-      "number": 526,
-      "title": "feat(elezioni-politiche-2022): intake Camera+Senato 2022 per comune",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/526"
-    },
     {
       "number": 354,
       "title": "feat: analisi ANAC \u2014 81% affidamento diretto, come spende la PA italiana",
@@ -37,19 +19,13 @@
       "url": "https://github.com/dataciviclab/dataciviclab/pull/354"
     }
   ],
-  "open_issues": 50,
+  "open_issues": 55,
   "issues": [
     {
       "number": 523,
       "title": "intake(eligendo): serie storica elezioni politiche Camera+Senato 1948-2022 per comune",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/523"
-    },
-    {
-      "number": 518,
-      "title": "intake: pnrr_progetti \u2014 Progetti del PNRR (Italia Domani)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/518"
     },
     {
       "number": 517,
@@ -148,6 +124,24 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/327"
     },
     {
+      "number": 360,
+      "title": "analisi: pnrr_progetti \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/360"
+    },
+    {
+      "number": 359,
+      "title": "analisi: unified_comuni \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/359"
+    },
+    {
+      "number": 358,
+      "title": "analisi: elezioni_politiche_2022 \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/358"
+    },
+    {
       "number": 357,
       "title": "analisi: farmacie \u2014 nuovo dataset pubblicato",
       "repo": "dataciviclab",
@@ -242,6 +236,24 @@
       "title": "feat(scaffold): scaffolding CKAN con schema DataStore per colonne e tipi precisi",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/363"
+    },
+    {
+      "number": 169,
+      "title": "follow-up: pagina e tema per pnrr_progetti",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/169"
+    },
+    {
+      "number": 168,
+      "title": "follow-up: pagina e tema per unified_comuni",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/168"
+    },
+    {
+      "number": 167,
+      "title": "follow-up: pagina e tema per elezioni_politiche_2022",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/167"
     },
     {
       "number": 166,
@@ -605,9 +617,9 @@
     "available": true,
     "generated_at": "2026-06-21",
     "summary": {
-      "total": 50,
+      "total": 53,
       "by_status": {
-        "ok": 50,
+        "ok": 53,
         "warn": 0,
         "error": 0
       }
@@ -620,8 +632,8 @@
     "name": "Lab Clean Registry",
     "updated_at": "2026-06-21",
     "summary": {
-      "total": 49,
-      "published": 34
+      "total": 52,
+      "published": 36
     },
     "datasets": [
       {
@@ -1950,6 +1962,24 @@
         ]
       },
       {
+        "slug": "elezioni_politiche_2022",
+        "name": "Elezioni Politiche 2022 \u2014 Camera e Senato",
+        "stage": "incubating",
+        "period": {
+          "start": 2022,
+          "end": 2022
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/elezioni_politiche_2022/2022/elezioni_politiche_2022_2022_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 7,
+        "dimension_columns": 12,
+        "column_count": 19,
+        "columns": []
+      },
+      {
         "slug": "farmacie",
         "name": "Farmacie \u2014 Anagrafica farmacie italiane (Ministero Salute)",
         "stage": "published",
@@ -3241,18 +3271,22 @@
         "name": "Opencivitas Fsc 2025 Rso",
         "stage": "published",
         "period": {
-          "start": 2025,
+          "start": 2022,
           "end": 2025
         },
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/opencivitas_fsc_2025_rso/2025/opencivitas_fsc_2025_rso_2025_clean.parquet",
-          "multi_file": false
+          "path": "gs://dataciviclab-clean/opencivitas_fsc_2025_rso/*/opencivitas_fsc_2025_rso_*_clean.parquet",
+          "multi_file": true
         },
         "metric_columns": 6,
-        "dimension_columns": 6,
-        "column_count": 12,
+        "dimension_columns": 7,
+        "column_count": 13,
         "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
           {
             "name": "username",
             "role": "dimension"
@@ -3518,6 +3552,277 @@
         "dimension_columns": 13,
         "column_count": 18,
         "columns": []
+      },
+      {
+        "slug": "pnrr_progetti",
+        "name": "PNRR Progetti \u2014 Italia Domani",
+        "stage": "published",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/pnrr_progetti/2026/pnrr_progetti_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 17,
+        "dimension_columns": 46,
+        "column_count": 63,
+        "columns": [
+          {
+            "name": "programma",
+            "role": "dimension"
+          },
+          {
+            "name": "missione",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_missione",
+            "role": "dimension"
+          },
+          {
+            "name": "componente",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_componente",
+            "role": "dimension"
+          },
+          {
+            "name": "id_misura",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_univoco_misura",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_misura",
+            "role": "dimension"
+          },
+          {
+            "name": "id_submisura",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_cid",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_univoco_submisura",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_submisura",
+            "role": "dimension"
+          },
+          {
+            "name": "amministrazione_titolare",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_procedura_attivazione",
+            "role": "dimension"
+          },
+          {
+            "name": "titolo_procedura",
+            "role": "dimension"
+          },
+          {
+            "name": "tipologia_procedura_attivazione",
+            "role": "dimension"
+          },
+          {
+            "name": "cup",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_locale_progetto",
+            "role": "dimension"
+          },
+          {
+            "name": "stato_cup",
+            "role": "dimension"
+          },
+          {
+            "name": "cup_codice_natura",
+            "role": "dimension"
+          },
+          {
+            "name": "cup_descrizione_natura",
+            "role": "dimension"
+          },
+          {
+            "name": "cup_codice_tipologia",
+            "role": "dimension"
+          },
+          {
+            "name": "cup_descrizione_tipologia",
+            "role": "dimension"
+          },
+          {
+            "name": "cup_codice_settore",
+            "role": "dimension"
+          },
+          {
+            "name": "cup_descrizione_settore",
+            "role": "dimension"
+          },
+          {
+            "name": "cup_codice_sottosettore",
+            "role": "dimension"
+          },
+          {
+            "name": "cup_descrizione_sottosettore",
+            "role": "dimension"
+          },
+          {
+            "name": "cup_codice_categoria",
+            "role": "dimension"
+          },
+          {
+            "name": "cup_descrizione_categoria",
+            "role": "dimension"
+          },
+          {
+            "name": "titolo_progetto",
+            "role": "dimension"
+          },
+          {
+            "name": "sintesi_progetto",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_tipo_aiuto",
+            "role": "dimension"
+          },
+          {
+            "name": "fin_stato",
+            "role": "metric"
+          },
+          {
+            "name": "fin_stato_bilancio",
+            "role": "metric"
+          },
+          {
+            "name": "fin_stato_foi",
+            "role": "metric"
+          },
+          {
+            "name": "fin_fpop",
+            "role": "metric"
+          },
+          {
+            "name": "fin_ue",
+            "role": "metric"
+          },
+          {
+            "name": "fin_regione",
+            "role": "metric"
+          },
+          {
+            "name": "fin_provincia",
+            "role": "metric"
+          },
+          {
+            "name": "fin_comune",
+            "role": "metric"
+          },
+          {
+            "name": "fin_altro_pubblico",
+            "role": "metric"
+          },
+          {
+            "name": "fin_privato",
+            "role": "metric"
+          },
+          {
+            "name": "fin_da_reperire",
+            "role": "metric"
+          },
+          {
+            "name": "fin_pnrr",
+            "role": "metric"
+          },
+          {
+            "name": "fin_pnc",
+            "role": "metric"
+          },
+          {
+            "name": "altri_fondi",
+            "role": "metric"
+          },
+          {
+            "name": "fin_totale",
+            "role": "metric"
+          },
+          {
+            "name": "fin_totale_pubblico",
+            "role": "metric"
+          },
+          {
+            "name": "fin_totale_pubblico_netto",
+            "role": "metric"
+          },
+          {
+            "name": "soggetto_attuatore",
+            "role": "dimension"
+          },
+          {
+            "name": "cf_soggetto_attuatore",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_progetti_in_essere",
+            "role": "dimension"
+          },
+          {
+            "name": "data_inizio_prevista",
+            "role": "dimension"
+          },
+          {
+            "name": "data_inizio_effettiva",
+            "role": "dimension"
+          },
+          {
+            "name": "data_fine_prevista",
+            "role": "dimension"
+          },
+          {
+            "name": "data_fine_effettiva",
+            "role": "dimension"
+          },
+          {
+            "name": "data_estrazione",
+            "role": "dimension"
+          },
+          {
+            "name": "data_ultima_validazione",
+            "role": "dimension"
+          },
+          {
+            "name": "esito_validazione",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_fase_iter",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_fase_iter",
+            "role": "dimension"
+          },
+          {
+            "name": "stato_fase_iter",
+            "role": "dimension"
+          },
+          {
+            "name": "stato_avanzamento",
+            "role": "dimension"
+          }
+        ]
       },
       {
         "slug": "popolazione_istat_comunale_2019_2025",
@@ -4235,6 +4540,149 @@
             "role": "metric"
           }
         ]
+      },
+      {
+        "slug": "unified_comuni",
+        "name": "Unified Comuni \u2014 metriche multi-dominio",
+        "stage": "published",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/unified_comuni/2026/unified_comuni_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 26,
+        "dimension_columns": 5,
+        "column_count": 31,
+        "columns": [
+          {
+            "name": "codice_istat",
+            "role": "dimension"
+          },
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione",
+            "role": "dimension"
+          },
+          {
+            "name": "sigla_provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "regione",
+            "role": "dimension"
+          },
+          {
+            "name": "superficie_km2",
+            "role": "metric"
+          },
+          {
+            "name": "altitudine",
+            "role": "metric"
+          },
+          {
+            "name": "popolazione_residente",
+            "role": "metric"
+          },
+          {
+            "name": "maschi",
+            "role": "metric"
+          },
+          {
+            "name": "femmine",
+            "role": "metric"
+          },
+          {
+            "name": "contribuenti",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_imponibile_eur",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_complessivo_eur",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_procapite",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_lav_dip_eur",
+            "role": "metric"
+          },
+          {
+            "name": "reddito_pensione_eur",
+            "role": "metric"
+          },
+          {
+            "name": "imposta_netta_eur",
+            "role": "metric"
+          },
+          {
+            "name": "addizionale_comunale_eur",
+            "role": "metric"
+          },
+          {
+            "name": "addizionale_regionale_eur",
+            "role": "metric"
+          },
+          {
+            "name": "ru_tonnellate",
+            "role": "metric"
+          },
+          {
+            "name": "rd_tonnellate",
+            "role": "metric"
+          },
+          {
+            "name": "rd_pct",
+            "role": "metric"
+          },
+          {
+            "name": "rd_procapite_kg",
+            "role": "metric"
+          },
+          {
+            "name": "suolo_consumato_ha",
+            "role": "metric"
+          },
+          {
+            "name": "suolo_consumato_pct",
+            "role": "metric"
+          },
+          {
+            "name": "suolo_incremento_ha",
+            "role": "metric"
+          },
+          {
+            "name": "popolazione_fsc",
+            "role": "metric"
+          },
+          {
+            "name": "capacita_fiscale",
+            "role": "metric"
+          },
+          {
+            "name": "dotazione_finale_fsc",
+            "role": "metric"
+          },
+          {
+            "name": "fondo_perequativo",
+            "role": "metric"
+          },
+          {
+            "name": "imu_tasi_standard",
+            "role": "metric"
+          }
+        ]
       }
     ]
   },
@@ -4296,13 +4744,15 @@
       "opencivitas_fsc_2025_rso",
       "opencoesione_progetti",
       "openga_ricorsi_cds",
+      "pnrr_progetti",
       "popolazione_istat_comunale_2019_2025",
       "posti_letto_stabilimento",
       "reparti_ricovero",
       "strutture_asl",
       "strutture_ricovero_asl",
       "terna_capacita_rinnovabile",
-      "terna_electricity_by_source"
+      "terna_electricity_by_source",
+      "unified_comuni"
     ],
     "last_deploy": {
       "run_id": 27828336888,

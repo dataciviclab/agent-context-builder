@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-06-21T09:51:37.272948",
+  "generated_at": "2026-06-21T14:12:22.969705",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -273,7 +273,7 @@
         "slug": "opencivitas_fsc_2025_rso",
         "name": "Opencivitas Fsc 2025 Rso",
         "period": {
-          "start": 2025,
+          "start": 2022,
           "end": 2025
         }
       }
@@ -294,6 +294,16 @@
         "name": "Openga Ricorsi Cds",
         "period": {
           "start": 2023,
+          "end": 2026
+        }
+      }
+    ],
+    "MEF \u2014 Italia Domani (italiadomani.gov.it)": [
+      {
+        "slug": "pnrr_progetti",
+        "name": "PNRR Progetti \u2014 Italia Domani",
+        "period": {
+          "start": 2026,
           "end": 2026
         }
       }
@@ -367,6 +377,16 @@
           "end": 2024
         }
       }
+    ],
+    "DataCivicLab \u2014 dataset composito": [
+      {
+        "slug": "unified_comuni",
+        "name": "Unified Comuni \u2014 metriche multi-dominio",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        }
+      }
     ]
   },
   "candidates_by_source": {
@@ -387,6 +407,14 @@
         "period": {
           "start": 2026,
           "end": 2026
+        }
+      },
+      {
+        "slug": "elezioni_politiche_2022",
+        "name": "Elezioni Politiche 2022 \u2014 Camera e Senato",
+        "period": {
+          "start": 2022,
+          "end": 2022
         }
       }
     ],

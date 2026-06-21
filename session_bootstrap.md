@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-21T09:51:37.272948
+**Generated**: 2026-06-21T14:12:22.969705
 
 ## 🔍 SCOUTING
 
@@ -15,8 +15,8 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 50 candidates — 50 ok
-**Dataset Catalog**: 34 published · 34 public · updated 2026-06-21
+**Pipeline**: 53 candidates — 53 ok
+**Dataset Catalog**: 36 published · 36 public · updated 2026-06-21
 
 ## 📊 ANALYSES
 
@@ -43,20 +43,17 @@
   · **Sanità**: spesa-farmaceutica, bdap-lea
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
-  ⚠ 34 dataset published non ancora su explorer:
+  ⚠ 36 dataset published non ancora su explorer:
     · aifa_spesa_consumo
     · anac_bandi_gara
     · bdap_anagrafe_enti
     · bdap_entrate_stato
     · bdap_lea
-    · ... e altri 29
+    · ... e altri 31
   **Deploy**: ✅ success (2026-06-19)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#531](https://github.com/dataciviclab/dataset-incubator/pull/531): feat(join-map): Join Map Registry + candidate unified-comuni
-- [dataset-incubator#527](https://github.com/dataciviclab/dataset-incubator/pull/527): feat(pnrr-progetti): intake PNRR Progetti — 63 colonne, 280k righe
-- [dataset-incubator#526](https://github.com/dataciviclab/dataset-incubator/pull/526): feat(elezioni-politiche-2022): intake Camera+Senato 2022 per comune
 - [dataciviclab#354](https://github.com/dataciviclab/dataciviclab/pull/354): feat: analisi ANAC — 81% affidamento diretto, come spende la PA italiana
 **Discussions**: 20 open
   · [Annunci] [Annunci] Dati Eurostat NUTS3 puliti e queryabili — PIL, occupazione, crimine, demografia a livello provinciale
