@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-22T11:55:58.571746
+**Generated**: 2026-06-22T16:59:23.599566
 
 ## 🔍 SCOUTING
 
@@ -55,8 +55,6 @@
 ## 🔗 OPEN
 
 - [dataciviclab#354](https://github.com/dataciviclab/dataciviclab/pull/354): feat: analisi ANAC — 81% affidamento diretto, come spende la PA italiana
-- [source-observatory#370](https://github.com/dataciviclab/source-observatory/pull/370): feat(so): open data health scores — bridge verso data-advocacy
-- **Dependabot**: 1 bump PR(s)
 **Discussions**: 20 open
   · [Annunci] [Annunci] Dati Eurostat NUTS3 puliti e queryabili — PIL, occupazione, crimine, demografia a livello provinciale
   · [Domanda] [senato-akn] I decreti sono il 9% degli atti ma il 25% del testo — il peso nascosto dell'urgenza legislativa
