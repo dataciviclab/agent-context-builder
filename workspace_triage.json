@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-22T04:18:12.500175",
+  "generated_at": "2026-06-22T11:55:58.571746",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,16 +10,28 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 1,
+  "open_prs": 3,
   "prs": [
+    {
+      "number": 58,
+      "title": "chore(deps): bump actions/checkout from 6 to 7",
+      "repo": "agent-context-builder",
+      "url": "https://github.com/dataciviclab/agent-context-builder/pull/58"
+    },
     {
       "number": 354,
       "title": "feat: analisi ANAC \u2014 81% affidamento diretto, come spende la PA italiana",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/pull/354"
+    },
+    {
+      "number": 370,
+      "title": "feat(so): open data health scores \u2014 bridge verso data-advocacy",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/370"
     }
   ],
-  "open_issues": 55,
+  "open_issues": 56,
   "issues": [
     {
       "number": 523,
@@ -316,6 +328,12 @@
       "url": "https://github.com/dataciviclab/data-explorer/issues/110"
     },
     {
+      "number": 369,
+      "title": "[Catalog] 2026-06-22 \u2014 1 regressionee, 1 rimossa, -18 item",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/369"
+    },
+    {
       "number": 362,
       "title": "chore: centralizzare path artifact in unico source of truth",
       "repo": "source-observatory",
@@ -557,61 +575,70 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-06-21",
+    "probe_date": "2026-06-22",
     "sources_total": 33,
-    "green": 28,
-    "yellow": 4,
+    "green": 32,
+    "yellow": 0,
     "red": 1,
     "persistent_red": 1,
     "unhealthy": [
-      {
-        "id": "istat_sdmx",
-        "status": "YELLOW",
-        "protocol": "sdmx",
-        "http_code": "-",
-        "note": "Timeout (ConnectTimeout)",
-        "red_streak": 0
-      },
-      {
-        "id": "openbdap",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
-        "red_streak": 0
-      },
-      {
-        "id": "consip_open_data",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
-        "red_streak": 0
-      },
-      {
-        "id": "mef_irpef",
-        "status": "YELLOW",
-        "protocol": "html",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
-        "red_streak": 0
-      },
       {
         "id": "mit_opendata",
         "status": "RED",
         "protocol": "ckan",
         "http_code": "500",
         "note": null,
-        "red_streak": 3
+        "red_streak": 4
       }
     ]
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-06-15T09:40:48+00:00",
-    "sources_checked": 28,
+    "captured_at": "2026-06-22T09:25:27+00:00",
+    "sources_checked": 27,
     "regressions": [],
-    "alerts": []
+    "alerts": [
+      {
+        "source": "istat_sdmx",
+        "protocol": "sdmx",
+        "signal_type": "inventory change",
+        "result": "inventory change",
+        "detail": "4876 item (dataflow_count), delta +2 rispetto al run precedente (4874).",
+        "suggested_action": "verificare se variazione attesa; avviare inventory-triage se nuovi dataset"
+      },
+      {
+        "source": "openbdap",
+        "protocol": "ckan",
+        "signal_type": "inventory change",
+        "result": "inventory change",
+        "detail": "3825 item (package_list), delta +8 rispetto al run precedente (3817).",
+        "suggested_action": "verificare se variazione attesa; avviare inventory-triage se nuovi dataset"
+      },
+      {
+        "source": "ispra_linked_data",
+        "protocol": "sparql",
+        "signal_type": "inventory change",
+        "result": "inventory change",
+        "detail": "70 item (sparql_query), delta +1 rispetto al run precedente (69).",
+        "suggested_action": "verificare se variazione attesa; avviare inventory-triage se nuovi dataset"
+      },
+      {
+        "source": "agcm",
+        "protocol": "ckan",
+        "signal_type": "inventory change",
+        "result": "inventory change",
+        "detail": "54 item (package_search), delta +1 rispetto al run precedente (53).",
+        "suggested_action": "verificare se variazione attesa; avviare inventory-triage se nuovi dataset"
+      },
+      {
+        "source": "pagopa",
+        "protocol": "ckan",
+        "signal_type": "inventory change",
+        "result": "inventory change",
+        "detail": "11 item (package_search), delta +3 rispetto al run precedente (8).",
+        "suggested_action": "verificare se variazione attesa; avviare inventory-triage se nuovi dataset"
+      }
+    ]
   },
   "pipeline_state": {
     "available": true,
@@ -4755,12 +4782,12 @@
       "unified_comuni"
     ],
     "last_deploy": {
-      "run_id": 27828336888,
+      "run_id": 27941524058,
       "name": "Deploy to GitHub Pages (Observable Framework)",
       "status": "completed",
       "conclusion": "success",
-      "completed_at": "2026-06-19T13:27:38Z",
-      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/27828336888"
+      "completed_at": "2026-06-22T09:06:01Z",
+      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/27941524058"
     }
   }
 }

@@ -1,17 +1,17 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-22T04:18:12.500175
+**Generated**: 2026-06-22T11:55:58.571746
 
 ## 🔍 SCOUTING
 
-**Radar**: 33 fonti — GREEN 28 · YELLOW 4 · RED 1 (probe: 2026-06-21)
+**Radar**: 33 fonti — GREEN 32 · YELLOW 0 · RED 1 (probe: 2026-06-22)
   ⚠ **1 persistent RED**
-  · **istat_sdmx** YELLOW [-] — Timeout (ConnectTimeout)
-  · **openbdap** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
-  · **consip_open_data** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
-  · **mef_irpef** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
-  · **mit_opendata** RED [500] (streak 3)
-**Catalog Drift**: no drift signals (28 sources checked)
+  · **mit_opendata** RED [500] (streak 4)
+  · **istat_sdmx** (sdmx): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
+  · **openbdap** (ckan): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
+  · **ispra_linked_data** (sparql): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
+  · **agcm** (ckan): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
+  · **pagopa** (ckan): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
 
 ## 📥 INTAKE
 
@@ -50,11 +50,13 @@
     · bdap_entrate_stato
     · bdap_lea
     · ... e altri 31
-  **Deploy**: ✅ success (2026-06-19)
+  **Deploy**: ✅ success (2026-06-22)
 
 ## 🔗 OPEN
 
 - [dataciviclab#354](https://github.com/dataciviclab/dataciviclab/pull/354): feat: analisi ANAC — 81% affidamento diretto, come spende la PA italiana
+- [source-observatory#370](https://github.com/dataciviclab/source-observatory/pull/370): feat(so): open data health scores — bridge verso data-advocacy
+- **Dependabot**: 1 bump PR(s)
 **Discussions**: 20 open
   · [Annunci] [Annunci] Dati Eurostat NUTS3 puliti e queryabili — PIL, occupazione, crimine, demografia a livello provinciale
   · [Domanda] [senato-akn] I decreti sono il 9% degli atti ma il 25% del testo — il peso nascosto dell'urgenza legislativa
