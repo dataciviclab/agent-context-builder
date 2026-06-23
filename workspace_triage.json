@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-23T09:40:18.812863",
+  "generated_at": "2026-06-23T14:52:07.304504",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,7 +10,7 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 5,
+  "open_prs": 4,
   "prs": [
     {
       "number": 541,
@@ -35,27 +35,15 @@
       "title": "chore(deps): bump actions/checkout from 6 to 7",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/171"
-    },
-    {
-      "number": 376,
-      "title": "fix: alza timeout openbdap a 1200s e workers a 8",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/376"
     }
   ],
-  "open_issues": 60,
+  "open_issues": 61,
   "issues": [
     {
       "number": 544,
       "title": "intake: mef_rappresentanti_partecipate",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/544"
-    },
-    {
-      "number": 543,
-      "title": "intake: ade_cinque_per_mille \u2014 5x1000: beneficiari e importi per ente (Agenzia Entrate)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/543"
     },
     {
       "number": 542,
@@ -164,6 +152,12 @@
       "title": "intake: Incentivi.gov: anagrafica degli incentivi alle imprese per regione, ambito e forma di agevolazione",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/327"
+    },
+    {
+      "number": 364,
+      "title": "analisi: ade_cinque_per_mille \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/364"
     },
     {
       "number": 360,
@@ -278,6 +272,12 @@
       "title": "feat(scaffold): scaffolding CKAN con schema DataStore per colonne e tipi precisi",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/363"
+    },
+    {
+      "number": 173,
+      "title": "follow-up: pagina e tema per ade_cinque_per_mille",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/173"
     },
     {
       "number": 169,
@@ -630,59 +630,27 @@
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-06-22T09:25:27+00:00",
-    "sources_checked": 27,
+    "captured_at": "2026-06-23T09:10:57+00:00",
+    "sources_checked": 28,
     "regressions": [],
     "alerts": [
-      {
-        "source": "istat_sdmx",
-        "protocol": "sdmx",
-        "signal_type": "inventory change",
-        "result": "inventory change",
-        "detail": "4876 item (dataflow_count), delta +2 rispetto al run precedente (4874).",
-        "suggested_action": "verificare se variazione attesa; avviare inventory-triage se nuovi dataset"
-      },
       {
         "source": "openbdap",
         "protocol": "ckan",
         "signal_type": "inventory change",
         "result": "inventory change",
-        "detail": "3825 item (package_list), delta +8 rispetto al run precedente (3817).",
-        "suggested_action": "verificare se variazione attesa; avviare inventory-triage se nuovi dataset"
-      },
-      {
-        "source": "ispra_linked_data",
-        "protocol": "sparql",
-        "signal_type": "inventory change",
-        "result": "inventory change",
-        "detail": "70 item (sparql_query), delta +1 rispetto al run precedente (69).",
-        "suggested_action": "verificare se variazione attesa; avviare inventory-triage se nuovi dataset"
-      },
-      {
-        "source": "agcm",
-        "protocol": "ckan",
-        "signal_type": "inventory change",
-        "result": "inventory change",
-        "detail": "54 item (package_search), delta +1 rispetto al run precedente (53).",
-        "suggested_action": "verificare se variazione attesa; avviare inventory-triage se nuovi dataset"
-      },
-      {
-        "source": "pagopa",
-        "protocol": "ckan",
-        "signal_type": "inventory change",
-        "result": "inventory change",
-        "detail": "11 item (package_search), delta +3 rispetto al run precedente (8).",
+        "detail": "3831 item (package_list), delta +6 rispetto al run precedente (3825).",
         "suggested_action": "verificare se variazione attesa; avviare inventory-triage se nuovi dataset"
       }
     ]
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-06-21",
+    "generated_at": "2026-06-23",
     "summary": {
-      "total": 53,
+      "total": 55,
       "by_status": {
-        "ok": 53,
+        "ok": 55,
         "warn": 0,
         "error": 0
       }
@@ -693,12 +661,107 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-06-21",
+    "updated_at": "2026-06-23",
     "summary": {
-      "total": 52,
-      "published": 36
+      "total": 54,
+      "published": 38
     },
     "datasets": [
+      {
+        "slug": "ade_cinque_per_mille",
+        "name": "5x1000 \u2014 Beneficiari e importi per ente",
+        "stage": "published",
+        "period": {
+          "start": 2024,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/ade_cinque_per_mille/2024/ade_cinque_per_mille_2024_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 5,
+        "dimension_columns": 14,
+        "column_count": 19,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "progressivo",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_fiscale",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione",
+            "role": "dimension"
+          },
+          {
+            "name": "regione",
+            "role": "dimension"
+          },
+          {
+            "name": "sigla_provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "comune",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_ets_onlus",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_asd",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_ricerca_scientifica",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_ricerca_sanitaria",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_comune",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_beni_culturali",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_area_protetta",
+            "role": "dimension"
+          },
+          {
+            "name": "numero_scelte",
+            "role": "metric"
+          },
+          {
+            "name": "importo_scelte_espresse",
+            "role": "metric"
+          },
+          {
+            "name": "importo_scelte_generiche",
+            "role": "metric"
+          },
+          {
+            "name": "importo_ripartizione",
+            "role": "metric"
+          },
+          {
+            "name": "importo_totale_erogabile",
+            "role": "metric"
+          }
+        ]
+      },
       {
         "slug": "aifa_spesa_consumo",
         "name": "AIFA Spesa Farmaceutica Convenzionata",
@@ -2322,6 +2385,145 @@
           {
             "name": "takeup_donne",
             "role": "metric"
+          }
+        ]
+      },
+      {
+        "slug": "ipa_enti",
+        "name": "Anagrafica Enti PA (IndicePA)",
+        "stage": "published",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/ipa_enti/2026/ipa_enti_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 0,
+        "dimension_columns": 30,
+        "column_count": 30,
+        "columns": [
+          {
+            "name": "codice_ipa",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione_ente",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_fiscale_ente",
+            "role": "dimension"
+          },
+          {
+            "name": "tipologia",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_categoria",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_natura",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_ateco",
+            "role": "dimension"
+          },
+          {
+            "name": "ente_in_liquidazione",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_miur",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_istat",
+            "role": "dimension"
+          },
+          {
+            "name": "acronimo",
+            "role": "dimension"
+          },
+          {
+            "name": "nome_responsabile",
+            "role": "dimension"
+          },
+          {
+            "name": "cognome_responsabile",
+            "role": "dimension"
+          },
+          {
+            "name": "titolo_responsabile",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_comune_istat",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_catastale_comune",
+            "role": "dimension"
+          },
+          {
+            "name": "cap",
+            "role": "dimension"
+          },
+          {
+            "name": "indirizzo",
+            "role": "dimension"
+          },
+          {
+            "name": "mail1",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_mail1",
+            "role": "dimension"
+          },
+          {
+            "name": "mail2",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_mail2",
+            "role": "dimension"
+          },
+          {
+            "name": "mail3",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_mail3",
+            "role": "dimension"
+          },
+          {
+            "name": "mail4",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_mail4",
+            "role": "dimension"
+          },
+          {
+            "name": "mail5",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_mail5",
+            "role": "dimension"
+          },
+          {
+            "name": "sito_istituzionale",
+            "role": "dimension"
+          },
+          {
+            "name": "data_aggiornamento",
+            "role": "dimension"
           }
         ]
       },
@@ -4780,6 +4982,7 @@
     ],
     "published_count": 22,
     "clean_ready_not_published": [
+      "ade_cinque_per_mille",
       "aifa_spesa_consumo",
       "anac_bandi_gara",
       "bdap_anagrafe_enti",
@@ -4794,6 +4997,7 @@
       "farmacie",
       "inps_pensioni_trimestrale",
       "inps_rdc_pdc",
+      "ipa_enti",
       "ipa_istat_mapping",
       "irpef_comunale",
       "ispra_emissioni_ghg",

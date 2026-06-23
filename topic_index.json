@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-06-23T09:40:18.812863",
+  "generated_at": "2026-06-23T14:52:07.304504",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -32,6 +32,16 @@
     }
   },
   "datasets_by_source": {
+    "Agenzia delle Entrate": [
+      {
+        "slug": "ade_cinque_per_mille",
+        "name": "5x1000 \u2014 Beneficiari e importi per ente",
+        "period": {
+          "start": 2024,
+          "end": 2024
+        }
+      }
+    ],
     "AIFA \u2014 Open Data Spesa e Consumo Farmaceutico": [
       {
         "slug": "aifa_spesa_consumo",
@@ -165,6 +175,16 @@
         "period": {
           "start": 2020,
           "end": 2020
+        }
+      }
+    ],
+    "AgID \u2014 IndicePA (ipa-dati)": [
+      {
+        "slug": "ipa_enti",
+        "name": "Anagrafica Enti PA (IndicePA)",
+        "period": {
+          "start": 2026,
+          "end": 2026
         }
       }
     ],
