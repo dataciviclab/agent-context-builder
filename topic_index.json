@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-06-23T14:52:07.304504",
+  "generated_at": "2026-06-23T20:06:52.380661",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -648,7 +648,12 @@
       "name": "Sanit\u00e0",
       "datasets": [
         "spesa-farmaceutica",
-        "bdap-lea"
+        "bdap-lea",
+        "strutture-asl",
+        "strutture-ricovero-asl",
+        "reparti-ricovero",
+        "posti-letto-stabilimento",
+        "farmacie"
       ]
     },
     {
@@ -670,6 +675,13 @@
       "datasets": [
         "flussi-giustizia-civile"
       ]
+    },
+    {
+      "slug": "terzo-settore",
+      "name": "Terzo settore",
+      "datasets": [
+        "cinque-per-mille"
+      ]
     }
   ],
   "analyses": [
@@ -682,6 +694,15 @@
       "path": "analisi/aifa-spesa-consumo/README.md",
       "status": "active",
       "discussion": 242
+    },
+    {
+      "slug": "appalti-affidamento-diretto",
+      "name": "81% affidamento diretto \u2014 come spende la PA italiana",
+      "datasets": [
+        "anac_bandi_gara"
+      ],
+      "path": "analisi/appalti-affidamento-diretto/README.md",
+      "status": "active"
     },
     {
       "slug": "camera-votazioni",
@@ -804,6 +825,9 @@
   "analyses_by_dataset": {
     "aifa_spesa_consumo": [
       "aifa-spesa-consumo"
+    ],
+    "anac_bandi_gara": [
+      "appalti-affidamento-diretto"
     ],
     "camera_votazioni_sparql": [
       "camera-votazioni"

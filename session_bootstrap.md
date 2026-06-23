@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-23T14:52:07.304504
+**Generated**: 2026-06-23T20:06:52.380661
 
 ## 🔍 SCOUTING
 
@@ -15,8 +15,9 @@
 
 ## 📊 ANALYSES
 
-**Attive**: 13
+**Attive**: 14
   · **AIFA Spesa farmaceutica convenzionata 2018-2024** · → aifa_spesa_consumo · [discussion #242](https://github.com/orgs/dataciviclab/discussions/242)
+  · **81% affidamento diretto — come spende la PA italiana** · → anac_bandi_gara
   · **Camera votazioni 2018-2025** · → camera_votazioni_sparql
   · **Flussi giustizia civile 2014-2025** · → civile_flussi
   · **Consip Consumi Convenzione 2023-2025** · → consip_consumi_convenzione
@@ -32,25 +33,27 @@
 
 ## 🗂 EXPLORER
 
-**Pubblicati**: 22 dataset · 5 temi · [data-explorer](https://dataciviclab.github.io/data-explorer/)
+**Pubblicati**: 28 dataset · 6 temi · [data-explorer](https://dataciviclab.github.io/data-explorer/)
   · **Territorio e ambiente**: rifiuti-urbani, capacita-rinnovabile, produzione-elettrica-fonti, mit-incidentalita
   · **Finanza pubblica**: irpef-comunale, entrate-stato, consip-consumi-convenzione, istat-gini-regionale, opencivitas-fsc-2025, opencoesione-progetti, mef-partecipazioni, bdap-spese-stato
-  · **Sanità**: spesa-farmaceutica, bdap-lea
+  · **Sanità**: spesa-farmaceutica, bdap-lea, strutture-asl, strutture-ricovero-asl, reparti-ricovero, posti-letto-stabilimento, farmacie
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
-  ⚠ 38 dataset published non ancora su explorer:
+  · **Terzo settore**: cinque-per-mille
+  ⚠ 37 dataset published non ancora su explorer:
     · ade_cinque_per_mille
     · aifa_spesa_consumo
     · anac_bandi_gara
     · bdap_anagrafe_enti
     · bdap_entrate_stato
-    · ... e altri 33
-  **Deploy**: ✅ success (2026-06-22)
+    · ... e altri 32
+  **Deploy**: ✅ success (2026-06-23)
 
 ## 🔗 OPEN
 
-- [dataciviclab#354](https://github.com/dataciviclab/dataciviclab/pull/354): feat: analisi ANAC — 81% affidamento diretto, come spende la PA italiana
-- **Dependabot**: 3 bump PR(s)
+- [dataciviclab#365](https://github.com/dataciviclab/dataciviclab/pull/365): feat: analisi 5x1000 — €521 milioni agli enti del terzo settore
+- [data-explorer#176](https://github.com/dataciviclab/data-explorer/pull/176): fix: gestione importo NULL e classificazione categorie 5x1000
+- **Dependabot**: 1 bump PR(s)
 **Discussions**: 20 open
   · [Domanda] Quanti soldi pubblici vanno al terzo settore, e come si distribuiscono?
   · [Annunci] [Annunci] Dati Eurostat NUTS3 puliti e queryabili — PIL, occupazione, crimine, demografia a livello provinciale
