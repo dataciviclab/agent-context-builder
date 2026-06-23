@@ -1,12 +1,11 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-23T03:37:20.761334
+**Generated**: 2026-06-23T09:40:18.812863
 
 ## 🔍 SCOUTING
 
-**Radar**: 33 fonti — GREEN 32 · YELLOW 0 · RED 1 (probe: 2026-06-22)
-  ⚠ **1 persistent RED**
-  · **mit_opendata** RED [500] (streak 4)
+**Radar**: 33 fonti — GREEN 32 · YELLOW 1 · RED 0 (probe: 2026-06-23)
+  · **istat_sdmx** YELLOW [-] — Timeout (ReadTimeout)
   · **istat_sdmx** (sdmx): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
   · **openbdap** (ckan): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
   · **ispra_linked_data** (sparql): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
@@ -55,6 +54,7 @@
 ## 🔗 OPEN
 
 - [dataciviclab#354](https://github.com/dataciviclab/dataciviclab/pull/354): feat: analisi ANAC — 81% affidamento diretto, come spende la PA italiana
+- [source-observatory#376](https://github.com/dataciviclab/source-observatory/pull/376): fix: alza timeout openbdap a 1200s e workers a 8
 - **Dependabot**: 3 bump PR(s)
 **Discussions**: 20 open
   · [Domanda] Quanti soldi pubblici vanno al terzo settore, e come si distribuiscono?
