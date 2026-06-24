@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-23T20:06:52.380661
+**Generated**: 2026-06-24T03:37:57.110733
 
 ## 🔍 SCOUTING
 
@@ -15,10 +15,11 @@
 
 ## 📊 ANALYSES
 
-**Attive**: 14
+**Attive**: 15
   · **AIFA Spesa farmaceutica convenzionata 2018-2024** · → aifa_spesa_consumo · [discussion #242](https://github.com/orgs/dataciviclab/discussions/242)
   · **81% affidamento diretto — come spende la PA italiana** · → anac_bandi_gara
   · **Camera votazioni 2018-2025** · → camera_votazioni_sparql
+  · **5x1000 — €521 milioni agli enti italiani** · → ade_cinque_per_mille · [discussion #363](https://github.com/orgs/dataciviclab/discussions/363)
   · **Flussi giustizia civile 2014-2025** · → civile_flussi
   · **Consip Consumi Convenzione 2023-2025** · → consip_consumi_convenzione
   · **Dipendenti pubblici 2010-2023** · → dipendenti_pubblici
@@ -51,13 +52,12 @@
 
 ## 🔗 OPEN
 
-- [dataciviclab#365](https://github.com/dataciviclab/dataciviclab/pull/365): feat: analisi 5x1000 — €521 milioni agli enti del terzo settore
-- [data-explorer#176](https://github.com/dataciviclab/data-explorer/pull/176): fix: gestione importo NULL e classificazione categorie 5x1000
+- [dataset-incubator#549](https://github.com/dataciviclab/dataset-incubator/pull/549): feat: estensione 5x1000 a 2023-2025
 - **Dependabot**: 1 bump PR(s)
 **Discussions**: 20 open
+  · [Domanda] Dove sono i deserti farmaceutici? Distribuzione territoriale delle farmacie in Italia
   · [Domanda] Quanti soldi pubblici vanno al terzo settore, e come si distribuiscono?
   · [Annunci] [Annunci] Dati Eurostat NUTS3 puliti e queryabili — PIL, occupazione, crimine, demografia a livello provinciale
-  · [Domanda] [senato-akn] I decreti sono il 9% degli atti ma il 25% del testo — il peso nascosto dell'urgenza legislativa
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA

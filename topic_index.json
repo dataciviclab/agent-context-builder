@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-06-23T20:06:52.380661",
+  "generated_at": "2026-06-24T03:37:57.110733",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -714,6 +714,16 @@
       "status": "active"
     },
     {
+      "slug": "cinque-per-mille",
+      "name": "5x1000 \u2014 \u20ac521 milioni agli enti italiani",
+      "datasets": [
+        "ade_cinque_per_mille"
+      ],
+      "path": "analisi/cinque-per-mille/README.md",
+      "status": "active",
+      "discussion": 363
+    },
+    {
       "slug": "civile-flussi",
       "name": "Flussi giustizia civile 2014-2025",
       "datasets": [
@@ -831,6 +841,9 @@
     ],
     "camera_votazioni_sparql": [
       "camera-votazioni"
+    ],
+    "ade_cinque_per_mille": [
+      "cinque-per-mille"
     ],
     "civile_flussi": [
       "civile-flussi"
