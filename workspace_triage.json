@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-24T09:31:07.462141",
+  "generated_at": "2026-06-24T13:13:36.284556",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,14 +10,8 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 2,
+  "open_prs": 1,
   "prs": [
-    {
-      "number": 549,
-      "title": "feat: estensione 5x1000 a 2023-2025",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/549"
-    },
     {
       "number": 172,
       "title": "chore(deps-dev): bump globals from 17.6.0 to 17.7.0",
@@ -25,8 +19,44 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/172"
     }
   ],
-  "open_issues": 60,
+  "open_issues": 66,
   "issues": [
+    {
+      "number": 556,
+      "title": "intake: istat_occupazione_provinciale \u2014 Tasso di occupazione e disoccupazione per provincia (2004-2025)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/556"
+    },
+    {
+      "number": 555,
+      "title": "intake: anpr_mobilita_residenziale \u2014 Cambi di residenza interregionali (2022-2025)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/555"
+    },
+    {
+      "number": 554,
+      "title": "intake: istat_migrazioni_interne \u2014 Trasferimenti di residenza tra comuni (2018-2024)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/554"
+    },
+    {
+      "number": 553,
+      "title": "intake: mim_scuola_infanzia \u2014 Bambini italiani e non italiani per scuola (2017-2025)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/553"
+    },
+    {
+      "number": 551,
+      "title": "intake: iva_regionale \u2014 Volume d'affari, VA fiscale e imposta IVA per regione/settore",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/551"
+    },
+    {
+      "number": 550,
+      "title": "intake: irpef_subcomunale \u2014 Redditi IRPEF per CAP (sub-comunale)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/550"
+    },
     {
       "number": 544,
       "title": "intake: mef_rappresentanti_partecipate",
@@ -391,6 +421,34 @@
   "open_discussions": 20,
   "discussions": [
     {
+      "number": 183,
+      "title": "ISTAT Occupazione e Disoccupazione: serie provinciale 2004-2025",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/183",
+      "category": "Datasets"
+    },
+    {
+      "number": 181,
+      "title": "ANPR Open Data: mobilita' residenziale e anagrafe digitale",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/181",
+      "category": "Datasets"
+    },
+    {
+      "number": 150,
+      "title": "ISTAT Migrazioni interne - matrice origine-destinazione comunale (2018-2024)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/150",
+      "category": "Datasets"
+    },
+    {
+      "number": 271,
+      "title": "[Dataset] MIM \u2014 Scuola dell'infanzia: bambini italiani e non italiani per scuola (2017-2025)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/271",
+      "category": "Datasets"
+    },
+    {
       "number": 325,
       "title": "Dove sono i deserti farmaceutici? Distribuzione territoriale delle farmacie in Italia",
       "repo": "dataciviclab",
@@ -501,34 +559,6 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/323",
       "category": "Proposte"
-    },
-    {
-      "number": 322,
-      "title": "INPS stipendi \u2014 come sono cambiati per comune in 10 anni? C'\u00e8 un divario Nord-Sud per operai, impiegati e dirigenti?",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/322",
-      "category": "Domanda"
-    },
-    {
-      "number": 319,
-      "title": "Senato Akoma Ntoso \u2014 corpus legislativo in formato XML strutturato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/319",
-      "category": "Datasets"
-    },
-    {
-      "number": 275,
-      "title": "Processo penale: a Cagliari 864 giorni, a Messina 261. E la fase GIP GUP \u00e8 gi\u00e0 in affanno in 101 tribunali su 140",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/275",
-      "category": "Domanda"
-    },
-    {
-      "number": 289,
-      "title": "Giustizia Amministrativa \u2014 Quanto durano i ricorsi al CdS?",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/289",
-      "category": "Domanda"
     }
   ],
   "github_fetch_errors": {},
@@ -628,7 +658,7 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-06-23",
+    "generated_at": "2026-06-24",
     "summary": {
       "total": 55,
       "by_status": {
@@ -643,7 +673,7 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-06-23",
+    "updated_at": "2026-06-24",
     "summary": {
       "total": 54,
       "published": 38
@@ -659,8 +689,8 @@
         },
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/ade_cinque_per_mille/2024/ade_cinque_per_mille_2024_clean.parquet",
-          "multi_file": false
+          "path": "gs://dataciviclab-clean/ade_cinque_per_mille/*/ade_cinque_per_mille_*_clean.parquet",
+          "multi_file": true
         },
         "metric_columns": 5,
         "dimension_columns": 14,

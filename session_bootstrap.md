@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-24T09:31:07.462141
+**Generated**: 2026-06-24T13:13:36.284556
 
 ## 🔍 SCOUTING
 
@@ -11,7 +11,7 @@
 ## 📥 INTAKE
 
 **Pipeline**: 55 candidates — 55 ok
-**Dataset Catalog**: 38 published · 38 public · updated 2026-06-23
+**Dataset Catalog**: 38 published · 38 public · updated 2026-06-24
 
 ## 📊 ANALYSES
 
@@ -52,12 +52,11 @@
 
 ## 🔗 OPEN
 
-- [dataset-incubator#549](https://github.com/dataciviclab/dataset-incubator/pull/549): feat: estensione 5x1000 a 2023-2025
 - **Dependabot**: 1 bump PR(s)
 **Discussions**: 20 open
-  · [Domanda] Dove sono i deserti farmaceutici? Distribuzione territoriale delle farmacie in Italia
-  · [Domanda] Quanti soldi pubblici vanno al terzo settore, e come si distribuiscono?
-  · [Annunci] [Annunci] Dati Eurostat NUTS3 puliti e queryabili — PIL, occupazione, crimine, demografia a livello provinciale
+  · [Datasets] ISTAT Occupazione e Disoccupazione: serie provinciale 2004-2025
+  · [Datasets] ANPR Open Data: mobilita' residenziale e anagrafe digitale
+  · [Datasets] ISTAT Migrazioni interne - matrice origine-destinazione comunale (2018-2024)
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
