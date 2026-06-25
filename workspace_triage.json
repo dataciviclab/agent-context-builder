@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-24T19:47:14.813054",
+  "generated_at": "2026-06-25T03:36:42.027426",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,13 +10,25 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 1,
+  "open_prs": 3,
   "prs": [
+    {
+      "number": 404,
+      "title": "feat: HTTPS fallback in probe_url_headers",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/404"
+    },
     {
       "number": 172,
       "title": "chore(deps-dev): bump globals from 17.6.0 to 17.7.0",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/172"
+    },
+    {
+      "number": 381,
+      "title": "fix: content-type validation, HTTPS fallback, SPARQL format, _http_head_with_retry delegato a toolkit",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/381"
     }
   ],
   "open_issues": 66,

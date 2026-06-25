@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-24T19:47:14.813054
+**Generated**: 2026-06-25T03:36:42.027426
 
 ## 🔍 SCOUTING
 
@@ -52,6 +52,8 @@
 
 ## 🔗 OPEN
 
+- [toolkit#404](https://github.com/dataciviclab/toolkit/pull/404): feat: HTTPS fallback in probe_url_headers
+- [source-observatory#381](https://github.com/dataciviclab/source-observatory/pull/381): fix: content-type validation, HTTPS fallback, SPARQL format, _http_head_with_retry delegato a toolkit
 - **Dependabot**: 1 bump PR(s)
 **Discussions**: 20 open
   · [Datasets] ISTAT Occupazione e Disoccupazione: serie provinciale 2004-2025
