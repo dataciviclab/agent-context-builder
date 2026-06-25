@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-25T09:22:32.399094
+**Generated**: 2026-06-25T14:34:28.282402
 
 ## 🔍 SCOUTING
 
@@ -47,11 +47,11 @@
     · bdap_anagrafe_enti
     · bdap_entrate_stato
     · ... e altri 32
-  **Deploy**: ✅ success (2026-06-23)
+  **Deploy**: ✅ success (2026-06-25)
 
 ## 🔗 OPEN
 
-- **Dependabot**: 1 bump PR(s)
+**PRs**: none open
 **Discussions**: 20 open
   · [Datasets] ISTAT Occupazione e Disoccupazione: serie provinciale 2004-2025
   · [Datasets] ANPR Open Data: mobilita' residenziale e anagrafe digitale
