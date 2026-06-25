@@ -1,12 +1,11 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-25T03:36:42.027426
+**Generated**: 2026-06-25T09:22:32.399094
 
 ## 🔍 SCOUTING
 
-**Radar**: 33 fonti — GREEN 32 · YELLOW 1 · RED 0 (probe: 2026-06-24)
-  · **istat_sdmx** YELLOW [-] — Timeout (ReadTimeout)
-  · **openbdap** (ckan): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
+**Radar**: 33 fonti — GREEN 33 · YELLOW 0 · RED 0 (probe: 2026-06-25)
+**Catalog Drift**: no drift signals (28 sources checked)
 
 ## 📥 INTAKE
 
@@ -52,8 +51,6 @@
 
 ## 🔗 OPEN
 
-- [toolkit#404](https://github.com/dataciviclab/toolkit/pull/404): feat: HTTPS fallback in probe_url_headers
-- [source-observatory#381](https://github.com/dataciviclab/source-observatory/pull/381): fix: content-type validation, HTTPS fallback, SPARQL format, _http_head_with_retry delegato a toolkit
 - **Dependabot**: 1 bump PR(s)
 **Discussions**: 20 open
   · [Datasets] ISTAT Occupazione e Disoccupazione: serie provinciale 2004-2025

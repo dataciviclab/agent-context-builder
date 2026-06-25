@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-25T03:36:42.027426",
+  "generated_at": "2026-06-25T09:22:32.399094",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,25 +10,13 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 3,
+  "open_prs": 1,
   "prs": [
-    {
-      "number": 404,
-      "title": "feat: HTTPS fallback in probe_url_headers",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/404"
-    },
     {
       "number": 172,
       "title": "chore(deps-dev): bump globals from 17.6.0 to 17.7.0",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/172"
-    },
-    {
-      "number": 381,
-      "title": "fix: content-type validation, HTTPS fallback, SPARQL format, _http_head_with_retry delegato a toolkit",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/381"
     }
   ],
   "open_issues": 66,
@@ -635,38 +623,20 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-06-24",
+    "probe_date": "2026-06-25",
     "sources_total": 33,
-    "green": 32,
-    "yellow": 1,
+    "green": 33,
+    "yellow": 0,
     "red": 0,
     "persistent_red": 0,
-    "unhealthy": [
-      {
-        "id": "istat_sdmx",
-        "status": "YELLOW",
-        "protocol": "sdmx",
-        "http_code": "-",
-        "note": "Timeout (ReadTimeout)",
-        "red_streak": 0
-      }
-    ]
+    "unhealthy": []
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-06-23T09:10:57+00:00",
+    "captured_at": "2026-06-25T08:32:42+00:00",
     "sources_checked": 28,
     "regressions": [],
-    "alerts": [
-      {
-        "source": "openbdap",
-        "protocol": "ckan",
-        "signal_type": "inventory change",
-        "result": "inventory change",
-        "detail": "3831 item (package_list), delta +6 rispetto al run precedente (3825).",
-        "suggested_action": "verificare se variazione attesa; avviare inventory-triage se nuovi dataset"
-      }
-    ]
+    "alerts": []
   },
   "pipeline_state": {
     "available": true,
