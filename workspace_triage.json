@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-27T08:36:55.038558",
+  "generated_at": "2026-06-27T13:44:13.244394",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -12,7 +12,7 @@
   ],
   "open_prs": 0,
   "prs": [],
-  "open_issues": 64,
+  "open_issues": 67,
   "issues": [
     {
       "number": 556,
@@ -165,6 +165,18 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/327"
     },
     {
+      "number": 367,
+      "title": "analisi: rna_misure \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/367"
+    },
+    {
+      "number": 366,
+      "title": "analisi: rna_aiuti_stato \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/366"
+    },
+    {
       "number": 364,
       "title": "analisi: ade_cinque_per_mille \u2014 nuovo dataset pubblicato",
       "repo": "dataciviclab",
@@ -285,6 +297,12 @@
       "url": "https://github.com/dataciviclab/toolkit/issues/391"
     },
     {
+      "number": 177,
+      "title": "follow-up: pagina e tema per 2 nuovi dataset",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/177"
+    },
+    {
       "number": 169,
       "title": "follow-up: pagina e tema per pnrr_progetti",
       "repo": "data-explorer",
@@ -401,6 +419,13 @@
   ],
   "open_discussions": 20,
   "discussions": [
+    {
+      "number": 368,
+      "title": "RNA \u2014 Aiuti di Stato: 17 milioni di aiuti alle imprese italiane ora in formato queryabile",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/368",
+      "category": "Annunci"
+    },
     {
       "number": 183,
       "title": "ISTAT Occupazione e Disoccupazione: serie provinciale 2004-2025",
@@ -533,13 +558,6 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/326",
       "category": "Domanda"
-    },
-    {
-      "number": 323,
-      "title": "Contenuti audio dalle analisi: usare NotebookLM per podcast e social?",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/323",
-      "category": "Proposte"
     }
   ],
   "github_fetch_errors": {},
@@ -621,11 +639,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-06-24",
+    "generated_at": "2026-06-27",
     "summary": {
-      "total": 55,
+      "total": 57,
       "by_status": {
-        "ok": 55,
+        "ok": 57,
         "warn": 0,
         "error": 0
       }
@@ -636,10 +654,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-06-24",
+    "updated_at": "2026-06-27",
     "summary": {
-      "total": 54,
-      "published": 38
+      "total": 56,
+      "published": 40
     },
     "datasets": [
       {
@@ -4402,6 +4420,248 @@
         ]
       },
       {
+        "slug": "rna_aiuti_stato",
+        "name": "RNA \u2014 Aiuti di Stato alle imprese",
+        "stage": "published",
+        "period": {
+          "start": 2017,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/rna_aiuti_stato/*/rna_aiuti_stato_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 2,
+        "dimension_columns": 29,
+        "column_count": 31,
+        "columns": [
+          {
+            "name": "data_concessione",
+            "role": "dimension"
+          },
+          {
+            "name": "car",
+            "role": "dimension"
+          },
+          {
+            "name": "cor",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione_beneficiario",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_fiscale_beneficiario",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_beneficiario",
+            "role": "dimension"
+          },
+          {
+            "name": "regione_beneficiario",
+            "role": "dimension"
+          },
+          {
+            "name": "soggetto_concedente",
+            "role": "dimension"
+          },
+          {
+            "name": "titolo_misura",
+            "role": "dimension"
+          },
+          {
+            "name": "des_tipo_misura",
+            "role": "dimension"
+          },
+          {
+            "name": "titolo_progetto",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_progetto",
+            "role": "dimension"
+          },
+          {
+            "name": "cup",
+            "role": "dimension"
+          },
+          {
+            "name": "atto_concessione",
+            "role": "dimension"
+          },
+          {
+            "name": "base_giuridica_nazionale",
+            "role": "dimension"
+          },
+          {
+            "name": "identificativo_ufficio",
+            "role": "dimension"
+          },
+          {
+            "name": "link_trasparenza_nazionale",
+            "role": "dimension"
+          },
+          {
+            "name": "id_componente",
+            "role": "dimension"
+          },
+          {
+            "name": "procedimento",
+            "role": "dimension"
+          },
+          {
+            "name": "cod_procedimento",
+            "role": "dimension"
+          },
+          {
+            "name": "regolamento_ue",
+            "role": "dimension"
+          },
+          {
+            "name": "cod_regolamento",
+            "role": "dimension"
+          },
+          {
+            "name": "obiettivo",
+            "role": "dimension"
+          },
+          {
+            "name": "cod_obiettivo",
+            "role": "dimension"
+          },
+          {
+            "name": "settore_attivita",
+            "role": "dimension"
+          },
+          {
+            "name": "cod_strumento",
+            "role": "dimension"
+          },
+          {
+            "name": "strumento",
+            "role": "dimension"
+          },
+          {
+            "name": "elemento_aiuto",
+            "role": "metric"
+          },
+          {
+            "name": "importo_nominale",
+            "role": "metric"
+          },
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "mese",
+            "role": "dimension"
+          }
+        ]
+      },
+      {
+        "slug": "rna_misure",
+        "name": "RNA \u2014 Misure (leggi e regimi di aiuto)",
+        "stage": "published",
+        "period": {
+          "start": 1994,
+          "end": 2023
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/rna_misure/2023/rna_misure_2023_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 2,
+        "dimension_columns": 18,
+        "column_count": 20,
+        "columns": [
+          {
+            "name": "car",
+            "role": "dimension"
+          },
+          {
+            "name": "car_padre",
+            "role": "dimension"
+          },
+          {
+            "name": "car_attivo",
+            "role": "dimension"
+          },
+          {
+            "name": "titolo_misura",
+            "role": "dimension"
+          },
+          {
+            "name": "des_tipo_misura",
+            "role": "dimension"
+          },
+          {
+            "name": "cod_tipo_misura",
+            "role": "dimension"
+          },
+          {
+            "name": "data_inizio_misura",
+            "role": "dimension"
+          },
+          {
+            "name": "data_fine_misura",
+            "role": "dimension"
+          },
+          {
+            "name": "base_giuridica_nazionale",
+            "role": "dimension"
+          },
+          {
+            "name": "stato_membro",
+            "role": "dimension"
+          },
+          {
+            "name": "cod_amm",
+            "role": "dimension"
+          },
+          {
+            "name": "des_autorita",
+            "role": "dimension"
+          },
+          {
+            "name": "autorita_concedente",
+            "role": "dimension"
+          },
+          {
+            "name": "importo_prestiti_garantiti",
+            "role": "metric"
+          },
+          {
+            "name": "importo_aiuto_ad_hoc",
+            "role": "metric"
+          },
+          {
+            "name": "link_aiuto",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_quadro",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_modifica_regime",
+            "role": "dimension"
+          },
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "mese",
+            "role": "dimension"
+          }
+        ]
+      },
+      {
         "slug": "strutture_asl",
         "name": "Strutture Asl",
         "stage": "published",
@@ -4994,6 +5254,8 @@
       "popolazione_istat_comunale_2019_2025",
       "posti_letto_stabilimento",
       "reparti_ricovero",
+      "rna_aiuti_stato",
+      "rna_misure",
       "strutture_asl",
       "strutture_ricovero_asl",
       "terna_capacita_rinnovabile",

@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-06-27T08:36:55.038558",
+  "generated_at": "2026-06-27T13:44:13.244394",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -355,6 +355,24 @@
         "period": {
           "start": 2022,
           "end": 2022
+        }
+      }
+    ],
+    "MIMIT \u2014 Registro Nazionale Aiuti di Stato": [
+      {
+        "slug": "rna_aiuti_stato",
+        "name": "RNA \u2014 Aiuti di Stato alle imprese",
+        "period": {
+          "start": 2017,
+          "end": 2026
+        }
+      },
+      {
+        "slug": "rna_misure",
+        "name": "RNA \u2014 Misure (leggi e regimi di aiuto)",
+        "period": {
+          "start": 1994,
+          "end": 2023
         }
       }
     ],

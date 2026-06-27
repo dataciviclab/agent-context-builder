@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-27T08:36:55.038558
+**Generated**: 2026-06-27T13:44:13.244394
 
 ## 🔍 SCOUTING
 
@@ -9,8 +9,8 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 55 candidates — 55 ok
-**Dataset Catalog**: 38 published · 38 public · updated 2026-06-24
+**Pipeline**: 57 candidates — 57 ok
+**Dataset Catalog**: 40 published · 40 public · updated 2026-06-27
 
 ## 📊 ANALYSES
 
@@ -40,22 +40,22 @@
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
   · **Terzo settore**: cinque-per-mille
-  ⚠ 37 dataset published non ancora su explorer:
+  ⚠ 39 dataset published non ancora su explorer:
     · ade_cinque_per_mille
     · aifa_spesa_consumo
     · anac_bandi_gara
     · bdap_anagrafe_enti
     · bdap_entrate_stato
-    · ... e altri 32
+    · ... e altri 34
   **Deploy**: ✅ success (2026-06-25)
 
 ## 🔗 OPEN
 
 **PRs**: none open
 **Discussions**: 20 open
+  · [Annunci] RNA — Aiuti di Stato: 17 milioni di aiuti alle imprese italiane ora in formato queryabile
   · [Datasets] ISTAT Occupazione e Disoccupazione: serie provinciale 2004-2025
   · [Datasets] ANPR Open Data: mobilita' residenziale e anagrafe digitale
-  · [Datasets] ISTAT Migrazioni interne - matrice origine-destinazione comunale (2018-2024)
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
