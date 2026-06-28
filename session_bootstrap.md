@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-28T18:50:23.266918
+**Generated**: 2026-06-28T19:20:50.070467
 
 ## 🔍 SCOUTING
 
@@ -52,7 +52,7 @@
 
 ## 🔗 OPEN
 
-**PRs**: none open
+- [dataset-incubator#580](https://github.com/dataciviclab/dataset-incubator/pull/580): chore(post-merge): aggiorna registry per PR #579
 **Discussions**: 20 open
   · [Annunci] RNA — Aiuti di Stato: 17 milioni di aiuti alle imprese italiane ora in formato queryabile
   · [Datasets] ISTAT Occupazione e Disoccupazione: serie provinciale 2004-2025

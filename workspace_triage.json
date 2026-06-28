@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-28T18:50:23.266918",
+  "generated_at": "2026-06-28T19:20:50.070467",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,9 +10,16 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 0,
-  "prs": [],
-  "open_issues": 70,
+  "open_prs": 1,
+  "prs": [
+    {
+      "number": 580,
+      "title": "chore(post-merge): aggiorna registry per PR #579",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/580"
+    }
+  ],
+  "open_issues": 71,
   "issues": [
     {
       "number": 569,
@@ -37,12 +44,6 @@
       "title": "intake: istat_migrazioni_interne \u2014 Trasferimenti di residenza tra comuni (2018-2024)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/554"
-    },
-    {
-      "number": 553,
-      "title": "intake: mim_scuola_infanzia \u2014 Bambini italiani e non italiani per scuola (2017-2025)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/553"
     },
     {
       "number": 551,
@@ -169,6 +170,12 @@
       "title": "intake: Incentivi.gov: anagrafica degli incentivi alle imprese per regione, ambito e forma di agevolazione",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/327"
+    },
+    {
+      "number": 370,
+      "title": "analisi: istat_occupazione_provinciale \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/370"
     },
     {
       "number": 369,
@@ -307,6 +314,12 @@
       "title": "refactor: estrarre _write_reports() da run_full() in report_ops.py",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/391"
+    },
+    {
+      "number": 179,
+      "title": "follow-up: pagina e tema per istat_occupazione_provinciale",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/179"
     },
     {
       "number": 178,
