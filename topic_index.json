@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-06-28T13:47:25.936942",
+  "generated_at": "2026-06-28T16:37:33.820962",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -145,6 +145,16 @@
         "period": {
           "start": 2023,
           "end": 2025
+        }
+      }
+    ],
+    "dataciviclab/costituzione-italiana": [
+      {
+        "slug": "costituzione_master",
+        "name": "Costituzione Master",
+        "period": {
+          "start": 2026,
+          "end": 2026
         }
       }
     ],
@@ -469,7 +479,7 @@
     "ISPRA": [
       {
         "slug": "ispra_consumo_suolo",
-        "name": "ISPRA - Consumo di Suolo 2024",
+        "name": "ISPRA \u2014 Consumo di Suolo (serie 2006-2024)",
         "period": {
           "start": 2024,
           "end": 2024

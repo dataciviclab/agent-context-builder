@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-28T13:47:25.936942",
+  "generated_at": "2026-06-28T16:37:33.820962",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -12,7 +12,7 @@
   ],
   "open_prs": 0,
   "prs": [],
-  "open_issues": 69,
+  "open_issues": 71,
   "issues": [
     {
       "number": 569,
@@ -177,6 +177,12 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/327"
     },
     {
+      "number": 369,
+      "title": "analisi: costituzione_master \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/369"
+    },
+    {
       "number": 367,
       "title": "analisi: rna_misure \u2014 nuovo dataset pubblicato",
       "repo": "dataciviclab",
@@ -307,6 +313,12 @@
       "title": "refactor: estrarre _write_reports() da run_full() in report_ops.py",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/391"
+    },
+    {
+      "number": 178,
+      "title": "follow-up: pagina e tema per costituzione_master",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/178"
     },
     {
       "number": 177,
@@ -662,9 +674,9 @@
     "available": true,
     "generated_at": "2026-06-28",
     "summary": {
-      "total": 59,
+      "total": 60,
       "by_status": {
-        "ok": 59,
+        "ok": 60,
         "warn": 0,
         "error": 0
       }
@@ -677,8 +689,8 @@
     "name": "Lab Clean Registry",
     "updated_at": "2026-06-28",
     "summary": {
-      "total": 56,
-      "published": 40
+      "total": 57,
+      "published": 41
     },
     "datasets": [
       {
@@ -1973,6 +1985,57 @@
         ]
       },
       {
+        "slug": "costituzione_master",
+        "name": "Costituzione Master",
+        "stage": "published",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/costituzione_master/2026/costituzione_master_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 3,
+        "dimension_columns": 5,
+        "column_count": 8,
+        "columns": [
+          {
+            "name": "articolo",
+            "role": "dimension"
+          },
+          {
+            "name": "parte",
+            "role": "dimension"
+          },
+          {
+            "name": "heading",
+            "role": "dimension"
+          },
+          {
+            "name": "testo_preview",
+            "role": "dimension"
+          },
+          {
+            "name": "n_modifiche",
+            "role": "metric"
+          },
+          {
+            "name": "n_giudizi",
+            "role": "metric"
+          },
+          {
+            "name": "n_indicatori",
+            "role": "metric"
+          },
+          {
+            "name": "dataset_slugs",
+            "role": "dimension"
+          }
+        ]
+      },
+      {
         "slug": "dait_amministratori_locali",
         "name": "Amministratori Locali DAIT",
         "stage": "incubating",
@@ -2853,7 +2916,7 @@
       },
       {
         "slug": "ispra_consumo_suolo",
-        "name": "ISPRA - Consumo di Suolo 2024",
+        "name": "ISPRA \u2014 Consumo di Suolo (serie 2006-2024)",
         "stage": "incubating",
         "period": {
           "start": 2024,
@@ -2864,9 +2927,9 @@
           "path": "gs://dataciviclab-clean/ispra_consumo_suolo/2024/ispra_consumo_suolo_2024_clean.parquet",
           "multi_file": false
         },
-        "metric_columns": 35,
-        "dimension_columns": 4,
-        "column_count": 39,
+        "metric_columns": 5,
+        "dimension_columns": 6,
+        "column_count": 11,
         "columns": []
       },
       {
@@ -5254,6 +5317,7 @@
       "civile_flussi",
       "comuni_master",
       "consip_consumi_convenzione",
+      "costituzione_master",
       "dipendenti_pubblici",
       "inps_pensioni_trimestrale",
       "inps_rdc_pdc",
