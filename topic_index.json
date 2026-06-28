@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-06-28T16:37:33.820962",
+  "generated_at": "2026-06-28T18:50:23.266918",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -274,6 +274,16 @@
         "name": "Istat Ipab Aree",
         "period": {
           "start": 2010,
+          "end": 2025
+        }
+      }
+    ],
+    "ISTAT \u2014 SDMX (DCCV_TAXOCCU1)": [
+      {
+        "slug": "istat_occupazione_provinciale",
+        "name": "ISTAT \u2014 Tasso di Occupazione Provinciale (2018-2025)",
+        "period": {
+          "start": 2018,
           "end": 2025
         }
       }

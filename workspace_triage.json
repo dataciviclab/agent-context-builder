@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-28T16:37:33.820962",
+  "generated_at": "2026-06-28T18:50:23.266918",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -12,7 +12,7 @@
   ],
   "open_prs": 0,
   "prs": [],
-  "open_issues": 71,
+  "open_issues": 70,
   "issues": [
     {
       "number": 569,
@@ -25,12 +25,6 @@
       "title": "Sondaggio: Pronunce della Corte Costituzionale come candidate",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/568"
-    },
-    {
-      "number": 556,
-      "title": "intake: istat_occupazione_provinciale \u2014 Tasso di occupazione e disoccupazione per provincia (2004-2025)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/556"
     },
     {
       "number": 555,
@@ -674,9 +668,9 @@
     "available": true,
     "generated_at": "2026-06-28",
     "summary": {
-      "total": 60,
+      "total": 61,
       "by_status": {
-        "ok": 60,
+        "ok": 61,
         "warn": 0,
         "error": 0
       }
@@ -689,8 +683,8 @@
     "name": "Lab Clean Registry",
     "updated_at": "2026-06-28",
     "summary": {
-      "total": 57,
-      "published": 41
+      "total": 58,
+      "published": 42
     },
     "datasets": [
       {
@@ -3363,6 +3357,61 @@
         ]
       },
       {
+        "slug": "istat_occupazione_provinciale",
+        "name": "ISTAT \u2014 Tasso di Occupazione Provinciale (2018-2025)",
+        "stage": "published",
+        "period": {
+          "start": 2018,
+          "end": 2025
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/istat_occupazione_provinciale/2025/istat_occupazione_provinciale_2025_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 1,
+        "dimension_columns": 8,
+        "column_count": 9,
+        "columns": [
+          {
+            "name": "ref_area",
+            "role": "dimension"
+          },
+          {
+            "name": "territorio",
+            "role": "dimension"
+          },
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "indicatore",
+            "role": "dimension"
+          },
+          {
+            "name": "sesso_codice",
+            "role": "dimension"
+          },
+          {
+            "name": "sesso",
+            "role": "dimension"
+          },
+          {
+            "name": "eta_codice",
+            "role": "dimension"
+          },
+          {
+            "name": "eta",
+            "role": "dimension"
+          },
+          {
+            "name": "valore",
+            "role": "metric"
+          }
+        ]
+      },
+      {
         "slug": "istat_pil_territoriale",
         "name": "PIL regionale e provinciale",
         "stage": "published",
@@ -5330,6 +5379,7 @@
       "istat_gini_regionale",
       "istat_housing_crowding",
       "istat_ipab_aree",
+      "istat_occupazione_provinciale",
       "istat_pil_territoriale",
       "mim_alunni_corso_eta",
       "opencivitas_fsc_2025_rso",
