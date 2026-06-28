@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-28T13:24:59.426668
+**Generated**: 2026-06-28T13:47:25.936942
 
 ## 🔍 SCOUTING
 
@@ -52,7 +52,7 @@
 
 ## 🔗 OPEN
 
-- [dataset-incubator#567](https://github.com/dataciviclab/dataset-incubator/pull/567): feat(compose): costituzione-master — JOIN metriche costituzionali
+**PRs**: none open
 **Discussions**: 20 open
   · [Annunci] RNA — Aiuti di Stato: 17 milioni di aiuti alle imprese italiane ora in formato queryabile
   · [Datasets] ISTAT Occupazione e Disoccupazione: serie provinciale 2004-2025
