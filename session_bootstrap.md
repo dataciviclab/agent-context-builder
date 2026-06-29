@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-29T15:48:21.535577
+**Generated**: 2026-06-29T19:58:54.248247
 
 ## 🔍 SCOUTING
 
@@ -53,7 +53,7 @@
 
 ## 🔗 OPEN
 
-**PRs**: none open
+- [dataset-incubator#587](https://github.com/dataciviclab/dataset-incubator/pull/587): chore(post-merge): aggiorna registry per PR #586
 **Discussions**: 20 open
   · [Domanda] Quanti soldi pubblici vanno al terzo settore, e come si distribuiscono?
   · [Annunci] RNA — Aiuti di Stato: 17 milioni di aiuti alle imprese italiane ora in formato queryabile
