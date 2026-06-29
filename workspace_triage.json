@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-28T19:20:50.070467",
+  "generated_at": "2026-06-29T03:58:57.197956",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -13,10 +13,10 @@
   "open_prs": 1,
   "prs": [
     {
-      "number": 580,
-      "title": "chore(post-merge): aggiorna registry per PR #579",
+      "number": 581,
+      "title": "feat: mef-rappresentanti-partecipate \u2014 compensi rappresentanti PA nelle partecipate (2018-2023)",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/580"
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/581"
     }
   ],
   "open_issues": 71,
@@ -50,12 +50,6 @@
       "title": "intake: iva_regionale \u2014 Volume d'affari, VA fiscale e imposta IVA per regione/settore",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/551"
-    },
-    {
-      "number": 550,
-      "title": "intake: irpef_subcomunale \u2014 Redditi IRPEF per CAP (sub-comunale)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/550"
     },
     {
       "number": 544,
@@ -166,10 +160,10 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/374"
     },
     {
-      "number": 327,
-      "title": "intake: Incentivi.gov: anagrafica degli incentivi alle imprese per regione, ambito e forma di agevolazione",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/327"
+      "number": 371,
+      "title": "analisi: mim_scuola_infanzia \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/371"
     },
     {
       "number": 370,
@@ -314,6 +308,12 @@
       "title": "refactor: estrarre _write_reports() da run_full() in report_ops.py",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/391"
+    },
+    {
+      "number": 180,
+      "title": "follow-up: pagina e tema per mim_scuola_infanzia",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/180"
     },
     {
       "number": 179,
@@ -681,9 +681,9 @@
     "available": true,
     "generated_at": "2026-06-28",
     "summary": {
-      "total": 61,
+      "total": 62,
       "by_status": {
-        "ok": 61,
+        "ok": 62,
         "warn": 0,
         "error": 0
       }
@@ -696,8 +696,8 @@
     "name": "Lab Clean Registry",
     "updated_at": "2026-06-28",
     "summary": {
-      "total": 58,
-      "published": 42
+      "total": 59,
+      "published": 43
     },
     "datasets": [
       {
@@ -3617,6 +3617,81 @@
         "columns": []
       },
       {
+        "slug": "mim_scuola_infanzia",
+        "name": "MIM \u2014 Bambini Scuola Infanzia per Cittadinanza (2018-2025)",
+        "stage": "published",
+        "period": {
+          "start": 2018,
+          "end": 2025
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/mim_scuola_infanzia/*/mim_scuola_infanzia_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 3,
+        "dimension_columns": 11,
+        "column_count": 14,
+        "columns": [
+          {
+            "name": "anno_scolastico",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_scuola",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione_scuola",
+            "role": "dimension"
+          },
+          {
+            "name": "grado_istruzione_scuola",
+            "role": "dimension"
+          },
+          {
+            "name": "caratteristica_scuola",
+            "role": "dimension"
+          },
+          {
+            "name": "bambini_italiani",
+            "role": "metric"
+          },
+          {
+            "name": "bambini_non_italiani",
+            "role": "metric"
+          },
+          {
+            "name": "bambini_totale",
+            "role": "metric"
+          },
+          {
+            "name": "area_geografica",
+            "role": "dimension"
+          },
+          {
+            "name": "regione",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "comune",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_comune_scuola",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione_istituto_riferimento",
+            "role": "dimension"
+          }
+        ]
+      },
+      {
         "slug": "mit_incidentalita_mensile",
         "name": "MIT Incidentalit\u00e0 Stradale Mensile",
         "stage": "incubating",
@@ -5395,6 +5470,7 @@
       "istat_occupazione_provinciale",
       "istat_pil_territoriale",
       "mim_alunni_corso_eta",
+      "mim_scuola_infanzia",
       "opencivitas_fsc_2025_rso",
       "opencoesione_progetti",
       "openga_ricorsi_cds",

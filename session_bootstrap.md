@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-28T19:20:50.070467
+**Generated**: 2026-06-29T03:58:57.197956
 
 ## 🔍 SCOUTING
 
@@ -10,8 +10,8 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 61 candidates — 61 ok
-**Dataset Catalog**: 42 published · 42 public · updated 2026-06-28
+**Pipeline**: 62 candidates — 62 ok
+**Dataset Catalog**: 43 published · 43 public · updated 2026-06-28
 
 ## 📊 ANALYSES
 
@@ -41,18 +41,18 @@
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
   · **Terzo settore**: cinque-per-mille
-  ⚠ 41 dataset published non ancora su explorer:
+  ⚠ 42 dataset published non ancora su explorer:
     · ade_cinque_per_mille
     · aifa_spesa_consumo
     · anac_bandi_gara
     · bdap_anagrafe_enti
     · bdap_entrate_stato
-    · ... e altri 36
+    · ... e altri 37
   **Deploy**: ✅ success (2026-06-25)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#580](https://github.com/dataciviclab/dataset-incubator/pull/580): chore(post-merge): aggiorna registry per PR #579
+- [dataset-incubator#581](https://github.com/dataciviclab/dataset-incubator/pull/581): feat: mef-rappresentanti-partecipate — compensi rappresentanti PA nelle partecipate (2018-2023)
 **Discussions**: 20 open
   · [Annunci] RNA — Aiuti di Stato: 17 milioni di aiuti alle imprese italiane ora in formato queryabile
   · [Datasets] ISTAT Occupazione e Disoccupazione: serie provinciale 2004-2025

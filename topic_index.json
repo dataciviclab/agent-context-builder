@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-06-28T19:20:50.070467",
+  "generated_at": "2026-06-29T03:58:57.197956",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -304,6 +304,16 @@
         "name": "Alunni per corso ed et\u00e0 \u2014 MIM",
         "period": {
           "start": 2016,
+          "end": 2025
+        }
+      }
+    ],
+    "MIM \u2014 dati.istruzione.it (INFANZIASTRACITSTA)": [
+      {
+        "slug": "mim_scuola_infanzia",
+        "name": "MIM \u2014 Bambini Scuola Infanzia per Cittadinanza (2018-2025)",
+        "period": {
+          "start": 2018,
           "end": 2025
         }
       }
