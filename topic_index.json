@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-06-29T11:01:14.032541",
+  "generated_at": "2026-06-29T15:48:21.535577",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -59,6 +59,16 @@
         "period": {
           "start": 2023,
           "end": 2025
+        }
+      }
+    ],
+    "ANPR \u2014 Anagrafe Nazionale della Popolazione Residente (PCM)": [
+      {
+        "slug": "anpr_mobilita_residenziale",
+        "name": "ANPR \u2014 Mobilita Residenziale Interregionale (2022-2026)",
+        "period": {
+          "start": 2022,
+          "end": 2026
         }
       }
     ],
@@ -755,7 +765,7 @@
     },
     {
       "slug": "appalti-affidamento-diretto",
-      "name": "81% affidamento diretto \u2014 come spende la PA italiana",
+      "name": "10 anni di appalti pubblici: da 167 a 635 miliardi",
       "datasets": [
         "anac_bandi_gara"
       ],
@@ -773,7 +783,7 @@
     },
     {
       "slug": "cinque-per-mille",
-      "name": "5x1000 \u2014 \u20ac521 milioni agli enti italiani",
+      "name": "5x1000 \u2014 \u20ac601 milioni record nel 2025",
       "datasets": [
         "ade_cinque_per_mille"
       ],
@@ -861,6 +871,16 @@
       "issue": 338
     },
     {
+      "slug": "rna-aiuti-stato",
+      "name": "RNA \u2014 Aiuti di Stato: 480 miliardi alle imprese italiane in 10 anni",
+      "datasets": [
+        "rna_aiuti_stato"
+      ],
+      "path": "analisi/rna-aiuti-stato/README.md",
+      "status": "active",
+      "discussion": 368
+    },
+    {
       "slug": "siope-comuni-spesa",
       "name": "Dove vanno i soldi dei comuni italiani?",
       "datasets": [
@@ -926,6 +946,9 @@
     ],
     "ispra_ru_base": [
       "rifiuti-km2"
+    ],
+    "rna_aiuti_stato": [
+      "rna-aiuti-stato"
     ],
     "siope_uscite_comuni": [
       "siope-comuni-spesa"

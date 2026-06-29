@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-29T11:01:14.032541",
+  "generated_at": "2026-06-29T15:48:21.535577",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,21 +10,8 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 2,
-  "prs": [
-    {
-      "number": 584,
-      "title": "feat: anpr-mobilita-residenziale \u2014 flussi cambio residenza tra regioni (ANPR)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/584"
-    },
-    {
-      "number": 373,
-      "title": "rna-aiuti-stato: analisi aiuti di Stato 2017-2026",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/pull/373"
-    }
-  ],
+  "open_prs": 0,
+  "prs": [],
   "open_issues": 71,
   "issues": [
     {
@@ -38,12 +25,6 @@
       "title": "Sondaggio: Pronunce della Corte Costituzionale come candidate",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/568"
-    },
-    {
-      "number": 555,
-      "title": "intake: anpr_mobilita_residenziale \u2014 Cambi di residenza interregionali (2022-2025)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/555"
     },
     {
       "number": 554,
@@ -154,6 +135,12 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/374"
     },
     {
+      "number": 376,
+      "title": "analisi: anpr_mobilita_residenziale \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/376"
+    },
+    {
       "number": 372,
       "title": "analisi: mef_rappresentanti_partecipate \u2014 nuovo dataset pubblicato",
       "repo": "dataciviclab",
@@ -182,12 +169,6 @@
       "title": "analisi: rna_misure \u2014 nuovo dataset pubblicato",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/issues/367"
-    },
-    {
-      "number": 366,
-      "title": "analisi: rna_aiuti_stato \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/366"
     },
     {
       "number": 364,
@@ -308,6 +289,12 @@
       "title": "refactor: estrarre _write_reports() da run_full() in report_ops.py",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/391"
+    },
+    {
+      "number": 182,
+      "title": "follow-up: pagina e tema per anpr_mobilita_residenziale",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/182"
     },
     {
       "number": 181,
@@ -457,6 +444,13 @@
   "open_discussions": 20,
   "discussions": [
     {
+      "number": 363,
+      "title": "Quanti soldi pubblici vanno al terzo settore, e come si distribuiscono?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/363",
+      "category": "Domanda"
+    },
+    {
       "number": 368,
       "title": "RNA \u2014 Aiuti di Stato: 17 milioni di aiuti alle imprese italiane ora in formato queryabile",
       "repo": "dataciviclab",
@@ -496,13 +490,6 @@
       "title": "Dove sono i deserti farmaceutici? Distribuzione territoriale delle farmacie in Italia",
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/325",
-      "category": "Domanda"
-    },
-    {
-      "number": 363,
-      "title": "Quanti soldi pubblici vanno al terzo settore, e come si distribuiscono?",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/363",
       "category": "Domanda"
     },
     {
@@ -696,9 +683,9 @@
     "available": true,
     "generated_at": "2026-06-29",
     "summary": {
-      "total": 63,
+      "total": 64,
       "by_status": {
-        "ok": 63,
+        "ok": 64,
         "warn": 0,
         "error": 0
       }
@@ -711,8 +698,8 @@
     "name": "Lab Clean Registry",
     "updated_at": "2026-06-29",
     "summary": {
-      "total": 60,
-      "published": 44
+      "total": 61,
+      "published": 45
     },
     "datasets": [
       {
@@ -1141,6 +1128,53 @@
           {
             "name": "data_ultimo_perfezionamento",
             "role": "dimension"
+          }
+        ]
+      },
+      {
+        "slug": "anpr_mobilita_residenziale",
+        "name": "ANPR \u2014 Mobilita Residenziale Interregionale (2022-2026)",
+        "stage": "published",
+        "period": {
+          "start": 2022,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/anpr_mobilita_residenziale/2026/anpr_mobilita_residenziale_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 1,
+        "dimension_columns": 6,
+        "column_count": 7,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "mese",
+            "role": "dimension"
+          },
+          {
+            "name": "partenza",
+            "role": "dimension"
+          },
+          {
+            "name": "cod_regione_partenza",
+            "role": "dimension"
+          },
+          {
+            "name": "arrivo",
+            "role": "dimension"
+          },
+          {
+            "name": "cod_regione_arrivo",
+            "role": "dimension"
+          },
+          {
+            "name": "totale",
+            "role": "metric"
           }
         ]
       },
@@ -5596,6 +5630,7 @@
       "ade_cinque_per_mille",
       "aifa_spesa_consumo",
       "anac_bandi_gara",
+      "anpr_mobilita_residenziale",
       "bdap_anagrafe_enti",
       "bdap_entrate_stato",
       "bdap_lea",

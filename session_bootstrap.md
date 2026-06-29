@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-29T11:01:14.032541
+**Generated**: 2026-06-29T15:48:21.535577
 
 ## 🔍 SCOUTING
 
@@ -10,16 +10,16 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 63 candidates — 63 ok
-**Dataset Catalog**: 44 published · 44 public · updated 2026-06-29
+**Pipeline**: 64 candidates — 64 ok
+**Dataset Catalog**: 45 published · 45 public · updated 2026-06-29
 
 ## 📊 ANALYSES
 
-**Attive**: 15
+**Attive**: 16
   · **AIFA Spesa farmaceutica convenzionata 2018-2024** · → aifa_spesa_consumo · [discussion #242](https://github.com/orgs/dataciviclab/discussions/242)
-  · **81% affidamento diretto — come spende la PA italiana** · → anac_bandi_gara
+  · **10 anni di appalti pubblici: da 167 a 635 miliardi** · → anac_bandi_gara
   · **Camera votazioni 2018-2025** · → camera_votazioni_sparql
-  · **5x1000 — €521 milioni agli enti italiani** · → ade_cinque_per_mille · [discussion #363](https://github.com/orgs/dataciviclab/discussions/363)
+  · **5x1000 — €601 milioni record nel 2025** · → ade_cinque_per_mille · [discussion #363](https://github.com/orgs/dataciviclab/discussions/363)
   · **Flussi giustizia civile 2014-2025** · → civile_flussi
   · **Consip Consumi Convenzione 2023-2025** · → consip_consumi_convenzione
   · **Dipendenti pubblici 2010-2023** · → dipendenti_pubblici
@@ -28,6 +28,7 @@
   · **Malasanità 2022: mortalità evitabile e dotazione sanitaria regionale** · → malasanita_struttura_mortalita · [discussion #99](https://github.com/orgs/dataciviclab/discussions/99)
   · **OpenCivitas FSC 2025 RSO** · → opencivitas_fsc_2025_rso
   · **Rifiuti per km² — dove si produce di più?** · → ispra_ru_base · [discussion #340](https://github.com/orgs/dataciviclab/discussions/340)
+  · **RNA — Aiuti di Stato: 480 miliardi alle imprese italiane in 10 anni** · → rna_aiuti_stato · [discussion #368](https://github.com/orgs/dataciviclab/discussions/368)
   · **Dove vanno i soldi dei comuni italiani?** · → siope_uscite_comuni
   · **Terna capacità rinnovabile 2015-2024** · → terna_capacita_rinnovabile · [discussion #339](https://github.com/orgs/dataciviclab/discussions/339)
   · **Terna mix elettrico 2015-2024** · → terna_electricity_by_source
@@ -41,23 +42,22 @@
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
   · **Terzo settore**: cinque-per-mille
-  ⚠ 43 dataset published non ancora su explorer:
+  ⚠ 44 dataset published non ancora su explorer:
     · ade_cinque_per_mille
     · aifa_spesa_consumo
     · anac_bandi_gara
+    · anpr_mobilita_residenziale
     · bdap_anagrafe_enti
-    · bdap_entrate_stato
-    · ... e altri 38
+    · ... e altri 39
   **Deploy**: ✅ success (2026-06-25)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#584](https://github.com/dataciviclab/dataset-incubator/pull/584): feat: anpr-mobilita-residenziale — flussi cambio residenza tra regioni (ANPR)
-- [dataciviclab#373](https://github.com/dataciviclab/dataciviclab/pull/373): rna-aiuti-stato: analisi aiuti di Stato 2017-2026
+**PRs**: none open
 **Discussions**: 20 open
+  · [Domanda] Quanti soldi pubblici vanno al terzo settore, e come si distribuiscono?
   · [Annunci] RNA — Aiuti di Stato: 17 milioni di aiuti alle imprese italiane ora in formato queryabile
   · [Datasets] ISTAT Occupazione e Disoccupazione: serie provinciale 2004-2025
-  · [Datasets] ANPR Open Data: mobilita' residenziale e anagrafe digitale
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
