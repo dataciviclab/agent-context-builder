@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-29T03:58:57.197956",
+  "generated_at": "2026-06-29T11:01:14.032541",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,13 +10,19 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 1,
+  "open_prs": 2,
   "prs": [
     {
-      "number": 581,
-      "title": "feat: mef-rappresentanti-partecipate \u2014 compensi rappresentanti PA nelle partecipate (2018-2023)",
+      "number": 584,
+      "title": "feat: anpr-mobilita-residenziale \u2014 flussi cambio residenza tra regioni (ANPR)",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/581"
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/584"
+    },
+    {
+      "number": 373,
+      "title": "rna-aiuti-stato: analisi aiuti di Stato 2017-2026",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/pull/373"
     }
   ],
   "open_issues": 71,
@@ -50,18 +56,6 @@
       "title": "intake: iva_regionale \u2014 Volume d'affari, VA fiscale e imposta IVA per regione/settore",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/551"
-    },
-    {
-      "number": 544,
-      "title": "intake: mef_rappresentanti_partecipate",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/544"
-    },
-    {
-      "number": 542,
-      "title": "intake: PagoPA \u2014 dati digitalizzazione PA (IO, SEND, pagoPA)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/542"
     },
     {
       "number": 523,
@@ -158,6 +152,12 @@
       "title": "Proposta intake: SILOS Infrastrutture strategiche (dati.camera.it)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/374"
+    },
+    {
+      "number": 372,
+      "title": "analisi: mef_rappresentanti_partecipate \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/372"
     },
     {
       "number": 371,
@@ -308,6 +308,12 @@
       "title": "refactor: estrarre _write_reports() da run_full() in report_ops.py",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/391"
+    },
+    {
+      "number": 181,
+      "title": "follow-up: pagina e tema per mef_rappresentanti_partecipate",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/181"
     },
     {
       "number": 180,
@@ -653,7 +659,7 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-06-28",
+    "probe_date": "2026-06-29",
     "sources_total": 33,
     "green": 32,
     "yellow": 1,
@@ -672,18 +678,27 @@
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-06-26T11:00:43+00:00",
+    "captured_at": "2026-06-29T08:29:37+00:00",
     "sources_checked": 30,
     "regressions": [],
-    "alerts": []
+    "alerts": [
+      {
+        "source": "unioncamere",
+        "protocol": "ckan",
+        "signal_type": "inventory change",
+        "result": "inventory change",
+        "detail": "373 item (package_search), delta +2 rispetto al run precedente (371).",
+        "suggested_action": "verificare se variazione attesa; avviare inventory-triage se nuovi dataset"
+      }
+    ]
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-06-28",
+    "generated_at": "2026-06-29",
     "summary": {
-      "total": 62,
+      "total": 63,
       "by_status": {
-        "ok": 62,
+        "ok": 63,
         "warn": 0,
         "error": 0
       }
@@ -694,10 +709,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-06-28",
+    "updated_at": "2026-06-29",
     "summary": {
-      "total": 59,
-      "published": 43
+      "total": 60,
+      "published": 44
     },
     "datasets": [
       {
@@ -3516,6 +3531,141 @@
         "columns": []
       },
       {
+        "slug": "mef_rappresentanti_partecipate",
+        "name": "MEF \u2014 Compensi Rappresentanti PA nelle Partecipate (2018-2023)",
+        "stage": "published",
+        "period": {
+          "start": 2018,
+          "end": 2023
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/mef_rappresentanti_partecipate/*/mef_rappresentanti_partecipate_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 3,
+        "dimension_columns": 26,
+        "column_count": 29,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "amministrazione",
+            "role": "dimension"
+          },
+          {
+            "name": "amm_settore",
+            "role": "dimension"
+          },
+          {
+            "name": "amm_macrocategoria",
+            "role": "dimension"
+          },
+          {
+            "name": "amm_categoria",
+            "role": "dimension"
+          },
+          {
+            "name": "amm_cf",
+            "role": "dimension"
+          },
+          {
+            "name": "amm_regione",
+            "role": "dimension"
+          },
+          {
+            "name": "amm_provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "amm_comune",
+            "role": "dimension"
+          },
+          {
+            "name": "societa",
+            "role": "dimension"
+          },
+          {
+            "name": "societa_cf",
+            "role": "dimension"
+          },
+          {
+            "name": "societa_anno_costituzione",
+            "role": "metric"
+          },
+          {
+            "name": "societa_forma_giuridica",
+            "role": "dimension"
+          },
+          {
+            "name": "societa_stato",
+            "role": "dimension"
+          },
+          {
+            "name": "societa_settore",
+            "role": "dimension"
+          },
+          {
+            "name": "societa_ateco",
+            "role": "dimension"
+          },
+          {
+            "name": "societa_regione",
+            "role": "dimension"
+          },
+          {
+            "name": "societa_provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "societa_comune",
+            "role": "dimension"
+          },
+          {
+            "name": "rapp_id",
+            "role": "dimension"
+          },
+          {
+            "name": "rapp_cognome",
+            "role": "dimension"
+          },
+          {
+            "name": "rapp_nome",
+            "role": "dimension"
+          },
+          {
+            "name": "rapp_genere",
+            "role": "dimension"
+          },
+          {
+            "name": "incarico_tipo",
+            "role": "dimension"
+          },
+          {
+            "name": "incarico_data_inizio",
+            "role": "dimension"
+          },
+          {
+            "name": "incarico_data_fine",
+            "role": "dimension"
+          },
+          {
+            "name": "incarico_gratuito",
+            "role": "dimension"
+          },
+          {
+            "name": "incarico_importo_eur",
+            "role": "metric"
+          },
+          {
+            "name": "incarico_riversato_eur",
+            "role": "metric"
+          }
+        ]
+      },
+      {
         "slug": "mim_alunni_corso_eta",
         "name": "Alunni per corso ed et\u00e0 \u2014 MIM",
         "stage": "published",
@@ -5469,6 +5619,7 @@
       "istat_ipab_aree",
       "istat_occupazione_provinciale",
       "istat_pil_territoriale",
+      "mef_rappresentanti_partecipate",
       "mim_alunni_corso_eta",
       "mim_scuola_infanzia",
       "opencivitas_fsc_2025_rso",

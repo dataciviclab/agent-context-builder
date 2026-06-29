@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-06-29T03:58:57.197956",
+  "generated_at": "2026-06-29T11:01:14.032541",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -295,6 +295,16 @@
         "period": {
           "start": 1995,
           "end": 2024
+        }
+      }
+    ],
+    "MEF \u2014 Dipartimento del Tesoro (Open Data Partecipazioni)": [
+      {
+        "slug": "mef_rappresentanti_partecipate",
+        "name": "MEF \u2014 Compensi Rappresentanti PA nelle Partecipate (2018-2023)",
+        "period": {
+          "start": 2018,
+          "end": 2023
         }
       }
     ],

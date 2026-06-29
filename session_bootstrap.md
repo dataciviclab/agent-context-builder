@@ -1,17 +1,17 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-29T03:58:57.197956
+**Generated**: 2026-06-29T11:01:14.032541
 
 ## 🔍 SCOUTING
 
-**Radar**: 33 fonti — GREEN 32 · YELLOW 1 · RED 0 (probe: 2026-06-28)
+**Radar**: 33 fonti — GREEN 32 · YELLOW 1 · RED 0 (probe: 2026-06-29)
   · **istat_sdmx** YELLOW [-] — Timeout (ReadTimeout)
-**Catalog Drift**: no drift signals (30 sources checked)
+  · **unioncamere** (ckan): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
 
 ## 📥 INTAKE
 
-**Pipeline**: 62 candidates — 62 ok
-**Dataset Catalog**: 43 published · 43 public · updated 2026-06-28
+**Pipeline**: 63 candidates — 63 ok
+**Dataset Catalog**: 44 published · 44 public · updated 2026-06-29
 
 ## 📊 ANALYSES
 
@@ -41,18 +41,19 @@
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
   · **Terzo settore**: cinque-per-mille
-  ⚠ 42 dataset published non ancora su explorer:
+  ⚠ 43 dataset published non ancora su explorer:
     · ade_cinque_per_mille
     · aifa_spesa_consumo
     · anac_bandi_gara
     · bdap_anagrafe_enti
     · bdap_entrate_stato
-    · ... e altri 37
+    · ... e altri 38
   **Deploy**: ✅ success (2026-06-25)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#581](https://github.com/dataciviclab/dataset-incubator/pull/581): feat: mef-rappresentanti-partecipate — compensi rappresentanti PA nelle partecipate (2018-2023)
+- [dataset-incubator#584](https://github.com/dataciviclab/dataset-incubator/pull/584): feat: anpr-mobilita-residenziale — flussi cambio residenza tra regioni (ANPR)
+- [dataciviclab#373](https://github.com/dataciviclab/dataciviclab/pull/373): rna-aiuti-stato: analisi aiuti di Stato 2017-2026
 **Discussions**: 20 open
   · [Annunci] RNA — Aiuti di Stato: 17 milioni di aiuti alle imprese italiane ora in formato queryabile
   · [Datasets] ISTAT Occupazione e Disoccupazione: serie provinciale 2004-2025
