@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-29T19:58:54.248247",
+  "generated_at": "2026-06-30T03:41:47.832544",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,17 +10,29 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 1,
+  "open_prs": 2,
   "prs": [
     {
-      "number": 587,
-      "title": "chore(post-merge): aggiorna registry per PR #586",
+      "number": 589,
+      "title": "feat: intake elezioni regionali 2018-2024 (Eligendo)",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/587"
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/589"
+    },
+    {
+      "number": 184,
+      "title": "chore(deps-dev): bump eslint from 10.5.0 to 10.6.0",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/184"
     }
   ],
-  "open_issues": 69,
+  "open_issues": 72,
   "issues": [
+    {
+      "number": 588,
+      "title": "intake(eligendo): elezioni regionali 2018-2024 risultati per comune",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/588"
+    },
     {
       "number": 569,
       "title": "registry/costituzione-mapping.yaml \u2014 mappa articoli Costituzione \u2194 dataset Lab",
@@ -134,6 +146,12 @@
       "title": "Proposta intake: SILOS Infrastrutture strategiche (dati.camera.it)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/374"
+    },
+    {
+      "number": 377,
+      "title": "analisi: iva_regionale \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/377"
     },
     {
       "number": 376,
@@ -284,6 +302,12 @@
       "title": "refactor: estrarre _write_reports() da run_full() in report_ops.py",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/391"
+    },
+    {
+      "number": 183,
+      "title": "follow-up: pagina e tema per iva_regionale",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/183"
     },
     {
       "number": 182,
@@ -678,9 +702,9 @@
     "available": true,
     "generated_at": "2026-06-29",
     "summary": {
-      "total": 64,
+      "total": 65,
       "by_status": {
-        "ok": 64,
+        "ok": 65,
         "warn": 0,
         "error": 0
       }
@@ -693,8 +717,8 @@
     "name": "Lab Clean Registry",
     "updated_at": "2026-06-29",
     "summary": {
-      "total": 61,
-      "published": 45
+      "total": 62,
+      "published": 46
     },
     "datasets": [
       {
@@ -3524,6 +3548,61 @@
         ]
       },
       {
+        "slug": "iva_regionale",
+        "name": "MEF \u2014 IVA Regionale: Volume Affari e VA fiscale (2014-2023)",
+        "stage": "published",
+        "period": {
+          "start": 2015,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/iva_regionale/*/iva_regionale_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 6,
+        "dimension_columns": 3,
+        "column_count": 9,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "regione",
+            "role": "dimension"
+          },
+          {
+            "name": "cod_regione",
+            "role": "dimension"
+          },
+          {
+            "name": "contribuenti",
+            "role": "metric"
+          },
+          {
+            "name": "volume_affari_eur",
+            "role": "metric"
+          },
+          {
+            "name": "acquisti_eur",
+            "role": "metric"
+          },
+          {
+            "name": "va_fiscale_eur",
+            "role": "metric"
+          },
+          {
+            "name": "imposta_dovuta_eur",
+            "role": "metric"
+          },
+          {
+            "name": "imposta_credito_eur",
+            "role": "metric"
+          }
+        ]
+      },
+      {
         "slug": "mef_irpef_regionale",
         "name": "MEF - Irpef Regionale",
         "stage": "incubating",
@@ -5649,6 +5728,7 @@
       "istat_ipab_aree",
       "istat_occupazione_provinciale",
       "istat_pil_territoriale",
+      "iva_regionale",
       "mef_rappresentanti_partecipate",
       "mim_alunni_corso_eta",
       "mim_scuola_infanzia",

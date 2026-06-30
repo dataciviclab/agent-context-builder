@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-06-29T19:58:54.248247
+**Generated**: 2026-06-30T03:41:47.832544
 
 ## 🔍 SCOUTING
 
@@ -10,8 +10,8 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 64 candidates — 64 ok
-**Dataset Catalog**: 45 published · 45 public · updated 2026-06-29
+**Pipeline**: 65 candidates — 65 ok
+**Dataset Catalog**: 46 published · 46 public · updated 2026-06-29
 
 ## 📊 ANALYSES
 
@@ -42,18 +42,19 @@
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
   · **Terzo settore**: cinque-per-mille
-  ⚠ 44 dataset published non ancora su explorer:
+  ⚠ 45 dataset published non ancora su explorer:
     · ade_cinque_per_mille
     · aifa_spesa_consumo
     · anac_bandi_gara
     · anpr_mobilita_residenziale
     · bdap_anagrafe_enti
-    · ... e altri 39
+    · ... e altri 40
   **Deploy**: ✅ success (2026-06-25)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#587](https://github.com/dataciviclab/dataset-incubator/pull/587): chore(post-merge): aggiorna registry per PR #586
+- [dataset-incubator#589](https://github.com/dataciviclab/dataset-incubator/pull/589): feat: intake elezioni regionali 2018-2024 (Eligendo)
+- **Dependabot**: 1 bump PR(s)
 **Discussions**: 20 open
   · [Domanda] Quanti soldi pubblici vanno al terzo settore, e come si distribuiscono?
   · [Annunci] RNA — Aiuti di Stato: 17 milioni di aiuti alle imprese italiane ora in formato queryabile

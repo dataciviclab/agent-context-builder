@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-06-29T19:58:54.248247",
+  "generated_at": "2026-06-30T03:41:47.832544",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -304,6 +304,16 @@
         "name": "PIL regionale e provinciale",
         "period": {
           "start": 1995,
+          "end": 2024
+        }
+      }
+    ],
+    "MEF \u2014 Dipartimento delle Finanze (CIVATOT0201)": [
+      {
+        "slug": "iva_regionale",
+        "name": "MEF \u2014 IVA Regionale: Volume Affari e VA fiscale (2014-2023)",
+        "period": {
+          "start": 2015,
           "end": 2024
         }
       }
