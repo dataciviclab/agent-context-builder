@@ -1,16 +1,16 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-01T03:57:35.809242
+**Generated**: 2026-07-01T09:48:16.470622
 
 ## 🔍 SCOUTING
 
-**Radar**: 33 fonti — GREEN 33 · YELLOW 0 · RED 0 (probe: 2026-06-30)
+**Radar**: 33 fonti — GREEN 33 · YELLOW 0 · RED 0 (probe: 2026-07-01)
   · **unioncamere** (ckan): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
 
 ## 📥 INTAKE
 
-**Pipeline**: 65 candidates — 65 ok
-**Dataset Catalog**: 46 published · 46 public · updated 2026-06-29
+**Pipeline**: 66 candidates — 66 ok
+**Dataset Catalog**: 46 published · 46 public · updated 2026-07-01
 
 ## 📊 ANALYSES
 
@@ -48,12 +48,11 @@
     · anpr_mobilita_residenziale
     · bdap_anagrafe_enti
     · ... e altri 40
-  **Deploy**: ✅ success (2026-06-25)
+  **Deploy**: ✅ success (2026-07-01)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#589](https://github.com/dataciviclab/dataset-incubator/pull/589): feat: intake elezioni regionali 2018-2024 (Eligendo)
-- **Dependabot**: 1 bump PR(s)
+**PRs**: none open
 **Discussions**: 20 open
   · [Domanda] Quanti soldi pubblici vanno al terzo settore, e come si distribuiscono?
   · [Annunci] RNA — Aiuti di Stato: 17 milioni di aiuti alle imprese italiane ora in formato queryabile

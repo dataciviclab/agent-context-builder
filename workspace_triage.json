@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T03:57:35.809242",
+  "generated_at": "2026-07-01T09:48:16.470622",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,29 +10,10 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 2,
-  "prs": [
-    {
-      "number": 589,
-      "title": "feat: intake elezioni regionali 2018-2024 (Eligendo)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/589"
-    },
-    {
-      "number": 184,
-      "title": "chore(deps-dev): bump eslint from 10.5.0 to 10.6.0",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/184"
-    }
-  ],
-  "open_issues": 72,
+  "open_prs": 0,
+  "prs": [],
+  "open_issues": 71,
   "issues": [
-    {
-      "number": 588,
-      "title": "intake(eligendo): elezioni regionali 2018-2024 risultati per comune",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/588"
-    },
     {
       "number": 569,
       "title": "registry/costituzione-mapping.yaml \u2014 mappa articoli Costituzione \u2194 dataset Lab",
@@ -665,7 +646,7 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-06-30",
+    "probe_date": "2026-07-01",
     "sources_total": 33,
     "green": 33,
     "yellow": 0,
@@ -691,11 +672,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-06-29",
+    "generated_at": "2026-07-01",
     "summary": {
-      "total": 65,
+      "total": 66,
       "by_status": {
-        "ok": 65,
+        "ok": 66,
         "warn": 0,
         "error": 0
       }
@@ -706,9 +687,9 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-06-29",
+    "updated_at": "2026-07-01",
     "summary": {
-      "total": 62,
+      "total": 63,
       "published": 46
     },
     "datasets": [
@@ -2246,6 +2227,24 @@
         "metric_columns": 7,
         "dimension_columns": 12,
         "column_count": 19,
+        "columns": []
+      },
+      {
+        "slug": "elezioni_regionali",
+        "name": "Elezioni Regionali 2018-2024",
+        "stage": "incubating",
+        "period": {
+          "start": 2018,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/elezioni_regionali/*/elezioni_regionali_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 5,
+        "dimension_columns": 7,
+        "column_count": 12,
         "columns": []
       },
       {
@@ -5739,12 +5738,12 @@
       "unified_comuni"
     ],
     "last_deploy": {
-      "run_id": 28173635061,
+      "run_id": 28501277924,
       "name": "Deploy to GitHub Pages (Observable Framework)",
       "status": "completed",
       "conclusion": "success",
-      "completed_at": "2026-06-25T13:36:12Z",
-      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/28173635061"
+      "completed_at": "2026-07-01T07:36:23Z",
+      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/28501277924"
     }
   }
 }
