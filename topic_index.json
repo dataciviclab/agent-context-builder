@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-01T09:48:16.470622",
+  "generated_at": "2026-07-01T14:37:05.386204",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -175,6 +175,16 @@
         "period": {
           "start": 2026,
           "end": 2026
+        }
+      }
+    ],
+    "Commissione Europea \u2014 Financial Transparency System (FTS)": [
+      {
+        "slug": "fts_eu_grants",
+        "name": "Grant UE erogati in Italia (FTS EU Grants)",
+        "period": {
+          "start": 2020,
+          "end": 2024
         }
       }
     ],
@@ -453,6 +463,16 @@
         "period": {
           "start": 2022,
           "end": 2022
+        }
+      }
+    ],
+    "data.europa.eu \u2014 TED (Tenders Electronic Daily)": [
+      {
+        "slug": "ted_contract_notices",
+        "name": "Bandi di gara UE in Italia (TED Contract Notices)",
+        "period": {
+          "start": 2020,
+          "end": 2023
         }
       }
     ],

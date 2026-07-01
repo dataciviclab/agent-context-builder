@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T09:48:16.470622",
+  "generated_at": "2026-07-01T14:37:05.386204",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -12,7 +12,7 @@
   ],
   "open_prs": 0,
   "prs": [],
-  "open_issues": 71,
+  "open_issues": 75,
   "issues": [
     {
       "number": 569,
@@ -127,6 +127,18 @@
       "title": "Proposta intake: SILOS Infrastrutture strategiche (dati.camera.it)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/374"
+    },
+    {
+      "number": 379,
+      "title": "analisi: fts_eu_grants \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/379"
+    },
+    {
+      "number": 378,
+      "title": "analisi: ted_contract_notices \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/378"
     },
     {
       "number": 377,
@@ -283,6 +295,18 @@
       "title": "refactor: estrarre _write_reports() da run_full() in report_ops.py",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/391"
+    },
+    {
+      "number": 186,
+      "title": "follow-up: pagina e tema per fts_eu_grants",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/186"
+    },
+    {
+      "number": 185,
+      "title": "follow-up: pagina e tema per ted_contract_notices",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/185"
     },
     {
       "number": 183,
@@ -674,9 +698,9 @@
     "available": true,
     "generated_at": "2026-07-01",
     "summary": {
-      "total": 66,
+      "total": 68,
       "by_status": {
-        "ok": 66,
+        "ok": 68,
         "warn": 0,
         "error": 0
       }
@@ -689,8 +713,8 @@
     "name": "Lab Clean Registry",
     "updated_at": "2026-07-01",
     "summary": {
-      "total": 63,
-      "published": 46
+      "total": 65,
+      "published": 48
     },
     "datasets": [
       {
@@ -2350,6 +2374,177 @@
           },
           {
             "name": "localizzazione",
+            "role": "dimension"
+          }
+        ]
+      },
+      {
+        "slug": "fts_eu_grants",
+        "name": "Grant UE erogati in Italia (FTS EU Grants)",
+        "stage": "published",
+        "period": {
+          "start": 2020,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/fts_eu_grants/*/fts_eu_grants_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 7,
+        "dimension_columns": 31,
+        "column_count": 38,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "budget",
+            "role": "dimension"
+          },
+          {
+            "name": "rif_impegno_giuridico",
+            "role": "dimension"
+          },
+          {
+            "name": "rif_bilancio",
+            "role": "dimension"
+          },
+          {
+            "name": "beneficiario_nome",
+            "role": "dimension"
+          },
+          {
+            "name": "beneficiario_partita_iva",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_no_profit",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_ong",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_coordinatore",
+            "role": "dimension"
+          },
+          {
+            "name": "beneficiario_indirizzo",
+            "role": "dimension"
+          },
+          {
+            "name": "beneficiario_citta",
+            "role": "dimension"
+          },
+          {
+            "name": "beneficiario_cap",
+            "role": "dimension"
+          },
+          {
+            "name": "paese_beneficiario",
+            "role": "dimension"
+          },
+          {
+            "name": "nuts2",
+            "role": "dimension"
+          },
+          {
+            "name": "zona_geografica",
+            "role": "dimension"
+          },
+          {
+            "name": "luogo_azione",
+            "role": "dimension"
+          },
+          {
+            "name": "importo_contrattato",
+            "role": "metric"
+          },
+          {
+            "name": "importo_contrattato_stimato",
+            "role": "metric"
+          },
+          {
+            "name": "importo_consumato_stimato",
+            "role": "metric"
+          },
+          {
+            "name": "impegno_importo_a",
+            "role": "metric"
+          },
+          {
+            "name": "importo_aggiuntivo_ridotto_b",
+            "role": "metric"
+          },
+          {
+            "name": "impegno_totale_a_plus_b",
+            "role": "metric"
+          },
+          {
+            "name": "impegno_consumato",
+            "role": "metric"
+          },
+          {
+            "name": "fonte_dettaglio",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_spesa",
+            "role": "dimension"
+          },
+          {
+            "name": "oggetto_contributo",
+            "role": "dimension"
+          },
+          {
+            "name": "dipartimento_responsabile",
+            "role": "dimension"
+          },
+          {
+            "name": "linea_bilancio_codice",
+            "role": "dimension"
+          },
+          {
+            "name": "linea_bilancio_nome",
+            "role": "dimension"
+          },
+          {
+            "name": "nome_programma",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_finanziamento",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_gruppo_beneficiario",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_beneficiario",
+            "role": "dimension"
+          },
+          {
+            "name": "data_inizio_progetto",
+            "role": "dimension"
+          },
+          {
+            "name": "data_fine_progetto",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_contratto",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_gestione",
+            "role": "dimension"
+          },
+          {
+            "name": "paese_beneficiante",
             "role": "dimension"
           }
         ]
@@ -5425,6 +5620,281 @@
         ]
       },
       {
+        "slug": "ted_contract_notices",
+        "name": "Bandi di gara UE in Italia (TED Contract Notices)",
+        "stage": "published",
+        "period": {
+          "start": 2020,
+          "end": 2023
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/ted_contract_notices/*/ted_contract_notices_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 17,
+        "dimension_columns": 47,
+        "column_count": 64,
+        "columns": [
+          {
+            "name": "id_notice_cn",
+            "role": "metric"
+          },
+          {
+            "name": "ted_notice_url",
+            "role": "dimension"
+          },
+          {
+            "name": "anno_pubblicazione",
+            "role": "dimension"
+          },
+          {
+            "name": "id_tipo_notice",
+            "role": "dimension"
+          },
+          {
+            "name": "data_invio",
+            "role": "dimension"
+          },
+          {
+            "name": "xsd_version",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_cancellato",
+            "role": "metric"
+          },
+          {
+            "name": "n_correzioni",
+            "role": "metric"
+          },
+          {
+            "name": "future_can_id",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_future_can_estimated",
+            "role": "metric"
+          },
+          {
+            "name": "flag_multipla_stazione",
+            "role": "dimension"
+          },
+          {
+            "name": "stazione_appaltante_nome",
+            "role": "dimension"
+          },
+          {
+            "name": "stazione_appaltante_codice_nazionale",
+            "role": "dimension"
+          },
+          {
+            "name": "stazione_appaltante_indirizzo",
+            "role": "dimension"
+          },
+          {
+            "name": "stazione_appaltante_citta",
+            "role": "dimension"
+          },
+          {
+            "name": "stazione_appaltante_cap",
+            "role": "dimension"
+          },
+          {
+            "name": "paese",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_multi_paese",
+            "role": "dimension"
+          },
+          {
+            "name": "paesi_coinvolti",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_stazione_appaltante",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_istituzione_ue",
+            "role": "dimension"
+          },
+          {
+            "name": "attivita_principale",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_per_conto_terzi",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_appalto_congiunto",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_aggiudicato_centrale",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_contratto",
+            "role": "dimension"
+          },
+          {
+            "name": "nuts_luogo_esecuzione",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_accordo_quadro",
+            "role": "dimension"
+          },
+          {
+            "name": "accordo_quadro_stima",
+            "role": "metric"
+          },
+          {
+            "name": "flag_operatore_unico",
+            "role": "dimension"
+          },
+          {
+            "name": "n_operatori_accordo",
+            "role": "metric"
+          },
+          {
+            "name": "n_max_operatori_accordo",
+            "role": "metric"
+          },
+          {
+            "name": "flag_sistema_dinamico",
+            "role": "dimension"
+          },
+          {
+            "name": "cpv_codice",
+            "role": "dimension"
+          },
+          {
+            "name": "id_lotto",
+            "role": "dimension"
+          },
+          {
+            "name": "cpv_codici_aggiuntivi",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_gpa",
+            "role": "dimension"
+          },
+          {
+            "name": "n_lotti",
+            "role": "metric"
+          },
+          {
+            "name": "lotti_presentati",
+            "role": "metric"
+          },
+          {
+            "name": "flag_varianti",
+            "role": "dimension"
+          },
+          {
+            "name": "valore_euro",
+            "role": "metric"
+          },
+          {
+            "name": "valore_euro_fin_1",
+            "role": "metric"
+          },
+          {
+            "name": "valore_euro_fin_2",
+            "role": "metric"
+          },
+          {
+            "name": "flag_opzioni",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_fondi_ue",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_rinnovo",
+            "role": "dimension"
+          },
+          {
+            "name": "durata_mesi",
+            "role": "metric"
+          },
+          {
+            "name": "data_inizio_contratto",
+            "role": "dimension"
+          },
+          {
+            "name": "data_fine_contratto",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_procedura",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_accelerata",
+            "role": "dimension"
+          },
+          {
+            "name": "n_operatori_inviati",
+            "role": "metric"
+          },
+          {
+            "name": "n_min_operatori",
+            "role": "metric"
+          },
+          {
+            "name": "n_max_operatori",
+            "role": "metric"
+          },
+          {
+            "name": "codice_criterio_aggiudicazione",
+            "role": "dimension"
+          },
+          {
+            "name": "peso_prezzo",
+            "role": "metric"
+          },
+          {
+            "name": "criteri_qualitativi",
+            "role": "dimension"
+          },
+          {
+            "name": "pesi_criteri",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_asta_elettronica",
+            "role": "dimension"
+          },
+          {
+            "name": "data_scadenza_offerte",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_lingua_qualsiasi_ce",
+            "role": "dimension"
+          },
+          {
+            "name": "lingue_ammesse",
+            "role": "dimension"
+          },
+          {
+            "name": "altre_lingue_ammesse",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_appalto_ricorrente",
+            "role": "dimension"
+          }
+        ]
+      },
+      {
         "slug": "terna_capacita_rinnovabile",
         "name": "Terna Capacita Rinnovabile",
         "stage": "published",
@@ -5705,6 +6175,7 @@
       "consip_consumi_convenzione",
       "costituzione_master",
       "dipendenti_pubblici",
+      "fts_eu_grants",
       "inps_pensioni_trimestrale",
       "inps_rdc_pdc",
       "ipa_enti",
@@ -5733,6 +6204,7 @@
       "rna_misure",
       "strutture_asl",
       "strutture_ricovero_asl",
+      "ted_contract_notices",
       "terna_capacita_rinnovabile",
       "terna_electricity_by_source",
       "unified_comuni"
