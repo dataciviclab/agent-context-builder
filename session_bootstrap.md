@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-01T14:37:05.386204
+**Generated**: 2026-07-01T19:56:34.544580
 
 ## 🔍 SCOUTING
 
@@ -9,8 +9,8 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 68 candidates — 68 ok
-**Dataset Catalog**: 48 published · 48 public · updated 2026-07-01
+**Pipeline**: 69 candidates — 69 ok
+**Dataset Catalog**: 49 published · 49 public · updated 2026-07-01
 
 ## 📊 ANALYSES
 
@@ -41,22 +41,23 @@
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
   · **Terzo settore**: cinque-per-mille
-  ⚠ 47 dataset published non ancora su explorer:
+  ⚠ 48 dataset published non ancora su explorer:
     · ade_cinque_per_mille
     · aifa_spesa_consumo
     · anac_bandi_gara
     · anpr_mobilita_residenziale
     · bdap_anagrafe_enti
-    · ... e altri 42
+    · ... e altri 43
   **Deploy**: ✅ success (2026-07-01)
 
 ## 🔗 OPEN
 
-**PRs**: none open
+- [dataset-incubator#601](https://github.com/dataciviclab/dataset-incubator/pull/601): intake: sai-progetti-italia — progetti SAI (Sistema Accoglienza e Integrazione) 2018-2024
+- [dataset-incubator#600](https://github.com/dataciviclab/dataset-incubator/pull/600): intake: sai-strutture-italia — strutture SAI (Sistema Accoglienza e Integrazione) 2018-2024
 **Discussions**: 20 open
+  · [Domanda] Quante persone immigrate arrivano in Italia, dove vengono accolte, e quanti ottengono protezione?
   · [Domanda] Quanti soldi pubblici vanno al terzo settore, e come si distribuiscono?
   · [Annunci] RNA — Aiuti di Stato: 17 milioni di aiuti alle imprese italiane ora in formato queryabile
-  · [Datasets] ISTAT Occupazione e Disoccupazione: serie provinciale 2004-2025
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA

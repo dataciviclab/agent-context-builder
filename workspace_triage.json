@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T14:37:05.386204",
+  "generated_at": "2026-07-01T19:56:34.544580",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,10 +10,35 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 0,
-  "prs": [],
-  "open_issues": 75,
+  "open_prs": 2,
+  "prs": [
+    {
+      "number": 601,
+      "title": "intake: sai-progetti-italia \u2014 progetti SAI (Sistema Accoglienza e Integrazione) 2018-2024",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/601"
+    },
+    {
+      "number": 600,
+      "title": "intake: sai-strutture-italia \u2014 strutture SAI (Sistema Accoglienza e Integrazione) 2018-2024",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/600"
+    }
+  ],
+  "open_issues": 79,
   "issues": [
+    {
+      "number": 597,
+      "title": "intake: richiedenti-asilo-italia \u2014 Domande e decisioni protezione internazionale (Comm. Naz. Asilo)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/597"
+    },
+    {
+      "number": 596,
+      "title": "intake: sbarchi-migranti-italia \u2014 Arrivi via mare, accoglienza e nazionalit\u00e0 (onData)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/596"
+    },
     {
       "number": 569,
       "title": "registry/costituzione-mapping.yaml \u2014 mappa articoli Costituzione \u2194 dataset Lab",
@@ -127,6 +152,12 @@
       "title": "Proposta intake: SILOS Infrastrutture strategiche (dati.camera.it)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/374"
+    },
+    {
+      "number": 381,
+      "title": "analisi: centri_accoglienza_italia \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/381"
     },
     {
       "number": 379,
@@ -295,6 +326,12 @@
       "title": "refactor: estrarre _write_reports() da run_full() in report_ops.py",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/391"
+    },
+    {
+      "number": 187,
+      "title": "follow-up: pagina e tema per centri_accoglienza_italia",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/187"
     },
     {
       "number": 186,
@@ -468,6 +505,13 @@
   "open_discussions": 20,
   "discussions": [
     {
+      "number": 380,
+      "title": "Quante persone immigrate arrivano in Italia, dove vengono accolte, e quanti ottengono protezione?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/380",
+      "category": "Domanda"
+    },
+    {
       "number": 363,
       "title": "Quanti soldi pubblici vanno al terzo settore, e come si distribuiscono?",
       "repo": "dataciviclab",
@@ -599,13 +643,6 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/297",
       "category": "Proposte"
-    },
-    {
-      "number": 326,
-      "title": "Quanto personale sanitario ha perso il SSN? Trend del personale dipendente ASL/AO/IRCCS per ruolo (2010-2021)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/326",
-      "category": "Domanda"
     }
   ],
   "github_fetch_errors": {},
@@ -698,9 +735,9 @@
     "available": true,
     "generated_at": "2026-07-01",
     "summary": {
-      "total": 68,
+      "total": 69,
       "by_status": {
-        "ok": 68,
+        "ok": 69,
         "warn": 0,
         "error": 0
       }
@@ -713,8 +750,8 @@
     "name": "Lab Clean Registry",
     "updated_at": "2026-07-01",
     "summary": {
-      "total": 65,
-      "published": 48
+      "total": 66,
+      "published": 49
     },
     "datasets": [
       {
@@ -1802,6 +1839,141 @@
           },
           {
             "name": "atto_camera",
+            "role": "dimension"
+          }
+        ]
+      },
+      {
+        "slug": "centri_accoglienza_italia",
+        "name": "Centri di accoglienza migranti \u2014 CAS, CPA, Hotspot (2018-2024)",
+        "stage": "published",
+        "period": {
+          "start": 2018,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/centri_accoglienza_italia/2026/centri_accoglienza_italia_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 6,
+        "dimension_columns": 23,
+        "column_count": 29,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "rilevazione_data",
+            "role": "dimension"
+          },
+          {
+            "name": "centro_id",
+            "role": "dimension"
+          },
+          {
+            "name": "centro_denominazione",
+            "role": "dimension"
+          },
+          {
+            "name": "comune_id",
+            "role": "dimension"
+          },
+          {
+            "name": "comune_denominazione",
+            "role": "dimension"
+          },
+          {
+            "name": "comune_codice_istat",
+            "role": "dimension"
+          },
+          {
+            "name": "comune_abitanti",
+            "role": "metric"
+          },
+          {
+            "name": "comune_codice_catastale",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia_cm_id",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia_cm_denominazione",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia_cm_codice_istat",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia_cm_abitanti",
+            "role": "metric"
+          },
+          {
+            "name": "provincia_cm_sigla",
+            "role": "dimension"
+          },
+          {
+            "name": "regione_id",
+            "role": "dimension"
+          },
+          {
+            "name": "regione_denominazione",
+            "role": "dimension"
+          },
+          {
+            "name": "regione_codice_istat",
+            "role": "dimension"
+          },
+          {
+            "name": "regione_abitanti",
+            "role": "metric"
+          },
+          {
+            "name": "ente_gestore",
+            "role": "dimension"
+          },
+          {
+            "name": "data_stipula_convenzione",
+            "role": "dimension"
+          },
+          {
+            "name": "data_scadenza_convenzione",
+            "role": "dimension"
+          },
+          {
+            "name": "data_scadenza_proroga",
+            "role": "dimension"
+          },
+          {
+            "name": "costo_giornaliero_per_ospite",
+            "role": "metric"
+          },
+          {
+            "name": "presenze_giornaliere",
+            "role": "metric"
+          },
+          {
+            "name": "capienza",
+            "role": "metric"
+          },
+          {
+            "name": "procedura_affidamento",
+            "role": "dimension"
+          },
+          {
+            "name": "operativita",
+            "role": "dimension"
+          },
+          {
+            "name": "tipologia_centro",
+            "role": "dimension"
+          },
+          {
+            "name": "tipologia_ospiti",
             "role": "dimension"
           }
         ]
@@ -6170,6 +6342,7 @@
       "bdap_lea",
       "bdap_spese_stato",
       "camera_votazioni_sparql",
+      "centri_accoglienza_italia",
       "civile_flussi",
       "comuni_master",
       "consip_consumi_convenzione",
