@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-02T08:57:46.686664",
+  "generated_at": "2026-07-02T14:01:54.802679",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -132,6 +132,22 @@
       {
         "slug": "centri_accoglienza_italia",
         "name": "Centri di accoglienza migranti \u2014 CAS, CPA, Hotspot (2018-2024)",
+        "period": {
+          "start": 2018,
+          "end": 2024
+        }
+      },
+      {
+        "slug": "sai_progetti_italia",
+        "name": "SAI Progetti \u2014 Progetti del Sistema Accoglienza e Integrazione (2018-2024)",
+        "period": {
+          "start": 2018,
+          "end": 2024
+        }
+      },
+      {
+        "slug": "sai_strutture_italia",
+        "name": "SAI Strutture \u2014 Strutture del Sistema Accoglienza e Integrazione (2018-2024)",
         "period": {
           "start": 2018,
           "end": 2024

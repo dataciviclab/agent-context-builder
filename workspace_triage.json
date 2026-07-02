@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-02T08:57:46.686664",
+  "generated_at": "2026-07-02T14:01:54.802679",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,22 +10,9 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 2,
-  "prs": [
-    {
-      "number": 601,
-      "title": "intake: sai-progetti-italia \u2014 progetti SAI (Sistema Accoglienza e Integrazione) 2018-2024",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/601"
-    },
-    {
-      "number": 600,
-      "title": "intake: sai-strutture-italia \u2014 strutture SAI (Sistema Accoglienza e Integrazione) 2018-2024",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/600"
-    }
-  ],
-  "open_issues": 79,
+  "open_prs": 0,
+  "prs": [],
+  "open_issues": 83,
   "issues": [
     {
       "number": 597,
@@ -152,6 +139,18 @@
       "title": "Proposta intake: SILOS Infrastrutture strategiche (dati.camera.it)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/374"
+    },
+    {
+      "number": 383,
+      "title": "analisi: sai_strutture_italia \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/383"
+    },
+    {
+      "number": 382,
+      "title": "analisi: sai_progetti_italia \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/382"
     },
     {
       "number": 381,
@@ -326,6 +325,18 @@
       "title": "refactor: estrarre _write_reports() da run_full() in report_ops.py",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/391"
+    },
+    {
+      "number": 189,
+      "title": "follow-up: pagina e tema per sai_strutture_italia",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/189"
+    },
+    {
+      "number": 188,
+      "title": "follow-up: pagina e tema per sai_progetti_italia",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/188"
     },
     {
       "number": 187,
@@ -733,11 +744,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-07-01",
+    "generated_at": "2026-07-02",
     "summary": {
-      "total": 69,
+      "total": 71,
       "by_status": {
-        "ok": 69,
+        "ok": 71,
         "warn": 0,
         "error": 0
       }
@@ -748,10 +759,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-07-01",
+    "updated_at": "2026-07-02",
     "summary": {
-      "total": 66,
-      "published": 49
+      "total": 68,
+      "published": 51
     },
     "datasets": [
       {
@@ -5498,6 +5509,232 @@
         ]
       },
       {
+        "slug": "sai_progetti_italia",
+        "name": "SAI Progetti \u2014 Progetti del Sistema Accoglienza e Integrazione (2018-2024)",
+        "stage": "published",
+        "period": {
+          "start": 2018,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/sai_progetti_italia/2026/sai_progetti_italia_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 5,
+        "dimension_columns": 16,
+        "column_count": 21,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "progetto_codice",
+            "role": "dimension"
+          },
+          {
+            "name": "data_riferimento",
+            "role": "dimension"
+          },
+          {
+            "name": "ente_locale_progetto",
+            "role": "dimension"
+          },
+          {
+            "name": "tipologia",
+            "role": "dimension"
+          },
+          {
+            "name": "capienza",
+            "role": "metric"
+          },
+          {
+            "name": "presenze",
+            "role": "metric"
+          },
+          {
+            "name": "comune_id",
+            "role": "dimension"
+          },
+          {
+            "name": "comune_denominazione",
+            "role": "dimension"
+          },
+          {
+            "name": "comune_codice_istat",
+            "role": "dimension"
+          },
+          {
+            "name": "comune_abitanti",
+            "role": "metric"
+          },
+          {
+            "name": "comune_codice_catastale",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia_cm_id",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia_cm_denominazione",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia_cm_codice_istat",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia_cm_abitanti",
+            "role": "metric"
+          },
+          {
+            "name": "provincia_cm_sigla",
+            "role": "dimension"
+          },
+          {
+            "name": "regione_id",
+            "role": "dimension"
+          },
+          {
+            "name": "regione_denominazione",
+            "role": "dimension"
+          },
+          {
+            "name": "regione_codice_istat",
+            "role": "dimension"
+          },
+          {
+            "name": "regione_abitanti",
+            "role": "metric"
+          }
+        ]
+      },
+      {
+        "slug": "sai_strutture_italia",
+        "name": "SAI Strutture \u2014 Strutture del Sistema Accoglienza e Integrazione (2018-2024)",
+        "stage": "published",
+        "period": {
+          "start": 2018,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/sai_strutture_italia/2026/sai_strutture_italia_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 5,
+        "dimension_columns": 21,
+        "column_count": 26,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "sai_struttura_id",
+            "role": "dimension"
+          },
+          {
+            "name": "sai_struttura_denominazione",
+            "role": "dimension"
+          },
+          {
+            "name": "comune_id",
+            "role": "dimension"
+          },
+          {
+            "name": "comune_denominazione",
+            "role": "dimension"
+          },
+          {
+            "name": "comune_codice_istat",
+            "role": "dimension"
+          },
+          {
+            "name": "comune_abitanti",
+            "role": "metric"
+          },
+          {
+            "name": "comune_codice_catastale",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia_cm_id",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia_cm_denominazione",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia_cm_codice_istat",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia_cm_abitanti",
+            "role": "metric"
+          },
+          {
+            "name": "provincia_cm_sigla",
+            "role": "dimension"
+          },
+          {
+            "name": "regione_id",
+            "role": "dimension"
+          },
+          {
+            "name": "regione_denominazione",
+            "role": "dimension"
+          },
+          {
+            "name": "regione_codice_istat",
+            "role": "dimension"
+          },
+          {
+            "name": "regione_abitanti",
+            "role": "metric"
+          },
+          {
+            "name": "sai_struttura_tipologia",
+            "role": "dimension"
+          },
+          {
+            "name": "sai_progetto_codice",
+            "role": "dimension"
+          },
+          {
+            "name": "sai_progetto_denominazione",
+            "role": "dimension"
+          },
+          {
+            "name": "sai_progetto_tipologia",
+            "role": "dimension"
+          },
+          {
+            "name": "data_inizio",
+            "role": "dimension"
+          },
+          {
+            "name": "data_fine",
+            "role": "dimension"
+          },
+          {
+            "name": "data_rilevazione",
+            "role": "dimension"
+          },
+          {
+            "name": "capienza",
+            "role": "metric"
+          },
+          {
+            "name": "presenze_giornaliere",
+            "role": "metric"
+          }
+        ]
+      },
+      {
         "slug": "strutture_asl",
         "name": "Strutture Asl",
         "stage": "published",
@@ -6375,6 +6612,8 @@
       "reparti_ricovero",
       "rna_aiuti_stato",
       "rna_misure",
+      "sai_progetti_italia",
+      "sai_strutture_italia",
       "strutture_asl",
       "strutture_ricovero_asl",
       "ted_contract_notices",

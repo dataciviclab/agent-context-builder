@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-02T08:57:46.686664
+**Generated**: 2026-07-02T14:01:54.802679
 
 ## 🔍 SCOUTING
 
@@ -9,8 +9,8 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 69 candidates — 69 ok
-**Dataset Catalog**: 49 published · 49 public · updated 2026-07-01
+**Pipeline**: 71 candidates — 71 ok
+**Dataset Catalog**: 51 published · 51 public · updated 2026-07-02
 
 ## 📊 ANALYSES
 
@@ -41,19 +41,18 @@
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
   · **Terzo settore**: cinque-per-mille
-  ⚠ 48 dataset published non ancora su explorer:
+  ⚠ 50 dataset published non ancora su explorer:
     · ade_cinque_per_mille
     · aifa_spesa_consumo
     · anac_bandi_gara
     · anpr_mobilita_residenziale
     · bdap_anagrafe_enti
-    · ... e altri 43
+    · ... e altri 45
   **Deploy**: ✅ success (2026-07-01)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#601](https://github.com/dataciviclab/dataset-incubator/pull/601): intake: sai-progetti-italia — progetti SAI (Sistema Accoglienza e Integrazione) 2018-2024
-- [dataset-incubator#600](https://github.com/dataciviclab/dataset-incubator/pull/600): intake: sai-strutture-italia — strutture SAI (Sistema Accoglienza e Integrazione) 2018-2024
+**PRs**: none open
 **Discussions**: 20 open
   · [Domanda] Quante persone immigrate arrivano in Italia, dove vengono accolte, e quanti ottengono protezione?
   · [Domanda] Quanti soldi pubblici vanno al terzo settore, e come si distribuiscono?
