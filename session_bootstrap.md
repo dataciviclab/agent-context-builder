@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-02T14:01:54.802679
+**Generated**: 2026-07-02T19:25:19.503684
 
 ## 🔍 SCOUTING
 
@@ -9,8 +9,8 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 71 candidates — 71 ok
-**Dataset Catalog**: 51 published · 51 public · updated 2026-07-02
+**Pipeline**: 72 candidates — 72 ok
+**Dataset Catalog**: 52 published · 52 public · updated 2026-07-02
 
 ## 📊 ANALYSES
 
@@ -41,22 +41,22 @@
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
   · **Terzo settore**: cinque-per-mille
-  ⚠ 50 dataset published non ancora su explorer:
+  ⚠ 51 dataset published non ancora su explorer:
     · ade_cinque_per_mille
     · aifa_spesa_consumo
     · anac_bandi_gara
     · anpr_mobilita_residenziale
     · bdap_anagrafe_enti
-    · ... e altri 45
+    · ... e altri 46
   **Deploy**: ✅ success (2026-07-01)
 
 ## 🔗 OPEN
 
-**PRs**: none open
+- [dataset-incubator#607](https://github.com/dataciviclab/dataset-incubator/pull/607): refactor: cleanup tools + caching
 **Discussions**: 20 open
-  · [Domanda] Quante persone immigrate arrivano in Italia, dove vengono accolte, e quanti ottengono protezione?
-  · [Domanda] Quanti soldi pubblici vanno al terzo settore, e come si distribuiscono?
-  · [Annunci] RNA — Aiuti di Stato: 17 milioni di aiuti alle imprese italiane ora in formato queryabile
+  · [Domanda] SILOS Camera — Dove sono finite le infrastrutture strategiche?
+  · [Domanda] La transizione energetica accelera? Dopo il recepimento RED II il fotovoltaico cresce 8 volte più veloce
+  · [Domanda] Rifiuti: l'Italia supera l'obiettivo UE 65% di RD, ma il divario territoriale non si chiude. Colpa della legge o dell'attuazione?
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA

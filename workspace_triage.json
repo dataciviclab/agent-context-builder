@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-02T14:01:54.802679",
+  "generated_at": "2026-07-02T19:25:19.503684",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,9 +10,16 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 0,
-  "prs": [],
-  "open_issues": 83,
+  "open_prs": 1,
+  "prs": [
+    {
+      "number": 607,
+      "title": "refactor: cleanup tools + caching",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/607"
+    }
+  ],
+  "open_issues": 84,
   "issues": [
     {
       "number": 597,
@@ -135,10 +142,10 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/375"
     },
     {
-      "number": 374,
-      "title": "Proposta intake: SILOS Infrastrutture strategiche (dati.camera.it)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/374"
+      "number": 384,
+      "title": "analisi: silos_infrastrutture \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/384"
     },
     {
       "number": 383,
@@ -325,6 +332,12 @@
       "title": "refactor: estrarre _write_reports() da run_full() in report_ops.py",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/391"
+    },
+    {
+      "number": 190,
+      "title": "follow-up: pagina e tema per silos_infrastrutture",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/190"
     },
     {
       "number": 189,
@@ -516,6 +529,27 @@
   "open_discussions": 20,
   "discussions": [
     {
+      "number": 286,
+      "title": "SILOS Camera \u2014 Dove sono finite le infrastrutture strategiche?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/286",
+      "category": "Domanda"
+    },
+    {
+      "number": 339,
+      "title": "La transizione energetica accelera? Dopo il recepimento RED II il fotovoltaico cresce 8 volte pi\u00f9 veloce",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/339",
+      "category": "Domanda"
+    },
+    {
+      "number": 340,
+      "title": "Rifiuti: l'Italia supera l'obiettivo UE 65% di RD, ma il divario territoriale non si chiude. Colpa della legge o dell'attuazione?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/340",
+      "category": "Domanda"
+    },
+    {
       "number": 380,
       "title": "Quante persone immigrate arrivano in Italia, dove vengono accolte, e quanti ottengono protezione?",
       "repo": "dataciviclab",
@@ -593,25 +627,11 @@
       "category": "Annunci"
     },
     {
-      "number": 340,
-      "title": "Rifiuti: l'Italia supera l'obiettivo UE 65% di RD, ma il divario territoriale non si chiude. Colpa della legge o dell'attuazione?",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/340",
-      "category": "Domanda"
-    },
-    {
       "number": 337,
       "title": "[italia-corpus] 4 discussioni aperte su legislazione italiana",
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/337",
       "category": "Annunci"
-    },
-    {
-      "number": 339,
-      "title": "La transizione energetica accelera? Dopo il recepimento RED II il fotovoltaico cresce 8 volte pi\u00f9 veloce",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/339",
-      "category": "Domanda"
     },
     {
       "number": 274,
@@ -647,13 +667,6 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/190",
       "category": "Domanda"
-    },
-    {
-      "number": 297,
-      "title": "MCP adapters and source-check patterns for public data \u2014 cross-country comparison (FR/IT)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/297",
-      "category": "Proposte"
     }
   ],
   "github_fetch_errors": {},
@@ -746,9 +759,9 @@
     "available": true,
     "generated_at": "2026-07-02",
     "summary": {
-      "total": 71,
+      "total": 72,
       "by_status": {
-        "ok": 71,
+        "ok": 72,
         "warn": 0,
         "error": 0
       }
@@ -761,8 +774,8 @@
     "name": "Lab Clean Registry",
     "updated_at": "2026-07-02",
     "summary": {
-      "total": 68,
-      "published": 51
+      "total": 69,
+      "published": 52
     },
     "datasets": [
       {
@@ -5735,6 +5748,85 @@
         ]
       },
       {
+        "slug": "silos_infrastrutture",
+        "name": "Infrastrutture strategiche e prioritarie (SILOS)",
+        "stage": "published",
+        "period": {
+          "start": 2004,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/silos_infrastrutture/2024/silos_infrastrutture_2024_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 3,
+        "dimension_columns": 12,
+        "column_count": 15,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "link_scheda",
+            "role": "dimension"
+          },
+          {
+            "name": "progressivo",
+            "role": "dimension"
+          },
+          {
+            "name": "livello",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_commissariato_pnrr",
+            "role": "dimension"
+          },
+          {
+            "name": "sistema_infrastrutturale",
+            "role": "dimension"
+          },
+          {
+            "name": "cup",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione",
+            "role": "dimension"
+          },
+          {
+            "name": "soggetto_competente",
+            "role": "dimension"
+          },
+          {
+            "name": "luogo_lavori",
+            "role": "dimension"
+          },
+          {
+            "name": "stato_attuazione",
+            "role": "dimension"
+          },
+          {
+            "name": "anno_ultimazione_previsto",
+            "role": "dimension"
+          },
+          {
+            "name": "costi_mln_euro",
+            "role": "metric"
+          },
+          {
+            "name": "disponibilita_mln_euro",
+            "role": "metric"
+          },
+          {
+            "name": "fabbisogno_mln_euro",
+            "role": "metric"
+          }
+        ]
+      },
+      {
         "slug": "strutture_asl",
         "name": "Strutture Asl",
         "stage": "published",
@@ -6614,6 +6706,7 @@
       "rna_misure",
       "sai_progetti_italia",
       "sai_strutture_italia",
+      "silos_infrastrutture",
       "strutture_asl",
       "strutture_ricovero_asl",
       "ted_contract_notices",

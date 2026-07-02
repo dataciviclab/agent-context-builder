@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-02T14:01:54.802679",
+  "generated_at": "2026-07-02T19:25:19.503684",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -469,6 +469,16 @@
         "period": {
           "start": 1994,
           "end": 2023
+        }
+      }
+    ],
+    "https://dati.camera.it/ocd/dump/silos/PISRapportoCSV2024.zip": [
+      {
+        "slug": "silos_infrastrutture",
+        "name": "Infrastrutture strategiche e prioritarie (SILOS)",
+        "period": {
+          "start": 2004,
+          "end": 2024
         }
       }
     ],
