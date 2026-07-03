@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-03T03:18:46.897097",
+  "generated_at": "2026-07-03T09:18:44.813305",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,8 +10,15 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 0,
-  "prs": [],
+  "open_prs": 1,
+  "prs": [
+    {
+      "number": 608,
+      "title": "docs(anac-bandi-gara): CIG verification results for issue #512",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/608"
+    }
+  ],
   "open_issues": 83,
   "issues": [
     {
@@ -718,13 +725,22 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-07-02",
+    "probe_date": "2026-07-03",
     "sources_total": 33,
-    "green": 33,
-    "yellow": 0,
+    "green": 32,
+    "yellow": 1,
     "red": 0,
     "persistent_red": 0,
-    "unhealthy": []
+    "unhealthy": [
+      {
+        "id": "istat_sdmx",
+        "status": "YELLOW",
+        "protocol": "sdmx",
+        "http_code": "-",
+        "note": "Timeout (ReadTimeout)",
+        "red_streak": 0
+      }
+    ]
   },
   "source_health": {
     "available": true,

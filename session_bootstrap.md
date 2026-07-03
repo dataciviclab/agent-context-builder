@@ -1,10 +1,11 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-03T03:18:46.897097
+**Generated**: 2026-07-03T09:18:44.813305
 
 ## 🔍 SCOUTING
 
-**Radar**: 33 fonti — GREEN 33 · YELLOW 0 · RED 0 (probe: 2026-07-02)
+**Radar**: 33 fonti — GREEN 32 · YELLOW 1 · RED 0 (probe: 2026-07-03)
+  · **istat_sdmx** YELLOW [-] — Timeout (ReadTimeout)
   · **unioncamere** (ckan): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
 
 ## 📥 INTAKE
@@ -52,7 +53,7 @@
 
 ## 🔗 OPEN
 
-**PRs**: none open
+- [dataset-incubator#608](https://github.com/dataciviclab/dataset-incubator/pull/608): docs(anac-bandi-gara): CIG verification results for issue #512
 **Discussions**: 20 open
   · [Domanda] SILOS Camera — Dove sono finite le infrastrutture strategiche?
   · [Domanda] La transizione energetica accelera? Dopo il recepimento RED II il fotovoltaico cresce 8 volte più veloce
