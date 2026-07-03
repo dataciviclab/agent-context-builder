@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-03T09:18:44.813305",
+  "generated_at": "2026-07-03T14:05:23.494301",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -705,6 +705,16 @@
           "end": 2022
         }
       }
+    ],
+    "SIOPE \u2014 Sistema Informativo sulle Operazioni degli Enti Pubblici": [
+      {
+        "slug": "siope_bilancio_unificato",
+        "name": "SIOPE Bilancio Unificato",
+        "period": {
+          "start": 2021,
+          "end": 2026
+        }
+      }
     ]
   },
   "operational_topics": {
@@ -770,7 +780,8 @@
         "rifiuti-urbani",
         "capacita-rinnovabile",
         "produzione-elettrica-fonti",
-        "mit-incidentalita"
+        "mit-incidentalita",
+        "silos-infrastrutture"
       ]
     },
     {
@@ -783,6 +794,7 @@
         "istat-gini-regionale",
         "opencivitas-fsc-2025",
         "opencoesione-progetti",
+        "fts-eu-grants",
         "mef-partecipazioni",
         "bdap-spese-stato"
       ]

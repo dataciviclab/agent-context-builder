@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-03T09:18:44.813305
+**Generated**: 2026-07-03T14:05:23.494301
 
 ## 🔍 SCOUTING
 
@@ -10,8 +10,8 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 72 candidates — 72 ok
-**Dataset Catalog**: 52 published · 52 public · updated 2026-07-02
+**Pipeline**: 73 candidates — 73 ok
+**Dataset Catalog**: 52 published · 52 public · updated 2026-07-03
 
 ## 📊 ANALYSES
 
@@ -35,9 +35,9 @@
 
 ## 🗂 EXPLORER
 
-**Pubblicati**: 28 dataset · 6 temi · [data-explorer](https://dataciviclab.github.io/data-explorer/)
-  · **Territorio e ambiente**: rifiuti-urbani, capacita-rinnovabile, produzione-elettrica-fonti, mit-incidentalita
-  · **Finanza pubblica**: irpef-comunale, entrate-stato, consip-consumi-convenzione, istat-gini-regionale, opencivitas-fsc-2025, opencoesione-progetti, mef-partecipazioni, bdap-spese-stato
+**Pubblicati**: 30 dataset · 6 temi · [data-explorer](https://dataciviclab.github.io/data-explorer/)
+  · **Territorio e ambiente**: rifiuti-urbani, capacita-rinnovabile, produzione-elettrica-fonti, mit-incidentalita, silos-infrastrutture
+  · **Finanza pubblica**: irpef-comunale, entrate-stato, consip-consumi-convenzione, istat-gini-regionale, opencivitas-fsc-2025, opencoesione-progetti, fts-eu-grants, mef-partecipazioni, bdap-spese-stato
   · **Sanità**: spesa-farmaceutica, bdap-lea, strutture-asl, strutture-ricovero-asl, reparti-ricovero, posti-letto-stabilimento, farmacie
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
@@ -49,7 +49,7 @@
     · anpr_mobilita_residenziale
     · bdap_anagrafe_enti
     · ... e altri 46
-  **Deploy**: ✅ success (2026-07-01)
+  **Deploy**: ✅ success (2026-07-03)
 
 ## 🔗 OPEN
 

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-03T09:18:44.813305",
+  "generated_at": "2026-07-03T14:05:23.494301",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -140,6 +140,12 @@
       "title": "Proposta intake: Operatori Economici Consip (dati.consip.it)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/375"
+    },
+    {
+      "number": 385,
+      "title": "analisi: siope_bilancio_unificato \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/385"
     },
     {
       "number": 384,
@@ -334,10 +340,10 @@
       "url": "https://github.com/dataciviclab/toolkit/issues/391"
     },
     {
-      "number": 190,
-      "title": "follow-up: pagina e tema per silos_infrastrutture",
+      "number": 193,
+      "title": "follow-up: pagina e tema per siope_bilancio_unificato",
       "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/issues/190"
+      "url": "https://github.com/dataciviclab/data-explorer/issues/193"
     },
     {
       "number": 189,
@@ -356,12 +362,6 @@
       "title": "follow-up: pagina e tema per centri_accoglienza_italia",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/issues/187"
-    },
-    {
-      "number": 186,
-      "title": "follow-up: pagina e tema per fts_eu_grants",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/issues/186"
     },
     {
       "number": 185,
@@ -760,11 +760,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-07-02",
+    "generated_at": "2026-07-03",
     "summary": {
-      "total": 72,
+      "total": 73,
       "by_status": {
-        "ok": 72,
+        "ok": 73,
         "warn": 0,
         "error": 0
       }
@@ -775,9 +775,9 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-07-02",
+    "updated_at": "2026-07-03",
     "summary": {
-      "total": 69,
+      "total": 70,
       "published": 52
     },
     "datasets": [
@@ -5830,6 +5830,24 @@
         ]
       },
       {
+        "slug": "siope_bilancio_unificato",
+        "name": "SIOPE Bilancio Unificato",
+        "stage": "incubating",
+        "period": {
+          "start": 2021,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/siope_bilancio_unificato/*/siope_bilancio_unificato_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 2,
+        "dimension_columns": 21,
+        "column_count": 23,
+        "columns": []
+      },
+      {
         "slug": "strutture_asl",
         "name": "Strutture Asl",
         "stage": "published",
@@ -6635,12 +6653,12 @@
       {
         "slug": "territorio-ambiente",
         "name": "Territorio e ambiente",
-        "dataset_count": 4
+        "dataset_count": 5
       },
       {
         "slug": "finanza-pubblica",
         "name": "Finanza pubblica",
-        "dataset_count": 8
+        "dataset_count": 9
       },
       {
         "slug": "sanita",
@@ -6663,7 +6681,7 @@
         "dataset_count": 1
       }
     ],
-    "published_count": 28,
+    "published_count": 30,
     "clean_ready_not_published": [
       "ade_cinque_per_mille",
       "aifa_spesa_consumo",
@@ -6718,12 +6736,12 @@
       "unified_comuni"
     ],
     "last_deploy": {
-      "run_id": 28501277924,
+      "run_id": 28658834001,
       "name": "Deploy to GitHub Pages (Observable Framework)",
       "status": "completed",
       "conclusion": "success",
-      "completed_at": "2026-07-01T07:36:23Z",
-      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/28501277924"
+      "completed_at": "2026-07-03T12:07:09Z",
+      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/28658834001"
     }
   }
 }
