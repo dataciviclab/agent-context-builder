@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-02T19:25:19.503684
+**Generated**: 2026-07-03T03:18:46.897097
 
 ## 🔍 SCOUTING
 
@@ -52,7 +52,7 @@
 
 ## 🔗 OPEN
 
-- [dataset-incubator#607](https://github.com/dataciviclab/dataset-incubator/pull/607): refactor: cleanup tools + caching
+**PRs**: none open
 **Discussions**: 20 open
   · [Domanda] SILOS Camera — Dove sono finite le infrastrutture strategiche?
   · [Domanda] La transizione energetica accelera? Dopo il recepimento RED II il fotovoltaico cresce 8 volte più veloce
