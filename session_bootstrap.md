@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-03T19:23:47.193542
+**Generated**: 2026-07-04T02:57:20.455549
 
 ## 🔍 SCOUTING
 
@@ -53,6 +53,7 @@
 
 ## 🔗 OPEN
 
+- [dataset-incubator#611](https://github.com/dataciviclab/dataset-incubator/pull/611): intake(sbarchi-migranti-italia): candidate #596 — arrivi via mare, accoglienza e nazionalita (onData)
 - [dataset-incubator#608](https://github.com/dataciviclab/dataset-incubator/pull/608): docs(anac-bandi-gara): CIG verification results for issue #512
 **Discussions**: 20 open
   · [Domanda] SILOS Camera — Dove sono finite le infrastrutture strategiche?
