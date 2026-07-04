@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-04T08:37:44.610156
+**Generated**: 2026-07-04T13:27:18.489084
 
 ## 🔍 SCOUTING
 
@@ -52,8 +52,8 @@
 
 ## 🔗 OPEN
 
+- [dataset-incubator#618](https://github.com/dataciviclab/dataset-incubator/pull/618): feat(terna-electrical-energy-by-sector): candidate — consumi elettrici per settore e provincia (GWh)
 - [dataset-incubator#611](https://github.com/dataciviclab/dataset-incubator/pull/611): intake(sbarchi-migranti-italia): candidate #596 — arrivi via mare, accoglienza e nazionalita (onData)
-- [dataset-incubator#608](https://github.com/dataciviclab/dataset-incubator/pull/608): docs(anac-bandi-gara): CIG verification results for issue #512
 **Discussions**: 20 open
   · [Domanda] SILOS Camera — Dove sono finite le infrastrutture strategiche?
   · [Domanda] La transizione energetica accelera? Dopo il recepimento RED II il fotovoltaico cresce 8 volte più veloce
