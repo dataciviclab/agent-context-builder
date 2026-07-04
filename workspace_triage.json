@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-04T13:27:18.489084",
+  "generated_at": "2026-07-04T19:14:16.484887",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,14 +10,8 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 2,
+  "open_prs": 1,
   "prs": [
-    {
-      "number": 618,
-      "title": "feat(terna-electrical-energy-by-sector): candidate \u2014 consumi elettrici per settore e provincia (GWh)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/618"
-    },
     {
       "number": 611,
       "title": "intake(sbarchi-migranti-italia): candidate #596 \u2014 arrivi via mare, accoglienza e nazionalita (onData)",
@@ -25,26 +19,8 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/611"
     }
   ],
-  "open_issues": 85,
+  "open_issues": 82,
   "issues": [
-    {
-      "number": 616,
-      "title": "intake: terna-electrical-energy-by-sector \u2014 Consumi elettrici per settore economico (GWh)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/616"
-    },
-    {
-      "number": 614,
-      "title": "intake: terna-energy-balance \u2014 Bilancio energetico nazionale (produzione + scambi)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/614"
-    },
-    {
-      "number": 612,
-      "title": "intake: terna-total-load \u2014 Carico elettrico per zona di mercato (MW orari)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/612"
-    },
     {
       "number": 597,
       "title": "intake: richiedenti-asilo-italia \u2014 Domande e decisioni protezione internazionale (Comm. Naz. Asilo)",
@@ -56,18 +32,6 @@
       "title": "intake: sbarchi-migranti-italia \u2014 Arrivi via mare, accoglienza e nazionalit\u00e0 (onData)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/596"
-    },
-    {
-      "number": 569,
-      "title": "registry/costituzione-mapping.yaml \u2014 mappa articoli Costituzione \u2194 dataset Lab",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/569"
-    },
-    {
-      "number": 568,
-      "title": "Sondaggio: Pronunce della Corte Costituzionale come candidate",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/568"
     },
     {
       "number": 554,
@@ -158,6 +122,12 @@
       "title": "Proposta intake: Operatori Economici Consip (dati.consip.it)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/375"
+    },
+    {
+      "number": 386,
+      "title": "analisi: terna_electrical_energy_by_sector \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/386"
     },
     {
       "number": 385,
@@ -356,6 +326,12 @@
       "title": "refactor: estrarre _write_reports() da run_full() in report_ops.py",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/391"
+    },
+    {
+      "number": 194,
+      "title": "follow-up: pagina e tema per terna_electrical_energy_by_sector",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/194"
     },
     {
       "number": 193,
@@ -769,11 +745,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-07-03",
+    "generated_at": "2026-07-04",
     "summary": {
-      "total": 73,
+      "total": 74,
       "by_status": {
-        "ok": 73,
+        "ok": 74,
         "warn": 0,
         "error": 0
       }
@@ -784,10 +760,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-07-03",
+    "updated_at": "2026-07-04",
     "summary": {
-      "total": 70,
-      "published": 52
+      "total": 71,
+      "published": 53
     },
     "datasets": [
       {
@@ -2276,9 +2252,9 @@
           "path": "gs://dataciviclab-clean/costituzione_master/2026/costituzione_master_2026_clean.parquet",
           "multi_file": false
         },
-        "metric_columns": 3,
+        "metric_columns": 7,
         "dimension_columns": 5,
-        "column_count": 8,
+        "column_count": 12,
         "columns": [
           {
             "name": "articolo",
@@ -2302,6 +2278,22 @@
           },
           {
             "name": "n_giudizi",
+            "role": "metric"
+          },
+          {
+            "name": "n_accolte",
+            "role": "metric"
+          },
+          {
+            "name": "n_respinte",
+            "role": "metric"
+          },
+          {
+            "name": "n_inammissibili",
+            "role": "metric"
+          },
+          {
+            "name": "n_citazioni_legislative",
             "role": "metric"
           },
           {
@@ -6469,6 +6461,45 @@
         ]
       },
       {
+        "slug": "terna_electrical_energy_by_sector",
+        "name": "Consumi elettrici per settore e provincia (GWh)",
+        "stage": "published",
+        "period": {
+          "start": 2015,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/terna_electrical_energy_by_sector/*/terna_electrical_energy_by_sector_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 1,
+        "dimension_columns": 4,
+        "column_count": 5,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "regione",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "settore",
+            "role": "dimension"
+          },
+          {
+            "name": "consumo_gwh",
+            "role": "metric"
+          }
+        ]
+      },
+      {
         "slug": "terna_electricity_by_source",
         "name": "Terna Electricity By Source",
         "stage": "published",
@@ -6741,6 +6772,7 @@
       "strutture_ricovero_asl",
       "ted_contract_notices",
       "terna_capacita_rinnovabile",
+      "terna_electrical_energy_by_sector",
       "terna_electricity_by_source",
       "unified_comuni"
     ],

@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-04T13:27:18.489084",
+  "generated_at": "2026-07-04T19:14:16.484887",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -516,6 +516,16 @@
       {
         "slug": "terna_capacita_rinnovabile",
         "name": "Terna Capacita Rinnovabile",
+        "period": {
+          "start": 2015,
+          "end": 2024
+        }
+      }
+    ],
+    "TERNA S.p.A. \u2014 Download Center": [
+      {
+        "slug": "terna_electrical_energy_by_sector",
+        "name": "Consumi elettrici per settore e provincia (GWh)",
         "period": {
           "start": 2015,
           "end": 2024

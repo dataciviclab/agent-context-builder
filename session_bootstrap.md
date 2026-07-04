@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-04T13:27:18.489084
+**Generated**: 2026-07-04T19:14:16.484887
 
 ## 🔍 SCOUTING
 
@@ -9,8 +9,8 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 73 candidates — 73 ok
-**Dataset Catalog**: 52 published · 52 public · updated 2026-07-03
+**Pipeline**: 74 candidates — 74 ok
+**Dataset Catalog**: 53 published · 53 public · updated 2026-07-04
 
 ## 📊 ANALYSES
 
@@ -41,18 +41,17 @@
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
   · **Terzo settore**: cinque-per-mille
-  ⚠ 51 dataset published non ancora su explorer:
+  ⚠ 52 dataset published non ancora su explorer:
     · ade_cinque_per_mille
     · aifa_spesa_consumo
     · anac_bandi_gara
     · anpr_mobilita_residenziale
     · bdap_anagrafe_enti
-    · ... e altri 46
+    · ... e altri 47
   **Deploy**: ✅ success (2026-07-03)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#618](https://github.com/dataciviclab/dataset-incubator/pull/618): feat(terna-electrical-energy-by-sector): candidate — consumi elettrici per settore e provincia (GWh)
 - [dataset-incubator#611](https://github.com/dataciviclab/dataset-incubator/pull/611): intake(sbarchi-migranti-italia): candidate #596 — arrivi via mare, accoglienza e nazionalita (onData)
 **Discussions**: 20 open
   · [Domanda] SILOS Camera — Dove sono finite le infrastrutture strategiche?
