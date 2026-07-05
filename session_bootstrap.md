@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-05T08:53:07.308833
+**Generated**: 2026-07-05T13:40:09.733104
 
 ## 🔍 SCOUTING
 
@@ -54,6 +54,7 @@
 ## 🔗 OPEN
 
 - [dataset-incubator#611](https://github.com/dataciviclab/dataset-incubator/pull/611): intake(sbarchi-migranti-italia): candidate #596 — arrivi via mare, accoglienza e nazionalita (onData)
+- [dataciviclab#387](https://github.com/dataciviclab/dataciviclab/pull/387): Nuova analisi: Le due Italie — divario Nord-Sud (GDP, povertà, sanità, istruzione, demografia)
 **Discussions**: 20 open
   · [Domanda] SILOS Camera — Dove sono finite le infrastrutture strategiche?
   · [Domanda] La transizione energetica accelera? Dopo il recepimento RED II il fotovoltaico cresce 8 volte più veloce
