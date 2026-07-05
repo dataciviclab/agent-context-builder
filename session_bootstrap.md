@@ -1,10 +1,11 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-05T03:27:25.724884
+**Generated**: 2026-07-05T08:53:07.308833
 
 ## 🔍 SCOUTING
 
-**Radar**: 33 fonti — GREEN 33 · YELLOW 0 · RED 0 (probe: 2026-07-04)
+**Radar**: 33 fonti — GREEN 32 · YELLOW 0 · RED 1 (probe: 2026-07-05)
+  · **istat_sdmx** RED [500]
   · **unioncamere** (ckan): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
 
 ## 📥 INTAKE
