@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-06T15:34:18.874677
+**Generated**: 2026-07-06T19:58:08.190935
 
 ## 🔍 SCOUTING
 
@@ -11,8 +11,8 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 74 candidates — 74 ok
-**Dataset Catalog**: 53 published · 53 public · updated 2026-07-04
+**Pipeline**: 76 candidates — 76 ok
+**Dataset Catalog**: 55 published · 55 public · updated 2026-07-06
 
 ## 📊 ANALYSES
 
@@ -43,19 +43,17 @@
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
   · **Terzo settore**: cinque-per-mille
-  ⚠ 52 dataset published non ancora su explorer:
+  ⚠ 54 dataset published non ancora su explorer:
+    · aci_prime_iscrizioni_autovetture
     · ade_cinque_per_mille
     · aifa_spesa_consumo
     · anac_bandi_gara
     · anpr_mobilita_residenziale
-    · bdap_anagrafe_enti
-    · ... e altri 47
+    · ... e altri 49
   **Deploy**: ✅ success (2026-07-03)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#624](https://github.com/dataciviclab/dataset-incubator/pull/624): candidate(aci-prime-iscrizioni-autovetture): intake #494 — prime iscrizioni autovetture per comune e alimentazione (2017-2024)
-- [dataset-incubator#611](https://github.com/dataciviclab/dataset-incubator/pull/611): intake(sbarchi-migranti-italia): candidate #596 — arrivi via mare, accoglienza e nazionalita (onData)
 - [dataciviclab#387](https://github.com/dataciviclab/dataciviclab/pull/387): Nuova analisi: Le due Italie — divario Nord-Sud (GDP, povertà, sanità, istruzione, demografia)
 **Discussions**: 20 open
   · [Domanda] SILOS Camera — Dove sono finite le infrastrutture strategiche?

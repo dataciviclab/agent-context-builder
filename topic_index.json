@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-06T15:34:18.874677",
+  "generated_at": "2026-07-06T19:58:08.190935",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -32,6 +32,16 @@
     }
   },
   "datasets_by_source": {
+    "ACI \u2014 Automobile Club Italia (lod.aci.it)": [
+      {
+        "slug": "aci_prime_iscrizioni_autovetture",
+        "name": "Aci Prime Iscrizioni Autovetture",
+        "period": {
+          "start": 2017,
+          "end": 2024
+        }
+      }
+    ],
     "Agenzia delle Entrate": [
       {
         "slug": "ade_cinque_per_mille",
@@ -469,6 +479,16 @@
         "period": {
           "start": 1994,
           "end": 2023
+        }
+      }
+    ],
+    "onData \u2014 liberiamoli-tutti": [
+      {
+        "slug": "sbarchi_migranti_italia",
+        "name": "Sbarchi Migranti Italia",
+        "period": {
+          "start": 2019,
+          "end": 2025
         }
       }
     ],

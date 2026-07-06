@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-06T15:34:18.874677",
+  "generated_at": "2026-07-06T19:58:08.190935",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,20 +10,8 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 3,
+  "open_prs": 1,
   "prs": [
-    {
-      "number": 624,
-      "title": "candidate(aci-prime-iscrizioni-autovetture): intake #494 \u2014 prime iscrizioni autovetture per comune e alimentazione (2017-2024)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/624"
-    },
-    {
-      "number": 611,
-      "title": "intake(sbarchi-migranti-italia): candidate #596 \u2014 arrivi via mare, accoglienza e nazionalita (onData)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/611"
-    },
     {
       "number": 387,
       "title": "Nuova analisi: Le due Italie \u2014 divario Nord-Sud (GDP, povert\u00e0, sanit\u00e0, istruzione, demografia)",
@@ -31,19 +19,13 @@
       "url": "https://github.com/dataciviclab/dataciviclab/pull/387"
     }
   ],
-  "open_issues": 83,
+  "open_issues": 85,
   "issues": [
     {
       "number": 597,
       "title": "intake: richiedenti-asilo-italia \u2014 Domande e decisioni protezione internazionale (Comm. Naz. Asilo)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/597"
-    },
-    {
-      "number": 596,
-      "title": "intake: sbarchi-migranti-italia \u2014 Arrivi via mare, accoglienza e nazionalit\u00e0 (onData)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/596"
     },
     {
       "number": 554,
@@ -62,12 +44,6 @@
       "title": "intake: pnrr_gare \u2014 Gare d'appalto del PNRR (Italia Domani)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/517"
-    },
-    {
-      "number": 494,
-      "title": "intake: aci_prime_iscrizioni_autovetture",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/494"
     },
     {
       "number": 489,
@@ -134,6 +110,18 @@
       "title": "Proposta intake: Operatori Economici Consip (dati.consip.it)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/375"
+    },
+    {
+      "number": 389,
+      "title": "analisi: aci_prime_iscrizioni_autovetture \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/389"
+    },
+    {
+      "number": 388,
+      "title": "analisi: sbarchi_migranti_italia \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/388"
     },
     {
       "number": 386,
@@ -338,6 +326,18 @@
       "title": "refactor: estrarre _write_reports() da run_full() in report_ops.py",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/391"
+    },
+    {
+      "number": 196,
+      "title": "follow-up: pagina e tema per aci_prime_iscrizioni_autovetture",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/196"
+    },
+    {
+      "number": 195,
+      "title": "follow-up: pagina e tema per sbarchi_migranti_italia",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/195"
     },
     {
       "number": 194,
@@ -780,11 +780,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-07-04",
+    "generated_at": "2026-07-06",
     "summary": {
-      "total": 74,
+      "total": 76,
       "by_status": {
-        "ok": 74,
+        "ok": 76,
         "warn": 0,
         "error": 0
       }
@@ -795,12 +795,51 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-07-04",
+    "updated_at": "2026-07-06",
     "summary": {
-      "total": 71,
-      "published": 53
+      "total": 73,
+      "published": 55
     },
     "datasets": [
+      {
+        "slug": "aci_prime_iscrizioni_autovetture",
+        "name": "Aci Prime Iscrizioni Autovetture",
+        "stage": "published",
+        "period": {
+          "start": 2017,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/aci_prime_iscrizioni_autovetture/2024/aci_prime_iscrizioni_autovetture_2024_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 1,
+        "dimension_columns": 4,
+        "column_count": 5,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "comune",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "alimentazione",
+            "role": "dimension"
+          },
+          {
+            "name": "prime_iscrizioni",
+            "role": "metric"
+          }
+        ]
+      },
       {
         "slug": "ade_cinque_per_mille",
         "name": "5x1000 \u2014 Beneficiari e importi per ente",
@@ -5787,6 +5826,41 @@
         ]
       },
       {
+        "slug": "sbarchi_migranti_italia",
+        "name": "Sbarchi Migranti Italia",
+        "stage": "published",
+        "period": {
+          "start": 2019,
+          "end": 2025
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/sbarchi_migranti_italia/2025/sbarchi_migranti_italia_2025_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 1,
+        "dimension_columns": 3,
+        "column_count": 4,
+        "columns": [
+          {
+            "name": "data_sbarchi",
+            "role": "dimension"
+          },
+          {
+            "name": "valore",
+            "role": "metric"
+          },
+          {
+            "name": "note",
+            "role": "dimension"
+          },
+          {
+            "name": "fonte",
+            "role": "dimension"
+          }
+        ]
+      },
+      {
         "slug": "silos_infrastrutture",
         "name": "Infrastrutture strategiche e prioritarie (SILOS)",
         "stage": "published",
@@ -6758,6 +6832,7 @@
     ],
     "published_count": 30,
     "clean_ready_not_published": [
+      "aci_prime_iscrizioni_autovetture",
       "ade_cinque_per_mille",
       "aifa_spesa_consumo",
       "anac_bandi_gara",
@@ -6802,6 +6877,7 @@
       "rna_misure",
       "sai_progetti_italia",
       "sai_strutture_italia",
+      "sbarchi_migranti_italia",
       "silos_infrastrutture",
       "strutture_asl",
       "strutture_ricovero_asl",
