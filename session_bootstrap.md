@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-06T10:22:50.825040
+**Generated**: 2026-07-06T15:34:18.874677
 
 ## 🔍 SCOUTING
 
@@ -54,6 +54,7 @@
 
 ## 🔗 OPEN
 
+- [dataset-incubator#624](https://github.com/dataciviclab/dataset-incubator/pull/624): candidate(aci-prime-iscrizioni-autovetture): intake #494 — prime iscrizioni autovetture per comune e alimentazione (2017-2024)
 - [dataset-incubator#611](https://github.com/dataciviclab/dataset-incubator/pull/611): intake(sbarchi-migranti-italia): candidate #596 — arrivi via mare, accoglienza e nazionalita (onData)
 - [dataciviclab#387](https://github.com/dataciviclab/dataciviclab/pull/387): Nuova analisi: Le due Italie — divario Nord-Sud (GDP, povertà, sanità, istruzione, demografia)
 **Discussions**: 20 open
