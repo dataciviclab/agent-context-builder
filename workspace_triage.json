@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-06T03:35:18.628934",
+  "generated_at": "2026-07-06T10:22:50.825040",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -25,7 +25,7 @@
       "url": "https://github.com/dataciviclab/dataciviclab/pull/387"
     }
   ],
-  "open_issues": 82,
+  "open_issues": 83,
   "issues": [
     {
       "number": 597,
@@ -490,6 +490,12 @@
       "url": "https://github.com/dataciviclab/data-explorer/issues/110"
     },
     {
+      "number": 400,
+      "title": "[Catalog] 2026-07-06 \u2014 -8 item",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/400"
+    },
+    {
       "number": 362,
       "title": "chore: centralizzare path artifact in unico source of truth",
       "repo": "source-observatory",
@@ -725,35 +731,43 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-07-05",
+    "probe_date": "2026-07-06",
     "sources_total": 33,
     "green": 32,
-    "yellow": 0,
-    "red": 1,
+    "yellow": 1,
+    "red": 0,
     "persistent_red": 0,
     "unhealthy": [
       {
         "id": "istat_sdmx",
-        "status": "RED",
+        "status": "YELLOW",
         "protocol": "sdmx",
-        "http_code": "500",
-        "note": null,
+        "http_code": "-",
+        "note": "Timeout (ReadTimeout)",
         "red_streak": 0
       }
     ]
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-06-29T08:29:37+00:00",
+    "captured_at": "2026-07-06T07:58:38+00:00",
     "sources_checked": 30,
     "regressions": [],
     "alerts": [
+      {
+        "source": "openbdap",
+        "protocol": "ckan",
+        "signal_type": "inventory change",
+        "result": "inventory change",
+        "detail": "3823 item (package_list), delta -8 rispetto al run precedente (3831).",
+        "suggested_action": "verificare se variazione attesa; avviare inventory-triage se nuovi dataset"
+      },
       {
         "source": "unioncamere",
         "protocol": "ckan",
         "signal_type": "inventory change",
         "result": "inventory change",
-        "detail": "373 item (package_search), delta +2 rispetto al run precedente (371).",
+        "detail": "384 item (package_search), delta +11 rispetto al run precedente (373).",
         "suggested_action": "verificare se variazione attesa; avviare inventory-triage se nuovi dataset"
       }
     ]
