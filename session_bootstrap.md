@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-06T19:58:08.190935
+**Generated**: 2026-07-07T03:25:58.201440
 
 ## 🔍 SCOUTING
 
@@ -16,7 +16,7 @@
 
 ## 📊 ANALYSES
 
-**Attive**: 16
+**Attive**: 17
   · **AIFA Spesa farmaceutica convenzionata 2018-2024** · → aifa_spesa_consumo · [discussion #242](https://github.com/orgs/dataciviclab/discussions/242)
   · **10 anni di appalti pubblici: da 167 a 635 miliardi** · → anac_bandi_gara
   · **Camera votazioni 2018-2025** · → camera_votazioni_sparql
@@ -24,6 +24,7 @@
   · **Flussi giustizia civile 2014-2025** · → civile_flussi
   · **Consip Consumi Convenzione 2023-2025** · → consip_consumi_convenzione
   · **Dipendenti pubblici 2010-2023** · → dipendenti_pubblici
+  · **Le due Italie — un'analisi multi-dimensionale del divario Nord-Sud** · → divario_nord_sud
   · **BDAP Entrate Stato 2008-2024** · → bdap_entrate_stato · [discussion #218](https://github.com/orgs/dataciviclab/discussions/218)
   · **IRPEF comunale 2019-2023** · → irpef_comunale · [discussion #88](https://github.com/orgs/dataciviclab/discussions/88)
   · **Malasanità 2022: mortalità evitabile e dotazione sanitaria regionale** · → malasanita_struttura_mortalita · [discussion #99](https://github.com/orgs/dataciviclab/discussions/99)
@@ -54,7 +55,7 @@
 
 ## 🔗 OPEN
 
-- [dataciviclab#387](https://github.com/dataciviclab/dataciviclab/pull/387): Nuova analisi: Le due Italie — divario Nord-Sud (GDP, povertà, sanità, istruzione, demografia)
+**PRs**: none open
 **Discussions**: 20 open
   · [Domanda] SILOS Camera — Dove sono finite le infrastrutture strategiche?
   · [Domanda] La transizione energetica accelera? Dopo il recepimento RED II il fotovoltaico cresce 8 volte più veloce

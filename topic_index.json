@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-06T19:58:08.190935",
+  "generated_at": "2026-07-07T03:25:58.201440",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -938,6 +938,15 @@
       "issue": 131
     },
     {
+      "slug": "divario-nord-sud",
+      "name": "Le due Italie \u2014 un'analisi multi-dimensionale del divario Nord-Sud",
+      "datasets": [
+        "divario_nord_sud"
+      ],
+      "path": "analisi/divario-nord-sud/README.md",
+      "status": "active"
+    },
+    {
       "slug": "entrate-stato",
       "name": "BDAP Entrate Stato 2008-2024",
       "datasets": [
@@ -1049,6 +1058,9 @@
     ],
     "dipendenti_pubblici": [
       "dipendenti-pubblici"
+    ],
+    "divario_nord_sud": [
+      "divario-nord-sud"
     ],
     "bdap_entrate_stato": [
       "entrate-stato"
