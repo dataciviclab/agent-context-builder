@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-07T14:34:41.883037
+**Generated**: 2026-07-07T19:55:52.553750
 
 ## 🔍 SCOUTING
 
@@ -55,7 +55,7 @@
 
 ## 🔗 OPEN
 
-**PRs**: none open
+- [dataset-incubator#633](https://github.com/dataciviclab/dataset-incubator/pull/633): Aggiunge dataset elezioni: Europee, Referendum, Comunali
 **Discussions**: 20 open
   · [Domanda] SILOS Camera — Dove sono finite le infrastrutture strategiche?
   · [Domanda] La transizione energetica accelera? Dopo il recepimento RED II il fotovoltaico cresce 8 volte più veloce
