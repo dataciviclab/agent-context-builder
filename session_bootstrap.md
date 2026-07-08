@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-08T08:29:13.226788
+**Generated**: 2026-07-08T14:08:27.685754
 
 ## 🔍 SCOUTING
 
@@ -10,8 +10,8 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 76 candidates — 76 ok
-**Dataset Catalog**: 55 published · 55 public · updated 2026-07-06
+**Pipeline**: 79 candidates — 79 ok
+**Dataset Catalog**: 58 published · 58 public · updated 2026-07-08
 
 ## 📊 ANALYSES
 
@@ -43,22 +43,22 @@
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
   · **Terzo settore**: cinque-per-mille
-  ⚠ 54 dataset published non ancora su explorer:
+  ⚠ 57 dataset published non ancora su explorer:
     · aci_prime_iscrizioni_autovetture
     · ade_cinque_per_mille
     · aifa_spesa_consumo
     · anac_bandi_gara
     · anpr_mobilita_residenziale
-    · ... e altri 49
+    · ... e altri 52
   **Deploy**: ✅ success (2026-07-03)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#633](https://github.com/dataciviclab/dataset-incubator/pull/633): Aggiunge dataset elezioni: Europee, Referendum, Comunali
+**PRs**: none open
 **Discussions**: 20 open
+  · [Proposte] [Progetto] Rifiuti & Disuguaglianza Socio-Economica
   · [Domanda] SILOS Camera — Dove sono finite le infrastrutture strategiche?
   · [Domanda] La transizione energetica accelera? Dopo il recepimento RED II il fotovoltaico cresce 8 volte più veloce
-  · [Domanda] Rifiuti: l'Italia supera l'obiettivo UE 65% di RD, ma il divario territoriale non si chiude. Colpa della legge o dell'attuazione?
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T08:29:13.226788",
+  "generated_at": "2026-07-08T14:08:27.685754",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,16 +10,9 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 1,
-  "prs": [
-    {
-      "number": 633,
-      "title": "Aggiunge dataset elezioni: Europee, Referendum, Comunali",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/633"
-    }
-  ],
-  "open_issues": 82,
+  "open_prs": 0,
+  "prs": [],
+  "open_issues": 87,
   "issues": [
     {
       "number": 632,
@@ -62,12 +55,6 @@
       "title": "intake: istat_migrazioni_interne \u2014 Trasferimenti di residenza tra comuni (2018-2024)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/554"
-    },
-    {
-      "number": 523,
-      "title": "intake(eligendo): serie storica elezioni politiche Camera+Senato 1948-2022 per comune",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/523"
     },
     {
       "number": 517,
@@ -140,6 +127,24 @@
       "title": "Proposta intake: Operatori Economici Consip (dati.consip.it)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/375"
+    },
+    {
+      "number": 392,
+      "title": "analisi: elezioni_referendum \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/392"
+    },
+    {
+      "number": 391,
+      "title": "analisi: elezioni_europee \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/391"
+    },
+    {
+      "number": 390,
+      "title": "analisi: elezioni_comunali \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/390"
     },
     {
       "number": 389,
@@ -352,6 +357,24 @@
       "url": "https://github.com/dataciviclab/toolkit/issues/391"
     },
     {
+      "number": 199,
+      "title": "follow-up: pagina e tema per elezioni_referendum",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/199"
+    },
+    {
+      "number": 198,
+      "title": "follow-up: pagina e tema per elezioni_europee",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/198"
+    },
+    {
+      "number": 197,
+      "title": "follow-up: pagina e tema per elezioni_comunali",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/197"
+    },
+    {
       "number": 196,
       "title": "follow-up: pagina e tema per aci_prime_iscrizioni_autovetture",
       "repo": "data-explorer",
@@ -517,6 +540,13 @@
   "open_discussions": 20,
   "discussions": [
     {
+      "number": 72,
+      "title": "[Progetto] Rifiuti & Disuguaglianza Socio-Economica",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/72",
+      "category": "Proposte"
+    },
+    {
       "number": 286,
       "title": "SILOS Camera \u2014 Dove sono finite le infrastrutture strategiche?",
       "repo": "dataciviclab",
@@ -648,13 +678,6 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/323",
       "category": "Proposte"
-    },
-    {
-      "number": 322,
-      "title": "INPS stipendi \u2014 come sono cambiati per comune in 10 anni? C'\u00e8 un divario Nord-Sud per operai, impiegati e dirigenti?",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/322",
-      "category": "Domanda"
     }
   ],
   "github_fetch_errors": {},
@@ -753,11 +776,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-07-06",
+    "generated_at": "2026-07-08",
     "summary": {
-      "total": 76,
+      "total": 79,
       "by_status": {
-        "ok": 76,
+        "ok": 79,
         "warn": 0,
         "error": 0
       }
@@ -768,10 +791,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-07-06",
+    "updated_at": "2026-07-08",
     "summary": {
-      "total": 73,
-      "published": 55
+      "total": 76,
+      "published": 58
     },
     "datasets": [
       {
@@ -2483,6 +2506,144 @@
         ]
       },
       {
+        "slug": "elezioni_comunali",
+        "name": "Elezioni Comunali",
+        "stage": "published",
+        "period": {
+          "start": 2016,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/elezioni_comunali/*/elezioni_comunali_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 8,
+        "dimension_columns": 7,
+        "column_count": 15,
+        "columns": [
+          {
+            "name": "data_elezione",
+            "role": "dimension"
+          },
+          {
+            "name": "regione",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "comune",
+            "role": "dimension"
+          },
+          {
+            "name": "turno",
+            "role": "dimension"
+          },
+          {
+            "name": "candidato",
+            "role": "dimension"
+          },
+          {
+            "name": "lista",
+            "role": "dimension"
+          },
+          {
+            "name": "voti_candidato",
+            "role": "metric"
+          },
+          {
+            "name": "voti_lista",
+            "role": "metric"
+          },
+          {
+            "name": "seggi_lista",
+            "role": "metric"
+          },
+          {
+            "name": "elettori",
+            "role": "metric"
+          },
+          {
+            "name": "elettori_maschi",
+            "role": "metric"
+          },
+          {
+            "name": "votanti",
+            "role": "metric"
+          },
+          {
+            "name": "votanti_maschi",
+            "role": "metric"
+          },
+          {
+            "name": "schede_bianche",
+            "role": "metric"
+          }
+        ]
+      },
+      {
+        "slug": "elezioni_europee",
+        "name": "Elezioni Europee",
+        "stage": "published",
+        "period": {
+          "start": 1979,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/elezioni_europee/*/elezioni_europee_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 4,
+        "dimension_columns": 6,
+        "column_count": 10,
+        "columns": [
+          {
+            "name": "data_elezione",
+            "role": "dimension"
+          },
+          {
+            "name": "circoscrizione",
+            "role": "dimension"
+          },
+          {
+            "name": "regione",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "comune",
+            "role": "dimension"
+          },
+          {
+            "name": "lista",
+            "role": "dimension"
+          },
+          {
+            "name": "voti_lista",
+            "role": "metric"
+          },
+          {
+            "name": "elettori",
+            "role": "metric"
+          },
+          {
+            "name": "votanti",
+            "role": "metric"
+          },
+          {
+            "name": "schede_bianche",
+            "role": "metric"
+          }
+        ]
+      },
+      {
         "slug": "elezioni_politiche_2022",
         "name": "Elezioni Politiche 2022 \u2014 Camera e Senato",
         "stage": "incubating",
@@ -2499,6 +2660,81 @@
         "dimension_columns": 12,
         "column_count": 19,
         "columns": []
+      },
+      {
+        "slug": "elezioni_referendum",
+        "name": "Elezioni Referendum",
+        "stage": "published",
+        "period": {
+          "start": 1995,
+          "end": 2022
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/elezioni_referendum/*/elezioni_referendum_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 9,
+        "dimension_columns": 5,
+        "column_count": 14,
+        "columns": [
+          {
+            "name": "data_elezione",
+            "role": "dimension"
+          },
+          {
+            "name": "regione",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "comune",
+            "role": "dimension"
+          },
+          {
+            "name": "elettori_uomini",
+            "role": "metric"
+          },
+          {
+            "name": "elettori",
+            "role": "metric"
+          },
+          {
+            "name": "votanti_uomini",
+            "role": "metric"
+          },
+          {
+            "name": "votanti",
+            "role": "metric"
+          },
+          {
+            "name": "voti_si",
+            "role": "metric"
+          },
+          {
+            "name": "voti_no",
+            "role": "metric"
+          },
+          {
+            "name": "schede_nulle",
+            "role": "metric"
+          },
+          {
+            "name": "schede_bianche",
+            "role": "metric"
+          },
+          {
+            "name": "schede_contestate",
+            "role": "metric"
+          },
+          {
+            "name": "num_quesito",
+            "role": "dimension"
+          }
+        ]
       },
       {
         "slug": "elezioni_regionali",
@@ -6821,6 +7057,9 @@
       "consip_consumi_convenzione",
       "costituzione_master",
       "dipendenti_pubblici",
+      "elezioni_comunali",
+      "elezioni_europee",
+      "elezioni_referendum",
       "fts_eu_grants",
       "inps_pensioni_trimestrale",
       "inps_rdc_pdc",

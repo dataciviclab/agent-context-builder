@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-08T08:29:13.226788",
+  "generated_at": "2026-07-08T14:08:27.685754",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -201,6 +201,32 @@
         "period": {
           "start": 2026,
           "end": 2026
+        }
+      }
+    ],
+    "Eligendo \u2014 DAIT Ministero dell'Interno": [
+      {
+        "slug": "elezioni_comunali",
+        "name": "Elezioni Comunali",
+        "period": {
+          "start": 2016,
+          "end": 2024
+        }
+      },
+      {
+        "slug": "elezioni_europee",
+        "name": "Elezioni Europee",
+        "period": {
+          "start": 1979,
+          "end": 2024
+        }
+      },
+      {
+        "slug": "elezioni_referendum",
+        "name": "Elezioni Referendum",
+        "period": {
+          "start": 1995,
+          "end": 2022
         }
       }
     ],
