@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-09T15:10:55.587504
+**Generated**: 2026-07-09T19:47:16.810671
 
 ## 🔍 SCOUTING
 
@@ -54,7 +54,9 @@
 
 ## 🔗 OPEN
 
-**PRs**: none open
+- [dataset-incubator#643](https://github.com/dataciviclab/dataset-incubator/pull/643): intake: candidate mur_immatricolati (#628)
+- [dataset-incubator#642](https://github.com/dataciviclab/dataset-incubator/pull/642): intake: candidate istat_asia_ul (#413)
+- [dataset-incubator#641](https://github.com/dataciviclab/dataset-incubator/pull/641): fix: skip GCS push per compose dataset
 **Discussions**: 20 open
   · [Proposte] [Progetto] Rifiuti & Disuguaglianza Socio-Economica
   · [Domanda] SILOS Camera — Dove sono finite le infrastrutture strategiche?
