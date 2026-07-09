@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-09T19:47:16.810671
+**Generated**: 2026-07-09T21:29:02.237751
 
 ## 🔍 SCOUTING
 
@@ -58,9 +58,9 @@
 - [dataset-incubator#642](https://github.com/dataciviclab/dataset-incubator/pull/642): intake: candidate istat_asia_ul (#413)
 - [dataset-incubator#641](https://github.com/dataciviclab/dataset-incubator/pull/641): fix: skip GCS push per compose dataset
 **Discussions**: 20 open
-  · [Proposte] [Progetto] Rifiuti & Disuguaglianza Socio-Economica
-  · [Domanda] SILOS Camera — Dove sono finite le infrastrutture strategiche?
-  · [Domanda] La transizione energetica accelera? Dopo il recepimento RED II il fotovoltaico cresce 8 volte più veloce
+  · [Domanda] Elezioni Europee — 10 domande su 45 anni di voto in Italia (1979-2024)
+  · [Domanda] Votazioni Camera — 10 domande su partecipazione, fiducia e presenza in Aula (2018-2025)
+  · [Domanda] Elezioni Comunali — 11 domande su candidati, affluenza e liste (2016-2024)
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
