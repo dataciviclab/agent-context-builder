@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T03:21:46.132190",
+  "generated_at": "2026-07-10T09:35:53.475271",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -577,6 +577,13 @@
   "open_discussions": 20,
   "discussions": [
     {
+      "number": 403,
+      "title": "IVA Regionale \u2014 10 domande su volume d'affari e valore aggiunto fiscale in Italia (2014-2023)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/403",
+      "category": "Domanda"
+    },
+    {
       "number": 402,
       "title": "Emissioni GHG in Italia \u2014 10 domande su 33 anni di gas serra (1990-2023)",
       "repo": "dataciviclab",
@@ -708,13 +715,6 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/353",
       "category": "Annunci"
-    },
-    {
-      "number": 348,
-      "title": "[senato-akn] I decreti sono il 9% degli atti ma il 25% del testo \u2014 il peso nascosto dell'urgenza legislativa",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/348",
-      "category": "Domanda"
     }
   ],
   "github_fetch_errors": {},
@@ -779,13 +779,22 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-07-09",
+    "probe_date": "2026-07-10",
     "sources_total": 33,
-    "green": 33,
-    "yellow": 0,
+    "green": 32,
+    "yellow": 1,
     "red": 0,
     "persistent_red": 0,
-    "unhealthy": []
+    "unhealthy": [
+      {
+        "id": "istat_sdmx",
+        "status": "YELLOW",
+        "protocol": "sdmx",
+        "http_code": "-",
+        "note": "Timeout (ReadTimeout)",
+        "red_streak": 0
+      }
+    ]
   },
   "source_health": {
     "available": true,

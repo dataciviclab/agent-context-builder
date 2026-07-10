@@ -1,10 +1,11 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-10T03:21:46.132190
+**Generated**: 2026-07-10T09:35:53.475271
 
 ## 🔍 SCOUTING
 
-**Radar**: 33 fonti — GREEN 33 · YELLOW 0 · RED 0 (probe: 2026-07-09)
+**Radar**: 33 fonti — GREEN 32 · YELLOW 1 · RED 0 (probe: 2026-07-10)
+  · **istat_sdmx** YELLOW [-] — Timeout (ReadTimeout)
   · **openbdap** (ckan): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
   · **unioncamere** (ckan): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
 
@@ -58,9 +59,9 @@
 - [dataset-incubator#642](https://github.com/dataciviclab/dataset-incubator/pull/642): intake: candidate istat_asia_ul (#413)
 - [dataset-incubator#641](https://github.com/dataciviclab/dataset-incubator/pull/641): fix: skip GCS push per compose dataset
 **Discussions**: 20 open
+  · [Domanda] IVA Regionale — 10 domande su volume d'affari e valore aggiunto fiscale in Italia (2014-2023)
   · [Domanda] Emissioni GHG in Italia — 10 domande su 33 anni di gas serra (1990-2023)
   · [Domanda] Consumo di Suolo ISPRA — 11 domande sulla cementificazione in Italia (2006-2024)
-  · [Domanda] Elezioni Europee — 10 domande su 45 anni di voto in Italia (1979-2024)
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
