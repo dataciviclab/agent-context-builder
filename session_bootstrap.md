@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-09T21:29:02.237751
+**Generated**: 2026-07-10T03:21:46.132190
 
 ## 🔍 SCOUTING
 
@@ -58,9 +58,9 @@
 - [dataset-incubator#642](https://github.com/dataciviclab/dataset-incubator/pull/642): intake: candidate istat_asia_ul (#413)
 - [dataset-incubator#641](https://github.com/dataciviclab/dataset-incubator/pull/641): fix: skip GCS push per compose dataset
 **Discussions**: 20 open
+  · [Domanda] Emissioni GHG in Italia — 10 domande su 33 anni di gas serra (1990-2023)
+  · [Domanda] Consumo di Suolo ISPRA — 11 domande sulla cementificazione in Italia (2006-2024)
   · [Domanda] Elezioni Europee — 10 domande su 45 anni di voto in Italia (1979-2024)
-  · [Domanda] Votazioni Camera — 10 domande su partecipazione, fiducia e presenza in Aula (2018-2025)
-  · [Domanda] Elezioni Comunali — 11 domande su candidati, affluenza e liste (2016-2024)
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
