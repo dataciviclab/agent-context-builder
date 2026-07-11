@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-11T13:20:02.693429
+**Generated**: 2026-07-11T19:03:42.273994
 
 ## 🔍 SCOUTING
 
@@ -55,13 +55,14 @@
 
 ## 🔗 OPEN
 
+- [dataset-incubator#644](https://github.com/dataciviclab/dataset-incubator/pull/644): intake: candidate personale-ssn (#454)
 - [dataset-incubator#643](https://github.com/dataciviclab/dataset-incubator/pull/643): intake: candidate mur_immatricolati (#628)
 - [dataset-incubator#642](https://github.com/dataciviclab/dataset-incubator/pull/642): intake: candidate istat_asia_ul (#413)
 - [dataset-incubator#641](https://github.com/dataciviclab/dataset-incubator/pull/641): fix: skip GCS push per compose dataset
 **Discussions**: 20 open
+  · [Domanda] RNA Aiuti di Stato — 11 domande su 17 milioni di aiuti pubblici alle imprese (2017-2026)
+  · [Presentazioni] [Presentazione] Ciao! Piacere, sono Lorenzo!
   · [Domanda] Dipendenti Pubblici — 12 domande su occupazione, genere e turnover nella PA (2010-2023)
-  · [Domanda] Quante persone immigrate arrivano in Italia, dove vengono accolte, e quanti ottengono protezione?
-  · [Proposte] [Progetto] Rifiuti & Disuguaglianza Socio-Economica
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
