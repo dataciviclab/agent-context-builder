@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-11T07:56:28.697957
+**Generated**: 2026-07-11T13:20:02.693429
 
 ## 🔍 SCOUTING
 
@@ -59,9 +59,9 @@
 - [dataset-incubator#642](https://github.com/dataciviclab/dataset-incubator/pull/642): intake: candidate istat_asia_ul (#413)
 - [dataset-incubator#641](https://github.com/dataciviclab/dataset-incubator/pull/641): fix: skip GCS push per compose dataset
 **Discussions**: 20 open
-  · [Domanda] IVA Regionale — 10 domande su volume d'affari e valore aggiunto fiscale in Italia (2014-2023)
-  · [Domanda] Emissioni GHG in Italia — 10 domande su 33 anni di gas serra (1990-2023)
-  · [Domanda] Consumo di Suolo ISPRA — 11 domande sulla cementificazione in Italia (2006-2024)
+  · [Domanda] Dipendenti Pubblici — 12 domande su occupazione, genere e turnover nella PA (2010-2023)
+  · [Domanda] Quante persone immigrate arrivano in Italia, dove vengono accolte, e quanti ottengono protezione?
+  · [Proposte] [Progetto] Rifiuti & Disuguaglianza Socio-Economica
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
