@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-12T13:20:29.819377",
+  "generated_at": "2026-07-12T19:06:36.336399",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,7 +10,7 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 4,
+  "open_prs": 3,
   "prs": [
     {
       "number": 644,
@@ -25,19 +25,13 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/643"
     },
     {
-      "number": 642,
-      "title": "intake: candidate istat_asia_ul (#413)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/642"
-    },
-    {
       "number": 641,
       "title": "fix: skip GCS push per compose dataset",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/641"
     }
   ],
-  "open_issues": 90,
+  "open_issues": 91,
   "issues": [
     {
       "number": 640,
@@ -154,12 +148,6 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/417"
     },
     {
-      "number": 413,
-      "title": "intake: istat_asia_ul \u2014 Unit\u00e0 locali e addetti ASIA per comune",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/413"
-    },
-    {
       "number": 378,
       "title": "Proposta intake: Indicatori Fabbisogno Standard Comuni (opencivitas.it)",
       "repo": "dataset-incubator",
@@ -170,6 +158,12 @@
       "title": "Proposta intake: Operatori Economici Consip (dati.consip.it)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/375"
+    },
+    {
+      "number": 407,
+      "title": "analisi: istat_asia_ul \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/407"
     },
     {
       "number": 392,
@@ -400,6 +394,12 @@
       "url": "https://github.com/dataciviclab/toolkit/issues/391"
     },
     {
+      "number": 200,
+      "title": "follow-up: pagina e tema per istat_asia_ul",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/200"
+    },
+    {
       "number": 199,
       "title": "follow-up: pagina e tema per elezioni_referendum",
       "repo": "data-explorer",
@@ -583,10 +583,10 @@
   "open_discussions": 20,
   "discussions": [
     {
-      "number": 405,
-      "title": "RNA Aiuti di Stato \u2014 11 domande su 17 milioni di aiuti pubblici alle imprese (2017-2026)",
+      "number": 406,
+      "title": "MEF Partecipate \u2014 11 domande su 101mila incarichi e compensi dei rappresentanti PA (2018-2023)",
       "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/405",
+      "url": "https://github.com/orgs/dataciviclab/discussions/406",
       "category": "Domanda"
     },
     {
@@ -595,6 +595,13 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/404",
       "category": "Presentazioni"
+    },
+    {
+      "number": 405,
+      "title": "RNA Aiuti di Stato \u2014 11 domande su 17 milioni di aiuti pubblici alle imprese (2017-2026)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/405",
+      "category": "Domanda"
     },
     {
       "number": 396,
@@ -714,13 +721,6 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/326",
       "category": "Domanda"
-    },
-    {
-      "number": 323,
-      "title": "Contenuti audio dalle analisi: usare NotebookLM per podcast e social?",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/323",
-      "category": "Proposte"
     }
   ],
   "github_fetch_errors": {},
@@ -836,11 +836,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-07-08",
+    "generated_at": "2026-07-12",
     "summary": {
-      "total": 79,
+      "total": 80,
       "by_status": {
-        "ok": 79,
+        "ok": 80,
         "warn": 0,
         "error": 0
       }
@@ -851,10 +851,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-07-08",
+    "updated_at": "2026-07-12",
     "summary": {
-      "total": 76,
-      "published": 58
+      "total": 77,
+      "published": 59
     },
     "datasets": [
       {
@@ -3872,6 +3872,41 @@
         "dimension_columns": 5,
         "column_count": 15,
         "columns": []
+      },
+      {
+        "slug": "istat_asia_ul",
+        "name": "Istat Asia Ul",
+        "stage": "published",
+        "period": {
+          "start": 2018,
+          "end": 2020
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/istat_asia_ul/2020/istat_asia_ul_2020_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 1,
+        "dimension_columns": 3,
+        "column_count": 4,
+        "columns": [
+          {
+            "name": "codice_comune",
+            "role": "dimension"
+          },
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "ateco_sezione",
+            "role": "dimension"
+          },
+          {
+            "name": "unita_locali",
+            "role": "metric"
+          }
+        ]
       },
       {
         "slug": "istat_elenco_comuni",
@@ -7128,6 +7163,7 @@
       "irpef_comunale",
       "ispra_emissioni_ghg",
       "ispra_ru_base",
+      "istat_asia_ul",
       "istat_elenco_comuni",
       "istat_gini_regionale",
       "istat_housing_crowding",

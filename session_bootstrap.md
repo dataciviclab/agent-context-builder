@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-12T13:20:29.819377
+**Generated**: 2026-07-12T19:06:36.336399
 
 ## 🔍 SCOUTING
 
@@ -12,8 +12,8 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 79 candidates — 79 ok
-**Dataset Catalog**: 58 published · 58 public · updated 2026-07-08
+**Pipeline**: 80 candidates — 80 ok
+**Dataset Catalog**: 59 published · 59 public · updated 2026-07-12
 
 ## 📊 ANALYSES
 
@@ -45,25 +45,24 @@
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
   · **Terzo settore**: cinque-per-mille
-  ⚠ 57 dataset published non ancora su explorer:
+  ⚠ 58 dataset published non ancora su explorer:
     · aci_prime_iscrizioni_autovetture
     · ade_cinque_per_mille
     · aifa_spesa_consumo
     · anac_bandi_gara
     · anpr_mobilita_residenziale
-    · ... e altri 52
+    · ... e altri 53
   **Deploy**: ✅ success (2026-07-03)
 
 ## 🔗 OPEN
 
 - [dataset-incubator#644](https://github.com/dataciviclab/dataset-incubator/pull/644): intake: candidate personale-ssn (#454)
 - [dataset-incubator#643](https://github.com/dataciviclab/dataset-incubator/pull/643): intake: candidate mur_immatricolati (#628)
-- [dataset-incubator#642](https://github.com/dataciviclab/dataset-incubator/pull/642): intake: candidate istat_asia_ul (#413)
 - [dataset-incubator#641](https://github.com/dataciviclab/dataset-incubator/pull/641): fix: skip GCS push per compose dataset
 **Discussions**: 20 open
-  · [Domanda] RNA Aiuti di Stato — 11 domande su 17 milioni di aiuti pubblici alle imprese (2017-2026)
+  · [Domanda] MEF Partecipate — 11 domande su 101mila incarichi e compensi dei rappresentanti PA (2018-2023)
   · [Presentazioni] [Presentazione] Ciao! Piacere, sono Lorenzo!
-  · [Domanda] Dipendenti Pubblici — 12 domande su occupazione, genere e turnover nella PA (2010-2023)
+  · [Domanda] RNA Aiuti di Stato — 11 domande su 17 milioni di aiuti pubblici alle imprese (2017-2026)
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
