@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-12T02:48:12.210468",
+  "generated_at": "2026-07-12T08:18:39.494193",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -785,10 +785,10 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-07-11",
+    "probe_date": "2026-07-12",
     "sources_total": 33,
-    "green": 32,
-    "yellow": 1,
+    "green": 31,
+    "yellow": 2,
     "red": 0,
     "persistent_red": 0,
     "unhealthy": [
@@ -798,6 +798,14 @@
         "protocol": "sdmx",
         "http_code": "-",
         "note": "Timeout (ReadTimeout)",
+        "red_streak": 0
+      },
+      {
+        "id": "dati_camera",
+        "status": "YELLOW",
+        "protocol": "sparql",
+        "http_code": "403",
+        "note": null,
         "red_streak": 0
       }
     ]
