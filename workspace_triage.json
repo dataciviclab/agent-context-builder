@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T09:27:59.817696",
+  "generated_at": "2026-07-13T14:34:59.281029",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,7 +10,7 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 5,
+  "open_prs": 4,
   "prs": [
     {
       "number": 647,
@@ -25,12 +25,6 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/646"
     },
     {
-      "number": 644,
-      "title": "intake: candidate personale-ssn (#454)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/644"
-    },
-    {
       "number": 643,
       "title": "intake: candidate mur_immatricolati (#628)",
       "repo": "dataset-incubator",
@@ -43,7 +37,7 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/641"
     }
   ],
-  "open_issues": 90,
+  "open_issues": 92,
   "issues": [
     {
       "number": 640,
@@ -170,6 +164,12 @@
       "title": "Proposta intake: Operatori Economici Consip (dati.consip.it)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/375"
+    },
+    {
+      "number": 408,
+      "title": "analisi: personale_ssn \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/408"
     },
     {
       "number": 407,
@@ -404,6 +404,12 @@
       "title": "refactor: estrarre _write_reports() da run_full() in report_ops.py",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/391"
+    },
+    {
+      "number": 202,
+      "title": "follow-up: pagina e tema per personale_ssn",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/202"
     },
     {
       "number": 200,
@@ -833,11 +839,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-07-12",
+    "generated_at": "2026-07-13",
     "summary": {
-      "total": 80,
+      "total": 81,
       "by_status": {
-        "ok": 80,
+        "ok": 81,
         "warn": 0,
         "error": 0
       }
@@ -848,10 +854,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-07-12",
+    "updated_at": "2026-07-13",
     "summary": {
-      "total": 77,
-      "published": 59
+      "total": 78,
+      "published": 60
     },
     "datasets": [
       {
@@ -5051,6 +5057,85 @@
         "columns": []
       },
       {
+        "slug": "personale_ssn",
+        "name": "Personale del Servizio Sanitario Nazionale",
+        "stage": "published",
+        "period": {
+          "start": 2010,
+          "end": 2021
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/personale_ssn/2021/personale_ssn_2021_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 9,
+        "dimension_columns": 6,
+        "column_count": 15,
+        "columns": [
+          {
+            "name": "prospetto",
+            "role": "dimension"
+          },
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_regione",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione_regione",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_azienda",
+            "role": "dimension"
+          },
+          {
+            "name": "ruolo_categoria",
+            "role": "dimension"
+          },
+          {
+            "name": "dotazioni_organiche",
+            "role": "metric"
+          },
+          {
+            "name": "tempo_pieno_u",
+            "role": "metric"
+          },
+          {
+            "name": "tempo_pieno_d",
+            "role": "metric"
+          },
+          {
+            "name": "part_time_inf_50_u",
+            "role": "metric"
+          },
+          {
+            "name": "part_time_inf_50_d",
+            "role": "metric"
+          },
+          {
+            "name": "part_time_sup_50_u",
+            "role": "metric"
+          },
+          {
+            "name": "part_time_sup_50_d",
+            "role": "metric"
+          },
+          {
+            "name": "pers_anno_rif_u",
+            "role": "metric"
+          },
+          {
+            "name": "pers_anno_rif_d",
+            "role": "metric"
+          }
+        ]
+      },
+      {
         "slug": "pnrr_progetti",
         "name": "PNRR Progetti \u2014 Italia Domani",
         "stage": "published",
@@ -7174,6 +7259,7 @@
       "opencivitas_fsc_2025_rso",
       "opencoesione_progetti",
       "openga_ricorsi_cds",
+      "personale_ssn",
       "pnrr_progetti",
       "popolazione_istat_comunale_2019_2025",
       "posti_letto_stabilimento",

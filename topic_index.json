@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-13T09:27:59.817696",
+  "generated_at": "2026-07-13T14:34:59.281029",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -457,6 +457,16 @@
         "period": {
           "start": 2023,
           "end": 2026
+        }
+      }
+    ],
+    "Ministero della Salute \u2014 Dati del Personale SSN": [
+      {
+        "slug": "personale_ssn",
+        "name": "Personale del Servizio Sanitario Nazionale",
+        "period": {
+          "start": 2010,
+          "end": 2021
         }
       }
     ],

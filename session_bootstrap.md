@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-13T09:27:59.817696
+**Generated**: 2026-07-13T14:34:59.281029
 
 ## 🔍 SCOUTING
 
@@ -11,8 +11,8 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 80 candidates — 80 ok
-**Dataset Catalog**: 59 published · 59 public · updated 2026-07-12
+**Pipeline**: 81 candidates — 81 ok
+**Dataset Catalog**: 60 published · 60 public · updated 2026-07-13
 
 ## 📊 ANALYSES
 
@@ -44,20 +44,19 @@
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
   · **Terzo settore**: cinque-per-mille
-  ⚠ 58 dataset published non ancora su explorer:
+  ⚠ 59 dataset published non ancora su explorer:
     · aci_prime_iscrizioni_autovetture
     · ade_cinque_per_mille
     · aifa_spesa_consumo
     · anac_bandi_gara
     · anpr_mobilita_residenziale
-    · ... e altri 53
+    · ... e altri 54
   **Deploy**: ✅ success (2026-07-13)
 
 ## 🔗 OPEN
 
 - [dataset-incubator#647](https://github.com/dataciviclab/dataset-incubator/pull/647): intake: candidate elezioni-politiche — Camera+Senato 1948-2022
 - [dataset-incubator#646](https://github.com/dataciviclab/dataset-incubator/pull/646): intake: candidate mur-iscritti (#629)
-- [dataset-incubator#644](https://github.com/dataciviclab/dataset-incubator/pull/644): intake: candidate personale-ssn (#454)
 - [dataset-incubator#643](https://github.com/dataciviclab/dataset-incubator/pull/643): intake: candidate mur_immatricolati (#628)
 - [dataset-incubator#641](https://github.com/dataciviclab/dataset-incubator/pull/641): fix: skip GCS push per compose dataset
 **Discussions**: 20 open
