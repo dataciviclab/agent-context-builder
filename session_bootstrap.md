@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-13T14:34:59.281029
+**Generated**: 2026-07-13T19:23:46.157876
 
 ## 🔍 SCOUTING
 
@@ -59,10 +59,11 @@
 - [dataset-incubator#646](https://github.com/dataciviclab/dataset-incubator/pull/646): intake: candidate mur-iscritti (#629)
 - [dataset-incubator#643](https://github.com/dataciviclab/dataset-incubator/pull/643): intake: candidate mur_immatricolati (#628)
 - [dataset-incubator#641](https://github.com/dataciviclab/dataset-incubator/pull/641): fix: skip GCS push per compose dataset
+- [lab-connectors#67](https://github.com/dataciviclab/lab-connectors/pull/67): feat: catena di fallback HTTP completa (TLS 1.2+proxy, curl, urllib)
 **Discussions**: 20 open
+  · [Domanda] ACI Auto Nuove — 11 domande su 8 anni di immatricolazioni e transizione energetica (2017-2024)
+  · [Domanda] Elezioni Europee — 10 domande su 45 anni di voto in Italia (1979-2024)
   · [Domanda] Consumo di Suolo ISPRA — 11 domande sulla cementificazione in Italia (2006-2024)
-  · [Domanda] MEF Partecipate — 11 domande su 101mila incarichi e compensi dei rappresentanti PA (2018-2023)
-  · [Presentazioni] [Presentazione] Ciao! Piacere, sono Lorenzo!
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
