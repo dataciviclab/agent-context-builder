@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-12T19:06:36.336399
+**Generated**: 2026-07-13T02:49:44.704941
 
 ## 🔍 SCOUTING
 
@@ -59,6 +59,7 @@
 - [dataset-incubator#644](https://github.com/dataciviclab/dataset-incubator/pull/644): intake: candidate personale-ssn (#454)
 - [dataset-incubator#643](https://github.com/dataciviclab/dataset-incubator/pull/643): intake: candidate mur_immatricolati (#628)
 - [dataset-incubator#641](https://github.com/dataciviclab/dataset-incubator/pull/641): fix: skip GCS push per compose dataset
+- [data-explorer#201](https://github.com/dataciviclab/data-explorer/pull/201): feat: add ISPRA GHG emissions explorer page
 **Discussions**: 20 open
   · [Domanda] MEF Partecipate — 11 domande su 101mila incarichi e compensi dei rappresentanti PA (2018-2023)
   · [Presentazioni] [Presentazione] Ciao! Piacere, sono Lorenzo!
