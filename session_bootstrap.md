@@ -1,14 +1,13 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-13T02:49:44.704941
+**Generated**: 2026-07-13T09:27:59.817696
 
 ## 🔍 SCOUTING
 
-**Radar**: 33 fonti — GREEN 31 · YELLOW 2 · RED 0 (probe: 2026-07-12)
-  · **istat_sdmx** YELLOW [-] — Timeout (ReadTimeout)
-  · **dati_camera** YELLOW [403]
-  · **openbdap** (ckan): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
-  · **unioncamere** (ckan): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
+**Radar**: 33 fonti — GREEN 33 · YELLOW 0 · RED 0 (probe: 2026-07-13)
+  · **istat_sdmx** (sdmx): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
+  · **dati_senato** (sparql): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
+  · **pagopa** (ckan): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
 
 ## 📥 INTAKE
 
@@ -38,8 +37,8 @@
 
 ## 🗂 EXPLORER
 
-**Pubblicati**: 30 dataset · 6 temi · [data-explorer](https://dataciviclab.github.io/data-explorer/)
-  · **Territorio e ambiente**: rifiuti-urbani, capacita-rinnovabile, produzione-elettrica-fonti, mit-incidentalita, silos-infrastrutture
+**Pubblicati**: 31 dataset · 6 temi · [data-explorer](https://dataciviclab.github.io/data-explorer/)
+  · **Territorio e ambiente**: rifiuti-urbani, capacita-rinnovabile, produzione-elettrica-fonti, mit-incidentalita, silos-infrastrutture, ispra-emissioni-ghg
   · **Finanza pubblica**: irpef-comunale, entrate-stato, consip-consumi-convenzione, istat-gini-regionale, opencivitas-fsc-2025, opencoesione-progetti, fts-eu-grants, mef-partecipazioni, bdap-spese-stato
   · **Sanità**: spesa-farmaceutica, bdap-lea, strutture-asl, strutture-ricovero-asl, reparti-ricovero, posti-letto-stabilimento, farmacie
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
@@ -52,18 +51,19 @@
     · anac_bandi_gara
     · anpr_mobilita_residenziale
     · ... e altri 53
-  **Deploy**: ✅ success (2026-07-03)
+  **Deploy**: ✅ success (2026-07-13)
 
 ## 🔗 OPEN
 
+- [dataset-incubator#647](https://github.com/dataciviclab/dataset-incubator/pull/647): intake: candidate elezioni-politiche — Camera+Senato 1948-2022
+- [dataset-incubator#646](https://github.com/dataciviclab/dataset-incubator/pull/646): intake: candidate mur-iscritti (#629)
 - [dataset-incubator#644](https://github.com/dataciviclab/dataset-incubator/pull/644): intake: candidate personale-ssn (#454)
 - [dataset-incubator#643](https://github.com/dataciviclab/dataset-incubator/pull/643): intake: candidate mur_immatricolati (#628)
 - [dataset-incubator#641](https://github.com/dataciviclab/dataset-incubator/pull/641): fix: skip GCS push per compose dataset
-- [data-explorer#201](https://github.com/dataciviclab/data-explorer/pull/201): feat: add ISPRA GHG emissions explorer page
 **Discussions**: 20 open
+  · [Domanda] Consumo di Suolo ISPRA — 11 domande sulla cementificazione in Italia (2006-2024)
   · [Domanda] MEF Partecipate — 11 domande su 101mila incarichi e compensi dei rappresentanti PA (2018-2023)
   · [Presentazioni] [Presentazione] Ciao! Piacere, sono Lorenzo!
-  · [Domanda] RNA Aiuti di Stato — 11 domande su 17 milioni di aiuti pubblici alle imprese (2017-2026)
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
