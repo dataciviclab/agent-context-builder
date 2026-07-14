@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-14T18:12:05.540680
+**Generated**: 2026-07-14T18:42:38.726831
 
 ## 🔍 SCOUTING
 
@@ -59,8 +59,8 @@
 - [lab-connectors#70](https://github.com/dataciviclab/lab-connectors/pull/70): feat: download(url) -> bytes standalone (closes #68)
 - [eurostat#99](https://github.com/dataciviclab/eurostat/pull/99): feat: add income inequality S80/S20 by NUTS2 (ILC_DI11_R) (#87)
 **Discussions**: 140 open
-  · [Domanda] ANPR Mobilità Residenziale — 13 domande che possiamo fare ai dati (2022-2026)
   · [Domanda] Emissioni GHG in Italia — 10 domande su 33 anni di gas serra (1990-2023)
+  · [Domanda] ANPR Mobilità Residenziale — 13 domande che possiamo fare ai dati (2022-2026)
   · [Domanda] PIL territoriale — 11 domande su 30 anni di economia italiana regione per regione (1995-2024)
 **Topics**: pipeline · governance · infrastructure · analyses
 
