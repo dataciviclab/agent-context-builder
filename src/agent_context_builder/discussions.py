@@ -57,12 +57,12 @@ class DiscussionCollector:
         # Maps "<repo>:discussions" to error message — populated during collection
         self.fetch_errors: dict[str, str] = {}
 
-    def get_discussions(self, repos: list[str], first: int = 20) -> list[Discussion]:
+    def get_discussions(self, repos: list[str], first: int = 100) -> list[Discussion]:
         """Get open discussions across repos.
 
         Args:
             repos: List of repo names
-            first: Max discussions per repo (default 20)
+            first: Max discussions per repo (default 100)
 
         Returns:
             List of Discussion objects. Repos that failed are in self.fetch_errors.
