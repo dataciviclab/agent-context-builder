@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-14T08:05:38.478921
+**Generated**: 2026-07-14T11:14:38.118598
 
 ## 🔍 SCOUTING
 
@@ -51,16 +51,14 @@
     · anac_bandi_gara
     · anpr_mobilita_residenziale
     · ... e altri 54
-  **Deploy**: ✅ success (2026-07-13)
+  **Deploy**: ✅ success (2026-07-14)
 
 ## 🔗 OPEN
 
+- [dataset-incubator#649](https://github.com/dataciviclab/dataset-incubator/pull/649): intake: candidate mur-immatricolati (#628)
 - [dataset-incubator#647](https://github.com/dataciviclab/dataset-incubator/pull/647): intake: candidate elezioni-politiche — Camera+Senato 1948-2022
 - [dataset-incubator#646](https://github.com/dataciviclab/dataset-incubator/pull/646): intake: candidate mur-iscritti (#629)
-- [dataset-incubator#643](https://github.com/dataciviclab/dataset-incubator/pull/643): intake: candidate mur_immatricolati (#628)
 - [dataset-incubator#641](https://github.com/dataciviclab/dataset-incubator/pull/641): fix: skip GCS push per compose dataset
-- [lab-connectors#67](https://github.com/dataciviclab/lab-connectors/pull/67): feat: catena di fallback HTTP completa (TLS 1.2+proxy, curl, urllib)
-- **Dependabot**: 1 bump PR(s)
 **Discussions**: 20 open
   · [Domanda] ACI Auto Nuove — 11 domande su 8 anni di immatricolazioni e transizione energetica (2017-2024)
   · [Domanda] Elezioni Europee — 10 domande su 45 anni di voto in Italia (1979-2024)

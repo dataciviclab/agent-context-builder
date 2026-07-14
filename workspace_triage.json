@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T08:05:38.478921",
+  "generated_at": "2026-07-14T11:14:38.118598",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,8 +10,14 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 6,
+  "open_prs": 4,
   "prs": [
+    {
+      "number": 649,
+      "title": "intake: candidate mur-immatricolati (#628)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/649"
+    },
     {
       "number": 647,
       "title": "intake: candidate elezioni-politiche \u2014 Camera+Senato 1948-2022",
@@ -25,31 +31,13 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/646"
     },
     {
-      "number": 643,
-      "title": "intake: candidate mur_immatricolati (#628)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/643"
-    },
-    {
       "number": 641,
       "title": "fix: skip GCS push per compose dataset",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/641"
-    },
-    {
-      "number": 203,
-      "title": "chore(deps-dev): bump eslint from 10.6.0 to 10.7.0",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/203"
-    },
-    {
-      "number": 67,
-      "title": "feat: catena di fallback HTTP completa (TLS 1.2+proxy, curl, urllib)",
-      "repo": "lab-connectors",
-      "url": "https://github.com/dataciviclab/lab-connectors/pull/67"
     }
   ],
-  "open_issues": 93,
+  "open_issues": 95,
   "issues": [
     {
       "number": 640,
@@ -406,6 +394,18 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/123"
     },
     {
+      "number": 411,
+      "title": "feat(core): utility preprocessing \u2014 normalize_number, decode_bytes, normalize_columns_map",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/411"
+    },
+    {
+      "number": 410,
+      "title": "feat(ckan): supporto proxy esplicito per fonti che bloccano GHA",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/410"
+    },
+    {
       "number": 403,
       "title": "[Task] Quality Certificate \u2014 report unificato di validazione cross-layer",
       "repo": "toolkit",
@@ -598,10 +598,10 @@
       "url": "https://github.com/dataciviclab/source-observatory/issues/275"
     },
     {
-      "number": 66,
-      "title": "feat: catena di fallback HTTP completa per server PA (TLS 1.2, proxy, curl, urllib)",
+      "number": 68,
+      "title": "feat(http): funzione standalone download(url) -> bytes",
       "repo": "lab-connectors",
-      "url": "https://github.com/dataciviclab/lab-connectors/issues/66"
+      "url": "https://github.com/dataciviclab/lab-connectors/issues/68"
     },
     {
       "number": 45,
@@ -812,9 +812,7 @@
       "untracked_files": 0
     }
   },
-  "warnings": [
-    "Many open PRs: 6"
-  ],
+  "warnings": [],
   "radar": {
     "available": true,
     "probe_date": "2026-07-14",
@@ -7299,12 +7297,12 @@
       "unified_comuni"
     ],
     "last_deploy": {
-      "run_id": 29237411918,
+      "run_id": 29322721552,
       "name": "Deploy to GitHub Pages (Observable Framework)",
       "status": "completed",
       "conclusion": "success",
-      "completed_at": "2026-07-13T09:06:18Z",
-      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/29237411918"
+      "completed_at": "2026-07-14T09:48:59Z",
+      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/29322721552"
     }
   }
 }
