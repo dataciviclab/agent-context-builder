@@ -360,6 +360,177 @@ def refresh_context() -> dict[str, object]:
     return guard_timed(_exec, "refresh_context")
 
 
+def _search_github_issues(
+    query: str, token: str | None, limit: int = 10
+) -> list[dict[str, object]]:
+    """Search issues and PRs across dataciviclab org via GitHub Search API.
+
+    Args:
+        query: Search query (natural language, full-text on title + body)
+        token: GitHub token (optional; affects rate limit)
+        limit: Max results (default 10, max 50)
+
+    Returns:
+        List of matching issues/PRs with repo, number, title, state, url, type.
+    """
+    url = "https://api.github.com/search/issues"
+    headers = (
+        {"Authorization": f"token {token}", "Accept": "application/vnd.github+json"}
+        if token
+        else {}
+    )
+    params = {
+        "q": f"{query} org:dataciviclab",
+        "sort": "updated",
+        "order": "desc",
+        "per_page": min(limit, 50),
+    }
+    client = HttpClient(timeout=10)
+    try:
+        result = client.get(url, params=params, headers=headers)
+    except Exception as exc:
+        _log.warning("search_issues", "http_error", error=str(exc))
+        return []
+
+    if not result.is_ok or result.response is None:
+        _log.warning("search_issues", "failed", error=str(result.err))
+        return []
+
+    try:
+        response = result.response
+        data = response.json()
+        items = data.get("items", [])
+    except Exception as exc:
+        _log.warning("search_issues", "parse_error", error=str(exc))
+        return []
+
+    results = []
+    for item in items:
+        repo_full = item.get("repository_url", "").replace("https://api.github.com/repos/", "")
+        results.append(
+            {
+                "repo": repo_full or "",
+                "number": item.get("number"),
+                "title": item.get("title", ""),
+                "state": item.get("state", ""),
+                "url": item.get("html_url", ""),
+                "type": "pr" if "pull_request" in item else "issue",
+                "updated_at": item.get("updated_at", ""),
+            }
+        )
+    return results
+
+
+def _search_topic_index(query: str, topic_data: dict) -> dict[str, list[dict[str, object]]]:
+    """Search datasets and analyses in the topic_index data.
+
+    Args:
+        query: Search query (case-insensitive substring match)
+        topic_data: Parsed topic_index.json content
+
+    Returns:
+        Dict with 'datasets' and 'analyses' lists.
+    """
+    q = query.lower()
+    datasets_found: list[dict[str, object]] = []
+    analyses_found: list[dict[str, object]] = []
+
+    # Search datasets by slug, name, source
+    seen_slugs: set[str] = set()
+    for section in ("datasets_by_source", "candidates_by_source"):
+        entries = topic_data.get(section, {})
+        for source, datasets in entries.items():
+            for ds in datasets:
+                slug = ds.get("slug", "")
+                name = ds.get("name", "")
+                if slug not in seen_slugs and (
+                    q in slug.lower() or q in name.lower() or q in source.lower()
+                ):
+                    seen_slugs.add(slug)
+                    datasets_found.append(
+                        {
+                            "slug": slug,
+                            "name": name,
+                            "source": source,
+                            "period": ds.get("period"),
+                            "stage": "published"
+                            if section == "datasets_by_source"
+                            else "incubating",
+                        }
+                    )
+
+    # Search analyses by slug, name, datasets
+    for analysis in topic_data.get("analyses", []):
+        a_slug = analysis.get("slug", "")
+        a_name = analysis.get("name", "")
+        a_datasets = " ".join(analysis.get("datasets", []))
+        if q in a_slug.lower() or q in a_name.lower() or q in a_datasets.lower():
+            analyses_found.append(
+                {
+                    "slug": a_slug,
+                    "name": a_name,
+                    "datasets": analysis.get("datasets", []),
+                    "status": analysis.get("status", ""),
+                }
+            )
+
+    return {"datasets": datasets_found, "analyses": analyses_found}
+
+
+@mcp.tool(
+    description=(
+        "Cerca in issue, PR, dataset e analisi del DataCivicLab. "
+        "Combina GitHub Search API (issue/PR full-text) con l'indice locale "
+        "(dataset, analisi). I risultati sono raggruppati per tipo."
+    ),
+    structured_output=True,
+)
+def search(query: str, limit: int = 10) -> dict[str, object]:
+    """Search across the DataCivicLab ecosystem.
+
+    Args:
+        query: Testo da cercare (es. \"disuguaglianza\", \"sanità\", \"appalti\")
+        limit: Massimo risultati per sezione (default 10, max 50)
+
+    Returns:
+        Risultati raggruppati per tipo (issues, datasets, analyses).
+    """
+
+    def _exec() -> dict[str, object]:
+        token = _get_env("GITHUB_TOKEN")
+
+        # 1. Search GitHub Issues + PRs
+        issues = _search_github_issues(query, token, limit)
+
+        # 2. Fetch topic_index and search datasets + analyses
+        try:
+            topic_raw = _fetch("topic_index.json", retries=0)
+            topic_data = json.loads(topic_raw)
+        except Exception as exc:
+            _log.warning("search", "topic_index_fetch_failed", error=str(exc))
+            topic_data = {}
+
+        local = (
+            _search_topic_index(query, topic_data)
+            if topic_data
+            else {"datasets": [], "analyses": []}
+        )
+
+        total = len(issues) + len(local["datasets"]) + len(local["analyses"])
+        return {
+            "query": query,
+            "total": total,
+            "results": {
+                "issues": issues,
+                "datasets": local["datasets"],
+                "analyses": local["analyses"],
+            },
+            "ok": True,
+        }
+
+    return guard_timed(_exec, "search")
+
+
 def main() -> None:
     """Entry point per l'MCP server."""
     _log.info("main", "starting", repo=_REPO, branch=_BRANCH)
