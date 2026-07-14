@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-13T19:23:46.157876
+**Generated**: 2026-07-14T02:31:19.323970
 
 ## 🔍 SCOUTING
 
@@ -60,6 +60,7 @@
 - [dataset-incubator#643](https://github.com/dataciviclab/dataset-incubator/pull/643): intake: candidate mur_immatricolati (#628)
 - [dataset-incubator#641](https://github.com/dataciviclab/dataset-incubator/pull/641): fix: skip GCS push per compose dataset
 - [lab-connectors#67](https://github.com/dataciviclab/lab-connectors/pull/67): feat: catena di fallback HTTP completa (TLS 1.2+proxy, curl, urllib)
+- **Dependabot**: 1 bump PR(s)
 **Discussions**: 20 open
   · [Domanda] ACI Auto Nuove — 11 domande su 8 anni di immatricolazioni e transizione energetica (2017-2024)
   · [Domanda] Elezioni Europee — 10 domande su 45 anni di voto in Italia (1979-2024)

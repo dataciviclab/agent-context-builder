@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T19:23:46.157876",
+  "generated_at": "2026-07-14T02:31:19.323970",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,7 +10,7 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 5,
+  "open_prs": 6,
   "prs": [
     {
       "number": 647,
@@ -35,6 +35,12 @@
       "title": "fix: skip GCS push per compose dataset",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/641"
+    },
+    {
+      "number": 203,
+      "title": "chore(deps-dev): bump eslint from 10.6.0 to 10.7.0",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/203"
     },
     {
       "number": 67,
@@ -806,7 +812,9 @@
       "untracked_files": 0
     }
   },
-  "warnings": [],
+  "warnings": [
+    "Many open PRs: 6"
+  ],
   "radar": {
     "available": true,
     "probe_date": "2026-07-13",
