@@ -17,6 +17,7 @@ Configuration via environment variables:
 
 import json
 import os
+import re
 import time
 from datetime import datetime, timezone
 from pathlib import Path
@@ -421,17 +422,40 @@ def _search_github_issues(
     return results
 
 
+def _word_match(query: str, text: str) -> bool:
+    """Check if each word of query appears as a whole word in text.
+
+    Uses ``\\b`` word boundary — ``\"pubblica\"`` matches ``\"finanza pubblica\"``
+    but NOT ``\"pubblicati\"``. Case-insensitive.
+
+    Args:
+        query: Search query (one or more words)
+        text: Text to search in
+
+    Returns:
+        True if ALL words in query appear as whole words in text.
+    """
+    words = query.lower().split()
+    text_lower = text.lower()
+    for word in words:
+        if not re.search(r"\b" + re.escape(word) + r"\b", text_lower):
+            return False
+    return True
+
+
 def _search_topic_index(query: str, topic_data: dict) -> dict[str, list[dict[str, object]]]:
     """Search datasets and analyses in the topic_index data.
 
+    Uses word-boundary matching (``_word_match``) on slug, name, and source
+    to avoid false positives from substring matches.
+
     Args:
-        query: Search query (case-insensitive substring match)
+        query: Search query
         topic_data: Parsed topic_index.json content
 
     Returns:
         Dict with 'datasets' and 'analyses' lists.
     """
-    q = query.lower()
     datasets_found: list[dict[str, object]] = []
     analyses_found: list[dict[str, object]] = []
 
@@ -444,7 +468,10 @@ def _search_topic_index(query: str, topic_data: dict) -> dict[str, list[dict[str
                 slug = ds.get("slug", "")
                 name = ds.get("name", "")
                 if slug not in seen_slugs and (
-                    q in slug.lower() or q in name.lower() or q in source.lower()
+                    query.lower()
+                    in slug.lower()  # substring su slug (identificatori con underscore)
+                    or _word_match(query, name)  # word boundary su name (testo umano)
+                    or _word_match(query, source)  # word boundary su source (testo umano)
                 ):
                     seen_slugs.add(slug)
                     datasets_found.append(
@@ -464,7 +491,11 @@ def _search_topic_index(query: str, topic_data: dict) -> dict[str, list[dict[str
         a_slug = analysis.get("slug", "")
         a_name = analysis.get("name", "")
         a_datasets = " ".join(analysis.get("datasets", []))
-        if q in a_slug.lower() or q in a_name.lower() or q in a_datasets.lower():
+        if (
+            query.lower() in a_slug.lower()  # substring su slug analisi
+            or _word_match(query, a_name)  # word boundary su nome analisi
+            or query.lower() in a_datasets.lower()  # substring su dataset collegati
+        ):
             analyses_found.append(
                 {
                     "slug": a_slug,

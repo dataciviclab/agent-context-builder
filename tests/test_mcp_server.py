@@ -403,6 +403,47 @@ def test_search_topic_index_no_match():
 
 
 @pytest.mark.contract
+def test_search_topic_index_word_boundary():
+    """_search_topic_index uses word boundary on name: 'pubblica' ∌ 'pubblicati'."""
+    topic = {
+        "datasets_by_source": {
+            "Terna": [
+                {
+                    "slug": "terna_capacita_rinnovabile",
+                    "name": "Terna Capacità Rinnovabile",
+                    "period": {"start": 2015},
+                },
+            ],
+            "MEF": [
+                {
+                    "slug": "dipendenti_pubblici",
+                    "name": "Dipendenti Pubblici",
+                    "period": {"start": 2010},
+                },
+            ],
+        },
+        "analyses": [],
+    }
+    # 'pubblica' in source "dati pubblicati su terna.com" era un falso positivo
+    # Con word boundary: NON deve matchare
+    source_terna = "Terna S.p.A. — dati pubblicati su terna.com"
+    topic["datasets_by_source"]["Terna"][0]["source"] = source_terna
+    topic["datasets_by_source"]["MEF"][0]["source"] = "MEF"
+
+    result = mcp_server._search_topic_index("pubblica", topic)
+    slugs = [d["slug"] for d in result["datasets"]]
+    assert "terna_capacita_rinnovabile" not in slugs, (
+        "word boundary: 'pubblica' non deve matchare 'pubblicati'"
+    )
+    # 'pubblici' DEVE matchare (parola intera in nome/slug)
+    result2 = mcp_server._search_topic_index("pubblici", topic)
+    slugs2 = [d["slug"] for d in result2["datasets"]]
+    assert "dipendenti_pubblici" in slugs2, (
+        "'pubblici' deve matchare 'dipendenti_pubblici' via slug (substring)"
+    )
+
+
+@pytest.mark.contract
 def test_search_topic_index_empty_topic():
     """_search_topic_index handles empty topic data gracefully."""
     assert mcp_server._search_topic_index("test", {}) == {"datasets": [], "analyses": []}
