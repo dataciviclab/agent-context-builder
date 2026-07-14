@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-14T12:28:26.348337",
+  "generated_at": "2026-07-14T13:44:04.847296",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -230,6 +230,16 @@
         }
       }
     ],
+    "Eligendo \u2014 Archivio storico elettorale del DAIT (Ministero dell'Interno)": [
+      {
+        "slug": "elezioni_politiche",
+        "name": "Elezioni Politiche 1948-2022",
+        "period": {
+          "start": 1948,
+          "end": 2022
+        }
+      }
+    ],
     "Ministero della Salute \u2014 Open Data": [
       {
         "slug": "farmacie",
@@ -426,6 +436,16 @@
         "name": "MIM \u2014 Bambini Scuola Infanzia per Cittadinanza (2018-2025)",
         "period": {
           "start": 2018,
+          "end": 2025
+        }
+      }
+    ],
+    "MUR \u2014 USTAT (Ufficio Statistica e Studi)": [
+      {
+        "slug": "mur_immatricolati",
+        "name": "Immatricolati Universitari",
+        "period": {
+          "start": 1998,
           "end": 2025
         }
       }
@@ -637,14 +657,6 @@
         "period": {
           "start": 2026,
           "end": 2026
-        }
-      },
-      {
-        "slug": "elezioni_politiche_2022",
-        "name": "Elezioni Politiche 2022 \u2014 Camera e Senato",
-        "period": {
-          "start": 2022,
-          "end": 2022
         }
       }
     ],

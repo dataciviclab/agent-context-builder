@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T12:28:26.348337",
+  "generated_at": "2026-07-14T13:44:04.847296",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -10,20 +10,8 @@
     "source-observatory",
     "lab-connectors"
   ],
-  "open_prs": 5,
+  "open_prs": 3,
   "prs": [
-    {
-      "number": 650,
-      "title": "chore(post-merge): aggiorna registry per PR #649",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/650"
-    },
-    {
-      "number": 647,
-      "title": "intake: candidate elezioni-politiche \u2014 Camera+Senato 1948-2022",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/647"
-    },
     {
       "number": 646,
       "title": "intake: candidate mur-iscritti (#629)",
@@ -43,7 +31,7 @@
       "url": "https://github.com/dataciviclab/lab-connectors/pull/70"
     }
   ],
-  "open_issues": 93,
+  "open_issues": 97,
   "issues": [
     {
       "number": 640,
@@ -164,6 +152,18 @@
       "title": "Proposta intake: Operatori Economici Consip (dati.consip.it)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/375"
+    },
+    {
+      "number": 412,
+      "title": "analisi: elezioni_politiche \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/412"
+    },
+    {
+      "number": 411,
+      "title": "analisi: mur_immatricolati \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/411"
     },
     {
       "number": 408,
@@ -418,6 +418,18 @@
       "url": "https://github.com/dataciviclab/toolkit/issues/391"
     },
     {
+      "number": 205,
+      "title": "follow-up: pagina e tema per elezioni_politiche",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/205"
+    },
+    {
+      "number": 204,
+      "title": "follow-up: pagina e tema per mur_immatricolati",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/204"
+    },
+    {
       "number": 202,
       "title": "follow-up: pagina e tema per personale_ssn",
       "repo": "data-explorer",
@@ -607,6 +619,20 @@
   "open_discussions": 20,
   "discussions": [
     {
+      "number": 405,
+      "title": "RNA Aiuti di Stato \u2014 11 domande su 17 milioni di aiuti pubblici alle imprese (2017-2026)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/405",
+      "category": "Domanda"
+    },
+    {
+      "number": 410,
+      "title": "ISTAT Occupazione \u2014 11 domande sul lavoro provincia per provincia in Italia (2018-2025)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/410",
+      "category": "Domanda"
+    },
+    {
       "number": 409,
       "title": "ACI Auto Nuove \u2014 11 domande su 8 anni di immatricolazioni e transizione energetica (2017-2024)",
       "repo": "dataciviclab",
@@ -640,13 +666,6 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/404",
       "category": "Presentazioni"
-    },
-    {
-      "number": 405,
-      "title": "RNA Aiuti di Stato \u2014 11 domande su 17 milioni di aiuti pubblici alle imprese (2017-2026)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/405",
-      "category": "Domanda"
     },
     {
       "number": 396,
@@ -737,13 +756,6 @@
       "title": "[Annunci] Dati Eurostat NUTS3 puliti e queryabili \u2014 PIL, occupazione, crimine, demografia a livello provinciale",
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/353",
-      "category": "Annunci"
-    },
-    {
-      "number": 347,
-      "title": "[open-siope] 6 discussioni aperte sulla spesa pubblica italiana",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/347",
       "category": "Annunci"
     }
   ],
@@ -851,11 +863,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-07-13",
+    "generated_at": "2026-07-14",
     "summary": {
-      "total": 81,
+      "total": 83,
       "by_status": {
-        "ok": 81,
+        "ok": 83,
         "warn": 0,
         "error": 0
       }
@@ -866,10 +878,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-07-13",
+    "updated_at": "2026-07-14",
     "summary": {
-      "total": 78,
-      "published": 60
+      "total": 79,
+      "published": 62
     },
     "datasets": [
       {
@@ -2719,22 +2731,107 @@
         ]
       },
       {
-        "slug": "elezioni_politiche_2022",
-        "name": "Elezioni Politiche 2022 \u2014 Camera e Senato",
-        "stage": "incubating",
+        "slug": "elezioni_politiche",
+        "name": "Elezioni Politiche 1948-2022",
+        "stage": "published",
         "period": {
-          "start": 2022,
+          "start": 1948,
           "end": 2022
         },
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/elezioni_politiche_2022/2022/elezioni_politiche_2022_2022_clean.parquet",
+          "path": "gs://dataciviclab-clean/elezioni_politiche/2022/elezioni_politiche_2022_clean.parquet",
           "multi_file": false
         },
         "metric_columns": 7,
-        "dimension_columns": 12,
-        "column_count": 19,
-        "columns": []
+        "dimension_columns": 14,
+        "column_count": 21,
+        "columns": [
+          {
+            "name": "data_elezione",
+            "role": "dimension"
+          },
+          {
+            "name": "camera_senato",
+            "role": "dimension"
+          },
+          {
+            "name": "circoscrizione",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "comune",
+            "role": "dimension"
+          },
+          {
+            "name": "collegio_plurinominale",
+            "role": "dimension"
+          },
+          {
+            "name": "collegio_uninominale",
+            "role": "dimension"
+          },
+          {
+            "name": "elettori_totali",
+            "role": "metric"
+          },
+          {
+            "name": "elettori_maschi",
+            "role": "metric"
+          },
+          {
+            "name": "votanti_totali",
+            "role": "metric"
+          },
+          {
+            "name": "votanti_maschi",
+            "role": "metric"
+          },
+          {
+            "name": "schede_biache",
+            "role": "metric"
+          },
+          {
+            "name": "lista",
+            "role": "dimension"
+          },
+          {
+            "name": "voti_lista",
+            "role": "metric"
+          },
+          {
+            "name": "descr_lista",
+            "role": "dimension"
+          },
+          {
+            "name": "cognome",
+            "role": "dimension"
+          },
+          {
+            "name": "nome",
+            "role": "dimension"
+          },
+          {
+            "name": "luogo_nascita",
+            "role": "dimension"
+          },
+          {
+            "name": "data_nascita",
+            "role": "dimension"
+          },
+          {
+            "name": "sesso",
+            "role": "dimension"
+          },
+          {
+            "name": "voti_candidato",
+            "role": "metric"
+          }
+        ]
       },
       {
         "slug": "elezioni_referendum",
@@ -4780,6 +4877,45 @@
         "dimension_columns": 5,
         "column_count": 6,
         "columns": []
+      },
+      {
+        "slug": "mur_immatricolati",
+        "name": "Immatricolati Universitari",
+        "stage": "published",
+        "period": {
+          "start": 1998,
+          "end": 2025
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/mur_immatricolati/2025/mur_immatricolati_2025_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 1,
+        "dimension_columns": 4,
+        "column_count": 5,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "classe_cod",
+            "role": "dimension"
+          },
+          {
+            "name": "classe_nome",
+            "role": "dimension"
+          },
+          {
+            "name": "sesso",
+            "role": "dimension"
+          },
+          {
+            "name": "immatricolati",
+            "role": "metric"
+          }
+        ]
       },
       {
         "slug": "opencivitas_fsc_2025_rso",
@@ -7248,6 +7384,7 @@
       "dipendenti_pubblici",
       "elezioni_comunali",
       "elezioni_europee",
+      "elezioni_politiche",
       "elezioni_referendum",
       "fts_eu_grants",
       "inps_pensioni_trimestrale",
@@ -7268,6 +7405,7 @@
       "mef_rappresentanti_partecipate",
       "mim_alunni_corso_eta",
       "mim_scuola_infanzia",
+      "mur_immatricolati",
       "opencivitas_fsc_2025_rso",
       "opencoesione_progetti",
       "openga_ricorsi_cds",

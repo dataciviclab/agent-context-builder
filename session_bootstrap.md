@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-14T12:28:26.348337
+**Generated**: 2026-07-14T13:44:04.847296
 
 ## 🔍 SCOUTING
 
@@ -11,8 +11,8 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 81 candidates — 81 ok
-**Dataset Catalog**: 60 published · 60 public · updated 2026-07-13
+**Pipeline**: 83 candidates — 83 ok
+**Dataset Catalog**: 62 published · 62 public · updated 2026-07-14
 
 ## 📊 ANALYSES
 
@@ -44,26 +44,24 @@
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
   · **Terzo settore**: cinque-per-mille
-  ⚠ 59 dataset published non ancora su explorer:
+  ⚠ 61 dataset published non ancora su explorer:
     · aci_prime_iscrizioni_autovetture
     · ade_cinque_per_mille
     · aifa_spesa_consumo
     · anac_bandi_gara
     · anpr_mobilita_residenziale
-    · ... e altri 54
+    · ... e altri 56
   **Deploy**: ✅ success (2026-07-14)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#650](https://github.com/dataciviclab/dataset-incubator/pull/650): chore(post-merge): aggiorna registry per PR #649
-- [dataset-incubator#647](https://github.com/dataciviclab/dataset-incubator/pull/647): intake: candidate elezioni-politiche — Camera+Senato 1948-2022
 - [dataset-incubator#646](https://github.com/dataciviclab/dataset-incubator/pull/646): intake: candidate mur-iscritti (#629)
 - [dataset-incubator#641](https://github.com/dataciviclab/dataset-incubator/pull/641): fix: skip GCS push per compose dataset
 - [lab-connectors#70](https://github.com/dataciviclab/lab-connectors/pull/70): feat: download(url) -> bytes standalone (closes #68)
 **Discussions**: 20 open
+  · [Domanda] RNA Aiuti di Stato — 11 domande su 17 milioni di aiuti pubblici alle imprese (2017-2026)
+  · [Domanda] ISTAT Occupazione — 11 domande sul lavoro provincia per provincia in Italia (2018-2025)
   · [Domanda] ACI Auto Nuove — 11 domande su 8 anni di immatricolazioni e transizione energetica (2017-2024)
-  · [Domanda] Elezioni Europee — 10 domande su 45 anni di voto in Italia (1979-2024)
-  · [Domanda] Consumo di Suolo ISPRA — 11 domande sulla cementificazione in Italia (2006-2024)
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
