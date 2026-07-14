@@ -354,3 +354,217 @@ def test_refresh_context_api_error(monkeypatch):
 
     assert result["ok"] is False
     assert result["status_code"] == 403
+
+
+# ── search ─────────────────────────────────────────────────────────────────
+
+
+@pytest.mark.contract
+def test_search_topic_index_matches_name():
+    """_search_topic_index matches dataset slug, name and source case-insensitive."""
+    topic = {
+        "datasets_by_source": {
+            "ISPRA": [
+                {"slug": "ispra_ru_base", "name": "Rifiuti Urbani", "period": {"start": 2020}},
+            ],
+            "MEF": [
+                {"slug": "irpef_comunale", "name": "IRPEF Comunale", "period": {"start": 2019}},
+            ],
+        },
+        "analyses": [
+            {
+                "slug": "irpef-comunale",
+                "name": "IRPEF Comunale 2019-2023",
+                "datasets": ["irpef_comunale"],
+                "status": "active",
+            },
+        ],
+    }
+    result = mcp_server._search_topic_index("rifiuti", topic)
+    assert len(result["datasets"]) == 1
+    assert result["datasets"][0]["slug"] == "ispra_ru_base"
+
+    result2 = mcp_server._search_topic_index("irpef", topic)
+    assert len(result2["datasets"]) == 1
+    assert len(result2["analyses"]) == 1
+    assert result2["analyses"][0]["slug"] == "irpef-comunale"
+
+
+@pytest.mark.contract
+def test_search_topic_index_no_match():
+    """_search_topic_index returns empty lists when nothing matches."""
+    topic = {
+        "datasets_by_source": {"ISTAT": [{"slug": "popolazione", "name": "Popolazione"}]},
+        "analyses": [],
+    }
+    result = mcp_server._search_topic_index("clima", topic)
+    assert result["datasets"] == []
+    assert result["analyses"] == []
+
+
+@pytest.mark.contract
+def test_search_topic_index_word_boundary():
+    """_search_topic_index uses word boundary on name: 'pubblica' ∌ 'pubblicati'."""
+    topic = {
+        "datasets_by_source": {
+            "Terna": [
+                {
+                    "slug": "terna_capacita_rinnovabile",
+                    "name": "Terna Capacità Rinnovabile",
+                    "period": {"start": 2015},
+                },
+            ],
+            "MEF": [
+                {
+                    "slug": "dipendenti_pubblici",
+                    "name": "Dipendenti Pubblici",
+                    "period": {"start": 2010},
+                },
+            ],
+        },
+        "analyses": [],
+    }
+    # 'pubblica' in source "dati pubblicati su terna.com" era un falso positivo
+    # Con word boundary: NON deve matchare
+    source_terna = "Terna S.p.A. — dati pubblicati su terna.com"
+    topic["datasets_by_source"]["Terna"][0]["source"] = source_terna
+    topic["datasets_by_source"]["MEF"][0]["source"] = "MEF"
+
+    result = mcp_server._search_topic_index("pubblica", topic)
+    slugs = [d["slug"] for d in result["datasets"]]
+    assert "terna_capacita_rinnovabile" not in slugs, (
+        "word boundary: 'pubblica' non deve matchare 'pubblicati'"
+    )
+    # 'pubblici' DEVE matchare (parola intera in nome/slug)
+    result2 = mcp_server._search_topic_index("pubblici", topic)
+    slugs2 = [d["slug"] for d in result2["datasets"]]
+    assert "dipendenti_pubblici" in slugs2, (
+        "'pubblici' deve matchare 'dipendenti_pubblici' via slug (substring)"
+    )
+
+
+@pytest.mark.contract
+def test_search_topic_index_empty_topic():
+    """_search_topic_index handles empty topic data gracefully."""
+    assert mcp_server._search_topic_index("test", {}) == {"datasets": [], "analyses": []}
+
+
+@pytest.mark.adapter
+def test_search_github_issues_api_error():
+    """_search_github_issues returns empty list on API error instead of raising."""
+    fake = FakeHttpClient()
+    search_url = "https://api.github.com/search/issues"
+    fake.responses[search_url] = HttpResult(
+        response=None,
+        err=RuntimeError("403 rate limit exceeded"),
+    )
+    with patch("agent_context_builder.mcp_server.HttpClient") as mock_cls:
+        mock_cls.return_value = fake
+        result = mcp_server._search_github_issues("test", "fake-token", limit=5)
+
+    assert result == []
+
+
+@pytest.mark.adapter
+def test_search_github_issues_malformed_json():
+    """_search_github_issues handles malformed JSON response."""
+    fake = FakeHttpClient()
+    url = "https://api.github.com/search/issues"
+    fake.responses[url] = HttpResult(
+        response=fake_response(200, text="not json"),
+        err=None,
+    )
+    with patch("agent_context_builder.mcp_server.HttpClient") as mock_cls:
+        mock_cls.return_value = fake
+        result = mcp_server._search_github_issues("test", "fake-token", limit=5)
+
+    assert result == []
+
+
+@pytest.mark.adapter
+def test_search_github_issues_success():
+    """_search_github_issues parses valid search results correctly."""
+    fake = FakeHttpClient()
+    url = "https://api.github.com/search/issues"
+    fake.responses[url] = HttpResult(
+        response=fake_response(
+            200,
+            json_data={
+                "total_count": 1,
+                "items": [
+                    {
+                        "number": 42,
+                        "title": "Test issue about rifiuti",
+                        "state": "open",
+                        "html_url": "https://github.com/dataciviclab/test-repo/issues/42",
+                        "repository_url": "https://api.github.com/repos/dataciviclab/test-repo",
+                        "updated_at": "2026-07-14T10:00:00Z",
+                    },
+                ],
+            },
+        ),
+        err=None,
+    )
+    with patch("agent_context_builder.mcp_server.HttpClient") as mock_cls:
+        mock_cls.return_value = fake
+        result = mcp_server._search_github_issues("rifiuti", "fake-token", limit=5)
+
+    assert len(result) == 1
+    assert result[0]["number"] == 42
+    assert result[0]["repo"] == "dataciviclab/test-repo"
+    assert result[0]["type"] == "issue"
+    assert result[0]["state"] == "open"
+
+
+@pytest.mark.adapter
+def test_search_github_issues_detects_pr():
+    """_search_github_issues marks items with pull_request field as type 'pr'."""
+    fake = FakeHttpClient()
+    url = "https://api.github.com/search/issues"
+    fake.responses[url] = HttpResult(
+        response=fake_response(
+            200,
+            json_data={
+                "total_count": 1,
+                "items": [
+                    {
+                        "number": 99,
+                        "title": "feat: add new dataset",
+                        "state": "open",
+                        "html_url": "https://github.com/dataciviclab/repo/pull/99",
+                        "repository_url": "https://api.github.com/repos/dataciviclab/repo",
+                        "pull_request": {"url": "..."},
+                        "updated_at": "2026-07-14T10:00:00Z",
+                    },
+                ],
+            },
+        ),
+        err=None,
+    )
+    with patch("agent_context_builder.mcp_server.HttpClient") as mock_cls:
+        mock_cls.return_value = fake
+        result = mcp_server._search_github_issues("dataset", "fake-token", limit=5)
+
+    assert len(result) == 1
+    assert result[0]["type"] == "pr"
+
+
+@pytest.mark.contract
+def test_search_tool_no_token(monkeypatch):
+    """search() works without token (just topic_index search)."""
+    monkeypatch.delenv("GITHUB_TOKEN", raising=False)
+    monkeypatch.setenv("ACB_ENV_FILE", "")
+    monkeypatch.setattr(mcp_server, "_ENV_LOADED", True)
+
+    fake = FakeHttpClient()
+    _patch_fetch(fake, "topic_index.json", text='{"datasets_by_source": {}, "analyses": []}')
+
+    with patch("agent_context_builder.mcp_server.HttpClient") as mock_cls:
+        mock_cls.return_value = fake
+        result = mcp_server.search(query="test", limit=5)
+
+    assert result["ok"] is True
+    assert result["query"] == "test"
+    assert "issues" in result["results"]
+    assert "datasets" in result["results"]
+    assert "analyses" in result["results"]

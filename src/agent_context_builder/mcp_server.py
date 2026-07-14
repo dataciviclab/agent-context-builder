@@ -17,6 +17,7 @@ Configuration via environment variables:
 
 import json
 import os
+import re
 import time
 from datetime import datetime, timezone
 from pathlib import Path
@@ -358,6 +359,207 @@ def refresh_context() -> dict[str, object]:
             }
 
     return guard_timed(_exec, "refresh_context")
+
+
+def _search_github_issues(
+    query: str, token: str | None, limit: int = 10
+) -> list[dict[str, object]]:
+    """Search issues and PRs across dataciviclab org via GitHub Search API.
+
+    Args:
+        query: Search query (natural language, full-text on title + body)
+        token: GitHub token (optional; affects rate limit)
+        limit: Max results (default 10, max 50)
+
+    Returns:
+        List of matching issues/PRs with repo, number, title, state, url, type.
+    """
+    url = "https://api.github.com/search/issues"
+    headers = (
+        {"Authorization": f"token {token}", "Accept": "application/vnd.github+json"}
+        if token
+        else {}
+    )
+    params = {
+        "q": f"{query} org:dataciviclab",
+        "sort": "updated",
+        "order": "desc",
+        "per_page": min(limit, 50),
+    }
+    client = HttpClient(timeout=10)
+    try:
+        result = client.get(url, params=params, headers=headers)
+    except Exception as exc:
+        _log.warning("search_issues", "http_error", error=str(exc))
+        return []
+
+    if not result.is_ok or result.response is None:
+        _log.warning("search_issues", "failed", error=str(result.err))
+        return []
+
+    try:
+        response = result.response
+        data = response.json()
+        items = data.get("items", [])
+    except Exception as exc:
+        _log.warning("search_issues", "parse_error", error=str(exc))
+        return []
+
+    results = []
+    for item in items:
+        repo_full = item.get("repository_url", "").replace("https://api.github.com/repos/", "")
+        results.append(
+            {
+                "repo": repo_full or "",
+                "number": item.get("number"),
+                "title": item.get("title", ""),
+                "state": item.get("state", ""),
+                "url": item.get("html_url", ""),
+                "type": "pr" if "pull_request" in item else "issue",
+                "updated_at": item.get("updated_at", ""),
+            }
+        )
+    return results
+
+
+def _word_match(query: str, text: str) -> bool:
+    """Check if each word of query appears as a whole word in text.
+
+    Uses ``\\b`` word boundary — ``\"pubblica\"`` matches ``\"finanza pubblica\"``
+    but NOT ``\"pubblicati\"``. Case-insensitive.
+
+    Args:
+        query: Search query (one or more words)
+        text: Text to search in
+
+    Returns:
+        True if ALL words in query appear as whole words in text.
+    """
+    words = query.lower().split()
+    text_lower = text.lower()
+    for word in words:
+        if not re.search(r"\b" + re.escape(word) + r"\b", text_lower):
+            return False
+    return True
+
+
+def _search_topic_index(query: str, topic_data: dict) -> dict[str, list[dict[str, object]]]:
+    """Search datasets and analyses in the topic_index data.
+
+    Uses word-boundary matching (``_word_match``) on slug, name, and source
+    to avoid false positives from substring matches.
+
+    Args:
+        query: Search query
+        topic_data: Parsed topic_index.json content
+
+    Returns:
+        Dict with 'datasets' and 'analyses' lists.
+    """
+    datasets_found: list[dict[str, object]] = []
+    analyses_found: list[dict[str, object]] = []
+
+    # Search datasets by slug, name, source
+    seen_slugs: set[str] = set()
+    for section in ("datasets_by_source", "candidates_by_source"):
+        entries = topic_data.get(section, {})
+        for source, datasets in entries.items():
+            for ds in datasets:
+                slug = ds.get("slug", "")
+                name = ds.get("name", "")
+                if slug not in seen_slugs and (
+                    query.lower()
+                    in slug.lower()  # substring su slug (identificatori con underscore)
+                    or _word_match(query, name)  # word boundary su name (testo umano)
+                    or _word_match(query, source)  # word boundary su source (testo umano)
+                ):
+                    seen_slugs.add(slug)
+                    datasets_found.append(
+                        {
+                            "slug": slug,
+                            "name": name,
+                            "source": source,
+                            "period": ds.get("period"),
+                            "stage": "published"
+                            if section == "datasets_by_source"
+                            else "incubating",
+                        }
+                    )
+
+    # Search analyses by slug, name, datasets
+    for analysis in topic_data.get("analyses", []):
+        a_slug = analysis.get("slug", "")
+        a_name = analysis.get("name", "")
+        a_datasets = " ".join(analysis.get("datasets", []))
+        if (
+            query.lower() in a_slug.lower()  # substring su slug analisi
+            or _word_match(query, a_name)  # word boundary su nome analisi
+            or query.lower() in a_datasets.lower()  # substring su dataset collegati
+        ):
+            analyses_found.append(
+                {
+                    "slug": a_slug,
+                    "name": a_name,
+                    "datasets": analysis.get("datasets", []),
+                    "status": analysis.get("status", ""),
+                }
+            )
+
+    return {"datasets": datasets_found, "analyses": analyses_found}
+
+
+@mcp.tool(
+    description=(
+        "Cerca in issue, PR, dataset e analisi del DataCivicLab. "
+        "Combina GitHub Search API (issue/PR full-text) con l'indice locale "
+        "(dataset, analisi). I risultati sono raggruppati per tipo."
+    ),
+    structured_output=True,
+)
+def search(query: str, limit: int = 10) -> dict[str, object]:
+    """Search across the DataCivicLab ecosystem.
+
+    Args:
+        query: Testo da cercare (es. \"disuguaglianza\", \"sanità\", \"appalti\")
+        limit: Massimo risultati per sezione (default 10, max 50)
+
+    Returns:
+        Risultati raggruppati per tipo (issues, datasets, analyses).
+    """
+
+    def _exec() -> dict[str, object]:
+        token = _get_env("GITHUB_TOKEN")
+
+        # 1. Search GitHub Issues + PRs
+        issues = _search_github_issues(query, token, limit)
+
+        # 2. Fetch topic_index and search datasets + analyses
+        try:
+            topic_raw = _fetch("topic_index.json", retries=0)
+            topic_data = json.loads(topic_raw)
+        except Exception as exc:
+            _log.warning("search", "topic_index_fetch_failed", error=str(exc))
+            topic_data = {}
+
+        local = (
+            _search_topic_index(query, topic_data)
+            if topic_data
+            else {"datasets": [], "analyses": []}
+        )
+
+        total = len(issues) + len(local["datasets"]) + len(local["analyses"])
+        return {
+            "query": query,
+            "total": total,
+            "results": {
+                "issues": issues,
+                "datasets": local["datasets"],
+                "analyses": local["analyses"],
+            },
+            "ok": True,
+        }
+
+    return guard_timed(_exec, "search")
 
 
 def main() -> None:
