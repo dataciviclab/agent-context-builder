@@ -50,10 +50,11 @@ agent-context-mcp
 Tool MCP:
 
 | Tool | Uso |
-|---|---|
+|---|---|---|
 | `session_bootstrap` | orientamento rapido: repo attivi, PR, issue, discussion |
 | `workspace_triage` | triage machine-readable: PR, issue, warning, git state |
 | `topic_index` | indice v2: repos, datasets per fonte, topic operativi |
+| `search(query, limit=10)` | cerca cross-repo in issue, PR, dataset e analisi (GitHub Search API + topic_index) |
 | `refresh_context` | triggera build CI; richiede `GITHUB_TOKEN` con scope `workflow` |
 
 Esempio `settings.json`:
@@ -121,7 +122,7 @@ Il builder non deve crashare per contesto parziale:
 |---|---|
 | rate limit / 403 GitHub | campi `null`, errore in JSON |
 | repo privato senza token | repo saltato, warning registrato |
-| nessun token | discussion saltate |
+| nessun token | discussion saltate; `search()` usa solo topic_index (senza GitHub Search API) |
 | repo locale assente | `available: false`, `reason: path_not_found` |
 | path non git | `available: false`, `reason: not_git_repo` |
 | local mode non attivo | `available: false`, `reason: local_disabled` |
