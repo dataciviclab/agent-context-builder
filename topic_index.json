@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-14T13:44:04.847296",
+  "generated_at": "2026-07-14T18:12:05.540680",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -29,6 +29,18 @@
     "lab-connectors": {
       "description": "Package Python condiviso per i repo del DataCivicLab.",
       "url": "https://github.com/dataciviclab/lab-connectors"
+    },
+    "eurostat": {
+      "description": "Eurostat datasets, connectors and pipelines \u2014 designed for regional (NUTS2/NUTS3) analysis across Europe.",
+      "url": "https://github.com/dataciviclab/eurostat"
+    },
+    "open-siope": {
+      "description": "open-siope \u2014 Spesa e entrate di comuni, ASL, regioni, universit\u00e0 italiane. Dati SIOPE puliti e aperti.",
+      "url": "https://github.com/dataciviclab/open-siope"
+    },
+    "italia-corpus": {
+      "description": "Fork Lab di ahmeabd/italia-corpus. Corpus della legislazione italiana in Markdown da Normattiva, con tooling per estrazione metadati e ricerca full-text via MCP.",
+      "url": "https://github.com/dataciviclab/italia-corpus"
     }
   },
   "datasets_by_source": {
@@ -446,6 +458,14 @@
         "name": "Immatricolati Universitari",
         "period": {
           "start": 1998,
+          "end": 2025
+        }
+      },
+      {
+        "slug": "mur_iscritti",
+        "name": "Iscritti Universitari per Ateneo",
+        "period": {
+          "start": 2000,
           "end": 2025
         }
       }

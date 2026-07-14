@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-14T13:44:04.847296
+**Generated**: 2026-07-14T18:12:05.540680
 
 ## 🔍 SCOUTING
 
@@ -12,7 +12,7 @@
 ## 📥 INTAKE
 
 **Pipeline**: 83 candidates — 83 ok
-**Dataset Catalog**: 62 published · 62 public · updated 2026-07-14
+**Dataset Catalog**: 63 published · 63 public · updated 2026-07-14
 
 ## 📊 ANALYSES
 
@@ -44,27 +44,27 @@
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
   · **Terzo settore**: cinque-per-mille
-  ⚠ 61 dataset published non ancora su explorer:
+  ⚠ 62 dataset published non ancora su explorer:
     · aci_prime_iscrizioni_autovetture
     · ade_cinque_per_mille
     · aifa_spesa_consumo
     · anac_bandi_gara
     · anpr_mobilita_residenziale
-    · ... e altri 56
+    · ... e altri 57
   **Deploy**: ✅ success (2026-07-14)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#646](https://github.com/dataciviclab/dataset-incubator/pull/646): intake: candidate mur-iscritti (#629)
 - [dataset-incubator#641](https://github.com/dataciviclab/dataset-incubator/pull/641): fix: skip GCS push per compose dataset
 - [lab-connectors#70](https://github.com/dataciviclab/lab-connectors/pull/70): feat: download(url) -> bytes standalone (closes #68)
-**Discussions**: 20 open
-  · [Domanda] RNA Aiuti di Stato — 11 domande su 17 milioni di aiuti pubblici alle imprese (2017-2026)
-  · [Domanda] ISTAT Occupazione — 11 domande sul lavoro provincia per provincia in Italia (2018-2025)
-  · [Domanda] ACI Auto Nuove — 11 domande su 8 anni di immatricolazioni e transizione energetica (2017-2024)
+- [eurostat#99](https://github.com/dataciviclab/eurostat/pull/99): feat: add income inequality S80/S20 by NUTS2 (ILC_DI11_R) (#87)
+**Discussions**: 140 open
+  · [Domanda] ANPR Mobilità Residenziale — 13 domande che possiamo fare ai dati (2022-2026)
+  · [Domanda] Emissioni GHG in Italia — 10 domande su 33 anni di gas serra (1990-2023)
+  · [Domanda] PIL territoriale — 11 domande su 30 anni di economia italiana regione per regione (1995-2024)
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
 
-**Repos**: 7 attivi
+**Repos**: 10 attivi
 **Local git**: no workspace

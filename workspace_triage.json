@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T13:44:04.847296",
+  "generated_at": "2026-07-14T18:12:05.540680",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -8,16 +8,13 @@
     "toolkit",
     "data-explorer",
     "source-observatory",
-    "lab-connectors"
+    "lab-connectors",
+    "eurostat",
+    "open-siope",
+    "italia-corpus"
   ],
   "open_prs": 3,
   "prs": [
-    {
-      "number": 646,
-      "title": "intake: candidate mur-iscritti (#629)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/646"
-    },
     {
       "number": 641,
       "title": "fix: skip GCS push per compose dataset",
@@ -29,9 +26,15 @@
       "title": "feat: download(url) -> bytes standalone (closes #68)",
       "repo": "lab-connectors",
       "url": "https://github.com/dataciviclab/lab-connectors/pull/70"
+    },
+    {
+      "number": 99,
+      "title": "feat: add income inequality S80/S20 by NUTS2 (ILC_DI11_R) (#87)",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/pull/99"
     }
   ],
-  "open_issues": 97,
+  "open_issues": 104,
   "issues": [
     {
       "number": 640,
@@ -152,6 +155,12 @@
       "title": "Proposta intake: Operatori Economici Consip (dati.consip.it)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/375"
+    },
+    {
+      "number": 415,
+      "title": "analisi: mur_iscritti \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/415"
     },
     {
       "number": 412,
@@ -406,16 +415,16 @@
       "url": "https://github.com/dataciviclab/toolkit/issues/410"
     },
     {
-      "number": 403,
-      "title": "[Task] Quality Certificate \u2014 report unificato di validazione cross-layer",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/403"
-    },
-    {
       "number": 391,
       "title": "refactor: estrarre _write_reports() da run_full() in report_ops.py",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/391"
+    },
+    {
+      "number": 206,
+      "title": "follow-up: pagina e tema per mur_iscritti",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/206"
     },
     {
       "number": 205,
@@ -614,10 +623,74 @@
       "title": "feat(http): funzione standalone download(url) -> bytes",
       "repo": "lab-connectors",
       "url": "https://github.com/dataciviclab/lab-connectors/issues/68"
+    },
+    {
+      "number": 90,
+      "title": "dataset: Internet access by NACE and NUTS 2 region (ISOC_R_CI_IN_EN2)",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/issues/90"
+    },
+    {
+      "number": 88,
+      "title": "dataset: Cultural employment by NUTS 2 region (CULT_EMP_REG)",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/issues/88"
+    },
+    {
+      "number": 87,
+      "title": "dataset: Income inequality S80/S20 by NUTS 2 region (ILC_DI11_R)",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/issues/87"
+    },
+    {
+      "number": 77,
+      "title": "dataset: Inability to keep home adequately warm by NUTS 2 region (ILC_MDES01_R)",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/issues/77"
+    },
+    {
+      "number": 66,
+      "title": "dataset: National road freight transport by region of unloading NUTS3 (ROAD_GO_NA_RU3G)",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/issues/66"
+    },
+    {
+      "number": 28,
+      "title": "Estrarre firma presidente della Repubblica e presidente del Consiglio dal body",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/issues/28"
     }
   ],
-  "open_discussions": 20,
+  "open_discussions": 140,
   "discussions": [
+    {
+      "number": 393,
+      "title": "ANPR Mobilit\u00e0 Residenziale \u2014 13 domande che possiamo fare ai dati (2022-2026)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/393",
+      "category": "Domanda"
+    },
+    {
+      "number": 402,
+      "title": "Emissioni GHG in Italia \u2014 10 domande su 33 anni di gas serra (1990-2023)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/402",
+      "category": "Domanda"
+    },
+    {
+      "number": 414,
+      "title": "PIL territoriale \u2014 11 domande su 30 anni di economia italiana regione per regione (1995-2024)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/414",
+      "category": "Domanda"
+    },
+    {
+      "number": 413,
+      "title": "PNRR Progetti \u2014 11 domande su 280mila progetti e 150 miliardi del Piano (Italia Domani)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/413",
+      "category": "Domanda"
+    },
     {
       "number": 405,
       "title": "RNA Aiuti di Stato \u2014 11 domande su 17 milioni di aiuti pubblici alle imprese (2017-2026)",
@@ -696,13 +769,6 @@
       "category": "Domanda"
     },
     {
-      "number": 402,
-      "title": "Emissioni GHG in Italia \u2014 10 domande su 33 anni di gas serra (1990-2023)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/402",
-      "category": "Domanda"
-    },
-    {
       "number": 399,
       "title": "Votazioni Camera \u2014 10 domande su partecipazione, fiducia e presenza in Aula (2018-2025)",
       "repo": "dataciviclab",
@@ -738,13 +804,6 @@
       "category": "Domanda"
     },
     {
-      "number": 393,
-      "title": "ANPR Mobilit\u00e0 Residenziale \u2014 13 domande che possiamo fare ai dati (2022-2026)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/393",
-      "category": "Domanda"
-    },
-    {
       "number": 368,
       "title": "RNA \u2014 Aiuti di Stato: 17 milioni di aiuti alle imprese italiane ora in formato queryabile",
       "repo": "dataciviclab",
@@ -757,6 +816,832 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/353",
       "category": "Annunci"
+    },
+    {
+      "number": 347,
+      "title": "[open-siope] 6 discussioni aperte sulla spesa pubblica italiana",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/347",
+      "category": "Annunci"
+    },
+    {
+      "number": 326,
+      "title": "Quanto personale sanitario ha perso il SSN? Trend del personale dipendente ASL/AO/IRCCS per ruolo (2010-2021)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/326",
+      "category": "Domanda"
+    },
+    {
+      "number": 323,
+      "title": "Contenuti audio dalle analisi: usare NotebookLM per podcast e social?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/323",
+      "category": "Proposte"
+    },
+    {
+      "number": 322,
+      "title": "INPS stipendi \u2014 come sono cambiati per comune in 10 anni? C'\u00e8 un divario Nord-Sud per operai, impiegati e dirigenti?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/322",
+      "category": "Domanda"
+    },
+    {
+      "number": 316,
+      "title": "Terzo settore \u2014 quante istituzioni non profit ci sono, dove operano e quanti ci lavorano?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/316",
+      "category": "Domanda"
+    },
+    {
+      "number": 307,
+      "title": "ASIA ISTAT \u2014 Quante imprese e addetti ci sono nel mio comune?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/307",
+      "category": "Domanda"
+    },
+    {
+      "number": 288,
+      "title": "Corte Costituzionale \u2014 Come decide la Consulta?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/288",
+      "category": "Domanda"
+    },
+    {
+      "number": 273,
+      "title": "[Analisi] MIT Incidentalit\u00e0: l'andamento della mortalit\u00e0 stradale in Italia (2001\u20112018)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/273",
+      "category": "Analisi"
+    },
+    {
+      "number": 242,
+      "title": "AIFA Spesa Farmaceutica \u2014 il cardiovascolare traina il 63% della spesa, il divario Nord-Sud si allarga",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/242",
+      "category": "Analisi"
+    },
+    {
+      "number": 240,
+      "title": "Dove si accumulano pi\u00f9 cause pendenti in rapporto alla popolazione?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/240",
+      "category": "Domanda"
+    },
+    {
+      "number": 239,
+      "title": "Quanta parte delle entrate tributarie dipende da poche voci e quanto \u00e8 diffuso?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/239",
+      "category": "Domanda"
+    },
+    {
+      "number": 218,
+      "title": "[Analisi] Entrate dello Stato 2008-2024: nelle crisi cresce il peso dei prestiti?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/218",
+      "category": "Analisi"
+    },
+    {
+      "number": 210,
+      "title": "La geografia del calo iscrizioni nelle scuole primarie (2015-2024)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/210",
+      "category": "Domanda"
+    },
+    {
+      "number": 175,
+      "title": "Nuove categorie, stesso obiettivo: rendere piu' chiaro il passaggio da fonte a lettura pubblica",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/175",
+      "category": "Annunci"
+    },
+    {
+      "number": 224,
+      "title": "Come funziona il flusso tra repo Lab \u2014 e cosa manca?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/224",
+      "category": "Metodo"
+    },
+    {
+      "number": 197,
+      "title": "Quando una fonte puo' passare da radar-only a catalog-watch?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/197",
+      "category": "Q&A"
+    },
+    {
+      "number": 114,
+      "title": "Quali comuni dipendono di piu dai trasferimenti rispetto ai tributi propri?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/114",
+      "category": "Domanda"
+    },
+    {
+      "number": 91,
+      "title": "Come si finanziano davvero i grandi comuni italiani?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/91",
+      "category": "Domanda"
+    },
+    {
+      "number": 204,
+      "title": "Prezzi delle abitazioni per macro-area: le nuove costruzioni si stanno staccando dall'esistente?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/204",
+      "category": "Domanda"
+    },
+    {
+      "number": 206,
+      "title": "Disuguaglianza di reddito nelle regioni italiane: quali aree sono rimaste piu' indietro?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/206",
+      "category": "Domanda"
+    },
+    {
+      "number": 208,
+      "title": "Q&A - Come orientarsi nel Lab",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/208",
+      "category": "Q&A"
+    },
+    {
+      "number": 207,
+      "title": "Che cosa dovrebbe fare data-explorer nel Lab?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/207",
+      "category": "Q&A"
+    },
+    {
+      "number": 203,
+      "title": "Quando un clean di dataset-incubator e' abbastanza pronto per essere esposto pubblicamente?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/203",
+      "category": "Q&A"
+    },
+    {
+      "number": 202,
+      "title": "[Analisi] BDAP LEA: il peso della prevenzione nelle ASL italiane (2024)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/202",
+      "category": "Analisi"
+    },
+    {
+      "number": 199,
+      "title": "Come si entra nel Lab senza partire da un progetto completo?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/199",
+      "category": "Q&A"
+    },
+    {
+      "number": 196,
+      "title": "Quando una fonte entra in source-observatory?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/196",
+      "category": "Q&A"
+    },
+    {
+      "number": 195,
+      "title": "Quando un dataset e' abbastanza pronto per entrare in dataset-incubator?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/195",
+      "category": "Q&A"
+    },
+    {
+      "number": 135,
+      "title": "Quanta parte dei fondi UE 2014-2020 \u00e8 stata davvero spesa, per regione e per tema?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/135",
+      "category": "Domanda"
+    },
+    {
+      "number": 170,
+      "title": "[Analisi] Affitto e proprieta': un divario di densita' che non cambia in vent'anni",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/170",
+      "category": "Analisi"
+    },
+    {
+      "number": 169,
+      "title": "[Analisi] Trattamenti pensionistici sotto i 1000 euro: prime differenze regionali",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/169",
+      "category": "Analisi"
+    },
+    {
+      "number": 191,
+      "title": "Hai visto un dataset o portale interessante?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/191",
+      "category": "Q&A"
+    },
+    {
+      "number": 189,
+      "title": "Primi passi nel Lab",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/189",
+      "category": "Q&A"
+    },
+    {
+      "number": 178,
+      "title": "Come contribuire al Lab: cinque punti di ingresso",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/178",
+      "category": "Annunci"
+    },
+    {
+      "number": 176,
+      "title": "Quando ha senso pubblicare una prima lettura prima che sia completa",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/176",
+      "category": "Metodo"
+    },
+    {
+      "number": 171,
+      "title": "[Analisi] Fondi UE 2014-2020: il tema Ambiente e' l'unico con ratio sotto 1",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/171",
+      "category": "Analisi"
+    },
+    {
+      "number": 174,
+      "title": "Quando un dataset e' soprattutto un support dataset",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/174",
+      "category": "Metodo"
+    },
+    {
+      "number": 173,
+      "title": "Come leggiamo i proxy nei dati pubblici",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/173",
+      "category": "Metodo"
+    },
+    {
+      "number": 172,
+      "title": "Come usare la categoria Metodo",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/172",
+      "category": "Metodo"
+    },
+    {
+      "number": 168,
+      "title": "Come usare la categoria Domande",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/168",
+      "category": "Domanda"
+    },
+    {
+      "number": 130,
+      "title": "Come usare le Discussions del Lab",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/130",
+      "category": "Annunci"
+    },
+    {
+      "number": 166,
+      "title": "Come usare la categoria Analisi",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/166",
+      "category": "Analisi"
+    },
+    {
+      "number": 57,
+      "title": "Ciao a tutti da Marco! (Analisi dati, Salute territoriale e Machine Learning). Pronto a collaborare su dati farmaceutici e civici",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/57",
+      "category": "Presentazioni"
+    },
+    {
+      "number": 54,
+      "title": "[Metodo] Assunzioni, limiti e coerenza metodologica",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/54",
+      "category": "Metodo"
+    },
+    {
+      "number": 88,
+      "title": "Come varia la capacit\u00e0 fiscale tra comuni e regioni?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/88",
+      "category": "Domanda"
+    },
+    {
+      "number": 94,
+      "title": "Il carico della giustizia civile sta migliorando o peggiorando nei territori?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/94",
+      "category": "Domanda"
+    },
+    {
+      "number": 22,
+      "title": "Esiste una relazione tra costi e risultati nella gestione dei rifiuti?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/22",
+      "category": "Proposte"
+    },
+    {
+      "number": 115,
+      "title": "Il mix elettrico italiano si sta spostando dalle fonti fossili?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/115",
+      "category": "Domanda"
+    },
+    {
+      "number": 129,
+      "title": "[Domanda] Le regioni con minore dotazione sanitaria mostrano livelli pi\u00f9 alti di mortalit\u00e0 evitabile?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/129",
+      "category": "Domanda"
+    },
+    {
+      "number": 140,
+      "title": "Come cambia tra regioni e nel tempo la spesa farmaceutica a carico del SSN?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/140",
+      "category": "Domanda"
+    },
+    {
+      "number": 99,
+      "title": "[Progetto] Malasanit\u00e0 in Italia \u2014 Analisi dati su errori medici, sinistri e responsabilit\u00e0 sanitaria",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/99",
+      "category": "Proposte"
+    },
+    {
+      "number": 85,
+      "title": "[Presentazione] Ciao! Piacere, Francesco",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/85",
+      "category": "Presentazioni"
+    },
+    {
+      "number": 75,
+      "title": "[Progetto] Mobilit\u00e0, Trasporto Pubblico & Qualit\u00e0 dell'Aria",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/75",
+      "category": "Proposte"
+    },
+    {
+      "number": 74,
+      "title": "[Progetto] Spesa Pubblica Locale & Performance Ambientale",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/74",
+      "category": "Proposte"
+    },
+    {
+      "number": 73,
+      "title": "[Progetto] Inquinamento Atmosferico & Vulnerabilit\u00e0 Sociale",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/73",
+      "category": "Proposte"
+    },
+    {
+      "number": 59,
+      "title": "# RFC: Architettura Dati Scalabile - Shared Storage & DuckDB",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/59",
+      "category": "Proposte"
+    },
+    {
+      "number": 56,
+      "title": "\ud83d\ude80 Server Discord DataCivicLab \u2013 Coordinamento operativo e community",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/56",
+      "category": "Annunci"
+    },
+    {
+      "number": 53,
+      "title": "Ciao a tutti sono Simone \ud83d\udc4b",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/53",
+      "category": "Presentazioni"
+    },
+    {
+      "number": 52,
+      "title": "[Metodo] Pipeline dati standard del DataCivicLab",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/52",
+      "category": "Metodo"
+    },
+    {
+      "number": 51,
+      "title": "[Presentazione] Ciao a tutti, sono Giacomo",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/51",
+      "category": "Presentazioni"
+    },
+    {
+      "number": 49,
+      "title": "[Presentazione] Piacere, Pasquale!",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/49",
+      "category": "Presentazioni"
+    },
+    {
+      "number": 46,
+      "title": "[Metodo] KPI 20/80 e selezione degli indicatori chiave",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/46",
+      "category": "Metodo"
+    },
+    {
+      "number": 47,
+      "title": "\ud83d\udc4b Ciao a tutti!",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/47",
+      "category": "Presentazioni"
+    },
+    {
+      "number": 45,
+      "title": "Agricoltura Italia",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/45",
+      "category": "Proposte"
+    },
+    {
+      "number": 42,
+      "title": "[Metodo] Serie storiche disomogenee e cambi di perimetro",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/42",
+      "category": "Metodo"
+    },
+    {
+      "number": 35,
+      "title": "[Metodo] Gestione dei dati mancanti (missing data)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/35",
+      "category": "Metodo"
+    },
+    {
+      "number": 37,
+      "title": "[Metodo] Normalizzazione dei dati (pro capite, per km\u00b2, ecc.)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/37",
+      "category": "Metodo"
+    },
+    {
+      "number": 29,
+      "title": "ciao a tutti ,  sono Alessio",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/29",
+      "category": "Presentazioni"
+    },
+    {
+      "number": 30,
+      "title": "[Presentazione] Ciao a tutti , sono Gabriele \ud83d\udc4b",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/30",
+      "category": "Presentazioni"
+    },
+    {
+      "number": 28,
+      "title": "[Presentazione] Ari",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/28",
+      "category": "Presentazioni"
+    },
+    {
+      "number": 25,
+      "title": "[Presentazione] Luigi Mezza",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/25",
+      "category": "Presentazioni"
+    },
+    {
+      "number": 24,
+      "title": "[Presentazione] Ciao! Piacere, Andrea!",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/24",
+      "category": "Presentazioni"
+    },
+    {
+      "number": 23,
+      "title": "[Presentazione] Ciao! Piacere, Gabriele!",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/23",
+      "category": "Presentazioni"
+    },
+    {
+      "number": 96,
+      "title": "[Business] Enterprise demography in Europe \u2014 10 questions about where startups thrive and where they die (2008-2020)",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/discussions/96",
+      "category": "Question"
+    },
+    {
+      "number": 93,
+      "title": "[Economy] Labour productivity in Europe \u2014 10 questions about who produces most per worker and why (2000-2024)",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/discussions/93",
+      "category": "Question"
+    },
+    {
+      "number": 97,
+      "title": "[Innovation] R&D spending in Europe \u2014 10 questions about who invests in innovation and who falls behind (1980-2024)",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/discussions/97",
+      "category": "Question"
+    },
+    {
+      "number": 95,
+      "title": "[Health] Hospital beds in Europe \u2014 10 questions about healthcare capacity by region (1993-2024)",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/discussions/95",
+      "category": "Question"
+    },
+    {
+      "number": 94,
+      "title": "[Education] Early school leaving in Europe \u2014 10 questions about who drops out, where and why (2000-2025)",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/discussions/94",
+      "category": "Question"
+    },
+    {
+      "number": 91,
+      "title": "[Demography] Italy is aging fast: 11 regions have median age over 50, Sardegna aged +6.1 years in a decade",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/discussions/91",
+      "category": "Finding"
+    },
+    {
+      "number": 84,
+      "title": "[Social] At-risk-of-poverty in Italy: from Calabria (37.2%) to Bolzano (5.9%) \u2014 a 6\u00d7 divide across Italian regions",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/discussions/84",
+      "category": "Finding"
+    },
+    {
+      "number": 81,
+      "title": "[Health] Physicians in Italy: from Lazio (636/100k) to Basilicata (390/100k) \u2014 the regional healthcare divide",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/discussions/81",
+      "category": "Finding"
+    },
+    {
+      "number": 72,
+      "title": "[Environment] Soil erosion in Italy: from Verbano-Cusio-Ossola (35 t/ha) to Ferrara (0.5 t/ha) \u2014 a province-level analysis",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/discussions/72",
+      "category": "Finding"
+    },
+    {
+      "number": 62,
+      "title": "[Climate] Climate change in your province: heating and cooling degree days since 1980",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/discussions/62",
+      "category": "Finding"
+    },
+    {
+      "number": 61,
+      "title": "[Crime] Crime in Italy by province: 17 years of theft, assault, and fraud (2008\u20132024)",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/discussions/61",
+      "category": "Finding"
+    },
+    {
+      "number": 27,
+      "title": "[Ideas] Which Eurostat NUTS3 datasets should we add next? \ud83d\uddf3\ufe0f",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/discussions/27",
+      "category": "Ideas"
+    },
+    {
+      "number": 30,
+      "title": "[Question] Cross-dataset: can we compute NUTS3 GDP per capita by joining GDP (MIO_EUR) + Population?",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/discussions/30",
+      "category": "Question"
+    },
+    {
+      "number": 52,
+      "title": "[Tourism] Overtourism in Europe: 127 tourist nights per resident per year in the South Aegean (2000\u20132024)",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/discussions/52",
+      "category": "Question"
+    },
+    {
+      "number": 51,
+      "title": "[Demography] Mortality in Italy by province, age and sex \u2014 COVID excess, aging, and territorial gaps (2013\u20132024)",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/discussions/51",
+      "category": "Question"
+    },
+    {
+      "number": 40,
+      "title": "[Demography] Population density in Europe: from Paris (20,148/km\u00b2) to Iceland (1/km\u00b2)",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/discussions/40",
+      "category": "Question"
+    },
+    {
+      "number": 39,
+      "title": "[Demography] Italy's demographic winter: every single region has negative natural change (2024)",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/discussions/39",
+      "category": "Question"
+    },
+    {
+      "number": 29,
+      "title": "[Quality] Missing NUTS3 data, quality flags, and what they mean for GDP per capita",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/discussions/29",
+      "category": "Quality & Methodology"
+    },
+    {
+      "number": 28,
+      "title": "[Finding] GVA growth across Italian regions 2015\u20132024: Bolzano leads, Calabria lags",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/discussions/28",
+      "category": "Finding"
+    },
+    {
+      "number": 26,
+      "title": "[GDP] Which EU regions recovered fastest after COVID? (2019\u21922024)",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/discussions/26",
+      "category": "Question"
+    },
+    {
+      "number": 25,
+      "title": "[GDP] The North-South Italy gap: is it shrinking or growing? (2000\u20132024)",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/discussions/25",
+      "category": "Question"
+    },
+    {
+      "number": 24,
+      "title": "\ud83d\udc4b Welcome \u2014 Eurostat datasets for regional Europe-wide analysis",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/discussions/24",
+      "category": "Announcements"
+    },
+    {
+      "number": 68,
+      "title": "Manutenzione strade e scuole: stiamo lasciando cadere il patrimonio pubblico?",
+      "repo": "open-siope",
+      "url": "https://github.com/dataciviclab/open-siope/discussions/68",
+      "category": "Territorio (PRO)"
+    },
+    {
+      "number": 67,
+      "title": "FFO: quanto riceve ogni ateneo dallo Stato?",
+      "repo": "open-siope",
+      "url": "https://github.com/dataciviclab/open-siope/discussions/67",
+      "category": "Universit\u00e0 (UNI)"
+    },
+    {
+      "number": 66,
+      "title": "Quanto costa la farmaceutica nella tua regione?",
+      "repo": "open-siope",
+      "url": "https://github.com/dataciviclab/open-siope/discussions/66",
+      "category": "Sanit\u00e0 (SAN)"
+    },
+    {
+      "number": 61,
+      "title": "Mensa scolastica: quanto costa il pranzo dei nostri figli?",
+      "repo": "open-siope",
+      "url": "https://github.com/dataciviclab/open-siope/discussions/61",
+      "category": "Territorio (PRO)"
+    },
+    {
+      "number": 60,
+      "title": "Personale comunale: quanto costa la macchina amministrativa del tuo comune?",
+      "repo": "open-siope",
+      "url": "https://github.com/dataciviclab/open-siope/discussions/60",
+      "category": "Territorio (PRO)"
+    },
+    {
+      "number": 59,
+      "title": "Multe stradali: quanto incassa il tuo comune? E i soldi dove vanno?",
+      "repo": "open-siope",
+      "url": "https://github.com/dataciviclab/open-siope/discussions/59",
+      "category": "Territorio (PRO)"
+    },
+    {
+      "number": 65,
+      "title": "Trasporto pubblico locale: quanto costa e chi spende di pi\u00f9?",
+      "repo": "open-siope",
+      "url": "https://github.com/dataciviclab/open-siope/discussions/65",
+      "category": "Regioni (REG)"
+    },
+    {
+      "number": 63,
+      "title": "Interessi passivi: quanto debito hanno gli enti pubblici italiani?",
+      "repo": "open-siope",
+      "url": "https://github.com/dataciviclab/open-siope/discussions/63",
+      "category": "Trasversale"
+    },
+    {
+      "number": 62,
+      "title": "Addizionale comunale IRPEF: quanto costa al tuo stipendio?",
+      "repo": "open-siope",
+      "url": "https://github.com/dataciviclab/open-siope/discussions/62",
+      "category": "Territorio (PRO)"
+    },
+    {
+      "number": 40,
+      "title": "Consulenze pubbliche: quanto spendono i nostri enti per \"esperti esterni\"?",
+      "repo": "open-siope",
+      "url": "https://github.com/dataciviclab/open-siope/discussions/40",
+      "category": "Trasversale"
+    },
+    {
+      "number": 44,
+      "title": "TARI 2025: quanto paghiamo per i rifiuti? Confronto tra comuni",
+      "repo": "open-siope",
+      "url": "https://github.com/dataciviclab/open-siope/discussions/44",
+      "category": "Territorio (PRO)"
+    },
+    {
+      "number": 41,
+      "title": "Quanto costa l'IMU nel tuo comune? Confronto tra comuni italiani",
+      "repo": "open-siope",
+      "url": "https://github.com/dataciviclab/open-siope/discussions/41",
+      "category": "Territorio (PRO)"
+    },
+    {
+      "number": 58,
+      "title": "Fondo di Solidariet\u00e0 Comunale: \u20ac7 miliardi. Il tuo comune riceve abbastanza?",
+      "repo": "open-siope",
+      "url": "https://github.com/dataciviclab/open-siope/discussions/58",
+      "category": "Territorio (PRO)"
+    },
+    {
+      "number": 39,
+      "title": "Bentrovati su open-siope \u2014 la spesa pubblica italiana, aperta e interrogabile",
+      "repo": "open-siope",
+      "url": "https://github.com/dataciviclab/open-siope/discussions/39",
+      "category": "Announcements"
+    },
+    {
+      "number": 49,
+      "title": "Tasse universitarie: quanto costa studiare in Italia? Confronto tra atenei",
+      "repo": "open-siope",
+      "url": "https://github.com/dataciviclab/open-siope/discussions/49",
+      "category": "Universit\u00e0 (UNI)"
+    },
+    {
+      "number": 43,
+      "title": "Spesa sanitaria pro-capite: quanto costa la salute nella tua regione?",
+      "repo": "open-siope",
+      "url": "https://github.com/dataciviclab/open-siope/discussions/43",
+      "category": "Sanit\u00e0 (SAN)"
+    },
+    {
+      "number": 15,
+      "title": "La \"dittatura del decreto\"? 50 anni di decretazione d'urgenza in Italia",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/15",
+      "category": "Analisi"
+    },
+    {
+      "number": 16,
+      "title": "Finding: Recepimento direttive UE \u2014 ritardo stabile a 3 anni (ma copertura CELEX ancora bassa)",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/16",
+      "category": "Analisi"
+    },
+    {
+      "number": 30,
+      "title": "Data di pubblicazione in Gazzetta Ufficiale \u2014 estrarla dal body",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/30",
+      "category": "Idee"
+    },
+    {
+      "number": 22,
+      "title": "Dati dinamici via API: l'obbligo del D.Lgs 200/2021 \u00e8 realt\u00e0 o lettera morta?",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/22",
+      "category": "Idee"
+    },
+    {
+      "number": 21,
+      "title": "Art. 52 CAD: 20 anni di \"open data by default\" in Italia \u2014 missione compiuta o lettera morta?",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/21",
+      "category": "Analisi"
+    },
+    {
+      "number": 20,
+      "title": "FOIA italiano: uno strumento concreto per chiedere dataset alla PA?",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/20",
+      "category": "Idee"
+    },
+    {
+      "number": 18,
+      "title": "Cosa ci dice (e cosa non ci dice) italia-corpus? Limiti e potenziale del dataset",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/18",
+      "category": "Generale"
+    },
+    {
+      "number": 17,
+      "title": "Atti \"omnibus\": quando lo stesso decreto fa tutto (e il contrario di tutto)",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/17",
+      "category": "Idee"
     }
   ],
   "github_fetch_errors": {},
@@ -810,6 +1695,30 @@
       "untracked_files": 0
     },
     "lab-connectors": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
+    "eurostat": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
+    "open-siope": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
+    "italia-corpus": {
       "available": false,
       "reason": "local_disabled",
       "dirty": null,
@@ -880,8 +1789,8 @@
     "name": "Lab Clean Registry",
     "updated_at": "2026-07-14",
     "summary": {
-      "total": 79,
-      "published": 62
+      "total": 80,
+      "published": 63
     },
     "datasets": [
       {
@@ -4918,6 +5827,45 @@
         ]
       },
       {
+        "slug": "mur_iscritti",
+        "name": "Iscritti Universitari per Ateneo",
+        "stage": "published",
+        "period": {
+          "start": 2000,
+          "end": 2025
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/mur_iscritti/2025/mur_iscritti_2025_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 1,
+        "dimension_columns": 4,
+        "column_count": 5,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "ateneo_cod",
+            "role": "dimension"
+          },
+          {
+            "name": "ateneo_nome",
+            "role": "dimension"
+          },
+          {
+            "name": "sesso",
+            "role": "dimension"
+          },
+          {
+            "name": "iscritti",
+            "role": "metric"
+          }
+        ]
+      },
+      {
         "slug": "opencivitas_fsc_2025_rso",
         "name": "Opencivitas Fsc 2025 Rso",
         "stage": "published",
@@ -7406,6 +8354,7 @@
       "mim_alunni_corso_eta",
       "mim_scuola_infanzia",
       "mur_immatricolati",
+      "mur_iscritti",
       "opencivitas_fsc_2025_rso",
       "opencoesione_progetti",
       "openga_ricorsi_cds",
