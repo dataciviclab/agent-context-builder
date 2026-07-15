@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-15T09:28:02.992951
+**Generated**: 2026-07-15T13:44:11.906197
 
 ## 🔍 SCOUTING
 
@@ -55,11 +55,15 @@
 
 ## 🔗 OPEN
 
+- [dataset-incubator#659](https://github.com/dataciviclab/dataset-incubator/pull/659): chore(post-merge): aggiorna registry per PR #
+- [dataset-incubator#658](https://github.com/dataciviclab/dataset-incubator/pull/658): fix(unified-comuni): ripristina CTE SIOPE, dipendenti, PNRR + fix join testuali
+- [dataset-incubator#657](https://github.com/dataciviclab/dataset-incubator/pull/657): compose: who-is-who-pa — ente, uffici, responsabili, contatti
 - [dataset-incubator#641](https://github.com/dataciviclab/dataset-incubator/pull/641): fix: skip GCS push per compose dataset
+- [dataciviclab#417](https://github.com/dataciviclab/dataciviclab/pull/417): la-struttura-della-pa: analisi della struttura organizzativa della PA italiana
 **Discussions**: 142 open
+  · [Domanda] Centri di accoglienza migranti — 12 domande sui dati CAS, CPA e Hotspot (2018-2024)
   · [Domanda] SIOPE Bilancio Unificato — 11 domande su 68 milioni di transazioni degli enti pubblici italiani (2021-2026)
   · [Domanda] Emissioni GHG in Italia — 10 domande su 33 anni di gas serra (1990-2023)
-  · [Domanda] ANPR Mobilità Residenziale — 13 domande che possiamo fare ai dati (2022-2026)
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
