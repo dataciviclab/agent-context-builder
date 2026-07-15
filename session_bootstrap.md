@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-14T19:20:51.720096
+**Generated**: 2026-07-15T02:28:57.507638
 
 ## 🔍 SCOUTING
 
@@ -56,9 +56,7 @@
 ## 🔗 OPEN
 
 - [dataset-incubator#641](https://github.com/dataciviclab/dataset-incubator/pull/641): fix: skip GCS push per compose dataset
-- [lab-connectors#70](https://github.com/dataciviclab/lab-connectors/pull/70): feat: download(url) -> bytes standalone (closes #68)
-- [eurostat#99](https://github.com/dataciviclab/eurostat/pull/99): feat: add income inequality S80/S20 by NUTS2 (ILC_DI11_R) (#87)
-**Discussions**: 141 open
+**Discussions**: 142 open
   · [Domanda] SIOPE Bilancio Unificato — 11 domande su 68 milioni di transazioni degli enti pubblici italiani (2021-2026)
   · [Domanda] Emissioni GHG in Italia — 10 domande su 33 anni di gas serra (1990-2023)
   · [Domanda] ANPR Mobilità Residenziale — 13 domande che possiamo fare ai dati (2022-2026)

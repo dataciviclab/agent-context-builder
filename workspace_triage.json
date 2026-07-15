@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T19:20:51.720096",
+  "generated_at": "2026-07-15T02:28:57.507638",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -13,28 +13,16 @@
     "open-siope",
     "italia-corpus"
   ],
-  "open_prs": 3,
+  "open_prs": 1,
   "prs": [
     {
       "number": 641,
       "title": "fix: skip GCS push per compose dataset",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/641"
-    },
-    {
-      "number": 70,
-      "title": "feat: download(url) -> bytes standalone (closes #68)",
-      "repo": "lab-connectors",
-      "url": "https://github.com/dataciviclab/lab-connectors/pull/70"
-    },
-    {
-      "number": 99,
-      "title": "feat: add income inequality S80/S20 by NUTS2 (ILC_DI11_R) (#87)",
-      "repo": "eurostat",
-      "url": "https://github.com/dataciviclab/eurostat/pull/99"
     }
   ],
-  "open_issues": 105,
+  "open_issues": 103,
   "issues": [
     {
       "number": 59,
@@ -625,12 +613,6 @@
       "url": "https://github.com/dataciviclab/source-observatory/issues/275"
     },
     {
-      "number": 68,
-      "title": "feat(http): funzione standalone download(url) -> bytes",
-      "repo": "lab-connectors",
-      "url": "https://github.com/dataciviclab/lab-connectors/issues/68"
-    },
-    {
       "number": 90,
       "title": "dataset: Internet access by NACE and NUTS 2 region (ISOC_R_CI_IN_EN2)",
       "repo": "eurostat",
@@ -641,12 +623,6 @@
       "title": "dataset: Cultural employment by NUTS 2 region (CULT_EMP_REG)",
       "repo": "eurostat",
       "url": "https://github.com/dataciviclab/eurostat/issues/88"
-    },
-    {
-      "number": 87,
-      "title": "dataset: Income inequality S80/S20 by NUTS 2 region (ILC_DI11_R)",
-      "repo": "eurostat",
-      "url": "https://github.com/dataciviclab/eurostat/issues/87"
     },
     {
       "number": 77,
@@ -667,7 +643,7 @@
       "url": "https://github.com/dataciviclab/italia-corpus/issues/28"
     }
   ],
-  "open_discussions": 141,
+  "open_discussions": 142,
   "discussions": [
     {
       "number": 416,
@@ -1335,6 +1311,34 @@
       "category": "Presentazioni"
     },
     {
+      "number": 95,
+      "title": "[Health] Hospital beds in Europe \u2014 10 questions about healthcare capacity by region (1993-2024)",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/discussions/95",
+      "category": "Question"
+    },
+    {
+      "number": 102,
+      "title": "[Health] Physicians in Europe \u2014 10 questions about doctor density by region (1993-2024)",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/discussions/102",
+      "category": "Question"
+    },
+    {
+      "number": 101,
+      "title": "[Social] At-risk-of-poverty in Europe \u2014 10 questions about who is poorest and where (2003-2025)",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/discussions/101",
+      "category": "Question"
+    },
+    {
+      "number": 100,
+      "title": "[Social] Income inequality in Europe \u2014 10 questions about the gap between rich and poor by region (2003-2025)",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/discussions/100",
+      "category": "Question"
+    },
+    {
       "number": 96,
       "title": "[Business] Enterprise demography in Europe \u2014 10 questions about where startups thrive and where they die (2008-2020)",
       "repo": "eurostat",
@@ -1356,13 +1360,6 @@
       "category": "Question"
     },
     {
-      "number": 95,
-      "title": "[Health] Hospital beds in Europe \u2014 10 questions about healthcare capacity by region (1993-2024)",
-      "repo": "eurostat",
-      "url": "https://github.com/dataciviclab/eurostat/discussions/95",
-      "category": "Question"
-    },
-    {
       "number": 94,
       "title": "[Education] Early school leaving in Europe \u2014 10 questions about who drops out, where and why (2000-2025)",
       "repo": "eurostat",
@@ -1374,20 +1371,6 @@
       "title": "[Demography] Italy is aging fast: 11 regions have median age over 50, Sardegna aged +6.1 years in a decade",
       "repo": "eurostat",
       "url": "https://github.com/dataciviclab/eurostat/discussions/91",
-      "category": "Finding"
-    },
-    {
-      "number": 84,
-      "title": "[Social] At-risk-of-poverty in Italy: from Calabria (37.2%) to Bolzano (5.9%) \u2014 a 6\u00d7 divide across Italian regions",
-      "repo": "eurostat",
-      "url": "https://github.com/dataciviclab/eurostat/discussions/84",
-      "category": "Finding"
-    },
-    {
-      "number": 81,
-      "title": "[Health] Physicians in Italy: from Lazio (636/100k) to Basilicata (390/100k) \u2014 the regional healthcare divide",
-      "repo": "eurostat",
-      "url": "https://github.com/dataciviclab/eurostat/discussions/81",
       "category": "Finding"
     },
     {
