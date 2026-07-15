@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T13:44:11.906197",
+  "generated_at": "2026-07-15T19:11:27.563773",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -13,20 +13,8 @@
     "open-siope",
     "italia-corpus"
   ],
-  "open_prs": 5,
+  "open_prs": 4,
   "prs": [
-    {
-      "number": 659,
-      "title": "chore(post-merge): aggiorna registry per PR #",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/659"
-    },
-    {
-      "number": 658,
-      "title": "fix(unified-comuni): ripristina CTE SIOPE, dipendenti, PNRR + fix join testuali",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/658"
-    },
     {
       "number": 657,
       "title": "compose: who-is-who-pa \u2014 ente, uffici, responsabili, contatti",
@@ -44,9 +32,15 @@
       "title": "la-struttura-della-pa: analisi della struttura organizzativa della PA italiana",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/pull/417"
+    },
+    {
+      "number": 415,
+      "title": "feat(core): preprocessing utilities \u2014 normalize_number, normalize_columns_map, decode_bytes (#411)",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/415"
     }
   ],
-  "open_issues": 103,
+  "open_issues": 102,
   "issues": [
     {
       "number": 59,
@@ -581,12 +575,6 @@
       "title": "follow-up: pagina e tema per pnrr_progetti",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/issues/169"
-    },
-    {
-      "number": 167,
-      "title": "follow-up: pagina e tema per elezioni_politiche_2022",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/issues/167"
     },
     {
       "number": 165,
@@ -8412,9 +8400,9 @@
           "path": "gs://dataciviclab-clean/unified_comuni/2026/unified_comuni_2026_clean.parquet",
           "multi_file": false
         },
-        "metric_columns": 26,
+        "metric_columns": 39,
         "dimension_columns": 5,
-        "column_count": 31,
+        "column_count": 44,
         "columns": [
           {
             "name": "codice_istat",
@@ -8538,6 +8526,58 @@
           },
           {
             "name": "imu_tasi_standard",
+            "role": "metric"
+          },
+          {
+            "name": "siope_entrate",
+            "role": "metric"
+          },
+          {
+            "name": "siope_uscite",
+            "role": "metric"
+          },
+          {
+            "name": "siope_avanzo",
+            "role": "metric"
+          },
+          {
+            "name": "siope_personale",
+            "role": "metric"
+          },
+          {
+            "name": "siope_investimenti",
+            "role": "metric"
+          },
+          {
+            "name": "siope_imposte_proprie",
+            "role": "metric"
+          },
+          {
+            "name": "siope_fondi_perequativi",
+            "role": "metric"
+          },
+          {
+            "name": "dipendenti_totali",
+            "role": "metric"
+          },
+          {
+            "name": "dipendenti_assunti",
+            "role": "metric"
+          },
+          {
+            "name": "dipendenti_cessati",
+            "role": "metric"
+          },
+          {
+            "name": "dipendenti_saldo",
+            "role": "metric"
+          },
+          {
+            "name": "pnrr_progetti",
+            "role": "metric"
+          },
+          {
+            "name": "pnrr_fin_totale",
             "role": "metric"
           }
         ]
