@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T08:10:39.175097",
+  "generated_at": "2026-07-15T09:28:02.992951",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -1768,11 +1768,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-07-14",
+    "generated_at": "2026-07-15",
     "summary": {
-      "total": 83,
+      "total": 85,
       "by_status": {
-        "ok": 83,
+        "ok": 85,
         "warn": 0,
         "error": 0
       }
@@ -1783,10 +1783,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-07-14",
+    "updated_at": "2026-07-15",
     "summary": {
-      "total": 80,
-      "published": 63
+      "total": 82,
+      "published": 65
     },
     "datasets": [
       {
@@ -4286,6 +4286,129 @@
         ]
       },
       {
+        "slug": "ipa_aree_organizzative_omogenee",
+        "name": "Aree Organizzative Omogenee (IPA)",
+        "stage": "published",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/ipa_aree_organizzative_omogenee/2026/ipa_aree_organizzative_omogenee_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 0,
+        "dimension_columns": 26,
+        "column_count": 26,
+        "columns": [
+          {
+            "name": "codice_ipa",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione_ente",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_fiscale_ente",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_uni_aoo",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione_aoo",
+            "role": "dimension"
+          },
+          {
+            "name": "data_istituzione",
+            "role": "dimension"
+          },
+          {
+            "name": "nome_responsabile",
+            "role": "dimension"
+          },
+          {
+            "name": "cognome_responsabile",
+            "role": "dimension"
+          },
+          {
+            "name": "mail_responsabile",
+            "role": "dimension"
+          },
+          {
+            "name": "telefono_responsabile",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_comune_istat",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_catastale_comune",
+            "role": "dimension"
+          },
+          {
+            "name": "cap",
+            "role": "dimension"
+          },
+          {
+            "name": "indirizzo",
+            "role": "dimension"
+          },
+          {
+            "name": "telefono",
+            "role": "dimension"
+          },
+          {
+            "name": "fax",
+            "role": "dimension"
+          },
+          {
+            "name": "mail1",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_mail1",
+            "role": "dimension"
+          },
+          {
+            "name": "mail2",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_mail2",
+            "role": "dimension"
+          },
+          {
+            "name": "mail3",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_mail3",
+            "role": "dimension"
+          },
+          {
+            "name": "protocollo_informatico",
+            "role": "dimension"
+          },
+          {
+            "name": "uri_protocollo_informatico",
+            "role": "dimension"
+          },
+          {
+            "name": "data_aggiornamento",
+            "role": "dimension"
+          },
+          {
+            "name": "cod_aoo",
+            "role": "dimension"
+          }
+        ]
+      },
+      {
         "slug": "ipa_enti",
         "name": "Anagrafica Enti PA (IndicePA)",
         "stage": "published",
@@ -4503,6 +4626,129 @@
           },
           {
             "name": "sito_istituzionale",
+            "role": "dimension"
+          }
+        ]
+      },
+      {
+        "slug": "ipa_unita_organizzative",
+        "name": "Unit\u00e0 Organizzative (IPA)",
+        "stage": "published",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/ipa_unita_organizzative/2026/ipa_unita_organizzative_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 0,
+        "dimension_columns": 26,
+        "column_count": 26,
+        "columns": [
+          {
+            "name": "codice_ipa",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione_ente",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_fiscale_ente",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_uni_uo",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_uni_aoo",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_uni_uo_padre",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_uo",
+            "role": "dimension"
+          },
+          {
+            "name": "data_istituzione",
+            "role": "dimension"
+          },
+          {
+            "name": "nome_responsabile",
+            "role": "dimension"
+          },
+          {
+            "name": "cognome_responsabile",
+            "role": "dimension"
+          },
+          {
+            "name": "mail_responsabile",
+            "role": "dimension"
+          },
+          {
+            "name": "telefono_responsabile",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_comune_istat",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_catastale_comune",
+            "role": "dimension"
+          },
+          {
+            "name": "cap",
+            "role": "dimension"
+          },
+          {
+            "name": "indirizzo",
+            "role": "dimension"
+          },
+          {
+            "name": "telefono",
+            "role": "dimension"
+          },
+          {
+            "name": "fax",
+            "role": "dimension"
+          },
+          {
+            "name": "mail1",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_mail1",
+            "role": "dimension"
+          },
+          {
+            "name": "mail2",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_mail2",
+            "role": "dimension"
+          },
+          {
+            "name": "mail3",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_mail3",
+            "role": "dimension"
+          },
+          {
+            "name": "data_aggiornamento",
+            "role": "dimension"
+          },
+          {
+            "name": "url",
             "role": "dimension"
           }
         ]
@@ -8333,8 +8579,10 @@
       "fts_eu_grants",
       "inps_pensioni_trimestrale",
       "inps_rdc_pdc",
+      "ipa_aree_organizzative_omogenee",
       "ipa_enti",
       "ipa_istat_mapping",
+      "ipa_unita_organizzative",
       "irpef_comunale",
       "ispra_emissioni_ghg",
       "ispra_ru_base",

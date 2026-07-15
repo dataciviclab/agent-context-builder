@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-15T08:10:39.175097",
+  "generated_at": "2026-07-15T09:28:02.992951",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -294,8 +294,24 @@
     ],
     "AgID \u2014 IndicePA (ipa-dati)": [
       {
+        "slug": "ipa_aree_organizzative_omogenee",
+        "name": "Aree Organizzative Omogenee (IPA)",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        }
+      },
+      {
         "slug": "ipa_enti",
         "name": "Anagrafica Enti PA (IndicePA)",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        }
+      },
+      {
+        "slug": "ipa_unita_organizzative",
+        "name": "Unit\u00e0 Organizzative (IPA)",
         "period": {
           "start": 2026,
           "end": 2026
