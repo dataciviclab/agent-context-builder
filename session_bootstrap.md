@@ -1,13 +1,12 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-16T15:30:36.809524
+**Generated**: 2026-07-16T19:11:46.611288
 
 ## 🔍 SCOUTING
 
 **Radar**: 33 fonti — GREEN 33 · YELLOW 0 · RED 0 (probe: 2026-07-16)
   · **istat_sdmx** (sdmx): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
-  · **dati_senato** (sparql): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
-  · **pagopa** (ckan): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
+  · **openbdap** (ckan): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
 
 ## 📥 INTAKE
 
@@ -59,6 +58,7 @@
 - [dataset-incubator#641](https://github.com/dataciviclab/dataset-incubator/pull/641): fix: skip GCS push per compose dataset
 - [dataciviclab#417](https://github.com/dataciviclab/dataciviclab/pull/417): la-struttura-della-pa: analisi della struttura organizzativa della PA italiana
 - [toolkit#415](https://github.com/dataciviclab/toolkit/pull/415): feat(core): preprocessing utilities — normalize_number, normalize_columns_map, decode_bytes (#411)
+- [source-observatory#407](https://github.com/dataciviclab/source-observatory/pull/407): fix: SPARQL formato URI normalizzato nel collector
 **Discussions**: 143 open
   · [Domanda] IVA Regionale — 10 domande su volume d'affari e valore aggiunto fiscale in Italia (2014-2023)
   · [Domanda] Iscritti Universitari — 11 domande su 25 anni di studenti in Italia (2000-2025)

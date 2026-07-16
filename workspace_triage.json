@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T15:30:36.809524",
+  "generated_at": "2026-07-16T19:11:46.611288",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -13,7 +13,7 @@
     "open-siope",
     "italia-corpus"
   ],
-  "open_prs": 4,
+  "open_prs": 5,
   "prs": [
     {
       "number": 661,
@@ -38,9 +38,15 @@
       "title": "feat(core): preprocessing utilities \u2014 normalize_number, normalize_columns_map, decode_bytes (#411)",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/pull/415"
+    },
+    {
+      "number": 407,
+      "title": "fix: SPARQL formato URI normalizzato nel collector",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/407"
     }
   ],
-  "open_issues": 105,
+  "open_issues": 100,
   "issues": [
     {
       "number": 59,
@@ -601,46 +607,16 @@
       "url": "https://github.com/dataciviclab/data-explorer/issues/162"
     },
     {
+      "number": 404,
+      "title": "[Catalog] 2026-07-16 \u2014 +25 item",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/404"
+    },
+    {
       "number": 402,
       "title": "source-check: ministero-del-lavoro (lavoro_opendata) \u2014 portale down, FOIA inviato",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/402"
-    },
-    {
-      "number": 401,
-      "title": "source-check: unioncamere \u2014 revisione verdict: go -> watchlist",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/401"
-    },
-    {
-      "number": 400,
-      "title": "[Catalog] 2026-07-06 \u2014 -8 item",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/400"
-    },
-    {
-      "number": 362,
-      "title": "chore: centralizzare path artifact in unico source of truth",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/362"
-    },
-    {
-      "number": 345,
-      "title": "source-check: pcm_transizione_digitale",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/345"
-    },
-    {
-      "number": 342,
-      "title": "source-check: ispra_indicatori_ambientali",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/342"
-    },
-    {
-      "number": 275,
-      "title": "scouting: Banca d'Italia (80 dataset su dati.gov.it)",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/275"
     },
     {
       "number": 90,
@@ -1773,7 +1749,7 @@
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-07-13T06:34:26+00:00",
+    "captured_at": "2026-07-16T15:54:37+00:00",
     "sources_checked": 30,
     "regressions": [],
     "alerts": [
@@ -1782,23 +1758,15 @@
         "protocol": "sdmx",
         "signal_type": "inventory change",
         "result": "inventory change",
-        "detail": "4878 item (dataflow_count), delta +2 rispetto al run precedente (4876).",
+        "detail": "4884 item (dataflow_count), delta +6 rispetto al run precedente (4878).",
         "suggested_action": "verificare se variazione attesa; avviare inventory-triage se nuovi dataset"
       },
       {
-        "source": "dati_senato",
-        "protocol": "sparql",
-        "signal_type": "inventory change",
-        "result": "inventory change",
-        "detail": "100 item (named_graphs), delta +2 rispetto al run precedente (98).",
-        "suggested_action": "verificare se variazione attesa; avviare inventory-triage se nuovi dataset"
-      },
-      {
-        "source": "pagopa",
+        "source": "openbdap",
         "protocol": "ckan",
         "signal_type": "inventory change",
         "result": "inventory change",
-        "detail": "12 item (package_search), delta +1 rispetto al run precedente (11).",
+        "detail": "3841 item (package_list), delta +18 rispetto al run precedente (3823).",
         "suggested_action": "verificare se variazione attesa; avviare inventory-triage se nuovi dataset"
       }
     ]
