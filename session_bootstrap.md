@@ -1,10 +1,10 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-16T02:37:10.996752
+**Generated**: 2026-07-16T08:14:01.431671
 
 ## 🔍 SCOUTING
 
-**Radar**: 33 fonti — GREEN 33 · YELLOW 0 · RED 0 (probe: 2026-07-15)
+**Radar**: 33 fonti — GREEN 33 · YELLOW 0 · RED 0 (probe: 2026-07-16)
   · **istat_sdmx** (sdmx): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
   · **dati_senato** (sparql): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
   · **pagopa** (ckan): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
