@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-16T08:14:01.431671
+**Generated**: 2026-07-16T13:50:56.963110
 
 ## 🔍 SCOUTING
 
@@ -11,8 +11,8 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 85 candidates — 85 ok
-**Dataset Catalog**: 65 published · 65 public · updated 2026-07-15
+**Pipeline**: 86 candidates — 86 ok
+**Dataset Catalog**: 66 published · 66 public · updated 2026-07-16
 
 ## 📊 ANALYSES
 
@@ -44,25 +44,25 @@
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
   · **Terzo settore**: cinque-per-mille
-  ⚠ 64 dataset published non ancora su explorer:
+  ⚠ 65 dataset published non ancora su explorer:
     · aci_prime_iscrizioni_autovetture
     · ade_cinque_per_mille
     · aifa_spesa_consumo
     · anac_bandi_gara
     · anpr_mobilita_residenziale
-    · ... e altri 59
+    · ... e altri 60
   **Deploy**: ✅ success (2026-07-14)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#657](https://github.com/dataciviclab/dataset-incubator/pull/657): compose: who-is-who-pa — ente, uffici, responsabili, contatti
+- [dataset-incubator#661](https://github.com/dataciviclab/dataset-incubator/pull/661): intake: opencivitas-indicatori — 7 ambiti × 7 anni in EAV
 - [dataset-incubator#641](https://github.com/dataciviclab/dataset-incubator/pull/641): fix: skip GCS push per compose dataset
 - [dataciviclab#417](https://github.com/dataciviclab/dataciviclab/pull/417): la-struttura-della-pa: analisi della struttura organizzativa della PA italiana
 - [toolkit#415](https://github.com/dataciviclab/toolkit/pull/415): feat(core): preprocessing utilities — normalize_number, normalize_columns_map, decode_bytes (#411)
-**Discussions**: 142 open
-  · [Domanda] Centri di accoglienza migranti — 12 domande sui dati CAS, CPA e Hotspot (2018-2024)
-  · [Domanda] SIOPE Bilancio Unificato — 11 domande su 68 milioni di transazioni degli enti pubblici italiani (2021-2026)
-  · [Domanda] Emissioni GHG in Italia — 10 domande su 33 anni di gas serra (1990-2023)
+**Discussions**: 143 open
+  · [Domanda] IVA Regionale — 10 domande su volume d'affari e valore aggiunto fiscale in Italia (2014-2023)
+  · [Domanda] Iscritti Universitari — 11 domande su 25 anni di studenti in Italia (2000-2025)
+  · [Domanda] FTS EU Grants — 13 domande sui finanziamenti UE in Italia (2020-2024)
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
