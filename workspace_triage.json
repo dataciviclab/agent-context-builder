@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T08:10:25.877506",
+  "generated_at": "2026-07-17T13:38:04.606599",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -658,6 +658,34 @@
   "open_discussions": 143,
   "discussions": [
     {
+      "number": 397,
+      "title": "ANAC Bandi di Gara \u2014 11 domande sugli appalti pubblici italiani (2016-2025)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/397",
+      "category": "Domanda"
+    },
+    {
+      "number": 353,
+      "title": "[Annunci] Dati Eurostat NUTS3 puliti e queryabili \u2014 PIL, occupazione, crimine, demografia a livello provinciale",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/353",
+      "category": "Annunci"
+    },
+    {
+      "number": 406,
+      "title": "MEF Partecipate \u2014 11 domande su 101mila incarichi e compensi dei rappresentanti PA (2018-2023)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/406",
+      "category": "Domanda"
+    },
+    {
+      "number": 401,
+      "title": "Consumo di Suolo ISPRA \u2014 11 domande sulla cementificazione in Italia (2006-2024)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/401",
+      "category": "Domanda"
+    },
+    {
       "number": 403,
       "title": "IVA Regionale \u2014 10 domande su volume d'affari e valore aggiunto fiscale in Italia (2014-2023)",
       "repo": "dataciviclab",
@@ -749,20 +777,6 @@
       "category": "Domanda"
     },
     {
-      "number": 401,
-      "title": "Consumo di Suolo ISPRA \u2014 11 domande sulla cementificazione in Italia (2006-2024)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/401",
-      "category": "Domanda"
-    },
-    {
-      "number": 406,
-      "title": "MEF Partecipate \u2014 11 domande su 101mila incarichi e compensi dei rappresentanti PA (2018-2023)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/406",
-      "category": "Domanda"
-    },
-    {
       "number": 404,
       "title": "[Presentazione] Ciao! Piacere, sono Lorenzo!",
       "repo": "dataciviclab",
@@ -805,24 +819,10 @@
       "category": "Domanda"
     },
     {
-      "number": 397,
-      "title": "ANAC Bandi di Gara \u2014 11 domande sugli appalti pubblici italiani (2016-2025)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/397",
-      "category": "Domanda"
-    },
-    {
       "number": 368,
       "title": "RNA \u2014 Aiuti di Stato: 17 milioni di aiuti alle imprese italiane ora in formato queryabile",
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/368",
-      "category": "Annunci"
-    },
-    {
-      "number": 353,
-      "title": "[Annunci] Dati Eurostat NUTS3 puliti e queryabili \u2014 PIL, occupazione, crimine, demografia a livello provinciale",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/353",
       "category": "Annunci"
     },
     {
@@ -1764,27 +1764,10 @@
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-07-16T15:54:37+00:00",
-    "sources_checked": 30,
+    "captured_at": "2026-07-17T09:34:28+00:00",
+    "sources_checked": 33,
     "regressions": [],
-    "alerts": [
-      {
-        "source": "istat_sdmx",
-        "protocol": "sdmx",
-        "signal_type": "inventory change",
-        "result": "inventory change",
-        "detail": "4884 item (dataflow_count), delta +6 rispetto al run precedente (4878).",
-        "suggested_action": "verificare se variazione attesa; avviare inventory-triage se nuovi dataset"
-      },
-      {
-        "source": "openbdap",
-        "protocol": "ckan",
-        "signal_type": "inventory change",
-        "result": "inventory change",
-        "detail": "3841 item (package_list), delta +18 rispetto al run precedente (3823).",
-        "suggested_action": "verificare se variazione attesa; avviare inventory-triage se nuovi dataset"
-      }
-    ]
+    "alerts": []
   },
   "pipeline_state": {
     "available": true,

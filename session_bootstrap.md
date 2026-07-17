@@ -1,13 +1,12 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-17T08:10:25.877506
+**Generated**: 2026-07-17T13:38:04.606599
 
 ## 🔍 SCOUTING
 
 **Radar**: 36 fonti — GREEN 35 · YELLOW 1 · RED 0 (probe: 2026-07-17)
   · **istat_sdmx** YELLOW [-] — Timeout (ReadTimeout)
-  · **istat_sdmx** (sdmx): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
-  · **openbdap** (ckan): inventory change — azione: verificare se variazione attesa; avviare inventory-triage se nuovi dataset
+**Catalog Drift**: no drift signals (33 sources checked)
 
 ## 📥 INTAKE
 
@@ -60,9 +59,9 @@
 - [dataciviclab#417](https://github.com/dataciviclab/dataciviclab/pull/417): la-struttura-della-pa: analisi della struttura organizzativa della PA italiana
 - [toolkit#415](https://github.com/dataciviclab/toolkit/pull/415): feat(core): preprocessing utilities — normalize_number, normalize_columns_map, decode_bytes (#411)
 **Discussions**: 143 open
-  · [Domanda] IVA Regionale — 10 domande su volume d'affari e valore aggiunto fiscale in Italia (2014-2023)
-  · [Domanda] Iscritti Universitari — 11 domande su 25 anni di studenti in Italia (2000-2025)
-  · [Domanda] FTS EU Grants — 13 domande sui finanziamenti UE in Italia (2020-2024)
+  · [Domanda] ANAC Bandi di Gara — 11 domande sugli appalti pubblici italiani (2016-2025)
+  · [Annunci] [Annunci] Dati Eurostat NUTS3 puliti e queryabili — PIL, occupazione, crimine, demografia a livello provinciale
+  · [Domanda] MEF Partecipate — 11 domande su 101mila incarichi e compensi dei rappresentanti PA (2018-2023)
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
