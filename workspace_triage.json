@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-18T07:50:29.573571",
+  "generated_at": "2026-07-18T09:31:15.583767",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -13,14 +13,8 @@
     "open-siope",
     "italia-corpus"
   ],
-  "open_prs": 4,
+  "open_prs": 3,
   "prs": [
-    {
-      "number": 661,
-      "title": "intake: opencivitas-indicatori \u2014 7 ambiti \u00d7 7 anni in EAV",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/661"
-    },
     {
       "number": 641,
       "title": "fix: skip GCS push per compose dataset",
@@ -40,7 +34,7 @@
       "url": "https://github.com/dataciviclab/toolkit/pull/415"
     }
   ],
-  "open_issues": 102,
+  "open_issues": 103,
   "issues": [
     {
       "number": 59,
@@ -169,16 +163,16 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/417"
     },
     {
-      "number": 378,
-      "title": "Proposta intake: Indicatori Fabbisogno Standard Comuni (opencivitas.it)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/378"
-    },
-    {
       "number": 375,
       "title": "Proposta intake: Operatori Economici Consip (dati.consip.it)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/375"
+    },
+    {
+      "number": 420,
+      "title": "analisi: opencivitas_indicatori \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/420"
     },
     {
       "number": 419,
@@ -449,6 +443,12 @@
       "title": "refactor: estrarre _write_reports() da run_full() in report_ops.py",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/391"
+    },
+    {
+      "number": 208,
+      "title": "follow-up: pagina e tema per opencivitas_indicatori",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/208"
     },
     {
       "number": 207,
@@ -1762,11 +1762,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-07-16",
+    "generated_at": "2026-07-18",
     "summary": {
-      "total": 86,
+      "total": 88,
       "by_status": {
-        "ok": 86,
+        "ok": 88,
         "warn": 0,
         "error": 0
       }
@@ -1777,10 +1777,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-07-16",
+    "updated_at": "2026-07-18",
     "summary": {
-      "total": 83,
-      "published": 66
+      "total": 85,
+      "published": 68
     },
     "datasets": [
       {
@@ -6191,6 +6191,136 @@
         "columns": []
       },
       {
+        "slug": "opencivitas_glossario",
+        "name": "Glossario indicatori OpenCivitas",
+        "stage": "published",
+        "period": {
+          "start": 2015,
+          "end": 2022
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/opencivitas_glossario/*/opencivitas_glossario_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 0,
+        "dimension_columns": 8,
+        "column_count": 8,
+        "columns": [
+          {
+            "name": "codice_indicatore",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo",
+            "role": "dimension"
+          },
+          {
+            "name": "categoria",
+            "role": "dimension"
+          },
+          {
+            "name": "funzione",
+            "role": "dimension"
+          },
+          {
+            "name": "ordine",
+            "role": "dimension"
+          },
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "ambito",
+            "role": "dimension"
+          }
+        ]
+      },
+      {
+        "slug": "opencivitas_indicatori",
+        "name": "Indicatori di performance dei comuni",
+        "stage": "published",
+        "period": {
+          "start": 2015,
+          "end": 2022
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/opencivitas_indicatori/*/opencivitas_indicatori_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 1,
+        "dimension_columns": 14,
+        "column_count": 15,
+        "columns": [
+          {
+            "name": "username",
+            "role": "dimension"
+          },
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "ambito",
+            "role": "dimension"
+          },
+          {
+            "name": "indicatore",
+            "role": "dimension"
+          },
+          {
+            "name": "valore_num",
+            "role": "metric"
+          },
+          {
+            "name": "descrizione_indicatore",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_indicatore",
+            "role": "dimension"
+          },
+          {
+            "name": "categoria_indicatore",
+            "role": "dimension"
+          },
+          {
+            "name": "funzione_indicatore",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "regione",
+            "role": "dimension"
+          },
+          {
+            "name": "regione_istat_cod",
+            "role": "dimension"
+          },
+          {
+            "name": "join_enti_ok",
+            "role": "dimension"
+          },
+          {
+            "name": "join_metadati_ok",
+            "role": "dimension"
+          }
+        ]
+      },
+      {
         "slug": "opencoesione_progetti",
         "name": "Opencoesione Progetti",
         "stage": "published",
@@ -8809,6 +8939,8 @@
       "mur_immatricolati",
       "mur_iscritti",
       "opencivitas_fsc_2025_rso",
+      "opencivitas_glossario",
+      "opencivitas_indicatori",
       "opencoesione_progetti",
       "openga_ricorsi_cds",
       "personale_ssn",

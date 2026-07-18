@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-18T07:50:29.573571",
+  "generated_at": "2026-07-18T09:31:15.583767",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -493,6 +493,22 @@
         "period": {
           "start": 2022,
           "end": 2025
+        }
+      },
+      {
+        "slug": "opencivitas_glossario",
+        "name": "Glossario indicatori OpenCivitas",
+        "period": {
+          "start": 2015,
+          "end": 2022
+        }
+      },
+      {
+        "slug": "opencivitas_indicatori",
+        "name": "Indicatori di performance dei comuni",
+        "period": {
+          "start": 2015,
+          "end": 2022
         }
       }
     ],

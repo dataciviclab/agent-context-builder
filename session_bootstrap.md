@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-18T07:50:29.573571
+**Generated**: 2026-07-18T09:31:15.583767
 
 ## 🔍 SCOUTING
 
@@ -9,8 +9,8 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 86 candidates — 86 ok
-**Dataset Catalog**: 66 published · 66 public · updated 2026-07-16
+**Pipeline**: 88 candidates — 88 ok
+**Dataset Catalog**: 68 published · 68 public · updated 2026-07-18
 
 ## 📊 ANALYSES
 
@@ -42,18 +42,17 @@
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
   · **Terzo settore**: cinque-per-mille
-  ⚠ 65 dataset published non ancora su explorer:
+  ⚠ 67 dataset published non ancora su explorer:
     · aci_prime_iscrizioni_autovetture
     · ade_cinque_per_mille
     · aifa_spesa_consumo
     · anac_bandi_gara
     · anpr_mobilita_residenziale
-    · ... e altri 60
+    · ... e altri 62
   **Deploy**: ✅ success (2026-07-14)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#661](https://github.com/dataciviclab/dataset-incubator/pull/661): intake: opencivitas-indicatori — 7 ambiti × 7 anni in EAV
 - [dataset-incubator#641](https://github.com/dataciviclab/dataset-incubator/pull/641): fix: skip GCS push per compose dataset
 - [dataciviclab#417](https://github.com/dataciviclab/dataciviclab/pull/417): la-struttura-della-pa: analisi della struttura organizzativa della PA italiana
 - [toolkit#415](https://github.com/dataciviclab/toolkit/pull/415): feat(core): preprocessing utilities — normalize_number, normalize_columns_map, decode_bytes (#411)
