@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-18T09:31:15.583767",
+  "generated_at": "2026-07-18T13:15:45.149526",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -75,6 +75,22 @@
       }
     ],
     "ANAC - Autorit\u00e0 Nazionale Anticorruzione": [
+      {
+        "slug": "anac_aggiudicatari",
+        "name": "ANAC Aggiudicatari",
+        "period": {
+          "start": 2000,
+          "end": 2026
+        }
+      },
+      {
+        "slug": "anac_aggiudicazioni",
+        "name": "ANAC Aggiudicazioni",
+        "period": {
+          "start": 2000,
+          "end": 2026
+        }
+      },
       {
         "slug": "anac_bandi_gara",
         "name": "ANAC Bandi di Gara (CIG)",

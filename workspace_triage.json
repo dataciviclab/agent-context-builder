@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-18T09:31:15.583767",
+  "generated_at": "2026-07-18T13:15:45.149526",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -34,13 +34,19 @@
       "url": "https://github.com/dataciviclab/toolkit/pull/415"
     }
   ],
-  "open_issues": 103,
+  "open_issues": 106,
   "issues": [
     {
       "number": 59,
       "title": "feat: whats_new \u2014 delta awareness tra build CI (P2)",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/issues/59"
+    },
+    {
+      "number": 673,
+      "title": "compose: anac-appalti-completo \u2014 bandi + aggiudicazioni + aggiudicatari",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/673"
     },
     {
       "number": 665,
@@ -167,6 +173,12 @@
       "title": "Proposta intake: Operatori Economici Consip (dati.consip.it)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/375"
+    },
+    {
+      "number": 421,
+      "title": "analisi: anac_aggiudicazioni \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/421"
     },
     {
       "number": 420,
@@ -443,6 +455,12 @@
       "title": "refactor: estrarre _write_reports() da run_full() in report_ops.py",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/391"
+    },
+    {
+      "number": 209,
+      "title": "follow-up: pagina e tema per anac_aggiudicazioni",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/209"
     },
     {
       "number": 208,
@@ -1764,9 +1782,9 @@
     "available": true,
     "generated_at": "2026-07-18",
     "summary": {
-      "total": 88,
+      "total": 90,
       "by_status": {
-        "ok": 88,
+        "ok": 90,
         "warn": 0,
         "error": 0
       }
@@ -1779,8 +1797,8 @@
     "name": "Lab Clean Registry",
     "updated_at": "2026-07-18",
     "summary": {
-      "total": 85,
-      "published": 68
+      "total": 87,
+      "published": 70
     },
     "datasets": [
       {
@@ -2000,6 +2018,180 @@
           },
           {
             "name": "spesa_convenzionata",
+            "role": "metric"
+          }
+        ]
+      },
+      {
+        "slug": "anac_aggiudicatari",
+        "name": "ANAC Aggiudicatari",
+        "stage": "published",
+        "period": {
+          "start": 2000,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/anac_aggiudicatari/2026/anac_aggiudicatari_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 0,
+        "dimension_columns": 6,
+        "column_count": 6,
+        "columns": [
+          {
+            "name": "cig",
+            "role": "dimension"
+          },
+          {
+            "name": "ruolo",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_fiscale",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_soggetto",
+            "role": "dimension"
+          },
+          {
+            "name": "id_aggiudicazione",
+            "role": "dimension"
+          }
+        ]
+      },
+      {
+        "slug": "anac_aggiudicazioni",
+        "name": "ANAC Aggiudicazioni",
+        "stage": "published",
+        "period": {
+          "start": 2000,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/anac_aggiudicazioni/2026/anac_aggiudicazioni_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 10,
+        "dimension_columns": 18,
+        "column_count": 28,
+        "columns": [
+          {
+            "name": "cig",
+            "role": "dimension"
+          },
+          {
+            "name": "data_aggiudicazione_definitiva",
+            "role": "dimension"
+          },
+          {
+            "name": "esito",
+            "role": "dimension"
+          },
+          {
+            "name": "criterio_aggiudicazione",
+            "role": "dimension"
+          },
+          {
+            "name": "data_comunicazione_esito",
+            "role": "dimension"
+          },
+          {
+            "name": "numero_offerte_ammesse",
+            "role": "metric"
+          },
+          {
+            "name": "numero_offerte_escluse",
+            "role": "metric"
+          },
+          {
+            "name": "importo_aggiudicazione",
+            "role": "metric"
+          },
+          {
+            "name": "ribasso_aggiudicazione",
+            "role": "metric"
+          },
+          {
+            "name": "num_imprese_offerenti",
+            "role": "metric"
+          },
+          {
+            "name": "flag_subappalto",
+            "role": "dimension"
+          },
+          {
+            "name": "id_aggiudicazione",
+            "role": "dimension"
+          },
+          {
+            "name": "cod_esito",
+            "role": "dimension"
+          },
+          {
+            "name": "num_imprese_richiedenti",
+            "role": "metric"
+          },
+          {
+            "name": "asta_elettronica",
+            "role": "dimension"
+          },
+          {
+            "name": "num_imprese_invitate",
+            "role": "metric"
+          },
+          {
+            "name": "massimo_ribasso",
+            "role": "metric"
+          },
+          {
+            "name": "minimo_ribasso",
+            "role": "metric"
+          },
+          {
+            "name": "FLAG_SCOMPUTO",
+            "role": "dimension"
+          },
+          {
+            "name": "COD_PRESTAZIONI_COMPRESE",
+            "role": "dimension"
+          },
+          {
+            "name": "PRESTAZIONI_COMPRESE",
+            "role": "dimension"
+          },
+          {
+            "name": "CIG_PROG_ESTERNA",
+            "role": "dimension"
+          },
+          {
+            "name": "DATA_INCARICO_PROG",
+            "role": "dimension"
+          },
+          {
+            "name": "DATA_CONS_PROG",
+            "role": "dimension"
+          },
+          {
+            "name": "COD_MODO_RIAGGIUDICAZIONE",
+            "role": "dimension"
+          },
+          {
+            "name": "MODO_RIAGGIUDICAZIONE",
+            "role": "dimension"
+          },
+          {
+            "name": "FLAG_PROC_ACCELERATA",
+            "role": "dimension"
+          },
+          {
+            "name": "N_MANIF_INTERESSE",
             "role": "metric"
           }
         ]
@@ -8898,6 +9090,8 @@
       "aci_prime_iscrizioni_autovetture",
       "ade_cinque_per_mille",
       "aifa_spesa_consumo",
+      "anac_aggiudicatari",
+      "anac_aggiudicazioni",
       "anac_bandi_gara",
       "anpr_mobilita_residenziale",
       "bdap_anagrafe_enti",
