@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-18T13:15:45.149526",
+  "generated_at": "2026-07-18T19:04:19.585815",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -13,7 +13,7 @@
     "open-siope",
     "italia-corpus"
   ],
-  "open_prs": 3,
+  "open_prs": 4,
   "prs": [
     {
       "number": 641,
@@ -32,15 +32,39 @@
       "title": "feat(core): preprocessing utilities \u2014 normalize_number, normalize_columns_map, decode_bytes (#411)",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/pull/415"
+    },
+    {
+      "number": 411,
+      "title": "fix(inps): aggiorna al nuovo portale Open Data INPS (opendata.inps.it)",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/411"
     }
   ],
-  "open_issues": 106,
+  "open_issues": 109,
   "issues": [
     {
       "number": 59,
       "title": "feat: whats_new \u2014 delta awareness tra build CI (P2)",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/issues/59"
+    },
+    {
+      "number": 677,
+      "title": "intake: anac-subappalti \u2014 Subappalti e filiera esecutiva (support)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/677"
+    },
+    {
+      "number": 675,
+      "title": "intake: inps_precariato \u2014 Assunzioni precarie per regione, sesso, et\u00e0 e tipologia (2014-2024)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/675"
+    },
+    {
+      "number": 674,
+      "title": "intake: inps_imprese_provincia \u2014 Imprese per provincia (2013-2022)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/674"
     },
     {
       "number": 673,
@@ -1782,9 +1806,9 @@
     "available": true,
     "generated_at": "2026-07-18",
     "summary": {
-      "total": 90,
+      "total": 91,
       "by_status": {
-        "ok": 90,
+        "ok": 91,
         "warn": 0,
         "error": 0
       }
@@ -1797,8 +1821,8 @@
     "name": "Lab Clean Registry",
     "updated_at": "2026-07-18",
     "summary": {
-      "total": 87,
-      "published": 70
+      "total": 88,
+      "published": 71
     },
     "datasets": [
       {
@@ -2439,6 +2463,45 @@
           },
           {
             "name": "data_ultimo_perfezionamento",
+            "role": "dimension"
+          }
+        ]
+      },
+      {
+        "slug": "anac_partecipanti",
+        "name": "ANAC Partecipanti",
+        "stage": "published",
+        "period": {
+          "start": 2023,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/anac_partecipanti/2026/anac_partecipanti_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 0,
+        "dimension_columns": 5,
+        "column_count": 5,
+        "columns": [
+          {
+            "name": "cig",
+            "role": "dimension"
+          },
+          {
+            "name": "ruolo",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_fiscale",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_soggetto",
             "role": "dimension"
           }
         ]
@@ -9093,6 +9156,7 @@
       "anac_aggiudicatari",
       "anac_aggiudicazioni",
       "anac_bandi_gara",
+      "anac_partecipanti",
       "anpr_mobilita_residenziale",
       "bdap_anagrafe_enti",
       "bdap_entrate_stato",

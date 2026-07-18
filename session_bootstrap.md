@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-18T13:15:45.149526
+**Generated**: 2026-07-18T19:04:19.585815
 
 ## 🔍 SCOUTING
 
@@ -9,8 +9,8 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 90 candidates — 90 ok
-**Dataset Catalog**: 70 published · 70 public · updated 2026-07-18
+**Pipeline**: 91 candidates — 91 ok
+**Dataset Catalog**: 71 published · 71 public · updated 2026-07-18
 
 ## 📊 ANALYSES
 
@@ -42,13 +42,13 @@
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
   · **Terzo settore**: cinque-per-mille
-  ⚠ 69 dataset published non ancora su explorer:
+  ⚠ 70 dataset published non ancora su explorer:
     · aci_prime_iscrizioni_autovetture
     · ade_cinque_per_mille
     · aifa_spesa_consumo
     · anac_aggiudicatari
     · anac_aggiudicazioni
-    · ... e altri 64
+    · ... e altri 65
   **Deploy**: ✅ success (2026-07-14)
 
 ## 🔗 OPEN
@@ -56,6 +56,7 @@
 - [dataset-incubator#641](https://github.com/dataciviclab/dataset-incubator/pull/641): fix: skip GCS push per compose dataset
 - [dataciviclab#417](https://github.com/dataciviclab/dataciviclab/pull/417): la-struttura-della-pa: analisi della struttura organizzativa della PA italiana
 - [toolkit#415](https://github.com/dataciviclab/toolkit/pull/415): feat(core): preprocessing utilities — normalize_number, normalize_columns_map, decode_bytes (#411)
+- [source-observatory#411](https://github.com/dataciviclab/source-observatory/pull/411): fix(inps): aggiorna al nuovo portale Open Data INPS (opendata.inps.it)
 **Discussions**: 143 open
   · [Domanda] ANAC Bandi di Gara — 11 domande sugli appalti pubblici italiani (2016-2025)
   · [Annunci] [Annunci] Dati Eurostat NUTS3 puliti e queryabili — PIL, occupazione, crimine, demografia a livello provinciale
