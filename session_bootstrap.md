@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-19T13:18:10.078745
+**Generated**: 2026-07-19T19:07:16.189925
 
 ## 🔍 SCOUTING
 
@@ -10,8 +10,8 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 91 candidates — 91 ok
-**Dataset Catalog**: 71 published · 71 public · updated 2026-07-18
+**Pipeline**: 92 candidates — 92 ok
+**Dataset Catalog**: 72 published · 72 public · updated 2026-07-18
 
 ## 📊 ANALYSES
 
@@ -43,25 +43,24 @@
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
   · **Terzo settore**: cinque-per-mille
-  ⚠ 70 dataset published non ancora su explorer:
+  ⚠ 71 dataset published non ancora su explorer:
     · aci_prime_iscrizioni_autovetture
     · ade_cinque_per_mille
     · aifa_spesa_consumo
     · anac_aggiudicatari
     · anac_aggiudicazioni
-    · ... e altri 65
+    · ... e altri 66
   **Deploy**: ✅ success (2026-07-14)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#641](https://github.com/dataciviclab/dataset-incubator/pull/641): fix: skip GCS push per compose dataset
 - [dataciviclab#417](https://github.com/dataciviclab/dataciviclab/pull/417): la-struttura-della-pa: analisi della struttura organizzativa della PA italiana
 - [toolkit#415](https://github.com/dataciviclab/toolkit/pull/415): feat(core): preprocessing utilities — normalize_number, normalize_columns_map, decode_bytes (#411)
 - [source-observatory#411](https://github.com/dataciviclab/source-observatory/pull/411): fix(inps): aggiorna al nuovo portale Open Data INPS (opendata.inps.it)
-**Discussions**: 143 open
+**Discussions**: 144 open
+  · [Domanda] OpenCivitas — 11 domande su 19 milioni di indicatori di performance dei comuni italiani (2015-2022)
   · [Domanda] ANAC Bandi di Gara — 11 domande sugli appalti pubblici italiani (2016-2025)
   · [Annunci] [Annunci] Dati Eurostat NUTS3 puliti e queryabili — PIL, occupazione, crimine, demografia a livello provinciale
-  · [Domanda] MEF Partecipate — 11 domande su 101mila incarichi e compensi dei rappresentanti PA (2018-2023)
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA

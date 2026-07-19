@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-19T13:18:10.078745",
+  "generated_at": "2026-07-19T19:07:16.189925",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -104,6 +104,14 @@
         "name": "ANAC Partecipanti",
         "period": {
           "start": 2023,
+          "end": 2026
+        }
+      },
+      {
+        "slug": "anac_subappalti",
+        "name": "ANAC Subappalti",
+        "period": {
+          "start": 2020,
           "end": 2026
         }
       }

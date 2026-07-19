@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-19T13:18:10.078745",
+  "generated_at": "2026-07-19T19:07:16.189925",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -13,14 +13,8 @@
     "open-siope",
     "italia-corpus"
   ],
-  "open_prs": 4,
+  "open_prs": 3,
   "prs": [
-    {
-      "number": 641,
-      "title": "fix: skip GCS push per compose dataset",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/641"
-    },
     {
       "number": 417,
       "title": "la-struttura-della-pa: analisi della struttura organizzativa della PA italiana",
@@ -40,7 +34,7 @@
       "url": "https://github.com/dataciviclab/source-observatory/pull/411"
     }
   ],
-  "open_issues": 109,
+  "open_issues": 110,
   "issues": [
     {
       "number": 59,
@@ -49,10 +43,10 @@
       "url": "https://github.com/dataciviclab/agent-context-builder/issues/59"
     },
     {
-      "number": 677,
-      "title": "intake: anac-subappalti \u2014 Subappalti e filiera esecutiva (support)",
+      "number": 680,
+      "title": "intake: anac-smartcig \u2014 Affidamenti diretti sotto \u20ac40K (support)",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/677"
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/680"
     },
     {
       "number": 675,
@@ -145,12 +139,6 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/517"
     },
     {
-      "number": 489,
-      "title": "bug: compose (mart-only) fallisce GCS push in post-merge",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/489"
-    },
-    {
       "number": 485,
       "title": "intake: bdap_mop_gare \u2014 Gare Opere Pubbliche MOP per regione (2026)",
       "repo": "dataset-incubator",
@@ -197,6 +185,12 @@
       "title": "Proposta intake: Operatori Economici Consip (dati.consip.it)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/375"
+    },
+    {
+      "number": 423,
+      "title": "analisi: who_is_who_pa \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/423"
     },
     {
       "number": 421,
@@ -481,6 +475,12 @@
       "url": "https://github.com/dataciviclab/toolkit/issues/391"
     },
     {
+      "number": 210,
+      "title": "follow-up: pagina e tema per who_is_who_pa",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/210"
+    },
+    {
       "number": 209,
       "title": "follow-up: pagina e tema per anac_aggiudicazioni",
       "repo": "data-explorer",
@@ -697,8 +697,15 @@
       "url": "https://github.com/dataciviclab/italia-corpus/issues/28"
     }
   ],
-  "open_discussions": 143,
+  "open_discussions": 144,
   "discussions": [
+    {
+      "number": 422,
+      "title": "OpenCivitas \u2014 11 domande su 19 milioni di indicatori di performance dei comuni italiani (2015-2022)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/422",
+      "category": "Domanda"
+    },
     {
       "number": 397,
       "title": "ANAC Bandi di Gara \u2014 11 domande sugli appalti pubblici italiani (2016-2025)",
@@ -1813,11 +1820,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-07-18",
+    "generated_at": "2026-07-19",
     "summary": {
-      "total": 91,
+      "total": 92,
       "by_status": {
-        "ok": 91,
+        "ok": 92,
         "warn": 0,
         "error": 0
       }
@@ -1830,8 +1837,8 @@
     "name": "Lab Clean Registry",
     "updated_at": "2026-07-18",
     "summary": {
-      "total": 88,
-      "published": 71
+      "total": 89,
+      "published": 72
     },
     "datasets": [
       {
@@ -2507,6 +2514,85 @@
           },
           {
             "name": "denominazione",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_soggetto",
+            "role": "dimension"
+          }
+        ]
+      },
+      {
+        "slug": "anac_subappalti",
+        "name": "ANAC Subappalti",
+        "stage": "published",
+        "period": {
+          "start": 2020,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/anac_subappalti/2026/anac_subappalti_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 0,
+        "dimension_columns": 15,
+        "column_count": 15,
+        "columns": [
+          {
+            "name": "cig",
+            "role": "dimension"
+          },
+          {
+            "name": "id_subappalto",
+            "role": "dimension"
+          },
+          {
+            "name": "cf_subappaltante",
+            "role": "dimension"
+          },
+          {
+            "name": "data_autorizzazione",
+            "role": "dimension"
+          },
+          {
+            "name": "oggetto",
+            "role": "dimension"
+          },
+          {
+            "name": "cod_categoria",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_categoria",
+            "role": "dimension"
+          },
+          {
+            "name": "classe_importo",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_tipo_categoria",
+            "role": "dimension"
+          },
+          {
+            "name": "cod_cpv",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_cpv",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_fiscale",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione",
+            "role": "dimension"
+          },
+          {
+            "name": "ruolo",
             "role": "dimension"
           },
           {
@@ -9166,6 +9252,7 @@
       "anac_aggiudicazioni",
       "anac_bandi_gara",
       "anac_partecipanti",
+      "anac_subappalti",
       "anpr_mobilita_residenziale",
       "bdap_anagrafe_enti",
       "bdap_entrate_stato",
