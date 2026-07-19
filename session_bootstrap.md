@@ -1,10 +1,11 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-19T02:44:40.082515
+**Generated**: 2026-07-19T08:19:25.708012
 
 ## 🔍 SCOUTING
 
-**Radar**: 36 fonti — GREEN 36 · YELLOW 0 · RED 0 (probe: 2026-07-18)
+**Radar**: 36 fonti — GREEN 35 · YELLOW 1 · RED 0 (probe: 2026-07-19)
+  · **istat_sdmx** YELLOW [-] — Timeout (ReadTimeout)
 **Catalog Drift**: no drift signals (33 sources checked)
 
 ## 📥 INTAKE
