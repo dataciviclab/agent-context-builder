@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-20T02:58:06.991976",
+  "generated_at": "2026-07-20T08:58:51.577235",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -13,7 +13,7 @@
     "open-siope",
     "italia-corpus"
   ],
-  "open_prs": 3,
+  "open_prs": 4,
   "prs": [
     {
       "number": 417,
@@ -32,6 +32,12 @@
       "title": "fix(inps): aggiorna al nuovo portale Open Data INPS (opendata.inps.it)",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/pull/411"
+    },
+    {
+      "number": 71,
+      "title": "chore(deps): bump actions/setup-python from 6 to 7",
+      "repo": "lab-connectors",
+      "url": "https://github.com/dataciviclab/lab-connectors/pull/71"
     }
   ],
   "open_issues": 110,
@@ -1794,26 +1800,17 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-07-19",
+    "probe_date": "2026-07-20",
     "sources_total": 36,
-    "green": 35,
-    "yellow": 1,
+    "green": 36,
+    "yellow": 0,
     "red": 0,
     "persistent_red": 0,
-    "unhealthy": [
-      {
-        "id": "istat_sdmx",
-        "status": "YELLOW",
-        "protocol": "sdmx",
-        "http_code": "-",
-        "note": "Timeout (ReadTimeout)",
-        "red_streak": 0
-      }
-    ]
+    "unhealthy": []
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-07-17T09:34:28+00:00",
+    "captured_at": "2026-07-20T06:29:09+00:00",
     "sources_checked": 33,
     "regressions": [],
     "alerts": []
