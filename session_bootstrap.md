@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-20T19:44:11.800303
+**Generated**: 2026-07-21T02:42:48.661325
 
 ## 🔍 SCOUTING
 
@@ -56,7 +56,7 @@
 - [dataciviclab#417](https://github.com/dataciviclab/dataciviclab/pull/417): la-struttura-della-pa: analisi della struttura organizzativa della PA italiana
 - [toolkit#415](https://github.com/dataciviclab/toolkit/pull/415): feat(core): preprocessing utilities — normalize_number, normalize_columns_map, decode_bytes (#411)
 - [source-observatory#411](https://github.com/dataciviclab/source-observatory/pull/411): fix(inps): aggiorna al nuovo portale Open Data INPS (opendata.inps.it)
-- **Dependabot**: 1 bump PR(s)
+- **Dependabot**: 3 bump PR(s)
 **Discussions**: 144 open
   · [Domanda] OpenCivitas — 11 domande su 19 milioni di indicatori di performance dei comuni italiani (2015-2022)
   · [Domanda] ANAC Bandi di Gara — 11 domande sugli appalti pubblici italiani (2016-2025)

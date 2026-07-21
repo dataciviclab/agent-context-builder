@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-20T19:44:11.800303",
+  "generated_at": "2026-07-21T02:42:48.661325",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -13,8 +13,14 @@
     "open-siope",
     "italia-corpus"
   ],
-  "open_prs": 4,
+  "open_prs": 6,
   "prs": [
+    {
+      "number": 683,
+      "title": "chore(deps): bump actions/setup-python from 6 to 7",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/683"
+    },
     {
       "number": 417,
       "title": "la-struttura-della-pa: analisi della struttura organizzativa della PA italiana",
@@ -26,6 +32,12 @@
       "title": "feat(core): preprocessing utilities \u2014 normalize_number, normalize_columns_map, decode_bytes (#411)",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/pull/415"
+    },
+    {
+      "number": 211,
+      "title": "chore(deps): bump actions/setup-node from 6 to 7",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/211"
     },
     {
       "number": 411,
@@ -1797,7 +1809,9 @@
       "untracked_files": 0
     }
   },
-  "warnings": [],
+  "warnings": [
+    "Many open PRs: 6"
+  ],
   "radar": {
     "available": true,
     "probe_date": "2026-07-20",
