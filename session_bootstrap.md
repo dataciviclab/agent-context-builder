@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-21T08:29:05.107242
+**Generated**: 2026-07-21T13:50:52.857925
 
 ## 🔍 SCOUTING
 
@@ -10,8 +10,8 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 92 candidates — 92 ok
-**Dataset Catalog**: 72 published · 72 public · updated 2026-07-18
+**Pipeline**: 95 candidates — 95 ok
+**Dataset Catalog**: 75 published · 75 public · updated 2026-07-21
 
 ## 📊 ANALYSES
 
@@ -43,20 +43,19 @@
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
   · **Terzo settore**: cinque-per-mille
-  ⚠ 71 dataset published non ancora su explorer:
+  ⚠ 74 dataset published non ancora su explorer:
     · aci_prime_iscrizioni_autovetture
     · ade_cinque_per_mille
     · aifa_spesa_consumo
     · anac_aggiudicatari
     · anac_aggiudicazioni
-    · ... e altri 66
+    · ... e altri 69
   **Deploy**: ✅ success (2026-07-14)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#685](https://github.com/dataciviclab/dataset-incubator/pull/685): chore(post-merge): aggiorna registry per PR #684
+- [dataset-incubator#694](https://github.com/dataciviclab/dataset-incubator/pull/694): feat: giustizia intake — penale-flussi, monitoraggio-mensile-civile, intercettazioni + update giustizia-penale-indicatori
 - [dataciviclab#417](https://github.com/dataciviclab/dataciviclab/pull/417): la-struttura-della-pa: analisi della struttura organizzativa della PA italiana
-- [toolkit#416](https://github.com/dataciviclab/toolkit/pull/416): feat(sql): standard DuckDB macros per il layer CLEAN
 - [source-observatory#411](https://github.com/dataciviclab/source-observatory/pull/411): fix(inps): aggiorna al nuovo portale Open Data INPS (opendata.inps.it)
 - **Dependabot**: 3 bump PR(s)
 **Discussions**: 144 open

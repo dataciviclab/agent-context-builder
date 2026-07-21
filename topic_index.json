@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-21T08:29:05.107242",
+  "generated_at": "2026-07-21T13:50:52.857925",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -467,6 +467,32 @@
         "period": {
           "start": 2015,
           "end": 2024
+        }
+      }
+    ],
+    "MEF \u2014 Dipartimento dell'Economia (Open Data Immobili PA)": [
+      {
+        "slug": "mef_patrimonio_detenzioni",
+        "name": "MEF \u2014 Detenzioni a favore di terzi di immobili pubblici",
+        "period": {
+          "start": 2022,
+          "end": 2023
+        }
+      },
+      {
+        "slug": "mef_patrimonio_enti",
+        "name": "MEF \u2014 Enti adempienti e non adempienti censimento immobili",
+        "period": {
+          "start": 2022,
+          "end": 2023
+        }
+      },
+      {
+        "slug": "mef_patrimonio_immobili",
+        "name": "MEF \u2014 Catalogo immobili pubblici italiani",
+        "period": {
+          "start": 2022,
+          "end": 2023
         }
       }
     ],

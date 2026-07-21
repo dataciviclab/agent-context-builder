@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-21T08:29:05.107242",
+  "generated_at": "2026-07-21T13:50:52.857925",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -13,13 +13,13 @@
     "open-siope",
     "italia-corpus"
   ],
-  "open_prs": 7,
+  "open_prs": 6,
   "prs": [
     {
-      "number": 685,
-      "title": "chore(post-merge): aggiorna registry per PR #684",
+      "number": 694,
+      "title": "feat: giustizia intake \u2014 penale-flussi, monitoraggio-mensile-civile, intercettazioni + update giustizia-penale-indicatori",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/685"
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/694"
     },
     {
       "number": 683,
@@ -32,12 +32,6 @@
       "title": "la-struttura-della-pa: analisi della struttura organizzativa della PA italiana",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/pull/417"
-    },
-    {
-      "number": 416,
-      "title": "feat(sql): standard DuckDB macros per il layer CLEAN",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/416"
     },
     {
       "number": 211,
@@ -58,13 +52,37 @@
       "url": "https://github.com/dataciviclab/lab-connectors/pull/71"
     }
   ],
-  "open_issues": 109,
+  "open_issues": 117,
   "issues": [
     {
       "number": 59,
       "title": "feat: whats_new \u2014 delta awareness tra build CI (P2)",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/issues/59"
+    },
+    {
+      "number": 693,
+      "title": "update: giustizia_penale_indicatori \u2014 estensione a tutti gli uffici penali (Corti d'Appello, GdP, Minorenni) + anno 2025",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/693"
+    },
+    {
+      "number": 692,
+      "title": "intake: intercettazioni \u2014 Bersagli intercettazioni per tipologia, reato e distretto (2014-2025)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/692"
+    },
+    {
+      "number": 691,
+      "title": "intake: monitoraggio_mensile_civile \u2014 Iscritti e Definiti civili per mese/sede/materia (2019-2025)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/691"
+    },
+    {
+      "number": 690,
+      "title": "intake: penale_flussi \u2014 Flussi procedimenti penali per ufficio (iscritti/definiti/pendenti) 2005-2025",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/690"
     },
     {
       "number": 680,
@@ -209,6 +227,24 @@
       "title": "Proposta intake: Operatori Economici Consip (dati.consip.it)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/375"
+    },
+    {
+      "number": 426,
+      "title": "analisi: mef_patrimonio_immobili \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/426"
+    },
+    {
+      "number": 425,
+      "title": "analisi: mef_patrimonio_enti \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/425"
+    },
+    {
+      "number": 424,
+      "title": "analisi: mef_patrimonio_detenzioni \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/424"
     },
     {
       "number": 423,
@@ -491,6 +527,12 @@
       "title": "refactor: estrarre _write_reports() da run_full() in report_ops.py",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/391"
+    },
+    {
+      "number": 212,
+      "title": "follow-up: pagina e tema per 3 nuovi dataset",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/212"
     },
     {
       "number": 210,
@@ -1810,7 +1852,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 7"
+    "Many open PRs: 6"
   ],
   "radar": {
     "available": true,
@@ -1840,11 +1882,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-07-19",
+    "generated_at": "2026-07-21",
     "summary": {
-      "total": 92,
+      "total": 95,
       "by_status": {
-        "ok": 92,
+        "ok": 95,
         "warn": 0,
         "error": 0
       }
@@ -1855,10 +1897,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-07-18",
+    "updated_at": "2026-07-21",
     "summary": {
-      "total": 89,
-      "published": 72
+      "total": 92,
+      "published": 75
     },
     "datasets": [
       {
@@ -6029,6 +6071,451 @@
         "columns": []
       },
       {
+        "slug": "mef_patrimonio_detenzioni",
+        "name": "MEF \u2014 Detenzioni a favore di terzi di immobili pubblici",
+        "stage": "published",
+        "period": {
+          "start": 2022,
+          "end": 2023
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/mef_patrimonio_detenzioni/*/mef_patrimonio_detenzioni_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 3,
+        "dimension_columns": 23,
+        "column_count": 26,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "id_variazione",
+            "role": "dimension"
+          },
+          {
+            "name": "settore_istituzionale",
+            "role": "dimension"
+          },
+          {
+            "name": "macrocategoria_amministrazione",
+            "role": "dimension"
+          },
+          {
+            "name": "tipologia_amministrazione",
+            "role": "dimension"
+          },
+          {
+            "name": "amministrazione_denominazione",
+            "role": "dimension"
+          },
+          {
+            "name": "amministrazione_codice_fiscale",
+            "role": "dimension"
+          },
+          {
+            "name": "reg_amministrazione",
+            "role": "dimension"
+          },
+          {
+            "name": "prov_amministrazione",
+            "role": "dimension"
+          },
+          {
+            "name": "comune_amministrazione",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_comune_amministrazione",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_detenzione_terzi",
+            "role": "dimension"
+          },
+          {
+            "name": "detenzione_intera_ui",
+            "role": "dimension"
+          },
+          {
+            "name": "superficie_detenzione_mq",
+            "role": "metric"
+          },
+          {
+            "name": "canone_annuale",
+            "role": "metric"
+          },
+          {
+            "name": "data_decorrenza",
+            "role": "dimension"
+          },
+          {
+            "name": "data_scadenza",
+            "role": "dimension"
+          },
+          {
+            "name": "soggetto_ricevente_tipo",
+            "role": "dimension"
+          },
+          {
+            "name": "soggetto_ricevente_denominazione",
+            "role": "dimension"
+          },
+          {
+            "name": "soggetto_ricevente_cf",
+            "role": "dimension"
+          },
+          {
+            "name": "soggetto_ricevente_pa",
+            "role": "dimension"
+          },
+          {
+            "name": "finalita_pf",
+            "role": "dimension"
+          },
+          {
+            "name": "id_bene",
+            "role": "dimension"
+          },
+          {
+            "name": "natura_bene",
+            "role": "dimension"
+          },
+          {
+            "name": "tipologia_bene",
+            "role": "dimension"
+          },
+          {
+            "name": "superficie_riferimento_mq",
+            "role": "metric"
+          }
+        ]
+      },
+      {
+        "slug": "mef_patrimonio_enti",
+        "name": "MEF \u2014 Enti adempienti e non adempienti censimento immobili",
+        "stage": "published",
+        "period": {
+          "start": 2022,
+          "end": 2023
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/mef_patrimonio_enti/*/mef_patrimonio_enti_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 2,
+        "dimension_columns": 17,
+        "column_count": 19,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "settore_istituzionale",
+            "role": "dimension"
+          },
+          {
+            "name": "macrocategoria_amministrazione",
+            "role": "dimension"
+          },
+          {
+            "name": "tipologia_amministrazione",
+            "role": "dimension"
+          },
+          {
+            "name": "amministrazione_denominazione",
+            "role": "dimension"
+          },
+          {
+            "name": "amministrazione_codice_fiscale",
+            "role": "dimension"
+          },
+          {
+            "name": "regione",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "comune",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_comune",
+            "role": "dimension"
+          },
+          {
+            "name": "num_beni_proprieta",
+            "role": "metric"
+          },
+          {
+            "name": "num_beni_detenzione",
+            "role": "metric"
+          },
+          {
+            "name": "dichiarazione_negativa",
+            "role": "dimension"
+          },
+          {
+            "name": "dichiarazione_completezza",
+            "role": "dimension"
+          },
+          {
+            "name": "invio_comunicazione",
+            "role": "dimension"
+          },
+          {
+            "name": "obbligo_comunicazione",
+            "role": "dimension"
+          },
+          {
+            "name": "nome_sezione",
+            "role": "dimension"
+          },
+          {
+            "name": "nome_file_immobili",
+            "role": "dimension"
+          },
+          {
+            "name": "nome_file_detenzioni",
+            "role": "dimension"
+          }
+        ]
+      },
+      {
+        "slug": "mef_patrimonio_immobili",
+        "name": "MEF \u2014 Catalogo immobili pubblici italiani",
+        "stage": "published",
+        "period": {
+          "start": 2022,
+          "end": 2023
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/mef_patrimonio_immobili/*/mef_patrimonio_immobili_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 9,
+        "dimension_columns": 43,
+        "column_count": 52,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "settore_istituzionale",
+            "role": "dimension"
+          },
+          {
+            "name": "macrocategoria_amministrazione",
+            "role": "dimension"
+          },
+          {
+            "name": "tipologia_amministrazione",
+            "role": "dimension"
+          },
+          {
+            "name": "amministrazione_denominazione",
+            "role": "dimension"
+          },
+          {
+            "name": "amministrazione_codice_fiscale",
+            "role": "dimension"
+          },
+          {
+            "name": "reg_amministrazione",
+            "role": "dimension"
+          },
+          {
+            "name": "prov_amministrazione",
+            "role": "dimension"
+          },
+          {
+            "name": "comune_amministrazione",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_comune_amministrazione",
+            "role": "dimension"
+          },
+          {
+            "name": "titolo_proprieta",
+            "role": "dimension"
+          },
+          {
+            "name": "quota_proprieta",
+            "role": "metric"
+          },
+          {
+            "name": "titolo_detenzione",
+            "role": "dimension"
+          },
+          {
+            "name": "detenzione_intera_ui",
+            "role": "dimension"
+          },
+          {
+            "name": "superficie_detenzione_mq",
+            "role": "metric"
+          },
+          {
+            "name": "canone_annuale",
+            "role": "metric"
+          },
+          {
+            "name": "soggetto_cedente",
+            "role": "dimension"
+          },
+          {
+            "name": "soggetto_cedente_cf",
+            "role": "dimension"
+          },
+          {
+            "name": "id_bene",
+            "role": "dimension"
+          },
+          {
+            "name": "natura_bene",
+            "role": "dimension"
+          },
+          {
+            "name": "stato_accatastamento",
+            "role": "dimension"
+          },
+          {
+            "name": "sistema_catastale",
+            "role": "dimension"
+          },
+          {
+            "name": "regione_bene",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia_bene",
+            "role": "dimension"
+          },
+          {
+            "name": "comune_bene",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_comune_bene",
+            "role": "dimension"
+          },
+          {
+            "name": "indirizzo",
+            "role": "dimension"
+          },
+          {
+            "name": "numero_civico",
+            "role": "dimension"
+          },
+          {
+            "name": "fonte_georef",
+            "role": "dimension"
+          },
+          {
+            "name": "precisione_georef",
+            "role": "dimension"
+          },
+          {
+            "name": "immobile_georef",
+            "role": "dimension"
+          },
+          {
+            "name": "latitudine",
+            "role": "metric"
+          },
+          {
+            "name": "longitudine",
+            "role": "metric"
+          },
+          {
+            "name": "identificativo_catastale",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_bene_non_accatastato",
+            "role": "dimension"
+          },
+          {
+            "name": "tipologia_bene",
+            "role": "dimension"
+          },
+          {
+            "name": "superficie_mq",
+            "role": "metric"
+          },
+          {
+            "name": "cubatura_mc",
+            "role": "metric"
+          },
+          {
+            "name": "sup_aree_pertinenziali_mq",
+            "role": "metric"
+          },
+          {
+            "name": "superficie_riferimento_mq",
+            "role": "metric"
+          },
+          {
+            "name": "epoca_costruzione",
+            "role": "dimension"
+          },
+          {
+            "name": "vincoli",
+            "role": "dimension"
+          },
+          {
+            "name": "natura_giuridica_bene",
+            "role": "dimension"
+          },
+          {
+            "name": "diritto_gravante_terreno",
+            "role": "dimension"
+          },
+          {
+            "name": "id_compendio",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_compendio",
+            "role": "dimension"
+          },
+          {
+            "name": "tipologia_compendio",
+            "role": "dimension"
+          },
+          {
+            "name": "utilizzo_bene",
+            "role": "dimension"
+          },
+          {
+            "name": "finalita",
+            "role": "dimension"
+          },
+          {
+            "name": "altra_finalita",
+            "role": "dimension"
+          },
+          {
+            "name": "ui_data_interamente_terzi",
+            "role": "dimension"
+          },
+          {
+            "name": "ui_data_parzialmente_terzi",
+            "role": "dimension"
+          }
+        ]
+      },
+      {
         "slug": "mef_rappresentanti_partecipate",
         "name": "MEF \u2014 Compensi Rappresentanti PA nelle Partecipate (2018-2023)",
         "stage": "published",
@@ -9307,6 +9794,9 @@
       "istat_occupazione_provinciale",
       "istat_pil_territoriale",
       "iva_regionale",
+      "mef_patrimonio_detenzioni",
+      "mef_patrimonio_enti",
+      "mef_patrimonio_immobili",
       "mef_rappresentanti_partecipate",
       "mim_alunni_corso_eta",
       "mim_scuola_infanzia",
