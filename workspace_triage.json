@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-21T16:01:04.558209",
+  "generated_at": "2026-07-21T19:23:51.587886",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -13,8 +13,14 @@
     "open-siope",
     "italia-corpus"
   ],
-  "open_prs": 5,
+  "open_prs": 6,
   "prs": [
+    {
+      "number": 700,
+      "title": "Intake: openga-ricorsi-appalto \u2014 estensione da CdS a 31 sedi (OpenGA)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/700"
+    },
     {
       "number": 683,
       "title": "chore(deps): bump actions/setup-python from 6 to 7",
@@ -46,13 +52,19 @@
       "url": "https://github.com/dataciviclab/lab-connectors/pull/71"
     }
   ],
-  "open_issues": 115,
+  "open_issues": 117,
   "issues": [
     {
       "number": 59,
       "title": "feat: whats_new \u2014 delta awareness tra build CI (P2)",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/issues/59"
+    },
+    {
+      "number": 699,
+      "title": "Intake: openga-ricorsi-appalto \u2014 estensione da CdS a 31 sedi",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/699"
     },
     {
       "number": 680,
@@ -197,6 +209,12 @@
       "title": "Proposta intake: Operatori Economici Consip (dati.consip.it)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/375"
+    },
+    {
+      "number": 430,
+      "title": "analisi: ga_sentenze \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/430"
     },
     {
       "number": 429,
@@ -487,12 +505,6 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/324"
     },
     {
-      "number": 298,
-      "title": "analisi: camera_deputati_legislature \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/298"
-    },
-    {
       "number": 410,
       "title": "feat(ckan): supporto proxy esplicito per fonti che bloccano GHA",
       "repo": "toolkit",
@@ -503,6 +515,12 @@
       "title": "refactor: estrarre _write_reports() da run_full() in report_ops.py",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/391"
+    },
+    {
+      "number": 214,
+      "title": "follow-up: pagina e tema per ga_sentenze",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/214"
     },
     {
       "number": 213,
@@ -1833,7 +1851,9 @@
       "untracked_files": 0
     }
   },
-  "warnings": [],
+  "warnings": [
+    "Many open PRs: 6"
+  ],
   "radar": {
     "available": true,
     "probe_date": "2026-07-21",
@@ -1864,9 +1884,9 @@
     "available": true,
     "generated_at": "2026-07-21",
     "summary": {
-      "total": 98,
+      "total": 99,
       "by_status": {
-        "ok": 98,
+        "ok": 99,
         "warn": 0,
         "error": 0
       }
@@ -1879,8 +1899,8 @@
     "name": "Lab Clean Registry",
     "updated_at": "2026-07-21",
     "summary": {
-      "total": 95,
-      "published": 78
+      "total": 96,
+      "published": 79
     },
     "datasets": [
       {
@@ -4491,6 +4511,93 @@
           },
           {
             "name": "paese_beneficiante",
+            "role": "dimension"
+          }
+        ]
+      },
+      {
+        "slug": "ga_sentenze",
+        "name": "Sentenze Giustizia Amministrativa (OpenGA)",
+        "stage": "published",
+        "period": {
+          "start": 2023,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/ga_sentenze/*/ga_sentenze_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 1,
+        "dimension_columns": 16,
+        "column_count": 17,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_sede",
+            "role": "dimension"
+          },
+          {
+            "name": "nome_sede",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_sezione",
+            "role": "dimension"
+          },
+          {
+            "name": "nome_sezione",
+            "role": "dimension"
+          },
+          {
+            "name": "numero_provvedimento",
+            "role": "dimension"
+          },
+          {
+            "name": "numero_ricorso",
+            "role": "dimension"
+          },
+          {
+            "name": "data_pubblicazione",
+            "role": "dimension"
+          },
+          {
+            "name": "mese_pubblicazione",
+            "role": "dimension"
+          },
+          {
+            "name": "esito_provvedimento",
+            "role": "dimension"
+          },
+          {
+            "name": "flg_definisce",
+            "role": "dimension"
+          },
+          {
+            "name": "data_deposito_ricorso",
+            "role": "dimension"
+          },
+          {
+            "name": "oggetto_ricorso",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_ricorso",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_udienza",
+            "role": "dimension"
+          },
+          {
+            "name": "num_membri_collegio",
+            "role": "metric"
+          },
+          {
+            "name": "tipo_provvedimento",
             "role": "dimension"
           }
         ]
@@ -9910,6 +10017,7 @@
       "elezioni_politiche",
       "elezioni_referendum",
       "fts_eu_grants",
+      "ga_sentenze",
       "inps_pensioni_trimestrale",
       "inps_rdc_pdc",
       "intercettazioni",
