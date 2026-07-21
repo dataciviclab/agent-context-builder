@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-21T13:50:52.857925",
+  "generated_at": "2026-07-21T16:01:04.558209",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -321,6 +321,32 @@
         "period": {
           "start": 2020,
           "end": 2020
+        }
+      }
+    ],
+    "Ministero della Giustizia \u2014 DG Statistica (datiestatistiche.giustizia.it)": [
+      {
+        "slug": "intercettazioni",
+        "name": "Intercettazioni",
+        "period": {
+          "start": 2014,
+          "end": 2025
+        }
+      },
+      {
+        "slug": "monitoraggio_mensile_civile",
+        "name": "Monitoraggio Mensile Civile",
+        "period": {
+          "start": 2019,
+          "end": 2025
+        }
+      },
+      {
+        "slug": "penale_flussi",
+        "name": "Penale Flussi",
+        "period": {
+          "start": 2014,
+          "end": 2025
         }
       }
     ],
@@ -796,7 +822,7 @@
         "name": "Giustizia Penale \u2014 Clearance Rate e Disposition Time",
         "period": {
           "start": 2014,
-          "end": 2024
+          "end": 2025
         }
       }
     ],
