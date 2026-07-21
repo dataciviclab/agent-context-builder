@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-21T02:42:48.661325",
+  "generated_at": "2026-07-21T08:29:05.107242",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -13,8 +13,14 @@
     "open-siope",
     "italia-corpus"
   ],
-  "open_prs": 6,
+  "open_prs": 7,
   "prs": [
+    {
+      "number": 685,
+      "title": "chore(post-merge): aggiorna registry per PR #684",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/685"
+    },
     {
       "number": 683,
       "title": "chore(deps): bump actions/setup-python from 6 to 7",
@@ -28,10 +34,10 @@
       "url": "https://github.com/dataciviclab/dataciviclab/pull/417"
     },
     {
-      "number": 415,
-      "title": "feat(core): preprocessing utilities \u2014 normalize_number, normalize_columns_map, decode_bytes (#411)",
+      "number": 416,
+      "title": "feat(sql): standard DuckDB macros per il layer CLEAN",
       "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/415"
+      "url": "https://github.com/dataciviclab/toolkit/pull/416"
     },
     {
       "number": 211,
@@ -52,7 +58,7 @@
       "url": "https://github.com/dataciviclab/lab-connectors/pull/71"
     }
   ],
-  "open_issues": 110,
+  "open_issues": 109,
   "issues": [
     {
       "number": 59,
@@ -473,12 +479,6 @@
       "title": "[Roadmap 2026] 5 dataset welfare e lavoro puliti e analizzati",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/issues/123"
-    },
-    {
-      "number": 411,
-      "title": "feat(core): utility preprocessing \u2014 normalize_number, decode_bytes, normalize_columns_map",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/411"
     },
     {
       "number": 410,
@@ -1810,17 +1810,26 @@
     }
   },
   "warnings": [
-    "Many open PRs: 6"
+    "Many open PRs: 7"
   ],
   "radar": {
     "available": true,
-    "probe_date": "2026-07-20",
+    "probe_date": "2026-07-21",
     "sources_total": 36,
-    "green": 36,
-    "yellow": 0,
+    "green": 35,
+    "yellow": 1,
     "red": 0,
     "persistent_red": 0,
-    "unhealthy": []
+    "unhealthy": [
+      {
+        "id": "istat_sdmx",
+        "status": "YELLOW",
+        "protocol": "sdmx",
+        "http_code": "-",
+        "note": "Timeout (ReadTimeout)",
+        "red_streak": 0
+      }
+    ]
   },
   "source_health": {
     "available": true,
