@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-21T19:23:51.587886",
+  "generated_at": "2026-07-22T02:40:10.275330",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -13,14 +13,8 @@
     "open-siope",
     "italia-corpus"
   ],
-  "open_prs": 6,
+  "open_prs": 5,
   "prs": [
-    {
-      "number": 700,
-      "title": "Intake: openga-ricorsi-appalto \u2014 estensione da CdS a 31 sedi (OpenGA)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/700"
-    },
     {
       "number": 683,
       "title": "chore(deps): bump actions/setup-python from 6 to 7",
@@ -52,19 +46,13 @@
       "url": "https://github.com/dataciviclab/lab-connectors/pull/71"
     }
   ],
-  "open_issues": 117,
+  "open_issues": 116,
   "issues": [
     {
       "number": 59,
       "title": "feat: whats_new \u2014 delta awareness tra build CI (P2)",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/issues/59"
-    },
-    {
-      "number": 699,
-      "title": "Intake: openga-ricorsi-appalto \u2014 estensione da CdS a 31 sedi",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/699"
     },
     {
       "number": 680,
@@ -1851,9 +1839,7 @@
       "untracked_files": 0
     }
   },
-  "warnings": [
-    "Many open PRs: 6"
-  ],
+  "warnings": [],
   "radar": {
     "available": true,
     "probe_date": "2026-07-21",
@@ -7487,7 +7473,7 @@
       },
       {
         "slug": "openga_ricorsi_appalto",
-        "name": "Ricorsi Appalto Consiglio di Stato",
+        "name": "Ricorsi Appalto (OpenGA \u2014 31 sedi)",
         "stage": "incubating",
         "period": {
           "start": 2023,

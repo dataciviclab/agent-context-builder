@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-21T19:23:51.587886
+**Generated**: 2026-07-22T02:40:10.275330
 
 ## 🔍 SCOUTING
 
@@ -54,7 +54,6 @@
 
 ## 🔗 OPEN
 
-- [dataset-incubator#700](https://github.com/dataciviclab/dataset-incubator/pull/700): Intake: openga-ricorsi-appalto — estensione da CdS a 31 sedi (OpenGA)
 - [dataciviclab#417](https://github.com/dataciviclab/dataciviclab/pull/417): la-struttura-della-pa: analisi della struttura organizzativa della PA italiana
 - [source-observatory#411](https://github.com/dataciviclab/source-observatory/pull/411): fix(inps): aggiorna al nuovo portale Open Data INPS (opendata.inps.it)
 - **Dependabot**: 3 bump PR(s)
