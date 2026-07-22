@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-22T08:29:42.095838",
+  "generated_at": "2026-07-22T13:54:17.461092",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -305,6 +305,22 @@
       }
     ],
     "Giustizia Amministrativa \u2014 OpenGA": [
+      {
+        "slug": "ga_decreti",
+        "name": "Ga Decreti",
+        "period": {
+          "start": 2023,
+          "end": 2026
+        }
+      },
+      {
+        "slug": "ga_ordinanze",
+        "name": "Ga Ordinanze",
+        "period": {
+          "start": 2023,
+          "end": 2026
+        }
+      },
       {
         "slug": "ga_sentenze",
         "name": "Sentenze Giustizia Amministrativa (OpenGA)",

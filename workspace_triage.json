@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T08:29:42.095838",
+  "generated_at": "2026-07-22T13:54:17.461092",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -46,7 +46,7 @@
       "url": "https://github.com/dataciviclab/lab-connectors/pull/71"
     }
   ],
-  "open_issues": 116,
+  "open_issues": 117,
   "issues": [
     {
       "number": 59,
@@ -197,6 +197,18 @@
       "title": "Proposta intake: Operatori Economici Consip (dati.consip.it)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/375"
+    },
+    {
+      "number": 432,
+      "title": "analisi: ga_ordinanze \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/432"
+    },
+    {
+      "number": 431,
+      "title": "analisi: ga_decreti \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/431"
     },
     {
       "number": 430,
@@ -481,18 +493,6 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/328"
     },
     {
-      "number": 327,
-      "title": "analisi: strutture_asl \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/327"
-    },
-    {
-      "number": 324,
-      "title": "analisi: opencoesione_progetti \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/324"
-    },
-    {
       "number": 410,
       "title": "feat(ckan): supporto proxy esplicito per fonti che bloccano GHA",
       "repo": "toolkit",
@@ -503,6 +503,12 @@
       "title": "refactor: estrarre _write_reports() da run_full() in report_ops.py",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/391"
+    },
+    {
+      "number": 215,
+      "title": "follow-up: pagina e tema per 2 nuovi dataset",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/215"
     },
     {
       "number": 214,
@@ -1859,11 +1865,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-07-21",
+    "generated_at": "2026-07-22",
     "summary": {
-      "total": 99,
+      "total": 101,
       "by_status": {
-        "ok": 99,
+        "ok": 101,
         "warn": 0,
         "error": 0
       }
@@ -1874,10 +1880,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-07-21",
+    "updated_at": "2026-07-22",
     "summary": {
-      "total": 96,
-      "published": 79
+      "total": 98,
+      "published": 81
     },
     "datasets": [
       {
@@ -4488,6 +4494,180 @@
           },
           {
             "name": "paese_beneficiante",
+            "role": "dimension"
+          }
+        ]
+      },
+      {
+        "slug": "ga_decreti",
+        "name": "Ga Decreti",
+        "stage": "published",
+        "period": {
+          "start": 2023,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/ga_decreti/*/ga_decreti_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 1,
+        "dimension_columns": 16,
+        "column_count": 17,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_sede",
+            "role": "dimension"
+          },
+          {
+            "name": "nome_sede",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_sezione",
+            "role": "dimension"
+          },
+          {
+            "name": "nome_sezione",
+            "role": "dimension"
+          },
+          {
+            "name": "numero_provvedimento",
+            "role": "dimension"
+          },
+          {
+            "name": "numero_ricorso",
+            "role": "dimension"
+          },
+          {
+            "name": "data_pubblicazione",
+            "role": "dimension"
+          },
+          {
+            "name": "mese_pubblicazione",
+            "role": "dimension"
+          },
+          {
+            "name": "esito_provvedimento",
+            "role": "dimension"
+          },
+          {
+            "name": "flg_definisce",
+            "role": "dimension"
+          },
+          {
+            "name": "data_deposito_ricorso",
+            "role": "dimension"
+          },
+          {
+            "name": "oggetto_ricorso",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_ricorso",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_udienza",
+            "role": "dimension"
+          },
+          {
+            "name": "num_membri_collegio",
+            "role": "metric"
+          },
+          {
+            "name": "tipo_provvedimento",
+            "role": "dimension"
+          }
+        ]
+      },
+      {
+        "slug": "ga_ordinanze",
+        "name": "Ga Ordinanze",
+        "stage": "published",
+        "period": {
+          "start": 2023,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/ga_ordinanze/*/ga_ordinanze_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 1,
+        "dimension_columns": 16,
+        "column_count": 17,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_sede",
+            "role": "dimension"
+          },
+          {
+            "name": "nome_sede",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_sezione",
+            "role": "dimension"
+          },
+          {
+            "name": "nome_sezione",
+            "role": "dimension"
+          },
+          {
+            "name": "numero_provvedimento",
+            "role": "dimension"
+          },
+          {
+            "name": "numero_ricorso",
+            "role": "dimension"
+          },
+          {
+            "name": "data_pubblicazione",
+            "role": "dimension"
+          },
+          {
+            "name": "mese_pubblicazione",
+            "role": "dimension"
+          },
+          {
+            "name": "esito_provvedimento",
+            "role": "dimension"
+          },
+          {
+            "name": "flg_definisce",
+            "role": "dimension"
+          },
+          {
+            "name": "data_deposito_ricorso",
+            "role": "dimension"
+          },
+          {
+            "name": "oggetto_ricorso",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_ricorso",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_udienza",
+            "role": "dimension"
+          },
+          {
+            "name": "num_membri_collegio",
+            "role": "metric"
+          },
+          {
+            "name": "tipo_provvedimento",
             "role": "dimension"
           }
         ]
@@ -9994,6 +10174,8 @@
       "elezioni_politiche",
       "elezioni_referendum",
       "fts_eu_grants",
+      "ga_decreti",
+      "ga_ordinanze",
       "ga_sentenze",
       "inps_pensioni_trimestrale",
       "inps_rdc_pdc",
