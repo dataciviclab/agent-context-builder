@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-23T02:45:54.932102",
+  "generated_at": "2026-07-23T08:30:41.969044",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -1848,13 +1848,22 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-07-22",
+    "probe_date": "2026-07-23",
     "sources_total": 36,
-    "green": 36,
-    "yellow": 0,
+    "green": 35,
+    "yellow": 1,
     "red": 0,
     "persistent_red": 0,
-    "unhealthy": []
+    "unhealthy": [
+      {
+        "id": "istat_sdmx",
+        "status": "YELLOW",
+        "protocol": "sdmx",
+        "http_code": "-",
+        "note": "Timeout (ReadTimeout)",
+        "red_streak": 0
+      }
+    ]
   },
   "source_health": {
     "available": true,
