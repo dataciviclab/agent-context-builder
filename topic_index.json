@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-23T14:00:18.474938",
+  "generated_at": "2026-07-23T19:18:09.652617",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -1198,6 +1198,15 @@
       "discussion": 88
     },
     {
+      "slug": "la-struttura-della-pa",
+      "name": "La struttura della PA italiana",
+      "datasets": [
+        "ipa_unita_organizzative"
+      ],
+      "path": "analisi/la-struttura-della-pa/README.md",
+      "status": "active"
+    },
+    {
       "slug": "malasanita-struttura-mortalita",
       "name": "Malasanit\u00e0 2022: mortalit\u00e0 evitabile e dotazione sanitaria regionale",
       "datasets": [
@@ -1298,6 +1307,9 @@
     ],
     "irpef_comunale": [
       "irpef-comunale"
+    ],
+    "ipa_unita_organizzative": [
+      "la-struttura-della-pa"
     ],
     "malasanita_struttura_mortalita": [
       "malasanita-struttura-mortalita"

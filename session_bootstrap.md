@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-23T14:00:18.474938
+**Generated**: 2026-07-23T19:18:09.652617
 
 ## 🔍 SCOUTING
 
@@ -15,7 +15,7 @@
 
 ## 📊 ANALYSES
 
-**Attive**: 17
+**Attive**: 18
   · **AIFA Spesa farmaceutica convenzionata 2018-2024** · → aifa_spesa_consumo · [discussion #242](https://github.com/orgs/dataciviclab/discussions/242)
   · **10 anni di appalti pubblici: da 167 a 635 miliardi** · → anac_bandi_gara
   · **Camera votazioni 2018-2025** · → camera_votazioni_sparql
@@ -26,6 +26,7 @@
   · **Le due Italie — un'analisi multi-dimensionale del divario Nord-Sud** · → divario_nord_sud
   · **BDAP Entrate Stato 2008-2024** · → bdap_entrate_stato · [discussion #218](https://github.com/orgs/dataciviclab/discussions/218)
   · **IRPEF comunale 2019-2023** · → irpef_comunale · [discussion #88](https://github.com/orgs/dataciviclab/discussions/88)
+  · **La struttura della PA italiana** · → ipa_unita_organizzative
   · **Malasanità 2022: mortalità evitabile e dotazione sanitaria regionale** · → malasanita_struttura_mortalita · [discussion #99](https://github.com/orgs/dataciviclab/discussions/99)
   · **OpenCivitas FSC 2025 RSO** · → opencivitas_fsc_2025_rso
   · **Rifiuti per km² — dove si produce di più?** · → ispra_ru_base · [discussion #340](https://github.com/orgs/dataciviclab/discussions/340)
@@ -54,7 +55,6 @@
 
 ## 🔗 OPEN
 
-- [dataciviclab#417](https://github.com/dataciviclab/dataciviclab/pull/417): la-struttura-della-pa: analisi della struttura organizzativa della PA italiana
 - [source-observatory#411](https://github.com/dataciviclab/source-observatory/pull/411): fix(inps): aggiorna al nuovo portale Open Data INPS (opendata.inps.it)
 - **Dependabot**: 3 bump PR(s)
 **Discussions**: 144 open
