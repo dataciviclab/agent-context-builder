@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-23T08:30:41.969044
+**Generated**: 2026-07-23T14:00:18.474938
 
 ## 🔍 SCOUTING
 
@@ -58,9 +58,9 @@
 - [source-observatory#411](https://github.com/dataciviclab/source-observatory/pull/411): fix(inps): aggiorna al nuovo portale Open Data INPS (opendata.inps.it)
 - **Dependabot**: 3 bump PR(s)
 **Discussions**: 144 open
+  · [Proposte] [Progetto] Rifiuti & Disuguaglianza Socio-Economica
   · [Domanda] OpenCivitas — 11 domande su 19 milioni di indicatori di performance dei comuni italiani (2015-2022)
   · [Domanda] ANAC Bandi di Gara — 11 domande sugli appalti pubblici italiani (2016-2025)
-  · [Annunci] [Annunci] Dati Eurostat NUTS3 puliti e queryabili — PIL, occupazione, crimine, demografia a livello provinciale
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
