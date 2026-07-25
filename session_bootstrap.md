@@ -1,10 +1,10 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-25T02:39:54.904226
+**Generated**: 2026-07-25T08:06:38.463652
 
 ## 🔍 SCOUTING
 
-**Radar**: 36 fonti — GREEN 36 · YELLOW 0 · RED 0 (probe: 2026-07-24)
+**Radar**: 36 fonti — GREEN 36 · YELLOW 0 · RED 0 (probe: 2026-07-25)
 **Catalog Drift**: no drift signals (33 sources checked)
 
 ## 📥 INTAKE
@@ -54,6 +54,7 @@
 
 ## 🔗 OPEN
 
+- [dataset-incubator#706](https://github.com/dataciviclab/dataset-incubator/pull/706): feat: mart analitici + macro SQL + validazione per 5 dataset
 - [source-observatory#411](https://github.com/dataciviclab/source-observatory/pull/411): fix(inps): aggiorna al nuovo portale Open Data INPS (opendata.inps.it)
 - **Dependabot**: 3 bump PR(s)
 **Discussions**: 144 open
