@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-25T08:06:38.463652",
+  "generated_at": "2026-07-25T13:26:48.036615",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -16,10 +16,10 @@
   "open_prs": 5,
   "prs": [
     {
-      "number": 706,
-      "title": "feat: mart analitici + macro SQL + validazione per 5 dataset",
+      "number": 709,
+      "title": "compose: anac-appalti-master \u2014 8 dataset ANAC unificati (6.08M CIG, grana 1:1)",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/706"
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/709"
     },
     {
       "number": 683,
@@ -1871,11 +1871,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-07-22",
+    "generated_at": "2026-07-25",
     "summary": {
-      "total": 101,
+      "total": 104,
       "by_status": {
-        "ok": 101,
+        "ok": 104,
         "warn": 0,
         "error": 0
       }
@@ -1886,10 +1886,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-07-22",
+    "updated_at": "2026-07-25",
     "summary": {
-      "total": 98,
-      "published": 81
+      "total": 101,
+      "published": 84
     },
     "datasets": [
       {
@@ -2535,6 +2535,100 @@
         ]
       },
       {
+        "slug": "anac_collaudo",
+        "name": "ANAC Collaudo",
+        "stage": "published",
+        "period": {
+          "start": 2000,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/anac_collaudo/2026/anac_collaudo_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 3,
+        "dimension_columns": 9,
+        "column_count": 12,
+        "columns": [
+          {
+            "name": "cig",
+            "role": "dimension"
+          },
+          {
+            "name": "data_delibera",
+            "role": "dimension"
+          },
+          {
+            "name": "data_cert_collaudo",
+            "role": "dimension"
+          },
+          {
+            "name": "esito_collaudo",
+            "role": "dimension"
+          },
+          {
+            "name": "data_inizio_oper",
+            "role": "dimension"
+          },
+          {
+            "name": "data_regolare_esec",
+            "role": "dimension"
+          },
+          {
+            "name": "data_nomina_coll",
+            "role": "dimension"
+          },
+          {
+            "name": "data_collaudo_stat",
+            "role": "dimension"
+          },
+          {
+            "name": "id_aggiudicazione",
+            "role": "dimension"
+          },
+          {
+            "name": "riserve_avanzate",
+            "role": "metric"
+          },
+          {
+            "name": "riserve_definite",
+            "role": "metric"
+          },
+          {
+            "name": "importo_contenz_risolto",
+            "role": "metric"
+          }
+        ]
+      },
+      {
+        "slug": "anac_cup",
+        "name": "ANAC CUP",
+        "stage": "published",
+        "period": {
+          "start": 2000,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/anac_cup/2026/anac_cup_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 0,
+        "dimension_columns": 2,
+        "column_count": 2,
+        "columns": [
+          {
+            "name": "cig",
+            "role": "dimension"
+          },
+          {
+            "name": "cup",
+            "role": "dimension"
+          }
+        ]
+      },
+      {
         "slug": "anac_partecipanti",
         "name": "ANAC Partecipanti",
         "stage": "published",
@@ -2570,6 +2664,69 @@
           {
             "name": "tipo_soggetto",
             "role": "dimension"
+          }
+        ]
+      },
+      {
+        "slug": "anac_stati_avanzamento",
+        "name": "ANAC Stati Avanzamento",
+        "stage": "published",
+        "period": {
+          "start": 2000,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/anac_stati_avanzamento/2026/anac_stati_avanzamento_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 5,
+        "dimension_columns": 6,
+        "column_count": 11,
+        "columns": [
+          {
+            "name": "cig",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione_sal",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_ritardo",
+            "role": "dimension"
+          },
+          {
+            "name": "data_emissione_sal",
+            "role": "dimension"
+          },
+          {
+            "name": "importo_sal",
+            "role": "metric"
+          },
+          {
+            "name": "n_giorni_scostamento",
+            "role": "metric"
+          },
+          {
+            "name": "progressivo_sal",
+            "role": "metric"
+          },
+          {
+            "name": "id_aggiudicazione",
+            "role": "dimension"
+          },
+          {
+            "name": "data_cert_pagamento",
+            "role": "dimension"
+          },
+          {
+            "name": "importo_cert_pagamento",
+            "role": "metric"
+          },
+          {
+            "name": "giorni_proroga",
+            "role": "metric"
           }
         ]
       },
@@ -10161,7 +10318,10 @@
       "anac_aggiudicatari",
       "anac_aggiudicazioni",
       "anac_bandi_gara",
+      "anac_collaudo",
+      "anac_cup",
       "anac_partecipanti",
+      "anac_stati_avanzamento",
       "anac_subappalti",
       "anpr_mobilita_residenziale",
       "bdap_anagrafe_enti",

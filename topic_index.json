@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-25T08:06:38.463652",
+  "generated_at": "2026-07-25T13:26:48.036615",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -100,10 +100,34 @@
         }
       },
       {
+        "slug": "anac_collaudo",
+        "name": "ANAC Collaudo",
+        "period": {
+          "start": 2000,
+          "end": 2026
+        }
+      },
+      {
+        "slug": "anac_cup",
+        "name": "ANAC CUP",
+        "period": {
+          "start": 2000,
+          "end": 2026
+        }
+      },
+      {
         "slug": "anac_partecipanti",
         "name": "ANAC Partecipanti",
         "period": {
           "start": 2023,
+          "end": 2026
+        }
+      },
+      {
+        "slug": "anac_stati_avanzamento",
+        "name": "ANAC Stati Avanzamento",
+        "period": {
+          "start": 2000,
           "end": 2026
         }
       },

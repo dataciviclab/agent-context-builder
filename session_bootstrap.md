@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-25T08:06:38.463652
+**Generated**: 2026-07-25T13:26:48.036615
 
 ## 🔍 SCOUTING
 
@@ -9,8 +9,8 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 101 candidates — 101 ok
-**Dataset Catalog**: 81 published · 81 public · updated 2026-07-22
+**Pipeline**: 104 candidates — 104 ok
+**Dataset Catalog**: 84 published · 84 public · updated 2026-07-25
 
 ## 📊 ANALYSES
 
@@ -43,18 +43,18 @@
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
   · **Terzo settore**: cinque-per-mille
-  ⚠ 80 dataset published non ancora su explorer:
+  ⚠ 83 dataset published non ancora su explorer:
     · aci_prime_iscrizioni_autovetture
     · ade_cinque_per_mille
     · aifa_spesa_consumo
     · anac_aggiudicatari
     · anac_aggiudicazioni
-    · ... e altri 75
+    · ... e altri 78
   **Deploy**: ✅ success (2026-07-14)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#706](https://github.com/dataciviclab/dataset-incubator/pull/706): feat: mart analitici + macro SQL + validazione per 5 dataset
+- [dataset-incubator#709](https://github.com/dataciviclab/dataset-incubator/pull/709): compose: anac-appalti-master — 8 dataset ANAC unificati (6.08M CIG, grana 1:1)
 - [source-observatory#411](https://github.com/dataciviclab/source-observatory/pull/411): fix(inps): aggiorna al nuovo portale Open Data INPS (opendata.inps.it)
 - **Dependabot**: 3 bump PR(s)
 **Discussions**: 144 open
