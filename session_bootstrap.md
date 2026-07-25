@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-25T13:26:48.036615
+**Generated**: 2026-07-25T19:07:22.554643
 
 ## 🔍 SCOUTING
 
@@ -57,10 +57,10 @@
 - [dataset-incubator#709](https://github.com/dataciviclab/dataset-incubator/pull/709): compose: anac-appalti-master — 8 dataset ANAC unificati (6.08M CIG, grana 1:1)
 - [source-observatory#411](https://github.com/dataciviclab/source-observatory/pull/411): fix(inps): aggiorna al nuovo portale Open Data INPS (opendata.inps.it)
 - **Dependabot**: 3 bump PR(s)
-**Discussions**: 144 open
+**Discussions**: 145 open
+  · [Annunci] [Annunci] open-conto-annuale — 1,8 milioni di microdati sul personale della PA italiana (2020-2024)
   · [Proposte] [Progetto] Rifiuti & Disuguaglianza Socio-Economica
   · [Domanda] OpenCivitas — 11 domande su 19 milioni di indicatori di performance dei comuni italiani (2015-2022)
-  · [Domanda] ANAC Bandi di Gara — 11 domande sugli appalti pubblici italiani (2016-2025)
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
