@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-26T13:23:05.528281",
+  "generated_at": "2026-07-26T19:10:51.224193",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -13,7 +13,7 @@
     "open-siope",
     "italia-corpus"
   ],
-  "open_prs": 5,
+  "open_prs": 6,
   "prs": [
     {
       "number": 709,
@@ -32,6 +32,12 @@
       "title": "chore(deps): bump actions/setup-node from 6 to 7",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/211"
+    },
+    {
+      "number": 412,
+      "title": "feat: pipeline merge+validate \u2014 nuovo funnel SO (\u22126.400 righe nette)",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/412"
     },
     {
       "number": 411,
@@ -1858,7 +1864,9 @@
       "untracked_files": 0
     }
   },
-  "warnings": [],
+  "warnings": [
+    "Many open PRs: 6"
+  ],
   "radar": {
     "available": true,
     "probe_date": "2026-07-26",
