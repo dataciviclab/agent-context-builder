@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-25T19:07:22.554643",
+  "generated_at": "2026-07-26T02:48:33.544066",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -1880,9 +1880,9 @@
     "available": true,
     "generated_at": "2026-07-25",
     "summary": {
-      "total": 104,
+      "total": 103,
       "by_status": {
-        "ok": 104,
+        "ok": 103,
         "warn": 0,
         "error": 0
       }
@@ -1895,8 +1895,8 @@
     "name": "Lab Clean Registry",
     "updated_at": "2026-07-25",
     "summary": {
-      "total": 101,
-      "published": 84
+      "total": 100,
+      "published": 83
     },
     "datasets": [
       {
@@ -3680,7 +3680,7 @@
       },
       {
         "slug": "comuni_master",
-        "name": "Comuni Master",
+        "name": "Comuni Master \u2014 hub territoriale completo",
         "stage": "published",
         "period": {
           "start": 2026,
@@ -3692,8 +3692,8 @@
           "multi_file": false
         },
         "metric_columns": 5,
-        "dimension_columns": 19,
-        "column_count": 24,
+        "dimension_columns": 33,
+        "column_count": 38,
         "columns": [
           {
             "name": "codice_istat",
@@ -3748,11 +3748,75 @@
             "role": "dimension"
           },
           {
+            "name": "nuts1_2021",
+            "role": "dimension"
+          },
+          {
+            "name": "nuts2_2021",
+            "role": "dimension"
+          },
+          {
+            "name": "nuts3_2021",
+            "role": "dimension"
+          },
+          {
+            "name": "nuts1_2024",
+            "role": "dimension"
+          },
+          {
+            "name": "nuts2_2024",
+            "role": "dimension"
+          },
+          {
+            "name": "nuts3_2024",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_ripartizione",
+            "role": "dimension"
+          },
+          {
+            "name": "ripartizione",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_capoluogo",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_tipologia_uts",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione_uts",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione_altra_lingua",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_110_province",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_107_province",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_103_province",
+            "role": "dimension"
+          },
+          {
             "name": "codice_ipa",
             "role": "dimension"
           },
           {
             "name": "codice_fiscale",
+            "role": "dimension"
+          },
+          {
+            "name": "denominazione_ipa",
             "role": "dimension"
           },
           {
@@ -3764,15 +3828,7 @@
             "role": "dimension"
           },
           {
-            "name": "codice_regione",
-            "role": "dimension"
-          },
-          {
             "name": "codice_istat_ipa",
-            "role": "dimension"
-          },
-          {
-            "name": "denominazione_ipa",
             "role": "dimension"
           },
           {
@@ -5402,89 +5458,6 @@
           },
           {
             "name": "data_aggiornamento",
-            "role": "dimension"
-          }
-        ]
-      },
-      {
-        "slug": "ipa_istat_mapping",
-        "name": "IPA\u2194ISTAT Mapping Comuni",
-        "stage": "published",
-        "period": {
-          "start": 2026,
-          "end": 2026
-        },
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/ipa_istat_mapping/2026/ipa_istat_mapping_2026_clean.parquet",
-          "multi_file": false
-        },
-        "metric_columns": 0,
-        "dimension_columns": 16,
-        "column_count": 16,
-        "columns": [
-          {
-            "name": "codice_istat",
-            "role": "dimension"
-          },
-          {
-            "name": "denominazione",
-            "role": "dimension"
-          },
-          {
-            "name": "regione",
-            "role": "dimension"
-          },
-          {
-            "name": "sigla_provincia",
-            "role": "dimension"
-          },
-          {
-            "name": "codice_regione",
-            "role": "dimension"
-          },
-          {
-            "name": "codice_catastale_istat",
-            "role": "dimension"
-          },
-          {
-            "name": "codice_ipa",
-            "role": "dimension"
-          },
-          {
-            "name": "codice_fiscale",
-            "role": "dimension"
-          },
-          {
-            "name": "denominazione_ipa",
-            "role": "dimension"
-          },
-          {
-            "name": "codice_categoria",
-            "role": "dimension"
-          },
-          {
-            "name": "codice_catastale_comune",
-            "role": "dimension"
-          },
-          {
-            "name": "codice_istat_ipa",
-            "role": "dimension"
-          },
-          {
-            "name": "acronimo",
-            "role": "dimension"
-          },
-          {
-            "name": "indirizzo",
-            "role": "dimension"
-          },
-          {
-            "name": "cap",
-            "role": "dimension"
-          },
-          {
-            "name": "sito_istituzionale",
             "role": "dimension"
           }
         ]
@@ -10355,7 +10328,6 @@
       "intercettazioni",
       "ipa_aree_organizzative_omogenee",
       "ipa_enti",
-      "ipa_istat_mapping",
       "ipa_unita_organizzative",
       "irpef_comunale",
       "ispra_emissioni_ghg",

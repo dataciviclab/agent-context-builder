@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-25T19:07:22.554643",
+  "generated_at": "2026-07-26T02:48:33.544066",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -242,10 +242,10 @@
         }
       }
     ],
-    "ISTAT SITUAS + AgID IPA": [
+    "ISTAT SITUAS + ISTAT (Elenco codici unit\u00e0 amministrative) + AgID IPA": [
       {
         "slug": "comuni_master",
-        "name": "Comuni Master",
+        "name": "Comuni Master \u2014 hub territoriale completo",
         "period": {
           "start": 2026,
           "end": 2026
@@ -420,16 +420,6 @@
       {
         "slug": "ipa_unita_organizzative",
         "name": "Unit\u00e0 Organizzative (IPA)",
-        "period": {
-          "start": 2026,
-          "end": 2026
-        }
-      }
-    ],
-    "AgID (IPA) + ISTAT": [
-      {
-        "slug": "ipa_istat_mapping",
-        "name": "IPA\u2194ISTAT Mapping Comuni",
         "period": {
           "start": 2026,
           "end": 2026
