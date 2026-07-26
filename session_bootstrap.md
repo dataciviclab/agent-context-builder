@@ -1,10 +1,11 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-26T02:48:33.544066
+**Generated**: 2026-07-26T08:26:30.295873
 
 ## 🔍 SCOUTING
 
-**Radar**: 36 fonti — GREEN 36 · YELLOW 0 · RED 0 (probe: 2026-07-25)
+**Radar**: 36 fonti — GREEN 35 · YELLOW 1 · RED 0 (probe: 2026-07-26)
+  · **istat_sdmx** YELLOW [-] — Timeout (ReadTimeout)
 **Catalog Drift**: no drift signals (33 sources checked)
 
 ## 📥 INTAKE
@@ -54,6 +55,7 @@
 
 ## 🔗 OPEN
 
+- [dataset-incubator#712](https://github.com/dataciviclab/dataset-incubator/pull/712): feat(popolazione-istat): allineamento standard + mart indicatori + mart regione/provincia + push MART GCS
 - [dataset-incubator#709](https://github.com/dataciviclab/dataset-incubator/pull/709): compose: anac-appalti-master — 8 dataset ANAC unificati (6.08M CIG, grana 1:1)
 - [source-observatory#411](https://github.com/dataciviclab/source-observatory/pull/411): fix(inps): aggiorna al nuovo portale Open Data INPS (opendata.inps.it)
 - **Dependabot**: 3 bump PR(s)

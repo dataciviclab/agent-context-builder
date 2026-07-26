@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-26T02:48:33.544066",
+  "generated_at": "2026-07-26T08:26:30.295873",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -13,8 +13,14 @@
     "open-siope",
     "italia-corpus"
   ],
-  "open_prs": 5,
+  "open_prs": 6,
   "prs": [
+    {
+      "number": 712,
+      "title": "feat(popolazione-istat): allineamento standard + mart indicatori + mart regione/provincia + push MART GCS",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/712"
+    },
     {
       "number": 709,
       "title": "compose: anac-appalti-master \u2014 8 dataset ANAC unificati (6.08M CIG, grana 1:1)",
@@ -1858,16 +1864,27 @@
       "untracked_files": 0
     }
   },
-  "warnings": [],
+  "warnings": [
+    "Many open PRs: 6"
+  ],
   "radar": {
     "available": true,
-    "probe_date": "2026-07-25",
+    "probe_date": "2026-07-26",
     "sources_total": 36,
-    "green": 36,
-    "yellow": 0,
+    "green": 35,
+    "yellow": 1,
     "red": 0,
     "persistent_red": 0,
-    "unhealthy": []
+    "unhealthy": [
+      {
+        "id": "istat_sdmx",
+        "status": "YELLOW",
+        "protocol": "sdmx",
+        "http_code": "-",
+        "note": "Timeout (ReadTimeout)",
+        "red_streak": 0
+      }
+    ]
   },
   "source_health": {
     "available": true,
