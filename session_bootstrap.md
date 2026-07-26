@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-26T08:26:30.295873
+**Generated**: 2026-07-26T13:23:05.528281
 
 ## 🔍 SCOUTING
 
@@ -55,7 +55,6 @@
 
 ## 🔗 OPEN
 
-- [dataset-incubator#712](https://github.com/dataciviclab/dataset-incubator/pull/712): feat(popolazione-istat): allineamento standard + mart indicatori + mart regione/provincia + push MART GCS
 - [dataset-incubator#709](https://github.com/dataciviclab/dataset-incubator/pull/709): compose: anac-appalti-master — 8 dataset ANAC unificati (6.08M CIG, grana 1:1)
 - [source-observatory#411](https://github.com/dataciviclab/source-observatory/pull/411): fix(inps): aggiorna al nuovo portale Open Data INPS (opendata.inps.it)
 - **Dependabot**: 3 bump PR(s)
