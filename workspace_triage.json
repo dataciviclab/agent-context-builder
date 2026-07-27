@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T14:34:50.216513",
+  "generated_at": "2026-07-27T19:27:33.435205",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -13,22 +13,27 @@
     "open-siope",
     "italia-corpus"
   ],
-  "open_prs": 1,
-  "prs": [
-    {
-      "number": 717,
-      "title": "compose: conto-annuale-profilo-ente \u2014 profilo completo enti PA (costo, assenze, demografia)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/717"
-    }
-  ],
-  "open_issues": 118,
+  "open_prs": 0,
+  "prs": [],
+  "open_issues": 121,
   "issues": [
     {
       "number": 59,
       "title": "feat: whats_new \u2014 delta awareness tra build CI (P2)",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/issues/59"
+    },
+    {
+      "number": 720,
+      "title": "intake: gse_cer_elenco \u2014 Elenco nazionale Comunit\u00e0 Energetiche Rinnovabili (2025)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/720"
+    },
+    {
+      "number": 718,
+      "title": "design: unified-enti \u2014 composizione dell'anagrafica estesa della PA (struttura, personale, costo, bilancio)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/718"
     },
     {
       "number": 680,
@@ -167,6 +172,12 @@
       "title": "Proposta intake: Operatori Economici Consip (dati.consip.it)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/375"
+    },
+    {
+      "number": 440,
+      "title": "analisi: conto_annuale_profilo_ente \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/440"
     },
     {
       "number": 438,
@@ -463,12 +474,6 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/349"
     },
     {
-      "number": 344,
-      "title": "analisi: openga_ricorsi_appalto \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/344"
-    },
-    {
       "number": 410,
       "title": "feat(ckan): supporto proxy esplicito per fonti che bloccano GHA",
       "repo": "toolkit",
@@ -479,6 +484,12 @@
       "title": "refactor: estrarre _write_reports() da run_full() in report_ops.py",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/391"
+    },
+    {
+      "number": 218,
+      "title": "follow-up: pagina e tema per conto_annuale_profilo_ente",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/218"
     },
     {
       "number": 217,
@@ -1872,9 +1883,9 @@
     "available": true,
     "generated_at": "2026-07-27",
     "summary": {
-      "total": 107,
+      "total": 108,
       "by_status": {
-        "ok": 107,
+        "ok": 108,
         "warn": 0,
         "error": 0
       }
@@ -1887,8 +1898,8 @@
     "name": "Lab Clean Registry",
     "updated_at": "2026-07-27",
     "summary": {
-      "total": 104,
-      "published": 87
+      "total": 105,
+      "published": 88
     },
     "datasets": [
       {
@@ -4063,6 +4074,85 @@
           },
           {
             "name": "n_po_con_consumi",
+            "role": "metric"
+          }
+        ]
+      },
+      {
+        "slug": "conto_annuale_profilo_ente",
+        "name": "Conto Annuale \u2014 Profilo Ente PA",
+        "stage": "published",
+        "period": {
+          "start": 2020,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/conto_annuale_profilo_ente/*/conto_annuale_profilo_ente_*_clean.parquet",
+          "multi_file": true
+        },
+        "metric_columns": 8,
+        "dimension_columns": 7,
+        "column_count": 15,
+        "columns": [
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "istituzione",
+            "role": "dimension"
+          },
+          {
+            "name": "desc_istituzione",
+            "role": "dimension"
+          },
+          {
+            "name": "codi_fiscale",
+            "role": "dimension"
+          },
+          {
+            "name": "codi_comparto",
+            "role": "dimension"
+          },
+          {
+            "name": "desc_comparto",
+            "role": "dimension"
+          },
+          {
+            "name": "codi_tipo_istituzione",
+            "role": "dimension"
+          },
+          {
+            "name": "dipendenti",
+            "role": "metric"
+          },
+          {
+            "name": "donne",
+            "role": "metric"
+          },
+          {
+            "name": "eta_media",
+            "role": "metric"
+          },
+          {
+            "name": "anzianita_media",
+            "role": "metric"
+          },
+          {
+            "name": "pct_laureati",
+            "role": "metric"
+          },
+          {
+            "name": "retribuzione_totale",
+            "role": "metric"
+          },
+          {
+            "name": "costo_totale",
+            "role": "metric"
+          },
+          {
+            "name": "assenze_totali",
             "role": "metric"
           }
         ]
@@ -10742,6 +10832,7 @@
       "civile_flussi",
       "comuni_master",
       "consip_consumi_convenzione",
+      "conto_annuale_profilo_ente",
       "costituzione_master",
       "dipendenti_pubblici",
       "elezioni_comunali",

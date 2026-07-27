@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-27T14:34:50.216513
+**Generated**: 2026-07-27T19:27:33.435205
 
 ## 🔍 SCOUTING
 
@@ -10,8 +10,8 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 107 candidates — 107 ok
-**Dataset Catalog**: 87 published · 87 public · updated 2026-07-27
+**Pipeline**: 108 candidates — 108 ok
+**Dataset Catalog**: 88 published · 88 public · updated 2026-07-27
 
 ## 📊 ANALYSES
 
@@ -44,18 +44,18 @@
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
   · **Terzo settore**: cinque-per-mille
-  ⚠ 86 dataset published non ancora su explorer:
+  ⚠ 87 dataset published non ancora su explorer:
     · aci_prime_iscrizioni_autovetture
     · ade_cinque_per_mille
     · aifa_spesa_consumo
     · anac_aggiudicatari
     · anac_aggiudicazioni
-    · ... e altri 81
+    · ... e altri 82
   **Deploy**: ✅ success (2026-07-27)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#717](https://github.com/dataciviclab/dataset-incubator/pull/717): compose: conto-annuale-profilo-ente — profilo completo enti PA (costo, assenze, demografia)
+**PRs**: none open
 **Discussions**: 146 open
   · [Annunci] 📢 dcl-bologna — primo pilota territoriale del Lab
   · [Annunci] [Annunci] open-conto-annuale — 1,8 milioni di microdati sul personale della PA italiana (2020-2024)
