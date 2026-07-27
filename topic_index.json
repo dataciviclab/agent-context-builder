@@ -1,45 +1,45 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-27T09:52:35.933767",
+  "generated_at": "2026-07-27T14:34:50.216513",
   "repos": {
     "agent-context-builder": {
-      "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
+      "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
       "url": "https://github.com/dataciviclab/agent-context-builder"
     },
     "dataset-incubator": {
-      "description": "dataset-incubator \u00e8 il repo dove il Lab fa intake, verifica e incubazione leggera dei filoni dataset prima della promozione verso dataciviclab o una repo progetto dedicata.",
+      "description": "Incubazione dei dataset del Lab \u2014 intake, verifica e promozione dei filoni dati.",
       "url": "https://github.com/dataciviclab/dataset-incubator"
     },
     "dataciviclab": {
-      "description": "dataciviclab\u00a0\u00e8 l\u2019hub pubblico dell\u2019ecosistema, pensato per spiegare chi siamo, cosa facciamo e come orientarsi tra le repo.",
+      "description": "Hub pubblico del DataCivicLab. Spieghiamo chi siamo, cosa facciamo e come partecipare.",
       "url": "https://github.com/dataciviclab/dataciviclab"
     },
     "toolkit": {
-      "description": "Toolkit \u00e8 il motore tecnico di DataCivicLab per eseguire pipeline dati riproducibili da\u00a0dataset.yml, da RAW a CLEAN e MART, con validazione, tracking e output leggibili dai notebook.",
+      "description": "Motore di pipeline dati del DataCivicLab \u2014 da fonti pubbliche a dataset pronti per l'analisi.",
       "url": "https://github.com/dataciviclab/toolkit"
     },
     "data-explorer": {
-      "description": "Frontend pubblico dati del Lab, basato su Observable Framework, DuckDB e clean parquet pubblici su GCS.",
+      "description": "Esplora i dati del DataCivicLab \u2014 catalogo pubblico, query e visualizzazioni.",
       "url": "https://github.com/dataciviclab/data-explorer"
     },
     "source-observatory": {
-      "description": "Piccolo intelligence layer per fonti pubbliche: radar, catalog-watch, monitoraggio risorse e workflow di source-check.",
+      "description": "Osservatorio delle fonti pubbliche \u2014 radar, monitoraggio e scouting di dataset aperti.",
       "url": "https://github.com/dataciviclab/source-observatory"
     },
     "lab-connectors": {
-      "description": "Package Python condiviso per i repo del DataCivicLab.",
+      "description": "Libreria condivisa per connettersi a fonti dati pubbliche \u2014 HTTP, GCS, DuckDB.",
       "url": "https://github.com/dataciviclab/lab-connectors"
     },
     "eurostat": {
-      "description": "Eurostat datasets, connectors and pipelines \u2014 designed for regional (NUTS2/NUTS3) analysis across Europe.",
+      "description": "European regional data at your fingertips \u2014 GDP, population, crime and more at NUTS2/NUTS3 level.",
       "url": "https://github.com/dataciviclab/eurostat"
     },
     "open-siope": {
-      "description": "open-siope \u2014 Spesa e entrate di comuni, ASL, regioni, universit\u00e0 italiane. Dati SIOPE puliti e aperti.",
+      "description": "La spesa pubblica italiana \u2014 comuni, ASL, regioni, universit\u00e0. Dati SIOPE aperti e interrogabili.",
       "url": "https://github.com/dataciviclab/open-siope"
     },
     "italia-corpus": {
-      "description": "Fork Lab di ahmeabd/italia-corpus. Corpus della legislazione italiana in Markdown da Normattiva, con tooling per estrazione metadati e ricerca full-text via MCP.",
+      "description": "La legislazione italiana a portata di ricerca \u2014 leggi, decreti e codici da Normattiva in formato aperto.",
       "url": "https://github.com/dataciviclab/italia-corpus"
     }
   },
@@ -315,6 +315,32 @@
         "period": {
           "start": 1948,
           "end": 2022
+        }
+      }
+    ],
+    "Eurostat": [
+      {
+        "slug": "eurostat_demography",
+        "name": "Indicatori demografici regionali EU (popolazione, densit\u00e0, struttura et\u00e0, bilancio)",
+        "period": {
+          "start": 2014,
+          "end": 2025
+        }
+      },
+      {
+        "slug": "eurostat_economy",
+        "name": "Indicatori economici regionali EU (PIL, GVA, occupazione, produttivit\u00e0)",
+        "period": {
+          "start": 2000,
+          "end": 2024
+        }
+      },
+      {
+        "slug": "eurostat_territory",
+        "name": "Indicatori territoriali regionali EU (superficie, turismo, criminalit\u00e0, incidenti)",
+        "period": {
+          "start": 2000,
+          "end": 2024
         }
       }
     ],

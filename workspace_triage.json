@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T09:52:35.933767",
+  "generated_at": "2026-07-27T14:34:50.216513",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -13,34 +13,16 @@
     "open-siope",
     "italia-corpus"
   ],
-  "open_prs": 4,
+  "open_prs": 1,
   "prs": [
     {
-      "number": 715,
-      "title": "compose: eurostat-economy, eurostat-demography, eurostat-territory \u2014 tabelle composte tematiche da dataset Eurostat NUTS3",
+      "number": 717,
+      "title": "compose: conto-annuale-profilo-ente \u2014 profilo completo enti PA (costo, assenze, demografia)",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/715"
-    },
-    {
-      "number": 683,
-      "title": "chore(deps): bump actions/setup-python from 6 to 7",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/683"
-    },
-    {
-      "number": 211,
-      "title": "chore(deps): bump actions/setup-node from 6 to 7",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/211"
-    },
-    {
-      "number": 71,
-      "title": "chore(deps): bump actions/setup-python from 6 to 7",
-      "repo": "lab-connectors",
-      "url": "https://github.com/dataciviclab/lab-connectors/pull/71"
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/717"
     }
   ],
-  "open_issues": 117,
+  "open_issues": 118,
   "issues": [
     {
       "number": 59,
@@ -185,6 +167,24 @@
       "title": "Proposta intake: Operatori Economici Consip (dati.consip.it)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/375"
+    },
+    {
+      "number": 438,
+      "title": "analisi: eurostat_territory \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/438"
+    },
+    {
+      "number": 437,
+      "title": "analisi: eurostat_economy \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/437"
+    },
+    {
+      "number": 436,
+      "title": "analisi: eurostat_demography \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/436"
     },
     {
       "number": 434,
@@ -469,24 +469,6 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/344"
     },
     {
-      "number": 335,
-      "title": "analisi: posti_letto_stabilimento \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/335"
-    },
-    {
-      "number": 329,
-      "title": "analisi: reparti_ricovero \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/329"
-    },
-    {
-      "number": 328,
-      "title": "analisi: strutture_ricovero_asl \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/328"
-    },
-    {
       "number": 410,
       "title": "feat(ckan): supporto proxy esplicito per fonti che bloccano GHA",
       "repo": "toolkit",
@@ -497,6 +479,12 @@
       "title": "refactor: estrarre _write_reports() da run_full() in report_ops.py",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/391"
+    },
+    {
+      "number": 217,
+      "title": "follow-up: pagina e tema per 3 nuovi dataset",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/217"
     },
     {
       "number": 216,
@@ -745,8 +733,15 @@
       "url": "https://github.com/dataciviclab/italia-corpus/issues/28"
     }
   ],
-  "open_discussions": 145,
+  "open_discussions": 146,
   "discussions": [
+    {
+      "number": 435,
+      "title": "\ud83d\udce2 dcl-bologna \u2014 primo pilota territoriale del Lab",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/435",
+      "category": "Annunci"
+    },
     {
       "number": 433,
       "title": "[Annunci] open-conto-annuale \u2014 1,8 milioni di microdati sul personale della PA italiana (2020-2024)",
@@ -1877,9 +1872,9 @@
     "available": true,
     "generated_at": "2026-07-27",
     "summary": {
-      "total": 104,
+      "total": 107,
       "by_status": {
-        "ok": 104,
+        "ok": 107,
         "warn": 0,
         "error": 0
       }
@@ -1892,8 +1887,8 @@
     "name": "Lab Clean Registry",
     "updated_at": "2026-07-27",
     "summary": {
-      "total": 101,
-      "published": 84
+      "total": 104,
+      "published": 87
     },
     "datasets": [
       {
@@ -4601,6 +4596,283 @@
         "dimension_columns": 7,
         "column_count": 12,
         "columns": []
+      },
+      {
+        "slug": "eurostat_demography",
+        "name": "Indicatori demografici regionali EU (popolazione, densit\u00e0, struttura et\u00e0, bilancio)",
+        "stage": "published",
+        "period": {
+          "start": 2014,
+          "end": 2025
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/eurostat_demography/2026/eurostat_demography_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 11,
+        "dimension_columns": 7,
+        "column_count": 18,
+        "columns": [
+          {
+            "name": "geo",
+            "role": "dimension"
+          },
+          {
+            "name": "year",
+            "role": "dimension"
+          },
+          {
+            "name": "nuts_level",
+            "role": "dimension"
+          },
+          {
+            "name": "country_code",
+            "role": "dimension"
+          },
+          {
+            "name": "geo_label_en",
+            "role": "dimension"
+          },
+          {
+            "name": "nuts_parent_code",
+            "role": "dimension"
+          },
+          {
+            "name": "nuts_parent_label_en",
+            "role": "dimension"
+          },
+          {
+            "name": "population",
+            "role": "metric"
+          },
+          {
+            "name": "pop_density_km2",
+            "role": "metric"
+          },
+          {
+            "name": "median_age",
+            "role": "metric"
+          },
+          {
+            "name": "old_age_dependency_pct",
+            "role": "metric"
+          },
+          {
+            "name": "youth_pct",
+            "role": "metric"
+          },
+          {
+            "name": "total_dependency_pct",
+            "role": "metric"
+          },
+          {
+            "name": "over65_pct",
+            "role": "metric"
+          },
+          {
+            "name": "over75_pct",
+            "role": "metric"
+          },
+          {
+            "name": "natural_change",
+            "role": "metric"
+          },
+          {
+            "name": "net_migration",
+            "role": "metric"
+          },
+          {
+            "name": "total_change",
+            "role": "metric"
+          }
+        ]
+      },
+      {
+        "slug": "eurostat_economy",
+        "name": "Indicatori economici regionali EU (PIL, GVA, occupazione, produttivit\u00e0)",
+        "stage": "published",
+        "period": {
+          "start": 2000,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/eurostat_economy/2026/eurostat_economy_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 19,
+        "dimension_columns": 7,
+        "column_count": 26,
+        "columns": [
+          {
+            "name": "geo",
+            "role": "dimension"
+          },
+          {
+            "name": "year",
+            "role": "dimension"
+          },
+          {
+            "name": "nuts_level",
+            "role": "dimension"
+          },
+          {
+            "name": "country_code",
+            "role": "dimension"
+          },
+          {
+            "name": "geo_label_en",
+            "role": "dimension"
+          },
+          {
+            "name": "nuts_parent_code",
+            "role": "dimension"
+          },
+          {
+            "name": "nuts_parent_label_en",
+            "role": "dimension"
+          },
+          {
+            "name": "gdp_per_capita",
+            "role": "metric"
+          },
+          {
+            "name": "gdp_million_eur",
+            "role": "metric"
+          },
+          {
+            "name": "gdp_pps_hab",
+            "role": "metric"
+          },
+          {
+            "name": "gva_total_million",
+            "role": "metric"
+          },
+          {
+            "name": "gva_industry_million",
+            "role": "metric"
+          },
+          {
+            "name": "gva_construction_million",
+            "role": "metric"
+          },
+          {
+            "name": "gva_trade_million",
+            "role": "metric"
+          },
+          {
+            "name": "gva_ict_million",
+            "role": "metric"
+          },
+          {
+            "name": "gva_financial_services_million",
+            "role": "metric"
+          },
+          {
+            "name": "gva_public_admin_million",
+            "role": "metric"
+          },
+          {
+            "name": "gva_industry_pct",
+            "role": "metric"
+          },
+          {
+            "name": "gva_construction_pct",
+            "role": "metric"
+          },
+          {
+            "name": "gva_trade_pct",
+            "role": "metric"
+          },
+          {
+            "name": "gva_ict_pct",
+            "role": "metric"
+          },
+          {
+            "name": "gva_financial_services_pct",
+            "role": "metric"
+          },
+          {
+            "name": "gva_public_admin_pct",
+            "role": "metric"
+          },
+          {
+            "name": "employment_thousands",
+            "role": "metric"
+          },
+          {
+            "name": "nominal_labour_productivity_eur",
+            "role": "metric"
+          },
+          {
+            "name": "gdp_per_employed_eur",
+            "role": "metric"
+          }
+        ]
+      },
+      {
+        "slug": "eurostat_territory",
+        "name": "Indicatori territoriali regionali EU (superficie, turismo, criminalit\u00e0, incidenti)",
+        "stage": "published",
+        "period": {
+          "start": 2000,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/eurostat_territory/2026/eurostat_territory_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 4,
+        "dimension_columns": 7,
+        "column_count": 11,
+        "columns": [
+          {
+            "name": "geo",
+            "role": "dimension"
+          },
+          {
+            "name": "year",
+            "role": "dimension"
+          },
+          {
+            "name": "nuts_level",
+            "role": "dimension"
+          },
+          {
+            "name": "country_code",
+            "role": "dimension"
+          },
+          {
+            "name": "geo_label_en",
+            "role": "dimension"
+          },
+          {
+            "name": "nuts_parent_code",
+            "role": "dimension"
+          },
+          {
+            "name": "nuts_parent_label_en",
+            "role": "dimension"
+          },
+          {
+            "name": "area_km2",
+            "role": "metric"
+          },
+          {
+            "name": "total_nights_spent",
+            "role": "metric"
+          },
+          {
+            "name": "total_crimes",
+            "role": "metric"
+          },
+          {
+            "name": "road_accidents",
+            "role": "metric"
+          }
+        ]
       },
       {
         "slug": "farmacie",
@@ -10476,6 +10748,9 @@
       "elezioni_europee",
       "elezioni_politiche",
       "elezioni_referendum",
+      "eurostat_demography",
+      "eurostat_economy",
+      "eurostat_territory",
       "fts_eu_grants",
       "ga_decreti",
       "ga_ordinanze",
@@ -10533,12 +10808,12 @@
       "who_is_who_pa"
     ],
     "last_deploy": {
-      "run_id": 29322721552,
+      "run_id": 30262974720,
       "name": "Deploy to GitHub Pages (Observable Framework)",
       "status": "completed",
       "conclusion": "success",
-      "completed_at": "2026-07-14T09:48:59Z",
-      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/29322721552"
+      "completed_at": "2026-07-27T11:49:14Z",
+      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/30262974720"
     }
   }
 }
