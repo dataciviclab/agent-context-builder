@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-27T02:56:37.762813",
+  "generated_at": "2026-07-27T09:52:35.933767",
   "repos": {
     "agent-context-builder": {
       "description": "Genera contesto operativo compatto per gli agenti di DataCivicLab a partire da GitHub e, opzionalmente, da checkout locali dei repo Lab.",
@@ -137,6 +137,16 @@
         "period": {
           "start": 2020,
           "end": 2026
+        }
+      }
+    ],
+    "DataCivicLab (composite: ANAC, 8 dataset)": [
+      {
+        "slug": "anac_appalti_master",
+        "name": "ANAC Appalti Master",
+        "period": {
+          "start": 2016,
+          "end": 2025
         }
       }
     ],

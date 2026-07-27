@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T02:56:37.762813",
+  "generated_at": "2026-07-27T09:52:35.933767",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -13,13 +13,13 @@
     "open-siope",
     "italia-corpus"
   ],
-  "open_prs": 6,
+  "open_prs": 4,
   "prs": [
     {
-      "number": 709,
-      "title": "compose: anac-appalti-master \u2014 8 dataset ANAC unificati (6.08M CIG, grana 1:1)",
+      "number": 715,
+      "title": "compose: eurostat-economy, eurostat-demography, eurostat-territory \u2014 tabelle composte tematiche da dataset Eurostat NUTS3",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/709"
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/715"
     },
     {
       "number": 683,
@@ -34,25 +34,13 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/211"
     },
     {
-      "number": 412,
-      "title": "feat: pipeline merge+validate \u2014 nuovo funnel SO (\u22126.400 righe nette)",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/412"
-    },
-    {
-      "number": 411,
-      "title": "fix(inps): aggiorna al nuovo portale Open Data INPS (opendata.inps.it)",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/411"
-    },
-    {
       "number": 71,
       "title": "chore(deps): bump actions/setup-python from 6 to 7",
       "repo": "lab-connectors",
       "url": "https://github.com/dataciviclab/lab-connectors/pull/71"
     }
   ],
-  "open_issues": 118,
+  "open_issues": 117,
   "issues": [
     {
       "number": 59,
@@ -77,12 +65,6 @@
       "title": "intake: inps_imprese_provincia \u2014 Imprese per provincia (2013-2022)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/674"
-    },
-    {
-      "number": 673,
-      "title": "compose: anac-appalti-completo \u2014 bandi + aggiudicazioni + aggiudicatari",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/673"
     },
     {
       "number": 665,
@@ -203,6 +185,12 @@
       "title": "Proposta intake: Operatori Economici Consip (dati.consip.it)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/375"
+    },
+    {
+      "number": 434,
+      "title": "analisi: anac_appalti_master \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/434"
     },
     {
       "number": 432,
@@ -499,12 +487,6 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/328"
     },
     {
-      "number": 327,
-      "title": "analisi: strutture_asl \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/327"
-    },
-    {
       "number": 410,
       "title": "feat(ckan): supporto proxy esplicito per fonti che bloccano GHA",
       "repo": "toolkit",
@@ -515,6 +497,12 @@
       "title": "refactor: estrarre _write_reports() da run_full() in report_ops.py",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/391"
+    },
+    {
+      "number": 216,
+      "title": "follow-up: pagina e tema per anac_appalti_master",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/216"
     },
     {
       "number": 215,
@@ -725,12 +713,6 @@
       "title": "follow-up: pagina e tema per dait_amministratori_locali",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/issues/162"
-    },
-    {
-      "number": 404,
-      "title": "[Catalog] 2026-07-16 \u2014 +25 item",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/404"
     },
     {
       "number": 90,
@@ -1864,12 +1846,10 @@
       "untracked_files": 0
     }
   },
-  "warnings": [
-    "Many open PRs: 6"
-  ],
+  "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-07-26",
+    "probe_date": "2026-07-27",
     "sources_total": 36,
     "green": 35,
     "yellow": 1,
@@ -1888,18 +1868,18 @@
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-07-20T06:29:09+00:00",
-    "sources_checked": 33,
+    "captured_at": "unknown",
+    "sources_checked": 36,
     "regressions": [],
     "alerts": []
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-07-26",
+    "generated_at": "2026-07-27",
     "summary": {
-      "total": 103,
+      "total": 104,
       "by_status": {
-        "ok": 103,
+        "ok": 104,
         "warn": 0,
         "error": 0
       }
@@ -1910,10 +1890,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-07-25",
+    "updated_at": "2026-07-27",
     "summary": {
-      "total": 100,
-      "published": 83
+      "total": 101,
+      "published": 84
     },
     "datasets": [
       {
@@ -2308,6 +2288,165 @@
           {
             "name": "N_MANIF_INTERESSE",
             "role": "metric"
+          }
+        ]
+      },
+      {
+        "slug": "anac_appalti_master",
+        "name": "ANAC Appalti Master",
+        "stage": "published",
+        "period": {
+          "start": 2016,
+          "end": 2025
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/anac_appalti_master/2026/anac_appalti_master_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 14,
+        "dimension_columns": 21,
+        "column_count": 35,
+        "columns": [
+          {
+            "name": "cig",
+            "role": "dimension"
+          },
+          {
+            "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "oggetto_gara",
+            "role": "dimension"
+          },
+          {
+            "name": "importo_complessivo_gara",
+            "role": "metric"
+          },
+          {
+            "name": "oggetto_principale",
+            "role": "dimension"
+          },
+          {
+            "name": "stato",
+            "role": "dimension"
+          },
+          {
+            "name": "esito_bando",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_pnrr",
+            "role": "dimension"
+          },
+          {
+            "name": "cod_cpv",
+            "role": "dimension"
+          },
+          {
+            "name": "descr_cpv",
+            "role": "dimension"
+          },
+          {
+            "name": "amministrazione",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "sezione_regionale",
+            "role": "dimension"
+          },
+          {
+            "name": "importo_agg",
+            "role": "metric"
+          },
+          {
+            "name": "data_agg",
+            "role": "dimension"
+          },
+          {
+            "name": "ribasso",
+            "role": "metric"
+          },
+          {
+            "name": "offerte_ammesse",
+            "role": "metric"
+          },
+          {
+            "name": "flag_subappalto",
+            "role": "dimension"
+          },
+          {
+            "name": "criterio_agg",
+            "role": "dimension"
+          },
+          {
+            "name": "operatore",
+            "role": "dimension"
+          },
+          {
+            "name": "cf",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_soggetto",
+            "role": "dimension"
+          },
+          {
+            "name": "n_operatori",
+            "role": "metric"
+          },
+          {
+            "name": "n_partecipanti",
+            "role": "metric"
+          },
+          {
+            "name": "n_imprese_partecipanti",
+            "role": "metric"
+          },
+          {
+            "name": "n_subappalti",
+            "role": "metric"
+          },
+          {
+            "name": "n_subappaltatori",
+            "role": "metric"
+          },
+          {
+            "name": "esito_collaudo",
+            "role": "dimension"
+          },
+          {
+            "name": "data_collaudo",
+            "role": "dimension"
+          },
+          {
+            "name": "riserve_avanzate",
+            "role": "metric"
+          },
+          {
+            "name": "contenzioso",
+            "role": "metric"
+          },
+          {
+            "name": "n_sal",
+            "role": "metric"
+          },
+          {
+            "name": "importo_totale_sal",
+            "role": "metric"
+          },
+          {
+            "name": "scostamento_medio",
+            "role": "metric"
+          },
+          {
+            "name": "cup",
+            "role": "dimension"
           }
         ]
       },
@@ -10314,6 +10453,7 @@
       "aifa_spesa_consumo",
       "anac_aggiudicatari",
       "anac_aggiudicazioni",
+      "anac_appalti_master",
       "anac_bandi_gara",
       "anac_collaudo",
       "anac_cup",

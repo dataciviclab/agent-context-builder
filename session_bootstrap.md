@@ -1,17 +1,17 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-27T02:56:37.762813
+**Generated**: 2026-07-27T09:52:35.933767
 
 ## 🔍 SCOUTING
 
-**Radar**: 36 fonti — GREEN 35 · YELLOW 1 · RED 0 (probe: 2026-07-26)
+**Radar**: 36 fonti — GREEN 35 · YELLOW 1 · RED 0 (probe: 2026-07-27)
   · **istat_sdmx** YELLOW [-] — Timeout (ReadTimeout)
-**Catalog Drift**: no drift signals (33 sources checked)
+**Catalog Drift**: no drift signals (36 sources checked)
 
 ## 📥 INTAKE
 
-**Pipeline**: 103 candidates — 103 ok
-**Dataset Catalog**: 83 published · 83 public · updated 2026-07-25
+**Pipeline**: 104 candidates — 104 ok
+**Dataset Catalog**: 84 published · 84 public · updated 2026-07-27
 
 ## 📊 ANALYSES
 
@@ -44,20 +44,18 @@
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
   · **Terzo settore**: cinque-per-mille
-  ⚠ 82 dataset published non ancora su explorer:
+  ⚠ 83 dataset published non ancora su explorer:
     · aci_prime_iscrizioni_autovetture
     · ade_cinque_per_mille
     · aifa_spesa_consumo
     · anac_aggiudicatari
     · anac_aggiudicazioni
-    · ... e altri 77
+    · ... e altri 78
   **Deploy**: ✅ success (2026-07-14)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#709](https://github.com/dataciviclab/dataset-incubator/pull/709): compose: anac-appalti-master — 8 dataset ANAC unificati (6.08M CIG, grana 1:1)
-- [source-observatory#412](https://github.com/dataciviclab/source-observatory/pull/412): feat: pipeline merge+validate — nuovo funnel SO (−6.400 righe nette)
-- [source-observatory#411](https://github.com/dataciviclab/source-observatory/pull/411): fix(inps): aggiorna al nuovo portale Open Data INPS (opendata.inps.it)
+- [dataset-incubator#715](https://github.com/dataciviclab/dataset-incubator/pull/715): compose: eurostat-economy, eurostat-demography, eurostat-territory — tabelle composte tematiche da dataset Eurostat NUTS3
 - **Dependabot**: 3 bump PR(s)
 **Discussions**: 145 open
   · [Annunci] [Annunci] open-conto-annuale — 1,8 milioni di microdati sul personale della PA italiana (2020-2024)
