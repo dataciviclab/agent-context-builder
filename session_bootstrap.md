@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-27T19:27:33.435205
+**Generated**: 2026-07-28T02:33:26.223898
 
 ## 🔍 SCOUTING
 
@@ -55,7 +55,7 @@
 
 ## 🔗 OPEN
 
-**PRs**: none open
+- **Dependabot**: 2 bump PR(s)
 **Discussions**: 146 open
   · [Annunci] 📢 dcl-bologna — primo pilota territoriale del Lab
   · [Annunci] [Annunci] open-conto-annuale — 1,8 milioni di microdati sul personale della PA italiana (2020-2024)
