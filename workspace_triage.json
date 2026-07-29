@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T08:34:33.343976",
+  "generated_at": "2026-07-29T20:10:10.788974",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -13,8 +13,14 @@
     "open-siope",
     "italia-corpus"
   ],
-  "open_prs": 2,
+  "open_prs": 3,
   "prs": [
+    {
+      "number": 736,
+      "title": "refactor(scripts): fondi create_dcl_analysis_issue + create_de_followup_issue in create_issue.py",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/736"
+    },
     {
       "number": 220,
       "title": "chore(deps-dev): bump eslint from 10.7.0 to 10.8.0",
@@ -487,16 +493,16 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/349"
     },
     {
-      "number": 410,
-      "title": "feat(ckan): supporto proxy esplicito per fonti che bloccano GHA",
+      "number": 426,
+      "title": "pulizia automatica parquet mart non pi\u00f9 dichiarati in dataset.yml",
       "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/410"
+      "url": "https://github.com/dataciviclab/toolkit/issues/426"
     },
     {
-      "number": 391,
-      "title": "refactor: estrarre _write_reports() da run_full() in report_ops.py",
+      "number": 425,
+      "title": "pipeline: mart_index \u00e8 un indovinello \u2014 sostituire con mart_name",
       "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/391"
+      "url": "https://github.com/dataciviclab/toolkit/issues/425"
     },
     {
       "number": 218,
@@ -1868,22 +1874,13 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-07-28",
+    "probe_date": "2026-07-29",
     "sources_total": 36,
-    "green": 35,
-    "yellow": 1,
+    "green": 36,
+    "yellow": 0,
     "red": 0,
     "persistent_red": 0,
-    "unhealthy": [
-      {
-        "id": "istat_sdmx",
-        "status": "YELLOW",
-        "protocol": "sdmx",
-        "http_code": "-",
-        "note": "Timeout (ReadTimeout)",
-        "red_streak": 0
-      }
-    ]
+    "unhealthy": []
   },
   "source_health": {
     "available": true,
@@ -1894,11 +1891,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-07-27",
+    "generated_at": "2026-07-29",
     "summary": {
-      "total": 108,
+      "total": 109,
       "by_status": {
-        "ok": 108,
+        "ok": 109,
         "warn": 0,
         "error": 0
       }
@@ -1909,10 +1906,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-07-27",
+    "updated_at": "2026-07-29",
     "summary": {
-      "total": 105,
-      "published": 88
+      "total": 106,
+      "published": 89
     },
     "datasets": [
       {
@@ -4699,6 +4696,89 @@
         "dimension_columns": 7,
         "column_count": 12,
         "columns": []
+      },
+      {
+        "slug": "elezioni_voto",
+        "name": "Elezioni Voto \u2014 risultati comunali, europee e regionali",
+        "stage": "published",
+        "period": {
+          "start": 1979,
+          "end": 2024
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/elezioni_voto/2026/elezioni_voto_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 7,
+        "dimension_columns": 9,
+        "column_count": 16,
+        "columns": [
+          {
+            "name": "data_elezione",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_elezione",
+            "role": "dimension"
+          },
+          {
+            "name": "regione",
+            "role": "dimension"
+          },
+          {
+            "name": "provincia",
+            "role": "dimension"
+          },
+          {
+            "name": "comune",
+            "role": "dimension"
+          },
+          {
+            "name": "circoscrizione",
+            "role": "dimension"
+          },
+          {
+            "name": "elettori",
+            "role": "metric"
+          },
+          {
+            "name": "votanti",
+            "role": "metric"
+          },
+          {
+            "name": "schede_bianche",
+            "role": "metric"
+          },
+          {
+            "name": "affluenza_pct",
+            "role": "metric"
+          },
+          {
+            "name": "lista",
+            "role": "dimension"
+          },
+          {
+            "name": "voti_lista",
+            "role": "metric"
+          },
+          {
+            "name": "candidato",
+            "role": "dimension"
+          },
+          {
+            "name": "voti_candidato",
+            "role": "metric"
+          },
+          {
+            "name": "turno",
+            "role": "dimension"
+          },
+          {
+            "name": "seggi_lista",
+            "role": "metric"
+          }
+        ]
       },
       {
         "slug": "eurostat_demography",
@@ -10852,6 +10932,7 @@
       "elezioni_europee",
       "elezioni_politiche",
       "elezioni_referendum",
+      "elezioni_voto",
       "eurostat_demography",
       "eurostat_economy",
       "eurostat_territory",

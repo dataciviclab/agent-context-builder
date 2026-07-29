@@ -1,17 +1,16 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-28T08:34:33.343976
+**Generated**: 2026-07-29T20:10:10.788974
 
 ## 🔍 SCOUTING
 
-**Radar**: 36 fonti — GREEN 35 · YELLOW 1 · RED 0 (probe: 2026-07-28)
-  · **istat_sdmx** YELLOW [-] — Timeout (ReadTimeout)
+**Radar**: 36 fonti — GREEN 36 · YELLOW 0 · RED 0 (probe: 2026-07-29)
 **Catalog Drift**: no drift signals (36 sources checked)
 
 ## 📥 INTAKE
 
-**Pipeline**: 108 candidates — 108 ok
-**Dataset Catalog**: 88 published · 88 public · updated 2026-07-27
+**Pipeline**: 109 candidates — 109 ok
+**Dataset Catalog**: 89 published · 89 public · updated 2026-07-29
 
 ## 📊 ANALYSES
 
@@ -44,17 +43,18 @@
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
   · **Terzo settore**: cinque-per-mille
-  ⚠ 87 dataset published non ancora su explorer:
+  ⚠ 88 dataset published non ancora su explorer:
     · aci_prime_iscrizioni_autovetture
     · ade_cinque_per_mille
     · aifa_spesa_consumo
     · anac_aggiudicatari
     · anac_aggiudicazioni
-    · ... e altri 82
+    · ... e altri 83
   **Deploy**: ✅ success (2026-07-27)
 
 ## 🔗 OPEN
 
+- [dataset-incubator#736](https://github.com/dataciviclab/dataset-incubator/pull/736): refactor(scripts): fondi create_dcl_analysis_issue + create_de_followup_issue in create_issue.py
 - **Dependabot**: 2 bump PR(s)
 **Discussions**: 146 open
   · [Annunci] 📢 dcl-bologna — primo pilota territoriale del Lab
