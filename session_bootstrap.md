@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-29T20:10:10.788974
+**Generated**: 2026-07-30T02:25:43.432073
 
 ## 🔍 SCOUTING
 
@@ -10,7 +10,7 @@
 ## 📥 INTAKE
 
 **Pipeline**: 109 candidates — 109 ok
-**Dataset Catalog**: 89 published · 89 public · updated 2026-07-29
+**Dataset Catalog**: 89 published · 89 public · updated 2026-07-30
 
 ## 📊 ANALYSES
 
@@ -54,7 +54,6 @@
 
 ## 🔗 OPEN
 
-- [dataset-incubator#736](https://github.com/dataciviclab/dataset-incubator/pull/736): refactor(scripts): fondi create_dcl_analysis_issue + create_de_followup_issue in create_issue.py
 - **Dependabot**: 2 bump PR(s)
 **Discussions**: 146 open
   · [Annunci] 📢 dcl-bologna — primo pilota territoriale del Lab
