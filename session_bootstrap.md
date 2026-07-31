@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-31T14:06:53.654009
+**Generated**: 2026-07-31T19:25:34.621479
 
 ## 🔍 SCOUTING
 
@@ -56,7 +56,6 @@
 
 ## 🔗 OPEN
 
-- [dataset-incubator#755](https://github.com/dataciviclab/dataset-incubator/pull/755): batch(openga): allinea 5 candidate a contratti toolkit v1.47
 - **Dependabot**: 2 bump PR(s)
 **Discussions**: 146 open
   · [Annunci] 📢 dcl-bologna — primo pilota territoriale del Lab
