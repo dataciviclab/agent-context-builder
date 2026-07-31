@@ -1,10 +1,11 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-31T02:50:29.761429
+**Generated**: 2026-07-31T08:50:03.233351
 
 ## 🔍 SCOUTING
 
-**Radar**: 36 fonti — GREEN 35 · YELLOW 1 · RED 0 (probe: 2026-07-30)
+**Radar**: 36 fonti — GREEN 34 · YELLOW 2 · RED 0 (probe: 2026-07-31)
+  · **istat_sdmx** YELLOW [-] — Timeout (ReadTimeout)
   · **opencivitas** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
 **Catalog Drift**: no drift signals (36 sources checked)
 
@@ -55,6 +56,7 @@
 
 ## 🔗 OPEN
 
+- [dataset-incubator#747](https://github.com/dataciviclab/dataset-incubator/pull/747): align(toolkit): adatta DI al nuovo CLI (run default, validate rimosso)
 - **Dependabot**: 2 bump PR(s)
 **Discussions**: 146 open
   · [Annunci] 📢 dcl-bologna — primo pilota territoriale del Lab
