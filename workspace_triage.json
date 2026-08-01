@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T02:48:47.167652",
+  "generated_at": "2026-08-01T08:21:21.121453",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -16,10 +16,10 @@
   "open_prs": 3,
   "prs": [
     {
-      "number": 443,
-      "title": "feat(config): warning tags/category in validate_config + time_coverage in docs",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/443"
+      "number": 759,
+      "title": "feat(standard): standard candidate v1 + gate strict + migrazione 109 dataset",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/759"
     },
     {
       "number": 220,
@@ -1874,11 +1874,11 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-07-31",
+    "probe_date": "2026-08-01",
     "sources_total": 36,
-    "green": 34,
+    "green": 33,
     "yellow": 2,
-    "red": 0,
+    "red": 1,
     "persistent_red": 0,
     "unhealthy": [
       {
@@ -1887,6 +1887,14 @@
         "protocol": "sdmx",
         "http_code": "-",
         "note": "Timeout (ReadTimeout)",
+        "red_streak": 0
+      },
+      {
+        "id": "dati_camera",
+        "status": "RED",
+        "protocol": "sparql",
+        "http_code": "503",
+        "note": null,
         "red_streak": 0
       },
       {

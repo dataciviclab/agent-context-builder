@@ -1,11 +1,12 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-01T02:48:47.167652
+**Generated**: 2026-08-01T08:21:21.121453
 
 ## 🔍 SCOUTING
 
-**Radar**: 36 fonti — GREEN 34 · YELLOW 2 · RED 0 (probe: 2026-07-31)
+**Radar**: 36 fonti — GREEN 33 · YELLOW 2 · RED 1 (probe: 2026-08-01)
   · **istat_sdmx** YELLOW [-] — Timeout (ReadTimeout)
+  · **dati_camera** RED [503]
   · **opencivitas** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
 **Catalog Drift**: no drift signals (36 sources checked)
 
@@ -56,7 +57,7 @@
 
 ## 🔗 OPEN
 
-- [toolkit#443](https://github.com/dataciviclab/toolkit/pull/443): feat(config): warning tags/category in validate_config + time_coverage in docs
+- [dataset-incubator#759](https://github.com/dataciviclab/dataset-incubator/pull/759): feat(standard): standard candidate v1 + gate strict + migrazione 109 dataset
 - **Dependabot**: 2 bump PR(s)
 **Discussions**: 146 open
   · [Annunci] 📢 dcl-bologna — primo pilota territoriale del Lab
