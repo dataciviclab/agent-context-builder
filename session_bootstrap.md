@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-07-31T19:25:34.621479
+**Generated**: 2026-08-01T02:48:47.167652
 
 ## 🔍 SCOUTING
 
@@ -56,6 +56,7 @@
 
 ## 🔗 OPEN
 
+- [toolkit#443](https://github.com/dataciviclab/toolkit/pull/443): feat(config): warning tags/category in validate_config + time_coverage in docs
 - **Dependabot**: 2 bump PR(s)
 **Discussions**: 146 open
   · [Annunci] 📢 dcl-bologna — primo pilota territoriale del Lab
