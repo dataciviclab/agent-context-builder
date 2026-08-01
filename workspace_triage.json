@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T08:21:21.121453",
+  "generated_at": "2026-08-01T13:21:12.738283",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -13,14 +13,8 @@
     "open-siope",
     "italia-corpus"
   ],
-  "open_prs": 3,
+  "open_prs": 2,
   "prs": [
-    {
-      "number": 759,
-      "title": "feat(standard): standard candidate v1 + gate strict + migrazione 109 dataset",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/759"
-    },
     {
       "number": 220,
       "title": "chore(deps-dev): bump eslint from 10.7.0 to 10.8.0",
@@ -34,7 +28,7 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/219"
     }
   ],
-  "open_issues": 121,
+  "open_issues": 122,
   "issues": [
     {
       "number": 59,
@@ -491,6 +485,12 @@
       "title": "analisi: dait_amministratori_locali \u2014 nuovo dataset pubblicato",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/issues/349"
+    },
+    {
+      "number": 444,
+      "title": "pipeline: plugin SDMX costruisce chiave incompleta (7 dim attese, 5 fornite) + fallback in 302 loop",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/444"
     },
     {
       "number": 426,
@@ -1916,7 +1916,7 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-07-31",
+    "generated_at": "2026-08-01",
     "summary": {
       "total": 109,
       "by_status": {
@@ -1931,7 +1931,7 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-07-31",
+    "updated_at": "2026-08-01",
     "summary": {
       "total": 106,
       "published": 89
