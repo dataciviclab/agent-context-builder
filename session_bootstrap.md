@@ -1,13 +1,10 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-02T02:48:00.476252
+**Generated**: 2026-08-02T08:24:25.271145
 
 ## 🔍 SCOUTING
 
-**Radar**: 36 fonti — GREEN 33 · YELLOW 2 · RED 1 (probe: 2026-08-01)
-  · **istat_sdmx** YELLOW [-] — Timeout (ReadTimeout)
-  · **dati_camera** RED [503]
-  · **opencivitas** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
+**Radar**: 36 fonti — GREEN 36 · YELLOW 0 · RED 0 (probe: 2026-08-02)
 **Catalog Drift**: no drift signals (36 sources checked)
 
 ## 📥 INTAKE

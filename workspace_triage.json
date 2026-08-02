@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-02T02:48:00.476252",
+  "generated_at": "2026-08-02T08:24:25.271145",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -1880,38 +1880,13 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-08-01",
+    "probe_date": "2026-08-02",
     "sources_total": 36,
-    "green": 33,
-    "yellow": 2,
-    "red": 1,
+    "green": 36,
+    "yellow": 0,
+    "red": 0,
     "persistent_red": 0,
-    "unhealthy": [
-      {
-        "id": "istat_sdmx",
-        "status": "YELLOW",
-        "protocol": "sdmx",
-        "http_code": "-",
-        "note": "Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
-      {
-        "id": "dati_camera",
-        "status": "RED",
-        "protocol": "sparql",
-        "http_code": "503",
-        "note": null,
-        "red_streak": 0
-      },
-      {
-        "id": "opencivitas",
-        "status": "YELLOW",
-        "protocol": "html",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
-        "red_streak": 0
-      }
-    ]
+    "unhealthy": []
   },
   "source_health": {
     "available": true,
