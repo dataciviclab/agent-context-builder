@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-02T08:24:25.271145
+**Generated**: 2026-08-02T13:21:32.155387
 
 ## 🔍 SCOUTING
 
@@ -55,6 +55,7 @@
 ## 🔗 OPEN
 
 - [dataset-incubator#763](https://github.com/dataciviclab/dataset-incubator/pull/763): feat(iva-regionale): standard v1 — mart serie, frequenze, http_file, multi-year
+- [toolkit#446](https://github.com/dataciviclab/toolkit/pull/446): fix(mart): validazione multi-year — tabelle con years non bloccano il run (#445)
 - **Dependabot**: 2 bump PR(s)
 **Discussions**: 146 open
   · [Annunci] 📢 dcl-bologna — primo pilota territoriale del Lab
