@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-02T13:21:32.155387",
+  "generated_at": "2026-08-02T19:10:22.591598",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -13,19 +13,13 @@
     "open-siope",
     "italia-corpus"
   ],
-  "open_prs": 4,
+  "open_prs": 3,
   "prs": [
     {
-      "number": 763,
-      "title": "feat(iva-regionale): standard v1 \u2014 mart serie, frequenze, http_file, multi-year",
+      "number": 778,
+      "title": "feat(mef-partecipazioni): standard v1 \u2014 mart serie, fix quota_soggetto_privato",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/763"
-    },
-    {
-      "number": 446,
-      "title": "fix(mart): validazione multi-year \u2014 tabelle con years non bloccano il run (#445)",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/446"
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/778"
     },
     {
       "number": 220,
@@ -40,7 +34,7 @@
       "url": "https://github.com/dataciviclab/data-explorer/pull/219"
     }
   ],
-  "open_issues": 122,
+  "open_issues": 121,
   "issues": [
     {
       "number": 59,
@@ -493,12 +487,6 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/349"
     },
     {
-      "number": 445,
-      "title": "pipeline: mart multi-year (tutte con years) \u2014 run per-anno fallisce e il multi-year non parte",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/445"
-    },
-    {
       "number": 444,
       "title": "pipeline: plugin SDMX costruisce chiave incompleta (7 dim attese, 5 fornite) + fallback in 302 loop",
       "repo": "toolkit",
@@ -778,6 +766,13 @@
   "open_discussions": 146,
   "discussions": [
     {
+      "number": 403,
+      "title": "IVA Regionale \u2014 10 domande su volume d'affari e valore aggiunto fiscale in Italia (2014-2023)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/403",
+      "category": "Domanda"
+    },
+    {
       "number": 435,
       "title": "\ud83d\udce2 dcl-bologna \u2014 primo pilota territoriale del Lab",
       "repo": "dataciviclab",
@@ -831,13 +826,6 @@
       "title": "Consumo di Suolo ISPRA \u2014 11 domande sulla cementificazione in Italia (2006-2024)",
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/401",
-      "category": "Domanda"
-    },
-    {
-      "number": 403,
-      "title": "IVA Regionale \u2014 10 domande su volume d'affari e valore aggiunto fiscale in Italia (2014-2023)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/403",
       "category": "Domanda"
     },
     {
@@ -1903,7 +1891,7 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-08-01",
+    "generated_at": "2026-08-02",
     "summary": {
       "total": 109,
       "by_status": {
@@ -1918,7 +1906,7 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-08-01",
+    "updated_at": "2026-08-02",
     "summary": {
       "total": 106,
       "published": 89
@@ -5702,12 +5690,16 @@
           "path": "gs://dataciviclab-clean/inps_rdc_pdc/2020/inps_rdc_pdc_2020_clean.parquet",
           "multi_file": false
         },
-        "metric_columns": 14,
-        "dimension_columns": 5,
-        "column_count": 19,
+        "metric_columns": 15,
+        "dimension_columns": 8,
+        "column_count": 23,
         "columns": [
           {
             "name": "anno",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_catastale",
             "role": "dimension"
           },
           {
@@ -5719,6 +5711,14 @@
             "role": "dimension"
           },
           {
+            "name": "regione",
+            "role": "dimension"
+          },
+          {
+            "name": "sigla_provincia",
+            "role": "dimension"
+          },
+          {
             "name": "codice_regione",
             "role": "dimension"
           },
@@ -5727,31 +5727,35 @@
             "role": "dimension"
           },
           {
-            "name": "nuclei_familiari_percettori_rdc_luglio_2020",
+            "name": "superficie_km2",
             "role": "metric"
           },
           {
-            "name": "nuclei_familiari_percettori_pdc_luglio_2020",
+            "name": "nuclei_rdc",
             "role": "metric"
           },
           {
-            "name": "individui_coinvolti_luglio_2020",
+            "name": "nuclei_pdc",
             "role": "metric"
           },
           {
-            "name": "numero_componenti_per_famiglia",
+            "name": "individui_coinvolti",
             "role": "metric"
           },
           {
-            "name": "numero_donne_per_famiglia",
+            "name": "componenti_per_famiglia",
             "role": "metric"
           },
           {
-            "name": "numero_minori_18_anni_per_famiglia",
+            "name": "donne_per_famiglia",
             "role": "metric"
           },
           {
-            "name": "numero_anziani_75_anni_per_famiglia",
+            "name": "minori_18_per_famiglia",
+            "role": "metric"
+          },
+          {
+            "name": "anziani_75_per_famiglia",
             "role": "metric"
           },
           {
@@ -5759,19 +5763,19 @@
             "role": "metric"
           },
           {
-            "name": "dev_standard_importo_mensile",
+            "name": "dev_standard_importo",
             "role": "metric"
           },
           {
-            "name": "uomini_residenti_al_1_1_2020",
+            "name": "uomini_residenti",
             "role": "metric"
           },
           {
-            "name": "donne_residenti_al_1_1_2020",
+            "name": "donne_residenti",
             "role": "metric"
           },
           {
-            "name": "popolazione_residente_al_1_1_2020",
+            "name": "popolazione_residente",
             "role": "metric"
           },
           {
@@ -7033,17 +7037,17 @@
         "name": "MEF \u2014 IVA Regionale: Volume Affari e VA fiscale (2014-2023)",
         "stage": "published",
         "period": {
-          "start": 2015,
-          "end": 2024
+          "start": 2014,
+          "end": 2023
         },
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/iva_regionale/*/iva_regionale_*_clean.parquet",
           "multi_file": true
         },
-        "metric_columns": 6,
+        "metric_columns": 11,
         "dimension_columns": 3,
-        "column_count": 9,
+        "column_count": 14,
         "columns": [
           {
             "name": "anno",
@@ -7062,7 +7066,15 @@
             "role": "metric"
           },
           {
+            "name": "volume_frequenza",
+            "role": "metric"
+          },
+          {
             "name": "volume_affari_eur",
+            "role": "metric"
+          },
+          {
+            "name": "acquisti_frequenza",
             "role": "metric"
           },
           {
@@ -7070,11 +7082,23 @@
             "role": "metric"
           },
           {
+            "name": "va_frequenza",
+            "role": "metric"
+          },
+          {
             "name": "va_fiscale_eur",
             "role": "metric"
           },
           {
+            "name": "imposta_dovuta_frequenza",
+            "role": "metric"
+          },
+          {
             "name": "imposta_dovuta_eur",
+            "role": "metric"
+          },
+          {
+            "name": "imposta_credito_frequenza",
             "role": "metric"
           },
           {

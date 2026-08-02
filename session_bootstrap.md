@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-02T13:21:32.155387
+**Generated**: 2026-08-02T19:10:22.591598
 
 ## 🔍 SCOUTING
 
@@ -10,7 +10,7 @@
 ## 📥 INTAKE
 
 **Pipeline**: 109 candidates — 109 ok
-**Dataset Catalog**: 89 published · 89 public · updated 2026-08-01
+**Dataset Catalog**: 89 published · 89 public · updated 2026-08-02
 
 ## 📊 ANALYSES
 
@@ -54,13 +54,12 @@
 
 ## 🔗 OPEN
 
-- [dataset-incubator#763](https://github.com/dataciviclab/dataset-incubator/pull/763): feat(iva-regionale): standard v1 — mart serie, frequenze, http_file, multi-year
-- [toolkit#446](https://github.com/dataciviclab/toolkit/pull/446): fix(mart): validazione multi-year — tabelle con years non bloccano il run (#445)
+- [dataset-incubator#778](https://github.com/dataciviclab/dataset-incubator/pull/778): feat(mef-partecipazioni): standard v1 — mart serie, fix quota_soggetto_privato
 - **Dependabot**: 2 bump PR(s)
 **Discussions**: 146 open
+  · [Domanda] IVA Regionale — 10 domande su volume d'affari e valore aggiunto fiscale in Italia (2014-2023)
   · [Annunci] 📢 dcl-bologna — primo pilota territoriale del Lab
   · [Annunci] [Annunci] open-conto-annuale — 1,8 milioni di microdati sul personale della PA italiana (2020-2024)
-  · [Proposte] [Progetto] Rifiuti & Disuguaglianza Socio-Economica
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
