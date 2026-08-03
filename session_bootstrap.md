@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-03T09:45:33.050034
+**Generated**: 2026-08-03T14:39:22.382041
 
 ## 🔍 SCOUTING
 
@@ -10,7 +10,7 @@
 ## 📥 INTAKE
 
 **Pipeline**: 109 candidates — 109 ok
-**Dataset Catalog**: 89 published · 89 public · updated 2026-08-02
+**Dataset Catalog**: 89 published · 89 public · updated 2026-08-03
 
 ## 📊 ANALYSES
 
@@ -55,10 +55,10 @@
 ## 🔗 OPEN
 
 - **Dependabot**: 3 bump PR(s)
-**Discussions**: 146 open
-  · [Domanda] FTS EU Grants — 13 domande sui finanziamenti UE in Italia (2020-2024)
-  · [Domanda] Consumo di Suolo ISPRA — 11 domande sulla cementificazione in Italia (2006-2024)
-  · [Domanda] ACI Auto Nuove — 11 domande su 8 anni di immatricolazioni e transizione energetica (2017-2024)
+**Discussions**: 147 open
+  · [Domanda] MEF Partecipate — 11 domande su 101mila incarichi e compensi dei rappresentanti PA (2018-2023)
+  · [Domanda] ISPRA Rifiuti Urbani — 11 domande su differenziata e produzione comune per comune (2010-2024)
+  · [Domanda] AIFA Spesa Farmaceutica — 11 domande su 10 miliardi di farmaci convenzionati (2018-2024)
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA

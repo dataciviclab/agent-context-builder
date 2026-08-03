@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T09:45:33.050034",
+  "generated_at": "2026-08-03T14:39:22.382041",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -34,13 +34,25 @@
       "url": "https://github.com/dataciviclab/lab-connectors/pull/74"
     }
   ],
-  "open_issues": 121,
+  "open_issues": 123,
   "issues": [
     {
       "number": 59,
       "title": "feat: whats_new \u2014 delta awareness tra build CI (P2)",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/issues/59"
+    },
+    {
+      "number": 781,
+      "title": "intake: senato_ddl \u2014 Iter legislativo dei disegni di legge del Senato",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/781"
+    },
+    {
+      "number": 780,
+      "title": "intake: senato_sindisp \u2014 Sindacato ispettivo del Senato (interrogazioni, interpellanze, mozioni)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/780"
     },
     {
       "number": 720,
@@ -763,8 +775,36 @@
       "url": "https://github.com/dataciviclab/italia-corpus/issues/28"
     }
   ],
-  "open_discussions": 146,
+  "open_discussions": 147,
   "discussions": [
+    {
+      "number": 406,
+      "title": "MEF Partecipate \u2014 11 domande su 101mila incarichi e compensi dei rappresentanti PA (2018-2023)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/406",
+      "category": "Domanda"
+    },
+    {
+      "number": 443,
+      "title": "ISPRA Rifiuti Urbani \u2014 11 domande su differenziata e produzione comune per comune (2010-2024)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/443",
+      "category": "Domanda"
+    },
+    {
+      "number": 442,
+      "title": "AIFA Spesa Farmaceutica \u2014 11 domande su 10 miliardi di farmaci convenzionati (2018-2024)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/442",
+      "category": "Domanda"
+    },
+    {
+      "number": 441,
+      "title": "IRPEF Comunale \u2014 11 domande su redditi e imposta comune per comune (2019-2024)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/441",
+      "category": "Domanda"
+    },
     {
       "number": 395,
       "title": "FTS EU Grants \u2014 13 domande sui finanziamenti UE in Italia (2020-2024)",
@@ -841,13 +881,6 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/353",
       "category": "Annunci"
-    },
-    {
-      "number": 406,
-      "title": "MEF Partecipate \u2014 11 domande su 101mila incarichi e compensi dei rappresentanti PA (2018-2023)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/406",
-      "category": "Domanda"
     },
     {
       "number": 418,
@@ -1445,20 +1478,6 @@
       "category": "Presentazioni"
     },
     {
-      "number": 24,
-      "title": "[Presentazione] Ciao! Piacere, Andrea!",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/24",
-      "category": "Presentazioni"
-    },
-    {
-      "number": 23,
-      "title": "[Presentazione] Ciao! Piacere, Gabriele!",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/23",
-      "category": "Presentazioni"
-    },
-    {
       "number": 96,
       "title": "[Business] Enterprise demography in Europe \u2014 10 questions about where startups thrive and where they die (2008-2020)",
       "repo": "eurostat",
@@ -1891,7 +1910,7 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-08-02",
+    "generated_at": "2026-08-03",
     "summary": {
       "total": 109,
       "by_status": {
@@ -1906,7 +1925,7 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-08-02",
+    "updated_at": "2026-08-03",
     "summary": {
       "total": 106,
       "published": 89
