@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-02T19:10:22.591598
+**Generated**: 2026-08-03T02:49:00.411870
 
 ## 🔍 SCOUTING
 
@@ -54,12 +54,12 @@
 
 ## 🔗 OPEN
 
-- [dataset-incubator#778](https://github.com/dataciviclab/dataset-incubator/pull/778): feat(mef-partecipazioni): standard v1 — mart serie, fix quota_soggetto_privato
+- [dataset-incubator#779](https://github.com/dataciviclab/dataset-incubator/pull/779): chore(post-merge): aggiorna registry per PR #778
 - **Dependabot**: 2 bump PR(s)
 **Discussions**: 146 open
+  · [Domanda] ACI Auto Nuove — 11 domande su 8 anni di immatricolazioni e transizione energetica (2017-2024)
+  · [Domanda] ANPR Mobilità Residenziale — 13 domande che possiamo fare ai dati (2022-2026)
   · [Domanda] IVA Regionale — 10 domande su volume d'affari e valore aggiunto fiscale in Italia (2014-2023)
-  · [Annunci] 📢 dcl-bologna — primo pilota territoriale del Lab
-  · [Annunci] [Annunci] open-conto-annuale — 1,8 milioni di microdati sul personale della PA italiana (2020-2024)
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
