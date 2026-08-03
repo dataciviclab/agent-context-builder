@@ -1,10 +1,10 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-03T02:49:00.411870
+**Generated**: 2026-08-03T09:45:33.050034
 
 ## 🔍 SCOUTING
 
-**Radar**: 36 fonti — GREEN 36 · YELLOW 0 · RED 0 (probe: 2026-08-02)
+**Radar**: 36 fonti — GREEN 36 · YELLOW 0 · RED 0 (probe: 2026-08-03)
 **Catalog Drift**: no drift signals (36 sources checked)
 
 ## 📥 INTAKE
@@ -54,12 +54,11 @@
 
 ## 🔗 OPEN
 
-- [dataset-incubator#779](https://github.com/dataciviclab/dataset-incubator/pull/779): chore(post-merge): aggiorna registry per PR #778
-- **Dependabot**: 2 bump PR(s)
+- **Dependabot**: 3 bump PR(s)
 **Discussions**: 146 open
+  · [Domanda] FTS EU Grants — 13 domande sui finanziamenti UE in Italia (2020-2024)
+  · [Domanda] Consumo di Suolo ISPRA — 11 domande sulla cementificazione in Italia (2006-2024)
   · [Domanda] ACI Auto Nuove — 11 domande su 8 anni di immatricolazioni e transizione energetica (2017-2024)
-  · [Domanda] ANPR Mobilità Residenziale — 13 domande che possiamo fare ai dati (2022-2026)
-  · [Domanda] IVA Regionale — 10 domande su volume d'affari e valore aggiunto fiscale in Italia (2014-2023)
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA

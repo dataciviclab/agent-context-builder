@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T02:49:00.411870",
+  "generated_at": "2026-08-03T09:45:33.050034",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -16,12 +16,6 @@
   "open_prs": 3,
   "prs": [
     {
-      "number": 779,
-      "title": "chore(post-merge): aggiorna registry per PR #778",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/779"
-    },
-    {
       "number": 220,
       "title": "chore(deps-dev): bump eslint from 10.7.0 to 10.8.0",
       "repo": "data-explorer",
@@ -32,6 +26,12 @@
       "title": "chore(deps-dev): bump globals from 17.7.0 to 17.8.0",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/219"
+    },
+    {
+      "number": 74,
+      "title": "chore(deps-dev): update mcp requirement from <2,>=1.13 to >=1.13,<3",
+      "repo": "lab-connectors",
+      "url": "https://github.com/dataciviclab/lab-connectors/pull/74"
     }
   ],
   "open_issues": 121,
@@ -766,6 +766,20 @@
   "open_discussions": 146,
   "discussions": [
     {
+      "number": 395,
+      "title": "FTS EU Grants \u2014 13 domande sui finanziamenti UE in Italia (2020-2024)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/395",
+      "category": "Domanda"
+    },
+    {
+      "number": 401,
+      "title": "Consumo di Suolo ISPRA \u2014 11 domande sulla cementificazione in Italia (2006-2024)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/401",
+      "category": "Domanda"
+    },
+    {
       "number": 409,
       "title": "ACI Auto Nuove \u2014 11 domande su 8 anni di immatricolazioni e transizione energetica (2017-2024)",
       "repo": "dataciviclab",
@@ -836,24 +850,10 @@
       "category": "Domanda"
     },
     {
-      "number": 401,
-      "title": "Consumo di Suolo ISPRA \u2014 11 domande sulla cementificazione in Italia (2006-2024)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/401",
-      "category": "Domanda"
-    },
-    {
       "number": 418,
       "title": "Iscritti Universitari \u2014 11 domande su 25 anni di studenti in Italia (2000-2025)",
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/418",
-      "category": "Domanda"
-    },
-    {
-      "number": 395,
-      "title": "FTS EU Grants \u2014 13 domande sui finanziamenti UE in Italia (2020-2024)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/395",
       "category": "Domanda"
     },
     {
@@ -1874,7 +1874,7 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-08-02",
+    "probe_date": "2026-08-03",
     "sources_total": 36,
     "green": 36,
     "yellow": 0,
