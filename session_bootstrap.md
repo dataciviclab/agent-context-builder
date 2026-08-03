@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-03T14:39:22.382041
+**Generated**: 2026-08-03T18:03:12.509524
 
 ## 🔍 SCOUTING
 
@@ -9,8 +9,8 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 109 candidates — 109 ok
-**Dataset Catalog**: 89 published · 89 public · updated 2026-08-03
+**Pipeline**: 110 candidates — 110 ok
+**Dataset Catalog**: 90 published · 90 public · updated 2026-08-03
 
 ## 📊 ANALYSES
 
@@ -43,22 +43,22 @@
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
   · **Terzo settore**: cinque-per-mille
-  ⚠ 88 dataset published non ancora su explorer:
+  ⚠ 89 dataset published non ancora su explorer:
     · aci_prime_iscrizioni_autovetture
     · ade_cinque_per_mille
     · aifa_spesa_consumo
     · anac_aggiudicatari
     · anac_aggiudicazioni
-    · ... e altri 83
+    · ... e altri 84
   **Deploy**: ✅ success (2026-07-27)
 
 ## 🔗 OPEN
 
 - **Dependabot**: 3 bump PR(s)
 **Discussions**: 147 open
+  · [Domanda] FTS EU Grants — 13 domande sui finanziamenti UE in Italia (2020-2025)
   · [Domanda] MEF Partecipate — 11 domande su 101mila incarichi e compensi dei rappresentanti PA (2018-2023)
   · [Domanda] ISPRA Rifiuti Urbani — 11 domande su differenziata e produzione comune per comune (2010-2024)
-  · [Domanda] AIFA Spesa Farmaceutica — 11 domande su 10 miliardi di farmaci convenzionati (2018-2024)
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA

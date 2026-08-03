@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T14:39:22.382041",
+  "generated_at": "2026-08-03T18:03:12.509524",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -34,13 +34,19 @@
       "url": "https://github.com/dataciviclab/lab-connectors/pull/74"
     }
   ],
-  "open_issues": 123,
+  "open_issues": 124,
   "issues": [
     {
       "number": 59,
       "title": "feat: whats_new \u2014 delta awareness tra build CI (P2)",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/issues/59"
+    },
+    {
+      "number": 786,
+      "title": "intake: membri_governo \u2014 Membri e organi dei Governi italiani dal Regno d'Italia (1862) alla XIX legislatura",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/786"
     },
     {
       "number": 781,
@@ -778,6 +784,13 @@
   "open_discussions": 147,
   "discussions": [
     {
+      "number": 395,
+      "title": "FTS EU Grants \u2014 13 domande sui finanziamenti UE in Italia (2020-2025)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/395",
+      "category": "Domanda"
+    },
+    {
       "number": 406,
       "title": "MEF Partecipate \u2014 11 domande su 101mila incarichi e compensi dei rappresentanti PA (2018-2023)",
       "repo": "dataciviclab",
@@ -803,13 +816,6 @@
       "title": "IRPEF Comunale \u2014 11 domande su redditi e imposta comune per comune (2019-2024)",
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/441",
-      "category": "Domanda"
-    },
-    {
-      "number": 395,
-      "title": "FTS EU Grants \u2014 13 domande sui finanziamenti UE in Italia (2020-2024)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/395",
       "category": "Domanda"
     },
     {
@@ -1912,9 +1918,9 @@
     "available": true,
     "generated_at": "2026-08-03",
     "summary": {
-      "total": 109,
+      "total": 110,
       "by_status": {
-        "ok": 109,
+        "ok": 110,
         "warn": 0,
         "error": 0
       }
@@ -1927,8 +1933,8 @@
     "name": "Lab Clean Registry",
     "updated_at": "2026-08-03",
     "summary": {
-      "total": 106,
-      "published": 89
+      "total": 107,
+      "published": 90
     },
     "datasets": [
       {
@@ -3571,18 +3577,73 @@
         "name": "Camera Deputati Legislature",
         "stage": "incubating",
         "period": {
-          "start": 2024,
-          "end": 2024
+          "start": 1861,
+          "end": 2026
         },
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/camera_deputati_legislature/2024/camera_deputati_legislature_2024_clean.parquet",
+          "path": "gs://dataciviclab-clean/camera_deputati_legislature/2026/camera_deputati_legislature_2026_clean.parquet",
           "multi_file": false
         },
         "metric_columns": 0,
-        "dimension_columns": 5,
-        "column_count": 5,
+        "dimension_columns": 10,
+        "column_count": 10,
         "columns": []
+      },
+      {
+        "slug": "camera_incarichi",
+        "name": "Incarichi nei Gruppi Parlamentari (Camera)",
+        "stage": "published",
+        "period": {
+          "start": 1946,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/camera_incarichi/2026/camera_incarichi_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 0,
+        "dimension_columns": 9,
+        "column_count": 9,
+        "columns": [
+          {
+            "name": "incarico",
+            "role": "dimension"
+          },
+          {
+            "name": "ruolo",
+            "role": "dimension"
+          },
+          {
+            "name": "label",
+            "role": "dimension"
+          },
+          {
+            "name": "deputato",
+            "role": "dimension"
+          },
+          {
+            "name": "persona_id",
+            "role": "dimension"
+          },
+          {
+            "name": "gruppo",
+            "role": "dimension"
+          },
+          {
+            "name": "legislatura",
+            "role": "dimension"
+          },
+          {
+            "name": "start_date",
+            "role": "dimension"
+          },
+          {
+            "name": "end_date",
+            "role": "dimension"
+          }
+        ]
       },
       {
         "slug": "camera_votazioni_sparql",
@@ -5189,7 +5250,7 @@
         "stage": "published",
         "period": {
           "start": 2020,
-          "end": 2024
+          "end": 2025
         },
         "location": {
           "type": "gcs",
@@ -5197,8 +5258,8 @@
           "multi_file": true
         },
         "metric_columns": 7,
-        "dimension_columns": 31,
-        "column_count": 38,
+        "dimension_columns": 32,
+        "column_count": 39,
         "columns": [
           {
             "name": "anno",
@@ -5318,6 +5379,10 @@
           },
           {
             "name": "nome_programma",
+            "role": "dimension"
+          },
+          {
+            "name": "is_rrf",
             "role": "dimension"
           },
           {
@@ -10975,6 +11040,7 @@
       "bdap_entrate_stato",
       "bdap_lea",
       "bdap_spese_stato",
+      "camera_incarichi",
       "camera_votazioni_sparql",
       "centri_accoglienza_italia",
       "civile_flussi",

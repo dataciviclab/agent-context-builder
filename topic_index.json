@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-08-03T14:39:22.382041",
+  "generated_at": "2026-08-03T18:03:12.509524",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -206,6 +206,16 @@
         }
       }
     ],
+    "Camera dei Deputati \u2014 OpenData SPARQL endpoint": [
+      {
+        "slug": "camera_incarichi",
+        "name": "Incarichi nei Gruppi Parlamentari (Camera)",
+        "period": {
+          "start": 1946,
+          "end": 2026
+        }
+      }
+    ],
     "https://dati.camera.it/sparql": [
       {
         "slug": "camera_votazioni_sparql",
@@ -378,7 +388,7 @@
         "name": "Grant UE erogati in Italia (FTS EU Grants)",
         "period": {
           "start": 2020,
-          "end": 2024
+          "end": 2025
         }
       }
     ],
@@ -885,8 +895,8 @@
         "slug": "camera_deputati_legislature",
         "name": "Camera Deputati Legislature",
         "period": {
-          "start": 2024,
-          "end": 2024
+          "start": 1861,
+          "end": 2026
         }
       }
     ],
