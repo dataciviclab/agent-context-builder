@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T08:36:56.289948",
+  "generated_at": "2026-08-04T14:11:49.013798",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -34,19 +34,13 @@
       "url": "https://github.com/dataciviclab/lab-connectors/pull/74"
     }
   ],
-  "open_issues": 124,
+  "open_issues": 125,
   "issues": [
     {
       "number": 59,
       "title": "feat: whats_new \u2014 delta awareness tra build CI (P2)",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/issues/59"
-    },
-    {
-      "number": 781,
-      "title": "intake: senato_ddl \u2014 Iter legislativo dei disegni di legge del Senato",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/781"
     },
     {
       "number": 780,
@@ -197,6 +191,12 @@
       "title": "Proposta intake: Operatori Economici Consip (dati.consip.it)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/375"
+    },
+    {
+      "number": 445,
+      "title": "analisi: senato_ddl \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/445"
     },
     {
       "number": 444,
@@ -493,10 +493,10 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/352"
     },
     {
-      "number": 350,
-      "title": "analisi: anac_bandi_gara \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/350"
+      "number": 449,
+      "title": "fix: paginazione SPARQL fa break silenzioso su DownloadError \u2014 perdita dati su endpoint instabile",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/449"
     },
     {
       "number": 444,
@@ -515,6 +515,12 @@
       "title": "pipeline: mart_index \u00e8 un indovinello \u2014 sostituire con mart_name",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/425"
+    },
+    {
+      "number": 223,
+      "title": "follow-up: pagina e tema per senato_ddl",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/223"
     },
     {
       "number": 222,
@@ -784,6 +790,13 @@
   "open_discussions": 147,
   "discussions": [
     {
+      "number": 397,
+      "title": "ANAC Bandi di Gara \u2014 11 domande sugli appalti pubblici italiani (2016-2025)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/397",
+      "category": "Domanda"
+    },
+    {
       "number": 395,
       "title": "FTS EU Grants \u2014 13 domande sui finanziamenti UE in Italia (2020-2025)",
       "repo": "dataciviclab",
@@ -872,13 +885,6 @@
       "title": "OpenCivitas \u2014 11 domande su 19 milioni di indicatori di performance dei comuni italiani (2015-2022)",
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/422",
-      "category": "Domanda"
-    },
-    {
-      "number": 397,
-      "title": "ANAC Bandi di Gara \u2014 11 domande sugli appalti pubblici italiani (2016-2025)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/397",
       "category": "Domanda"
     },
     {
@@ -1916,11 +1922,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-08-03",
+    "generated_at": "2026-08-04",
     "summary": {
-      "total": 111,
+      "total": 112,
       "by_status": {
-        "ok": 111,
+        "ok": 112,
         "warn": 0,
         "error": 0
       }
@@ -1931,10 +1937,10 @@
     "available": true,
     "schema_version": "1",
     "name": "Lab Clean Registry",
-    "updated_at": "2026-08-03",
+    "updated_at": "2026-08-04",
     "summary": {
-      "total": 108,
-      "published": 91
+      "total": 109,
+      "published": 92
     },
     "datasets": [
       {
@@ -9896,6 +9902,133 @@
         ]
       },
       {
+        "slug": "senato_ddl",
+        "name": "Senato Ddl",
+        "stage": "published",
+        "period": {
+          "start": 2022,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/senato_ddl/2026/senato_ddl_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 5,
+        "dimension_columns": 22,
+        "column_count": 27,
+        "columns": [
+          {
+            "name": "id_ddl",
+            "role": "metric"
+          },
+          {
+            "name": "ddl_url",
+            "role": "dimension"
+          },
+          {
+            "name": "titolo",
+            "role": "dimension"
+          },
+          {
+            "name": "titolo_breve",
+            "role": "dimension"
+          },
+          {
+            "name": "stato",
+            "role": "dimension"
+          },
+          {
+            "name": "data_presentazione",
+            "role": "dimension"
+          },
+          {
+            "name": "data_stato_ddl",
+            "role": "dimension"
+          },
+          {
+            "name": "natura",
+            "role": "dimension"
+          },
+          {
+            "name": "fase",
+            "role": "dimension"
+          },
+          {
+            "name": "ramo",
+            "role": "dimension"
+          },
+          {
+            "name": "iniziativa",
+            "role": "dimension"
+          },
+          {
+            "name": "descr_iniziativa",
+            "role": "dimension"
+          },
+          {
+            "name": "progressivo_iter",
+            "role": "metric"
+          },
+          {
+            "name": "numero_fase",
+            "role": "metric"
+          },
+          {
+            "name": "numero_fase_compatto",
+            "role": "dimension"
+          },
+          {
+            "name": "id_fase",
+            "role": "dimension"
+          },
+          {
+            "name": "legislatura",
+            "role": "metric"
+          },
+          {
+            "name": "presentato_trasmesso",
+            "role": "dimension"
+          },
+          {
+            "name": "numero_legge",
+            "role": "metric"
+          },
+          {
+            "name": "data_legge",
+            "role": "dimension"
+          },
+          {
+            "name": "relatore",
+            "role": "dimension"
+          },
+          {
+            "name": "classificazione",
+            "role": "dimension"
+          },
+          {
+            "name": "assegnazione",
+            "role": "dimension"
+          },
+          {
+            "name": "testo_presentato",
+            "role": "dimension"
+          },
+          {
+            "name": "testo_approvato",
+            "role": "dimension"
+          },
+          {
+            "name": "testo_unificato",
+            "role": "dimension"
+          },
+          {
+            "name": "stralcio",
+            "role": "dimension"
+          }
+        ]
+      },
+      {
         "slug": "silos_infrastrutture",
         "name": "Infrastrutture strategiche e prioritarie (SILOS)",
         "stage": "published",
@@ -11163,6 +11296,7 @@
       "sai_progetti_italia",
       "sai_strutture_italia",
       "sbarchi_migranti_italia",
+      "senato_ddl",
       "silos_infrastrutture",
       "strutture_asl",
       "strutture_ricovero_asl",
