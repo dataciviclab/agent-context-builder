@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-08-04T14:11:49.013798",
+  "generated_at": "2026-08-04T19:37:51.975469",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -230,7 +230,7 @@
         "name": "Votazioni Camera dei Deputati",
         "period": {
           "start": 2018,
-          "end": 2025
+          "end": 2026
         }
       }
     ],
@@ -810,6 +810,14 @@
       {
         "slug": "senato_ddl",
         "name": "Senato Ddl",
+        "period": {
+          "start": 2022,
+          "end": 2026
+        }
+      },
+      {
+        "slug": "senato_firmatari",
+        "name": "Senato Firmatari",
         "period": {
           "start": 2022,
           "end": 2026

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T14:11:49.013798",
+  "generated_at": "2026-08-04T19:37:51.975469",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -13,8 +13,14 @@
     "open-siope",
     "italia-corpus"
   ],
-  "open_prs": 3,
+  "open_prs": 4,
   "prs": [
+    {
+      "number": 798,
+      "title": "feat(politica): support camera-gruppi + senato-anagrafica \u2014 nomi gruppi Camera e anagrafica senatori",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/798"
+    },
     {
       "number": 220,
       "title": "chore(deps-dev): bump eslint from 10.7.0 to 10.8.0",
@@ -790,6 +796,13 @@
   "open_discussions": 147,
   "discussions": [
     {
+      "number": 414,
+      "title": "PIL territoriale \u2014 11 domande su 30 anni di economia italiana regione per regione (1995-2024)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/414",
+      "category": "Domanda"
+    },
+    {
       "number": 397,
       "title": "ANAC Bandi di Gara \u2014 11 domande sugli appalti pubblici italiani (2016-2025)",
       "repo": "dataciviclab",
@@ -920,13 +933,6 @@
       "title": "Emissioni GHG in Italia \u2014 10 domande su 33 anni di gas serra (1990-2023)",
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/402",
-      "category": "Domanda"
-    },
-    {
-      "number": 414,
-      "title": "PIL territoriale \u2014 11 domande su 30 anni di economia italiana regione per regione (1995-2024)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/414",
       "category": "Domanda"
     },
     {
@@ -1924,9 +1930,9 @@
     "available": true,
     "generated_at": "2026-08-04",
     "summary": {
-      "total": 112,
+      "total": 113,
       "by_status": {
-        "ok": 112,
+        "ok": 113,
         "warn": 0,
         "error": 0
       }
@@ -1939,8 +1945,8 @@
     "name": "Lab Clean Registry",
     "updated_at": "2026-08-04",
     "summary": {
-      "total": 109,
-      "published": 92
+      "total": 110,
+      "published": 93
     },
     "datasets": [
       {
@@ -3657,7 +3663,7 @@
         "stage": "published",
         "period": {
           "start": 2018,
-          "end": 2025
+          "end": 2026
         },
         "location": {
           "type": "gcs",
@@ -7827,8 +7833,8 @@
           "multi_file": false
         },
         "metric_columns": 0,
-        "dimension_columns": 10,
-        "column_count": 10,
+        "dimension_columns": 13,
+        "column_count": 13,
         "columns": [
           {
             "name": "membro",
@@ -7848,6 +7854,18 @@
           },
           {
             "name": "start_date",
+            "role": "dimension"
+          },
+          {
+            "name": "end_date",
+            "role": "dimension"
+          },
+          {
+            "name": "interim",
+            "role": "dimension"
+          },
+          {
+            "name": "motivo_termine",
             "role": "dimension"
           },
           {
@@ -10029,6 +10047,65 @@
         ]
       },
       {
+        "slug": "senato_firmatari",
+        "name": "Senato Firmatari",
+        "stage": "published",
+        "period": {
+          "start": 2022,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/senato_firmatari/2026/senato_firmatari_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 2,
+        "dimension_columns": 8,
+        "column_count": 10,
+        "columns": [
+          {
+            "name": "ddl",
+            "role": "dimension"
+          },
+          {
+            "name": "ddl_id",
+            "role": "metric"
+          },
+          {
+            "name": "iniziativa",
+            "role": "dimension"
+          },
+          {
+            "name": "presentatore",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_iniziativa",
+            "role": "dimension"
+          },
+          {
+            "name": "primo_firmatario",
+            "role": "dimension"
+          },
+          {
+            "name": "senatore_id",
+            "role": "metric"
+          },
+          {
+            "name": "data_aggiunta_firma",
+            "role": "dimension"
+          },
+          {
+            "name": "data_ritiro_firma",
+            "role": "dimension"
+          },
+          {
+            "name": "deputato_url",
+            "role": "dimension"
+          }
+        ]
+      },
+      {
         "slug": "silos_infrastrutture",
         "name": "Infrastrutture strategiche e prioritarie (SILOS)",
         "stage": "published",
@@ -11297,6 +11374,7 @@
       "sai_strutture_italia",
       "sbarchi_migranti_italia",
       "senato_ddl",
+      "senato_firmatari",
       "silos_infrastrutture",
       "strutture_asl",
       "strutture_ricovero_asl",

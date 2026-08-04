@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-04T14:11:49.013798
+**Generated**: 2026-08-04T19:37:51.975469
 
 ## 🔍 SCOUTING
 
@@ -9,8 +9,8 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 112 candidates — 112 ok
-**Dataset Catalog**: 92 published · 92 public · updated 2026-08-04
+**Pipeline**: 113 candidates — 113 ok
+**Dataset Catalog**: 93 published · 93 public · updated 2026-08-04
 
 ## 📊 ANALYSES
 
@@ -43,22 +43,23 @@
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
   · **Terzo settore**: cinque-per-mille
-  ⚠ 91 dataset published non ancora su explorer:
+  ⚠ 92 dataset published non ancora su explorer:
     · aci_prime_iscrizioni_autovetture
     · ade_cinque_per_mille
     · aifa_spesa_consumo
     · anac_aggiudicatari
     · anac_aggiudicazioni
-    · ... e altri 86
+    · ... e altri 87
   **Deploy**: ✅ success (2026-08-03)
 
 ## 🔗 OPEN
 
+- [dataset-incubator#798](https://github.com/dataciviclab/dataset-incubator/pull/798): feat(politica): support camera-gruppi + senato-anagrafica — nomi gruppi Camera e anagrafica senatori
 - **Dependabot**: 3 bump PR(s)
 **Discussions**: 147 open
+  · [Domanda] PIL territoriale — 11 domande su 30 anni di economia italiana regione per regione (1995-2024)
   · [Domanda] ANAC Bandi di Gara — 11 domande sugli appalti pubblici italiani (2016-2025)
   · [Domanda] FTS EU Grants — 13 domande sui finanziamenti UE in Italia (2020-2025)
-  · [Domanda] MEF Partecipate — 11 domande su 101mila incarichi e compensi dei rappresentanti PA (2018-2023)
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
