@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T19:37:52.101621",
+  "generated_at": "2026-08-04T02:32:36.047160",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -41,12 +41,6 @@
       "title": "feat: whats_new \u2014 delta awareness tra build CI (P2)",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/issues/59"
-    },
-    {
-      "number": 786,
-      "title": "intake: membri_governo \u2014 Membri e organi dei Governi italiani dal Regno d'Italia (1862) alla XIX legislatura",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/786"
     },
     {
       "number": 781,
@@ -203,6 +197,12 @@
       "title": "Proposta intake: Operatori Economici Consip (dati.consip.it)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/375"
+    },
+    {
+      "number": 444,
+      "title": "analisi: membri_governo \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/444"
     },
     {
       "number": 440,
@@ -499,12 +499,6 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/350"
     },
     {
-      "number": 349,
-      "title": "analisi: dait_amministratori_locali \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/349"
-    },
-    {
       "number": 444,
       "title": "pipeline: plugin SDMX costruisce chiave incompleta (7 dim attese, 5 fornite) + fallback in 302 loop",
       "repo": "toolkit",
@@ -521,6 +515,12 @@
       "title": "pipeline: mart_index \u00e8 un indovinello \u2014 sostituire con mart_name",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/425"
+    },
+    {
+      "number": 222,
+      "title": "follow-up: pagina e tema per membri_governo",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/222"
     },
     {
       "number": 218,
@@ -1918,9 +1918,9 @@
     "available": true,
     "generated_at": "2026-08-03",
     "summary": {
-      "total": 110,
+      "total": 111,
       "by_status": {
-        "ok": 110,
+        "ok": 111,
         "warn": 0,
         "error": 0
       }
@@ -1933,8 +1933,8 @@
     "name": "Lab Clean Registry",
     "updated_at": "2026-08-03",
     "summary": {
-      "total": 107,
-      "published": 90
+      "total": 108,
+      "published": 91
     },
     "datasets": [
       {
@@ -7808,6 +7808,65 @@
         ]
       },
       {
+        "slug": "membri_governo",
+        "name": "Membri dei Governi italiani (1862-2026)",
+        "stage": "published",
+        "period": {
+          "start": 1862,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/membri_governo/2026/membri_governo_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 0,
+        "dimension_columns": 10,
+        "column_count": 10,
+        "columns": [
+          {
+            "name": "membro",
+            "role": "dimension"
+          },
+          {
+            "name": "persona_id",
+            "role": "dimension"
+          },
+          {
+            "name": "ruolo",
+            "role": "dimension"
+          },
+          {
+            "name": "label",
+            "role": "dimension"
+          },
+          {
+            "name": "start_date",
+            "role": "dimension"
+          },
+          {
+            "name": "nome",
+            "role": "dimension"
+          },
+          {
+            "name": "cognome",
+            "role": "dimension"
+          },
+          {
+            "name": "legislatura",
+            "role": "dimension"
+          },
+          {
+            "name": "governo",
+            "role": "dimension"
+          },
+          {
+            "name": "organo",
+            "role": "dimension"
+          }
+        ]
+      },
+      {
         "slug": "mim_alunni_corso_eta",
         "name": "Alunni per corso ed et\u00e0 \u2014 MIM",
         "stage": "published",
@@ -11082,6 +11141,7 @@
       "mef_patrimonio_enti",
       "mef_patrimonio_immobili",
       "mef_rappresentanti_partecipate",
+      "membri_governo",
       "mim_alunni_corso_eta",
       "mim_scuola_infanzia",
       "monitoraggio_mensile_civile",
@@ -11114,12 +11174,12 @@
       "who_is_who_pa"
     ],
     "last_deploy": {
-      "run_id": 30262974720,
+      "run_id": 30855009754,
       "name": "Deploy to GitHub Pages (Observable Framework)",
       "status": "completed",
       "conclusion": "success",
-      "completed_at": "2026-07-27T11:49:14Z",
-      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/30262974720"
+      "completed_at": "2026-08-03T21:38:16Z",
+      "html_url": "https://github.com/dataciviclab/data-explorer/actions/runs/30855009754"
     }
   }
 }
