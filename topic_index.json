@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-08-05T02:32:05.484036",
+  "generated_at": "2026-08-05T08:35:49.732691",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -203,6 +203,16 @@
         "period": {
           "start": 2024,
           "end": 2024
+        }
+      }
+    ],
+    "Camera dei Deputati \u2014 OpenData SPARQL endpoint (dati.camera.it)": [
+      {
+        "slug": "camera_gruppi",
+        "name": "Gruppi Parlamentari (Camera)",
+        "period": {
+          "start": 1948,
+          "end": 2026
         }
       }
     ],
@@ -803,6 +813,16 @@
         "period": {
           "start": 2019,
           "end": 2025
+        }
+      }
+    ],
+    "Senato della Repubblica \u2014 OpenData SPARQL endpoint (dati.senato.it)": [
+      {
+        "slug": "senato_anagrafica",
+        "name": "Anagrafica Senatori (XIX legislatura)",
+        "period": {
+          "start": 2022,
+          "end": 2026
         }
       }
     ],

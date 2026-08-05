@@ -1,16 +1,17 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-05T02:32:05.484036
+**Generated**: 2026-08-05T08:35:49.732691
 
 ## 🔍 SCOUTING
 
-**Radar**: 36 fonti — GREEN 36 · YELLOW 0 · RED 0 (probe: 2026-08-04)
+**Radar**: 36 fonti — GREEN 35 · YELLOW 0 · RED 1 (probe: 2026-08-05)
+  · **dati_camera** RED [503]
 **Catalog Drift**: no drift signals (36 sources checked)
 
 ## 📥 INTAKE
 
-**Pipeline**: 113 candidates — 113 ok
-**Dataset Catalog**: 93 published · 93 public · updated 2026-08-04
+**Pipeline**: 115 candidates — 115 ok
+**Dataset Catalog**: 95 published · 95 public · updated 2026-08-05
 
 ## 📊 ANALYSES
 
@@ -43,18 +44,17 @@
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
   · **Terzo settore**: cinque-per-mille
-  ⚠ 92 dataset published non ancora su explorer:
+  ⚠ 94 dataset published non ancora su explorer:
     · aci_prime_iscrizioni_autovetture
     · ade_cinque_per_mille
     · aifa_spesa_consumo
     · anac_aggiudicatari
     · anac_aggiudicazioni
-    · ... e altri 87
+    · ... e altri 89
   **Deploy**: ✅ success (2026-08-03)
 
 ## 🔗 OPEN
 
-- [dataset-incubator#798](https://github.com/dataciviclab/dataset-incubator/pull/798): feat(politica): support camera-gruppi + senato-anagrafica — nomi gruppi Camera e anagrafica senatori
 - **Dependabot**: 3 bump PR(s)
 **Discussions**: 147 open
   · [Domanda] PIL territoriale — 11 domande su 30 anni di economia italiana regione per regione (1995-2024)
