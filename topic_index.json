@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-08-05T08:35:49.732691",
+  "generated_at": "2026-08-05T14:09:20.915593",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -750,10 +750,26 @@
     ],
     "MEF \u2014 Italia Domani (italiadomani.gov.it)": [
       {
+        "slug": "pnrr_gare",
+        "name": "PNRR Gare \u2014 Italia Domani",
+        "period": {
+          "start": 2016,
+          "end": 2026
+        }
+      },
+      {
+        "slug": "pnrr_pagamenti",
+        "name": "PNRR Pagamenti \u2014 Italia Domani",
+        "period": {
+          "start": 2021,
+          "end": 2026
+        }
+      },
+      {
         "slug": "pnrr_progetti",
         "name": "PNRR Progetti \u2014 Italia Domani",
         "period": {
-          "start": 2026,
+          "start": 2021,
           "end": 2026
         }
       }

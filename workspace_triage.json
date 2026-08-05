@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T08:35:49.732691",
+  "generated_at": "2026-08-05T14:09:20.915593",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -34,7 +34,7 @@
       "url": "https://github.com/dataciviclab/lab-connectors/pull/74"
     }
   ],
-  "open_issues": 125,
+  "open_issues": 126,
   "issues": [
     {
       "number": 59,
@@ -139,12 +139,6 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/597"
     },
     {
-      "number": 517,
-      "title": "intake: pnrr_gare \u2014 Gare d'appalto del PNRR (Italia Domani)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/517"
-    },
-    {
       "number": 485,
       "title": "intake: bdap_mop_gare \u2014 Gare Opere Pubbliche MOP per regione (2026)",
       "repo": "dataset-incubator",
@@ -191,6 +185,18 @@
       "title": "Proposta intake: Operatori Economici Consip (dati.consip.it)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/375"
+    },
+    {
+      "number": 447,
+      "title": "analisi: pnrr_pagamenti \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/447"
+    },
+    {
+      "number": 446,
+      "title": "analisi: pnrr_gare \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/446"
     },
     {
       "number": 445,
@@ -481,18 +487,6 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/357"
     },
     {
-      "number": 356,
-      "title": "analisi: inps_rdc_pdc \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/356"
-    },
-    {
-      "number": 352,
-      "title": "analisi: ispra_emissioni_ghg \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/352"
-    },
-    {
       "number": 449,
       "title": "fix: paginazione SPARQL fa break silenzioso su DownloadError \u2014 perdita dati su endpoint instabile",
       "repo": "toolkit",
@@ -515,6 +509,18 @@
       "title": "pipeline: mart_index \u00e8 un indovinello \u2014 sostituire con mart_name",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/425"
+    },
+    {
+      "number": 225,
+      "title": "follow-up: pagina e tema per pnrr_pagamenti",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/225"
+    },
+    {
+      "number": 224,
+      "title": "follow-up: pagina e tema per pnrr_gare",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/224"
     },
     {
       "number": 223,
@@ -1933,9 +1939,9 @@
     "available": true,
     "generated_at": "2026-08-05",
     "summary": {
-      "total": 115,
+      "total": 117,
       "by_status": {
-        "ok": 115,
+        "ok": 117,
         "warn": 0,
         "error": 0
       }
@@ -1948,8 +1954,8 @@
     "name": "Lab Clean Registry",
     "updated_at": "2026-08-05",
     "summary": {
-      "total": 112,
-      "published": 95
+      "total": 114,
+      "published": 97
     },
     "datasets": [
       {
@@ -8843,11 +8849,221 @@
         ]
       },
       {
+        "slug": "pnrr_gare",
+        "name": "PNRR Gare \u2014 Italia Domani",
+        "stage": "published",
+        "period": {
+          "start": 2016,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/pnrr_gare/2026/pnrr_gare_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 2,
+        "dimension_columns": 18,
+        "column_count": 20,
+        "columns": [
+          {
+            "name": "codice_univoco_submisura",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_submisura",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_procedura_aggiudicazione",
+            "role": "dimension"
+          },
+          {
+            "name": "cup",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_locale_progetto",
+            "role": "dimension"
+          },
+          {
+            "name": "cig",
+            "role": "dimension"
+          },
+          {
+            "name": "cig_accordo_quadro",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_procedura_utente",
+            "role": "dimension"
+          },
+          {
+            "name": "modalita_realizzazione",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_interno_pda",
+            "role": "dimension"
+          },
+          {
+            "name": "oggetto_principale_contratto",
+            "role": "dimension"
+          },
+          {
+            "name": "oggetto_gara",
+            "role": "dimension"
+          },
+          {
+            "name": "data_pubblicazione_cig",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_motivo_assenza_cig",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_motivo_assenza_cig",
+            "role": "dimension"
+          },
+          {
+            "name": "importo_complessivo_gara",
+            "role": "metric"
+          },
+          {
+            "name": "importo_aggiudicazione",
+            "role": "metric"
+          },
+          {
+            "name": "data_aggiudicazione_definitiva",
+            "role": "dimension"
+          },
+          {
+            "name": "data_estrazione",
+            "role": "dimension"
+          },
+          {
+            "name": "anno_estrazione",
+            "role": "dimension"
+          }
+        ]
+      },
+      {
+        "slug": "pnrr_pagamenti",
+        "name": "PNRR Pagamenti \u2014 Italia Domani",
+        "stage": "published",
+        "period": {
+          "start": 2021,
+          "end": 2026
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/pnrr_pagamenti/2026/pnrr_pagamenti_2026_clean.parquet",
+          "multi_file": false
+        },
+        "metric_columns": 17,
+        "dimension_columns": 6,
+        "column_count": 23,
+        "columns": [
+          {
+            "name": "codice_univoco_submisura",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_submisura",
+            "role": "dimension"
+          },
+          {
+            "name": "cup",
+            "role": "dimension"
+          },
+          {
+            "name": "codice_locale_progetto",
+            "role": "dimension"
+          },
+          {
+            "name": "finanziamento_totale",
+            "role": "metric"
+          },
+          {
+            "name": "finanziamento_pnrr",
+            "role": "metric"
+          },
+          {
+            "name": "pagamento_totale",
+            "role": "metric"
+          },
+          {
+            "name": "pagamento_pnrr",
+            "role": "metric"
+          },
+          {
+            "name": "pagamento_stato",
+            "role": "metric"
+          },
+          {
+            "name": "pagamento_stato_bilancio",
+            "role": "metric"
+          },
+          {
+            "name": "pagamento_stato_foi",
+            "role": "metric"
+          },
+          {
+            "name": "pagamento_fpop",
+            "role": "metric"
+          },
+          {
+            "name": "pagamento_ue",
+            "role": "metric"
+          },
+          {
+            "name": "pagamento_regione",
+            "role": "metric"
+          },
+          {
+            "name": "pagamento_provincia",
+            "role": "metric"
+          },
+          {
+            "name": "pagamento_comune",
+            "role": "metric"
+          },
+          {
+            "name": "pagamento_altro_pubblico",
+            "role": "metric"
+          },
+          {
+            "name": "pagamento_privato",
+            "role": "metric"
+          },
+          {
+            "name": "pagamento_da_reperire",
+            "role": "metric"
+          },
+          {
+            "name": "pagamento_pnc",
+            "role": "metric"
+          },
+          {
+            "name": "pagamento_altri_fondi",
+            "role": "metric"
+          },
+          {
+            "name": "data_estrazione",
+            "role": "dimension"
+          },
+          {
+            "name": "anno_estrazione",
+            "role": "dimension"
+          }
+        ]
+      },
+      {
         "slug": "pnrr_progetti",
         "name": "PNRR Progetti \u2014 Italia Domani",
         "stage": "published",
         "period": {
-          "start": 2026,
+          "start": 2021,
           "end": 2026
         },
         "location": {
@@ -11442,6 +11658,8 @@
       "openga_ricorsi_cds",
       "penale_flussi",
       "personale_ssn",
+      "pnrr_gare",
+      "pnrr_pagamenti",
       "pnrr_progetti",
       "popolazione_istat_comunale_2019_2025",
       "posti_letto_stabilimento",

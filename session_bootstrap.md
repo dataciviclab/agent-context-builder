@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-05T08:35:49.732691
+**Generated**: 2026-08-05T14:09:20.915593
 
 ## 🔍 SCOUTING
 
@@ -10,8 +10,8 @@
 
 ## 📥 INTAKE
 
-**Pipeline**: 115 candidates — 115 ok
-**Dataset Catalog**: 95 published · 95 public · updated 2026-08-05
+**Pipeline**: 117 candidates — 117 ok
+**Dataset Catalog**: 97 published · 97 public · updated 2026-08-05
 
 ## 📊 ANALYSES
 
@@ -44,13 +44,13 @@
   · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
   · **Giustizia**: flussi-giustizia-civile
   · **Terzo settore**: cinque-per-mille
-  ⚠ 94 dataset published non ancora su explorer:
+  ⚠ 96 dataset published non ancora su explorer:
     · aci_prime_iscrizioni_autovetture
     · ade_cinque_per_mille
     · aifa_spesa_consumo
     · anac_aggiudicatari
     · anac_aggiudicazioni
-    · ... e altri 89
+    · ... e altri 91
   **Deploy**: ✅ success (2026-08-03)
 
 ## 🔗 OPEN
