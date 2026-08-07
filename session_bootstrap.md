@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-07T13:03:19.736474
+**Generated**: 2026-08-07T18:57:14.362692
 
 ## 🔍 SCOUTING
 
@@ -58,6 +58,7 @@
 
 ## 🔗 OPEN
 
+- [eurostat#108](https://github.com/dataciviclab/eurostat/pull/108): feat: sdmx source + support codelists + 2 new analytical datasets
 - **Dependabot**: 3 bump PR(s)
 **Discussions**: 147 open
   · [Domanda] PNRR Progetti — 11 domande su 280mila progetti e 150 miliardi del Piano (Italia Domani)
