@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T03:12:33.434925",
+  "generated_at": "2026-08-07T07:15:26.572639",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -1911,13 +1911,46 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-08-06",
+    "probe_date": "2026-08-07",
     "sources_total": 36,
-    "green": 36,
-    "yellow": 0,
+    "green": 32,
+    "yellow": 4,
     "red": 0,
     "persistent_red": 0,
-    "unhealthy": []
+    "unhealthy": [
+      {
+        "id": "istat_sdmx",
+        "status": "YELLOW",
+        "protocol": "sdmx",
+        "http_code": "-",
+        "note": "Timeout (ConnectTimeout)",
+        "red_streak": 0
+      },
+      {
+        "id": "openbdap",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
+        "red_streak": 0
+      },
+      {
+        "id": "consip_open_data",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
+        "red_streak": 0
+      },
+      {
+        "id": "mef_irpef",
+        "status": "YELLOW",
+        "protocol": "html",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
+        "red_streak": 0
+      }
+    ]
   },
   "source_health": {
     "available": true,
