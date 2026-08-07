@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-06T14:09:57.572117
+**Generated**: 2026-08-06T23:59:47.212984
 
 ## 🔍 SCOUTING
 
@@ -56,9 +56,9 @@
 
 - **Dependabot**: 3 bump PR(s)
 **Discussions**: 147 open
+  · [Domanda] PNRR Progetti — 11 domande su 280mila progetti e 150 miliardi del Piano (Italia Domani)
   · [Domanda] PIL territoriale — 11 domande su 30 anni di economia italiana regione per regione (1995-2024)
   · [Domanda] ANAC Bandi di Gara — 11 domande sugli appalti pubblici italiani (2016-2025)
-  · [Domanda] FTS EU Grants — 13 domande sui finanziamenti UE in Italia (2020-2025)
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
