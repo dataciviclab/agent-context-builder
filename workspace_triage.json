@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-08T12:48:21.619163",
+  "generated_at": "2026-08-08T18:37:50.107295",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -13,13 +13,19 @@
     "open-siope",
     "italia-corpus"
   ],
-  "open_prs": 4,
+  "open_prs": 5,
   "prs": [
     {
-      "number": 454,
-      "title": "fix(sdmx): ESTAT constraints HTTP 413 -> fallback wildcard for large flows",
+      "number": 807,
+      "title": "feat(registry): riallinea wrapper a toolkit v1.49.0 (fusion ADR) \u2014 registry.json unico + proiezioni legacy",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/807"
+    },
+    {
+      "number": 456,
+      "title": "feat(graph): tool MCP toolkit_graph \u2014 grafo entit\u00e0 cross-repo (fusion ADR)",
       "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/454"
+      "url": "https://github.com/dataciviclab/toolkit/pull/456"
     },
     {
       "number": 220,
