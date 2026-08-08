@@ -1,14 +1,11 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-08T01:39:52.203658
+**Generated**: 2026-08-08T06:53:17.543530
 
 ## 🔍 SCOUTING
 
-**Radar**: 36 fonti — GREEN 32 · YELLOW 4 · RED 0 (probe: 2026-08-07)
-  · **istat_sdmx** YELLOW [-] — Timeout (ConnectTimeout)
-  · **openbdap** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
-  · **consip_open_data** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
-  · **mef_irpef** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
+**Radar**: 36 fonti — GREEN 35 · YELLOW 1 · RED 0 (probe: 2026-08-08)
+  · **dati_cultura** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
 **Catalog Drift**: no drift signals (36 sources checked)
 
 ## 📥 INTAKE
