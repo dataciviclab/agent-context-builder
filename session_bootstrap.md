@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-08T06:53:17.543530
+**Generated**: 2026-08-08T12:48:21.619163
 
 ## 🔍 SCOUTING
 
@@ -55,6 +55,7 @@
 
 ## 🔗 OPEN
 
+- [toolkit#454](https://github.com/dataciviclab/toolkit/pull/454): fix(sdmx): ESTAT constraints HTTP 413 -> fallback wildcard for large flows
 - **Dependabot**: 3 bump PR(s)
 **Discussions**: 147 open
   · [Domanda] PNRR Progetti — 11 domande su 280mila progetti e 150 miliardi del Piano (Italia Domani)
