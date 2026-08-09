@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-08T18:37:50.107295",
+  "generated_at": "2026-08-09T01:44:46.852365",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -13,19 +13,13 @@
     "open-siope",
     "italia-corpus"
   ],
-  "open_prs": 5,
+  "open_prs": 4,
   "prs": [
     {
-      "number": 807,
-      "title": "feat(registry): riallinea wrapper a toolkit v1.49.0 (fusion ADR) \u2014 registry.json unico + proiezioni legacy",
+      "number": 808,
+      "title": "chore(clean-query): rimuove MCP clean-query \u2014 coperto dal toolkit (find/overview/query/graph)",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/807"
-    },
-    {
-      "number": 456,
-      "title": "feat(graph): tool MCP toolkit_graph \u2014 grafo entit\u00e0 cross-repo (fusion ADR)",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/456"
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/808"
     },
     {
       "number": 220,
@@ -2120,8 +2114,8 @@
         },
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/aifa_spesa_consumo/*/aifa_spesa_consumo_*_clean.parquet",
-          "multi_file": true
+          "path": "gs://dataciviclab-clean/aifa_spesa_consumo/2024/aifa_spesa_consumo_2024_clean.parquet",
+          "multi_file": false
         },
         "metric_columns": 4,
         "dimension_columns": 13,
@@ -2540,8 +2534,8 @@
         },
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/anac_bandi_gara/*/anac_bandi_gara_*_clean.parquet",
-          "multi_file": true
+          "path": "gs://dataciviclab-clean/anac_bandi_gara/2024/anac_bandi_gara_2024_clean.parquet",
+          "multi_file": false
         },
         "metric_columns": 5,
         "dimension_columns": 52,
@@ -4248,8 +4242,8 @@
         },
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/conto_annuale_profilo_ente/*/conto_annuale_profilo_ente_*_clean.parquet",
-          "multi_file": true
+          "path": "gs://dataciviclab-clean/conto_annuale_profilo_ente/2024/conto_annuale_profilo_ente_2024_clean.parquet",
+          "multi_file": false
         },
         "metric_columns": 8,
         "dimension_columns": 7,
@@ -5499,8 +5493,8 @@
         },
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/ga_decreti/*/ga_decreti_*_clean.parquet",
-          "multi_file": true
+          "path": "gs://dataciviclab-clean/ga_decreti/2025/ga_decreti_2025_clean.parquet",
+          "multi_file": false
         },
         "metric_columns": 1,
         "dimension_columns": 16,
@@ -5586,8 +5580,8 @@
         },
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/ga_ordinanze/*/ga_ordinanze_*_clean.parquet",
-          "multi_file": true
+          "path": "gs://dataciviclab-clean/ga_ordinanze/2025/ga_ordinanze_2025_clean.parquet",
+          "multi_file": false
         },
         "metric_columns": 1,
         "dimension_columns": 16,
@@ -5673,8 +5667,8 @@
         },
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/ga_sentenze/*/ga_sentenze_*_clean.parquet",
-          "multi_file": true
+          "path": "gs://dataciviclab-clean/ga_sentenze/2025/ga_sentenze_2025_clean.parquet",
+          "multi_file": false
         },
         "metric_columns": 1,
         "dimension_columns": 16,
@@ -5760,8 +5754,8 @@
         },
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/giustizia_penale_indicatori/*/giustizia_penale_indicatori_*_clean.parquet",
-          "multi_file": true
+          "path": "gs://dataciviclab-clean/giustizia_penale_indicatori/2025/giustizia_penale_indicatori_2025_clean.parquet",
+          "multi_file": false
         },
         "metric_columns": 2,
         "dimension_columns": 5,

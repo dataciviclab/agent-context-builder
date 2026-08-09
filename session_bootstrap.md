@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-08T18:37:50.107295
+**Generated**: 2026-08-09T01:44:46.852365
 
 ## 🔍 SCOUTING
 
@@ -55,8 +55,7 @@
 
 ## 🔗 OPEN
 
-- [dataset-incubator#807](https://github.com/dataciviclab/dataset-incubator/pull/807): feat(registry): riallinea wrapper a toolkit v1.49.0 (fusion ADR) — registry.json unico + proiezioni legacy
-- [toolkit#456](https://github.com/dataciviclab/toolkit/pull/456): feat(graph): tool MCP toolkit_graph — grafo entità cross-repo (fusion ADR)
+- [dataset-incubator#808](https://github.com/dataciviclab/dataset-incubator/pull/808): chore(clean-query): rimuove MCP clean-query — coperto dal toolkit (find/overview/query/graph)
 - **Dependabot**: 3 bump PR(s)
 **Discussions**: 147 open
   · [Domanda] PNRR Progetti — 11 domande su 280mila progetti e 150 miliardi del Piano (Italia Domani)
