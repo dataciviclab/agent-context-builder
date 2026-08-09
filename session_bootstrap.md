@@ -1,10 +1,10 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-09T01:44:46.852365
+**Generated**: 2026-08-09T06:56:42.799561
 
 ## 🔍 SCOUTING
 
-**Radar**: 36 fonti — GREEN 35 · YELLOW 1 · RED 0 (probe: 2026-08-08)
+**Radar**: 36 fonti — GREEN 35 · YELLOW 1 · RED 0 (probe: 2026-08-09)
   · **dati_cultura** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
 **Catalog Drift**: no drift signals (36 sources checked)
 
