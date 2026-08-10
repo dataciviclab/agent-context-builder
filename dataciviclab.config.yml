@@ -24,9 +24,12 @@ repos:
   - eurostat
   - open-siope
   - italia-corpus
+  # Aggiunti 2026-08-09 — repo progetto con registry.json (registry_summary)
+  - dcl-bologna
+  - open-conto-annuale
 
 # Hint operativi per agenti — descrivono flussi, non repo o dataset
-# (repo descriptions vengono da GitHub API, dataset da clean_catalog)
+# (repo descriptions vengono da GitHub API, dataset da registry.json)
 topics:
   pipeline:
     summary: Ciclo di vita del dato — RAW → CLEAN → MART con toolkit
