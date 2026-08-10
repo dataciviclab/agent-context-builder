@@ -103,7 +103,7 @@ class RepoSignals:
 
 
 @dataclass
-class DICleanDatasetColumn:
+class DIRegistryDatasetColumn:
     """Simplified column descriptor for triage."""
 
     name: str
@@ -111,8 +111,8 @@ class DICleanDatasetColumn:
 
 
 @dataclass
-class DICleanDataset:
-    """Single clean dataset entry from dataset-incubator clean_catalog.json."""
+class DIRegistryDataset:
+    """Single dataset entry from a Lab registry.json (schema v1)."""
 
     slug: str
     name: str
@@ -124,26 +124,26 @@ class DICleanDataset:
     metric_columns: int = 0
     dimension_columns: int = 0
     column_count: int = 0
-    columns: list[DICleanDatasetColumn] = field(default_factory=list)
+    columns: list[DIRegistryDatasetColumn] = field(default_factory=list)
 
 
 @dataclass
-class DICleanCatalog:
-    """Clean dataset catalog from dataset-incubator registry."""
+class DIRegistry:
+    """Dataset registry from a Lab repo registry.json (schema v1)."""
 
     schema_version: str
     name: str
     updated_at: str
-    datasets: list[DICleanDataset] = field(default_factory=list)
+    datasets: list[DIRegistryDataset] = field(default_factory=list)
 
     @property
-    def clean_ready(self) -> list[DICleanDataset]:
-        """Datasets with stage published (formerly clean_ready)."""
+    def published(self) -> list[DIRegistryDataset]:
+        """Datasets with stage published."""
         return [d for d in self.datasets if d.stage == "published"]
 
     @property
-    def candidates(self) -> list[DICleanDataset]:
-        """Datasets with stage incubating (formerly candidate)."""
+    def incubating(self) -> list[DIRegistryDataset]:
+        """Datasets with stage incubating."""
         return [d for d in self.datasets if d.stage == "incubating"]
 
 
@@ -201,18 +201,19 @@ def parse_repo_signals(raw: str) -> RepoSignals:
     )
 
 
-def parse_di_clean_catalog(raw: str) -> DICleanCatalog:
-    """Parse dataset-incubator registry/clean_catalog.json.
+def parse_di_registry(raw: str) -> DIRegistry:
+    """Parse a Lab registry.json (schema v1) — canonical cross-repo artifact.
 
-    ACB keeps the fields needed for agent orientation and triage. Descriptive
-    metadata such as description, source, and registry_source remains in the
-    upstream catalog and is intentionally omitted from this compact model.
+    Reads the ``datasets`` section, which is the same list that the legacy
+    ``clean_catalog.json`` projection exposed. ACB keeps the fields needed
+    for agent orientation and triage; descriptive metadata (description,
+    registry_source, mart_refs, run) remains in the upstream registry.
 
     Args:
-        raw: Raw JSON content of clean_catalog.json
+        raw: Raw JSON content of a registry.json
 
     Returns:
-        Parsed DICleanCatalog instance
+        Parsed DIRegistry instance
 
     Raises:
         ValueError: If the JSON is invalid
@@ -228,7 +229,7 @@ def parse_di_clean_catalog(raw: str) -> DICleanCatalog:
         metric_columns = sum(1 for c in columns if c.get("role") == "metric")
         dimension_columns = sum(1 for c in columns if c.get("role") == "dimension")
         datasets.append(
-            DICleanDataset(
+            DIRegistryDataset(
                 slug=item.get("slug", ""),
                 name=item.get("name", item.get("slug", "")),
                 stage=item.get("stage", "incubating"),
@@ -240,15 +241,15 @@ def parse_di_clean_catalog(raw: str) -> DICleanCatalog:
                 dimension_columns=dimension_columns,
                 column_count=len(columns),
                 columns=[
-                    DICleanDatasetColumn(name=c.get("name", ""), role=c.get("role", ""))
+                    DIRegistryDatasetColumn(name=c.get("name", ""), role=c.get("role", ""))
                     for c in columns
                 ],
             )
         )
 
-    return DICleanCatalog(
+    return DIRegistry(
         schema_version=str(data.get("schema_version", "1")),
-        name=data.get("name", ""),
+        name=data.get("name") or data.get("source_repo") or data.get("repo", ""),
         updated_at=data.get("updated_at", "unknown"),
         datasets=datasets,
     )
@@ -442,3 +443,105 @@ def parse_radar_summary(raw: str) -> RadarSummary:
         persistent_red=data.get("persistent_red", 0),
         sources=sources,
     )
+
+
+@dataclass
+class RepoRegistrySummary:
+    """Compact per-repo summary of a registry.json (schema v1).
+
+    Orientation data only: section counts + GCS availability + freshness.
+    The detailed dataset/mart entries stay in the upstream registry,
+    consumed via the toolkit MCP (registry_show/find/overview).
+
+    ``stage`` is intentionally NOT exposed: it is a builder default
+    (``incubating``) that only dataset-incubator ever promotes, so it does
+    not reflect actual publication. Being in the registry with a GCS
+    location is the real "published" signal.
+    """
+
+    repo: str
+    available: bool
+    source_repo: str = ""
+    updated_at: str = ""
+    datasets: int = 0
+    marts: int = 0
+    signals: int = 0
+    codelists: int = 0
+    entities: int = 0
+    gcs: int = 0
+    reason: str = ""
+
+
+def _section_count(section: Any) -> int:
+    """Count entries in a registry section.
+
+    Sections are either lists (datasets/marts/signals) or dicts wrapping a
+    dict keyed by name (codelists/codelists, entities/entities). For dicts
+    the count is the number of keys.
+    """
+    if isinstance(section, list):
+        return len(section)
+    if isinstance(section, dict):
+        for key in ("codelists", "entities", "signals"):
+            value = section.get(key)
+            if isinstance(value, list):
+                return len(value)
+            if isinstance(value, dict):
+                return len(value)
+    return 0
+
+
+def parse_registry_summary(repo: str, raw: str | None) -> RepoRegistrySummary:
+    """Build a compact registry summary from raw registry.json content.
+
+    A ``None`` raw payload means the repo has no registry.json (or the fetch
+    failed): reported as ``available=False`` with a reason, never raising.
+
+    Args:
+        repo: Repository name (under the org)
+        raw: Raw JSON content of the repo's registry.json, or None
+
+    Returns:
+        RepoRegistrySummary instance
+    """
+    if raw is None:
+        return RepoRegistrySummary(repo=repo, available=False, reason="registry_not_found")
+
+    try:
+        data: dict[str, Any] = json.loads(raw)
+    except json.JSONDecodeError as exc:
+        return RepoRegistrySummary(repo=repo, available=False, reason=f"invalid_json: {exc}")
+    datasets = data.get("datasets", [])
+    if not isinstance(datasets, list):
+        datasets = []
+    gcs_count = sum(
+        1 for d in datasets if isinstance(d, dict) and d.get("location", {}).get("type") == "gcs"
+    )
+
+    return RepoRegistrySummary(
+        repo=repo,
+        available=True,
+        source_repo=data.get("source_repo", ""),
+        updated_at=data.get("updated_at", ""),
+        datasets=len(datasets),
+        marts=_section_count(data.get("marts", [])),
+        signals=_section_count(data.get("signals", [])),
+        codelists=_section_count(data.get("codelists", [])),
+        entities=_section_count(data.get("entities", [])),
+        gcs=gcs_count,
+    )
+
+
+def _count_stages(datasets: list[dict[str, Any]]) -> dict[str, int]:
+    """Count datasets by stage from a registry datasets list (legacy, unused).
+
+    Kept only as a documented reference: ``stage`` is a builder default that
+    only dataset-incubator promotes; it must not surface in ACB output.
+    """
+    counts: dict[str, int] = {}
+    for ds in datasets:
+        if isinstance(ds, dict):
+            stage = ds.get("stage", "")
+            if stage:
+                counts[stage] = counts.get(stage, 0) + 1
+    return counts

@@ -214,12 +214,13 @@ def sample_di_json() -> str:
     )
 
 
-def sample_di_clean_catalog_json() -> str:
-    """Simulate ``clean_catalog.json`` from dataset-incubator."""
+def sample_di_registry_json() -> str:
+    """Simulate ``registry.json`` (schema v1) from dataset-incubator."""
     return json.dumps(
         {
             "schema_version": 1,
-            "name": "Lab Clean Registry",
+            "repo": "dataset-incubator",
+            "source_repo": "dataciviclab/dataset-incubator",
             "updated_at": "2026-04-14",
             "datasets": [
                 {
@@ -244,5 +245,51 @@ def sample_di_clean_catalog_json() -> str:
                     "columns": [],
                 },
             ],
+            "marts": [],
+            "signals": [],
+            "codelists": {
+                "source_repo": "dataciviclab/dataset-incubator",
+                "codelists": [],
+            },
+            "entities": {
+                "generated_from": "sample",
+                "entities": [],
+                "bridges": [],
+                "summary": {},
+            },
+        }
+    )
+
+
+def sample_second_registry_json() -> str:
+    """Simulate a second repo's ``registry.json`` for cross-repo tests."""
+    return json.dumps(
+        {
+            "schema_version": 1,
+            "repo": "repo2",
+            "source_repo": "test-org/repo2",
+            "updated_at": "2026-08-08",
+            "datasets": [
+                {
+                    "slug": "repo2_ds",
+                    "name": "Repo2 Dataset",
+                    "stage": "incubating",
+                    "location": {"type": "gcs", "path": "gs://bucket/repo2_ds"},
+                    "columns": [],
+                },
+            ],
+            "marts": [{"slug": "repo2_mart"}],
+            "signals": [{"id": "repo2_signal"}],
+            "codelists": {
+                "schema_version": 1,
+                "source_repo": "test-org/repo2",
+                "codelists": {"c1": {}},
+            },
+            "entities": {
+                "generated_from": "sample",
+                "entities": {"e1": {}},
+                "bridges": [],
+                "summary": {},
+            },
         }
     )

@@ -39,7 +39,22 @@ Contiene stato incrociato di PR, issue, discussion, git e segnali operativi.
   "radar": { "generated_at": "...", "green": 20, "yellow": 2, "red": 0, "unhealthy": [] },
   "source_health": { "captured_at": "...", "alerts": [] },
   "pipeline_state": { "generated_at": "...", "actionable": [] },
-  "dataset_catalog": { "schema_version": "1", "updated_at": "...", "clean_ready": [] }
+  "dataset_catalog": { "schema_version": "1", "updated_at": "...", "summary": {"total": 114, "published": 97}, "datasets": [] },
+  "registry_summary": [
+    {
+      "repo": "dataset-incubator",
+      "available": true,
+      "source_repo": "dataciviclab/dataset-incubator",
+      "updated_at": "2026-08-08",
+      "datasets": 114,
+      "marts": 197,
+      "signals": 117,
+      "codelists": 0,
+      "entities": 19,
+      "gcs": 114,
+      "reason": ""
+    }
+  ]
 }
 ```
 
@@ -64,7 +79,8 @@ Contiene stato incrociato di PR, issue, discussion, git e segnali operativi.
 | `radar` | object \| null | Health fonti da `radar_summary.json` |
 | `source_health` | object \| null | Segnali drift/inventory da `catalog_signals.json` |
 | `pipeline_state` | object \| null | Stato candidati da `pipeline_signals.json` |
-| `dataset_catalog` | object \| null | Dataset clean-ready da `clean_catalog.json` |
+| `dataset_catalog` | object \| null | Dataset da `registry.json` di dataset-incubator (senza colonne dettagliate) |
+| `registry_summary` | array | Orientamento per-repo dei registry.json dei repo configurati |
 
 ## `git_state[repo]`
 
@@ -76,6 +92,29 @@ Contiene stato incrociato di PR, issue, discussion, git e segnali operativi.
 | `current_branch` | string \| null | Branch corrente |
 | `branches_ahead` | array | Branch locali ahead di main |
 | `untracked_files` | array | File non tracciati |
+
+## `registry_summary[]`
+
+| Campo | Tipo | Descrizione |
+|-------|------|-------------|
+| `repo` | string | Nome repo (sotto l'org) |
+| `available` | bool | Il repo ha un `registry.json` parsabile |
+| `source_repo` | string | `source_repo` dichiarato nel registry |
+| `updated_at` | string | Freschezza del registry (data) |
+| `datasets` / `marts` / `signals` | int | Conteggio entries per sezione |
+| `codelists` / `entities` | int | Conteggio entries (dict keyed-by-name) |
+| `gcs` | int | Dataset con `location.type: gcs` (parquet queryabile = pubblicato) |
+| `reason` | string | Motivo se `available: false` (`registry_not_found`, `invalid_json`) |
+
+**Pubblicazione**: essendo nel registry con location GCS, un dataset è di
+fatto pubblicato (parquet queryabile). Il campo `stage` del registry NON è
+esposto: è un default del builder (`incubating`) che solo dataset-incubator
+promuove — non riflette la pubblicazione reale e non deve essere usato come
+segnale.
+
+Un repo del config senza `registry.json` (non ancora migrato) è riportato
+con `available: false` e NON sporca `warnings`/`github_fetch_errors`
+(il 404 è stato normale, non un errore).
 
 ## Valori null
 

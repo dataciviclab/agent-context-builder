@@ -5,9 +5,10 @@ import json
 import pytest
 
 from agent_context_builder.signals import (
-    DICleanCatalog,
-    parse_di_clean_catalog,
+    DIRegistry,
+    parse_di_registry,
     parse_explorer_themes_from_py,
+    parse_registry_summary,
     parse_repo_signals,
     parse_source_observatory_signals,
 )
@@ -291,14 +292,14 @@ def test_candidates_property():
             ],
         }
     )
-    catalog = parse_di_clean_catalog(raw)
-    assert len(catalog.clean_ready) == 1
-    assert len(catalog.candidates) == 2
-    assert {d.slug for d in catalog.candidates} == {"cand", "cand2"}
+    catalog = parse_di_registry(raw)
+    assert len(catalog.published) == 1
+    assert len(catalog.incubating) == 2
+    assert {d.slug for d in catalog.incubating} == {"cand", "cand2"}
 
 
 @pytest.mark.contract
-def test_di_clean_catalog_columns_parsed():
+def test_di_registry_columns_parsed():
     """Column name and role are parsed; type and description are excluded."""
     raw = json.dumps(
         {
@@ -328,7 +329,7 @@ def test_di_clean_catalog_columns_parsed():
             ],
         }
     )
-    catalog = parse_di_clean_catalog(raw)
+    catalog = parse_di_registry(raw)
     ds = catalog.datasets[0]
     assert len(ds.columns) == 2
     assert ds.columns[0].name == "anno"
@@ -404,11 +405,11 @@ def test_parse_radar_summary():
 
 
 @pytest.mark.contract
-def test_parse_di_clean_catalog_basic():
+def test_parse_di_registry_basic():
     raw = json.dumps(
         {
             "schema_version": 1,
-            "name": "Lab Clean Registry",
+            "source_repo": "dataciviclab/dataset-incubator",
             "updated_at": "2026-04-14",
             "datasets": [
                 {
@@ -427,12 +428,13 @@ def test_parse_di_clean_catalog_basic():
         }
     )
 
-    catalog = parse_di_clean_catalog(raw)
+    catalog = parse_di_registry(raw)
 
-    assert isinstance(catalog, DICleanCatalog)
+    assert isinstance(catalog, DIRegistry)
     assert catalog.schema_version == "1"
     assert catalog.updated_at == "2026-04-14"
-    assert len(catalog.clean_ready) == 1
+    assert catalog.name == "dataciviclab/dataset-incubator"
+    assert len(catalog.published) == 1
     dataset = catalog.datasets[0]
     assert dataset.slug == "irpef_comunale"
     assert dataset.metric_columns == 1
@@ -447,10 +449,10 @@ def test_parse_di_clean_catalog_basic():
 
 
 @pytest.mark.policy
-def test_parse_di_clean_catalog_missing_fields_use_defaults():
+def test_parse_di_registry_missing_fields_use_defaults():
     raw = json.dumps({"datasets": [{"slug": "minimal"}]})
 
-    catalog = parse_di_clean_catalog(raw)
+    catalog = parse_di_registry(raw)
 
     assert catalog.name == ""
     assert catalog.updated_at == "unknown"
@@ -458,6 +460,98 @@ def test_parse_di_clean_catalog_missing_fields_use_defaults():
     assert catalog.datasets[0].stage == "incubating"
     assert catalog.datasets[0].location == {}
     assert catalog.datasets[0].columns == []
+
+
+# ── parse_registry_summary ─────────────────────────────────────────────────
+
+
+def _sample_full_registry_json() -> str:
+    """A full registry.json (schema v1) with populated sections."""
+    return json.dumps(
+        {
+            "schema_version": 1,
+            "repo": "eurostat",
+            "source_repo": "dataciviclab/eurostat",
+            "updated_at": "2026-08-08",
+            "datasets": [
+                {
+                    "slug": "a",
+                    "name": "A",
+                    "stage": "published",
+                    "location": {"type": "gcs", "path": "gs://bucket/a"},
+                    "columns": [],
+                },
+                {
+                    "slug": "b",
+                    "name": "B",
+                    "stage": "incubating",
+                    "location": {"type": "gcs", "path": "gs://bucket/b"},
+                    "columns": [],
+                },
+                {"slug": "c", "name": "C", "stage": "incubating", "columns": []},
+            ],
+            "marts": [{"slug": "m1"}, {"slug": "m2"}],
+            "signals": [{"id": "s1"}],
+            "codelists": {
+                "schema_version": 1,
+                "source_repo": "dataciviclab/eurostat",
+                "codelists": {"c1": {}},
+            },
+            "entities": {
+                "generated_from": "sample",
+                "entities": {"e1": {}, "e2": {}},
+                "bridges": [],
+                "summary": {},
+            },
+        }
+    )
+
+
+@pytest.mark.pure_unit
+def test_parse_registry_summary_counts():
+    """Section counts + stage counts + GCS availability are parsed."""
+    s = parse_registry_summary("eurostat", _sample_full_registry_json())
+
+    assert s.available is True
+    assert s.repo == "eurostat"
+    assert s.source_repo == "dataciviclab/eurostat"
+    assert s.updated_at == "2026-08-08"
+    assert s.datasets == 3
+    assert s.marts == 2
+    assert s.signals == 1
+    assert s.codelists == 1
+    assert s.entities == 2
+    assert s.gcs == 2  # "c" has no location
+
+
+@pytest.mark.pure_unit
+def test_parse_registry_summary_none_returns_unavailable():
+    """A missing registry.json (None) is unavailable, not an error."""
+    s = parse_registry_summary("toolkit", None)
+
+    assert s.available is False
+    assert s.reason == "registry_not_found"
+    assert s.datasets == 0
+
+
+@pytest.mark.pure_unit
+def test_parse_registry_summary_invalid_json():
+    """Invalid registry content is unavailable with a reason."""
+    s = parse_registry_summary("toolkit", "not json{")
+
+    assert s.available is False
+    assert s.reason.startswith("invalid_json")
+
+
+@pytest.mark.pure_unit
+def test_parse_registry_summary_non_list_datasets():
+    """A registry with a non-list datasets section degrades to zero counts."""
+    raw = json.dumps({"schema_version": 1, "datasets": {"not": "a list"}})
+    s = parse_registry_summary("repo-x", raw)
+
+    assert s.available is True
+    assert s.datasets == 0
+    assert s.gcs == 0
 
 
 # ── parse_explorer_themes_from_py ──────────────────────────────────────────

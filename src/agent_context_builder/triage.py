@@ -10,6 +10,7 @@ from .git_local import GitLocalCollector, GitState
 from .github import PR, GitHubCollector
 from .sources.de import DataExplorerFetcher
 from .sources.di import DatasetIncubatorFetcher
+from .sources.registry import RegistryFetcher
 from .sources.so import SourceObservatoryFetcher
 
 
@@ -22,6 +23,7 @@ def build_workspace_triage(
     so_fetcher: SourceObservatoryFetcher | None = None,
     di_fetcher: DatasetIncubatorFetcher | None = None,
     de_fetcher: DataExplorerFetcher | None = None,
+    registry_fetcher: RegistryFetcher | None = None,
 ) -> dict[str, Any]:
     """Build the workspace_triage.json payload."""
     prs = github_collector.get_prs(config.repos)
@@ -37,6 +39,7 @@ def build_workspace_triage(
     so_fetcher = so_fetcher or SourceObservatoryFetcher(github_collector)
     di_fetcher = di_fetcher or DatasetIncubatorFetcher(github_collector)
     de_fetcher = de_fetcher or DataExplorerFetcher(github_collector)
+    registry_fetcher = registry_fetcher or RegistryFetcher(github_collector)
 
     return {
         "generated_at": fixed_timestamp,
@@ -57,6 +60,7 @@ def build_workspace_triage(
         "source_health": _build_source_health_dict(so_fetcher, github_collector),
         "pipeline_state": _build_pipeline_state_dict(di_fetcher, github_collector),
         "dataset_catalog": _build_dataset_catalog_dict(di_fetcher, github_collector),
+        "registry_summary": _build_registry_summary_dict(registry_fetcher, config.repos),
         "explorer": _build_explorer_dict(de_fetcher, di_fetcher),
     }
 
@@ -185,40 +189,71 @@ def _build_dataset_catalog_dict(
     fetcher: DatasetIncubatorFetcher,
     github_collector: GitHubCollector,
 ) -> dict[str, Any]:
-    catalog = fetcher.fetch_clean_catalog()
-    if catalog is None:
+    """Build the dataset_catalog block from dataset-incubator registry.json.
+
+    Compact orientation view: per-dataset metadata + column counts, without
+    the detailed column list (served by the toolkit MCP from the same
+    registry via registry_show/find/overview).
+    """
+    registry = fetcher.fetch_registry()
+    if registry is None:
         return {
             "available": False,
-            "errors": {
-                k: v for k, v in github_collector.fetch_errors.items() if "clean_catalog" in k
-            },
+            "errors": {k: v for k, v in github_collector.fetch_errors.items() if "registry" in k},
         }
     return {
         "available": True,
-        "schema_version": catalog.schema_version,
-        "name": catalog.name,
-        "updated_at": catalog.updated_at,
+        "schema_version": registry.schema_version,
+        "name": registry.name,
+        "updated_at": registry.updated_at,
         "summary": {
-            "total": len(catalog.datasets),
-            "published": len(catalog.clean_ready),
+            "total": len(registry.datasets),
+            "published": len(registry.published),
         },
         "datasets": [
             {
                 "slug": d.slug,
                 "name": d.name,
                 "stage": d.stage,
+                "source": d.source,
                 "period": d.period,
                 "location": d.location,
                 "metric_columns": d.metric_columns,
                 "dimension_columns": d.dimension_columns,
                 "column_count": d.column_count,
-                "columns": [{"name": c.name, "role": c.role} for c in d.columns]
-                if d.stage == "published"
-                else [],
             }
-            for d in catalog.datasets
+            for d in registry.datasets
         ],
     }
+
+
+def _build_registry_summary_dict(
+    fetcher: RegistryFetcher,
+    repos: list[str],
+) -> list[dict[str, Any]]:
+    """Build the registry_summary block — per-repo registry orientation.
+
+    Cross-repo view over every configured repo's registry.json: section
+    counts, stage counts and freshness. Repos without a registry (not yet
+    migrated) are reported as available=False.
+    """
+    summaries = fetcher.fetch(repos)
+    return [
+        {
+            "repo": s.repo,
+            "available": s.available,
+            "source_repo": s.source_repo,
+            "updated_at": s.updated_at,
+            "datasets": s.datasets,
+            "marts": s.marts,
+            "signals": s.signals,
+            "codelists": s.codelists,
+            "entities": s.entities,
+            "gcs": s.gcs,
+            "reason": s.reason,
+        }
+        for s in summaries.values()
+    ]
 
 
 def _build_explorer_dict(
@@ -227,8 +262,9 @@ def _build_explorer_dict(
 ) -> dict[str, Any]:
     """Build explorer state block for workspace_triage.json.
 
-    Cross-references data-explorer themes.json with DI clean_catalog.json
-    to surface gap analysis (clean_ready datasets not yet on explorer).
+    Cross-references data-explorer themes.json with the dataset-incubator
+    registry (published datasets) to surface gap analysis (published
+    datasets not yet on explorer).
     Includes last deploy status from GitHub Actions API.
     """
     themes = de_fetcher.fetch_themes()
@@ -240,14 +276,14 @@ def _build_explorer_dict(
     for theme in themes:
         themed_slugs.update(theme.datasets)
 
-    # Gap analysis: clean_ready datasets not in any theme
-    catalog = di_fetcher.fetch_clean_catalog()
-    clean_ready_slugs: set[str] = set()
-    if catalog is not None:
-        for ds in catalog.clean_ready:
-            clean_ready_slugs.add(ds.slug)
+    # Gap analysis: published datasets not in any theme
+    registry = di_fetcher.fetch_registry()
+    published_slugs: set[str] = set()
+    if registry is not None:
+        for ds in registry.published:
+            published_slugs.add(ds.slug)
 
-    clean_ready_not_published = sorted(clean_ready_slugs - themed_slugs)
+    clean_ready_not_published = sorted(published_slugs - themed_slugs)
 
     # Deploy status (operativo — GitHub Actions API)
     deploy: dict[str, Any] | None = None

@@ -27,11 +27,21 @@ https://raw.githubusercontent.com/dataciviclab/agent-context-builder/context/top
 
 | Repo | Path | Uso |
 |---|---|---|
-| `source-observatory` | `data/radar/radar_summary.json` | health 33 fonti (GREEN/YELLOW/RED) |
+| `source-observatory` | `data/radar/radar_summary.json` | health fonti (GREEN/YELLOW/RED) |
 | `source-observatory` | `data/catalog/catalog_signals.json` | drift inventariale per fonte |
-| `dataset-incubator` | `registry/pipeline_signals.json` | stato 83 candidate pipeline |
-| `dataset-incubator` | `registry/clean_catalog.json` | 63 dataset pubblicati (slug, colonne, periodo) |
-| `data-explorer` | `src/data/themes.json.py` | 6 temi editoriali + gap explorer |
+| `dataset-incubator` | `registry/pipeline_signals.json` | stato candidate pipeline |
+| `dataset-incubator` | `registry/registry.json` | dataset pubblicati (slug, periodo, colonne) |
+| tutti i repo del config | `registry/registry.json` | registry summary cross-repo (`registry_summary`) |
+| `data-explorer` | `src/data/themes.json.py` | temi editoriali + gap explorer |
+
+Il dettaglio colonne/entries dei registry vive nel `registry.json` upstream,
+servito agli agenti dal **toolkit MCP** (`registry_show`/`find`/`overview`).
+ACB mantiene la vista compatta di orientamento: conteggi per sezione,
+dataset con parquet GCS (pubblicati) e freschezza per repo. Il campo
+`stage` del registry non è esposto (default del builder, non riflette la
+pubblicazione reale). Un repo del config senza `registry.json` (non ancora
+migrato) è riportato come `available: false`, senza sporcare i warning del
+triage.
 
 ## Tool MCP
 

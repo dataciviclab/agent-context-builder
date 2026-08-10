@@ -11,7 +11,7 @@ from .git_local import GitLocalCollector, GitState
 from .github import PR, GitHubCollector
 from .signals import (
     Analysis,
-    DICleanCatalog,
+    DIRegistry,
     ExplorerTheme,
     RadarSummary,
     RepoSignals,
@@ -20,6 +20,7 @@ from .signals import (
 from .sources.dcl import DataciviclabFetcher
 from .sources.de import DataExplorerFetcher
 from .sources.di import DatasetIncubatorFetcher
+from .sources.registry import RegistryFetcher
 from .sources.so import SourceObservatoryFetcher
 from .triage import build_workspace_triage
 
@@ -53,12 +54,13 @@ class Renderer:
         self._di_fetcher = DatasetIncubatorFetcher(self.github_collector)
         self._de_fetcher = DataExplorerFetcher(self.github_collector)
         self._dcl_fetcher = DataciviclabFetcher(self.github_collector)
+        self._registry_fetcher = RegistryFetcher(self.github_collector)
 
     def render_session_bootstrap(self) -> str:
         """Render session_bootstrap.md.
 
-        Organized by Lab phase: SCOUTING → INTAKE → OPEN → INFRA.
-        Target: ~40 lines. Details live in workspace_triage.json.
+        Organized by Lab phase: SCOUTING → REGISTRY → ANALYSES → EXPLORER →
+        OPEN → INFRA. Target: ~40 lines. Details live in workspace_triage.json.
         """
         lines = []
         lines.append("# Session Bootstrap")
@@ -66,6 +68,11 @@ class Renderer:
         lines.append(f"**Generated**: {self.fixed_timestamp}")
         if self.config.workspace_root:
             lines.append(f"**Workspace**: {self.config.workspace_root}")
+
+        # Degradation warning first — always visible, not buried in OPEN
+        collector_warn = self.github_collector.collector_warning()
+        if collector_warn:
+            lines.append(f"> ⚠️ {collector_warn}")
         lines.append("")
 
         # ── SCOUTING ────────────────────────────────────────────────────
@@ -121,36 +128,18 @@ class Renderer:
 
             lines.append("")
 
-        # ── INTAKE ────────────────────────────────────────────────────────
-        di = self._fetch_di_pipeline_signals()
-        catalog = self._fetch_di_clean_catalog()
-
-        lines.append("## 📥 INTAKE")
-        lines.append("")
-
-        if di is not None:
-            summary = di.summary
-            total = summary.get("total", len(di.signals))
-            by_status = summary.get("by_status", {})
-            status_str = " · ".join(f"{v} {k}" for k, v in sorted(by_status.items()) if v)
-            lines.append(f"**Pipeline**: {total} candidates — {status_str}")
-            for s in di.failed_runs:
-                run = s.sample_run
-                if run is not None:
-                    lines.append(f"  ⚠️ **{s.label}** — run fallito [{run.year}]({run.run_url})")
-        else:
-            lines.append("**Pipeline**: unavailable")
-
-        if catalog is not None:
-            clean_ready = catalog.clean_ready
-            public_count = len(clean_ready)  # tutti pubblici (visibility rimosso)
-            lines.append(
-                f"**Dataset Catalog**: {len(clean_ready)} published · "
-                f"{public_count} public · updated {catalog.updated_at}"
-            )
-        else:
-            lines.append("**Dataset Catalog**: unavailable")
-        lines.append("")
+        # ── REGISTRY (cross-repo) ────────────────────────────────────────
+        registry_summaries = self._registry_fetcher.fetch(self.config.repos)
+        available_summaries = [reg for reg in registry_summaries.values() if reg.available]
+        if available_summaries:
+            lines.append("## 🗂 REGISTRY")
+            lines.append("")
+            for reg in available_summaries:
+                lines.append(
+                    f"  · **{reg.repo}**: {reg.datasets} ds · {reg.marts} marts · "
+                    f"{reg.signals} signals · {reg.updated_at}"
+                )
+            lines.append("")
 
         # ── ANALYSES ──────────────────────────────────────────────────────
         analyses = self._fetch_dcl_analyses()
@@ -200,10 +189,10 @@ class Renderer:
                 lines.append(f"  · **{t.name}**: {datasets_str}")
 
             # Gap analysis: published datasets without a theme
-            catalog = self._fetch_di_clean_catalog()
+            catalog = self._fetch_di_registry()
             catalog_published_slugs: set[str] = set()
             if catalog is not None:
-                for ds in catalog.clean_ready:
+                for ds in catalog.published:
                     catalog_published_slugs.add(ds.slug)
             gap = sorted(catalog_published_slugs - themed_slugs)
             if gap:
@@ -232,7 +221,6 @@ class Renderer:
         # ── OPEN ─────────────────────────────────────────────────────────
         prs = self.github_collector.get_prs(self.config.repos)
         github_errors = self.github_collector.fetch_errors
-        collector_warn = self.github_collector.collector_warning()
         if self.discussion_collector:
             discussions = self.discussion_collector.get_discussions(self.config.repos)
             disc_errors = self.discussion_collector.fetch_errors
@@ -246,8 +234,6 @@ class Renderer:
             lines.append("")
 
             # PRs
-            if collector_warn:
-                lines.append("> Warning: GitHub fetch error — dati incompleti")
             if prs:
                 _DEPENDABOT = {"dependabot[bot]", "dependabot"}
                 feature_prs = [pr for pr in prs if pr.author not in _DEPENDABOT]
@@ -320,6 +306,7 @@ class Renderer:
             so_fetcher=self._so_fetcher,
             di_fetcher=self._di_fetcher,
             de_fetcher=self._de_fetcher,
+            registry_fetcher=self._registry_fetcher,
         )
 
     def _fetch_explorer_themes(self) -> list[ExplorerTheme] | None:
@@ -328,8 +315,8 @@ class Renderer:
     def _fetch_di_pipeline_signals(self) -> RepoSignals | None:
         return self._di_fetcher.fetch_pipeline_signals()
 
-    def _fetch_di_clean_catalog(self) -> DICleanCatalog | None:
-        return self._di_fetcher.fetch_clean_catalog()
+    def _fetch_di_registry(self) -> DIRegistry | None:
+        return self._di_fetcher.fetch_registry()
 
     @staticmethod
     def _format_period(period: dict[str, Any]) -> str:
@@ -375,7 +362,7 @@ class Renderer:
 
         Returns:
             - repos: GitHub description per repo (auto from API)
-            - datasets_by_source: clean_ready datasets grouped by source (auto from catalog)
+            - datasets_by_source: published datasets grouped by source (auto from registry)
             - candidates_by_source: incubating datasets grouped by source
             - operational_topics: YAML-defined topics for agent navigation
             - explorer_themes: editorial themes from data-explorer (v2)
@@ -389,13 +376,13 @@ class Renderer:
             for name, info in repos_info.items()
         }
 
-        # Datasets grouped by source from clean_catalog
-        catalog = self._fetch_di_clean_catalog()
+        # Datasets grouped by source from the dataset-incubator registry
+        catalog = self._fetch_di_registry()
         datasets_by_source: dict[str, list[dict[str, Any]]] = {}
         candidates_by_source: dict[str, list[dict[str, Any]]] = {}
         all_dataset_slugs: set[str] = set()
         if catalog:
-            for ds in catalog.clean_ready:
+            for ds in catalog.published:
                 source = ds.source or "unknown"
                 datasets_by_source.setdefault(source, []).append(
                     {
@@ -405,7 +392,7 @@ class Renderer:
                     }
                 )
                 all_dataset_slugs.add(ds.slug)
-            for ds in catalog.candidates:
+            for ds in catalog.incubating:
                 source = ds.source or "unknown"
                 candidates_by_source.setdefault(source, []).append(
                     {
