@@ -192,28 +192,6 @@ def sample_so_json(drift: bool = False) -> str:
     )
 
 
-def sample_di_json() -> str:
-    """Simulate ``pipeline_signals.json`` from dataset-incubator."""
-    return json.dumps(
-        {
-            "schema_version": "1",
-            "generated_at": "2026-04-16T10:00:00",
-            "repo": "dataciviclab/dataset-incubator",
-            "topic": "pipeline_state",
-            "signals": [
-                {
-                    "id": "irpef-comunale",
-                    "status": "ok",
-                    "label": "irpef-comunale",
-                    "detail": "",
-                    "action": "",
-                },
-            ],
-            "summary": {"ok": 1, "warn": 0, "error": 0},
-        }
-    )
-
-
 def sample_di_registry_json() -> str:
     """Simulate ``registry.json`` (schema v1) from dataset-incubator."""
     return json.dumps(
@@ -246,14 +224,30 @@ def sample_di_registry_json() -> str:
                 },
             ],
             "marts": [],
-            "signals": [],
+            "signals": [
+                {
+                    "id": "irpef-comunale",
+                    "status": "ok",
+                    "label": "irpef-comunale",
+                    "detail": "mart: si",
+                    "action": "",
+                },
+                {
+                    "id": "ispra-ru-base",
+                    "status": "warn",
+                    "label": "ispra-ru-base",
+                    "detail": "nessun mart SQL",
+                    "action": "aggiungere mart SQL",
+                },
+            ],
             "codelists": {
+                "schema_version": 1,
                 "source_repo": "dataciviclab/dataset-incubator",
-                "codelists": [],
+                "codelists": {},
             },
             "entities": {
                 "generated_from": "sample",
-                "entities": [],
+                "entities": {},
                 "bridges": [],
                 "summary": {},
             },
@@ -291,5 +285,58 @@ def sample_second_registry_json() -> str:
                 "bridges": [],
                 "summary": {},
             },
+        }
+    )
+
+
+def sample_explorer_datasets_json() -> str:
+    """Simulate data-explorer ``catalog/datasets.json`` (committed)."""
+    return json.dumps(
+        {
+            "schema_version": 1,
+            "source": "dataset-incubator",
+            "generated_at": "2026-08-10",
+            "datasets": [
+                {
+                    "slug": "spesa-farmaceutica",
+                    "di_slug": "aifa_spesa_consumo",
+                    "name": "AIFA Spesa",
+                    "theme": "sanita",
+                    "stage": "published",
+                    "category": "sanita",
+                },
+                {
+                    "slug": "rifiuti-urbani",
+                    "di_slug": "ispra_ru_base",
+                    "name": "Rifiuti Urbani",
+                    "theme": "territorio-ambiente",
+                    "stage": "published",
+                    "category": "ambiente",
+                },
+                {
+                    "slug": "nuovo-dataset",
+                    "di_slug": "nuovo_dataset",
+                    "name": "Nuovo Dataset",
+                    "stage": "published",
+                    "category": "sanita",
+                },
+            ],
+        }
+    )
+
+
+def sample_explorer_themes_json() -> str:
+    """Simulate data-explorer ``catalog/themes.json`` (editorial config)."""
+    return json.dumps(
+        {
+            "schema_version": 1,
+            "temi": [
+                {"slug": "sanita", "name": "Sanità", "categories": ["sanita"]},
+                {
+                    "slug": "territorio-ambiente",
+                    "name": "Territorio e ambiente",
+                    "categories": ["ambiente"],
+                },
+            ],
         }
     )

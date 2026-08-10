@@ -15,8 +15,9 @@ from tests.conftest import (
     _UNAVAILABLE,
     make_git_mock,
     make_github_mock,
-    sample_di_json,
     sample_di_registry_json,
+    sample_explorer_datasets_json,
+    sample_explorer_themes_json,
     sample_second_registry_json,
     sample_so_json,
 )
@@ -275,10 +276,12 @@ def test_render_signals_cached_across_bootstrap_and_triage():
     def _raw_file_side_effect(repo, path, ref="main"):
         if path == "data/catalog/catalog_signals.json":
             return sample_so_json(drift=False)
-        if path == "registry/pipeline_signals.json":
-            return sample_di_json()
         if path == "registry/registry.json":
             return sample_di_registry_json()
+        if path == "catalog/datasets.json":
+            return sample_explorer_datasets_json()
+        if path == "catalog/themes.json":
+            return sample_explorer_themes_json()
         return None
 
     gh.get_raw_file.side_effect = _raw_file_side_effect
@@ -288,17 +291,17 @@ def test_render_signals_cached_across_bootstrap_and_triage():
     renderer.render_workspace_triage()
 
     # 6 files fetched via get_raw_file: radar_summary + catalog_signals +
-    # pipeline_signals + registry.json (di fetcher) + registry.json
-    # (cross-repo registry fetcher) + themes.json.py
-    # + 1 directory listing call via list_directory (analisi/)
+    # registry.json (cross-repo, repo1 bootstrap) + registry.json
+    # (dataset-incubator, triage pipeline_state) + datasets.json +
+    # themes.json + 1 directory listing call via list_directory (analisi/)
     assert gh.get_raw_file.call_count == 6
     assert gh.list_directory.call_count == 1
     paths_fetched = [call.args[1] for call in gh.get_raw_file.call_args_list]
     assert "data/radar/radar_summary.json" in paths_fetched
     assert "data/catalog/catalog_signals.json" in paths_fetched
-    assert "registry/pipeline_signals.json" in paths_fetched
     assert "registry/registry.json" in paths_fetched
-    assert "src/data/themes.json.py" in paths_fetched
+    assert "catalog/datasets.json" in paths_fetched
+    assert "catalog/themes.json" in paths_fetched
 
 
 # ── Topic index ───────────────────────────────────────────────────────────
@@ -347,59 +350,6 @@ def test_render_topic_index():
     )
     assert "operational_topics" in result
     assert result["operational_topics"]["toolkit"]["summary"] == "Pipeline engine"
-
-
-# ── Dataset catalog ────────────────────────────────────────────────────────
-
-
-def test_render_triage_dataset_catalog_available():
-    """Triage includes machine-readable dataset registry entries."""
-    gh = make_github_mock()
-
-    def _raw_file_side_effect(repo, path, ref="main"):
-        if path == "registry/registry.json":
-            return sample_di_registry_json()
-        return None
-
-    gh.get_raw_file.side_effect = _raw_file_side_effect
-    catalog = _r(_cfg(), gh=gh).render_workspace_triage()["dataset_catalog"]
-
-    assert catalog["available"] is True
-    assert catalog["updated_at"] == "2026-04-14"
-    assert catalog["summary"] == {"total": 2, "published": 1}
-    assert catalog["datasets"][0]["slug"] == "irpef_comunale"
-    assert catalog["datasets"][0]["metric_columns"] == 1
-    assert catalog["datasets"][0]["dimension_columns"] == 2
-
-
-@pytest.mark.contract
-def test_render_triage_dataset_catalog_no_columns():
-    """dataset_catalog drops the detailed column list (served by toolkit MCP).
-
-    Compact orientation only: column counts stay, the per-column detail is
-    the toolkit's job (registry_show/find/overview).
-    """
-    gh = make_github_mock()
-
-    def _raw_file_side_effect(repo, path, ref="main"):
-        if path == "registry/registry.json":
-            return sample_di_registry_json()
-        return None
-
-    gh.get_raw_file.side_effect = _raw_file_side_effect
-    catalog = _r(_cfg(), gh=gh).render_workspace_triage()["dataset_catalog"]
-
-    assert "columns" not in catalog["datasets"][0]
-    assert catalog["datasets"][0]["column_count"] == 3
-
-
-def test_render_triage_dataset_catalog_unavailable():
-    """Triage marks dataset catalog unavailable when registry fetch fails."""
-    catalog = _r(_cfg(), gh=make_github_mock(raw_file=None)).render_workspace_triage()[
-        "dataset_catalog"
-    ]
-
-    assert catalog["available"] is False
 
 
 # ── Registry summary (cross-repo) ──────────────────────────────────────────
@@ -477,7 +427,7 @@ def test_render_bootstrap_registry_section():
     bootstrap = _r(_cfg(repos=["repo1"]), gh=gh).render_session_bootstrap()
 
     assert "## 🗂 REGISTRY" in bootstrap
-    assert "**repo1**: 2 ds · 0 marts · 0 signals ·" in bootstrap
+    assert "**repo1**: 2 ds · 0 marts · 2 signals ·" in bootstrap
 
 
 def test_render_bootstrap_registry_section_hidden_when_unavailable():

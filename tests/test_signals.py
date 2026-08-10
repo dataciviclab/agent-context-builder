@@ -7,10 +7,12 @@ import pytest
 from agent_context_builder.signals import (
     DIRegistry,
     parse_di_registry,
-    parse_explorer_themes_from_py,
-    parse_registry_summary,
-    parse_repo_signals,
+    parse_explorer_catalog,
     parse_source_observatory_signals,
+)
+from tests.conftest import (
+    sample_explorer_datasets_json,
+    sample_explorer_themes_json,
 )
 
 
@@ -106,178 +108,6 @@ def test_alerts_alias_matches_drift_alerts():
     assert so.alerts == so.drift_alerts
 
 
-# --- parse_repo_signals / RepoSignals ---
-
-
-def _sample_repo_signals_json(signals: list[dict] | None = None) -> str:
-    return json.dumps(
-        {
-            "schema_version": "1",
-            "generated_at": "2026-04-16T10:00:00",
-            "repo": "dataciviclab/dataset-incubator",
-            "topic": "pipeline_state",
-            "signals": signals
-            or [
-                {
-                    "id": "irpef-comunale",
-                    "status": "ok",
-                    "label": "irpef-comunale (2022-2023)",
-                    "detail": "single-source, mart SQL presente",
-                    "action": "",
-                },
-                {
-                    "id": "ispra-ru-base",
-                    "status": "warn",
-                    "label": "ispra-ru-base (2020-2023)",
-                    "detail": "nessun mart SQL trovato",
-                    "action": "aggiungere mart SQL",
-                },
-                {
-                    "id": "broken-candidate",
-                    "status": "error",
-                    "label": "broken-candidate",
-                    "detail": "struttura non riconosciuta",
-                    "action": "verificare dataset.yml",
-                },
-            ],
-            "summary": {"ok": 1, "warn": 1, "error": 1},
-        }
-    )
-
-
-@pytest.mark.pure_unit
-def test_parse_repo_signals_basic():
-    rs = parse_repo_signals(_sample_repo_signals_json())
-    assert rs.repo == "dataciviclab/dataset-incubator"
-    assert rs.topic == "pipeline_state"
-    assert rs.generated_at == "2026-04-16T10:00:00"
-    assert len(rs.signals) == 3
-
-
-@pytest.mark.pure_unit
-def test_parse_repo_signals_actionable():
-    rs = parse_repo_signals(_sample_repo_signals_json())
-    actionable = rs.actionable
-    assert len(actionable) == 2
-    statuses = {s.status for s in actionable}
-    assert statuses == {"warn", "error"}
-
-
-@pytest.mark.pure_unit
-def test_parse_repo_signals_all_ok():
-    raw = _sample_repo_signals_json(
-        [
-            {"id": "a", "status": "ok", "label": "a", "detail": "", "action": ""},
-        ]
-    )
-    rs = parse_repo_signals(raw)
-    assert rs.actionable == []
-
-
-@pytest.mark.pure_unit
-def test_parse_repo_signals_invalid_json_raises():
-    with pytest.raises(ValueError, match="Invalid JSON"):
-        parse_repo_signals("not json{")
-
-
-@pytest.mark.policy
-def test_parse_repo_signals_missing_fields_use_defaults():
-    raw = json.dumps({"signals": [{"id": "test"}]})
-    rs = parse_repo_signals(raw)
-    assert rs.generated_at == "unknown"
-    assert rs.signals[0].status == "ok"
-    assert rs.signals[0].label == "test"
-
-
-@pytest.mark.contract
-def test_parse_repo_signals_sample_run_parsing():
-    """sample_run fields are parsed and exposed on RepoSignal."""
-    raw = json.dumps(
-        {
-            "schema_version": "1",
-            "generated_at": "2026-04-30",
-            "repo": "di",
-            "topic": "pipeline",
-            "signals": [
-                {
-                    "id": "test-candidate",
-                    "status": "ok",
-                    "label": "test-candidate",
-                    "detail": "ok",
-                    "action": "",
-                    "sample_run": {
-                        "status": "failed",
-                        "run_id": "12345",
-                        "run_url": "https://github.com/.../actions/runs/12345",
-                        "checked_at": "2026-04-30",
-                        "year": 2020,
-                        "config_path": "candidates/test-candidate/dataset.yml",
-                    },
-                },
-            ],
-        }
-    )
-    rs = parse_repo_signals(raw)
-    assert len(rs.signals) == 1
-    sr = rs.signals[0]
-    assert sr.sample_run is not None
-    assert sr.sample_run.status == "failed"
-    assert sr.sample_run.run_id == "12345"
-    assert sr.sample_run.year == 2020
-
-
-@pytest.mark.pure_unit
-def test_parse_repo_signals_no_sample_run():
-    """Signal without sample_run has None."""
-    raw = json.dumps(
-        {
-            "schema_version": "1",
-            "generated_at": "2026-04-30",
-            "repo": "di",
-            "topic": "pipeline",
-            "signals": [{"id": "a", "status": "ok", "label": "a", "detail": "", "action": ""}],
-        }
-    )
-    rs = parse_repo_signals(raw)
-    assert rs.signals[0].sample_run is None
-
-
-@pytest.mark.pure_unit
-def test_failed_runs_property():
-    """failed_runs returns only signals with a failed sample_run."""
-    raw = json.dumps(
-        {
-            "schema_version": "1",
-            "generated_at": "2026-04-30",
-            "repo": "di",
-            "topic": "pipeline",
-            "signals": [
-                {"id": "ok-signal", "status": "ok", "label": "ok", "detail": "", "action": ""},
-                {
-                    "id": "failed-signal",
-                    "status": "ok",
-                    "label": "failed-signal",
-                    "detail": "",
-                    "action": "",
-                    "sample_run": {
-                        "status": "failed",
-                        "run_id": "1",
-                        "run_url": "x",
-                        "checked_at": "x",
-                        "year": 2020,
-                        "config_path": "x.yml",
-                    },
-                },
-                {"id": "ok-signal-2", "status": "ok", "label": "ok2", "detail": "", "action": ""},
-            ],
-        }
-    )
-    rs = parse_repo_signals(raw)
-    assert len(rs.failed_runs) == 1
-    assert rs.failed_runs[0].id == "failed-signal"
-
-
-@pytest.mark.pure_unit
 def test_candidates_property():
     """candidates returns datasets with stage != published."""
     raw = json.dumps(
@@ -286,9 +116,9 @@ def test_candidates_property():
             "name": "Test",
             "updated_at": "2026-04-30",
             "datasets": [
-                {"slug": "ready", "name": "Ready", "stage": "published", "columns": []},
-                {"slug": "cand", "name": "Candidate", "stage": "incubating", "columns": []},
-                {"slug": "cand2", "name": "Candidate 2", "stage": "incubating", "columns": []},
+                {"slug": "ready", "name": "Ready", "stage": "published"},
+                {"slug": "cand", "name": "Candidate", "stage": "incubating"},
+                {"slug": "cand2", "name": "Candidate 2", "stage": "incubating"},
             ],
         }
     )
@@ -296,46 +126,6 @@ def test_candidates_property():
     assert len(catalog.published) == 1
     assert len(catalog.incubating) == 2
     assert {d.slug for d in catalog.incubating} == {"cand", "cand2"}
-
-
-@pytest.mark.contract
-def test_di_registry_columns_parsed():
-    """Column name and role are parsed; type and description are excluded."""
-    raw = json.dumps(
-        {
-            "schema_version": "1",
-            "name": "Test",
-            "updated_at": "2026-04-30",
-            "datasets": [
-                {
-                    "slug": "test",
-                    "name": "Test",
-                    "stage": "published",
-                    "columns": [
-                        {
-                            "name": "anno",
-                            "type": "INTEGER",
-                            "role": "dimension",
-                            "description": "Year",
-                        },
-                        {
-                            "name": "valore",
-                            "type": "FLOAT",
-                            "role": "metric",
-                            "description": "Value",
-                        },
-                    ],
-                }
-            ],
-        }
-    )
-    catalog = parse_di_registry(raw)
-    ds = catalog.datasets[0]
-    assert len(ds.columns) == 2
-    assert ds.columns[0].name == "anno"
-    assert ds.columns[0].role == "dimension"
-    assert ds.columns[1].name == "valore"
-    assert ds.columns[1].role == "metric"
 
 
 @pytest.mark.contract
@@ -437,15 +227,7 @@ def test_parse_di_registry_basic():
     assert len(catalog.published) == 1
     dataset = catalog.datasets[0]
     assert dataset.slug == "irpef_comunale"
-    assert dataset.metric_columns == 1
-    assert dataset.dimension_columns == 2
-    assert dataset.column_count == 3
-    # Columns are parsed: name + role only (no type, no description)
-    assert len(dataset.columns) == 3
-    assert dataset.columns[0].name == "anno"
-    assert dataset.columns[0].role == "dimension"
-    assert dataset.columns[2].name == "imposta"
-    assert dataset.columns[2].role == "metric"
+    assert dataset.source == ""
 
 
 @pytest.mark.policy
@@ -458,11 +240,10 @@ def test_parse_di_registry_missing_fields_use_defaults():
     assert catalog.updated_at == "unknown"
     assert catalog.datasets[0].name == "minimal"
     assert catalog.datasets[0].stage == "incubating"
-    assert catalog.datasets[0].location == {}
-    assert catalog.datasets[0].columns == []
+    assert catalog.datasets[0].period == {}
 
 
-# ── parse_registry_summary ─────────────────────────────────────────────────
+# ── parse_di_registry counts (registry_summary data) ────────────────────────
 
 
 def _sample_full_registry_json() -> str:
@@ -479,16 +260,14 @@ def _sample_full_registry_json() -> str:
                     "name": "A",
                     "stage": "published",
                     "location": {"type": "gcs", "path": "gs://bucket/a"},
-                    "columns": [],
                 },
                 {
                     "slug": "b",
                     "name": "B",
                     "stage": "incubating",
                     "location": {"type": "gcs", "path": "gs://bucket/b"},
-                    "columns": [],
                 },
-                {"slug": "c", "name": "C", "stage": "incubating", "columns": []},
+                {"slug": "c", "name": "C", "stage": "incubating"},
             ],
             "marts": [{"slug": "m1"}, {"slug": "m2"}],
             "signals": [{"id": "s1"}],
@@ -508,202 +287,67 @@ def _sample_full_registry_json() -> str:
 
 
 @pytest.mark.pure_unit
-def test_parse_registry_summary_counts():
-    """Section counts + stage counts + GCS availability are parsed."""
-    s = parse_registry_summary("eurostat", _sample_full_registry_json())
+def test_parse_di_registry_counts():
+    """Section counts + GCS availability + signals are parsed."""
+    reg = parse_di_registry(_sample_full_registry_json())
 
-    assert s.available is True
-    assert s.repo == "eurostat"
-    assert s.source_repo == "dataciviclab/eurostat"
-    assert s.updated_at == "2026-08-08"
-    assert s.datasets == 3
-    assert s.marts == 2
-    assert s.signals == 1
-    assert s.codelists == 1
-    assert s.entities == 2
-    assert s.gcs == 2  # "c" has no location
-
-
-@pytest.mark.pure_unit
-def test_parse_registry_summary_none_returns_unavailable():
-    """A missing registry.json (None) is unavailable, not an error."""
-    s = parse_registry_summary("toolkit", None)
-
-    assert s.available is False
-    assert s.reason == "registry_not_found"
-    assert s.datasets == 0
+    assert reg.schema_version == "1"
+    assert reg.name == "dataciviclab/eurostat"
+    assert reg.updated_at == "2026-08-08"
+    assert len(reg.datasets) == 3
+    assert len(reg.published) == 1
+    assert len(reg.incubating) == 2
+    assert reg.gcs == 2  # "c" has no location
+    assert reg.marts == 2
+    assert reg.codelists == 1
+    assert reg.entities == 2
+    assert len(reg.signals) == 1
 
 
 @pytest.mark.pure_unit
-def test_parse_registry_summary_invalid_json():
-    """Invalid registry content is unavailable with a reason."""
-    s = parse_registry_summary("toolkit", "not json{")
-
-    assert s.available is False
-    assert s.reason.startswith("invalid_json")
-
-
-@pytest.mark.pure_unit
-def test_parse_registry_summary_non_list_datasets():
+def test_parse_di_registry_non_list_datasets():
     """A registry with a non-list datasets section degrades to zero counts."""
     raw = json.dumps({"schema_version": 1, "datasets": {"not": "a list"}})
-    s = parse_registry_summary("repo-x", raw)
+    reg = parse_di_registry(raw)
 
-    assert s.available is True
-    assert s.datasets == 0
-    assert s.gcs == 0
-
-
-# ── parse_explorer_themes_from_py ──────────────────────────────────────────
-
-_THEMES_PY_SAMPLE = '''#!/usr/bin/env python3
-"""Data loader: temi editoriali."""
-import json, sys
-
-themes = [
-    {
-        "slug": "territorio-ambiente",
-        "name": "Territorio e ambiente",
-        "description": "Descrizione",
-        "datasets": ["rifiuti-urbani", "capacita-rinnovabile"],
-        "questions": ["Domanda 1?"],
-    },
-    {
-        "slug": "finanza-pubblica",
-        "name": "Finanza pubblica",
-        "datasets": ["irpef-comunale", "entrate-stato"],
-    },
-]
-json.dump(themes, sys.stdout, ensure_ascii=False)
-'''
+    assert len(reg.datasets) == 0
+    assert reg.gcs == 0
+    assert reg.marts == 0
 
 
-@pytest.mark.pure_unit
-def test_parse_themes_from_py_basic():
-    """Parsing themes.json.py returns correct ExplorerTheme instances."""
-    themes = parse_explorer_themes_from_py(_THEMES_PY_SAMPLE)
-    assert len(themes) == 2
-    assert themes[0].slug == "territorio-ambiente"
-    assert themes[0].name == "Territorio e ambiente"
-    assert themes[0].datasets == ["rifiuti-urbani", "capacita-rinnovabile"]
-    assert themes[1].slug == "finanza-pubblica"
-    assert themes[1].datasets == ["irpef-comunale", "entrate-stato"]
+# ── parse_explorer_catalog ─────────────────────────────────────────────────
 
 
-@pytest.mark.pure_unit
-def test_parse_themes_from_py_empty_list():
-    """Empty themes list returns empty list."""
-    themes = parse_explorer_themes_from_py("themes = []")
-    assert themes == []
+def test_parse_explorer_catalog_themes():
+    """Themes are derived from datasets.json (per-dataset theme) + themes.json."""
+    catalog = parse_explorer_catalog(sample_explorer_datasets_json(), sample_explorer_themes_json())
+
+    assert len(catalog.themes) == 2
+    sanita = next(t for t in catalog.themes if t.slug == "sanita")
+    assert sanita.name == "Sanità"
+    assert sanita.datasets == ["spesa-farmaceutica"]
+    territorio = next(t for t in catalog.themes if t.slug == "territorio-ambiente")
+    assert territorio.datasets == ["rifiuti-urbani"]
 
 
-@pytest.mark.pure_unit
-def test_parse_themes_from_py_invalid_syntax_raises():
-    """Malformed Python raises ValueError via ast.literal_eval."""
-    with pytest.raises(ValueError, match="Failed to evaluate"):
-        parse_explorer_themes_from_py("themes = [not valid]")
+def test_parse_explorer_catalog_without_theme():
+    """Published datasets without a theme are reported in without_theme."""
+    catalog = parse_explorer_catalog(sample_explorer_datasets_json(), sample_explorer_themes_json())
+
+    assert catalog.without_theme == ["nuovo_dataset"]
 
 
-@pytest.mark.policy
-def test_parse_themes_from_py_unmatched_brackets_raises():
-    """Unmatched bracket raises ValueError via SyntaxError from ast.parse."""
-    with pytest.raises(ValueError, match="Failed to parse themes.json.py as Python"):
-        parse_explorer_themes_from_py("themes = [not closed")
+def test_parse_explorer_catalog_invalid_json():
+    """Malformed datasets.json raises ValueError."""
+    import pytest
+
+    with pytest.raises(ValueError, match="Invalid datasets.json"):
+        parse_explorer_catalog("not json{", "{}")
 
 
-@pytest.mark.policy
-def test_parse_themes_from_py_no_themes_var_raises():
-    """Missing 'themes' variable raises ValueError."""
-    with pytest.raises(ValueError, match="No top-level 'themes' variable found"):
-        parse_explorer_themes_from_py("print('hello')")
+def test_parse_explorer_catalog_missing_temi():
+    """themes.json without a temi list raises ValueError."""
+    import pytest
 
-
-@pytest.mark.contract
-def test_parse_themes_from_py_brackets_before_themes():
-    """Brackets in docstring or before 'themes =' do not confuse the parser.
-
-    The old naive bracket-matching approach would pick the first '[' in the
-    file. The AST-based approach correctly skips brackets in docstrings,
-    imports and other code.
-    """
-    py_src = '''#!/usr/bin/env python3
-"""Docstring with [brackets] inside."""
-import json, sys
-
-SOME_CONSTANT = [1, 2, 3]
-
-themes = [
-    {"slug": "test", "name": "Test", "datasets": ["ds1"]},
-]
-json.dump(themes, sys.stdout, ensure_ascii=False)
-'''
-    themes = parse_explorer_themes_from_py(py_src)
-    assert len(themes) == 1
-    assert themes[0].slug == "test"
-    assert themes[0].datasets == ["ds1"]
-    """Parse the actual themes.json.py from data-explorer (real content)."""
-    py_src = '''#!/usr/bin/env python3
-"""Data loader: temi editoriali. Mappa slug tema \u2192 slug dataset."""
-import json, sys
-
-themes = [
-    {
-        "slug": "territorio-ambiente",
-        "name": "Territorio e ambiente",
-        "description": "Trasformazioni territoriali, ambiente, energia e rifiuti",
-        "datasets": ["rifiuti-urbani", "capacita-rinnovabile"],
-        "questions": [
-            "Come varia la raccolta differenziata tra territori?",
-            "Come cambia il mix elettrico regionale tra fonti fossili e rinnovabili?",
-        ],
-    },
-    {
-        "slug": "finanza-pubblica",
-        "name": "Finanza pubblica",
-        "description": "Entrate dello Stato, capacit\u00e0 fiscale e tributi locali",
-        "datasets": ["irpef-comunale", "entrate-stato"],
-        "questions": [
-            "Come si distribuisce la capacit\u00e0 fiscale tra regioni?",
-            "Quali sono le principali voci di entrata dello Stato?",
-        ],
-    },
-    {
-        "slug": "sanita",
-        "name": "Sanit\u00e0",
-        "description": "Spesa farmaceutica, consumi sanitari e prevenzione",
-        "datasets": ["spesa-farmaceutica"],
-        "questions": ["Come cambia tra regioni la spesa farmaceutica per classi terapeutiche?"],
-    },
-    {
-        "slug": "welfare-lavoro",
-        "name": "Welfare e lavoro",
-        "description": "Pubblico impiego, pensioni e previdenza",
-        "datasets": ["dipendenti-pubblici", "pensioni-inps"],
-        "questions": [
-            "La crescita del pubblico impiego \u00e8 diffusa o concentrata in pochi comparti?",
-            "Come sono distribuite le pensioni tra gestioni previdenziali?",
-        ],
-    },
-    {
-        "slug": "giustizia",
-        "name": "Giustizia",
-        "description": "Flussi civili, tempi e carichi dei tribunali",
-        "datasets": ["flussi-giustizia-civile"],
-        "questions": ["Come si distribuisce il carico civile tra i distretti italiani?"],
-    },
-]
-
-json.dump(themes, sys.stdout, ensure_ascii=False)
-'''
-    themes = parse_explorer_themes_from_py(py_src)
-    assert len(themes) == 5
-    slugs = [t.slug for t in themes]
-    assert slugs == [
-        "territorio-ambiente",
-        "finanza-pubblica",
-        "sanita",
-        "welfare-lavoro",
-        "giustizia",
-    ]
-    assert themes[2].datasets == ["spesa-farmaceutica"]
-    assert themes[3].name == "Welfare e lavoro"
+    with pytest.raises(ValueError, match="manca la chiave 'temi'"):
+        parse_explorer_catalog('{"datasets": []}', '{"foo": 1}')

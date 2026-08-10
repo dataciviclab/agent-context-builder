@@ -6,14 +6,14 @@ from dataclasses import dataclass
 from typing import Any
 
 from ..github import GitHubCollector
-from ..signals import ExplorerTheme, parse_explorer_themes_from_py
+from ..signals import ExplorerCatalog, parse_explorer_catalog
 
 
 @dataclass
 class DataExplorerData:
     """Cached data-explorer artifact bundle."""
 
-    themes: list[ExplorerTheme] | None
+    catalog: ExplorerCatalog | None
     last_deploy: dict[str, Any] | None
 
 
@@ -21,44 +21,44 @@ class DataExplorerFetcher:
     """Fetch data-explorer artifacts from GitHub raw URLs + API.
 
     Consumes:
-      - src/data/themes.json.py (editorial theme assignments, parsed statically)
+      - catalog/datasets.json + catalog/themes.json (committed editorial
+        catalog: per-dataset theme resolution; replaces the old static
+        themes.json.py loader)
       - GitHub Actions API (deploy status, operativo)
     """
 
     def __init__(self, collector: GitHubCollector):
         self.collector = collector
-        self._themes_cache: list[ExplorerTheme] | None | object = _UNSET
+        self._catalog_cache: ExplorerCatalog | None | object = _UNSET
         self._deploy_cache: dict[str, Any] | None | object = _UNSET
 
     def fetch(self) -> DataExplorerData:
         """Fetch all data-explorer artifacts."""
         return DataExplorerData(
-            themes=self.fetch_themes(),
+            catalog=self.fetch_explorer_catalog(),
             last_deploy=self.fetch_deploy_status(),
         )
 
-    def fetch_themes(self) -> list[ExplorerTheme] | None:
-        """Fetch and parse themes from data-explorer's ``themes.json.py``.
+    def fetch_explorer_catalog(self) -> ExplorerCatalog | None:
+        """Fetch and parse the committed editorial catalog.
 
-        After the Observable Framework migration, themes no longer live as a
-        static JSON file. They are defined in ``src/data/themes.json.py`` as a
-        Python list literal. This method fetches that source file and extracts
-        the list via static analysis (``ast.literal_eval``).
-
-        Returns None if the file is unavailable or malformed.
+        ``catalog/datasets.json`` resolves each dataset to its theme (URL
+        slug); ``catalog/themes.json`` carries theme names/order. Both are
+        committed JSON artifacts — no source parsing.
         """
-        if self._themes_cache is not _UNSET:
-            return self._themes_cache  # type: ignore[return-value]
-        raw = self.collector.get_raw_file("data-explorer", "src/data/themes.json.py")
-        if raw is None:
-            self._themes_cache = None
+        if self._catalog_cache is not _UNSET:
+            return self._catalog_cache  # type: ignore[return-value]
+        raw_catalog = self.collector.get_raw_file("data-explorer", "catalog/datasets.json")
+        raw_themes = self.collector.get_raw_file("data-explorer", "catalog/themes.json")
+        if raw_catalog is None or raw_themes is None:
+            self._catalog_cache = None
             return None
         try:
-            result = parse_explorer_themes_from_py(raw)
+            result = parse_explorer_catalog(raw_catalog, raw_themes)
         except ValueError as exc:
             self.collector.fetch_errors["data-explorer:themes"] = str(exc)
             result = None
-        self._themes_cache = result
+        self._catalog_cache = result
         return result
 
     def fetch_deploy_status(self) -> dict[str, Any] | None:

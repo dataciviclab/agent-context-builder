@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import ast
 import json
 from dataclasses import dataclass, field
 from typing import Any
@@ -54,65 +53,13 @@ class SourceObservatorySignals:
 
 
 @dataclass
-class RepoSignalSampleRun:
-    """Sample run metadata for a pipeline signal."""
-
-    status: str  # passed | failed
-    run_id: str
-    run_url: str
-    checked_at: str
-    year: int
-    config_path: str
-
-
-@dataclass
-class RepoSignal:
-    """Single signal entry following the repo-signals standard v1."""
-
-    id: str
-    status: str  # ok | warn | error
-    label: str
-    detail: str
-    action: str
-    source_id: str = ""
-    sample_run: RepoSignalSampleRun | None = None
-
-
-@dataclass
-class RepoSignals:
-    """Aggregated signals from a repo following the repo-signals standard v1."""
-
-    schema_version: str
-    generated_at: str
-    repo: str
-    topic: str
-    signals: list[RepoSignal] = field(default_factory=list)
-    summary: dict[str, Any] = field(default_factory=dict)
-
-    @property
-    def actionable(self) -> list[RepoSignal]:
-        """Signals that are warn or error (shown in bootstrap)."""
-        return [s for s in self.signals if s.status in ("warn", "error")]
-
-    @property
-    def failed_runs(self) -> list[RepoSignal]:
-        """Signals with a failed sample_run (shown in bootstrap)."""
-        return [
-            s for s in self.signals if s.sample_run is not None and s.sample_run.status == "failed"
-        ]
-
-
-@dataclass
-class DIRegistryDatasetColumn:
-    """Simplified column descriptor for triage."""
-
-    name: str
-    role: str  # metric | dimension
-
-
-@dataclass
 class DIRegistryDataset:
-    """Single dataset entry from a Lab registry.json (schema v1)."""
+    """Single dataset entry from a Lab registry.json (schema v1).
+
+    Compact model for topic_index grouping: slug/name/source/period/stage.
+    Column detail, location and counts stay in the upstream registry,
+    served by the toolkit MCP (registry_show/overview).
+    """
 
     slug: str
     name: str
@@ -120,21 +67,27 @@ class DIRegistryDataset:
     source_id: str = ""
     source: str = ""
     period: dict[str, Any] = field(default_factory=dict)
-    location: dict[str, Any] = field(default_factory=dict)
-    metric_columns: int = 0
-    dimension_columns: int = 0
-    column_count: int = 0
-    columns: list[DIRegistryDatasetColumn] = field(default_factory=list)
 
 
 @dataclass
 class DIRegistry:
-    """Dataset registry from a Lab repo registry.json (schema v1)."""
+    """Dataset registry from a Lab repo registry.json (schema v1).
+
+    Compact cross-repo model: datasets + signals for topic_index/pipeline
+    state, plus section counts for the per-repo registry_summary. Detailed
+    column/entry data stays in the upstream registry, served by the toolkit
+    MCP (registry_show/overview).
+    """
 
     schema_version: str
     name: str
     updated_at: str
     datasets: list[DIRegistryDataset] = field(default_factory=list)
+    signals: list[dict[str, Any]] = field(default_factory=list)
+    gcs: int = 0
+    marts: int = 0
+    codelists: int = 0
+    entities: int = 0
 
     @property
     def published(self) -> list[DIRegistryDataset]:
@@ -147,67 +100,14 @@ class DIRegistry:
         return [d for d in self.datasets if d.stage == "incubating"]
 
 
-def _parse_sample_run(raw: dict[str, Any] | None) -> RepoSignalSampleRun | None:
-    """Parse a sample_run dict into a RepoSignalSampleRun instance."""
-    if raw is None:
-        return None
-    return RepoSignalSampleRun(
-        status=raw.get("status", ""),
-        run_id=raw.get("run_id", ""),
-        run_url=raw.get("run_url", ""),
-        checked_at=raw.get("checked_at", ""),
-        year=raw.get("year", 0),
-        config_path=raw.get("config_path", ""),
-    )
-
-
-def parse_repo_signals(raw: str) -> RepoSignals:
-    """Parse a repo-signals standard v1 JSON string.
-
-    Args:
-        raw: Raw JSON content of a pipeline_signals.json (or compatible)
-
-    Returns:
-        Parsed RepoSignals instance
-
-    Raises:
-        ValueError: If the JSON is invalid
-    """
-    try:
-        data: dict[str, Any] = json.loads(raw)
-    except json.JSONDecodeError as exc:
-        raise ValueError(f"Invalid JSON: {exc}") from exc
-
-    signals = [
-        RepoSignal(
-            id=s.get("id", ""),
-            source_id=s.get("source_id", ""),
-            status=s.get("status", "ok"),
-            label=s.get("label", s.get("id", "")),
-            detail=s.get("detail", ""),
-            action=s.get("action", ""),
-            sample_run=_parse_sample_run(s.get("sample_run")),
-        )
-        for s in data.get("signals", [])
-    ]
-
-    return RepoSignals(
-        schema_version=str(data.get("schema_version", "1")),
-        generated_at=data.get("generated_at", "unknown"),
-        repo=data.get("repo", ""),
-        topic=data.get("topic", ""),
-        signals=signals,
-        summary=data.get("summary", {}),
-    )
-
-
 def parse_di_registry(raw: str) -> DIRegistry:
     """Parse a Lab registry.json (schema v1) — canonical cross-repo artifact.
 
     Reads the ``datasets`` section, which is the same list that the legacy
-    ``clean_catalog.json`` projection exposed. ACB keeps the fields needed
-    for agent orientation and triage; descriptive metadata (description,
-    registry_source, mart_refs, run) remains in the upstream registry.
+    ``clean_catalog.json`` projection exposed, and the ``signals`` section
+    (the legacy pipeline_signals.json projection). ACB keeps the fields
+    needed for agent orientation and triage; descriptive metadata
+    (description, registry_source, mart_refs, run) stays upstream.
 
     Args:
         raw: Raw JSON content of a registry.json
@@ -223,36 +123,57 @@ def parse_di_registry(raw: str) -> DIRegistry:
     except json.JSONDecodeError as exc:
         raise ValueError(f"Invalid JSON: {exc}") from exc
 
-    datasets = []
-    for item in data.get("datasets", []):
-        columns = item.get("columns", [])
-        metric_columns = sum(1 for c in columns if c.get("role") == "metric")
-        dimension_columns = sum(1 for c in columns if c.get("role") == "dimension")
-        datasets.append(
-            DIRegistryDataset(
-                slug=item.get("slug", ""),
-                name=item.get("name", item.get("slug", "")),
-                stage=item.get("stage", "incubating"),
-                source_id=item.get("source_id", ""),
-                source=item.get("source", ""),
-                period=item.get("period", {}),
-                location=item.get("location", {}),
-                metric_columns=metric_columns,
-                dimension_columns=dimension_columns,
-                column_count=len(columns),
-                columns=[
-                    DIRegistryDatasetColumn(name=c.get("name", ""), role=c.get("role", ""))
-                    for c in columns
-                ],
-            )
+    datasets = [
+        DIRegistryDataset(
+            slug=item.get("slug") or "",
+            name=item.get("name") or item.get("slug") or "",
+            stage=item.get("stage") or "incubating",
+            source_id=item.get("source_id") or "",
+            source=item.get("source") or "",
+            period=item.get("period") or {},
         )
+        for item in data.get("datasets", [])
+        if isinstance(item, dict)
+    ]
+    # gcs counts dataset entries with a GCS location (queryable parquet)
+    gcs = sum(
+        1
+        for item in data.get("datasets", [])
+        if isinstance(item, dict)
+        and isinstance(item.get("location"), dict)
+        and item["location"].get("type") == "gcs"
+    )
 
     return DIRegistry(
         schema_version=str(data.get("schema_version", "1")),
         name=data.get("name") or data.get("source_repo") or data.get("repo", ""),
         updated_at=data.get("updated_at", "unknown"),
         datasets=datasets,
+        signals=[s for s in data.get("signals", []) if isinstance(s, dict)],
+        gcs=gcs,
+        marts=_section_count(data.get("marts", [])),
+        codelists=_section_count(data.get("codelists", [])),
+        entities=_section_count(data.get("entities", [])),
     )
+
+
+def _section_count(section: Any) -> int:
+    """Count entries in a registry section.
+
+    Sections are either lists (datasets/marts/signals) or dicts wrapping a
+    dict keyed by name (codelists/codelists, entities/entities). For dicts
+    the count is the number of keys.
+    """
+    if isinstance(section, list):
+        return len(section)
+    if isinstance(section, dict):
+        for key in ("codelists", "entities", "signals"):
+            value = section.get(key)
+            if isinstance(value, list):
+                return len(value)
+            if isinstance(value, dict):
+                return len(value)
+    return 0
 
 
 def parse_source_observatory_signals(raw: str) -> SourceObservatorySignals:
@@ -349,66 +270,74 @@ class ExplorerTheme:
     datasets: list[str]
 
 
-def parse_explorer_themes_from_py(raw_py: str) -> list[ExplorerTheme]:
-    """Parse themes list from ``src/data/themes.json.py`` source file.
+@dataclass
+class ExplorerCatalog:
+    """Parsed data-explorer editorial catalog (datasets.json + themes.json).
 
-    Instead of fetching a static JSON (which no longer exists after the
-    Observable Framework migration), this function reads the Python data
-    loader file and extracts the ``themes`` variable via ``ast.parse`` +
-    ``ast.literal_eval``.
+    datasets.json is the committed editorial output: every dataset carries
+    its resolved ``theme`` (URL slug). themes.json carries names/order.
+    """
 
-    The file ``themes.json.py`` in data-explorer has a stable structure:
-    a top-level ``themes`` variable assigned to a list of dicts with
-    ``slug``, ``name``, ``datasets`` (and optional ``description``,
-    ``questions``) keys.
+    themes: list[ExplorerTheme]
+    without_theme: list[str]  # di_slug of published datasets with no theme
 
-    Uses full AST parsing rather than naive bracket matching so that
-    brackets in docstrings, imports, or other code before ``themes =``
-    do not cause false positives.
+
+def parse_explorer_catalog(raw_catalog: str, raw_themes: str) -> ExplorerCatalog:
+    """Parse data-explorer ``catalog/datasets.json`` + ``catalog/themes.json``.
+
+    Replaces the old AST parse of ``themes.json.py``: data-explorer moved to
+    dynamic theming (build_themes from the registry), so the Python loader
+    no longer carries a static ``themes`` list. The committed JSON artifacts
+    are the stable contract.
 
     Args:
-        raw_py: Raw content of ``src/data/themes.json.py``
+        raw_catalog: Raw JSON of catalog/datasets.json (per-dataset theme)
+        raw_themes: Raw JSON of catalog/themes.json (theme names/order)
 
     Returns:
-        List of ExplorerTheme instances
+        ExplorerCatalog instance
 
     Raises:
-        ValueError: If the ``themes`` variable cannot be found or evaluated
+        ValueError: If either JSON is invalid or malformed
     """
     try:
-        tree = ast.parse(raw_py)
-    except SyntaxError as exc:
-        raise ValueError(f"Failed to parse themes.json.py as Python: {exc}") from exc
-
-    themes_value = None
-    for node in ast.walk(tree):
-        if isinstance(node, ast.Assign):
-            for target in node.targets:
-                if isinstance(target, ast.Name) and target.id == "themes":
-                    themes_value = node.value
-                    break
-        if themes_value is not None:
-            break
-
-    if themes_value is None:
-        raise ValueError("No top-level 'themes' variable found in themes.json.py")
-
+        catalog: dict[str, Any] = json.loads(raw_catalog)
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"Invalid datasets.json: {exc}") from exc
     try:
-        data: list[dict[str, Any]] = ast.literal_eval(themes_value)
-    except (ValueError, SyntaxError) as exc:
-        raise ValueError(f"Failed to evaluate themes literal: {exc}") from exc
+        themes_cfg: dict[str, Any] = json.loads(raw_themes)
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"Invalid themes.json: {exc}") from exc
 
-    if not isinstance(data, list):
-        raise ValueError(f"Expected list literal for themes, got {type(data).__name__}")
+    datasets = catalog.get("datasets", [])
+    if not isinstance(datasets, list):
+        datasets = []
 
-    return [
+    by_theme: dict[str, list[str]] = {}
+    without_theme: list[str] = []
+    for ds in datasets:
+        if not isinstance(ds, dict):
+            continue
+        url_slug = ds.get("slug") or ds.get("di_slug") or ""
+        theme = ds.get("theme")
+        if theme:
+            by_theme.setdefault(theme, []).append(url_slug)
+        elif ds.get("stage") == "published":
+            without_theme.append(ds.get("di_slug") or ds.get("slug") or "")
+
+    temi = themes_cfg.get("temi")
+    if not isinstance(temi, list):
+        raise ValueError("themes.json: manca la chiave 'temi' (lista)")
+
+    themes = [
         ExplorerTheme(
-            slug=item.get("slug", ""),
-            name=item.get("name", ""),
-            datasets=item.get("datasets", []),
+            slug=t.get("slug", ""),
+            name=t.get("name", t.get("slug", "")),
+            datasets=by_theme.get(t.get("slug", ""), []),
         )
-        for item in data
+        for t in temi
     ]
+    return ExplorerCatalog(themes=themes, without_theme=sorted(set(without_theme)))
 
 
 def parse_radar_summary(raw: str) -> RadarSummary:
@@ -442,93 +371,6 @@ def parse_radar_summary(raw: str) -> RadarSummary:
         red=counts.get("RED", 0),
         persistent_red=data.get("persistent_red", 0),
         sources=sources,
-    )
-
-
-@dataclass
-class RepoRegistrySummary:
-    """Compact per-repo summary of a registry.json (schema v1).
-
-    Orientation data only: section counts + GCS availability + freshness.
-    The detailed dataset/mart entries stay in the upstream registry,
-    consumed via the toolkit MCP (registry_show/find/overview).
-
-    ``stage`` is intentionally NOT exposed: it is a builder default
-    (``incubating``) that only dataset-incubator ever promotes, so it does
-    not reflect actual publication. Being in the registry with a GCS
-    location is the real "published" signal.
-    """
-
-    repo: str
-    available: bool
-    source_repo: str = ""
-    updated_at: str = ""
-    datasets: int = 0
-    marts: int = 0
-    signals: int = 0
-    codelists: int = 0
-    entities: int = 0
-    gcs: int = 0
-    reason: str = ""
-
-
-def _section_count(section: Any) -> int:
-    """Count entries in a registry section.
-
-    Sections are either lists (datasets/marts/signals) or dicts wrapping a
-    dict keyed by name (codelists/codelists, entities/entities). For dicts
-    the count is the number of keys.
-    """
-    if isinstance(section, list):
-        return len(section)
-    if isinstance(section, dict):
-        for key in ("codelists", "entities", "signals"):
-            value = section.get(key)
-            if isinstance(value, list):
-                return len(value)
-            if isinstance(value, dict):
-                return len(value)
-    return 0
-
-
-def parse_registry_summary(repo: str, raw: str | None) -> RepoRegistrySummary:
-    """Build a compact registry summary from raw registry.json content.
-
-    A ``None`` raw payload means the repo has no registry.json (or the fetch
-    failed): reported as ``available=False`` with a reason, never raising.
-
-    Args:
-        repo: Repository name (under the org)
-        raw: Raw JSON content of the repo's registry.json, or None
-
-    Returns:
-        RepoRegistrySummary instance
-    """
-    if raw is None:
-        return RepoRegistrySummary(repo=repo, available=False, reason="registry_not_found")
-
-    try:
-        data: dict[str, Any] = json.loads(raw)
-    except json.JSONDecodeError as exc:
-        return RepoRegistrySummary(repo=repo, available=False, reason=f"invalid_json: {exc}")
-    datasets = data.get("datasets", [])
-    if not isinstance(datasets, list):
-        datasets = []
-    gcs_count = sum(
-        1 for d in datasets if isinstance(d, dict) and d.get("location", {}).get("type") == "gcs"
-    )
-
-    return RepoRegistrySummary(
-        repo=repo,
-        available=True,
-        source_repo=data.get("source_repo", ""),
-        updated_at=data.get("updated_at", ""),
-        datasets=len(datasets),
-        marts=_section_count(data.get("marts", [])),
-        signals=_section_count(data.get("signals", [])),
-        codelists=_section_count(data.get("codelists", [])),
-        entities=_section_count(data.get("entities", [])),
-        gcs=gcs_count,
     )
 
 

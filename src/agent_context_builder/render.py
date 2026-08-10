@@ -12,14 +12,12 @@ from .github import PR, GitHubCollector
 from .signals import (
     Analysis,
     DIRegistry,
-    ExplorerTheme,
+    ExplorerCatalog,
     RadarSummary,
-    RepoSignals,
     SourceObservatorySignals,
 )
 from .sources.dcl import DataciviclabFetcher
 from .sources.de import DataExplorerFetcher
-from .sources.di import DatasetIncubatorFetcher
 from .sources.registry import RegistryFetcher
 from .sources.so import SourceObservatoryFetcher
 from .triage import build_workspace_triage
@@ -51,7 +49,6 @@ class Renderer:
         self.discussion_collector = discussion_collector
         self.fixed_timestamp = fixed_timestamp or datetime.now().isoformat()
         self._so_fetcher = SourceObservatoryFetcher(self.github_collector)
-        self._di_fetcher = DatasetIncubatorFetcher(self.github_collector)
         self._de_fetcher = DataExplorerFetcher(self.github_collector)
         self._dcl_fetcher = DataciviclabFetcher(self.github_collector)
         self._registry_fetcher = RegistryFetcher(self.github_collector)
@@ -130,14 +127,16 @@ class Renderer:
 
         # ── REGISTRY (cross-repo) ────────────────────────────────────────
         registry_summaries = self._registry_fetcher.fetch(self.config.repos)
-        available_summaries = [reg for reg in registry_summaries.values() if reg.available]
+        available_summaries = [
+            (repo, reg) for repo, reg in registry_summaries.items() if reg is not None
+        ]
         if available_summaries:
             lines.append("## 🗂 REGISTRY")
             lines.append("")
-            for reg in available_summaries:
+            for repo, reg in available_summaries:
                 lines.append(
-                    f"  · **{reg.repo}**: {reg.datasets} ds · {reg.marts} marts · "
-                    f"{reg.signals} signals · {reg.updated_at}"
+                    f"  · **{repo}**: {len(reg.datasets)} ds · {reg.marts} marts · "
+                    f"{len(reg.signals)} signals · {reg.updated_at}"
                 )
             lines.append("")
 
@@ -168,33 +167,28 @@ class Renderer:
             lines.append("")
 
         # ── EXPLORER ──────────────────────────────────────────────────────
-        explorer_themes = self._fetch_explorer_themes()
-        if explorer_themes is not None:
+        explorer_catalog = self._fetch_explorer_catalog()
+        if explorer_catalog is not None:
             lines.append("## 🗂 EXPLORER")
             lines.append("")
 
             # Count themed datasets
             themed_slugs: set[str] = set()
-            for t in explorer_themes:
+            for t in explorer_catalog.themes:
                 themed_slugs.update(t.datasets)
 
             # Link all'explorer
             lines.append(
                 f"**Pubblicati**: {len(themed_slugs)} dataset · "
-                f"{len(explorer_themes)} temi · "
+                f"{len(explorer_catalog.themes)} temi · "
                 f"[data-explorer](https://dataciviclab.github.io/data-explorer/)"
             )
-            for t in explorer_themes:
+            for t in explorer_catalog.themes:
                 datasets_str = ", ".join(t.datasets)
                 lines.append(f"  · **{t.name}**: {datasets_str}")
 
-            # Gap analysis: published datasets without a theme
-            catalog = self._fetch_di_registry()
-            catalog_published_slugs: set[str] = set()
-            if catalog is not None:
-                for ds in catalog.published:
-                    catalog_published_slugs.add(ds.slug)
-            gap = sorted(catalog_published_slugs - themed_slugs)
+            # Gap analysis: published datasets without a theme (no page yet)
+            gap = explorer_catalog.without_theme
             if gap:
                 lines.append(f"  ⚠ {len(gap)} dataset published non ancora su explorer:")
                 for slug in gap[:5]:
@@ -304,19 +298,15 @@ class Renderer:
             self.discussion_collector,
             self.fixed_timestamp,
             so_fetcher=self._so_fetcher,
-            di_fetcher=self._di_fetcher,
             de_fetcher=self._de_fetcher,
             registry_fetcher=self._registry_fetcher,
         )
 
-    def _fetch_explorer_themes(self) -> list[ExplorerTheme] | None:
-        return self._de_fetcher.fetch_themes()
-
-    def _fetch_di_pipeline_signals(self) -> RepoSignals | None:
-        return self._di_fetcher.fetch_pipeline_signals()
+    def _fetch_explorer_catalog(self) -> ExplorerCatalog | None:
+        return self._de_fetcher.fetch_explorer_catalog()
 
     def _fetch_di_registry(self) -> DIRegistry | None:
-        return self._di_fetcher.fetch_registry()
+        return self._registry_fetcher.fetch_repo("dataset-incubator")
 
     @staticmethod
     def _format_period(period: dict[str, Any]) -> str:
@@ -415,15 +405,15 @@ class Renderer:
 
         # Explorer themes from data-explorer
         explorer_themes_list: list[dict[str, Any]] = []
-        explorer_themes = self._fetch_explorer_themes()
-        if explorer_themes is not None:
+        explorer_catalog = self._fetch_explorer_catalog()
+        if explorer_catalog is not None:
             explorer_themes_list = [
                 {
                     "slug": t.slug,
                     "name": t.name,
                     "datasets": t.datasets,
                 }
-                for t in explorer_themes
+                for t in explorer_catalog.themes
             ]
 
         # ── v3: Analyses from dataciviclab ──────────────────────────────
