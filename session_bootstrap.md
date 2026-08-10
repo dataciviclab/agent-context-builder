@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-10T13:07:50.147850
+**Generated**: 2026-08-10T18:57:34.084880
 
 ## 🔍 SCOUTING
 
@@ -41,9 +41,10 @@
 
 ## 🔗 OPEN
 
-- [dataset-incubator#812](https://github.com/dataciviclab/dataset-incubator/pull/812): chore(publish): push GCS con gsutil rsync, rimuove push_archive.py e check-gcs
 - [dataset-incubator#811](https://github.com/dataciviclab/dataset-incubator/pull/811): remove(rna): candidate spostati nel repo rna-aiuti-stato
-- [toolkit#465](https://github.com/dataciviclab/toolkit/pull/465): fix(registry): clean_catalog preserva il run storico dall'existing + rimuove check-gcs
+- [open-siope#74](https://github.com/dataciviclab/open-siope/pull/74): chore(registry): migra al comando unico toolkit registry build
+- [dcl-bologna#28](https://github.com/dataciviclab/dcl-bologna/pull/28): chore(registry): migra al comando unico toolkit registry build
+- [open-conto-annuale#7](https://github.com/dataciviclab/open-conto-annuale/pull/7): chore(registry): migra al comando unico toolkit registry build
 - **Dependabot**: 1 bump PR(s)
 **Discussions**: 152 open
   · [Domanda] PNRR Progetti — 11 domande su 280mila progetti e 150 miliardi del Piano (Italia Domani)
