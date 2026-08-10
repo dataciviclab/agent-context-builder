@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-10T07:41:45.156826
+**Generated**: 2026-08-10T12:47:26.316918
 
 ## 🔍 SCOUTING
 
@@ -9,10 +9,13 @@
   · **ispra_linked_data** YELLOW [-] — Retry timeout/connection: Timeout (ReadTimeout)
 **Catalog Drift**: no drift signals (36 sources checked)
 
-## 📥 INTAKE
+## 🗂 REGISTRY
 
-**Pipeline**: 117 candidates — 117 ok
-**Dataset Catalog**: 97 published · 97 public · updated 2026-08-05
+  · **dataset-incubator**: 114 ds · 197 marts · 117 signals · 2026-08-08
+  · **eurostat**: 26 ds · 80 marts · 28 signals · 2026-08-08
+  · **open-siope**: 9 ds · 19 marts · 9 signals · 2026-08-09
+  · **dcl-bologna**: 11 ds · 21 marts · 11 signals · 2026-08-08
+  · **open-conto-annuale**: 23 ds · 52 marts · 23 signals · 2026-08-09
 
 ## 📊 ANALYSES
 
@@ -36,28 +39,12 @@
   · **Terna capacità rinnovabile 2015-2024** · → terna_capacita_rinnovabile · [discussion #339](https://github.com/orgs/dataciviclab/discussions/339)
   · **Terna mix elettrico 2015-2024** · → terna_electricity_by_source
 
-## 🗂 EXPLORER
-
-**Pubblicati**: 31 dataset · 6 temi · [data-explorer](https://dataciviclab.github.io/data-explorer/)
-  · **Territorio e ambiente**: rifiuti-urbani, capacita-rinnovabile, produzione-elettrica-fonti, mit-incidentalita, silos-infrastrutture, ispra-emissioni-ghg
-  · **Finanza pubblica**: irpef-comunale, entrate-stato, consip-consumi-convenzione, istat-gini-regionale, opencivitas-fsc-2025, opencoesione-progetti, fts-eu-grants, mef-partecipazioni, bdap-spese-stato
-  · **Sanità**: spesa-farmaceutica, bdap-lea, strutture-asl, strutture-ricovero-asl, reparti-ricovero, posti-letto-stabilimento, farmacie
-  · **Welfare e lavoro**: dipendenti-pubblici, pensioni-inps, pensioni-pa-dag, istat-ipab-aree, mim-alunni-corso-eta, popolazione-istat, housing-crowding
-  · **Giustizia**: flussi-giustizia-civile
-  · **Terzo settore**: cinque-per-mille
-  ⚠ 96 dataset published non ancora su explorer:
-    · aci_prime_iscrizioni_autovetture
-    · ade_cinque_per_mille
-    · aifa_spesa_consumo
-    · anac_aggiudicatari
-    · anac_aggiudicazioni
-    · ... e altri 91
-  **Deploy**: ✅ success (2026-08-03)
-
 ## 🔗 OPEN
 
-- **Dependabot**: 3 bump PR(s)
-**Discussions**: 147 open
+- [dataset-incubator#811](https://github.com/dataciviclab/dataset-incubator/pull/811): remove(rna): candidate spostati nel repo rna-aiuti-stato
+- [toolkit#465](https://github.com/dataciviclab/toolkit/pull/465): fix(registry): clean_catalog preserva il run storico dall'existing + rimuove check-gcs
+- **Dependabot**: 1 bump PR(s)
+**Discussions**: 152 open
   · [Domanda] PNRR Progetti — 11 domande su 280mila progetti e 150 miliardi del Piano (Italia Domani)
   · [Domanda] PIL territoriale — 11 domande su 30 anni di economia italiana regione per regione (1995-2024)
   · [Domanda] ANAC Bandi di Gara — 11 domande sugli appalti pubblici italiani (2016-2025)
@@ -65,5 +52,5 @@
 
 ## 🛠 INFRA
 
-**Repos**: 10 attivi
+**Repos**: 12 attivi
 **Local git**: no workspace

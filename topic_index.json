@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-08-10T07:41:45.156826",
+  "generated_at": "2026-08-10T12:47:26.316918",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -41,6 +41,14 @@
     "italia-corpus": {
       "description": "La legislazione italiana a portata di ricerca \u2014 leggi, decreti e codici da Normattiva in formato aperto.",
       "url": "https://github.com/dataciviclab/italia-corpus"
+    },
+    "dcl-bologna": {
+      "description": "Bologna in dati \u2014 analisi e dataset aperti sul Comune di Bologna.",
+      "url": "https://github.com/dataciviclab/dcl-bologna"
+    },
+    "open-conto-annuale": {
+      "description": "1,8 milioni di microdati sul personale della PA italiana \u2014 chi lavora nel pubblico, dove e con quali ruoli.",
+      "url": "https://github.com/dataciviclab/open-conto-annuale"
     }
   },
   "datasets_by_source": {
@@ -1172,75 +1180,7 @@
       "next": "Vedi analisi/registry/active.md per filoni attivi"
     }
   },
-  "explorer_themes": [
-    {
-      "slug": "territorio-ambiente",
-      "name": "Territorio e ambiente",
-      "datasets": [
-        "rifiuti-urbani",
-        "capacita-rinnovabile",
-        "produzione-elettrica-fonti",
-        "mit-incidentalita",
-        "silos-infrastrutture",
-        "ispra-emissioni-ghg"
-      ]
-    },
-    {
-      "slug": "finanza-pubblica",
-      "name": "Finanza pubblica",
-      "datasets": [
-        "irpef-comunale",
-        "entrate-stato",
-        "consip-consumi-convenzione",
-        "istat-gini-regionale",
-        "opencivitas-fsc-2025",
-        "opencoesione-progetti",
-        "fts-eu-grants",
-        "mef-partecipazioni",
-        "bdap-spese-stato"
-      ]
-    },
-    {
-      "slug": "sanita",
-      "name": "Sanit\u00e0",
-      "datasets": [
-        "spesa-farmaceutica",
-        "bdap-lea",
-        "strutture-asl",
-        "strutture-ricovero-asl",
-        "reparti-ricovero",
-        "posti-letto-stabilimento",
-        "farmacie"
-      ]
-    },
-    {
-      "slug": "welfare-lavoro",
-      "name": "Welfare e lavoro",
-      "datasets": [
-        "dipendenti-pubblici",
-        "pensioni-inps",
-        "pensioni-pa-dag",
-        "istat-ipab-aree",
-        "mim-alunni-corso-eta",
-        "popolazione-istat",
-        "housing-crowding"
-      ]
-    },
-    {
-      "slug": "giustizia",
-      "name": "Giustizia",
-      "datasets": [
-        "flussi-giustizia-civile"
-      ]
-    },
-    {
-      "slug": "terzo-settore",
-      "name": "Terzo settore",
-      "datasets": [
-        "cinque-per-mille"
-      ]
-    }
-  ],
+  "explorer_themes": [],
   "analyses": [
     {
       "slug": "aifa-spesa-consumo",
