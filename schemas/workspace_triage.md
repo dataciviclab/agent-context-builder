@@ -39,7 +39,6 @@ Contiene stato incrociato di PR, issue, discussion, git e segnali operativi.
   "radar": { "generated_at": "...", "green": 20, "yellow": 2, "red": 0, "unhealthy": [] },
   "source_health": { "captured_at": "...", "alerts": [] },
   "pipeline_state": { "generated_at": "...", "actionable": [] },
-  "dataset_catalog": { "schema_version": "1", "updated_at": "...", "summary": {"total": 114, "published": 97}, "datasets": [] },
   "registry_summary": [
     {
       "repo": "dataset-incubator",
@@ -78,8 +77,7 @@ Contiene stato incrociato di PR, issue, discussion, git e segnali operativi.
 | `warnings` | array | Warning testuali su branch dirty/ahead |
 | `radar` | object \| null | Health fonti da `radar_summary.json` |
 | `source_health` | object \| null | Segnali drift/inventory da `catalog_signals.json` |
-| `pipeline_state` | object \| null | Stato candidati da `pipeline_signals.json` |
-| `dataset_catalog` | object \| null | Dataset da `registry.json` di dataset-incubator (senza colonne dettagliate) |
+| `pipeline_state` | object \| null | Stato candidati dai signals del registry DI |
 | `registry_summary` | array | Orientamento per-repo dei registry.json dei repo configurati |
 
 ## `git_state[repo]`
@@ -119,5 +117,5 @@ con `available: false` e NON sporca `warnings`/`github_fetch_errors`
 ## Valori null
 
 I campi `open_prs`, `open_issues`, `open_discussions` sono `null` in caso di errore fetch.
-Le sezioni `radar`, `source_health`, `pipeline_state`, `dataset_catalog`
-sono `null` se l'artifact upstream non è disponibile o non è stato ancora prodotto.
+Le sezioni `radar`, `source_health`, `pipeline_state` sono `null` se
+l'artifact upstream non è disponibile o non è stato ancora prodotto.
