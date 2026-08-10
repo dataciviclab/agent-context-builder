@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-10T12:47:26.316918
+**Generated**: 2026-08-10T13:07:50.147850
 
 ## 🔍 SCOUTING
 
@@ -41,6 +41,7 @@
 
 ## 🔗 OPEN
 
+- [dataset-incubator#812](https://github.com/dataciviclab/dataset-incubator/pull/812): chore(publish): push GCS con gsutil rsync, rimuove push_archive.py e check-gcs
 - [dataset-incubator#811](https://github.com/dataciviclab/dataset-incubator/pull/811): remove(rna): candidate spostati nel repo rna-aiuti-stato
 - [toolkit#465](https://github.com/dataciviclab/toolkit/pull/465): fix(registry): clean_catalog preserva il run storico dall'existing + rimuove check-gcs
 - **Dependabot**: 1 bump PR(s)
