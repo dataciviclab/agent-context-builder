@@ -108,6 +108,7 @@ def test_alerts_alias_matches_drift_alerts():
     assert so.alerts == so.drift_alerts
 
 
+@pytest.mark.pure_unit
 def test_candidates_property():
     """candidates returns datasets with stage != published."""
     raw = json.dumps(
@@ -318,6 +319,7 @@ def test_parse_di_registry_non_list_datasets():
 # ── parse_explorer_catalog ─────────────────────────────────────────────────
 
 
+@pytest.mark.pure_unit
 def test_parse_explorer_catalog_themes():
     """Themes are derived from datasets.json (per-dataset theme) + themes.json."""
     catalog = parse_explorer_catalog(sample_explorer_datasets_json(), sample_explorer_themes_json())
@@ -330,6 +332,7 @@ def test_parse_explorer_catalog_themes():
     assert territorio.datasets == ["rifiuti-urbani"]
 
 
+@pytest.mark.pure_unit
 def test_parse_explorer_catalog_without_theme():
     """Published datasets without a theme are reported in without_theme."""
     catalog = parse_explorer_catalog(sample_explorer_datasets_json(), sample_explorer_themes_json())
@@ -337,6 +340,7 @@ def test_parse_explorer_catalog_without_theme():
     assert catalog.without_theme == ["nuovo_dataset"]
 
 
+@pytest.mark.pure_unit
 def test_parse_explorer_catalog_invalid_json():
     """Malformed datasets.json raises ValueError."""
     import pytest
@@ -345,6 +349,7 @@ def test_parse_explorer_catalog_invalid_json():
         parse_explorer_catalog("not json{", "{}")
 
 
+@pytest.mark.pure_unit
 def test_parse_explorer_catalog_missing_temi():
     """themes.json without a temi list raises ValueError."""
     import pytest
