@@ -15,8 +15,10 @@ from tests.conftest import (
     _UNAVAILABLE,
     make_git_mock,
     make_github_mock,
-    sample_di_clean_catalog_json,
-    sample_di_json,
+    sample_di_registry_json,
+    sample_explorer_datasets_json,
+    sample_explorer_themes_json,
+    sample_second_registry_json,
     sample_so_json,
 )
 
@@ -58,19 +60,17 @@ def test_render_session_bootstrap():
     assert "Session Bootstrap" in bootstrap
     assert "## 🛠 INFRA" in bootstrap
     assert "6 attivi" not in bootstrap
-    assert len(bootstrap.split("\n")) > 10
+    assert len(bootstrap.split("\n")) > 5
 
 
 def test_render_session_bootstrap_github_error():
-    """Bootstrap shows warning when GitHub fetch fails."""
+    """Bootstrap shows the degradation warning on top when GitHub fetch fails."""
     gh = make_github_mock(fetch_errors={"repo1:prs": "403 rate limit exceeded"})
     bootstrap = _r(
         _cfg(root=Path("/tmp/test")), gh=gh, git_state={"repo1": _UNAVAILABLE}
     ).render_session_bootstrap()
 
-    assert "## 📥 INTAKE" in bootstrap
-    assert "Pipeline" in bootstrap
-    assert "unavailable" in bootstrap
+    assert "> ⚠️ GitHub rate-limit or auth error" in bootstrap
 
 
 def test_render_session_bootstrap_groups_dependabot_prs():
@@ -238,12 +238,11 @@ def test_render_bootstrap_catalog_drift_all_stable():
 
 
 def test_render_bootstrap_catalog_drift_unavailable():
-    """Bootstrap shows unavailable when catalog signals fetch fails."""
+    """Bootstrap degrades silently (no SCOUTING section) when signals are missing."""
     bootstrap = _r(_cfg(), gh=make_github_mock(raw_file=None)).render_session_bootstrap()
 
-    assert "## 📥 INTAKE" in bootstrap
-    assert "Pipeline" in bootstrap
-    assert "unavailable" in bootstrap
+    assert "Session Bootstrap" in bootstrap
+    assert "## 🛠 INFRA" in bootstrap
 
 
 # ── Source health ─────────────────────────────────────────────────────────
@@ -277,10 +276,12 @@ def test_render_signals_cached_across_bootstrap_and_triage():
     def _raw_file_side_effect(repo, path, ref="main"):
         if path == "data/catalog/catalog_signals.json":
             return sample_so_json(drift=False)
-        if path == "registry/pipeline_signals.json":
-            return sample_di_json()
-        if path == "registry/clean_catalog.json":
-            return sample_di_clean_catalog_json()
+        if path == "registry/registry.json":
+            return sample_di_registry_json()
+        if path == "catalog/datasets.json":
+            return sample_explorer_datasets_json()
+        if path == "catalog/themes.json":
+            return sample_explorer_themes_json()
         return None
 
     gh.get_raw_file.side_effect = _raw_file_side_effect
@@ -289,17 +290,18 @@ def test_render_signals_cached_across_bootstrap_and_triage():
     renderer.render_session_bootstrap()
     renderer.render_workspace_triage()
 
-    # 6 files fetched: radar_summary + catalog_signals + pipeline_signals
-    # + clean_catalog + themes.json.py = 5 via get_raw_file
-    # + 1 directory listing call via list_directory (analisi/)
-    assert gh.get_raw_file.call_count == 5
+    # 6 files fetched via get_raw_file: radar_summary + catalog_signals +
+    # registry.json (cross-repo, repo1 bootstrap) + registry.json
+    # (dataset-incubator, triage pipeline_state) + datasets.json +
+    # themes.json + 1 directory listing call via list_directory (analisi/)
+    assert gh.get_raw_file.call_count == 6
     assert gh.list_directory.call_count == 1
     paths_fetched = [call.args[1] for call in gh.get_raw_file.call_args_list]
     assert "data/radar/radar_summary.json" in paths_fetched
     assert "data/catalog/catalog_signals.json" in paths_fetched
-    assert "registry/pipeline_signals.json" in paths_fetched
-    assert "registry/clean_catalog.json" in paths_fetched
-    assert "src/data/themes.json.py" in paths_fetched
+    assert "registry/registry.json" in paths_fetched
+    assert "catalog/datasets.json" in paths_fetched
+    assert "catalog/themes.json" in paths_fetched
 
 
 # ── Topic index ───────────────────────────────────────────────────────────
@@ -332,8 +334,8 @@ def test_render_topic_index():
     )
 
     def _raw_file_side_effect(repo, path, ref="main"):
-        if path == "registry/clean_catalog.json":
-            return sample_di_clean_catalog_json()
+        if path == "registry/registry.json":
+            return sample_di_registry_json()
         return None
 
     gh.get_raw_file.side_effect = _raw_file_side_effect
@@ -350,52 +352,90 @@ def test_render_topic_index():
     assert result["operational_topics"]["toolkit"]["summary"] == "Pipeline engine"
 
 
-# ── Clean catalog ─────────────────────────────────────────────────────────
+# ── Registry summary (cross-repo) ──────────────────────────────────────────
 
 
-def test_render_bootstrap_dataset_catalog_section():
-    """Bootstrap includes clean dataset catalog summary when available."""
+@pytest.mark.contract
+def test_render_triage_registry_summary_cross_repo():
+    """Triage registry_summary aggregates per-repo registry orientation."""
     gh = make_github_mock()
 
     def _raw_file_side_effect(repo, path, ref="main"):
-        if path == "registry/clean_catalog.json":
-            return sample_di_clean_catalog_json()
+        if path == "registry/registry.json":
+            if repo == "repo1":
+                return sample_di_registry_json()
+            if repo == "repo2":
+                return sample_second_registry_json()
         return None
 
     gh.get_raw_file.side_effect = _raw_file_side_effect
-    bootstrap = _r(_cfg(), gh=gh).render_session_bootstrap()
+    triage = _r(_cfg(repos=["repo1", "repo2"]), gh=gh).render_workspace_triage()
 
-    assert "Dataset Catalog" in bootstrap
-    assert "**Dataset Catalog**: 1 published · 1 public · updated" in bootstrap
+    summary = triage["registry_summary"]
+    assert len(summary) == 2
+
+    repo1 = next(s for s in summary if s["repo"] == "repo1")
+    assert repo1["available"] is True
+    assert repo1["datasets"] == 2
+    assert repo1["updated_at"] == "2026-04-14"
+
+    repo2 = next(s for s in summary if s["repo"] == "repo2")
+    assert repo2["available"] is True
+    assert repo2["datasets"] == 1
+    assert repo2["marts"] == 1
+    assert repo2["signals"] == 1
+    assert repo2["codelists"] == 1
+    assert repo2["entities"] == 1
+    assert repo2["gcs"] == 1
 
 
-def test_render_triage_dataset_catalog_available():
-    """Triage includes machine-readable clean catalog entries."""
+@pytest.mark.policy
+def test_render_triage_registry_summary_missing_registry_is_quiet():
+    """A repo without registry.json is available=False without polluting warnings."""
     gh = make_github_mock()
 
     def _raw_file_side_effect(repo, path, ref="main"):
-        if path == "registry/clean_catalog.json":
-            return sample_di_clean_catalog_json()
+        if path == "registry/registry.json":
+            if repo == "repo1":
+                return sample_di_registry_json()
         return None
 
     gh.get_raw_file.side_effect = _raw_file_side_effect
-    catalog = _r(_cfg(), gh=gh).render_workspace_triage()["dataset_catalog"]
+    triage = _r(_cfg(repos=["repo1", "repo2"]), gh=gh).render_workspace_triage()
 
-    assert catalog["available"] is True
-    assert catalog["updated_at"] == "2026-04-14"
-    assert catalog["summary"] == {"total": 2, "published": 1}
-    assert catalog["datasets"][0]["slug"] == "irpef_comunale"
-    assert catalog["datasets"][0]["metric_columns"] == 1
-    assert catalog["datasets"][0]["dimension_columns"] == 2
+    summary = triage["registry_summary"]
+    missing = next(s for s in summary if s["repo"] == "repo2")
+    assert missing["available"] is False
+    assert missing["reason"] == "registry_not_found"
+
+    # The 404 is not a triage warning and not in fetch_errors
+    assert triage["warnings"] == []
+    assert triage["github_fetch_errors"] == {}
 
 
-def test_render_triage_dataset_catalog_unavailable():
-    """Triage marks dataset catalog unavailable when clean_catalog fetch fails."""
-    catalog = _r(_cfg(), gh=make_github_mock(raw_file=None)).render_workspace_triage()[
-        "dataset_catalog"
-    ]
+@pytest.mark.contract
+def test_render_bootstrap_registry_section():
+    """Bootstrap includes a REGISTRY block with per-repo counts."""
+    gh = make_github_mock()
 
-    assert catalog["available"] is False
+    def _raw_file_side_effect(repo, path, ref="main"):
+        if path == "registry/registry.json":
+            return sample_di_registry_json()
+        return None
+
+    gh.get_raw_file.side_effect = _raw_file_side_effect
+    bootstrap = _r(_cfg(repos=["repo1"]), gh=gh).render_session_bootstrap()
+
+    assert "## 🗂 REGISTRY" in bootstrap
+    assert "**repo1**: 2 ds · 0 marts · 2 signals ·" in bootstrap
+
+
+def test_render_bootstrap_registry_section_hidden_when_unavailable():
+    """Bootstrap omits the REGISTRY block when no repo has a registry."""
+    gh = make_github_mock(raw_file=None)
+    bootstrap = _r(_cfg(repos=["repo1"]), gh=gh).render_session_bootstrap()
+
+    assert "## 🗂 REGISTRY" not in bootstrap
 
 
 # ── Topic index v3: analyses ───────────────────────────────────────────────
@@ -440,8 +480,8 @@ def test_render_topic_index_v3_with_analyses():
     gh.list_directory.return_value = ["irpef-comunale", "aifa-spesa-consumo"]
 
     def _raw_file_side_effect(repo, path, ref="main"):
-        if path == "registry/clean_catalog.json":
-            return sample_di_clean_catalog_json()
+        if path == "registry/registry.json":
+            return sample_di_registry_json()
         if repo == "dataciviclab" and path.startswith("analisi/") and path.endswith("/README.md"):
             slug = path.split("/")[1]
             disc = 88 if slug == "irpef-comunale" else None
@@ -481,11 +521,11 @@ def test_render_topic_index_v3_with_analyses():
 def test_render_topic_index_v2_when_no_analyses():
     """Topic index stays v2 when dataciviclab data is unavailable."""
     config = _cfg(repos=["repo1"])
-    gh = make_github_mock(raw_file=sample_di_clean_catalog_json())
+    gh = make_github_mock(raw_file=sample_di_registry_json())
 
     def _raw_file_side_effect(repo, path, ref="main"):
-        if path == "registry/clean_catalog.json":
-            return sample_di_clean_catalog_json()
+        if path == "registry/registry.json":
+            return sample_di_registry_json()
         return None
 
     gh.get_raw_file.side_effect = _raw_file_side_effect

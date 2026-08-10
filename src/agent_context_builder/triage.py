@@ -8,8 +8,9 @@ from .config import Config
 from .discussions import Discussion, DiscussionCollector
 from .git_local import GitLocalCollector, GitState
 from .github import PR, GitHubCollector
+from .signals import DIRegistry
 from .sources.de import DataExplorerFetcher
-from .sources.di import DatasetIncubatorFetcher
+from .sources.registry import RegistryFetcher
 from .sources.so import SourceObservatoryFetcher
 
 
@@ -20,8 +21,8 @@ def build_workspace_triage(
     discussion_collector: DiscussionCollector | None,
     fixed_timestamp: str,
     so_fetcher: SourceObservatoryFetcher | None = None,
-    di_fetcher: DatasetIncubatorFetcher | None = None,
     de_fetcher: DataExplorerFetcher | None = None,
+    registry_fetcher: RegistryFetcher | None = None,
 ) -> dict[str, Any]:
     """Build the workspace_triage.json payload."""
     prs = github_collector.get_prs(config.repos)
@@ -35,8 +36,8 @@ def build_workspace_triage(
         disc_errors = discussion_collector.fetch_errors
 
     so_fetcher = so_fetcher or SourceObservatoryFetcher(github_collector)
-    di_fetcher = di_fetcher or DatasetIncubatorFetcher(github_collector)
     de_fetcher = de_fetcher or DataExplorerFetcher(github_collector)
+    registry_fetcher = registry_fetcher or RegistryFetcher(github_collector)
 
     return {
         "generated_at": fixed_timestamp,
@@ -55,9 +56,9 @@ def build_workspace_triage(
         "warnings": _collect_warnings(github_collector, prs, repos_state),
         "radar": _build_radar_dict(so_fetcher),
         "source_health": _build_source_health_dict(so_fetcher, github_collector),
-        "pipeline_state": _build_pipeline_state_dict(di_fetcher, github_collector),
-        "dataset_catalog": _build_dataset_catalog_dict(di_fetcher, github_collector),
-        "explorer": _build_explorer_dict(de_fetcher, di_fetcher),
+        "pipeline_state": _build_pipeline_state_dict(registry_fetcher, github_collector),
+        "registry_summary": _build_registry_summary_dict(registry_fetcher, config.repos),
+        "explorer": _build_explorer_dict(de_fetcher),
     }
 
 
@@ -159,95 +160,105 @@ def _build_source_health_dict(
 
 
 def _build_pipeline_state_dict(
-    fetcher: DatasetIncubatorFetcher,
+    fetcher: RegistryFetcher,
     github_collector: GitHubCollector,
 ) -> dict[str, Any]:
-    di = fetcher.fetch_pipeline_signals()
-    if di is None:
+    """Build pipeline_state from the dataset-incubator registry signals.
+
+    The registry.json embeds the same signals that the legacy
+    pipeline_signals.json projection exposed (id/status/detail/action).
+    """
+    registry = fetcher.fetch_repo("dataset-incubator")
+    if registry is None:
         return {
             "available": False,
-            "errors": {
-                k: v for k, v in github_collector.fetch_errors.items() if "dataset-incubator" in k
-            },
+            "errors": {k: v for k, v in github_collector.fetch_errors.items() if "registry" in k},
         }
+    signals = registry.signals
+    by_status: dict[str, int] = {}
+    for s in signals:
+        status = s.get("status", "unknown")
+        by_status[status] = by_status.get(status, 0) + 1
+    actionable = [
+        {
+            "id": s.get("id", ""),
+            "status": s.get("status", ""),
+            "detail": s.get("detail", ""),
+            "action": s.get("action", ""),
+        }
+        for s in signals
+        if s.get("status") in ("warn", "error")
+    ]
     return {
         "available": True,
-        "generated_at": di.generated_at,
-        "summary": di.summary,
-        "actionable": [
-            {"id": s.id, "status": s.status, "detail": s.detail, "action": s.action}
-            for s in di.actionable
-        ],
+        "generated_at": registry.updated_at,
+        "summary": {"total": len(signals), "by_status": by_status},
+        "actionable": actionable,
     }
 
 
-def _build_dataset_catalog_dict(
-    fetcher: DatasetIncubatorFetcher,
-    github_collector: GitHubCollector,
-) -> dict[str, Any]:
-    catalog = fetcher.fetch_clean_catalog()
-    if catalog is None:
+def _build_registry_summary_dict(
+    fetcher: RegistryFetcher,
+    repos: list[str],
+) -> list[dict[str, Any]]:
+    """Build the registry_summary block — per-repo registry orientation.
+
+    Cross-repo view over every configured repo's registry.json: section
+    counts, GCS availability and freshness. Repos without a registry (not
+    yet migrated) are reported as available=False.
+    """
+    registries = fetcher.fetch(repos)
+    return [_registry_summary_item(repo, reg) for repo, reg in registries.items()]
+
+
+def _registry_summary_item(repo: str, registry: DIRegistry | None) -> dict[str, Any]:
+    """Serialize a single repo registry into the compact summary entry."""
+    if registry is None:
         return {
+            "repo": repo,
             "available": False,
-            "errors": {
-                k: v for k, v in github_collector.fetch_errors.items() if "clean_catalog" in k
-            },
+            "source_repo": "",
+            "updated_at": "",
+            "datasets": 0,
+            "marts": 0,
+            "signals": 0,
+            "codelists": 0,
+            "entities": 0,
+            "gcs": 0,
+            "reason": "registry_not_found",
         }
     return {
+        "repo": repo,
         "available": True,
-        "schema_version": catalog.schema_version,
-        "name": catalog.name,
-        "updated_at": catalog.updated_at,
-        "summary": {
-            "total": len(catalog.datasets),
-            "published": len(catalog.clean_ready),
-        },
-        "datasets": [
-            {
-                "slug": d.slug,
-                "name": d.name,
-                "stage": d.stage,
-                "period": d.period,
-                "location": d.location,
-                "metric_columns": d.metric_columns,
-                "dimension_columns": d.dimension_columns,
-                "column_count": d.column_count,
-                "columns": [{"name": c.name, "role": c.role} for c in d.columns]
-                if d.stage == "published"
-                else [],
-            }
-            for d in catalog.datasets
-        ],
+        "source_repo": registry.name,
+        "updated_at": registry.updated_at,
+        "datasets": len(registry.datasets),
+        "marts": registry.marts,
+        "signals": len(registry.signals),
+        "codelists": registry.codelists,
+        "entities": registry.entities,
+        "gcs": registry.gcs,
+        "reason": "",
     }
 
 
 def _build_explorer_dict(
     de_fetcher: DataExplorerFetcher,
-    di_fetcher: DatasetIncubatorFetcher,
 ) -> dict[str, Any]:
     """Build explorer state block for workspace_triage.json.
 
-    Cross-references data-explorer themes.json with DI clean_catalog.json
-    to surface gap analysis (clean_ready datasets not yet on explorer).
+    Uses the committed data-explorer editorial catalog (datasets.json +
+    themes.json): themes with dataset counts, themed dataset count, and the
+    gap — published datasets with no theme (not exposed on explorer yet).
     Includes last deploy status from GitHub Actions API.
     """
-    themes = de_fetcher.fetch_themes()
-    if themes is None:
+    catalog = de_fetcher.fetch_explorer_catalog()
+    if catalog is None:
         return {"available": False}
 
-    # Collect all dataset slugs referenced in themes
     themed_slugs: set[str] = set()
-    for theme in themes:
+    for theme in catalog.themes:
         themed_slugs.update(theme.datasets)
-
-    # Gap analysis: clean_ready datasets not in any theme
-    catalog = di_fetcher.fetch_clean_catalog()
-    clean_ready_slugs: set[str] = set()
-    if catalog is not None:
-        for ds in catalog.clean_ready:
-            clean_ready_slugs.add(ds.slug)
-
-    clean_ready_not_published = sorted(clean_ready_slugs - themed_slugs)
 
     # Deploy status (operativo — GitHub Actions API)
     deploy: dict[str, Any] | None = None
@@ -265,10 +276,11 @@ def _build_explorer_dict(
     return {
         "available": True,
         "themes": [
-            {"slug": t.slug, "name": t.name, "dataset_count": len(t.datasets)} for t in themes
+            {"slug": t.slug, "name": t.name, "dataset_count": len(t.datasets)}
+            for t in catalog.themes
         ],
         "published_count": len(themed_slugs),
-        "clean_ready_not_published": clean_ready_not_published,
+        "clean_ready_not_published": catalog.without_theme,
         "last_deploy": deploy,
     }
 
