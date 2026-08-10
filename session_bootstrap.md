@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-09T18:40:49.866174
+**Generated**: 2026-08-10T01:48:31.523528
 
 ## 🔍 SCOUTING
 
@@ -55,7 +55,6 @@
 
 ## 🔗 OPEN
 
-- [dataset-incubator#808](https://github.com/dataciviclab/dataset-incubator/pull/808): chore(clean-query): rimuove MCP clean-query — coperto dal toolkit (find/overview/query/graph)
 - **Dependabot**: 3 bump PR(s)
 **Discussions**: 147 open
   · [Domanda] PNRR Progetti — 11 domande su 280mila progetti e 150 miliardi del Piano (Italia Domani)
