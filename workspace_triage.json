@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T01:48:31.523528",
+  "generated_at": "2026-08-10T07:41:45.156826",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -1905,10 +1905,10 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "probe_date": "2026-08-09",
+    "probe_date": "2026-08-10",
     "sources_total": 36,
-    "green": 35,
-    "yellow": 1,
+    "green": 34,
+    "yellow": 2,
     "red": 0,
     "persistent_red": 0,
     "unhealthy": [
@@ -1918,6 +1918,14 @@
         "protocol": "sparql",
         "http_code": "-",
         "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
+        "red_streak": 0
+      },
+      {
+        "id": "ispra_linked_data",
+        "status": "YELLOW",
+        "protocol": "sparql",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       }
     ]
