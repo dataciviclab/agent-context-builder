@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-11T01:44:59.422279",
+  "generated_at": "2026-08-11T07:07:55.017281",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -1998,13 +1998,21 @@
   ],
   "radar": {
     "available": true,
-    "probe_date": "2026-08-10",
+    "probe_date": "2026-08-11",
     "sources_total": 36,
-    "green": 34,
-    "yellow": 2,
-    "red": 0,
+    "green": 33,
+    "yellow": 1,
+    "red": 2,
     "persistent_red": 0,
     "unhealthy": [
+      {
+        "id": "dati_camera",
+        "status": "RED",
+        "protocol": "sparql",
+        "http_code": "503",
+        "note": null,
+        "red_streak": 0
+      },
       {
         "id": "dati_cultura",
         "status": "YELLOW",
@@ -2015,10 +2023,10 @@
       },
       {
         "id": "ispra_linked_data",
-        "status": "YELLOW",
+        "status": "RED",
         "protocol": "sparql",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "503",
+        "note": null,
         "red_streak": 0
       }
     ]
