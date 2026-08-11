@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-10T18:57:34.084880
+**Generated**: 2026-08-11T01:44:59.422279
 
 ## 🔍 SCOUTING
 
@@ -11,7 +11,7 @@
 
 ## 🗂 REGISTRY
 
-  · **dataset-incubator**: 114 ds · 197 marts · 117 signals · 2026-08-08
+  · **dataset-incubator**: 114 ds · 197 marts · 117 signals · 2026-08-10
   · **eurostat**: 26 ds · 80 marts · 28 signals · 2026-08-08
   · **open-siope**: 9 ds · 19 marts · 9 signals · 2026-08-09
   · **dcl-bologna**: 11 ds · 21 marts · 11 signals · 2026-08-08
@@ -42,10 +42,7 @@
 ## 🔗 OPEN
 
 - [dataset-incubator#811](https://github.com/dataciviclab/dataset-incubator/pull/811): remove(rna): candidate spostati nel repo rna-aiuti-stato
-- [open-siope#74](https://github.com/dataciviclab/open-siope/pull/74): chore(registry): migra al comando unico toolkit registry build
-- [dcl-bologna#28](https://github.com/dataciviclab/dcl-bologna/pull/28): chore(registry): migra al comando unico toolkit registry build
-- [open-conto-annuale#7](https://github.com/dataciviclab/open-conto-annuale/pull/7): chore(registry): migra al comando unico toolkit registry build
-- **Dependabot**: 1 bump PR(s)
+- **Dependabot**: 3 bump PR(s)
 **Discussions**: 152 open
   · [Domanda] PNRR Progetti — 11 domande su 280mila progetti e 150 miliardi del Piano (Italia Domani)
   · [Domanda] PIL territoriale — 11 domande su 30 anni di economia italiana regione per regione (1995-2024)
