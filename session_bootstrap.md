@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-11T13:05:12.749809
+**Generated**: 2026-08-11T19:02:13.990519
 
 ## 🔍 SCOUTING
 
@@ -43,7 +43,7 @@
 ## 🔗 OPEN
 
 - [dataset-incubator#811](https://github.com/dataciviclab/dataset-incubator/pull/811): remove(rna): candidate spostati nel repo rna-aiuti-stato
-- [dcl-bologna#30](https://github.com/dataciviclab/dcl-bologna/pull/30): feat: analisi 09 — fuori dalla cerchia, trend spire 2022-2025
+- [dcl-bologna#35](https://github.com/dataciviclab/dcl-bologna/pull/35): feat: indici-fragilita — candidate dataset (issue #31)
 - **Dependabot**: 3 bump PR(s)
 **Discussions**: 153 open
   · [Domanda] PNRR Progetti — 11 domande su 280mila progetti e 150 miliardi del Piano (Italia Domani)
