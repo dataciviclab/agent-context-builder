@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T13:09:28.251291",
+  "generated_at": "2026-08-12T19:02:02.262554",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -42,16 +42,10 @@
       "url": "https://github.com/dataciviclab/lab-connectors/pull/74"
     },
     {
-      "number": 40,
-      "title": "chore(post-merge): aggiorna registry (35)",
+      "number": 45,
+      "title": "feat: candidate esercizi-somministrazione + analisi 12 \u2014 il tessuto commerciale",
       "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/pull/40"
-    },
-    {
-      "number": 39,
-      "title": "feat: candidate reddito-mediano + analisi 11 \u2014 il reddito per area",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/pull/39"
+      "url": "https://github.com/dataciviclab/dcl-bologna/pull/45"
     }
   ],
   "open_issues": null,
@@ -501,6 +495,12 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/357"
     },
     {
+      "number": 471,
+      "title": "registry: derive codelists section from support: ids (not codelists/*.csv glob) \u2014 unblocks eurostat CSV removal",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/471"
+    },
+    {
       "number": 449,
       "title": "fix: paginazione SPARQL fa break silenzioso su DownloadError \u2014 perdita dati su endpoint instabile",
       "repo": "toolkit",
@@ -813,12 +813,6 @@
       "url": "https://github.com/dataciviclab/dcl-bologna/issues/33"
     },
     {
-      "number": 32,
-      "title": "\ud83d\udce5 Dataset: Reddito mediano per area statistica",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/issues/32"
-    },
-    {
       "number": 8,
       "title": "\ud83d\udd17 Cross ANAC sistematico",
       "repo": "dcl-bologna",
@@ -837,7 +831,7 @@
       "url": "https://github.com/dataciviclab/dcl-bologna/issues/5"
     }
   ],
-  "open_discussions": null,
+  "open_discussions": 156,
   "discussions": [
     {
       "number": 413,
@@ -1869,10 +1863,10 @@
       "category": "Idee"
     },
     {
-      "number": 38,
-      "title": "\ud83d\udcb0 Il reddito a Bologna per area: la collina contro la periferia (2,3:1) \u2014 e Roveri che cambia volto",
+      "number": 44,
+      "title": "\ud83c\udf5d Il tessuto commerciale di Bologna: 1 bar su 24 sopravvive agli anni '90 \u2014 non desertificazione, ma ricambio",
       "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/38",
+      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/44",
       "category": "Idee analisi"
     },
     {
@@ -1880,6 +1874,13 @@
       "title": "\ud83d\udeb6 Bologna a piedi: il 2024 anno record, il weekend batte il feriale \u2014 e Piazza Maggiore domina",
       "repo": "dcl-bologna",
       "url": "https://github.com/dataciviclab/dcl-bologna/discussions/36",
+      "category": "Idee analisi"
+    },
+    {
+      "number": 38,
+      "title": "\ud83d\udcb0 Il reddito a Bologna per area: la collina contro la periferia (2,3:1) \u2014 e Roveri che cambia volto",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/38",
       "category": "Idee analisi"
     },
     {
@@ -1926,8 +1927,7 @@
     }
   ],
   "github_fetch_errors": {
-    "data-explorer:catalog/datasets.json": "https://raw.githubusercontent.com/dataciviclab/data-explorer/main/catalog/datasets.json: HTTP 404",
-    "lab-connectors:discussions": "HTTPSConnectionPool(host='api.github.com', port=443): Read timed out. (read timeout=10)"
+    "data-explorer:catalog/datasets.json": "https://raw.githubusercontent.com/dataciviclab/data-explorer/main/catalog/datasets.json: HTTP 404"
   },
   "git_state": {
     "agent-context-builder": {
@@ -2028,8 +2028,7 @@
     }
   },
   "warnings": [
-    "GitHub fetch failed \u2014 data-explorer:catalog/datasets.json: https://raw.githubusercontent.com/dataciviclab/data-explorer/main/catalog/datasets.json: HTTP 404",
-    "Many open PRs: 6"
+    "GitHub fetch failed \u2014 data-explorer:catalog/datasets.json: https://raw.githubusercontent.com/dataciviclab/data-explorer/main/catalog/datasets.json: HTTP 404"
   ],
   "radar": {
     "available": true,
@@ -2067,7 +2066,7 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-08-10",
+    "generated_at": "2026-08-12",
     "summary": {
       "total": 117,
       "by_status": {
@@ -2094,7 +2093,7 @@
       "repo": "dataset-incubator",
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
-      "updated_at": "2026-08-10",
+      "updated_at": "2026-08-12",
       "datasets": 114,
       "marts": 197,
       "signals": 117,
@@ -2172,20 +2171,20 @@
       "repo": "eurostat",
       "available": true,
       "source_repo": "dataciviclab/eurostat",
-      "updated_at": "2026-08-08",
-      "datasets": 26,
-      "marts": 80,
+      "updated_at": "2026-08-12",
+      "datasets": 28,
+      "marts": 84,
       "signals": 28,
-      "codelists": 13,
+      "codelists": 16,
       "entities": 3,
-      "gcs": 26,
+      "gcs": 28,
       "reason": ""
     },
     {
       "repo": "open-siope",
       "available": true,
       "source_repo": "dataciviclab/open-siope",
-      "updated_at": "2026-08-09",
+      "updated_at": "2026-08-12",
       "datasets": 9,
       "marts": 19,
       "signals": 9,
@@ -2211,20 +2210,20 @@
       "repo": "dcl-bologna",
       "available": true,
       "source_repo": "dataciviclab/dcl-bologna",
-      "updated_at": "2026-08-08",
-      "datasets": 11,
-      "marts": 21,
-      "signals": 11,
+      "updated_at": "2026-08-12",
+      "datasets": 14,
+      "marts": 27,
+      "signals": 14,
       "codelists": 0,
       "entities": 2,
-      "gcs": 11,
+      "gcs": 14,
       "reason": ""
     },
     {
       "repo": "open-conto-annuale",
       "available": true,
       "source_repo": "dataciviclab/open-conto-annuale",
-      "updated_at": "2026-08-09",
+      "updated_at": "2026-08-12",
       "datasets": 23,
       "marts": 52,
       "signals": 23,

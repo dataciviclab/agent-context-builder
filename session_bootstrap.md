@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-12T13:09:28.251291
+**Generated**: 2026-08-12T19:02:02.262554
 
 ## 🔍 SCOUTING
 
@@ -12,11 +12,11 @@
 
 ## 🗂 REGISTRY
 
-  · **dataset-incubator**: 114 ds · 197 marts · 117 signals · 2026-08-10
-  · **eurostat**: 26 ds · 80 marts · 28 signals · 2026-08-08
-  · **open-siope**: 9 ds · 19 marts · 9 signals · 2026-08-09
-  · **dcl-bologna**: 11 ds · 21 marts · 11 signals · 2026-08-08
-  · **open-conto-annuale**: 23 ds · 52 marts · 23 signals · 2026-08-09
+  · **dataset-incubator**: 114 ds · 197 marts · 117 signals · 2026-08-12
+  · **eurostat**: 28 ds · 84 marts · 28 signals · 2026-08-12
+  · **open-siope**: 9 ds · 19 marts · 9 signals · 2026-08-12
+  · **dcl-bologna**: 14 ds · 27 marts · 14 signals · 2026-08-12
+  · **open-conto-annuale**: 23 ds · 52 marts · 23 signals · 2026-08-12
 
 ## 📊 ANALYSES
 
@@ -43,10 +43,9 @@
 ## 🔗 OPEN
 
 - [dataset-incubator#811](https://github.com/dataciviclab/dataset-incubator/pull/811): remove(rna): candidate spostati nel repo rna-aiuti-stato
-- [dcl-bologna#40](https://github.com/dataciviclab/dcl-bologna/pull/40): chore(post-merge): aggiorna registry (35)
-- [dcl-bologna#39](https://github.com/dataciviclab/dcl-bologna/pull/39): feat: candidate reddito-mediano + analisi 11 — il reddito per area
+- [dcl-bologna#45](https://github.com/dataciviclab/dcl-bologna/pull/45): feat: candidate esercizi-somministrazione + analisi 12 — il tessuto commerciale
 - **Dependabot**: 3 bump PR(s)
-**Discussions**: 155 open
+**Discussions**: 156 open
   · [Domanda] PNRR Progetti — 11 domande su 280mila progetti e 150 miliardi del Piano (Italia Domani)
   · [Domanda] PIL territoriale — 11 domande su 30 anni di economia italiana regione per regione (1995-2024)
   · [Domanda] ANAC Bandi di Gara — 11 domande sugli appalti pubblici italiani (2016-2025)
