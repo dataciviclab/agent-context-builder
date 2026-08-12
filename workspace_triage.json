@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T07:24:49.959080",
+  "generated_at": "2026-08-12T13:09:28.251291",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -42,16 +42,16 @@
       "url": "https://github.com/dataciviclab/lab-connectors/pull/74"
     },
     {
-      "number": 37,
-      "title": "feat: candidate bolognawifi-matrice + analisi 10 \u2014 Bologna a piedi",
+      "number": 40,
+      "title": "chore(post-merge): aggiorna registry (35)",
       "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/pull/37"
+      "url": "https://github.com/dataciviclab/dcl-bologna/pull/40"
     },
     {
-      "number": 35,
-      "title": "feat: indici-fragilita \u2014 candidate dataset (issue #31)",
+      "number": 39,
+      "title": "feat: candidate reddito-mediano + analisi 11 \u2014 il reddito per area",
       "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/pull/35"
+      "url": "https://github.com/dataciviclab/dcl-bologna/pull/39"
     }
   ],
   "open_issues": null,
@@ -807,12 +807,6 @@
       "url": "https://github.com/dataciviclab/italia-corpus/issues/28"
     },
     {
-      "number": 34,
-      "title": "\ud83d\udce5 Dataset: BolognaWiFi Matrice Spostamenti (2021-2025)",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/issues/34"
-    },
-    {
       "number": 33,
       "title": "\ud83d\udce5 Dataset: Elenco esercizi somministrazione",
       "repo": "dcl-bologna",
@@ -823,12 +817,6 @@
       "title": "\ud83d\udce5 Dataset: Reddito mediano per area statistica",
       "repo": "dcl-bologna",
       "url": "https://github.com/dataciviclab/dcl-bologna/issues/32"
-    },
-    {
-      "number": 31,
-      "title": "\ud83d\udce5 Dataset: Indici di fragilit\u00e0 per area statistica",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/issues/31"
     },
     {
       "number": 8,
@@ -849,7 +837,7 @@
       "url": "https://github.com/dataciviclab/dcl-bologna/issues/5"
     }
   ],
-  "open_discussions": 154,
+  "open_discussions": null,
   "discussions": [
     {
       "number": 413,
@@ -1881,6 +1869,13 @@
       "category": "Idee"
     },
     {
+      "number": 38,
+      "title": "\ud83d\udcb0 Il reddito a Bologna per area: la collina contro la periferia (2,3:1) \u2014 e Roveri che cambia volto",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/38",
+      "category": "Idee analisi"
+    },
+    {
       "number": 36,
       "title": "\ud83d\udeb6 Bologna a piedi: il 2024 anno record, il weekend batte il feriale \u2014 e Piazza Maggiore domina",
       "repo": "dcl-bologna",
@@ -1931,7 +1926,8 @@
     }
   ],
   "github_fetch_errors": {
-    "data-explorer:catalog/datasets.json": "https://raw.githubusercontent.com/dataciviclab/data-explorer/main/catalog/datasets.json: HTTP 404"
+    "data-explorer:catalog/datasets.json": "https://raw.githubusercontent.com/dataciviclab/data-explorer/main/catalog/datasets.json: HTTP 404",
+    "lab-connectors:discussions": "HTTPSConnectionPool(host='api.github.com', port=443): Read timed out. (read timeout=10)"
   },
   "git_state": {
     "agent-context-builder": {

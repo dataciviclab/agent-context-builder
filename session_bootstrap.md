@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-12T07:24:49.959080
+**Generated**: 2026-08-12T13:09:28.251291
 
 ## 🔍 SCOUTING
 
@@ -43,10 +43,10 @@
 ## 🔗 OPEN
 
 - [dataset-incubator#811](https://github.com/dataciviclab/dataset-incubator/pull/811): remove(rna): candidate spostati nel repo rna-aiuti-stato
-- [dcl-bologna#37](https://github.com/dataciviclab/dcl-bologna/pull/37): feat: candidate bolognawifi-matrice + analisi 10 — Bologna a piedi
-- [dcl-bologna#35](https://github.com/dataciviclab/dcl-bologna/pull/35): feat: indici-fragilita — candidate dataset (issue #31)
+- [dcl-bologna#40](https://github.com/dataciviclab/dcl-bologna/pull/40): chore(post-merge): aggiorna registry (35)
+- [dcl-bologna#39](https://github.com/dataciviclab/dcl-bologna/pull/39): feat: candidate reddito-mediano + analisi 11 — il reddito per area
 - **Dependabot**: 3 bump PR(s)
-**Discussions**: 154 open
+**Discussions**: 155 open
   · [Domanda] PNRR Progetti — 11 domande su 280mila progetti e 150 miliardi del Piano (Italia Domani)
   · [Domanda] PIL territoriale — 11 domande su 30 anni di economia italiana regione per regione (1995-2024)
   · [Domanda] ANAC Bandi di Gara — 11 domande sugli appalti pubblici italiani (2016-2025)
