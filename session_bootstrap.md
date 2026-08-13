@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-13T07:26:52.528106
+**Generated**: 2026-08-13T13:10:40.969617
 
 ## 🔍 SCOUTING
 
@@ -31,7 +31,7 @@
   · **dataset-incubator**: 114 ds · 197 marts · 117 signals · 2026-08-12
   · **eurostat**: 29 ds · 87 marts · 29 signals · 2026-08-12
   · **open-siope**: 9 ds · 19 marts · 9 signals · 2026-08-12
-  · **dcl-bologna**: 14 ds · 27 marts · 14 signals · 2026-08-12
+  · **dcl-bologna**: 15 ds · 29 marts · 15 signals · 2026-08-13
   · **open-conto-annuale**: 23 ds · 52 marts · 23 signals · 2026-08-12
 
 ## 📊 ANALYSES
@@ -59,9 +59,9 @@
 ## 🔗 OPEN
 
 - [dataset-incubator#811](https://github.com/dataciviclab/dataset-incubator/pull/811): remove(rna): candidate spostati nel repo rna-aiuti-stato
-- [dcl-bologna#45](https://github.com/dataciviclab/dcl-bologna/pull/45): feat: candidate esercizi-somministrazione + analisi 12 — il tessuto commerciale
+- [dcl-bologna#48](https://github.com/dataciviclab/dcl-bologna/pull/48): feat: analisi 13 — blocco economia cross (reddito × fragilità × commercio)
 - **Dependabot**: 3 bump PR(s)
-**Discussions**: 156 open
+**Discussions**: 157 open
   · [Domanda] PNRR Progetti — 11 domande su 280mila progetti e 150 miliardi del Piano (Italia Domani)
   · [Domanda] PIL territoriale — 11 domande su 30 anni di economia italiana regione per regione (1995-2024)
   · [Domanda] ANAC Bandi di Gara — 11 domande sugli appalti pubblici italiani (2016-2025)
