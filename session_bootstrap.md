@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-12T19:02:02.262554
+**Generated**: 2026-08-13T01:59:18.543412
 
 ## 🔍 SCOUTING
 
@@ -13,7 +13,7 @@
 ## 🗂 REGISTRY
 
   · **dataset-incubator**: 114 ds · 197 marts · 117 signals · 2026-08-12
-  · **eurostat**: 28 ds · 84 marts · 28 signals · 2026-08-12
+  · **eurostat**: 29 ds · 87 marts · 29 signals · 2026-08-12
   · **open-siope**: 9 ds · 19 marts · 9 signals · 2026-08-12
   · **dcl-bologna**: 14 ds · 27 marts · 14 signals · 2026-08-12
   · **open-conto-annuale**: 23 ds · 52 marts · 23 signals · 2026-08-12
