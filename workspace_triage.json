@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-13T01:59:18.543412",
+  "generated_at": "2026-08-13T07:26:52.528106",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -2026,19 +2026,27 @@
   ],
   "radar": {
     "available": true,
-    "probe_date": "2026-08-12",
+    "probe_date": "2026-08-13",
     "sources_total": 36,
-    "green": 34,
-    "yellow": 1,
-    "red": 1,
+    "green": 18,
+    "yellow": 0,
+    "red": 18,
     "persistent_red": 1,
     "unhealthy": [
       {
-        "id": "dati_cultura",
-        "status": "YELLOW",
-        "protocol": "sparql",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
+        "id": "anac",
+        "status": "RED",
+        "protocol": "ckan",
+        "http_code": "500",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "inail_opendata",
+        "status": "RED",
+        "protocol": "ckan",
+        "http_code": "500",
+        "note": null,
         "red_streak": 0
       },
       {
@@ -2047,7 +2055,127 @@
         "protocol": "sparql",
         "http_code": "503",
         "note": null,
-        "red_streak": 2
+        "red_streak": 3
+      },
+      {
+        "id": "lavoro_opendata",
+        "status": "RED",
+        "protocol": "ckan",
+        "http_code": "500",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "mur_ustat",
+        "status": "RED",
+        "protocol": "ckan",
+        "http_code": "500",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "opencoesione",
+        "status": "RED",
+        "protocol": "ckan",
+        "http_code": "500",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "mit_opendata",
+        "status": "RED",
+        "protocol": "ckan",
+        "http_code": "500",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "ministero_interno",
+        "status": "RED",
+        "protocol": "ckan",
+        "http_code": "500",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "agid",
+        "status": "RED",
+        "protocol": "ckan",
+        "http_code": "500",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "mimit_rna",
+        "status": "RED",
+        "protocol": "ckan",
+        "http_code": "500",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "ministero_turismo_opendata",
+        "status": "RED",
+        "protocol": "ckan",
+        "http_code": "500",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "ministero_salute",
+        "status": "RED",
+        "protocol": "ckan",
+        "http_code": "500",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "agcm",
+        "status": "RED",
+        "protocol": "ckan",
+        "http_code": "500",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "unioncamere",
+        "status": "RED",
+        "protocol": "ckan",
+        "http_code": "500",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "pagopa",
+        "status": "RED",
+        "protocol": "ckan",
+        "http_code": "500",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "art_opendata",
+        "status": "RED",
+        "protocol": "ckan",
+        "http_code": "500",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "aci",
+        "status": "RED",
+        "protocol": "ckan",
+        "http_code": "500",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "adm_opendata",
+        "status": "RED",
+        "protocol": "ckan",
+        "http_code": "500",
+        "note": null,
+        "red_streak": 0
       }
     ]
   },
