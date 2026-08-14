@@ -1,29 +1,14 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-14T01:57:10.112518
+**Generated**: 2026-08-14T07:24:29.844729
 
 ## 🔍 SCOUTING
 
-**Radar**: 36 fonti — GREEN 18 · YELLOW 0 · RED 18 (probe: 2026-08-13)
+**Radar**: 36 fonti — GREEN 33 · YELLOW 1 · RED 2 (probe: 2026-08-14)
   ⚠ **1 persistent RED**
-  · **anac** RED [500]
-  · **inail_opendata** RED [500]
-  · **ispra_linked_data** RED [503] (streak 3)
-  · **lavoro_opendata** RED [500]
-  · **mur_ustat** RED [500]
-  · **opencoesione** RED [500]
-  · **mit_opendata** RED [500]
-  · **ministero_interno** RED [500]
-  · **agid** RED [500]
-  · **mimit_rna** RED [500]
-  · **ministero_turismo_opendata** RED [500]
-  · **ministero_salute** RED [500]
-  · **agcm** RED [500]
-  · **unioncamere** RED [500]
-  · **pagopa** RED [500]
-  · **art_opendata** RED [500]
-  · **aci** RED [500]
-  · **adm_opendata** RED [500]
+  · **dati_camera** RED [503]
+  · **dati_cultura** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
+  · **ispra_linked_data** RED [-] — Connection error (ConnectionError) (streak 4)
 **Catalog Drift**: no drift signals (36 sources checked)
 
 ## 🗂 REGISTRY

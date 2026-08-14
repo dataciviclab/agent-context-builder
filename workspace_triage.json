@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T01:57:10.112518",
+  "generated_at": "2026-08-14T07:24:29.844729",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -2046,156 +2046,36 @@
   ],
   "radar": {
     "available": true,
-    "probe_date": "2026-08-13",
+    "probe_date": "2026-08-14",
     "sources_total": 36,
-    "green": 18,
-    "yellow": 0,
-    "red": 18,
+    "green": 33,
+    "yellow": 1,
+    "red": 2,
     "persistent_red": 1,
     "unhealthy": [
       {
-        "id": "anac",
+        "id": "dati_camera",
         "status": "RED",
-        "protocol": "ckan",
-        "http_code": "500",
+        "protocol": "sparql",
+        "http_code": "503",
         "note": null,
         "red_streak": 0
       },
       {
-        "id": "inail_opendata",
-        "status": "RED",
-        "protocol": "ckan",
-        "http_code": "500",
-        "note": null,
+        "id": "dati_cultura",
+        "status": "YELLOW",
+        "protocol": "sparql",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
         "red_streak": 0
       },
       {
         "id": "ispra_linked_data",
         "status": "RED",
         "protocol": "sparql",
-        "http_code": "503",
-        "note": null,
-        "red_streak": 3
-      },
-      {
-        "id": "lavoro_opendata",
-        "status": "RED",
-        "protocol": "ckan",
-        "http_code": "500",
-        "note": null,
-        "red_streak": 0
-      },
-      {
-        "id": "mur_ustat",
-        "status": "RED",
-        "protocol": "ckan",
-        "http_code": "500",
-        "note": null,
-        "red_streak": 0
-      },
-      {
-        "id": "opencoesione",
-        "status": "RED",
-        "protocol": "ckan",
-        "http_code": "500",
-        "note": null,
-        "red_streak": 0
-      },
-      {
-        "id": "mit_opendata",
-        "status": "RED",
-        "protocol": "ckan",
-        "http_code": "500",
-        "note": null,
-        "red_streak": 0
-      },
-      {
-        "id": "ministero_interno",
-        "status": "RED",
-        "protocol": "ckan",
-        "http_code": "500",
-        "note": null,
-        "red_streak": 0
-      },
-      {
-        "id": "agid",
-        "status": "RED",
-        "protocol": "ckan",
-        "http_code": "500",
-        "note": null,
-        "red_streak": 0
-      },
-      {
-        "id": "mimit_rna",
-        "status": "RED",
-        "protocol": "ckan",
-        "http_code": "500",
-        "note": null,
-        "red_streak": 0
-      },
-      {
-        "id": "ministero_turismo_opendata",
-        "status": "RED",
-        "protocol": "ckan",
-        "http_code": "500",
-        "note": null,
-        "red_streak": 0
-      },
-      {
-        "id": "ministero_salute",
-        "status": "RED",
-        "protocol": "ckan",
-        "http_code": "500",
-        "note": null,
-        "red_streak": 0
-      },
-      {
-        "id": "agcm",
-        "status": "RED",
-        "protocol": "ckan",
-        "http_code": "500",
-        "note": null,
-        "red_streak": 0
-      },
-      {
-        "id": "unioncamere",
-        "status": "RED",
-        "protocol": "ckan",
-        "http_code": "500",
-        "note": null,
-        "red_streak": 0
-      },
-      {
-        "id": "pagopa",
-        "status": "RED",
-        "protocol": "ckan",
-        "http_code": "500",
-        "note": null,
-        "red_streak": 0
-      },
-      {
-        "id": "art_opendata",
-        "status": "RED",
-        "protocol": "ckan",
-        "http_code": "500",
-        "note": null,
-        "red_streak": 0
-      },
-      {
-        "id": "aci",
-        "status": "RED",
-        "protocol": "ckan",
-        "http_code": "500",
-        "note": null,
-        "red_streak": 0
-      },
-      {
-        "id": "adm_opendata",
-        "status": "RED",
-        "protocol": "ckan",
-        "http_code": "500",
-        "note": null,
-        "red_streak": 0
+        "http_code": "-",
+        "note": "Connection error (ConnectionError)",
+        "red_streak": 4
       }
     ]
   },
