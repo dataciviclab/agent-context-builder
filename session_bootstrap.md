@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-14T07:24:29.844729
+**Generated**: 2026-08-14T13:06:02.885598
 
 ## 🔍 SCOUTING
 
@@ -14,8 +14,8 @@
 ## 🗂 REGISTRY
 
   · **dataset-incubator**: 112 ds · 187 marts · 115 signals · 2026-08-12
-  · **eurostat**: 29 ds · 87 marts · 29 signals · 2026-08-12
-  · **open-siope**: 9 ds · 19 marts · 9 signals · 2026-08-12
+  · **eurostat**: 30 ds · 90 marts · 30 signals · 2026-08-14
+  · **open-siope**: 9 ds · 19 marts · 9 signals · 2026-08-14
   · **dcl-bologna**: 15 ds · 29 marts · 15 signals · 2026-08-13
   · **open-conto-annuale**: 23 ds · 52 marts · 23 signals · 2026-08-12
 
@@ -43,9 +43,6 @@
 
 ## 🔗 OPEN
 
-- [toolkit#472](https://github.com/dataciviclab/toolkit/pull/472): fix(sparql): paginazione robusta — keyset + retry anti-troncamento + docs
-- [eurostat#130](https://github.com/dataciviclab/eurostat/pull/130): feat: add employment rate by sex and age NUTS2 (LFST_R_LFE2EMPRT) — 30th dataset
-- [open-siope#75](https://github.com/dataciviclab/open-siope/pull/75): feat: classificazione macro completa (compatti + macroaggregati) + pulizia obsoleti
 - [dcl-bologna#48](https://github.com/dataciviclab/dcl-bologna/pull/48): feat: analisi 13 — blocco economia cross (reddito × fragilità × commercio)
 - **Dependabot**: 3 bump PR(s)
 **Discussions**: 157 open
