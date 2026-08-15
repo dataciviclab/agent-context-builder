@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-15T12:37:13.807791",
+  "generated_at": "2026-08-15T18:29:12.613980",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -18,6 +18,12 @@
   "open_prs": null,
   "prs": [
     {
+      "number": 823,
+      "title": "chore(post-merge): aggiorna registry per PR #822",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/823"
+    },
+    {
       "number": 228,
       "title": "chore(deps-dev): bump globals from 17.8.0 to 17.9.0",
       "repo": "data-explorer",
@@ -34,18 +40,6 @@
       "title": "chore(deps-dev): update mcp requirement from <2,>=1.13 to >=1.13,<3",
       "repo": "lab-connectors",
       "url": "https://github.com/dataciviclab/lab-connectors/pull/74"
-    },
-    {
-      "number": 77,
-      "title": "feat(bilancio): siope_bilancio_unificato ANNUALE in open-siope (self-contained)",
-      "repo": "open-siope",
-      "url": "https://github.com/dataciviclab/open-siope/pull/77"
-    },
-    {
-      "number": 48,
-      "title": "feat: analisi 13 \u2014 blocco economia cross (reddito \u00d7 fragilit\u00e0 \u00d7 commercio)",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/pull/48"
     }
   ],
   "open_issues": null,
@@ -2061,11 +2055,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-08-12",
+    "generated_at": "2026-08-15",
     "summary": {
-      "total": 115,
+      "total": 114,
       "by_status": {
-        "ok": 115
+        "ok": 114
       }
     },
     "actionable": []
@@ -2088,13 +2082,13 @@
       "repo": "dataset-incubator",
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
-      "updated_at": "2026-08-12",
-      "datasets": 112,
-      "marts": 187,
-      "signals": 115,
+      "updated_at": "2026-08-15",
+      "datasets": 96,
+      "marts": 155,
+      "signals": 114,
       "codelists": 0,
       "entities": 19,
-      "gcs": 112,
+      "gcs": 96,
       "reason": ""
     },
     {
@@ -2179,13 +2173,13 @@
       "repo": "open-siope",
       "available": true,
       "source_repo": "dataciviclab/open-siope",
-      "updated_at": "2026-08-14",
-      "datasets": 9,
-      "marts": 19,
-      "signals": 9,
+      "updated_at": "2026-08-15",
+      "datasets": 10,
+      "marts": 22,
+      "signals": 10,
       "codelists": 0,
       "entities": 6,
-      "gcs": 9,
+      "gcs": 10,
       "reason": ""
     },
     {
@@ -2205,7 +2199,7 @@
       "repo": "dcl-bologna",
       "available": true,
       "source_repo": "dataciviclab/dcl-bologna",
-      "updated_at": "2026-08-13",
+      "updated_at": "2026-08-15",
       "datasets": 15,
       "marts": 29,
       "signals": 15,

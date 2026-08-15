@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-15T12:37:13.807791
+**Generated**: 2026-08-15T18:29:12.613980
 
 ## 🔍 SCOUTING
 
@@ -12,10 +12,10 @@
 
 ## 🗂 REGISTRY
 
-  · **dataset-incubator**: 112 ds · 187 marts · 115 signals · 2026-08-12
+  · **dataset-incubator**: 96 ds · 155 marts · 114 signals · 2026-08-15
   · **eurostat**: 30 ds · 90 marts · 30 signals · 2026-08-14
-  · **open-siope**: 9 ds · 19 marts · 9 signals · 2026-08-14
-  · **dcl-bologna**: 15 ds · 29 marts · 15 signals · 2026-08-13
+  · **open-siope**: 10 ds · 22 marts · 10 signals · 2026-08-15
+  · **dcl-bologna**: 15 ds · 29 marts · 15 signals · 2026-08-15
   · **open-conto-annuale**: 23 ds · 52 marts · 23 signals · 2026-08-12
 
 ## 📊 ANALYSES
@@ -42,8 +42,7 @@
 
 ## 🔗 OPEN
 
-- [open-siope#77](https://github.com/dataciviclab/open-siope/pull/77): feat(bilancio): siope_bilancio_unificato ANNUALE in open-siope (self-contained)
-- [dcl-bologna#48](https://github.com/dataciviclab/dcl-bologna/pull/48): feat: analisi 13 — blocco economia cross (reddito × fragilità × commercio)
+- [dataset-incubator#823](https://github.com/dataciviclab/dataset-incubator/pull/823): chore(post-merge): aggiorna registry per PR #822
 - **Dependabot**: 3 bump PR(s)
 **Discussions**: 157 open
   · [Domanda] PNRR Progetti — 11 domande su 280mila progetti e 150 miliardi del Piano (Italia Domani)

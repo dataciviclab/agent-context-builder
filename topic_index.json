@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-08-15T12:37:13.807791",
+  "generated_at": "2026-08-15T18:29:12.613980",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -214,44 +214,6 @@
         }
       }
     ],
-    "Camera dei Deputati \u2014 OpenData SPARQL endpoint (dati.camera.it)": [
-      {
-        "slug": "camera_gruppi",
-        "name": "Gruppi Parlamentari (Camera)",
-        "period": {
-          "start": 1948,
-          "end": 2026
-        }
-      }
-    ],
-    "Camera dei Deputati \u2014 OpenData SPARQL endpoint": [
-      {
-        "slug": "camera_incarichi",
-        "name": "Incarichi nei Gruppi Parlamentari (Camera)",
-        "period": {
-          "start": 1946,
-          "end": 2026
-        }
-      },
-      {
-        "slug": "membri_governo",
-        "name": "Membri dei Governi italiani (1862-2026)",
-        "period": {
-          "start": 1862,
-          "end": 2026
-        }
-      }
-    ],
-    "https://dati.camera.it/sparql": [
-      {
-        "slug": "camera_votazioni_sparql",
-        "name": "Votazioni Camera dei Deputati",
-        "period": {
-          "start": 2018,
-          "end": 2026
-        }
-      }
-    ],
     "Centri d'Italia \u2014 ActionAid Italia / Fondazione Openpolis": [
       {
         "slug": "centri_accoglienza_italia",
@@ -325,50 +287,6 @@
         "period": {
           "start": 2026,
           "end": 2026
-        }
-      }
-    ],
-    "Eligendo \u2014 DAIT Ministero dell'Interno": [
-      {
-        "slug": "elezioni_comunali",
-        "name": "Elezioni Comunali",
-        "period": {
-          "start": 2016,
-          "end": 2024
-        }
-      },
-      {
-        "slug": "elezioni_europee",
-        "name": "Elezioni Europee",
-        "period": {
-          "start": 1979,
-          "end": 2024
-        }
-      },
-      {
-        "slug": "elezioni_referendum",
-        "name": "Elezioni Referendum",
-        "period": {
-          "start": 1995,
-          "end": 2022
-        }
-      },
-      {
-        "slug": "elezioni_voto",
-        "name": "Elezioni Voto \u2014 risultati comunali, europee e regionali",
-        "period": {
-          "start": 1979,
-          "end": 2024
-        }
-      }
-    ],
-    "Eligendo \u2014 Archivio storico elettorale del DAIT (Ministero dell'Interno)": [
-      {
-        "slug": "elezioni_politiche",
-        "name": "Elezioni Politiche 1948-2022",
-        "period": {
-          "start": 1948,
-          "end": 2022
         }
       }
     ],
@@ -822,34 +740,6 @@
         }
       }
     ],
-    "Senato della Repubblica \u2014 OpenData SPARQL endpoint (dati.senato.it)": [
-      {
-        "slug": "senato_anagrafica",
-        "name": "Anagrafica Senatori (XIX legislatura)",
-        "period": {
-          "start": 2022,
-          "end": 2026
-        }
-      }
-    ],
-    "Senato della Repubblica \u2014 SPARQL endpoint (dati.senato.it)": [
-      {
-        "slug": "senato_ddl",
-        "name": "Senato Ddl",
-        "period": {
-          "start": 2022,
-          "end": 2026
-        }
-      },
-      {
-        "slug": "senato_firmatari",
-        "name": "Senato Firmatari",
-        "period": {
-          "start": 2022,
-          "end": 2026
-        }
-      }
-    ],
     "https://dati.camera.it/ocd/dump/silos/PISRapportoCSV2024.zip": [
       {
         "slug": "silos_infrastrutture",
@@ -942,36 +832,6 @@
     ]
   },
   "candidates_by_source": {
-    "Camera dei Deputati \u2014 OpenData SPARQL endpoint": [
-      {
-        "slug": "camera_deputati_legislature",
-        "name": "Camera Deputati Legislature",
-        "period": {
-          "start": 1861,
-          "end": 2026
-        }
-      }
-    ],
-    "Ministero dell'Interno \u2014 DAIT (Dipartimento per gli Affari Interni e Territoriali)": [
-      {
-        "slug": "dait_amministratori_locali",
-        "name": "Amministratori Locali DAIT",
-        "period": {
-          "start": 2026,
-          "end": 2026
-        }
-      }
-    ],
-    "Ministero dell'Interno \u2014 DAIT (Eligendo)": [
-      {
-        "slug": "elezioni_regionali",
-        "name": "Elezioni Regionali 2018-2024",
-        "period": {
-          "start": 2018,
-          "end": 2024
-        }
-      }
-    ],
     "Ministero della Giustizia \u2014 Direzione Generale di Statistica e Analisi Organizzativa": [
       {
         "slug": "giustizia_penale_indicatori",
@@ -1093,16 +953,6 @@
         "period": {
           "start": 2017,
           "end": 2022
-        }
-      }
-    ],
-    "SIOPE \u2014 Sistema Informativo sulle Operazioni degli Enti Pubblici": [
-      {
-        "slug": "siope_bilancio_unificato",
-        "name": "SIOPE Bilancio Unificato",
-        "period": {
-          "start": 2021,
-          "end": 2026
         }
       }
     ]
