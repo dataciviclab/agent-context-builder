@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-14T18:54:14.901288
+**Generated**: 2026-08-15T01:13:52.275379
 
 ## 🔍 SCOUTING
 
@@ -43,6 +43,7 @@
 
 ## 🔗 OPEN
 
+- [open-siope#77](https://github.com/dataciviclab/open-siope/pull/77): feat(bilancio): siope_bilancio_unificato ANNUALE in open-siope (self-contained)
 - [dcl-bologna#48](https://github.com/dataciviclab/dcl-bologna/pull/48): feat: analisi 13 — blocco economia cross (reddito × fragilità × commercio)
 - **Dependabot**: 3 bump PR(s)
 **Discussions**: 157 open
