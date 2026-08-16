@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T06:39:45.041183",
+  "generated_at": "2026-08-16T12:38:38.539953",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -18,10 +18,16 @@
   "open_prs": null,
   "prs": [
     {
-      "number": 825,
-      "title": "intake: bdap-pagamenti-stato \u2014 consuntivo pagamenti bilancio dello Stato (2014-2025)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/825"
+      "number": 62,
+      "title": "ci: usa composite action org python-ci",
+      "repo": "agent-context-builder",
+      "url": "https://github.com/dataciviclab/agent-context-builder/pull/62"
+    },
+    {
+      "number": 473,
+      "title": "ci: usa composite action org python-ci nel job test",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/473"
     },
     {
       "number": 228,
@@ -34,6 +40,18 @@
       "title": "chore(deps-dev): bump eslint from 10.8.0 to 10.8.1",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/227"
+    },
+    {
+      "number": 418,
+      "title": "ci: usa composite action org python-ci",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/418"
+    },
+    {
+      "number": 77,
+      "title": "ci: migra ai componenti condivisi org (python-setup, python-ci, test-audit-reusable)",
+      "repo": "lab-connectors",
+      "url": "https://github.com/dataciviclab/lab-connectors/pull/77"
     },
     {
       "number": 74,
@@ -49,12 +67,6 @@
       "title": "feat: whats_new \u2014 delta awareness tra build CI (P2)",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/issues/59"
-    },
-    {
-      "number": 824,
-      "title": "intake: OpenBDAP Pagamenti Bilancio dello Stato \u2014 consuntivo per Amministrazione/Missione/Categoria",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/824"
     },
     {
       "number": 780,
@@ -193,6 +205,12 @@
       "title": "Proposta intake: Operatori Economici Consip (dati.consip.it)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/375"
+    },
+    {
+      "number": 449,
+      "title": "analisi: bdap_pagamenti_stato \u2014 nuovo dataset pubblicato",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/issues/449"
     },
     {
       "number": 447,
@@ -489,12 +507,6 @@
       "url": "https://github.com/dataciviclab/dataciviclab/issues/358"
     },
     {
-      "number": 357,
-      "title": "analisi: farmacie \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/357"
-    },
-    {
       "number": 471,
       "title": "registry: derive codelists section from support: ids (not codelists/*.csv glob) \u2014 unblocks eurostat CSV removal",
       "repo": "toolkit",
@@ -523,6 +535,12 @@
       "title": "pipeline: mart_index \u00e8 un indovinello \u2014 sostituire con mart_name",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/425"
+    },
+    {
+      "number": 229,
+      "title": "follow-up: pagina e tema per bdap_pagamenti_stato",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/229"
     },
     {
       "number": 225,
@@ -2023,7 +2041,8 @@
     }
   },
   "warnings": [
-    "GitHub fetch failed \u2014 data-explorer:catalog/datasets.json: https://raw.githubusercontent.com/dataciviclab/data-explorer/main/catalog/datasets.json: HTTP 404"
+    "GitHub fetch failed \u2014 data-explorer:catalog/datasets.json: https://raw.githubusercontent.com/dataciviclab/data-explorer/main/catalog/datasets.json: HTTP 404",
+    "Many open PRs: 7"
   ],
   "radar": {
     "available": true,
@@ -2061,11 +2080,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-08-15",
+    "generated_at": "2026-08-16",
     "summary": {
-      "total": 99,
+      "total": 100,
       "by_status": {
-        "ok": 99
+        "ok": 100
       }
     },
     "actionable": []
@@ -2088,13 +2107,13 @@
       "repo": "dataset-incubator",
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
-      "updated_at": "2026-08-15",
-      "datasets": 96,
-      "marts": 155,
-      "signals": 99,
+      "updated_at": "2026-08-16",
+      "datasets": 97,
+      "marts": 156,
+      "signals": 100,
       "codelists": 0,
       "entities": 16,
-      "gcs": 96,
+      "gcs": 97,
       "reason": ""
     },
     {

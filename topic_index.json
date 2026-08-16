@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-08-16T06:39:45.041183",
+  "generated_at": "2026-08-16T12:38:38.539953",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -832,6 +832,16 @@
     ]
   },
   "candidates_by_source": {
+    "MEF \u2014 Ragioneria Generale dello Stato / OpenBDAP": [
+      {
+        "slug": "bdap_pagamenti_stato",
+        "name": "Pagamenti Bilancio dello Stato (consuntivo)",
+        "period": {
+          "start": 2014,
+          "end": 2025
+        }
+      }
+    ],
     "Ministero della Giustizia \u2014 Direzione Generale di Statistica e Analisi Organizzativa": [
       {
         "slug": "giustizia_penale_indicatori",
