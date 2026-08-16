@@ -12,12 +12,14 @@ on:
       - 'src/**'
       - 'tests/**'
       - 'pyproject.toml'
+      - '.github/workflows/**'
   pull_request:
     branches: [main]
     paths:
       - 'src/**'
       - 'tests/**'
       - 'pyproject.toml'
+      - '.github/workflows/**'
 
 jobs:
   test:
@@ -31,14 +33,15 @@ jobs:
         with:
           extra-packages: -e ".[dev]"
 
-      - name: Lint
-        run: ruff check src/ tests/
-
-      - name: Type check
-        run: mypy src/ tests/
-
-      - name: Test
-        run: pytest --cov=src/agent_context_builder --cov-report=xml --cov-fail-under=70
+      - uses: dataciviclab/.github/actions/python-ci@main
+        with:
+          lint_paths: "src/ tests/"
+          mypy_paths: "src/ tests/"
+          test_dir: "tests"
+          pytest_args: ""
+          cov_module: "src/agent_context_builder"
+          cov_report: "xml"
+          cov_threshold: "70"
 
       - name: Upload coverage
         uses: codecov/codecov-action@v7
