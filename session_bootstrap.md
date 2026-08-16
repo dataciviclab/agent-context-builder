@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-16T12:38:38.539953
+**Generated**: 2026-08-16T12:55:58.191162
 
 ## 🔍 SCOUTING
 
@@ -42,10 +42,6 @@
 
 ## 🔗 OPEN
 
-- [agent-context-builder#62](https://github.com/dataciviclab/agent-context-builder/pull/62): ci: usa composite action org python-ci
-- [toolkit#473](https://github.com/dataciviclab/toolkit/pull/473): ci: usa composite action org python-ci nel job test
-- [source-observatory#418](https://github.com/dataciviclab/source-observatory/pull/418): ci: usa composite action org python-ci
-- [lab-connectors#77](https://github.com/dataciviclab/lab-connectors/pull/77): ci: migra ai componenti condivisi org (python-setup, python-ci, test-audit-reusable)
 - **Dependabot**: 3 bump PR(s)
 **Discussions**: 157 open
   · [Domanda] PNRR Progetti — 11 domande su 280mila progetti e 150 miliardi del Piano (Italia Domani)
