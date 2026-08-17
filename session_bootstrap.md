@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-16T18:28:46.851314
+**Generated**: 2026-08-17T01:15:28.955699
 
 ## 🔍 SCOUTING
 
@@ -14,7 +14,7 @@
 
   · **dataset-incubator**: 97 ds · 156 marts · 100 signals · 2026-08-16
   · **eurostat**: 30 ds · 90 marts · 30 signals · 2026-08-16
-  · **open-siope**: 10 ds · 22 marts · 10 signals · 2026-08-15
+  · **open-siope**: 10 ds · 22 marts · 10 signals · 2026-08-16
   · **dcl-bologna**: 15 ds · 29 marts · 15 signals · 2026-08-15
   · **open-conto-annuale**: 23 ds · 52 marts · 23 signals · 2026-08-16
 
@@ -42,7 +42,6 @@
 
 ## 🔗 OPEN
 
-- [open-siope#80](https://github.com/dataciviclab/open-siope/pull/80): chore(post-merge): aggiorna registry (79)
 - **Dependabot**: 3 bump PR(s)
 **Discussions**: 157 open
   · [Domanda] PNRR Progetti — 11 domande su 280mila progetti e 150 miliardi del Piano (Italia Domani)
