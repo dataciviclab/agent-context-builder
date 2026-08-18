@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T12:45:52.050194",
+  "generated_at": "2026-08-18T18:38:55.098752",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -17,6 +17,18 @@
   ],
   "open_prs": null,
   "prs": [
+    {
+      "number": 829,
+      "title": "intake: inpa-bandi e inpa-comunicazioni \u2014 reclutamento PA dal Portale inPA",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/829"
+    },
+    {
+      "number": 475,
+      "title": "fix(script source): timeout configurabile via client + iniezione client appiattito",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/475"
+    },
     {
       "number": 474,
       "title": "refactor(mcp): 16 \u2192 5 tool aggregati (dataset, query, pipeline, source, contract)",
@@ -55,6 +67,12 @@
       "title": "feat: whats_new \u2014 delta awareness tra build CI (P2)",
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/issues/59"
+    },
+    {
+      "number": 828,
+      "title": "intake: inpa-bandi e inpa-comunicazioni \u2014 reclutamento PA (Portale inPA)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/828"
     },
     {
       "number": 780,
@@ -2029,7 +2047,8 @@
     }
   },
   "warnings": [
-    "GitHub fetch failed \u2014 data-explorer:catalog/datasets.json: https://raw.githubusercontent.com/dataciviclab/data-explorer/main/catalog/datasets.json: HTTP 404"
+    "GitHub fetch failed \u2014 data-explorer:catalog/datasets.json: https://raw.githubusercontent.com/dataciviclab/data-explorer/main/catalog/datasets.json: HTTP 404",
+    "Many open PRs: 7"
   ],
   "radar": {
     "available": true,

@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-18T12:45:52.050194
+**Generated**: 2026-08-18T18:38:55.098752
 
 ## 🔍 SCOUTING
 
@@ -43,6 +43,8 @@
 
 ## 🔗 OPEN
 
+- [dataset-incubator#829](https://github.com/dataciviclab/dataset-incubator/pull/829): intake: inpa-bandi e inpa-comunicazioni — reclutamento PA dal Portale inPA
+- [toolkit#475](https://github.com/dataciviclab/toolkit/pull/475): fix(script source): timeout configurabile via client + iniezione client appiattito
 - [toolkit#474](https://github.com/dataciviclab/toolkit/pull/474): refactor(mcp): 16 → 5 tool aggregati (dataset, query, pipeline, source, contract)
 - **Dependabot**: 4 bump PR(s)
 **Discussions**: 157 open
