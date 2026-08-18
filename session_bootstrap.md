@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-17T18:39:20.798648
+**Generated**: 2026-08-18T01:13:39.585974
 
 ## 🔍 SCOUTING
 
@@ -44,7 +44,11 @@
 ## 🔗 OPEN
 
 - [toolkit#474](https://github.com/dataciviclab/toolkit/pull/474): refactor(mcp): 16 → 5 tool aggregati (dataset, query, pipeline, source, contract)
-- **Dependabot**: 3 bump PR(s)
+- **Dependabot**: 4 bump PR(s)
+**Discussions**: 157 open
+  · [Domanda] PNRR Progetti — 11 domande su 280mila progetti e 150 miliardi del Piano (Italia Domani)
+  · [Domanda] PIL territoriale — 11 domande su 30 anni di economia italiana regione per regione (1995-2024)
+  · [Domanda] ANAC Bandi di Gara — 11 domande sugli appalti pubblici italiani (2016-2025)
 **Topics**: pipeline · governance · infrastructure · analyses
 
 ## 🛠 INFRA
