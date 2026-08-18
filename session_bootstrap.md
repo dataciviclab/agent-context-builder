@@ -1,14 +1,14 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-18T01:13:39.585974
+**Generated**: 2026-08-18T06:42:36.882636
 
 ## 🔍 SCOUTING
 
-**Radar**: 36 fonti — GREEN 33 · YELLOW 1 · RED 2 (probe: 2026-08-17)
+**Radar**: 36 fonti — GREEN 33 · YELLOW 2 · RED 1 (probe: 2026-08-18)
   ⚠ **1 persistent RED**
-  · **dati_camera** RED [503]
   · **dati_cultura** YELLOW [-] — Retry timeout/connection: Timeout (ConnectTimeout)
-  · **ispra_linked_data** RED [-] — Connection error (ConnectionError) (streak 7)
+  · **ispra_linked_data** RED [-] — Connection error (ConnectionError) (streak 8)
+  · **aifa** YELLOW [-] — Retry timeout/connection: Timeout (ReadTimeout)
 **Catalog Drift**: no drift signals (36 sources checked)
 
 ## 🗂 REGISTRY
