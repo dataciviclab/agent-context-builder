@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T12:47:05.624225",
+  "generated_at": "2026-08-21T18:36:17.561848",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -18,6 +18,12 @@
   "open_prs": null,
   "prs": [
     {
+      "number": 831,
+      "title": "cleanup: rimuovi 5 dataset migrati ad altri repo",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/831"
+    },
+    {
       "number": 829,
       "title": "intake: inpa-bandi e inpa-comunicazioni \u2014 reclutamento PA dal Portale inPA",
       "repo": "dataset-incubator",
@@ -34,6 +40,12 @@
       "title": "refactor(mcp): 16 \u2192 5 tool aggregati (dataset, query, pipeline, source, contract)",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/pull/474"
+    },
+    {
+      "number": 245,
+      "title": "feat: trio PNRR \u2014 gare, pagamenti, progetti (3 pagine data-driven)",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/245"
     },
     {
       "number": 244,
@@ -63,22 +75,10 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/828"
     },
     {
-      "number": 780,
-      "title": "intake: senato_sindisp \u2014 Sindacato ispettivo del Senato (interrogazioni, interpellanze, mozioni)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/780"
-    },
-    {
       "number": 720,
       "title": "intake: gse_cer_elenco \u2014 Elenco nazionale Comunit\u00e0 Energetiche Rinnovabili (2025)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/720"
-    },
-    {
-      "number": 718,
-      "title": "design: unified-enti \u2014 composizione dell'anagrafica estesa della PA (struttura, personale, costo, bilancio)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/718"
     },
     {
       "number": 680,
@@ -189,316 +189,10 @@
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/436"
     },
     {
-      "number": 428,
-      "title": "intake: istat_nonprofit \u2014 Censimento permanente delle Istituzioni non profit",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/428"
-    },
-    {
       "number": 375,
       "title": "Proposta intake: Operatori Economici Consip (dati.consip.it)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/375"
-    },
-    {
-      "number": 449,
-      "title": "analisi: bdap_pagamenti_stato \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/449"
-    },
-    {
-      "number": 447,
-      "title": "analisi: pnrr_pagamenti \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/447"
-    },
-    {
-      "number": 446,
-      "title": "analisi: pnrr_gare \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/446"
-    },
-    {
-      "number": 445,
-      "title": "analisi: senato_ddl \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/445"
-    },
-    {
-      "number": 444,
-      "title": "analisi: membri_governo \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/444"
-    },
-    {
-      "number": 440,
-      "title": "analisi: conto_annuale_profilo_ente \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/440"
-    },
-    {
-      "number": 438,
-      "title": "analisi: eurostat_territory \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/438"
-    },
-    {
-      "number": 437,
-      "title": "analisi: eurostat_economy \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/437"
-    },
-    {
-      "number": 436,
-      "title": "analisi: eurostat_demography \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/436"
-    },
-    {
-      "number": 434,
-      "title": "analisi: anac_appalti_master \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/434"
-    },
-    {
-      "number": 432,
-      "title": "analisi: ga_ordinanze \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/432"
-    },
-    {
-      "number": 431,
-      "title": "analisi: ga_decreti \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/431"
-    },
-    {
-      "number": 430,
-      "title": "analisi: ga_sentenze \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/430"
-    },
-    {
-      "number": 429,
-      "title": "analisi: penale_flussi \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/429"
-    },
-    {
-      "number": 428,
-      "title": "analisi: monitoraggio_mensile_civile \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/428"
-    },
-    {
-      "number": 427,
-      "title": "analisi: intercettazioni \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/427"
-    },
-    {
-      "number": 426,
-      "title": "analisi: mef_patrimonio_immobili \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/426"
-    },
-    {
-      "number": 425,
-      "title": "analisi: mef_patrimonio_enti \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/425"
-    },
-    {
-      "number": 424,
-      "title": "analisi: mef_patrimonio_detenzioni \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/424"
-    },
-    {
-      "number": 423,
-      "title": "analisi: who_is_who_pa \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/423"
-    },
-    {
-      "number": 421,
-      "title": "analisi: anac_aggiudicazioni \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/421"
-    },
-    {
-      "number": 420,
-      "title": "analisi: opencivitas_indicatori \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/420"
-    },
-    {
-      "number": 419,
-      "title": "analisi: who_is_who_pa \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/419"
-    },
-    {
-      "number": 415,
-      "title": "analisi: mur_iscritti \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/415"
-    },
-    {
-      "number": 412,
-      "title": "analisi: elezioni_politiche \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/412"
-    },
-    {
-      "number": 411,
-      "title": "analisi: mur_immatricolati \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/411"
-    },
-    {
-      "number": 408,
-      "title": "analisi: personale_ssn \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/408"
-    },
-    {
-      "number": 407,
-      "title": "analisi: istat_asia_ul \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/407"
-    },
-    {
-      "number": 392,
-      "title": "analisi: elezioni_referendum \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/392"
-    },
-    {
-      "number": 391,
-      "title": "analisi: elezioni_europee \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/391"
-    },
-    {
-      "number": 390,
-      "title": "analisi: elezioni_comunali \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/390"
-    },
-    {
-      "number": 389,
-      "title": "analisi: aci_prime_iscrizioni_autovetture \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/389"
-    },
-    {
-      "number": 388,
-      "title": "analisi: sbarchi_migranti_italia \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/388"
-    },
-    {
-      "number": 386,
-      "title": "analisi: terna_electrical_energy_by_sector \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/386"
-    },
-    {
-      "number": 385,
-      "title": "analisi: siope_bilancio_unificato \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/385"
-    },
-    {
-      "number": 384,
-      "title": "analisi: silos_infrastrutture \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/384"
-    },
-    {
-      "number": 383,
-      "title": "analisi: sai_strutture_italia \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/383"
-    },
-    {
-      "number": 382,
-      "title": "analisi: sai_progetti_italia \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/382"
-    },
-    {
-      "number": 381,
-      "title": "analisi: centri_accoglienza_italia \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/381"
-    },
-    {
-      "number": 379,
-      "title": "analisi: fts_eu_grants \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/379"
-    },
-    {
-      "number": 378,
-      "title": "analisi: ted_contract_notices \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/378"
-    },
-    {
-      "number": 377,
-      "title": "analisi: iva_regionale \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/377"
-    },
-    {
-      "number": 376,
-      "title": "analisi: anpr_mobilita_residenziale \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/376"
-    },
-    {
-      "number": 372,
-      "title": "analisi: mef_rappresentanti_partecipate \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/372"
-    },
-    {
-      "number": 371,
-      "title": "analisi: mim_scuola_infanzia \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/371"
-    },
-    {
-      "number": 370,
-      "title": "analisi: istat_occupazione_provinciale \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/370"
-    },
-    {
-      "number": 369,
-      "title": "analisi: costituzione_master \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/369"
-    },
-    {
-      "number": 367,
-      "title": "analisi: rna_misure \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/367"
-    },
-    {
-      "number": 360,
-      "title": "analisi: pnrr_progetti \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/360"
-    },
-    {
-      "number": 358,
-      "title": "analisi: elezioni_politiche_2022 \u2014 nuovo dataset pubblicato",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/issues/358"
     },
     {
       "number": 471,
@@ -2035,7 +1729,8 @@
     }
   },
   "warnings": [
-    "GitHub fetch failed \u2014 data-explorer:catalog/datasets.json: https://raw.githubusercontent.com/dataciviclab/data-explorer/main/catalog/datasets.json: HTTP 404"
+    "GitHub fetch failed \u2014 data-explorer:catalog/datasets.json: https://raw.githubusercontent.com/dataciviclab/data-explorer/main/catalog/datasets.json: HTTP 404",
+    "Many open PRs: 7"
   ],
   "radar": {
     "available": true,
