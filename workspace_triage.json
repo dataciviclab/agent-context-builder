@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T01:17:25.203621",
+  "generated_at": "2026-08-21T06:46:16.103640",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -2039,29 +2039,13 @@
   ],
   "radar": {
     "available": true,
-    "probe_date": "2026-08-20",
+    "probe_date": "2026-08-21",
     "sources_total": 36,
-    "green": 32,
-    "yellow": 2,
-    "red": 2,
-    "persistent_red": 2,
+    "green": 34,
+    "yellow": 1,
+    "red": 1,
+    "persistent_red": 1,
     "unhealthy": [
-      {
-        "id": "istat_sdmx",
-        "status": "YELLOW",
-        "protocol": "sdmx",
-        "http_code": "-",
-        "note": "Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
-      {
-        "id": "dati_camera",
-        "status": "RED",
-        "protocol": "sparql",
-        "http_code": "503",
-        "note": null,
-        "red_streak": 2
-      },
       {
         "id": "dati_cultura",
         "status": "YELLOW",
@@ -2076,7 +2060,7 @@
         "protocol": "sparql",
         "http_code": "-",
         "note": "Connection error (ConnectionError)",
-        "red_streak": 10
+        "red_streak": 11
       }
     ]
   },
