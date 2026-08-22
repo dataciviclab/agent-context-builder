@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-22T01:13:23.915048",
+  "generated_at": "2026-08-22T06:39:37.635392",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -1673,13 +1673,21 @@
   ],
   "radar": {
     "available": true,
-    "probe_date": "2026-08-21",
+    "probe_date": "2026-08-22",
     "sources_total": 36,
-    "green": 34,
+    "green": 33,
     "yellow": 1,
-    "red": 1,
+    "red": 2,
     "persistent_red": 1,
     "unhealthy": [
+      {
+        "id": "dati_camera",
+        "status": "RED",
+        "protocol": "sparql",
+        "http_code": "503",
+        "note": null,
+        "red_streak": 0
+      },
       {
         "id": "dati_cultura",
         "status": "YELLOW",
@@ -1694,7 +1702,7 @@
         "protocol": "sparql",
         "http_code": "-",
         "note": "Connection error (ConnectionError)",
-        "red_streak": 11
+        "red_streak": 12
       }
     ]
   },
