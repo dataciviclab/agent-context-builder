@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-22T06:39:37.635392
+**Generated**: 2026-08-22T12:38:37.653136
 
 ## 🔍 SCOUTING
 
@@ -13,7 +13,7 @@
 
 ## 🗂 REGISTRY
 
-  · **dataset-incubator**: 97 ds · 156 marts · 100 signals · 2026-08-16
+  · **dataset-incubator**: 92 ds · 149 marts · 100 signals · 2026-08-16
   · **eurostat**: 30 ds · 90 marts · 30 signals · 2026-08-16
   · **open-siope**: 10 ds · 22 marts · 10 signals · 2026-08-16
   · **dcl-bologna**: 15 ds · 29 marts · 15 signals · 2026-08-15
@@ -43,7 +43,6 @@
 
 ## 🔗 OPEN
 
-- [dataset-incubator#831](https://github.com/dataciviclab/dataset-incubator/pull/831): cleanup: rimuovi 5 dataset migrati ad altri repo
 - [dataset-incubator#829](https://github.com/dataciviclab/dataset-incubator/pull/829): intake: inpa-bandi e inpa-comunicazioni — reclutamento PA dal Portale inPA
 - [toolkit#475](https://github.com/dataciviclab/toolkit/pull/475): fix(script source): timeout configurabile via client + iniezione client appiattito
 - [toolkit#474](https://github.com/dataciviclab/toolkit/pull/474): refactor(mcp): 16 → 5 tool aggregati (dataset, query, pipeline, source, contract)
