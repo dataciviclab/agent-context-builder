@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-23T01:19:31.706608",
+  "generated_at": "2026-08-23T06:40:26.581757",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -1619,21 +1619,13 @@
   ],
   "radar": {
     "available": true,
-    "probe_date": "2026-08-22",
+    "probe_date": "2026-08-23",
     "sources_total": 36,
     "green": 33,
     "yellow": 1,
     "red": 2,
     "persistent_red": 1,
     "unhealthy": [
-      {
-        "id": "dati_camera",
-        "status": "RED",
-        "protocol": "sparql",
-        "http_code": "503",
-        "note": null,
-        "red_streak": 0
-      },
       {
         "id": "dati_cultura",
         "status": "YELLOW",
@@ -1648,7 +1640,15 @@
         "protocol": "sparql",
         "http_code": "-",
         "note": "Connection error (ConnectionError)",
-        "red_streak": 12
+        "red_streak": 13
+      },
+      {
+        "id": "aifa",
+        "status": "RED",
+        "protocol": "html",
+        "http_code": "502",
+        "note": null,
+        "red_streak": 0
       }
     ]
   },
