@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T01:17:17.460597",
+  "generated_at": "2026-08-24T06:58:15.771516",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -1619,11 +1619,11 @@
   ],
   "radar": {
     "available": true,
-    "probe_date": "2026-08-23",
+    "probe_date": "2026-08-24",
     "sources_total": 36,
     "green": 33,
-    "yellow": 1,
-    "red": 2,
+    "yellow": 2,
+    "red": 1,
     "persistent_red": 1,
     "unhealthy": [
       {
@@ -1640,14 +1640,14 @@
         "protocol": "sparql",
         "http_code": "-",
         "note": "Connection error (ConnectionError)",
-        "red_streak": 13
+        "red_streak": 14
       },
       {
         "id": "aifa",
-        "status": "RED",
+        "status": "YELLOW",
         "protocol": "html",
-        "http_code": "502",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       }
     ]
