@@ -118,13 +118,20 @@ def test_topic_index_http_error():
 
 _SAMPLE_V3_INDEX = json.dumps(
     {
-        "schema_version": 3,
-        "datasets_by_source": {
+        "schema_version": 4,
+        "datasets": {
             "ISPRA": [
                 {
                     "slug": "ispra_ru_base",
                     "name": "Rifiuti Urbani",
                     "period": {"start": 2020, "end": 2024},
+                    "stage": "published",
+                },
+                {
+                    "slug": "ispra_consumo_suolo",
+                    "name": "Consumo Suolo",
+                    "period": {"start": 2024, "end": 2024},
+                    "stage": "incubating",
                 },
             ],
             "MEF": [
@@ -132,15 +139,7 @@ _SAMPLE_V3_INDEX = json.dumps(
                     "slug": "irpef_comunale",
                     "name": "IRPEF Comunale",
                     "period": {"start": 2019, "end": 2023},
-                },
-            ],
-        },
-        "candidates_by_source": {
-            "ISPRA": [
-                {
-                    "slug": "ispra_consumo_suolo",
-                    "name": "Consumo Suolo",
-                    "period": {"start": 2024, "end": 2024},
+                    "stage": "published",
                 },
             ],
         },
@@ -149,7 +148,6 @@ _SAMPLE_V3_INDEX = json.dumps(
                 "slug": "irpef-comunale",
                 "name": "IRPEF Comunale 2019-2023",
                 "datasets": ["irpef_comunale"],
-                "path": "analisi/irpef-comunale/README.md",
                 "status": "active",
                 "discussion": 88,
             },
@@ -363,12 +361,22 @@ def test_refresh_context_api_error(monkeypatch):
 def test_search_topic_index_matches_name():
     """_search_topic_index matches dataset slug, name and source case-insensitive."""
     topic = {
-        "datasets_by_source": {
+        "datasets": {
             "ISPRA": [
-                {"slug": "ispra_ru_base", "name": "Rifiuti Urbani", "period": {"start": 2020}},
+                {
+                    "slug": "ispra_ru_base",
+                    "name": "Rifiuti Urbani",
+                    "period": {"start": 2020},
+                    "stage": "published",
+                },
             ],
             "MEF": [
-                {"slug": "irpef_comunale", "name": "IRPEF Comunale", "period": {"start": 2019}},
+                {
+                    "slug": "irpef_comunale",
+                    "name": "IRPEF Comunale",
+                    "period": {"start": 2019},
+                    "stage": "published",
+                },
             ],
         },
         "analyses": [
@@ -394,7 +402,9 @@ def test_search_topic_index_matches_name():
 def test_search_topic_index_no_match():
     """_search_topic_index returns empty lists when nothing matches."""
     topic = {
-        "datasets_by_source": {"ISTAT": [{"slug": "popolazione", "name": "Popolazione"}]},
+        "datasets": {
+            "ISTAT": [{"slug": "popolazione", "name": "Popolazione", "stage": "published"}]
+        },
         "analyses": [],
     }
     result = mcp_server._search_topic_index("clima", topic)
@@ -406,12 +416,13 @@ def test_search_topic_index_no_match():
 def test_search_topic_index_word_boundary():
     """_search_topic_index uses word boundary on name: 'pubblica' ∌ 'pubblicati'."""
     topic = {
-        "datasets_by_source": {
+        "datasets": {
             "Terna": [
                 {
                     "slug": "terna_capacita_rinnovabile",
                     "name": "Terna Capacità Rinnovabile",
                     "period": {"start": 2015},
+                    "stage": "published",
                 },
             ],
             "MEF": [
@@ -419,6 +430,7 @@ def test_search_topic_index_word_boundary():
                     "slug": "dipendenti_pubblici",
                     "name": "Dipendenti Pubblici",
                     "period": {"start": 2010},
+                    "stage": "published",
                 },
             ],
         },
@@ -427,8 +439,8 @@ def test_search_topic_index_word_boundary():
     # 'pubblica' in source "dati pubblicati su terna.com" era un falso positivo
     # Con word boundary: NON deve matchare
     source_terna = "Terna S.p.A. — dati pubblicati su terna.com"
-    topic["datasets_by_source"]["Terna"][0]["source"] = source_terna
-    topic["datasets_by_source"]["MEF"][0]["source"] = "MEF"
+    topic["datasets"]["Terna"][0]["source"] = source_terna
+    topic["datasets"]["MEF"][0]["source"] = "MEF"
 
     result = mcp_server._search_topic_index("pubblica", topic)
     slugs = [d["slug"] for d in result["datasets"]]
@@ -557,7 +569,7 @@ def test_search_tool_no_token(monkeypatch):
     monkeypatch.setattr(mcp_server, "_ENV_LOADED", True)
 
     fake = FakeHttpClient()
-    _patch_fetch(fake, "topic_index.json", text='{"datasets_by_source": {}, "analyses": []}')
+    _patch_fetch(fake, "topic_index.json", text='{"datasets": {}, "analyses": []}')
 
     with patch("agent_context_builder.mcp_server.HttpClient") as mock_cls:
         mock_cls.return_value = fake

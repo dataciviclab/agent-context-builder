@@ -5,6 +5,8 @@ from typing import Optional
 
 from lab_connectors.http import HttpClient
 
+from .github import classify_discussion_category
+
 _GRAPHQL_URL = "https://api.github.com/graphql"
 
 _QUERY = """
@@ -36,6 +38,7 @@ class Discussion:
     category: str
     author: str
     updated_at: str
+    actionable: bool = True
 
 
 class DiscussionCollector:
@@ -106,6 +109,9 @@ class DiscussionCollector:
                 category=node["category"]["name"] if node.get("category") else "",
                 author=node["author"]["login"] if node.get("author") else "",
                 updated_at=node.get("updatedAt", ""),
+                actionable=classify_discussion_category(
+                    node["category"]["name"] if node.get("category") else ""
+                ),
             )
             for node in nodes
         ]

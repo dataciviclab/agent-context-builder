@@ -24,7 +24,11 @@ def build_workspace_triage(
     de_fetcher: DataExplorerFetcher | None = None,
     registry_fetcher: RegistryFetcher | None = None,
 ) -> dict[str, Any]:
-    """Build the workspace_triage.json payload."""
+    """Build the workspace_triage.json payload — actionable items only.
+
+    Issues and discussions are filtered to exclude automated/non-actionable
+    items (e.g. "analisi: XXX — nuovo dataset pubblicato", old presentazioni).
+    """
     prs = github_collector.get_prs(config.repos)
     issues = github_collector.get_issues(config.repos)
     repos_state = git_collector.get_repos_state(config.repos)
@@ -39,18 +43,25 @@ def build_workspace_triage(
     de_fetcher = de_fetcher or DataExplorerFetcher(github_collector)
     registry_fetcher = registry_fetcher or RegistryFetcher(github_collector)
 
+    # Filter to actionable only
+    actionable_prs = [pr for pr in prs if pr.actionable]
+    actionable_issues = [issue for issue in issues if issue.actionable]
+    actionable_discussions = [d for d in discussions if d.actionable]
+
     return {
         "generated_at": fixed_timestamp,
         "workspace_root": str(config.workspace_root) if config.workspace_root else None,
         "repos": config.repos,
-        "open_prs": len(prs) if not github_collector.fetch_errors else None,
-        "prs": [_serialize_pr(pr) for pr in prs],
-        "open_issues": len(issues) if not github_collector.fetch_errors else None,
-        "issues": [_serialize_issue(issue) for issue in issues],
+        "open_prs": len(actionable_prs) if not github_collector.fetch_errors else None,
+        "prs": [_serialize_pr(pr) for pr in actionable_prs],
+        "open_issues": len(actionable_issues) if not github_collector.fetch_errors else None,
+        "issues": [_serialize_issue(issue) for issue in actionable_issues],
         "open_discussions": (
-            len(discussions) if discussion_collector is not None and not disc_errors else None
+            len(actionable_discussions)
+            if discussion_collector is not None and not disc_errors
+            else None
         ),
-        "discussions": [_serialize_discussion(d) for d in discussions],
+        "discussions": [_serialize_discussion(d) for d in actionable_discussions],
         "github_fetch_errors": {**github_collector.fetch_errors, **disc_errors},
         "git_state": _serialize_git_state(repos_state),
         "warnings": _collect_warnings(github_collector, prs, repos_state),
@@ -63,11 +74,23 @@ def build_workspace_triage(
 
 
 def _serialize_pr(pr: PR) -> dict[str, Any]:
-    return {"number": pr.number, "title": pr.title, "repo": pr.repo, "url": pr.url}
+    return {
+        "number": pr.number,
+        "title": pr.title,
+        "repo": pr.repo,
+        "url": pr.url,
+        "category": pr.category,
+    }
 
 
 def _serialize_issue(issue: Any) -> dict[str, Any]:
-    return {"number": issue.number, "title": issue.title, "repo": issue.repo, "url": issue.url}
+    return {
+        "number": issue.number,
+        "title": issue.title,
+        "repo": issue.repo,
+        "url": issue.url,
+        "category": issue.category,
+    }
 
 
 def _serialize_discussion(discussion: Discussion) -> dict[str, Any]:
