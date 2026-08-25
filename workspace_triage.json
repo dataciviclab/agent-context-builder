@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T18:39:33.289632",
+  "generated_at": "2026-08-25T01:15:32.687781",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -34,6 +34,18 @@
       "title": "refactor(mcp): 16 \u2192 5 tool aggregati (dataset, query, pipeline, source, contract)",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/pull/474"
+    },
+    {
+      "number": 252,
+      "title": "chore(deps-dev): bump eslint from 10.8.1 to 10.9.0",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/252"
+    },
+    {
+      "number": 251,
+      "title": "chore(deps): bump actions/cache from 4 to 6",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/251"
     },
     {
       "number": 74,
@@ -1609,7 +1621,8 @@
     }
   },
   "warnings": [
-    "GitHub fetch failed \u2014 data-explorer:catalog/datasets.json: https://raw.githubusercontent.com/dataciviclab/data-explorer/main/catalog/datasets.json: HTTP 404"
+    "GitHub fetch failed \u2014 data-explorer:catalog/datasets.json: https://raw.githubusercontent.com/dataciviclab/data-explorer/main/catalog/datasets.json: HTTP 404",
+    "Many open PRs: 6"
   ],
   "radar": {
     "available": true,

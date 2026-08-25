@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-24T18:39:33.289632
+**Generated**: 2026-08-25T01:15:32.687781
 
 ## 🔍 SCOUTING
 
@@ -46,7 +46,7 @@
 - [dataset-incubator#829](https://github.com/dataciviclab/dataset-incubator/pull/829): intake: inpa-bandi e inpa-comunicazioni — reclutamento PA dal Portale inPA
 - [toolkit#475](https://github.com/dataciviclab/toolkit/pull/475): fix(script source): timeout configurabile via client + iniezione client appiattito
 - [toolkit#474](https://github.com/dataciviclab/toolkit/pull/474): refactor(mcp): 16 → 5 tool aggregati (dataset, query, pipeline, source, contract)
-- **Dependabot**: 1 bump PR(s)
+- **Dependabot**: 3 bump PR(s)
 **Discussions**: 157 open
   · [Domanda] PNRR Progetti — 11 domande su 280mila progetti e 150 miliardi del Piano (Italia Domani)
   · [Domanda] PIL territoriale — 11 domande su 30 anni di economia italiana regione per regione (1995-2024)
