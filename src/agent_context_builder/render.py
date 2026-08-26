@@ -134,12 +134,9 @@ class Renderer:
             if reg is None:
                 continue
             for sig in reg.signals:
-                if sig.get("status") in ("error", "warn"):
-                    sig_id = sig.get("id", "?")
-                    sig_status = sig.get("status")
-                    sig_detail = sig.get("detail", "")
+                if sig.status in ("error", "warn"):
                     actionable_items.append(
-                        f"- [Pipeline] {repo}/{sig_id}: {sig_status} — {sig_detail}"
+                        f"- [Pipeline] {repo}/{sig.id}: {sig.status} — {sig.detail}"
                     )
 
         if actionable_items:
@@ -275,24 +272,14 @@ class Renderer:
         catalog = self._fetch_di_registry()
         datasets_by_source: dict[str, list[dict[str, Any]]] = {}
         if catalog:
-            for ds in catalog.published:
+            for ds in catalog.datasets:
                 source = ds.source or "unknown"
                 datasets_by_source.setdefault(source, []).append(
                     {
                         "slug": ds.slug,
-                        "name": ds.name,
+                        "name": ds.name or ds.slug,
                         "period": ds.period,
-                        "stage": "published",
-                    }
-                )
-            for ds in catalog.incubating:
-                source = ds.source or "unknown"
-                datasets_by_source.setdefault(source, []).append(
-                    {
-                        "slug": ds.slug,
-                        "name": ds.name,
-                        "period": ds.period,
-                        "stage": "incubating",
+                        "stage": ds.stage or "incubating",
                     }
                 )
 

@@ -200,17 +200,16 @@ def _build_pipeline_state_dict(
     signals = registry.signals
     by_status: dict[str, int] = {}
     for s in signals:
-        status = s.get("status", "unknown")
-        by_status[status] = by_status.get(status, 0) + 1
+        by_status[s.status] = by_status.get(s.status, 0) + 1
     actionable = [
         {
-            "id": s.get("id", ""),
-            "status": s.get("status", ""),
-            "detail": s.get("detail", ""),
-            "action": s.get("action", ""),
+            "id": s.id,
+            "status": s.status,
+            "detail": s.detail,
+            "action": s.action,
         }
         for s in signals
-        if s.get("status") in ("warn", "error")
+        if s.status in ("warn", "error")
     ]
     return {
         "available": True,
@@ -250,19 +249,41 @@ def _registry_summary_item(repo: str, registry: DIRegistry | None) -> dict[str, 
             "gcs": 0,
             "reason": "registry_not_found",
         }
+    # Compute GCS count from datasets with GCS location (non-empty path)
+    gcs = sum(
+        1
+        for ds in registry.datasets
+        if hasattr(ds, "location")
+        and getattr(ds.location, "type", "") == "gcs"
+        and getattr(ds.location, "path", "")
+    )
+    # codelists/entities may be dicts with nested structure — count inner items
+    codelists = _count_section(registry.codelists, "codelists")
+    entities = _count_section(registry.entities, "entities")
     return {
         "repo": repo,
         "available": True,
-        "source_repo": registry.name,
+        "source_repo": registry.source_repo or registry.repo,
         "updated_at": registry.updated_at,
         "datasets": len(registry.datasets),
-        "marts": registry.marts,
+        "marts": len(registry.marts),
         "signals": len(registry.signals),
-        "codelists": registry.codelists,
-        "entities": registry.entities,
-        "gcs": registry.gcs,
+        "codelists": codelists,
+        "entities": entities,
+        "gcs": gcs,
         "reason": "",
     }
+
+
+def _count_section(section: Any, inner_key: str) -> int:
+    """Count entries in a registry section that may be a list or nested dict."""
+    if isinstance(section, list):
+        return len(section)
+    if isinstance(section, dict):
+        inner = section.get(inner_key)
+        if isinstance(inner, (list, dict)):
+            return len(inner)
+    return 0
 
 
 def _build_explorer_dict(
