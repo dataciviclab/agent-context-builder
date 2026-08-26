@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-26T12:51:55.811622
+**Generated**: 2026-08-26T19:46:58.475242
 
 ## 🔍 SCOUTING
 
@@ -42,8 +42,11 @@
 
 ## 🔗 OPEN
 
+- [agent-context-builder#63](https://github.com/dataciviclab/agent-context-builder/pull/63): feat: filter noise + schema v4 + lab_connectors.registry migration
+- [dataset-incubator#834](https://github.com/dataciviclab/dataset-incubator/pull/834): chore(deps): bump toolkit a v1.51.0
 - [dataset-incubator#833](https://github.com/dataciviclab/dataset-incubator/pull/833): chore(workflows): allinea PR check e post-merge ad ADR-001
 - [dataset-incubator#829](https://github.com/dataciviclab/dataset-incubator/pull/829): intake: inpa-bandi e inpa-comunicazioni — reclutamento PA dal Portale inPA
+- [lab-connectors#79](https://github.com/dataciviclab/lab-connectors/pull/79): chore(deps): migra mcp a v2.x
 - **Dependabot**: 1 bump PR(s)
 **Discussions**: 157 open
   · [Domanda] PNRR Progetti — 11 domande su 280mila progetti e 150 miliardi del Piano (Italia Domani)
