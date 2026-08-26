@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T01:18:01.051260",
+  "generated_at": "2026-08-26T06:49:56.069769",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -1619,10 +1619,10 @@
   ],
   "radar": {
     "available": true,
-    "probe_date": "2026-08-25",
+    "probe_date": "2026-08-26",
     "sources_total": 36,
-    "green": 33,
-    "yellow": 2,
+    "green": 34,
+    "yellow": 1,
     "red": 1,
     "persistent_red": 1,
     "unhealthy": [
@@ -1641,14 +1641,6 @@
         "http_code": "-",
         "note": "Connection error (ConnectionError)",
         "red_streak": 14
-      },
-      {
-        "id": "aifa",
-        "status": "YELLOW",
-        "protocol": "html",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
-        "red_streak": 0
       }
     ]
   },
