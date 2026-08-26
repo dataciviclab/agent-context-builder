@@ -270,11 +270,11 @@ class Renderer:
 
         # Datasets grouped by source — unified section with stage field
         catalog = self._fetch_di_registry()
-        datasets_by_source: dict[str, list[dict[str, Any]]] = {}
+        datasets_by_stage: dict[str, list[dict[str, Any]]] = {}
         if catalog:
             for ds in catalog.datasets:
                 source = ds.source or "unknown"
-                datasets_by_source.setdefault(source, []).append(
+                datasets_by_stage.setdefault(source, []).append(
                     {
                         "slug": ds.slug,
                         "name": ds.name or ds.slug,
@@ -331,7 +331,7 @@ class Renderer:
             "schema_version": 4,
             "generated_at": self.fixed_timestamp,
             "repos": repos_section,
-            "datasets": datasets_by_source,
+            "datasets": datasets_by_stage,
             "operational_topics": operational_topics,
             "explorer_themes": explorer_themes_list,
         }
