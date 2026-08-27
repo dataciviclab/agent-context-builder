@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T08:09:52.113416",
+  "generated_at": "2026-08-27T21:52:31.584652",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -43,17 +43,10 @@
       "category": "other"
     },
     {
-      "number": 79,
-      "title": "chore(deps): migra mcp a v2.x",
-      "repo": "lab-connectors",
-      "url": "https://github.com/dataciviclab/lab-connectors/pull/79",
-      "category": "other"
-    },
-    {
-      "number": 10,
-      "title": "feat(dashboard): add Streamlit dashboard (4 pages)",
-      "repo": "open-conto-annuale",
-      "url": "https://github.com/dataciviclab/open-conto-annuale/pull/10",
+      "number": 81,
+      "title": "refactor(dashboard): delega a lab-connectors (formatters, years_from_registry, fix hardcoded URL)",
+      "repo": "open-siope",
+      "url": "https://github.com/dataciviclab/open-siope/pull/81",
       "category": "other"
     },
     {
@@ -1338,26 +1331,17 @@
     }
   },
   "warnings": [
-    "GitHub fetch failed \u2014 data-explorer:catalog/datasets.json: https://raw.githubusercontent.com/dataciviclab/data-explorer/main/catalog/datasets.json: HTTP 404",
-    "Many open PRs: 7"
+    "GitHub fetch failed \u2014 data-explorer:catalog/datasets.json: https://raw.githubusercontent.com/dataciviclab/data-explorer/main/catalog/datasets.json: HTTP 404"
   ],
   "radar": {
     "available": true,
-    "probe_date": "2026-08-26",
+    "probe_date": "2026-08-27",
     "sources_total": 36,
-    "green": 34,
-    "yellow": 1,
+    "green": 35,
+    "yellow": 0,
     "red": 1,
     "persistent_red": 1,
     "unhealthy": [
-      {
-        "id": "dati_cultura",
-        "status": "YELLOW",
-        "protocol": "sparql",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
-        "red_streak": 0
-      },
       {
         "id": "ispra_linked_data",
         "status": "RED",
@@ -1560,7 +1544,7 @@
       "repo": "senato-akn",
       "available": true,
       "source_repo": "dataciviclab/senato-akn",
-      "updated_at": "2026-08-18",
+      "updated_at": "2026-08-27",
       "datasets": 3,
       "marts": 5,
       "signals": 3,
@@ -1573,7 +1557,7 @@
       "repo": "debito-pubblico-intelligence",
       "available": true,
       "source_repo": "dataciviclab/debito-pubblico-intelligence",
-      "updated_at": "2026-08-25",
+      "updated_at": "2026-08-27",
       "datasets": 8,
       "marts": 12,
       "signals": 8,
