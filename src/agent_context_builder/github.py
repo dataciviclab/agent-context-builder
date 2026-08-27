@@ -2,11 +2,61 @@
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass
 from typing import Any, Optional
 
 from lab_connectors.http import HttpClient, HttpResult
 from lab_connectors.http.types import ResponseLike
+
+# ── Actionability classification ──────────────────────────────────────────
+
+# Issue title patterns that are automated / non-actionable
+_AUTOMATED_PATTERNS: list[re.Pattern[str]] = [
+    re.compile(r"^analisi:.*—\s*nuovo dataset pubblicato$", re.IGNORECASE),
+    re.compile(r"^follow-up:.*pagina e tema per", re.IGNORECASE),
+]
+
+# Discussion categories that are informational, not actionable
+_NON_ACTIONABLE_DISCUSSION_CATEGORIES: set[str] = {
+    "Presentazioni",
+    "Annunci",
+    "Q&A",
+}
+
+
+def classify_issue(title: str) -> tuple[bool, str]:
+    """Classify an issue as actionable or automated.
+
+    Returns:
+        (actionable, category) tuple.
+        category is one of: bug, intake, analysis, follow-up, infrastructure, other
+    """
+    for pattern in _AUTOMATED_PATTERNS:
+        if pattern.search(title):
+            return False, "automated"
+
+    t = title.lower()
+    if t.startswith("intake:") or "intake:" in t:
+        return True, "intake"
+    if t.startswith("bug:") or "bug:" in t:
+        return True, "bug"
+    if t.startswith("feat:") or t.startswith("refactor:") or t.startswith("chore:"):
+        return True, "infrastructure"
+    if t.startswith("analisi:") or t.startswith("[analisi]"):
+        return True, "analysis"
+    if t.startswith("dataset:") or "dataset:" in t:
+        return True, "intake"
+    if t.startswith("[roadmap"):
+        return True, "analysis"
+    if t.startswith("proposta intake:") or t.startswith("valutare se"):
+        return True, "intake"
+    return True, "other"
+
+
+def classify_discussion_category(category: str) -> bool:
+    """Return True if discussion category is actionable (not informational)."""
+    return category not in _NON_ACTIONABLE_DISCUSSION_CATEGORIES
 
 
 @dataclass
@@ -19,6 +69,8 @@ class PR:
     url: str
     state: str = "open"
     author: str = ""
+    actionable: bool = True
+    category: str = "other"
 
 
 @dataclass
@@ -30,6 +82,8 @@ class Issue:
     repo: str
     url: str
     state: str = "open"
+    actionable: bool = True
+    category: str = "other"
 
 
 @dataclass
@@ -134,8 +188,11 @@ class GitHubCollector:
         result = self._http.get(url, params=params, headers=self._headers())
         response = self._raise_on_bad_status(result, url)
 
+        _DEPENDABOT = {"dependabot[bot]", "dependabot"}
         prs = []
         for item in response.json():
+            author = item.get("user", {}).get("login", "")
+            is_dep = author in _DEPENDABOT
             prs.append(
                 PR(
                     number=item["number"],
@@ -143,7 +200,9 @@ class GitHubCollector:
                     repo=repo,
                     url=item["html_url"],
                     state=item["state"],
-                    author=item.get("user", {}).get("login", ""),
+                    author=author,
+                    actionable=not is_dep,
+                    category="dependencies" if is_dep else "other",
                 )
             )
         return prs
@@ -302,13 +361,17 @@ class GitHubCollector:
             # Skip pull requests: they have a pull_request field
             if "pull_request" in item:
                 continue
+            title = item["title"]
+            actionable, category = classify_issue(title)
             issues.append(
                 Issue(
                     number=item["number"],
-                    title=item["title"],
+                    title=title,
                     repo=repo,
                     url=item["html_url"],
                     state=item["state"],
+                    actionable=actionable,
+                    category=category,
                 )
             )
         return issues

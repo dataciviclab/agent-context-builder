@@ -42,7 +42,7 @@ def _mock_renderer():
     }
     m.render_topic_index.return_value = {
         "repos": {},
-        "datasets_by_source": {},
+        "datasets": {},
         "operational_topics": {},
     }
     return m

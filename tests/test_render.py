@@ -58,9 +58,7 @@ def test_render_session_bootstrap():
     bootstrap = _r(config, git_state=repos_state).render_session_bootstrap()
 
     assert "Session Bootstrap" in bootstrap
-    assert "## 🛠 INFRA" in bootstrap
-    assert "6 attivi" not in bootstrap
-    assert len(bootstrap.split("\n")) > 5
+    assert len(bootstrap.split("\n")) >= 4
 
 
 def test_render_session_bootstrap_github_error():
@@ -76,13 +74,22 @@ def test_render_session_bootstrap_github_error():
 def test_render_session_bootstrap_groups_dependabot_prs():
     """Bootstrap keeps Dependabot PRs compact and leaves feature PRs visible."""
     prs = [
-        PR(1, "feat: improve context", "repo1", "https://example.test/pr/1", author="gabry"),
+        PR(
+            1,
+            "feat: improve context",
+            "repo1",
+            "https://example.test/pr/1",
+            author="gabry",
+            actionable=True,
+        ),
         PR(
             2,
             "chore(deps): bump package",
             "repo1",
             "https://example.test/pr/2",
             author="dependabot[bot]",
+            actionable=False,
+            category="dependencies",
         ),
         PR(
             3,
@@ -90,6 +97,8 @@ def test_render_session_bootstrap_groups_dependabot_prs():
             "repo1",
             "https://example.test/pr/3",
             author="dependabot[bot]",
+            actionable=False,
+            category="dependencies",
         ),
     ]
     gh = make_github_mock(prs=prs)
@@ -98,7 +107,7 @@ def test_render_session_bootstrap_groups_dependabot_prs():
     ).render_session_bootstrap()
 
     assert "feat: improve context" in bootstrap
-    assert "**Dependabot**: 2 bump PR(s)" in bootstrap
+    assert "2 dependabot bump" in bootstrap
     assert "chore(deps): bump package" not in bootstrap
 
 
@@ -172,15 +181,16 @@ def test_render_bootstrap_with_discussions():
             "Civic Questions",
             "gabry",
             "2026-04-14T20:00:00Z",
+            actionable=True,
         ),
     ]
     bootstrap = _r(
         config, disc=disc, git_state={"dataset-incubator": _UNAVAILABLE}
     ).render_session_bootstrap()
 
-    assert "## 🔗 OPEN" in bootstrap
-    assert "IRPEF" in bootstrap
-    assert "[Civic Questions]" in bootstrap
+    # New format: discussions are not shown in bootstrap (compact)
+    # Just verify it renders without error
+    assert "Session Bootstrap" in bootstrap
 
 
 def test_render_triage_with_discussions():
@@ -197,6 +207,7 @@ def test_render_triage_with_discussions():
             "Civic Questions",
             "gabry",
             "2026-04-14T20:00:00Z",
+            actionable=True,
         ),
     ]
     triage = _r(
@@ -219,30 +230,28 @@ def test_render_triage_without_discussion_collector():
 
 
 def test_render_bootstrap_with_catalog_drift():
-    """Bootstrap includes the catalog drift section with inventory detail."""
+    """Bootstrap includes drift alerts in Richiede attenzione section."""
     gh = make_github_mock(raw_file=sample_so_json(drift=True))
     bootstrap = _r(_cfg(), gh=gh).render_session_bootstrap()
 
-    assert "## 🔍 SCOUTING" in bootstrap
+    assert "Richiede attenzione" in bootstrap
     assert "inps" in bootstrap
-    assert "inventory change" in bootstrap
 
 
 def test_render_bootstrap_catalog_drift_all_stable():
-    """Bootstrap shows SCOUTING section with no drift when all sources are stable."""
+    """Bootstrap shows no drift alerts when all sources are stable."""
     gh = make_github_mock(raw_file=sample_so_json(drift=False))
     bootstrap = _r(_cfg(), gh=gh).render_session_bootstrap()
 
-    assert "## 🔍 SCOUTING" in bootstrap
-    assert "no drift signals" in bootstrap
+    # No drift = no "Richiede attenzione" section
+    assert "Richiede attenzione" not in bootstrap
 
 
 def test_render_bootstrap_catalog_drift_unavailable():
-    """Bootstrap degrades silently (no SCOUTING section) when signals are missing."""
+    """Bootstrap degrades silently when signals are missing."""
     bootstrap = _r(_cfg(), gh=make_github_mock(raw_file=None)).render_session_bootstrap()
 
     assert "Session Bootstrap" in bootstrap
-    assert "## 🛠 INFRA" in bootstrap
 
 
 # ── Source health ─────────────────────────────────────────────────────────
@@ -308,7 +317,7 @@ def test_render_signals_cached_across_bootstrap_and_triage():
 
 
 def test_render_topic_index():
-    """Topic index includes repos, datasets_by_source, operational_topics."""
+    """Topic index includes repos, datasets, operational_topics."""
     from agent_context_builder.config import Topic
 
     config = Config(
@@ -343,10 +352,9 @@ def test_render_topic_index():
 
     assert "repos" in result
     assert result["repos"]["repo1"]["description"] == "Test repo"
-    assert "datasets_by_source" in result
+    assert "datasets" in result
     assert any(
-        any(d["slug"] == "irpef_comunale" for d in slugs)
-        for slugs in result["datasets_by_source"].values()
+        any(d["slug"] == "irpef_comunale" for d in slugs) for slugs in result["datasets"].values()
     )
     assert "operational_topics" in result
     assert result["operational_topics"]["toolkit"]["summary"] == "Pipeline engine"
@@ -415,7 +423,7 @@ def test_render_triage_registry_summary_missing_registry_is_quiet():
 
 @pytest.mark.contract
 def test_render_bootstrap_registry_section():
-    """Bootstrap includes a REGISTRY block with per-repo counts."""
+    """Bootstrap includes registry info in Stato section."""
     gh = make_github_mock()
 
     def _raw_file_side_effect(repo, path, ref="main"):
@@ -426,16 +434,16 @@ def test_render_bootstrap_registry_section():
     gh.get_raw_file.side_effect = _raw_file_side_effect
     bootstrap = _r(_cfg(repos=["repo1"]), gh=gh).render_session_bootstrap()
 
-    assert "## 🗂 REGISTRY" in bootstrap
-    assert "**repo1**: 2 ds · 0 marts · 2 signals ·" in bootstrap
+    assert "Stato" in bootstrap
+    assert "Registry:" in bootstrap
 
 
 def test_render_bootstrap_registry_section_hidden_when_unavailable():
-    """Bootstrap omits the REGISTRY block when no repo has a registry."""
+    """Bootstrap omits registry info when no repo has a registry."""
     gh = make_github_mock(raw_file=None)
     bootstrap = _r(_cfg(repos=["repo1"]), gh=gh).render_session_bootstrap()
 
-    assert "## 🗂 REGISTRY" not in bootstrap
+    assert "Registry:" not in bootstrap
 
 
 # ── Topic index v3: analyses ───────────────────────────────────────────────
@@ -472,7 +480,7 @@ Content...
 
 
 def test_render_topic_index_v3_with_analyses():
-    """Topic index v3 includes analyses and analyses_by_dataset."""
+    """Topic index includes analyses and analyses_by_dataset."""
     config = _cfg(repos=["repo1", "dataciviclab"])
     gh = make_github_mock()
 
@@ -491,7 +499,7 @@ def test_render_topic_index_v3_with_analyses():
     gh.get_raw_file.side_effect = _raw_file_side_effect
     result = _r(config, gh=gh).render_topic_index()
 
-    assert result["schema_version"] == 3
+    assert result["schema_version"] == 4
     assert "analyses" in result
     assert "analyses_by_dataset" in result
 
@@ -505,6 +513,7 @@ def test_render_topic_index_v3_with_analyses():
     assert irpef["discussion"] == 88
     assert irpef["status"] == "active"
     assert "issue" not in irpef  # None → omitted
+    assert "path" not in irpef  # removed in v4
 
     aifa = next(a for a in analyses if a["slug"] == "aifa-spesa-consumo")
     assert aifa["name"] == "AIFA Spesa farmaceutica 2018-2024"
@@ -519,7 +528,7 @@ def test_render_topic_index_v3_with_analyses():
 
 
 def test_render_topic_index_v2_when_no_analyses():
-    """Topic index stays v2 when dataciviclab data is unavailable."""
+    """Topic index stays at v4 even without analyses (schema is always 4)."""
     config = _cfg(repos=["repo1"])
     gh = make_github_mock(raw_file=sample_di_registry_json())
 
@@ -531,6 +540,6 @@ def test_render_topic_index_v2_when_no_analyses():
     gh.get_raw_file.side_effect = _raw_file_side_effect
     result = _r(config, gh=gh).render_topic_index()
 
-    assert result["schema_version"] == 2
+    assert result["schema_version"] == 4
     assert "analyses" not in result
     assert "analyses_by_dataset" not in result

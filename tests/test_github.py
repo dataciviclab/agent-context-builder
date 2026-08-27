@@ -91,3 +91,98 @@ class TestGetIssues:
         assert result == []
         assert "some-repo:issues" in collector.fetch_errors
         assert "HTTP 403" in collector.fetch_errors["some-repo:issues"]
+
+
+# ── Actionability classification ──────────────────────────────────────────
+
+
+class TestClassifyIssue:
+    """classify_issue filters automated issues and categorizes actionable ones."""
+
+    @pytest.mark.pure_unit
+    def test_automated_analisi_nuovo_dataset(self):
+        from agent_context_builder.github import classify_issue
+
+        actionable, cat = classify_issue("analisi: irpef_comunale — nuovo dataset pubblicato")
+        assert actionable is False
+        assert cat == "automated"
+
+    @pytest.mark.pure_unit
+    def test_automated_followup_pagina_tema(self):
+        from agent_context_builder.github import classify_issue
+
+        actionable, cat = classify_issue("follow-up: pagina e tema per dipendenti_pubblici")
+        assert actionable is False
+        assert cat == "automated"
+
+    @pytest.mark.pure_unit
+    def test_actionable_intake(self):
+        from agent_context_builder.github import classify_issue
+
+        actionable, cat = classify_issue(
+            "intake: mim_docenti_titolari — Docenti a tempo indeterminato"
+        )
+        assert actionable is True
+        assert cat == "intake"
+
+    @pytest.mark.pure_unit
+    def test_actionable_bug(self):
+        from agent_context_builder.github import classify_issue
+
+        actionable, cat = classify_issue("bug: compose fallisce GCS push in post-merge")
+        assert actionable is True
+        assert cat == "bug"
+
+    @pytest.mark.pure_unit
+    def test_actionable_feat(self):
+        from agent_context_builder.github import classify_issue
+
+        actionable, cat = classify_issue("feat: download(url) -> bytes standalone")
+        assert actionable is True
+        assert cat == "infrastructure"
+
+    @pytest.mark.pure_unit
+    def test_actionable_refactor(self):
+        from agent_context_builder.github import classify_issue
+
+        actionable, cat = classify_issue("refactor: estrarre _write_reports() da run_full()")
+        assert actionable is True
+        assert cat == "infrastructure"
+
+    @pytest.mark.pure_unit
+    def test_actionable_dataset_prefix(self):
+        from agent_context_builder.github import classify_issue
+
+        actionable, cat = classify_issue("dataset: Internet access by NACE and NUTS 2 region")
+        assert actionable is True
+        assert cat == "intake"
+
+    @pytest.mark.pure_unit
+    def test_actionable_other(self):
+        from agent_context_builder.github import classify_issue
+
+        actionable, cat = classify_issue("Valutare se i notebook template portano ancora valore")
+        assert actionable is True
+        assert cat == "intake"
+
+
+class TestClassifyDiscussionCategory:
+    """classify_discussion_category filters non-actionable categories."""
+
+    @pytest.mark.pure_unit
+    @pytest.mark.parametrize(
+        "category,expected",
+        [
+            ("Presentazioni", False),
+            ("Annunci", False),
+            ("Q&A", False),
+            ("Domanda", True),
+            ("Analisi", True),
+            ("Proposte", True),
+            ("Metodo", True),
+        ],
+    )
+    def test_category_actionability(self, category, expected):
+        from agent_context_builder.github import classify_discussion_category
+
+        assert classify_discussion_category(category) is expected

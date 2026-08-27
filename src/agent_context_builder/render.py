@@ -54,10 +54,10 @@ class Renderer:
         self._registry_fetcher = RegistryFetcher(self.github_collector)
 
     def render_session_bootstrap(self) -> str:
-        """Render session_bootstrap.md.
+        """Render session_bootstrap.md — compact signal-oriented overview.
 
-        Organized by Lab phase: SCOUTING → REGISTRY → ANALYSES → EXPLORER →
-        OPEN → INFRA. Target: ~40 lines. Details live in workspace_triage.json.
+        Target: ~30 lines. Only actionable signals + summary counts.
+        Details live in workspace_triage.json and topic_index.json.
         """
         lines = []
         lines.append("# Session Bootstrap")
@@ -66,217 +66,120 @@ class Renderer:
         if self.config.workspace_root:
             lines.append(f"**Workspace**: {self.config.workspace_root}")
 
-        # Degradation warning first — always visible, not buried in OPEN
+        # Degradation warning first
         collector_warn = self.github_collector.collector_warning()
         if collector_warn:
             lines.append(f"> ⚠️ {collector_warn}")
         lines.append("")
 
-        # ── SCOUTING ────────────────────────────────────────────────────
-        radar = self._fetch_radar_summary()
-        so = self._fetch_source_observatory_signals()
-        has_scouting = radar is not None or so is not None
+        # ── STATUS LINE ───────────────────────────────────────────────────
+        status_parts: list[str] = []
 
-        if has_scouting:
-            lines.append("## 🔍 SCOUTING")
+        # Radar
+        radar = self._fetch_radar_summary()
+        if radar is not None:
+            status_parts.append(f"Radar: {radar.sources_total} fonti GREEN {radar.green}")
+            if radar.red > 0:
+                status_parts[-1] += f" · RED {radar.red}"
+
+        # Pipeline (from registry signals)
+        registry_summaries = self._registry_fetcher.fetch(self.config.repos)
+        available_repos = [r for r, reg in registry_summaries.items() if reg is not None]
+        total_datasets = sum(len(reg.datasets) for _, reg in registry_summaries.items() if reg)
+        if available_repos:
+            status_parts.append(f"Registry: {len(available_repos)} repo · {total_datasets} dataset")
+
+        # Explorer
+        explorer_catalog = self._fetch_explorer_catalog()
+        if explorer_catalog is not None:
+            themed: set[str] = set()
+            for t in explorer_catalog.themes:
+                themed.update(t.datasets)
+            gap = len(explorer_catalog.without_theme)
+            status_parts.append(
+                f"Explorer: {len(themed)} pubblicati" + (f" · {gap} senza tema" if gap else "")
+            )
+
+        if status_parts:
+            lines.append("## Stato")
+            lines.append("")
+            lines.append(" · ".join(status_parts))
             lines.append("")
 
-            # Radar
-            if radar is not None:
-                lines.append(
-                    f"**Radar**: {radar.sources_total} fonti — "
-                    f"GREEN {radar.green} · YELLOW {radar.yellow} · RED {radar.red} "
-                    f"(probe: {radar.probe_date})"
-                )
-                if radar.persistent_red:
-                    lines.append(f"  ⚠ **{radar.persistent_red} persistent RED**")
-                if radar.unhealthy:
-                    for rs in radar.unhealthy:
-                        _d = f" — ↳ {', '.join(rs.datasets_in_use)}" if rs.datasets_in_use else ""
-                        streak = f" (streak {rs.red_streak})" if rs.red_streak else ""
-                        note = f" — {rs.note}" if rs.note else ""
-                        _row = f"  · **{rs.id}** {rs.status} [{rs.http_code}]{note}{streak}{_d}"
-                        lines.append(_row)
-            else:
-                lines.append("**Radar**: unavailable")
+        # ── ACTIONABLE ────────────────────────────────────────────────────
+        actionable_items: list[str] = []
 
-            # Catalog drift
-            if so is None:
-                lines.append("**Catalog Drift**: unavailable")
-            else:
-                issues = so.drift_alerts
-                if issues:
-                    for alert in issues:
-                        action = (
-                            f" — azione: {alert.suggested_action}"
-                            if alert.suggested_action not in ("nessuna", "")
-                            else ""
-                        )
-                        _row = (
-                            f"  · **{alert.source}** ({alert.protocol}):"
-                            f" {alert.signal_type}{action}"
-                        )
-                        lines.append(_row)
-                else:
-                    lines.append(
-                        f"**Catalog Drift**: no drift signals "
-                        f"({so.sources_checked} sources checked)"
+        # PRs (only actionable, max 5)
+        prs = self.github_collector.get_prs(self.config.repos)
+        feature_prs = [pr for pr in prs if pr.actionable]
+        dep_count = len([pr for pr in prs if not pr.actionable])
+        for pr in feature_prs[:5]:
+            actionable_items.append(f"- [PR] {pr.repo}#{pr.number}: {pr.title}")
+        if dep_count:
+            actionable_items.append(f"- [PR] {dep_count} dependabot bump (skipped)")
+
+        # Source drift (only if actionable)
+        so = self._fetch_source_observatory_signals()
+        if so is not None:
+            for alert in so.drift_alerts[:3]:
+                action = (
+                    f" → {alert.suggested_action}"
+                    if alert.suggested_action not in ("nessuna", "")
+                    else ""
+                )
+                actionable_items.append(f"- [Fonte] {alert.source}: {alert.signal_type}{action}")
+
+        # Open issues with problems (pipeline errors from registry signals)
+        for repo, reg in registry_summaries.items():
+            if reg is None:
+                continue
+            for sig in reg.signals:
+                if sig.status in ("error", "warn"):
+                    actionable_items.append(
+                        f"- [Pipeline] {repo}/{sig.id}: {sig.status} — {sig.detail}"
                     )
 
+        if actionable_items:
+            lines.append("## Richiede attenzione")
             lines.append("")
-
-        # ── REGISTRY (cross-repo) ────────────────────────────────────────
-        registry_summaries = self._registry_fetcher.fetch(self.config.repos)
-        available_summaries = [
-            (repo, reg) for repo, reg in registry_summaries.items() if reg is not None
-        ]
-        if available_summaries:
-            lines.append("## 🗂 REGISTRY")
-            lines.append("")
-            for repo, reg in available_summaries:
-                lines.append(
-                    f"  · **{repo}**: {len(reg.datasets)} ds · {reg.marts} marts · "
-                    f"{len(reg.signals)} signals · {reg.updated_at}"
-                )
+            lines.extend(actionable_items)
             lines.append("")
 
         # ── ANALYSES ──────────────────────────────────────────────────────
         analyses = self._fetch_dcl_analyses()
         if analyses:
             active = [a for a in analyses if a.status == "active"]
-            archived = [a for a in analyses if a.status == "archived"]
-            lines.append("## 📊 ANALYSES")
-            lines.append("")
             if active:
-                lines.append(f"**Attive**: {len(active)}")
-                for a in active:
-                    datasets_str = ", ".join(a.datasets) if a.datasets else ""
-                    parts = [f"**{a.name}**"]
-                    if datasets_str:
-                        parts.append(f"→ {datasets_str}")
-                    if a.discussion is not None:
-                        parts.append(
-                            f"[discussion #{a.discussion}]"
-                            f"(https://github.com/orgs/dataciviclab/discussions/{a.discussion})"
-                        )
-                    lines.append(f"  · {' · '.join(parts)}")
-            if archived:
-                lines.append(f"**Archiviate**: {len(archived)}")
-                for a in archived:
-                    lines.append(f"  · **{a.name}**")
-            lines.append("")
-
-        # ── EXPLORER ──────────────────────────────────────────────────────
-        explorer_catalog = self._fetch_explorer_catalog()
-        if explorer_catalog is not None:
-            lines.append("## 🗂 EXPLORER")
-            lines.append("")
-
-            # Count themed datasets
-            themed_slugs: set[str] = set()
-            for t in explorer_catalog.themes:
-                themed_slugs.update(t.datasets)
-
-            # Link all'explorer
-            lines.append(
-                f"**Pubblicati**: {len(themed_slugs)} dataset · "
-                f"{len(explorer_catalog.themes)} temi · "
-                f"[data-explorer](https://dataciviclab.github.io/data-explorer/)"
-            )
-            for t in explorer_catalog.themes:
-                datasets_str = ", ".join(t.datasets)
-                lines.append(f"  · **{t.name}**: {datasets_str}")
-
-            # Gap analysis: published datasets without a theme (no page yet)
-            gap = explorer_catalog.without_theme
-            if gap:
-                lines.append(f"  ⚠ {len(gap)} dataset published non ancora su explorer:")
-                for slug in gap[:5]:
-                    lines.append(f"    · {slug}")
-                if len(gap) > 5:
-                    lines.append(f"    · ... e altri {len(gap) - 5}")
-
-            # Deploy status
-            last_deploy = self._de_fetcher.fetch_deploy_status()
-            if last_deploy is not None:
-                conclusion = last_deploy.get("conclusion", "unknown")
-                icon = "✅" if conclusion == "success" else "❌"
-                completed = (
-                    last_deploy.get("completed_at", "")[:10]
-                    if last_deploy.get("completed_at")
-                    else "?"
+                # Show top-3 most recent (by discussion number, higher = more recent)
+                with_disc = sorted(
+                    [a for a in active if a.discussion is not None],
+                    key=lambda a: a.discussion or 0,
+                    reverse=True,
                 )
-                lines.append(f"  **Deploy**: {icon} {conclusion} ({completed})")
-            else:
-                lines.append("  **Deploy**: dati non disponibili")
+                recent = with_disc[:3] if with_disc else active[:3]
+                refs = ", ".join(
+                    f"{a.slug} (#{a.discussion})" if a.discussion else a.slug for a in recent
+                )
+                lines.append(f"## Analisi attive ({len(active)})")
+                lines.append("")
+                lines.append(f"Ultimo update: {refs}")
+                lines.append("")
 
-            lines.append("")
-
-        # ── OPEN ─────────────────────────────────────────────────────────
-        prs = self.github_collector.get_prs(self.config.repos)
-        github_errors = self.github_collector.fetch_errors
-        if self.discussion_collector:
-            discussions = self.discussion_collector.get_discussions(self.config.repos)
-            disc_errors = self.discussion_collector.fetch_errors
-        else:
-            discussions = []
-            disc_errors = {}
-
-        has_open = bool(prs) or bool(discussions) or bool(self.config.topics)
-        if has_open:
-            lines.append("## 🔗 OPEN")
-            lines.append("")
-
-            # PRs
-            if prs:
-                _DEPENDABOT = {"dependabot[bot]", "dependabot"}
-                feature_prs = [pr for pr in prs if pr.author not in _DEPENDABOT]
-                dep_prs = [pr for pr in prs if pr.author in _DEPENDABOT]
-                for pr in feature_prs[:5]:
-                    lines.append(f"- [{pr.repo}#{pr.number}]({pr.url}): {pr.title}")
-                if dep_prs:
-                    lines.append(f"- **Dependabot**: {len(dep_prs)} bump PR(s)")
-            elif not github_errors:
-                lines.append("**PRs**: none open")
-
-            # Discussions
-            if disc_errors:
-                lines.append(f"**Discussions**: {len(disc_errors)} fetch error(s)")
-            elif discussions:
-                lines.append(f"**Discussions**: {len(discussions)} open")
-                for d in discussions[:3]:
-                    lines.append(f"  · [{d.category}] {d.title}")
-
-            # Topics
-            if self.config.topics:
-                topics = " · ".join(self.config.topics.keys())
-                lines.append(f"**Topics**: {topics}")
-
-            lines.append("")
-
-        # ── INFRA ─────────────────────────────────────────────────────────
+        # ── INFRA (compact) ───────────────────────────────────────────────
         repos_state = self.git_collector.get_repos_state(self.config.repos)
-        local_available = any(s.available for s in repos_state.values())
-        repos_count = len(self.config.repos)
+        dirty_repos = [r for r, s in repos_state.items() if s.available and s.dirty]
+        ahead_repos = [r for r, s in repos_state.items() if s.available and s.branches_ahead]
+        if dirty_repos or ahead_repos:
+            infra_parts: list[str] = []
+            if dirty_repos:
+                infra_parts.append(f"dirty: {', '.join(dirty_repos)}")
+            if ahead_repos:
+                infra_parts.append(f"ahead: {', '.join(ahead_repos)}")
+            lines.append("## Infra")
+            lines.append("")
+            lines.append(f"Repos locali: {' · '.join(infra_parts)}")
+            lines.append("")
 
-        lines.append("## 🛠 INFRA")
-        lines.append("")
-        lines.append(f"**Repos**: {repos_count} attivi")
-
-        if local_available:
-            for repo, state in repos_state.items():
-                if state.available:
-                    flags = []
-                    if state.dirty:
-                        flags.append("dirty")
-                    if state.branches_ahead:
-                        flags.append(f"ahead: {', '.join(state.branches_ahead)}")
-                    flag_str = f" ({', '.join(flags)})" if flags else ""
-                    lines.append(f"  · **{repo}** `{state.current_branch}`{flag_str}")
-        else:
-            lines.append("**Local git**: no workspace")
-
-        lines.append("")
         return "\n".join(lines)
 
     def _fetch_radar_summary(self) -> RadarSummary | None:
@@ -348,16 +251,15 @@ class Renderer:
         return warnings
 
     def render_topic_index(self) -> dict[str, Any]:
-        """Render topic_index.json (schema v3).
+        """Render topic_index.json (schema v4).
 
         Returns:
             - repos: GitHub description per repo (auto from API)
-            - datasets_by_source: published datasets grouped by source (auto from registry)
-            - candidates_by_source: incubating datasets grouped by source
+            - datasets: all datasets (published + incubating) grouped by source, with stage
             - operational_topics: YAML-defined topics for agent navigation
-            - explorer_themes: editorial themes from data-explorer (v2)
-            - analyses: list of analyses from dataciviclab/analisi/ (v3)
-            - analyses_by_dataset: reverse lookup dataset → analyses (v3)
+            - explorer_themes: editorial themes from data-explorer
+            - analyses: list of analyses from dataciviclab/analisi/
+            - analyses_by_dataset: reverse lookup dataset → analyses
         """
         # Repos with description from GitHub
         repos_info = self.github_collector.get_repos_info(self.config.repos)
@@ -366,29 +268,18 @@ class Renderer:
             for name, info in repos_info.items()
         }
 
-        # Datasets grouped by source from the dataset-incubator registry
+        # Datasets grouped by source — unified section with stage field
         catalog = self._fetch_di_registry()
-        datasets_by_source: dict[str, list[dict[str, Any]]] = {}
-        candidates_by_source: dict[str, list[dict[str, Any]]] = {}
-        all_dataset_slugs: set[str] = set()
+        datasets_by_stage: dict[str, list[dict[str, Any]]] = {}
         if catalog:
-            for ds in catalog.published:
+            for ds in catalog.datasets:
                 source = ds.source or "unknown"
-                datasets_by_source.setdefault(source, []).append(
+                datasets_by_stage.setdefault(source, []).append(
                     {
                         "slug": ds.slug,
-                        "name": ds.name,
+                        "name": ds.name or ds.slug,
                         "period": ds.period,
-                    }
-                )
-                all_dataset_slugs.add(ds.slug)
-            for ds in catalog.incubating:
-                source = ds.source or "unknown"
-                candidates_by_source.setdefault(source, []).append(
-                    {
-                        "slug": ds.slug,
-                        "name": ds.name,
-                        "period": ds.period,
+                        "stage": ds.stage or "incubating",
                     }
                 )
 
@@ -396,10 +287,8 @@ class Renderer:
         operational_topics = {}
         for topic_name, topic in self.config.topics.items():
             operational_topics[topic_name] = {
-                "name": topic_name,
                 "summary": topic.summary,
                 "repos": topic.repos,
-                "paths": topic.paths,
                 "next": topic.next,
             }
 
@@ -416,7 +305,7 @@ class Renderer:
                 for t in explorer_catalog.themes
             ]
 
-        # ── v3: Analyses from dataciviclab ──────────────────────────────
+        # ── Analyses from dataciviclab ──────────────────────────────────
         analyses_list: list[dict[str, Any]] = []
         analyses_by_dataset: dict[str, list[str]] = {}
         analyses = self._fetch_dcl_analyses()
@@ -426,7 +315,6 @@ class Renderer:
                     "slug": a.slug,
                     "name": a.name,
                     "datasets": a.datasets,
-                    "path": a.path,
                     "status": a.status,
                 }
                 if a.discussion is not None:
@@ -439,15 +327,11 @@ class Renderer:
                 for ds_slug in a.datasets:
                     analyses_by_dataset.setdefault(ds_slug, []).append(a.slug)
 
-        # Determine schema version: 3 if we have analyses, 2 otherwise
-        schema_version = 3 if analyses_list else 2
-
         result: dict[str, Any] = {
-            "schema_version": schema_version,
+            "schema_version": 4,
             "generated_at": self.fixed_timestamp,
             "repos": repos_section,
-            "datasets_by_source": datasets_by_source,
-            "candidates_by_source": candidates_by_source,
+            "datasets": datasets_by_stage,
             "operational_topics": operational_topics,
             "explorer_themes": explorer_themes_list,
         }

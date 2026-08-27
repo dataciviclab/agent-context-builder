@@ -178,10 +178,11 @@ def workspace_triage() -> dict[str, object]:
 
 @mcp.tool(
     description=(
-        "Topic index — repos, datasets_by_source, operational_topics, analyses. "
+        "Topic index — repos, datasets (published + incubating with stage), "
+        "operational_topics, analyses. "
         "Quando ``resolve`` (dataset slug, analysis slug, o source name) è "
         "specificato, restituisce un sub-graph compatto con tutte le entità "
-        "correlate. Senza ``resolve`` restituisce l'index completo (schema v3)."
+        "correlate. Senza ``resolve`` restituisce l'index completo (schema v4)."
     ),
     structured_output=True,
 )
@@ -212,24 +213,22 @@ def topic_index(resolve: str | None = None) -> dict[str, object]:
                 seen_datasets.add(slug)
                 result.setdefault("datasets", []).append(entry)
 
-        for section in ("datasets_by_source", "candidates_by_source"):
-            entries = data.get(section, {})
-            for source, datasets in entries.items():
-                for ds in datasets:
-                    if ds.get("slug", "").lower() == resolve_lower:
-                        _add_dataset(
-                            {
-                                "slug": ds["slug"],
-                                "name": ds.get("name", ""),
-                                "source": source,
-                                "period": ds.get("period"),
-                                "stage": "published"
-                                if section == "datasets_by_source"
-                                else "incubating",
-                            }
-                        )
-                        result["found"] = True
-                        _add_source(source)
+        # Schema v4: unified 'datasets' section with stage field
+        entries = data.get("datasets", {})
+        for source, datasets in entries.items():
+            for ds in datasets:
+                if ds.get("slug", "").lower() == resolve_lower:
+                    _add_dataset(
+                        {
+                            "slug": ds["slug"],
+                            "name": ds.get("name", ""),
+                            "source": source,
+                            "period": ds.get("period"),
+                            "stage": ds.get("stage", "published"),
+                        }
+                    )
+                    result["found"] = True
+                    _add_source(source)
 
         for analysis in data.get("analyses", []):
             a_slug = analysis.get("slug", "")
@@ -261,24 +260,21 @@ def topic_index(resolve: str | None = None) -> dict[str, object]:
                     )
                     result["found"] = True
 
-        for section in ("datasets_by_source", "candidates_by_source"):
-            entries = data.get(section, {})
-            for source in entries:
-                if source.lower() == resolve_lower:
-                    result["found"] = True
-                    _add_source(source)
-                    for ds in entries[source]:
-                        _add_dataset(
-                            {
-                                "slug": ds["slug"],
-                                "name": ds.get("name", ""),
-                                "source": source,
-                                "period": ds.get("period"),
-                                "stage": "published"
-                                if section == "datasets_by_source"
-                                else "incubating",
-                            }
-                        )
+        # Resolve by source name
+        for source in entries:
+            if source.lower() == resolve_lower:
+                result["found"] = True
+                _add_source(source)
+                for ds in entries[source]:
+                    _add_dataset(
+                        {
+                            "slug": ds["slug"],
+                            "name": ds.get("name", ""),
+                            "source": source,
+                            "period": ds.get("period"),
+                            "stage": ds.get("stage", "published"),
+                        }
+                    )
 
         result["ts"] = datetime.now(timezone.utc).isoformat()
         return {"content": result, "ok": True}
@@ -459,32 +455,28 @@ def _search_topic_index(query: str, topic_data: dict) -> dict[str, list[dict[str
     datasets_found: list[dict[str, object]] = []
     analyses_found: list[dict[str, object]] = []
 
-    # Search datasets by slug, name, source
+    # Search datasets by slug, name, source (schema v4: unified 'datasets' section)
     seen_slugs: set[str] = set()
-    for section in ("datasets_by_source", "candidates_by_source"):
-        entries = topic_data.get(section, {})
-        for source, datasets in entries.items():
-            for ds in datasets:
-                slug = ds.get("slug", "")
-                name = ds.get("name", "")
-                if slug not in seen_slugs and (
-                    query.lower()
-                    in slug.lower()  # substring su slug (identificatori con underscore)
-                    or _word_match(query, name)  # word boundary su name (testo umano)
-                    or _word_match(query, source)  # word boundary su source (testo umano)
-                ):
-                    seen_slugs.add(slug)
-                    datasets_found.append(
-                        {
-                            "slug": slug,
-                            "name": name,
-                            "source": source,
-                            "period": ds.get("period"),
-                            "stage": "published"
-                            if section == "datasets_by_source"
-                            else "incubating",
-                        }
-                    )
+    entries = topic_data.get("datasets", {})
+    for source, datasets in entries.items():
+        for ds in datasets:
+            slug = ds.get("slug", "")
+            name = ds.get("name", "")
+            if slug not in seen_slugs and (
+                query.lower() in slug.lower()  # substring su slug (identificatori con underscore)
+                or _word_match(query, name)  # word boundary su name (testo umano)
+                or _word_match(query, source)  # word boundary su source (testo umano)
+            ):
+                seen_slugs.add(slug)
+                datasets_found.append(
+                    {
+                        "slug": slug,
+                        "name": name,
+                        "source": source,
+                        "period": ds.get("period"),
+                        "stage": ds.get("stage", "published"),
+                    }
+                )
 
     # Search analyses by slug, name, datasets
     for analysis in topic_data.get("analyses", []):

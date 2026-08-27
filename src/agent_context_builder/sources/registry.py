@@ -1,15 +1,15 @@
 """Cross-repo registry fetch helpers.
 
+Uses ``lab_connectors.registry`` models and client for parsing.
 One fetcher per repo: fetches and parses the canonical ``registry.json``
-(schema v1) that each Lab repo publishes under ``registry/``. Consumers
-derive what they need from the parsed ``DIRegistry``: per-repo summary
-(counts), signals (pipeline state), datasets (topic_index, explorer gap).
+(schema v1) that each Lab repo publishes under ``registry/``.
 """
 
 from __future__ import annotations
 
+from lab_connectors.registry import Registry
+
 from ..github import GitHubCollector
-from ..signals import DIRegistry, parse_di_registry
 
 _REGISTRY_PATH = "registry/registry.json"
 
@@ -24,13 +24,13 @@ class RegistryFetcher:
 
     def __init__(self, collector: GitHubCollector):
         self.collector = collector
-        self._cache: dict[str, DIRegistry | None] = {}
+        self._cache: dict[str, Registry | None] = {}
 
-    def fetch(self, repos: list[str]) -> dict[str, DIRegistry | None]:
+    def fetch(self, repos: list[str]) -> dict[str, Registry | None]:
         """Fetch and parse registry.json for all given repos."""
         return {repo: self.fetch_repo(repo) for repo in repos}
 
-    def fetch_repo(self, repo: str) -> DIRegistry | None:
+    def fetch_repo(self, repo: str) -> Registry | None:
         """Fetch and parse a single repo registry.json, or None if missing."""
         if repo in self._cache:
             return self._cache[repo]
@@ -48,8 +48,11 @@ class RegistryFetcher:
             return None
 
         try:
-            registry = parse_di_registry(raw)
-        except ValueError as exc:
+            import json
+
+            data = json.loads(raw)
+            registry = Registry.from_dict(data)
+        except (ValueError, json.JSONDecodeError) as exc:
             self.collector.fetch_errors[f"{repo}:registry"] = str(exc)
             registry = None
         self._cache[repo] = registry

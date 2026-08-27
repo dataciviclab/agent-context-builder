@@ -24,7 +24,11 @@ def build_workspace_triage(
     de_fetcher: DataExplorerFetcher | None = None,
     registry_fetcher: RegistryFetcher | None = None,
 ) -> dict[str, Any]:
-    """Build the workspace_triage.json payload."""
+    """Build the workspace_triage.json payload — actionable items only.
+
+    Issues and discussions are filtered to exclude automated/non-actionable
+    items (e.g. "analisi: XXX — nuovo dataset pubblicato", old presentazioni).
+    """
     prs = github_collector.get_prs(config.repos)
     issues = github_collector.get_issues(config.repos)
     repos_state = git_collector.get_repos_state(config.repos)
@@ -39,18 +43,25 @@ def build_workspace_triage(
     de_fetcher = de_fetcher or DataExplorerFetcher(github_collector)
     registry_fetcher = registry_fetcher or RegistryFetcher(github_collector)
 
+    # Filter to actionable only
+    actionable_prs = [pr for pr in prs if pr.actionable]
+    actionable_issues = [issue for issue in issues if issue.actionable]
+    actionable_discussions = [d for d in discussions if d.actionable]
+
     return {
         "generated_at": fixed_timestamp,
         "workspace_root": str(config.workspace_root) if config.workspace_root else None,
         "repos": config.repos,
-        "open_prs": len(prs) if not github_collector.fetch_errors else None,
-        "prs": [_serialize_pr(pr) for pr in prs],
-        "open_issues": len(issues) if not github_collector.fetch_errors else None,
-        "issues": [_serialize_issue(issue) for issue in issues],
+        "open_prs": len(actionable_prs) if not github_collector.fetch_errors else None,
+        "prs": [_serialize_pr(pr) for pr in actionable_prs],
+        "open_issues": len(actionable_issues) if not github_collector.fetch_errors else None,
+        "issues": [_serialize_issue(issue) for issue in actionable_issues],
         "open_discussions": (
-            len(discussions) if discussion_collector is not None and not disc_errors else None
+            len(actionable_discussions)
+            if discussion_collector is not None and not disc_errors
+            else None
         ),
-        "discussions": [_serialize_discussion(d) for d in discussions],
+        "discussions": [_serialize_discussion(d) for d in actionable_discussions],
         "github_fetch_errors": {**github_collector.fetch_errors, **disc_errors},
         "git_state": _serialize_git_state(repos_state),
         "warnings": _collect_warnings(github_collector, prs, repos_state),
@@ -63,11 +74,23 @@ def build_workspace_triage(
 
 
 def _serialize_pr(pr: PR) -> dict[str, Any]:
-    return {"number": pr.number, "title": pr.title, "repo": pr.repo, "url": pr.url}
+    return {
+        "number": pr.number,
+        "title": pr.title,
+        "repo": pr.repo,
+        "url": pr.url,
+        "category": pr.category,
+    }
 
 
 def _serialize_issue(issue: Any) -> dict[str, Any]:
-    return {"number": issue.number, "title": issue.title, "repo": issue.repo, "url": issue.url}
+    return {
+        "number": issue.number,
+        "title": issue.title,
+        "repo": issue.repo,
+        "url": issue.url,
+        "category": issue.category,
+    }
 
 
 def _serialize_discussion(discussion: Discussion) -> dict[str, Any]:
@@ -177,17 +200,16 @@ def _build_pipeline_state_dict(
     signals = registry.signals
     by_status: dict[str, int] = {}
     for s in signals:
-        status = s.get("status", "unknown")
-        by_status[status] = by_status.get(status, 0) + 1
+        by_status[s.status] = by_status.get(s.status, 0) + 1
     actionable = [
         {
-            "id": s.get("id", ""),
-            "status": s.get("status", ""),
-            "detail": s.get("detail", ""),
-            "action": s.get("action", ""),
+            "id": s.id,
+            "status": s.status,
+            "detail": s.detail,
+            "action": s.action,
         }
         for s in signals
-        if s.get("status") in ("warn", "error")
+        if s.status in ("warn", "error")
     ]
     return {
         "available": True,
@@ -227,19 +249,41 @@ def _registry_summary_item(repo: str, registry: DIRegistry | None) -> dict[str, 
             "gcs": 0,
             "reason": "registry_not_found",
         }
+    # Compute GCS count from datasets with GCS location (non-empty path)
+    gcs = sum(
+        1
+        for ds in registry.datasets
+        if hasattr(ds, "location")
+        and getattr(ds.location, "type", "") == "gcs"
+        and getattr(ds.location, "path", "")
+    )
+    # codelists/entities may be dicts with nested structure — count inner items
+    codelists = _count_section(registry.codelists, "codelists")
+    entities = _count_section(registry.entities, "entities")
     return {
         "repo": repo,
         "available": True,
-        "source_repo": registry.name,
+        "source_repo": registry.source_repo or registry.repo,
         "updated_at": registry.updated_at,
         "datasets": len(registry.datasets),
-        "marts": registry.marts,
+        "marts": len(registry.marts),
         "signals": len(registry.signals),
-        "codelists": registry.codelists,
-        "entities": registry.entities,
-        "gcs": registry.gcs,
+        "codelists": codelists,
+        "entities": entities,
+        "gcs": gcs,
         "reason": "",
     }
+
+
+def _count_section(section: Any, inner_key: str) -> int:
+    """Count entries in a registry section that may be a list or nested dict."""
+    if isinstance(section, list):
+        return len(section)
+    if isinstance(section, dict):
+        inner = section.get(inner_key)
+        if isinstance(inner, (list, dict)):
+            return len(inner)
+    return 0
 
 
 def _build_explorer_dict(

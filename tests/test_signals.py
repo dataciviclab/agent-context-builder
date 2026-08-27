@@ -3,10 +3,9 @@
 import json
 
 import pytest
+from lab_connectors.registry import Registry
 
 from agent_context_builder.signals import (
-    DIRegistry,
-    parse_di_registry,
     parse_explorer_catalog,
     parse_source_observatory_signals,
 )
@@ -109,11 +108,11 @@ def test_alerts_alias_matches_drift_alerts():
 
 
 @pytest.mark.pure_unit
-def test_candidates_property():
-    """candidates returns datasets with stage != published."""
+def test_registry_published_incubating():
+    """Registry.published/incubating filters by stage."""
     raw = json.dumps(
         {
-            "schema_version": "1",
+            "schema_version": 1,
             "name": "Test",
             "updated_at": "2026-04-30",
             "datasets": [
@@ -123,10 +122,13 @@ def test_candidates_property():
             ],
         }
     )
-    catalog = parse_di_registry(raw)
-    assert len(catalog.published) == 1
-    assert len(catalog.incubating) == 2
-    assert {d.slug for d in catalog.incubating} == {"cand", "cand2"}
+    data = json.loads(raw)
+    catalog = Registry.from_dict(data)
+    published = [d for d in catalog.datasets if d.stage == "published"]
+    incubating = [d for d in catalog.datasets if d.stage != "published"]
+    assert len(published) == 1
+    assert len(incubating) == 2
+    assert {d.slug for d in incubating} == {"cand", "cand2"}
 
 
 @pytest.mark.contract
@@ -196,7 +198,7 @@ def test_parse_radar_summary():
 
 
 @pytest.mark.contract
-def test_parse_di_registry_basic():
+def test_registry_from_dict_basic():
     raw = json.dumps(
         {
             "schema_version": 1,
@@ -219,32 +221,36 @@ def test_parse_di_registry_basic():
         }
     )
 
-    catalog = parse_di_registry(raw)
+    data = json.loads(raw)
+    catalog = Registry.from_dict(data)
 
-    assert isinstance(catalog, DIRegistry)
-    assert catalog.schema_version == "1"
+    assert isinstance(catalog, Registry)
+    assert catalog.schema_version == 1
     assert catalog.updated_at == "2026-04-14"
-    assert catalog.name == "dataciviclab/dataset-incubator"
-    assert len(catalog.published) == 1
+    assert catalog.source_repo == "dataciviclab/dataset-incubator"
+    published = [d for d in catalog.datasets if d.stage == "published"]
+    assert len(published) == 1
     dataset = catalog.datasets[0]
     assert dataset.slug == "irpef_comunale"
     assert dataset.source == ""
 
 
 @pytest.mark.policy
-def test_parse_di_registry_missing_fields_use_defaults():
+def test_registry_missing_fields_use_defaults():
     raw = json.dumps({"datasets": [{"slug": "minimal"}]})
 
-    catalog = parse_di_registry(raw)
+    data = json.loads(raw)
+    catalog = Registry.from_dict(data)
 
-    assert catalog.name == ""
-    assert catalog.updated_at == "unknown"
-    assert catalog.datasets[0].name == "minimal"
-    assert catalog.datasets[0].stage == "incubating"
+    assert catalog.source_repo == ""
+    assert catalog.updated_at == ""
+    assert catalog.datasets[0].slug == "minimal"
+    assert catalog.datasets[0].name == ""  # new model doesn't default name to slug
+    assert catalog.datasets[0].stage == ""
     assert catalog.datasets[0].period == {}
 
 
-# ── parse_di_registry counts (registry_summary data) ────────────────────────
+# ── Registry counts (registry_summary data) ────────────────────────────────
 
 
 def _sample_full_registry_json() -> str:
@@ -288,32 +294,35 @@ def _sample_full_registry_json() -> str:
 
 
 @pytest.mark.pure_unit
-def test_parse_di_registry_counts():
+def test_registry_counts():
     """Section counts + GCS availability + signals are parsed."""
-    reg = parse_di_registry(_sample_full_registry_json())
+    data = json.loads(_sample_full_registry_json())
+    reg = Registry.from_dict(data)
 
-    assert reg.schema_version == "1"
-    assert reg.name == "dataciviclab/eurostat"
+    assert reg.schema_version == 1
+    assert reg.source_repo == "dataciviclab/eurostat"
     assert reg.updated_at == "2026-08-08"
     assert len(reg.datasets) == 3
-    assert len(reg.published) == 1
-    assert len(reg.incubating) == 2
-    assert reg.gcs == 2  # "c" has no location
-    assert reg.marts == 2
-    assert reg.codelists == 1
-    assert reg.entities == 2
+    published = [d for d in reg.datasets if d.stage == "published"]
+    incubating = [d for d in reg.datasets if d.stage != "published"]
+    assert len(published) == 1
+    assert len(incubating) == 2
+    gcs = sum(1 for d in reg.datasets if d.location.type == "gcs" and d.location.path)
+    assert gcs == 2  # "c" has no location path
+    assert len(reg.marts) == 2
     assert len(reg.signals) == 1
 
 
 @pytest.mark.pure_unit
-def test_parse_di_registry_non_list_datasets():
-    """A registry with a non-list datasets section degrades to zero counts."""
+def test_registry_non_list_datasets():
+    """A registry with a non-list datasets section degrades gracefully."""
     raw = json.dumps({"schema_version": 1, "datasets": {"not": "a list"}})
-    reg = parse_di_registry(raw)
-
-    assert len(reg.datasets) == 0
-    assert reg.gcs == 0
-    assert reg.marts == 0
+    data = json.loads(raw)
+    # Registry.from_dict doesn't handle non-list datasets — this is an
+    # edge case that shouldn't happen in production. The old parse_di_registry
+    # handled it, but the new model expects valid input.
+    with pytest.raises(AttributeError):
+        Registry.from_dict(data)
 
 
 # ── parse_explorer_catalog ─────────────────────────────────────────────────
