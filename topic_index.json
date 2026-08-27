@@ -1,6 +1,6 @@
 {
-  "schema_version": 3,
-  "generated_at": "2026-08-27T07:51:25.212666",
+  "schema_version": 4,
+  "generated_at": "2026-08-27T08:09:52.113416",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -49,9 +49,25 @@
     "open-conto-annuale": {
       "description": "1,8 milioni di microdati sul personale della PA italiana \u2014 chi lavora nel pubblico, dove e con quali ruoli.",
       "url": "https://github.com/dataciviclab/open-conto-annuale"
+    },
+    "rna-aiuti-stato": {
+      "description": "17 milioni di aiuti pubblici alle imprese italiane \u2014 il Registro Nazionale Aiuti di Stato aperto e interrogabile.",
+      "url": "https://github.com/dataciviclab/rna-aiuti-stato"
+    },
+    "senato-akn": {
+      "description": "I lavori del Senato italiano in formato strutturato \u2014 progetti di legge, emendamenti e iter legislativo.",
+      "url": "https://github.com/dataciviclab/senato-akn"
+    },
+    "debito-pubblico-intelligence": {
+      "description": "Intelligence sul debito pubblico italiano \u2014 riconciliazione multi-fonte, segnali e mart queryabile",
+      "url": "https://github.com/dataciviclab/debito-pubblico-intelligence"
+    },
+    "open-politica": {
+      "description": "La politica italiana in dati aperti: chi vota, come vota, cosa decide. Parlamento, elezioni e governo in parquet pronti per l'analisi.",
+      "url": "https://github.com/dataciviclab/open-politica"
     }
   },
-  "datasets_by_source": {
+  "datasets": {
     "ACI \u2014 Automobile Club Italia (lod.aci.it)": [
       {
         "slug": "aci_prime_iscrizioni_autovetture",
@@ -59,7 +75,8 @@
         "period": {
           "start": 2017,
           "end": 2024
-        }
+        },
+        "stage": "published"
       }
     ],
     "Agenzia delle Entrate": [
@@ -69,7 +86,8 @@
         "period": {
           "start": 2023,
           "end": 2025
-        }
+        },
+        "stage": "published"
       }
     ],
     "AIFA \u2014 Open Data Spesa e Consumo Farmaceutico": [
@@ -79,7 +97,8 @@
         "period": {
           "start": 2018,
           "end": 2024
-        }
+        },
+        "stage": "published"
       }
     ],
     "ANAC - Autorit\u00e0 Nazionale Anticorruzione": [
@@ -89,7 +108,8 @@
         "period": {
           "start": 2000,
           "end": 2026
-        }
+        },
+        "stage": "published"
       },
       {
         "slug": "anac_aggiudicazioni",
@@ -97,7 +117,8 @@
         "period": {
           "start": 2000,
           "end": 2026
-        }
+        },
+        "stage": "published"
       },
       {
         "slug": "anac_bandi_gara",
@@ -105,7 +126,8 @@
         "period": {
           "start": 2016,
           "end": 2025
-        }
+        },
+        "stage": "published"
       },
       {
         "slug": "anac_collaudo",
@@ -113,7 +135,8 @@
         "period": {
           "start": 2000,
           "end": 2026
-        }
+        },
+        "stage": "published"
       },
       {
         "slug": "anac_cup",
@@ -121,7 +144,8 @@
         "period": {
           "start": 2000,
           "end": 2026
-        }
+        },
+        "stage": "published"
       },
       {
         "slug": "anac_partecipanti",
@@ -129,7 +153,8 @@
         "period": {
           "start": 2023,
           "end": 2026
-        }
+        },
+        "stage": "published"
       },
       {
         "slug": "anac_stati_avanzamento",
@@ -137,7 +162,8 @@
         "period": {
           "start": 2000,
           "end": 2026
-        }
+        },
+        "stage": "published"
       },
       {
         "slug": "anac_subappalti",
@@ -145,7 +171,8 @@
         "period": {
           "start": 2020,
           "end": 2026
-        }
+        },
+        "stage": "published"
       }
     ],
     "DataCivicLab (composite: ANAC, 8 dataset)": [
@@ -155,7 +182,8 @@
         "period": {
           "start": 2016,
           "end": 2025
-        }
+        },
+        "stage": "published"
       }
     ],
     "ANPR \u2014 Anagrafe Nazionale della Popolazione Residente (PCM)": [
@@ -165,7 +193,8 @@
         "period": {
           "start": 2022,
           "end": 2026
-        }
+        },
+        "stage": "published"
       }
     ],
     "MEF \u2014 Ragioneria Generale dello Stato / OpenBDAP": [
@@ -175,7 +204,17 @@
         "period": {
           "start": 2026,
           "end": 2026
-        }
+        },
+        "stage": "published"
+      },
+      {
+        "slug": "bdap_pagamenti_stato",
+        "name": "Pagamenti Bilancio dello Stato (consuntivo)",
+        "period": {
+          "start": 2014,
+          "end": 2025
+        },
+        "stage": "incubating"
       }
     ],
     "MEF-BDAP": [
@@ -185,7 +224,8 @@
         "period": {
           "start": 2008,
           "end": 2024
-        }
+        },
+        "stage": "published"
       },
       {
         "slug": "bdap_spese_stato",
@@ -193,7 +233,8 @@
         "period": {
           "start": 2008,
           "end": 2024
-        }
+        },
+        "stage": "published"
       },
       {
         "slug": "dipendenti_pubblici",
@@ -201,7 +242,8 @@
         "period": {
           "start": 2010,
           "end": 2023
-        }
+        },
+        "stage": "published"
       }
     ],
     "BDAP LEA \u2014 Ragioneria Generale dello Stato (MEF)": [
@@ -211,7 +253,8 @@
         "period": {
           "start": 2024,
           "end": 2024
-        }
+        },
+        "stage": "published"
       }
     ],
     "Centri d'Italia \u2014 ActionAid Italia / Fondazione Openpolis": [
@@ -221,7 +264,8 @@
         "period": {
           "start": 2018,
           "end": 2024
-        }
+        },
+        "stage": "published"
       },
       {
         "slug": "sai_progetti_italia",
@@ -229,7 +273,8 @@
         "period": {
           "start": 2018,
           "end": 2024
-        }
+        },
+        "stage": "published"
       },
       {
         "slug": "sai_strutture_italia",
@@ -237,7 +282,8 @@
         "period": {
           "start": 2018,
           "end": 2024
-        }
+        },
+        "stage": "published"
       }
     ],
     "https://datiestatistiche.giustizia.it/ (Ministero della Giustizia \u2014 Direzione Generale di Statistica)": [
@@ -247,7 +293,8 @@
         "period": {
           "start": 2014,
           "end": 2025
-        }
+        },
+        "stage": "published"
       }
     ],
     "ISTAT SITUAS + ISTAT (Elenco codici unit\u00e0 amministrative) + AgID IPA": [
@@ -257,7 +304,8 @@
         "period": {
           "start": 2026,
           "end": 2026
-        }
+        },
+        "stage": "published"
       }
     ],
     "Consip SpA / MEF \u2014 dati.consip.it (CKAN)": [
@@ -267,7 +315,8 @@
         "period": {
           "start": 2023,
           "end": 2025
-        }
+        },
+        "stage": "published"
       }
     ],
     "dataciviclab/costituzione-italiana": [
@@ -277,7 +326,8 @@
         "period": {
           "start": 2026,
           "end": 2026
-        }
+        },
+        "stage": "published"
       }
     ],
     "Ministero della Salute \u2014 Open Data": [
@@ -287,7 +337,8 @@
         "period": {
           "start": 2026,
           "end": 2026
-        }
+        },
+        "stage": "published"
       }
     ],
     "Commissione Europea \u2014 Financial Transparency System (FTS)": [
@@ -297,7 +348,8 @@
         "period": {
           "start": 2020,
           "end": 2025
-        }
+        },
+        "stage": "published"
       }
     ],
     "Giustizia Amministrativa \u2014 OpenGA": [
@@ -307,7 +359,8 @@
         "period": {
           "start": 2023,
           "end": 2026
-        }
+        },
+        "stage": "published"
       },
       {
         "slug": "ga_ordinanze",
@@ -315,7 +368,8 @@
         "period": {
           "start": 2023,
           "end": 2026
-        }
+        },
+        "stage": "published"
       },
       {
         "slug": "ga_sentenze",
@@ -323,477 +377,8 @@
         "period": {
           "start": 2023,
           "end": 2026
-        }
-      }
-    ],
-    "https://www.inps.it/gestione-previdenziale": [
-      {
-        "slug": "inps_pensioni_trimestrale",
-        "name": "INPS Pensioni \u2014 trimestrale",
-        "period": {
-          "start": 2020,
-          "end": 2024
-        }
-      }
-    ],
-    "INPS \u2014 Open Data (opendata.inps.it)": [
-      {
-        "slug": "inps_rdc_pdc",
-        "name": "INPS RdC/PdC \u2014 Nuclei percettori per comune (2020)",
-        "period": {
-          "start": 2020,
-          "end": 2020
-        }
-      }
-    ],
-    "Ministero della Giustizia \u2014 DG Statistica (datiestatistiche.giustizia.it)": [
-      {
-        "slug": "intercettazioni",
-        "name": "Intercettazioni",
-        "period": {
-          "start": 2014,
-          "end": 2025
-        }
-      },
-      {
-        "slug": "monitoraggio_mensile_civile",
-        "name": "Monitoraggio Mensile Civile",
-        "period": {
-          "start": 2019,
-          "end": 2025
-        }
-      },
-      {
-        "slug": "penale_flussi",
-        "name": "Penale Flussi",
-        "period": {
-          "start": 2014,
-          "end": 2025
-        }
-      }
-    ],
-    "AgID \u2014 IndicePA (ipa-dati)": [
-      {
-        "slug": "ipa_aree_organizzative_omogenee",
-        "name": "Aree Organizzative Omogenee (IPA)",
-        "period": {
-          "start": 2026,
-          "end": 2026
-        }
-      },
-      {
-        "slug": "ipa_enti",
-        "name": "Anagrafica Enti PA (IndicePA)",
-        "period": {
-          "start": 2026,
-          "end": 2026
-        }
-      },
-      {
-        "slug": "ipa_unita_organizzative",
-        "name": "Unit\u00e0 Organizzative (IPA)",
-        "period": {
-          "start": 2026,
-          "end": 2026
-        }
-      }
-    ],
-    "Ministero dell'Economia e delle Finanze - OpenData": [
-      {
-        "slug": "irpef_comunale",
-        "name": "Irpef Comunale",
-        "period": {
-          "start": 2019,
-          "end": 2023
-        }
-      }
-    ],
-    "ISPRA \u2014 Indicatori Ambientali": [
-      {
-        "slug": "ispra_emissioni_ghg",
-        "name": "ISPRA \u2014 Emissioni GHG da processi energetici per settore (1990-2023)",
-        "period": {
-          "start": 1990,
-          "end": 2023
-        }
-      }
-    ],
-    "ISPRA": [
-      {
-        "slug": "ispra_ru_base",
-        "name": "ISPRA - Rifiuti Urbani (dati base)",
-        "period": {
-          "start": 2020,
-          "end": 2024
-        }
-      }
-    ],
-    "ISTAT \u2014 ASIA UL (Archivio Statistico Imprese Attive - Unit\u00c3  Locali)": [
-      {
-        "slug": "istat_asia_ul",
-        "name": "Istat Asia Ul",
-        "period": {
-          "start": 2018,
-          "end": 2020
-        }
-      }
-    ],
-    "ISTAT SITUAS (via opensituas)": [
-      {
-        "slug": "istat_elenco_comuni",
-        "name": "Elenco comuni italiani (codici ISTAT, catastali, superficie km\u00b2)",
-        "period": {
-          "start": 2026,
-          "end": 2026
-        }
-      }
-    ],
-    "ISTAT \u2014 Dataflow 32_221 (Omogeneita del reddito regionale), SDMX-CSV": [
-      {
-        "slug": "istat_gini_regionale",
-        "name": "ISTAT - Indice di Gini regionale",
-        "period": {
-          "start": 2003,
-          "end": 2024
-        }
-      }
-    ],
-    "ISTAT \u2014 Dataflow 33_179 (Housing conditions), SDMX-CSV": [
-      {
-        "slug": "istat_housing_crowding",
-        "name": "Istat Housing Crowding",
-        "period": {
-          "start": 2004,
-          "end": 2025
-        }
-      }
-    ],
-    "ISTAT \u2014 Dataflow 33_292 (IPAB trimestrale), SDMX-CSV": [
-      {
-        "slug": "istat_ipab_aree",
-        "name": "Istat Ipab Aree",
-        "period": {
-          "start": 2010,
-          "end": 2025
-        }
-      }
-    ],
-    "ISTAT \u2014 SDMX (DCCV_TAXOCCU1)": [
-      {
-        "slug": "istat_occupazione_provinciale",
-        "name": "ISTAT \u2014 Tasso di Occupazione Provinciale (2018-2025)",
-        "period": {
-          "start": 2018,
-          "end": 2025
-        }
-      }
-    ],
-    "ISTAT \u2014 Conti economici territoriali": [
-      {
-        "slug": "istat_pil_territoriale",
-        "name": "PIL regionale e provinciale",
-        "period": {
-          "start": 1995,
-          "end": 2024
-        }
-      }
-    ],
-    "MEF \u2014 Dipartimento delle Finanze (CIVATOT0201)": [
-      {
-        "slug": "iva_regionale",
-        "name": "MEF \u2014 IVA Regionale: Volume Affari e VA fiscale (2014-2023)",
-        "period": {
-          "start": 2014,
-          "end": 2023
-        }
-      }
-    ],
-    "MEF \u2014 Dipartimento dell'Economia (Open Data Immobili PA)": [
-      {
-        "slug": "mef_patrimonio_detenzioni",
-        "name": "MEF \u2014 Detenzioni a favore di terzi di immobili pubblici",
-        "period": {
-          "start": 2022,
-          "end": 2023
-        }
-      },
-      {
-        "slug": "mef_patrimonio_enti",
-        "name": "MEF \u2014 Enti adempienti e non adempienti censimento immobili",
-        "period": {
-          "start": 2022,
-          "end": 2023
-        }
-      },
-      {
-        "slug": "mef_patrimonio_immobili",
-        "name": "MEF \u2014 Catalogo immobili pubblici italiani",
-        "period": {
-          "start": 2022,
-          "end": 2023
-        }
-      }
-    ],
-    "MEF \u2014 Dipartimento del Tesoro (Open Data Partecipazioni)": [
-      {
-        "slug": "mef_rappresentanti_partecipate",
-        "name": "MEF \u2014 Compensi Rappresentanti PA nelle Partecipate (2018-2023)",
-        "period": {
-          "start": 2018,
-          "end": 2023
-        }
-      }
-    ],
-    "https://dati.istruzione.it/opendata/ \u2014 Ministero dell'Istruzione e del Merito (MIM)": [
-      {
-        "slug": "mim_alunni_corso_eta",
-        "name": "Alunni per corso ed et\u00e0 \u2014 MIM",
-        "period": {
-          "start": 2016,
-          "end": 2025
-        }
-      }
-    ],
-    "MIM \u2014 dati.istruzione.it (INFANZIASTRACITSTA)": [
-      {
-        "slug": "mim_scuola_infanzia",
-        "name": "MIM \u2014 Bambini Scuola Infanzia per Cittadinanza (2018-2025)",
-        "period": {
-          "start": 2018,
-          "end": 2025
-        }
-      }
-    ],
-    "MUR \u2014 USTAT (Ufficio Statistica e Studi)": [
-      {
-        "slug": "mur_immatricolati",
-        "name": "Immatricolati Universitari",
-        "period": {
-          "start": 1998,
-          "end": 2025
-        }
-      },
-      {
-        "slug": "mur_iscritti",
-        "name": "Iscritti Universitari per Ateneo",
-        "period": {
-          "start": 2000,
-          "end": 2025
-        }
-      }
-    ],
-    "OpenCivitas / Sogei": [
-      {
-        "slug": "opencivitas_fsc_2025_rso",
-        "name": "Opencivitas Fsc 2025 Rso",
-        "period": {
-          "start": 2022,
-          "end": 2025
-        }
-      },
-      {
-        "slug": "opencivitas_glossario",
-        "name": "Glossario indicatori OpenCivitas",
-        "period": {
-          "start": 2015,
-          "end": 2022
-        }
-      },
-      {
-        "slug": "opencivitas_indicatori",
-        "name": "Indicatori di performance dei comuni",
-        "period": {
-          "start": 2015,
-          "end": 2022
-        }
-      }
-    ],
-    "PCM-OpenCoesione / dati.gov.it": [
-      {
-        "slug": "opencoesione_progetti",
-        "name": "Opencoesione Progetti",
-        "period": {
-          "start": 2007,
-          "end": 2027
-        }
-      }
-    ],
-    "OpenGA \u2014 Giustizia Amministrativa": [
-      {
-        "slug": "openga_ricorsi_cds",
-        "name": "Openga Ricorsi Cds",
-        "period": {
-          "start": 2023,
-          "end": 2026
-        }
-      }
-    ],
-    "Ministero della Salute \u2014 Dati del Personale SSN": [
-      {
-        "slug": "personale_ssn",
-        "name": "Personale del Servizio Sanitario Nazionale",
-        "period": {
-          "start": 2010,
-          "end": 2021
-        }
-      }
-    ],
-    "MEF \u2014 Italia Domani (italiadomani.gov.it)": [
-      {
-        "slug": "pnrr_gare",
-        "name": "PNRR Gare \u2014 Italia Domani",
-        "period": {
-          "start": 2016,
-          "end": 2026
-        }
-      },
-      {
-        "slug": "pnrr_pagamenti",
-        "name": "PNRR Pagamenti \u2014 Italia Domani",
-        "period": {
-          "start": 2021,
-          "end": 2026
-        }
-      },
-      {
-        "slug": "pnrr_progetti",
-        "name": "PNRR Progetti \u2014 Italia Domani",
-        "period": {
-          "start": 2021,
-          "end": 2026
-        }
-      }
-    ],
-    "ISTAT - demo.posas (Popolazione residente per sesso, et\u00e0 e comune)": [
-      {
-        "slug": "popolazione_istat_comunale_2019_2025",
-        "name": "Popolazione ISTAT Comunale",
-        "period": {
-          "start": 2019,
-          "end": 2025
-        }
-      }
-    ],
-    "Ministero della Salute \u2014 Banca Dati Posti Letto": [
-      {
-        "slug": "posti_letto_stabilimento",
-        "name": "Posti Letto Stabilimento",
-        "period": {
-          "start": 2020,
-          "end": 2023
-        }
-      }
-    ],
-    "Ministero della Salute \u2014 Open Data Dati di struttura e attivit\u00e0 dei reparti di ricovero": [
-      {
-        "slug": "reparti_ricovero",
-        "name": "Reparti Ricovero",
-        "period": {
-          "start": 2022,
-          "end": 2022
-        }
-      }
-    ],
-    "onData \u2014 liberiamoli-tutti": [
-      {
-        "slug": "sbarchi_migranti_italia",
-        "name": "Sbarchi Migranti Italia",
-        "period": {
-          "start": 2019,
-          "end": 2025
-        }
-      }
-    ],
-    "https://dati.camera.it/ocd/dump/silos/PISRapportoCSV2024.zip": [
-      {
-        "slug": "silos_infrastrutture",
-        "name": "Infrastrutture strategiche e prioritarie (SILOS)",
-        "period": {
-          "start": 2004,
-          "end": 2024
-        }
-      }
-    ],
-    "Ministero della Salute \u2014 Open Data Strutture e attivit\u00e0 ASL": [
-      {
-        "slug": "strutture_asl",
-        "name": "Strutture Asl",
-        "period": {
-          "start": 2022,
-          "end": 2022
-        }
-      }
-    ],
-    "Ministero della Salute \u2014 Open Data Strutture di ricovero per ASL": [
-      {
-        "slug": "strutture_ricovero_asl",
-        "name": "Strutture Ricovero Asl",
-        "period": {
-          "start": 2022,
-          "end": 2022
-        }
-      }
-    ],
-    "data.europa.eu \u2014 TED (Tenders Electronic Daily)": [
-      {
-        "slug": "ted_contract_notices",
-        "name": "Bandi di gara UE in Italia (TED Contract Notices)",
-        "period": {
-          "start": 2020,
-          "end": 2023
-        }
-      }
-    ],
-    "Terna S.p.A. \u2014 dati pubblicati su terna.com": [
-      {
-        "slug": "terna_capacita_rinnovabile",
-        "name": "Terna Capacita Rinnovabile",
-        "period": {
-          "start": 2015,
-          "end": 2024
-        }
-      }
-    ],
-    "TERNA S.p.A. \u2014 Download Center": [
-      {
-        "slug": "terna_electrical_energy_by_sector",
-        "name": "Consumi elettrici per settore e provincia (GWh)",
-        "period": {
-          "start": 2015,
-          "end": 2024
-        }
-      }
-    ],
-    "Terna S.p.A. - dati.terna.it": [
-      {
-        "slug": "terna_electricity_by_source",
-        "name": "Terna Electricity By Source",
-        "period": {
-          "start": 2023,
-          "end": 2024
-        }
-      }
-    ],
-    "AgID \u2014 Indice della Pubblica Amministrazione (indicepa.gov.it)": [
-      {
-        "slug": "who_is_who_pa",
-        "name": "Who Is Who PA \u2014 anagrafica enti, vertici, uffici, contatti",
-        "period": {
-          "start": 2026,
-          "end": 2026
-        }
-      }
-    ]
-  },
-  "candidates_by_source": {
-    "MEF \u2014 Ragioneria Generale dello Stato / OpenBDAP": [
-      {
-        "slug": "bdap_pagamenti_stato",
-        "name": "Pagamenti Bilancio dello Stato (consuntivo)",
-        "period": {
-          "start": 2014,
-          "end": 2025
-        }
+        },
+        "stage": "published"
       }
     ],
     "Ministero della Giustizia \u2014 Direzione Generale di Statistica e Analisi Organizzativa": [
@@ -803,7 +388,99 @@
         "period": {
           "start": 2014,
           "end": 2025
-        }
+        },
+        "stage": "incubating"
+      }
+    ],
+    "https://www.inps.it/gestione-previdenziale": [
+      {
+        "slug": "inps_pensioni_trimestrale",
+        "name": "INPS Pensioni \u2014 trimestrale",
+        "period": {
+          "start": 2020,
+          "end": 2024
+        },
+        "stage": "published"
+      }
+    ],
+    "INPS \u2014 Open Data (opendata.inps.it)": [
+      {
+        "slug": "inps_rdc_pdc",
+        "name": "INPS RdC/PdC \u2014 Nuclei percettori per comune (2020)",
+        "period": {
+          "start": 2020,
+          "end": 2020
+        },
+        "stage": "published"
+      }
+    ],
+    "Ministero della Giustizia \u2014 DG Statistica (datiestatistiche.giustizia.it)": [
+      {
+        "slug": "intercettazioni",
+        "name": "Intercettazioni",
+        "period": {
+          "start": 2014,
+          "end": 2025
+        },
+        "stage": "published"
+      },
+      {
+        "slug": "monitoraggio_mensile_civile",
+        "name": "Monitoraggio Mensile Civile",
+        "period": {
+          "start": 2019,
+          "end": 2025
+        },
+        "stage": "published"
+      },
+      {
+        "slug": "penale_flussi",
+        "name": "Penale Flussi",
+        "period": {
+          "start": 2014,
+          "end": 2025
+        },
+        "stage": "published"
+      }
+    ],
+    "AgID \u2014 IndicePA (ipa-dati)": [
+      {
+        "slug": "ipa_aree_organizzative_omogenee",
+        "name": "Aree Organizzative Omogenee (IPA)",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "published"
+      },
+      {
+        "slug": "ipa_enti",
+        "name": "Anagrafica Enti PA (IndicePA)",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "published"
+      },
+      {
+        "slug": "ipa_unita_organizzative",
+        "name": "Unit\u00e0 Organizzative (IPA)",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "published"
+      }
+    ],
+    "Ministero dell'Economia e delle Finanze - OpenData": [
+      {
+        "slug": "irpef_comunale",
+        "name": "Irpef Comunale",
+        "period": {
+          "start": 2019,
+          "end": 2023
+        },
+        "stage": "published"
       }
     ],
     "ISPRA": [
@@ -813,7 +490,17 @@
         "period": {
           "start": 2024,
           "end": 2024
-        }
+        },
+        "stage": "incubating"
+      },
+      {
+        "slug": "ispra_ru_base",
+        "name": "ISPRA - Rifiuti Urbani (dati base)",
+        "period": {
+          "start": 2020,
+          "end": 2024
+        },
+        "stage": "published"
       },
       {
         "slug": "ispra_ru_costi_kg",
@@ -821,7 +508,8 @@
         "period": {
           "start": 2020,
           "end": 2024
-        }
+        },
+        "stage": "incubating"
       },
       {
         "slug": "ispra_ru_costi_procapite",
@@ -829,7 +517,107 @@
         "period": {
           "start": 2020,
           "end": 2024
-        }
+        },
+        "stage": "incubating"
+      }
+    ],
+    "ISPRA \u2014 Indicatori Ambientali": [
+      {
+        "slug": "ispra_emissioni_ghg",
+        "name": "ISPRA \u2014 Emissioni GHG da processi energetici per settore (1990-2023)",
+        "period": {
+          "start": 1990,
+          "end": 2023
+        },
+        "stage": "published"
+      }
+    ],
+    "ISTAT \u2014 ASIA UL (Archivio Statistico Imprese Attive - Unit\u00c3  Locali)": [
+      {
+        "slug": "istat_asia_ul",
+        "name": "Istat Asia Ul",
+        "period": {
+          "start": 2018,
+          "end": 2020
+        },
+        "stage": "published"
+      }
+    ],
+    "ISTAT SITUAS (via opensituas)": [
+      {
+        "slug": "istat_elenco_comuni",
+        "name": "Elenco comuni italiani (codici ISTAT, catastali, superficie km\u00b2)",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "published"
+      }
+    ],
+    "ISTAT \u2014 Dataflow 32_221 (Omogeneita del reddito regionale), SDMX-CSV": [
+      {
+        "slug": "istat_gini_regionale",
+        "name": "ISTAT - Indice di Gini regionale",
+        "period": {
+          "start": 2003,
+          "end": 2024
+        },
+        "stage": "published"
+      }
+    ],
+    "ISTAT \u2014 Dataflow 33_179 (Housing conditions), SDMX-CSV": [
+      {
+        "slug": "istat_housing_crowding",
+        "name": "Istat Housing Crowding",
+        "period": {
+          "start": 2004,
+          "end": 2025
+        },
+        "stage": "published"
+      }
+    ],
+    "ISTAT \u2014 Dataflow 33_292 (IPAB trimestrale), SDMX-CSV": [
+      {
+        "slug": "istat_ipab_aree",
+        "name": "Istat Ipab Aree",
+        "period": {
+          "start": 2010,
+          "end": 2025
+        },
+        "stage": "published"
+      }
+    ],
+    "ISTAT \u2014 SDMX (DCCV_TAXOCCU1)": [
+      {
+        "slug": "istat_occupazione_provinciale",
+        "name": "ISTAT \u2014 Tasso di Occupazione Provinciale (2018-2025)",
+        "period": {
+          "start": 2018,
+          "end": 2025
+        },
+        "stage": "published"
+      }
+    ],
+    "ISTAT \u2014 Conti economici territoriali": [
+      {
+        "slug": "istat_pil_territoriale",
+        "name": "PIL regionale e provinciale",
+        "period": {
+          "start": 1995,
+          "end": 2024
+        },
+        "stage": "published"
+      }
+    ],
+    "MEF \u2014 Dipartimento delle Finanze (CIVATOT0201)": [
+      {
+        "slug": "iva_regionale",
+        "name": "MEF \u2014 IVA Regionale: Volume Affari e VA fiscale (2014-2023)",
+        "period": {
+          "start": 2014,
+          "end": 2023
+        },
+        "stage": "published"
       }
     ],
     "https://www.mef.gov.it/": [
@@ -839,7 +627,8 @@
         "period": {
           "start": 2017,
           "end": 2025
-        }
+        },
+        "stage": "incubating"
       }
     ],
     "MEF \u2014 Dipartimento dell'Economia, Open Data Partecipazioni Pubbliche": [
@@ -849,7 +638,59 @@
         "period": {
           "start": 2020,
           "end": 2023
-        }
+        },
+        "stage": "incubating"
+      }
+    ],
+    "MEF \u2014 Dipartimento dell'Economia (Open Data Immobili PA)": [
+      {
+        "slug": "mef_patrimonio_detenzioni",
+        "name": "MEF \u2014 Detenzioni a favore di terzi di immobili pubblici",
+        "period": {
+          "start": 2022,
+          "end": 2023
+        },
+        "stage": "published"
+      },
+      {
+        "slug": "mef_patrimonio_enti",
+        "name": "MEF \u2014 Enti adempienti e non adempienti censimento immobili",
+        "period": {
+          "start": 2022,
+          "end": 2023
+        },
+        "stage": "published"
+      },
+      {
+        "slug": "mef_patrimonio_immobili",
+        "name": "MEF \u2014 Catalogo immobili pubblici italiani",
+        "period": {
+          "start": 2022,
+          "end": 2023
+        },
+        "stage": "published"
+      }
+    ],
+    "MEF \u2014 Dipartimento del Tesoro (Open Data Partecipazioni)": [
+      {
+        "slug": "mef_rappresentanti_partecipate",
+        "name": "MEF \u2014 Compensi Rappresentanti PA nelle Partecipate (2018-2023)",
+        "period": {
+          "start": 2018,
+          "end": 2023
+        },
+        "stage": "published"
+      }
+    ],
+    "https://dati.istruzione.it/opendata/ \u2014 Ministero dell'Istruzione e del Merito (MIM)": [
+      {
+        "slug": "mim_alunni_corso_eta",
+        "name": "Alunni per corso ed et\u00e0 \u2014 MIM",
+        "period": {
+          "start": 2016,
+          "end": 2025
+        },
+        "stage": "published"
       }
     ],
     "MIM - dati.istruzione.it": [
@@ -859,7 +700,19 @@
         "period": {
           "start": 2024,
           "end": 2024
-        }
+        },
+        "stage": "incubating"
+      }
+    ],
+    "MIM \u2014 dati.istruzione.it (INFANZIASTRACITSTA)": [
+      {
+        "slug": "mim_scuola_infanzia",
+        "name": "MIM \u2014 Bambini Scuola Infanzia per Cittadinanza (2018-2025)",
+        "period": {
+          "start": 2018,
+          "end": 2025
+        },
+        "stage": "published"
       }
     ],
     "MIT \u2014 Ministero delle Infrastrutture e dei Trasporti, portale open data": [
@@ -869,7 +722,8 @@
         "period": {
           "start": 2001,
           "end": 2018
-        }
+        },
+        "stage": "incubating"
       },
       {
         "slug": "mit_opere_incompiute_2020",
@@ -877,7 +731,8 @@
         "period": {
           "start": 2020,
           "end": 2020
-        }
+        },
+        "stage": "incubating"
       }
     ],
     "MUR / USTAT CKAN": [
@@ -887,7 +742,57 @@
         "period": {
           "start": 2017,
           "end": 2024
-        }
+        },
+        "stage": "incubating"
+      }
+    ],
+    "MUR \u2014 USTAT (Ufficio Statistica e Studi)": [
+      {
+        "slug": "mur_immatricolati",
+        "name": "Immatricolati Universitari",
+        "period": {
+          "start": 1998,
+          "end": 2025
+        },
+        "stage": "published"
+      },
+      {
+        "slug": "mur_iscritti",
+        "name": "Iscritti Universitari per Ateneo",
+        "period": {
+          "start": 2000,
+          "end": 2025
+        },
+        "stage": "published"
+      }
+    ],
+    "OpenCivitas / Sogei": [
+      {
+        "slug": "opencivitas_fsc_2025_rso",
+        "name": "Opencivitas Fsc 2025 Rso",
+        "period": {
+          "start": 2022,
+          "end": 2025
+        },
+        "stage": "published"
+      },
+      {
+        "slug": "opencivitas_glossario",
+        "name": "Glossario indicatori OpenCivitas",
+        "period": {
+          "start": 2015,
+          "end": 2022
+        },
+        "stage": "published"
+      },
+      {
+        "slug": "opencivitas_indicatori",
+        "name": "Indicatori di performance dei comuni",
+        "period": {
+          "start": 2015,
+          "end": 2022
+        },
+        "stage": "published"
       }
     ],
     "unknown": [
@@ -897,7 +802,19 @@
         "period": {
           "start": 2025,
           "end": 2025
-        }
+        },
+        "stage": "incubating"
+      }
+    ],
+    "PCM-OpenCoesione / dati.gov.it": [
+      {
+        "slug": "opencoesione_progetti",
+        "name": "Opencoesione Progetti",
+        "period": {
+          "start": 2007,
+          "end": 2027
+        },
+        "stage": "published"
       }
     ],
     "OpenGA \u2014 Giustizia Amministrativa": [
@@ -907,7 +824,17 @@
         "period": {
           "start": 2023,
           "end": 2026
-        }
+        },
+        "stage": "incubating"
+      },
+      {
+        "slug": "openga_ricorsi_cds",
+        "name": "Openga Ricorsi Cds",
+        "period": {
+          "start": 2023,
+          "end": 2026
+        },
+        "stage": "published"
       }
     ],
     "INPS - OpenData": [
@@ -917,61 +844,213 @@
         "period": {
           "start": 2017,
           "end": 2022
-        }
+        },
+        "stage": "incubating"
+      }
+    ],
+    "Ministero della Salute \u2014 Dati del Personale SSN": [
+      {
+        "slug": "personale_ssn",
+        "name": "Personale del Servizio Sanitario Nazionale",
+        "period": {
+          "start": 2010,
+          "end": 2021
+        },
+        "stage": "published"
+      }
+    ],
+    "MEF \u2014 Italia Domani (italiadomani.gov.it)": [
+      {
+        "slug": "pnrr_gare",
+        "name": "PNRR Gare \u2014 Italia Domani",
+        "period": {
+          "start": 2016,
+          "end": 2026
+        },
+        "stage": "published"
+      },
+      {
+        "slug": "pnrr_pagamenti",
+        "name": "PNRR Pagamenti \u2014 Italia Domani",
+        "period": {
+          "start": 2021,
+          "end": 2026
+        },
+        "stage": "published"
+      },
+      {
+        "slug": "pnrr_progetti",
+        "name": "PNRR Progetti \u2014 Italia Domani",
+        "period": {
+          "start": 2021,
+          "end": 2026
+        },
+        "stage": "published"
+      }
+    ],
+    "ISTAT - demo.posas (Popolazione residente per sesso, et\u00e0 e comune)": [
+      {
+        "slug": "popolazione_istat_comunale_2019_2025",
+        "name": "Popolazione ISTAT Comunale",
+        "period": {
+          "start": 2019,
+          "end": 2025
+        },
+        "stage": "published"
+      }
+    ],
+    "Ministero della Salute \u2014 Banca Dati Posti Letto": [
+      {
+        "slug": "posti_letto_stabilimento",
+        "name": "Posti Letto Stabilimento",
+        "period": {
+          "start": 2020,
+          "end": 2023
+        },
+        "stage": "published"
+      }
+    ],
+    "Ministero della Salute \u2014 Open Data Dati di struttura e attivit\u00e0 dei reparti di ricovero": [
+      {
+        "slug": "reparti_ricovero",
+        "name": "Reparti Ricovero",
+        "period": {
+          "start": 2022,
+          "end": 2022
+        },
+        "stage": "published"
+      }
+    ],
+    "onData \u2014 liberiamoli-tutti": [
+      {
+        "slug": "sbarchi_migranti_italia",
+        "name": "Sbarchi Migranti Italia",
+        "period": {
+          "start": 2019,
+          "end": 2025
+        },
+        "stage": "published"
+      }
+    ],
+    "https://dati.camera.it/ocd/dump/silos/PISRapportoCSV2024.zip": [
+      {
+        "slug": "silos_infrastrutture",
+        "name": "Infrastrutture strategiche e prioritarie (SILOS)",
+        "period": {
+          "start": 2004,
+          "end": 2024
+        },
+        "stage": "published"
+      }
+    ],
+    "Ministero della Salute \u2014 Open Data Strutture e attivit\u00e0 ASL": [
+      {
+        "slug": "strutture_asl",
+        "name": "Strutture Asl",
+        "period": {
+          "start": 2022,
+          "end": 2022
+        },
+        "stage": "published"
+      }
+    ],
+    "Ministero della Salute \u2014 Open Data Strutture di ricovero per ASL": [
+      {
+        "slug": "strutture_ricovero_asl",
+        "name": "Strutture Ricovero Asl",
+        "period": {
+          "start": 2022,
+          "end": 2022
+        },
+        "stage": "published"
+      }
+    ],
+    "data.europa.eu \u2014 TED (Tenders Electronic Daily)": [
+      {
+        "slug": "ted_contract_notices",
+        "name": "Bandi di gara UE in Italia (TED Contract Notices)",
+        "period": {
+          "start": 2020,
+          "end": 2023
+        },
+        "stage": "published"
+      }
+    ],
+    "Terna S.p.A. \u2014 dati pubblicati su terna.com": [
+      {
+        "slug": "terna_capacita_rinnovabile",
+        "name": "Terna Capacita Rinnovabile",
+        "period": {
+          "start": 2015,
+          "end": 2024
+        },
+        "stage": "published"
+      }
+    ],
+    "TERNA S.p.A. \u2014 Download Center": [
+      {
+        "slug": "terna_electrical_energy_by_sector",
+        "name": "Consumi elettrici per settore e provincia (GWh)",
+        "period": {
+          "start": 2015,
+          "end": 2024
+        },
+        "stage": "published"
+      }
+    ],
+    "Terna S.p.A. - dati.terna.it": [
+      {
+        "slug": "terna_electricity_by_source",
+        "name": "Terna Electricity By Source",
+        "period": {
+          "start": 2023,
+          "end": 2024
+        },
+        "stage": "published"
+      }
+    ],
+    "AgID \u2014 Indice della Pubblica Amministrazione (indicepa.gov.it)": [
+      {
+        "slug": "who_is_who_pa",
+        "name": "Who Is Who PA \u2014 anagrafica enti, vertici, uffici, contatti",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "published"
       }
     ]
   },
   "operational_topics": {
     "pipeline": {
-      "name": "pipeline",
       "summary": "Ciclo di vita del dato \u2014 RAW \u2192 CLEAN \u2192 MART con toolkit",
       "repos": [
         "toolkit",
         "dataset-incubator"
       ],
-      "paths": [
-        "toolkit/docs/",
-        "dataset-incubator/workflows/post-merge-candidate.md"
-      ],
       "next": "Vedi post-merge-candidate.md per il flusso completo run + push GCS"
     },
     "governance": {
-      "name": "governance",
       "summary": "Flusso operativo del Lab \u2014 intake, promozione, issues, PR, discussions",
       "repos": [
         "dataciviclab",
         "dataset-incubator"
       ],
-      "paths": [
-        "dataciviclab/docs/workflows.md",
-        "dataciviclab/docs/dataset-project-flow.md",
-        "dataset-incubator/PROMOTION_CHECKLIST.md"
-      ],
       "next": "Vedi dataset-project-flow.md per il ciclo intake \u2192 promozione"
     },
     "infrastructure": {
-      "name": "infrastructure",
       "summary": "Foundation tecnica condivisa \u2014 HTTP client, GCS paths, MCP core",
       "repos": [
         "lab-connectors",
         "toolkit",
         "data-explorer"
       ],
-      "paths": [
-        "lab-connectors/lab_connectors/http/",
-        "lab-connectors/lab_connectors/gcs/paths.py",
-        "lab-connectors/lab_connectors/mcp/"
-      ],
       "next": "lab-connectors \u00e8 dipendenza pip di toolkit, data-explorer e ACB"
     },
     "analyses": {
-      "name": "analyses",
       "summary": "Analisi pubbliche su dati civici \u2014 dal dataset al racconto",
       "repos": [
         "dataciviclab"
-      ],
-      "paths": [
-        "dataciviclab/analisi/"
       ],
       "next": "Vedi analisi/registry/active.md per filoni attivi"
     }
@@ -984,7 +1063,6 @@
       "datasets": [
         "aifa_spesa_consumo"
       ],
-      "path": "analisi/aifa-spesa-consumo/README.md",
       "status": "active",
       "discussion": 242
     },
@@ -994,7 +1072,6 @@
       "datasets": [
         "anac_bandi_gara"
       ],
-      "path": "analisi/appalti-affidamento-diretto/README.md",
       "status": "active"
     },
     {
@@ -1003,7 +1080,6 @@
       "datasets": [
         "camera_votazioni_sparql"
       ],
-      "path": "analisi/camera-votazioni/README.md",
       "status": "active"
     },
     {
@@ -1012,7 +1088,6 @@
       "datasets": [
         "ade_cinque_per_mille"
       ],
-      "path": "analisi/cinque-per-mille/README.md",
       "status": "active",
       "discussion": 363
     },
@@ -1022,7 +1097,6 @@
       "datasets": [
         "civile_flussi"
       ],
-      "path": "analisi/civile-flussi/README.md",
       "status": "active"
     },
     {
@@ -1031,7 +1105,6 @@
       "datasets": [
         "consip_consumi_convenzione"
       ],
-      "path": "analisi/consip-consumi-convenzione/README.md",
       "status": "active"
     },
     {
@@ -1040,7 +1113,6 @@
       "datasets": [
         "dipendenti_pubblici"
       ],
-      "path": "analisi/dipendenti-pubblici/README.md",
       "status": "active",
       "issue": 131
     },
@@ -1050,7 +1122,6 @@
       "datasets": [
         "divario_nord_sud"
       ],
-      "path": "analisi/divario-nord-sud/README.md",
       "status": "active"
     },
     {
@@ -1059,7 +1130,6 @@
       "datasets": [
         "bdap_entrate_stato"
       ],
-      "path": "analisi/entrate-stato/README.md",
       "status": "active",
       "discussion": 218
     },
@@ -1069,7 +1139,6 @@
       "datasets": [
         "irpef_comunale"
       ],
-      "path": "analisi/irpef-comunale/README.md",
       "status": "active",
       "discussion": 88
     },
@@ -1079,7 +1148,6 @@
       "datasets": [
         "ipa_unita_organizzative"
       ],
-      "path": "analisi/la-struttura-della-pa/README.md",
       "status": "active"
     },
     {
@@ -1088,7 +1156,6 @@
       "datasets": [
         "malasanita_struttura_mortalita"
       ],
-      "path": "analisi/malasanita-struttura-mortalita/README.md",
       "status": "active",
       "discussion": 99,
       "issue": 110
@@ -1099,7 +1166,6 @@
       "datasets": [
         "opencivitas_fsc_2025_rso"
       ],
-      "path": "analisi/opencivitas-fsc-rso/README.md",
       "status": "active"
     },
     {
@@ -1108,7 +1174,6 @@
       "datasets": [
         "ispra_ru_base"
       ],
-      "path": "analisi/rifiuti-km2/README.md",
       "status": "active",
       "discussion": 340,
       "issue": 338
@@ -1119,7 +1184,6 @@
       "datasets": [
         "rna_aiuti_stato"
       ],
-      "path": "analisi/rna-aiuti-stato/README.md",
       "status": "active",
       "discussion": 368
     },
@@ -1129,7 +1193,6 @@
       "datasets": [
         "siope_uscite_comuni"
       ],
-      "path": "analisi/siope-comuni-spesa/README.md",
       "status": "active"
     },
     {
@@ -1138,7 +1201,6 @@
       "datasets": [
         "terna_capacita_rinnovabile"
       ],
-      "path": "analisi/terna-capacita-rinnovabile/README.md",
       "status": "active",
       "discussion": 339
     },
@@ -1148,7 +1210,6 @@
       "datasets": [
         "terna_electricity_by_source"
       ],
-      "path": "analisi/terna-electricity-by-source/README.md",
       "status": "active",
       "issue": 133
     }
