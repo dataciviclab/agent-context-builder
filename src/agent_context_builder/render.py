@@ -347,17 +347,17 @@ class Renderer:
         analyses = self._fetch_dcl_analyses()
         if analyses:
             for a in analyses:
-                entry: dict[str, Any] = {
+                ae: dict[str, Any] = {
                     "slug": a.slug,
                     "name": a.name,
                     "datasets": a.datasets,
                     "status": a.status,
                 }
                 if a.discussion is not None:
-                    entry["discussion"] = a.discussion
+                    ae["discussion"] = a.discussion
                 if a.issue is not None:
-                    entry["issue"] = a.issue
-                analyses_list.append(entry)
+                    ae["issue"] = a.issue
+                analyses_list.append(ae)
 
                 # Build reverse lookup: dataset_slug → [analysis_slug, ...]
                 for ds_slug in a.datasets:
