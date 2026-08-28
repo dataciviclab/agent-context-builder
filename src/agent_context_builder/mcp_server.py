@@ -1,26 +1,27 @@
 """Public MCP server — serves DataCivicLab context artifacts from the context branch.
 
-Exposes three read-only tools built by the CI workflow:
-  session_bootstrap — session_bootstrap.md
-  workspace_triage  — workspace_triage.json
-  topic_index       — topic_index.json
+Tools:
+  session_bootstrap  — quick orientation (markdown)
+  workspace_triage   — machine-readable state (compact + sections)
+  topic_index        — dataset/analysis exploration (resolve for deep-dive)
+  search             — cross-cutting search (compact results)
+  refresh_context    — trigger CI rebuild (action)
 
-One optional tool:
-  refresh_context — triggers a new CI build (requires GITHUB_TOKEN with workflow scope)
-
-Configuration via environment variables:
+Configuration:
   ACB_REPO       GitHub repo (default: dataciviclab/agent-context-builder)
   ACB_BRANCH     Branch where artifacts are published (default: context)
-  GITHUB_TOKEN   Required only for the refresh_context tool
-  ACB_LOG_LEVEL  Logging level, default INFO (options: DEBUG, INFO, WARNING, ERROR)
+  GITHUB_TOKEN   Required only for refresh_context
+  ACB_LOG_LEVEL  Logging level (default: INFO)
 """
+
+from __future__ import annotations
 
 import json
 import os
 import re
 import time
-from datetime import datetime, timezone
 from pathlib import Path
+from typing import Any
 
 from lab_connectors.http import HttpClient
 from lab_connectors.mcp import create_mcp_server, get_mcp_logger, guard_timed
@@ -30,26 +31,22 @@ _BRANCH = os.environ.get("ACB_BRANCH", "context")
 _RAW_BASE = f"https://raw.githubusercontent.com/{_REPO}/{_BRANCH}"
 _API_BASE = f"https://api.github.com/repos/{_REPO}"
 
-# Rate-limit guard: GitHub allows ~2 workflow dispatches per hour per repo/ref
-_REFRESH_MIN_INTERVAL = 60  # seconds — local guard before hitting GitHub limit
+_REFRESH_MIN_INTERVAL = 60
 _last_refresh_attempt: float | None = None
 
-_log = get_mcp_logger(
-    "agent-context-builder",
-    level=os.environ.get("ACB_LOG_LEVEL", "INFO"),
-)
+_log = get_mcp_logger("agent-context-builder", level=os.environ.get("ACB_LOG_LEVEL", "INFO"))
 
 mcp = create_mcp_server(
     name="dataciviclab-context",
     instructions=(
         "DataCivicLab context artifacts, generated from GitHub every 6 hours. "
-        "Start with session_bootstrap for a quick orientation, then use "
-        "workspace_triage for machine-readable state and topic_index for "
-        "targeted exploration by topic."
+        "Start with session_bootstrap for orientation, then workspace_triage "
+        "for actionable state, search for discovery, topic_index for deep-dive."
     ),
 )
 
 
+# ── Env / HTTP helpers ─────────────────────────────────────────────────────────
 _ENV_LOADED = False
 
 
@@ -66,17 +63,14 @@ def _parse_env_line(line: str) -> tuple[str, str] | None:
 
 
 def _candidate_env_paths() -> list[Path]:
-    """Return .env candidates, from explicit config to nearby parent directories."""
     explicit = os.environ.get("ACB_ENV_FILE", "").strip()
     paths: list[Path] = []
     if explicit:
         paths.append(Path(explicit).expanduser())
-
     starts = [Path.cwd(), Path(__file__).resolve()]
     for start in starts:
         current = start if start.is_dir() else start.parent
         paths.extend(parent / ".env" for parent in [current] + list(current.parents))
-
     seen: set[Path] = set()
     unique: list[Path] = []
     for path in paths:
@@ -88,72 +82,70 @@ def _candidate_env_paths() -> list[Path]:
 
 
 def _load_dotenv_if_present() -> bool:
-    """Load local .env files without overriding variables already set by the host.
-
-    Lookup order:
-    1. `ACB_ENV_FILE`, when set.
-    2. `.env` from the current working directory upward.
-    3. `.env` from this module directory upward.
-
-    Partial `.env` files are allowed: the loader keeps checking later candidates
-    until at least one missing or blank variable has been filled.
-    """
     global _ENV_LOADED
     if _ENV_LOADED:
         return True
-
-    loaded_any = False
-    for env_path in _candidate_env_paths():
-        if not env_path.exists():
+    _ENV_LOADED = True
+    loaded = False
+    for path in _candidate_env_paths():
+        if not path.is_file():
             continue
-        for line in env_path.read_text(encoding="utf-8").splitlines():
-            parsed = _parse_env_line(line)
-            if not parsed:
-                continue
-            key, value = parsed
-            if not os.environ.get(key):
-                os.environ[key] = value
-                loaded_any = True
-    if loaded_any:
-        _ENV_LOADED = True
-    return loaded_any
+        try:
+            for line in path.read_text(encoding="utf-8").splitlines():
+                parsed = _parse_env_line(line)
+                if parsed is None:
+                    continue
+                key, value = parsed
+                if key not in os.environ or not os.environ[key]:
+                    os.environ[key] = value
+                    loaded = True
+        except OSError:
+            continue
+    return loaded
 
 
 def _get_env(name: str) -> str | None:
-    value = os.environ.get(name)
-    if value:
-        return value
     _load_dotenv_if_present()
-    return os.environ.get(name)
+    return os.environ.get(name) or None
+
+
+_http: HttpClient | None = None
+
+
+def _get_http() -> HttpClient:
+    global _http
+    if _http is None:
+        _http = HttpClient(timeout=15)
+    return _http
 
 
 def _fetch(path: str, retries: int = 1, backoff: float = 1.0) -> str:
-    """Fetch a file from the context branch with retry/backoff via HttpClient.
-
-    Args:
-        path: Path on the context branch (e.g. "session_bootstrap.md")
-        retries: Number of retry attempts (default 1)
-        backoff: Base backoff delay in seconds (default 1.0)
-    """
-    token = _get_env("GITHUB_TOKEN")
-    headers = {"Authorization": f"token {token}"} if token else {}
     url = f"{_RAW_BASE}/{path}"
+    client = _get_http()
+    last_err: Exception | None = None
+    for attempt in range(retries + 1):
+        try:
+            result = client.get(url)
+        except Exception as exc:
+            last_err = exc
+            _log.warning("fetch", "exception", path=path, attempt=attempt, error=str(exc))
+            if attempt < retries:
+                time.sleep(backoff * (2**attempt))
+            continue
+        if result.is_ok and result.response is not None:
+            return result.response.text
+        last_err = Exception(f"HTTP {result.status_code}: {result.err}")
+        _log.warning("fetch", "http_error", path=path, status=result.status_code, error=result.err)
+        if attempt < retries:
+            time.sleep(backoff * (2**attempt))
+    raise last_err or Exception(f"Failed to fetch {path}")
 
-    client = HttpClient(max_retries=retries, retry_backoff=backoff, timeout=10)
-    result = client.get(url, headers=headers)
 
-    if not result.is_ok or result.response is None:
-        _log.error("fetch", "failed", path=path, error=str(result.err))
-        raise result.err if result.err else RuntimeError(f"Failed to fetch {path}")
-
-    response = result.response
-    response.raise_for_status()
-    _log.info("fetch", "success", path=path, status=response.status_code)
-    return response.text
+# ── Tools ──────────────────────────────────────────────────────────────────────
 
 
 @mcp.tool(
-    description="Orientamento rapido: repo attivi, PR aperte, discussion, stato locale, topic.",
+    description="Quick orientation — compact markdown overview of Lab state.",
     structured_output=True,
 )
 def session_bootstrap() -> dict[str, object]:
@@ -165,24 +157,74 @@ def session_bootstrap() -> dict[str, object]:
 
 
 @mcp.tool(
-    description="Triage machine-readable: PR, issue, discussion, stato git per repo, warning.",
+    description=(
+        "Machine-readable Lab state. Default: compact summary. "
+        "Use section= to get a specific part: radar, prs, issues, "
+        "discussions, registry, git, warnings."
+    ),
     structured_output=True,
 )
-def workspace_triage() -> dict[str, object]:
+def workspace_triage(section: str | None = None) -> dict[str, object]:
     def _exec() -> dict[str, object]:
-        content = _fetch("workspace_triage.json")
-        return {"content": json.loads(content), "ok": True}
+        raw = _fetch("workspace_triage.json")
+        data: dict = json.loads(raw)
+
+        # Default: compact summary
+        if section is None:
+            radar = data.get("radar", {})
+            registry = data.get("registry_summary", [])
+            total_ds = sum(r.get("datasets", 0) for r in registry if r.get("available"))
+            total_signals = sum(r.get("signals", 0) for r in registry if r.get("available"))
+            return {
+                "radar": {
+                    "green": radar.get("green", 0),
+                    "yellow": radar.get("yellow", 0),
+                    "red": radar.get("red", 0),
+                    "persistent_red": radar.get("persistent_red", 0),
+                },
+                "datasets": total_ds,
+                "signals": total_signals,
+                "repos_active": sum(1 for r in registry if r.get("available")),
+                "prs": data.get("open_prs") or len(data.get("prs", [])),
+                "issues": data.get("open_issues") or len(data.get("issues", [])),
+                "discussions": data.get("open_discussions") or len(data.get("discussions", [])),
+                "warnings": data.get("warnings", []),
+                "ok": True,
+            }
+
+        # Section filter
+        sections = {
+            "radar": lambda d: d.get("radar", {}),
+            "prs": lambda d: {"prs": d.get("prs", []), "count": len(d.get("prs", []))},
+            "issues": lambda d: {"issues": d.get("issues", []), "count": len(d.get("issues", []))},
+            "discussions": lambda d: {
+                "discussions": d.get("discussions", []),
+                "count": len(d.get("discussions", [])),
+            },
+            "registry": lambda d: {"registry_summary": d.get("registry_summary", [])},
+            "git": lambda d: {"git_state": d.get("git_state", {})},
+            "warnings": lambda d: {"warnings": d.get("warnings", [])},
+            "pipeline": lambda d: {"pipeline_state": d.get("pipeline_state", {})},
+            "source_health": lambda d: {"source_health": d.get("source_health", {})},
+        }
+
+        extractor = sections.get(section)
+        if extractor is None:
+            return {
+                "ok": False,
+                "error": f"Sezione '{section}' non valida. Opzioni: {list(sections.keys())}",
+            }
+
+        return {"content": extractor(data), "ok": True}
 
     return guard_timed(_exec, "workspace_triage")
 
 
 @mcp.tool(
     description=(
-        "Topic index — repos, datasets (published + incubating with stage), "
-        "operational_topics, analyses. "
-        "Quando ``resolve`` (dataset slug, analysis slug, o source name) è "
-        "specificato, restituisce un sub-graph compatto con tutte le entità "
-        "correlate. Senza ``resolve`` restituisce l'index completo (schema v4)."
+        "Dataset/analysis exploration. "
+        "Without resolve: returns compact summary (counts by source, stage). "
+        "With resolve (slug, name, or source): returns sub-graph with related entities."
     ),
     structured_output=True,
 )
@@ -191,92 +233,86 @@ def topic_index(resolve: str | None = None) -> dict[str, object]:
         raw = _fetch("topic_index.json")
         data: dict = json.loads(raw)
 
+        # Default: compact summary
         if not resolve:
-            return {"content": data, "ok": True}
+            by_source: dict[str, int] = {}
+            by_stage: dict[str, int] = {}
+            for source, ds_list in data.get("datasets", {}).items():
+                for ds in ds_list:
+                    by_source[source] = by_source.get(source, 0) + 1
+                    stage = ds.get("stage", "unknown")
+                    by_stage[stage] = by_stage.get(stage, 0) + 1
+            top_sources = sorted(by_source.items(), key=lambda x: -x[1])[:10]
+            return {
+                "total": sum(by_stage.values()),
+                "by_stage": by_stage,
+                "top_sources": {s: n for s, n in top_sources},
+                "n_sources": len(by_source),
+                "analyses": len(data.get("analyses", [])),
+                "explorer_themes": len(data.get("explorer_themes", [])),
+                "ok": True,
+            }
 
+        # Resolve: sub-graph
         resolve_lower = resolve.lower()
-        result: dict = {"resolve": resolve, "found": False}
+        result: dict[str, Any] = {"resolve": resolve, "found": False}
+        seen_slugs: set[str] = set()
 
-        seen_sources: set[str] = set()
-        seen_datasets: set[str] = set()
-        seen_analyses: set[str] = set()
-        seen_themes: set[str] = set()
-
-        def _add_source(source: str) -> None:
-            if source not in seen_sources:
-                seen_sources.add(source)
-                result.setdefault("sources", []).append(source)
-
-        def _add_dataset(entry: dict) -> None:
-            slug = entry["slug"]
-            if slug not in seen_datasets:
-                seen_datasets.add(slug)
-                result.setdefault("datasets", []).append(entry)
-
-        # Schema v4: unified 'datasets' section with stage field
-        entries = data.get("datasets", {})
-        for source, datasets in entries.items():
-            for ds in datasets:
-                if ds.get("slug", "").lower() == resolve_lower:
-                    _add_dataset(
+        # Search datasets
+        for source, ds_list in data.get("datasets", {}).items():
+            for ds in ds_list:
+                slug = ds.get("slug", "")
+                if slug.lower() == resolve_lower and slug not in seen_slugs:
+                    seen_slugs.add(slug)
+                    result.setdefault("datasets", []).append(
                         {
-                            "slug": ds["slug"],
+                            "slug": slug,
                             "name": ds.get("name", ""),
                             "source": source,
                             "period": ds.get("period"),
                             "stage": ds.get("stage", "published"),
+                            "gcs_path": ds.get("location", {}).get("path", ""),
                         }
                     )
                     result["found"] = True
-                    _add_source(source)
 
-        for analysis in data.get("analyses", []):
-            a_slug = analysis.get("slug", "")
+        # Search analyses
+        for a in data.get("analyses", []):
+            a_slug = a.get("slug", "")
             if a_slug.lower() == resolve_lower or resolve_lower in [
-                d.lower() for d in analysis.get("datasets", [])
+                d.lower() for d in a.get("datasets", [])
             ]:
-                if a_slug not in seen_analyses:
-                    seen_analyses.add(a_slug)
-                    result.setdefault("analyses", []).append(analysis)
-                    result["found"] = True
-
-        abd = data.get("analyses_by_dataset", {})
-        if resolve_lower in {k.lower() for k in abd}:
-            for k, v in abd.items():
-                if k.lower() == resolve_lower:
-                    result.setdefault("analyses_for_dataset", []).extend(
-                        s for s in v if s not in seen_analyses
-                    )
-                    result["found"] = True
-
-        for theme in data.get("explorer_themes", []):
-            ds_list = [d.lower() for d in theme.get("datasets", [])]
-            if resolve_lower in ds_list:
-                t_slug = theme.get("slug", "")
-                if t_slug not in seen_themes:
-                    seen_themes.add(t_slug)
-                    result.setdefault("explorer_themes", []).append(
-                        {"slug": t_slug, "name": theme.get("name")}
-                    )
-                    result["found"] = True
-
-        # Resolve by source name
-        for source in entries:
-            if source.lower() == resolve_lower:
+                result.setdefault("analyses", []).append(
+                    {
+                        "slug": a_slug,
+                        "name": a.get("name", ""),
+                        "datasets": a.get("datasets", []),
+                        "status": a.get("status", ""),
+                    }
+                )
                 result["found"] = True
-                _add_source(source)
-                for ds in entries[source]:
-                    _add_dataset(
-                        {
-                            "slug": ds["slug"],
-                            "name": ds.get("name", ""),
-                            "source": source,
-                            "period": ds.get("period"),
-                            "stage": ds.get("stage", "published"),
-                        }
-                    )
 
-        result["ts"] = datetime.now(timezone.utc).isoformat()
+        # Search by source name
+        entries = data.get("datasets", {})
+        if resolve_lower in {s.lower() for s in entries}:
+            for source, ds_list in entries.items():
+                if source.lower() == resolve_lower:
+                    result["found"] = True
+                    for ds in ds_list:
+                        slug = ds.get("slug", "")
+                        if slug not in seen_slugs:
+                            seen_slugs.add(slug)
+                            result.setdefault("datasets", []).append(
+                                {
+                                    "slug": slug,
+                                    "name": ds.get("name", ""),
+                                    "source": source,
+                                    "period": ds.get("period"),
+                                    "stage": ds.get("stage", "published"),
+                                }
+                            )
+
+        result["count"] = len(result.get("datasets", []))
         return {"content": result, "ok": True}
 
     return guard_timed(_exec, "topic_index")
@@ -284,11 +320,48 @@ def topic_index(resolve: str | None = None) -> dict[str, object]:
 
 @mcp.tool(
     description=(
-        "Triggera un nuovo build del contesto su CI. "
-        "Richiede GITHUB_TOKEN con scope workflow. "
-        "Gli artifact aggiornati saranno disponibili entro ~1 minuto. "
-        "Rate-limit: GitHub allow ~2 dispatches per hour. "
-        "Local guard: one dispatch per minute."
+        "Cross-cutting search across issues, PRs, datasets, and analyses. "
+        "Returns compact results (slug/name/type). Use topic_index(resolve=slug) for details."
+    ),
+    structured_output=True,
+)
+def search(query: str, limit: int = 10) -> dict[str, object]:
+    def _exec() -> dict[str, object]:
+        token = _get_env("GITHUB_TOKEN")
+
+        # GitHub Issues + PRs
+        issues = _search_github_issues(query, token, limit)
+
+        # Local search
+        try:
+            topic_raw = _fetch("topic_index.json", retries=0)
+            topic_data = json.loads(topic_raw)
+        except Exception:
+            topic_data = {}
+
+        local = (
+            _search_topic_index(query, topic_data)
+            if topic_data
+            else {"datasets": [], "analyses": []}
+        )
+
+        return {
+            "query": query,
+            "total": len(issues) + len(local["datasets"]) + len(local["analyses"]),
+            "issues": issues,
+            "datasets": local["datasets"],
+            "analyses": local["analyses"],
+            "ok": True,
+        }
+
+    return guard_timed(_exec, "search")
+
+
+@mcp.tool(
+    description=(
+        "Trigger a new context build on CI. "
+        "Requires GITHUB_TOKEN with workflow scope. "
+        "Artifacts updated within ~1 minute. Rate limit: 2 dispatches/hour."
     ),
     structured_output=True,
 )
@@ -298,10 +371,7 @@ def refresh_context() -> dict[str, object]:
 
         token = _get_env("GITHUB_TOKEN")
         if not token:
-            return {
-                "ok": False,
-                "error": "GITHUB_TOKEN non impostato. Serve un token con scope 'workflow'.",
-            }
+            return {"ok": False, "error": "GITHUB_TOKEN non impostato."}
 
         now = time.monotonic()
         if _last_refresh_attempt is not None:
@@ -310,66 +380,37 @@ def refresh_context() -> dict[str, object]:
                 wait = _REFRESH_MIN_INTERVAL - elapsed
                 return {
                     "ok": False,
-                    "error": f"Troppo presto. Ultimo tentativo {int(elapsed)}s fa. "
-                    f"Aspetta ~{int(wait)}s prima di riprovare.",
+                    "error": f"Rate limit. Aspetta ~{int(wait)}s.",
                     "retry_after": int(wait),
                 }
 
         _last_refresh_attempt = now
-        client = HttpClient(timeout=10)
+        client = _get_http()
         result = client.post(
             f"{_API_BASE}/actions/workflows/build-context.yml/dispatches",
             json={"ref": "main"},
-            headers={
-                "Authorization": f"token {token}",
-                "Accept": "application/vnd.github+json",
-            },
+            headers={"Authorization": f"token {token}", "Accept": "application/vnd.github+json"},
         )
 
         if not result.is_ok or result.response is None:
-            _log.error("refresh_context", "network_error", error=str(result.err))
             return {"ok": False, "error": f"Errore di rete: {result.err}"}
 
-        response = result.response
-        if response.status_code == 204:
-            _log.info("refresh_context", "triggered", ref="main")
-            return {
-                "ok": True,
-                "message": "Build triggerato. Artifact aggiornati entro ~1 minuto.",
-            }
-        elif response.status_code == 422:
-            _log.error(
-                "refresh_context", "rejected", status=response.status_code, body=response.text
-            )
-            return {
-                "ok": False,
-                "error": "Build rifiutato (422). Verifica che il workflow sia su main.",
-                "status_code": 422,
-            }
+        if result.response.status_code == 204:
+            return {"ok": True, "message": "Build triggerato. Aggiornamento entro ~1 minuto."}
+        elif result.response.status_code == 422:
+            return {"ok": False, "error": "Build rifiutato (422). Verifica workflow su main."}
         else:
-            _log.error("refresh_context", "failed", status=response.status_code, body=response.text)
-            return {
-                "ok": False,
-                "error": f"Errore {response.status_code}: {response.text}",
-                "status_code": response.status_code,
-            }
+            return {"ok": False, "error": f"Errore {result.response.status_code}"}
 
     return guard_timed(_exec, "refresh_context")
+
+
+# ── Search helpers ─────────────────────────────────────────────────────────────
 
 
 def _search_github_issues(
     query: str, token: str | None, limit: int = 10
 ) -> list[dict[str, object]]:
-    """Search issues and PRs across dataciviclab org via GitHub Search API.
-
-    Args:
-        query: Search query (natural language, full-text on title + body)
-        token: GitHub token (optional; affects rate limit)
-        limit: Max results (default 10, max 50)
-
-    Returns:
-        List of matching issues/PRs with repo, number, title, state, url, type.
-    """
     url = "https://api.github.com/search/issues"
     headers = (
         {"Authorization": f"token {token}", "Accept": "application/vnd.github+json"}
@@ -382,55 +423,31 @@ def _search_github_issues(
         "order": "desc",
         "per_page": min(limit, 50),
     }
-    client = HttpClient(timeout=10)
+    client = _get_http()
     try:
         result = client.get(url, params=params, headers=headers)
-    except Exception as exc:
-        _log.warning("search_issues", "http_error", error=str(exc))
+    except Exception:
         return []
-
     if not result.is_ok or result.response is None:
-        _log.warning("search_issues", "failed", error=str(result.err))
         return []
-
     try:
-        response = result.response
-        data = response.json()
-        items = data.get("items", [])
-    except Exception as exc:
-        _log.warning("search_issues", "parse_error", error=str(exc))
+        items = result.response.json().get("items", [])
+    except Exception:
         return []
-
-    results = []
-    for item in items:
-        repo_full = item.get("repository_url", "").replace("https://api.github.com/repos/", "")
-        results.append(
-            {
-                "repo": repo_full or "",
-                "number": item.get("number"),
-                "title": item.get("title", ""),
-                "state": item.get("state", ""),
-                "url": item.get("html_url", ""),
-                "type": "pr" if "pull_request" in item else "issue",
-                "updated_at": item.get("updated_at", ""),
-            }
-        )
-    return results
+    return [
+        {
+            "repo": item.get("repository_url", "").replace("https://api.github.com/repos/", ""),
+            "number": item.get("number"),
+            "title": item.get("title", ""),
+            "state": item.get("state", ""),
+            "url": item.get("html_url", ""),
+            "type": "pr" if "pull_request" in item else "issue",
+        }
+        for item in items
+    ]
 
 
 def _word_match(query: str, text: str) -> bool:
-    """Check if each word of query appears as a whole word in text.
-
-    Uses ``\\b`` word boundary — ``\"pubblica\"`` matches ``\"finanza pubblica\"``
-    but NOT ``\"pubblicati\"``. Case-insensitive.
-
-    Args:
-        query: Search query (one or more words)
-        text: Text to search in
-
-    Returns:
-        True if ALL words in query appear as whole words in text.
-    """
     words = query.lower().split()
     text_lower = text.lower()
     for word in words:
@@ -440,122 +457,41 @@ def _word_match(query: str, text: str) -> bool:
 
 
 def _search_topic_index(query: str, topic_data: dict) -> dict[str, list[dict[str, object]]]:
-    """Search datasets and analyses in the topic_index data.
-
-    Uses word-boundary matching (``_word_match``) on slug, name, and source
-    to avoid false positives from substring matches.
-
-    Args:
-        query: Search query
-        topic_data: Parsed topic_index.json content
-
-    Returns:
-        Dict with 'datasets' and 'analyses' lists.
-    """
     datasets_found: list[dict[str, object]] = []
     analyses_found: list[dict[str, object]] = []
-
-    # Search datasets by slug, name, source (schema v4: unified 'datasets' section)
     seen_slugs: set[str] = set()
-    entries = topic_data.get("datasets", {})
-    for source, datasets in entries.items():
-        for ds in datasets:
+
+    for source, ds_list in topic_data.get("datasets", {}).items():
+        for ds in ds_list:
             slug = ds.get("slug", "")
             name = ds.get("name", "")
             if slug not in seen_slugs and (
-                query.lower() in slug.lower()  # substring su slug (identificatori con underscore)
-                or _word_match(query, name)  # word boundary su name (testo umano)
-                or _word_match(query, source)  # word boundary su source (testo umano)
+                query.lower() in slug.lower()
+                or _word_match(query, name)
+                or _word_match(query, source)
             ):
                 seen_slugs.add(slug)
                 datasets_found.append(
-                    {
-                        "slug": slug,
-                        "name": name,
-                        "source": source,
-                        "period": ds.get("period"),
-                        "stage": ds.get("stage", "published"),
-                    }
+                    {"slug": slug, "name": name, "stage": ds.get("stage", "published")}
                 )
 
-    # Search analyses by slug, name, datasets
-    for analysis in topic_data.get("analyses", []):
-        a_slug = analysis.get("slug", "")
-        a_name = analysis.get("name", "")
-        a_datasets = " ".join(analysis.get("datasets", []))
+    for a in topic_data.get("analyses", []):
+        a_slug = a.get("slug", "")
+        a_name = a.get("name", "")
+        a_datasets = " ".join(a.get("datasets", []))
         if (
-            query.lower() in a_slug.lower()  # substring su slug analisi
-            or _word_match(query, a_name)  # word boundary su nome analisi
-            or query.lower() in a_datasets.lower()  # substring su dataset collegati
+            query.lower() in a_slug.lower()
+            or _word_match(query, a_name)
+            or query.lower() in a_datasets.lower()
         ):
             analyses_found.append(
-                {
-                    "slug": a_slug,
-                    "name": a_name,
-                    "datasets": analysis.get("datasets", []),
-                    "status": analysis.get("status", ""),
-                }
+                {"slug": a_slug, "name": a_name, "datasets": a.get("datasets", [])}
             )
 
     return {"datasets": datasets_found, "analyses": analyses_found}
 
 
-@mcp.tool(
-    description=(
-        "Cerca in issue, PR, dataset e analisi del DataCivicLab. "
-        "Combina GitHub Search API (issue/PR full-text) con l'indice locale "
-        "(dataset, analisi). I risultati sono raggruppati per tipo."
-    ),
-    structured_output=True,
-)
-def search(query: str, limit: int = 10) -> dict[str, object]:
-    """Search across the DataCivicLab ecosystem.
-
-    Args:
-        query: Testo da cercare (es. \"disuguaglianza\", \"sanità\", \"appalti\")
-        limit: Massimo risultati per sezione (default 10, max 50)
-
-    Returns:
-        Risultati raggruppati per tipo (issues, datasets, analyses).
-    """
-
-    def _exec() -> dict[str, object]:
-        token = _get_env("GITHUB_TOKEN")
-
-        # 1. Search GitHub Issues + PRs
-        issues = _search_github_issues(query, token, limit)
-
-        # 2. Fetch topic_index and search datasets + analyses
-        try:
-            topic_raw = _fetch("topic_index.json", retries=0)
-            topic_data = json.loads(topic_raw)
-        except Exception as exc:
-            _log.warning("search", "topic_index_fetch_failed", error=str(exc))
-            topic_data = {}
-
-        local = (
-            _search_topic_index(query, topic_data)
-            if topic_data
-            else {"datasets": [], "analyses": []}
-        )
-
-        total = len(issues) + len(local["datasets"]) + len(local["analyses"])
-        return {
-            "query": query,
-            "total": total,
-            "results": {
-                "issues": issues,
-                "datasets": local["datasets"],
-                "analyses": local["analyses"],
-            },
-            "ok": True,
-        }
-
-    return guard_timed(_exec, "search")
-
-
 def main() -> None:
-    """Entry point per l'MCP server."""
     _log.info("main", "starting", repo=_REPO, branch=_BRANCH)
     mcp.run()
 
