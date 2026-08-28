@@ -499,7 +499,7 @@ def test_render_topic_index_v3_with_analyses():
     gh.get_raw_file.side_effect = _raw_file_side_effect
     result = _r(config, gh=gh).render_topic_index()
 
-    assert result["schema_version"] == 4
+    assert result["schema_version"] == 5
     assert "analyses" in result
     assert "analyses_by_dataset" in result
 
@@ -540,6 +540,6 @@ def test_render_topic_index_v2_when_no_analyses():
     gh.get_raw_file.side_effect = _raw_file_side_effect
     result = _r(config, gh=gh).render_topic_index()
 
-    assert result["schema_version"] == 4
+    assert result["schema_version"] == 5
     assert "analyses" not in result
     assert "analyses_by_dataset" not in result
