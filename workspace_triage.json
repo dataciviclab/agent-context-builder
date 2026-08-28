@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T21:52:31.584652",
+  "generated_at": "2026-08-28T08:43:14.035986",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -1335,12 +1335,303 @@
   ],
   "radar": {
     "available": true,
+    "generated_at": "2026-08-27T14:07:11.806451+00:00",
     "probe_date": "2026-08-27",
     "sources_total": 36,
     "green": 35,
     "yellow": 0,
     "red": 1,
     "persistent_red": 1,
+    "sources": [
+      {
+        "id": "istat_sdmx",
+        "status": "GREEN",
+        "protocol": "sdmx",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "anac",
+        "status": "GREEN",
+        "protocol": "ckan",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "inps",
+        "status": "GREEN",
+        "protocol": "ckan",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "openbdap",
+        "status": "GREEN",
+        "protocol": "ckan",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "inail_opendata",
+        "status": "GREEN",
+        "protocol": "ckan",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "mim_opendata",
+        "status": "GREEN",
+        "protocol": "html",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "dati_camera",
+        "status": "GREEN",
+        "protocol": "sparql",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "dati_senato",
+        "status": "GREEN",
+        "protocol": "sparql",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "dati_cultura",
+        "status": "GREEN",
+        "protocol": "sparql",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "ispra_linked_data",
+        "status": "RED",
+        "protocol": "sparql",
+        "http_code": "-",
+        "note": "Connection error (ConnectionError)",
+        "red_streak": 14
+      },
+      {
+        "id": "consip_open_data",
+        "status": "GREEN",
+        "protocol": "ckan",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "lavoro_opendata",
+        "status": "GREEN",
+        "protocol": "ckan",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "mur_ustat",
+        "status": "GREEN",
+        "protocol": "ckan",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "opencoesione",
+        "status": "GREEN",
+        "protocol": "ckan",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "mef_irpef",
+        "status": "GREEN",
+        "protocol": "html",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "opencivitas",
+        "status": "GREEN",
+        "protocol": "html",
+        "http_code": "200",
+        "note": "SSL verify failed; fallback verify=False used (SSLError)",
+        "red_streak": 0
+      },
+      {
+        "id": "aifa",
+        "status": "GREEN",
+        "protocol": "html",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "dait",
+        "status": "GREEN",
+        "protocol": "html",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "eligendo",
+        "status": "GREEN",
+        "protocol": "html",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "mit_opendata",
+        "status": "GREEN",
+        "protocol": "ckan",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "openga",
+        "status": "GREEN",
+        "protocol": "ckan",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "giustizia_statistiche",
+        "status": "GREEN",
+        "protocol": "html",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "cortecostituzionale",
+        "status": "GREEN",
+        "protocol": "html",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "terna_opendata",
+        "status": "GREEN",
+        "protocol": "rest",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "ministero_interno",
+        "status": "GREEN",
+        "protocol": "ckan",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "agid",
+        "status": "GREEN",
+        "protocol": "ckan",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "noipa_sparql",
+        "status": "GREEN",
+        "protocol": "sparql",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "mimit_rna",
+        "status": "GREEN",
+        "protocol": "ckan",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "ministero_turismo_opendata",
+        "status": "GREEN",
+        "protocol": "ckan",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "ministero_salute",
+        "status": "GREEN",
+        "protocol": "ckan",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "agcm",
+        "status": "GREEN",
+        "protocol": "ckan",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "unioncamere",
+        "status": "GREEN",
+        "protocol": "ckan",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "pagopa",
+        "status": "GREEN",
+        "protocol": "ckan",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "art_opendata",
+        "status": "GREEN",
+        "protocol": "ckan",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "aci",
+        "status": "GREEN",
+        "protocol": "ckan",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "adm_opendata",
+        "status": "GREEN",
+        "protocol": "ckan",
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
+      }
+    ],
     "unhealthy": [
       {
         "id": "ispra_linked_data",
@@ -1395,7 +1686,1045 @@
       "codelists": 0,
       "entities": 16,
       "gcs": 92,
-      "reason": ""
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "aci_prime_iscrizioni_autovetture",
+          "source_id": "aci",
+          "status": "ok",
+          "label": "aci_prime_iscrizioni_autovetture",
+          "detail": "anno 2024 \u2014 mart: si"
+        },
+        {
+          "id": "ade_cinque_per_mille",
+          "source_id": "ade",
+          "status": "ok",
+          "label": "ade_cinque_per_mille",
+          "detail": "anni 2023-2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260728T140724Z_2d4d475f",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-07-28T14:07:24.076485+00:00",
+            "finished_at": "2026-07-28T14:07:46.805591+00:00"
+          }
+        },
+        {
+          "id": "aifa_spesa_consumo",
+          "source_id": "aifa",
+          "status": "ok",
+          "label": "aifa_spesa_consumo",
+          "detail": "anni 2018-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260730T084948Z_d12bb7c2",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-07-30T08:49:48.164156+00:00",
+            "finished_at": "2026-07-30T08:50:08.017957+00:00"
+          }
+        },
+        {
+          "id": "anac_aggiudicazioni",
+          "source_id": "anac",
+          "status": "ok",
+          "label": "anac_aggiudicazioni",
+          "detail": "anno 2026 \u2014 mart: si"
+        },
+        {
+          "id": "anac_bandi_gara",
+          "source_id": "anac",
+          "status": "ok",
+          "label": "anac_bandi_gara",
+          "detail": "anni 2016-2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260728T093933Z_e87c8a52",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-07-28T09:39:33.538892+00:00",
+            "finished_at": "2026-07-28T09:42:56.910622+00:00"
+          }
+        },
+        {
+          "id": "anpr_mobilita_residenziale",
+          "source_id": "anpr",
+          "status": "ok",
+          "label": "anpr_mobilita_residenziale",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260801T133743Z_75b44ded",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-01T13:37:43.676108+00:00",
+            "finished_at": "2026-08-01T13:37:45.384535+00:00"
+          }
+        },
+        {
+          "id": "bdap_entrate_stato",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "bdap_entrate_stato",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260731T163739Z_1a473287",
+            "year": 2024,
+            "status": "DRY_RUN",
+            "started_at": "2026-07-31T16:37:39.488090+00:00",
+            "finished_at": "2026-07-31T16:37:39.494379+00:00"
+          }
+        },
+        {
+          "id": "bdap_lea",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "bdap_lea",
+          "detail": "anni 2019-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260731T163744Z_3e42196f",
+            "year": 2024,
+            "status": "DRY_RUN",
+            "started_at": "2026-07-31T16:37:44.040306+00:00",
+            "finished_at": "2026-07-31T16:37:44.044617+00:00"
+          }
+        },
+        {
+          "id": "bdap_pagamenti_stato",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "bdap_pagamenti_stato",
+          "detail": "anni 2014-2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T082045Z_786bab73",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T08:20:45.346498+00:00",
+            "finished_at": "2026-08-16T08:20:46.918325+00:00"
+          }
+        },
+        {
+          "id": "bdap_spese_stato",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "bdap_spese_stato",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260731T163747Z_7aea68b1",
+            "year": 2024,
+            "status": "DRY_RUN",
+            "started_at": "2026-07-31T16:37:47.439580+00:00",
+            "finished_at": "2026-07-31T16:37:47.443667+00:00"
+          }
+        },
+        {
+          "id": "centri_accoglienza_italia",
+          "source_id": "centri_d_italia",
+          "status": "ok",
+          "label": "centri_accoglienza_italia",
+          "detail": "anno 2026 \u2014 mart: si"
+        },
+        {
+          "id": "civile_flussi",
+          "source_id": "giustizia_statistiche",
+          "status": "ok",
+          "label": "civile_flussi",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260731T114731Z_3dec8a0d",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-07-31T11:47:31.726712+00:00",
+            "finished_at": "2026-07-31T11:48:42.007615+00:00"
+          }
+        },
+        {
+          "id": "consip_consumi_convenzione",
+          "source_id": "consip_open_data",
+          "status": "ok",
+          "label": "consip_consumi_convenzione",
+          "detail": "anni 2023-2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260728T141049Z_6e9fd376",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-07-28T14:10:49.622969+00:00",
+            "finished_at": "2026-07-28T14:10:52.081123+00:00"
+          }
+        },
+        {
+          "id": "dipendenti_pubblici",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "dipendenti_pubblici",
+          "detail": "anni 2010-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260731T163751Z_089f4aa1",
+            "year": 2024,
+            "status": "DRY_RUN",
+            "started_at": "2026-07-31T16:37:51.902532+00:00",
+            "finished_at": "2026-07-31T16:37:51.906743+00:00"
+          }
+        },
+        {
+          "id": "farmacie",
+          "source_id": "ministero_salute",
+          "status": "ok",
+          "label": "farmacie",
+          "detail": "anno 2026 \u2014 mart: si"
+        },
+        {
+          "id": "fts_eu_grants",
+          "source_id": "fts",
+          "status": "ok",
+          "label": "fts_eu_grants",
+          "detail": "anni 2020-2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260803T142618Z_72bd8736",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-08-03T14:26:18.297828+00:00",
+            "finished_at": "2026-08-03T14:26:18.530459+00:00"
+          }
+        },
+        {
+          "id": "ga_decreti",
+          "source_id": "openga",
+          "status": "ok",
+          "label": "ga_decreti",
+          "detail": "anni 2023-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260731T164741Z_c2fa4114",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-07-31T16:47:41.536101+00:00",
+            "finished_at": "2026-07-31T16:48:25.675999+00:00"
+          }
+        },
+        {
+          "id": "ga_ordinanze",
+          "source_id": "openga",
+          "status": "ok",
+          "label": "ga_ordinanze",
+          "detail": "anni 2023-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260731T164839Z_e096ea4f",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-07-31T16:48:39.363232+00:00",
+            "finished_at": "2026-07-31T16:49:24.672774+00:00"
+          }
+        },
+        {
+          "id": "ga_sentenze",
+          "source_id": "openga",
+          "status": "ok",
+          "label": "ga_sentenze",
+          "detail": "anni 2023-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260731T164928Z_d58e6f80",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-07-31T16:49:28.971050+00:00",
+            "finished_at": "2026-07-31T16:50:16.554599+00:00"
+          }
+        },
+        {
+          "id": "giustizia_penale_indicatori",
+          "source_id": "giustizia_statistiche",
+          "status": "ok",
+          "label": "giustizia_penale_indicatori",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260731T114716Z_f5866314",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-07-31T11:47:16.516103+00:00",
+            "finished_at": "2026-07-31T11:47:21.231718+00:00"
+          }
+        },
+        {
+          "id": "inps_pensioni_trimestrale",
+          "source_id": "inps",
+          "status": "ok",
+          "label": "inps_pensioni_trimestrale",
+          "detail": "anno 2024 \u2014 mart: si"
+        },
+        {
+          "id": "inps_rdc_pdc",
+          "source_id": "inps_open_data",
+          "status": "ok",
+          "label": "inps_rdc_pdc",
+          "detail": "anno 2020 \u2014 mart: si",
+          "run": {
+            "run_id": "20260802T144644Z_466a9d69",
+            "year": 2020,
+            "status": "SUCCESS",
+            "started_at": "2026-08-02T14:46:44.923044+00:00",
+            "finished_at": "2026-08-02T14:46:47.376092+00:00"
+          }
+        },
+        {
+          "id": "intercettazioni",
+          "source_id": "giustizia_statistiche",
+          "status": "ok",
+          "label": "intercettazioni",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260731T114851Z_0639a702",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-07-31T11:48:51.291161+00:00",
+            "finished_at": "2026-07-31T11:48:53.648463+00:00"
+          }
+        },
+        {
+          "id": "irpef_comunale",
+          "source_id": "mef_irpef",
+          "status": "ok",
+          "label": "irpef_comunale",
+          "detail": "anni 2019-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260730T182415Z_687dcf3d",
+            "year": 2024,
+            "status": "DRY_RUN",
+            "started_at": "2026-07-30T18:24:15.434148+00:00",
+            "finished_at": "2026-07-30T18:24:15.438095+00:00"
+          }
+        },
+        {
+          "id": "ispra_consumo_suolo",
+          "source_id": "ispra_linked_data",
+          "status": "ok",
+          "label": "ispra_consumo_suolo",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260727T225500Z_9ccedea6",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-07-27T22:55:00.864542+00:00",
+            "finished_at": "2026-07-27T22:55:17.710967+00:00"
+          }
+        },
+        {
+          "id": "ispra_emissioni_ghg",
+          "source_id": "ispra",
+          "status": "ok",
+          "label": "ispra_emissioni_ghg",
+          "detail": "anno 2023 \u2014 mart: si",
+          "run": {
+            "run_id": "20260801T103200Z_4dc2cbf5",
+            "year": 2023,
+            "status": "SUCCESS",
+            "started_at": "2026-08-01T10:32:00.800427+00:00",
+            "finished_at": "2026-08-01T10:32:02.250921+00:00"
+          }
+        },
+        {
+          "id": "ispra_ru_base",
+          "source_id": "ispra_linked_data",
+          "status": "ok",
+          "label": "ispra_ru_base",
+          "detail": "anni 2010-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260731T103443Z_1b75dcf8",
+            "year": 2024,
+            "status": "DRY_RUN",
+            "started_at": "2026-07-31T10:34:43.409146+00:00",
+            "finished_at": "2026-07-31T10:34:43.416212+00:00"
+          }
+        },
+        {
+          "id": "ispra_ru_costi_kg",
+          "source_id": "ispra_linked_data",
+          "status": "ok",
+          "label": "ispra_ru_costi_kg",
+          "detail": "anni 2020-2024 \u2014 mart: si"
+        },
+        {
+          "id": "ispra_ru_costi_procapite",
+          "source_id": "ispra_linked_data",
+          "status": "ok",
+          "label": "ispra_ru_costi_procapite",
+          "detail": "anni 2020-2024 \u2014 mart: si"
+        },
+        {
+          "id": "istat_asia_ul",
+          "source_id": "istat_dbnomics",
+          "status": "ok",
+          "label": "istat_asia_ul",
+          "detail": "anno 2020 \u2014 mart: si"
+        },
+        {
+          "id": "istat_gini_regionale",
+          "source_id": "istat_sdmx",
+          "status": "ok",
+          "label": "istat_gini_regionale",
+          "detail": "anno 2023 \u2014 mart: si"
+        },
+        {
+          "id": "istat_housing_crowding",
+          "source_id": "istat_sdmx",
+          "status": "ok",
+          "label": "istat_housing_crowding",
+          "detail": "anno 2024 \u2014 mart: si"
+        },
+        {
+          "id": "istat_ipab_aree",
+          "source_id": "istat_sdmx",
+          "status": "ok",
+          "label": "istat_ipab_aree",
+          "detail": "anno 2024 \u2014 mart: si"
+        },
+        {
+          "id": "istat_occupazione_provinciale",
+          "source_id": "istat_sdmx",
+          "status": "ok",
+          "label": "istat_occupazione_provinciale",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260806T103246Z_04b24585",
+            "year": 2025,
+            "status": "FAILED",
+            "started_at": "2026-08-06T10:32:46.528792+00:00",
+            "finished_at": "2026-08-06T10:34:59.409896+00:00"
+          }
+        },
+        {
+          "id": "iva_regionale",
+          "source_id": "mef_finanze",
+          "status": "ok",
+          "label": "iva_regionale",
+          "detail": "anni 2015-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260802T133429Z_d1f83810",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-02T13:34:29.280524+00:00",
+            "finished_at": "2026-08-02T13:34:30.475378+00:00"
+          }
+        },
+        {
+          "id": "mef_irpef_regionale",
+          "source_id": "mef_irpef",
+          "status": "ok",
+          "label": "mef_irpef_regionale",
+          "detail": "anni 2017-2025 \u2014 mart: si"
+        },
+        {
+          "id": "mef_partecipazioni",
+          "source_id": "mef_tesoro",
+          "status": "ok",
+          "label": "mef_partecipazioni",
+          "detail": "anni 2020-2023 \u2014 mart: si",
+          "run": {
+            "run_id": "20260802T180319Z_432e868a",
+            "year": 2023,
+            "status": "SUCCESS",
+            "started_at": "2026-08-02T18:03:19.213223+00:00",
+            "finished_at": "2026-08-02T18:03:57.083600+00:00"
+          }
+        },
+        {
+          "id": "mef_patrimonio_detenzioni",
+          "source_id": "mef_de",
+          "status": "ok",
+          "label": "mef_patrimonio_detenzioni",
+          "detail": "anni 2022-2023 \u2014 mart: si"
+        },
+        {
+          "id": "mef_patrimonio_enti",
+          "source_id": "mef_de",
+          "status": "ok",
+          "label": "mef_patrimonio_enti",
+          "detail": "anni 2022-2023 \u2014 mart: si"
+        },
+        {
+          "id": "mef_patrimonio_immobili",
+          "source_id": "mef_de",
+          "status": "ok",
+          "label": "mef_patrimonio_immobili",
+          "detail": "anni 2022-2023 \u2014 mart: si"
+        },
+        {
+          "id": "mef_rappresentanti_partecipate",
+          "source_id": "mef_tesoro",
+          "status": "ok",
+          "label": "mef_rappresentanti_partecipate",
+          "detail": "anni 2018-2023 \u2014 mart: si",
+          "run": {
+            "run_id": "20260803T104219Z_ba17250b",
+            "year": 2023,
+            "status": "SUCCESS",
+            "started_at": "2026-08-03T10:42:19.829537+00:00",
+            "finished_at": "2026-08-03T10:42:34.022082+00:00"
+          }
+        },
+        {
+          "id": "mim_alunni_corso_eta",
+          "source_id": "mim_opendata",
+          "status": "ok",
+          "label": "mim_alunni_corso_eta",
+          "detail": "anni 2016-2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260802T151738Z_bdfe8893",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-08-02T15:17:38.019774+00:00",
+            "finished_at": "2026-08-02T15:17:51.712255+00:00"
+          }
+        },
+        {
+          "id": "mim_scuola_infanzia",
+          "source_id": "mim_opendata",
+          "status": "ok",
+          "label": "mim_scuola_infanzia",
+          "detail": "anni 2018-2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260802T170946Z_3d920f3b",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-08-02T17:09:46.433945+00:00",
+            "finished_at": "2026-08-02T17:09:48.312381+00:00"
+          }
+        },
+        {
+          "id": "mit_incidentalita_mensile",
+          "source_id": "mit_opendata",
+          "status": "ok",
+          "label": "mit_incidentalita_mensile",
+          "detail": "anno 2001 \u2014 mart: si"
+        },
+        {
+          "id": "mit_opere_incompiute_2020",
+          "source_id": "mit_opendata",
+          "status": "ok",
+          "label": "mit_opere_incompiute_2020",
+          "detail": "anno 2020 \u2014 mart: si"
+        },
+        {
+          "id": "monitoraggio_mensile_civile",
+          "source_id": "giustizia_statistiche",
+          "status": "ok",
+          "label": "monitoraggio_mensile_civile",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260731T115219Z_a7c39d31",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-07-31T11:52:19.225482+00:00",
+            "finished_at": "2026-07-31T11:53:38.894285+00:00"
+          }
+        },
+        {
+          "id": "mortalita_istat_evitabile",
+          "source_id": "istat_situas",
+          "status": "ok",
+          "label": "mortalita_istat_evitabile",
+          "detail": "anno 2022 \u2014 mart: si"
+        },
+        {
+          "id": "mur_contribuzione_universitaria",
+          "source_id": "mur_ustat",
+          "status": "ok",
+          "label": "mur_contribuzione_universitaria",
+          "detail": "anni 2017-2024 \u2014 mart: si"
+        },
+        {
+          "id": "mur_immatricolati",
+          "source_id": "mur_ustat",
+          "status": "ok",
+          "label": "mur_immatricolati",
+          "detail": "anno 2025 \u2014 mart: si"
+        },
+        {
+          "id": "mur_iscritti",
+          "source_id": "mur_ustat",
+          "status": "ok",
+          "label": "mur_iscritti",
+          "detail": "anno 2025 \u2014 mart: si"
+        },
+        {
+          "id": "opencivitas_fsc_2025_rso",
+          "source_id": "opencivitas",
+          "status": "ok",
+          "label": "opencivitas_fsc_2025_rso",
+          "detail": "anni 2022-2025 \u2014 mart: si"
+        },
+        {
+          "id": "opencivitas_indicatori",
+          "source_id": "opencivitas",
+          "status": "ok",
+          "label": "opencivitas_indicatori",
+          "detail": "anni 2015-2022 \u2014 mart: si",
+          "run": {
+            "run_id": "20260728T085206Z_2551b510",
+            "year": 2022,
+            "status": "SUCCESS",
+            "started_at": "2026-07-28T08:52:06.876449+00:00",
+            "finished_at": "2026-07-28T08:52:16.688673+00:00"
+          }
+        },
+        {
+          "id": "opencoesione_progetti",
+          "source_id": "opencoesione",
+          "status": "ok",
+          "label": "opencoesione_progetti",
+          "detail": "anno 2026 \u2014 mart: si"
+        },
+        {
+          "id": "openga_ricorsi_appalto",
+          "source_id": "openga",
+          "status": "ok",
+          "label": "openga_ricorsi_appalto",
+          "detail": "anni 2023-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260731T123551Z_3ca0794e",
+            "year": 2025,
+            "status": "DRY_RUN",
+            "started_at": "2026-07-31T12:35:51.657488+00:00",
+            "finished_at": "2026-07-31T12:35:51.663620+00:00"
+          }
+        },
+        {
+          "id": "openga_ricorsi_cds",
+          "source_id": "openga",
+          "status": "ok",
+          "label": "openga_ricorsi_cds",
+          "detail": "anni 2023-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260731T123555Z_5571820e",
+            "year": 2025,
+            "status": "DRY_RUN",
+            "started_at": "2026-07-31T12:35:55.828015+00:00",
+            "finished_at": "2026-07-31T12:35:55.831966+00:00"
+          }
+        },
+        {
+          "id": "penale_flussi",
+          "source_id": "giustizia_statistiche",
+          "status": "ok",
+          "label": "penale_flussi",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260731T115341Z_c860293c",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-07-31T11:53:41.149534+00:00",
+            "finished_at": "2026-07-31T11:53:49.224335+00:00"
+          }
+        },
+        {
+          "id": "pensioni_pa_dag",
+          "source_id": "inps",
+          "status": "ok",
+          "label": "pensioni_pa_dag",
+          "detail": "anno 2024 \u2014 mart: si"
+        },
+        {
+          "id": "personale_ssn",
+          "source_id": "ministero_salute",
+          "status": "ok",
+          "label": "personale_ssn",
+          "detail": "anno 2021 \u2014 mart: si"
+        },
+        {
+          "id": "pnrr_gare",
+          "source_id": "italiadomani",
+          "status": "ok",
+          "label": "pnrr_gare",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260805T091706Z_2ce7cf85",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-05T09:17:06.753424+00:00",
+            "finished_at": "2026-08-05T09:17:26.426649+00:00"
+          }
+        },
+        {
+          "id": "pnrr_pagamenti",
+          "source_id": "italiadomani",
+          "status": "ok",
+          "label": "pnrr_pagamenti",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260805T094956Z_85265fae",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-05T09:49:56.312633+00:00",
+            "finished_at": "2026-08-05T09:50:04.539033+00:00"
+          }
+        },
+        {
+          "id": "pnrr_progetti",
+          "source_id": "italiadomani",
+          "status": "ok",
+          "label": "pnrr_progetti",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260805T122053Z_54cd7799",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-05T12:20:53.322984+00:00",
+            "finished_at": "2026-08-05T12:21:25.449919+00:00"
+          }
+        },
+        {
+          "id": "posti_letto_stabilimento",
+          "source_id": "ministero_salute",
+          "status": "ok",
+          "label": "posti_letto_stabilimento",
+          "detail": "anni 2020-2023 \u2014 mart: si"
+        },
+        {
+          "id": "reparti_ricovero",
+          "source_id": "ministero_salute",
+          "status": "ok",
+          "label": "reparti_ricovero",
+          "detail": "anno 2022 \u2014 mart: si"
+        },
+        {
+          "id": "sai_progetti_italia",
+          "source_id": "centri_d_italia",
+          "status": "ok",
+          "label": "sai_progetti_italia",
+          "detail": "anno 2026 \u2014 mart: si"
+        },
+        {
+          "id": "sai_strutture_italia",
+          "source_id": "centri_d_italia",
+          "status": "ok",
+          "label": "sai_strutture_italia",
+          "detail": "anno 2026 \u2014 mart: si"
+        },
+        {
+          "id": "sbarchi_migranti_italia",
+          "source_id": "liberiamoli_tutti",
+          "status": "ok",
+          "label": "sbarchi_migranti_italia",
+          "detail": "anno 2025 \u2014 mart: si"
+        },
+        {
+          "id": "silos_infrastrutture",
+          "source_id": "dati_camera",
+          "status": "ok",
+          "label": "silos_infrastrutture",
+          "detail": "anno 2024 \u2014 mart: si"
+        },
+        {
+          "id": "strutture_asl",
+          "source_id": "ministero_salute",
+          "status": "ok",
+          "label": "strutture_asl",
+          "detail": "anno 2022 \u2014 mart: si",
+          "run": {
+            "run_id": "20260731T200402Z_a97afd3e",
+            "year": 2022,
+            "status": "SUCCESS",
+            "started_at": "2026-07-31T20:04:02.821252+00:00",
+            "finished_at": "2026-07-31T20:04:05.627269+00:00"
+          }
+        },
+        {
+          "id": "strutture_ricovero_asl",
+          "source_id": "ministero_salute",
+          "status": "ok",
+          "label": "strutture_ricovero_asl",
+          "detail": "anno 2022 \u2014 mart: si"
+        },
+        {
+          "id": "ted_contract_notices",
+          "source_id": "ted",
+          "status": "ok",
+          "label": "ted_contract_notices",
+          "detail": "anni 2020-2023 \u2014 mart: si"
+        },
+        {
+          "id": "terna_capacita_rinnovabile",
+          "source_id": "terna_opendata",
+          "status": "ok",
+          "label": "terna_capacita_rinnovabile",
+          "detail": "anni 2015-2024 \u2014 mart: si"
+        },
+        {
+          "id": "terna_electrical_energy_by_sector",
+          "source_id": "terna_opendata",
+          "status": "ok",
+          "label": "terna_electrical_energy_by_sector",
+          "detail": "anni 2015-2024 \u2014 mart: si"
+        },
+        {
+          "id": "terna_electricity_by_source",
+          "source_id": "terna_opendata",
+          "status": "ok",
+          "label": "terna_electricity_by_source",
+          "detail": "anni 2015-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260731T083122Z_d43d863a",
+            "year": 2024,
+            "status": "DRY_RUN",
+            "started_at": "2026-07-31T08:31:22.287201+00:00",
+            "finished_at": "2026-07-31T08:31:22.291339+00:00"
+          }
+        },
+        {
+          "id": "compose:anac_appalti_master",
+          "source_id": "dataciviclab_composite",
+          "status": "ok",
+          "label": "anac_appalti_master",
+          "detail": "anno 2026 \u2014 mart: si"
+        },
+        {
+          "id": "compose:comuni_master",
+          "source_id": "istat_situas",
+          "status": "ok",
+          "label": "comuni_master",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260730T160410Z_a60f19f4",
+            "year": 2026,
+            "status": "DRY_RUN",
+            "started_at": "2026-07-30T16:04:10.845383+00:00",
+            "finished_at": "2026-07-30T16:04:10.866765+00:00"
+          }
+        },
+        {
+          "id": "compose:conto_annuale_profilo_ente",
+          "source_id": "rgs_conto_annuale",
+          "status": "ok",
+          "label": "conto_annuale_profilo_ente",
+          "detail": "anni 2020-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260727T181422Z_2e14ed72",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-07-27T18:14:22.788009+00:00",
+            "finished_at": "2026-07-27T18:14:30.384220+00:00"
+          }
+        },
+        {
+          "id": "compose:costituzione_master",
+          "source_id": "costituzione-italiana",
+          "status": "ok",
+          "label": "costituzione_master",
+          "detail": "anno 2026 \u2014 mart: si"
+        },
+        {
+          "id": "compose:eurostat_demography",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_demography",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260727T090737Z_986b13bc",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-07-27T09:07:37.475085+00:00",
+            "finished_at": "2026-07-27T09:07:41.498542+00:00"
+          }
+        },
+        {
+          "id": "compose:eurostat_economy",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_economy",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260727T090658Z_8f8bd230",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-07-27T09:06:58.133700+00:00",
+            "finished_at": "2026-07-27T09:07:03.043263+00:00"
+          }
+        },
+        {
+          "id": "compose:eurostat_territory",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_territory",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260727T090743Z_7f7ef8c6",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-07-27T09:07:43.327742+00:00",
+            "finished_at": "2026-07-27T09:07:47.044512+00:00"
+          }
+        },
+        {
+          "id": "compose:ispra_ru_costi_kg_compose",
+          "source_id": "ispra_linked_data",
+          "status": "ok",
+          "label": "ispra_ru_costi_kg_compose",
+          "detail": "anni 2020-2024 \u2014 mart: si"
+        },
+        {
+          "id": "compose:malasanita_compose",
+          "source_id": "dataciviclab_composite",
+          "status": "ok",
+          "label": "malasanita_compose",
+          "detail": "anno 2022 \u2014 mart: si"
+        },
+        {
+          "id": "compose:unified_comuni",
+          "source_id": "dataciviclab_composite",
+          "status": "ok",
+          "label": "unified_comuni",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260815T162530Z_de3bede1",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-15T16:25:30.209124+00:00",
+            "finished_at": "2026-08-15T16:27:00.490842+00:00"
+          }
+        },
+        {
+          "id": "compose:who_is_who_pa",
+          "source_id": "dataciviclab_composite",
+          "status": "ok",
+          "label": "who_is_who_pa",
+          "detail": "anno 2026 \u2014 mart: si"
+        },
+        {
+          "id": "anac_aggiudicatari",
+          "source_id": "anac",
+          "status": "ok",
+          "label": "anac_aggiudicatari",
+          "detail": "anno 2026 \u2014 mart: si"
+        },
+        {
+          "id": "anac_collaudo",
+          "source_id": "anac",
+          "status": "ok",
+          "label": "anac_collaudo",
+          "detail": "anno 2026 \u2014 mart: si"
+        },
+        {
+          "id": "anac_cup",
+          "source_id": "anac",
+          "status": "ok",
+          "label": "anac_cup",
+          "detail": "anno 2026 \u2014 mart: si"
+        },
+        {
+          "id": "anac_partecipanti",
+          "source_id": "anac",
+          "status": "ok",
+          "label": "anac_partecipanti",
+          "detail": "anno 2026 \u2014 mart: si"
+        },
+        {
+          "id": "anac_stati_avanzamento",
+          "source_id": "anac",
+          "status": "ok",
+          "label": "anac_stati_avanzamento",
+          "detail": "anno 2026 \u2014 mart: si"
+        },
+        {
+          "id": "anac_subappalti",
+          "source_id": "anac",
+          "status": "ok",
+          "label": "anac_subappalti",
+          "detail": "anno 2026 \u2014 mart: si"
+        },
+        {
+          "id": "bdap_anagrafe_enti",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "bdap_anagrafe_enti",
+          "detail": "anno 2026 \u2014 mart: si"
+        },
+        {
+          "id": "ipa_aree_organizzative_omogenee",
+          "source_id": "agid",
+          "status": "ok",
+          "label": "ipa_aree_organizzative_omogenee",
+          "detail": "anno 2026 \u2014 mart: si"
+        },
+        {
+          "id": "ipa_enti",
+          "source_id": "agid",
+          "status": "ok",
+          "label": "ipa_enti",
+          "detail": "anno 2026 \u2014 mart: si"
+        },
+        {
+          "id": "ipa_unita_organizzative",
+          "source_id": "agid",
+          "status": "ok",
+          "label": "ipa_unita_organizzative",
+          "detail": "anno 2026 \u2014 mart: si"
+        },
+        {
+          "id": "istat_elenco_comuni",
+          "source_id": "istat_situas",
+          "status": "ok",
+          "label": "istat_elenco_comuni",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260802T144646Z_4fcf6d42",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-02T14:46:46.836471+00:00",
+            "finished_at": "2026-08-02T14:46:44.919945+00:00"
+          }
+        },
+        {
+          "id": "istat_pil_territoriale",
+          "source_id": "istat_sdmx",
+          "status": "ok",
+          "label": "istat_pil_territoriale",
+          "detail": "anno 2024 \u2014 mart: si"
+        },
+        {
+          "id": "mim_anagrafica_scuole_statali",
+          "source_id": "mim_opendata",
+          "status": "ok",
+          "label": "mim_anagrafica_scuole_statali",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260802T170921Z_338da845",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-02T17:09:21.138889+00:00",
+            "finished_at": "2026-08-02T17:09:32.630233+00:00"
+          }
+        },
+        {
+          "id": "opencivitas_fsc_enti_rso",
+          "source_id": "opencivitas",
+          "status": "ok",
+          "label": "opencivitas_fsc_enti_rso",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260729T120941Z_6c07cd84",
+            "year": 2025,
+            "status": "RUNNING",
+            "started_at": "2026-07-29T12:09:41.401993+00:00",
+            "finished_at": ""
+          }
+        },
+        {
+          "id": "opencivitas_glossario",
+          "source_id": "opencivitas",
+          "status": "ok",
+          "label": "opencivitas_glossario",
+          "detail": "anni 2015-2022 \u2014 mart: si"
+        },
+        {
+          "id": "popolazione_istat_comunale_2019_2025",
+          "source_id": "istat_sdmx",
+          "status": "ok",
+          "label": "popolazione_istat_comunale_2019_2025",
+          "detail": "anni 2019-2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260730T182719Z_16c88d81",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-07-30T18:27:19.148801+00:00",
+            "finished_at": "2026-07-30T18:27:36.870374+00:00"
+          }
+        }
+      ]
     },
     {
       "repo": "dataciviclab",
@@ -1473,7 +2802,422 @@
       "codelists": 16,
       "entities": 3,
       "gcs": 30,
-      "reason": ""
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "eurostat_area_nuts3",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_area_nuts3",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260808T114410Z_3c07a10d",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-08T11:44:10.469531+00:00",
+            "finished_at": "2026-08-08T11:44:13.755204+00:00"
+          }
+        },
+        {
+          "id": "eurostat_bd_hgnace2_r3_nuts3",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_bd_hgnace2_r3_nuts3",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260812T175509Z_9c30a452",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-12T17:55:09.029162+00:00",
+            "finished_at": "2026-08-12T17:56:15.231858+00:00"
+          }
+        },
+        {
+          "id": "eurostat_business_demography_nuts3",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_business_demography_nuts3",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260808T152628Z_f4453406",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-08T15:26:28.918148+00:00",
+            "finished_at": "2026-08-08T15:27:03.308334+00:00"
+          }
+        },
+        {
+          "id": "eurostat_crime_nuts3",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_crime_nuts3",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260808T120554Z_50010709",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-08T12:05:54.180897+00:00",
+            "finished_at": "2026-08-08T12:06:03.210000+00:00"
+          }
+        },
+        {
+          "id": "eurostat_demo_balance_nuts3",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_demo_balance_nuts3",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260808T114414Z_78451f0c",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-08T11:44:14.945535+00:00",
+            "finished_at": "2026-08-08T11:44:25.239414+00:00"
+          }
+        },
+        {
+          "id": "eurostat_demo_r_fagec3_nuts3",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_demo_r_fagec3_nuts3",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260808T133016Z_19af5ef6",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-08T13:30:16.265684+00:00",
+            "finished_at": "2026-08-08T13:30:21.851893+00:00"
+          }
+        },
+        {
+          "id": "eurostat_demo_r_magec3_nuts3",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_demo_r_magec3_nuts3",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260808T133022Z_754d6bda",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-08T13:30:22.519874+00:00",
+            "finished_at": "2026-08-08T13:30:43.228870+00:00"
+          }
+        },
+        {
+          "id": "eurostat_demo_r_pjangrp3_nuts3",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_demo_r_pjangrp3_nuts3",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260808T133043Z_29fee5c4",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-08T13:30:43.910496+00:00",
+            "finished_at": "2026-08-08T13:31:08.330981+00:00"
+          }
+        },
+        {
+          "id": "eurostat_early_school_leavers_nuts2",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_early_school_leavers_nuts2",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260808T120603Z_3cfc2355",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-08T12:06:03.949194+00:00",
+            "finished_at": "2026-08-08T12:06:06.430381+00:00"
+          }
+        },
+        {
+          "id": "eurostat_emp_nuts3",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_emp_nuts3",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260808T133109Z_4d4ea657",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-08T13:31:09.948065+00:00",
+            "finished_at": "2026-08-08T13:31:31.554762+00:00"
+          }
+        },
+        {
+          "id": "eurostat_employment_sex_age_nuts2",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_employment_sex_age_nuts2",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260814T100418Z_d5013ee0",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-14T10:04:18.991987+00:00",
+            "finished_at": "2026-08-14T10:04:28.688269+00:00"
+          }
+        },
+        {
+          "id": "eurostat_energy_poverty_nuts2",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_energy_poverty_nuts2",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260812T193831Z_5d1fa578",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-12T19:38:31.284434+00:00",
+            "finished_at": "2026-08-12T19:38:32.333309+00:00"
+          }
+        },
+        {
+          "id": "eurostat_fertility_nuts3",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_fertility_nuts3",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260808T114425Z_3346247e",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-08T11:44:25.910781+00:00",
+            "finished_at": "2026-08-08T11:44:29.501598+00:00"
+          }
+        },
+        {
+          "id": "eurostat_gdp_nuts3",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_gdp_nuts3",
+          "detail": "anno 2026 \u2014 mart: si"
+        },
+        {
+          "id": "eurostat_gva_nuts3",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_gva_nuts3",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260808T133132Z_9f387dfc",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-08T13:31:32.263825+00:00",
+            "finished_at": "2026-08-08T13:31:51.729480+00:00"
+          }
+        },
+        {
+          "id": "eurostat_nrg_chddr2_m_nuts3",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_nrg_chddr2_m_nuts3",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260808T152705Z_d56b8c91",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-08T15:27:05.781589+00:00",
+            "finished_at": "2026-08-08T15:27:41.345092+00:00"
+          }
+        },
+        {
+          "id": "eurostat_hospital_beds_nuts2",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_hospital_beds_nuts2",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T165408Z_a0086ed7",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T16:54:08.193275+00:00",
+            "finished_at": "2026-08-16T16:54:10.385063+00:00"
+          }
+        },
+        {
+          "id": "eurostat_income_inequality_nuts2",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_income_inequality_nuts2",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260808T120610Z_728e4ea8",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-08T12:06:10.333577+00:00",
+            "finished_at": "2026-08-08T12:06:12.210073+00:00"
+          }
+        },
+        {
+          "id": "eurostat_labour_productivity_nuts3",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_labour_productivity_nuts3",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260808T105411Z_a7912ca9",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-08T10:54:11.253849+00:00",
+            "finished_at": "2026-08-08T10:54:14.831071+00:00"
+          }
+        },
+        {
+          "id": "eurostat_nrg_chddr2_a_nuts3",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_nrg_chddr2_a_nuts3",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260808T133152Z_e09da7db",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-08T13:31:52.723743+00:00",
+            "finished_at": "2026-08-08T13:31:56.620643+00:00"
+          }
+        },
+        {
+          "id": "eurostat_physicians_nuts2",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_physicians_nuts2",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260808T120612Z_ea62a19f",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-08T12:06:12.931580+00:00",
+            "finished_at": "2026-08-08T12:06:15.405003+00:00"
+          }
+        },
+        {
+          "id": "eurostat_pop_density_nuts3",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_pop_density_nuts3",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260808T114430Z_48e5de3d",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-08T11:44:30.183529+00:00",
+            "finished_at": "2026-08-08T11:44:33.185708+00:00"
+          }
+        },
+        {
+          "id": "eurostat_pop_nuts3",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_pop_nuts3",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260812T175616Z_ba22d6c5",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-12T17:56:16.755680+00:00",
+            "finished_at": "2026-08-12T17:57:41.526027+00:00"
+          }
+        },
+        {
+          "id": "eurostat_pop_structure_nuts3",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_pop_structure_nuts3",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260808T152742Z_dcf93748",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-08T15:27:42.546482+00:00",
+            "finished_at": "2026-08-08T15:28:06.370435+00:00"
+          }
+        },
+        {
+          "id": "eurostat_poverty_risk_nuts2",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_poverty_risk_nuts2",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260808T120616Z_752bcfc8",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-08T12:06:16.134694+00:00",
+            "finished_at": "2026-08-08T12:06:18.052530+00:00"
+          }
+        },
+        {
+          "id": "eurostat_rd_expenditure_nuts2",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_rd_expenditure_nuts2",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260808T105415Z_d1c0c363",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-08T10:54:15.832492+00:00",
+            "finished_at": "2026-08-08T10:54:25.617918+00:00"
+          }
+        },
+        {
+          "id": "eurostat_soil_erosion_nuts3",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_soil_erosion_nuts3",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260808T152808Z_e1836713",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-08T15:28:08.115748+00:00",
+            "finished_at": "2026-08-08T15:28:22.384599+00:00"
+          }
+        },
+        {
+          "id": "eurostat_tertiary_education_nuts2",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_tertiary_education_nuts2",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260808T120618Z_5d86ddf8",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-08T12:06:18.778569+00:00",
+            "finished_at": "2026-08-08T12:06:20.990906+00:00"
+          }
+        },
+        {
+          "id": "eurostat_tourism_nuts3",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_tourism_nuts3",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260808T152824Z_aa702aaa",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-08T15:28:24.741978+00:00",
+            "finished_at": "2026-08-08T15:28:42.152950+00:00"
+          }
+        },
+        {
+          "id": "eurostat_tran_sf_roadnu",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_tran_sf_roadnu",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260808T120621Z_c8253320",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-08T12:06:21.720794+00:00",
+            "finished_at": "2026-08-08T12:06:25.148383+00:00"
+          }
+        }
+      ]
     },
     {
       "repo": "open-siope",
@@ -1486,7 +3230,149 @@
       "codelists": 0,
       "entities": 6,
       "gcs": 10,
-      "reason": ""
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "siope_bilancio_unificato",
+          "source_id": "siope",
+          "status": "ok",
+          "label": "siope_bilancio_unificato",
+          "detail": "anni 2021-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T175027Z_da93ea2b",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:50:27.063055+00:00",
+            "finished_at": "2026-08-16T17:50:41.139407+00:00"
+          }
+        },
+        {
+          "id": "siope_entrate",
+          "source_id": "siope",
+          "status": "ok",
+          "label": "siope_entrate",
+          "detail": "anni 2021-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T173838Z_490ca9f5",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:38:38.521586+00:00",
+            "finished_at": "2026-08-16T17:39:08.483247+00:00"
+          }
+        },
+        {
+          "id": "siope_uscite",
+          "source_id": "siope",
+          "status": "ok",
+          "label": "siope_uscite",
+          "detail": "anni 2021-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T174728Z_dd676c60",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:47:28.146220+00:00",
+            "finished_at": "2026-08-16T17:48:32.532827+00:00"
+          }
+        },
+        {
+          "id": "siope_anag_codgest_entrate_seed",
+          "source_id": "siope",
+          "status": "ok",
+          "label": "siope_anag_codgest_entrate_seed",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T173425Z_5a4d1363",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:34:25.601678+00:00",
+            "finished_at": "2026-08-16T17:34:27.708149+00:00"
+          }
+        },
+        {
+          "id": "siope_anag_codgest_uscite_seed",
+          "source_id": "siope",
+          "status": "ok",
+          "label": "siope_anag_codgest_uscite_seed",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T173429Z_24e72571",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:34:29.110192+00:00",
+            "finished_at": "2026-08-16T17:34:32.166558+00:00"
+          }
+        },
+        {
+          "id": "siope_anag_comparti_seed",
+          "source_id": "siope",
+          "status": "ok",
+          "label": "siope_anag_comparti_seed",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T173415Z_fa8b8d4b",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:34:15.302040+00:00",
+            "finished_at": "2026-08-16T17:34:18.050343+00:00"
+          }
+        },
+        {
+          "id": "siope_anag_comuni_seed",
+          "source_id": "siope",
+          "status": "ok",
+          "label": "siope_anag_comuni_seed",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T173436Z_c3f388e2",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:34:36.393980+00:00",
+            "finished_at": "2026-08-16T17:34:37.888868+00:00"
+          }
+        },
+        {
+          "id": "siope_anag_enti_seed",
+          "source_id": "siope",
+          "status": "ok",
+          "label": "siope_anag_enti_seed",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T173422Z_1d43e967",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:34:22.813074+00:00",
+            "finished_at": "2026-08-16T17:34:24.491925+00:00"
+          }
+        },
+        {
+          "id": "siope_anag_reg_prov_seed",
+          "source_id": "siope",
+          "status": "ok",
+          "label": "siope_anag_reg_prov_seed",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T173433Z_811577c7",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:34:33.582035+00:00",
+            "finished_at": "2026-08-16T17:34:35.215812+00:00"
+          }
+        },
+        {
+          "id": "siope_anag_sottocomparti_seed",
+          "source_id": "siope",
+          "status": "ok",
+          "label": "siope_anag_sottocomparti_seed",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T173419Z_472085ea",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:34:19.447202+00:00",
+            "finished_at": "2026-08-16T17:34:21.404742+00:00"
+          }
+        }
+      ]
     },
     {
       "repo": "italia-corpus",
@@ -1512,7 +3398,219 @@
       "codelists": 0,
       "entities": 3,
       "gcs": 15,
-      "reason": ""
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "bolognawifi_matrice",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "bolognawifi_matrice",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260812T163244Z_5010cfd4",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-12T16:32:44.134439+00:00",
+            "finished_at": "2026-08-12T16:35:19.433178+00:00"
+          }
+        },
+        {
+          "id": "centraline_aria",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "centraline_aria",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260808T142946Z_d1879d43",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-08T14:29:46.828915+00:00",
+            "finished_at": "2026-08-08T14:29:52.241475+00:00"
+          }
+        },
+        {
+          "id": "colonnine_bici",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "colonnine_bici",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260808T145356Z_a46a8147",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-08T14:53:56.337317+00:00",
+            "finished_at": "2026-08-08T14:55:03.364393+00:00"
+          }
+        },
+        {
+          "id": "convivenze",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "convivenze",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260806T232038Z_57426af1",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-06T23:20:38.681609+00:00",
+            "finished_at": "2026-08-06T23:20:46.950899+00:00"
+          }
+        },
+        {
+          "id": "emigrati_destinazione",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "emigrati_destinazione",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260807T104059Z_c556f8f0",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-07T10:40:59.112616+00:00",
+            "finished_at": "2026-08-07T10:41:06.576399+00:00"
+          }
+        },
+        {
+          "id": "esercizi_somministrazione",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "esercizi_somministrazione",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260815T144115Z_f43e38df",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-15T14:41:15.733364+00:00",
+            "finished_at": "2026-08-15T14:41:20.518692+00:00"
+          }
+        },
+        {
+          "id": "famiglie_tipologia",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "famiglie_tipologia",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260807T104108Z_5c440bb9",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-07T10:41:08.847212+00:00",
+            "finished_at": "2026-08-07T10:41:15.476803+00:00"
+          }
+        },
+        {
+          "id": "incarichi",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "incarichi",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260807T091631Z_76040b6c",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-07T09:16:31.873957+00:00",
+            "finished_at": "2026-08-07T09:16:32.938458+00:00"
+          }
+        },
+        {
+          "id": "indici_fragilita",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "indici_fragilita",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260812T165204Z_505c0c37",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-12T16:52:04.915908+00:00",
+            "finished_at": "2026-08-12T16:52:06.362321+00:00"
+          }
+        },
+        {
+          "id": "popolazione_quartiere",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "popolazione_quartiere",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260807T104148Z_fd1da3e3",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-07T10:41:48.960807+00:00",
+            "finished_at": "2026-08-07T10:42:09.482530+00:00"
+          }
+        },
+        {
+          "id": "precipitazioni_bologna",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "precipitazioni_bologna",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260806T231359Z_13e982b6",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-06T23:13:59.591164+00:00",
+            "finished_at": "2026-08-06T23:14:02.858045+00:00"
+          }
+        },
+        {
+          "id": "reddito_mediano",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "reddito_mediano",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260812T163521Z_e7595ce6",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-12T16:35:21.383017+00:00",
+            "finished_at": "2026-08-12T16:35:22.067338+00:00"
+          }
+        },
+        {
+          "id": "spire_traffico",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "spire_traffico",
+          "detail": "anni 2022-2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260807T094219Z_8f7e19fb",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-08-07T09:42:19.442488+00:00",
+            "finished_at": "2026-08-07T09:43:20.863458+00:00"
+          }
+        },
+        {
+          "id": "temperature_bologna",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "temperature_bologna",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260806T231356Z_bcba265b",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-06T23:13:56.052775+00:00",
+            "finished_at": "2026-08-06T23:13:57.406325+00:00"
+          }
+        },
+        {
+          "id": "varchi_ztl",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "varchi_ztl",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260807T134538Z_123fb963",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-07T13:45:38.813902+00:00",
+            "finished_at": "2026-08-07T13:47:13.126440+00:00"
+          }
+        }
+      ]
     },
     {
       "repo": "open-conto-annuale",
@@ -1525,7 +3623,331 @@
       "codelists": 0,
       "entities": 3,
       "gcs": 23,
-      "reason": ""
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "anzianita",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "anzianita",
+          "detail": "anni 2020-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T171256Z_02e447e2",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:12:56.015572+00:00",
+            "finished_at": "2026-08-16T17:12:57.150584+00:00"
+          }
+        },
+        {
+          "id": "assenze",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "assenze",
+          "detail": "anni 2020-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T171217Z_dabb67bd",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:12:17.798195+00:00",
+            "finished_at": "2026-08-16T17:12:19.194512+00:00"
+          }
+        },
+        {
+          "id": "comandati",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "comandati",
+          "detail": "anni 2020-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T171308Z_b05a3daa",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:13:08.644124+00:00",
+            "finished_at": "2026-08-16T17:13:09.566947+00:00"
+          }
+        },
+        {
+          "id": "composizione_retribuzione",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "composizione_retribuzione",
+          "detail": "anni 2020-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T171232Z_bbc92d6f",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:12:32.907380+00:00",
+            "finished_at": "2026-08-16T17:12:35.177173+00:00"
+          }
+        },
+        {
+          "id": "contrattazione",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "contrattazione",
+          "detail": "anni 2020-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T171315Z_9d29398d",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:13:15.105725+00:00",
+            "finished_at": "2026-08-16T17:13:16.264875+00:00"
+          }
+        },
+        {
+          "id": "costo_lavoro",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "costo_lavoro",
+          "detail": "anni 2020-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T171241Z_72db3f0b",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:12:41.308378+00:00",
+            "finished_at": "2026-08-16T17:12:42.511387+00:00"
+          }
+        },
+        {
+          "id": "distribuzione",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "distribuzione",
+          "detail": "anni 2020-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T171329Z_64b23bb8",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:13:29.747579+00:00",
+            "finished_at": "2026-08-16T17:13:30.527085+00:00"
+          }
+        },
+        {
+          "id": "flessibili",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "flessibili",
+          "detail": "anni 2020-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T171320Z_34380a07",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:13:20.037665+00:00",
+            "finished_at": "2026-08-16T17:13:20.714581+00:00"
+          }
+        },
+        {
+          "id": "modalita_flessibile",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "modalita_flessibile",
+          "detail": "anni 2021-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T171338Z_238458bf",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:13:38.594022+00:00",
+            "finished_at": "2026-08-16T17:13:39.281519+00:00"
+          }
+        },
+        {
+          "id": "occupazione",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "occupazione",
+          "detail": "anni 2020-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T171344Z_e08064be",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:13:44.516474+00:00",
+            "finished_at": "2026-08-16T17:13:45.419368+00:00"
+          }
+        },
+        {
+          "id": "passaggi",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "passaggi",
+          "detail": "anni 2020-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T171324Z_17ff4525",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:13:24.373794+00:00",
+            "finished_at": "2026-08-16T17:13:25.040985+00:00"
+          }
+        },
+        {
+          "id": "personale",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "personale",
+          "detail": "anni 2020-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T171248Z_431a8659",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:12:48.969748+00:00",
+            "finished_at": "2026-08-16T17:12:50.156669+00:00"
+          }
+        },
+        {
+          "id": "retribuzione_media",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "retribuzione_media",
+          "detail": "anni 2020-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T171334Z_3954a11a",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:13:34.782167+00:00",
+            "finished_at": "2026-08-16T17:13:35.580063+00:00"
+          }
+        },
+        {
+          "id": "titoli_studio",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "titoli_studio",
+          "detail": "anni 2020-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T171302Z_f3e89bb6",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:13:02.622638+00:00",
+            "finished_at": "2026-08-16T17:13:03.614648+00:00"
+          }
+        },
+        {
+          "id": "ca_anag_causali_seed",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "ca_anag_causali_seed",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T171206Z_c25dfb83",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:12:06.532205+00:00",
+            "finished_at": "2026-08-16T17:12:06.685877+00:00"
+          }
+        },
+        {
+          "id": "ca_anag_comparti_seed",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "ca_anag_comparti_seed",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T171204Z_46e55f56",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:12:04.162798+00:00",
+            "finished_at": "2026-08-16T17:12:04.320660+00:00"
+          }
+        },
+        {
+          "id": "ca_anag_enti_seed",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "ca_anag_enti_seed",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T171203Z_67dd7760",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:12:03.144724+00:00",
+            "finished_at": "2026-08-16T17:12:03.565352+00:00"
+          }
+        },
+        {
+          "id": "ca_anag_fondi_seed",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "ca_anag_fondi_seed",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T171209Z_01298dae",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:12:09.976539+00:00",
+            "finished_at": "2026-08-16T17:12:10.185944+00:00"
+          }
+        },
+        {
+          "id": "ca_anag_qualifiche_seed",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "ca_anag_qualifiche_seed",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T171204Z_38e09a1c",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:12:04.895782+00:00",
+            "finished_at": "2026-08-16T17:12:05.197769+00:00"
+          }
+        },
+        {
+          "id": "ca_anag_territorio_seed",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "ca_anag_territorio_seed",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T171207Z_e8e47503",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:12:07.270277+00:00",
+            "finished_at": "2026-08-16T17:12:07.688850+00:00"
+          }
+        },
+        {
+          "id": "ca_anag_titoli_studio_seed",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "ca_anag_titoli_studio_seed",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T171208Z_1024b5f8",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:12:08.275074+00:00",
+            "finished_at": "2026-08-16T17:12:08.421759+00:00"
+          }
+        },
+        {
+          "id": "ca_anag_voci_fua_seed",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "ca_anag_voci_fua_seed",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T171209Z_089d4eb1",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:12:09.039764+00:00",
+            "finished_at": "2026-08-16T17:12:09.343531+00:00"
+          }
+        },
+        {
+          "id": "ca_anag_voci_spesa_seed",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "ca_anag_voci_spesa_seed",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T171205Z_9a8e8c65",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T17:12:05.780328+00:00",
+            "finished_at": "2026-08-16T17:12:05.952617+00:00"
+          }
+        }
+      ]
     },
     {
       "repo": "rna-aiuti-stato",
@@ -1538,7 +3960,37 @@
       "codelists": 0,
       "entities": 4,
       "gcs": 2,
-      "reason": ""
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "rna_aiuti_stato",
+          "source_id": "mimit_rna",
+          "status": "ok",
+          "label": "rna_aiuti_stato",
+          "detail": "anni 2017-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260810T114612Z_d22e8956",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-10T11:46:12.852637+00:00",
+            "finished_at": "2026-08-10T11:46:17.611503+00:00"
+          }
+        },
+        {
+          "id": "rna_misure",
+          "source_id": "mimit_rna",
+          "status": "ok",
+          "label": "rna_misure",
+          "detail": "anno 2023 \u2014 mart: si",
+          "run": {
+            "run_id": "20260810T114618Z_e02f7f2c",
+            "year": 2023,
+            "status": "SUCCESS",
+            "started_at": "2026-08-10T11:46:18.574538+00:00",
+            "finished_at": "2026-08-10T11:46:19.039578+00:00"
+          }
+        }
+      ]
     },
     {
       "repo": "senato-akn",
@@ -1551,7 +4003,51 @@
       "codelists": 0,
       "entities": 2,
       "gcs": 3,
-      "reason": ""
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "senato_corpus",
+          "source_id": "senato_akn",
+          "status": "ok",
+          "label": "senato_corpus",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260827T165930Z_fa7da04a",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-27T16:59:30.513913+00:00",
+            "finished_at": "2026-08-27T16:59:30.848651+00:00"
+          }
+        },
+        {
+          "id": "senato_dibattito",
+          "source_id": "senato_akn",
+          "status": "ok",
+          "label": "senato_dibattito",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260827T165931Z_b0a2bc58",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-27T16:59:31.232772+00:00",
+            "finished_at": "2026-08-27T16:59:33.502064+00:00"
+          }
+        },
+        {
+          "id": "senato_emendamenti",
+          "source_id": "senato_akn",
+          "status": "ok",
+          "label": "senato_emendamenti",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260827T165933Z_cfdee1db",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-27T16:59:33.878310+00:00",
+            "finished_at": "2026-08-27T16:59:34.931658+00:00"
+          }
+        }
+      ]
     },
     {
       "repo": "debito-pubblico-intelligence",
@@ -1564,7 +4060,121 @@
       "codelists": 0,
       "entities": 2,
       "gcs": 8,
-      "reason": ""
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "eurostat_debito_pil",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_debito_pil",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260827T180318Z_f1b001c3",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-27T18:03:18.905742+00:00",
+            "finished_at": "2026-08-27T18:03:20.181194+00:00"
+          }
+        },
+        {
+          "id": "eurostat_rendimento_10y",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_rendimento_10y",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260827T180320Z_a2049733",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-27T18:03:20.231412+00:00",
+            "finished_at": "2026-08-27T18:03:21.980849+00:00"
+          }
+        },
+        {
+          "id": "fpi_debito_pa",
+          "source_id": "banca_ditalia",
+          "status": "ok",
+          "label": "fpi_debito_pa",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260827T180322Z_ffcda489",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-27T18:03:22.035655+00:00",
+            "finished_at": "2026-08-27T18:03:25.319013+00:00"
+          }
+        },
+        {
+          "id": "mef_composizione",
+          "source_id": "mef_tesoro",
+          "status": "ok",
+          "label": "mef_composizione",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260827T180325Z_96e58945",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-27T18:03:25.400179+00:00",
+            "finished_at": "2026-08-27T18:03:27.933150+00:00"
+          }
+        },
+        {
+          "id": "mef_scadenze_isin",
+          "source_id": "mef_tesoro",
+          "status": "ok",
+          "label": "mef_scadenze_isin",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260827T180327Z_539c2204",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-27T18:03:27.982140+00:00",
+            "finished_at": "2026-08-27T18:03:30.544693+00:00"
+          }
+        },
+        {
+          "id": "mef_titoli_12m",
+          "source_id": "mef_tesoro",
+          "status": "ok",
+          "label": "mef_titoli_12m",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260827T180330Z_4ee47864",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-27T18:03:30.605546+00:00",
+            "finished_at": "2026-08-27T18:03:32.976987+00:00"
+          }
+        },
+        {
+          "id": "mef_vita_media",
+          "source_id": "mef_tesoro",
+          "status": "ok",
+          "label": "mef_vita_media",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260827T180333Z_2506583c",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-27T18:03:33.022812+00:00",
+            "finished_at": "2026-08-27T18:03:34.375540+00:00"
+          }
+        },
+        {
+          "id": "ocpi_serie_storiche",
+          "source_id": "ocpi",
+          "status": "ok",
+          "label": "ocpi_serie_storiche",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260827T180334Z_e49891db",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-27T18:03:34.422357+00:00",
+            "finished_at": "2026-08-27T18:03:36.310782+00:00"
+          }
+        }
+      ]
     },
     {
       "repo": "open-politica",
@@ -1577,7 +4187,401 @@
       "codelists": 0,
       "entities": 8,
       "gcs": 28,
-      "reason": ""
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "compose:decreti_legge",
+          "source_id": "dataciviclab_composite",
+          "status": "ok",
+          "label": "decreti_legge",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T213506Z_a908897d",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T21:35:06.189115+00:00",
+            "finished_at": "2026-08-16T21:35:06.312442+00:00"
+          }
+        },
+        {
+          "id": "compose:elezioni_voto",
+          "source_id": "dataciviclab_composite",
+          "status": "ok",
+          "label": "elezioni_voto",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T213507Z_764659c5",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T21:35:07.812039+00:00",
+            "finished_at": "2026-08-16T21:35:27.553780+00:00"
+          }
+        },
+        {
+          "id": "compose:osservatorio_parlamento",
+          "source_id": "dataciviclab_composite",
+          "status": "ok",
+          "label": "osservatorio_parlamento",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T213528Z_65a17005",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T21:35:28.225179+00:00",
+            "finished_at": "2026-08-16T21:35:28.537710+00:00"
+          }
+        },
+        {
+          "id": "compose:profilo_politico",
+          "source_id": "dataciviclab_composite",
+          "status": "ok",
+          "label": "profilo_politico",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T213529Z_94676388",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T21:35:29.263357+00:00",
+            "finished_at": "2026-08-16T21:35:30.346612+00:00"
+          }
+        },
+        {
+          "id": "compose:senato_corpus_parlamento",
+          "source_id": "dataciviclab_composite",
+          "status": "ok",
+          "label": "senato_corpus_parlamento",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260818T075053Z_9c91ea18",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-18T07:50:53.834560+00:00",
+            "finished_at": "2026-08-18T07:50:55.810682+00:00"
+          }
+        },
+        {
+          "id": "camera_commissioni",
+          "source_id": "dati_camera",
+          "status": "ok",
+          "label": "camera_commissioni",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T212641Z_400f1a88",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T21:26:41.216290+00:00",
+            "finished_at": "2026-08-16T21:26:42.632977+00:00"
+          }
+        },
+        {
+          "id": "camera_deputati_legislature",
+          "source_id": "dati_camera",
+          "status": "ok",
+          "label": "camera_deputati_legislature",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T212643Z_a07bc625",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T21:26:43.239396+00:00",
+            "finished_at": "2026-08-16T21:26:54.661467+00:00"
+          }
+        },
+        {
+          "id": "camera_gruppi",
+          "source_id": "dati_camera",
+          "status": "ok",
+          "label": "camera_gruppi",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T212655Z_3671ba44",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T21:26:55.258127+00:00",
+            "finished_at": "2026-08-16T21:26:56.138341+00:00"
+          }
+        },
+        {
+          "id": "camera_incarichi",
+          "source_id": "dati_camera",
+          "status": "ok",
+          "label": "camera_incarichi",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T212656Z_99d89846",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T21:26:56.725968+00:00",
+            "finished_at": "2026-08-16T21:26:59.068625+00:00"
+          }
+        },
+        {
+          "id": "camera_interventi",
+          "source_id": "dati_camera",
+          "status": "ok",
+          "label": "camera_interventi",
+          "detail": "anni 2022-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T212816Z_d1848014",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T21:28:16.929007+00:00",
+            "finished_at": "2026-08-16T21:28:24.635599+00:00"
+          }
+        },
+        {
+          "id": "camera_relatori",
+          "source_id": "dati_camera",
+          "status": "ok",
+          "label": "camera_relatori",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T212825Z_ae9b34a4",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T21:28:25.243888+00:00",
+            "finished_at": "2026-08-16T21:28:29.065586+00:00"
+          }
+        },
+        {
+          "id": "camera_votazioni_sparql",
+          "source_id": "dati_camera",
+          "status": "ok",
+          "label": "camera_votazioni_sparql",
+          "detail": "anni 2018-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T212857Z_d2621363",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T21:28:57.481351+00:00",
+            "finished_at": "2026-08-16T21:28:59.975572+00:00"
+          }
+        },
+        {
+          "id": "camera_voti",
+          "source_id": "dati_camera",
+          "status": "ok",
+          "label": "camera_voti",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T212900Z_9b5fd741",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T21:29:00.602457+00:00",
+            "finished_at": "2026-08-16T21:29:03.023631+00:00"
+          }
+        },
+        {
+          "id": "dait_amministratori_locali",
+          "source_id": "dait",
+          "status": "ok",
+          "label": "dait_amministratori_locali",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T212905Z_e8608053",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T21:29:05.216395+00:00",
+            "finished_at": "2026-08-16T21:29:08.812771+00:00"
+          }
+        },
+        {
+          "id": "elezioni_comunali",
+          "source_id": "eligendo",
+          "status": "ok",
+          "label": "elezioni_comunali",
+          "detail": "anni 2016-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T212919Z_d55d880f",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T21:29:19.986123+00:00",
+            "finished_at": "2026-08-16T21:29:21.925448+00:00"
+          }
+        },
+        {
+          "id": "elezioni_europee",
+          "source_id": "eligendo",
+          "status": "ok",
+          "label": "elezioni_europee",
+          "detail": "anni 1979-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T213001Z_e8f9d9ee",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T21:30:01.348416+00:00",
+            "finished_at": "2026-08-16T21:30:09.206330+00:00"
+          }
+        },
+        {
+          "id": "elezioni_politiche",
+          "source_id": "ministero_interno_dait",
+          "status": "ok",
+          "label": "elezioni_politiche",
+          "detail": "anno 2022 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T213009Z_f1b7deb1",
+            "year": 2022,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T21:30:09.790922+00:00",
+            "finished_at": "2026-08-16T21:31:47.083298+00:00"
+          }
+        },
+        {
+          "id": "elezioni_referendum",
+          "source_id": "eligendo",
+          "status": "ok",
+          "label": "elezioni_referendum",
+          "detail": "anni 1995-2022 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T213203Z_9a90b4b6",
+            "year": 2022,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T21:32:03.740443+00:00",
+            "finished_at": "2026-08-16T21:32:06.776170+00:00"
+          }
+        },
+        {
+          "id": "elezioni_regionali",
+          "source_id": "eligendo",
+          "status": "ok",
+          "label": "elezioni_regionali",
+          "detail": "anni 2018-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T213222Z_40d219f8",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T21:32:22.272740+00:00",
+            "finished_at": "2026-08-16T21:32:23.902644+00:00"
+          }
+        },
+        {
+          "id": "membri_governo",
+          "source_id": "dati_camera",
+          "status": "ok",
+          "label": "membri_governo",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T213224Z_7b019bf8",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T21:32:24.509345+00:00",
+            "finished_at": "2026-08-16T21:32:28.427933+00:00"
+          }
+        },
+        {
+          "id": "ponte_persona",
+          "source_id": "dataciviclab_composite",
+          "status": "ok",
+          "label": "ponte_persona",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T213505Z_82d1bfdd",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T21:35:05.431340+00:00",
+            "finished_at": "2026-08-16T21:35:05.550867+00:00"
+          }
+        },
+        {
+          "id": "senato_anagrafica",
+          "source_id": "dati_senato",
+          "status": "ok",
+          "label": "senato_anagrafica",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T213229Z_e5c3cc5d",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T21:32:29.043422+00:00",
+            "finished_at": "2026-08-16T21:33:23.595757+00:00"
+          }
+        },
+        {
+          "id": "senato_commissioni",
+          "source_id": "dati_senato",
+          "status": "ok",
+          "label": "senato_commissioni",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T213324Z_3bf2cd4d",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T21:33:24.193918+00:00",
+            "finished_at": "2026-08-16T21:33:29.379993+00:00"
+          }
+        },
+        {
+          "id": "senato_ddl",
+          "source_id": "dati_senato",
+          "status": "ok",
+          "label": "senato_ddl",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260818T075034Z_1638f376",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-18T07:50:34.754945+00:00",
+            "finished_at": "2026-08-18T07:50:53.560605+00:00"
+          }
+        },
+        {
+          "id": "senato_firmatari",
+          "source_id": "dati_senato",
+          "status": "ok",
+          "label": "senato_firmatari",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T213359Z_653086be",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T21:33:59.669839+00:00",
+            "finished_at": "2026-08-16T21:34:31.276763+00:00"
+          }
+        },
+        {
+          "id": "senato_gruppi",
+          "source_id": "dati_senato",
+          "status": "ok",
+          "label": "senato_gruppi",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T213431Z_6697baee",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T21:34:31.865440+00:00",
+            "finished_at": "2026-08-16T21:34:34.540674+00:00"
+          }
+        },
+        {
+          "id": "senato_interventi",
+          "source_id": "dati_senato",
+          "status": "ok",
+          "label": "senato_interventi",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T213435Z_2bb2e08f",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T21:34:35.138300+00:00",
+            "finished_at": "2026-08-16T21:35:03.026133+00:00"
+          }
+        },
+        {
+          "id": "senato_votazioni",
+          "source_id": "dati_senato",
+          "status": "ok",
+          "label": "senato_votazioni",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260816T213503Z_2468d0b0",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-08-16T21:35:03.642590+00:00",
+            "finished_at": "2026-08-16T21:35:04.338570+00:00"
+          }
+        }
+      ]
     }
   ],
   "explorer": {
