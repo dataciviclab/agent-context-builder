@@ -1,102 +1,72 @@
 # agent-context-builder
 
-Genera contesto operativo compatto per agenti [DataCivicLab](https://github.com/dataciviclab)
-da GitHub e, se disponibile, dai checkout locali dei repo Lab.
+Genera contesto operativo compatto per agenti [DataCivicLab](https://github.com/dataciviclab).
+ACB è il **layer di contesto**: ogni 6 ore scansiona i repo del Lab e produce
+artifact che dicono ad agenti e umani *"cosa è successo e cosa serve attenzione"*.
 
-ACB è il **layer di contesto** dell'ecosistema: ogni 6 ore scansiona 10 repo,
-colleziona segnali da source-observatory, dataset-incubator e data-explorer,
-e produce artifact che dicono ad agenti e umani *"cosa è successo e cosa serve attenzione"*.
+## Artifact
 
-## Artifact prodotti
-
-| Artifact | Versione | Ruolo |
+| Artifact | Schema | Ruolo |
 |---|---|---|
-| `session_bootstrap.md` | — | orientamento rapido: segnali, PR, discussion, stato git |
-| `workspace_triage.json` | v1 | dati strutturati: issue, PR, discussion, warning, radar, pipeline |
-| `topic_index.json` | v3 | indice navigabile: repos, dataset per fonte, analisi, explorer themes |
+| `session_bootstrap.md` | — | Orientamento rapido (markdown) |
+| `workspace_triage.json` | v1 | Stato Lab: radar, PR, issues, discussions, registry, pipeline |
+| `topic_index.json` | v5 | Catalogo: 211 dataset (con columns, location), 18 analisi, explorer themes |
 
-URL su branch `context`:
-
+Branch `context`:
 ```text
-https://raw.githubusercontent.com/dataciviclab/agent-context-builder/context/session_bootstrap.md
-https://raw.githubusercontent.com/dataciviclab/agent-context-builder/context/workspace_triage.json
 https://raw.githubusercontent.com/dataciviclab/agent-context-builder/context/topic_index.json
+https://raw.githubusercontent.com/dataciviclab/agent-context-builder/context/workspace_triage.json
 ```
 
-## Artifact consumati da upstream
+## Fonti consumate
 
-| Repo | Path | Uso |
+| Repo | Artifact | Cosa |
 |---|---|---|
-| `source-observatory` | `data/radar/radar_summary.json` | health fonti (GREEN/YELLOW/RED) |
-| `source-observatory` | `data/catalog/catalog_signals.json` | drift inventariale per fonte |
-| `dataset-incubator` | `registry/pipeline_signals.json` | stato candidate pipeline |
-| `dataset-incubator` | `registry/registry.json` | dataset pubblicati (slug, periodo, colonne) |
-| tutti i repo del config | `registry/registry.json` | registry summary cross-repo (`registry_summary`) |
-| `data-explorer` | `src/data/themes.json.py` | temi editoriali + gap explorer |
-
-Il dettaglio colonne/entries dei registry vive nel `registry.json` upstream,
-servito agli agenti dal **toolkit MCP** (`registry_show`/`find`/`overview`).
-ACB mantiene la vista compatta di orientamento: conteggi per sezione,
-dataset con parquet GCS (pubblicati) e freschezza per repo. Il campo
-`stage` del registry non è esposto (default del builder, non riflette la
-pubblicazione reale). Un repo del config senza `registry.json` (non ancora
-migrato) è riportato come `available: false`, senza sporcare i warning del
-triage.
+| tutti i repo config | `registry/registry.json` | Dataset (slug, columns, location, stage), signals, marts |
+| `source-observatory` | `data/radar/radar_summary.json` | Radar 36 fonti (GREEN/YELLOW/RED) |
+| `source-observatory` | `data/catalog/catalog_signals.json` | Drift inventariale |
+| `data-explorer` | `catalog/datasets.json` + `catalog/themes.json` | Temi editoriali |
 
 ## Tool MCP
 
 Esposti via `agent-context-mcp` (server MCP `dataciviclab-context`).
 
-| Tool | Output | Quando usarlo |
-|---|---|---|
-| `session_bootstrap()` | Markdown | Prima chiamata della sessione — orientamento: segnali, PR, discussion, radar |
-| `workspace_triage()` | JSON | Dati precisi: conteggi, stato git, source health, pipeline state |
-| `topic_index(resolve=)` | JSON | Esplorare dataset/analisi per tema o slug |
-| `search(query, limit=10)` | JSON | Cercare in tutto il Lab: issue, PR, dataset, analisi |
-| `refresh_context()` | OK/error | Forzare rebuild CI (richiede GITHUB_TOKEN con scope workflow) |
+| Tool | Quando usarlo |
+|---|---|
+| `session_bootstrap()` | Prima chiamata — orientamento rapido |
+| `workspace_triage(section=)` | Stato precisi: radar, prs, issues, registry, pipeline |
+| `topic_index(resolve=)` | Deep-dive su dataset/analisi per slug o fonte |
+| `search(query)` | Ricerca cross-cutting: issues, PR, dataset, analisi |
+| `refresh_context()` | Trigger rebuild CI |
 
-### `search()` nel dettaglio
+### Esempi
 
-Combina due fonti in una risposta:
+```python
+# Orientamento
+session_bootstrap()
+# → markdown con radar, PR, issues, discussions
 
-```
-search("disuguaglianza")
-  ├── GitHub Issues Search API → issue/PR da tutti i repo dataciviclab
-  └── topic_index.json locale → dataset e analisi per nome/slug/fonte
-```
+# Stato radar
+workspace_triage(section="radar")
+# → {"green": 35, "yellow": 0, "red": 1, ...}
 
-Senza `GITHUB_TOKEN` funziona solo su dataset e analisi (topic_index).
+# Deep-dive dataset
+topic_index(resolve="ispra_ru_base")
+# → {slug, name, source, period, stage, gcs_path, analyses: [...]
 
-Esempio di risposta:
-
-```json
-{
-  "query": "rifiuti",
-  "total": 9,
-  "results": {
-    "issues": [
-      {"repo": "dataciviclab/data-explorer", "number": 201, "title": "feat: add ISPRA GHG...", "type": "pr"}
-    ],
-    "datasets": [
-      {"slug": "ispra_ru_base", "name": "Rifiuti Urbani", "source": "ISPRA"}
-    ],
-    "analyses": [
-      {"slug": "rifiuti-km2", "name": "Rifiuti per km²..."}
-    ]
-  }
-}
+# Ricerca
+search("rifiuti")
+# → {issues: [...], datasets: [{slug, name, stage}], analyses: [...]}
 ```
 
-### Configurazione MCP
+### Configurazione
 
 ```json
 {
   "mcpServers": {
     "dataciviclab-context": {
       "command": "agent-context-mcp",
-      "env": {
-        "GITHUB_TOKEN": "<opzionale: serve per refresh_context e search issues>"
-      }
+      "env": { "GITHUB_TOKEN": "<opzionale>" }
     }
   }
 }
@@ -105,39 +75,17 @@ Esempio di risposta:
 ## Utilizzo locale
 
 ```bash
-pip install -e ".[mcp]"
-
-# Solo GitHub (stato CI)
+pip install -e ".[dev]"
 agent-context build --config dataciviclab.config.yml --out generated/
-
-# Con stato git locale
-agent-context build --config dataciviclab.config.yml --out generated/ \
-  --workspace-root ~/dev/dataciviclab-workspace
 ```
-
-Variabili ambiente utili:
-- `GITHUB_TOKEN` — per discussion, refresh, search issues
-- `DATACIVICLAB_WORKSPACE` — path workspace locale
-- `ACB_REPO`, `ACB_BRANCH` — override repo/branch MCP (default: `dataciviclab/agent-context-builder`, `context`)
-
-## Degradazione controllata
-
-Nessun crash per contesto parziale:
-
-| Condizione | Comportamento |
-|---|---|
-| rate limit / 403 GitHub | campi `null`, errore in JSON |
-| nessun token | discussion e search issues saltate; topic_index search funziona |
-| repo upstream non disponibile | `available: false`, articolazioni interne populate |
-| repo locale assente | `available: false`, `reason: path_not_found` |
-| local mode non attivo | `available: false`, `reason: local_disabled` |
 
 ## Sviluppo
 
 ```bash
 pip install -e ".[dev]"
-pytest
+pytest          # 141 test
 ruff check src/ tests/
+mypy src/ tests/
 ```
 
 ## Licenza
