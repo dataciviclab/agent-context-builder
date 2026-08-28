@@ -134,8 +134,10 @@ def _fetch(path: str, retries: int = 1, backoff: float = 1.0) -> str:
             continue
         if result.is_ok and result.response is not None:
             return result.response.text
-        last_err = Exception(f"HTTP {result.status_code}: {result.err}")
-        _log.warning("fetch", "http_error", path=path, status=result.status_code, error=result.err)
+        last_err = Exception(
+            f"HTTP {result.response.status_code if result.response else 'N/A'}: {result.err}"
+        )
+        _log.warning("fetch", "http_error", path=path, error=result.err)
         if attempt < retries:
             time.sleep(backoff * (2**attempt))
     raise last_err or Exception(f"Failed to fetch {path}")
