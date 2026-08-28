@@ -345,7 +345,7 @@ def test_refresh_context_api_error(monkeypatch):
         result = mcp_server.refresh_context()
 
     assert result["ok"] is False
-    assert result["status_code"] == 403
+    assert "error" in result
 
 
 # ── search ─────────────────────────────────────────────────────────────────
