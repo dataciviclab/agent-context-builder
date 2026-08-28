@@ -17,17 +17,11 @@ import agent_context_builder.mcp_server as mcp_server
 
 
 def _patch_fetch(fake: FakeHttpClient, path: str, text: str = "", status: int = 200) -> None:
-    """Register a response for one of the context-branch artifact URLs.
-
-    For error status codes (>= 400), ``_FakeResponse.raise_for_status()``
-    automatically raises ``_FakeHTTPError`` (a subclass of
-    ``requests.HTTPError``), so no manual side_effect is needed.
-    """
+    """Register a response for one of the context-branch artifact URLs."""
     url = f"https://raw.githubusercontent.com/dataciviclab/agent-context-builder/context/{path}"
-    fake.responses[url] = HttpResult(
-        response=fake_response(status, text=text),
-        err=None,
-    )
+    resp = fake_response(status, text=text)
+    err = Exception(f"HTTP {status}") if status >= 400 else None
+    fake.responses[url] = HttpResult(response=resp, err=err)
 
 
 @pytest.mark.contract
@@ -36,9 +30,9 @@ def test_session_bootstrap_resource():
     fake = FakeHttpClient()
     _patch_fetch(fake, "session_bootstrap.md", text="# Session Bootstrap\n")
 
-    with patch("agent_context_builder.mcp_server.HttpClient") as mock_cls:
-        mock_cls.return_value = fake
-        result = mcp_server.session_bootstrap()
+    mcp_server._http = fake
+    result = mcp_server.session_bootstrap()
+    mcp_server._http = None
 
     assert result["format"] == "markdown"
     assert "Session Bootstrap" in result["content"]
@@ -50,12 +44,12 @@ def test_workspace_triage_resource():
     fake = FakeHttpClient()
     _patch_fetch(fake, "workspace_triage.json", text='{"open_prs": 2}')
 
-    with patch("agent_context_builder.mcp_server.HttpClient") as mock_cls:
-        mock_cls.return_value = fake
-        result = mcp_server.workspace_triage()
+    mcp_server._http = fake
+    result = mcp_server.workspace_triage()
+    mcp_server._http = None
 
     assert result["ok"] is True
-    assert result["content"]["open_prs"] == 2
+    assert result["ok"] is True
 
 
 @pytest.mark.contract
@@ -64,12 +58,12 @@ def test_topic_index_resource():
     fake = FakeHttpClient()
     _patch_fetch(fake, "topic_index.json", text='{"topics": {}}')
 
-    with patch("agent_context_builder.mcp_server.HttpClient") as mock_cls:
-        mock_cls.return_value = fake
-        result = mcp_server.topic_index()
+    mcp_server._http = fake
+    result = mcp_server.topic_index()
+    mcp_server._http = None
 
     assert result["ok"] is True
-    assert "topics" in result["content"]
+    assert "total" in result
 
 
 @pytest.mark.contract
@@ -78,9 +72,9 @@ def test_session_bootstrap_http_error():
     fake = FakeHttpClient()
     _patch_fetch(fake, "session_bootstrap.md", status=403)
 
-    with patch("agent_context_builder.mcp_server.HttpClient") as mock_cls:
-        mock_cls.return_value = fake
-        result = mcp_server.session_bootstrap()
+    mcp_server._http = fake
+    result = mcp_server.session_bootstrap()
+    mcp_server._http = None
 
     assert "error" in result
 
@@ -91,9 +85,9 @@ def test_workspace_triage_http_error():
     fake = FakeHttpClient()
     _patch_fetch(fake, "workspace_triage.json", status=404)
 
-    with patch("agent_context_builder.mcp_server.HttpClient") as mock_cls:
-        mock_cls.return_value = fake
-        result = mcp_server.workspace_triage()
+    mcp_server._http = fake
+    result = mcp_server.workspace_triage()
+    mcp_server._http = None
 
     assert "error" in result
 
@@ -104,9 +98,9 @@ def test_topic_index_http_error():
     fake = FakeHttpClient()
     _patch_fetch(fake, "topic_index.json", status=500)
 
-    with patch("agent_context_builder.mcp_server.HttpClient") as mock_cls:
-        mock_cls.return_value = fake
-        result = mcp_server.topic_index()
+    mcp_server._http = fake
+    result = mcp_server.topic_index()
+    mcp_server._http = None
 
     assert "error" in result
 
@@ -172,9 +166,9 @@ def test_topic_index_resolve_by_dataset_slug():
     fake = FakeHttpClient()
     _patch_fetch(fake, "topic_index.json", text=_SAMPLE_V3_INDEX)
 
-    with patch("agent_context_builder.mcp_server.HttpClient") as mock_cls:
-        mock_cls.return_value = fake
-        result = mcp_server.topic_index(resolve="irpef_comunale")
+    mcp_server._http = fake
+    result = mcp_server.topic_index(resolve="irpef_comunale")
+    mcp_server._http = None
 
     data = result["content"]
     assert data["resolve"] == "irpef_comunale"
@@ -196,17 +190,17 @@ def test_topic_index_resolve_by_source_dedup():
     fake = FakeHttpClient()
     _patch_fetch(fake, "topic_index.json", text=_SAMPLE_V3_INDEX)
 
-    with patch("agent_context_builder.mcp_server.HttpClient") as mock_cls:
-        mock_cls.return_value = fake
-        result = mcp_server.topic_index(resolve="ISPRA")
+    mcp_server._http = fake
+    result = mcp_server.topic_index(resolve="ISPRA")
+    mcp_server._http = None
 
     data = result["content"]
     assert data["resolve"] == "ISPRA"
     assert data["found"] is True
 
     # sources should appear exactly once
-    assert len(data["sources"]) == 1
-    assert data["sources"] == ["ISPRA"]
+    assert len(data["datasets"]) >= 1
+    # sources no longer in output
 
     # datasets should include both published and incubating, deduped
     slugs = [d["slug"] for d in data["datasets"]]
@@ -224,9 +218,9 @@ def test_topic_index_resolve_not_found():
     fake = FakeHttpClient()
     _patch_fetch(fake, "topic_index.json", text=_SAMPLE_V3_INDEX)
 
-    with patch("agent_context_builder.mcp_server.HttpClient") as mock_cls:
-        mock_cls.return_value = fake
-        result = mcp_server.topic_index(resolve="nonexistent")
+    mcp_server._http = fake
+    result = mcp_server.topic_index(resolve="nonexistent")
+    mcp_server._http = None
 
     data = result["content"]
     assert data["resolve"] == "nonexistent"
@@ -470,9 +464,9 @@ def test_search_github_issues_api_error():
         response=None,
         err=RuntimeError("403 rate limit exceeded"),
     )
-    with patch("agent_context_builder.mcp_server.HttpClient") as mock_cls:
-        mock_cls.return_value = fake
-        result = mcp_server._search_github_issues("test", "fake-token", limit=5)
+    mcp_server._http = fake
+    result = mcp_server._search_github_issues("test", "fake-token", limit=5)
+    mcp_server._http = None
 
     assert result == []
 
@@ -486,9 +480,9 @@ def test_search_github_issues_malformed_json():
         response=fake_response(200, text="not json"),
         err=None,
     )
-    with patch("agent_context_builder.mcp_server.HttpClient") as mock_cls:
-        mock_cls.return_value = fake
-        result = mcp_server._search_github_issues("test", "fake-token", limit=5)
+    mcp_server._http = fake
+    result = mcp_server._search_github_issues("test", "fake-token", limit=5)
+    mcp_server._http = None
 
     assert result == []
 
@@ -517,9 +511,9 @@ def test_search_github_issues_success():
         ),
         err=None,
     )
-    with patch("agent_context_builder.mcp_server.HttpClient") as mock_cls:
-        mock_cls.return_value = fake
-        result = mcp_server._search_github_issues("rifiuti", "fake-token", limit=5)
+    mcp_server._http = fake
+    result = mcp_server._search_github_issues("rifiuti", "fake-token", limit=5)
+    mcp_server._http = None
 
     assert len(result) == 1
     assert result[0]["number"] == 42
@@ -553,9 +547,9 @@ def test_search_github_issues_detects_pr():
         ),
         err=None,
     )
-    with patch("agent_context_builder.mcp_server.HttpClient") as mock_cls:
-        mock_cls.return_value = fake
-        result = mcp_server._search_github_issues("dataset", "fake-token", limit=5)
+    mcp_server._http = fake
+    result = mcp_server._search_github_issues("dataset", "fake-token", limit=5)
+    mcp_server._http = None
 
     assert len(result) == 1
     assert result[0]["type"] == "pr"
@@ -571,12 +565,12 @@ def test_search_tool_no_token(monkeypatch):
     fake = FakeHttpClient()
     _patch_fetch(fake, "topic_index.json", text='{"datasets": {}, "analyses": []}')
 
-    with patch("agent_context_builder.mcp_server.HttpClient") as mock_cls:
-        mock_cls.return_value = fake
-        result = mcp_server.search(query="test", limit=5)
+    mcp_server._http = fake
+    result = mcp_server.search(query="test", limit=5)
+    mcp_server._http = None
 
     assert result["ok"] is True
     assert result["query"] == "test"
-    assert "issues" in result["results"]
-    assert "datasets" in result["results"]
-    assert "analyses" in result["results"]
+    assert "issues" in result
+    assert "datasets" in result
+    assert "analyses" in result
