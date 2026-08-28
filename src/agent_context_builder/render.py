@@ -209,7 +209,22 @@ class Renderer:
         return self._de_fetcher.fetch_explorer_catalog()
 
     def _fetch_di_registry(self) -> DIRegistry | None:
-        return self._registry_fetcher.fetch_repo("dataset-incubator")
+        """Fetch and merge registries from ALL repos (not just dataset-incubator)."""
+        registries = self._registry_fetcher.fetch(self.config.repos)
+        # Merge all datasets, marts, signals from available registries
+        merged = DIRegistry(schema_version=1, repo="merged")
+        for repo_name, reg in registries.items():
+            if reg is None:
+                continue
+            merged.datasets.extend(reg.datasets)
+            merged.marts.extend(reg.marts)
+            merged.signals.extend(reg.signals)
+            # Merge entities and codelists
+            if isinstance(reg.entities, dict):
+                merged.entities.update(reg.entities)
+            if isinstance(reg.codelists, list):
+                merged.codelists.extend(reg.codelists)
+        return merged if merged.datasets else None
 
     @staticmethod
     def _format_period(period: dict[str, Any]) -> str:
@@ -268,20 +283,41 @@ class Renderer:
             for name, info in repos_info.items()
         }
 
-        # Datasets grouped by source — unified section with stage field
+        # Datasets grouped by source — full details for downstream consumers
         catalog = self._fetch_di_registry()
         datasets_by_stage: dict[str, list[dict[str, Any]]] = {}
         if catalog:
             for ds in catalog.datasets:
-                source = ds.source or "unknown"
-                datasets_by_stage.setdefault(source, []).append(
-                    {
-                        "slug": ds.slug,
-                        "name": ds.name or ds.slug,
-                        "period": ds.period,
-                        "stage": ds.stage or "incubating",
+                source = ds.source or ds.source_id or "unknown"
+                entry: dict[str, Any] = {
+                    "slug": ds.slug,
+                    "name": ds.name or ds.slug,
+                    "description": ds.description,
+                    "source_id": ds.source_id,
+                    "period": ds.period,
+                    "stage": ds.stage or "incubating",
+                    "tags": ds.tags,
+                    "category": ds.category,
+                }
+                # Location (GCS path + multi_file flag)
+                if ds.location and ds.location.path:
+                    entry["location"] = {
+                        "type": ds.location.type,
+                        "path": ds.location.path,
+                        "multi_file": ds.location.multi_file,
                     }
-                )
+                # Columns (schema)
+                if ds.columns:
+                    entry["columns"] = [
+                        {
+                            "name": c.name,
+                            "type": c.type,
+                            "role": c.role,
+                            "description": c.description,
+                        }
+                        for c in ds.columns
+                    ]
+                datasets_by_stage.setdefault(source, []).append(entry)
 
         # YAML-defined operational topics (agent navigation hints)
         operational_topics = {}
@@ -311,24 +347,24 @@ class Renderer:
         analyses = self._fetch_dcl_analyses()
         if analyses:
             for a in analyses:
-                entry: dict[str, Any] = {
+                ae: dict[str, Any] = {
                     "slug": a.slug,
                     "name": a.name,
                     "datasets": a.datasets,
                     "status": a.status,
                 }
                 if a.discussion is not None:
-                    entry["discussion"] = a.discussion
+                    ae["discussion"] = a.discussion
                 if a.issue is not None:
-                    entry["issue"] = a.issue
-                analyses_list.append(entry)
+                    ae["issue"] = a.issue
+                analyses_list.append(ae)
 
                 # Build reverse lookup: dataset_slug → [analysis_slug, ...]
                 for ds_slug in a.datasets:
                     analyses_by_dataset.setdefault(ds_slug, []).append(a.slug)
 
         result: dict[str, Any] = {
-            "schema_version": 4,
+            "schema_version": 5,
             "generated_at": self.fixed_timestamp,
             "repos": repos_section,
             "datasets": datasets_by_stage,

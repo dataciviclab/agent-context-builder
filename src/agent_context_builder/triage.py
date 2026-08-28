@@ -123,12 +123,24 @@ def _build_radar_dict(fetcher: SourceObservatoryFetcher) -> dict[str, Any]:
         return {"available": False}
     return {
         "available": True,
+        "generated_at": radar.generated_at,
         "probe_date": radar.probe_date,
         "sources_total": radar.sources_total,
         "green": radar.green,
         "yellow": radar.yellow,
         "red": radar.red,
         "persistent_red": radar.persistent_red,
+        "sources": [
+            {
+                "id": s.id,
+                "status": s.status,
+                "protocol": s.protocol,
+                "http_code": s.http_code,
+                "note": s.note,
+                "red_streak": s.red_streak,
+            }
+            for s in radar.sources
+        ],
         "unhealthy": [
             {
                 "id": s.id,
@@ -260,7 +272,28 @@ def _registry_summary_item(repo: str, registry: DIRegistry | None) -> dict[str, 
     # codelists/entities may be dicts with nested structure — count inner items
     codelists = _count_section(registry.codelists, "codelists")
     entities = _count_section(registry.entities, "entities")
-    return {
+
+    # Signals with run details (for downstream dashboards)
+    signals_detail = []
+    for sig in registry.signals:
+        sig_entry: dict[str, Any] = {
+            "id": sig.id,
+            "source_id": sig.source_id,
+            "status": sig.status,
+            "label": sig.label,
+            "detail": sig.detail,
+        }
+        if sig.run is not None:
+            sig_entry["run"] = {
+                "run_id": sig.run.run_id,
+                "year": sig.run.year,
+                "status": sig.run.status,
+                "started_at": sig.run.started_at,
+                "finished_at": sig.run.finished_at,
+            }
+        signals_detail.append(sig_entry)
+
+    result: dict[str, Any] = {
         "repo": repo,
         "available": True,
         "source_repo": registry.source_repo or registry.repo,
@@ -273,6 +306,9 @@ def _registry_summary_item(repo: str, registry: DIRegistry | None) -> dict[str, 
         "gcs": gcs,
         "reason": "",
     }
+    if signals_detail:
+        result["signals_detail"] = signals_detail
+    return result
 
 
 def _count_section(section: Any, inner_key: str) -> int:
