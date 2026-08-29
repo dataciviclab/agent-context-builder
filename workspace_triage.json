@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-29T12:25:17.071473",
+  "generated_at": "2026-08-29T20:30:25.321201",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -40,13 +40,6 @@
       "title": "intake: inpa-bandi e inpa-comunicazioni \u2014 reclutamento PA dal Portale inPA",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/829",
-      "category": "other"
-    },
-    {
-      "number": 81,
-      "title": "refactor(dashboard): delega a lab-connectors (formatters, years_from_registry, fix hardcoded URL)",
-      "repo": "open-siope",
-      "url": "https://github.com/dataciviclab/open-siope/pull/81",
       "category": "other"
     }
   ],
@@ -225,6 +218,13 @@
       "title": "pipeline: mart_index \u00e8 un indovinello \u2014 sostituire con mart_name",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/425",
+      "category": "other"
+    },
+    {
+      "number": 82,
+      "title": "feat(queries): years_from_registry deve gestire multi_file: false",
+      "repo": "lab-connectors",
+      "url": "https://github.com/dataciviclab/lab-connectors/issues/82",
       "category": "other"
     },
     {
@@ -3989,7 +3989,7 @@
       "repo": "senato-akn",
       "available": true,
       "source_repo": "dataciviclab/senato-akn",
-      "updated_at": "2026-08-27",
+      "updated_at": "2026-08-29",
       "datasets": 3,
       "marts": 5,
       "signals": 3,
@@ -4005,11 +4005,11 @@
           "label": "senato_corpus",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260827T165930Z_fa7da04a",
+            "run_id": "20260829T172859Z_a025c05d",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-08-27T16:59:30.513913+00:00",
-            "finished_at": "2026-08-27T16:59:30.848651+00:00"
+            "started_at": "2026-08-29T17:28:59.685115+00:00",
+            "finished_at": "2026-08-29T17:29:00.018510+00:00"
           }
         },
         {
@@ -4019,11 +4019,11 @@
           "label": "senato_dibattito",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260827T165931Z_b0a2bc58",
+            "run_id": "20260829T172900Z_af9e3300",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-08-27T16:59:31.232772+00:00",
-            "finished_at": "2026-08-27T16:59:33.502064+00:00"
+            "started_at": "2026-08-29T17:29:00.396431+00:00",
+            "finished_at": "2026-08-29T17:29:02.866513+00:00"
           }
         },
         {
@@ -4033,11 +4033,11 @@
           "label": "senato_emendamenti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260827T165933Z_cfdee1db",
+            "run_id": "20260829T172903Z_debc1a92",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-08-27T16:59:33.878310+00:00",
-            "finished_at": "2026-08-27T16:59:34.931658+00:00"
+            "started_at": "2026-08-29T17:29:03.241709+00:00",
+            "finished_at": "2026-08-29T17:29:04.287843+00:00"
           }
         }
       ]
@@ -4173,9 +4173,9 @@
       "repo": "open-politica",
       "available": true,
       "source_repo": "dataciviclab/open-politica",
-      "updated_at": "2026-08-18",
+      "updated_at": "2026-08-29",
       "datasets": 28,
-      "marts": 53,
+      "marts": 54,
       "signals": 28,
       "codelists": 0,
       "entities": 8,
@@ -4413,11 +4413,11 @@
           "label": "elezioni_politiche",
           "detail": "anno 2022 \u2014 mart: si",
           "run": {
-            "run_id": "20260816T213009Z_f1b7deb1",
+            "run_id": "20260829T163943Z_fff9dc7b",
             "year": 2022,
             "status": "SUCCESS",
-            "started_at": "2026-08-16T21:30:09.790922+00:00",
-            "finished_at": "2026-08-16T21:31:47.083298+00:00"
+            "started_at": "2026-08-29T16:39:43.956428+00:00",
+            "finished_at": "2026-08-29T16:41:18.796396+00:00"
           }
         },
         {
