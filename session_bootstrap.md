@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-08-31T12:53:26.550245
+**Generated**: 2026-08-31T22:33:57.627983
 
 ## Stato
 
@@ -9,7 +9,6 @@ Radar: 36 fonti GREEN 35 · RED 1 · Registry: 9 repo · 211 dataset
 ## Richiede attenzione
 
 - [PR] dataset-incubator#834: chore(deps): bump toolkit a v1.51.0
-- [PR] dataset-incubator#833: chore(workflows): allinea PR check e post-merge ad ADR-001
 - [PR] dataset-incubator#829: intake: inpa-bandi e inpa-comunicazioni — reclutamento PA dal Portale inPA
 
 ## Analisi attive (18)
