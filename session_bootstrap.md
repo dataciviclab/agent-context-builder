@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-09-01T11:12:52.163627
+**Generated**: 2026-09-01T16:10:06.499174
 
 ## Stato
 
@@ -10,6 +10,8 @@ Radar: 36 fonti GREEN 34 · RED 2 · Registry: 9 repo · 211 dataset
 
 - [PR] dataset-incubator#834: chore(deps): bump toolkit a v1.51.0
 - [PR] dataset-incubator#829: intake: inpa-bandi e inpa-comunicazioni — reclutamento PA dal Portale inPA
+- [PR] rna-aiuti-stato#19: ci(rna-aiuti-stato): migra a Workload Identity Federation
+- [PR] senato-akn#28: ci(senato-akn): migra a Workload Identity Federation
 - [PR] 1 dependabot bump (skipped)
 
 ## Analisi attive (18)
