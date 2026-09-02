@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T03:13:09.943175",
+  "generated_at": "2026-09-02T10:46:32.257380",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -1321,12 +1321,12 @@
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-09-01T08:35:07.629320+00:00",
-    "probe_date": "2026-09-01",
+    "generated_at": "2026-09-02T07:52:09.348973+00:00",
+    "probe_date": "2026-09-02",
     "sources_total": 36,
-    "green": 34,
+    "green": 35,
     "yellow": 0,
-    "red": 2,
+    "red": 1,
     "persistent_red": 1,
     "sources": [
       {
@@ -1379,9 +1379,9 @@
       },
       {
         "id": "dati_camera",
-        "status": "RED",
+        "status": "GREEN",
         "protocol": "sparql",
-        "http_code": "503",
+        "http_code": "200",
         "note": null,
         "red_streak": 0
       },
@@ -1619,14 +1619,6 @@
       }
     ],
     "unhealthy": [
-      {
-        "id": "dati_camera",
-        "status": "RED",
-        "protocol": "sparql",
-        "http_code": "503",
-        "note": null,
-        "red_streak": 0
-      },
       {
         "id": "ispra_linked_data",
         "status": "RED",
