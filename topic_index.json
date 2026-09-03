@@ -1,6 +1,6 @@
 {
   "schema_version": 5,
-  "generated_at": "2026-09-03T15:55:09.185935",
+  "generated_at": "2026-09-03T20:35:48.651489",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -18121,7 +18121,7 @@
         "category": "trasporti",
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/bolognawifi_matrice/2026/bolognawifi_matrice_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/bologna/bolognawifi_matrice/2026/bolognawifi_matrice_2026_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -18214,7 +18214,7 @@
         "category": "ambiente",
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/centraline_aria/2026/centraline_aria_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/bologna/centraline_aria/2026/centraline_aria_2026_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -18269,7 +18269,7 @@
         "category": "ambiente",
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/precipitazioni_bologna/2026/precipitazioni_bologna_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/bologna/precipitazioni_bologna/2026/precipitazioni_bologna_2026_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -18312,7 +18312,7 @@
         "category": "ambiente",
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/temperature_bologna/2026/temperature_bologna_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/bologna/temperature_bologna/2026/temperature_bologna_2026_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -18369,7 +18369,7 @@
         "category": "trasporti",
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/colonnine_bici/2026/colonnine_bici_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/bologna/colonnine_bici/2026/colonnine_bici_2026_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -18461,7 +18461,7 @@
         "category": "trasporti",
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/spire_traffico/*/spire_traffico_*_clean.parquet",
+          "path": "gs://dataciviclab-clean/bologna/spire_traffico/*/spire_traffico_*_clean.parquet",
           "multi_file": true
         },
         "columns": [
@@ -18577,7 +18577,7 @@
         "category": "trasporti",
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/varchi_ztl/2026/varchi_ztl_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/bologna/varchi_ztl/2026/varchi_ztl_2026_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -18723,7 +18723,7 @@
         "category": "welfare-lavoro",
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/convivenze/2024/convivenze_2024_clean.parquet",
+          "path": "gs://dataciviclab-clean/bologna/convivenze/2024/convivenze_2024_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -18813,7 +18813,7 @@
         "category": "welfare-lavoro",
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/emigrati_destinazione/2024/emigrati_destinazione_2024_clean.parquet",
+          "path": "gs://dataciviclab-clean/bologna/emigrati_destinazione/2024/emigrati_destinazione_2024_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -18879,7 +18879,7 @@
         "category": "welfare-lavoro",
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/famiglie_tipologia/2024/famiglie_tipologia_2024_clean.parquet",
+          "path": "gs://dataciviclab-clean/bologna/famiglie_tipologia/2024/famiglie_tipologia_2024_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -18952,7 +18952,7 @@
         "category": "welfare-lavoro",
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/indici_fragilita/2026/indici_fragilita_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/bologna/indici_fragilita/2026/indici_fragilita_2026_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -19150,7 +19150,7 @@
         "category": "welfare-lavoro",
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/popolazione_quartiere/2024/popolazione_quartiere_2024_clean.parquet",
+          "path": "gs://dataciviclab-clean/bologna/popolazione_quartiere/2024/popolazione_quartiere_2024_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -19235,7 +19235,7 @@
         "category": "finanza-pubblica",
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/reddito_mediano/2026/reddito_mediano_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/bologna/reddito_mediano/2026/reddito_mediano_2026_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -19286,7 +19286,7 @@
         "category": "economia",
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/esercizi_somministrazione/2026/esercizi_somministrazione_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/bologna/esercizi_somministrazione/2026/esercizi_somministrazione_2026_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -19415,7 +19415,7 @@
         "category": "pa",
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/incarichi/2026/incarichi_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/bologna/incarichi/2026/incarichi_2026_clean.parquet",
           "multi_file": false
         },
         "columns": [
