@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-04T03:13:51.415386",
+  "generated_at": "2026-09-04T10:45:08.898153",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -1321,20 +1321,20 @@
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-09-03T07:59:50.243683+00:00",
-    "probe_date": "2026-09-03",
+    "generated_at": "2026-09-04T08:01:59.898544+00:00",
+    "probe_date": "2026-09-04",
     "sources_total": 36,
-    "green": 35,
-    "yellow": 0,
-    "red": 1,
+    "green": 33,
+    "yellow": 1,
+    "red": 2,
     "persistent_red": 1,
     "sources": [
       {
         "id": "istat_sdmx",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "sdmx",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
@@ -1379,9 +1379,9 @@
       },
       {
         "id": "dati_camera",
-        "status": "GREEN",
+        "status": "RED",
         "protocol": "sparql",
-        "http_code": "200",
+        "http_code": "503",
         "note": null,
         "red_streak": 0
       },
@@ -1619,6 +1619,22 @@
       }
     ],
     "unhealthy": [
+      {
+        "id": "istat_sdmx",
+        "status": "YELLOW",
+        "protocol": "sdmx",
+        "http_code": "-",
+        "note": "Timeout (ReadTimeout)",
+        "red_streak": 0
+      },
+      {
+        "id": "dati_camera",
+        "status": "RED",
+        "protocol": "sparql",
+        "http_code": "503",
+        "note": null,
+        "red_streak": 0
+      },
       {
         "id": "ispra_linked_data",
         "status": "RED",
