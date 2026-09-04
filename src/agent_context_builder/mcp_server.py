@@ -251,7 +251,6 @@ def topic_index(resolve: str | None = None) -> dict[str, object]:
                 "top_sources": {s: n for s, n in top_sources},
                 "n_sources": len(by_source),
                 "analyses": len(data.get("analyses", [])),
-                "explorer_themes": len(data.get("explorer_themes", [])),
                 "ok": True,
             }
 

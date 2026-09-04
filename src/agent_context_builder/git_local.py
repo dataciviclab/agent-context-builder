@@ -28,18 +28,6 @@ class GitLocalCollector:
         """
         self.workspace_root = Path(workspace_root) if workspace_root else None
 
-    def get_state(self) -> GitState:
-        """Get state of workspace root git repository.
-
-        Returns:
-            GitState object (available=False if local collection disabled or not a git repo)
-        """
-        if self.workspace_root is None:
-            return GitState(
-                available=False, reason="local_disabled", dirty=None, current_branch=None
-            )
-        return self._get_repo_state(self.workspace_root)
-
     def get_repos_state(self, repos: list[str]) -> dict[str, GitState]:
         """Get state for each configured repo under workspace.
 

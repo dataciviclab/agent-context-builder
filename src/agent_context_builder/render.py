@@ -7,17 +7,15 @@ from typing import Any
 
 from .config import Config
 from .discussions import DiscussionCollector
-from .git_local import GitLocalCollector, GitState
-from .github import PR, GitHubCollector
+from .git_local import GitLocalCollector
+from .github import GitHubCollector
 from .signals import (
     Analysis,
     DIRegistry,
-    ExplorerCatalog,
     RadarSummary,
     SourceObservatorySignals,
 )
 from .sources.dcl import DataciviclabFetcher
-from .sources.de import DataExplorerFetcher
 from .sources.registry import RegistryFetcher
 from .sources.so import SourceObservatoryFetcher
 from .triage import build_workspace_triage
@@ -49,7 +47,6 @@ class Renderer:
         self.discussion_collector = discussion_collector
         self.fixed_timestamp = fixed_timestamp or datetime.now().isoformat()
         self._so_fetcher = SourceObservatoryFetcher(self.github_collector)
-        self._de_fetcher = DataExplorerFetcher(self.github_collector)
         self._dcl_fetcher = DataciviclabFetcher(self.github_collector)
         self._registry_fetcher = RegistryFetcher(self.github_collector)
 
@@ -88,17 +85,6 @@ class Renderer:
         total_datasets = sum(len(reg.datasets) for _, reg in registry_summaries.items() if reg)
         if available_repos:
             status_parts.append(f"Registry: {len(available_repos)} repo · {total_datasets} dataset")
-
-        # Explorer
-        explorer_catalog = self._fetch_explorer_catalog()
-        if explorer_catalog is not None:
-            themed: set[str] = set()
-            for t in explorer_catalog.themes:
-                themed.update(t.datasets)
-            gap = len(explorer_catalog.without_theme)
-            status_parts.append(
-                f"Explorer: {len(themed)} pubblicati" + (f" · {gap} senza tema" if gap else "")
-            )
 
         if status_parts:
             lines.append("## Stato")
@@ -201,78 +187,41 @@ class Renderer:
             self.discussion_collector,
             self.fixed_timestamp,
             so_fetcher=self._so_fetcher,
-            de_fetcher=self._de_fetcher,
             registry_fetcher=self._registry_fetcher,
         )
 
-    def _fetch_explorer_catalog(self) -> ExplorerCatalog | None:
-        return self._de_fetcher.fetch_explorer_catalog()
+    def _fetch_di_registry(
+        self,
+    ) -> tuple[DIRegistry, dict[str, str]] | None:
+        """Fetch and merge registries from ALL repos.
 
-    def _fetch_di_registry(self) -> DIRegistry | None:
-        """Fetch and merge registries from ALL repos (not just dataset-incubator)."""
+        Returns (merged_registry, slug_to_repo) or None if no datasets.
+        slug_to_repo maps dataset slug → repo name (for registry_source).
+        """
         registries = self._registry_fetcher.fetch(self.config.repos)
-        # Merge all datasets, marts, signals from available registries
         merged = DIRegistry(schema_version=1, repo="merged")
+        slug_to_repo: dict[str, str] = {}
         for repo_name, reg in registries.items():
             if reg is None:
                 continue
+            for ds in reg.datasets:
+                slug_to_repo[ds.slug] = repo_name
             merged.datasets.extend(reg.datasets)
             merged.marts.extend(reg.marts)
             merged.signals.extend(reg.signals)
-            # Merge entities and codelists
             if isinstance(reg.entities, dict):
                 merged.entities.update(reg.entities)
             if isinstance(reg.codelists, list):
                 merged.codelists.extend(reg.codelists)
-        return merged if merged.datasets else None
-
-    @staticmethod
-    def _format_period(period: dict[str, Any]) -> str:
-        start = period.get("start")
-        end = period.get("end")
-        if start is None and end is None:
-            return ""
-        if start == end:
-            return str(start)
-        return f"{start or '?'}-{end or '?'}"
-
-    def _collect_warnings(self, prs: list[PR], repos_state: dict[str, GitState]) -> list[str]:
-        """Collect warnings for triage.
-
-        Args:
-            prs: List of PRs
-            repos_state: Dict mapping repo name to GitState
-
-        Returns:
-            List of warning messages
-        """
-        warnings = []
-
-        # GitHub fetch failures
-        for key, err in self.github_collector.fetch_errors.items():
-            warnings.append(f"GitHub fetch failed — {key}: {err}")
-
-        if len(prs) > 5:
-            warnings.append(f"Many open PRs: {len(prs)}")
-
-        # Check for dirty or ahead repos
-        for repo, state in repos_state.items():
-            if state.available:
-                if state.dirty:
-                    warnings.append(f"{repo}: dirty ({state.untracked_files} untracked)")
-                if state.branches_ahead:
-                    warnings.append(f"{repo}: ahead on {', '.join(state.branches_ahead)}")
-
-        return warnings
+        return (merged, slug_to_repo) if merged.datasets else None
 
     def render_topic_index(self) -> dict[str, Any]:
-        """Render topic_index.json (schema v4).
+        """Render topic_index.json (schema v6).
 
         Returns:
             - repos: GitHub description per repo (auto from API)
-            - datasets: all datasets (published + incubating) grouped by source, with stage
+            - datasets: all datasets grouped by source, with full metadata
             - operational_topics: YAML-defined topics for agent navigation
-            - explorer_themes: editorial themes from data-explorer
             - analyses: list of analyses from dataciviclab/analisi/
             - analyses_by_dataset: reverse lookup dataset → analyses
         """
@@ -284,20 +233,39 @@ class Renderer:
         }
 
         # Datasets grouped by source — full details for downstream consumers
-        catalog = self._fetch_di_registry()
+        # (data-explorer, lab-dashboard, dataciviclab)
+        result_catalog = self._fetch_di_registry()
         datasets_by_stage: dict[str, list[dict[str, Any]]] = {}
-        if catalog:
+        if result_catalog:
+            catalog, slug_to_repo = result_catalog
+            # Build signal lookup for clean_rows
+            signals_by_id: dict[str, Any] = {}
+            for sig in catalog.signals:
+                if sig.run is not None:
+                    signals_by_id[sig.id] = sig.run
+
             for ds in catalog.datasets:
                 source = ds.source or ds.source_id or "unknown"
+                run = signals_by_id.get(ds.slug)
+                clean_rows = None
+                if run is not None:
+                    clean_rows = (
+                        run.output_rows.get("clean") if hasattr(run, "output_rows") else None
+                    )
+
                 entry: dict[str, Any] = {
                     "slug": ds.slug,
+                    "url_slug": ds.slug.replace("_", "-"),
                     "name": ds.name or ds.slug,
                     "description": ds.description,
+                    "source": ds.source,
                     "source_id": ds.source_id,
                     "period": ds.period,
                     "stage": ds.stage or "incubating",
                     "tags": ds.tags,
                     "category": ds.category,
+                    "registry_source": slug_to_repo.get(ds.slug, ""),
+                    "clean_rows": clean_rows,
                 }
                 # Location (GCS path + multi_file flag)
                 if ds.location and ds.location.path:
@@ -313,10 +281,14 @@ class Renderer:
                             "name": c.name,
                             "type": c.type,
                             "role": c.role,
+                            "semantic_type": c.semantic_type or "",
                             "description": c.description,
                         }
                         for c in ds.columns
                     ]
+                # Mart references
+                if ds.mart_refs:
+                    entry["mart_refs"] = ds.mart_refs
                 datasets_by_stage.setdefault(source, []).append(entry)
 
         # YAML-defined operational topics (agent navigation hints)
@@ -327,19 +299,6 @@ class Renderer:
                 "repos": topic.repos,
                 "next": topic.next,
             }
-
-        # Explorer themes from data-explorer
-        explorer_themes_list: list[dict[str, Any]] = []
-        explorer_catalog = self._fetch_explorer_catalog()
-        if explorer_catalog is not None:
-            explorer_themes_list = [
-                {
-                    "slug": t.slug,
-                    "name": t.name,
-                    "datasets": t.datasets,
-                }
-                for t in explorer_catalog.themes
-            ]
 
         # ── Analyses from dataciviclab ──────────────────────────────────
         analyses_list: list[dict[str, Any]] = []
@@ -364,12 +323,11 @@ class Renderer:
                     analyses_by_dataset.setdefault(ds_slug, []).append(a.slug)
 
         result: dict[str, Any] = {
-            "schema_version": 5,
+            "schema_version": 6,
             "generated_at": self.fixed_timestamp,
             "repos": repos_section,
             "datasets": datasets_by_stage,
             "operational_topics": operational_topics,
-            "explorer_themes": explorer_themes_list,
         }
 
         if analyses_list:

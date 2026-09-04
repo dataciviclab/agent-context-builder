@@ -9,7 +9,6 @@ from .discussions import Discussion, DiscussionCollector
 from .git_local import GitLocalCollector, GitState
 from .github import PR, GitHubCollector
 from .signals import DIRegistry
-from .sources.de import DataExplorerFetcher
 from .sources.registry import RegistryFetcher
 from .sources.so import SourceObservatoryFetcher
 
@@ -21,7 +20,6 @@ def build_workspace_triage(
     discussion_collector: DiscussionCollector | None,
     fixed_timestamp: str,
     so_fetcher: SourceObservatoryFetcher | None = None,
-    de_fetcher: DataExplorerFetcher | None = None,
     registry_fetcher: RegistryFetcher | None = None,
 ) -> dict[str, Any]:
     """Build the workspace_triage.json payload — actionable items only.
@@ -40,7 +38,6 @@ def build_workspace_triage(
         disc_errors = discussion_collector.fetch_errors
 
     so_fetcher = so_fetcher or SourceObservatoryFetcher(github_collector)
-    de_fetcher = de_fetcher or DataExplorerFetcher(github_collector)
     registry_fetcher = registry_fetcher or RegistryFetcher(github_collector)
 
     # Filter to actionable only
@@ -69,7 +66,6 @@ def build_workspace_triage(
         "source_health": _build_source_health_dict(so_fetcher, github_collector),
         "pipeline_state": _build_pipeline_state_dict(registry_fetcher, github_collector),
         "registry_summary": _build_registry_summary_dict(registry_fetcher, config.repos),
-        "explorer": _build_explorer_dict(de_fetcher),
     }
 
 
@@ -320,49 +316,6 @@ def _count_section(section: Any, inner_key: str) -> int:
         if isinstance(inner, (list, dict)):
             return len(inner)
     return 0
-
-
-def _build_explorer_dict(
-    de_fetcher: DataExplorerFetcher,
-) -> dict[str, Any]:
-    """Build explorer state block for workspace_triage.json.
-
-    Uses the committed data-explorer editorial catalog (datasets.json +
-    themes.json): themes with dataset counts, themed dataset count, and the
-    gap — published datasets with no theme (not exposed on explorer yet).
-    Includes last deploy status from GitHub Actions API.
-    """
-    catalog = de_fetcher.fetch_explorer_catalog()
-    if catalog is None:
-        return {"available": False}
-
-    themed_slugs: set[str] = set()
-    for theme in catalog.themes:
-        themed_slugs.update(theme.datasets)
-
-    # Deploy status (operativo — GitHub Actions API)
-    deploy: dict[str, Any] | None = None
-    raw_deploy = de_fetcher.fetch_deploy_status()
-    if raw_deploy is not None:
-        deploy = {
-            "run_id": raw_deploy.get("run_id"),
-            "name": raw_deploy.get("name", ""),
-            "status": raw_deploy.get("status", ""),
-            "conclusion": raw_deploy.get("conclusion"),
-            "completed_at": raw_deploy.get("completed_at", ""),
-            "html_url": raw_deploy.get("html_url", ""),
-        }
-
-    return {
-        "available": True,
-        "themes": [
-            {"slug": t.slug, "name": t.name, "dataset_count": len(t.datasets)}
-            for t in catalog.themes
-        ],
-        "published_count": len(themed_slugs),
-        "clean_ready_not_published": catalog.without_theme,
-        "last_deploy": deploy,
-    }
 
 
 def _collect_warnings(

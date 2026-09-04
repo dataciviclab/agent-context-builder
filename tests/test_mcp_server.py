@@ -149,13 +149,6 @@ _SAMPLE_V3_INDEX = json.dumps(
         "analyses_by_dataset": {
             "irpef_comunale": ["irpef-comunale"],
         },
-        "explorer_themes": [
-            {
-                "slug": "finanza-pubblica",
-                "name": "Finanza pubblica",
-                "datasets": ["irpef-comunale", "entrate-stato"],
-            },
-        ],
     }
 )
 

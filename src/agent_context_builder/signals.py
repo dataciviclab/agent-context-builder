@@ -138,65 +138,6 @@ class Analysis:
     status: str = "active"
 
 
-@dataclass
-class ExplorerTheme:
-    """Single theme entry from data-explorer editorial themes."""
-
-    slug: str
-    name: str
-    datasets: list[str]
-
-
-@dataclass
-class ExplorerCatalog:
-    """Parsed data-explorer editorial catalog."""
-
-    themes: list[ExplorerTheme]
-    without_theme: list[str]
-
-
-def parse_explorer_catalog(raw_catalog: str, raw_themes: str) -> ExplorerCatalog:
-    """Parse data-explorer catalog/datasets.json + catalog/themes.json."""
-    try:
-        catalog: dict[str, Any] = json.loads(raw_catalog)
-    except json.JSONDecodeError as exc:
-        raise ValueError(f"Invalid datasets.json: {exc}") from exc
-    try:
-        themes_cfg: dict[str, Any] = json.loads(raw_themes)
-    except json.JSONDecodeError as exc:
-        raise ValueError(f"Invalid themes.json: {exc}") from exc
-
-    datasets = catalog.get("datasets", [])
-    if not isinstance(datasets, list):
-        datasets = []
-
-    by_theme: dict[str, list[str]] = {}
-    without_theme: list[str] = []
-    for ds in datasets:
-        if not isinstance(ds, dict):
-            continue
-        url_slug = ds.get("slug") or ds.get("di_slug") or ""
-        theme = ds.get("theme")
-        if theme:
-            by_theme.setdefault(theme, []).append(url_slug)
-        elif ds.get("stage") == "published":
-            without_theme.append(ds.get("di_slug") or ds.get("slug") or "")
-
-    temi = themes_cfg.get("temi")
-    if not isinstance(temi, list):
-        raise ValueError("themes.json: manca la chiave 'temi' (lista)")
-
-    themes = [
-        ExplorerTheme(
-            slug=t.get("slug", ""),
-            name=t.get("name", t.get("slug", "")),
-            datasets=by_theme.get(t.get("slug", ""), []),
-        )
-        for t in temi
-    ]
-    return ExplorerCatalog(themes=themes, without_theme=sorted(set(without_theme)))
-
-
 def parse_radar_summary(raw: str) -> RadarSummary:
     try:
         data: dict[str, Any] = json.loads(raw)

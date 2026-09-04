@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-
 from ..github import GitHubCollector
 from ..signals import (
     RadarSummary,
@@ -13,14 +11,6 @@ from ..signals import (
 )
 
 
-@dataclass
-class SourceObservatoryData:
-    """Cached source-observatory artifact bundle."""
-
-    radar: RadarSummary | None
-    catalog_signals: SourceObservatorySignals | None
-
-
 class SourceObservatoryFetcher:
     """Fetch source-observatory artifacts from GitHub raw URLs."""
 
@@ -28,13 +18,6 @@ class SourceObservatoryFetcher:
         self.collector = collector
         self._radar_cache: RadarSummary | None | object = _UNSET
         self._catalog_signals_cache: SourceObservatorySignals | None | object = _UNSET
-
-    def fetch(self) -> SourceObservatoryData:
-        """Fetch all source-observatory artifacts."""
-        return SourceObservatoryData(
-            radar=self.fetch_radar_summary(),
-            catalog_signals=self.fetch_catalog_signals(),
-        )
 
     def fetch_radar_summary(self) -> RadarSummary | None:
         if self._radar_cache is not _UNSET:
