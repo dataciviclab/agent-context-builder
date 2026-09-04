@@ -40,7 +40,7 @@ def list_org_repos_with_registry(org: str, token: str | None = None) -> list[str
     while True:
         resp = requests.get(
             f"https://api.github.com/orgs/{org}/repos",
-            params={"type": "public", "per_page": 100, "page": page},
+            params={"type": "public", "per_page": "100", "page": str(page)},
             headers=headers,
             timeout=30,
         )

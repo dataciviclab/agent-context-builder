@@ -14,6 +14,8 @@ from scripts.discover_registries import (
     save_config_repos,
 )
 
+pytestmark = pytest.mark.pure_unit
+
 
 @pytest.fixture
 def sample_config(tmp_path: Path) -> Path:
