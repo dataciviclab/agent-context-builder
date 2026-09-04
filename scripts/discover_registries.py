@@ -73,7 +73,7 @@ def load_config_repos(config_path: Path) -> list[str]:
     """Load repos list from dataciviclab.config.yml."""
     with open(config_path, encoding="utf-8") as f:
         data = yaml.safe_load(f)
-    return data.get("repos", [])
+    return data.get("repos") or []
 
 
 def save_config_repos(config_path: Path, repos: list[str]) -> None:
