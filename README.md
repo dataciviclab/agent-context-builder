@@ -10,7 +10,7 @@ artifact che dicono ad agenti e umani *"cosa è successo e cosa serve attenzione
 |---|---|---|
 | `session_bootstrap.md` | — | Orientamento rapido (markdown) |
 | `workspace_triage.json` | v1 | Stato Lab: radar, PR, issues, discussions, registry, pipeline |
-| `topic_index.json` | v5 | Catalogo: 211 dataset (con columns, location), 18 analisi, explorer themes |
+| `topic_index.json` | v6 | Catalogo: 211 dataset (registry_source, url_slug, columns, location, clean_rows), 18 analisi |
 
 Branch `context`:
 ```text
@@ -25,7 +25,21 @@ https://raw.githubusercontent.com/dataciviclab/agent-context-builder/context/wor
 | tutti i repo config | `registry/registry.json` | Dataset (slug, columns, location, stage), signals, marts |
 | `source-observatory` | `data/radar/radar_summary.json` | Radar 36 fonti (GREEN/YELLOW/RED) |
 | `source-observatory` | `data/catalog/catalog_signals.json` | Drift inventariale |
-| `data-explorer` | `catalog/datasets.json` + `catalog/themes.json` | Temi editoriali |
+
+### Auto-discovery repo
+
+Lo script `scripts/discover_registries.py` scansiona l'organizzazione GitHub
+alla ricerca di repo con `registry/registry.json` e propone (via PR automatica)
+l'aggiornamento di `dataciviclab.config.yml`. Il workflow `.github/workflows/discover-registries.yml`
+gira quotidianamente.
+
+```bash
+# Dry-run: mostra cosa cambierebbe
+python scripts/discover_registries.py --org dataciviclab --config dataciviclab.config.yml
+
+# Applica: aggiorna il YAML
+python scripts/discover_registries.py --org dataciviclab --config dataciviclab.config.yml --apply
+```
 
 ## Tool MCP
 
@@ -83,7 +97,7 @@ agent-context build --config dataciviclab.config.yml --out generated/
 
 ```bash
 pip install -e ".[dev]"
-pytest          # 141 test
+pytest          # 147 test
 ruff check src/ tests/
 mypy src/ tests/
 ```
