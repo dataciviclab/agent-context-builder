@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-04T20:22:23.891859",
+  "generated_at": "2026-09-04T21:16:25.415389",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -19,15 +19,8 @@
     "debito-pubblico-intelligence",
     "open-politica"
   ],
-  "open_prs": null,
+  "open_prs": 5,
   "prs": [
-    {
-      "number": 66,
-      "title": "refactor: centralize registry in ACB, remove dead explorer code",
-      "repo": "agent-context-builder",
-      "url": "https://github.com/dataciviclab/agent-context-builder/pull/66",
-      "category": "other"
-    },
     {
       "number": 837,
       "title": "chore: rimuovi candidati bdap duplicati (pagamenti, entrate, spese)",
@@ -64,7 +57,7 @@
       "category": "other"
     }
   ],
-  "open_issues": null,
+  "open_issues": 34,
   "issues": [
     {
       "number": 59,
@@ -1204,9 +1197,7 @@
       "category": "Announcements"
     }
   ],
-  "github_fetch_errors": {
-    "data-explorer:catalog/datasets.json": "https://raw.githubusercontent.com/dataciviclab/data-explorer/main/catalog/datasets.json: HTTP 404"
-  },
+  "github_fetch_errors": {},
   "git_state": {
     "agent-context-builder": {
       "available": false,
@@ -1337,10 +1328,7 @@
       "untracked_files": 0
     }
   },
-  "warnings": [
-    "GitHub fetch failed \u2014 data-explorer:catalog/datasets.json: https://raw.githubusercontent.com/dataciviclab/data-explorer/main/catalog/datasets.json: HTTP 404",
-    "Many open PRs: 6"
-  ],
+  "warnings": [],
   "radar": {
     "available": true,
     "generated_at": "2026-09-04T08:01:59.898544+00:00",
@@ -4614,8 +4602,5 @@
         }
       ]
     }
-  ],
-  "explorer": {
-    "available": false
-  }
+  ]
 }
