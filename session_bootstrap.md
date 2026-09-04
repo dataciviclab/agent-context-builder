@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-09-04T15:52:26.137544
+**Generated**: 2026-09-04T20:22:23.891859
 
 ## Stato
 
@@ -8,6 +8,7 @@ Radar: 36 fonti GREEN 33 · RED 2 · Registry: 9 repo · 211 dataset
 
 ## Richiede attenzione
 
+- [PR] agent-context-builder#66: refactor: centralize registry in ACB, remove dead explorer code
 - [PR] dataset-incubator#837: chore: rimuovi candidati bdap duplicati (pagamenti, entrate, spese)
 - [PR] dataset-incubator#836: feat(candidates): bootstrap gse_cer_elenco candidate
 - [PR] dataset-incubator#834: chore(deps): bump toolkit a v1.51.0

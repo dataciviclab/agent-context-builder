@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-04T15:52:26.137544",
+  "generated_at": "2026-09-04T20:22:23.891859",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -21,6 +21,13 @@
   ],
   "open_prs": null,
   "prs": [
+    {
+      "number": 66,
+      "title": "refactor: centralize registry in ACB, remove dead explorer code",
+      "repo": "agent-context-builder",
+      "url": "https://github.com/dataciviclab/agent-context-builder/pull/66",
+      "category": "other"
+    },
     {
       "number": 837,
       "title": "chore: rimuovi candidati bdap duplicati (pagamenti, entrate, spese)",
@@ -47,6 +54,13 @@
       "title": "intake: inpa-bandi e inpa-comunicazioni \u2014 reclutamento PA dal Portale inPA",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/829",
+      "category": "other"
+    },
+    {
+      "number": 256,
+      "title": "refactor: consume registry from ACB instead of fetching directly",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/256",
       "category": "other"
     }
   ],
@@ -1324,7 +1338,8 @@
     }
   },
   "warnings": [
-    "GitHub fetch failed \u2014 data-explorer:catalog/datasets.json: https://raw.githubusercontent.com/dataciviclab/data-explorer/main/catalog/datasets.json: HTTP 404"
+    "GitHub fetch failed \u2014 data-explorer:catalog/datasets.json: https://raw.githubusercontent.com/dataciviclab/data-explorer/main/catalog/datasets.json: HTTP 404",
+    "Many open PRs: 6"
   ],
   "radar": {
     "available": true,
