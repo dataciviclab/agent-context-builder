@@ -16,8 +16,6 @@ from tests.conftest import (
     make_git_mock,
     make_github_mock,
     sample_di_registry_json,
-    sample_explorer_datasets_json,
-    sample_explorer_themes_json,
     sample_second_registry_json,
     sample_so_json,
 )
@@ -287,10 +285,6 @@ def test_render_signals_cached_across_bootstrap_and_triage():
             return sample_so_json(drift=False)
         if path == "registry/registry.json":
             return sample_di_registry_json()
-        if path == "catalog/datasets.json":
-            return sample_explorer_datasets_json()
-        if path == "catalog/themes.json":
-            return sample_explorer_themes_json()
         return None
 
     gh.get_raw_file.side_effect = _raw_file_side_effect
@@ -299,18 +293,15 @@ def test_render_signals_cached_across_bootstrap_and_triage():
     renderer.render_session_bootstrap()
     renderer.render_workspace_triage()
 
-    # 6 files fetched via get_raw_file: radar_summary + catalog_signals +
+    # 3 files fetched via get_raw_file: radar_summary + catalog_signals +
     # registry.json (cross-repo, repo1 bootstrap) + registry.json
-    # (dataset-incubator, triage pipeline_state) + datasets.json +
-    # themes.json + 1 directory listing call via list_directory (analisi/)
-    assert gh.get_raw_file.call_count == 6
+    # (dataset-incubator, triage pipeline_state) + 1 list_directory (analisi/)
+    assert gh.get_raw_file.call_count == 4
     assert gh.list_directory.call_count == 1
     paths_fetched = [call.args[1] for call in gh.get_raw_file.call_args_list]
     assert "data/radar/radar_summary.json" in paths_fetched
     assert "data/catalog/catalog_signals.json" in paths_fetched
     assert "registry/registry.json" in paths_fetched
-    assert "catalog/datasets.json" in paths_fetched
-    assert "catalog/themes.json" in paths_fetched
 
 
 # ── Topic index ───────────────────────────────────────────────────────────
@@ -499,7 +490,7 @@ def test_render_topic_index_v3_with_analyses():
     gh.get_raw_file.side_effect = _raw_file_side_effect
     result = _r(config, gh=gh).render_topic_index()
 
-    assert result["schema_version"] == 5
+    assert result["schema_version"] == 6
     assert "analyses" in result
     assert "analyses_by_dataset" in result
 
@@ -540,6 +531,6 @@ def test_render_topic_index_v2_when_no_analyses():
     gh.get_raw_file.side_effect = _raw_file_side_effect
     result = _r(config, gh=gh).render_topic_index()
 
-    assert result["schema_version"] == 5
+    assert result["schema_version"] == 6
     assert "analyses" not in result
     assert "analyses_by_dataset" not in result

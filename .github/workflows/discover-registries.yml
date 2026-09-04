@@ -1,0 +1,61 @@
+name: Discover registries
+
+on:
+  schedule:
+    # Daily at 8am UTC
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Python setup
+        uses: dataciviclab/.github/actions/python-setup@main
+
+      - name: Discover repos with registry.json
+        id: discover
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/discover_registries.py \
+            --org dataciviclab \
+            --config dataciviclab.config.yml \
+            --token "$GITHUB_TOKEN" \
+            --apply
+          # Capture exit code: 0 = no changes, 1 = changes found
+          echo "changes=$?" >> "$GITHUB_OUTPUT"
+
+      - name: Create PR if changes found
+        if: steps.discover.outputs.changes == '1'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCH="auto/discover-registries-$(date -u +%Y-%m-%d)"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git checkout -B "$BRANCH"
+          git add dataciviclab.config.yml
+          git commit -m "chore: auto-discover registries ($(date -u +%Y-%m-%d))"
+
+          git push --force-with-lease -u origin "$BRANCH"
+
+          # Check if PR already exists for this branch
+          EXISTING_PR=$(gh pr list --head "$BRANCH" --json number --jq '.[0].number // empty')
+          if [ -n "$EXISTING_PR" ]; then
+            echo "PR #$EXISTING_PR already exists, skipping."
+          else
+            gh pr create \
+              --base main \
+              --head "$BRANCH" \
+              --title "chore: auto-discover registries ($(date -u +%Y-%m-%d))" \
+              --body "Auto-discovered new repos with registry/registry.json. Review the diff in dataciviclab.config.yml." \
+              --label "automated"
+          fi
