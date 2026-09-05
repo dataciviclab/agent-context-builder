@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-05T16:10:29.691419",
+  "generated_at": "2026-09-05T20:00:22.419043",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -21,15 +21,8 @@
     "source-observatory",
     "toolkit"
   ],
-  "open_prs": 4,
+  "open_prs": 3,
   "prs": [
-    {
-      "number": 837,
-      "title": "chore: rimuovi candidati bdap duplicati (pagamenti, entrate, spese)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/837",
-      "category": "other"
-    },
     {
       "number": 836,
       "title": "feat(candidates): bootstrap gse_cer_elenco candidate",
@@ -1703,9 +1696,9 @@
     "available": true,
     "generated_at": "2026-08-16",
     "summary": {
-      "total": 100,
+      "total": 97,
       "by_status": {
-        "ok": 100
+        "ok": 97
       }
     },
     "actionable": []
@@ -1840,12 +1833,12 @@
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
       "updated_at": "2026-08-16",
-      "datasets": 92,
-      "marts": 149,
-      "signals": 100,
+      "datasets": 86,
+      "marts": 146,
+      "signals": 97,
       "codelists": 0,
       "entities": 16,
-      "gcs": 92,
+      "gcs": 86,
       "reason": "",
       "signals_detail": [
         {
@@ -2281,27 +2274,6 @@
             "started_at": "2026-08-02T18:03:19.213223+00:00",
             "finished_at": "2026-08-02T18:03:57.083600+00:00"
           }
-        },
-        {
-          "id": "mef_patrimonio_detenzioni",
-          "source_id": "mef_de",
-          "status": "ok",
-          "label": "mef_patrimonio_detenzioni",
-          "detail": "anni 2022-2023 \u2014 mart: si"
-        },
-        {
-          "id": "mef_patrimonio_enti",
-          "source_id": "mef_de",
-          "status": "ok",
-          "label": "mef_patrimonio_enti",
-          "detail": "anni 2022-2023 \u2014 mart: si"
-        },
-        {
-          "id": "mef_patrimonio_immobili",
-          "source_id": "mef_de",
-          "status": "ok",
-          "label": "mef_patrimonio_immobili",
-          "detail": "anni 2022-2023 \u2014 mart: si"
         },
         {
           "id": "mef_rappresentanti_partecipate",

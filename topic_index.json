@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "generated_at": "2026-09-05T16:10:29.691419",
+  "generated_at": "2026-09-05T20:00:22.419043",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -96,7 +96,7 @@
           "bilancio-stato"
         ],
         "category": "finanza-pubblica",
-        "registry_source": "dataset-incubator",
+        "registry_source": "bilancio-pubblico",
         "clean_rows": null,
         "location": {
           "type": "gcs",
@@ -396,7 +396,7 @@
           "bilancio-stato"
         ],
         "category": "finanza-pubblica",
-        "registry_source": "dataset-incubator",
+        "registry_source": "bilancio-pubblico",
         "clean_rows": 542,
         "location": {
           "type": "gcs",
@@ -732,7 +732,7 @@
           "bilancio-stato"
         ],
         "category": "finanza-pubblica",
-        "registry_source": "dataset-incubator",
+        "registry_source": "bilancio-pubblico",
         "clean_rows": null,
         "location": {
           "type": "gcs",
@@ -6246,566 +6246,6 @@
             "description": "Data esclusione DLGS 118/2011"
           }
         ]
-      },
-      {
-        "slug": "bdap_pagamenti_stato",
-        "url_slug": "bdap-pagamenti-stato",
-        "name": "Pagamenti Bilancio dello Stato (consuntivo)",
-        "description": "Consuntivo dei pagamenti del bilancio dello Stato per amministrazione, missione e categoria economica, 2014-2025. Fonte: MEF RGS OpenBDAP. Completa il triangolo previsione (BDAP spese) \u2192 stima (OCPI) \u2192 consuntivo; include la missione \"Debito pubblico\" con interessi e rimborsi pagati realmente.",
-        "source": "MEF \u2014 Ragioneria Generale dello Stato / OpenBDAP",
-        "source_id": "openbdap",
-        "period": {
-          "start": 2014,
-          "end": 2025
-        },
-        "stage": "incubating",
-        "tags": [
-          "finanza-pubblica",
-          "bdap",
-          "pagamenti",
-          "consuntivo",
-          "bilancio-stato"
-        ],
-        "category": "finanza-pubblica",
-        "registry_source": "dataset-incubator",
-        "clean_rows": 542,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/bdap_pagamenti_stato/*/bdap_pagamenti_stato_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "esercizio_finanziario",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": "Anno contabile"
-          },
-          {
-            "name": "codice_stp",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Codice ministero (STP)"
-          },
-          {
-            "name": "amministrazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Amministrazione dello Stato"
-          },
-          {
-            "name": "codice_missione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Codice missione"
-          },
-          {
-            "name": "missione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Missione di spesa"
-          },
-          {
-            "name": "codice_categoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Codice categoria economica"
-          },
-          {
-            "name": "categoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Categoria economica"
-          },
-          {
-            "name": "op_erario",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Pagamenti per ordini di pagamento (erario)"
-          },
-          {
-            "name": "op_tesoreria",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Pagamenti per ordini di pagamento (tesoreria)"
-          },
-          {
-            "name": "op_esterno",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Pagamenti per ordini di pagamento (esterno)"
-          },
-          {
-            "name": "oa_tesoreria",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Pagamenti per ordini di accreditamento (tesoreria)"
-          },
-          {
-            "name": "oa_spesa_funz_deleg",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Pagamenti per spese funzionali delegate"
-          },
-          {
-            "name": "rsf_stipendi",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Pagamenti ruoli di spesa fissa \u2014 stipendi"
-          },
-          {
-            "name": "rsf_altro",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Pagamenti ruoli di spesa fissa \u2014 altro"
-          },
-          {
-            "name": "note_imputazione",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Pagamenti via note di imputazione"
-          },
-          {
-            "name": "totale_pagato",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Totale pagato (somma canali)"
-          }
-        ],
-        "mart_refs": [
-          "bdap_pagamenti_stato__mart_pagamenti_missione_categoria"
-        ]
-      }
-    ],
-    "MEF-BDAP": [
-      {
-        "slug": "bdap_entrate_stato",
-        "url_slug": "bdap-entrate-stato",
-        "name": "BDAP Entrate Stato - Serie Storica",
-        "description": "Entrate statali da BDAP, aggregate per titolo, natura, tipologia, provento",
-        "source": "MEF-BDAP",
-        "source_id": "openbdap",
-        "period": {
-          "start": 2008,
-          "end": 2024
-        },
-        "stage": "published",
-        "tags": [
-          "finanza-pubblica",
-          "bdap",
-          "entrate"
-        ],
-        "category": "finanza-pubblica",
-        "registry_source": "dataset-incubator",
-        "clean_rows": null,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/bdap_entrate_stato/2024/bdap_entrate_stato_2024_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "esercizio_finanziario",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": "Anno di riferimento"
-          },
-          {
-            "name": "codice_titolo",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Codice del titolo di entrata"
-          },
-          {
-            "name": "titolo",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Descrizione del titolo (es: TITOLO I - ENTRATE TRIBUTARIE)"
-          },
-          {
-            "name": "codice_natura",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Codice della natura"
-          },
-          {
-            "name": "natura",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Descrizione della natura (es: Entrate ricorrenti)"
-          },
-          {
-            "name": "codice_tipologia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Codice della tipologia"
-          },
-          {
-            "name": "tipologia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Descrizione della tipologia"
-          },
-          {
-            "name": "codice_provento",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Codice del provento"
-          },
-          {
-            "name": "provento",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Descrizione del provento"
-          },
-          {
-            "name": "previsioni_definitive_cp",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Previsioni definitive competenze di cassa"
-          },
-          {
-            "name": "previsioni_definitive_cs",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Previsioni definitive competenze di competenza"
-          }
-        ]
-      },
-      {
-        "slug": "bdap_spese_stato",
-        "url_slug": "bdap-spese-stato",
-        "name": "BDAP Spese Stato",
-        "description": "Spese statali da BDAP, aggregate per amministrazione, missione, programma, macroaggregato",
-        "source": "MEF-BDAP",
-        "source_id": "openbdap",
-        "period": {
-          "start": 2008,
-          "end": 2024
-        },
-        "stage": "published",
-        "tags": [
-          "finanza-pubblica",
-          "bdap",
-          "spese"
-        ],
-        "category": "finanza-pubblica",
-        "registry_source": "dataset-incubator",
-        "clean_rows": null,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/bdap_spese_stato/2024/bdap_spese_stato_2024_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "esercizio_finanziario",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": "Anno di riferimento"
-          },
-          {
-            "name": "stato_previsione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Stato della previsione (Previsioni definitive)"
-          },
-          {
-            "name": "amministrazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Amministrazione dello Stato"
-          },
-          {
-            "name": "missione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Missione di spesa"
-          },
-          {
-            "name": "programma",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Programma di spesa"
-          },
-          {
-            "name": "udv_livello_1",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Unit\u00e0 di voto livello 1"
-          },
-          {
-            "name": "udv_livello_2",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Unit\u00e0 di voto livello 2"
-          },
-          {
-            "name": "udv_livello_3",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Unit\u00e0 di voto livello 3"
-          },
-          {
-            "name": "codice_puntato_udv",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Codice puntato unit\u00e0 di voto"
-          },
-          {
-            "name": "macroaggregato",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Macroaggregato economico"
-          },
-          {
-            "name": "previsioni_definitive_cp",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Previsioni definitive competenze di cassa"
-          },
-          {
-            "name": "previsioni_definitive_cs",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Previsioni definitive competenze di competenza"
-          }
-        ]
-      },
-      {
-        "slug": "dipendenti_pubblici",
-        "url_slug": "dipendenti-pubblici",
-        "name": "Dipendenti Pubblici - Occupazione e Turnover",
-        "description": "Dipendenti pubblici per ente, comparto, categoria, genere e tipo di orario (2010-2023)",
-        "source": "MEF-BDAP",
-        "source_id": "openbdap",
-        "period": {
-          "start": 2010,
-          "end": 2023
-        },
-        "stage": "published",
-        "tags": [
-          "welfare-lavoro",
-          "dipendenti",
-          "pubblici"
-        ],
-        "category": "welfare-lavoro",
-        "registry_source": "dataset-incubator",
-        "clean_rows": null,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/dipendenti_pubblici/*/dipendenti_pubblici_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": "Anno di rilevazione"
-          },
-          {
-            "name": "tipo_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Tipo di istituzione"
-          },
-          {
-            "name": "codice_istituzione",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Codice istituzione"
-          },
-          {
-            "name": "codice_ente_bdap",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Codice ente BDAP"
-          },
-          {
-            "name": "ente",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Denominazione ente"
-          },
-          {
-            "name": "codice_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Codice comparto"
-          },
-          {
-            "name": "comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Descrizione comparto"
-          },
-          {
-            "name": "codice_contratto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Codice contratto di lavoro"
-          },
-          {
-            "name": "contratto_lavoro",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Descrizione contratto di lavoro"
-          },
-          {
-            "name": "codice_macrocategoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Codice macrocategoria"
-          },
-          {
-            "name": "macrocategoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Descrizione macrocategoria"
-          },
-          {
-            "name": "codice_categoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Codice categoria"
-          },
-          {
-            "name": "categoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Descrizione categoria"
-          },
-          {
-            "name": "donne_tempo_pieno",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero dipendenti donne tempo pieno"
-          },
-          {
-            "name": "uomini_tempo_pieno",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero dipendenti uomini tempo pieno"
-          },
-          {
-            "name": "donne_part_time_inf_50",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero dipendenti donne part time <50%"
-          },
-          {
-            "name": "uomini_part_time_inf_50",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero dipendenti uomini part time <50%"
-          },
-          {
-            "name": "donne_part_time_sup_50",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero dipendenti donne part time >50%"
-          },
-          {
-            "name": "uomini_part_time_sup_50",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero dipendenti uomini part time >50%"
-          },
-          {
-            "name": "donne_assunte",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero dipendenti donne assunte"
-          },
-          {
-            "name": "uomini_assunti",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero dipendenti uomini assunti"
-          },
-          {
-            "name": "donne_cessate",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero dipendenti donne cessate"
-          },
-          {
-            "name": "uomini_cessati",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero dipendenti uomini cessati"
-          }
-        ],
-        "mart_refs": [
-          "dipendenti_pubblici__mart_comparti_anno",
-          "dipendenti_pubblici__mart_genere_categoria",
-          "dipendenti_pubblici__mart_turnover_enti",
-          "dipendenti_pubblici__mart_part_time",
-          "dipendenti_pubblici__mart_tipo_istituzione"
-        ]
       }
     ],
     "BDAP LEA \u2014 Ragioneria Generale dello Stato (MEF)": [
@@ -8264,6 +7704,204 @@
             "semantic_type": "",
             "description": "Lista degli slug dei dataset Lab collegati all'articolo"
           }
+        ]
+      }
+    ],
+    "MEF-BDAP": [
+      {
+        "slug": "dipendenti_pubblici",
+        "url_slug": "dipendenti-pubblici",
+        "name": "Dipendenti Pubblici - Occupazione e Turnover",
+        "description": "Dipendenti pubblici per ente, comparto, categoria, genere e tipo di orario (2010-2023)",
+        "source": "MEF-BDAP",
+        "source_id": "openbdap",
+        "period": {
+          "start": 2010,
+          "end": 2023
+        },
+        "stage": "published",
+        "tags": [
+          "welfare-lavoro",
+          "dipendenti",
+          "pubblici"
+        ],
+        "category": "welfare-lavoro",
+        "registry_source": "dataset-incubator",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/dipendenti_pubblici/*/dipendenti_pubblici_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": "Anno di rilevazione"
+          },
+          {
+            "name": "tipo_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Tipo di istituzione"
+          },
+          {
+            "name": "codice_istituzione",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Codice istituzione"
+          },
+          {
+            "name": "codice_ente_bdap",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Codice ente BDAP"
+          },
+          {
+            "name": "ente",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Denominazione ente"
+          },
+          {
+            "name": "codice_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Codice comparto"
+          },
+          {
+            "name": "comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Descrizione comparto"
+          },
+          {
+            "name": "codice_contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Codice contratto di lavoro"
+          },
+          {
+            "name": "contratto_lavoro",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Descrizione contratto di lavoro"
+          },
+          {
+            "name": "codice_macrocategoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Codice macrocategoria"
+          },
+          {
+            "name": "macrocategoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Descrizione macrocategoria"
+          },
+          {
+            "name": "codice_categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Codice categoria"
+          },
+          {
+            "name": "categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Descrizione categoria"
+          },
+          {
+            "name": "donne_tempo_pieno",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Numero dipendenti donne tempo pieno"
+          },
+          {
+            "name": "uomini_tempo_pieno",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Numero dipendenti uomini tempo pieno"
+          },
+          {
+            "name": "donne_part_time_inf_50",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Numero dipendenti donne part time <50%"
+          },
+          {
+            "name": "uomini_part_time_inf_50",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Numero dipendenti uomini part time <50%"
+          },
+          {
+            "name": "donne_part_time_sup_50",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Numero dipendenti donne part time >50%"
+          },
+          {
+            "name": "uomini_part_time_sup_50",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Numero dipendenti uomini part time >50%"
+          },
+          {
+            "name": "donne_assunte",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Numero dipendenti donne assunte"
+          },
+          {
+            "name": "uomini_assunti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Numero dipendenti uomini assunti"
+          },
+          {
+            "name": "donne_cessate",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Numero dipendenti donne cessate"
+          },
+          {
+            "name": "uomini_cessati",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Numero dipendenti uomini cessati"
+          }
+        ],
+        "mart_refs": [
+          "dipendenti_pubblici__mart_comparti_anno",
+          "dipendenti_pubblici__mart_genere_categoria",
+          "dipendenti_pubblici__mart_turnover_enti",
+          "dipendenti_pubblici__mart_part_time",
+          "dipendenti_pubblici__mart_tipo_istituzione"
         ]
       }
     ],
@@ -13300,774 +12938,6 @@
           "mef_partecipazioni__mart_trend_anno",
           "mef_partecipazioni__mart_top_amministrazioni",
           "mef_partecipazioni__mart_sintesi_regione"
-        ]
-      }
-    ],
-    "MEF \u2014 Dipartimento dell'Economia (Open Data Immobili PA)": [
-      {
-        "slug": "mef_patrimonio_detenzioni",
-        "url_slug": "mef-patrimonio-detenzioni",
-        "name": "MEF \u2014 Detenzioni a favore di terzi di immobili pubblici",
-        "description": "Detenzioni a favore di terzi di immobili pubblici dichiarate dalle PA. Include tipo detenzione, canone annuo, decorrenza/scadenza, soggetto ricevente. Fonte: MEF Dipartimento Economia, censimento immobili pubblici (art.2 c.222 L.191/2009).",
-        "source": "MEF \u2014 Dipartimento dell'Economia (Open Data Immobili PA)",
-        "source_id": "mef_de",
-        "period": {
-          "start": 2022,
-          "end": 2023
-        },
-        "stage": "published",
-        "tags": [
-          "finanza-pubblica",
-          "mef",
-          "patrimonio",
-          "detenzioni"
-        ],
-        "category": "finanza-pubblica",
-        "registry_source": "patrimonio-territorio",
-        "clean_rows": 564003,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/mef_patrimonio_detenzioni/*/mef_patrimonio_detenzioni_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": "Anno di riferimento del censimento"
-          },
-          {
-            "name": "id_variazione",
-            "type": "BIGINT",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Identificativo univoco della variazione/detenzione"
-          },
-          {
-            "name": "settore_istituzionale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Settore istituzionale dell'ente dichiarante (S13/NON S13)"
-          },
-          {
-            "name": "macrocategoria_amministrazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Macrocategoria dell'ente dichiarante"
-          },
-          {
-            "name": "tipologia_amministrazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Tipologia dell'ente dichiarante (Comuni, Regioni, ASL, ...)"
-          },
-          {
-            "name": "amministrazione_denominazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Denominazione dell'ente che cede in detenzione"
-          },
-          {
-            "name": "amministrazione_codice_fiscale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "fiscal_code",
-            "description": "Codice fiscale dell'ente cedente"
-          },
-          {
-            "name": "reg_amministrazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Regione dell'ente cedente"
-          },
-          {
-            "name": "prov_amministrazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Provincia dell'ente cedente"
-          },
-          {
-            "name": "comune_amministrazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Comune dell'ente cedente"
-          },
-          {
-            "name": "codice_comune_amministrazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Codice ISTAT del comune dell'ente cedente"
-          },
-          {
-            "name": "tipo_detenzione_terzi",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Tipo detenzione: in locazione, uso gratuito, concessione, gestione per conto di"
-          },
-          {
-            "name": "detenzione_intera_ui",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Indica se la detenzione riguarda l'intera unit\u00e0 immobiliare (S\u00ec/No)"
-          },
-          {
-            "name": "superficie_detenzione_mq",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Superficie in detenzione in metri quadri"
-          },
-          {
-            "name": "canone_annuale",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Canone annuo in euro"
-          },
-          {
-            "name": "data_decorrenza",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Data di decorrenza della detenzione"
-          },
-          {
-            "name": "data_scadenza",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Data di scadenza della detenzione (null se aperta)"
-          },
-          {
-            "name": "soggetto_ricevente_tipo",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Tipo soggetto ricevente: PF (persona fisica) o PG (persona giuridica)"
-          },
-          {
-            "name": "soggetto_ricevente_denominazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Denominazione del soggetto che beneficia della detenzione"
-          },
-          {
-            "name": "soggetto_ricevente_cf",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Codice fiscale del soggetto ricevente"
-          },
-          {
-            "name": "soggetto_ricevente_pa",
-            "type": "BOOLEAN",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "True se il soggetto ricevente \u00e8 una pubblica amministrazione"
-          },
-          {
-            "name": "finalita_pf",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Finalit\u00e0 della detenzione per persona fisica"
-          },
-          {
-            "name": "id_bene",
-            "type": "BIGINT",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Identificativo del bene immobile (FK \u2192 mef_patrimonio_immobili)"
-          },
-          {
-            "name": "natura_bene",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Natura del bene: FABBRICATO o TERRENO"
-          },
-          {
-            "name": "tipologia_bene",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Tipologia del bene immobile (ufficio, abitazione, terreno agricolo, ...)"
-          },
-          {
-            "name": "superficie_riferimento_mq",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Superficie di riferimento del bene in metri quadri"
-          }
-        ]
-      },
-      {
-        "slug": "mef_patrimonio_enti",
-        "url_slug": "mef-patrimonio-enti",
-        "name": "MEF \u2014 Enti adempienti e non adempienti censimento immobili",
-        "description": "Anagrafe degli enti pubblici con stato di adempimento al censimento immobiliare MEF. Include obbligo di comunicazione, invio, dichiarazione negativa, e numero di beni dichiarati. Fonte: MEF Dipartimento Economia.",
-        "source": "MEF \u2014 Dipartimento dell'Economia (Open Data Immobili PA)",
-        "source_id": "mef_de",
-        "period": {
-          "start": 2022,
-          "end": 2023
-        },
-        "stage": "published",
-        "tags": [
-          "finanza-pubblica",
-          "mef",
-          "patrimonio",
-          "enti"
-        ],
-        "category": "finanza-pubblica",
-        "registry_source": "patrimonio-territorio",
-        "clean_rows": 11326,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/mef_patrimonio_enti/*/mef_patrimonio_enti_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": "Anno di riferimento del censimento"
-          },
-          {
-            "name": "settore_istituzionale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Settore istituzionale dell'ente (S13/NON S13)"
-          },
-          {
-            "name": "macrocategoria_amministrazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Macrocategoria: Amministrazioni Locali, Centrali, ..."
-          },
-          {
-            "name": "tipologia_amministrazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Tipologia ente: Comuni, Regioni, ASL, Universit\u00e0, ..."
-          },
-          {
-            "name": "amministrazione_denominazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Denominazione dell'amministrazione"
-          },
-          {
-            "name": "amministrazione_codice_fiscale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "fiscal_code",
-            "description": "Codice fiscale dell'amministrazione"
-          },
-          {
-            "name": "regione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "region_code",
-            "description": "Regione dell'amministrazione"
-          },
-          {
-            "name": "provincia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "province_code",
-            "description": "Provincia dell'amministrazione"
-          },
-          {
-            "name": "comune",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "municipality_name",
-            "description": "Comune dell'amministrazione"
-          },
-          {
-            "name": "codice_comune",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "municipality_code",
-            "description": "Codice ISTAT del comune"
-          },
-          {
-            "name": "num_beni_proprieta",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero di beni immobili in propriet\u00e0 dichiarati"
-          },
-          {
-            "name": "num_beni_detenzione",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero di beni immobili in detenzione dichiarati"
-          },
-          {
-            "name": "dichiarazione_negativa",
-            "type": "BOOLEAN",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "True se l'ente ha dichiarato di non possedere beni"
-          },
-          {
-            "name": "dichiarazione_completezza",
-            "type": "BOOLEAN",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "True se l'ente ha dichiarato completezza dei dati"
-          },
-          {
-            "name": "invio_comunicazione",
-            "type": "BOOLEAN",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "True se l'ente ha inviato la comunicazione"
-          },
-          {
-            "name": "obbligo_comunicazione",
-            "type": "BOOLEAN",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "True se l'ente aveva obbligo di comunicazione"
-          },
-          {
-            "name": "nome_sezione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Nome della sezione di appartenenza"
-          },
-          {
-            "name": "nome_file_immobili",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Nome del file ZIP contenente i dati immobiliari"
-          },
-          {
-            "name": "nome_file_detenzioni",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Nome del file ZIP contenente le detenzioni"
-          }
-        ]
-      },
-      {
-        "slug": "mef_patrimonio_immobili",
-        "url_slug": "mef-patrimonio-immobili",
-        "name": "MEF \u2014 Catalogo immobili pubblici italiani",
-        "description": "Catalogo completo degli immobili pubblici italiani dichiarati dalle PA. 51 colonne: anagrafica ente, dati catastali, coordinate geografiche (100% georeferenziato), superficie, destinazione d'uso, stato d'uso, vincoli. Fonte: MEF Dipartimento Economia, censimento immobili pubblici.",
-        "source": "MEF \u2014 Dipartimento dell'Economia (Open Data Immobili PA)",
-        "source_id": "mef_de",
-        "period": {
-          "start": 2022,
-          "end": 2023
-        },
-        "stage": "published",
-        "tags": [
-          "finanza-pubblica",
-          "mef",
-          "patrimonio",
-          "immobili"
-        ],
-        "category": "finanza-pubblica",
-        "registry_source": "patrimonio-territorio",
-        "clean_rows": 3257044,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/mef_patrimonio_immobili/*/mef_patrimonio_immobili_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": "Anno di riferimento del censimento"
-          },
-          {
-            "name": "settore_istituzionale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Settore istituzionale dell'ente proprietario/detentore"
-          },
-          {
-            "name": "macrocategoria_amministrazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Macrocategoria dell'ente proprietario/detentore"
-          },
-          {
-            "name": "tipologia_amministrazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Tipologia dell'ente proprietario/detentore"
-          },
-          {
-            "name": "amministrazione_denominazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Denominazione dell'ente proprietario/detentore"
-          },
-          {
-            "name": "amministrazione_codice_fiscale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "fiscal_code",
-            "description": "Codice fiscale dell'ente"
-          },
-          {
-            "name": "reg_amministrazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Regione dell'ente"
-          },
-          {
-            "name": "prov_amministrazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Provincia dell'ente"
-          },
-          {
-            "name": "comune_amministrazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Comune dell'ente"
-          },
-          {
-            "name": "codice_comune_amministrazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Codice ISTAT del comune dell'ente"
-          },
-          {
-            "name": "titolo_proprieta",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Titolo di propriet\u00e0 del bene"
-          },
-          {
-            "name": "quota_proprieta",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Quota di propriet\u00e0 in percentuale"
-          },
-          {
-            "name": "titolo_detenzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Titolo di detenzione del bene"
-          },
-          {
-            "name": "detenzione_intera_ui",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Detenzione sull'intera unit\u00e0 immobiliare (S\u00ec/No)"
-          },
-          {
-            "name": "superficie_detenzione_mq",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Superficie in detenzione in metri quadri"
-          },
-          {
-            "name": "canone_annuale",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Canone annuale in euro"
-          },
-          {
-            "name": "soggetto_cedente",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Denominazione del soggetto cedente"
-          },
-          {
-            "name": "soggetto_cedente_cf",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Codice fiscale del soggetto cedente"
-          },
-          {
-            "name": "id_bene",
-            "type": "BIGINT",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Identificativo univoco del bene (PK, FK \u2192 mef_patrimonio_detenzioni)"
-          },
-          {
-            "name": "natura_bene",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Natura del bene: FABBRICATO o TERRENO"
-          },
-          {
-            "name": "stato_accatastamento",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Stato di accatastamento del bene"
-          },
-          {
-            "name": "sistema_catastale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Sistema catastale di riferimento"
-          },
-          {
-            "name": "regione_bene",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Regione in cui si trova il bene"
-          },
-          {
-            "name": "provincia_bene",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Provincia in cui si trova il bene"
-          },
-          {
-            "name": "comune_bene",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Comune in cui si trova il bene"
-          },
-          {
-            "name": "codice_comune_bene",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Codice ISTAT del comune del bene"
-          },
-          {
-            "name": "indirizzo",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Indirizzo del bene"
-          },
-          {
-            "name": "numero_civico",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Numero civico del bene"
-          },
-          {
-            "name": "fonte_georef",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Fonte della georeferenziazione"
-          },
-          {
-            "name": "precisione_georef",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Precisione della georeferenziazione"
-          },
-          {
-            "name": "immobile_georef",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Indica se l'immobile \u00e8 georeferenziato (S\u00ec/No)"
-          },
-          {
-            "name": "latitudine",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Latitudine del bene (WGS84)"
-          },
-          {
-            "name": "longitudine",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Longitudine del bene (WGS84)"
-          },
-          {
-            "name": "identificativo_catastale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Identificativo catastale del bene"
-          },
-          {
-            "name": "codice_bene_non_accatastato",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Codice del bene se non accatastato"
-          },
-          {
-            "name": "tipologia_bene",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Tipologia del bene (ufficio, abitazione, terreno, ...)"
-          },
-          {
-            "name": "superficie_mq",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Superficie in metri quadri"
-          },
-          {
-            "name": "cubatura_mc",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Cubatura in metri cubi"
-          },
-          {
-            "name": "sup_aree_pertinenziali_mq",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Superficie delle aree pertinenziali in metri quadri"
-          },
-          {
-            "name": "superficie_riferimento_mq",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Superficie di riferimento in metri quadri"
-          },
-          {
-            "name": "epoca_costruzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Epoca di costruzione del bene"
-          },
-          {
-            "name": "vincoli",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Vincoli culturali/paesaggistici presenti"
-          },
-          {
-            "name": "natura_giuridica_bene",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Natura giuridica del bene"
-          },
-          {
-            "name": "diritto_gravante_terreno",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Diritto gravante sul terreno"
-          },
-          {
-            "name": "id_compendio",
-            "type": "BIGINT",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Identificativo del compendio immobiliare"
-          },
-          {
-            "name": "descrizione_compendio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Descrizione del compendio immobiliare"
-          },
-          {
-            "name": "tipologia_compendio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Tipologia del compendio immobiliare"
-          },
-          {
-            "name": "utilizzo_bene",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Stato d'uso del bene (Utilizzato, Non utilizzato, Inutilizzabile, ...)"
-          },
-          {
-            "name": "finalita",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Finalit\u00e0 d'uso del bene (attivit\u00e0 amministrativa, didattica, culturale, ...)"
-          },
-          {
-            "name": "altra_finalita",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Altra finalit\u00e0 d'uso del bene"
-          },
-          {
-            "name": "ui_data_interamente_terzi",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "UI data interamente a terzi (S\u00ec/No)"
-          },
-          {
-            "name": "ui_data_parzialmente_terzi",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "UI data parzialmente a terzi (S\u00ec/No)"
-          }
         ]
       }
     ],
