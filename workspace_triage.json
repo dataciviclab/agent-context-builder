@@ -1,12 +1,13 @@
 {
-  "generated_at": "2026-09-05T16:05:46.405344",
+  "generated_at": "2026-09-05T16:10:29.691419",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
-    "dcl-bologna",
+    "bilancio-pubblico",
     "data-explorer",
     "dataciviclab",
     "dataset-incubator",
+    "dcl-bologna",
     "debito-pubblico-intelligence",
     "eurostat",
     "italia-corpus",
@@ -14,6 +15,7 @@
     "open-conto-annuale",
     "open-politica",
     "open-siope",
+    "patrimonio-territorio",
     "rna-aiuti-stato",
     "senato-akn",
     "source-observatory",
@@ -58,27 +60,6 @@
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/issues/59",
       "category": "infrastructure"
-    },
-    {
-      "number": 8,
-      "title": "\ud83d\udd17 Cross ANAC sistematico",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/issues/8",
-      "category": "other"
-    },
-    {
-      "number": 6,
-      "title": "\ud83d\udce5 Dataset: Segnalazioni cittadini CZRM (123k, mensile, geo)",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/issues/6",
-      "category": "intake"
-    },
-    {
-      "number": 5,
-      "title": "\ud83d\udce5 Dataset: Eventi cultura (30k, daily, geo)",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/issues/5",
-      "category": "intake"
     },
     {
       "number": 828,
@@ -221,6 +202,27 @@
       "category": "intake"
     },
     {
+      "number": 8,
+      "title": "\ud83d\udd17 Cross ANAC sistematico",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/issues/8",
+      "category": "other"
+    },
+    {
+      "number": 6,
+      "title": "\ud83d\udce5 Dataset: Segnalazioni cittadini CZRM (123k, mensile, geo)",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/issues/6",
+      "category": "intake"
+    },
+    {
+      "number": 5,
+      "title": "\ud83d\udce5 Dataset: Eventi cultura (30k, daily, geo)",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/issues/5",
+      "category": "intake"
+    },
+    {
       "number": 90,
       "title": "dataset: Internet access by NACE and NUTS 2 region (ISOC_R_CI_IN_EN2)",
       "repo": "eurostat",
@@ -291,77 +293,49 @@
       "category": "other"
     }
   ],
-  "open_discussions": 128,
+  "open_discussions": 134,
   "discussions": [
     {
-      "number": 47,
-      "title": "\ud83e\udde9 Il blocco economia di Bologna: la fragilit\u00e0 segue il reddito (-0,76), ma il commercio sta nel centro \u2014 ovunque",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/47",
-      "category": "Idee analisi"
+      "number": 10,
+      "title": "[Domanda] Le Spese Correnti stanno comprimendo gli investimenti?",
+      "repo": "bilancio-pubblico",
+      "url": "https://github.com/dataciviclab/bilancio-pubblico/discussions/10",
+      "category": "Domande"
     },
     {
-      "number": 44,
-      "title": "\ud83c\udf5d Il tessuto commerciale di Bologna: 1 bar su 24 sopravvive agli anni '90 \u2014 non desertificazione, ma ricambio",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/44",
-      "category": "Idee analisi"
+      "number": 14,
+      "title": "[Domanda] L\u2019Avanzo Primario \u00e8 un mito o una realt\u00e0?",
+      "repo": "bilancio-pubblico",
+      "url": "https://github.com/dataciviclab/bilancio-pubblico/discussions/14",
+      "category": "Domande"
     },
     {
-      "number": 2,
-      "title": "\ud83d\udcca I quartieri di Bologna invecchiano a velocit\u00e0 diverse \u2014 dati 1986\u20132024",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/2",
-      "category": "Idee analisi"
+      "number": 9,
+      "title": "[Domanda] Lo Stato italiano \u00e8 strutturalmente in deficit?",
+      "repo": "bilancio-pubblico",
+      "url": "https://github.com/dataciviclab/bilancio-pubblico/discussions/9",
+      "category": "Domande"
     },
     {
-      "number": 36,
-      "title": "\ud83d\udeb6 Bologna a piedi: il 2024 anno record, il weekend batte il feriale \u2014 e Piazza Maggiore domina",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/36",
-      "category": "Idee analisi"
+      "number": 17,
+      "title": "Quanto paga lo Stato ogni anno in interessi sul debito?",
+      "repo": "bilancio-pubblico",
+      "url": "https://github.com/dataciviclab/bilancio-pubblico/discussions/17",
+      "category": "Domande"
     },
     {
-      "number": 38,
-      "title": "\ud83d\udcb0 Il reddito a Bologna per area: la collina contro la periferia (2,3:1) \u2014 e Roveri che cambia volto",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/38",
-      "category": "Idee analisi"
+      "number": 16,
+      "title": "Il Ricorso al Mercato \u00e8 una costante del sistema?",
+      "repo": "bilancio-pubblico",
+      "url": "https://github.com/dataciviclab/bilancio-pubblico/discussions/16",
+      "category": "Domande"
     },
     {
-      "number": 29,
-      "title": "\ud83d\udee3\ufe0f Fuori dalla cerchia: il traffico cala (-11,7%) ma la met\u00e0 che in ZTL \u2014 e 120 spire sono state spente",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/29",
-      "category": "Idee analisi"
-    },
-    {
-      "number": 26,
-      "title": "\ud83c\udf21\ufe0f Bologna si scalda: +1,25\u00b0C in 25 anni \u2014 ma l'afa \u00e8 raddoppiata",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/26",
-      "category": "Idee analisi"
-    },
-    {
-      "number": 23,
-      "title": "\ud83d\ude97 Meno auto in ZTL: il traffico \u00e8 calato del 22% \u2014 ma \u00e8 sparito o si \u00e8 spostato?",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/23",
-      "category": "Idee analisi"
-    },
-    {
-      "number": 3,
-      "title": "\ud83d\udce1 Segnalazioni dataset \u2014 quali dati mancano?",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/3",
-      "category": "Segnalazioni dataset"
-    },
-    {
-      "number": 1,
-      "title": "\ud83c\udfaf Benvenuti \u2014 questo \u00e8 il posto per i dati di Bologna",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/1",
-      "category": "Announcements"
+      "number": 12,
+      "title": "[Domanda] Le Entrate Tributarie coprono la macchina dello Stato?",
+      "repo": "bilancio-pubblico",
+      "url": "https://github.com/dataciviclab/bilancio-pubblico/discussions/12",
+      "category": "Domande"
     },
     {
       "number": 413,
@@ -861,6 +835,76 @@
       "category": "Metodo"
     },
     {
+      "number": 47,
+      "title": "\ud83e\udde9 Il blocco economia di Bologna: la fragilit\u00e0 segue il reddito (-0,76), ma il commercio sta nel centro \u2014 ovunque",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/47",
+      "category": "Idee analisi"
+    },
+    {
+      "number": 44,
+      "title": "\ud83c\udf5d Il tessuto commerciale di Bologna: 1 bar su 24 sopravvive agli anni '90 \u2014 non desertificazione, ma ricambio",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/44",
+      "category": "Idee analisi"
+    },
+    {
+      "number": 2,
+      "title": "\ud83d\udcca I quartieri di Bologna invecchiano a velocit\u00e0 diverse \u2014 dati 1986\u20132024",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/2",
+      "category": "Idee analisi"
+    },
+    {
+      "number": 36,
+      "title": "\ud83d\udeb6 Bologna a piedi: il 2024 anno record, il weekend batte il feriale \u2014 e Piazza Maggiore domina",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/36",
+      "category": "Idee analisi"
+    },
+    {
+      "number": 38,
+      "title": "\ud83d\udcb0 Il reddito a Bologna per area: la collina contro la periferia (2,3:1) \u2014 e Roveri che cambia volto",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/38",
+      "category": "Idee analisi"
+    },
+    {
+      "number": 29,
+      "title": "\ud83d\udee3\ufe0f Fuori dalla cerchia: il traffico cala (-11,7%) ma la met\u00e0 che in ZTL \u2014 e 120 spire sono state spente",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/29",
+      "category": "Idee analisi"
+    },
+    {
+      "number": 26,
+      "title": "\ud83c\udf21\ufe0f Bologna si scalda: +1,25\u00b0C in 25 anni \u2014 ma l'afa \u00e8 raddoppiata",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/26",
+      "category": "Idee analisi"
+    },
+    {
+      "number": 23,
+      "title": "\ud83d\ude97 Meno auto in ZTL: il traffico \u00e8 calato del 22% \u2014 ma \u00e8 sparito o si \u00e8 spostato?",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/23",
+      "category": "Idee analisi"
+    },
+    {
+      "number": 3,
+      "title": "\ud83d\udce1 Segnalazioni dataset \u2014 quali dati mancano?",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/3",
+      "category": "Segnalazioni dataset"
+    },
+    {
+      "number": 1,
+      "title": "\ud83c\udfaf Benvenuti \u2014 questo \u00e8 il posto per i dati di Bologna",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/1",
+      "category": "Announcements"
+    },
+    {
       "number": 93,
       "title": "[Economy] Labour productivity in Europe \u2014 10 questions about who produces most per worker and why (2000-2024)",
       "repo": "eurostat",
@@ -1200,7 +1244,7 @@
       "branches_ahead": [],
       "untracked_files": 0
     },
-    "dcl-bologna": {
+    "bilancio-pubblico": {
       "available": false,
       "reason": "local_disabled",
       "dirty": null,
@@ -1225,6 +1269,14 @@
       "untracked_files": 0
     },
     "dataset-incubator": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
+    "dcl-bologna": {
       "available": false,
       "reason": "local_disabled",
       "dirty": null,
@@ -1281,6 +1333,14 @@
       "untracked_files": 0
     },
     "open-siope": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
+    "patrimonio-territorio": {
       "available": false,
       "reason": "local_disabled",
       "dirty": null,
@@ -1665,226 +1725,86 @@
       "reason": "registry_not_found"
     },
     {
-      "repo": "dcl-bologna",
+      "repo": "bilancio-pubblico",
       "available": true,
-      "source_repo": "dataciviclab/dcl-bologna",
-      "updated_at": "2026-09-03",
-      "datasets": 15,
-      "marts": 29,
-      "signals": 15,
+      "source_repo": "dataciviclab/bilancio-pubblico",
+      "updated_at": "2026-09-05",
+      "datasets": 5,
+      "marts": 14,
+      "signals": 5,
       "codelists": 0,
-      "entities": 3,
-      "gcs": 15,
+      "entities": 1,
+      "gcs": 5,
       "reason": "",
       "signals_detail": [
         {
-          "id": "bolognawifi_matrice",
-          "source_id": "comune_bologna_opendata",
+          "id": "bdap_entrate_stato",
+          "source_id": "openbdap",
           "status": "ok",
-          "label": "bolognawifi_matrice",
-          "detail": "anno 2026 \u2014 mart: si",
+          "label": "bdap_entrate_stato",
+          "detail": "anno 2025 \u2014 mart: si",
           "run": {
-            "run_id": "20260903T172548Z_502df4d3",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-03T17:25:48.330581+00:00",
-            "finished_at": "2026-09-03T17:27:55.786181+00:00"
-          }
-        },
-        {
-          "id": "centraline_aria",
-          "source_id": "comune_bologna_opendata",
-          "status": "ok",
-          "label": "centraline_aria",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260903T172756Z_b0202ffc",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-03T17:27:56.842428+00:00",
-            "finished_at": "2026-09-03T17:28:03.696252+00:00"
-          }
-        },
-        {
-          "id": "colonnine_bici",
-          "source_id": "comune_bologna_opendata",
-          "status": "ok",
-          "label": "colonnine_bici",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260903T172804Z_32937f1a",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-03T17:28:04.308177+00:00",
-            "finished_at": "2026-09-03T17:29:13.950208+00:00"
-          }
-        },
-        {
-          "id": "convivenze",
-          "source_id": "comune_bologna_opendata",
-          "status": "ok",
-          "label": "convivenze",
-          "detail": "anno 2024 \u2014 mart: si",
-          "run": {
-            "run_id": "20260903T172914Z_04fcdff0",
-            "year": 2024,
-            "status": "SUCCESS",
-            "started_at": "2026-09-03T17:29:14.626743+00:00",
-            "finished_at": "2026-09-03T17:29:24.210872+00:00"
-          }
-        },
-        {
-          "id": "emigrati_destinazione",
-          "source_id": "comune_bologna_opendata",
-          "status": "ok",
-          "label": "emigrati_destinazione",
-          "detail": "anno 2024 \u2014 mart: si",
-          "run": {
-            "run_id": "20260903T172924Z_a5b5a7d3",
-            "year": 2024,
-            "status": "SUCCESS",
-            "started_at": "2026-09-03T17:29:24.764916+00:00",
-            "finished_at": "2026-09-03T17:29:33.195360+00:00"
-          }
-        },
-        {
-          "id": "esercizi_somministrazione",
-          "source_id": "comune_bologna_opendata",
-          "status": "ok",
-          "label": "esercizi_somministrazione",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260903T172933Z_9bd06f60",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-03T17:29:33.827466+00:00",
-            "finished_at": "2026-09-03T17:29:38.218828+00:00"
-          }
-        },
-        {
-          "id": "famiglie_tipologia",
-          "source_id": "comune_bologna_opendata",
-          "status": "ok",
-          "label": "famiglie_tipologia",
-          "detail": "anno 2024 \u2014 mart: si",
-          "run": {
-            "run_id": "20260903T172938Z_c1756c79",
-            "year": 2024,
-            "status": "SUCCESS",
-            "started_at": "2026-09-03T17:29:38.929885+00:00",
-            "finished_at": "2026-09-03T17:29:45.722688+00:00"
-          }
-        },
-        {
-          "id": "incarichi",
-          "source_id": "comune_bologna_opendata",
-          "status": "ok",
-          "label": "incarichi",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260903T172946Z_b8a5eaab",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-03T17:29:46.281208+00:00",
-            "finished_at": "2026-09-03T17:29:47.774158+00:00"
-          }
-        },
-        {
-          "id": "indici_fragilita",
-          "source_id": "comune_bologna_opendata",
-          "status": "ok",
-          "label": "indici_fragilita",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260903T172948Z_4a45c1b1",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-03T17:29:48.373238+00:00",
-            "finished_at": "2026-09-03T17:29:49.241288+00:00"
-          }
-        },
-        {
-          "id": "popolazione_quartiere",
-          "source_id": "comune_bologna_opendata",
-          "status": "ok",
-          "label": "popolazione_quartiere",
-          "detail": "anno 2024 \u2014 mart: si",
-          "run": {
-            "run_id": "20260903T172949Z_63116a81",
-            "year": 2024,
-            "status": "SUCCESS",
-            "started_at": "2026-09-03T17:29:49.797731+00:00",
-            "finished_at": "2026-09-03T17:30:19.542166+00:00"
-          }
-        },
-        {
-          "id": "precipitazioni_bologna",
-          "source_id": "comune_bologna_opendata",
-          "status": "ok",
-          "label": "precipitazioni_bologna",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260903T173020Z_992ae566",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-03T17:30:20.204968+00:00",
-            "finished_at": "2026-09-03T17:30:22.210218+00:00"
-          }
-        },
-        {
-          "id": "reddito_mediano",
-          "source_id": "comune_bologna_opendata",
-          "status": "ok",
-          "label": "reddito_mediano",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260903T173022Z_1b1b1c16",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-03T17:30:22.826370+00:00",
-            "finished_at": "2026-09-03T17:30:23.569025+00:00"
-          }
-        },
-        {
-          "id": "spire_traffico",
-          "source_id": "comune_bologna_opendata",
-          "status": "ok",
-          "label": "spire_traffico",
-          "detail": "anni 2022-2025 \u2014 mart: si",
-          "run": {
-            "run_id": "20260903T173416Z_6ab5eb9f",
+            "run_id": "20260904T112245Z_bc85f25e",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-09-03T17:34:16.375103+00:00",
-            "finished_at": "2026-09-03T17:35:29.999386+00:00"
+            "started_at": "2026-09-04T11:22:45.505658+00:00",
+            "finished_at": "2026-09-04T11:22:49.996793+00:00"
           }
         },
         {
-          "id": "temperature_bologna",
-          "source_id": "comune_bologna_opendata",
+          "id": "bdap_lb_spese_missione",
+          "source_id": "openbdap",
           "status": "ok",
-          "label": "temperature_bologna",
-          "detail": "anno 2026 \u2014 mart: si",
+          "label": "bdap_lb_spese_missione",
+          "detail": "anni 2017-2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260903T173531Z_6ccb0e73",
+            "run_id": "20260904T112434Z_524cdbb5",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-03T17:35:31.241408+00:00",
-            "finished_at": "2026-09-03T17:36:27.480312+00:00"
+            "started_at": "2026-09-04T11:24:34.636638+00:00",
+            "finished_at": "2026-09-04T11:24:46.448881+00:00"
           }
         },
         {
-          "id": "varchi_ztl",
-          "source_id": "comune_bologna_opendata",
+          "id": "bdap_pagamenti_stato",
+          "source_id": "openbdap",
           "status": "ok",
-          "label": "varchi_ztl",
-          "detail": "anno 2026 \u2014 mart: si",
+          "label": "bdap_pagamenti_stato",
+          "detail": "anni 2014-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20260903T181314Z_797e0776",
-            "year": 2026,
+            "run_id": "20260904T112507Z_35b2f9a4",
+            "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-09-03T18:13:14.111202+00:00",
-            "finished_at": "2026-09-03T18:13:32.475710+00:00"
+            "started_at": "2026-09-04T11:25:07.127095+00:00",
+            "finished_at": "2026-09-04T11:25:08.468415+00:00"
+          }
+        },
+        {
+          "id": "bdap_saldi_stato",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "bdap_saldi_stato",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260904T112511Z_e31285f8",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-09-04T11:25:11.207157+00:00",
+            "finished_at": "2026-09-04T11:25:12.773361+00:00"
+          }
+        },
+        {
+          "id": "bdap_spese_stato",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "bdap_spese_stato",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260904T112518Z_14300f14",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-09-04T11:25:18.585992+00:00",
+            "finished_at": "2026-09-04T11:25:25.110904+00:00"
           }
         }
       ]
@@ -2962,6 +2882,231 @@
             "status": "SUCCESS",
             "started_at": "2026-07-30T18:27:19.148801+00:00",
             "finished_at": "2026-07-30T18:27:36.870374+00:00"
+          }
+        }
+      ]
+    },
+    {
+      "repo": "dcl-bologna",
+      "available": true,
+      "source_repo": "dataciviclab/dcl-bologna",
+      "updated_at": "2026-09-03",
+      "datasets": 15,
+      "marts": 29,
+      "signals": 15,
+      "codelists": 0,
+      "entities": 3,
+      "gcs": 15,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "bolognawifi_matrice",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "bolognawifi_matrice",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T172548Z_502df4d3",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T17:25:48.330581+00:00",
+            "finished_at": "2026-09-03T17:27:55.786181+00:00"
+          }
+        },
+        {
+          "id": "centraline_aria",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "centraline_aria",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T172756Z_b0202ffc",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T17:27:56.842428+00:00",
+            "finished_at": "2026-09-03T17:28:03.696252+00:00"
+          }
+        },
+        {
+          "id": "colonnine_bici",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "colonnine_bici",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T172804Z_32937f1a",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T17:28:04.308177+00:00",
+            "finished_at": "2026-09-03T17:29:13.950208+00:00"
+          }
+        },
+        {
+          "id": "convivenze",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "convivenze",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T172914Z_04fcdff0",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T17:29:14.626743+00:00",
+            "finished_at": "2026-09-03T17:29:24.210872+00:00"
+          }
+        },
+        {
+          "id": "emigrati_destinazione",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "emigrati_destinazione",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T172924Z_a5b5a7d3",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T17:29:24.764916+00:00",
+            "finished_at": "2026-09-03T17:29:33.195360+00:00"
+          }
+        },
+        {
+          "id": "esercizi_somministrazione",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "esercizi_somministrazione",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T172933Z_9bd06f60",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T17:29:33.827466+00:00",
+            "finished_at": "2026-09-03T17:29:38.218828+00:00"
+          }
+        },
+        {
+          "id": "famiglie_tipologia",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "famiglie_tipologia",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T172938Z_c1756c79",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T17:29:38.929885+00:00",
+            "finished_at": "2026-09-03T17:29:45.722688+00:00"
+          }
+        },
+        {
+          "id": "incarichi",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "incarichi",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T172946Z_b8a5eaab",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T17:29:46.281208+00:00",
+            "finished_at": "2026-09-03T17:29:47.774158+00:00"
+          }
+        },
+        {
+          "id": "indici_fragilita",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "indici_fragilita",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T172948Z_4a45c1b1",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T17:29:48.373238+00:00",
+            "finished_at": "2026-09-03T17:29:49.241288+00:00"
+          }
+        },
+        {
+          "id": "popolazione_quartiere",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "popolazione_quartiere",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T172949Z_63116a81",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T17:29:49.797731+00:00",
+            "finished_at": "2026-09-03T17:30:19.542166+00:00"
+          }
+        },
+        {
+          "id": "precipitazioni_bologna",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "precipitazioni_bologna",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T173020Z_992ae566",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T17:30:20.204968+00:00",
+            "finished_at": "2026-09-03T17:30:22.210218+00:00"
+          }
+        },
+        {
+          "id": "reddito_mediano",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "reddito_mediano",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T173022Z_1b1b1c16",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T17:30:22.826370+00:00",
+            "finished_at": "2026-09-03T17:30:23.569025+00:00"
+          }
+        },
+        {
+          "id": "spire_traffico",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "spire_traffico",
+          "detail": "anni 2022-2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T173416Z_6ab5eb9f",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T17:34:16.375103+00:00",
+            "finished_at": "2026-09-03T17:35:29.999386+00:00"
+          }
+        },
+        {
+          "id": "temperature_bologna",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "temperature_bologna",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T173531Z_6ccb0e73",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T17:35:31.241408+00:00",
+            "finished_at": "2026-09-03T17:36:27.480312+00:00"
+          }
+        },
+        {
+          "id": "varchi_ztl",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "varchi_ztl",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T181314Z_797e0776",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T18:13:14.111202+00:00",
+            "finished_at": "2026-09-03T18:13:32.475710+00:00"
           }
         }
       ]
@@ -4449,6 +4594,63 @@
             "status": "SUCCESS",
             "started_at": "2026-09-05T10:14:35.273339+00:00",
             "finished_at": "2026-09-05T10:14:37.865579+00:00"
+          }
+        }
+      ]
+    },
+    {
+      "repo": "patrimonio-territorio",
+      "available": true,
+      "source_repo": "dataciviclab/patrimonio-territorio",
+      "updated_at": "2026-09-05",
+      "datasets": 3,
+      "marts": 4,
+      "signals": 3,
+      "codelists": 0,
+      "entities": 5,
+      "gcs": 3,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "mef_patrimonio_detenzioni",
+          "source_id": "mef_de",
+          "status": "ok",
+          "label": "mef_patrimonio_detenzioni",
+          "detail": "anno 2023 \u2014 mart: si",
+          "run": {
+            "run_id": "20260905T124639Z_7d5d4a9d",
+            "year": 2023,
+            "status": "SUCCESS",
+            "started_at": "2026-09-05T12:46:39.032746+00:00",
+            "finished_at": "2026-09-05T12:47:20.019775+00:00"
+          }
+        },
+        {
+          "id": "mef_patrimonio_enti",
+          "source_id": "mef_de",
+          "status": "ok",
+          "label": "mef_patrimonio_enti",
+          "detail": "anno 2023 \u2014 mart: si",
+          "run": {
+            "run_id": "20260905T124720Z_281cd05d",
+            "year": 2023,
+            "status": "SUCCESS",
+            "started_at": "2026-09-05T12:47:20.450808+00:00",
+            "finished_at": "2026-09-05T12:47:22.963212+00:00"
+          }
+        },
+        {
+          "id": "mef_patrimonio_immobili",
+          "source_id": "mef_de",
+          "status": "ok",
+          "label": "mef_patrimonio_immobili",
+          "detail": "anno 2023 \u2014 mart: si",
+          "run": {
+            "run_id": "20260905T124723Z_fd476882",
+            "year": 2023,
+            "status": "SUCCESS",
+            "started_at": "2026-09-05T12:47:23.367238+00:00",
+            "finished_at": "2026-09-05T12:49:54.256483+00:00"
           }
         }
       ]
