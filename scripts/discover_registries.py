@@ -69,7 +69,10 @@ def list_org_repos_with_registry(org: str, token: str | None = None) -> list[str
 
 
 def load_config_repos(config_path: Path) -> list[str]:
-    """Load repos list from dataciviclab.config.yml (simple YAML parser)."""
+    """Load repos list from dataciviclab.config.yml (simple YAML parser).
+
+    Skips commented lines (starting with ``#`` after stripping).
+    """
     repos: list[str] = []
     in_repos = False
     with open(config_path, encoding="utf-8") as f:
@@ -78,15 +81,25 @@ def load_config_repos(config_path: Path) -> list[str]:
                 in_repos = True
                 continue
             if in_repos:
-                if line.startswith("  - "):
-                    repos.append(line.strip().removeprefix("- ").strip())
-                elif line.strip() and not line.startswith(" "):
+                stripped = line.strip()
+                if stripped.startswith("- ") and not stripped.startswith("- #"):
+                    repos.append(stripped.removeprefix("- ").strip())
+                elif stripped.startswith("#"):
+                    continue  # skip comments
+                elif stripped == "":
+                    continue  # skip blank lines
+                else:
                     break  # reached next top-level key
     return repos
 
 
 def save_config_repos(config_path: Path, repos: list[str]) -> None:
-    """Update repos list in dataciviclab.config.yml, preserving YAML structure."""
+    """Replace repos list in dataciviclab.config.yml.
+
+    Drops all lines between ``repos:`` and the next top-level key
+    (including comments, blank lines, old entries), then writes
+    a clean deduplicated list.
+    """
     with open(config_path, encoding="utf-8") as f:
         content = f.read()
 
@@ -98,12 +111,17 @@ def save_config_repos(config_path: Path, repos: list[str]) -> None:
         if line.startswith("repos:"):
             in_repos = True
             new_lines.append("repos:")
+            seen: set[str] = set()
             for repo in repos:
-                new_lines.append(f"  - {repo}")
+                if repo not in seen:
+                    new_lines.append(f"  - {repo}")
+                    seen.add(repo)
             continue
         if in_repos:
-            if line.startswith("  - ") or line.strip() == "":
-                continue
+            if line.strip() == "" or line.strip().startswith("#"):
+                continue  # skip blank lines and comments in repos block
+            elif line.startswith("  - "):
+                continue  # skip old entries
             else:
                 in_repos = False
         new_lines.append(line)

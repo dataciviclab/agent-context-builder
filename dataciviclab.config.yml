@@ -14,24 +14,21 @@ github_org: dataciviclab
 
 repos:
   - agent-context-builder
-  - dataset-incubator
-  - dataciviclab
-  - toolkit
-  - data-explorer
-  - source-observatory
-  - lab-connectors
-  # Aggiunti 2026-07-14 — discussion/issue attive non tracciate
-  - eurostat
-  - open-siope
-  - italia-corpus
-  # Aggiunti 2026-08-09 — repo progetto con registry.json (registry_summary)
   - dcl-bologna
+  - data-explorer
+  - dataciviclab
+  - dataset-incubator
+  - debito-pubblico-intelligence
+  - eurostat
+  - italia-corpus
+  - lab-connectors
   - open-conto-annuale
-  # Aggiunti 2026-08-25 — repo dati attivi con registry.json
+  - open-politica
+  - open-siope
   - rna-aiuti-stato
   - senato-akn
-  - debito-pubblico-intelligence
-  - open-politica
+  - source-observatory
+  - toolkit
 
 # Hint operativi per agenti — descrivono flussi, non repo o dataset
 # (repo descriptions vengono da GitHub API, dataset da registry.json)
