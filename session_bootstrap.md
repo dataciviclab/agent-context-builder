@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-09-05T10:03:25.913667
+**Generated**: 2026-09-05T14:42:54.259140
 
 ## Stato
 
@@ -12,7 +12,6 @@ Radar: 36 fonti GREEN 35 · RED 1 · Registry: 9 repo · 211 dataset
 - [PR] dataset-incubator#836: feat(candidates): bootstrap gse_cer_elenco candidate
 - [PR] dataset-incubator#834: chore(deps): bump toolkit a v1.51.0
 - [PR] dataset-incubator#829: intake: inpa-bandi e inpa-comunicazioni — reclutamento PA dal Portale inPA
-- [PR] lab-connectors#84: feat(branding): add apply_branding() for Streamlit dashboards
 
 ## Analisi attive (18)
 
