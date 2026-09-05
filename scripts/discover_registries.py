@@ -5,6 +5,8 @@ Scans all public repos in the configured org for registry/registry.json.
 Compares with the current repos list in dataciviclab.config.yml.
 Outputs the list of repos to add, or exits 0 if no changes.
 
+No external dependencies — uses only stdlib (urllib, json).
+
 Usage::
 
     python scripts/discover_registries.py \\
@@ -16,36 +18,38 @@ Usage::
 from __future__ import annotations
 
 import argparse
+import json
+import os
 import sys
 import time
+import urllib.error
+import urllib.request
 from pathlib import Path
 
-import requests
-import yaml
 
-
-def list_org_repos_with_registry(org: str, token: str | None = None) -> list[str]:
-    """List all repos in the org that have registry/registry.json.
-
-    Uses GitHub Contents API: GET /repos/{org}/{repo}/contents/registry/registry.json
-    Falls back to listing all repos + checking each one.
-    """
+def _github_get(url: str, token: str | None = None) -> dict | list | None:
+    """GET a GitHub API endpoint, return parsed JSON or None on 404."""
     headers = {"Accept": "application/vnd.github+json"}
     if token:
         headers["Authorization"] = f"token {token}"
+    req = urllib.request.Request(url, headers=headers)
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            return json.loads(resp.read())
+    except urllib.error.HTTPError as exc:
+        if exc.code == 404:
+            return None
+        raise
 
+
+def list_org_repos_with_registry(org: str, token: str | None = None) -> list[str]:
+    """List all repos in the org that have registry/registry.json."""
     # Step 1: list all public repos
     repos: list[str] = []
     page = 1
     while True:
-        resp = requests.get(
-            f"https://api.github.com/orgs/{org}/repos",
-            params={"type": "public", "per_page": "100", "page": str(page)},
-            headers=headers,
-            timeout=30,
-        )
-        resp.raise_for_status()
-        batch = resp.json()
+        url = f"https://api.github.com/orgs/{org}/repos?type=public&per_page=100&page={page}"
+        batch = _github_get(url, token)
         if not batch:
             break
         repos.extend(r["name"] for r in batch)
@@ -56,24 +60,29 @@ def list_org_repos_with_registry(org: str, token: str | None = None) -> list[str
     # Step 2: check which repos have registry/registry.json
     with_registry: list[str] = []
     for repo in repos:
-        resp = requests.get(
-            f"https://api.github.com/repos/{org}/{repo}/contents/registry/registry.json",
-            headers=headers,
-            timeout=15,
-        )
-        if resp.status_code == 200:
+        url = f"https://api.github.com/repos/{org}/{repo}/contents/registry/registry.json"
+        if _github_get(url, token) is not None:
             with_registry.append(repo)
-        # Rate limit: small delay between checks
         time.sleep(0.1)
 
     return sorted(with_registry)
 
 
 def load_config_repos(config_path: Path) -> list[str]:
-    """Load repos list from dataciviclab.config.yml."""
+    """Load repos list from dataciviclab.config.yml (simple YAML parser)."""
+    repos: list[str] = []
+    in_repos = False
     with open(config_path, encoding="utf-8") as f:
-        data = yaml.safe_load(f)
-    return data.get("repos") or []
+        for line in f:
+            if line.startswith("repos:"):
+                in_repos = True
+                continue
+            if in_repos:
+                if line.startswith("  - "):
+                    repos.append(line.strip().removeprefix("- ").strip())
+                elif line.strip() and not line.startswith(" "):
+                    break  # reached next top-level key
+    return repos
 
 
 def save_config_repos(config_path: Path, repos: list[str]) -> None:
@@ -81,8 +90,6 @@ def save_config_repos(config_path: Path, repos: list[str]) -> None:
     with open(config_path, encoding="utf-8") as f:
         content = f.read()
 
-    # Find and replace the repos list
-    # The repos list is a YAML block starting with "repos:" and ending before "topics:"
     lines = content.split("\n")
     new_lines: list[str] = []
     in_repos = False
@@ -96,7 +103,7 @@ def save_config_repos(config_path: Path, repos: list[str]) -> None:
             continue
         if in_repos:
             if line.startswith("  - ") or line.strip() == "":
-                continue  # skip old repos entries and blank lines after repos:
+                continue
             else:
                 in_repos = False
         new_lines.append(line)
@@ -120,8 +127,6 @@ def main() -> int:
         help="Apply changes to config file (default: dry-run)",
     )
     args = parser.parse_args()
-
-    import os
 
     token = args.token or os.environ.get("GITHUB_TOKEN")
 

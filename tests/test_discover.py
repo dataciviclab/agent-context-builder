@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import textwrap
 from pathlib import Path
-from unittest.mock import MagicMock, patch
+from unittest.mock import patch
 
 import pytest
 
@@ -67,42 +67,22 @@ class TestSaveConfigRepos:
 
 class TestListOrgReposWithRegistry:
     def test_discovery_logic(self) -> None:
-        mock_repos = [
-            {"name": "repo-a"},
-            {"name": "repo-b"},
-            {"name": "repo-c"},
-        ]
-
-        def _mock_get(url, **kwargs):
-            resp = MagicMock()
+        def _mock_github_get(url, token=None):
             if "/repos" in url and "/contents/" not in url:
-                resp.status_code = 200
-                resp.json.return_value = mock_repos
-                resp.raise_for_status = MagicMock()
-            elif "repo-a/contents/registry" in url:
-                resp.status_code = 200
-            elif "repo-b/contents/registry" in url:
-                resp.status_code = 404
-            elif "repo-c/contents/registry" in url:
-                resp.status_code = 200
-            else:
-                resp.status_code = 404
-            return resp
+                return [{"name": "repo-a"}, {"name": "repo-b"}, {"name": "repo-c"}]
+            if "repo-a/contents/registry" in url:
+                return {"name": "registry.json"}
+            if "repo-c/contents/registry" in url:
+                return {"name": "registry.json"}
+            return None  # 404
 
-        with patch("scripts.discover_registries.requests.get", side_effect=_mock_get):
+        with patch("scripts.discover_registries._github_get", side_effect=_mock_github_get):
             result = list_org_repos_with_registry("test-org", token="fake")
 
         assert result == ["repo-a", "repo-c"]
 
     def test_empty_org(self) -> None:
-        def _mock_get(url, **kwargs):
-            resp = MagicMock()
-            resp.status_code = 200
-            resp.json.return_value = []
-            resp.raise_for_status = MagicMock()
-            return resp
-
-        with patch("scripts.discover_registries.requests.get", side_effect=_mock_get):
+        with patch("scripts.discover_registries._github_get", return_value=[]):
             result = list_org_repos_with_registry("empty-org", token="fake")
 
         assert result == []
