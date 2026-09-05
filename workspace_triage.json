@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-05T03:16:36.106465",
+  "generated_at": "2026-09-05T10:03:25.913667",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -19,7 +19,7 @@
     "debito-pubblico-intelligence",
     "open-politica"
   ],
-  "open_prs": 5,
+  "open_prs": 6,
   "prs": [
     {
       "number": 837,
@@ -54,6 +54,13 @@
       "title": "feat(branding): add apply_branding() for Streamlit dashboards",
       "repo": "lab-connectors",
       "url": "https://github.com/dataciviclab/lab-connectors/pull/84",
+      "category": "other"
+    },
+    {
+      "number": 24,
+      "title": "chore(post-merge): aggiorna registry (schedule)",
+      "repo": "rna-aiuti-stato",
+      "url": "https://github.com/dataciviclab/rna-aiuti-stato/pull/24",
       "category": "other"
     }
   ],
@@ -1328,23 +1335,25 @@
       "untracked_files": 0
     }
   },
-  "warnings": [],
+  "warnings": [
+    "Many open PRs: 6"
+  ],
   "radar": {
     "available": true,
-    "generated_at": "2026-09-04T08:01:59.898544+00:00",
-    "probe_date": "2026-09-04",
+    "generated_at": "2026-09-05T07:37:29.584175+00:00",
+    "probe_date": "2026-09-05",
     "sources_total": 36,
-    "green": 33,
-    "yellow": 1,
-    "red": 2,
+    "green": 35,
+    "yellow": 0,
+    "red": 1,
     "persistent_red": 1,
     "sources": [
       {
         "id": "istat_sdmx",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "sdmx",
-        "http_code": "-",
-        "note": "Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
@@ -1389,9 +1398,9 @@
       },
       {
         "id": "dati_camera",
-        "status": "RED",
+        "status": "GREEN",
         "protocol": "sparql",
-        "http_code": "503",
+        "http_code": "200",
         "note": null,
         "red_streak": 0
       },
@@ -1629,22 +1638,6 @@
       }
     ],
     "unhealthy": [
-      {
-        "id": "istat_sdmx",
-        "status": "YELLOW",
-        "protocol": "sdmx",
-        "http_code": "-",
-        "note": "Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
-      {
-        "id": "dati_camera",
-        "status": "RED",
-        "protocol": "sparql",
-        "http_code": "503",
-        "note": null,
-        "red_streak": 0
-      },
       {
         "id": "ispra_linked_data",
         "status": "RED",
