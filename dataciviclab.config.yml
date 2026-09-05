@@ -14,10 +14,11 @@ github_org: dataciviclab
 
 repos:
   - agent-context-builder
-  - dcl-bologna
+  - bilancio-pubblico
   - data-explorer
   - dataciviclab
   - dataset-incubator
+  - dcl-bologna
   - debito-pubblico-intelligence
   - eurostat
   - italia-corpus
@@ -25,13 +26,11 @@ repos:
   - open-conto-annuale
   - open-politica
   - open-siope
+  - patrimonio-territorio
   - rna-aiuti-stato
   - senato-akn
   - source-observatory
   - toolkit
-
-# Hint operativi per agenti — descrivono flussi, non repo o dataset
-# (repo descriptions vengono da GitHub API, dataset da registry.json)
 topics:
   pipeline:
     summary: Ciclo di vita del dato — RAW → CLEAN → MART con toolkit
