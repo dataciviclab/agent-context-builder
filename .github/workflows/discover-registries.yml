@@ -24,16 +24,22 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          set +e
           python scripts/discover_registries.py \
             --org dataciviclab \
             --config dataciviclab.config.yml \
             --token "$GITHUB_TOKEN" \
             --apply
-          # Capture exit code: 0 = no changes, 1 = changes found
-          echo "changes=$?" >> "$GITHUB_OUTPUT"
+          EXIT_CODE=$?
+          set -e
+          if [ "$EXIT_CODE" -eq 1 ]; then
+            echo "changes=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changes=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Create PR if changes found
-        if: steps.discover.outputs.changes == '1'
+        if: steps.discover.outputs.changes == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
