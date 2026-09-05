@@ -1,33 +1,26 @@
 {
-  "generated_at": "2026-09-05T16:00:56.459581",
+  "generated_at": "2026-09-05T16:05:46.405344",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
-    "dataset-incubator",
-    "dataciviclab",
-    "toolkit",
-    "data-explorer",
-    "source-observatory",
-    "lab-connectors",
-    "eurostat",
-    "open-siope",
-    "italia-corpus",
     "dcl-bologna",
+    "data-explorer",
+    "dataciviclab",
+    "dataset-incubator",
+    "debito-pubblico-intelligence",
+    "eurostat",
+    "italia-corpus",
+    "lab-connectors",
     "open-conto-annuale",
+    "open-politica",
+    "open-siope",
     "rna-aiuti-stato",
     "senato-akn",
-    "debito-pubblico-intelligence",
-    "open-politica"
+    "source-observatory",
+    "toolkit"
   ],
-  "open_prs": 5,
+  "open_prs": 4,
   "prs": [
-    {
-      "number": 68,
-      "title": "chore: auto-discover registries (2026-09-05)",
-      "repo": "agent-context-builder",
-      "url": "https://github.com/dataciviclab/agent-context-builder/pull/68",
-      "category": "other"
-    },
     {
       "number": 837,
       "title": "chore: rimuovi candidati bdap duplicati (pagamenti, entrate, spese)",
@@ -65,6 +58,27 @@
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/issues/59",
       "category": "infrastructure"
+    },
+    {
+      "number": 8,
+      "title": "\ud83d\udd17 Cross ANAC sistematico",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/issues/8",
+      "category": "other"
+    },
+    {
+      "number": 6,
+      "title": "\ud83d\udce5 Dataset: Segnalazioni cittadini CZRM (123k, mensile, geo)",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/issues/6",
+      "category": "intake"
+    },
+    {
+      "number": 5,
+      "title": "\ud83d\udce5 Dataset: Eventi cultura (30k, daily, geo)",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/issues/5",
+      "category": "intake"
     },
     {
       "number": 828,
@@ -207,34 +221,6 @@
       "category": "intake"
     },
     {
-      "number": 471,
-      "title": "registry: derive codelists section from support: ids (not codelists/*.csv glob) \u2014 unblocks eurostat CSV removal",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/471",
-      "category": "other"
-    },
-    {
-      "number": 444,
-      "title": "pipeline: plugin SDMX costruisce chiave incompleta (7 dim attese, 5 fornite) + fallback in 302 loop",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/444",
-      "category": "other"
-    },
-    {
-      "number": 426,
-      "title": "pulizia automatica parquet mart non pi\u00f9 dichiarati in dataset.yml",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/426",
-      "category": "other"
-    },
-    {
-      "number": 425,
-      "title": "pipeline: mart_index \u00e8 un indovinello \u2014 sostituire con mart_name",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/425",
-      "category": "other"
-    },
-    {
       "number": 90,
       "title": "dataset: Internet access by NACE and NUTS 2 region (ISOC_R_CI_IN_EN2)",
       "repo": "eurostat",
@@ -263,24 +249,10 @@
       "category": "other"
     },
     {
-      "number": 8,
-      "title": "\ud83d\udd17 Cross ANAC sistematico",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/issues/8",
-      "category": "other"
-    },
-    {
-      "number": 6,
-      "title": "\ud83d\udce5 Dataset: Segnalazioni cittadini CZRM (123k, mensile, geo)",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/issues/6",
-      "category": "intake"
-    },
-    {
-      "number": 5,
-      "title": "\ud83d\udce5 Dataset: Eventi cultura (30k, daily, geo)",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/issues/5",
+      "number": 15,
+      "title": "intake: senato_sindisp \u2014 Sindacato ispettivo del Senato (interrogazioni, interpellanze, mozioni)",
+      "repo": "open-politica",
+      "url": "https://github.com/dataciviclab/open-politica/issues/15",
       "category": "intake"
     },
     {
@@ -291,15 +263,106 @@
       "category": "other"
     },
     {
-      "number": 15,
-      "title": "intake: senato_sindisp \u2014 Sindacato ispettivo del Senato (interrogazioni, interpellanze, mozioni)",
-      "repo": "open-politica",
-      "url": "https://github.com/dataciviclab/open-politica/issues/15",
-      "category": "intake"
+      "number": 471,
+      "title": "registry: derive codelists section from support: ids (not codelists/*.csv glob) \u2014 unblocks eurostat CSV removal",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/471",
+      "category": "other"
+    },
+    {
+      "number": 444,
+      "title": "pipeline: plugin SDMX costruisce chiave incompleta (7 dim attese, 5 fornite) + fallback in 302 loop",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/444",
+      "category": "other"
+    },
+    {
+      "number": 426,
+      "title": "pulizia automatica parquet mart non pi\u00f9 dichiarati in dataset.yml",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/426",
+      "category": "other"
+    },
+    {
+      "number": 425,
+      "title": "pipeline: mart_index \u00e8 un indovinello \u2014 sostituire con mart_name",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/425",
+      "category": "other"
     }
   ],
   "open_discussions": 128,
   "discussions": [
+    {
+      "number": 47,
+      "title": "\ud83e\udde9 Il blocco economia di Bologna: la fragilit\u00e0 segue il reddito (-0,76), ma il commercio sta nel centro \u2014 ovunque",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/47",
+      "category": "Idee analisi"
+    },
+    {
+      "number": 44,
+      "title": "\ud83c\udf5d Il tessuto commerciale di Bologna: 1 bar su 24 sopravvive agli anni '90 \u2014 non desertificazione, ma ricambio",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/44",
+      "category": "Idee analisi"
+    },
+    {
+      "number": 2,
+      "title": "\ud83d\udcca I quartieri di Bologna invecchiano a velocit\u00e0 diverse \u2014 dati 1986\u20132024",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/2",
+      "category": "Idee analisi"
+    },
+    {
+      "number": 36,
+      "title": "\ud83d\udeb6 Bologna a piedi: il 2024 anno record, il weekend batte il feriale \u2014 e Piazza Maggiore domina",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/36",
+      "category": "Idee analisi"
+    },
+    {
+      "number": 38,
+      "title": "\ud83d\udcb0 Il reddito a Bologna per area: la collina contro la periferia (2,3:1) \u2014 e Roveri che cambia volto",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/38",
+      "category": "Idee analisi"
+    },
+    {
+      "number": 29,
+      "title": "\ud83d\udee3\ufe0f Fuori dalla cerchia: il traffico cala (-11,7%) ma la met\u00e0 che in ZTL \u2014 e 120 spire sono state spente",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/29",
+      "category": "Idee analisi"
+    },
+    {
+      "number": 26,
+      "title": "\ud83c\udf21\ufe0f Bologna si scalda: +1,25\u00b0C in 25 anni \u2014 ma l'afa \u00e8 raddoppiata",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/26",
+      "category": "Idee analisi"
+    },
+    {
+      "number": 23,
+      "title": "\ud83d\ude97 Meno auto in ZTL: il traffico \u00e8 calato del 22% \u2014 ma \u00e8 sparito o si \u00e8 spostato?",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/23",
+      "category": "Idee analisi"
+    },
+    {
+      "number": 3,
+      "title": "\ud83d\udce1 Segnalazioni dataset \u2014 quali dati mancano?",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/3",
+      "category": "Segnalazioni dataset"
+    },
+    {
+      "number": 1,
+      "title": "\ud83c\udfaf Benvenuti \u2014 questo \u00e8 il posto per i dati di Bologna",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/1",
+      "category": "Announcements"
+    },
     {
       "number": 413,
       "title": "PNRR Progetti \u2014 11 domande su 280mila progetti e 150 miliardi del Piano (Italia Domani)",
@@ -959,6 +1022,62 @@
       "category": "Announcements"
     },
     {
+      "number": 15,
+      "title": "La \"dittatura del decreto\"? 50 anni di decretazione d'urgenza in Italia",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/15",
+      "category": "Analisi"
+    },
+    {
+      "number": 16,
+      "title": "Finding: Recepimento direttive UE \u2014 ritardo stabile a 3 anni (ma copertura CELEX ancora bassa)",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/16",
+      "category": "Analisi"
+    },
+    {
+      "number": 30,
+      "title": "Data di pubblicazione in Gazzetta Ufficiale \u2014 estrarla dal body",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/30",
+      "category": "Idee"
+    },
+    {
+      "number": 22,
+      "title": "Dati dinamici via API: l'obbligo del D.Lgs 200/2021 \u00e8 realt\u00e0 o lettera morta?",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/22",
+      "category": "Idee"
+    },
+    {
+      "number": 21,
+      "title": "Art. 52 CAD: 20 anni di \"open data by default\" in Italia \u2014 missione compiuta o lettera morta?",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/21",
+      "category": "Analisi"
+    },
+    {
+      "number": 20,
+      "title": "FOIA italiano: uno strumento concreto per chiedere dataset alla PA?",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/20",
+      "category": "Idee"
+    },
+    {
+      "number": 18,
+      "title": "Cosa ci dice (e cosa non ci dice) italia-corpus? Limiti e potenziale del dataset",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/18",
+      "category": "Generale"
+    },
+    {
+      "number": 17,
+      "title": "Atti \"omnibus\": quando lo stesso decreto fa tutto (e il contrario di tutto)",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/17",
+      "category": "Idee"
+    },
+    {
       "number": 68,
       "title": "Manutenzione strade e scuole: stiamo lasciando cadere il patrimonio pubblico?",
       "repo": "open-siope",
@@ -1069,209 +1188,11 @@
       "repo": "open-siope",
       "url": "https://github.com/dataciviclab/open-siope/discussions/43",
       "category": "Sanit\u00e0 (SAN)"
-    },
-    {
-      "number": 15,
-      "title": "La \"dittatura del decreto\"? 50 anni di decretazione d'urgenza in Italia",
-      "repo": "italia-corpus",
-      "url": "https://github.com/dataciviclab/italia-corpus/discussions/15",
-      "category": "Analisi"
-    },
-    {
-      "number": 16,
-      "title": "Finding: Recepimento direttive UE \u2014 ritardo stabile a 3 anni (ma copertura CELEX ancora bassa)",
-      "repo": "italia-corpus",
-      "url": "https://github.com/dataciviclab/italia-corpus/discussions/16",
-      "category": "Analisi"
-    },
-    {
-      "number": 30,
-      "title": "Data di pubblicazione in Gazzetta Ufficiale \u2014 estrarla dal body",
-      "repo": "italia-corpus",
-      "url": "https://github.com/dataciviclab/italia-corpus/discussions/30",
-      "category": "Idee"
-    },
-    {
-      "number": 22,
-      "title": "Dati dinamici via API: l'obbligo del D.Lgs 200/2021 \u00e8 realt\u00e0 o lettera morta?",
-      "repo": "italia-corpus",
-      "url": "https://github.com/dataciviclab/italia-corpus/discussions/22",
-      "category": "Idee"
-    },
-    {
-      "number": 21,
-      "title": "Art. 52 CAD: 20 anni di \"open data by default\" in Italia \u2014 missione compiuta o lettera morta?",
-      "repo": "italia-corpus",
-      "url": "https://github.com/dataciviclab/italia-corpus/discussions/21",
-      "category": "Analisi"
-    },
-    {
-      "number": 20,
-      "title": "FOIA italiano: uno strumento concreto per chiedere dataset alla PA?",
-      "repo": "italia-corpus",
-      "url": "https://github.com/dataciviclab/italia-corpus/discussions/20",
-      "category": "Idee"
-    },
-    {
-      "number": 18,
-      "title": "Cosa ci dice (e cosa non ci dice) italia-corpus? Limiti e potenziale del dataset",
-      "repo": "italia-corpus",
-      "url": "https://github.com/dataciviclab/italia-corpus/discussions/18",
-      "category": "Generale"
-    },
-    {
-      "number": 17,
-      "title": "Atti \"omnibus\": quando lo stesso decreto fa tutto (e il contrario di tutto)",
-      "repo": "italia-corpus",
-      "url": "https://github.com/dataciviclab/italia-corpus/discussions/17",
-      "category": "Idee"
-    },
-    {
-      "number": 47,
-      "title": "\ud83e\udde9 Il blocco economia di Bologna: la fragilit\u00e0 segue il reddito (-0,76), ma il commercio sta nel centro \u2014 ovunque",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/47",
-      "category": "Idee analisi"
-    },
-    {
-      "number": 44,
-      "title": "\ud83c\udf5d Il tessuto commerciale di Bologna: 1 bar su 24 sopravvive agli anni '90 \u2014 non desertificazione, ma ricambio",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/44",
-      "category": "Idee analisi"
-    },
-    {
-      "number": 2,
-      "title": "\ud83d\udcca I quartieri di Bologna invecchiano a velocit\u00e0 diverse \u2014 dati 1986\u20132024",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/2",
-      "category": "Idee analisi"
-    },
-    {
-      "number": 36,
-      "title": "\ud83d\udeb6 Bologna a piedi: il 2024 anno record, il weekend batte il feriale \u2014 e Piazza Maggiore domina",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/36",
-      "category": "Idee analisi"
-    },
-    {
-      "number": 38,
-      "title": "\ud83d\udcb0 Il reddito a Bologna per area: la collina contro la periferia (2,3:1) \u2014 e Roveri che cambia volto",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/38",
-      "category": "Idee analisi"
-    },
-    {
-      "number": 29,
-      "title": "\ud83d\udee3\ufe0f Fuori dalla cerchia: il traffico cala (-11,7%) ma la met\u00e0 che in ZTL \u2014 e 120 spire sono state spente",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/29",
-      "category": "Idee analisi"
-    },
-    {
-      "number": 26,
-      "title": "\ud83c\udf21\ufe0f Bologna si scalda: +1,25\u00b0C in 25 anni \u2014 ma l'afa \u00e8 raddoppiata",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/26",
-      "category": "Idee analisi"
-    },
-    {
-      "number": 23,
-      "title": "\ud83d\ude97 Meno auto in ZTL: il traffico \u00e8 calato del 22% \u2014 ma \u00e8 sparito o si \u00e8 spostato?",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/23",
-      "category": "Idee analisi"
-    },
-    {
-      "number": 3,
-      "title": "\ud83d\udce1 Segnalazioni dataset \u2014 quali dati mancano?",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/3",
-      "category": "Segnalazioni dataset"
-    },
-    {
-      "number": 1,
-      "title": "\ud83c\udfaf Benvenuti \u2014 questo \u00e8 il posto per i dati di Bologna",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/1",
-      "category": "Announcements"
     }
   ],
   "github_fetch_errors": {},
   "git_state": {
     "agent-context-builder": {
-      "available": false,
-      "reason": "local_disabled",
-      "dirty": null,
-      "current_branch": null,
-      "branches_ahead": [],
-      "untracked_files": 0
-    },
-    "dataset-incubator": {
-      "available": false,
-      "reason": "local_disabled",
-      "dirty": null,
-      "current_branch": null,
-      "branches_ahead": [],
-      "untracked_files": 0
-    },
-    "dataciviclab": {
-      "available": false,
-      "reason": "local_disabled",
-      "dirty": null,
-      "current_branch": null,
-      "branches_ahead": [],
-      "untracked_files": 0
-    },
-    "toolkit": {
-      "available": false,
-      "reason": "local_disabled",
-      "dirty": null,
-      "current_branch": null,
-      "branches_ahead": [],
-      "untracked_files": 0
-    },
-    "data-explorer": {
-      "available": false,
-      "reason": "local_disabled",
-      "dirty": null,
-      "current_branch": null,
-      "branches_ahead": [],
-      "untracked_files": 0
-    },
-    "source-observatory": {
-      "available": false,
-      "reason": "local_disabled",
-      "dirty": null,
-      "current_branch": null,
-      "branches_ahead": [],
-      "untracked_files": 0
-    },
-    "lab-connectors": {
-      "available": false,
-      "reason": "local_disabled",
-      "dirty": null,
-      "current_branch": null,
-      "branches_ahead": [],
-      "untracked_files": 0
-    },
-    "eurostat": {
-      "available": false,
-      "reason": "local_disabled",
-      "dirty": null,
-      "current_branch": null,
-      "branches_ahead": [],
-      "untracked_files": 0
-    },
-    "open-siope": {
-      "available": false,
-      "reason": "local_disabled",
-      "dirty": null,
-      "current_branch": null,
-      "branches_ahead": [],
-      "untracked_files": 0
-    },
-    "italia-corpus": {
       "available": false,
       "reason": "local_disabled",
       "dirty": null,
@@ -1287,7 +1208,79 @@
       "branches_ahead": [],
       "untracked_files": 0
     },
+    "data-explorer": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
+    "dataciviclab": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
+    "dataset-incubator": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
+    "debito-pubblico-intelligence": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
+    "eurostat": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
+    "italia-corpus": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
+    "lab-connectors": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
     "open-conto-annuale": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
+    "open-politica": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
+    "open-siope": {
       "available": false,
       "reason": "local_disabled",
       "dirty": null,
@@ -1311,7 +1304,7 @@
       "branches_ahead": [],
       "untracked_files": 0
     },
-    "debito-pubblico-intelligence": {
+    "source-observatory": {
       "available": false,
       "reason": "local_disabled",
       "dirty": null,
@@ -1319,7 +1312,7 @@
       "branches_ahead": [],
       "untracked_files": 0
     },
-    "open-politica": {
+    "toolkit": {
       "available": false,
       "reason": "local_disabled",
       "dirty": null,
@@ -1660,6 +1653,257 @@
   "registry_summary": [
     {
       "repo": "agent-context-builder",
+      "available": false,
+      "source_repo": "",
+      "updated_at": "",
+      "datasets": 0,
+      "marts": 0,
+      "signals": 0,
+      "codelists": 0,
+      "entities": 0,
+      "gcs": 0,
+      "reason": "registry_not_found"
+    },
+    {
+      "repo": "dcl-bologna",
+      "available": true,
+      "source_repo": "dataciviclab/dcl-bologna",
+      "updated_at": "2026-09-03",
+      "datasets": 15,
+      "marts": 29,
+      "signals": 15,
+      "codelists": 0,
+      "entities": 3,
+      "gcs": 15,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "bolognawifi_matrice",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "bolognawifi_matrice",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T172548Z_502df4d3",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T17:25:48.330581+00:00",
+            "finished_at": "2026-09-03T17:27:55.786181+00:00"
+          }
+        },
+        {
+          "id": "centraline_aria",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "centraline_aria",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T172756Z_b0202ffc",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T17:27:56.842428+00:00",
+            "finished_at": "2026-09-03T17:28:03.696252+00:00"
+          }
+        },
+        {
+          "id": "colonnine_bici",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "colonnine_bici",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T172804Z_32937f1a",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T17:28:04.308177+00:00",
+            "finished_at": "2026-09-03T17:29:13.950208+00:00"
+          }
+        },
+        {
+          "id": "convivenze",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "convivenze",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T172914Z_04fcdff0",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T17:29:14.626743+00:00",
+            "finished_at": "2026-09-03T17:29:24.210872+00:00"
+          }
+        },
+        {
+          "id": "emigrati_destinazione",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "emigrati_destinazione",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T172924Z_a5b5a7d3",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T17:29:24.764916+00:00",
+            "finished_at": "2026-09-03T17:29:33.195360+00:00"
+          }
+        },
+        {
+          "id": "esercizi_somministrazione",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "esercizi_somministrazione",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T172933Z_9bd06f60",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T17:29:33.827466+00:00",
+            "finished_at": "2026-09-03T17:29:38.218828+00:00"
+          }
+        },
+        {
+          "id": "famiglie_tipologia",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "famiglie_tipologia",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T172938Z_c1756c79",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T17:29:38.929885+00:00",
+            "finished_at": "2026-09-03T17:29:45.722688+00:00"
+          }
+        },
+        {
+          "id": "incarichi",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "incarichi",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T172946Z_b8a5eaab",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T17:29:46.281208+00:00",
+            "finished_at": "2026-09-03T17:29:47.774158+00:00"
+          }
+        },
+        {
+          "id": "indici_fragilita",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "indici_fragilita",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T172948Z_4a45c1b1",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T17:29:48.373238+00:00",
+            "finished_at": "2026-09-03T17:29:49.241288+00:00"
+          }
+        },
+        {
+          "id": "popolazione_quartiere",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "popolazione_quartiere",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T172949Z_63116a81",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T17:29:49.797731+00:00",
+            "finished_at": "2026-09-03T17:30:19.542166+00:00"
+          }
+        },
+        {
+          "id": "precipitazioni_bologna",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "precipitazioni_bologna",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T173020Z_992ae566",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T17:30:20.204968+00:00",
+            "finished_at": "2026-09-03T17:30:22.210218+00:00"
+          }
+        },
+        {
+          "id": "reddito_mediano",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "reddito_mediano",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T173022Z_1b1b1c16",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T17:30:22.826370+00:00",
+            "finished_at": "2026-09-03T17:30:23.569025+00:00"
+          }
+        },
+        {
+          "id": "spire_traffico",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "spire_traffico",
+          "detail": "anni 2022-2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T173416Z_6ab5eb9f",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T17:34:16.375103+00:00",
+            "finished_at": "2026-09-03T17:35:29.999386+00:00"
+          }
+        },
+        {
+          "id": "temperature_bologna",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "temperature_bologna",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T173531Z_6ccb0e73",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T17:35:31.241408+00:00",
+            "finished_at": "2026-09-03T17:36:27.480312+00:00"
+          }
+        },
+        {
+          "id": "varchi_ztl",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "varchi_ztl",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T181314Z_797e0776",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T18:13:14.111202+00:00",
+            "finished_at": "2026-09-03T18:13:32.475710+00:00"
+          }
+        }
+      ]
+    },
+    {
+      "repo": "data-explorer",
+      "available": false,
+      "source_repo": "",
+      "updated_at": "",
+      "datasets": 0,
+      "marts": 0,
+      "signals": 0,
+      "codelists": 0,
+      "entities": 0,
+      "gcs": 0,
+      "reason": "registry_not_found"
+    },
+    {
+      "repo": "dataciviclab",
       "available": false,
       "source_repo": "",
       "updated_at": "",
@@ -2723,69 +2967,131 @@
       ]
     },
     {
-      "repo": "dataciviclab",
-      "available": false,
-      "source_repo": "",
-      "updated_at": "",
-      "datasets": 0,
-      "marts": 0,
-      "signals": 0,
+      "repo": "debito-pubblico-intelligence",
+      "available": true,
+      "source_repo": "dataciviclab/debito-pubblico-intelligence",
+      "updated_at": "2026-09-04",
+      "datasets": 8,
+      "marts": 12,
+      "signals": 8,
       "codelists": 0,
-      "entities": 0,
-      "gcs": 0,
-      "reason": "registry_not_found"
-    },
-    {
-      "repo": "toolkit",
-      "available": false,
-      "source_repo": "",
-      "updated_at": "",
-      "datasets": 0,
-      "marts": 0,
-      "signals": 0,
-      "codelists": 0,
-      "entities": 0,
-      "gcs": 0,
-      "reason": "registry_not_found"
-    },
-    {
-      "repo": "data-explorer",
-      "available": false,
-      "source_repo": "",
-      "updated_at": "",
-      "datasets": 0,
-      "marts": 0,
-      "signals": 0,
-      "codelists": 0,
-      "entities": 0,
-      "gcs": 0,
-      "reason": "registry_not_found"
-    },
-    {
-      "repo": "source-observatory",
-      "available": false,
-      "source_repo": "",
-      "updated_at": "",
-      "datasets": 0,
-      "marts": 0,
-      "signals": 0,
-      "codelists": 0,
-      "entities": 0,
-      "gcs": 0,
-      "reason": "registry_not_found"
-    },
-    {
-      "repo": "lab-connectors",
-      "available": false,
-      "source_repo": "",
-      "updated_at": "",
-      "datasets": 0,
-      "marts": 0,
-      "signals": 0,
-      "codelists": 0,
-      "entities": 0,
-      "gcs": 0,
-      "reason": "registry_not_found"
+      "entities": 2,
+      "gcs": 8,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "eurostat_debito_pil",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_debito_pil",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260904T131542Z_9a3841c6",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-04T13:15:42.207353+00:00",
+            "finished_at": "2026-09-04T13:15:43.775304+00:00"
+          }
+        },
+        {
+          "id": "eurostat_rendimento_10y",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_rendimento_10y",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260904T131543Z_01b10274",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-04T13:15:43.813542+00:00",
+            "finished_at": "2026-09-04T13:15:45.620615+00:00"
+          }
+        },
+        {
+          "id": "fpi_debito_pa",
+          "source_id": "banca_ditalia",
+          "status": "ok",
+          "label": "fpi_debito_pa",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260904T131545Z_2902cef2",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-04T13:15:45.660580+00:00",
+            "finished_at": "2026-09-04T13:15:48.788366+00:00"
+          }
+        },
+        {
+          "id": "mef_composizione",
+          "source_id": "mef_tesoro",
+          "status": "ok",
+          "label": "mef_composizione",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260904T131548Z_b458d1f1",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-04T13:15:48.848162+00:00",
+            "finished_at": "2026-09-04T13:15:52.190111+00:00"
+          }
+        },
+        {
+          "id": "mef_scadenze_isin",
+          "source_id": "mef_tesoro",
+          "status": "ok",
+          "label": "mef_scadenze_isin",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260904T131552Z_8b02d1bb",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-04T13:15:52.226851+00:00",
+            "finished_at": "2026-09-04T13:15:54.525709+00:00"
+          }
+        },
+        {
+          "id": "mef_titoli_12m",
+          "source_id": "mef_tesoro",
+          "status": "ok",
+          "label": "mef_titoli_12m",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260904T131554Z_87159110",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-04T13:15:54.569218+00:00",
+            "finished_at": "2026-09-04T13:15:56.674970+00:00"
+          }
+        },
+        {
+          "id": "mef_vita_media",
+          "source_id": "mef_tesoro",
+          "status": "ok",
+          "label": "mef_vita_media",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260904T131556Z_d9c32961",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-04T13:15:56.710501+00:00",
+            "finished_at": "2026-09-04T13:15:58.263807+00:00"
+          }
+        },
+        {
+          "id": "ocpi_serie_storiche",
+          "source_id": "ocpi",
+          "status": "ok",
+          "label": "ocpi_serie_storiche",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260904T131558Z_29bfa88e",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-04T13:15:58.299309+00:00",
+            "finished_at": "2026-09-04T13:16:00.618062+00:00"
+          }
+        }
+      ]
     },
     {
       "repo": "eurostat",
@@ -3223,161 +3529,6 @@
       ]
     },
     {
-      "repo": "open-siope",
-      "available": true,
-      "source_repo": "dataciviclab/open-siope",
-      "updated_at": "2026-09-05",
-      "datasets": 10,
-      "marts": 22,
-      "signals": 10,
-      "codelists": 0,
-      "entities": 6,
-      "gcs": 10,
-      "reason": "",
-      "signals_detail": [
-        {
-          "id": "siope_bilancio_unificato",
-          "source_id": "siope",
-          "status": "ok",
-          "label": "siope_bilancio_unificato",
-          "detail": "anni 2021-2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260905T103327Z_ca244715",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-05T10:33:27.977106+00:00",
-            "finished_at": "2026-09-05T10:33:44.361169+00:00"
-          }
-        },
-        {
-          "id": "siope_entrate",
-          "source_id": "siope",
-          "status": "ok",
-          "label": "siope_entrate",
-          "detail": "anni 2021-2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260905T101939Z_d78d4052",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-05T10:19:39.880581+00:00",
-            "finished_at": "2026-09-05T10:20:19.697077+00:00"
-          }
-        },
-        {
-          "id": "siope_uscite",
-          "source_id": "siope",
-          "status": "ok",
-          "label": "siope_uscite",
-          "detail": "anni 2021-2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260905T103004Z_dc9b3429",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-05T10:30:04.740374+00:00",
-            "finished_at": "2026-09-05T10:31:32.281698+00:00"
-          }
-        },
-        {
-          "id": "siope_anag_codgest_entrate_seed",
-          "source_id": "siope",
-          "status": "ok",
-          "label": "siope_anag_codgest_entrate_seed",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260905T101442Z_62c0e57d",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-05T10:14:42.381685+00:00",
-            "finished_at": "2026-09-05T10:14:44.740090+00:00"
-          }
-        },
-        {
-          "id": "siope_anag_codgest_uscite_seed",
-          "source_id": "siope",
-          "status": "ok",
-          "label": "siope_anag_codgest_uscite_seed",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260905T101445Z_253b555a",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-05T10:14:45.985693+00:00",
-            "finished_at": "2026-09-05T10:14:48.199040+00:00"
-          }
-        },
-        {
-          "id": "siope_anag_comparti_seed",
-          "source_id": "siope",
-          "status": "ok",
-          "label": "siope_anag_comparti_seed",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260905T101431Z_2eeabc51",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-05T10:14:31.486337+00:00",
-            "finished_at": "2026-09-05T10:14:34.362430+00:00"
-          }
-        },
-        {
-          "id": "siope_anag_comuni_seed",
-          "source_id": "siope",
-          "status": "ok",
-          "label": "siope_anag_comuni_seed",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260905T101452Z_981129f7",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-05T10:14:52.597139+00:00",
-            "finished_at": "2026-09-05T10:14:54.756970+00:00"
-          }
-        },
-        {
-          "id": "siope_anag_enti_seed",
-          "source_id": "siope",
-          "status": "ok",
-          "label": "siope_anag_enti_seed",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260905T101439Z_516248cc",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-05T10:14:39.054480+00:00",
-            "finished_at": "2026-09-05T10:14:41.461108+00:00"
-          }
-        },
-        {
-          "id": "siope_anag_reg_prov_seed",
-          "source_id": "siope",
-          "status": "ok",
-          "label": "siope_anag_reg_prov_seed",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260905T101449Z_3395c434",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-05T10:14:49.166684+00:00",
-            "finished_at": "2026-09-05T10:14:51.630749+00:00"
-          }
-        },
-        {
-          "id": "siope_anag_sottocomparti_seed",
-          "source_id": "siope",
-          "status": "ok",
-          "label": "siope_anag_sottocomparti_seed",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260905T101435Z_2948fdf4",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-05T10:14:35.273339+00:00",
-            "finished_at": "2026-09-05T10:14:37.865579+00:00"
-          }
-        }
-      ]
-    },
-    {
       "repo": "italia-corpus",
       "available": false,
       "source_repo": "",
@@ -3391,229 +3542,17 @@
       "reason": "registry_not_found"
     },
     {
-      "repo": "dcl-bologna",
-      "available": true,
-      "source_repo": "dataciviclab/dcl-bologna",
-      "updated_at": "2026-09-03",
-      "datasets": 15,
-      "marts": 29,
-      "signals": 15,
+      "repo": "lab-connectors",
+      "available": false,
+      "source_repo": "",
+      "updated_at": "",
+      "datasets": 0,
+      "marts": 0,
+      "signals": 0,
       "codelists": 0,
-      "entities": 3,
-      "gcs": 15,
-      "reason": "",
-      "signals_detail": [
-        {
-          "id": "bolognawifi_matrice",
-          "source_id": "comune_bologna_opendata",
-          "status": "ok",
-          "label": "bolognawifi_matrice",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260903T172548Z_502df4d3",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-03T17:25:48.330581+00:00",
-            "finished_at": "2026-09-03T17:27:55.786181+00:00"
-          }
-        },
-        {
-          "id": "centraline_aria",
-          "source_id": "comune_bologna_opendata",
-          "status": "ok",
-          "label": "centraline_aria",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260903T172756Z_b0202ffc",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-03T17:27:56.842428+00:00",
-            "finished_at": "2026-09-03T17:28:03.696252+00:00"
-          }
-        },
-        {
-          "id": "colonnine_bici",
-          "source_id": "comune_bologna_opendata",
-          "status": "ok",
-          "label": "colonnine_bici",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260903T172804Z_32937f1a",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-03T17:28:04.308177+00:00",
-            "finished_at": "2026-09-03T17:29:13.950208+00:00"
-          }
-        },
-        {
-          "id": "convivenze",
-          "source_id": "comune_bologna_opendata",
-          "status": "ok",
-          "label": "convivenze",
-          "detail": "anno 2024 \u2014 mart: si",
-          "run": {
-            "run_id": "20260903T172914Z_04fcdff0",
-            "year": 2024,
-            "status": "SUCCESS",
-            "started_at": "2026-09-03T17:29:14.626743+00:00",
-            "finished_at": "2026-09-03T17:29:24.210872+00:00"
-          }
-        },
-        {
-          "id": "emigrati_destinazione",
-          "source_id": "comune_bologna_opendata",
-          "status": "ok",
-          "label": "emigrati_destinazione",
-          "detail": "anno 2024 \u2014 mart: si",
-          "run": {
-            "run_id": "20260903T172924Z_a5b5a7d3",
-            "year": 2024,
-            "status": "SUCCESS",
-            "started_at": "2026-09-03T17:29:24.764916+00:00",
-            "finished_at": "2026-09-03T17:29:33.195360+00:00"
-          }
-        },
-        {
-          "id": "esercizi_somministrazione",
-          "source_id": "comune_bologna_opendata",
-          "status": "ok",
-          "label": "esercizi_somministrazione",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260903T172933Z_9bd06f60",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-03T17:29:33.827466+00:00",
-            "finished_at": "2026-09-03T17:29:38.218828+00:00"
-          }
-        },
-        {
-          "id": "famiglie_tipologia",
-          "source_id": "comune_bologna_opendata",
-          "status": "ok",
-          "label": "famiglie_tipologia",
-          "detail": "anno 2024 \u2014 mart: si",
-          "run": {
-            "run_id": "20260903T172938Z_c1756c79",
-            "year": 2024,
-            "status": "SUCCESS",
-            "started_at": "2026-09-03T17:29:38.929885+00:00",
-            "finished_at": "2026-09-03T17:29:45.722688+00:00"
-          }
-        },
-        {
-          "id": "incarichi",
-          "source_id": "comune_bologna_opendata",
-          "status": "ok",
-          "label": "incarichi",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260903T172946Z_b8a5eaab",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-03T17:29:46.281208+00:00",
-            "finished_at": "2026-09-03T17:29:47.774158+00:00"
-          }
-        },
-        {
-          "id": "indici_fragilita",
-          "source_id": "comune_bologna_opendata",
-          "status": "ok",
-          "label": "indici_fragilita",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260903T172948Z_4a45c1b1",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-03T17:29:48.373238+00:00",
-            "finished_at": "2026-09-03T17:29:49.241288+00:00"
-          }
-        },
-        {
-          "id": "popolazione_quartiere",
-          "source_id": "comune_bologna_opendata",
-          "status": "ok",
-          "label": "popolazione_quartiere",
-          "detail": "anno 2024 \u2014 mart: si",
-          "run": {
-            "run_id": "20260903T172949Z_63116a81",
-            "year": 2024,
-            "status": "SUCCESS",
-            "started_at": "2026-09-03T17:29:49.797731+00:00",
-            "finished_at": "2026-09-03T17:30:19.542166+00:00"
-          }
-        },
-        {
-          "id": "precipitazioni_bologna",
-          "source_id": "comune_bologna_opendata",
-          "status": "ok",
-          "label": "precipitazioni_bologna",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260903T173020Z_992ae566",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-03T17:30:20.204968+00:00",
-            "finished_at": "2026-09-03T17:30:22.210218+00:00"
-          }
-        },
-        {
-          "id": "reddito_mediano",
-          "source_id": "comune_bologna_opendata",
-          "status": "ok",
-          "label": "reddito_mediano",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260903T173022Z_1b1b1c16",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-03T17:30:22.826370+00:00",
-            "finished_at": "2026-09-03T17:30:23.569025+00:00"
-          }
-        },
-        {
-          "id": "spire_traffico",
-          "source_id": "comune_bologna_opendata",
-          "status": "ok",
-          "label": "spire_traffico",
-          "detail": "anni 2022-2025 \u2014 mart: si",
-          "run": {
-            "run_id": "20260903T173416Z_6ab5eb9f",
-            "year": 2025,
-            "status": "SUCCESS",
-            "started_at": "2026-09-03T17:34:16.375103+00:00",
-            "finished_at": "2026-09-03T17:35:29.999386+00:00"
-          }
-        },
-        {
-          "id": "temperature_bologna",
-          "source_id": "comune_bologna_opendata",
-          "status": "ok",
-          "label": "temperature_bologna",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260903T173531Z_6ccb0e73",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-03T17:35:31.241408+00:00",
-            "finished_at": "2026-09-03T17:36:27.480312+00:00"
-          }
-        },
-        {
-          "id": "varchi_ztl",
-          "source_id": "comune_bologna_opendata",
-          "status": "ok",
-          "label": "varchi_ztl",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260903T181314Z_797e0776",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-03T18:13:14.111202+00:00",
-            "finished_at": "2026-09-03T18:13:32.475710+00:00"
-          }
-        }
-      ]
+      "entities": 0,
+      "gcs": 0,
+      "reason": "registry_not_found"
     },
     {
       "repo": "open-conto-annuale",
@@ -3948,233 +3887,6 @@
             "status": "SUCCESS",
             "started_at": "2026-09-02T20:00:44.202990+00:00",
             "finished_at": "2026-09-02T20:00:44.619458+00:00"
-          }
-        }
-      ]
-    },
-    {
-      "repo": "rna-aiuti-stato",
-      "available": true,
-      "source_repo": "dataciviclab/rna-aiuti-stato",
-      "updated_at": "2026-09-05",
-      "datasets": 2,
-      "marts": 11,
-      "signals": 2,
-      "codelists": 0,
-      "entities": 4,
-      "gcs": 2,
-      "reason": "",
-      "signals_detail": [
-        {
-          "id": "rna_aiuti_stato",
-          "source_id": "mimit_rna",
-          "status": "ok",
-          "label": "rna_aiuti_stato",
-          "detail": "anni 2017-2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260905T094950Z_7e13ee38",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-05T09:49:50.065452+00:00",
-            "finished_at": "2026-09-05T09:49:55.595752+00:00"
-          }
-        },
-        {
-          "id": "rna_misure",
-          "source_id": "mimit_rna",
-          "status": "ok",
-          "label": "rna_misure",
-          "detail": "anno 2027 \u2014 mart: si",
-          "run": {
-            "run_id": "20260905T094956Z_041038c1",
-            "year": 2027,
-            "status": "SUCCESS",
-            "started_at": "2026-09-05T09:49:56.215714+00:00",
-            "finished_at": "2026-09-05T09:49:56.666560+00:00"
-          }
-        }
-      ]
-    },
-    {
-      "repo": "senato-akn",
-      "available": true,
-      "source_repo": "dataciviclab/senato-akn",
-      "updated_at": "2026-09-03",
-      "datasets": 3,
-      "marts": 5,
-      "signals": 3,
-      "codelists": 0,
-      "entities": 2,
-      "gcs": 3,
-      "reason": "",
-      "signals_detail": [
-        {
-          "id": "senato_corpus",
-          "source_id": "senato_akn",
-          "status": "ok",
-          "label": "senato_corpus",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260903T150700Z_ba30e94a",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-03T15:07:00.266808+00:00",
-            "finished_at": "2026-09-03T15:07:00.535727+00:00"
-          }
-        },
-        {
-          "id": "senato_dibattito",
-          "source_id": "senato_akn",
-          "status": "ok",
-          "label": "senato_dibattito",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260903T150700Z_992d3bf2",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-03T15:07:00.829588+00:00",
-            "finished_at": "2026-09-03T15:07:02.676440+00:00"
-          }
-        },
-        {
-          "id": "senato_emendamenti",
-          "source_id": "senato_akn",
-          "status": "ok",
-          "label": "senato_emendamenti",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260903T150703Z_e05d2569",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-03T15:07:03.088704+00:00",
-            "finished_at": "2026-09-03T15:07:03.991979+00:00"
-          }
-        }
-      ]
-    },
-    {
-      "repo": "debito-pubblico-intelligence",
-      "available": true,
-      "source_repo": "dataciviclab/debito-pubblico-intelligence",
-      "updated_at": "2026-09-04",
-      "datasets": 8,
-      "marts": 12,
-      "signals": 8,
-      "codelists": 0,
-      "entities": 2,
-      "gcs": 8,
-      "reason": "",
-      "signals_detail": [
-        {
-          "id": "eurostat_debito_pil",
-          "source_id": "eurostat",
-          "status": "ok",
-          "label": "eurostat_debito_pil",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260904T131542Z_9a3841c6",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-04T13:15:42.207353+00:00",
-            "finished_at": "2026-09-04T13:15:43.775304+00:00"
-          }
-        },
-        {
-          "id": "eurostat_rendimento_10y",
-          "source_id": "eurostat",
-          "status": "ok",
-          "label": "eurostat_rendimento_10y",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260904T131543Z_01b10274",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-04T13:15:43.813542+00:00",
-            "finished_at": "2026-09-04T13:15:45.620615+00:00"
-          }
-        },
-        {
-          "id": "fpi_debito_pa",
-          "source_id": "banca_ditalia",
-          "status": "ok",
-          "label": "fpi_debito_pa",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260904T131545Z_2902cef2",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-04T13:15:45.660580+00:00",
-            "finished_at": "2026-09-04T13:15:48.788366+00:00"
-          }
-        },
-        {
-          "id": "mef_composizione",
-          "source_id": "mef_tesoro",
-          "status": "ok",
-          "label": "mef_composizione",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260904T131548Z_b458d1f1",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-04T13:15:48.848162+00:00",
-            "finished_at": "2026-09-04T13:15:52.190111+00:00"
-          }
-        },
-        {
-          "id": "mef_scadenze_isin",
-          "source_id": "mef_tesoro",
-          "status": "ok",
-          "label": "mef_scadenze_isin",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260904T131552Z_8b02d1bb",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-04T13:15:52.226851+00:00",
-            "finished_at": "2026-09-04T13:15:54.525709+00:00"
-          }
-        },
-        {
-          "id": "mef_titoli_12m",
-          "source_id": "mef_tesoro",
-          "status": "ok",
-          "label": "mef_titoli_12m",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260904T131554Z_87159110",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-04T13:15:54.569218+00:00",
-            "finished_at": "2026-09-04T13:15:56.674970+00:00"
-          }
-        },
-        {
-          "id": "mef_vita_media",
-          "source_id": "mef_tesoro",
-          "status": "ok",
-          "label": "mef_vita_media",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260904T131556Z_d9c32961",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-04T13:15:56.710501+00:00",
-            "finished_at": "2026-09-04T13:15:58.263807+00:00"
-          }
-        },
-        {
-          "id": "ocpi_serie_storiche",
-          "source_id": "ocpi",
-          "status": "ok",
-          "label": "ocpi_serie_storiche",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260904T131558Z_29bfa88e",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-04T13:15:58.299309+00:00",
-            "finished_at": "2026-09-04T13:16:00.618062+00:00"
           }
         }
       ]
@@ -4585,6 +4297,287 @@
           }
         }
       ]
+    },
+    {
+      "repo": "open-siope",
+      "available": true,
+      "source_repo": "dataciviclab/open-siope",
+      "updated_at": "2026-09-05",
+      "datasets": 10,
+      "marts": 22,
+      "signals": 10,
+      "codelists": 0,
+      "entities": 6,
+      "gcs": 10,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "siope_bilancio_unificato",
+          "source_id": "siope",
+          "status": "ok",
+          "label": "siope_bilancio_unificato",
+          "detail": "anni 2021-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260905T103327Z_ca244715",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-05T10:33:27.977106+00:00",
+            "finished_at": "2026-09-05T10:33:44.361169+00:00"
+          }
+        },
+        {
+          "id": "siope_entrate",
+          "source_id": "siope",
+          "status": "ok",
+          "label": "siope_entrate",
+          "detail": "anni 2021-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260905T101939Z_d78d4052",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-05T10:19:39.880581+00:00",
+            "finished_at": "2026-09-05T10:20:19.697077+00:00"
+          }
+        },
+        {
+          "id": "siope_uscite",
+          "source_id": "siope",
+          "status": "ok",
+          "label": "siope_uscite",
+          "detail": "anni 2021-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260905T103004Z_dc9b3429",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-05T10:30:04.740374+00:00",
+            "finished_at": "2026-09-05T10:31:32.281698+00:00"
+          }
+        },
+        {
+          "id": "siope_anag_codgest_entrate_seed",
+          "source_id": "siope",
+          "status": "ok",
+          "label": "siope_anag_codgest_entrate_seed",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260905T101442Z_62c0e57d",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-05T10:14:42.381685+00:00",
+            "finished_at": "2026-09-05T10:14:44.740090+00:00"
+          }
+        },
+        {
+          "id": "siope_anag_codgest_uscite_seed",
+          "source_id": "siope",
+          "status": "ok",
+          "label": "siope_anag_codgest_uscite_seed",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260905T101445Z_253b555a",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-05T10:14:45.985693+00:00",
+            "finished_at": "2026-09-05T10:14:48.199040+00:00"
+          }
+        },
+        {
+          "id": "siope_anag_comparti_seed",
+          "source_id": "siope",
+          "status": "ok",
+          "label": "siope_anag_comparti_seed",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260905T101431Z_2eeabc51",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-05T10:14:31.486337+00:00",
+            "finished_at": "2026-09-05T10:14:34.362430+00:00"
+          }
+        },
+        {
+          "id": "siope_anag_comuni_seed",
+          "source_id": "siope",
+          "status": "ok",
+          "label": "siope_anag_comuni_seed",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260905T101452Z_981129f7",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-05T10:14:52.597139+00:00",
+            "finished_at": "2026-09-05T10:14:54.756970+00:00"
+          }
+        },
+        {
+          "id": "siope_anag_enti_seed",
+          "source_id": "siope",
+          "status": "ok",
+          "label": "siope_anag_enti_seed",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260905T101439Z_516248cc",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-05T10:14:39.054480+00:00",
+            "finished_at": "2026-09-05T10:14:41.461108+00:00"
+          }
+        },
+        {
+          "id": "siope_anag_reg_prov_seed",
+          "source_id": "siope",
+          "status": "ok",
+          "label": "siope_anag_reg_prov_seed",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260905T101449Z_3395c434",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-05T10:14:49.166684+00:00",
+            "finished_at": "2026-09-05T10:14:51.630749+00:00"
+          }
+        },
+        {
+          "id": "siope_anag_sottocomparti_seed",
+          "source_id": "siope",
+          "status": "ok",
+          "label": "siope_anag_sottocomparti_seed",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260905T101435Z_2948fdf4",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-05T10:14:35.273339+00:00",
+            "finished_at": "2026-09-05T10:14:37.865579+00:00"
+          }
+        }
+      ]
+    },
+    {
+      "repo": "rna-aiuti-stato",
+      "available": true,
+      "source_repo": "dataciviclab/rna-aiuti-stato",
+      "updated_at": "2026-09-05",
+      "datasets": 2,
+      "marts": 11,
+      "signals": 2,
+      "codelists": 0,
+      "entities": 4,
+      "gcs": 2,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "rna_aiuti_stato",
+          "source_id": "mimit_rna",
+          "status": "ok",
+          "label": "rna_aiuti_stato",
+          "detail": "anni 2017-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260905T094950Z_7e13ee38",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-05T09:49:50.065452+00:00",
+            "finished_at": "2026-09-05T09:49:55.595752+00:00"
+          }
+        },
+        {
+          "id": "rna_misure",
+          "source_id": "mimit_rna",
+          "status": "ok",
+          "label": "rna_misure",
+          "detail": "anno 2027 \u2014 mart: si",
+          "run": {
+            "run_id": "20260905T094956Z_041038c1",
+            "year": 2027,
+            "status": "SUCCESS",
+            "started_at": "2026-09-05T09:49:56.215714+00:00",
+            "finished_at": "2026-09-05T09:49:56.666560+00:00"
+          }
+        }
+      ]
+    },
+    {
+      "repo": "senato-akn",
+      "available": true,
+      "source_repo": "dataciviclab/senato-akn",
+      "updated_at": "2026-09-03",
+      "datasets": 3,
+      "marts": 5,
+      "signals": 3,
+      "codelists": 0,
+      "entities": 2,
+      "gcs": 3,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "senato_corpus",
+          "source_id": "senato_akn",
+          "status": "ok",
+          "label": "senato_corpus",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T150700Z_ba30e94a",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T15:07:00.266808+00:00",
+            "finished_at": "2026-09-03T15:07:00.535727+00:00"
+          }
+        },
+        {
+          "id": "senato_dibattito",
+          "source_id": "senato_akn",
+          "status": "ok",
+          "label": "senato_dibattito",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T150700Z_992d3bf2",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T15:07:00.829588+00:00",
+            "finished_at": "2026-09-03T15:07:02.676440+00:00"
+          }
+        },
+        {
+          "id": "senato_emendamenti",
+          "source_id": "senato_akn",
+          "status": "ok",
+          "label": "senato_emendamenti",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260903T150703Z_e05d2569",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-03T15:07:03.088704+00:00",
+            "finished_at": "2026-09-03T15:07:03.991979+00:00"
+          }
+        }
+      ]
+    },
+    {
+      "repo": "source-observatory",
+      "available": false,
+      "source_repo": "",
+      "updated_at": "",
+      "datasets": 0,
+      "marts": 0,
+      "signals": 0,
+      "codelists": 0,
+      "entities": 0,
+      "gcs": 0,
+      "reason": "registry_not_found"
+    },
+    {
+      "repo": "toolkit",
+      "available": false,
+      "source_repo": "",
+      "updated_at": "",
+      "datasets": 0,
+      "marts": 0,
+      "signals": 0,
+      "codelists": 0,
+      "entities": 0,
+      "gcs": 0,
+      "reason": "registry_not_found"
     }
   ]
 }
