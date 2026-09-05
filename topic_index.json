@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "generated_at": "2026-09-05T14:42:54.259140",
+  "generated_at": "2026-09-05T14:57:11.713424",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -27433,7 +27433,7 @@
         "clean_rows": 778,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/camera_commissioni/2026/camera_commissioni_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/open-politica/camera_commissioni/2026/camera_commissioni_2026_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -27768,7 +27768,7 @@
         "clean_rows": 7481,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/camera_interventi/*/camera_interventi_*_clean.parquet",
+          "path": "gs://dataciviclab-clean/open-politica/camera_interventi/*/camera_interventi_*_clean.parquet",
           "multi_file": true
         },
         "columns": [
@@ -27837,7 +27837,7 @@
         "clean_rows": 10360,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/camera_relatori/2026/camera_relatori_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/open-politica/camera_relatori/2026/camera_relatori_2026_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -27905,7 +27905,7 @@
         "clean_rows": 3321,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/camera_votazioni_sparql/*/camera_votazioni_sparql_*_clean.parquet",
+          "path": "gs://dataciviclab-clean/open-politica/camera_votazioni_sparql/*/camera_votazioni_sparql_*_clean.parquet",
           "multi_file": true
         },
         "columns": [
@@ -28050,7 +28050,7 @@
         "clean_rows": 7747588,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/camera_voti/2026/camera_voti_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/open-politica/camera_voti/2026/camera_voti_2026_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -28428,7 +28428,7 @@
         "clean_rows": null,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/decreti_legge/2026/decreti_legge_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/open-politica/decreti_legge/2026/decreti_legge_2026_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -28656,7 +28656,7 @@
         "clean_rows": null,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/osservatorio_parlamento/2026/osservatorio_parlamento_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/open-politica/osservatorio_parlamento/2026/osservatorio_parlamento_2026_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -28723,7 +28723,7 @@
         "clean_rows": 64,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/ponte_persona/2026/ponte_persona_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/open-politica/ponte_persona/2026/ponte_persona_2026_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -28777,7 +28777,7 @@
         "clean_rows": null,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/profilo_politico/2026/profilo_politico_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/open-politica/profilo_politico/2026/profilo_politico_2026_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -28943,7 +28943,7 @@
         "clean_rows": null,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/senato_corpus_parlamento/2026/senato_corpus_parlamento_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/open-politica/senato_corpus_parlamento/2026/senato_corpus_parlamento_2026_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -29103,7 +29103,7 @@
         "clean_rows": 10342,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/elezioni_comunali/*/elezioni_comunali_*_clean.parquet",
+          "path": "gs://dataciviclab-clean/open-politica/elezioni_comunali/*/elezioni_comunali_*_clean.parquet",
           "multi_file": true
         },
         "columns": [
@@ -29239,7 +29239,7 @@
         "clean_rows": 93984,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/elezioni_europee/*/elezioni_europee_*_clean.parquet",
+          "path": "gs://dataciviclab-clean/open-politica/elezioni_europee/*/elezioni_europee_*_clean.parquet",
           "multi_file": true
         },
         "columns": [
@@ -29340,7 +29340,7 @@
         "clean_rows": 39515,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/elezioni_referendum/*/elezioni_referendum_*_clean.parquet",
+          "path": "gs://dataciviclab-clean/open-politica/elezioni_referendum/*/elezioni_referendum_*_clean.parquet",
           "multi_file": true
         },
         "columns": [
@@ -29469,7 +29469,7 @@
         "clean_rows": 15266,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/elezioni_regionali/*/elezioni_regionali_*_clean.parquet",
+          "path": "gs://dataciviclab-clean/open-politica/elezioni_regionali/*/elezioni_regionali_*_clean.parquet",
           "multi_file": true
         },
         "columns": [
@@ -29846,7 +29846,7 @@
         "clean_rows": 1052,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/senato_commissioni/2026/senato_commissioni_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/open-politica/senato_commissioni/2026/senato_commissioni_2026_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -30270,7 +30270,7 @@
         "clean_rows": 288,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/senato_gruppi/2026/senato_gruppi_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/open-politica/senato_gruppi/2026/senato_gruppi_2026_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -30360,7 +30360,7 @@
         "clean_rows": 36168,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/senato_interventi/2026/senato_interventi_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/open-politica/senato_interventi/2026/senato_interventi_2026_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -30429,7 +30429,7 @@
         "clean_rows": 1182928,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/senato_votazioni/2026/senato_votazioni_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/open-politica/senato_votazioni/2026/senato_votazioni_2026_clean.parquet",
           "multi_file": false
         },
         "columns": [
