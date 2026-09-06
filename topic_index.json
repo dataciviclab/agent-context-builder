@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "generated_at": "2026-09-06T15:01:49.725976",
+  "generated_at": "2026-09-06T20:04:34.230925",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -22406,6 +22406,153 @@
         ]
       },
       {
+        "slug": "eurostat_gfcf_nuts2",
+        "url_slug": "eurostat-gfcf-nuts2",
+        "name": "Eurostat Gfcf Nuts2",
+        "description": "Gross fixed capital formation (investimenti fissi lordi) by NUTS 2 region",
+        "source": "",
+        "source_id": "eurostat",
+        "period": {
+          "start": 2000,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "economia",
+          "gfcf",
+          "investimenti",
+          "eurostat",
+          "benchmark",
+          "nuts2"
+        ],
+        "category": "economia",
+        "registry_source": "eurostat",
+        "clean_rows": 311800,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/eurostat/eurostat_gfcf_nuts2/",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "freq",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sector",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "currency",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nace_r2",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "geo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "nuts_code",
+            "description": ""
+          },
+          {
+            "name": "year",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "freq_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nace_r2_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "geo_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nuts_level",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "country",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "nuts_parent_code",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nuts_parent_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "value",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_desc_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "eurostat_gfcf_nuts2__mart_geo_benchmark",
+          "eurostat_gfcf_nuts2__mart_sintesi"
+        ]
+      },
+      {
         "slug": "eurostat_gva_nuts3",
         "url_slug": "eurostat-gva-nuts3",
         "name": "Eurostat Gva Nuts3",
@@ -22966,6 +23113,312 @@
           "eurostat_labour_productivity_nuts3__mart_geo_benchmark",
           "eurostat_labour_productivity_nuts3__mart_sintesi",
           "eurostat_labour_productivity_nuts3__mart_trend"
+        ]
+      },
+      {
+        "slug": "eurostat_nama10_gdp",
+        "url_slug": "eurostat-nama10-gdp",
+        "name": "Eurostat Nama10 Gdp",
+        "description": "GDP and main components by expenditure approach (national level)",
+        "source": "",
+        "source_id": "eurostat",
+        "period": {
+          "start": 1975,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "economia",
+          "pil",
+          "gdp",
+          "domanda",
+          "eurostat",
+          "nazionale"
+        ],
+        "category": "economia",
+        "registry_source": "eurostat",
+        "clean_rows": 1804533,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/eurostat/eurostat_nama10_gdp/",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "freq",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unit",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "na_item",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "geo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "nuts_code",
+            "description": ""
+          },
+          {
+            "name": "year",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "freq_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unit_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "na_item_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "geo_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nuts_level",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "country",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "nuts_parent_code",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nuts_parent_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "value",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_desc_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "eurostat_nama10_gdp__mart_expenditure"
+        ]
+      },
+      {
+        "slug": "eurostat_namq10_gdp",
+        "url_slug": "eurostat-namq10-gdp",
+        "name": "Eurostat Namq10 Gdp",
+        "description": "Quarterly GDP by NUTS 2 region",
+        "source": "",
+        "source_id": "eurostat",
+        "period": {
+          "start": 1995,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "economia",
+          "pil",
+          "gdp",
+          "trimestrale",
+          "eurostat",
+          "nuts2"
+        ],
+        "category": "economia",
+        "registry_source": "eurostat",
+        "clean_rows": 12698464,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/eurostat/eurostat_namq10_gdp/",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "freq",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unit",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "s_adj",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "na_item",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "geo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "nuts_code",
+            "description": ""
+          },
+          {
+            "name": "year",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "quarter",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "freq_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unit_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "na_item_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "geo_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nuts_level",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "country",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "nuts_parent_code",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nuts_parent_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "value",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_desc_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "eurostat_namq10_gdp__mart_quarterly"
         ]
       },
       {

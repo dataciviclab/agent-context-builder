@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T15:01:49.725976",
+  "generated_at": "2026-09-06T20:04:34.230925",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -21,7 +21,7 @@
     "source-observatory",
     "toolkit"
   ],
-  "open_prs": 4,
+  "open_prs": 5,
   "prs": [
     {
       "number": 836,
@@ -45,10 +45,17 @@
       "category": "other"
     },
     {
-      "number": 139,
-      "title": "chore(post-merge): aggiorna registry (schedule)",
-      "repo": "eurostat",
-      "url": "https://github.com/dataciviclab/eurostat/pull/139",
+      "number": 37,
+      "title": "feat: expose vigente field from frontmatter to normativa.parquet",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/pull/37",
+      "category": "other"
+    },
+    {
+      "number": 26,
+      "title": "feat(senato-ddl): estensione a legislature 13-19",
+      "repo": "open-politica",
+      "url": "https://github.com/dataciviclab/open-politica/pull/26",
       "category": "other"
     }
   ],
@@ -3214,13 +3221,13 @@
       "repo": "eurostat",
       "available": true,
       "source_repo": "dataciviclab/eurostat",
-      "updated_at": "2026-09-01",
-      "datasets": 30,
-      "marts": 90,
-      "signals": 30,
+      "updated_at": "2026-09-06",
+      "datasets": 33,
+      "marts": 94,
+      "signals": 33,
       "codelists": 16,
       "entities": 3,
-      "gcs": 30,
+      "gcs": 33,
       "reason": "",
       "signals_detail": [
         {
@@ -3420,6 +3427,20 @@
           }
         },
         {
+          "id": "eurostat_gfcf_nuts2",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_gfcf_nuts2",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260906T140647Z_30bd7e61",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-06T14:06:47.462536+00:00",
+            "finished_at": "2026-09-06T14:06:55.229697+00:00"
+          }
+        },
+        {
           "id": "eurostat_gva_nuts3",
           "source_id": "eurostat",
           "status": "ok",
@@ -3487,6 +3508,34 @@
             "status": "SUCCESS",
             "started_at": "2026-09-01T20:32:24.335390+00:00",
             "finished_at": "2026-09-01T20:32:27.243337+00:00"
+          }
+        },
+        {
+          "id": "eurostat_nama10_gdp",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_nama10_gdp",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260906T140655Z_9fb312c8",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-06T14:06:55.645263+00:00",
+            "finished_at": "2026-09-06T14:07:36.118732+00:00"
+          }
+        },
+        {
+          "id": "eurostat_namq10_gdp",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_namq10_gdp",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260906T140736Z_8bc6f8c7",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-06T14:07:36.194095+00:00",
+            "finished_at": "2026-09-06T14:12:19.803335+00:00"
           }
         },
         {
