@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-09-06T10:23:33.902622
+**Generated**: 2026-09-06T15:01:49.725976
 
 ## Stato
 
@@ -11,6 +11,7 @@ Radar: 36 fonti GREEN 35 · RED 1 · Registry: 11 repo · 213 dataset
 - [PR] dataset-incubator#836: feat(candidates): bootstrap gse_cer_elenco candidate
 - [PR] dataset-incubator#834: chore(deps): bump toolkit a v1.51.0
 - [PR] dataset-incubator#829: intake: inpa-bandi e inpa-comunicazioni — reclutamento PA dal Portale inPA
+- [PR] eurostat#139: chore(post-merge): aggiorna registry (schedule)
 
 ## Analisi attive (18)
 

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T10:23:33.902622",
+  "generated_at": "2026-09-06T15:01:49.725976",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -21,7 +21,7 @@
     "source-observatory",
     "toolkit"
   ],
-  "open_prs": 3,
+  "open_prs": 4,
   "prs": [
     {
       "number": 836,
@@ -43,9 +43,16 @@
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/829",
       "category": "other"
+    },
+    {
+      "number": 139,
+      "title": "chore(post-merge): aggiorna registry (schedule)",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/pull/139",
+      "category": "other"
     }
   ],
-  "open_issues": 34,
+  "open_issues": 33,
   "issues": [
     {
       "number": 59,
@@ -249,13 +256,6 @@
       "repo": "open-politica",
       "url": "https://github.com/dataciviclab/open-politica/issues/15",
       "category": "intake"
-    },
-    {
-      "number": 15,
-      "title": "F5 \u2014 Ponte proposto \u2194 vigente (senato-akn \u2194 italia-corpus)",
-      "repo": "senato-akn",
-      "url": "https://github.com/dataciviclab/senato-akn/issues/15",
-      "category": "other"
     },
     {
       "number": 471,
@@ -4012,7 +4012,7 @@
       "repo": "open-politica",
       "available": true,
       "source_repo": "dataciviclab/open-politica",
-      "updated_at": "2026-09-01",
+      "updated_at": "2026-09-06",
       "datasets": 28,
       "marts": 54,
       "signals": 28,
@@ -4350,11 +4350,11 @@
           "label": "senato_ddl",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260818T075034Z_1638f376",
+            "run_id": "20260906T134627Z_c845f161",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-08-18T07:50:34.754945+00:00",
-            "finished_at": "2026-08-18T07:50:53.560605+00:00"
+            "started_at": "2026-09-06T13:46:27.580203+00:00",
+            "finished_at": "2026-09-06T13:46:42.403705+00:00"
           }
         },
         {
