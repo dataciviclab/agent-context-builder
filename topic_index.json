@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "generated_at": "2026-09-07T03:14:38.650748",
+  "generated_at": "2026-09-07T11:44:48.145185",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -28161,11 +28161,11 @@
         "slug": "senato_ddl",
         "url_slug": "senato-ddl",
         "name": "Senato Ddl",
-        "description": "",
+        "description": "Iter legislativo dei disegni di legge del Senato (Leg13\u2013Leg19): stato, tempi, esiti.",
         "source": "",
         "source_id": "dati_senato",
         "period": {
-          "start": 2022,
+          "start": 1996,
           "end": 2026
         },
         "stage": "incubating",
@@ -28180,8 +28180,8 @@
         "clean_rows": 5170,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/open-politica/senato_ddl/2026/senato_ddl_2026_clean.parquet",
-          "multi_file": false
+          "path": "gs://dataciviclab-clean/open-politica/senato_ddl/*/senato_ddl_*_clean.parquet",
+          "multi_file": true
         },
         "columns": [
           {

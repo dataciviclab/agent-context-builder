@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-07T03:14:38.650748",
+  "generated_at": "2026-09-07T11:44:48.145185",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -21,7 +21,7 @@
     "source-observatory",
     "toolkit"
   ],
-  "open_prs": 5,
+  "open_prs": 4,
   "prs": [
     {
       "number": 836,
@@ -49,13 +49,6 @@
       "title": "feat: expose vigente field from frontmatter to normativa.parquet",
       "repo": "italia-corpus",
       "url": "https://github.com/dataciviclab/italia-corpus/pull/37",
-      "category": "other"
-    },
-    {
-      "number": 26,
-      "title": "feat(senato-ddl): estensione a legislature 13-19",
-      "repo": "open-politica",
-      "url": "https://github.com/dataciviclab/open-politica/pull/26",
       "category": "other"
     }
   ],
@@ -1384,8 +1377,8 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "generated_at": "2026-09-06T07:51:29.383930+00:00",
-    "probe_date": "2026-09-06",
+    "generated_at": "2026-09-07T08:13:29.823894+00:00",
+    "probe_date": "2026-09-07",
     "sources_total": 36,
     "green": 35,
     "yellow": 0,
@@ -4061,7 +4054,7 @@
       "repo": "open-politica",
       "available": true,
       "source_repo": "dataciviclab/open-politica",
-      "updated_at": "2026-09-06",
+      "updated_at": "2026-09-07",
       "datasets": 28,
       "marts": 54,
       "signals": 28,
@@ -4397,13 +4390,13 @@
           "source_id": "dati_senato",
           "status": "ok",
           "label": "senato_ddl",
-          "detail": "anno 2026 \u2014 mart: si",
+          "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20260906T134627Z_c845f161",
-            "year": 2026,
+            "run_id": "20260907T082358Z_c15aeae5",
+            "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-09-06T13:46:27.580203+00:00",
-            "finished_at": "2026-09-06T13:46:42.403705+00:00"
+            "started_at": "2026-09-07T08:23:58.280541+00:00",
+            "finished_at": "2026-09-07T08:24:13.941389+00:00"
           }
         },
         {
