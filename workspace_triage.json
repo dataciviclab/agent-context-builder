@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-07T17:22:49.289252",
+  "generated_at": "2026-09-07T21:11:46.419940",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -24,13 +24,6 @@
   "open_prs": 5,
   "prs": [
     {
-      "number": 840,
-      "title": "chore(post-merge): aggiorna registry (schedule)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/840",
-      "category": "other"
-    },
-    {
       "number": 836,
       "title": "feat(candidates): bootstrap gse_cer_elenco candidate",
       "repo": "dataset-incubator",
@@ -49,6 +42,13 @@
       "title": "intake: inpa-bandi e inpa-comunicazioni \u2014 reclutamento PA dal Portale inPA",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/829",
+      "category": "other"
+    },
+    {
+      "number": 39,
+      "title": "refactor: unifica 3 parquet in 2 + aggiunge vigente",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/pull/39",
       "category": "other"
     },
     {
@@ -1701,11 +1701,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-08-16",
+    "generated_at": "2026-09-07",
     "summary": {
-      "total": 97,
+      "total": 85,
       "by_status": {
-        "ok": 97
+        "ok": 85
       }
     },
     "actionable": []
@@ -1839,10 +1839,10 @@
       "repo": "dataset-incubator",
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
-      "updated_at": "2026-08-16",
+      "updated_at": "2026-09-07",
       "datasets": 86,
-      "marts": 146,
-      "signals": 97,
+      "marts": 139,
+      "signals": 85,
       "codelists": 0,
       "entities": 16,
       "gcs": 86,
@@ -1911,25 +1911,11 @@
           "label": "anpr_mobilita_residenziale",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260801T133743Z_75b44ded",
+            "run_id": "20260907T165805Z_0b8cb7fa",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-08-01T13:37:43.676108+00:00",
-            "finished_at": "2026-08-01T13:37:45.384535+00:00"
-          }
-        },
-        {
-          "id": "bdap_entrate_stato",
-          "source_id": "openbdap",
-          "status": "ok",
-          "label": "bdap_entrate_stato",
-          "detail": "anno 2024 \u2014 mart: si",
-          "run": {
-            "run_id": "20260731T163739Z_1a473287",
-            "year": 2024,
-            "status": "DRY_RUN",
-            "started_at": "2026-07-31T16:37:39.488090+00:00",
-            "finished_at": "2026-07-31T16:37:39.494379+00:00"
+            "started_at": "2026-09-07T16:58:05.487535+00:00",
+            "finished_at": "2026-09-07T16:58:06.058513+00:00"
           }
         },
         {
@@ -1944,34 +1930,6 @@
             "status": "DRY_RUN",
             "started_at": "2026-07-31T16:37:44.040306+00:00",
             "finished_at": "2026-07-31T16:37:44.044617+00:00"
-          }
-        },
-        {
-          "id": "bdap_pagamenti_stato",
-          "source_id": "openbdap",
-          "status": "ok",
-          "label": "bdap_pagamenti_stato",
-          "detail": "anni 2014-2025 \u2014 mart: si",
-          "run": {
-            "run_id": "20260816T082045Z_786bab73",
-            "year": 2025,
-            "status": "SUCCESS",
-            "started_at": "2026-08-16T08:20:45.346498+00:00",
-            "finished_at": "2026-08-16T08:20:46.918325+00:00"
-          }
-        },
-        {
-          "id": "bdap_spese_stato",
-          "source_id": "openbdap",
-          "status": "ok",
-          "label": "bdap_spese_stato",
-          "detail": "anno 2024 \u2014 mart: si",
-          "run": {
-            "run_id": "20260731T163747Z_7aea68b1",
-            "year": 2024,
-            "status": "DRY_RUN",
-            "started_at": "2026-07-31T16:37:47.439580+00:00",
-            "finished_at": "2026-07-31T16:37:47.443667+00:00"
           }
         },
         {
@@ -2381,27 +2339,6 @@
           "detail": "anno 2025 \u2014 mart: si"
         },
         {
-          "id": "opencivitas_fsc_2025_rso",
-          "source_id": "opencivitas",
-          "status": "ok",
-          "label": "opencivitas_fsc_2025_rso",
-          "detail": "anni 2022-2025 \u2014 mart: si"
-        },
-        {
-          "id": "opencivitas_indicatori",
-          "source_id": "opencivitas",
-          "status": "ok",
-          "label": "opencivitas_indicatori",
-          "detail": "anni 2015-2022 \u2014 mart: si",
-          "run": {
-            "run_id": "20260728T085206Z_2551b510",
-            "year": 2022,
-            "status": "SUCCESS",
-            "started_at": "2026-07-28T08:52:06.876449+00:00",
-            "finished_at": "2026-07-28T08:52:16.688673+00:00"
-          }
-        },
-        {
           "id": "opencoesione_progetti",
           "source_id": "opencoesione",
           "status": "ok",
@@ -2626,67 +2563,11 @@
           }
         },
         {
-          "id": "compose:conto_annuale_profilo_ente",
-          "source_id": "rgs_conto_annuale",
-          "status": "ok",
-          "label": "conto_annuale_profilo_ente",
-          "detail": "anni 2020-2024 \u2014 mart: si",
-          "run": {
-            "run_id": "20260727T181422Z_2e14ed72",
-            "year": 2024,
-            "status": "SUCCESS",
-            "started_at": "2026-07-27T18:14:22.788009+00:00",
-            "finished_at": "2026-07-27T18:14:30.384220+00:00"
-          }
-        },
-        {
           "id": "compose:costituzione_master",
           "source_id": "costituzione-italiana",
           "status": "ok",
           "label": "costituzione_master",
           "detail": "anno 2026 \u2014 mart: si"
-        },
-        {
-          "id": "compose:eurostat_demography",
-          "source_id": "eurostat",
-          "status": "ok",
-          "label": "eurostat_demography",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260727T090737Z_986b13bc",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-07-27T09:07:37.475085+00:00",
-            "finished_at": "2026-07-27T09:07:41.498542+00:00"
-          }
-        },
-        {
-          "id": "compose:eurostat_economy",
-          "source_id": "eurostat",
-          "status": "ok",
-          "label": "eurostat_economy",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260727T090658Z_8f8bd230",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-07-27T09:06:58.133700+00:00",
-            "finished_at": "2026-07-27T09:07:03.043263+00:00"
-          }
-        },
-        {
-          "id": "compose:eurostat_territory",
-          "source_id": "eurostat",
-          "status": "ok",
-          "label": "eurostat_territory",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260727T090743Z_7f7ef8c6",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-07-27T09:07:43.327742+00:00",
-            "finished_at": "2026-07-27T09:07:47.044512+00:00"
-          }
         },
         {
           "id": "compose:ispra_ru_costi_kg_compose",
@@ -2701,20 +2582,6 @@
           "status": "ok",
           "label": "malasanita_compose",
           "detail": "anno 2022 \u2014 mart: si"
-        },
-        {
-          "id": "compose:unified_comuni",
-          "source_id": "dataciviclab_composite",
-          "status": "ok",
-          "label": "unified_comuni",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260815T162530Z_de3bede1",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-08-15T16:25:30.209124+00:00",
-            "finished_at": "2026-08-15T16:27:00.490842+00:00"
-          }
         },
         {
           "id": "compose:who_is_who_pa",
@@ -2827,27 +2694,6 @@
             "started_at": "2026-08-02T17:09:21.138889+00:00",
             "finished_at": "2026-08-02T17:09:32.630233+00:00"
           }
-        },
-        {
-          "id": "opencivitas_fsc_enti_rso",
-          "source_id": "opencivitas",
-          "status": "ok",
-          "label": "opencivitas_fsc_enti_rso",
-          "detail": "anno 2025 \u2014 mart: si",
-          "run": {
-            "run_id": "20260729T120941Z_6c07cd84",
-            "year": 2025,
-            "status": "RUNNING",
-            "started_at": "2026-07-29T12:09:41.401993+00:00",
-            "finished_at": ""
-          }
-        },
-        {
-          "id": "opencivitas_glossario",
-          "source_id": "opencivitas",
-          "status": "ok",
-          "label": "opencivitas_glossario",
-          "detail": "anni 2015-2022 \u2014 mart: si"
         },
         {
           "id": "popolazione_istat_comunale_2019_2025",

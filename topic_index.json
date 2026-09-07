@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "generated_at": "2026-09-07T17:22:49.289252",
+  "generated_at": "2026-09-07T21:11:46.419940",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -97,7 +97,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "bilancio-pubblico",
-        "clean_rows": null,
+        "clean_rows": 1490,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/bilancio-pubblico/bdap_entrate_stato/2025/bdap_entrate_stato_2025_clean.parquet",
@@ -733,7 +733,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "bilancio-pubblico",
-        "clean_rows": null,
+        "clean_rows": 10889,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/bilancio-pubblico/bdap_spese_stato/2025/bdap_spese_stato_2025_clean.parquet",
@@ -5712,7 +5712,7 @@
         ],
         "category": "pa",
         "registry_source": "dataset-incubator",
-        "clean_rows": 22176,
+        "clean_rows": 22974,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/anpr_mobilita_residenziale/2026/anpr_mobilita_residenziale_2026_clean.parquet",
