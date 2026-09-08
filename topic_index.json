@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "generated_at": "2026-09-08T12:49:18.662288",
+  "generated_at": "2026-09-08T16:07:23.161005",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -33660,11 +33660,11 @@
         "slug": "senato_corpus",
         "url_slug": "senato-corpus",
         "name": "Senato Corpus",
-        "description": "Corpus Akoma Ntoso del Senato (Leg19): ogni documento legislativo (ddlpres, emend, ddlcomm, ddlmess) con famiglia, peso testuale e articoli. Deriva dall'estrazione XML di senato-akn; atto_num collega a senato_ddl via ddl_url (/ddl/N).",
+        "description": "Corpus Akoma Ntoso del Senato (Leg14\u2013Leg19): ogni documento legislativo (ddlpres, emend, ddlcomm, ddlmess) con famiglia, peso testuale e articoli. Deriva dall'estrazione XML di senato-akn; atto_num collega a senato_ddl via ddl_url (/ddl/N).",
         "source": "",
         "source_id": "senato_akn",
         "period": {
-          "start": 2022,
+          "start": 2010,
           "end": 2026
         },
         "stage": "incubating",
@@ -33677,7 +33677,7 @@
         ],
         "category": "politica",
         "registry_source": "senato-akn",
-        "clean_rows": 1898,
+        "clean_rows": 7663,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/senato_corpus/2026/senato_corpus_2026_clean.parquet",
@@ -33783,21 +33783,84 @@
             "description": ""
           },
           {
-            "name": "frbr_subtype",
+            "name": "FRBRsubtype",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
             "description": ""
           },
           {
-            "name": "frbr_number",
+            "name": "FRBRnumber",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
             "description": ""
           },
           {
-            "name": "active_ref",
+            "name": "FRBRname",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "work_uri",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "expression_uri",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "manifestation_uri",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "atto_dir",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "doc_number_raw",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "path",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "proponenti",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sezioni",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "speakers",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
@@ -33813,6 +33876,7 @@
         ],
         "mart_refs": [
           "senato_corpus__mart_per_atto",
+          "senato_corpus__mart_per_legislatura",
           "senato_corpus__mart_famiglie"
         ]
       },
@@ -33820,11 +33884,11 @@
         "slug": "senato_dibattito",
         "url_slug": "senato-dibattito",
         "name": "Senato Dibattito",
-        "description": "Ogni intervento parlamentare nella XIX legislatura (Aula `resaula` e Commissione `sommcomm`), dal corpus Akoma Ntoso. Una riga = un intervento, con oratore (bridge osr:Persona \u2192 senato_anagrafica) e testo.",
+        "description": "Ogni intervento parlamentare nelle legislature Leg14\u2013Leg19 (Aula `resaula` e Commissione `sommcomm`), dal corpus Akoma Ntoso. Una riga = un intervento, con oratore (bridge osr:Persona \u2192 senato_anagrafica) e testo.",
         "source": "",
         "source_id": "senato_akn",
         "period": {
-          "start": 2022,
+          "start": 2015,
           "end": 2026
         },
         "stage": "incubating",
@@ -33838,7 +33902,7 @@
         ],
         "category": "politica",
         "registry_source": "senato-akn",
-        "clean_rows": 195262,
+        "clean_rows": 359997,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/senato_dibattito/2026/senato_dibattito_2026_clean.parquet",
@@ -33874,6 +33938,20 @@
             "description": ""
           },
           {
+            "name": "legislatura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "atto_num",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "senatore_id",
             "type": "BIGINT",
             "role": "dimension",
@@ -33889,6 +33967,13 @@
           },
           {
             "name": "nome_oratore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ruolo",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
@@ -33918,18 +34003,19 @@
         ],
         "mart_refs": [
           "senato_dibattito__mart_interventi_per_persona",
-          "senato_dibattito__mart_dibattito_per_seduta"
+          "senato_dibattito__mart_dibattito_per_seduta",
+          "senato_dibattito__mart_dib_per_atto"
         ]
       },
       {
         "slug": "senato_emendamenti",
         "url_slug": "senato-emendamenti",
         "name": "Senato Emendamenti",
-        "description": "Ogni emendamento presentato nella XIX legislatura (Aula `emend` e Commissione `emendc`), dal corpus Akoma Ntoso. Un documento per riga, con la fase dell'atto a cui si riferisce (S.NNN) \u2014 bridge verso senato_ddl.",
+        "description": "Ogni emendamento presentato nelle legislature Leg14\u2013Leg19 (Aula `emend` e Commissione `emendc`), dal corpus Akoma Ntoso. Un documento per riga, con la fase dell'atto a cui si riferisce (S.NNN) \u2014 bridge verso senato_ddl.",
         "source": "",
         "source_id": "senato_akn",
         "period": {
-          "start": 2022,
+          "start": 2001,
           "end": 2026
         },
         "stage": "incubating",
@@ -33942,7 +34028,7 @@
         ],
         "category": "politica",
         "registry_source": "senato-akn",
-        "clean_rows": 137177,
+        "clean_rows": 1003167,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/senato_emendamenti/2026/senato_emendamenti_2026_clean.parquet",
@@ -33957,21 +34043,14 @@
             "description": ""
           },
           {
+            "name": "atto_num",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "emend_id",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "frbr_subtype",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "active_ref",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
@@ -33999,6 +34078,13 @@
             "description": ""
           },
           {
+            "name": "legislatura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "work_date",
             "type": "DATE",
             "role": "dimension",
@@ -34009,6 +34095,55 @@
             "name": "text_len",
             "type": "BIGINT",
             "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "FRBRsubtype",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "FRBRnumber",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "FRBRname",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "active_ref",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "active_ref_href",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "work_uri",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "doc_title",
+            "type": "VARCHAR",
+            "role": "dimension",
             "semantic_type": "",
             "description": ""
           },
