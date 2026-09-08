@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T16:07:23.161005",
+  "generated_at": "2026-09-08T20:48:16.446815",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -24,7 +24,7 @@
     "source-observatory",
     "toolkit"
   ],
-  "open_prs": 5,
+  "open_prs": 6,
   "prs": [
     {
       "number": 836,
@@ -59,6 +59,13 @@
       "title": "feat: expose vigente field from frontmatter to normativa.parquet",
       "repo": "italia-corpus",
       "url": "https://github.com/dataciviclab/italia-corpus/pull/37",
+      "category": "other"
+    },
+    {
+      "number": 41,
+      "title": "chore(post-merge): aggiorna registry (39)",
+      "repo": "senato-akn",
+      "url": "https://github.com/dataciviclab/senato-akn/pull/41",
       "category": "other"
     }
   ],
@@ -1416,7 +1423,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 8"
+    "Many open PRs: 9"
   ],
   "radar": {
     "available": true,
@@ -4881,11 +4888,11 @@
           "label": "senato_corpus",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260908T154239Z_ed34995f",
+            "run_id": "20260908T200930Z_7ef8de71",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-08T15:42:39.386239+00:00",
-            "finished_at": "2026-09-08T15:42:40.214587+00:00"
+            "started_at": "2026-09-08T20:09:30.253990+00:00",
+            "finished_at": "2026-09-08T20:09:31.985982+00:00"
           }
         },
         {
@@ -4895,11 +4902,11 @@
           "label": "senato_dibattito",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260908T154240Z_b626d34f",
+            "run_id": "20260908T200932Z_e168167b",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-08T15:42:40.527746+00:00",
-            "finished_at": "2026-09-08T15:42:44.258630+00:00"
+            "started_at": "2026-09-08T20:09:32.386275+00:00",
+            "finished_at": "2026-09-08T20:09:37.518513+00:00"
           }
         },
         {
@@ -4909,11 +4916,11 @@
           "label": "senato_emendamenti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260908T154244Z_ec6abd4d",
+            "run_id": "20260908T200937Z_4be1bd38",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-08T15:42:44.572418+00:00",
-            "finished_at": "2026-09-08T15:42:51.176338+00:00"
+            "started_at": "2026-09-08T20:09:37.914213+00:00",
+            "finished_at": "2026-09-08T20:09:44.403605+00:00"
           }
         }
       ]
