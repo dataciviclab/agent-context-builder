@@ -1,14 +1,14 @@
 # Session Bootstrap
 
-**Generated**: 2026-09-08T10:43:26.571185
+**Generated**: 2026-09-08T12:49:18.662288
 
 ## Stato
 
-Radar: 36 fonti GREEN 36 · Registry: 11 repo · 216 dataset
+Radar: 36 fonti GREEN 36 · Registry: 14 repo · 232 dataset
 
 ## Richiede attenzione
 
-- [PR] dataset-incubator#841: chore: remove MEF candidates (duplicati in partecipate-monitor)
+- [PR] costituzione-italiana#19: chore(post-merge): aggiorna registry (18)
 - [PR] dataset-incubator#836: feat(candidates): bootstrap gse_cer_elenco candidate
 - [PR] dataset-incubator#834: chore(deps): bump toolkit a v1.51.0
 - [PR] dataset-incubator#829: intake: inpa-bandi e inpa-comunicazioni — reclutamento PA dal Portale inPA

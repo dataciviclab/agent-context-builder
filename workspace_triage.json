@@ -1,9 +1,10 @@
 {
-  "generated_at": "2026-09-08T10:43:26.571185",
+  "generated_at": "2026-09-08T12:49:18.662288",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
     "bilancio-pubblico",
+    "costituzione-italiana",
     "data-explorer",
     "dataciviclab",
     "dataset-incubator",
@@ -15,21 +16,16 @@
     "open-conto-annuale",
     "open-politica",
     "open-siope",
+    "opencivitas",
+    "partecipate-monitor",
     "patrimonio-territorio",
     "rna-aiuti-stato",
     "senato-akn",
     "source-observatory",
     "toolkit"
   ],
-  "open_prs": 6,
+  "open_prs": 5,
   "prs": [
-    {
-      "number": 841,
-      "title": "chore: remove MEF candidates (duplicati in partecipate-monitor)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/841",
-      "category": "other"
-    },
     {
       "number": 836,
       "title": "feat(candidates): bootstrap gse_cer_elenco candidate",
@@ -66,7 +62,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 33,
+  "open_issues": 34,
   "issues": [
     {
       "number": 59,
@@ -74,6 +70,13 @@
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/issues/59",
       "category": "infrastructure"
+    },
+    {
+      "number": 13,
+      "title": "F6 \u2014 Indicatori Costituzione \u2192 processo legislativo (Art. 70-72)",
+      "repo": "costituzione-italiana",
+      "url": "https://github.com/dataciviclab/costituzione-italiana/issues/13",
+      "category": "other"
     },
     {
       "number": 828,
@@ -1259,6 +1262,14 @@
       "branches_ahead": [],
       "untracked_files": 0
     },
+    "costituzione-italiana": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
     "data-explorer": {
       "available": false,
       "reason": "local_disabled",
@@ -1347,6 +1358,22 @@
       "branches_ahead": [],
       "untracked_files": 0
     },
+    "opencivitas": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
+    "partecipate-monitor": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
     "patrimonio-territorio": {
       "available": false,
       "reason": "local_disabled",
@@ -1389,7 +1416,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 9"
+    "Many open PRs: 8"
   ],
   "radar": {
     "available": true,
@@ -1805,6 +1832,133 @@
             "status": "SUCCESS",
             "started_at": "2026-09-04T11:25:18.585992+00:00",
             "finished_at": "2026-09-04T11:25:25.110904+00:00"
+          }
+        }
+      ]
+    },
+    {
+      "repo": "costituzione-italiana",
+      "available": true,
+      "source_repo": "dataciviclab/costituzione-italiana",
+      "updated_at": "2026-09-08",
+      "datasets": 8,
+      "marts": 13,
+      "signals": 8,
+      "codelists": 0,
+      "entities": 1,
+      "gcs": 8,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "compose:sentenze_complete",
+          "source_id": "corte_costituzionale",
+          "status": "ok",
+          "label": "sentenze_complete",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260908T121914Z_cbf7b3c7",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-08T12:19:14.470903+00:00",
+            "finished_at": "2026-09-08T12:19:15.719314+00:00"
+          }
+        },
+        {
+          "id": "articoli_costituzione",
+          "source_id": "costituzione_italiana",
+          "status": "ok",
+          "label": "articoli_costituzione",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260908T121537Z_b9d9e36e",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-08T12:15:37.428347+00:00",
+            "finished_at": "2026-09-08T12:15:38.035516+00:00"
+          }
+        },
+        {
+          "id": "atti_promovimento_corte_costituzionale",
+          "source_id": "corte_costituzionale",
+          "status": "ok",
+          "label": "atti_promovimento_corte_costituzionale",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260908T121810Z_8d834e5f",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-08T12:18:10.359180+00:00",
+            "finished_at": "2026-09-08T12:18:12.759781+00:00"
+          }
+        },
+        {
+          "id": "citazioni_costituzionali",
+          "source_id": "italia_corpus",
+          "status": "ok",
+          "label": "citazioni_costituzionali",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260908T121845Z_20dc4d1a",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-08T12:18:45.505460+00:00",
+            "finished_at": "2026-09-08T12:18:46.937778+00:00"
+          }
+        },
+        {
+          "id": "giudici_corte_costituzionale",
+          "source_id": "corte_costituzionale",
+          "status": "ok",
+          "label": "giudici_corte_costituzionale",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260908T121912Z_0cd540a4",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-08T12:19:12.900450+00:00",
+            "finished_at": "2026-09-08T12:19:14.133077+00:00"
+          }
+        },
+        {
+          "id": "massime_corte_costituzionale",
+          "source_id": "corte_costituzionale",
+          "status": "ok",
+          "label": "massime_corte_costituzionale",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260908T121813Z_76f319dd",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-08T12:18:13.097026+00:00",
+            "finished_at": "2026-09-08T12:18:45.155326+00:00"
+          }
+        },
+        {
+          "id": "pronunce_corte_costituzionale",
+          "source_id": "corte_costituzionale",
+          "status": "ok",
+          "label": "pronunce_corte_costituzionale",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260908T121847Z_bc8f5182",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-08T12:18:47.259076+00:00",
+            "finished_at": "2026-09-08T12:19:12.571935+00:00"
+          }
+        },
+        {
+          "id": "revisioni_costituzionali",
+          "source_id": "italia_corpus",
+          "status": "ok",
+          "label": "revisioni_costituzionali",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260908T121538Z_90553d55",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-08T12:15:38.362088+00:00",
+            "finished_at": "2026-09-08T12:18:10.033684+00:00"
           }
         }
       ]
@@ -4461,6 +4615,148 @@
             "status": "SUCCESS",
             "started_at": "2026-09-05T10:14:35.273339+00:00",
             "finished_at": "2026-09-05T10:14:37.865579+00:00"
+          }
+        }
+      ]
+    },
+    {
+      "repo": "opencivitas",
+      "available": true,
+      "source_repo": "dataciviclab/opencivitas",
+      "updated_at": "2026-09-07",
+      "datasets": 5,
+      "marts": 6,
+      "signals": 5,
+      "codelists": 0,
+      "entities": 5,
+      "gcs": 5,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "opencivitas_determinanti",
+          "source_id": "opencivitas",
+          "status": "ok",
+          "label": "opencivitas_determinanti",
+          "detail": "anni 2015-2022 \u2014 mart: si",
+          "run": {
+            "run_id": "20260907T141309Z_dc7e0a7c",
+            "year": 2022,
+            "status": "SUCCESS",
+            "started_at": "2026-09-07T14:13:09.284539+00:00",
+            "finished_at": "2026-09-07T14:13:13.723743+00:00"
+          }
+        },
+        {
+          "id": "opencivitas_fsc_rso",
+          "source_id": "opencivitas",
+          "status": "ok",
+          "label": "opencivitas_fsc_rso",
+          "detail": "anni 2017-2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260907T141334Z_24e7a139",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-09-07T14:13:34.259211+00:00",
+            "finished_at": "2026-09-07T14:13:37.195174+00:00"
+          }
+        },
+        {
+          "id": "opencivitas_indicatori",
+          "source_id": "opencivitas",
+          "status": "ok",
+          "label": "opencivitas_indicatori",
+          "detail": "anni 2015-2022 \u2014 mart: si",
+          "run": {
+            "run_id": "20260907T141725Z_63f68ed2",
+            "year": 2022,
+            "status": "SUCCESS",
+            "started_at": "2026-09-07T14:17:25.098014+00:00",
+            "finished_at": "2026-09-07T14:18:01.185050+00:00"
+          }
+        },
+        {
+          "id": "opencivitas_fsc_enti_rso",
+          "source_id": "opencivitas",
+          "status": "ok",
+          "label": "opencivitas_fsc_enti_rso",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260907T141153Z_18be125c",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-09-07T14:11:53.625166+00:00",
+            "finished_at": "2026-09-07T14:11:56.131119+00:00"
+          }
+        },
+        {
+          "id": "opencivitas_glossario",
+          "source_id": "opencivitas",
+          "status": "ok",
+          "label": "opencivitas_glossario",
+          "detail": "anni 2015-2022 \u2014 mart: si",
+          "run": {
+            "run_id": "20260907T141235Z_0d1337ee",
+            "year": 2022,
+            "status": "SUCCESS",
+            "started_at": "2026-09-07T14:12:35.155325+00:00",
+            "finished_at": "2026-09-07T14:12:41.054301+00:00"
+          }
+        }
+      ]
+    },
+    {
+      "repo": "partecipate-monitor",
+      "available": true,
+      "source_repo": "dataciviclab/partecipate-monitor",
+      "updated_at": "2026-09-08",
+      "datasets": 3,
+      "marts": 3,
+      "signals": 3,
+      "codelists": 0,
+      "entities": 3,
+      "gcs": 3,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "mef_adempimenti",
+          "source_id": "mef_tesoro",
+          "status": "ok",
+          "label": "mef_adempimenti",
+          "detail": "anni 2020-2023 \u2014 mart: si",
+          "run": {
+            "run_id": "20260908T092223Z_59005a93",
+            "year": 2023,
+            "status": "SUCCESS",
+            "started_at": "2026-09-08T09:22:23.895935+00:00",
+            "finished_at": "2026-09-08T09:22:27.885835+00:00"
+          }
+        },
+        {
+          "id": "mef_partecipazioni",
+          "source_id": "mef_tesoro",
+          "status": "ok",
+          "label": "mef_partecipazioni",
+          "detail": "anni 2020-2023 \u2014 mart: si",
+          "run": {
+            "run_id": "20260908T092347Z_e363ccca",
+            "year": 2023,
+            "status": "SUCCESS",
+            "started_at": "2026-09-08T09:23:47.698447+00:00",
+            "finished_at": "2026-09-08T09:24:10.223902+00:00"
+          }
+        },
+        {
+          "id": "mef_rappresentanti_partecipate",
+          "source_id": "mef_tesoro",
+          "status": "ok",
+          "label": "mef_rappresentanti_partecipate",
+          "detail": "anni 2018-2023 \u2014 mart: si",
+          "run": {
+            "run_id": "20260908T092507Z_818949c6",
+            "year": 2023,
+            "status": "SUCCESS",
+            "started_at": "2026-09-08T09:25:07.366743+00:00",
+            "finished_at": "2026-09-08T09:25:17.703101+00:00"
           }
         }
       ]

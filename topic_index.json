@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "generated_at": "2026-09-08T10:43:26.571185",
+  "generated_at": "2026-09-08T12:49:18.662288",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -9,6 +9,10 @@
     "bilancio-pubblico": {
       "description": "I conti dello Stato italiano in serie storica \u2014 spesa corrente, investimenti e saldi di bilancio.",
       "url": "https://github.com/dataciviclab/bilancio-pubblico"
+    },
+    "costituzione-italiana": {
+      "description": "La Costituzione italiana, le sue revisioni e la giurisprudenza costituzionale \u2014 in formato aperto e interrogabile.",
+      "url": "https://github.com/dataciviclab/costituzione-italiana"
     },
     "data-explorer": {
       "description": "Esplora i dati del DataCivicLab \u2014 catalogo pubblico, query e visualizzazioni.",
@@ -53,6 +57,14 @@
     "open-siope": {
       "description": "La spesa pubblica italiana \u2014 comuni, ASL, regioni, universit\u00e0. Dati SIOPE aperti e interrogabili.",
       "url": "https://github.com/dataciviclab/open-siope"
+    },
+    "opencivitas": {
+      "description": "OpenCivitas Intelligence \u2014 FSC x servizi dei comuni italiani, aperti e interrogabili",
+      "url": "https://github.com/dataciviclab/opencivitas"
+    },
+    "partecipate-monitor": {
+      "description": "Chi possiede cosa? Le partecipate pubbliche italiane \u2014 dati aperti su societ\u00e0, incarichi e compensi.",
+      "url": "https://github.com/dataciviclab/partecipate-monitor"
     },
     "patrimonio-territorio": {
       "description": "3,25 milioni di immobili pubblici, 100% georeferenziati. Quanto \u00e8 utilizzato, quanto \u00e8 abbandonato?",
@@ -3838,6 +3850,929 @@
           "titoli_studio__titoli_studio_comparti",
           "titoli_studio__mart_sintesi",
           "titoli_studio__mart_trend"
+        ]
+      }
+    ],
+    "costituzione_italiana": [
+      {
+        "slug": "articoli_costituzione",
+        "url_slug": "articoli-costituzione",
+        "name": "Articoli Costituzione",
+        "description": "",
+        "source": "",
+        "source_id": "costituzione_italiana",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "costituzione",
+          "diritti",
+          "ordinamento"
+        ],
+        "category": "normativa",
+        "registry_source": "costituzione-italiana",
+        "clean_rows": 157,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/costituzione-italiana/articoli_costituzione/2026/articoli_costituzione_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "articolo",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "disposizione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "parte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "titolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sezione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "heading",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "testo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "commi",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "articoli_costituzione__mart_riepilogo_per_parte"
+        ]
+      }
+    ],
+    "corte_costituzionale": [
+      {
+        "slug": "atti_promovimento_corte_costituzionale",
+        "url_slug": "atti-promovimento-corte-costituzionale",
+        "name": "Atti Promovimento Corte Costituzionale",
+        "description": "",
+        "source": "",
+        "source_id": "corte_costituzionale",
+        "period": {
+          "start": 1956,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "costituzione",
+          "giurisprudenza",
+          "corte_costituzionale",
+          "promovimento"
+        ],
+        "category": "giurisprudenza",
+        "registry_source": "costituzione-italiana",
+        "clean_rows": 1008,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/costituzione-italiana/atti_promovimento_corte_costituzionale/2026/atti_promovimento_corte_costituzionale_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "tipo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "numero_atto",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_parte",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "parametro_articolo",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "parametro_comma",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "norma_descrizione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "norma_numero",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "norma_articolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "norme_str",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_norme",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "atti_promovimento_corte_costituzionale__mart_parametri_per_annuale",
+          "atti_promovimento_corte_costituzionale__mart_tipi_giudizio_per_annuale"
+        ]
+      },
+      {
+        "slug": "giudici_corte_costituzionale",
+        "url_slug": "giudici-corte-costituzionale",
+        "name": "Giudici Corte Costituzionale",
+        "description": "",
+        "source": "",
+        "source_id": "corte_costituzionale",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "costituzione",
+          "giurisprudenza",
+          "corte_costituzionale",
+          "giudici"
+        ],
+        "category": "giurisprudenza",
+        "registry_source": "costituzione-italiana",
+        "clean_rows": 133,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/costituzione-italiana/giudici_corte_costituzionale/2026/giudici_corte_costituzionale_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "nome_cognome",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cognome",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "titolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "eletto_da",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_nomina",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_giuramento",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_cessazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nota_biografica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "giudici_corte_costituzionale__mart_giudici_per_origine"
+        ]
+      },
+      {
+        "slug": "massime_corte_costituzionale",
+        "url_slug": "massime-corte-costituzionale",
+        "name": "Massime Corte Costituzionale",
+        "description": "",
+        "source": "",
+        "source_id": "corte_costituzionale",
+        "period": {
+          "start": 1956,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "costituzione",
+          "giurisprudenza",
+          "corte_costituzionale",
+          "massime"
+        ],
+        "category": "giurisprudenza",
+        "registry_source": "costituzione-italiana",
+        "clean_rows": 266831,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/costituzione-italiana/massime_corte_costituzionale/2026/massime_corte_costituzionale_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "id_massima",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno_pronuncia",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_pronuncia",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipologia_pronuncia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipologia_giudizio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_decisione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_deposito",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "esito",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "titolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "testo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "parametro_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "parametro_descrizione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "parametro_articolo",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "parametro_comma",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "norma_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "norma_descrizione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "norma_numero",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "norma_data",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "norma_articolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "norma_specificazione_articolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "norma_comma",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "norma_specificazione_comma",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "massime_corte_costituzionale__mart_sentenze_per_annuale",
+          "massime_corte_costituzionale__mart_parametri_per_annuale",
+          "massime_corte_costituzionale__mart_esiti_per_giudizio"
+        ]
+      },
+      {
+        "slug": "pronunce_corte_costituzionale",
+        "url_slug": "pronunce-corte-costituzionale",
+        "name": "Pronunce Corte Costituzionale",
+        "description": "",
+        "source": "",
+        "source_id": "corte_costituzionale",
+        "period": {
+          "start": 1956,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "costituzione",
+          "giurisprudenza",
+          "corte_costituzionale",
+          "pronunce"
+        ],
+        "category": "giurisprudenza",
+        "registry_source": "costituzione-italiana",
+        "clean_rows": 22389,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/costituzione-italiana/pronunce_corte_costituzionale/2026/pronunce_corte_costituzionale_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno_pronuncia",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_pronuncia",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ecli",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipologia_pronuncia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "presidente",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "relatore_pronuncia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "redattore_pronuncia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_decisione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_deposito",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "collegio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "testo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "dispositivo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "pronunce_corte_costituzionale__mart_relatore_per_annuale",
+          "pronunce_corte_costituzionale__mart_collegio_composizione"
+        ]
+      },
+      {
+        "slug": "sentenze_complete",
+        "url_slug": "sentenze-complete",
+        "name": "Sentenze Complete",
+        "description": "SentenzeComplete: pronunce della Corte Costituzionaliunite con massime (esiti, parametri, norme) e anagrafica giudici (eletto_da). Una riga per pronuncia \u00d7 massima.\n",
+        "source": "",
+        "source_id": "corte_costituzionale",
+        "period": {
+          "start": 1956,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "costituzione",
+          "giurisprudenza",
+          "corte_costituzionale",
+          "sentenze",
+          "compose"
+        ],
+        "category": "giurisprudenza",
+        "registry_source": "costituzione-italiana",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/costituzione-italiana/sentenze_complete/2026/sentenze_complete_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno_pronuncia",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_pronuncia",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ecli",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipologia_pronuncia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "presidente",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "relatore_pronuncia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "redattore_pronuncia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_decisione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_deposito",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "collegio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "dispositivo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "esito",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipologia_giudizio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "parametro_articolo",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "parametro_comma",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "norma_descrizione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "norma_articolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "relatore_eletto_da",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "relatore_nomina",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "sentenze_complete__mart_relatore_esiti",
+          "sentenze_complete__mart_sentenze_per_articolo"
+        ]
+      }
+    ],
+    "italia_corpus": [
+      {
+        "slug": "citazioni_costituzionali",
+        "url_slug": "citazioni-costituzionali",
+        "name": "Citazioni Costituzionali",
+        "description": "",
+        "source": "",
+        "source_id": "italia_corpus",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "costituzione",
+          "legislazione",
+          "citazioni"
+        ],
+        "category": "normativa",
+        "registry_source": "costituzione-italiana",
+        "clean_rows": 18182,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/costituzione-italiana/citazioni_costituzionali/2026/citazioni_costituzionali_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "fonte_filename",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fonte_collezione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fonte_anno",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fonte_tipo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "articolo",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "contesto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "citazioni_costituzionali__mart_citazioni_per_articolo"
+        ]
+      },
+      {
+        "slug": "revisioni_costituzionali",
+        "url_slug": "revisioni-costituzionali",
+        "name": "Revisioni Costituzionali",
+        "description": "",
+        "source": "",
+        "source_id": "italia_corpus",
+        "period": {
+          "start": 1948,
+          "end": 2023
+        },
+        "stage": "incubating",
+        "tags": [
+          "costituzione",
+          "revisioni",
+          "leggi_costituzionali"
+        ],
+        "category": "normativa",
+        "registry_source": "costituzione-italiana",
+        "clean_rows": 50,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/costituzione-italiana/revisioni_costituzionali/2026/revisioni_costituzionali_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "urn",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_redazionale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "titolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "articoli_modificati",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_articoli",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "revisioni_costituzionali__mart_revisioni_per_articolo"
         ]
       }
     ],
@@ -12330,7 +13265,7 @@
           "partecipazioni"
         ],
         "category": "finanza-pubblica",
-        "registry_source": "dataset-incubator",
+        "registry_source": "partecipate-monitor",
         "clean_rows": 53656,
         "location": {
           "type": "gcs",
@@ -12961,7 +13896,7 @@
           "partecipate"
         ],
         "category": "finanza-pubblica",
-        "registry_source": "dataset-incubator",
+        "registry_source": "partecipate-monitor",
         "clean_rows": 16785,
         "location": {
           "type": "gcs",
@@ -14297,8 +15232,8 @@
           "glossario"
         ],
         "category": "finanza-pubblica",
-        "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "registry_source": "opencivitas",
+        "clean_rows": 582,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/opencivitas_glossario/*/opencivitas_glossario_*_clean.parquet",
@@ -14381,8 +15316,8 @@
           "indicatori"
         ],
         "category": "finanza-pubblica",
-        "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "registry_source": "opencivitas",
+        "clean_rows": 2670752,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/opencivitas_indicatori/*/opencivitas_indicatori_*_clean.parquet",
@@ -14520,8 +15455,8 @@
           "enti"
         ],
         "category": "finanza-pubblica",
-        "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "registry_source": "opencivitas",
+        "clean_rows": 6573,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/opencivitas_fsc_enti_rso/2025/opencivitas_fsc_enti_rso_2025_clean.parquet",
@@ -25572,6 +26507,1006 @@
         "mart_refs": [
           "mef_vita_media__mart_vita_media"
         ]
+      },
+      {
+        "slug": "mef_adempimenti",
+        "url_slug": "mef-adempimenti",
+        "name": "Mef Adempimenti",
+        "description": "",
+        "source": "",
+        "source_id": "mef_tesoro",
+        "period": {
+          "start": 2020,
+          "end": 2023
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "mef",
+          "adempimenti",
+          "compliance",
+          "tusp"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "partecipate-monitor",
+        "clean_rows": 11365,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/partecipate-pubbliche/mef_adempimenti/*/mef_adempimenti_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "settore_istituzionale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "macrocategoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "denominazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cf",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "regione_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provincia_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "comune_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partecipazioni_dichiarate",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "incarichi_dichiarati",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "negativa_partecipazioni_societarie",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "negativa_partecipazioni_nonsocietarie",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "negativa_incarichi",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "adempiente",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mef_adempimenti__mart_adempimenti"
+        ]
+      },
+      {
+        "slug": "mef_partecipazioni",
+        "url_slug": "mef-partecipazioni",
+        "name": "Mef Partecipazioni",
+        "description": "",
+        "source": "",
+        "source_id": "mef_tesoro",
+        "period": {
+          "start": 2020,
+          "end": 2023
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "mef",
+          "partecipazioni",
+          "partecipate"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "partecipate-monitor",
+        "clean_rows": 53656,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/partecipate-pubbliche/mef_partecipazioni/*/mef_partecipazioni_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "amministrazione_settore_istituzionale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "amministrazione_macrocategoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "amministrazione_categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "amministrazione_denominazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "amministrazione_codice_fiscale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "appartenenza_perimetro_tusp",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "appartenenza_perimetro_revisione_periodica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "amministrazione_regione_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "amministrazione_provincia_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "amministrazione_comune_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partecipata_denominazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partecipata_codice_fiscale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partecipata_anno_di_costituzione",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partecipata_forma_giuridica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partecipata_stato_giuridico",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partecipata_anno_inizio_procedura",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partecipata_nazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partecipata_regione_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partecipata_provincia_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partecipata_comune_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "emittente_azioni_quotate",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "emittente_strumenti_quotati",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "societa_controllata_da_una_quotata",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "gal",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partecipata_settore_attivita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partecipata_divisione_ateco",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "servizi_affidati",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "servizio_affidato_1",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "modalita_affidamento_servizio_1",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ente_affidante_servizio_1",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_impegnato_servizio_1",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "servizio_affidato_2",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "modalita_affidamento_servizio_2",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ente_affidante_servizio_2",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_impegnato_servizio_2",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "servizio_affidato_3",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "modalita_affidamento_servizio_3",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ente_affidante_servizio_3",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_impegnato_servizio_3",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "servizio_affidato_4",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "modalita_affidamento_servizio_4",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ente_affidante_servizio_4",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_impegnato_servizio_4",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "servizio_affidato_5",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "modalita_affidamento_servizio_5",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ente_affidante_servizio_5",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_impegnato_servizio_5",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "quota_partecipazione_diretta",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partecipazione_indiretta",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_controllo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_oneri_importo_impegnato",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_oneri_importo_pagato_c_residui",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_oneri_importo_pagato_c_competenza",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partecipata_tipo_contabilita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partecipata_tipo_bilancio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partecipata_bilancio_di_esercizio_approvato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partecipata_numero_di_addetti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partecipata_patrimonio_netto_co_e_p",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partecipata_risultato_d_esercizio_co_e_p",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partecipata_valore_della_produzione_co_e_p",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partecipata_costo_della_produzione_co_e_p",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partecipata_costo_del_personale_co_e_p",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partecipata_patrimonio_netto_co_f",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partecipata_totale_entrate_co_f",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partecipata_totale_uscite_co_f",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partecipata_spese_per_personale_co_f",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nr_amministratori",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nr_componenti_organo_di_controllo",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partecipata_bilancio_di_esercizio_2020_approvato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "risultato_d_esercizio_2020",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partecipata_bilancio_di_esercizio_2019_approvato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "risultato_d_esercizio_2019",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partecipazione_ancora_detenuta_alla_data_di_adozione_del_provvedimento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "societa_controllata_da_una_quotata_dichiarata",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "attivita_a_favore_amm",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "societa_all_a",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "attivita_svolta",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "quota_soggetto_privato",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "attivita_analoghe_art_20_c_2_lett_c",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "contenimento_dei_costi_art_20_c_2_lett_f",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "aggregazione_di_societa_art_20_c_2_lett_g",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "esito_della_ricognizione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "modalita_razionalizzazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "termine_razionalizzazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mef_partecipazioni__mart_partecipate"
+        ]
+      },
+      {
+        "slug": "mef_rappresentanti_partecipate",
+        "url_slug": "mef-rappresentanti-partecipate",
+        "name": "Mef Rappresentanti Partecipate",
+        "description": "",
+        "source": "",
+        "source_id": "mef_tesoro",
+        "period": {
+          "start": 2018,
+          "end": 2023
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "mef",
+          "rappresentanti",
+          "partecipate"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "partecipate-monitor",
+        "clean_rows": 16785,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/partecipate-pubbliche/mef_rappresentanti_partecipate/*/mef_rappresentanti_partecipate_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "amministrazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "amm_settore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "amm_macrocategoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "amm_categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "amm_cf",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "amm_regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "amm_provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "amm_comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "societa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "societa_cf",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "societa_anno_costituzione",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "societa_forma_giuridica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "societa_stato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "societa_settore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "societa_ateco",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "societa_regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "societa_provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "societa_comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rapp_id",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rapp_cognome",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rapp_nome",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rapp_genere",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "incarico_tipo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "incarico_data_inizio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "incarico_data_fine",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "incarico_gratuito",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "incarico_importo_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "incarico_riversato_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mef_rappresentanti_partecipate__mart_rappresentanti"
+        ]
       }
     ],
     "ocpi": [
@@ -29820,6 +31755,692 @@
           "siope_uscite__mart_uni",
           "siope_uscite__mart_sintesi",
           "siope_uscite__mart_trend"
+        ]
+      }
+    ],
+    "https://www.opencivitas.it/": [
+      {
+        "slug": "opencivitas_determinanti",
+        "url_slug": "opencivitas-determinanti",
+        "name": "Opencivitas Determinanti",
+        "description": "Spesa standard vs storica, performance scores e determinanti demografiche per comune RSO \u2014 il TOT aggregato dal RDF OpenCivitas.",
+        "source": "https://www.opencivitas.it/",
+        "source_id": "opencivitas",
+        "period": {
+          "start": 2015,
+          "end": 2022
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "opencivitas",
+          "determinanti",
+          "spesa-standard",
+          "performance"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "opencivitas",
+        "clean_rows": 6587,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/opencivitas/opencivitas_determinanti/*/opencivitas_determinanti_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "username",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "sogei_code",
+            "description": ""
+          },
+          {
+            "name": "comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_name",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "regione_istat_cod",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "spesa_standard",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "spesa_standard_procapite",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "spesa_storica",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "spesa_storica_procapite",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rapporto_standard_storico",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "livello_servizi",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "livello_spesa",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "coord_servizi",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "coord_spesa",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_spesa_su_servizi_su",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_spesa_su_servizi_giu",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_spesa_giu_servizi_giu",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_spesa_giu_servizi_su",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_non_valutabile",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "costo_lavoro_procapite",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "dipendenti_x1000ab",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "diff_servizi_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "det_popolazione",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "det_densita",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "det_ultra_75",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "det_pop_straniera",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "det_pop_15_64",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "det_pop_65_74",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "det_deprivazione",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "det_pendolari",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "det_immobili",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "det_fattore_contesto",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "join_enti_ok",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "opencivitas_determinanti__mart_determinanti"
+        ]
+      },
+      {
+        "slug": "opencivitas_fsc_enti_rso",
+        "url_slug": "opencivitas-fsc-enti-rso",
+        "name": "Opencivitas Fsc Enti Rso",
+        "description": "Anagrafica enti RSO con codice Sogei, provincia e regione \u2014 tavola di supporto per join con dataset principali.",
+        "source": "https://www.opencivitas.it/",
+        "source_id": "opencivitas",
+        "period": {
+          "start": 2025,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "opencivitas",
+          "fsc",
+          "enti"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "opencivitas",
+        "clean_rows": 6573,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/opencivitas/opencivitas_fsc_enti_rso/2025/opencivitas_fsc_enti_rso_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "username",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "sogei_code",
+            "description": ""
+          },
+          {
+            "name": "denominazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "regione_istat_cod",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "opencivitas_fsc_enti_rso__mart_enti"
+        ]
+      },
+      {
+        "slug": "opencivitas_fsc_rso",
+        "url_slug": "opencivitas-fsc-rso",
+        "name": "Opencivitas Fsc Rso",
+        "description": "Finanza comunale FSC: capacit\u00e0 fiscale, fondo perequativo e dotazione finale per comune RSO.",
+        "source": "https://www.opencivitas.it/",
+        "source_id": "opencivitas",
+        "period": {
+          "start": 2017,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "opencivitas",
+          "fsc"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "opencivitas",
+        "clean_rows": 6573,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/opencivitas/opencivitas_fsc_rso/*/opencivitas_fsc_rso_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "username",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "sogei_code",
+            "description": ""
+          },
+          {
+            "name": "comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_name",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "regione_istat_cod",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "popolazione",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "capacita_fiscale",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fondo_perequativo",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "dotazione_finale_fsc",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imu_tasi_standard",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_risorse_storiche",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "join_enti_ok",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "opencivitas_fsc_rso__mart_compose_comuni"
+        ]
+      },
+      {
+        "slug": "opencivitas_glossario",
+        "url_slug": "opencivitas-glossario",
+        "name": "Opencivitas Glossario",
+        "description": "Metadati indicatori OpenCivitas: codice, descrizione, tipo, categoria e funzione per ogni indicatore.",
+        "source": "https://www.opencivitas.it/",
+        "source_id": "opencivitas",
+        "period": {
+          "start": 2015,
+          "end": 2022
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "opencivitas",
+          "glossario"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "opencivitas",
+        "clean_rows": 582,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/opencivitas/opencivitas_glossario/*/opencivitas_glossario_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "codice_indicatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "funzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ordine",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "ambito",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "opencivitas_glossario__mart_metadati"
+        ]
+      },
+      {
+        "slug": "opencivitas_indicatori",
+        "url_slug": "opencivitas-indicatori",
+        "name": "Opencivitas Indicatori",
+        "description": "Indicatori di servizio dei comuni RSO su 7 ambiti (rifiuti, istruzione, sociale, viabilit\u00e0, amministrazione) \u2014 formato EAV.",
+        "source": "https://www.opencivitas.it/",
+        "source_id": "opencivitas",
+        "period": {
+          "start": 2015,
+          "end": 2022
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "opencivitas",
+          "indicatori"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "opencivitas",
+        "clean_rows": 2670752,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/opencivitas/opencivitas_indicatori/*/opencivitas_indicatori_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "username",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "sogei_code",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "ambito",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "indicatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valore_num",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_indicatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_indicatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria_indicatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "funzione_indicatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "denominazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "regione_istat_cod",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "join_enti_ok",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "join_metadati_ok",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "opencivitas_indicatori__mart_indicatori",
+          "opencivitas_indicatori__mart_comuni"
         ]
       }
     ],
