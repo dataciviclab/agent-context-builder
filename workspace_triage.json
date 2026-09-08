@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T03:22:11.917197",
+  "generated_at": "2026-09-08T10:43:26.571185",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -21,8 +21,15 @@
     "source-observatory",
     "toolkit"
   ],
-  "open_prs": 5,
+  "open_prs": 6,
   "prs": [
+    {
+      "number": 841,
+      "title": "chore: remove MEF candidates (duplicati in partecipate-monitor)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/841",
+      "category": "other"
+    },
     {
       "number": 836,
       "title": "feat(candidates): bootstrap gse_cer_elenco candidate",
@@ -1382,17 +1389,17 @@
     }
   },
   "warnings": [
-    "Many open PRs: 8"
+    "Many open PRs: 9"
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-09-07T08:13:29.823894+00:00",
-    "probe_date": "2026-09-07",
+    "generated_at": "2026-09-08T08:01:21.837880+00:00",
+    "probe_date": "2026-09-08",
     "sources_total": 36,
-    "green": 35,
+    "green": 36,
     "yellow": 0,
-    "red": 1,
-    "persistent_red": 1,
+    "red": 0,
+    "persistent_red": 0,
     "sources": [
       {
         "id": "istat_sdmx",
@@ -1468,11 +1475,11 @@
       },
       {
         "id": "ispra_linked_data",
-        "status": "RED",
+        "status": "GREEN",
         "protocol": "sparql",
-        "http_code": "-",
-        "note": "Connection error (ConnectionError)",
-        "red_streak": 14
+        "http_code": "200",
+        "note": null,
+        "red_streak": 0
       },
       {
         "id": "consip_open_data",
@@ -1683,16 +1690,7 @@
         "red_streak": 0
       }
     ],
-    "unhealthy": [
-      {
-        "id": "ispra_linked_data",
-        "status": "RED",
-        "protocol": "sparql",
-        "http_code": "-",
-        "note": "Connection error (ConnectionError)",
-        "red_streak": 14
-      }
-    ]
+    "unhealthy": []
   },
   "source_health": {
     "available": true,
