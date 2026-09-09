@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09T03:25:43.076475",
+  "generated_at": "2026-09-09T10:52:08.033411",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -1420,11 +1420,11 @@
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-09-08T08:01:21.837880+00:00",
-    "probe_date": "2026-09-08",
+    "generated_at": "2026-09-09T08:06:09.894487+00:00",
+    "probe_date": "2026-09-09",
     "sources_total": 36,
-    "green": 36,
-    "yellow": 0,
+    "green": 35,
+    "yellow": 1,
     "red": 0,
     "persistent_red": 0,
     "sources": [
@@ -1446,10 +1446,10 @@
       },
       {
         "id": "inps",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "ckan",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
@@ -1717,7 +1717,16 @@
         "red_streak": 0
       }
     ],
-    "unhealthy": []
+    "unhealthy": [
+      {
+        "id": "inps",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "red_streak": 0
+      }
+    ]
   },
   "source_health": {
     "available": true,
