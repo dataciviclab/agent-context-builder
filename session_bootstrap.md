@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-09-09T10:52:08.033411
+**Generated**: 2026-09-09T16:02:02.503800
 
 ## Stato
 
@@ -12,7 +12,6 @@ Radar: 36 fonti GREEN 35 · Registry: 14 repo · 232 dataset
 - [PR] dataset-incubator#834: chore(deps): bump toolkit a v1.51.0
 - [PR] dataset-incubator#829: intake: inpa-bandi e inpa-comunicazioni — reclutamento PA dal Portale inPA
 - [PR] italia-corpus#39: refactor: unifica 3 parquet in 2 + aggiunge vigente
-- [PR] italia-corpus#37: feat: expose vigente field from frontmatter to normativa.parquet
 - [PR] 3 dependabot bump (skipped)
 
 ## Analisi attive (18)
