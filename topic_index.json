@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "generated_at": "2026-09-10T10:46:25.830982",
+  "generated_at": "2026-09-10T15:56:47.213606",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -15521,7 +15521,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "clean_rows": 2320817,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/opencoesione_progetti/2026/opencoesione_progetti_2026_clean.parquet",
@@ -15703,6 +15703,155 @@
             "semantic_type": "",
             "description": "Importo pagamenti coesione"
           }
+        ],
+        "mart_refs": [
+          "opencoesione_progetti__mart_macroarea_tema"
+        ]
+      }
+    ],
+    "opencoesione": [
+      {
+        "slug": "opencoesione_soggetti",
+        "url_slug": "opencoesione-soggetti",
+        "name": "Opencoesione Soggetti",
+        "description": "",
+        "source": "",
+        "source_id": "opencoesione",
+        "period": {
+          "start": 2007,
+          "end": 2027
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "opencoesione",
+          "soggetti",
+          "beneficiari"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 7195885,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/opencoesione_soggetti/2026/opencoesione_soggetti_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "COD_LOCALE_PROGETTO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "SOGG_COD_RUOLO",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "SOGG_DESCR_RUOLO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_CODICE_FISCALE_SOGG",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_DENOMINAZIONE_SOGG",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COD_FORMA_GIURIDICA_SOGG",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "DESCR_FORMA_GIURIDICA_SOGG",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COD_COMUNE_SEDE_SOGG",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "INDIRIZZO_SOGG",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "CAP_SOGG",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COD_ATECO_SOGG",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "DESCRIZIONE_ATECO_SOGG",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COD_DIMENSIONE_SOGG",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "DESCR_DIMENSIONE_SOGG",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "CODICE_FISCALE_SOGGETTO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "DENOMINAZIONE_SOGGETTO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "opencoesione_soggetti__mart_beneficiari"
         ]
       }
     ],

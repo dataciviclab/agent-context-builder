@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T10:46:25.830982",
+  "generated_at": "2026-09-10T15:56:47.213606",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -1728,11 +1728,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-09-07",
+    "generated_at": "2026-09-10",
     "summary": {
-      "total": 85,
+      "total": 84,
       "by_status": {
-        "ok": 85
+        "ok": 84
       }
     },
     "actionable": []
@@ -1993,13 +1993,13 @@
       "repo": "dataset-incubator",
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
-      "updated_at": "2026-09-07",
-      "datasets": 86,
-      "marts": 139,
-      "signals": 85,
+      "updated_at": "2026-09-10",
+      "datasets": 87,
+      "marts": 133,
+      "signals": 84,
       "codelists": 0,
       "entities": 16,
-      "gcs": 86,
+      "gcs": 87,
       "reason": "",
       "signals_detail": [
         {
@@ -2381,34 +2381,6 @@
           "detail": "anni 2017-2025 \u2014 mart: si"
         },
         {
-          "id": "mef_partecipazioni",
-          "source_id": "mef_tesoro",
-          "status": "ok",
-          "label": "mef_partecipazioni",
-          "detail": "anni 2020-2023 \u2014 mart: si",
-          "run": {
-            "run_id": "20260802T180319Z_432e868a",
-            "year": 2023,
-            "status": "SUCCESS",
-            "started_at": "2026-08-02T18:03:19.213223+00:00",
-            "finished_at": "2026-08-02T18:03:57.083600+00:00"
-          }
-        },
-        {
-          "id": "mef_rappresentanti_partecipate",
-          "source_id": "mef_tesoro",
-          "status": "ok",
-          "label": "mef_rappresentanti_partecipate",
-          "detail": "anni 2018-2023 \u2014 mart: si",
-          "run": {
-            "run_id": "20260803T104219Z_ba17250b",
-            "year": 2023,
-            "status": "SUCCESS",
-            "started_at": "2026-08-03T10:42:19.829537+00:00",
-            "finished_at": "2026-08-03T10:42:34.022082+00:00"
-          }
-        },
-        {
           "id": "mim_alunni_corso_eta",
           "source_id": "mim_opendata",
           "status": "ok",
@@ -2497,7 +2469,28 @@
           "source_id": "opencoesione",
           "status": "ok",
           "label": "opencoesione_progetti",
-          "detail": "anno 2026 \u2014 mart: si"
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260910T130331Z_956b2ace",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-10T13:03:31.613853+00:00",
+            "finished_at": "2026-09-10T13:03:44.947198+00:00"
+          }
+        },
+        {
+          "id": "opencoesione_soggetti",
+          "source_id": "opencoesione",
+          "status": "ok",
+          "label": "opencoesione_soggetti",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260910T130346Z_9117c19d",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-10T13:03:46.111979+00:00",
+            "finished_at": "2026-09-10T13:04:01.352032+00:00"
+          }
         },
         {
           "id": "openga_ricorsi_appalto",
