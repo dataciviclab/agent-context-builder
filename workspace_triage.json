@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-11T15:59:11.207580",
+  "generated_at": "2026-09-11T17:07:59.922111",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -22,17 +22,11 @@
     "rna-aiuti-stato",
     "senato-akn",
     "source-observatory",
+    "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 6,
+  "open_prs": 5,
   "prs": [
-    {
-      "number": 71,
-      "title": "chore: auto-discover registries (2026-09-11)",
-      "repo": "agent-context-builder",
-      "url": "https://github.com/dataciviclab/agent-context-builder/pull/71",
-      "category": "other"
-    },
     {
       "number": 844,
       "title": "chore: remove ade-cinque-per-mille (promosso a terzo-settore-intelligence)",
@@ -1413,6 +1407,14 @@
       "branches_ahead": [],
       "untracked_files": 0
     },
+    "terzo-settore": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
     "toolkit": {
       "available": false,
       "reason": "local_disabled",
@@ -1423,7 +1425,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 7"
+    "Many open PRs: 6"
   ],
   "radar": {
     "available": true,
@@ -4939,6 +4941,175 @@
       "entities": 0,
       "gcs": 0,
       "reason": "registry_not_found"
+    },
+    {
+      "repo": "terzo-settore",
+      "available": true,
+      "source_repo": "dataciviclab/terzo-settore",
+      "updated_at": "2026-09-10",
+      "datasets": 11,
+      "marts": 20,
+      "signals": 11,
+      "codelists": 0,
+      "entities": 5,
+      "gcs": 11,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "compose:ets_5xmille",
+          "source_id": "terzo_settore_intelligence",
+          "status": "ok",
+          "label": "ets_5xmille",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260910T112057Z_f81a0d03",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-10T11:20:57.689832+00:00",
+            "finished_at": "2026-09-10T11:20:59.572669+00:00"
+          }
+        },
+        {
+          "id": "compose:ets_anac",
+          "source_id": "terzo_settore_intelligence",
+          "status": "ok",
+          "label": "ets_anac",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260909T151758Z_e6a587c7",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-09T15:17:58.636673+00:00",
+            "finished_at": "2026-09-09T15:19:29.270792+00:00"
+          }
+        },
+        {
+          "id": "compose:ets_fts",
+          "source_id": "terzo_settore_intelligence",
+          "status": "ok",
+          "label": "ets_fts",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260910T160105Z_c7ac0c8a",
+            "year": 2026,
+            "status": "RUNNING",
+            "started_at": "2026-09-10T16:01:05.971548+00:00",
+            "finished_at": ""
+          }
+        },
+        {
+          "id": "compose:ets_mef",
+          "source_id": "terzo_settore_intelligence",
+          "status": "ok",
+          "label": "ets_mef",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260909T145104Z_2bfe4465",
+            "year": 2026,
+            "status": "FAILED",
+            "started_at": "2026-09-09T14:51:04.886578+00:00",
+            "finished_at": "2026-09-09T14:51:06.870644+00:00"
+          }
+        },
+        {
+          "id": "compose:ets_opencoesione",
+          "source_id": "terzo_settore_intelligence",
+          "status": "ok",
+          "label": "ets_opencoesione",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260910T133708Z_bbfd5afa",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-10T13:37:08.198717+00:00",
+            "finished_at": "2026-09-10T13:37:13.983264+00:00"
+          }
+        },
+        {
+          "id": "compose:ets_pnrr",
+          "source_id": "terzo_settore_intelligence",
+          "status": "ok",
+          "label": "ets_pnrr",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260909T145335Z_9bd64121",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-09T14:53:35.374439+00:00",
+            "finished_at": "2026-09-09T14:53:37.365593+00:00"
+          }
+        },
+        {
+          "id": "compose:ets_rna",
+          "source_id": "terzo_settore_intelligence",
+          "status": "ok",
+          "label": "ets_rna",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260909T145436Z_4bf9bfef",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-09T14:54:36.828164+00:00",
+            "finished_at": "2026-09-09T14:54:42.810331+00:00"
+          }
+        },
+        {
+          "id": "compose:ets_unified",
+          "source_id": "terzo_settore_intelligence",
+          "status": "ok",
+          "label": "ets_unified",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260910T163847Z_14098606",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-10T16:38:47.399134+00:00",
+            "finished_at": "2026-09-10T16:38:47.884082+00:00"
+          }
+        },
+        {
+          "id": "ade_cinque_per_mille",
+          "source_id": "ade",
+          "status": "ok",
+          "label": "ade_cinque_per_mille",
+          "detail": "anni 2022-2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260910T105635Z_2b5c7453",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-09-10T10:56:35.867032+00:00",
+            "finished_at": "2026-09-10T10:56:44.877743+00:00"
+          }
+        },
+        {
+          "id": "istat_non_profit_2023",
+          "source_id": "istat_excel",
+          "status": "ok",
+          "label": "istat_non_profit_2023",
+          "detail": "anno 2023 \u2014 mart: si",
+          "run": {
+            "run_id": "20260909T155603Z_b47a4746",
+            "year": 2023,
+            "status": "SUCCESS",
+            "started_at": "2026-09-09T15:56:03.696903+00:00",
+            "finished_at": "2026-09-09T15:56:03.416192+00:00"
+          }
+        },
+        {
+          "id": "runts",
+          "source_id": "ministero_lavoro",
+          "status": "ok",
+          "label": "runts",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260910T163104Z_a17e84d0",
+            "year": 2026,
+            "status": "FAILED",
+            "started_at": "2026-09-10T16:31:04.275263+00:00",
+            "finished_at": "2026-09-10T16:31:04.338068+00:00"
+          }
+        }
+      ]
     },
     {
       "repo": "toolkit",

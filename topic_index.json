@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "generated_at": "2026-09-11T15:59:11.207580",
+  "generated_at": "2026-09-11T17:07:59.922111",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -81,6 +81,10 @@
     "source-observatory": {
       "description": "Osservatorio delle fonti pubbliche \u2014 radar, monitoraggio e scouting di dataset aperti.",
       "url": "https://github.com/dataciviclab/source-observatory"
+    },
+    "terzo-settore": {
+      "description": "Quali risorse riceve il terzo settore italiano, come si distribuiscono tra territori e sezioni, e quali bandi potrebbero essere vinti dagli enti con maggiore capacita progettuale?",
+      "url": "https://github.com/dataciviclab/terzo-settore"
     },
     "toolkit": {
       "description": "Motore di pipeline dati del DataCivicLab \u2014 da fonti pubbliche a dataset pronti per l'analisi.",
@@ -4864,7 +4868,7 @@
           "mille"
         ],
         "category": "terzo-settore",
-        "registry_source": "dataset-incubator",
+        "registry_source": "terzo-settore",
         "clean_rows": 95977,
         "location": {
           "type": "gcs",
@@ -34306,6 +34310,1130 @@
         ],
         "mart_refs": [
           "senato_emendamenti__mart_emendamenti_per_atto"
+        ]
+      }
+    ],
+    "ade": [
+      {
+        "slug": "ade_cinque_per_mille",
+        "url_slug": "ade-cinque-per-mille",
+        "name": "Ade Cinque Per Mille",
+        "description": "",
+        "source": "",
+        "source_id": "ade",
+        "period": {
+          "start": 2022,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "terzo-settore",
+          "ade",
+          "cinque",
+          "per",
+          "mille"
+        ],
+        "category": "terzo-settore",
+        "registry_source": "terzo-settore",
+        "clean_rows": 95977,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/terzo_settore/ade_cinque_per_mille/*/ade_cinque_per_mille_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "progressivo",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_fiscale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "denominazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "sigla_provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_name",
+            "description": ""
+          },
+          {
+            "name": "flag_ets_onlus",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_asd",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_ricerca_scientifica",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_ricerca_sanitaria",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_comune",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_beni_culturali",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_area_protetta",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_scelte",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_scelte_espresse",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_scelte_generiche",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_ripartizione",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_totale_erogabile",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ade_cinque_per_mille__ade_cinque_per_mille",
+          "ade_cinque_per_mille__five_per_mille_trend",
+          "ade_cinque_per_mille__five_per_mille_per_provincia",
+          "ade_cinque_per_mille__five_per_mille_top_enti",
+          "ade_cinque_per_mille__five_per_mille_per_categoria"
+        ]
+      }
+    ],
+    "terzo_settore_intelligence": [
+      {
+        "slug": "ets_5xmille",
+        "url_slug": "ets-5xmille",
+        "name": "Ets 5Xmille",
+        "description": "Compose RUNTS + 5x1000 (ADE): profilo ETS con donazioni 5 per mille.",
+        "source": "",
+        "source_id": "terzo_settore_intelligence",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "terzo-settore",
+          "5xmille",
+          "compose"
+        ],
+        "category": "terzo-settore",
+        "registry_source": "terzo-settore",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/terzo_settore/ets_5xmille/2026/ets_5xmille_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "codice_fiscale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "denominazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sezione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_name",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "fonte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "importo",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_asd",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_ricerca_scientifica",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_ricerca_sanitaria",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_comune",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_beni_culturali",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_area_protetta",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ets_5xmille__ets_5xmille"
+        ]
+      },
+      {
+        "slug": "ets_anac",
+        "url_slug": "ets-anac",
+        "name": "Ets Anac",
+        "description": "Compose RUNTS + ANAC: aggiudicazioni, partecipazioni e subappalti.",
+        "source": "",
+        "source_id": "terzo_settore_intelligence",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "terzo-settore",
+          "anac",
+          "appalti",
+          "compose"
+        ],
+        "category": "terzo-settore",
+        "registry_source": "terzo-settore",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/terzo_settore/ets_anac/2026/ets_anac_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "fonte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_fiscale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "importo",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "oggetto_gara",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stazione_appaltante",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "appalto_riservato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_pnrr",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_gare",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_cpv",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "settore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_part",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "appalto_multiplo",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ets_anac__ets_anac_aggiudicazioni",
+          "ets_anac__ets_anac_partecipazioni",
+          "ets_anac__ets_anac_subappalti"
+        ]
+      },
+      {
+        "slug": "ets_fts",
+        "url_slug": "ets-fts",
+        "name": "Ets Fts",
+        "description": "Compose RUNTS + FTS: grant europei.",
+        "source": "",
+        "source_id": "terzo_settore_intelligence",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "terzo-settore",
+          "grant-ue",
+          "compose"
+        ],
+        "category": "terzo-settore",
+        "registry_source": "terzo-settore",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/terzo_settore/ets_fts/2026/ets_fts_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "codice_fiscale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "fonte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "importo",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_programma",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_no_profit",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_ong",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ets_fts__ets_fts"
+        ]
+      },
+      {
+        "slug": "ets_mef",
+        "url_slug": "ets-mef",
+        "name": "Ets Mef",
+        "description": "Compose RUNTS + MEF: patrimonio immobiliare pubblico in uso.",
+        "source": "",
+        "source_id": "terzo_settore_intelligence",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "terzo-settore",
+          "patrimonio",
+          "mef",
+          "compose"
+        ],
+        "category": "terzo-settore",
+        "registry_source": "terzo-settore",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/terzo_settore/ets_mef/2026/ets_mef_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "codice_fiscale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "fonte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "importo",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "finalita_pf",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipologia_bene",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ets_mef__ets_mef"
+        ]
+      },
+      {
+        "slug": "ets_opencoesione",
+        "url_slug": "ets-opencoesione",
+        "name": "Ets Opencoesione",
+        "description": "Compose RUNTS + OpenCoesione: quali ETS hanno partecipato a progetti di fondi coesione. Conteggio progetti (non importo per beneficiario).",
+        "source": "",
+        "source_id": "terzo_settore_intelligence",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "terzo-settore",
+          "opencoesione",
+          "fondi-coesione",
+          "compose"
+        ],
+        "category": "terzo-settore",
+        "registry_source": "terzo-settore",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/terzo_settore/ets_opencoesione/2026/ets_opencoesione_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "codice_fiscale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "fonte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "importo",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "denominazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sezione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_name",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "ha_progetti_coesione",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_progetti_coesione",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_temi_coesione",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "max_progetto_coesione",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "temi_coesione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ets_opencoesione__ets_coesione"
+        ]
+      },
+      {
+        "slug": "ets_pnrr",
+        "url_slug": "ets-pnrr",
+        "name": "Ets Pnrr",
+        "description": "Compose RUNTS + PNRR: progetti finanziati.",
+        "source": "",
+        "source_id": "terzo_settore_intelligence",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "terzo-settore",
+          "pnrr",
+          "compose"
+        ],
+        "category": "terzo-settore",
+        "registry_source": "terzo-settore",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/terzo_settore/ets_pnrr/2026/ets_pnrr_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "codice_fiscale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "fonte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "importo",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "programma",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "missione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_missione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ets_pnrr__ets_pnrr"
+        ]
+      },
+      {
+        "slug": "ets_rna",
+        "url_slug": "ets-rna",
+        "name": "Ets Rna",
+        "description": "Compose RUNTS + RNA: aiuti di stato.",
+        "source": "",
+        "source_id": "terzo_settore_intelligence",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "terzo-settore",
+          "rna",
+          "aiuti-stato",
+          "compose"
+        ],
+        "category": "terzo-settore",
+        "registry_source": "terzo-settore",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/terzo_settore/ets_rna/2026/ets_rna_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "codice_fiscale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "fonte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "importo",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "soggetto_concedente",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "procedimento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "titolo_misura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ets_rna__ets_rna"
+        ]
+      },
+      {
+        "slug": "ets_unified",
+        "url_slug": "ets-unified",
+        "name": "Ets Unified",
+        "description": "Fatti ETS (long) + profilo unificato (pivottato) + aggregato comunale. Legge i clean locali dei compose.",
+        "source": "",
+        "source_id": "terzo_settore_intelligence",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "terzo-settore",
+          "ets",
+          "anagrafe",
+          "capacita",
+          "territorio"
+        ],
+        "category": "terzo-settore",
+        "registry_source": "terzo-settore",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/terzo_settore/ets_unified/2026/ets_unified_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "cf",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "fonte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "importo",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ets_unified__ets_unified",
+          "ets_unified__ets_comuni"
+        ]
+      }
+    ],
+    "istat_excel": [
+      {
+        "slug": "istat_non_profit_2023",
+        "url_slug": "istat-non-profit-2023",
+        "name": "Istat Non Profit 2023",
+        "description": "Istituzioni non profit italiane - Dati 2023 da tavole ISTAT Excel. Regioni per forma giuridica e settore, province.",
+        "source": "",
+        "source_id": "istat_excel",
+        "period": {
+          "start": 2023,
+          "end": 2023
+        },
+        "stage": "incubating",
+        "tags": [
+          "terzo-settore",
+          "istat",
+          "censimento",
+          "2023"
+        ],
+        "category": "terzo-settore",
+        "registry_source": "terzo-settore",
+        "clean_rows": 521,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/terzo_settore/istat_non_profit_2023/2023/istat_non_profit_2023_2023_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "livello",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria_tipo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "istituzioni",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "dipendenti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "istat_non_profit_2023__nonprofit_by_regione",
+          "istat_non_profit_2023__nonprofit_by_provincia",
+          "istat_non_profit_2023__nonprofit_by_settore"
+        ]
+      }
+    ],
+    "ministero_lavoro": [
+      {
+        "slug": "runts",
+        "url_slug": "runts",
+        "name": "Runts",
+        "description": "Anagrafe degli enti iscritti al Registro Unico Nazionale del Terzo Settore (RUNTS) \u2014 snapshot dal Ministero del Lavoro.",
+        "source": "",
+        "source_id": "ministero_lavoro",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "terzo-settore",
+          "ets",
+          "anagrafe",
+          "runts"
+        ],
+        "category": "terzo-settore",
+        "registry_source": "terzo-settore",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/terzo_settore/runts/2026/runts_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "codice_fiscale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "repertorio",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "denominazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sezione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rappresentante",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rete",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_name",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "flag_5x1000",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_iscrizione",
+            "type": "TIMESTAMP",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "runts__runts_sezione"
         ]
       }
     ]
