@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-12T15:30:21.067028",
+  "generated_at": "2026-09-12T20:15:41.105274",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -57,7 +57,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 34,
+  "open_issues": 33,
   "issues": [
     {
       "number": 59,
@@ -65,6 +65,13 @@
       "repo": "agent-context-builder",
       "url": "https://github.com/dataciviclab/agent-context-builder/issues/59",
       "category": "infrastructure"
+    },
+    {
+      "number": 2,
+      "title": "intake: anac-smartcig \u2014 Affidamenti diretti sotto \u20ac40K",
+      "repo": "appalti-pubblici",
+      "url": "https://github.com/dataciviclab/appalti-pubblici/issues/2",
+      "category": "intake"
     },
     {
       "number": 13,
@@ -85,13 +92,6 @@
       "title": "intake: gse_cer_elenco \u2014 Elenco nazionale Comunit\u00e0 Energetiche Rinnovabili (2025)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/720",
-      "category": "intake"
-    },
-    {
-      "number": 680,
-      "title": "intake: anac-smartcig \u2014 Affidamenti diretti sotto \u20ac40K (support)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/680",
       "category": "intake"
     },
     {
@@ -190,13 +190,6 @@
       "title": "intake: opencoesione-pagamenti \u2014 Pagamenti progetti coesione (5.6M righe, serie temporale)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/442",
-      "category": "intake"
-    },
-    {
-      "number": 441,
-      "title": "intake: opencoesione-soggetti \u2014 Soggetti collegati ai progetti coesione (7.4M righe)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/441",
       "category": "intake"
     },
     {
@@ -1737,11 +1730,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-09-10",
+    "generated_at": "2026-09-12",
     "summary": {
-      "total": 84,
+      "total": 74,
       "by_status": {
-        "ok": 84
+        "ok": 74
       }
     },
     "actionable": []
@@ -2143,13 +2136,13 @@
       "repo": "dataset-incubator",
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
-      "updated_at": "2026-09-10",
-      "datasets": 87,
-      "marts": 133,
-      "signals": 84,
+      "updated_at": "2026-09-12",
+      "datasets": 78,
+      "marts": 117,
+      "signals": 74,
       "codelists": 0,
-      "entities": 16,
-      "gcs": 87,
+      "entities": 14,
+      "gcs": 78,
       "reason": "",
       "signals_detail": [
         {
@@ -2158,20 +2151,6 @@
           "status": "ok",
           "label": "aci_prime_iscrizioni_autovetture",
           "detail": "anno 2024 \u2014 mart: si"
-        },
-        {
-          "id": "ade_cinque_per_mille",
-          "source_id": "ade",
-          "status": "ok",
-          "label": "ade_cinque_per_mille",
-          "detail": "anni 2023-2025 \u2014 mart: si",
-          "run": {
-            "run_id": "20260728T140724Z_2d4d475f",
-            "year": 2025,
-            "status": "SUCCESS",
-            "started_at": "2026-07-28T14:07:24.076485+00:00",
-            "finished_at": "2026-07-28T14:07:46.805591+00:00"
-          }
         },
         {
           "id": "aifa_spesa_consumo",
@@ -2188,38 +2167,17 @@
           }
         },
         {
-          "id": "anac_aggiudicazioni",
-          "source_id": "anac",
-          "status": "ok",
-          "label": "anac_aggiudicazioni",
-          "detail": "anno 2026 \u2014 mart: si"
-        },
-        {
-          "id": "anac_bandi_gara",
-          "source_id": "anac",
-          "status": "ok",
-          "label": "anac_bandi_gara",
-          "detail": "anni 2016-2025 \u2014 mart: si",
-          "run": {
-            "run_id": "20260728T093933Z_e87c8a52",
-            "year": 2024,
-            "status": "SUCCESS",
-            "started_at": "2026-07-28T09:39:33.538892+00:00",
-            "finished_at": "2026-07-28T09:42:56.910622+00:00"
-          }
-        },
-        {
           "id": "anpr_mobilita_residenziale",
           "source_id": "anpr",
           "status": "ok",
           "label": "anpr_mobilita_residenziale",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260907T165805Z_0b8cb7fa",
+            "run_id": "20260912T175654Z_5b765d8f",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-07T16:58:05.487535+00:00",
-            "finished_at": "2026-09-07T16:58:06.058513+00:00"
+            "started_at": "2026-09-12T17:56:54.623777+00:00",
+            "finished_at": "2026-09-12T17:56:55.571201+00:00"
           }
         },
         {
@@ -2839,13 +2797,6 @@
           }
         },
         {
-          "id": "compose:anac_appalti_master",
-          "source_id": "dataciviclab_composite",
-          "status": "ok",
-          "label": "anac_appalti_master",
-          "detail": "anno 2026 \u2014 mart: si"
-        },
-        {
           "id": "compose:comuni_master",
           "source_id": "istat_situas",
           "status": "ok",
@@ -2885,48 +2836,6 @@
           "source_id": "dataciviclab_composite",
           "status": "ok",
           "label": "who_is_who_pa",
-          "detail": "anno 2026 \u2014 mart: si"
-        },
-        {
-          "id": "anac_aggiudicatari",
-          "source_id": "anac",
-          "status": "ok",
-          "label": "anac_aggiudicatari",
-          "detail": "anno 2026 \u2014 mart: si"
-        },
-        {
-          "id": "anac_collaudo",
-          "source_id": "anac",
-          "status": "ok",
-          "label": "anac_collaudo",
-          "detail": "anno 2026 \u2014 mart: si"
-        },
-        {
-          "id": "anac_cup",
-          "source_id": "anac",
-          "status": "ok",
-          "label": "anac_cup",
-          "detail": "anno 2026 \u2014 mart: si"
-        },
-        {
-          "id": "anac_partecipanti",
-          "source_id": "anac",
-          "status": "ok",
-          "label": "anac_partecipanti",
-          "detail": "anno 2026 \u2014 mart: si"
-        },
-        {
-          "id": "anac_stati_avanzamento",
-          "source_id": "anac",
-          "status": "ok",
-          "label": "anac_stati_avanzamento",
-          "detail": "anno 2026 \u2014 mart: si"
-        },
-        {
-          "id": "anac_subappalti",
-          "source_id": "anac",
-          "status": "ok",
-          "label": "anac_subappalti",
           "detail": "anno 2026 \u2014 mart: si"
         },
         {
