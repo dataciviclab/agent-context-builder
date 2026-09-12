@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-12T03:25:59.058396",
+  "generated_at": "2026-09-12T10:12:56.642521",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -25,15 +25,8 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 5,
+  "open_prs": 4,
   "prs": [
-    {
-      "number": 844,
-      "title": "chore: remove ade-cinque-per-mille (promosso a terzo-settore-intelligence)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/844",
-      "category": "other"
-    },
     {
       "number": 836,
       "title": "feat(candidates): bootstrap gse_cer_elenco candidate",
@@ -1424,16 +1417,14 @@
       "untracked_files": 0
     }
   },
-  "warnings": [
-    "Many open PRs: 6"
-  ],
+  "warnings": [],
   "radar": {
     "available": true,
-    "generated_at": "2026-09-11T08:00:19.698986+00:00",
-    "probe_date": "2026-09-11",
+    "generated_at": "2026-09-12T07:55:04.143758+00:00",
+    "probe_date": "2026-09-12",
     "sources_total": 36,
-    "green": 35,
-    "yellow": 1,
+    "green": 36,
+    "yellow": 0,
     "red": 0,
     "persistent_red": 0,
     "sources": [
@@ -1455,10 +1446,10 @@
       },
       {
         "id": "inps",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
@@ -1726,16 +1717,7 @@
         "red_streak": 0
       }
     ],
-    "unhealthy": [
-      {
-        "id": "inps",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
-        "red_streak": 0
-      }
-    ]
+    "unhealthy": []
   },
   "source_health": {
     "available": true,

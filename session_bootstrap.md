@@ -1,14 +1,13 @@
 # Session Bootstrap
 
-**Generated**: 2026-09-12T03:25:59.058396
+**Generated**: 2026-09-12T10:12:56.642521
 
 ## Stato
 
-Radar: 36 fonti GREEN 35 · Registry: 15 repo · 244 dataset
+Radar: 36 fonti GREEN 36 · Registry: 15 repo · 244 dataset
 
 ## Richiede attenzione
 
-- [PR] dataset-incubator#844: chore: remove ade-cinque-per-mille (promosso a terzo-settore-intelligence)
 - [PR] dataset-incubator#836: feat(candidates): bootstrap gse_cer_elenco candidate
 - [PR] dataset-incubator#834: chore(deps): bump toolkit a v1.51.0
 - [PR] dataset-incubator#829: intake: inpa-bandi e inpa-comunicazioni — reclutamento PA dal Portale inPA
