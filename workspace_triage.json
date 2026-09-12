@@ -1,8 +1,9 @@
 {
-  "generated_at": "2026-09-12T15:07:05.420461",
+  "generated_at": "2026-09-12T15:30:21.067028",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
+    "appalti-pubblici",
     "bilancio-pubblico",
     "costituzione-italiana",
     "data-explorer",
@@ -25,15 +26,8 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 5,
+  "open_prs": 4,
   "prs": [
-    {
-      "number": 72,
-      "title": "chore: auto-discover registries (2026-09-12)",
-      "repo": "agent-context-builder",
-      "url": "https://github.com/dataciviclab/agent-context-builder/pull/72",
-      "category": "other"
-    },
     {
       "number": 836,
       "title": "feat(candidates): bootstrap gse_cer_elenco candidate",
@@ -1255,6 +1249,14 @@
       "branches_ahead": [],
       "untracked_files": 0
     },
+    "appalti-pubblici": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
     "bilancio-pubblico": {
       "available": false,
       "reason": "local_disabled",
@@ -1424,9 +1426,7 @@
       "untracked_files": 0
     }
   },
-  "warnings": [
-    "Many open PRs: 6"
-  ],
+  "warnings": [],
   "radar": {
     "available": true,
     "generated_at": "2026-09-12T07:55:04.143758+00:00",
@@ -1759,6 +1759,147 @@
       "entities": 0,
       "gcs": 0,
       "reason": "registry_not_found"
+    },
+    {
+      "repo": "appalti-pubblici",
+      "available": true,
+      "source_repo": "dataciviclab/appalti-pubblici",
+      "updated_at": "2026-09-12",
+      "datasets": 9,
+      "marts": 19,
+      "signals": 9,
+      "codelists": 0,
+      "entities": 8,
+      "gcs": 9,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "compose:anac_cross",
+          "source_id": "dataciviclab_composite",
+          "status": "ok",
+          "label": "anac_cross",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260912T140216Z_ef2df8d0",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-12T14:02:16.125430+00:00",
+            "finished_at": "2026-09-12T14:06:13.491689+00:00"
+          }
+        },
+        {
+          "id": "anac_aggiudicatari",
+          "source_id": "anac",
+          "status": "ok",
+          "label": "anac_aggiudicatari",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260912T134851Z_891547fc",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-12T13:48:51.616977+00:00",
+            "finished_at": "2026-09-12T13:50:07.367667+00:00"
+          }
+        },
+        {
+          "id": "anac_aggiudicazioni",
+          "source_id": "anac",
+          "status": "ok",
+          "label": "anac_aggiudicazioni",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260912T135008Z_2eb65d9b",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-12T13:50:08.181792+00:00",
+            "finished_at": "2026-09-12T13:51:35.843436+00:00"
+          }
+        },
+        {
+          "id": "anac_bandi_gara",
+          "source_id": "anac",
+          "status": "ok",
+          "label": "anac_bandi_gara",
+          "detail": "anni 2016-2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260912T135749Z_bd3f3708",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-09-12T13:57:49.081888+00:00",
+            "finished_at": "2026-09-12T13:59:53.767964+00:00"
+          }
+        },
+        {
+          "id": "anac_collaudo",
+          "source_id": "anac",
+          "status": "ok",
+          "label": "anac_collaudo",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260912T135955Z_b09fe06f",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-12T13:59:55.019418+00:00",
+            "finished_at": "2026-09-12T14:00:02.716683+00:00"
+          }
+        },
+        {
+          "id": "anac_cup",
+          "source_id": "anac",
+          "status": "ok",
+          "label": "anac_cup",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260912T140003Z_4ab99ae0",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-12T14:00:03.278808+00:00",
+            "finished_at": "2026-09-12T14:00:36.027693+00:00"
+          }
+        },
+        {
+          "id": "anac_partecipanti",
+          "source_id": "anac",
+          "status": "ok",
+          "label": "anac_partecipanti",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260912T140036Z_45e68c8b",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-12T14:00:36.592292+00:00",
+            "finished_at": "2026-09-12T14:01:47.934903+00:00"
+          }
+        },
+        {
+          "id": "anac_stati_avanzamento",
+          "source_id": "anac",
+          "status": "ok",
+          "label": "anac_stati_avanzamento",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260912T140148Z_f2454a8d",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-12T14:01:48.498204+00:00",
+            "finished_at": "2026-09-12T14:02:03.893708+00:00"
+          }
+        },
+        {
+          "id": "anac_subappalti",
+          "source_id": "anac",
+          "status": "ok",
+          "label": "anac_subappalti",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260912T140204Z_887eba61",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-12T14:02:04.462595+00:00",
+            "finished_at": "2026-09-12T14:02:15.568151+00:00"
+          }
+        }
+      ]
     },
     {
       "repo": "bilancio-pubblico",

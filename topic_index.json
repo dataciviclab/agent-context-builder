@@ -1,10 +1,14 @@
 {
   "schema_version": 6,
-  "generated_at": "2026-09-12T15:07:05.420461",
+  "generated_at": "2026-09-12T15:30:21.067028",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
       "url": "https://github.com/dataciviclab/agent-context-builder"
+    },
+    "appalti-pubblici": {
+      "description": "Come funzionano gli appalti pubblici in Italia, dove ci sono ritardi, e quali imprese partecipano?",
+      "url": "https://github.com/dataciviclab/appalti-pubblici"
     },
     "bilancio-pubblico": {
       "description": "I conti dello Stato italiano in serie storica \u2014 spesa corrente, investimenti e saldi di bilancio.",
@@ -92,6 +96,2070 @@
     }
   },
   "datasets": {
+    "anac": [
+      {
+        "slug": "anac_aggiudicatari",
+        "url_slug": "anac-aggiudicatari",
+        "name": "Anac Aggiudicatari",
+        "description": "",
+        "source": "",
+        "source_id": "anac",
+        "period": {
+          "start": 2000,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "appalti",
+          "anac",
+          "aggiudicatari"
+        ],
+        "category": "appalti",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 5437334,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/appalti_pubblici/anac_aggiudicatari/2026/anac_aggiudicatari_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "cig",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cig_code",
+            "description": ""
+          },
+          {
+            "name": "ruolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_fiscale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "denominazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_soggetto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "id_aggiudicazione",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "anac_aggiudicatari__mart_top_aggiudicatari"
+        ]
+      },
+      {
+        "slug": "anac_aggiudicazioni",
+        "url_slug": "anac-aggiudicazioni",
+        "name": "Anac Aggiudicazioni",
+        "description": "",
+        "source": "",
+        "source_id": "anac",
+        "period": {
+          "start": 2000,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "appalti",
+          "anac",
+          "aggiudicazioni"
+        ],
+        "category": "appalti",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 4817672,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/appalti_pubblici/anac_aggiudicazioni/2026/anac_aggiudicazioni_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "cig",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cig_code",
+            "description": ""
+          },
+          {
+            "name": "data_aggiudicazione_definitiva",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "esito",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "criterio_aggiudicazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_comunicazione_esito",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_offerte_ammesse",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_offerte_escluse",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_aggiudicazione",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ribasso_aggiudicazione",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "num_imprese_offerenti",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_subappalto",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "id_aggiudicazione",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cod_esito",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "num_imprese_richiedenti",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "asta_elettronica",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "num_imprese_invitate",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "massimo_ribasso",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "minimo_ribasso",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "FLAG_SCOMPUTO",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COD_PRESTAZIONI_COMPRESE",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "PRESTAZIONI_COMPRESE",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "CIG_PROG_ESTERNA",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cig_code",
+            "description": ""
+          },
+          {
+            "name": "DATA_INCARICO_PROG",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "DATA_CONS_PROG",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COD_MODO_RIAGGIUDICAZIONE",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "MODO_RIAGGIUDICAZIONE",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "FLAG_PROC_ACCELERATA",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "N_MANIF_INTERESSE",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "anac_aggiudicazioni__mart_annuale",
+          "anac_aggiudicazioni__mart_dettaglio"
+        ]
+      },
+      {
+        "slug": "anac_bandi_gara",
+        "url_slug": "anac-bandi-gara",
+        "name": "Anac Bandi Gara",
+        "description": "",
+        "source": "",
+        "source_id": "anac",
+        "period": {
+          "start": 2016,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "appalti",
+          "anac",
+          "bandi",
+          "gara"
+        ],
+        "category": "appalti",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 1228909,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/appalti_pubblici/anac_bandi_gara/*/anac_bandi_gara_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "cig",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cig_code",
+            "description": ""
+          },
+          {
+            "name": "cig_accordo_quadro",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cig_code",
+            "description": ""
+          },
+          {
+            "name": "CIG_COLLEGAMENTO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cig_code",
+            "description": ""
+          },
+          {
+            "name": "CUI_PROGRAMMA",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_gara",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "oggetto_gara",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_complessivo_gara",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_lotti_componenti",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "oggetto_lotto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_lotto",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "oggetto_principale_contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "settore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_istat_luogo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_code",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "data_pubblicazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_scadenza_offerta",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cod_tipo_scelta_contraente",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_scelta_contraente",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cod_modalita_realizzazione",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "modalita_realizzazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_ausa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "ausa_code",
+            "description": ""
+          },
+          {
+            "name": "cf_amministrazione_appaltante",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "denominazione_amministrazione_appaltante",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sezione_regionale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "id_centro_costo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "denominazione_centro_costo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno_pubblicazione",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "mese_pubblicazione",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cod_cpv",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cpv_code",
+            "description": ""
+          },
+          {
+            "name": "descrizione_cpv",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_pnrr",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_urgenza",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_delega",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COD_MODALITA_INDIZIONE_SPECIALI",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "MODALITA_INDIZIONE_SPECIALI",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COD_MODALITA_INDIZIONE_SERVIZI",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "MODALITA_INDIZIONE_SERVIZI",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "durata_prevista",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COD_STRUMENTO_SVOLGIMENTO",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "STRUMENTO_SVOLGIMENTO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COD_MOTIVO_URGENZA",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "motivo_urgenza",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "funzioni_delegate",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "CF_SA_DELEGANTE",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "DENOMINAZIONE_SA_DELEGANTE",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "CF_SA_DELEGATA",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "DENOMINAZIONE_SA_DELEGATA",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_sicurezza",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COD_ESITO",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ESITO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_comunicazione_esito",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_cancellazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COD_MOTIVO_CANCELLAZIONE",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "MOTIVO_CANCELLAZIONE",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "TIPO_APPALTO_RISERVATO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_ultimo_perfezionamento",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "anac_bandi_gara__mart_annuale",
+          "anac_bandi_gara__mart_trend_pnrr",
+          "anac_bandi_gara__mart_top_stazioni",
+          "anac_bandi_gara__mart_esiti_per_procedura",
+          "anac_bandi_gara__mart_trend_settore",
+          "anac_bandi_gara__mart_sa_profilo"
+        ]
+      },
+      {
+        "slug": "anac_collaudo",
+        "url_slug": "anac-collaudo",
+        "name": "Anac Collaudo",
+        "description": "",
+        "source": "",
+        "source_id": "anac",
+        "period": {
+          "start": 2000,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "appalti",
+          "anac",
+          "collaudo"
+        ],
+        "category": "appalti",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 648862,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/appalti_pubblici/anac_collaudo/2026/anac_collaudo_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "cig",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cig_code",
+            "description": ""
+          },
+          {
+            "name": "data_delibera",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_cert_collaudo",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "esito_collaudo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_inizio_oper",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_regolare_esec",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_nomina_coll",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_collaudo_stat",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "id_aggiudicazione",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "riserve_avanzate",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "riserve_definite",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_contenz_risolto",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "anac_collaudo__mart_collaudo"
+        ]
+      },
+      {
+        "slug": "anac_cup",
+        "url_slug": "anac-cup",
+        "name": "Anac Cup",
+        "description": "",
+        "source": "",
+        "source_id": "anac",
+        "period": {
+          "start": 2000,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "appalti",
+          "anac",
+          "cup"
+        ],
+        "category": "appalti",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 7167369,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/appalti_pubblici/anac_cup/2026/anac_cup_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "cig",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cig_code",
+            "description": ""
+          },
+          {
+            "name": "cup",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cup_code",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "anac_cup__mart_cup"
+        ]
+      },
+      {
+        "slug": "anac_partecipanti",
+        "url_slug": "anac-partecipanti",
+        "name": "Anac Partecipanti",
+        "description": "",
+        "source": "",
+        "source_id": "anac",
+        "period": {
+          "start": 2023,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "appalti",
+          "anac",
+          "partecipanti"
+        ],
+        "category": "appalti",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 8044052,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/appalti_pubblici/anac_partecipanti/2026/anac_partecipanti_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "cig",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cig_code",
+            "description": ""
+          },
+          {
+            "name": "ruolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_fiscale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "denominazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_soggetto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "anac_partecipanti__mart_top_partecipanti"
+        ]
+      },
+      {
+        "slug": "anac_stati_avanzamento",
+        "url_slug": "anac-stati-avanzamento",
+        "name": "Anac Stati Avanzamento",
+        "description": "",
+        "source": "",
+        "source_id": "anac",
+        "period": {
+          "start": 2000,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "appalti",
+          "anac",
+          "stati",
+          "avanzamento"
+        ],
+        "category": "appalti",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 1274801,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/appalti_pubblici/anac_stati_avanzamento/2026/anac_stati_avanzamento_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "cig",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cig_code",
+            "description": ""
+          },
+          {
+            "name": "denominazione_sal",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_ritardo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_emissione_sal",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_sal",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_giorni_scostamento",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "progressivo_sal",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "id_aggiudicazione",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_cert_pagamento",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_cert_pagamento",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "giorni_proroga",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "anac_stati_avanzamento__mart_sal"
+        ]
+      },
+      {
+        "slug": "anac_subappalti",
+        "url_slug": "anac-subappalti",
+        "name": "Anac Subappalti",
+        "description": "",
+        "source": "",
+        "source_id": "anac",
+        "period": {
+          "start": 2020,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "appalti",
+          "anac",
+          "subappalti"
+        ],
+        "category": "appalti",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 334301,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/appalti_pubblici/anac_subappalti/2026/anac_subappalti_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "cig",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cig_code",
+            "description": ""
+          },
+          {
+            "name": "id_subappalto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cf_subappaltante",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "data_autorizzazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "oggetto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cod_categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "classe_importo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_tipo_categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cod_cpv",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cpv_code",
+            "description": ""
+          },
+          {
+            "name": "descrizione_cpv",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_fiscale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "denominazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ruolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_soggetto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "anac_subappalti__mart_top_subappalti"
+        ]
+      }
+    ],
+    "dataciviclab_composite": [
+      {
+        "slug": "anac_cross",
+        "url_slug": "anac-cross",
+        "name": "Anac Cross",
+        "description": "Compose ANAC: CIG-level snapshot unificato (2026) da tutti i dataset ANAC + vista lifecycle (bandi 2016-2025 + snapshot).",
+        "source": "",
+        "source_id": "dataciviclab_composite",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "appalti",
+          "anac",
+          "compose",
+          "cross"
+        ],
+        "category": "appalti",
+        "registry_source": "appalti-pubblici",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/appalti_pubblici/anac_cross/2026/anac_cross_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "cig",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cig_code",
+            "description": ""
+          },
+          {
+            "name": "n_aggiudicazioni",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_totale_agg",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_ultima_agg",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ha_subappalto_flag",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_offerenti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_offerte_ammesse",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_aggiudicatari",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "aggiudicatari",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_partecipanti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_subappalti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_subappaltatori",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_sal",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_totale_sal",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sal_in_ritardo",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "esito_collaudo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_cert_collaudo",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "riserve_avanzate",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_contenz_risolto",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cup",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cup_code",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "anac_cross__mart_panoramica",
+          "anac_cross__mart_lifecycle",
+          "anac_cross__mart_imprese",
+          "anac_cross__mart_ritardi_per_sa",
+          "anac_cross__mart_competitivita"
+        ]
+      },
+      {
+        "slug": "decreti_legge",
+        "url_slug": "decreti-legge",
+        "name": "Decreti Legge",
+        "description": "",
+        "source": "",
+        "source_id": "dataciviclab_composite",
+        "period": {
+          "start": 2022,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "politica",
+          "governo",
+          "decreti-legge",
+          "conversione",
+          "iter"
+        ],
+        "category": "politica",
+        "registry_source": "open-politica",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-politica/decreti_legge/2026/decreti_legge_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "dl_numero",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "dl_anno",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_presentazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_conversione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "esito",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "giorni_conversione",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "titolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "decreti_legge__mart_sintesi",
+          "decreti_legge__mart_dettaglio"
+        ]
+      },
+      {
+        "slug": "elezioni_voto",
+        "url_slug": "elezioni-voto",
+        "name": "Elezioni Voto",
+        "description": "",
+        "source": "",
+        "source_id": "dataciviclab_composite",
+        "period": {
+          "start": 1979,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "politica",
+          "elezioni",
+          "voto"
+        ],
+        "category": "politica",
+        "registry_source": "open-politica",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/elezioni_voto/2026/elezioni_voto_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "data_elezione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_elezione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_name",
+            "description": ""
+          },
+          {
+            "name": "circoscrizione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "elettori",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "votanti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "schede_bianche",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "affluenza_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "lista",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "voti_lista",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "candidato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "voti_candidato",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "turno",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "seggi_lista",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "elezioni_voto__mart_sintesi",
+          "elezioni_voto__mart_trend",
+          "elezioni_voto__mart_liste"
+        ]
+      },
+      {
+        "slug": "osservatorio_parlamento",
+        "url_slug": "osservatorio-parlamento",
+        "name": "Osservatorio Parlamento",
+        "description": "",
+        "source": "",
+        "source_id": "dataciviclab_composite",
+        "period": {
+          "start": 2022,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "politica",
+          "osservatorio",
+          "kpi",
+          "parlamento",
+          "benchmark"
+        ],
+        "category": "politica",
+        "registry_source": "open-politica",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-politica/osservatorio_parlamento/2026/osservatorio_parlamento_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "periodo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          },
+          {
+            "name": "dimensione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "kpi",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fonte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "osservatorio_parlamento__mart_kpi"
+        ]
+      },
+      {
+        "slug": "ponte_persona",
+        "url_slug": "ponte-persona",
+        "name": "Ponte Persona",
+        "description": "",
+        "source": "",
+        "source_id": "dataciviclab_composite",
+        "period": {
+          "start": 2022,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "politica",
+          "ponte",
+          "identita",
+          "persona"
+        ],
+        "category": "politica",
+        "registry_source": "open-politica",
+        "clean_rows": 64,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-politica/ponte_persona/2026/ponte_persona_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "senatore_id",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "senator_id",
+            "description": ""
+          },
+          {
+            "name": "persona_id",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "person_id",
+            "description": ""
+          },
+          {
+            "name": "tipo_match",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ponte_persona__mart_match"
+        ]
+      },
+      {
+        "slug": "profilo_politico",
+        "url_slug": "profilo-politico",
+        "name": "Profilo Politico",
+        "description": "",
+        "source": "",
+        "source_id": "dataciviclab_composite",
+        "period": {
+          "start": 2022,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "politica",
+          "profilo",
+          "senato",
+          "voti",
+          "accountability"
+        ],
+        "category": "politica",
+        "registry_source": "open-politica",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-politica/profilo_politico/2026/profilo_politico_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "ramo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "id_parlamentare",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "persona_id",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "person_id",
+            "description": ""
+          },
+          {
+            "name": "nome",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cognome",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_voti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_favorevoli",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_contrari",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_astenuti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pct_coerente",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pct_col_gruppo",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_cariche_governo",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "in_governo",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_commissioni_attuali",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "presidente_commissione",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "commissioni_attuali",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_relatori",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anni_relatore",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_interventi",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "profilo_politico__mart_profilo"
+        ]
+      },
+      {
+        "slug": "senato_corpus_parlamento",
+        "url_slug": "senato-corpus-parlamento",
+        "name": "Senato Corpus Parlamento",
+        "description": "",
+        "source": "",
+        "source_id": "dataciviclab_composite",
+        "period": {
+          "start": 2022,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "politica",
+          "senato",
+          "corpus",
+          "iter",
+          "peso-documentale"
+        ],
+        "category": "politica",
+        "registry_source": "open-politica",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-politica/senato_corpus_parlamento/2026/senato_corpus_parlamento_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "atto_num",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipologie",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "famiglie",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_documenti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "testo_totale",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "articoli_totali",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_primo_documento",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fase",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "natura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_presentazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_legge",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_legge",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ddl_url",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_emend",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "testo_emendamenti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_aula",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_commissione",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "senato_corpus_parlamento__mart_atto_corpus",
+          "senato_corpus_parlamento__mart_decreti_peso",
+          "senato_corpus_parlamento__mart_intensita_emendativa"
+        ]
+      }
+    ],
     "openbdap": [
       {
         "slug": "bdap_entrate_stato",
@@ -5188,7 +7256,7 @@
         ],
         "category": "appalti",
         "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "clean_rows": 5437334,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/anac_aggiudicatari/2026/anac_aggiudicatari_2026_clean.parquet",
@@ -5258,7 +7326,7 @@
         ],
         "category": "appalti",
         "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "clean_rows": 4817672,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/anac_aggiudicazioni/2026/anac_aggiudicazioni_2026_clean.parquet",
@@ -5917,7 +7985,7 @@
         ],
         "category": "appalti",
         "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "clean_rows": 648862,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/anac_collaudo/2026/anac_collaudo_2026_clean.parquet",
@@ -6029,7 +8097,7 @@
         ],
         "category": "appalti",
         "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "clean_rows": 7167369,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/anac_cup/2026/anac_cup_2026_clean.parquet",
@@ -6071,7 +8139,7 @@
         ],
         "category": "appalti",
         "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "clean_rows": 8044052,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/anac_partecipanti/2026/anac_partecipanti_2026_clean.parquet",
@@ -6135,7 +8203,7 @@
         ],
         "category": "appalti",
         "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "clean_rows": 1274801,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/anac_stati_avanzamento/2026/anac_stati_avanzamento_2026_clean.parquet",
@@ -6240,7 +8308,7 @@
         ],
         "category": "appalti",
         "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "clean_rows": 334301,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/anac_subappalti/2026/anac_subappalti_2026_clean.parquet",
@@ -28726,684 +30794,6 @@
           "dait_amministratori_locali__mart_profilo_carica",
           "dait_amministratori_locali__mart_profilo_demografico",
           "dait_amministratori_locali__mart_territorio"
-        ]
-      }
-    ],
-    "dataciviclab_composite": [
-      {
-        "slug": "decreti_legge",
-        "url_slug": "decreti-legge",
-        "name": "Decreti Legge",
-        "description": "",
-        "source": "",
-        "source_id": "dataciviclab_composite",
-        "period": {
-          "start": 2022,
-          "end": 2026
-        },
-        "stage": "incubating",
-        "tags": [
-          "politica",
-          "governo",
-          "decreti-legge",
-          "conversione",
-          "iter"
-        ],
-        "category": "politica",
-        "registry_source": "open-politica",
-        "clean_rows": null,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/open-politica/decreti_legge/2026/decreti_legge_2026_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "dl_numero",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "dl_anno",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "data_presentazione",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "data_conversione",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "esito",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "giorni_conversione",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "titolo",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "decreti_legge__mart_sintesi",
-          "decreti_legge__mart_dettaglio"
-        ]
-      },
-      {
-        "slug": "elezioni_voto",
-        "url_slug": "elezioni-voto",
-        "name": "Elezioni Voto",
-        "description": "",
-        "source": "",
-        "source_id": "dataciviclab_composite",
-        "period": {
-          "start": 1979,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "politica",
-          "elezioni",
-          "voto"
-        ],
-        "category": "politica",
-        "registry_source": "open-politica",
-        "clean_rows": null,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/elezioni_voto/2026/elezioni_voto_2026_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "data_elezione",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "tipo_elezione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "regione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "region_code",
-            "description": ""
-          },
-          {
-            "name": "provincia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "province_code",
-            "description": ""
-          },
-          {
-            "name": "comune",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "municipality_name",
-            "description": ""
-          },
-          {
-            "name": "circoscrizione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "elettori",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "votanti",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "schede_bianche",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "affluenza_pct",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "lista",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "voti_lista",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "candidato",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "voti_candidato",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "turno",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "seggi_lista",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "elezioni_voto__mart_sintesi",
-          "elezioni_voto__mart_trend",
-          "elezioni_voto__mart_liste"
-        ]
-      },
-      {
-        "slug": "osservatorio_parlamento",
-        "url_slug": "osservatorio-parlamento",
-        "name": "Osservatorio Parlamento",
-        "description": "",
-        "source": "",
-        "source_id": "dataciviclab_composite",
-        "period": {
-          "start": 2022,
-          "end": 2026
-        },
-        "stage": "incubating",
-        "tags": [
-          "politica",
-          "osservatorio",
-          "kpi",
-          "parlamento",
-          "benchmark"
-        ],
-        "category": "politica",
-        "registry_source": "open-politica",
-        "clean_rows": null,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/open-politica/osservatorio_parlamento/2026/osservatorio_parlamento_2026_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "periodo",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "month",
-            "description": ""
-          },
-          {
-            "name": "dimensione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "kpi",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "valore",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "fonte",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "osservatorio_parlamento__mart_kpi"
-        ]
-      },
-      {
-        "slug": "ponte_persona",
-        "url_slug": "ponte-persona",
-        "name": "Ponte Persona",
-        "description": "",
-        "source": "",
-        "source_id": "dataciviclab_composite",
-        "period": {
-          "start": 2022,
-          "end": 2026
-        },
-        "stage": "incubating",
-        "tags": [
-          "politica",
-          "ponte",
-          "identita",
-          "persona"
-        ],
-        "category": "politica",
-        "registry_source": "open-politica",
-        "clean_rows": 64,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/open-politica/ponte_persona/2026/ponte_persona_2026_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "senatore_id",
-            "type": "BIGINT",
-            "role": "dimension",
-            "semantic_type": "senator_id",
-            "description": ""
-          },
-          {
-            "name": "persona_id",
-            "type": "BIGINT",
-            "role": "dimension",
-            "semantic_type": "person_id",
-            "description": ""
-          },
-          {
-            "name": "tipo_match",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "ponte_persona__mart_match"
-        ]
-      },
-      {
-        "slug": "profilo_politico",
-        "url_slug": "profilo-politico",
-        "name": "Profilo Politico",
-        "description": "",
-        "source": "",
-        "source_id": "dataciviclab_composite",
-        "period": {
-          "start": 2022,
-          "end": 2026
-        },
-        "stage": "incubating",
-        "tags": [
-          "politica",
-          "profilo",
-          "senato",
-          "voti",
-          "accountability"
-        ],
-        "category": "politica",
-        "registry_source": "open-politica",
-        "clean_rows": null,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/open-politica/profilo_politico/2026/profilo_politico_2026_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "ramo",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "id_parlamentare",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "persona_id",
-            "type": "BIGINT",
-            "role": "dimension",
-            "semantic_type": "person_id",
-            "description": ""
-          },
-          {
-            "name": "nome",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "cognome",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "n_voti",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "n_favorevoli",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "n_contrari",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "n_astenuti",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "pct_coerente",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "pct_col_gruppo",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "n_cariche_governo",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "in_governo",
-            "type": "BOOLEAN",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "n_commissioni_attuali",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "presidente_commissione",
-            "type": "BOOLEAN",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "commissioni_attuali",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "n_relatori",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "anni_relatore",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "n_interventi",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "profilo_politico__mart_profilo"
-        ]
-      },
-      {
-        "slug": "senato_corpus_parlamento",
-        "url_slug": "senato-corpus-parlamento",
-        "name": "Senato Corpus Parlamento",
-        "description": "",
-        "source": "",
-        "source_id": "dataciviclab_composite",
-        "period": {
-          "start": 2022,
-          "end": 2026
-        },
-        "stage": "incubating",
-        "tags": [
-          "politica",
-          "senato",
-          "corpus",
-          "iter",
-          "peso-documentale"
-        ],
-        "category": "politica",
-        "registry_source": "open-politica",
-        "clean_rows": null,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/open-politica/senato_corpus_parlamento/2026/senato_corpus_parlamento_2026_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "atto_num",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "tipologie",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "famiglie",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "n_documenti",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "testo_totale",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "articoli_totali",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "data_primo_documento",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "fase",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "stato",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "country_code",
-            "description": ""
-          },
-          {
-            "name": "natura",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "data_presentazione",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "numero_legge",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "data_legge",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "ddl_url",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "n_emend",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "testo_emendamenti",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "n_aula",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "n_commissione",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "senato_corpus_parlamento__mart_atto_corpus",
-          "senato_corpus_parlamento__mart_decreti_peso",
-          "senato_corpus_parlamento__mart_intensita_emendativa"
         ]
       }
     ],
