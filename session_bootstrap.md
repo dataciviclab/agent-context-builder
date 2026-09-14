@@ -1,14 +1,13 @@
 # Session Bootstrap
 
-**Generated**: 2026-09-14T18:02:34.514253
+**Generated**: 2026-09-14T19:00:21.194070
 
 ## Stato
 
-Radar: 36 fonti GREEN 34 · RED 1 · Registry: 16 repo · 244 dataset
+Radar: 36 fonti GREEN 34 · RED 1 · Registry: 17 repo · 250 dataset
 
 ## Richiede attenzione
 
-- [PR] agent-context-builder#73: chore: auto-discover registries (2026-09-14)
 - [PR] dataciviclab#451: mit-incidentalita: analisi con README, notebook, figure
 - [PR] dataset-incubator#836: feat(candidates): bootstrap gse_cer_elenco candidate
 - [PR] dataset-incubator#834: chore(deps): bump toolkit a v1.51.0

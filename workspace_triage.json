@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-14T18:02:34.514253",
+  "generated_at": "2026-09-14T19:00:21.194070",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -18,6 +18,7 @@
     "open-politica",
     "open-siope",
     "opencivitas",
+    "opere-pubbliche",
     "partecipate-monitor",
     "patrimonio-territorio",
     "rna-aiuti-stato",
@@ -26,15 +27,8 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 5,
+  "open_prs": 4,
   "prs": [
-    {
-      "number": 73,
-      "title": "chore: auto-discover registries (2026-09-14)",
-      "repo": "agent-context-builder",
-      "url": "https://github.com/dataciviclab/agent-context-builder/pull/73",
-      "category": "other"
-    },
     {
       "number": 451,
       "title": "mit-incidentalita: analisi con README, notebook, figure",
@@ -1397,6 +1391,14 @@
       "branches_ahead": [],
       "untracked_files": 0
     },
+    "opere-pubbliche": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
     "partecipate-monitor": {
       "available": false,
       "reason": "local_disabled",
@@ -1454,9 +1456,7 @@
       "untracked_files": 0
     }
   },
-  "warnings": [
-    "Many open PRs: 6"
-  ],
+  "warnings": [],
   "radar": {
     "available": true,
     "generated_at": "2026-09-14T08:50:37.294005+00:00",
@@ -4806,6 +4806,105 @@
             "status": "SUCCESS",
             "started_at": "2026-09-07T14:12:35.155325+00:00",
             "finished_at": "2026-09-07T14:12:41.054301+00:00"
+          }
+        }
+      ]
+    },
+    {
+      "repo": "opere-pubbliche",
+      "available": true,
+      "source_repo": "dataciviclab/opere-pubbliche",
+      "updated_at": "2026-09-14",
+      "datasets": 6,
+      "marts": 8,
+      "signals": 6,
+      "codelists": 0,
+      "entities": 6,
+      "gcs": 6,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "compose:op_cup_lab",
+          "source_id": "dataciviclab_composite",
+          "status": "ok",
+          "label": "op_cup_lab",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260914T103107Z_a0a4d33c",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-14T10:31:07.856273+00:00",
+            "finished_at": "2026-09-14T10:33:26.505560+00:00"
+          }
+        },
+        {
+          "id": "opencup_progetti",
+          "source_id": "opencup",
+          "status": "ok",
+          "label": "opencup_progetti",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260914T101716Z_dee1c8bc",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-14T10:17:16.073548+00:00",
+            "finished_at": "2026-09-14T10:31:05.098393+00:00"
+          }
+        },
+        {
+          "id": "silos_infrastrutture",
+          "source_id": "dati_camera",
+          "status": "ok",
+          "label": "silos_infrastrutture",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260914T103105Z_fba739e3",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-14T10:31:05.487633+00:00",
+            "finished_at": "2026-09-14T10:31:07.517453+00:00"
+          }
+        },
+        {
+          "id": "opencup_fonti",
+          "source_id": "opencup",
+          "status": "ok",
+          "label": "opencup_fonti",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260914T100758Z_96044ce5",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-14T10:07:58.115779+00:00",
+            "finished_at": "2026-09-14T10:11:32.489830+00:00"
+          }
+        },
+        {
+          "id": "opencup_localizzazione",
+          "source_id": "opencup",
+          "status": "ok",
+          "label": "opencup_localizzazione",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260914T101133Z_b494d030",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-14T10:11:33.784151+00:00",
+            "finished_at": "2026-09-14T10:17:08.421047+00:00"
+          }
+        },
+        {
+          "id": "opencup_soggetti",
+          "source_id": "opencup",
+          "status": "ok",
+          "label": "opencup_soggetti",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260914T101709Z_d8b2543f",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-14T10:17:09.565670+00:00",
+            "finished_at": "2026-09-14T10:17:15.748173+00:00"
           }
         }
       ]
