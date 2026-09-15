@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T03:42:44.938666",
+  "generated_at": "2026-09-15T11:14:22.337967",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -27,13 +27,20 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 4,
+  "open_prs": 5,
   "prs": [
     {
       "number": 451,
       "title": "mit-incidentalita: analisi con README, notebook, figure",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/pull/451",
+      "category": "other"
+    },
+    {
+      "number": 847,
+      "title": "chore: remove IPA datasets migrated to indice-pa",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/847",
       "category": "other"
     },
     {
@@ -1456,15 +1463,17 @@
       "untracked_files": 0
     }
   },
-  "warnings": [],
+  "warnings": [
+    "Many open PRs: 6"
+  ],
   "radar": {
     "available": true,
-    "generated_at": "2026-09-14T08:50:37.294005+00:00",
-    "probe_date": "2026-09-14",
+    "generated_at": "2026-09-15T08:37:29.967487+00:00",
+    "probe_date": "2026-09-15",
     "sources_total": 36,
-    "green": 34,
+    "green": 35,
     "yellow": 1,
-    "red": 1,
+    "red": 0,
     "persistent_red": 0,
     "sources": [
       {
@@ -1525,18 +1534,18 @@
       },
       {
         "id": "dati_senato",
-        "status": "RED",
+        "status": "GREEN",
         "protocol": "sparql",
-        "http_code": "503",
+        "http_code": "200",
         "note": null,
         "red_streak": 0
       },
       {
         "id": "dati_cultura",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "sparql",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
         "red_streak": 0
       },
       {
@@ -1597,10 +1606,10 @@
       },
       {
         "id": "aifa",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "html",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
@@ -1758,19 +1767,11 @@
     ],
     "unhealthy": [
       {
-        "id": "dati_senato",
-        "status": "RED",
-        "protocol": "sparql",
-        "http_code": "503",
-        "note": null,
-        "red_streak": 0
-      },
-      {
-        "id": "aifa",
+        "id": "dati_cultura",
         "status": "YELLOW",
-        "protocol": "html",
+        "protocol": "sparql",
         "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
         "red_streak": 0
       }
     ]
