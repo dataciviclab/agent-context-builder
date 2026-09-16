@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T10:57:32.822751",
+  "generated_at": "2026-09-16T16:16:45.807168",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -4267,13 +4267,13 @@
       "repo": "open-politica",
       "available": true,
       "source_repo": "dataciviclab/open-politica",
-      "updated_at": "2026-09-07",
-      "datasets": 28,
-      "marts": 54,
-      "signals": 28,
+      "updated_at": "2026-09-16",
+      "datasets": 30,
+      "marts": 60,
+      "signals": 30,
       "codelists": 0,
-      "entities": 8,
-      "gcs": 28,
+      "entities": 9,
+      "gcs": 30,
       "reason": "",
       "signals_detail": [
         {
@@ -4361,6 +4361,20 @@
           }
         },
         {
+          "id": "camera_ddl",
+          "source_id": "dati_camera",
+          "status": "ok",
+          "label": "camera_ddl",
+          "detail": "anni 13-19 \u2014 mart: si",
+          "run": {
+            "run_id": "20260916T105615Z_7342d366",
+            "year": 19,
+            "status": "SUCCESS",
+            "started_at": "2026-09-16T10:56:15.984844+00:00",
+            "finished_at": "2026-09-16T10:56:17.804750+00:00"
+          }
+        },
+        {
           "id": "camera_deputati_legislature",
           "source_id": "dati_camera",
           "status": "ok",
@@ -4414,6 +4428,20 @@
             "status": "SUCCESS",
             "started_at": "2026-08-16T21:28:16.929007+00:00",
             "finished_at": "2026-08-16T21:28:24.635599+00:00"
+          }
+        },
+        {
+          "id": "camera_leggi",
+          "source_id": "dati_camera",
+          "status": "ok",
+          "label": "camera_leggi",
+          "detail": "anni 13-19 \u2014 mart: si",
+          "run": {
+            "run_id": "20260916T105624Z_3e70dede",
+            "year": 19,
+            "status": "SUCCESS",
+            "started_at": "2026-09-16T10:56:24.235674+00:00",
+            "finished_at": "2026-09-16T10:56:25.064503+00:00"
           }
         },
         {
@@ -4605,11 +4633,11 @@
           "label": "senato_ddl",
           "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20260907T082358Z_c15aeae5",
+            "run_id": "20260916T105816Z_327cc068",
             "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-09-07T08:23:58.280541+00:00",
-            "finished_at": "2026-09-07T08:24:13.941389+00:00"
+            "started_at": "2026-09-16T10:58:16.073983+00:00",
+            "finished_at": "2026-09-16T10:58:35.899376+00:00"
           }
         },
         {

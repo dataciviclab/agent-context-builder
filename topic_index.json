@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "generated_at": "2026-09-16T10:57:32.822751",
+  "generated_at": "2026-09-16T16:16:45.807168",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -30286,6 +30286,103 @@
         ]
       },
       {
+        "slug": "camera_ddl",
+        "url_slug": "camera-ddl",
+        "name": "Camera Ddl",
+        "description": "",
+        "source": "",
+        "source_id": "dati_camera",
+        "period": {
+          "start": 1948,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "politica",
+          "camera",
+          "ddl",
+          "iter-legislativo"
+        ],
+        "category": "politica",
+        "registry_source": "open-politica",
+        "clean_rows": 3099,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-politica/camera_ddl/*/camera_ddl_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "atto_camera",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "id_ddl",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "ddl_id",
+            "description": ""
+          },
+          {
+            "name": "titolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_presentazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "legislatura",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "primo_firmatario",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "camera_ddl__mart_stato",
+          "camera_ddl__mart_anno",
+          "camera_ddl__mart_firmatari"
+        ]
+      },
+      {
         "slug": "camera_deputati_legislature",
         "url_slug": "camera-deputati-legislature",
         "name": "Camera Deputati Legislature",
@@ -30604,6 +30701,111 @@
         "mart_refs": [
           "camera_interventi__mart_sintesi",
           "camera_interventi__mart_top_parlanti"
+        ]
+      },
+      {
+        "slug": "camera_leggi",
+        "url_slug": "camera-leggi",
+        "name": "Camera Leggi",
+        "description": "",
+        "source": "",
+        "source_id": "dati_camera",
+        "period": {
+          "start": 1948,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "politica",
+          "camera",
+          "leggi",
+          "normattiva",
+          "gazzetta-ufficiale"
+        ],
+        "category": "politica",
+        "registry_source": "open-politica",
+        "clean_rows": 188,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-politica/camera_leggi/*/camera_leggi_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "legge_camera",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "id_legge",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "titolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_promulgazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "legislatura",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "urn_normattiva",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "gu_pubblicazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ddl_numero",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "camera_leggi__mart_tipo",
+          "camera_leggi__mart_anno",
+          "camera_leggi__mart_normattiva"
         ]
       },
       {
@@ -32191,7 +32393,7 @@
         ],
         "category": "politica",
         "registry_source": "open-politica",
-        "clean_rows": 5170,
+        "clean_rows": 5200,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-politica/senato_ddl/*/senato_ddl_*_clean.parquet",
@@ -32208,7 +32410,7 @@
           {
             "name": "atto_num",
             "type": "BIGINT",
-            "role": "dimension",
+            "role": "metric",
             "semantic_type": "atto_num",
             "description": "Alias di id_ddl per join cross-repo con senato-akn (atto_num == id_ddl)"
           },
@@ -32328,7 +32530,7 @@
             "name": "anno",
             "type": "INTEGER",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "year",
             "description": "Anno di presentazione del DDL, estratto da data_presentazione"
           },
           {
