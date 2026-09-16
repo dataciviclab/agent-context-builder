@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T03:39:51.191978",
+  "generated_at": "2026-09-16T08:02:38.754288",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -12,6 +12,7 @@
     "dcl-bologna",
     "debito-pubblico-intelligence",
     "eurostat",
+    "indice-pa",
     "italia-corpus",
     "lab-connectors",
     "open-conto-annuale",
@@ -27,15 +28,8 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 7,
+  "open_prs": 6,
   "prs": [
-    {
-      "number": 74,
-      "title": "chore: auto-discover registries (2026-09-15)",
-      "repo": "agent-context-builder",
-      "url": "https://github.com/dataciviclab/agent-context-builder/pull/74",
-      "category": "other"
-    },
     {
       "number": 451,
       "title": "mit-incidentalita: analisi con README, notebook, figure",
@@ -1364,6 +1358,14 @@
       "branches_ahead": [],
       "untracked_files": 0
     },
+    "indice-pa": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
     "italia-corpus": {
       "available": false,
       "reason": "local_disabled",
@@ -1478,7 +1480,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 8"
+    "Many open PRs: 7"
   ],
   "radar": {
     "available": true,
@@ -3811,6 +3813,133 @@
             "status": "SUCCESS",
             "started_at": "2026-09-01T20:34:25.446926+00:00",
             "finished_at": "2026-09-01T20:34:27.706273+00:00"
+          }
+        }
+      ]
+    },
+    {
+      "repo": "indice-pa",
+      "available": true,
+      "source_repo": "dataciviclab/indice-pa",
+      "updated_at": "2026-09-15",
+      "datasets": 8,
+      "marts": 14,
+      "signals": 8,
+      "codelists": 0,
+      "entities": 4,
+      "gcs": 8,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "compose:who_is_who_pa",
+          "source_id": "dataciviclab_composite",
+          "status": "ok",
+          "label": "who_is_who_pa",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260915T130918Z_7044161a",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-15T13:09:18.081462+00:00",
+            "finished_at": "2026-09-15T13:09:19.034408+00:00"
+          }
+        },
+        {
+          "id": "ipa_aree_organizzative_omogenee",
+          "source_id": "agid",
+          "status": "ok",
+          "label": "ipa_aree_organizzative_omogenee",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260915T130745Z_5b817dba",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-15T13:07:45.173708+00:00",
+            "finished_at": "2026-09-15T13:08:02.719218+00:00"
+          }
+        },
+        {
+          "id": "ipa_categorie_enti",
+          "source_id": "agid",
+          "status": "ok",
+          "label": "ipa_categorie_enti",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260915T130804Z_46254706",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-15T13:08:04.189768+00:00",
+            "finished_at": "2026-09-15T13:08:05.988870+00:00"
+          }
+        },
+        {
+          "id": "ipa_enti",
+          "source_id": "agid",
+          "status": "ok",
+          "label": "ipa_enti",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260915T130809Z_d9eee054",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-15T13:08:09.463136+00:00",
+            "finished_at": "2026-09-15T13:08:13.473929+00:00"
+          }
+        },
+        {
+          "id": "ipa_rtd",
+          "source_id": "agid",
+          "status": "ok",
+          "label": "ipa_rtd",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260915T130814Z_26534af9",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-15T13:08:14.295281+00:00",
+            "finished_at": "2026-09-15T13:08:24.574121+00:00"
+          }
+        },
+        {
+          "id": "ipa_servizi_digitali",
+          "source_id": "agid",
+          "status": "ok",
+          "label": "ipa_servizi_digitali",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260915T130826Z_344813a5",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-15T13:08:26.133599+00:00",
+            "finished_at": "2026-09-15T13:08:30.682797+00:00"
+          }
+        },
+        {
+          "id": "ipa_servizi_uo",
+          "source_id": "agid",
+          "status": "ok",
+          "label": "ipa_servizi_uo",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260915T130831Z_4cad3f2f",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-15T13:08:31.569437+00:00",
+            "finished_at": "2026-09-15T13:08:34.308338+00:00"
+          }
+        },
+        {
+          "id": "ipa_unita_organizzative",
+          "source_id": "agid",
+          "status": "ok",
+          "label": "ipa_unita_organizzative",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260915T130835Z_af58a156",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-15T13:08:35.164594+00:00",
+            "finished_at": "2026-09-15T13:09:17.708873+00:00"
           }
         }
       ]
