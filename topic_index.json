@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "generated_at": "2026-09-16T08:02:38.754288",
+  "generated_at": "2026-09-16T10:57:32.822751",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -7939,7 +7939,7 @@
         ],
         "category": "pa",
         "registry_source": "dataset-incubator",
-        "clean_rows": 23007,
+        "clean_rows": 23011,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/anpr_mobilita_residenziale/2026/anpr_mobilita_residenziale_2026_clean.parquet",
@@ -32206,6 +32206,13 @@
             "description": ""
           },
           {
+            "name": "atto_num",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "atto_num",
+            "description": "Alias di id_ddl per join cross-repo con senato-akn (atto_num == id_ddl)"
+          },
+          {
             "name": "ddl_url",
             "type": "VARCHAR",
             "role": "dimension",
@@ -32316,6 +32323,13 @@
             "role": "metric",
             "semantic_type": "",
             "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Anno di presentazione del DDL, estratto da data_presentazione"
           },
           {
             "name": "presentato_trasmesso",

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T08:02:38.754288",
+  "generated_at": "2026-09-16T10:57:32.822751",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -28,20 +28,13 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 6,
+  "open_prs": 4,
   "prs": [
     {
       "number": 451,
       "title": "mit-incidentalita: analisi con README, notebook, figure",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/pull/451",
-      "category": "other"
-    },
-    {
-      "number": 847,
-      "title": "chore: remove IPA datasets migrated to indice-pa",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/847",
       "category": "other"
     },
     {
@@ -63,13 +56,6 @@
       "title": "intake: inpa-bandi e inpa-comunicazioni \u2014 reclutamento PA dal Portale inPA",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/829",
-      "category": "other"
-    },
-    {
-      "number": 28,
-      "title": "feat: Camera DDL + Leggi dataset (Leg13-19) \u2014 ponte Normattiva/GU",
-      "repo": "open-politica",
-      "url": "https://github.com/dataciviclab/open-politica/pull/28",
       "category": "other"
     }
   ],
@@ -1479,17 +1465,15 @@
       "untracked_files": 0
     }
   },
-  "warnings": [
-    "Many open PRs: 7"
-  ],
+  "warnings": [],
   "radar": {
     "available": true,
-    "generated_at": "2026-09-15T08:37:29.967487+00:00",
-    "probe_date": "2026-09-15",
+    "generated_at": "2026-09-16T08:31:10.238260+00:00",
+    "probe_date": "2026-09-16",
     "sources_total": 36,
     "green": 35,
-    "yellow": 1,
-    "red": 0,
+    "yellow": 0,
+    "red": 1,
     "persistent_red": 0,
     "sources": [
       {
@@ -1558,17 +1542,17 @@
       },
       {
         "id": "dati_cultura",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "sparql",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
         "id": "ispra_linked_data",
-        "status": "GREEN",
+        "status": "RED",
         "protocol": "sparql",
-        "http_code": "200",
+        "http_code": "503",
         "note": null,
         "red_streak": 0
       },
@@ -1783,11 +1767,11 @@
     ],
     "unhealthy": [
       {
-        "id": "dati_cultura",
-        "status": "YELLOW",
+        "id": "ispra_linked_data",
+        "status": "RED",
         "protocol": "sparql",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
+        "http_code": "503",
+        "note": null,
         "red_streak": 0
       }
     ]
@@ -1801,11 +1785,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-09-12",
+    "generated_at": "2026-09-16",
     "summary": {
-      "total": 74,
+      "total": 70,
       "by_status": {
-        "ok": 74
+        "ok": 70
       }
     },
     "actionable": []
@@ -2207,10 +2191,10 @@
       "repo": "dataset-incubator",
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
-      "updated_at": "2026-09-12",
+      "updated_at": "2026-09-16",
       "datasets": 78,
-      "marts": 117,
-      "signals": 74,
+      "marts": 113,
+      "signals": 70,
       "codelists": 0,
       "entities": 14,
       "gcs": 78,
@@ -2244,11 +2228,11 @@
           "label": "anpr_mobilita_residenziale",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260912T175654Z_5b765d8f",
+            "run_id": "20260916T081915Z_5236e76c",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-12T17:56:54.623777+00:00",
-            "finished_at": "2026-09-12T17:56:55.571201+00:00"
+            "started_at": "2026-09-16T08:19:15.907671+00:00",
+            "finished_at": "2026-09-16T08:19:16.668888+00:00"
           }
         },
         {
@@ -2903,38 +2887,10 @@
           "detail": "anno 2022 \u2014 mart: si"
         },
         {
-          "id": "compose:who_is_who_pa",
-          "source_id": "dataciviclab_composite",
-          "status": "ok",
-          "label": "who_is_who_pa",
-          "detail": "anno 2026 \u2014 mart: si"
-        },
-        {
           "id": "bdap_anagrafe_enti",
           "source_id": "openbdap",
           "status": "ok",
           "label": "bdap_anagrafe_enti",
-          "detail": "anno 2026 \u2014 mart: si"
-        },
-        {
-          "id": "ipa_aree_organizzative_omogenee",
-          "source_id": "agid",
-          "status": "ok",
-          "label": "ipa_aree_organizzative_omogenee",
-          "detail": "anno 2026 \u2014 mart: si"
-        },
-        {
-          "id": "ipa_enti",
-          "source_id": "agid",
-          "status": "ok",
-          "label": "ipa_enti",
-          "detail": "anno 2026 \u2014 mart: si"
-        },
-        {
-          "id": "ipa_unita_organizzative",
-          "source_id": "agid",
-          "status": "ok",
-          "label": "ipa_unita_organizzative",
           "detail": "anno 2026 \u2014 mart: si"
         },
         {
