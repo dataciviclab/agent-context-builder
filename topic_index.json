@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "generated_at": "2026-09-17T11:06:31.117239",
+  "generated_at": "2026-09-17T16:23:46.935492",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -7939,7 +7939,7 @@
         ],
         "category": "pa",
         "registry_source": "dataset-incubator",
-        "clean_rows": 23011,
+        "clean_rows": 23015,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/anpr_mobilita_residenziale/2026/anpr_mobilita_residenziale_2026_clean.parquet",
@@ -19191,141 +19191,6 @@
             "role": "dimension",
             "semantic_type": "",
             "description": "Fonte del dato (Ministero dell'Interno / onData)"
-          }
-        ]
-      }
-    ],
-    "https://dati.camera.it/ocd/dump/silos/PISRapportoCSV2024.zip": [
-      {
-        "slug": "silos_infrastrutture",
-        "url_slug": "silos-infrastrutture",
-        "name": "Infrastrutture strategiche e prioritarie (SILOS)",
-        "description": "Censimento delle infrastrutture strategiche e prioritarie in Italia. Report annuale del Servizio Studi della Camera dei Deputati. Per ogni opera: CUP, denominazione, soggetto competente, localizzazione, stato di attuazione, costi, disponibilit\u00e0 finanziaria e fabbisogno residuo in milioni di euro.",
-        "source": "https://dati.camera.it/ocd/dump/silos/PISRapportoCSV2024.zip",
-        "source_id": "dati_camera",
-        "period": {
-          "start": 2004,
-          "end": 2024
-        },
-        "stage": "published",
-        "tags": [
-          "ambiente",
-          "silos",
-          "infrastrutture"
-        ],
-        "category": "ambiente",
-        "registry_source": "opere-pubbliche",
-        "clean_rows": 3527,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/silos_infrastrutture/2024/silos_infrastrutture_2024_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": "Anno di riferimento del report"
-          },
-          {
-            "name": "link_scheda",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "URL della scheda opera su silos.infrastrutturestrategiche.it"
-          },
-          {
-            "name": "progressivo",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Numero progressivo dell'intervento nel report"
-          },
-          {
-            "name": "livello",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Livello gerarchico nella struttura ad albero del report"
-          },
-          {
-            "name": "flag_commissariato_pnrr",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Indicatore se l'opera \u00e8 commissariata o legata a PNRR/PNC"
-          },
-          {
-            "name": "sistema_infrastrutturale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Sistema infrastrutturale di appartenenza (Ferrovie, Strade, Porti, ecc.)"
-          },
-          {
-            "name": "cup",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "cup_code",
-            "description": "Codice Unico di Progetto (CUP) dell'intervento"
-          },
-          {
-            "name": "denominazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Denominazione dell'intervento"
-          },
-          {
-            "name": "soggetto_competente",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Soggetto competente alla realizzazione (es. RFI, ANAS, TELT)"
-          },
-          {
-            "name": "luogo_lavori",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Localizzazione geografica principale dell'opera"
-          },
-          {
-            "name": "stato_attuazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Stato di attuazione (Lavori in corso, Conclusi, Progettazione, Bloccato, ecc.)"
-          },
-          {
-            "name": "anno_ultimazione_previsto",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Anno previsto per l'ultimazione dei lavori"
-          },
-          {
-            "name": "costi_mln_euro",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Costi totali dell'opera in milioni di euro"
-          },
-          {
-            "name": "disponibilita_mln_euro",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Disponibilit\u00e0 finanziaria in milioni di euro"
-          },
-          {
-            "name": "fabbisogno_mln_euro",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Fabbisogno residuo in milioni di euro"
           }
         ]
       }

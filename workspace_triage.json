@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-17T11:06:31.117239",
+  "generated_at": "2026-09-17T16:23:46.935492",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -1785,11 +1785,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-09-16",
+    "generated_at": "2026-09-17",
     "summary": {
-      "total": 70,
+      "total": 69,
       "by_status": {
-        "ok": 70
+        "ok": 69
       }
     },
     "actionable": []
@@ -2191,13 +2191,13 @@
       "repo": "dataset-incubator",
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
-      "updated_at": "2026-09-16",
-      "datasets": 78,
-      "marts": 113,
-      "signals": 70,
+      "updated_at": "2026-09-17",
+      "datasets": 77,
+      "marts": 112,
+      "signals": 69,
       "codelists": 0,
       "entities": 14,
-      "gcs": 78,
+      "gcs": 77,
       "reason": "",
       "signals_detail": [
         {
@@ -2228,11 +2228,11 @@
           "label": "anpr_mobilita_residenziale",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260916T081915Z_5236e76c",
+            "run_id": "20260917T141937Z_1e9ff6a7",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-16T08:19:15.907671+00:00",
-            "finished_at": "2026-09-16T08:19:16.668888+00:00"
+            "started_at": "2026-09-17T14:19:37.037656+00:00",
+            "finished_at": "2026-09-17T14:19:38.129633+00:00"
           }
         },
         {
@@ -2787,13 +2787,6 @@
           "status": "ok",
           "label": "sbarchi_migranti_italia",
           "detail": "anno 2025 \u2014 mart: si"
-        },
-        {
-          "id": "silos_infrastrutture",
-          "source_id": "dati_camera",
-          "status": "ok",
-          "label": "silos_infrastrutture",
-          "detail": "anno 2024 \u2014 mart: si"
         },
         {
           "id": "strutture_asl",
