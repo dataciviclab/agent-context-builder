@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-09-17T21:00:22.869110
+**Generated**: 2026-09-18T03:30:57.434830
 
 ## Stato
 
@@ -9,6 +9,7 @@ Radar: 36 fonti GREEN 35 · RED 1 · Registry: 18 repo · 259 dataset
 ## Richiede attenzione
 
 - [PR] dataciviclab#451: mit-incidentalita: analisi con README, notebook, figure
+- [PR] dataset-incubator#851: feat(candidate): intake art-taxi-ncc, licenze TAXI/NCC per comune
 - [PR] dataset-incubator#836: feat(candidates): bootstrap gse_cer_elenco candidate
 - [PR] dataset-incubator#834: chore(deps): bump toolkit a v1.51.0
 - [PR] dataset-incubator#829: intake: inpa-bandi e inpa-comunicazioni — reclutamento PA dal Portale inPA
