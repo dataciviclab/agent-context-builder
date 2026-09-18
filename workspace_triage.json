@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T03:30:57.434830",
+  "generated_at": "2026-09-18T10:41:22.743208",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -1475,12 +1475,12 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "generated_at": "2026-09-17T08:35:58.102260+00:00",
-    "probe_date": "2026-09-17",
+    "generated_at": "2026-09-18T08:12:00.275250+00:00",
+    "probe_date": "2026-09-18",
     "sources_total": 36,
     "green": 35,
-    "yellow": 0,
-    "red": 1,
+    "yellow": 1,
+    "red": 0,
     "persistent_red": 0,
     "sources": [
       {
@@ -1501,10 +1501,10 @@
       },
       {
         "id": "inps",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "ckan",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
@@ -1533,9 +1533,9 @@
       },
       {
         "id": "dati_camera",
-        "status": "RED",
+        "status": "GREEN",
         "protocol": "sparql",
-        "http_code": "503",
+        "http_code": "200",
         "note": null,
         "red_streak": 0
       },
@@ -1774,11 +1774,11 @@
     ],
     "unhealthy": [
       {
-        "id": "dati_camera",
-        "status": "RED",
-        "protocol": "sparql",
-        "http_code": "503",
-        "note": null,
+        "id": "inps",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       }
     ]
