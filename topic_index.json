@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "generated_at": "2026-09-19T10:25:49.746645",
+  "generated_at": "2026-09-19T15:05:50.060624",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -54,9 +54,21 @@
       "description": "Libreria condivisa per connettersi a fonti dati pubbliche \u2014 HTTP, GCS, DuckDB.",
       "url": "https://github.com/dataciviclab/lab-connectors"
     },
+    "open-coesione": {
+      "description": "",
+      "url": "https://github.com/dataciviclab/open-coesione"
+    },
+    "open-consip": {
+      "description": "Come la PA italiana acquista beni e servizi via Consip, e con quali differenze territoriali?",
+      "url": "https://github.com/dataciviclab/open-consip"
+    },
     "open-conto-annuale": {
       "description": "1,8 milioni di microdati sul personale della PA italiana \u2014 chi lavora nel pubblico, dove e con quali ruoli.",
       "url": "https://github.com/dataciviclab/open-conto-annuale"
+    },
+    "open-pnrr": {
+      "description": "",
+      "url": "https://github.com/dataciviclab/open-pnrr"
     },
     "open-politica": {
       "description": "La politica italiana in dati aperti: chi vota, come vota, cosa decide. Parlamento, elezioni e governo in parquet pronti per l'analisi.",
@@ -1807,6 +1819,206 @@
         ],
         "mart_refs": [
           "who_is_who_pa__who_is_who_pa"
+        ]
+      },
+      {
+        "slug": "consip_composto",
+        "url_slug": "consip-composto",
+        "name": "Consip Composto",
+        "description": "Compose CONSIP: snapshot unificato anno \u00d7 regione da tutti i dataset Consip.",
+        "source": "",
+        "source_id": "dataciviclab_composite",
+        "period": {
+          "start": 2024,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "consip",
+          "compose",
+          "cross"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "open-consip",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open_consip/consip_composto/*/consip_composto_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "n_gare",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_aggiudicate",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tasso_aggiudicazione",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "base_asta_totale",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valore_aggiudicato_totale",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "incidenza_prezzo",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fornitori_medi_asp",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_contratti_mepa",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valore_contratti_mepa",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fornitori_medi_mepa",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tempi_medi_stipula",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_imprese_totali",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_imprese_con_agg",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_imprese_con_contratti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tot_aggiudicazioni",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "spesa_utility",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ordini_utility",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "spesa_ordini",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_ordini_totali",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_pa_con_ordini",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_pa_totali",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_po_totali",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "consip_composto__mart_riepilogo"
         ]
       },
       {
@@ -8003,6 +8215,75 @@
         ]
       }
     ],
+    "art_opendata": [
+      {
+        "slug": "art_taxi_ncc",
+        "url_slug": "art-taxi-ncc",
+        "name": "Art Taxi Ncc",
+        "description": "",
+        "source": "",
+        "source_id": "art_opendata",
+        "period": {
+          "start": 2024,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "mobilita",
+          "taxi",
+          "trasporti",
+          "comuni"
+        ],
+        "category": "mobilita",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 176,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/art_taxi_ncc/2024/art_taxi_ncc_2024_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_name",
+            "description": ""
+          },
+          {
+            "name": "taxi",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ncc",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "popolazione_residente",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "art_taxi_ncc__mart_taxi_ncc_per_capite"
+        ]
+      }
+    ],
     "MEF \u2014 Ragioneria Generale dello Stato / OpenBDAP": [
       {
         "slug": "bdap_anagrafe_enti",
@@ -9722,7 +10003,7 @@
           "convenzione"
         ],
         "category": "finanza-pubblica",
-        "registry_source": "dataset-incubator",
+        "registry_source": "open-consip",
         "clean_rows": 7115,
         "location": {
           "type": "gcs",
@@ -17021,7 +17302,7 @@
           "beneficiari"
         ],
         "category": "finanza-pubblica",
-        "registry_source": "dataset-incubator",
+        "registry_source": "open-coesione",
         "clean_rows": 7195885,
         "location": {
           "type": "gcs",
@@ -17136,6 +17417,1088 @@
           },
           {
             "name": "DENOMINAZIONE_SOGGETTO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "opencoesione_soggetti__mart_beneficiari"
+        ]
+      },
+      {
+        "slug": "opencoesione_indicatori",
+        "url_slug": "opencoesione-indicatori",
+        "name": "Opencoesione Indicatori",
+        "description": "",
+        "source": "",
+        "source_id": "opencoesione",
+        "period": {
+          "start": 2007,
+          "end": 2027
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "opencoesione",
+          "indicatori",
+          "valutazione"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "open-coesione",
+        "clean_rows": 3670364,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-coesione/opencoesione_indicatori/2026/opencoesione_indicatori_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "COD_LOCALE_PROGETTO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "TIPO_INDICATORE",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COD_INDICATORE",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "indicatore_code",
+            "description": ""
+          },
+          {
+            "name": "DESCR_INDICATORE",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "UNITA_MISURA",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "DESCR_UNITA_MISURA",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "VALORE_PROGRAMMATO",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "target_value",
+            "description": ""
+          },
+          {
+            "name": "VALORE_REALIZZATO",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_FLAG_VISUAL_INDICATORE",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "opencoesione_indicatori__mart_valutazione",
+          "opencoesione_indicatori__mart_indicatori_tipo"
+        ]
+      },
+      {
+        "slug": "opencoesione_localizzazioni",
+        "url_slug": "opencoesione-localizzazioni",
+        "name": "Opencoesione Localizzazioni",
+        "description": "",
+        "source": "",
+        "source_id": "opencoesione",
+        "period": {
+          "start": 2007,
+          "end": 2027
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "opencoesione",
+          "localizzazioni",
+          "geolocalizzazione"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "open-coesione",
+        "clean_rows": 2431641,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-coesione/opencoesione_localizzazioni/2026/opencoesione_localizzazioni_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "COD_LOCALE_PROGETTO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COD_REGIONE",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "DEN_REGIONE",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COD_PROVINCIA",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "DEN_PROVINCIA",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COD_COMUNE",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_code",
+            "description": ""
+          },
+          {
+            "name": "DEN_COMUNE",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COD_SLL",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "DEN_SLL",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COD_AREA_INTERNA",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "DEN_AREA_INTERNA",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "CLASSIF_AREA_INTERNA",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "INDIRIZZO_PROG",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "CAP_PROG",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_TERRITORIO_PROG",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "opencoesione_localizzazioni__mart_territorio",
+          "opencoesione_localizzazioni__mart_aree_interne"
+        ]
+      },
+      {
+        "slug": "opencoesione_pagamenti",
+        "url_slug": "opencoesione-pagamenti",
+        "name": "Opencoesione Pagamenti",
+        "description": "",
+        "source": "",
+        "source_id": "opencoesione",
+        "period": {
+          "start": 2007,
+          "end": 2027
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "opencoesione",
+          "pagamenti",
+          "flussi-cassa"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "open-coesione",
+        "clean_rows": 5616088,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-coesione/opencoesione_pagamenti/2026/opencoesione_pagamenti_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "COD_LOCALE_PROGETTO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_DATA_PAGAMENTI",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "TOT_PAGAMENTI",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_TOT_PAGAMENTI_RENDICONTAB_UE",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_TOT_PAGAMENTI_FSC",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_TOT_PAGAMENTI_PAC",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "CODICE_PROGRAMMA",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "programma_code",
+            "description": ""
+          },
+          {
+            "name": "OC_CODICE_PROGRAMMA",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "programma_code",
+            "description": ""
+          },
+          {
+            "name": "OC_TIPO_PAGAMENTI",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "opencoesione_pagamenti__mart_flusso_cassa",
+          "opencoesione_pagamenti__mart_pagamenti_programma"
+        ]
+      },
+      {
+        "slug": "opencoesione_progetti_esteso",
+        "url_slug": "opencoesione-progetti-esteso",
+        "name": "Opencoesione Progetti Esteso",
+        "description": "",
+        "source": "",
+        "source_id": "opencoesione",
+        "period": {
+          "start": 2021,
+          "end": 2027
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "opencoesione",
+          "progetti",
+          "esteso"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "open-coesione",
+        "clean_rows": 128450,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-coesione/opencoesione_progetti_esteso/2026/opencoesione_progetti_esteso_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "COD_LOCALE_PROGETTO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "CUP",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cup_code",
+            "description": ""
+          },
+          {
+            "name": "OC_LINK",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_TITOLO_PROGETTO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_SINTESI_PROGETTO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_COD_CICLO",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_DESCR_CICLO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_COD_TEMA_SINTETICO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_TEMA_SINTETICO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "policy_code",
+            "description": ""
+          },
+          {
+            "name": "COD_GRANDE_PROGETTO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "DESCRIZIONE_GRANDE_PROGETTO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_COD_FONTE",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_DESCR_FONTE",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "FONDO_COMUNITARIO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fondo_code",
+            "description": ""
+          },
+          {
+            "name": "OC_CODICE_PROGRAMMA",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "programma_code",
+            "description": ""
+          },
+          {
+            "name": "OC_DESCRIZIONE_PROGRAMMA",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "obiettivo_code",
+            "description": ""
+          },
+          {
+            "name": "COD_OB_TEMATICO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "policy_code",
+            "description": ""
+          },
+          {
+            "name": "DESCR_OB_TEMATICO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COD_PRIORITA_INVEST",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "DESCR_PRIORITA_INVEST",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_COD_CATEGORIA_SPESA",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_DESCR_CATEGORIA_SPESA",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_ARTICOLAZIONE_PROGRAMMA",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_COD_ARTICOLAZ_PROGRAMMA",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_DESCR_ARTICOLAZ_PROGRAMMA",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_SUBARTICOLAZIONE_PROGRAMMA",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_COD_SUBARTICOLAZ_PROGRAMMA",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_DESCR_SUBARTICOLAZ_PROGRAMMA",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "CUP_COD_NATURA",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "CUP_DESCR_NATURA",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "CUP_COD_SETTORE",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "CUP_DESCR_SETTORE",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "CUP_COD_CATEGORIA",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "CUP_DESCR_CATEGORIA",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_COD_TIPO_AIUTO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_DESCR_TIPO_AIUTO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COD_REGIONE",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "DEN_REGIONE",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COD_PROVINCIA",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "DEN_PROVINCIA",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COD_COMUNE",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_code",
+            "description": ""
+          },
+          {
+            "name": "DEN_COMUNE",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_MACROAREA",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COD_ATECO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "DESCRIZIONE_ATECO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_STATO_PROGETTO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_STATO_PROCEDURALE",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_STATO_FINANZIARIO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_COD_FASE_CORRENTE",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_DESCR_FASE_CORRENTE",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_DATA_INIZIO_PROGETTO",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_DATA_FINE_PROGETTO_PREVISTA",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_DATA_FINE_PROGETTO_EFFETTIVA",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "FINANZ_UE",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "FINANZ_UE_FESR",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "FINANZ_UE_FSE",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "FINANZ_STATO_FSC",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "FINANZ_REGIONE",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "FINANZ_PROVINCIA",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "FINANZ_COMUNE",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "FINANZ_PRIVATO",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "FINANZ_TOTALE_PUBBLICO",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_COSTO_COESIONE",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COSTO_REALIZZATO",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COSTO_RENDICONTABILE_UE",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "IMPEGNI",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_IMPEGNI_COESIONE",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "TOT_PAGAMENTI",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_TOT_PAGAMENTI_BENEFICIARI",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_TOT_PAGAMENTI_RENDICONTAB_UE",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_PAGAMENTI_COESIONE",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COD_INDICATORE_1",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "indicatore_code",
+            "description": ""
+          },
+          {
+            "name": "DESCR_INDICATORE_1",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "UNITA_MISURA_INDICATORE_1",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "PROGRAMMATO_INDICATORE_1",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "target_value",
+            "description": ""
+          },
+          {
+            "name": "REALIZZATO_INDICATORE_1",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "DATA_AGGIORNAMENTO",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "opencoesione_progetti_esteso__mart_tema_ciclo",
+          "opencoesione_progetti_esteso__mart_geolocalizzazione",
+          "opencoesione_progetti_esteso__mart_programmi"
+        ]
+      },
+      {
+        "slug": "opencoesione_soggetti",
+        "url_slug": "opencoesione-soggetti",
+        "name": "Opencoesione Soggetti",
+        "description": "",
+        "source": "",
+        "source_id": "opencoesione",
+        "period": {
+          "start": 2007,
+          "end": 2027
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "opencoesione",
+          "soggetti",
+          "beneficiari"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "open-coesione",
+        "clean_rows": 7195885,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-coesione/opencoesione_soggetti/2026/opencoesione_soggetti_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "COD_LOCALE_PROGETTO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "SOGG_COD_RUOLO",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "SOGG_DESCR_RUOLO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "SOGG_PROGR_RUOLO",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_CODICE_FISCALE_SOGG",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_DENOMINAZIONE_SOGG",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COD_FORMA_GIURIDICA_SOGG",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "DESCR_FORMA_GIURIDICA_SOGG",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COD_COMUNE_SEDE_SOGG",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "INDIRIZZO_SOGG",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "CAP_SOGG",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COD_ATECO_SOGG",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "DESCRIZIONE_ATECO_SOGG",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COD_ADDETTI_SOGG",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "DESCR_ADDETTI_SOGG",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "COD_DIMENSIONE_SOGG",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "DESCR_DIMENSIONE_SOGG",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "CODICE_FISCALE_SOGGETTO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "DENOMINAZIONE_SOGGETTO",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_COD_ENTE_BDAP",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "OC_COD_ENTE_IPA",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
@@ -17727,7 +19090,7 @@
           "gare"
         ],
         "category": "finanza-pubblica",
-        "registry_source": "dataset-incubator",
+        "registry_source": "open-pnrr",
         "clean_rows": 282655,
         "location": {
           "type": "gcs",
@@ -17900,7 +19263,7 @@
           "rendicontazione"
         ],
         "category": "finanza-pubblica",
-        "registry_source": "dataset-incubator",
+        "registry_source": "open-pnrr",
         "clean_rows": 211901,
         "location": {
           "type": "gcs",
@@ -18093,7 +19456,7 @@
           "progetti"
         ],
         "category": "finanza-pubblica",
-        "registry_source": "dataset-incubator",
+        "registry_source": "open-pnrr",
         "clean_rows": 291398,
         "location": {
           "type": "gcs",
@@ -30063,6 +31426,3011 @@
         "mart_refs": [
           "ipa_unita_organizzative__ipa_unita_organizzative",
           "ipa_unita_organizzative__ipa_unita_organizzative_riepilogo"
+        ]
+      }
+    ],
+    "consip_open_data": [
+      {
+        "slug": "consip_amministrazioni",
+        "url_slug": "consip-amministrazioni",
+        "name": "Consip Amministrazioni",
+        "description": "",
+        "source": "",
+        "source_id": "consip_open_data",
+        "period": {
+          "start": 2024,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "consip",
+          "pa",
+          "anagrafica",
+          "support"
+        ],
+        "category": "pa",
+        "registry_source": "open-consip",
+        "clean_rows": 25468,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-consip/consip_amministrazioni/*/consip_amministrazioni_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno_riferimento",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "identificativo_amministrazione",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "identificativo_ipa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipologia_amministrazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_fiscale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "denominazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_name",
+            "description": ""
+          },
+          {
+            "name": "latitudine",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "longitudine",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_po_attivi",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "consip_amministrazioni__mart_pa_per_territorio"
+        ]
+      },
+      {
+        "slug": "consip_bandi_e_gare",
+        "url_slug": "consip-bandi-e-gare",
+        "name": "Consip Bandi E Gare",
+        "description": "",
+        "source": "",
+        "source_id": "consip_open_data",
+        "period": {
+          "start": 2024,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "consip",
+          "bandi",
+          "gare",
+          "appalti"
+        ],
+        "category": "appalti",
+        "registry_source": "open-consip",
+        "clean_rows": 1785,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-consip/consip_bandi_e_gare/*/consip_bandi_e_gare_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno_riferimento",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "denominazione_bando",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "denominazione_lotto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "identificativo_lotto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipologia_lotto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria_merceologica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_strumento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_procedura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "modalita_svolgimento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "aggiudicazione_esclusiva",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "verde",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "criterio_aggiudicazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_pubblicazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_aggiudicazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_attivazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_autorizzazione_6_5",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_autorizzazione_7_5",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_termine",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "base_asta",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_massimale",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "quantita_massimale",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unita_misura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unita_misura_del_massimale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "percentuale_erosione",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_operatori_economici_partecipanti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_operatori_economici_aggiudicatari_abilitati",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "commissione_sul_valore_degli_acquisti",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_obbligatoria_facoltativa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_procedura_accelerata",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_rilancio_competitivo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "consip_bandi_e_gare__mart_bandi_per_strumento",
+          "consip_bandi_e_gare__mart_competizione_strumento"
+        ]
+      },
+      {
+        "slug": "consip_cataloghi",
+        "url_slug": "consip-cataloghi",
+        "name": "Consip Cataloghi",
+        "description": "",
+        "source": "",
+        "source_id": "consip_open_data",
+        "period": {
+          "start": 2024,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "consip",
+          "cataloghi",
+          "prodotti",
+          "cpv"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "open-consip",
+        "clean_rows": 244660,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-consip/consip_cataloghi/*/consip_cataloghi_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "denominazione_iniziativa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "denominazione_lotto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "identificativo_lotto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_strumento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "prodotto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_cpv",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cpv_code",
+            "description": ""
+          },
+          {
+            "name": "descrizione_cpv",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_prodotto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria_merceologica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_dettaglio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "principale_accessorio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "articolo_disp_mese",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "articolo_disp_anno",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "consip_cataloghi__mart_cataloghi_per_categoria"
+        ]
+      },
+      {
+        "slug": "consip_consumi_convenzione",
+        "url_slug": "consip-consumi-convenzione",
+        "name": "Consip Consumi Convenzione",
+        "description": "",
+        "source": "",
+        "source_id": "consip_open_data",
+        "period": {
+          "start": 2023,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "consip",
+          "consumi",
+          "convenzione"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "open-consip",
+        "clean_rows": 7115,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-consip/consip_consumi_convenzione/*/consip_consumi_convenzione_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno_riferimento",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "tipologia_amministrazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione_pa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provincia_pa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sigla_provincia_pa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "regione_fornitore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "convenzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "lotto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valore_economico_consumi",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_ordini_con_consumi",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_pa_con_consumi",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_po_con_consumi",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "consip_consumi_convenzione__mart_spesa_per_territorio"
+        ]
+      },
+      {
+        "slug": "consip_gare_asp",
+        "url_slug": "consip-gare-asp",
+        "name": "Consip Gare Asp",
+        "description": "",
+        "source": "",
+        "source_id": "consip_open_data",
+        "period": {
+          "start": 2024,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "consip",
+          "gare",
+          "appalti",
+          "asp",
+          "geolocalizzato"
+        ],
+        "category": "appalti",
+        "registry_source": "open-consip",
+        "clean_rows": 21358,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-consip/consip_gare_asp/*/consip_gare_asp_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno_riferimento",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipologia_amministrazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "denominazione_amministrazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "denominazione_gara",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stato_gara",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "denominazione_lotto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stato_lotto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "identificativo_lotto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria_merceologica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_procedura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "oggetto_appalto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "criterio_aggiudicazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione_pa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provincia_pa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sigla_prov_pa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_pubblicazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_aggiudicazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "base_asta",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valore_aggiudicato",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "durata_contratto_presunta",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "durata_contratto_stipula",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_fornitori_partecipanti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "latitudine_pa",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "longitudine_pa",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "consip_gare_asp__mart_gare_per_territorio",
+          "consip_gare_asp__mart_esito_gare_provincia"
+        ]
+      },
+      {
+        "slug": "consip_operatori_economici",
+        "url_slug": "consip-operatori-economici",
+        "name": "Consip Operatori Economici",
+        "description": "",
+        "source": "",
+        "source_id": "consip_open_data",
+        "period": {
+          "start": 2024,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "consip",
+          "imprese",
+          "operatori-economici"
+        ],
+        "category": "economia",
+        "registry_source": "open-consip",
+        "clean_rows": 315058,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-consip/consip_operatori_economici/*/consip_operatori_economici_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno_riferimento",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "partita_iva",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "ragione_sociale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "forma_societaria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nazione_sede_legale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione_sede_legale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provincia_sede_legale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "comune_sede_legale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "indirizzo_sede_legale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "latitudine_sede_legale",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "longitudine_sede_legale",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_aggiudicazioni",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_abilitazioni",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_transazioni",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_contratti_attivi",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "consip_operatori_economici__mart_imprese_per_territorio",
+          "consip_operatori_economici__mart_concentrazione_imprese"
+        ]
+      },
+      {
+        "slug": "consip_ordini_convenzione",
+        "url_slug": "consip-ordini-convenzione",
+        "name": "Consip Ordini Convenzione",
+        "description": "",
+        "source": "",
+        "source_id": "consip_open_data",
+        "period": {
+          "start": 2024,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "consip",
+          "ordini",
+          "convenzione",
+          "spesa"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "open-consip",
+        "clean_rows": 11328,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-consip/consip_ordini_convenzione/*/consip_ordini_convenzione_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno_riferimento",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "tipologia_amministrazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione_pa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provincia_pa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sigla_provincia_pa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "regione_fornitore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "convenzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "lotto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "bene_servizio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_cpv",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cpv_code",
+            "description": ""
+          },
+          {
+            "name": "descrizione_cpv",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_ordini",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_ordinato",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_pa",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_fornitori",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_po",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "consip_ordini_convenzione__mart_spesa_per_convenzione"
+        ]
+      },
+      {
+        "slug": "consip_ordini_mepa",
+        "url_slug": "consip-ordini-mepa",
+        "name": "Consip Ordini Mepa",
+        "description": "",
+        "source": "",
+        "source_id": "consip_open_data",
+        "period": {
+          "start": 2024,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "consip",
+          "ordini",
+          "mepa",
+          "spesa"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "open-consip",
+        "clean_rows": 69853,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-consip/consip_ordini_mepa/*/consip_ordini_mepa_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno_riferimento",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "tipologia_amministrazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione_pa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provincia_pa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sigla_provincia_pa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "regione_fornitore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "bando_mepa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria_abilitazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "bene_servizio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_cpv",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cpv_code",
+            "description": ""
+          },
+          {
+            "name": "descrizione_cpv",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_ordini",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valore_ordini",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_pa",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_fornitori",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_po",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "consip_ordini_mepa__mart_ordini_mepa_per_bene",
+          "consip_ordini_mepa__mart_ordini_mepa_per_regione"
+        ]
+      },
+      {
+        "slug": "consip_partecipazioni",
+        "url_slug": "consip-partecipazioni",
+        "name": "Consip Partecipazioni",
+        "description": "",
+        "source": "",
+        "source_id": "consip_open_data",
+        "period": {
+          "start": 2024,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "consip",
+          "gare",
+          "imprese",
+          "partecipazioni"
+        ],
+        "category": "appalti",
+        "registry_source": "open-consip",
+        "clean_rows": 1019679,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-consip/consip_partecipazioni/*/consip_partecipazioni_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno_riferimento",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "denominazione_iniziativa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "denominazione_lotto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "identificativo_lotto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_strumento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partita_iva",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "ragione_sociale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "forma_partecipazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "denominazione_partecipazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "progressivo_partecipante",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_capogruppo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "esito_partecipazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_aggiudicazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "consip_partecipazioni__mart_vincitori_per_strumento"
+        ]
+      },
+      {
+        "slug": "consip_rdo_td_stipulate",
+        "url_slug": "consip-rdo-td-stipulate",
+        "name": "Consip Rdo Td Stipulate",
+        "description": "",
+        "source": "",
+        "source_id": "consip_open_data",
+        "period": {
+          "start": 2024,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "consip",
+          "mepa",
+          "rdo",
+          "contratti",
+          "competizione"
+        ],
+        "category": "appalti",
+        "registry_source": "open-consip",
+        "clean_rows": 12813,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-consip/consip_rdo_td_stipulate/*/consip_rdo_td_stipulate_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno_riferimento",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "tipologia_amministrazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione_fornitore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione_pa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provincia_pa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sigla_provincia_pa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "tipo_negoziazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_negoziazioni_stipulate",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_contratti_stipulati",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valore_base_asta",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perc_negoziazioni_base_asta_valorizzata",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valore_contratti_stipulati",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_medio_fornitori_partecipanti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_fornitori_con_contratti_stipulati",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_pa_appaltanti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_po",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "durata_media_negoziazione",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tempi_medi_stipula",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "consip_rdo_td_stipulate__mart_competizione_mepa"
+        ]
+      }
+    ],
+    "italiadomani": [
+      {
+        "slug": "pnrr_avanzamento_indicatori",
+        "url_slug": "pnrr-avanzamento-indicatori",
+        "name": "Pnrr Avanzamento Indicatori",
+        "description": "",
+        "source": "",
+        "source_id": "italiadomani",
+        "period": {
+          "start": 2021,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "pnrr",
+          "indicatori",
+          "milestones",
+          "target"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "open-pnrr",
+        "clean_rows": 6030,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-pnrr/pnrr_avanzamento_indicatori/2026/pnrr_avanzamento_indicatori_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "missione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_missione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "obiettivo_code",
+            "description": ""
+          },
+          {
+            "name": "componente",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_componente",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "id_misura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_univoco_misura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_misura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "obiettivo_code",
+            "description": ""
+          },
+          {
+            "name": "codice_univoco_submisura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "id_submisura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_cid",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_submisura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "obiettivo_code",
+            "description": ""
+          },
+          {
+            "name": "amministrazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_indicatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "indicatore_code",
+            "description": ""
+          },
+          {
+            "name": "descrizione_indicatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unita_misura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "semestre",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valore_indicatore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valore_stimato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valore_non_disponibile",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_estrazione",
+            "type": "TIMESTAMP",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno_estrazione",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "pnrr_avanzamento_indicatori__mart_per_missione",
+          "pnrr_avanzamento_indicatori__mart_per_submisura"
+        ]
+      },
+      {
+        "slug": "pnrr_gare",
+        "url_slug": "pnrr-gare",
+        "name": "Pnrr Gare",
+        "description": "",
+        "source": "",
+        "source_id": "italiadomani",
+        "period": {
+          "start": 2016,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "pnrr",
+          "appalti",
+          "gare"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "open-pnrr",
+        "clean_rows": 282655,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-pnrr/pnrr_gare/2026/pnrr_gare_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "codice_univoco_submisura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_submisura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "obiettivo_code",
+            "description": ""
+          },
+          {
+            "name": "descrizione_procedura_aggiudicazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cup",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cup_code",
+            "description": ""
+          },
+          {
+            "name": "codice_locale_progetto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cig",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cig_code",
+            "description": ""
+          },
+          {
+            "name": "cig_accordo_quadro",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cig_code",
+            "description": ""
+          },
+          {
+            "name": "codice_procedura_utente",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "modalita_realizzazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_interno_pda",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "oggetto_principale_contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "oggetto_gara",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_pubblicazione_cig",
+            "type": "TIMESTAMP",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_motivo_assenza_cig",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_motivo_assenza_cig",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_complessivo_gara",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_aggiudicazione",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_aggiudicazione_definitiva",
+            "type": "TIMESTAMP",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_estrazione",
+            "type": "TIMESTAMP",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno_estrazione",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "pnrr_gare__mart_submisura",
+          "pnrr_gare__mart_procedura"
+        ]
+      },
+      {
+        "slug": "pnrr_indicatori_target",
+        "url_slug": "pnrr-indicatori-target",
+        "name": "Pnrr Indicatori Target",
+        "description": "",
+        "source": "",
+        "source_id": "italiadomani",
+        "period": {
+          "start": 2021,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "pnrr",
+          "indicatori",
+          "target"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "open-pnrr",
+        "clean_rows": 357183,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-pnrr/pnrr_indicatori_target/2026/pnrr_indicatori_target_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "codice_univoco_submisura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_submisura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "obiettivo_code",
+            "description": ""
+          },
+          {
+            "name": "cup",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cup_code",
+            "description": ""
+          },
+          {
+            "name": "codice_locale_progetto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_indicatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "indicatore_code",
+            "description": ""
+          },
+          {
+            "name": "descrizione_indicatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unita_misura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_unita_misura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_tipo_indicatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valore_realizzato",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valore_programmato",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "target_value",
+            "description": ""
+          },
+          {
+            "name": "mese",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "data_estrazione",
+            "type": "TIMESTAMP",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno_estrazione",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "pnrr_indicatori_target__mart_avanzamento",
+          "pnrr_indicatori_target__mart_per_submisura"
+        ]
+      },
+      {
+        "slug": "pnrr_pagamenti",
+        "url_slug": "pnrr-pagamenti",
+        "name": "Pnrr Pagamenti",
+        "description": "",
+        "source": "",
+        "source_id": "italiadomani",
+        "period": {
+          "start": 2021,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "pnrr",
+          "pagamenti",
+          "rendicontazione"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "open-pnrr",
+        "clean_rows": 211901,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-pnrr/pnrr_pagamenti/2026/pnrr_pagamenti_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "codice_univoco_submisura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_submisura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "obiettivo_code",
+            "description": ""
+          },
+          {
+            "name": "cup",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cup_code",
+            "description": ""
+          },
+          {
+            "name": "codice_locale_progetto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "finanziamento_totale",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "finanziamento_pnrr",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pagamento_totale",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pagamento_pnrr",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pagamento_stato",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pagamento_stato_bilancio",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pagamento_stato_foi",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pagamento_fpop",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pagamento_ue",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pagamento_regione",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pagamento_provincia",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pagamento_comune",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pagamento_altro_pubblico",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pagamento_privato",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pagamento_da_reperire",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pagamento_pnc",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pagamento_altri_fondi",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_estrazione",
+            "type": "TIMESTAMP",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno_estrazione",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "pnrr_pagamenti__mart_submisura",
+          "pnrr_pagamenti__mart_sintesi"
+        ]
+      },
+      {
+        "slug": "pnrr_progetti",
+        "url_slug": "pnrr-progetti",
+        "name": "Pnrr Progetti",
+        "description": "",
+        "source": "",
+        "source_id": "italiadomani",
+        "period": {
+          "start": 2021,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "pnrr",
+          "progetti"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "open-pnrr",
+        "clean_rows": 291398,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-pnrr/pnrr_progetti/2026/pnrr_progetti_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "programma",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "programma_code",
+            "description": ""
+          },
+          {
+            "name": "missione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_missione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "obiettivo_code",
+            "description": ""
+          },
+          {
+            "name": "componente",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_componente",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "id_misura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_univoco_misura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_misura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "obiettivo_code",
+            "description": ""
+          },
+          {
+            "name": "id_submisura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_cid",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_univoco_submisura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_submisura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "obiettivo_code",
+            "description": ""
+          },
+          {
+            "name": "amministrazione_titolare",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_procedura_attivazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "titolo_procedura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipologia_procedura_attivazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cup",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cup_code",
+            "description": ""
+          },
+          {
+            "name": "codice_locale_progetto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stato_cup",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cup_codice_natura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cup_descrizione_natura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cup_codice_tipologia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cup_descrizione_tipologia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cup_codice_settore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cup_descrizione_settore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cup_codice_sottosettore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cup_descrizione_sottosettore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cup_codice_categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cup_descrizione_categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "titolo_progetto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sintesi_progetto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_tipo_aiuto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fin_stato",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fin_stato_bilancio",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fin_stato_foi",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fin_fpop",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fin_ue",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fin_regione",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fin_provincia",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fin_comune",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fin_altro_pubblico",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fin_privato",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fin_da_reperire",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fin_pnrr",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fin_pnc",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "altri_fondi",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fin_totale",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fin_totale_pubblico",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fin_totale_pubblico_netto",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "soggetto_attuatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cf_soggetto_attuatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "flag_progetti_in_essere",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_inizio_prevista",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_inizio_effettiva",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_fine_prevista",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_fine_effettiva",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_estrazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_ultima_validazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "esito_validazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_fase_iter",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_fase_iter",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stato_fase_iter",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stato_avanzamento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "pnrr_progetti__mart_missione",
+          "pnrr_progetti__mart_stato_avanzamento"
+        ]
+      },
+      {
+        "slug": "pnrr_quadro_finanziario",
+        "url_slug": "pnrr-quadro-finanziario",
+        "name": "Pnrr Quadro Finanziario",
+        "description": "",
+        "source": "",
+        "source_id": "italiadomani",
+        "period": {
+          "start": 2021,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "pnrr",
+          "programmazione",
+          "misure"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "open-pnrr",
+        "clean_rows": 304,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-pnrr/pnrr_quadro_finanziario/2026/pnrr_quadro_finanziario_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "programma",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "programma_code",
+            "description": ""
+          },
+          {
+            "name": "missione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_missione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "obiettivo_code",
+            "description": ""
+          },
+          {
+            "name": "componente",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_componente",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "id_misura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_univoco_misura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_misura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "obiettivo_code",
+            "description": ""
+          },
+          {
+            "name": "id_submisura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_cid",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_univoco_submisura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_submisura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "obiettivo_code",
+            "description": ""
+          },
+          {
+            "name": "tipo_livello",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "investimento_riforma",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "prestito_sovvenzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "amministrazione_titolare",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_totale",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_progetti_in_essere",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_progetti_nuovi",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "pnrr_quadro_finanziario__mart_per_missione",
+          "pnrr_quadro_finanziario__mart_sintesi"
+        ]
+      },
+      {
+        "slug": "pnrr_tag_clima_digitale",
+        "url_slug": "pnrr-tag-clima-digitale",
+        "name": "Pnrr Tag Clima Digitale",
+        "description": "",
+        "source": "",
+        "source_id": "italiadomani",
+        "period": {
+          "start": 2021,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "pnrr",
+          "clima",
+          "digitale",
+          "tag"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "open-pnrr",
+        "clean_rows": 375,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-pnrr/pnrr_tag_clima_digitale/2026/pnrr_tag_clima_digitale_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "descrizione_misura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "obiettivo_code",
+            "description": ""
+          },
+          {
+            "name": "id_submisura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_cid",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_univoco_submisura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_submisura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "obiettivo_code",
+            "description": ""
+          },
+          {
+            "name": "tipo_intervento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "investimento_riforma",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sovvenzione_prestito",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "amministrazione_titolare",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_campo_intervento",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "campo_intervento_clima",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "coeff_clima",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "campo_intervento_digitale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "coeff_digitale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_clima",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_digitale",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "pnrr_tag_clima_digitale__mart_sintesi"
         ]
       }
     ],

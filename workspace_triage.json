@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-19T10:25:49.746645",
+  "generated_at": "2026-09-19T15:05:50.060624",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -15,7 +15,10 @@
     "indice-pa",
     "italia-corpus",
     "lab-connectors",
+    "open-coesione",
+    "open-consip",
     "open-conto-annuale",
+    "open-pnrr",
     "open-politica",
     "open-siope",
     "opencivitas",
@@ -28,7 +31,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 6,
+  "open_prs": 7,
   "prs": [
     {
       "number": 451,
@@ -38,10 +41,17 @@
       "category": "other"
     },
     {
-      "number": 851,
-      "title": "feat(candidate): intake art-taxi-ncc, licenze TAXI/NCC per comune",
+      "number": 853,
+      "title": "remove: opencoesione duplicates (moved to open-coesione repo)",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/851",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/853",
+      "category": "other"
+    },
+    {
+      "number": 852,
+      "title": "chore: rimuovi pnrr-progetti, pnrr-gare, pnrr-pagamenti \u2192 open-pnrr",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/852",
       "category": "other"
     },
     {
@@ -73,7 +83,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 37,
+  "open_issues": 39,
   "issues": [
     {
       "number": 59,
@@ -150,13 +160,6 @@
       "title": "intake: inps_imprese_provincia \u2014 Imprese per provincia (2013-2022)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/674",
-      "category": "intake"
-    },
-    {
-      "number": 665,
-      "title": "intake: art_diffusione_taxi_ncc \u2014 licenze TAXI e NCC per comune (2024)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/665",
       "category": "intake"
     },
     {
@@ -298,6 +301,27 @@
       "repo": "italia-corpus",
       "url": "https://github.com/dataciviclab/italia-corpus/issues/28",
       "category": "other"
+    },
+    {
+      "number": 5,
+      "title": "intake: as-sda-banditi \u2014 appalti su SDAPA",
+      "repo": "open-consip",
+      "url": "https://github.com/dataciviclab/open-consip/issues/5",
+      "category": "intake"
+    },
+    {
+      "number": 4,
+      "title": "intake: as-aq-banditi \u2014 appalti specifici su Accordi Quadro",
+      "repo": "open-consip",
+      "url": "https://github.com/dataciviclab/open-consip/issues/4",
+      "category": "intake"
+    },
+    {
+      "number": 3,
+      "title": "intake: ordini-aq \u2014 ordini su Accordi Quadro",
+      "repo": "open-consip",
+      "url": "https://github.com/dataciviclab/open-consip/issues/3",
+      "category": "intake"
     },
     {
       "number": 15,
@@ -1382,7 +1406,31 @@
       "branches_ahead": [],
       "untracked_files": 0
     },
+    "open-coesione": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
+    "open-consip": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
     "open-conto-annuale": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
+    "open-pnrr": {
       "available": false,
       "reason": "local_disabled",
       "dirty": null,
@@ -1480,7 +1528,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 6"
+    "Many open PRs: 7"
   ],
   "radar": {
     "available": true,
@@ -1801,11 +1849,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-09-17",
+    "generated_at": "2026-09-19",
     "summary": {
-      "total": 69,
+      "total": 70,
       "by_status": {
-        "ok": 69
+        "ok": 70
       }
     },
     "actionable": []
@@ -2207,13 +2255,13 @@
       "repo": "dataset-incubator",
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
-      "updated_at": "2026-09-17",
-      "datasets": 77,
-      "marts": 112,
-      "signals": 69,
+      "updated_at": "2026-09-19",
+      "datasets": 78,
+      "marts": 113,
+      "signals": 70,
       "codelists": 0,
       "entities": 14,
-      "gcs": 77,
+      "gcs": 78,
       "reason": "",
       "signals_detail": [
         {
@@ -2249,6 +2297,20 @@
             "status": "SUCCESS",
             "started_at": "2026-09-17T14:19:37.037656+00:00",
             "finished_at": "2026-09-17T14:19:38.129633+00:00"
+          }
+        },
+        {
+          "id": "art_taxi_ncc",
+          "source_id": "art_opendata",
+          "status": "ok",
+          "label": "art_taxi_ncc",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260919T145753Z_608aa9a7",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-19T14:57:53.271286+00:00",
+            "finished_at": "2026-09-19T14:57:53.667095+00:00"
           }
         },
         {
@@ -3936,6 +3998,253 @@
       "reason": "registry_not_found"
     },
     {
+      "repo": "open-coesione",
+      "available": true,
+      "source_repo": "dataciviclab/open-coesione",
+      "updated_at": "2026-09-19",
+      "datasets": 5,
+      "marts": 10,
+      "signals": 5,
+      "codelists": 0,
+      "entities": 4,
+      "gcs": 5,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "opencoesione_indicatori",
+          "source_id": "opencoesione",
+          "status": "ok",
+          "label": "opencoesione_indicatori",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260919T131341Z_66aa6a99",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-19T13:13:41.871477+00:00",
+            "finished_at": "2026-09-19T13:13:49.007904+00:00"
+          }
+        },
+        {
+          "id": "opencoesione_localizzazioni",
+          "source_id": "opencoesione",
+          "status": "ok",
+          "label": "opencoesione_localizzazioni",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260919T131350Z_1ff8298e",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-19T13:13:50.449454+00:00",
+            "finished_at": "2026-09-19T13:13:58.844909+00:00"
+          }
+        },
+        {
+          "id": "opencoesione_pagamenti",
+          "source_id": "opencoesione",
+          "status": "ok",
+          "label": "opencoesione_pagamenti",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260919T131400Z_515fe5cd",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-19T13:14:00.145523+00:00",
+            "finished_at": "2026-09-19T13:14:08.764394+00:00"
+          }
+        },
+        {
+          "id": "opencoesione_progetti_esteso",
+          "source_id": "opencoesione",
+          "status": "ok",
+          "label": "opencoesione_progetti_esteso",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260919T131409Z_4f2e5f88",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-19T13:14:09.588670+00:00",
+            "finished_at": "2026-09-19T13:14:14.003538+00:00"
+          }
+        },
+        {
+          "id": "opencoesione_soggetti",
+          "source_id": "opencoesione",
+          "status": "ok",
+          "label": "opencoesione_soggetti",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260919T131414Z_dac94e86",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-19T13:14:14.834487+00:00",
+            "finished_at": "2026-09-19T13:14:33.995542+00:00"
+          }
+        }
+      ]
+    },
+    {
+      "repo": "open-consip",
+      "available": true,
+      "source_repo": "dataciviclab/open-consip",
+      "updated_at": "2026-09-19",
+      "datasets": 11,
+      "marts": 16,
+      "signals": 11,
+      "codelists": 0,
+      "entities": 6,
+      "gcs": 11,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "compose:consip_anac_imprese",
+          "source_id": "dataciviclab_composite",
+          "status": "ok",
+          "label": "consip_anac_imprese",
+          "detail": "anno 2026 \u2014 mart: si"
+        },
+        {
+          "id": "consip_amministrazioni",
+          "source_id": "consip_open_data",
+          "status": "ok",
+          "label": "consip_amministrazioni",
+          "detail": "anni 2024-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260919T142154Z_161be762",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-19T14:21:54.467433+00:00",
+            "finished_at": "2026-09-19T14:21:59.461634+00:00"
+          }
+        },
+        {
+          "id": "consip_bandi_e_gare",
+          "source_id": "consip_open_data",
+          "status": "ok",
+          "label": "consip_bandi_e_gare",
+          "detail": "anni 2024-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260919T142210Z_957a871c",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-19T14:22:10.983279+00:00",
+            "finished_at": "2026-09-19T14:22:13.346088+00:00"
+          }
+        },
+        {
+          "id": "consip_cataloghi",
+          "source_id": "consip_open_data",
+          "status": "ok",
+          "label": "consip_cataloghi",
+          "detail": "anni 2024-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260919T142659Z_08e36fd4",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-19T14:26:59.718691+00:00",
+            "finished_at": "2026-09-19T14:27:59.434370+00:00"
+          }
+        },
+        {
+          "id": "consip_consumi_convenzione",
+          "source_id": "consip_open_data",
+          "status": "ok",
+          "label": "consip_consumi_convenzione",
+          "detail": "anni 2023-2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260919T142808Z_1eb2dab0",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-09-19T14:28:08.715480+00:00",
+            "finished_at": "2026-09-19T14:28:10.231926+00:00"
+          }
+        },
+        {
+          "id": "consip_gare_asp",
+          "source_id": "consip_open_data",
+          "status": "ok",
+          "label": "consip_gare_asp",
+          "detail": "anni 2024-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260919T142842Z_f7713e3a",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-19T14:28:42.747148+00:00",
+            "finished_at": "2026-09-19T14:28:59.916569+00:00"
+          }
+        },
+        {
+          "id": "consip_operatori_economici",
+          "source_id": "consip_open_data",
+          "status": "ok",
+          "label": "consip_operatori_economici",
+          "detail": "anni 2024-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260919T143058Z_5d2d9c8c",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-19T14:30:58.108505+00:00",
+            "finished_at": "2026-09-19T14:32:00.856825+00:00"
+          }
+        },
+        {
+          "id": "consip_ordini_convenzione",
+          "source_id": "consip_open_data",
+          "status": "ok",
+          "label": "consip_ordini_convenzione",
+          "detail": "anni 2024-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260919T143217Z_5426ad5e",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-19T14:32:17.555059+00:00",
+            "finished_at": "2026-09-19T14:32:21.414714+00:00"
+          }
+        },
+        {
+          "id": "consip_ordini_mepa",
+          "source_id": "consip_open_data",
+          "status": "ok",
+          "label": "consip_ordini_mepa",
+          "detail": "anni 2024-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260919T143312Z_60e26e19",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-19T14:33:12.893796+00:00",
+            "finished_at": "2026-09-19T14:33:28.463804+00:00"
+          }
+        },
+        {
+          "id": "consip_partecipazioni",
+          "source_id": "consip_open_data",
+          "status": "ok",
+          "label": "consip_partecipazioni",
+          "detail": "anni 2024-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260919T143911Z_817816fa",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-19T14:39:11.984189+00:00",
+            "finished_at": "2026-09-19T14:42:36.915445+00:00"
+          }
+        },
+        {
+          "id": "consip_rdo_td_stipulate",
+          "source_id": "consip_open_data",
+          "status": "ok",
+          "label": "consip_rdo_td_stipulate",
+          "detail": "anni 2024-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260919T144249Z_f846e7fd",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-19T14:42:49.061988+00:00",
+            "finished_at": "2026-09-19T14:42:50.913249+00:00"
+          }
+        }
+      ]
+    },
+    {
       "repo": "open-conto-annuale",
       "available": true,
       "source_repo": "dataciviclab/open-conto-annuale",
@@ -4268,6 +4577,119 @@
             "status": "SUCCESS",
             "started_at": "2026-09-02T20:00:44.202990+00:00",
             "finished_at": "2026-09-02T20:00:44.619458+00:00"
+          }
+        }
+      ]
+    },
+    {
+      "repo": "open-pnrr",
+      "available": true,
+      "source_repo": "dataciviclab/open-pnrr",
+      "updated_at": "2026-09-19",
+      "datasets": 7,
+      "marts": 13,
+      "signals": 7,
+      "codelists": 0,
+      "entities": 5,
+      "gcs": 7,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "pnrr_avanzamento_indicatori",
+          "source_id": "italiadomani",
+          "status": "ok",
+          "label": "pnrr_avanzamento_indicatori",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260919T131001Z_ceaba17a",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-19T13:10:01.938114+00:00",
+            "finished_at": "2026-09-19T13:10:04.822839+00:00"
+          }
+        },
+        {
+          "id": "pnrr_gare",
+          "source_id": "italiadomani",
+          "status": "ok",
+          "label": "pnrr_gare",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260919T131004Z_22ec3a05",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-19T13:10:04.896189+00:00",
+            "finished_at": "2026-09-19T13:10:12.336563+00:00"
+          }
+        },
+        {
+          "id": "pnrr_indicatori_target",
+          "source_id": "italiadomani",
+          "status": "ok",
+          "label": "pnrr_indicatori_target",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260919T131012Z_0156d9d9",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-19T13:10:12.407144+00:00",
+            "finished_at": "2026-09-19T13:10:19.239814+00:00"
+          }
+        },
+        {
+          "id": "pnrr_pagamenti",
+          "source_id": "italiadomani",
+          "status": "ok",
+          "label": "pnrr_pagamenti",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260919T131019Z_15628d79",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-19T13:10:19.313399+00:00",
+            "finished_at": "2026-09-19T13:10:24.762638+00:00"
+          }
+        },
+        {
+          "id": "pnrr_progetti",
+          "source_id": "italiadomani",
+          "status": "ok",
+          "label": "pnrr_progetti",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260919T131024Z_dd13da6a",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-19T13:10:24.841356+00:00",
+            "finished_at": "2026-09-19T13:10:45.534107+00:00"
+          }
+        },
+        {
+          "id": "pnrr_quadro_finanziario",
+          "source_id": "italiadomani",
+          "status": "ok",
+          "label": "pnrr_quadro_finanziario",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260919T131045Z_cd0468ea",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-19T13:10:45.610540+00:00",
+            "finished_at": "2026-09-19T13:10:47.296540+00:00"
+          }
+        },
+        {
+          "id": "pnrr_tag_clima_digitale",
+          "source_id": "italiadomani",
+          "status": "ok",
+          "label": "pnrr_tag_clima_digitale",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260919T131047Z_322a81a1",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-19T13:10:47.366115+00:00",
+            "finished_at": "2026-09-19T13:10:48.321304+00:00"
           }
         }
       ]
