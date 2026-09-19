@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-19T15:28:53.884369",
+  "generated_at": "2026-09-19T20:09:07.847472",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -34,6 +34,13 @@
   "open_prs": 6,
   "prs": [
     {
+      "number": 452,
+      "title": "hub: aggiorna progetti, migliora UX e pulisce contenuti stale",
+      "repo": "dataciviclab",
+      "url": "https://github.com/dataciviclab/dataciviclab/pull/452",
+      "category": "other"
+    },
+    {
       "number": 451,
       "title": "mit-incidentalita: analisi con README, notebook, figure",
       "repo": "dataciviclab",
@@ -66,13 +73,6 @@
       "title": "fix: handle NaN/pd.NA in formatters + repo_root for _detect_local_root",
       "repo": "lab-connectors",
       "url": "https://github.com/dataciviclab/lab-connectors/pull/86",
-      "category": "other"
-    },
-    {
-      "number": 485,
-      "title": "feat(registry): add --only-entities flag",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/485",
       "category": "other"
     }
   ],
@@ -2015,7 +2015,7 @@
       "marts": 14,
       "signals": 5,
       "codelists": 0,
-      "entities": 1,
+      "entities": 2,
       "gcs": 5,
       "reason": "",
       "signals_detail": [
@@ -3999,7 +3999,7 @@
       "marts": 10,
       "signals": 5,
       "codelists": 0,
-      "entities": 4,
+      "entities": 9,
       "gcs": 5,
       "reason": "",
       "signals_detail": [
@@ -4583,7 +4583,7 @@
       "marts": 13,
       "signals": 7,
       "codelists": 0,
-      "entities": 5,
+      "entities": 8,
       "gcs": 7,
       "reason": "",
       "signals_detail": [
@@ -5286,7 +5286,7 @@
       "marts": 6,
       "signals": 5,
       "codelists": 0,
-      "entities": 5,
+      "entities": 6,
       "gcs": 5,
       "reason": "",
       "signals_detail": [
@@ -5697,7 +5697,7 @@
       "marts": 20,
       "signals": 11,
       "codelists": 0,
-      "entities": 5,
+      "entities": 7,
       "gcs": 11,
       "reason": "",
       "signals_detail": [
