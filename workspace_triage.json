@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T10:45:51.864737",
+  "generated_at": "2026-09-20T14:39:38.584862",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -12,6 +12,8 @@
     "dcl-bologna",
     "debito-pubblico-intelligence",
     "eurostat",
+    "giustizia-amministrativa",
+    "imprese-italia",
     "indice-pa",
     "italia-corpus",
     "lab-connectors",
@@ -27,6 +29,7 @@
     "patrimonio-territorio",
     "rna-aiuti-stato",
     "senato-akn",
+    "sistema-bancario",
     "source-observatory",
     "terzo-settore",
     "toolkit"
@@ -1382,6 +1385,22 @@
       "branches_ahead": [],
       "untracked_files": 0
     },
+    "giustizia-amministrativa": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
+    "imprese-italia": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
     "indice-pa": {
       "available": false,
       "reason": "local_disabled",
@@ -1495,6 +1514,14 @@
       "untracked_files": 0
     },
     "senato-akn": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
+    "sistema-bancario": {
       "available": false,
       "reason": "local_disabled",
       "dirty": null,
@@ -3853,6 +3880,260 @@
       ]
     },
     {
+      "repo": "giustizia-amministrativa",
+      "available": true,
+      "source_repo": "dataciviclab/giustizia-amministrativa",
+      "updated_at": "2026-09-20",
+      "datasets": 9,
+      "marts": 18,
+      "signals": 9,
+      "codelists": 0,
+      "entities": 5,
+      "gcs": 9,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "compose:ga_cross",
+          "source_id": "dataciviclab_composite",
+          "status": "ok",
+          "label": "ga_cross",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T112347Z_24f62de2",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T11:23:47.071144+00:00",
+            "finished_at": "2026-09-20T11:23:47.410084+00:00"
+          }
+        },
+        {
+          "id": "ga_decreti",
+          "source_id": "openga",
+          "status": "ok",
+          "label": "ga_decreti",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T110522Z_a1a0ea7b",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T11:05:22.966434+00:00",
+            "finished_at": "2026-09-20T11:08:18.657603+00:00"
+          }
+        },
+        {
+          "id": "ga_ordinanze",
+          "source_id": "openga",
+          "status": "ok",
+          "label": "ga_ordinanze",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T110819Z_0a85a236",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T11:08:19.059956+00:00",
+            "finished_at": "2026-09-20T11:11:15.635098+00:00"
+          }
+        },
+        {
+          "id": "ga_provvedimenti",
+          "source_id": "openga",
+          "status": "ok",
+          "label": "ga_provvedimenti",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T111116Z_1d764831",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T11:11:16.039141+00:00",
+            "finished_at": "2026-09-20T11:13:01.631327+00:00"
+          }
+        },
+        {
+          "id": "ga_ricorsi_definiti",
+          "source_id": "openga",
+          "status": "ok",
+          "label": "ga_ricorsi_definiti",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T111302Z_5fc0500f",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T11:13:02.033895+00:00",
+            "finished_at": "2026-09-20T11:15:43.154757+00:00"
+          }
+        },
+        {
+          "id": "ga_ricorsi_pervenuti_class",
+          "source_id": "openga",
+          "status": "ok",
+          "label": "ga_ricorsi_pervenuti_class",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T111543Z_bc2ea541",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T11:15:43.556231+00:00",
+            "finished_at": "2026-09-20T11:17:52.667059+00:00"
+          }
+        },
+        {
+          "id": "ga_sentenze",
+          "source_id": "openga",
+          "status": "ok",
+          "label": "ga_sentenze",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T111753Z_cfc97d52",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T11:17:53.067910+00:00",
+            "finished_at": "2026-09-20T11:21:18.567726+00:00"
+          }
+        },
+        {
+          "id": "openga_ricorsi_appalto",
+          "source_id": "openga",
+          "status": "ok",
+          "label": "openga_ricorsi_appalto",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T112118Z_c3c39167",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T11:21:18.975460+00:00",
+            "finished_at": "2026-09-20T11:23:42.920320+00:00"
+          }
+        },
+        {
+          "id": "openga_ricorsi_cds",
+          "source_id": "openga",
+          "status": "ok",
+          "label": "openga_ricorsi_cds",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T112343Z_da7a3ce8",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T11:23:43.322717+00:00",
+            "finished_at": "2026-09-20T11:23:46.655321+00:00"
+          }
+        }
+      ]
+    },
+    {
+      "repo": "imprese-italia",
+      "available": true,
+      "source_repo": "dataciviclab/imprese-italia",
+      "updated_at": "2026-09-20",
+      "datasets": 7,
+      "marts": 9,
+      "signals": 7,
+      "codelists": 0,
+      "entities": 4,
+      "gcs": 7,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "camcom_cancellazioni",
+          "source_id": "camcom-marche",
+          "status": "ok",
+          "label": "camcom_cancellazioni",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T105042Z_d8b4f342",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T10:50:42.584781+00:00",
+            "finished_at": "2026-09-20T10:50:45.138049+00:00"
+          }
+        },
+        {
+          "id": "camcom_iscrizioni",
+          "source_id": "camcom-marche",
+          "status": "ok",
+          "label": "camcom_iscrizioni",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T105045Z_5368efc7",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T10:50:45.193604+00:00",
+            "finished_at": "2026-09-20T10:50:46.875018+00:00"
+          }
+        },
+        {
+          "id": "camcom_stock_italia",
+          "source_id": "camcom-marche",
+          "status": "ok",
+          "label": "camcom_stock_italia",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T105046Z_15853c2a",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T10:50:46.929949+00:00",
+            "finished_at": "2026-09-20T10:50:48.363786+00:00"
+          }
+        },
+        {
+          "id": "camcom_stock_italia_6cifre",
+          "source_id": "camcom-marche",
+          "status": "ok",
+          "label": "camcom_stock_italia_6cifre",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T105048Z_4a308983",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T10:50:48.419726+00:00",
+            "finished_at": "2026-09-20T10:50:51.081642+00:00"
+          }
+        },
+        {
+          "id": "camcom_stock_marche",
+          "source_id": "camcom-marche",
+          "status": "ok",
+          "label": "camcom_stock_marche",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T105051Z_28362cbb",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T10:50:51.146234+00:00",
+            "finished_at": "2026-09-20T10:50:52.980182+00:00"
+          }
+        },
+        {
+          "id": "camcom_stock_marche_6cifre",
+          "source_id": "camcom-marche",
+          "status": "ok",
+          "label": "camcom_stock_marche_6cifre",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T105053Z_102c9f78",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T10:50:53.036133+00:00",
+            "finished_at": "2026-09-20T10:50:55.146965+00:00"
+          }
+        },
+        {
+          "id": "camcom_variazione",
+          "source_id": "camcom-marche",
+          "status": "ok",
+          "label": "camcom_variazione",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T105055Z_5af17422",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T10:50:55.212820+00:00",
+            "finished_at": "2026-09-20T10:50:56.618433+00:00"
+          }
+        }
+      ]
+    },
+    {
       "repo": "indice-pa",
       "available": true,
       "source_repo": "dataciviclab/indice-pa",
@@ -5686,6 +5967,119 @@
             "status": "SUCCESS",
             "started_at": "2026-09-08T20:39:35.616951+00:00",
             "finished_at": "2026-09-08T20:39:42.794385+00:00"
+          }
+        }
+      ]
+    },
+    {
+      "repo": "sistema-bancario",
+      "available": true,
+      "source_repo": "sistema-bancario",
+      "updated_at": "2026-09-18",
+      "datasets": 7,
+      "marts": 14,
+      "signals": 7,
+      "codelists": 0,
+      "entities": 3,
+      "gcs": 7,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "compose:banche_unified",
+          "source_id": "dataciviclab_composite",
+          "status": "ok",
+          "label": "banche_unified",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260917T223159Z_d8a52e71",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-17T22:31:59.427714+00:00",
+            "finished_at": "2026-09-17T22:31:59.926649+00:00"
+          }
+        },
+        {
+          "id": "eba_panel",
+          "source_id": "eba",
+          "status": "ok",
+          "label": "eba_panel",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260917T220202Z_56803605",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-17T22:02:02.523163+00:00",
+            "finished_at": "2026-09-17T22:02:16.721517+00:00"
+          }
+        },
+        {
+          "id": "ecb_bls",
+          "source_id": "ecb",
+          "status": "ok",
+          "label": "ecb_bls",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260917T220220Z_947ea348",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-17T22:02:20.962184+00:00",
+            "finished_at": "2026-09-17T22:03:04.081863+00:00"
+          }
+        },
+        {
+          "id": "ecb_bsi",
+          "source_id": "ecb",
+          "status": "ok",
+          "label": "ecb_bsi",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260917T220359Z_e70a27cd",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-17T22:03:59.614984+00:00",
+            "finished_at": "2026-09-17T22:08:51.990522+00:00"
+          }
+        },
+        {
+          "id": "ecb_cbd2",
+          "source_id": "ecb",
+          "status": "ok",
+          "label": "ecb_cbd2",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260917T222829Z_3f89dd60",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-17T22:28:29.925845+00:00",
+            "finished_at": "2026-09-17T22:28:30.259849+00:00"
+          }
+        },
+        {
+          "id": "ecb_mir",
+          "source_id": "ecb",
+          "status": "ok",
+          "label": "ecb_mir",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260917T221124Z_9099ec55",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-17T22:11:24.740923+00:00",
+            "finished_at": "2026-09-17T22:11:52.061103+00:00"
+          }
+        },
+        {
+          "id": "wb_financial",
+          "source_id": "worldbank",
+          "status": "ok",
+          "label": "wb_financial",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260917T221152Z_284983dc",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-17T22:11:52.981243+00:00",
+            "finished_at": "2026-09-17T22:12:00.632747+00:00"
           }
         }
       ]

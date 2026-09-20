@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "generated_at": "2026-09-20T10:45:51.864737",
+  "generated_at": "2026-09-20T14:39:38.584862",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -41,6 +41,14 @@
     "eurostat": {
       "description": "European regional data at your fingertips \u2014 GDP, population, crime and more at NUTS2/NUTS3 level.",
       "url": "https://github.com/dataciviclab/eurostat"
+    },
+    "giustizia-amministrativa": {
+      "description": "Contenzioso, sentenze e provvedimenti della Giustizia Amministrativa italiana \u2014 31 sedi, 2017-2026",
+      "url": "https://github.com/dataciviclab/giustizia-amministrativa"
+    },
+    "imprese-italia": {
+      "description": "Demografia d'impresa italiana: stock, flussi, variazioni e specializzazione territoriale dal Registro delle Imprese",
+      "url": "https://github.com/dataciviclab/imprese-italia"
     },
     "indice-pa": {
       "description": "Chi \u00e8 la Pubblica Amministrazione italiana, come \u00e8 organizzata, e chi la governa?",
@@ -101,6 +109,10 @@
     "senato-akn": {
       "description": "I lavori del Senato italiano in formato strutturato \u2014 progetti di legge, emendamenti e iter legislativo.",
       "url": "https://github.com/dataciviclab/senato-akn"
+    },
+    "sistema-bancario": {
+      "description": "",
+      "url": "https://github.com/dataciviclab/sistema-bancario"
     },
     "source-observatory": {
       "description": "Osservatorio delle fonti pubbliche \u2014 radar, monitoraggio e scouting di dataset aperti.",
@@ -1501,6 +1513,117 @@
           "anac_cross__mart_imprese",
           "anac_cross__mart_ritardi_per_sa",
           "anac_cross__mart_competitivita"
+        ]
+      },
+      {
+        "slug": "ga_cross",
+        "url_slug": "ga-cross",
+        "name": "Ga Cross",
+        "description": "Compose GA: flusso ricorsi pervenuti \u2192 definiti per sede/classificazione/anno. Visione d'insieme della giustizia amministrativa italiana.",
+        "source": "",
+        "source_id": "dataciviclab_composite",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "giustizia",
+          "ga",
+          "compose",
+          "cross"
+        ],
+        "category": "giustizia",
+        "registry_source": "giustizia-amministrativa",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia-amministrativa/ga_cross/2026/ga_cross_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "codice_sede",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "classificazione_ricorso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pervenuti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "definiti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sentenze",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "accoglimenti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rigetti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tasso_definizione",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tasso_accoglimento",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ga_cross__mart_panoramica",
+          "ga_cross__mart_sede_flusso",
+          "ga_cross__mart_esiti"
         ]
       },
       {
@@ -10928,8 +11051,8 @@
           "contenzioso"
         ],
         "category": "giustizia",
-        "registry_source": "dataset-incubator",
-        "clean_rows": 17726,
+        "registry_source": "giustizia-amministrativa",
+        "clean_rows": 270887,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/ga_decreti/2025/ga_decreti_2025_clean.parquet",
@@ -11079,8 +11202,8 @@
           "contenzioso"
         ],
         "category": "giustizia",
-        "registry_source": "dataset-incubator",
-        "clean_rows": 32839,
+        "registry_source": "giustizia-amministrativa",
+        "clean_rows": 298344,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/ga_ordinanze/2025/ga_ordinanze_2025_clean.parquet",
@@ -11230,8 +11353,8 @@
           "contenzioso"
         ],
         "category": "giustizia",
-        "registry_source": "dataset-incubator",
-        "clean_rows": 60280,
+        "registry_source": "giustizia-amministrativa",
+        "clean_rows": 495618,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/ga_sentenze/2025/ga_sentenze_2025_clean.parquet",
@@ -18529,8 +18652,8 @@
           "contenzioso"
         ],
         "category": "giustizia",
-        "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "registry_source": "giustizia-amministrativa",
+        "clean_rows": 34631,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/openga_ricorsi_appalto/*/openga_ricorsi_appalto_*_clean.parquet",
@@ -18725,8 +18848,8 @@
           "contenzioso"
         ],
         "category": "giustizia",
-        "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "registry_source": "giustizia-amministrativa",
+        "clean_rows": 130,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/openga_ricorsi_cds/*/openga_ricorsi_cds_*_clean.parquet",
@@ -30250,6 +30373,1480 @@
         ]
       }
     ],
+    "openga": [
+      {
+        "slug": "ga_decreti",
+        "url_slug": "ga-decreti",
+        "name": "Ga Decreti",
+        "description": "",
+        "source": "",
+        "source_id": "openga",
+        "period": {
+          "start": 2017,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "giustizia",
+          "giustizia-amministrativa",
+          "contenzioso"
+        ],
+        "category": "giustizia",
+        "registry_source": "giustizia-amministrativa",
+        "clean_rows": 270887,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia-amministrativa/ga_decreti/2026/ga_decreti_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "codice_sede",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_sezione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_sezione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_provvedimento",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "ricorso_number",
+            "description": ""
+          },
+          {
+            "name": "numero_ricorso",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "ricorso_number",
+            "description": ""
+          },
+          {
+            "name": "data_pubblicazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "mese_pubblicazione",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "esito_provvedimento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flg_definisce",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_deposito_ricorso",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "oggetto_ricorso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_ricorso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_udienza",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "num_membri_collegio",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_provvedimento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ga_decreti__mart_esiti_per_sede",
+          "ga_decreti__mart_esiti_per_tipo"
+        ]
+      },
+      {
+        "slug": "ga_ordinanze",
+        "url_slug": "ga-ordinanze",
+        "name": "Ga Ordinanze",
+        "description": "",
+        "source": "",
+        "source_id": "openga",
+        "period": {
+          "start": 2017,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "giustizia",
+          "giustizia-amministrativa",
+          "contenzioso"
+        ],
+        "category": "giustizia",
+        "registry_source": "giustizia-amministrativa",
+        "clean_rows": 298344,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia-amministrativa/ga_ordinanze/2026/ga_ordinanze_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "codice_sede",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_sezione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_sezione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_provvedimento",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "ricorso_number",
+            "description": ""
+          },
+          {
+            "name": "numero_ricorso",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "ricorso_number",
+            "description": ""
+          },
+          {
+            "name": "data_pubblicazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "mese_pubblicazione",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "esito_provvedimento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flg_definisce",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_deposito_ricorso",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "oggetto_ricorso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_ricorso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_udienza",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "num_membri_collegio",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_provvedimento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ga_ordinanze__mart_esiti_per_sede",
+          "ga_ordinanze__mart_esiti_per_tipo"
+        ]
+      },
+      {
+        "slug": "ga_provvedimenti",
+        "url_slug": "ga-provvedimenti",
+        "name": "Ga Provvedimenti",
+        "description": "",
+        "source": "",
+        "source_id": "openga",
+        "period": {
+          "start": 2017,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "giustizia",
+          "giustizia-amministrativa",
+          "contenzioso"
+        ],
+        "category": "giustizia",
+        "registry_source": "giustizia-amministrativa",
+        "clean_rows": 29290,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia-amministrativa/ga_provvedimenti/2026/ga_provvedimenti_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "mese",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          },
+          {
+            "name": "codice_sede",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_provvedimento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provvedimenti_definiscono",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provvedimenti_non_definiscono",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_provvedimenti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ricorsi_definiti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ricorsi_non_definiti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_ricorsi",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ga_provvedimenti__mart_produttivita_sede",
+          "ga_provvedimenti__mart_trend"
+        ]
+      },
+      {
+        "slug": "ga_ricorsi_definiti",
+        "url_slug": "ga-ricorsi-definiti",
+        "name": "Ga Ricorsi Definiti",
+        "description": "",
+        "source": "",
+        "source_id": "openga",
+        "period": {
+          "start": 2017,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "giustizia",
+          "giustizia-amministrativa",
+          "contenzioso"
+        ],
+        "category": "giustizia",
+        "registry_source": "giustizia-amministrativa",
+        "clean_rows": 418328,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia-amministrativa/ga_ricorsi_definiti/2026/ga_ricorsi_definiti_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "mese",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          },
+          {
+            "name": "codice_sede",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "classificazione_ricorso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "esito_provvedimento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_ricorsi_definiti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ga_ricorsi_definiti__mart_definiti_per_sede",
+          "ga_ricorsi_definiti__mart_definiti_per_tipo"
+        ]
+      },
+      {
+        "slug": "ga_ricorsi_pervenuti_class",
+        "url_slug": "ga-ricorsi-pervenuti-class",
+        "name": "Ga Ricorsi Pervenuti Class",
+        "description": "",
+        "source": "",
+        "source_id": "openga",
+        "period": {
+          "start": 2017,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "giustizia",
+          "giustizia-amministrativa",
+          "contenzioso"
+        ],
+        "category": "giustizia",
+        "registry_source": "giustizia-amministrativa",
+        "clean_rows": 202580,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia-amministrativa/ga_ricorsi_pervenuti_class/2026/ga_ricorsi_pervenuti_class_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "anno_mese",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_sede",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "classificazione_ricorso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_ricorsi",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ga_ricorsi_pervenuti_class__mart_pervenuti_per_sede",
+          "ga_ricorsi_pervenuti_class__mart_pervenuti_per_tipo"
+        ]
+      },
+      {
+        "slug": "ga_sentenze",
+        "url_slug": "ga-sentenze",
+        "name": "Ga Sentenze",
+        "description": "",
+        "source": "",
+        "source_id": "openga",
+        "period": {
+          "start": 2017,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "giustizia",
+          "giustizia-amministrativa",
+          "contenzioso"
+        ],
+        "category": "giustizia",
+        "registry_source": "giustizia-amministrativa",
+        "clean_rows": 495618,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia-amministrativa/ga_sentenze/2026/ga_sentenze_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "codice_sede",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_sezione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_sezione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_provvedimento",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "ricorso_number",
+            "description": ""
+          },
+          {
+            "name": "numero_ricorso",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "ricorso_number",
+            "description": ""
+          },
+          {
+            "name": "data_pubblicazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "mese_pubblicazione",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "esito_provvedimento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flg_definisce",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_deposito_ricorso",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "oggetto_ricorso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_ricorso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_udienza",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "num_membri_collegio",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_provvedimento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ga_sentenze__mart_esiti_per_sede",
+          "ga_sentenze__mart_esiti_per_tipo"
+        ]
+      },
+      {
+        "slug": "openga_ricorsi_appalto",
+        "url_slug": "openga-ricorsi-appalto",
+        "name": "Openga Ricorsi Appalto",
+        "description": "",
+        "source": "",
+        "source_id": "openga",
+        "period": {
+          "start": 2018,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "giustizia",
+          "giustizia-amministrativa",
+          "contenzioso"
+        ],
+        "category": "giustizia",
+        "registry_source": "giustizia-amministrativa",
+        "clean_rows": 34631,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia-amministrativa/openga_ricorsi_appalto/2026/openga_ricorsi_appalto_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "codice_sede",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_sezione",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_sezione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_ricorso",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "ricorso_number",
+            "description": ""
+          },
+          {
+            "name": "data_deposito_ricorso",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "classificazione_ricorso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_cig",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cig_code",
+            "description": ""
+          },
+          {
+            "name": "codice_accordo_quadro",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_gara",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "oggetto_gara",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_complessivo_gara",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_lotti_componenti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "oggetto_lotto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_lotto",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stato_gara",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "settore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "luogo_istat",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "data_pubblicazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_scadenza_offerta",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cf_amministrazione_appaltante",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "denominazione_amministrazione_appaltante",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "openga_ricorsi_appalto__mart_ricorsi_sede_classificazione",
+          "openga_ricorsi_appalto__mart_ricorsi_territorio_settore"
+        ]
+      },
+      {
+        "slug": "openga_ricorsi_cds",
+        "url_slug": "openga-ricorsi-cds",
+        "name": "Openga Ricorsi Cds",
+        "description": "",
+        "source": "",
+        "source_id": "openga",
+        "period": {
+          "start": 2023,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "giustizia",
+          "giustizia-amministrativa",
+          "contenzioso"
+        ],
+        "category": "giustizia",
+        "registry_source": "giustizia-amministrativa",
+        "clean_rows": 130,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia-amministrativa/openga_ricorsi_cds/2026/openga_ricorsi_cds_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "anno_mese_riferimento",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "mese",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          },
+          {
+            "name": "codice_sede",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_ricorsi_pendenti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "openga_ricorsi_cds__ricorsi_annuali"
+        ]
+      }
+    ],
+    "camcom-marche": [
+      {
+        "slug": "camcom_cancellazioni",
+        "url_slug": "camcom-cancellazioni",
+        "name": "Camcom Cancellazioni",
+        "description": "",
+        "source": "",
+        "source_id": "camcom-marche",
+        "period": {
+          "start": 2025,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "imprese",
+          "economia",
+          "ateco",
+          "cancellazioni",
+          "camcom",
+          "cessazioni"
+        ],
+        "category": "economia",
+        "registry_source": "imprese-italia",
+        "clean_rows": 51408,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/imprese-italia/camcom_cancellazioni/2026/camcom_cancellazioni_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "territorio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ateco",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "ateco_code",
+            "description": ""
+          },
+          {
+            "name": "data",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cessazioni",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "camcom_cancellazioni__mart_cancellazioni_provincia"
+        ]
+      },
+      {
+        "slug": "camcom_iscrizioni",
+        "url_slug": "camcom-iscrizioni",
+        "name": "Camcom Iscrizioni",
+        "description": "",
+        "source": "",
+        "source_id": "camcom-marche",
+        "period": {
+          "start": 2025,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "imprese",
+          "economia",
+          "ateco",
+          "iscrizioni",
+          "camcom",
+          "nuove-imprese"
+        ],
+        "category": "economia",
+        "registry_source": "imprese-italia",
+        "clean_rows": 51408,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/imprese-italia/camcom_iscrizioni/2026/camcom_iscrizioni_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "territorio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ateco",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "ateco_code",
+            "description": ""
+          },
+          {
+            "name": "data",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nuove_imprese",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "camcom_iscrizioni__mart_iscrizioni_provincia"
+        ]
+      },
+      {
+        "slug": "camcom_stock_italia",
+        "url_slug": "camcom-stock-italia",
+        "name": "Camcom Stock Italia",
+        "description": "",
+        "source": "",
+        "source_id": "camcom-marche",
+        "period": {
+          "start": 2025,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "imprese",
+          "economia",
+          "ateco",
+          "demografia-impresa",
+          "camcom"
+        ],
+        "category": "economia",
+        "registry_source": "imprese-italia",
+        "clean_rows": 51408,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/imprese-italia/camcom_stock_italia/2026/camcom_stock_italia_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "territorio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ateco",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "ateco_code",
+            "description": ""
+          },
+          {
+            "name": "data",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imprese",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "camcom_stock_italia__mart_provincia_ateco"
+        ]
+      },
+      {
+        "slug": "camcom_stock_italia_6cifre",
+        "url_slug": "camcom-stock-italia-6cifre",
+        "name": "Camcom Stock Italia 6Cifre",
+        "description": "",
+        "source": "",
+        "source_id": "camcom-marche",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "imprese",
+          "economia",
+          "ateco",
+          "ateco-6cifre",
+          "camcom",
+          "micro"
+        ],
+        "category": "economia",
+        "registry_source": "imprese-italia",
+        "clean_rows": 112691,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/imprese-italia/camcom_stock_italia_6cifre/2026/camcom_stock_italia_6cifre_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "settore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "divisione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "classe",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sottocategoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imprese",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "camcom_stock_italia_6cifre__mart_6cifre_regione",
+          "camcom_stock_italia_6cifre__mart_6cifre_provincia"
+        ]
+      },
+      {
+        "slug": "camcom_stock_marche",
+        "url_slug": "camcom-stock-marche",
+        "name": "Camcom Stock Marche",
+        "description": "",
+        "source": "",
+        "source_id": "camcom-marche",
+        "period": {
+          "start": 2025,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "imprese",
+          "economia",
+          "ateco",
+          "demografia-impresa",
+          "camcom",
+          "marche",
+          "comunale"
+        ],
+        "category": "economia",
+        "registry_source": "imprese-italia",
+        "clean_rows": 92616,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/imprese-italia/camcom_stock_marche/2026/camcom_stock_marche_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "territorio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ateco",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "ateco_code",
+            "description": ""
+          },
+          {
+            "name": "data",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imprese",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "camcom_stock_marche__mart_comune_ateco"
+        ]
+      },
+      {
+        "slug": "camcom_stock_marche_6cifre",
+        "url_slug": "camcom-stock-marche-6cifre",
+        "name": "Camcom Stock Marche 6Cifre",
+        "description": "",
+        "source": "",
+        "source_id": "camcom-marche",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "imprese",
+          "economia",
+          "ateco",
+          "ateco-6cifre",
+          "camcom",
+          "micro",
+          "marche",
+          "comunale"
+        ],
+        "category": "economia",
+        "registry_source": "imprese-italia",
+        "clean_rows": 34057,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/imprese-italia/camcom_stock_marche_6cifre/2026/camcom_stock_marche_6cifre_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_name",
+            "description": ""
+          },
+          {
+            "name": "settore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "divisione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "classe",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sottocategoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imprese",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "camcom_stock_marche_6cifre__mart_6cifre_provincia",
+          "camcom_stock_marche_6cifre__mart_6cifre_comune"
+        ]
+      },
+      {
+        "slug": "camcom_variazione",
+        "url_slug": "camcom-variazione",
+        "name": "Camcom Variazione",
+        "description": "",
+        "source": "",
+        "source_id": "camcom-marche",
+        "period": {
+          "start": 2025,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "imprese",
+          "economia",
+          "ateco",
+          "demografia-impresa",
+          "camcom",
+          "variazione-yoy"
+        ],
+        "category": "economia",
+        "registry_source": "imprese-italia",
+        "clean_rows": 15428,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/imprese-italia/camcom_variazione/2026/camcom_variazione_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "territorio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ateco",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "ateco_code",
+            "description": ""
+          },
+          {
+            "name": "data",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "variazione_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "camcom_variazione__mart_variazione_provincia"
+        ]
+      }
+    ],
     "agid": [
       {
         "slug": "ipa_aree_organizzative_omogenee",
@@ -41097,6 +42694,754 @@
         ],
         "mart_refs": [
           "senato_emendamenti__mart_emendamenti_per_atto"
+        ]
+      }
+    ],
+    "banche_intelligence_composite": [
+      {
+        "slug": "banche_unified",
+        "url_slug": "banche-unified",
+        "name": "Banche Unified",
+        "description": "Compose: vista unificata KPI bancari + bilanci + tassi da ecb-cbd2 + ecb-bsi + ecb-mir.",
+        "source": "",
+        "source_id": "banche_intelligence_composite",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "banche",
+          "compose",
+          "unified",
+          "panorama"
+        ],
+        "category": "economia",
+        "registry_source": "sistema-bancario",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/sistema_bancario/banche_unified/2026/banche_unified_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "paese",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "trimestre",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "roe_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "roa_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "costo_reddito_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cet1_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "npl_ratio_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "lcr_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "attivo_totale_mld",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "prestiti_mld",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "deposits_mld",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "obbligazioni_mld",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "capitale_mld",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tasso_mutuo_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tasso_imprese_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tasso_depositi_scadenza_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "banche_unified__mart_panorama"
+        ]
+      }
+    ],
+    "eba": [
+      {
+        "slug": "eba_panel",
+        "url_slug": "eba-panel",
+        "name": "Eba Panel",
+        "description": "",
+        "source": "",
+        "source_id": "eba",
+        "period": {
+          "start": 2012,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "banche",
+          "eba",
+          "panel",
+          "banche-singole",
+          "corep",
+          "finrep"
+        ],
+        "category": "economia",
+        "registry_source": "sistema-bancario",
+        "clean_rows": 514121,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/sistema_bancario/eba_panel/2026/eba_panel_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "banca",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_banca",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_legale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "paese",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "nome_paese",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_ssm",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "periodo",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          },
+          {
+            "name": "codice_variabile",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_variabile",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "eba_panel__mart_banche_kpi",
+          "eba_panel__mart_banche_snapshot"
+        ]
+      }
+    ],
+    "ecb": [
+      {
+        "slug": "ecb_bls",
+        "url_slug": "ecb-bls",
+        "name": "Ecb Bls",
+        "description": "",
+        "source": "",
+        "source_id": "ecb",
+        "period": {
+          "start": 2007,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "banche",
+          "bce",
+          "bls",
+          "credit-standards",
+          "domanda-credito"
+        ],
+        "category": "economia",
+        "registry_source": "sistema-bancario",
+        "clean_rows": 830090,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/sistema_bancario/ecb_bls/2026/ecb_bls_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "paese",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "voce",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "periodo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          },
+          {
+            "name": "valore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "num_banche",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "trimestre",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ecb_bls__mart_bls_credit",
+          "ecb_bls__mart_bls_snapshot"
+        ]
+      },
+      {
+        "slug": "ecb_bsi",
+        "url_slug": "ecb-bsi",
+        "name": "Ecb Bsi",
+        "description": "",
+        "source": "",
+        "source_id": "ecb",
+        "period": {
+          "start": 2020,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "banche",
+          "bce",
+          "bsi",
+          "bilanci-mfi",
+          "depositi",
+          "prestiti",
+          "moneta"
+        ],
+        "category": "economia",
+        "registry_source": "sistema-bancario",
+        "clean_rows": 865602,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/sistema_bancario/ecb_bsi/2026/ecb_bsi_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "paese",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "voce",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "periodo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          },
+          {
+            "name": "valore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "frequenza",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "settore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "scadenza",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "trimestre",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ecb_bsi__mart_bsi_balance",
+          "ecb_bsi__mart_bsi_deposits",
+          "ecb_bsi__mart_bsi_snapshot"
+        ]
+      },
+      {
+        "slug": "ecb_cbd2",
+        "url_slug": "ecb-cbd2",
+        "name": "Ecb Cbd2",
+        "description": "",
+        "source": "",
+        "source_id": "ecb",
+        "period": {
+          "start": 2024,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "banche",
+          "bce",
+          "cbd2",
+          "sistema-bancario",
+          "europa"
+        ],
+        "category": "economia",
+        "registry_source": "sistema-bancario",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/sistema_bancario/ecb_cbd2/2026/ecb_cbd2_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "paese",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "indicatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "periodo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          },
+          {
+            "name": "valore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "frequenza",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "settore",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "framework",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "portfolio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_esposizione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "trimestre",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ecb_cbd2__mart_bank_kpi",
+          "ecb_cbd2__mart_bank_snapshot"
+        ]
+      },
+      {
+        "slug": "ecb_mir",
+        "url_slug": "ecb-mir",
+        "name": "Ecb Mir",
+        "description": "",
+        "source": "",
+        "source_id": "ecb",
+        "period": {
+          "start": 2020,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "banche",
+          "bce",
+          "mir",
+          "tassi-interesse",
+          "prestiti",
+          "depositi"
+        ],
+        "category": "economia",
+        "registry_source": "sistema-bancario",
+        "clean_rows": 533728,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/sistema_bancario/ecb_mir/2026/ecb_mir_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "paese",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "voce",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "scadenza",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "periodo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          },
+          {
+            "name": "valore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_dato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "copertura_attivita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "settore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "trimestre",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ecb_mir__mart_mir_rates",
+          "ecb_mir__mart_mir_snapshot"
+        ]
+      }
+    ],
+    "worldbank": [
+      {
+        "slug": "wb_financial",
+        "url_slug": "wb-financial",
+        "name": "Wb Financial",
+        "description": "",
+        "source": "",
+        "source_id": "worldbank",
+        "period": {
+          "start": 1960,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "banche",
+          "world-bank",
+          "wdi",
+          "npl",
+          "credito",
+          "filiali",
+          "storico"
+        ],
+        "category": "economia",
+        "registry_source": "sistema-bancario",
+        "clean_rows": 10922,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/sistema_bancario/wb_financial/2026/wb_financial_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "paese",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "codice_paese",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "indicatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_indicatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "valore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "wb_financial__mart_wd_indicators",
+          "wb_financial__mart_wd_snapshot"
         ]
       }
     ],
