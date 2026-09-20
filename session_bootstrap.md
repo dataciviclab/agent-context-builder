@@ -1,18 +1,18 @@
 # Session Bootstrap
 
-**Generated**: 2026-09-20T15:34:26.075646
+**Generated**: 2026-09-20T17:58:42.463199
 
 ## Stato
 
-Radar: 36 fonti GREEN 34 · RED 1 · Registry: 24 repo · 306 dataset
+Radar: 36 fonti GREEN 34 · RED 1 · Registry: 27 repo · 334 dataset
 
 ## Richiede attenzione
 
 - [PR] dataciviclab#452: hub: aggiorna progetti, migliora UX e pulisce contenuti stale
 - [PR] dataciviclab#451: mit-incidentalita: analisi con README, notebook, figure
-- [PR] dataset-incubator#836: feat(candidates): bootstrap gse_cer_elenco candidate
-- [PR] dataset-incubator#834: chore(deps): bump toolkit a v1.51.0
-- [PR] dataset-incubator#829: intake: inpa-bandi e inpa-comunicazioni — reclutamento PA dal Portale inPA
+- [PR] dataset-incubator#857: chore: rimossi ispra-ru-base, costi-kg, costi-procapite da candidates
+- [PR] dataset-incubator#856: remove: migra MEF dichiarazioni fiscali → dichiarazioni-italia
+- [PR] dataset-incubator#855: feat: remove GA datasets (migrated to giustizia-amministrativa)
 
 ## Analisi attive (18)
 

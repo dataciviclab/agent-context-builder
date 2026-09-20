@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T15:34:26.075646",
+  "generated_at": "2026-09-20T17:58:42.463199",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -11,6 +11,7 @@
     "dataset-incubator",
     "dcl-bologna",
     "debito-pubblico-intelligence",
+    "dichiarazioni-italia",
     "eurostat",
     "giustizia-amministrativa",
     "imprese-italia",
@@ -20,6 +21,7 @@
     "open-coesione",
     "open-consip",
     "open-conto-annuale",
+    "open-ispra",
     "open-pnrr",
     "open-politica",
     "open-siope",
@@ -27,6 +29,7 @@
     "opere-pubbliche",
     "partecipate-monitor",
     "patrimonio-territorio",
+    "rifiuti-urbani",
     "rna-aiuti-stato",
     "senato-akn",
     "sistema-bancario",
@@ -34,7 +37,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 7,
+  "open_prs": 10,
   "prs": [
     {
       "number": 452,
@@ -48,6 +51,27 @@
       "title": "mit-incidentalita: analisi con README, notebook, figure",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/pull/451",
+      "category": "other"
+    },
+    {
+      "number": 857,
+      "title": "chore: rimossi ispra-ru-base, costi-kg, costi-procapite da candidates",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/857",
+      "category": "other"
+    },
+    {
+      "number": 856,
+      "title": "remove: migra MEF dichiarazioni fiscali \u2192 dichiarazioni-italia",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/856",
+      "category": "other"
+    },
+    {
+      "number": 855,
+      "title": "feat: remove GA datasets (migrated to giustizia-amministrativa)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/855",
       "category": "other"
     },
     {
@@ -1377,6 +1401,14 @@
       "branches_ahead": [],
       "untracked_files": 0
     },
+    "dichiarazioni-italia": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
     "eurostat": {
       "available": false,
       "reason": "local_disabled",
@@ -1449,6 +1481,14 @@
       "branches_ahead": [],
       "untracked_files": 0
     },
+    "open-ispra": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
     "open-pnrr": {
       "available": false,
       "reason": "local_disabled",
@@ -1498,6 +1538,14 @@
       "untracked_files": 0
     },
     "patrimonio-territorio": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
+    "rifiuti-urbani": {
       "available": false,
       "reason": "local_disabled",
       "dirty": null,
@@ -1555,7 +1603,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 7"
+    "Many open PRs: 10"
   ],
   "radar": {
     "available": true,
@@ -3403,6 +3451,119 @@
       ]
     },
     {
+      "repo": "dichiarazioni-italia",
+      "available": true,
+      "source_repo": "dataciviclab/dichiarazioni-italia",
+      "updated_at": "2026-09-20",
+      "datasets": 7,
+      "marts": 12,
+      "signals": 7,
+      "codelists": 0,
+      "entities": 4,
+      "gcs": 7,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "irap_italia_estero",
+          "source_id": "mef_irap",
+          "status": "ok",
+          "label": "irap_italia_estero",
+          "detail": "anni 2015-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T143143Z_63e30b1e",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T14:31:43.244091+00:00",
+            "finished_at": "2026-09-20T14:31:44.176976+00:00"
+          }
+        },
+        {
+          "id": "irap_vp_regime",
+          "source_id": "mef_irap",
+          "status": "ok",
+          "label": "irap_vp_regime",
+          "detail": "anni 2015-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T143222Z_6add834d",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T14:32:22.656523+00:00",
+            "finished_at": "2026-09-20T14:32:24.676092+00:00"
+          }
+        },
+        {
+          "id": "ires_redditi_regione",
+          "source_id": "mef_ires",
+          "status": "ok",
+          "label": "ires_redditi_regione",
+          "detail": "anni 2015-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T143248Z_1d7665d4",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T14:32:48.621413+00:00",
+            "finished_at": "2026-09-20T14:32:49.510973+00:00"
+          }
+        },
+        {
+          "id": "irpef_comunale",
+          "source_id": "mef_irpef",
+          "status": "ok",
+          "label": "irpef_comunale",
+          "detail": "anni 2015-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T143328Z_30604b5b",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T14:33:28.580821+00:00",
+            "finished_at": "2026-09-20T14:33:32.638072+00:00"
+          }
+        },
+        {
+          "id": "iva_regionale",
+          "source_id": "mef_finanze",
+          "status": "ok",
+          "label": "iva_regionale",
+          "detail": "anni 2015-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T143359Z_c528e279",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T14:33:59.487042+00:00",
+            "finished_at": "2026-09-20T14:34:00.437807+00:00"
+          }
+        },
+        {
+          "id": "iva_sez_attivita",
+          "source_id": "mef_iva",
+          "status": "ok",
+          "label": "iva_sez_attivita",
+          "detail": "anni 2015-2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T143427Z_99e31a75",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T14:34:27.351200+00:00",
+            "finished_at": "2026-09-20T14:34:28.279402+00:00"
+          }
+        },
+        {
+          "id": "mef_irpef_regionale",
+          "source_id": "mef_irpef",
+          "status": "ok",
+          "label": "mef_irpef_regionale",
+          "detail": "anni 2017-2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T143500Z_1ce0f763",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T14:35:00.593734+00:00",
+            "finished_at": "2026-09-20T14:35:02.059587+00:00"
+          }
+        }
+      ]
+    },
+    {
       "repo": "eurostat",
       "available": true,
       "source_repo": "dataciviclab/eurostat",
@@ -4871,6 +5032,133 @@
       ]
     },
     {
+      "repo": "open-ispra",
+      "available": true,
+      "source_repo": "dataciviclab/open-ispra",
+      "updated_at": "2026-09-20",
+      "datasets": 8,
+      "marts": 13,
+      "signals": 8,
+      "codelists": 0,
+      "entities": 5,
+      "gcs": 8,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "ispra_bathw",
+          "source_id": "ispra_linked_data",
+          "status": "ok",
+          "label": "ispra_bathw",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T122935Z_1ac062a1",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T12:29:35.522763+00:00",
+            "finished_at": "2026-09-20T12:30:28.934266+00:00"
+          }
+        },
+        {
+          "id": "ispra_consumo_suolo",
+          "source_id": "ispra",
+          "status": "ok",
+          "label": "ispra_consumo_suolo",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T123030Z_db548742",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T12:30:30.028514+00:00",
+            "finished_at": "2026-09-20T12:30:37.422152+00:00"
+          }
+        },
+        {
+          "id": "ispra_iffi",
+          "source_id": "ispra",
+          "status": "ok",
+          "label": "ispra_iffi",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T123037Z_3fc6868d",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T12:30:37.834660+00:00",
+            "finished_at": "2026-09-20T12:30:46.771701+00:00"
+          }
+        },
+        {
+          "id": "ispra_pest",
+          "source_id": "ispra_linked_data",
+          "status": "ok",
+          "label": "ispra_pest",
+          "detail": "anno 2021 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T123047Z_e9f62bf1",
+            "year": 2021,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T12:30:47.189367+00:00",
+            "finished_at": "2026-09-20T12:40:30.284071+00:00"
+          }
+        },
+        {
+          "id": "ispra_rmn",
+          "source_id": "ispra_linked_data",
+          "status": "ok",
+          "label": "ispra_rmn",
+          "detail": "anno 2023 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T124030Z_6e256ee9",
+            "year": 2023,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T12:40:30.684023+00:00",
+            "finished_at": "2026-09-20T12:54:37.931912+00:00"
+          }
+        },
+        {
+          "id": "ispra_urban",
+          "source_id": "ispra_linked_data",
+          "status": "ok",
+          "label": "ispra_urban",
+          "detail": "anno 2018 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T125438Z_9e6e782a",
+            "year": 2018,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T12:54:38.333070+00:00",
+            "finished_at": "2026-09-20T12:55:25.715479+00:00"
+          }
+        },
+        {
+          "id": "ispra_pest_stations",
+          "source_id": "ispra_linked_data",
+          "status": "ok",
+          "label": "ispra_pest_stations",
+          "detail": "anno 2021 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T122926Z_d1e65b62",
+            "year": 2021,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T12:29:26.809680+00:00",
+            "finished_at": "2026-09-20T12:29:32.658056+00:00"
+          }
+        },
+        {
+          "id": "ispra_places",
+          "source_id": "ispra_linked_data",
+          "status": "ok",
+          "label": "ispra_places",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T122933Z_d01d561f",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T12:29:33.057618+00:00",
+            "finished_at": "2026-09-20T12:29:35.133981+00:00"
+          }
+        }
+      ]
+    },
+    {
       "repo": "open-pnrr",
       "available": true,
       "source_repo": "dataciviclab/open-pnrr",
@@ -5872,6 +6160,203 @@
       ]
     },
     {
+      "repo": "rifiuti-urbani",
+      "available": true,
+      "source_repo": "dataciviclab/rifiuti-urbani",
+      "updated_at": "2026-09-20",
+      "datasets": 13,
+      "marts": 16,
+      "signals": 13,
+      "codelists": 0,
+      "entities": 4,
+      "gcs": 13,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "compose:rifiuti_urbani_unified",
+          "source_id": "dataciviclab_composite",
+          "status": "ok",
+          "label": "rifiuti_urbani_unified",
+          "detail": "anni 2018-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T173114Z_74116b3f",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T17:31:14.731071+00:00",
+            "finished_at": "2026-09-20T17:31:14.995683+00:00"
+          }
+        },
+        {
+          "id": "ispra_ru_base",
+          "source_id": "ispra_linked_data",
+          "status": "ok",
+          "label": "ispra_ru_base",
+          "detail": "anni 2010-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T173043Z_8bd5b364",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T17:30:43.758066+00:00",
+            "finished_at": "2026-09-20T17:30:47.759811+00:00"
+          }
+        },
+        {
+          "id": "ispra_ru_costi_kg",
+          "source_id": "ispra_linked_data",
+          "status": "ok",
+          "label": "ispra_ru_costi_kg",
+          "detail": "anni 2018-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T173050Z_2ddabd16",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T17:30:50.852818+00:00",
+            "finished_at": "2026-09-20T17:30:51.216444+00:00"
+          }
+        },
+        {
+          "id": "ispra_ru_costi_procapite",
+          "source_id": "ispra_linked_data",
+          "status": "ok",
+          "label": "ispra_ru_costi_procapite",
+          "detail": "anni 2018-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T173054Z_31af7b27",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T17:30:54.011907+00:00",
+            "finished_at": "2026-09-20T17:30:54.485392+00:00"
+          }
+        },
+        {
+          "id": "ispra_rs_export",
+          "source_id": "ispra_linked_data",
+          "status": "ok",
+          "label": "ispra_rs_export",
+          "detail": "anni 2018-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T173056Z_588ce3f8",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T17:30:56.316741+00:00",
+            "finished_at": "2026-09-20T17:30:56.443249+00:00"
+          }
+        },
+        {
+          "id": "ispra_rs_gestione",
+          "source_id": "ispra_linked_data",
+          "status": "ok",
+          "label": "ispra_rs_gestione",
+          "detail": "anni 2014-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T173057Z_0d799aca",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T17:30:57.991186+00:00",
+            "finished_at": "2026-09-20T17:30:58.141212+00:00"
+          }
+        },
+        {
+          "id": "ispra_rs_impianti",
+          "source_id": "ispra_linked_data",
+          "status": "ok",
+          "label": "ispra_rs_impianti",
+          "detail": "anni 2018-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T173059Z_0929b0e6",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T17:30:59.861257+00:00",
+            "finished_at": "2026-09-20T17:30:59.988976+00:00"
+          }
+        },
+        {
+          "id": "ispra_rs_import",
+          "source_id": "ispra_linked_data",
+          "status": "ok",
+          "label": "ispra_rs_import",
+          "detail": "anni 2018-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T173102Z_4c2ce544",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T17:31:02.080312+00:00",
+            "finished_at": "2026-09-20T17:31:02.226230+00:00"
+          }
+        },
+        {
+          "id": "ispra_rs_produzione",
+          "source_id": "ispra_linked_data",
+          "status": "ok",
+          "label": "ispra_rs_produzione",
+          "detail": "anni 2014-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T173104Z_ae649e04",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T17:31:04.013624+00:00",
+            "finished_at": "2026-09-20T17:31:04.236838+00:00"
+          }
+        },
+        {
+          "id": "ispra_ru_export",
+          "source_id": "ispra_linked_data",
+          "status": "ok",
+          "label": "ispra_ru_export",
+          "detail": "anni 2018-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T173106Z_2be137d0",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T17:31:06.571961+00:00",
+            "finished_at": "2026-09-20T17:31:06.733713+00:00"
+          }
+        },
+        {
+          "id": "ispra_ru_flussi",
+          "source_id": "ispra_linked_data",
+          "status": "ok",
+          "label": "ispra_ru_flussi",
+          "detail": "anni 2018-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T173108Z_5ca95692",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T17:31:08.311001+00:00",
+            "finished_at": "2026-09-20T17:31:08.432294+00:00"
+          }
+        },
+        {
+          "id": "ispra_ru_gestione",
+          "source_id": "ispra_linked_data",
+          "status": "ok",
+          "label": "ispra_ru_gestione",
+          "detail": "anni 2015-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T173110Z_99005efb",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T17:31:10.220209+00:00",
+            "finished_at": "2026-09-20T17:31:10.457179+00:00"
+          }
+        },
+        {
+          "id": "ispra_ru_import",
+          "source_id": "ispra_linked_data",
+          "status": "ok",
+          "label": "ispra_ru_import",
+          "detail": "anni 2018-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260920T173112Z_71252205",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-20T17:31:12.564791+00:00",
+            "finished_at": "2026-09-20T17:31:12.716132+00:00"
+          }
+        }
+      ]
+    },
+    {
       "repo": "rna-aiuti-stato",
       "available": true,
       "source_repo": "dataciviclab/rna-aiuti-stato",
@@ -5974,8 +6459,8 @@
     {
       "repo": "sistema-bancario",
       "available": true,
-      "source_repo": "sistema-bancario",
-      "updated_at": "2026-09-18",
+      "source_repo": "dataciviclab/sistema-bancario",
+      "updated_at": "2026-09-20",
       "datasets": 7,
       "marts": 14,
       "signals": 7,
@@ -5991,11 +6476,11 @@
           "label": "banche_unified",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260917T223159Z_d8a52e71",
+            "run_id": "20260920T170930Z_23ec6c7a",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-17T22:31:59.427714+00:00",
-            "finished_at": "2026-09-17T22:31:59.926649+00:00"
+            "started_at": "2026-09-20T17:09:30.256705+00:00",
+            "finished_at": "2026-09-20T17:09:30.438595+00:00"
           }
         },
         {
@@ -6003,13 +6488,13 @@
           "source_id": "eba",
           "status": "ok",
           "label": "eba_panel",
-          "detail": "anno 2026 \u2014 mart: si",
+          "detail": "anno 2025 \u2014 mart: si",
           "run": {
-            "run_id": "20260917T220202Z_56803605",
-            "year": 2026,
+            "run_id": "20260920T170530Z_640cb47a",
+            "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-09-17T22:02:02.523163+00:00",
-            "finished_at": "2026-09-17T22:02:16.721517+00:00"
+            "started_at": "2026-09-20T17:05:30.231549+00:00",
+            "finished_at": "2026-09-20T17:05:35.395869+00:00"
           }
         },
         {
@@ -6019,11 +6504,11 @@
           "label": "ecb_bls",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260917T220220Z_947ea348",
+            "run_id": "20260920T170539Z_85344b0a",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-17T22:02:20.962184+00:00",
-            "finished_at": "2026-09-17T22:03:04.081863+00:00"
+            "started_at": "2026-09-20T17:05:39.874775+00:00",
+            "finished_at": "2026-09-20T17:06:05.722499+00:00"
           }
         },
         {
@@ -6033,11 +6518,11 @@
           "label": "ecb_bsi",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260917T220359Z_e70a27cd",
+            "run_id": "20260920T170611Z_eaeb2c78",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-17T22:03:59.614984+00:00",
-            "finished_at": "2026-09-17T22:08:51.990522+00:00"
+            "started_at": "2026-09-20T17:06:11.816809+00:00",
+            "finished_at": "2026-09-20T17:07:49.462682+00:00"
           }
         },
         {
@@ -6047,11 +6532,11 @@
           "label": "ecb_cbd2",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260917T222829Z_3f89dd60",
+            "run_id": "20260920T170756Z_660299db",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-17T22:28:29.925845+00:00",
-            "finished_at": "2026-09-17T22:28:30.259849+00:00"
+            "started_at": "2026-09-20T17:07:56.070259+00:00",
+            "finished_at": "2026-09-20T17:08:48.506771+00:00"
           }
         },
         {
@@ -6061,11 +6546,11 @@
           "label": "ecb_mir",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260917T221124Z_9099ec55",
+            "run_id": "20260920T170852Z_ac9553a2",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-17T22:11:24.740923+00:00",
-            "finished_at": "2026-09-17T22:11:52.061103+00:00"
+            "started_at": "2026-09-20T17:08:52.765233+00:00",
+            "finished_at": "2026-09-20T17:09:13.319337+00:00"
           }
         },
         {
@@ -6073,13 +6558,13 @@
           "source_id": "worldbank",
           "status": "ok",
           "label": "wb_financial",
-          "detail": "anno 2026 \u2014 mart: si",
+          "detail": "anno 2025 \u2014 mart: si",
           "run": {
-            "run_id": "20260917T221152Z_284983dc",
-            "year": 2026,
+            "run_id": "20260920T170913Z_58399ab3",
+            "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-09-17T22:11:52.981243+00:00",
-            "finished_at": "2026-09-17T22:12:00.632747+00:00"
+            "started_at": "2026-09-20T17:09:13.639354+00:00",
+            "finished_at": "2026-09-20T17:09:29.926059+00:00"
           }
         }
       ]

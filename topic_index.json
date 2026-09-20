@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "generated_at": "2026-09-20T15:34:26.075646",
+  "generated_at": "2026-09-20T17:58:42.463199",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -38,6 +38,10 @@
       "description": "Intelligence sul debito pubblico italiano \u2014 riconciliazione multi-fonte, segnali e mart queryabile",
       "url": "https://github.com/dataciviclab/debito-pubblico-intelligence"
     },
+    "dichiarazioni-italia": {
+      "description": "Dataset MEF dichiarazioni fiscali italiane: IRPEF, IVA, IRES, IRAP per comuni, regioni e settori ATECO",
+      "url": "https://github.com/dataciviclab/dichiarazioni-italia"
+    },
     "eurostat": {
       "description": "European regional data at your fingertips \u2014 GDP, population, crime and more at NUTS2/NUTS3 level.",
       "url": "https://github.com/dataciviclab/eurostat"
@@ -74,6 +78,10 @@
       "description": "1,8 milioni di microdati sul personale della PA italiana \u2014 chi lavora nel pubblico, dove e con quali ruoli.",
       "url": "https://github.com/dataciviclab/open-conto-annuale"
     },
+    "open-ispra": {
+      "description": "Dati ambientali ISPRA: acque, suolo, mari, pesticidi, frane. Open data italiani in formato standardizzato.",
+      "url": "https://github.com/dataciviclab/open-ispra"
+    },
     "open-pnrr": {
       "description": "194 miliardi, 285k progetti, 7 dataset: i dati ufficiali del PNRR, puliti e interrogabili",
       "url": "https://github.com/dataciviclab/open-pnrr"
@@ -102,6 +110,10 @@
       "description": "3,25 milioni di immobili pubblici, 100% georeferenziati. Quanto \u00e8 utilizzato, quanto \u00e8 abbandonato?",
       "url": "https://github.com/dataciviclab/patrimonio-territorio"
     },
+    "rifiuti-urbani": {
+      "description": "Quali sono le dinamiche di produzione, gestione e movimentazione dei rifiuti urbani e speciali in Italia?",
+      "url": "https://github.com/dataciviclab/rifiuti-urbani"
+    },
     "rna-aiuti-stato": {
       "description": "17 milioni di aiuti pubblici alle imprese italiane \u2014 il Registro Nazionale Aiuti di Stato aperto e interrogabile.",
       "url": "https://github.com/dataciviclab/rna-aiuti-stato"
@@ -111,7 +123,7 @@
       "url": "https://github.com/dataciviclab/senato-akn"
     },
     "sistema-bancario": {
-      "description": "",
+      "description": "I bilanci delle banche europee, interrogabili \u2014 dati EBA, BCE e World Bank in un'unica dashboard.",
       "url": "https://github.com/dataciviclab/sistema-bancario"
     },
     "source-observatory": {
@@ -3174,6 +3186,236 @@
         "mart_refs": [
           "op_cup_lab__mart_territorio",
           "op_cup_lab__mart_fonti"
+        ]
+      },
+      {
+        "slug": "rifiuti_urbani_unified",
+        "url_slug": "rifiuti-urbani-unified",
+        "name": "Rifiuti Urbani Unified",
+        "description": "Compose RU: vista unificata comuni con RD% + costi + benchmark da ispra-ru-base + ispra-ru-costi-*.",
+        "source": "",
+        "source_id": "dataciviclab_composite",
+        "period": {
+          "start": 2018,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "ispra",
+          "ru",
+          "compose",
+          "unified"
+        ],
+        "category": "ambiente",
+        "registry_source": "rifiuti-urbani",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/rifiuti-urbani/rifiuti_urbani_unified/*/rifiuti_urbani_unified_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "codice_comune_istat",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_code",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_name",
+            "description": ""
+          },
+          {
+            "name": "popolazione",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_ru_tonnellate",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_rd_tonnellate",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "percentuale_rd",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "kg_ru_per_abitante",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "kg_rd_per_abitante",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "classe_demografica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "media_nazionale_rd",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "media_regionale_rd",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "percentile_nazionale",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fascia_rd",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ctot_euro_ab",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "crt_euro_ab",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "crd_euro_ab",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "csl_euro_ab",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cc_euro_ab",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ck_euro_ab",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ctot_cent_kg",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "crt_cent_kg",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "crd_cent_kg",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "csl_cent_kg",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cc_cent_kg",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ck_cent_kg",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "rifiuti_urbani_unified__mart_comuni",
+          "rifiuti_urbani_unified__mart_sintesi"
         ]
       }
     ],
@@ -12813,8 +13055,8 @@
           "irpef"
         ],
         "category": "finanza-pubblica",
-        "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "registry_source": "dichiarazioni-italia",
+        "clean_rows": 7897,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/irpef_comunale/*/irpef_comunale_*_clean.parquet",
@@ -13214,7 +13456,7 @@
           "suolo"
         ],
         "category": "ambiente",
-        "registry_source": "dataset-incubator",
+        "registry_source": "open-ispra",
         "clean_rows": 86856,
         "location": {
           "type": "gcs",
@@ -13322,8 +13564,8 @@
           "rifiuti"
         ],
         "category": "ambiente",
-        "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "registry_source": "rifiuti-urbani",
+        "clean_rows": 7762,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/ispra_ru_base/*/ispra_ru_base_*_clean.parquet",
@@ -13427,8 +13669,8 @@
           "kg"
         ],
         "category": "ambiente",
-        "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "registry_source": "rifiuti-urbani",
+        "clean_rows": 6647,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/ispra_ru_costi_kg/*/ispra_ru_costi_kg_*_clean.parquet",
@@ -13541,8 +13783,8 @@
           "procapite"
         ],
         "category": "ambiente",
-        "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "registry_source": "rifiuti-urbani",
+        "clean_rows": 6647,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/ispra_ru_costi_procapite/*/ispra_ru_costi_procapite_*_clean.parquet",
@@ -14504,7 +14746,7 @@
           "regionale"
         ],
         "category": "finanza-pubblica",
-        "registry_source": "dataset-incubator",
+        "registry_source": "dichiarazioni-italia",
         "clean_rows": 21,
         "location": {
           "type": "gcs",
@@ -14637,8 +14879,8 @@
           "irpef"
         ],
         "category": "finanza-pubblica",
-        "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "registry_source": "dichiarazioni-italia",
+        "clean_rows": 714,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/mef_irpef_regionale/*/mef_irpef_regionale_*_clean.parquet",
@@ -30373,6 +30615,1369 @@
         ]
       }
     ],
+    "mef_irap": [
+      {
+        "slug": "irap_italia_estero",
+        "url_slug": "irap-italia-estero",
+        "name": "Irap Italia Estero",
+        "description": "",
+        "source": "",
+        "source_id": "mef_irap",
+        "period": {
+          "start": 2015,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "irap",
+          "regionale",
+          "produzione-netta",
+          "estero"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "dichiarazioni-italia",
+        "clean_rows": 21,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/dichiarazioni-italia/irap_italia_estero/*/irap_italia_estero_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "cod_regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "contribuenti",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "prod_netta_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "prod_netta_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "vp_estero_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "vp_estero_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "vp_italia_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "vp_italia_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "irap_italia_estero__mart_regioni_anno"
+        ]
+      },
+      {
+        "slug": "irap_vp_regime",
+        "url_slug": "irap-vp-regime",
+        "name": "Irap Vp Regime",
+        "description": "",
+        "source": "",
+        "source_id": "mef_irap",
+        "period": {
+          "start": 2015,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "irap",
+          "regionale",
+          "valore-produzione"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "dichiarazioni-italia",
+        "clean_rows": 21,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/dichiarazioni-italia/irap_vp_regime/*/irap_vp_regime_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "cod_regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "contribuenti",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "vp_ord_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "vp_ord_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "vp_forf_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "vp_forf_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "vp_agr_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "vp_agr_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "vp_arti_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "vp_arti_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "vp_noncomm_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "vp_noncomm_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "deduzioni_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "deduzioni_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "prod_netta_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "prod_netta_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "irap_vp_regime__mart_regioni_anno"
+        ]
+      }
+    ],
+    "mef_ires": [
+      {
+        "slug": "ires_redditi_regione",
+        "url_slug": "ires-redditi-regione",
+        "name": "Ires Redditi Regione",
+        "description": "",
+        "source": "",
+        "source_id": "mef_ires",
+        "period": {
+          "start": 2015,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "ires",
+          "regionale",
+          "reddito-impresa"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "dichiarazioni-italia",
+        "clean_rows": 21,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/dichiarazioni-italia/ires_redditi_regione/*/ires_redditi_regione_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "n_dichiarazioni",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_continuita_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_continuita_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_continuita_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_continuita_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_totale_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_totale_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_totale_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_totale_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ires_redditi_regione__mart_regioni_anno"
+        ]
+      }
+    ],
+    "mef_irpef": [
+      {
+        "slug": "irpef_comunale",
+        "url_slug": "irpef-comunale",
+        "name": "Irpef Comunale",
+        "description": "",
+        "source": "",
+        "source_id": "mef_irpef",
+        "period": {
+          "start": 2015,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "irpef"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "dichiarazioni-italia",
+        "clean_rows": 7897,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/dichiarazioni-italia/irpef_comunale/*/irpef_comunale_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno_di_imposta",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "codice_catastale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cadastral_code",
+            "description": ""
+          },
+          {
+            "name": "codice_istat_comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_code",
+            "description": ""
+          },
+          {
+            "name": "denominazione_comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_name",
+            "description": ""
+          },
+          {
+            "name": "sigla_provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "codice_istat_regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_contribuenti",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_da_fabbricati_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_da_fabbricati_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_da_lavoro_dipendente_e_assimilati_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_da_lavoro_dipendente_e_assimilati_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_da_pensione_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_da_pensione_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_da_lavoro_autonomo_comprensivo_valori_nulli_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_da_lavoro_autonomo_comprensivo_valori_nulli_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_di_spettanza_imprenditore_contabilita_ordinaria_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_di_spettanza_imprenditore_contabilita_ordinaria_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_di_spettanza_imprenditore_contabilita_semplificata_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_di_spettanza_imprenditore_contabilita_semplificata_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_da_partecipazione_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_da_partecipazione_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_imponibile_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_imponibile_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_netta_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_netta_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "trattamento_spettante_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "trattamento_spettante_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_imponibile_addizionale_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_imponibile_addizionale_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "addizionale_regionale_dovuta_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "addizionale_regionale_dovuta_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "addizionale_comunale_dovuta_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "addizionale_comunale_dovuta_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_complessivo_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_complessivo_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_complessivo_minore_o_uguale_a_zero_euro_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_complessivo_minore_o_uguale_a_zero_euro_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_complessivo_da_0_a_10000_euro_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_complessivo_da_0_a_10000_euro_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_complessivo_da_10000_a_15000_euro_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_complessivo_da_10000_a_15000_euro_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_complessivo_da_15000_a_26000_euro_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_complessivo_da_15000_a_26000_euro_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_complessivo_da_26000_a_55000_euro_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_complessivo_da_26000_a_55000_euro_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_complessivo_da_55000_a_75000_euro_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_complessivo_da_55000_a_75000_euro_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_complessivo_da_75000_a_120000_euro_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_complessivo_da_75000_a_120000_euro_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_complessivo_oltre_120000_euro_freq",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_complessivo_oltre_120000_euro_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "irpef_comunale__mart_comuni",
+          "irpef_comunale__mart_sintesi",
+          "irpef_comunale__mart_trend",
+          "irpef_comunale__mart_fasce"
+        ]
+      },
+      {
+        "slug": "mef_irpef_regionale",
+        "url_slug": "mef-irpef-regionale",
+        "name": "Mef Irpef Regionale",
+        "description": "",
+        "source": "",
+        "source_id": "mef_irpef",
+        "period": {
+          "start": 2017,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "mef",
+          "irpef"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "dichiarazioni-italia",
+        "clean_rows": 714,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/dichiarazioni-italia/mef_irpef_regionale/*/mef_irpef_regionale_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno_di_imposta",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "classe_reddito",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "numero_contribuenti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_dominicale_freq",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_dominicale_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_agrario_freq",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_agrario_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_allevamento_freq",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_allevamento_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_fabbricati_freq",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_fabbricati_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_lavoro_dipendente_freq",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_lavoro_dipendente_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_pensione_freq",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_pensione_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "altri_assimilati_ld_freq",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "altri_assimilati_ld_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_lavoro_autonomo_freq",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_lavoro_autonomo_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_lavoro_autonomo_freq",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_lavoro_autonomo_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provvigioni_770_freq",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provvigioni_770_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_cont_ordinaria_freq",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_cont_ordinaria_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_cont_semplificata_freq",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_cont_semplificata_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_partecipazione_freq",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_partecipazione_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_partecipazione_freq",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_partecipazione_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "plusvalenze_freq",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "plusvalenze_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_capitale_freq",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_capitale_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "redditi_diversi_freq",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "redditi_diversi_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "altri_la_startup_freq",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "altri_la_startup_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tassazione_separata_freq",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tassazione_separata_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mef_irpef_regionale__irpef_regione_classe"
+        ]
+      }
+    ],
+    "mef_finanze": [
+      {
+        "slug": "iva_regionale",
+        "url_slug": "iva-regionale",
+        "name": "Iva Regionale",
+        "description": "",
+        "source": "",
+        "source_id": "mef_finanze",
+        "period": {
+          "start": 2014,
+          "end": 2023
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "iva",
+          "regionale"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "dichiarazioni-italia",
+        "clean_rows": 21,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/dichiarazioni-italia/iva_regionale/*/iva_regionale_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "cod_regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "contribuenti",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "volume_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "volume_affari_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "acquisti_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "acquisti_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "va_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "va_fiscale_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_dovuta_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_dovuta_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_credito_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_credito_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "iva_regionale__mart_regioni_anno",
+          "iva_regionale__mart_sintesi_nazionale",
+          "iva_regionale__mart_trend_regioni"
+        ]
+      }
+    ],
+    "mef_iva": [
+      {
+        "slug": "iva_sez_attivita",
+        "url_slug": "iva-sez-attivita",
+        "name": "Iva Sez Attivita",
+        "description": "",
+        "source": "",
+        "source_id": "mef_iva",
+        "period": {
+          "start": 2015,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "iva",
+          "settore",
+          "ateaco"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "dichiarazioni-italia",
+        "clean_rows": 23,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/dichiarazioni-italia/iva_sez_attivita/*/iva_sez_attivita_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "sezione_attivita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "contribuenti",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "volume_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "volume_affari_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "acquisti_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "acquisti_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "va_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "va_fiscale_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_dovuta_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_dovuta_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_credito_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_credito_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "iva_sez_attivita__mart_settori_anno"
+        ]
+      }
+    ],
     "openga": [
       {
         "slug": "ga_decreti",
@@ -34549,6 +36154,1652 @@
         ],
         "mart_refs": [
           "consip_rdo_td_stipulate__mart_competizione_mepa"
+        ]
+      }
+    ],
+    "ispra_linked_data": [
+      {
+        "slug": "ispra_bathw",
+        "url_slug": "ispra-bathw",
+        "name": "Ispra Bathw",
+        "description": "Qualita acque di balneazione in Italia (1990-2024). Dati SPARQL da linked.isprambiente.it. 35 anni di serie storica, ~5.500 siti/anno.",
+        "source": "",
+        "source_id": "ispra_linked_data",
+        "period": {
+          "start": 2024,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "ispra",
+          "balneazione",
+          "acqua",
+          "qualita"
+        ],
+        "category": "ambiente",
+        "registry_source": "open-ispra",
+        "clean_rows": 173074,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-ispra/ispra_bathw/2024/ispra_bathw_2024_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "codice_sito",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "indicatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "indicatore_code",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "valore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unita_misura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ispra_bathw__mart_sintesi",
+          "ispra_bathw__mart_sintesi_anno"
+        ]
+      },
+      {
+        "slug": "ispra_pest",
+        "url_slug": "ispra-pest",
+        "name": "Ispra Pest",
+        "description": "Concentrazioni pesticidi nelle acque sotterranee in Italia (2018-2021). ~3M misurazioni/anno per sostanza CAS.",
+        "source": "",
+        "source_id": "ispra_linked_data",
+        "period": {
+          "start": 2021,
+          "end": 2021
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "ispra",
+          "pesticidi",
+          "acque",
+          "inquinamento"
+        ],
+        "category": "ambiente",
+        "registry_source": "open-ispra",
+        "clean_rows": 9644221,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-ispra/ispra_pest/2021/ispra_pest_2021_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "station_id",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cas_number",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unita_misura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ispra_pest__mart_sintesi"
+        ]
+      },
+      {
+        "slug": "ispra_pest_stations",
+        "url_slug": "ispra-pest-stations",
+        "name": "Ispra Pest Stations",
+        "description": "Anagrafica stazioni pesticidi ISPRA con coordinate geografiche (2018-2021). ~4-5K stazioni/anno.",
+        "source": "",
+        "source_id": "ispra_linked_data",
+        "period": {
+          "start": 2021,
+          "end": 2021
+        },
+        "stage": "incubating",
+        "tags": [
+          "anagrafica",
+          "ispra",
+          "pesticidi",
+          "stazioni"
+        ],
+        "category": "support",
+        "registry_source": "open-ispra",
+        "clean_rows": 16507,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-ispra/ispra_pest_stations/2021/ispra_pest_stations_2021_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "station_id",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "lat",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "lon",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ispra_pest_stations__mart_stations"
+        ]
+      },
+      {
+        "slug": "ispra_places",
+        "url_slug": "ispra-places",
+        "name": "Ispra Places",
+        "description": "Anagrafica comuni italiani dal place graph ISPRA. Codice ISTAT + nome. Usata per JOIN con altri dataset ISPRA.",
+        "source": "",
+        "source_id": "ispra_linked_data",
+        "period": {
+          "start": 2024,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "anagrafica",
+          "ispra",
+          "istat",
+          "comuni"
+        ],
+        "category": "support",
+        "registry_source": "open-ispra",
+        "clean_rows": 9530,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-ispra/ispra_places/2024/ispra_places_2024_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "codice_istat",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_code",
+            "description": ""
+          },
+          {
+            "name": "nome",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ispra_places__mart_places"
+        ]
+      },
+      {
+        "slug": "ispra_rmn",
+        "url_slug": "ispra-rmn",
+        "name": "Ispra Rmn",
+        "description": "Rete Mareografica Nazionale \u2014 livelli marini da 36 stazioni costiere italiane (2010-2023). Dati orari da boe e st fisse.",
+        "source": "",
+        "source_id": "ispra_linked_data",
+        "period": {
+          "start": 2023,
+          "end": 2023
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "ispra",
+          "mare",
+          "livello",
+          "maree",
+          "clima"
+        ],
+        "category": "ambiente",
+        "registry_source": "open-ispra",
+        "clean_rows": 29229815,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-ispra/ispra_rmn/2023/ispra_rmn_2023_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "station_id",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "mese",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          },
+          {
+            "name": "timestamp_utc",
+            "type": "TIMESTAMP",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "livello",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ispra_rmn__mart_stazioni",
+          "ispra_rmn__mart_sintesi"
+        ]
+      },
+      {
+        "slug": "ispra_urban",
+        "url_slug": "ispra-urban",
+        "name": "Ispra Urban",
+        "description": "Qualita ambientale urbana in Italia (1970-2019). Indicatori ambientali per comune da linked.isprambiente.it. 27 anni, ~245-600 comuni.",
+        "source": "",
+        "source_id": "ispra_linked_data",
+        "period": {
+          "start": 2018,
+          "end": 2018
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "ispra",
+          "qualita-urbana",
+          "comuni"
+        ],
+        "category": "ambiente",
+        "registry_source": "open-ispra",
+        "clean_rows": 201446,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-ispra/ispra_urban/2018/ispra_urban_2018_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "codice_istat",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_code",
+            "description": ""
+          },
+          {
+            "name": "indicatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "indicatore_code",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "valore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unita_misura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ispra_urban__mart_comuni",
+          "ispra_urban__mart_sintesi"
+        ]
+      },
+      {
+        "slug": "ispra_rs_export",
+        "url_slug": "ispra-rs-export",
+        "name": "Ispra Rs Export",
+        "description": "",
+        "source": "",
+        "source_id": "ispra_linked_data",
+        "period": {
+          "start": 2018,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "ispra",
+          "rs_export"
+        ],
+        "category": "ambiente",
+        "registry_source": "rifiuti-urbani",
+        "clean_rows": 21,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/rifiuti-urbani/ispra_rs_export/*/ispra_rs_export_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "rifiuti_non_pericolosi_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rifiuti_pericolosi_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ispra_rs_export__mart_import"
+        ]
+      },
+      {
+        "slug": "ispra_rs_gestione",
+        "url_slug": "ispra-rs-gestione",
+        "name": "Ispra Rs Gestione",
+        "description": "",
+        "source": "",
+        "source_id": "ispra_linked_data",
+        "period": {
+          "start": 2018,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "ispra",
+          "rs",
+          "gestione"
+        ],
+        "category": "ambiente",
+        "registry_source": "rifiuti-urbani",
+        "clean_rows": 28,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/rifiuti-urbani/ispra_rs_gestione/*/ispra_rs_gestione_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "area_geografica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rs_np_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rs_p_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rs_cer_nd_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ispra_rs_gestione__mart_gestione"
+        ]
+      },
+      {
+        "slug": "ispra_rs_impianti",
+        "url_slug": "ispra-rs-impianti",
+        "name": "Ispra Rs Impianti",
+        "description": "",
+        "source": "",
+        "source_id": "ispra_linked_data",
+        "period": {
+          "start": 2018,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "ispra",
+          "rs",
+          "impianti"
+        ],
+        "category": "ambiente",
+        "registry_source": "rifiuti-urbani",
+        "clean_rows": 4,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/rifiuti-urbani/ispra_rs_impianti/*/ispra_rs_impianti_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "area_geografica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_impianti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fanghi_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "altri_rs_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_rs_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ispra_rs_impianti__mart_impianti"
+        ]
+      },
+      {
+        "slug": "ispra_rs_import",
+        "url_slug": "ispra-rs-import",
+        "name": "Ispra Rs Import",
+        "description": "",
+        "source": "",
+        "source_id": "ispra_linked_data",
+        "period": {
+          "start": 2018,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "ispra",
+          "rs_import"
+        ],
+        "category": "ambiente",
+        "registry_source": "rifiuti-urbani",
+        "clean_rows": 19,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/rifiuti-urbani/ispra_rs_import/*/ispra_rs_import_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "rifiuti_non_pericolosi_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rifiuti_pericolosi_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ispra_rs_import__mart_import"
+        ]
+      },
+      {
+        "slug": "ispra_rs_produzione",
+        "url_slug": "ispra-rs-produzione",
+        "name": "Ispra Rs Produzione",
+        "description": "",
+        "source": "",
+        "source_id": "ispra_linked_data",
+        "period": {
+          "start": 2018,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "ispra",
+          "rs",
+          "produzione"
+        ],
+        "category": "ambiente",
+        "registry_source": "rifiuti-urbani",
+        "clean_rows": 317,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/rifiuti-urbani/ispra_rs_produzione/*/ispra_rs_produzione_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "area_geografica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rs_np_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rs_p_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rs_cer_nd_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ispra_rs_produzione__mart_produzione"
+        ]
+      },
+      {
+        "slug": "ispra_ru_base",
+        "url_slug": "ispra-ru-base",
+        "name": "Ispra Ru Base",
+        "description": "",
+        "source": "",
+        "source_id": "ispra_linked_data",
+        "period": {
+          "start": 2018,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "rifiuti"
+        ],
+        "category": "ambiente",
+        "registry_source": "rifiuti-urbani",
+        "clean_rows": 7762,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/rifiuti-urbani/ispra_ru_base/*/ispra_ru_base_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "codice_comune_istat",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_code",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_name",
+            "description": ""
+          },
+          {
+            "name": "popolazione",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "dato_riferito_a",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "frazione_umida_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "verde_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "carta_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "vetro_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "legno_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "metallo_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "plastica_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "raee_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tessili_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "selettiva_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cd_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pulizia_stradale_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ingombranti_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "altro_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ingombranti_smalt_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "indifferenziato_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_rd_tonnellate",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_ru_tonnellate",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "percentuale_rd",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ispra_ru_base__mart_comuni",
+          "ispra_ru_base__mart_sintesi",
+          "ispra_ru_base__mart_trend"
+        ]
+      },
+      {
+        "slug": "ispra_ru_costi_kg",
+        "url_slug": "ispra-ru-costi-kg",
+        "name": "Ispra Ru Costi Kg",
+        "description": "",
+        "source": "",
+        "source_id": "ispra_linked_data",
+        "period": {
+          "start": 2018,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "ispra",
+          "ru",
+          "costi",
+          "kg"
+        ],
+        "category": "ambiente",
+        "registry_source": "rifiuti-urbani",
+        "clean_rows": 6647,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/rifiuti-urbani/ispra_ru_costi_kg/*/ispra_ru_costi_kg_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "codice_comune_istat",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_code",
+            "description": ""
+          },
+          {
+            "name": "comune_o_aggregazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "numero_comuni",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "popolazione",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "crt_cent_kg",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "crd_cent_kg",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "csl_cent_kg",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cc_cent_kg",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ck_cent_kg",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ctot_cent_kg",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ispra_ru_costi_kg__mart_comuni"
+        ]
+      },
+      {
+        "slug": "ispra_ru_costi_procapite",
+        "url_slug": "ispra-ru-costi-procapite",
+        "name": "Ispra Ru Costi Procapite",
+        "description": "",
+        "source": "",
+        "source_id": "ispra_linked_data",
+        "period": {
+          "start": 2018,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "ispra",
+          "ru",
+          "costi",
+          "procapite"
+        ],
+        "category": "ambiente",
+        "registry_source": "rifiuti-urbani",
+        "clean_rows": 6647,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/rifiuti-urbani/ispra_ru_costi_procapite/*/ispra_ru_costi_procapite_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "codice_comune_istat",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_code",
+            "description": ""
+          },
+          {
+            "name": "comune_o_aggregazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "numero_comuni",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "popolazione",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "crt_euro_ab",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cts_euro_ab",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "crd_euro_ab",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ctr_euro_ab",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "csl_euro_ab",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cc_euro_ab",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ck_euro_ab",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ctot_euro_ab",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ispra_ru_costi_procapite__mart_comuni"
+        ]
+      },
+      {
+        "slug": "ispra_ru_export",
+        "url_slug": "ispra-ru-export",
+        "name": "Ispra Ru Export",
+        "description": "",
+        "source": "",
+        "source_id": "ispra_linked_data",
+        "period": {
+          "start": 2018,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "ispra",
+          "ru_export"
+        ],
+        "category": "ambiente",
+        "registry_source": "rifiuti-urbani",
+        "clean_rows": 21,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/rifiuti-urbani/ispra_ru_export/*/ispra_ru_export_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "rifiuti_non_pericolosi_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rifiuti_pericolosi_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ispra_ru_export__mart_import"
+        ]
+      },
+      {
+        "slug": "ispra_ru_flussi",
+        "url_slug": "ispra-ru-flussi",
+        "name": "Ispra Ru Flussi",
+        "description": "",
+        "source": "",
+        "source_id": "ispra_linked_data",
+        "period": {
+          "start": 2018,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "ispra",
+          "ru",
+          "flussi"
+        ],
+        "category": "ambiente",
+        "registry_source": "rifiuti-urbani",
+        "clean_rows": 21,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/rifiuti-urbani/ispra_ru_flussi/*/ispra_ru_flussi_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "quantita_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ispra_ru_flussi__mart_flussi"
+        ]
+      },
+      {
+        "slug": "ispra_ru_gestione",
+        "url_slug": "ispra-ru-gestione",
+        "name": "Ispra Ru Gestione",
+        "description": "",
+        "source": "",
+        "source_id": "ispra_linked_data",
+        "period": {
+          "start": 2018,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "ispra",
+          "ru",
+          "gestione"
+        ],
+        "category": "ambiente",
+        "registry_source": "rifiuti-urbani",
+        "clean_rows": 28,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/rifiuti-urbani/ispra_ru_gestione/*/ispra_ru_gestione_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "area_geografica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_impianti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "frazione_umida_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "verde_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tot_ru_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fanghi_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "altro_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ispra_ru_gestione__mart_gestione"
+        ]
+      },
+      {
+        "slug": "ispra_ru_import",
+        "url_slug": "ispra-ru-import",
+        "name": "Ispra Ru Import",
+        "description": "",
+        "source": "",
+        "source_id": "ispra_linked_data",
+        "period": {
+          "start": 2018,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "ispra",
+          "ru_import"
+        ],
+        "category": "ambiente",
+        "registry_source": "rifiuti-urbani",
+        "clean_rows": 17,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/rifiuti-urbani/ispra_ru_import/*/ispra_ru_import_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "rifiuti_non_pericolosi_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rifiuti_pericolosi_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ispra_ru_import__mart_import"
+        ]
+      }
+    ],
+    "ispra": [
+      {
+        "slug": "ispra_consumo_suolo",
+        "url_slug": "ispra-consumo-suolo",
+        "name": "Ispra Consumo Suolo",
+        "description": "",
+        "source": "",
+        "source_id": "ispra",
+        "period": {
+          "start": 2024,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "ispra",
+          "consumo",
+          "suolo"
+        ],
+        "category": "ambiente",
+        "registry_source": "open-ispra",
+        "clean_rows": 86856,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-ispra/ispra_consumo_suolo/2024/ispra_consumo_suolo_2024_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "pro_com",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_code",
+            "description": ""
+          },
+          {
+            "name": "comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_name",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "periodo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "incremento_netto_ha",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "incremento_lordo_ha",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ripristino_ha",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stock_ha",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stock_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ispra_consumo_suolo__mart_comuni",
+          "ispra_consumo_suolo__mart_sintesi"
+        ]
+      },
+      {
+        "slug": "ispra_iffi",
+        "url_slug": "ispra-iffi",
+        "name": "Ispra Iffi",
+        "description": "Inventario dei Fenomeni Franosi in Italia (IFFI). Statistiche frane per regione e provincia da IdroGEO API.",
+        "source": "",
+        "source_id": "ispra",
+        "period": {
+          "start": 2024,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "ispra",
+          "frane",
+          "dissesto",
+          "idrogeologico"
+        ],
+        "category": "ambiente",
+        "registry_source": "open-ispra",
+        "clean_rows": 20,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-ispra/ispra_iffi/2024/ispra_iffi_2024_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "cod_regione",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "nr_frane",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ispra_iffi__mart_italia",
+          "ispra_iffi__mart_regioni"
         ]
       }
     ],
@@ -42721,7 +45972,7 @@
         "clean_rows": null,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/sistema_bancario/banche_unified/2026/banche_unified_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/sistema-bancario/banche_unified/2026/banche_unified_2026_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -42876,7 +46127,7 @@
         "clean_rows": 514121,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/sistema_bancario/eba_panel/2026/eba_panel_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/sistema-bancario/eba_panel/2025/eba_panel_2025_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -42982,7 +46233,7 @@
         "clean_rows": 830090,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/sistema_bancario/ecb_bls/2026/ecb_bls_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/sistema-bancario/ecb_bls/2026/ecb_bls_2026_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -43064,10 +46315,10 @@
         ],
         "category": "economia",
         "registry_source": "sistema-bancario",
-        "clean_rows": 865602,
+        "clean_rows": 1429726,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/sistema_bancario/ecb_bsi/2026/ecb_bsi_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/sistema-bancario/ecb_bsi/2026/ecb_bsi_2026_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -43169,10 +46420,10 @@
         ],
         "category": "economia",
         "registry_source": "sistema-bancario",
-        "clean_rows": null,
+        "clean_rows": 1416526,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/sistema_bancario/ecb_cbd2/2026/ecb_cbd2_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/sistema-bancario/ecb_cbd2/2026/ecb_cbd2_2026_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -43187,7 +46438,7 @@
             "name": "indicatore",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "indicatore_code",
             "description": ""
           },
           {
@@ -43284,7 +46535,7 @@
         "clean_rows": 533728,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/sistema_bancario/ecb_mir/2026/ecb_mir_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/sistema-bancario/ecb_mir/2026/ecb_mir_2026_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -43392,7 +46643,7 @@
         "clean_rows": 10922,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/sistema_bancario/wb_financial/2026/wb_financial_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/sistema-bancario/wb_financial/2025/wb_financial_2025_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -43414,14 +46665,14 @@
             "name": "indicatore",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "indicatore_code",
             "description": ""
           },
           {
             "name": "codice_indicatore",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "indicatore_code",
             "description": ""
           },
           {
