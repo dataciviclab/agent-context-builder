@@ -16,6 +16,7 @@ from .signals import (
     SourceObservatorySignals,
 )
 from .sources.dcl import DataciviclabFetcher
+from .sources.pyproject import PyprojectFetcher
 from .sources.registry import RegistryFetcher
 from .sources.so import SourceObservatoryFetcher
 from .triage import build_workspace_triage
@@ -49,6 +50,7 @@ class Renderer:
         self._so_fetcher = SourceObservatoryFetcher(self.github_collector)
         self._dcl_fetcher = DataciviclabFetcher(self.github_collector)
         self._registry_fetcher = RegistryFetcher(self.github_collector)
+        self._pyproject_fetcher = PyprojectFetcher(self.github_collector)
 
     def render_session_bootstrap(self) -> str:
         """Render session_bootstrap.md — compact signal-oriented overview.
@@ -216,21 +218,31 @@ class Renderer:
         return (merged, slug_to_repo) if merged.datasets else None
 
     def render_topic_index(self) -> dict[str, Any]:
-        """Render topic_index.json (schema v6).
+        """Render topic_index.json (schema v7).
 
         Returns:
-            - repos: GitHub description per repo (auto from API)
+            - repos: GitHub description + pyproject metadata per repo
             - datasets: all datasets grouped by source, with full metadata
             - operational_topics: YAML-defined topics for agent navigation
             - analyses: list of analyses from dataciviclab/analisi/
             - analyses_by_dataset: reverse lookup dataset → analyses
         """
-        # Repos with description from GitHub
+        # Repos with description from GitHub + pyproject metadata
         repos_info = self.github_collector.get_repos_info(self.config.repos)
-        repos_section = {
-            name: {"description": info.description, "url": info.url}
-            for name, info in repos_info.items()
-        }
+        pyproject_data = self._pyproject_fetcher.fetch(self.config.repos)
+        repos_section: dict[str, Any] = {}
+        for name, info in repos_info.items():
+            entry: dict[str, Any] = {"description": info.description, "url": info.url}
+            meta = pyproject_data.get(name)
+            if meta is not None:
+                entry["python_version"] = meta.requires_python
+                entry["build_backend"] = meta.build_backend
+                entry["license"] = meta.license
+                entry["dependencies"] = meta.dependencies
+                entry["optional_dependencies"] = meta.optional_dependencies
+                entry["packages"] = meta.packages
+                entry["source_id"] = meta.source_id
+            repos_section[name] = entry
 
         # Datasets grouped by source — full details for downstream consumers
         # (data-explorer, lab-dashboard, dataciviclab)
@@ -323,7 +335,7 @@ class Renderer:
                     analyses_by_dataset.setdefault(ds_slug, []).append(a.slug)
 
         result: dict[str, Any] = {
-            "schema_version": 6,
+            "schema_version": 7,
             "generated_at": self.fixed_timestamp,
             "repos": repos_section,
             "datasets": datasets_by_stage,

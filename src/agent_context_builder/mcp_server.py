@@ -6,6 +6,7 @@ Tools:
   topic_index        — dataset/analysis exploration (resolve for deep-dive)
   search             — cross-cutting search (compact results)
   refresh_context    — trigger CI rebuild (action)
+  repo_metadata      — project metadata: Python version, deps, build system
 
 Configuration:
   ACB_REPO       GitHub repo (default: dataciviclab/agent-context-builder)
@@ -41,7 +42,8 @@ mcp = create_mcp_server(
     instructions=(
         "DataCivicLab context artifacts, generated from GitHub every 6 hours. "
         "Start with session_bootstrap for orientation, then workspace_triage "
-        "for actionable state, search for discovery, topic_index for deep-dive."
+        "for actionable state, search for discovery, topic_index for deep-dive, "
+        "repo_metadata for project dependencies and configuration."
     ),
 )
 
@@ -356,6 +358,75 @@ def search(query: str, limit: int = 10) -> dict[str, object]:
         }
 
     return guard_timed(_exec, "search")
+
+
+@mcp.tool(
+    description=(
+        "Project metadata per repo: Python version, build system, dependencies, license. "
+        "Without params: compact summary (counts by field). "
+        "With repo: full metadata for that repo. "
+        "With filter (e.g. dep='duckdb'): repos matching the dependency."
+    ),
+    structured_output=True,
+)
+def repo_metadata(
+    repo: str | None = None,
+    dep: str | None = None,
+) -> dict[str, object]:
+    def _exec() -> dict[str, object]:
+        raw = _fetch("topic_index.json")
+        data: dict = json.loads(raw)
+        repos = data.get("repos", {})
+
+        # Single repo lookup
+        if repo:
+            info = repos.get(repo)
+            if info is None:
+                return {
+                    "ok": False,
+                    "error": f"Repo '{repo}' non trovato. Opzioni: {sorted(repos.keys())}",
+                }
+            return {"repo": repo, "metadata": info, "ok": True}
+
+        # Filter by dependency
+        if dep:
+            dep_lower = dep.lower()
+            matches = []
+            for name, info in repos.items():
+                deps = info.get("dependencies", [])
+                opt_deps = info.get("optional_dependencies", {})
+                all_deps = deps + [d for group in opt_deps.values() for d in group]
+                if any(dep_lower in d.lower() for d in all_deps):
+                    matches.append(
+                        {
+                            "repo": name,
+                            "description": info.get("description", ""),
+                            "python_version": info.get("python_version", ""),
+                            "build_backend": info.get("build_backend", ""),
+                        }
+                    )
+            return {"query": dep, "matches": matches, "count": len(matches), "ok": True}
+
+        # Default: compact summary
+        by_backend: dict[str, int] = {}
+        by_python: dict[str, int] = {}
+        with_pyproject = 0
+        for name, info in repos.items():
+            if "build_backend" in info:
+                with_pyproject += 1
+                backend = info.get("build_backend", "unknown")
+                by_backend[backend] = by_backend.get(backend, 0) + 1
+                py = info.get("python_version", "unknown")
+                by_python[py] = by_python.get(py, 0) + 1
+        return {
+            "total_repos": len(repos),
+            "with_pyproject": with_pyproject,
+            "by_build_backend": by_backend,
+            "by_python_version": by_python,
+            "ok": True,
+        }
+
+    return guard_timed(_exec, "repo_metadata")
 
 
 @mcp.tool(

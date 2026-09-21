@@ -170,3 +170,20 @@ def parse_radar_summary(raw: str) -> RadarSummary:
         persistent_red=data.get("persistent_red", 0),
         sources=sources,
     )
+
+
+@dataclass
+class RepoMetadata:
+    """Project metadata extracted from a repo's pyproject.toml."""
+
+    repo: str
+    name: str = ""
+    version: str = ""
+    description: str = ""
+    requires_python: str = ""
+    build_backend: str = ""
+    license: str = ""
+    dependencies: list[str] = field(default_factory=list)
+    optional_dependencies: dict[str, list[str]] = field(default_factory=dict)
+    packages: list[str] | None = None
+    source_id: str = ""

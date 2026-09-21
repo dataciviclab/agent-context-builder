@@ -567,3 +567,131 @@ def test_search_tool_no_token(monkeypatch):
     assert "issues" in result
     assert "datasets" in result
     assert "analyses" in result
+
+
+# ── repo_metadata tool ─────────────────────────────────────────────────────
+
+_SAMPLE_TOPIC_INDEX_WITH_PYPROJECT = json.dumps(
+    {
+        "schema_version": 7,
+        "repos": {
+            "eurostat": {
+                "description": "Eurostat datasets",
+                "url": "https://github.com/dataciviclab/eurostat",
+                "python_version": ">=3.12",
+                "build_backend": "setuptools.build_meta",
+                "license": "MIT",
+                "dependencies": ["duckdb>=1.5.3,<2"],
+                "optional_dependencies": {
+                    "dev": ["pytest>=8.0"],
+                    "pipeline": ["dataciviclab-toolkit"],
+                },
+                "packages": [],
+                "source_id": "eurostat",
+            },
+            "toolkit": {
+                "description": "DataCivicLab Toolkit",
+                "url": "https://github.com/dataciviclab/toolkit",
+                "python_version": ">=3.12",
+                "build_backend": "setuptools.build_meta",
+                "dependencies": ["duckdb>=1.5.3", "pyyaml>=6.0.3"],
+                "optional_dependencies": {"dev": ["pytest>=8.0"]},
+            },
+            "data-explorer": {
+                "description": "Frontend",
+                "url": "https://github.com/dataciviclab/data-explorer",
+            },
+        },
+        "datasets": {},
+    }
+)
+
+
+@pytest.mark.contract
+def test_repo_metadata_summary():
+    """repo_metadata without params returns compact summary."""
+    fake = FakeHttpClient()
+    _patch_fetch(fake, "topic_index.json", text=_SAMPLE_TOPIC_INDEX_WITH_PYPROJECT)
+
+    mcp_server._http = fake
+    result = mcp_server.repo_metadata()
+    mcp_server._http = None
+
+    assert result["ok"] is True
+    assert result["total_repos"] == 3
+    assert result["with_pyproject"] == 2
+    assert result["by_build_backend"]["setuptools.build_meta"] == 2
+
+
+@pytest.mark.contract
+def test_repo_metadata_single_repo():
+    """repo_metadata with repo returns full metadata."""
+    fake = FakeHttpClient()
+    _patch_fetch(fake, "topic_index.json", text=_SAMPLE_TOPIC_INDEX_WITH_PYPROJECT)
+
+    mcp_server._http = fake
+    result = mcp_server.repo_metadata(repo="eurostat")
+    mcp_server._http = None
+
+    assert result["ok"] is True
+    assert result["repo"] == "eurostat"
+    assert result["metadata"]["python_version"] == ">=3.12"
+    assert result["metadata"]["source_id"] == "eurostat"
+
+
+@pytest.mark.contract
+def test_repo_metadata_single_repo_not_found():
+    """repo_metadata with unknown repo returns error."""
+    fake = FakeHttpClient()
+    _patch_fetch(fake, "topic_index.json", text=_SAMPLE_TOPIC_INDEX_WITH_PYPROJECT)
+
+    mcp_server._http = fake
+    result = mcp_server.repo_metadata(repo="nonexistent")
+    mcp_server._http = None
+
+    assert result["ok"] is False
+    assert "nonexistent" in result["error"]
+
+
+@pytest.mark.contract
+def test_repo_metadata_filter_by_dep():
+    """repo_metadata with dep filter returns matching repos."""
+    fake = FakeHttpClient()
+    _patch_fetch(fake, "topic_index.json", text=_SAMPLE_TOPIC_INDEX_WITH_PYPROJECT)
+
+    mcp_server._http = fake
+    result = mcp_server.repo_metadata(dep="duckdb")
+    mcp_server._http = None
+
+    assert result["ok"] is True
+    assert result["count"] == 2
+    repo_names = {m["repo"] for m in result["matches"]}
+    assert "eurostat" in repo_names
+    assert "toolkit" in repo_names
+
+
+@pytest.mark.contract
+def test_repo_metadata_filter_no_match():
+    """repo_metadata with dep filter returning no matches."""
+    fake = FakeHttpClient()
+    _patch_fetch(fake, "topic_index.json", text=_SAMPLE_TOPIC_INDEX_WITH_PYPROJECT)
+
+    mcp_server._http = fake
+    result = mcp_server.repo_metadata(dep="tensorflow")
+    mcp_server._http = None
+
+    assert result["ok"] is True
+    assert result["count"] == 0
+
+
+@pytest.mark.contract
+def test_repo_metadata_http_error():
+    """repo_metadata returns error dict on HTTP failure."""
+    fake = FakeHttpClient()
+    _patch_fetch(fake, "topic_index.json", status=500)
+
+    mcp_server._http = fake
+    result = mcp_server.repo_metadata()
+    mcp_server._http = None
+
+    assert "error" in result

@@ -490,7 +490,7 @@ def test_render_topic_index_v3_with_analyses():
     gh.get_raw_file.side_effect = _raw_file_side_effect
     result = _r(config, gh=gh).render_topic_index()
 
-    assert result["schema_version"] == 6
+    assert result["schema_version"] == 7
     assert "analyses" in result
     assert "analyses_by_dataset" in result
 
@@ -531,6 +531,55 @@ def test_render_topic_index_v2_when_no_analyses():
     gh.get_raw_file.side_effect = _raw_file_side_effect
     result = _r(config, gh=gh).render_topic_index()
 
-    assert result["schema_version"] == 6
+    assert result["schema_version"] == 7
     assert "analyses" not in result
     assert "analyses_by_dataset" not in result
+
+
+@pytest.mark.contract
+def test_render_topic_index_pyproject_fields():
+    """topic_index repos section includes pyproject metadata when available."""
+    PYPROJECT = """
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dataciviclab-test"
+version = "0.1.0"
+description = "Test repo"
+requires-python = ">=3.12"
+license = "MIT"
+dependencies = ["duckdb>=1.5.3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+pipeline = ["dataciviclab-toolkit"]
+
+[tool.setuptools]
+packages = []
+
+[tool.toolkit.extends]
+source_id = "test-source"
+"""
+    gh = make_github_mock(
+        repos_info={"repo1": RepoInfo(name="repo1", description="Test", url="https://x")},
+    )
+
+    def _pyproject_side_effect(repo, path, **kw):
+        if path == "pyproject.toml" and repo == "repo1":
+            return PYPROJECT
+        return None
+
+    gh.get_raw_file.side_effect = _pyproject_side_effect
+
+    result = _r(_cfg(repos=["repo1"]), gh=gh).render_topic_index()
+    meta = result["repos"]["repo1"]
+
+    assert meta["python_version"] == ">=3.12"
+    assert meta["build_backend"] == "setuptools.build_meta"
+    assert meta["license"] == "MIT"
+    assert meta["packages"] == []
+    assert meta["source_id"] == "test-source"
+    assert "duckdb" in meta["dependencies"][0]
+    assert "pipeline" in meta["optional_dependencies"]
