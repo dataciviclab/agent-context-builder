@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T20:25:43.416227",
+  "generated_at": "2026-09-21T03:39:56.962441",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -37,7 +37,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 8,
+  "open_prs": 7,
   "prs": [
     {
       "number": 452,
@@ -51,13 +51,6 @@
       "title": "mit-incidentalita: analisi con README, notebook, figure",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/pull/451",
-      "category": "other"
-    },
-    {
-      "number": 858,
-      "title": "chore(post-merge): aggiorna registry (schedule)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/858",
       "category": "other"
     },
     {
@@ -1589,7 +1582,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 8"
+    "Many open PRs: 7"
   ],
   "radar": {
     "available": true,
@@ -1918,11 +1911,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-09-19",
+    "generated_at": "2026-09-20",
     "summary": {
-      "total": 70,
+      "total": 53,
       "by_status": {
-        "ok": 70
+        "ok": 53
       }
     },
     "actionable": []
@@ -2324,13 +2317,13 @@
       "repo": "dataset-incubator",
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
-      "updated_at": "2026-09-19",
-      "datasets": 78,
-      "marts": 113,
-      "signals": 70,
+      "updated_at": "2026-09-20",
+      "datasets": 60,
+      "marts": 78,
+      "signals": 53,
       "codelists": 0,
       "entities": 14,
-      "gcs": 78,
+      "gcs": 60,
       "reason": "",
       "signals_detail": [
         {
@@ -2361,11 +2354,11 @@
           "label": "anpr_mobilita_residenziale",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260917T141937Z_1e9ff6a7",
+            "run_id": "20260920T195648Z_d3bc1227",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-17T14:19:37.037656+00:00",
-            "finished_at": "2026-09-17T14:19:38.129633+00:00"
+            "started_at": "2026-09-20T19:56:48.624568+00:00",
+            "finished_at": "2026-09-20T19:56:49.520921+00:00"
           }
         },
         {
@@ -2467,48 +2460,6 @@
           }
         },
         {
-          "id": "ga_decreti",
-          "source_id": "openga",
-          "status": "ok",
-          "label": "ga_decreti",
-          "detail": "anni 2023-2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260731T164741Z_c2fa4114",
-            "year": 2025,
-            "status": "SUCCESS",
-            "started_at": "2026-07-31T16:47:41.536101+00:00",
-            "finished_at": "2026-07-31T16:48:25.675999+00:00"
-          }
-        },
-        {
-          "id": "ga_ordinanze",
-          "source_id": "openga",
-          "status": "ok",
-          "label": "ga_ordinanze",
-          "detail": "anni 2023-2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260731T164839Z_e096ea4f",
-            "year": 2025,
-            "status": "SUCCESS",
-            "started_at": "2026-07-31T16:48:39.363232+00:00",
-            "finished_at": "2026-07-31T16:49:24.672774+00:00"
-          }
-        },
-        {
-          "id": "ga_sentenze",
-          "source_id": "openga",
-          "status": "ok",
-          "label": "ga_sentenze",
-          "detail": "anni 2023-2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260731T164928Z_d58e6f80",
-            "year": 2025,
-            "status": "SUCCESS",
-            "started_at": "2026-07-31T16:49:28.971050+00:00",
-            "finished_at": "2026-07-31T16:50:16.554599+00:00"
-          }
-        },
-        {
           "id": "giustizia_penale_indicatori",
           "source_id": "giustizia_statistiche",
           "status": "ok",
@@ -2558,20 +2509,6 @@
           }
         },
         {
-          "id": "irpef_comunale",
-          "source_id": "mef_irpef",
-          "status": "ok",
-          "label": "irpef_comunale",
-          "detail": "anni 2019-2024 \u2014 mart: si",
-          "run": {
-            "run_id": "20260730T182415Z_687dcf3d",
-            "year": 2024,
-            "status": "DRY_RUN",
-            "started_at": "2026-07-30T18:24:15.434148+00:00",
-            "finished_at": "2026-07-30T18:24:15.438095+00:00"
-          }
-        },
-        {
           "id": "ispra_consumo_suolo",
           "source_id": "ispra_linked_data",
           "status": "ok",
@@ -2598,34 +2535,6 @@
             "started_at": "2026-08-01T10:32:00.800427+00:00",
             "finished_at": "2026-08-01T10:32:02.250921+00:00"
           }
-        },
-        {
-          "id": "ispra_ru_base",
-          "source_id": "ispra_linked_data",
-          "status": "ok",
-          "label": "ispra_ru_base",
-          "detail": "anni 2010-2024 \u2014 mart: si",
-          "run": {
-            "run_id": "20260731T103443Z_1b75dcf8",
-            "year": 2024,
-            "status": "DRY_RUN",
-            "started_at": "2026-07-31T10:34:43.409146+00:00",
-            "finished_at": "2026-07-31T10:34:43.416212+00:00"
-          }
-        },
-        {
-          "id": "ispra_ru_costi_kg",
-          "source_id": "ispra_linked_data",
-          "status": "ok",
-          "label": "ispra_ru_costi_kg",
-          "detail": "anni 2020-2024 \u2014 mart: si"
-        },
-        {
-          "id": "ispra_ru_costi_procapite",
-          "source_id": "ispra_linked_data",
-          "status": "ok",
-          "label": "ispra_ru_costi_procapite",
-          "detail": "anni 2020-2024 \u2014 mart: si"
         },
         {
           "id": "istat_asia_ul",
@@ -2668,27 +2577,6 @@
             "started_at": "2026-08-06T10:32:46.528792+00:00",
             "finished_at": "2026-08-06T10:34:59.409896+00:00"
           }
-        },
-        {
-          "id": "iva_regionale",
-          "source_id": "mef_finanze",
-          "status": "ok",
-          "label": "iva_regionale",
-          "detail": "anni 2015-2024 \u2014 mart: si",
-          "run": {
-            "run_id": "20260802T133429Z_d1f83810",
-            "year": 2024,
-            "status": "SUCCESS",
-            "started_at": "2026-08-02T13:34:29.280524+00:00",
-            "finished_at": "2026-08-02T13:34:30.475378+00:00"
-          }
-        },
-        {
-          "id": "mef_irpef_regionale",
-          "source_id": "mef_irpef",
-          "status": "ok",
-          "label": "mef_irpef_regionale",
-          "detail": "anni 2017-2025 \u2014 mart: si"
         },
         {
           "id": "mim_alunni_corso_eta",
@@ -2775,62 +2663,6 @@
           "detail": "anno 2025 \u2014 mart: si"
         },
         {
-          "id": "opencoesione_progetti",
-          "source_id": "opencoesione",
-          "status": "ok",
-          "label": "opencoesione_progetti",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260910T130331Z_956b2ace",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-10T13:03:31.613853+00:00",
-            "finished_at": "2026-09-10T13:03:44.947198+00:00"
-          }
-        },
-        {
-          "id": "opencoesione_soggetti",
-          "source_id": "opencoesione",
-          "status": "ok",
-          "label": "opencoesione_soggetti",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260910T130346Z_9117c19d",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-09-10T13:03:46.111979+00:00",
-            "finished_at": "2026-09-10T13:04:01.352032+00:00"
-          }
-        },
-        {
-          "id": "openga_ricorsi_appalto",
-          "source_id": "openga",
-          "status": "ok",
-          "label": "openga_ricorsi_appalto",
-          "detail": "anni 2023-2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260731T123551Z_3ca0794e",
-            "year": 2025,
-            "status": "DRY_RUN",
-            "started_at": "2026-07-31T12:35:51.657488+00:00",
-            "finished_at": "2026-07-31T12:35:51.663620+00:00"
-          }
-        },
-        {
-          "id": "openga_ricorsi_cds",
-          "source_id": "openga",
-          "status": "ok",
-          "label": "openga_ricorsi_cds",
-          "detail": "anni 2023-2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260731T123555Z_5571820e",
-            "year": 2025,
-            "status": "DRY_RUN",
-            "started_at": "2026-07-31T12:35:55.828015+00:00",
-            "finished_at": "2026-07-31T12:35:55.831966+00:00"
-          }
-        },
-        {
           "id": "penale_flussi",
           "source_id": "giustizia_statistiche",
           "status": "ok",
@@ -2857,48 +2689,6 @@
           "status": "ok",
           "label": "personale_ssn",
           "detail": "anno 2021 \u2014 mart: si"
-        },
-        {
-          "id": "pnrr_gare",
-          "source_id": "italiadomani",
-          "status": "ok",
-          "label": "pnrr_gare",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260805T091706Z_2ce7cf85",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-08-05T09:17:06.753424+00:00",
-            "finished_at": "2026-08-05T09:17:26.426649+00:00"
-          }
-        },
-        {
-          "id": "pnrr_pagamenti",
-          "source_id": "italiadomani",
-          "status": "ok",
-          "label": "pnrr_pagamenti",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260805T094956Z_85265fae",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-08-05T09:49:56.312633+00:00",
-            "finished_at": "2026-08-05T09:50:04.539033+00:00"
-          }
-        },
-        {
-          "id": "pnrr_progetti",
-          "source_id": "italiadomani",
-          "status": "ok",
-          "label": "pnrr_progetti",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20260805T122053Z_54cd7799",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-08-05T12:20:53.322984+00:00",
-            "finished_at": "2026-08-05T12:21:25.449919+00:00"
-          }
         },
         {
           "id": "posti_letto_stabilimento",
@@ -3011,13 +2801,6 @@
           "status": "ok",
           "label": "costituzione_master",
           "detail": "anno 2026 \u2014 mart: si"
-        },
-        {
-          "id": "compose:ispra_ru_costi_kg_compose",
-          "source_id": "ispra_linked_data",
-          "status": "ok",
-          "label": "ispra_ru_costi_kg_compose",
-          "detail": "anni 2020-2024 \u2014 mart: si"
         },
         {
           "id": "compose:malasanita_compose",
