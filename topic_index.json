@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "generated_at": "2026-09-21T12:10:14.568764",
+  "generated_at": "2026-09-21T21:46:05.765567",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -14877,7 +14877,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "open-coesione",
-        "clean_rows": 7195885,
+        "clean_rows": 7219748,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/opencoesione_soggetti/2026/opencoesione_soggetti_2026_clean.parquet",
@@ -15021,7 +15021,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "open-coesione",
-        "clean_rows": 3670364,
+        "clean_rows": 3690525,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-coesione/opencoesione_indicatori/2026/opencoesione_indicatori_2026_clean.parquet",
@@ -15073,7 +15073,7 @@
           {
             "name": "VALORE_PROGRAMMATO",
             "type": "DOUBLE",
-            "role": "metric",
+            "role": "dimension",
             "semantic_type": "target_value",
             "description": ""
           },
@@ -15117,7 +15117,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "open-coesione",
-        "clean_rows": 2431641,
+        "clean_rows": 2442456,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-coesione/opencoesione_localizzazioni/2026/opencoesione_localizzazioni_2026_clean.parquet",
@@ -15255,7 +15255,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "open-coesione",
-        "clean_rows": 5616088,
+        "clean_rows": 5632379,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-coesione/opencoesione_pagamenti/2026/opencoesione_pagamenti_2026_clean.parquet",
@@ -15351,7 +15351,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "open-coesione",
-        "clean_rows": 128450,
+        "clean_rows": 130462,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-coesione/opencoesione_progetti_esteso/2026/opencoesione_progetti_esteso_2026_clean.parquet",
@@ -15653,7 +15653,7 @@
             "description": ""
           },
           {
-            "name": "OC_MACROAREA",
+            "name": "OC_MACROAREA_PROGETTO",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
@@ -15879,7 +15879,7 @@
           {
             "name": "PROGRAMMATO_INDICATORE_1",
             "type": "DOUBLE",
-            "role": "metric",
+            "role": "dimension",
             "semantic_type": "target_value",
             "description": ""
           },
@@ -15924,7 +15924,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "open-coesione",
-        "clean_rows": 7195885,
+        "clean_rows": 7219748,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-coesione/opencoesione_soggetti/2026/opencoesione_soggetti_2026_clean.parquet",
@@ -44512,219 +44512,5 @@
       ],
       "next": "Vedi analisi/registry/active.md per filoni attivi"
     }
-  },
-  "analyses": [
-    {
-      "slug": "aifa-spesa-consumo",
-      "name": "AIFA Spesa farmaceutica convenzionata 2018-2024",
-      "datasets": [
-        "aifa_spesa_consumo"
-      ],
-      "status": "active",
-      "discussion": 242
-    },
-    {
-      "slug": "appalti-affidamento-diretto",
-      "name": "10 anni di appalti pubblici: da 167 a 635 miliardi",
-      "datasets": [
-        "anac_bandi_gara"
-      ],
-      "status": "active"
-    },
-    {
-      "slug": "camera-votazioni",
-      "name": "Camera votazioni 2018-2025",
-      "datasets": [
-        "camera_votazioni_sparql"
-      ],
-      "status": "active"
-    },
-    {
-      "slug": "cinque-per-mille",
-      "name": "5x1000 \u2014 \u20ac601 milioni record nel 2025",
-      "datasets": [
-        "ade_cinque_per_mille"
-      ],
-      "status": "active",
-      "discussion": 363
-    },
-    {
-      "slug": "civile-flussi",
-      "name": "Flussi giustizia civile 2014-2025",
-      "datasets": [
-        "civile_flussi"
-      ],
-      "status": "active"
-    },
-    {
-      "slug": "consip-consumi-convenzione",
-      "name": "Consip Consumi Convenzione 2023-2025",
-      "datasets": [
-        "consip_consumi_convenzione"
-      ],
-      "status": "active"
-    },
-    {
-      "slug": "dipendenti-pubblici",
-      "name": "Dipendenti pubblici 2010-2023",
-      "datasets": [
-        "dipendenti_pubblici"
-      ],
-      "status": "active",
-      "issue": 131
-    },
-    {
-      "slug": "divario-nord-sud",
-      "name": "Le due Italie \u2014 un'analisi multi-dimensionale del divario Nord-Sud",
-      "datasets": [
-        "divario_nord_sud"
-      ],
-      "status": "active"
-    },
-    {
-      "slug": "entrate-stato",
-      "name": "BDAP Entrate Stato 2008-2024",
-      "datasets": [
-        "bdap_entrate_stato"
-      ],
-      "status": "active",
-      "discussion": 218
-    },
-    {
-      "slug": "irpef-comunale",
-      "name": "IRPEF comunale 2019-2023",
-      "datasets": [
-        "irpef_comunale"
-      ],
-      "status": "active",
-      "discussion": 88
-    },
-    {
-      "slug": "la-struttura-della-pa",
-      "name": "La struttura della PA italiana",
-      "datasets": [
-        "ipa_unita_organizzative"
-      ],
-      "status": "active"
-    },
-    {
-      "slug": "malasanita-struttura-mortalita",
-      "name": "Malasanit\u00e0 2022: mortalit\u00e0 evitabile e dotazione sanitaria regionale",
-      "datasets": [
-        "malasanita_struttura_mortalita"
-      ],
-      "status": "active",
-      "discussion": 99,
-      "issue": 110
-    },
-    {
-      "slug": "opencivitas-fsc-rso",
-      "name": "OpenCivitas FSC 2025 RSO",
-      "datasets": [
-        "opencivitas_fsc_2025_rso"
-      ],
-      "status": "active"
-    },
-    {
-      "slug": "rifiuti-km2",
-      "name": "Rifiuti per km\u00b2 \u2014 dove si produce di pi\u00f9?",
-      "datasets": [
-        "ispra_ru_base"
-      ],
-      "status": "active",
-      "discussion": 340,
-      "issue": 338
-    },
-    {
-      "slug": "rna-aiuti-stato",
-      "name": "RNA \u2014 Aiuti di Stato: 480 miliardi alle imprese italiane in 10 anni",
-      "datasets": [
-        "rna_aiuti_stato"
-      ],
-      "status": "active",
-      "discussion": 368
-    },
-    {
-      "slug": "siope-comuni-spesa",
-      "name": "Dove vanno i soldi dei comuni italiani?",
-      "datasets": [
-        "siope_uscite_comuni"
-      ],
-      "status": "active"
-    },
-    {
-      "slug": "terna-capacita-rinnovabile",
-      "name": "Terna capacit\u00e0 rinnovabile 2015-2024",
-      "datasets": [
-        "terna_capacita_rinnovabile"
-      ],
-      "status": "active",
-      "discussion": 339
-    },
-    {
-      "slug": "terna-electricity-by-source",
-      "name": "Terna mix elettrico 2015-2024",
-      "datasets": [
-        "terna_electricity_by_source"
-      ],
-      "status": "active",
-      "issue": 133
-    }
-  ],
-  "analyses_by_dataset": {
-    "aifa_spesa_consumo": [
-      "aifa-spesa-consumo"
-    ],
-    "anac_bandi_gara": [
-      "appalti-affidamento-diretto"
-    ],
-    "camera_votazioni_sparql": [
-      "camera-votazioni"
-    ],
-    "ade_cinque_per_mille": [
-      "cinque-per-mille"
-    ],
-    "civile_flussi": [
-      "civile-flussi"
-    ],
-    "consip_consumi_convenzione": [
-      "consip-consumi-convenzione"
-    ],
-    "dipendenti_pubblici": [
-      "dipendenti-pubblici"
-    ],
-    "divario_nord_sud": [
-      "divario-nord-sud"
-    ],
-    "bdap_entrate_stato": [
-      "entrate-stato"
-    ],
-    "irpef_comunale": [
-      "irpef-comunale"
-    ],
-    "ipa_unita_organizzative": [
-      "la-struttura-della-pa"
-    ],
-    "malasanita_struttura_mortalita": [
-      "malasanita-struttura-mortalita"
-    ],
-    "opencivitas_fsc_2025_rso": [
-      "opencivitas-fsc-rso"
-    ],
-    "ispra_ru_base": [
-      "rifiuti-km2"
-    ],
-    "rna_aiuti_stato": [
-      "rna-aiuti-stato"
-    ],
-    "siope_uscite_comuni": [
-      "siope-comuni-spesa"
-    ],
-    "terna_capacita_rinnovabile": [
-      "terna-capacita-rinnovabile"
-    ],
-    "terna_electricity_by_source": [
-      "terna-electricity-by-source"
-    ]
   }
 }

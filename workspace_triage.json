@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T12:10:14.568764",
+  "generated_at": "2026-09-21T21:46:05.765567",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -37,22 +37,8 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 11,
+  "open_prs": null,
   "prs": [
-    {
-      "number": 452,
-      "title": "hub: aggiorna progetti, migliora UX e pulisce contenuti stale",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/pull/452",
-      "category": "other"
-    },
-    {
-      "number": 451,
-      "title": "mit-incidentalita: analisi con README, notebook, figure",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/pull/451",
-      "category": "other"
-    },
     {
       "number": 836,
       "title": "feat(candidates): bootstrap gse_cer_elenco candidate",
@@ -75,17 +61,10 @@
       "category": "other"
     },
     {
-      "number": 2,
-      "title": "feat: migra da requirements.txt a pyproject.toml",
-      "repo": "dichiarazioni-italia",
-      "url": "https://github.com/dataciviclab/dichiarazioni-italia/pull/2",
-      "category": "other"
-    },
-    {
-      "number": 2,
-      "title": "feat: migra da requirements.txt a pyproject.toml",
-      "repo": "giustizia-amministrativa",
-      "url": "https://github.com/dataciviclab/giustizia-amministrativa/pull/2",
+      "number": 59,
+      "title": "refactor: migrate GCS sync to gcs-sync-reusable",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/pull/59",
       "category": "other"
     },
     {
@@ -96,17 +75,10 @@
       "category": "other"
     },
     {
-      "number": 2,
+      "number": 10,
       "title": "feat: migra da requirements.txt a pyproject.toml",
-      "repo": "open-coesione",
-      "url": "https://github.com/dataciviclab/open-coesione/pull/2",
-      "category": "other"
-    },
-    {
-      "number": 2,
-      "title": "feat: migra da requirements.txt a pyproject.toml",
-      "repo": "open-ispra",
-      "url": "https://github.com/dataciviclab/open-ispra/pull/2",
+      "repo": "opere-pubbliche",
+      "url": "https://github.com/dataciviclab/opere-pubbliche/pull/10",
       "category": "other"
     },
     {
@@ -117,7 +89,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 36,
+  "open_issues": null,
   "issues": [
     {
       "number": 59,
@@ -1313,7 +1285,10 @@
       "category": "Sanit\u00e0 (SAN)"
     }
   ],
-  "github_fetch_errors": {},
+  "github_fetch_errors": {
+    "dataciviclab:analisi": "https://api.github.com/repos/dataciviclab/dataciviclab/contents/analisi: HTTP 404",
+    "dataciviclab:analisi/registry/active.md": "https://raw.githubusercontent.com/dataciviclab/dataciviclab/main/analisi/registry/active.md: HTTP 404"
+  },
   "git_state": {
     "agent-context-builder": {
       "available": false,
@@ -1589,7 +1564,9 @@
     }
   },
   "warnings": [
-    "Many open PRs: 11"
+    "GitHub fetch failed \u2014 dataciviclab:analisi: https://api.github.com/repos/dataciviclab/dataciviclab/contents/analisi: HTTP 404",
+    "GitHub fetch failed \u2014 dataciviclab:analisi/registry/active.md: https://raw.githubusercontent.com/dataciviclab/dataciviclab/main/analisi/registry/active.md: HTTP 404",
+    "Many open PRs: 7"
   ],
   "radar": {
     "available": true,
@@ -3230,7 +3207,7 @@
       "repo": "dichiarazioni-italia",
       "available": true,
       "source_repo": "dataciviclab/dichiarazioni-italia",
-      "updated_at": "2026-09-20",
+      "updated_at": "2026-09-21",
       "datasets": 7,
       "marts": 12,
       "signals": 7,
@@ -3246,11 +3223,11 @@
           "label": "irap_italia_estero",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20260920T143143Z_63e30b1e",
+            "run_id": "20260921T143210Z_4b4fe0fd",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-09-20T14:31:43.244091+00:00",
-            "finished_at": "2026-09-20T14:31:44.176976+00:00"
+            "started_at": "2026-09-21T14:32:10.280051+00:00",
+            "finished_at": "2026-09-21T14:32:11.178896+00:00"
           }
         },
         {
@@ -3260,11 +3237,11 @@
           "label": "irap_vp_regime",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20260920T143222Z_6add834d",
+            "run_id": "20260921T143253Z_3920886c",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-09-20T14:32:22.656523+00:00",
-            "finished_at": "2026-09-20T14:32:24.676092+00:00"
+            "started_at": "2026-09-21T14:32:53.038780+00:00",
+            "finished_at": "2026-09-21T14:32:55.309275+00:00"
           }
         },
         {
@@ -3274,11 +3251,11 @@
           "label": "ires_redditi_regione",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20260920T143248Z_1d7665d4",
+            "run_id": "20260921T143321Z_3d5f111c",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-09-20T14:32:48.621413+00:00",
-            "finished_at": "2026-09-20T14:32:49.510973+00:00"
+            "started_at": "2026-09-21T14:33:21.753251+00:00",
+            "finished_at": "2026-09-21T14:33:22.672559+00:00"
           }
         },
         {
@@ -3288,11 +3265,11 @@
           "label": "irpef_comunale",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20260920T143328Z_30604b5b",
+            "run_id": "20260921T143402Z_a21d5c73",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-09-20T14:33:28.580821+00:00",
-            "finished_at": "2026-09-20T14:33:32.638072+00:00"
+            "started_at": "2026-09-21T14:34:02.359207+00:00",
+            "finished_at": "2026-09-21T14:34:05.993416+00:00"
           }
         },
         {
@@ -3302,11 +3279,11 @@
           "label": "iva_regionale",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20260920T143359Z_c528e279",
+            "run_id": "20260921T143431Z_fa89b8ce",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-09-20T14:33:59.487042+00:00",
-            "finished_at": "2026-09-20T14:34:00.437807+00:00"
+            "started_at": "2026-09-21T14:34:31.316754+00:00",
+            "finished_at": "2026-09-21T14:34:32.308807+00:00"
           }
         },
         {
@@ -3316,11 +3293,11 @@
           "label": "iva_sez_attivita",
           "detail": "anni 2015-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20260920T143427Z_99e31a75",
+            "run_id": "20260921T143459Z_855a2bed",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-09-20T14:34:27.351200+00:00",
-            "finished_at": "2026-09-20T14:34:28.279402+00:00"
+            "started_at": "2026-09-21T14:34:59.871030+00:00",
+            "finished_at": "2026-09-21T14:35:00.833119+00:00"
           }
         },
         {
@@ -3330,11 +3307,11 @@
           "label": "mef_irpef_regionale",
           "detail": "anni 2017-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20260920T143500Z_1ce0f763",
+            "run_id": "20260921T143534Z_d690ee89",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-09-20T14:35:00.593734+00:00",
-            "finished_at": "2026-09-20T14:35:02.059587+00:00"
+            "started_at": "2026-09-21T14:35:34.709861+00:00",
+            "finished_at": "2026-09-21T14:35:36.261525+00:00"
           }
         }
       ]
@@ -4227,7 +4204,7 @@
       "repo": "open-coesione",
       "available": true,
       "source_repo": "dataciviclab/open-coesione",
-      "updated_at": "2026-09-19",
+      "updated_at": "2026-09-21",
       "datasets": 5,
       "marts": 10,
       "signals": 5,
@@ -4243,11 +4220,11 @@
           "label": "opencoesione_indicatori",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260919T131341Z_66aa6a99",
+            "run_id": "20260921T144336Z_d6b6490e",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-19T13:13:41.871477+00:00",
-            "finished_at": "2026-09-19T13:13:49.007904+00:00"
+            "started_at": "2026-09-21T14:43:36.855952+00:00",
+            "finished_at": "2026-09-21T14:43:43.279602+00:00"
           }
         },
         {
@@ -4257,11 +4234,11 @@
           "label": "opencoesione_localizzazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260919T131350Z_1ff8298e",
+            "run_id": "20260921T144344Z_bd42843f",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-19T13:13:50.449454+00:00",
-            "finished_at": "2026-09-19T13:13:58.844909+00:00"
+            "started_at": "2026-09-21T14:43:44.304021+00:00",
+            "finished_at": "2026-09-21T14:43:53.761047+00:00"
           }
         },
         {
@@ -4271,11 +4248,11 @@
           "label": "opencoesione_pagamenti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260919T131400Z_515fe5cd",
+            "run_id": "20260921T144354Z_31af0253",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-19T13:14:00.145523+00:00",
-            "finished_at": "2026-09-19T13:14:08.764394+00:00"
+            "started_at": "2026-09-21T14:43:54.809268+00:00",
+            "finished_at": "2026-09-21T14:44:04.335967+00:00"
           }
         },
         {
@@ -4285,11 +4262,11 @@
           "label": "opencoesione_progetti_esteso",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260919T131409Z_4f2e5f88",
+            "run_id": "20260921T144405Z_768d84c3",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-19T13:14:09.588670+00:00",
-            "finished_at": "2026-09-19T13:14:14.003538+00:00"
+            "started_at": "2026-09-21T14:44:05.416512+00:00",
+            "finished_at": "2026-09-21T14:44:11.341480+00:00"
           }
         },
         {
@@ -4299,11 +4276,11 @@
           "label": "opencoesione_soggetti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260919T131414Z_dac94e86",
+            "run_id": "20260921T144412Z_639fa47b",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-19T13:14:14.834487+00:00",
-            "finished_at": "2026-09-19T13:14:33.995542+00:00"
+            "started_at": "2026-09-21T14:44:12.467537+00:00",
+            "finished_at": "2026-09-21T14:44:31.961125+00:00"
           }
         }
       ]
