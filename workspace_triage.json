@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T03:39:56.962441",
+  "generated_at": "2026-09-21T12:10:14.568764",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -37,7 +37,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 7,
+  "open_prs": 11,
   "prs": [
     {
       "number": 452,
@@ -75,10 +75,38 @@
       "category": "other"
     },
     {
+      "number": 2,
+      "title": "feat: migra da requirements.txt a pyproject.toml",
+      "repo": "dichiarazioni-italia",
+      "url": "https://github.com/dataciviclab/dichiarazioni-italia/pull/2",
+      "category": "other"
+    },
+    {
+      "number": 2,
+      "title": "feat: migra da requirements.txt a pyproject.toml",
+      "repo": "giustizia-amministrativa",
+      "url": "https://github.com/dataciviclab/giustizia-amministrativa/pull/2",
+      "category": "other"
+    },
+    {
       "number": 86,
       "title": "fix: handle NaN/pd.NA in formatters + repo_root for _detect_local_root",
       "repo": "lab-connectors",
       "url": "https://github.com/dataciviclab/lab-connectors/pull/86",
+      "category": "other"
+    },
+    {
+      "number": 2,
+      "title": "feat: migra da requirements.txt a pyproject.toml",
+      "repo": "open-coesione",
+      "url": "https://github.com/dataciviclab/open-coesione/pull/2",
+      "category": "other"
+    },
+    {
+      "number": 2,
+      "title": "feat: migra da requirements.txt a pyproject.toml",
+      "repo": "open-ispra",
+      "url": "https://github.com/dataciviclab/open-ispra/pull/2",
       "category": "other"
     },
     {
@@ -89,7 +117,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 39,
+  "open_issues": 36,
   "issues": [
     {
       "number": 59,
@@ -232,31 +260,10 @@
       "category": "intake"
     },
     {
-      "number": 485,
-      "title": "intake: bdap_mop_gare \u2014 Gare Opere Pubbliche MOP per regione (2026)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/485",
-      "category": "intake"
-    },
-    {
-      "number": 442,
-      "title": "intake: opencoesione-pagamenti \u2014 Pagamenti progetti coesione (5.6M righe, serie temporale)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/442",
-      "category": "intake"
-    },
-    {
       "number": 436,
       "title": "intake: inps_stipendi_comune \u2014 Stipendi lavoratori dipendenti per comune (2009-2018)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/436",
-      "category": "intake"
-    },
-    {
-      "number": 375,
-      "title": "Proposta intake: Operatori Economici Consip (dati.consip.it)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/375",
       "category": "intake"
     },
     {
@@ -1582,17 +1589,17 @@
     }
   },
   "warnings": [
-    "Many open PRs: 7"
+    "Many open PRs: 11"
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-09-20T08:33:22.445401+00:00",
-    "probe_date": "2026-09-20",
+    "generated_at": "2026-09-21T08:54:05.633938+00:00",
+    "probe_date": "2026-09-21",
     "sources_total": 36,
     "green": 34,
     "yellow": 1,
     "red": 1,
-    "persistent_red": 0,
+    "persistent_red": 1,
     "sources": [
       {
         "id": "istat_sdmx",
@@ -1648,7 +1655,7 @@
         "protocol": "sparql",
         "http_code": "503",
         "note": null,
-        "red_streak": 0
+        "red_streak": 2
       },
       {
         "id": "dati_senato",
@@ -1898,7 +1905,7 @@
         "protocol": "sparql",
         "http_code": "503",
         "note": null,
-        "red_streak": 0
+        "red_streak": 2
       }
     ]
   },
