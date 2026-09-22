@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T03:38:27.931748",
+  "generated_at": "2026-09-22T11:05:07.529684",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -1559,15 +1559,15 @@
   "warnings": [
     "GitHub fetch failed \u2014 dataciviclab:analisi: https://api.github.com/repos/dataciviclab/dataciviclab/contents/analisi: HTTP 404",
     "GitHub fetch failed \u2014 dataciviclab:analisi/registry/active.md: https://raw.githubusercontent.com/dataciviclab/dataciviclab/main/analisi/registry/active.md: HTTP 404",
-    "Many open PRs: 7"
+    "Many open PRs: 6"
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-09-21T08:54:05.633938+00:00",
-    "probe_date": "2026-09-21",
+    "generated_at": "2026-09-22T08:28:48.595414+00:00",
+    "probe_date": "2026-09-22",
     "sources_total": 36,
-    "green": 34,
-    "yellow": 1,
+    "green": 35,
+    "yellow": 0,
     "red": 1,
     "persistent_red": 1,
     "sources": [
@@ -1589,10 +1589,10 @@
       },
       {
         "id": "inps",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
@@ -1625,7 +1625,7 @@
         "protocol": "sparql",
         "http_code": "503",
         "note": null,
-        "red_streak": 2
+        "red_streak": 3
       },
       {
         "id": "dati_senato",
@@ -1862,20 +1862,12 @@
     ],
     "unhealthy": [
       {
-        "id": "inps",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
-      {
         "id": "dati_camera",
         "status": "RED",
         "protocol": "sparql",
         "http_code": "503",
         "note": null,
-        "red_streak": 2
+        "red_streak": 3
       }
     ]
   },
