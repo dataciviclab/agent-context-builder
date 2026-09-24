@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T03:28:48.478692",
+  "generated_at": "2026-09-24T11:14:26.802681",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -1555,11 +1555,11 @@
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-09-23T08:31:05.678520+00:00",
-    "probe_date": "2026-09-23",
+    "generated_at": "2026-09-24T08:25:49.715656+00:00",
+    "probe_date": "2026-09-24",
     "sources_total": 36,
-    "green": 36,
-    "yellow": 0,
+    "green": 35,
+    "yellow": 1,
     "red": 0,
     "persistent_red": 0,
     "sources": [
@@ -1629,10 +1629,10 @@
       },
       {
         "id": "dati_cultura",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "sparql",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
@@ -1852,7 +1852,16 @@
         "red_streak": 0
       }
     ],
-    "unhealthy": []
+    "unhealthy": [
+      {
+        "id": "dati_cultura",
+        "status": "YELLOW",
+        "protocol": "sparql",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "red_streak": 0
+      }
+    ]
   },
   "source_health": {
     "available": true,
