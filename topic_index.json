@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "generated_at": "2026-09-24T17:33:43.952288",
+  "generated_at": "2026-09-24T18:00:16.644153",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -41,6 +41,10 @@
     "dichiarazioni-italia": {
       "description": "Dataset MEF dichiarazioni fiscali italiane: IRPEF, IVA, IRES, IRAP per comuni, regioni e settori ATECO",
       "url": "https://github.com/dataciviclab/dichiarazioni-italia"
+    },
+    "energia-italia": {
+      "description": "Intelligence sul sistema elettrico italiano: produzione, mix energetico, prezzi, emissioni e confronti EU",
+      "url": "https://github.com/dataciviclab/energia-italia"
     },
     "eurostat": {
       "description": "European regional data at your fingertips \u2014 GDP, population, crime and more at NUTS2/NUTS3 level.",
@@ -12056,7 +12060,7 @@
           "ghg"
         ],
         "category": "ambiente",
-        "registry_source": "dataset-incubator",
+        "registry_source": "energia-italia",
         "clean_rows": 34,
         "location": {
           "type": "gcs",
@@ -18878,8 +18882,8 @@
           "fonti-rinnovabili"
         ],
         "category": "energia",
-        "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "registry_source": "energia-italia",
+        "clean_rows": 1070,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/terna_capacita_rinnovabile/*/terna_capacita_rinnovabile_*_clean.parquet",
@@ -20923,6 +20927,172 @@
         ],
         "mart_refs": [
           "eurostat_rendimento_10y__mart_rendimento_10y"
+        ]
+      },
+      {
+        "slug": "eurostat_emissioni_ghg",
+        "url_slug": "eurostat-emissioni-ghg",
+        "name": "Eurostat Emissioni Ghg",
+        "description": "Greenhouse gas emissions by NACE sector, gas type, and unit (tonnes)",
+        "source": "",
+        "source_id": "eurostat",
+        "period": {
+          "start": 2008,
+          "end": 2023
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "emissioni",
+          "ghg",
+          "eurostat",
+          "clima",
+          "carbon",
+          "co2",
+          "ch4",
+          "n2o",
+          "fgas"
+        ],
+        "category": "ambiente",
+        "registry_source": "energia-italia",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/energia_italia/eurostat_emissioni_ghg/2026/eurostat_emissioni_ghg_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "freq",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "airpol",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nace_r2",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unit",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "geo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "nuts_code",
+            "description": ""
+          },
+          {
+            "name": "year",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "value",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "eurostat_emissioni_ghg__mart_emissioni_italia_gas",
+          "eurostat_emissioni_ghg__mart_emissioni_italia_settori",
+          "eurostat_emissioni_ghg__mart_confronto_eu"
+        ]
+      },
+      {
+        "slug": "eurostat_rinnovabili",
+        "url_slug": "eurostat-rinnovabili",
+        "name": "Eurostat Rinnovabili",
+        "description": "Share of renewable energy in gross final energy consumption (%)",
+        "source": "",
+        "source_id": "eurostat",
+        "period": {
+          "start": 2004,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "energia",
+          "rinnovabili",
+          "eurostat",
+          "clima",
+          "target"
+        ],
+        "category": "ambiente",
+        "registry_source": "energia-italia",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/energia_italia/eurostat_rinnovabili/2026/eurostat_rinnovabili_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "freq",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nrg_bal",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unit",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "geo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "nuts_code",
+            "description": ""
+          },
+          {
+            "name": "year",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "value",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "eurostat_rinnovabili__mart_rinnovabili_italia",
+          "eurostat_rinnovabili__mart_ranking_eu"
         ]
       },
       {
@@ -28640,6 +28810,1052 @@
         ]
       }
     ],
+    "gme": [
+      {
+        "slug": "gme_pun_storico",
+        "url_slug": "gme-pun-storico",
+        "name": "Gme Pun Storico",
+        "description": "",
+        "source": "",
+        "source_id": "gme",
+        "period": {
+          "start": 2020,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "energia",
+          "elettricit\u00e0",
+          "prezzi",
+          "pun",
+          "psv",
+          "mercato"
+        ],
+        "category": "energia",
+        "registry_source": "energia-italia",
+        "clean_rows": 78,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/energia_italia/gme_pun_storico/2026/gme_pun_storico_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "mese",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          },
+          {
+            "name": "anno_mese",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pun_eur_kwh",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "psv_eur_smc",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pe_eur_kwh",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cmem_eur_smc",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pfor_eur_smc",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "psbil_eur_smc",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "gme_pun_storico__mart_pun_mensile",
+          "gme_pun_storico__mart_pun_annuale"
+        ]
+      }
+    ],
+    "ispra": [
+      {
+        "slug": "ispra_emissioni_ghg",
+        "url_slug": "ispra-emissioni-ghg",
+        "name": "Ispra Emissioni Ghg",
+        "description": "",
+        "source": "",
+        "source_id": "ispra",
+        "period": {
+          "start": 1990,
+          "end": 2023
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "ispra",
+          "emissioni",
+          "ghg"
+        ],
+        "category": "ambiente",
+        "registry_source": "energia-italia",
+        "clean_rows": 34,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/energia_italia/ispra_emissioni_ghg/2023/ispra_emissioni_ghg_2023_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "industrie_energetiche",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "industrie_manifatturiere",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "residenziale_e_servizi",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "trasporti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ispra_emissioni_ghg__mart_settori_anno",
+          "ispra_emissioni_ghg__mart_trend_settori"
+        ]
+      },
+      {
+        "slug": "ispra_consumo_suolo",
+        "url_slug": "ispra-consumo-suolo",
+        "name": "Ispra Consumo Suolo",
+        "description": "",
+        "source": "",
+        "source_id": "ispra",
+        "period": {
+          "start": 2024,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "ispra",
+          "consumo",
+          "suolo"
+        ],
+        "category": "ambiente",
+        "registry_source": "open-ispra",
+        "clean_rows": 86856,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-ispra/ispra_consumo_suolo/2024/ispra_consumo_suolo_2024_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "pro_com",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_code",
+            "description": ""
+          },
+          {
+            "name": "comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_name",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "periodo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "incremento_netto_ha",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "incremento_lordo_ha",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ripristino_ha",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stock_ha",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stock_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ispra_consumo_suolo__mart_comuni",
+          "ispra_consumo_suolo__mart_sintesi"
+        ]
+      },
+      {
+        "slug": "ispra_iffi",
+        "url_slug": "ispra-iffi",
+        "name": "Ispra Iffi",
+        "description": "Inventario dei Fenomeni Franosi in Italia (IFFI). Statistiche frane per regione e provincia da IdroGEO API.",
+        "source": "",
+        "source_id": "ispra",
+        "period": {
+          "start": 2024,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "ispra",
+          "frane",
+          "dissesto",
+          "idrogeologico"
+        ],
+        "category": "ambiente",
+        "registry_source": "open-ispra",
+        "clean_rows": 20,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-ispra/ispra_iffi/2024/ispra_iffi_2024_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "cod_regione",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "nr_frane",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ispra_iffi__mart_italia",
+          "ispra_iffi__mart_regioni"
+        ]
+      }
+    ],
+    "istat_sdmx": [
+      {
+        "slug": "istat_investimenti_mitigazione",
+        "url_slug": "istat-investimenti-mitigazione",
+        "name": "Istat Investimenti Mitigazione",
+        "description": "",
+        "source": "",
+        "source_id": "istat_sdmx",
+        "period": {
+          "start": 2016,
+          "end": 2023
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "investimenti",
+          "mitigazione",
+          "clima",
+          "istat",
+          "egss"
+        ],
+        "category": "ambiente",
+        "registry_source": "energia-italia",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/energia_italia/istat_investimenti_mitigazione/2026/istat_investimenti_mitigazione_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "freq",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ref_area",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_type",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nace_r2",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cep_class",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "year",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "obs_value",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unit",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "istat_investimenti_mitigazione__mart_investimenti_per_cea",
+          "istat_investimenti_mitigazione__mart_trend_investimenti"
+        ]
+      },
+      {
+        "slug": "istat_subsidi_ambientali",
+        "url_slug": "istat-subsidi-ambientali",
+        "name": "Istat Subsidi Ambientali",
+        "description": "",
+        "source": "",
+        "source_id": "istat_sdmx",
+        "period": {
+          "start": 1995,
+          "end": 2023
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "sussidi",
+          "istat",
+          "economia-verde",
+          "transferimenti"
+        ],
+        "category": "ambiente",
+        "registry_source": "energia-italia",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/energia_italia/istat_subsidi_ambientali/2026/istat_subsidi_ambientali_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "freq",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ref_area",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_type",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nace_r2",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cep_class",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "year",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "obs_value",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unit",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "istat_subsidi_ambientali__mart_sussidi_per_cea",
+          "istat_subsidi_ambientali__mart_trend_sussidi"
+        ]
+      }
+    ],
+    "terna_opendata": [
+      {
+        "slug": "terna_bilancio_elettrico",
+        "url_slug": "terna-bilancio-elettrico",
+        "name": "Terna Bilancio Elettrico",
+        "description": "",
+        "source": "",
+        "source_id": "terna_opendata",
+        "period": {
+          "start": 2022,
+          "end": 2023
+        },
+        "stage": "incubating",
+        "tags": [
+          "energia",
+          "elettricit\u00e0",
+          "bilancio",
+          "emissioni",
+          "confronti-internazionali"
+        ],
+        "category": "energia",
+        "registry_source": "energia-italia",
+        "clean_rows": 100,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/energia_italia/terna_bilancio_elettrico/*/terna_bilancio_elettrico_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "nazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "produzione_neta_twh",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importazione_neta_twh",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "richiesta_twh",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "consumi_twh",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "emissioni_co2_mt",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "produzione_termo_gwh",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "produzione_totale_gwh",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "emissioni_co2_termo_gr_kwh",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "emissioni_co2_totali_gr_kwh",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "terna_bilancio_elettrico__mart_bilancio_italia",
+          "terna_bilancio_elettrico__mart_confronto_ue"
+        ]
+      },
+      {
+        "slug": "terna_capacita_rinnovabile",
+        "url_slug": "terna-capacita-rinnovabile",
+        "name": "Terna Capacita Rinnovabile",
+        "description": "",
+        "source": "",
+        "source_id": "terna_opendata",
+        "period": {
+          "start": 2015,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "energia",
+          "elettricit\u00e0",
+          "fonti-rinnovabili"
+        ],
+        "category": "energia",
+        "registry_source": "energia-italia",
+        "clean_rows": 1070,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/energia_italia/terna_capacita_rinnovabile/*/terna_capacita_rinnovabile_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "tipo_capacita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "fonti",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "potenza_mw",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "terna_capacita_rinnovabile__mart_regioni_fonti_nette"
+        ]
+      },
+      {
+        "slug": "terna_consumo_per_fonte",
+        "url_slug": "terna-consumo-per-fonte",
+        "name": "Terna Consumo Per Fonte",
+        "description": "",
+        "source": "",
+        "source_id": "terna_opendata",
+        "period": {
+          "start": 2015,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "energia",
+          "elettricit\u00e0",
+          "fonti-rinnovabili",
+          "clima",
+          "consumo",
+          "copertura"
+        ],
+        "category": "ambiente",
+        "registry_source": "energia-italia",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/energia_italia/terna_consumo_per_fonte/*/terna_consumo_per_fonte_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "fonte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "copertura_gwh",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "terna_consumo_per_fonte__mart_consumo_fonte_nazionale"
+        ]
+      },
+      {
+        "slug": "terna_copertura_domanda",
+        "url_slug": "terna-copertura-domanda",
+        "name": "Terna Copertura Domanda",
+        "description": "",
+        "source": "",
+        "source_id": "terna_opendata",
+        "period": {
+          "start": 2015,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "energia",
+          "elettricit\u00e0",
+          "consumo",
+          "fonti-rinnovabili",
+          "regioni"
+        ],
+        "category": "energia",
+        "registry_source": "energia-italia",
+        "clean_rows": 180,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/energia_italia/terna_copertura_domanda/*/terna_copertura_domanda_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "fonte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "copertura_gwh",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "terna_copertura_domanda__mart_copertura_fonte_nazionale",
+          "terna_copertura_domanda__mart_copertura_fonte_regione"
+        ]
+      },
+      {
+        "slug": "terna_elettricita_per_fonte",
+        "url_slug": "terna-elettricita-per-fonte",
+        "name": "Terna Elettricita Per Fonte",
+        "description": "",
+        "source": "",
+        "source_id": "terna_opendata",
+        "period": {
+          "start": 2015,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "energia",
+          "elettricit\u00e0",
+          "fonti-rinnovabili",
+          "clima",
+          "mix-energetico"
+        ],
+        "category": "ambiente",
+        "registry_source": "energia-italia",
+        "clean_rows": 900,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/energia_italia/terna_elettricita_per_fonte/*/terna_elettricita_per_fonte_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "tipo_produzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "fonte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "produzione_gwh",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "terna_elettricita_per_fonte__mart_mix_regioni"
+        ]
+      },
+      {
+        "slug": "terna_elettricita_per_settore",
+        "url_slug": "terna-elettricita-per-settore",
+        "name": "Terna Elettricita Per Settore",
+        "description": "",
+        "source": "",
+        "source_id": "terna_opendata",
+        "period": {
+          "start": 2015,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "energia",
+          "elettricit\u00e0",
+          "consumi",
+          "settore"
+        ],
+        "category": "energia",
+        "registry_source": "energia-italia",
+        "clean_rows": 100,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/energia_italia/terna_elettricita_per_settore/*/terna_elettricita_per_settore_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "settore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "consumo_gwh",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "terna_elettricita_per_settore__mart_consumi_settore_provincia"
+        ]
+      },
+      {
+        "slug": "terna_emissioni_co2",
+        "url_slug": "terna-emissioni-co2",
+        "name": "Terna Emissioni Co2",
+        "description": "",
+        "source": "",
+        "source_id": "terna_opendata",
+        "period": {
+          "start": 2015,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "energia",
+          "emissioni",
+          "co2",
+          "combustibile",
+          "regioni"
+        ],
+        "category": "energia",
+        "registry_source": "energia-italia",
+        "clean_rows": 100,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/energia_italia/terna_emissioni_co2/*/terna_emissioni_co2_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "combustibile",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "produzione",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "emissioni_mt",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "terna_emissioni_co2__mart_emissioni_combustibile",
+          "terna_emissioni_co2__mart_emissioni_regione"
+        ]
+      }
+    ],
     "openga": [
       {
         "slug": "ga_decreti",
@@ -34295,173 +35511,6 @@
         ],
         "mart_refs": [
           "ispra_ru_import__mart_import"
-        ]
-      }
-    ],
-    "ispra": [
-      {
-        "slug": "ispra_consumo_suolo",
-        "url_slug": "ispra-consumo-suolo",
-        "name": "Ispra Consumo Suolo",
-        "description": "",
-        "source": "",
-        "source_id": "ispra",
-        "period": {
-          "start": 2024,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "ambiente",
-          "ispra",
-          "consumo",
-          "suolo"
-        ],
-        "category": "ambiente",
-        "registry_source": "open-ispra",
-        "clean_rows": 86856,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/open-ispra/ispra_consumo_suolo/2024/ispra_consumo_suolo_2024_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "pro_com",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "municipality_code",
-            "description": ""
-          },
-          {
-            "name": "comune",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "municipality_name",
-            "description": ""
-          },
-          {
-            "name": "provincia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "province_code",
-            "description": ""
-          },
-          {
-            "name": "regione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "region_code",
-            "description": ""
-          },
-          {
-            "name": "periodo",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "month",
-            "description": ""
-          },
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "incremento_netto_ha",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "incremento_lordo_ha",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "ripristino_ha",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "stock_ha",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "stock_pct",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "ispra_consumo_suolo__mart_comuni",
-          "ispra_consumo_suolo__mart_sintesi"
-        ]
-      },
-      {
-        "slug": "ispra_iffi",
-        "url_slug": "ispra-iffi",
-        "name": "Ispra Iffi",
-        "description": "Inventario dei Fenomeni Franosi in Italia (IFFI). Statistiche frane per regione e provincia da IdroGEO API.",
-        "source": "",
-        "source_id": "ispra",
-        "period": {
-          "start": 2024,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "ambiente",
-          "ispra",
-          "frane",
-          "dissesto",
-          "idrogeologico"
-        ],
-        "category": "ambiente",
-        "registry_source": "open-ispra",
-        "clean_rows": 20,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/open-ispra/ispra_iffi/2024/ispra_iffi_2024_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "regione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "region_code",
-            "description": ""
-          },
-          {
-            "name": "cod_regione",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "region_code",
-            "description": ""
-          },
-          {
-            "name": "nr_frane",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "ispra_iffi__mart_italia",
-          "ispra_iffi__mart_regioni"
         ]
       }
     ],

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T17:33:43.952288",
+  "generated_at": "2026-09-24T18:00:16.644153",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -12,6 +12,7 @@
     "dcl-bologna",
     "debito-pubblico-intelligence",
     "dichiarazioni-italia",
+    "energia-italia",
     "eurostat",
     "giustizia-amministrativa",
     "imprese-italia",
@@ -1357,6 +1358,14 @@
       "untracked_files": 0
     },
     "dichiarazioni-italia": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
+    "energia-italia": {
       "available": false,
       "reason": "local_disabled",
       "dirty": null,
@@ -3306,6 +3315,119 @@
             "status": "SUCCESS",
             "started_at": "2026-09-21T14:35:34.709861+00:00",
             "finished_at": "2026-09-21T14:35:36.261525+00:00"
+          }
+        }
+      ]
+    },
+    {
+      "repo": "energia-italia",
+      "available": true,
+      "source_repo": "dataciviclab/energia-italia",
+      "updated_at": "2026-09-24",
+      "datasets": 13,
+      "marts": 11,
+      "signals": 7,
+      "codelists": 0,
+      "entities": 5,
+      "gcs": 13,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "gme_pun_storico",
+          "source_id": "gme",
+          "status": "ok",
+          "label": "gme_pun_storico",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260924T170919Z_15849152",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-24T17:09:19.078352+00:00",
+            "finished_at": "2026-09-24T17:09:21.595568+00:00"
+          }
+        },
+        {
+          "id": "terna_bilancio_elettrico",
+          "source_id": "terna_opendata",
+          "status": "ok",
+          "label": "terna_bilancio_elettrico",
+          "detail": "anni 2022-2023 \u2014 mart: si",
+          "run": {
+            "run_id": "20260924T170924Z_f138a866",
+            "year": 2023,
+            "status": "SUCCESS",
+            "started_at": "2026-09-24T17:09:24.599710+00:00",
+            "finished_at": "2026-09-24T17:09:25.525520+00:00"
+          }
+        },
+        {
+          "id": "terna_capacita_rinnovabile",
+          "source_id": "terna_opendata",
+          "status": "ok",
+          "label": "terna_capacita_rinnovabile",
+          "detail": "anni 2015-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260924T170946Z_eb6daadc",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-24T17:09:46.142629+00:00",
+            "finished_at": "2026-09-24T17:09:47.721522+00:00"
+          }
+        },
+        {
+          "id": "terna_copertura_domanda",
+          "source_id": "terna_opendata",
+          "status": "ok",
+          "label": "terna_copertura_domanda",
+          "detail": "anni 2015-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260924T171002Z_ba88c5c4",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-24T17:10:02.864371+00:00",
+            "finished_at": "2026-09-24T17:10:03.667604+00:00"
+          }
+        },
+        {
+          "id": "terna_elettricita_per_fonte",
+          "source_id": "terna_opendata",
+          "status": "ok",
+          "label": "terna_elettricita_per_fonte",
+          "detail": "anni 2015-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260924T171023Z_ee3e23ff",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-24T17:10:23.555165+00:00",
+            "finished_at": "2026-09-24T17:10:24.605597+00:00"
+          }
+        },
+        {
+          "id": "terna_elettricita_per_settore",
+          "source_id": "terna_opendata",
+          "status": "ok",
+          "label": "terna_elettricita_per_settore",
+          "detail": "anni 2015-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260924T171112Z_c5898033",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-24T17:11:12.731760+00:00",
+            "finished_at": "2026-09-24T17:11:16.695678+00:00"
+          }
+        },
+        {
+          "id": "terna_emissioni_co2",
+          "source_id": "terna_opendata",
+          "status": "ok",
+          "label": "terna_emissioni_co2",
+          "detail": "anni 2015-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260924T171131Z_a3c6d636",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-24T17:11:31.041770+00:00",
+            "finished_at": "2026-09-24T17:11:31.880166+00:00"
           }
         }
       ]
