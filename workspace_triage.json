@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T18:00:16.644153",
+  "generated_at": "2026-09-24T21:13:42.851042",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -46,13 +46,6 @@
       "title": "feat(mit-incidentalita): plateau 2013, indice di mortalit\u00e0 e stagionalit\u00e0",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/264",
-      "category": "other"
-    },
-    {
-      "number": 859,
-      "title": "chore: rimuovi dataset Terna duplicati (ora in energia-italia)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/859",
       "category": "other"
     },
     {
@@ -1576,8 +1569,7 @@
   },
   "warnings": [
     "GitHub fetch failed \u2014 dataciviclab:analisi: https://api.github.com/repos/dataciviclab/dataciviclab/contents/analisi: HTTP 404",
-    "GitHub fetch failed \u2014 dataciviclab:analisi/registry/active.md: https://raw.githubusercontent.com/dataciviclab/dataciviclab/main/analisi/registry/active.md: HTTP 404",
-    "Many open PRs: 6"
+    "GitHub fetch failed \u2014 dataciviclab:analisi/registry/active.md: https://raw.githubusercontent.com/dataciviclab/dataciviclab/main/analisi/registry/active.md: HTTP 404"
   ],
   "radar": {
     "available": true,
@@ -1898,11 +1890,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-09-20",
+    "generated_at": "2026-09-24",
     "summary": {
-      "total": 53,
+      "total": 48,
       "by_status": {
-        "ok": 53
+        "ok": 48
       }
     },
     "actionable": []
@@ -2304,13 +2296,13 @@
       "repo": "dataset-incubator",
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
-      "updated_at": "2026-09-20",
-      "datasets": 60,
-      "marts": 78,
-      "signals": 53,
+      "updated_at": "2026-09-24",
+      "datasets": 54,
+      "marts": 75,
+      "signals": 48,
       "codelists": 0,
-      "entities": 14,
-      "gcs": 60,
+      "entities": 13,
+      "gcs": 54,
       "reason": "",
       "signals_detail": [
         {
@@ -2341,11 +2333,11 @@
           "label": "anpr_mobilita_residenziale",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260920T195648Z_d3bc1227",
+            "run_id": "20260924T180432Z_21553806",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-20T19:56:48.624568+00:00",
-            "finished_at": "2026-09-20T19:56:49.520921+00:00"
+            "started_at": "2026-09-24T18:04:32.935691+00:00",
+            "finished_at": "2026-09-24T18:04:33.784486+00:00"
           }
         },
         {
@@ -2395,20 +2387,6 @@
             "status": "SUCCESS",
             "started_at": "2026-07-31T11:47:31.726712+00:00",
             "finished_at": "2026-07-31T11:48:42.007615+00:00"
-          }
-        },
-        {
-          "id": "consip_consumi_convenzione",
-          "source_id": "consip_open_data",
-          "status": "ok",
-          "label": "consip_consumi_convenzione",
-          "detail": "anni 2023-2025 \u2014 mart: si",
-          "run": {
-            "run_id": "20260728T141049Z_6e9fd376",
-            "year": 2025,
-            "status": "SUCCESS",
-            "started_at": "2026-07-28T14:10:49.622969+00:00",
-            "finished_at": "2026-07-28T14:10:52.081123+00:00"
           }
         },
         {
@@ -2493,20 +2471,6 @@
             "status": "SUCCESS",
             "started_at": "2026-07-31T11:48:51.291161+00:00",
             "finished_at": "2026-07-31T11:48:53.648463+00:00"
-          }
-        },
-        {
-          "id": "ispra_consumo_suolo",
-          "source_id": "ispra_linked_data",
-          "status": "ok",
-          "label": "ispra_consumo_suolo",
-          "detail": "anno 2024 \u2014 mart: si",
-          "run": {
-            "run_id": "20260727T225500Z_9ccedea6",
-            "year": 2024,
-            "status": "SUCCESS",
-            "started_at": "2026-07-27T22:55:00.864542+00:00",
-            "finished_at": "2026-07-27T22:55:17.710967+00:00"
           }
         },
         {
@@ -2739,34 +2703,6 @@
           "status": "ok",
           "label": "ted_contract_notices",
           "detail": "anni 2020-2023 \u2014 mart: si"
-        },
-        {
-          "id": "terna_capacita_rinnovabile",
-          "source_id": "terna_opendata",
-          "status": "ok",
-          "label": "terna_capacita_rinnovabile",
-          "detail": "anni 2015-2024 \u2014 mart: si"
-        },
-        {
-          "id": "terna_electrical_energy_by_sector",
-          "source_id": "terna_opendata",
-          "status": "ok",
-          "label": "terna_electrical_energy_by_sector",
-          "detail": "anni 2015-2024 \u2014 mart: si"
-        },
-        {
-          "id": "terna_electricity_by_source",
-          "source_id": "terna_opendata",
-          "status": "ok",
-          "label": "terna_electricity_by_source",
-          "detail": "anni 2015-2024 \u2014 mart: si",
-          "run": {
-            "run_id": "20260731T083122Z_d43d863a",
-            "year": 2024,
-            "status": "DRY_RUN",
-            "started_at": "2026-07-31T08:31:22.287201+00:00",
-            "finished_at": "2026-07-31T08:31:22.291339+00:00"
-          }
         },
         {
           "id": "compose:comuni_master",
