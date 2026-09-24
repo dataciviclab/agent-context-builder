@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T16:37:49.101487",
+  "generated_at": "2026-09-24T17:33:43.952288",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -22,6 +22,7 @@
     "open-consip",
     "open-conto-annuale",
     "open-ispra",
+    "open-mur",
     "open-pnrr",
     "open-politica",
     "open-siope",
@@ -40,17 +41,17 @@
   "open_prs": null,
   "prs": [
     {
-      "number": 79,
-      "title": "chore: auto-discover registries (2026-09-24)",
-      "repo": "agent-context-builder",
-      "url": "https://github.com/dataciviclab/agent-context-builder/pull/79",
-      "category": "other"
-    },
-    {
       "number": 264,
       "title": "feat(mit-incidentalita): plateau 2013, indice di mortalit\u00e0 e stagionalit\u00e0",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/264",
+      "category": "other"
+    },
+    {
+      "number": 859,
+      "title": "chore: rimuovi dataset Terna duplicati (ora in energia-italia)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/859",
       "category": "other"
     },
     {
@@ -1436,6 +1437,14 @@
       "untracked_files": 0
     },
     "open-ispra": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
+    "open-mur": {
       "available": false,
       "reason": "local_disabled",
       "dirty": null,
@@ -4892,6 +4901,189 @@
             "status": "SUCCESS",
             "started_at": "2026-09-20T12:29:33.057618+00:00",
             "finished_at": "2026-09-20T12:29:35.133981+00:00"
+          }
+        }
+      ]
+    },
+    {
+      "repo": "open-mur",
+      "available": true,
+      "source_repo": "dataciviclab/open-mur",
+      "updated_at": "2026-09-24",
+      "datasets": 12,
+      "marts": 15,
+      "signals": 12,
+      "codelists": 0,
+      "entities": 3,
+      "gcs": 12,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "mur_contribuzione_universitaria",
+          "source_id": "mur_ustat",
+          "status": "ok",
+          "label": "mur_contribuzione_universitaria",
+          "detail": "anni 2017-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20260924T140008Z_23bcd122",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-09-24T14:00:08.753130+00:00",
+            "finished_at": "2026-09-24T14:04:15.286785+00:00"
+          }
+        },
+        {
+          "id": "mur_crosswalk_stem",
+          "source_id": "mur_ustat",
+          "status": "ok",
+          "label": "mur_crosswalk_stem",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260924T141500Z_79d22505",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-09-24T14:15:00.295872+00:00",
+            "finished_at": "2026-09-24T14:19:06.762406+00:00"
+          }
+        },
+        {
+          "id": "mur_formazione_post_laurea",
+          "source_id": "mur_ustat",
+          "status": "ok",
+          "label": "mur_formazione_post_laurea",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260924T151256Z_9a4e46f8",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-09-24T15:12:56.211945+00:00",
+            "finished_at": "2026-09-24T15:21:08.326951+00:00"
+          }
+        },
+        {
+          "id": "mur_immatricolati",
+          "source_id": "mur_ustat",
+          "status": "ok",
+          "label": "mur_immatricolati",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260924T123958Z_9eebc9f9",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-09-24T12:39:58.103173+00:00",
+            "finished_at": "2026-09-24T12:44:04.359905+00:00"
+          }
+        },
+        {
+          "id": "mur_iscritti",
+          "source_id": "mur_ustat",
+          "status": "ok",
+          "label": "mur_iscritti",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260924T123128Z_11274164",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-09-24T12:31:28.923697+00:00",
+            "finished_at": "2026-09-24T12:35:34.008174+00:00"
+          }
+        },
+        {
+          "id": "mur_laureati",
+          "source_id": "mur_ustat",
+          "status": "ok",
+          "label": "mur_laureati",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260924T154602Z_36b864ec",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-09-24T15:46:02.577922+00:00",
+            "finished_at": "2026-09-24T15:50:07.783743+00:00"
+          }
+        },
+        {
+          "id": "mur_laureati_voto",
+          "source_id": "mur_ustat",
+          "status": "ok",
+          "label": "mur_laureati_voto",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260924T153109Z_110bd8f9",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-09-24T15:31:09.556033+00:00",
+            "finished_at": "2026-09-24T15:35:16.000283+00:00"
+          }
+        },
+        {
+          "id": "mur_personale",
+          "source_id": "mur_ustat",
+          "status": "ok",
+          "label": "mur_personale",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260924T130655Z_a335f32a",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-09-24T13:06:55.165147+00:00",
+            "finished_at": "2026-09-24T13:11:00.196900+00:00"
+          }
+        },
+        {
+          "id": "mur_personale_ateneo",
+          "source_id": "mur_ustat",
+          "status": "ok",
+          "label": "mur_personale_ateneo",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260924T131904Z_78d2e207",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-09-24T13:19:04.390304+00:00",
+            "finished_at": "2026-09-24T13:23:11.190705+00:00"
+          }
+        },
+        {
+          "id": "mur_anagrafica_atenei",
+          "source_id": "mur_ustat",
+          "status": "ok",
+          "label": "mur_anagrafica_atenei",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260924T154157Z_58bdef39",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-09-24T15:41:57.912827+00:00",
+            "finished_at": "2026-09-24T15:46:02.576125+00:00"
+          }
+        },
+        {
+          "id": "mur_offerta_formativa",
+          "source_id": "mur_ustat",
+          "status": "ok",
+          "label": "mur_offerta_formativa",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260924T155944Z_6090246e",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-09-24T15:59:44.478893+00:00",
+            "finished_at": "2026-09-24T16:03:51.829720+00:00"
+          }
+        },
+        {
+          "id": "mur_tasso_abbandono",
+          "source_id": "mur_ustat",
+          "status": "ok",
+          "label": "mur_tasso_abbandono",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20260924T160759Z_459e013f",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-09-24T16:07:59.748185+00:00",
+            "finished_at": "2026-09-24T16:12:05.561926+00:00"
           }
         }
       ]

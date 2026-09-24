@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "generated_at": "2026-09-24T16:37:49.101487",
+  "generated_at": "2026-09-24T17:33:43.952288",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -81,6 +81,10 @@
     "open-ispra": {
       "description": "Dati ambientali ISPRA: acque, suolo, mari, pesticidi, frane. Open data italiani in formato standardizzato.",
       "url": "https://github.com/dataciviclab/open-ispra"
+    },
+    "open-mur": {
+      "description": "Iscritti, laureati, personale, contribuzione studentesca \u2014 puliti, arricchiti e pronti per l'analisi.",
+      "url": "https://github.com/dataciviclab/open-mur"
     },
     "open-pnrr": {
       "description": "194 miliardi, 285k progetti, 7 dataset: i dati ufficiali del PNRR, puliti e interrogabili",
@@ -14467,8 +14471,8 @@
           "universitaria"
         ],
         "category": "istruzione",
-        "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "registry_source": "open-mur",
+        "clean_rows": 1100,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/mur_contribuzione_universitaria/*/mur_contribuzione_universitaria_*_clean.parquet",
@@ -14539,8 +14543,8 @@
           "immatricolati"
         ],
         "category": "istruzione",
-        "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "registry_source": "open-mur",
+        "clean_rows": 3233,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/mur_immatricolati/2025/mur_immatricolati_2025_clean.parquet",
@@ -14602,8 +14606,8 @@
           "iscritti"
         ],
         "category": "istruzione",
-        "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "registry_source": "open-mur",
+        "clean_rows": 4362,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/mur_iscritti/2025/mur_iscritti_2025_clean.parquet",
@@ -34458,6 +34462,1075 @@
         "mart_refs": [
           "ispra_iffi__mart_italia",
           "ispra_iffi__mart_regioni"
+        ]
+      }
+    ],
+    "mur_ustat": [
+      {
+        "slug": "mur_anagrafica_atenei",
+        "url_slug": "mur-anagrafica-atenei",
+        "name": "Mur Anagrafica Atenei",
+        "description": "Anagrafica completa degli atenei italiani: codice, nome, tipo, citt\u00e0, provincia, regione, macro-area.",
+        "source": "",
+        "source_id": "mur_ustat",
+        "period": {
+          "start": 2025,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "istruzione",
+          "mur",
+          "anagrafica",
+          "atenei",
+          "geolocalizzazione",
+          "support"
+        ],
+        "category": "support",
+        "registry_source": "open-mur",
+        "clean_rows": 112,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open_mur/mur_anagrafica_atenei/2025/mur_anagrafica_atenei_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "cod_ateneo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_esteso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_operativo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "status",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "citta",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "macro_area",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mur_anagrafica_atenei__mart_anagrafica_atenei"
+        ]
+      },
+      {
+        "slug": "mur_contribuzione_universitaria",
+        "url_slug": "mur-contribuzione-universitaria",
+        "name": "Mur Contribuzione Universitaria",
+        "description": "",
+        "source": "",
+        "source_id": "mur_ustat",
+        "period": {
+          "start": 2017,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "istruzione",
+          "mur",
+          "contribuzione",
+          "universitaria"
+        ],
+        "category": "istruzione",
+        "registry_source": "open-mur",
+        "clean_rows": 1100,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open_mur/mur_contribuzione_universitaria/*/mur_contribuzione_universitaria_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "cod_ateneo",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_ateneo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_gettito",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_gettito",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "euro_contributo",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mur_contribuzione_universitaria__mart_contribuzione_trend"
+        ]
+      },
+      {
+        "slug": "mur_crosswalk_stem",
+        "url_slug": "mur-crosswalk-stem",
+        "name": "Mur Crosswalk Stem",
+        "description": "Crosswalk classi di laurea \u2192 ISCED-F 2013 con flag STEM. Support puro.",
+        "source": "",
+        "source_id": "mur_ustat",
+        "period": {
+          "start": 2025,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "istruzione",
+          "mur",
+          "crosswalk",
+          "stem",
+          "isced",
+          "support"
+        ],
+        "category": "support",
+        "registry_source": "open-mur",
+        "clean_rows": 334,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open_mur/mur_crosswalk_stem/2025/mur_crosswalk_stem_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "classe",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_corso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_classe",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "isced_1dgt",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_isced_1dgt",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "isced_2dgt",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_isced_2dgt",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "isced_3dgt",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_isced_3dgt",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "area_stem",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mur_crosswalk_stem__mart_crosswalk_stem"
+        ]
+      },
+      {
+        "slug": "mur_formazione_post_laurea",
+        "url_slug": "mur-formazione-post-laurea",
+        "name": "Mur Formazione Post Laurea",
+        "description": "",
+        "source": "",
+        "source_id": "mur_ustat",
+        "period": {
+          "start": 2001,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "istruzione",
+          "mur",
+          "dottorati",
+          "master",
+          "specializzazione",
+          "post-laurea",
+          "universita"
+        ],
+        "category": "istruzione",
+        "registry_source": "open-mur",
+        "clean_rows": 3381,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open_mur/mur_formazione_post_laurea/2025/mur_formazione_post_laurea_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno_accademico",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ateneo_cod",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ateneo_nome",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "livello",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_corso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sesso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "iscritti",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "macro_area",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mur_formazione_post_laurea__mart_post_laurea_area"
+        ]
+      },
+      {
+        "slug": "mur_immatricolati",
+        "url_slug": "mur-immatricolati",
+        "name": "Mur Immatricolati",
+        "description": "",
+        "source": "",
+        "source_id": "mur_ustat",
+        "period": {
+          "start": 1998,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "istruzione",
+          "mur",
+          "immatricolati"
+        ],
+        "category": "istruzione",
+        "registry_source": "open-mur",
+        "clean_rows": 3233,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open_mur/mur_immatricolati/2025/mur_immatricolati_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "classe_cod",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "classe_nome",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sesso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "immatricolati",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mur_immatricolati__mart_immatricolati_area"
+        ]
+      },
+      {
+        "slug": "mur_iscritti",
+        "url_slug": "mur-iscritti",
+        "name": "Mur Iscritti",
+        "description": "",
+        "source": "",
+        "source_id": "mur_ustat",
+        "period": {
+          "start": 2000,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "istruzione",
+          "mur",
+          "iscritti"
+        ],
+        "category": "istruzione",
+        "registry_source": "open-mur",
+        "clean_rows": 4362,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open_mur/mur_iscritti/2025/mur_iscritti_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "ateneo_cod",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ateneo_nome",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sesso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "iscritti",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "macro_area",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mur_iscritti__mart_iscritti_concentrazione"
+        ]
+      },
+      {
+        "slug": "mur_laureati",
+        "url_slug": "mur-laureati",
+        "name": "Mur Laureati",
+        "description": "",
+        "source": "",
+        "source_id": "mur_ustat",
+        "period": {
+          "start": 2001,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "istruzione",
+          "mur",
+          "laureati",
+          "universita"
+        ],
+        "category": "istruzione",
+        "registry_source": "open-mur",
+        "clean_rows": 4283,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open_mur/mur_laureati/2025/mur_laureati_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "ateneo_cod",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ateneo_nome",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sesso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "laureati",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "macro_area",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mur_laureati__mart_laureati_efficienza"
+        ]
+      },
+      {
+        "slug": "mur_laureati_voto",
+        "url_slug": "mur-laureati-voto",
+        "name": "Mur Laureati Voto",
+        "description": "",
+        "source": "",
+        "source_id": "mur_ustat",
+        "period": {
+          "start": 2014,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "istruzione",
+          "mur",
+          "laureati",
+          "voto",
+          "qualita"
+        ],
+        "category": "istruzione",
+        "registry_source": "open-mur",
+        "clean_rows": 2841,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open_mur/mur_laureati_voto/2025/mur_laureati_voto_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "cod_ateneo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_ateneo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "area_geo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "macro_area",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "classe_voto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "genere",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "laureati",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mur_laureati_voto__mart_laureati_per_voto",
+          "mur_laureati_voto__mart_voto_per_ateneo"
+        ]
+      },
+      {
+        "slug": "mur_offerta_formativa",
+        "url_slug": "mur-offerta-formativa",
+        "name": "Mur Offerta Formativa",
+        "description": "Offerta formativa: elenco corsi di laurea per ateneo, classe, corso, sede, lingua.",
+        "source": "",
+        "source_id": "mur_ustat",
+        "period": {
+          "start": 2025,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "istruzione",
+          "mur",
+          "offerta",
+          "formativa",
+          "corsi",
+          "laurea",
+          "support"
+        ],
+        "category": "support",
+        "registry_source": "open-mur",
+        "clean_rows": 5228,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open_mur/mur_offerta_formativa/2025/mur_offerta_formativa_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "ateneo_cod",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ateneo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "classe",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_classe",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "corso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sede_comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sede_provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "lingua",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mur_offerta_formativa__mart_offerta_per_ateneo",
+          "mur_offerta_formativa__mart_offerta_per_area"
+        ]
+      },
+      {
+        "slug": "mur_personale",
+        "url_slug": "mur-personale",
+        "name": "Mur Personale",
+        "description": "",
+        "source": "",
+        "source_id": "mur_ustat",
+        "period": {
+          "start": 1997,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "istruzione",
+          "mur",
+          "personale",
+          "docenti",
+          "ricercatori",
+          "universita"
+        ],
+        "category": "istruzione",
+        "registry_source": "open-mur",
+        "clean_rows": 314,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open_mur/mur_personale/2025/mur_personale_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "genere",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_qualifica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_qualifica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mur_personale__mart_personale_distribuzione"
+        ]
+      },
+      {
+        "slug": "mur_personale_ateneo",
+        "url_slug": "mur-personale-ateneo",
+        "name": "Mur Personale Ateneo",
+        "description": "",
+        "source": "",
+        "source_id": "mur_ustat",
+        "period": {
+          "start": 2012,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "istruzione",
+          "mur",
+          "personale",
+          "docenti",
+          "ricercatori",
+          "ateneo",
+          "bilancio-genere"
+        ],
+        "category": "istruzione",
+        "registry_source": "open-mur",
+        "clean_rows": 28719,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open_mur/mur_personale_ateneo/2025/mur_personale_ateneo_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "cod_ateneo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_ateneo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "area_geo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "macro_area",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "grade",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "genere",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "classe_eta",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mur_personale_ateneo__mart_personale_per_ateneo",
+          "mur_personale_ateneo__mart_personale_per_grade"
+        ]
+      },
+      {
+        "slug": "mur_tasso_abbandono",
+        "url_slug": "mur-tasso-abbandono",
+        "name": "Mur Tasso Abbandono",
+        "description": "Tasso di abbandono entro il 1\u00b0 anno di universit\u00e0, serie storica 2011-2025.",
+        "source": "",
+        "source_id": "mur_ustat",
+        "period": {
+          "start": 2011,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "istruzione",
+          "mur",
+          "abbandono",
+          "efficienza",
+          "support"
+        ],
+        "category": "support",
+        "registry_source": "open-mur",
+        "clean_rows": 14,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open_mur/mur_tasso_abbandono/2025/mur_tasso_abbandono_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno_accademico",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno_accademico_full",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tasso_m",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tasso_f",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tasso_totale",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "note",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mur_tasso_abbandono__mart_tasso_abbandono"
         ]
       }
     ],
