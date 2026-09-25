@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T03:46:21.947237",
+  "generated_at": "2026-09-25T11:19:06.004533",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -67,6 +67,27 @@
       "title": "intake: inpa-bandi e inpa-comunicazioni \u2014 reclutamento PA dal Portale inPA",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/829",
+      "category": "other"
+    },
+    {
+      "number": 4,
+      "title": "feat: Dashboard Streamlit + fix IRAP/IRES clean (\u00d71000)",
+      "repo": "dichiarazioni-italia",
+      "url": "https://github.com/dataciviclab/dichiarazioni-italia/pull/4",
+      "category": "other"
+    },
+    {
+      "number": 87,
+      "title": "fix: years_from_registry - rimuovi filtro multi_file, aggiungi filtro slug",
+      "repo": "lab-connectors",
+      "url": "https://github.com/dataciviclab/lab-connectors/pull/87",
+      "category": "other"
+    },
+    {
+      "number": 3,
+      "title": "fix: dashboard anni corretti da registry, fix 'Nessun dato disponibile'",
+      "repo": "sistema-bancario",
+      "url": "https://github.com/dataciviclab/sistema-bancario/pull/3",
       "category": "other"
     },
     {
@@ -1569,12 +1590,13 @@
   },
   "warnings": [
     "GitHub fetch failed \u2014 dataciviclab:analisi: https://api.github.com/repos/dataciviclab/dataciviclab/contents/analisi: HTTP 404",
-    "GitHub fetch failed \u2014 dataciviclab:analisi/registry/active.md: https://raw.githubusercontent.com/dataciviclab/dataciviclab/main/analisi/registry/active.md: HTTP 404"
+    "GitHub fetch failed \u2014 dataciviclab:analisi/registry/active.md: https://raw.githubusercontent.com/dataciviclab/dataciviclab/main/analisi/registry/active.md: HTTP 404",
+    "Many open PRs: 8"
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-09-24T08:25:49.715656+00:00",
-    "probe_date": "2026-09-24",
+    "generated_at": "2026-09-25T08:46:04.528441+00:00",
+    "probe_date": "2026-09-25",
     "sources_total": 36,
     "green": 35,
     "yellow": 1,
@@ -1649,8 +1671,8 @@
         "id": "dati_cultura",
         "status": "YELLOW",
         "protocol": "sparql",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "502",
+        "note": "Retry timeout/connection: RED",
         "red_streak": 0
       },
       {
@@ -1875,8 +1897,8 @@
         "id": "dati_cultura",
         "status": "YELLOW",
         "protocol": "sparql",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "502",
+        "note": "Retry timeout/connection: RED",
         "red_streak": 0
       }
     ]
