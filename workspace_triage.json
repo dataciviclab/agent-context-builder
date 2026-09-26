@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T15:55:59.204774",
+  "generated_at": "2026-09-26T20:43:37.519123",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -71,10 +71,24 @@
       "category": "other"
     },
     {
-      "number": 4,
-      "title": "feat: Dashboard Streamlit + fix IRAP/IRES clean (\u00d71000)",
-      "repo": "dichiarazioni-italia",
-      "url": "https://github.com/dataciviclab/dichiarazioni-italia/pull/4",
+      "number": 3,
+      "title": "chore(post-merge): aggiorna registry (schedule)",
+      "repo": "giustizia-amministrativa",
+      "url": "https://github.com/dataciviclab/giustizia-amministrativa/pull/3",
+      "category": "other"
+    },
+    {
+      "number": 3,
+      "title": "chore(post-merge): aggiorna registry (schedule)",
+      "repo": "rifiuti-urbani",
+      "url": "https://github.com/dataciviclab/rifiuti-urbani/pull/3",
+      "category": "other"
+    },
+    {
+      "number": 490,
+      "title": "feat: add support type 'external' for GCS-hosted parquet files",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/490",
       "category": "other"
     },
     {
@@ -1586,7 +1600,7 @@
   "warnings": [
     "GitHub fetch failed \u2014 dataciviclab:analisi: https://api.github.com/repos/dataciviclab/dataciviclab/contents/analisi: HTTP 404",
     "GitHub fetch failed \u2014 dataciviclab:analisi/registry/active.md: https://raw.githubusercontent.com/dataciviclab/dataciviclab/main/analisi/registry/active.md: HTTP 404",
-    "Many open PRs: 6"
+    "Many open PRs: 8"
   ],
   "radar": {
     "available": true,
@@ -3154,7 +3168,7 @@
       "repo": "dichiarazioni-italia",
       "available": true,
       "source_repo": "dataciviclab/dichiarazioni-italia",
-      "updated_at": "2026-09-21",
+      "updated_at": "2026-09-26",
       "datasets": 7,
       "marts": 12,
       "signals": 7,
@@ -3170,11 +3184,11 @@
           "label": "irap_italia_estero",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20260921T143210Z_4b4fe0fd",
+            "run_id": "20260926T191710Z_67daf058",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-09-21T14:32:10.280051+00:00",
-            "finished_at": "2026-09-21T14:32:11.178896+00:00"
+            "started_at": "2026-09-26T19:17:10.909502+00:00",
+            "finished_at": "2026-09-26T19:17:11.712840+00:00"
           }
         },
         {
@@ -3184,11 +3198,11 @@
           "label": "irap_vp_regime",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20260921T143253Z_3920886c",
+            "run_id": "20260926T191752Z_68dbc17f",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-09-21T14:32:53.038780+00:00",
-            "finished_at": "2026-09-21T14:32:55.309275+00:00"
+            "started_at": "2026-09-26T19:17:52.727640+00:00",
+            "finished_at": "2026-09-26T19:17:54.953338+00:00"
           }
         },
         {
@@ -3198,11 +3212,11 @@
           "label": "ires_redditi_regione",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20260921T143321Z_3d5f111c",
+            "run_id": "20260926T191815Z_d1485a6a",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-09-21T14:33:21.753251+00:00",
-            "finished_at": "2026-09-21T14:33:22.672559+00:00"
+            "started_at": "2026-09-26T19:18:15.452242+00:00",
+            "finished_at": "2026-09-26T19:18:16.248266+00:00"
           }
         },
         {
@@ -3212,11 +3226,11 @@
           "label": "irpef_comunale",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20260921T143402Z_a21d5c73",
+            "run_id": "20260926T191852Z_6da66b8a",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-09-21T14:34:02.359207+00:00",
-            "finished_at": "2026-09-21T14:34:05.993416+00:00"
+            "started_at": "2026-09-26T19:18:52.738312+00:00",
+            "finished_at": "2026-09-26T19:18:56.343545+00:00"
           }
         },
         {
@@ -3226,11 +3240,11 @@
           "label": "iva_regionale",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20260921T143431Z_fa89b8ce",
+            "run_id": "20260926T191921Z_62559f94",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-09-21T14:34:31.316754+00:00",
-            "finished_at": "2026-09-21T14:34:32.308807+00:00"
+            "started_at": "2026-09-26T19:19:21.061730+00:00",
+            "finished_at": "2026-09-26T19:19:21.908021+00:00"
           }
         },
         {
@@ -3240,11 +3254,11 @@
           "label": "iva_sez_attivita",
           "detail": "anni 2015-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20260921T143459Z_855a2bed",
+            "run_id": "20260926T191945Z_74f730ce",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-09-21T14:34:59.871030+00:00",
-            "finished_at": "2026-09-21T14:35:00.833119+00:00"
+            "started_at": "2026-09-26T19:19:45.246074+00:00",
+            "finished_at": "2026-09-26T19:19:46.065082+00:00"
           }
         },
         {
@@ -3254,11 +3268,11 @@
           "label": "mef_irpef_regionale",
           "detail": "anni 2017-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20260921T143534Z_d690ee89",
+            "run_id": "20260926T192014Z_1b79a485",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-09-21T14:35:34.709861+00:00",
-            "finished_at": "2026-09-21T14:35:36.261525+00:00"
+            "started_at": "2026-09-26T19:20:14.323200+00:00",
+            "finished_at": "2026-09-26T19:20:15.679177+00:00"
           }
         }
       ]

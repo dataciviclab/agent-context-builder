@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-09-26T15:55:59.204774
+**Generated**: 2026-09-26T20:43:37.519123
 
 ## Stato
 
@@ -12,4 +12,4 @@ Radar: 36 fonti GREEN 36 · Registry: 30 repo · 338 dataset
 - [PR] dataset-incubator#836: feat(candidates): bootstrap gse_cer_elenco candidate
 - [PR] dataset-incubator#834: chore(deps): bump toolkit a v1.51.0
 - [PR] dataset-incubator#829: intake: inpa-bandi e inpa-comunicazioni — reclutamento PA dal Portale inPA
-- [PR] dichiarazioni-italia#4: feat: Dashboard Streamlit + fix IRAP/IRES clean (×1000)
+- [PR] giustizia-amministrativa#3: chore(post-merge): aggiorna registry (schedule)
