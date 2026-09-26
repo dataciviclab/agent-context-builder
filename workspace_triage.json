@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T10:55:38.874162",
+  "generated_at": "2026-09-26T14:29:50.338981",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -18,6 +18,7 @@
     "imprese-italia",
     "indice-pa",
     "italia-corpus",
+    "italia-dipendenze",
     "lab-connectors",
     "open-coesione",
     "open-consip",
@@ -1406,6 +1407,14 @@
       "untracked_files": 0
     },
     "italia-corpus": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
+    "italia-dipendenze": {
       "available": false,
       "reason": "local_disabled",
       "dirty": null,
@@ -4239,6 +4248,77 @@
       "reason": "registry_not_found"
     },
     {
+      "repo": "italia-dipendenze",
+      "available": true,
+      "source_repo": "dataciviclab/italia-dipendenze",
+      "updated_at": "2026-09-26",
+      "datasets": 3,
+      "marts": 6,
+      "signals": 4,
+      "codelists": 0,
+      "entities": 3,
+      "gcs": 3,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "compose:resource_dependency_compose",
+          "source_id": "dataciviclab_composite",
+          "status": "ok",
+          "label": "resource_dependency_compose",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260926T110520Z_68bb2d32",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-26T11:05:20.457518+00:00",
+            "finished_at": "2026-09-26T11:05:20.524346+00:00"
+          }
+        },
+        {
+          "id": "comtrade_bilateral",
+          "source_id": "un_comtrade",
+          "status": "ok",
+          "label": "comtrade_bilateral",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260926T110438Z_88d82878",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-26T11:04:38.000074+00:00",
+            "finished_at": "2026-09-26T11:05:07.061124+00:00"
+          }
+        },
+        {
+          "id": "eurostat_nrg_bal_c",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_nrg_bal_c",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260926T110507Z_7a6425f7",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-26T11:05:07.135208+00:00",
+            "finished_at": "2026-09-26T11:05:19.870753+00:00"
+          }
+        },
+        {
+          "id": "fao_fertilizer_consumption",
+          "source_id": "faostat",
+          "status": "ok",
+          "label": "fao_fertilizer_consumption",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260926T110519Z_b10ba797",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-26T11:05:19.928474+00:00",
+            "finished_at": "2026-09-26T11:05:20.384083+00:00"
+          }
+        }
+      ]
+    },
+    {
       "repo": "lab-connectors",
       "available": false,
       "source_repo": "",
@@ -5262,7 +5342,7 @@
       "repo": "open-politica",
       "available": true,
       "source_repo": "dataciviclab/open-politica",
-      "updated_at": "2026-09-16",
+      "updated_at": "2026-09-26",
       "datasets": 30,
       "marts": 60,
       "signals": 30,
