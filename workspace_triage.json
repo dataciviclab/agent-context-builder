@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T19:50:19.989283",
+  "generated_at": "2026-09-27T20:59:17.583170",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -69,6 +69,13 @@
       "title": "intake: inpa-bandi e inpa-comunicazioni \u2014 reclutamento PA dal Portale inPA",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/829",
+      "category": "other"
+    },
+    {
+      "number": 33,
+      "title": "fix(extract): use IN-list batch for full senato extraction",
+      "repo": "open-politica",
+      "url": "https://github.com/dataciviclab/open-politica/pull/33",
       "category": "other"
     },
     {
@@ -1587,7 +1594,8 @@
   },
   "warnings": [
     "GitHub fetch failed \u2014 dataciviclab:analisi: https://api.github.com/repos/dataciviclab/dataciviclab/contents/analisi: HTTP 404",
-    "GitHub fetch failed \u2014 dataciviclab:analisi/registry/active.md: https://raw.githubusercontent.com/dataciviclab/dataciviclab/main/analisi/registry/active.md: HTTP 404"
+    "GitHub fetch failed \u2014 dataciviclab:analisi/registry/active.md: https://raw.githubusercontent.com/dataciviclab/dataciviclab/main/analisi/registry/active.md: HTTP 404",
+    "Many open PRs: 6"
   ],
   "radar": {
     "available": true,
@@ -6089,7 +6097,7 @@
       "repo": "opere-pubbliche",
       "available": true,
       "source_repo": "dataciviclab/opere-pubbliche",
-      "updated_at": "2026-09-14",
+      "updated_at": "2026-09-27",
       "datasets": 6,
       "marts": 8,
       "signals": 6,
@@ -6105,11 +6113,11 @@
           "label": "op_cup_lab",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260914T103107Z_a0a4d33c",
+            "run_id": "20260927T205146Z_0fe77275",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-14T10:31:07.856273+00:00",
-            "finished_at": "2026-09-14T10:33:26.505560+00:00"
+            "started_at": "2026-09-27T20:51:46.360792+00:00",
+            "finished_at": "2026-09-27T20:53:22.764455+00:00"
           }
         },
         {
@@ -6119,11 +6127,11 @@
           "label": "opencup_progetti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260914T101716Z_dee1c8bc",
+            "run_id": "20260927T204034Z_735c3057",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-14T10:17:16.073548+00:00",
-            "finished_at": "2026-09-14T10:31:05.098393+00:00"
+            "started_at": "2026-09-27T20:40:34.104817+00:00",
+            "finished_at": "2026-09-27T20:51:44.164060+00:00"
           }
         },
         {
@@ -6133,11 +6141,11 @@
           "label": "silos_infrastrutture",
           "detail": "anno 2024 \u2014 mart: si",
           "run": {
-            "run_id": "20260914T103105Z_fba739e3",
+            "run_id": "20260927T205144Z_0cc866d5",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-09-14T10:31:05.487633+00:00",
-            "finished_at": "2026-09-14T10:31:07.517453+00:00"
+            "started_at": "2026-09-27T20:51:44.469604+00:00",
+            "finished_at": "2026-09-27T20:51:46.057830+00:00"
           }
         },
         {
@@ -6147,11 +6155,11 @@
           "label": "opencup_fonti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260914T100758Z_96044ce5",
+            "run_id": "20260927T203256Z_5a65f818",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-14T10:07:58.115779+00:00",
-            "finished_at": "2026-09-14T10:11:32.489830+00:00"
+            "started_at": "2026-09-27T20:32:56.060862+00:00",
+            "finished_at": "2026-09-27T20:35:48.466012+00:00"
           }
         },
         {
@@ -6161,11 +6169,11 @@
           "label": "opencup_localizzazione",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260914T101133Z_b494d030",
+            "run_id": "20260927T203550Z_556342ae",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-14T10:11:33.784151+00:00",
-            "finished_at": "2026-09-14T10:17:08.421047+00:00"
+            "started_at": "2026-09-27T20:35:50.729791+00:00",
+            "finished_at": "2026-09-27T20:40:27.751196+00:00"
           }
         },
         {
@@ -6175,11 +6183,11 @@
           "label": "opencup_soggetti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260914T101709Z_d8b2543f",
+            "run_id": "20260927T204028Z_ecafe1fe",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-14T10:17:09.565670+00:00",
-            "finished_at": "2026-09-14T10:17:15.748173+00:00"
+            "started_at": "2026-09-27T20:40:28.744285+00:00",
+            "finished_at": "2026-09-27T20:40:33.804001+00:00"
           }
         }
       ]
