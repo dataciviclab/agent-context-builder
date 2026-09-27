@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T16:31:47.189956",
+  "generated_at": "2026-09-27T19:50:19.989283",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -17,6 +17,7 @@
     "giustizia-amministrativa",
     "imprese-italia",
     "indice-pa",
+    "inpa-reclutamento",
     "italia-corpus",
     "italia-dipendenze",
     "lab-connectors",
@@ -43,13 +44,6 @@
   "open_prs": null,
   "prs": [
     {
-      "number": 82,
-      "title": "chore: auto-discover registries (2026-09-27)",
-      "repo": "agent-context-builder",
-      "url": "https://github.com/dataciviclab/agent-context-builder/pull/82",
-      "category": "other"
-    },
-    {
       "number": 264,
       "title": "feat(mit-incidentalita): plateau 2013, indice di mortalit\u00e0 e stagionalit\u00e0",
       "repo": "data-explorer",
@@ -75,20 +69,6 @@
       "title": "intake: inpa-bandi e inpa-comunicazioni \u2014 reclutamento PA dal Portale inPA",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/829",
-      "category": "other"
-    },
-    {
-      "number": 31,
-      "title": "fix(compose): migrate workarounds to proper support types",
-      "repo": "open-politica",
-      "url": "https://github.com/dataciviclab/open-politica/pull/31",
-      "category": "other"
-    },
-    {
-      "number": 11,
-      "title": "feat: migrate op-cup-lab to support type external",
-      "repo": "opere-pubbliche",
-      "url": "https://github.com/dataciviclab/opere-pubbliche/pull/11",
       "category": "other"
     },
     {
@@ -1420,6 +1400,14 @@
       "branches_ahead": [],
       "untracked_files": 0
     },
+    "inpa-reclutamento": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
     "italia-corpus": {
       "available": false,
       "reason": "local_disabled",
@@ -1599,8 +1587,7 @@
   },
   "warnings": [
     "GitHub fetch failed \u2014 dataciviclab:analisi: https://api.github.com/repos/dataciviclab/dataciviclab/contents/analisi: HTTP 404",
-    "GitHub fetch failed \u2014 dataciviclab:analisi/registry/active.md: https://raw.githubusercontent.com/dataciviclab/dataciviclab/main/analisi/registry/active.md: HTTP 404",
-    "Many open PRs: 8"
+    "GitHub fetch failed \u2014 dataciviclab:analisi/registry/active.md: https://raw.githubusercontent.com/dataciviclab/dataciviclab/main/analisi/registry/active.md: HTTP 404"
   ],
   "radar": {
     "available": true,
@@ -4244,6 +4231,77 @@
             "status": "SUCCESS",
             "started_at": "2026-09-15T13:08:35.164594+00:00",
             "finished_at": "2026-09-15T13:09:17.708873+00:00"
+          }
+        }
+      ]
+    },
+    {
+      "repo": "inpa-reclutamento",
+      "available": true,
+      "source_repo": "dataciviclab/inpa-reclutamento",
+      "updated_at": "2026-09-27",
+      "datasets": 4,
+      "marts": 12,
+      "signals": 4,
+      "codelists": 0,
+      "entities": 2,
+      "gcs": 4,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "compose:inpa_insight",
+          "source_id": "inpa_reclutamento",
+          "status": "ok",
+          "label": "inpa_insight",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260927T115534Z_3a62ae28",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-27T11:55:34.271004+00:00",
+            "finished_at": "2026-09-27T11:55:35.133832+00:00"
+          }
+        },
+        {
+          "id": "inpa_bandi_closed",
+          "source_id": "inpa_reclutamento",
+          "status": "ok",
+          "label": "inpa_bandi_closed",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260927T113957Z_9da21cdb",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-27T11:39:57.368800+00:00",
+            "finished_at": "2026-09-27T11:55:34.262393+00:00"
+          }
+        },
+        {
+          "id": "inpa_bandi_open",
+          "source_id": "inpa_reclutamento",
+          "status": "ok",
+          "label": "inpa_bandi_open",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260927T113910Z_3b976a71",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-27T11:39:10.024381+00:00",
+            "finished_at": "2026-09-27T11:39:31.605513+00:00"
+          }
+        },
+        {
+          "id": "inpa_comunicazioni",
+          "source_id": "inpa_reclutamento",
+          "status": "ok",
+          "label": "inpa_comunicazioni",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260927T113932Z_d67911f7",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-27T11:39:32.073513+00:00",
+            "finished_at": "2026-09-27T11:39:56.912219+00:00"
           }
         }
       ]
