@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "generated_at": "2026-09-28T04:02:10.748675",
+  "generated_at": "2026-09-28T13:05:28.006509",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -2718,8 +2718,8 @@
           {
             "name": "atto_num",
             "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
+            "role": "dimension",
+            "semantic_type": "ddl_id",
             "description": ""
           },
           {
@@ -38769,8 +38769,8 @@
           {
             "name": "deputato_id",
             "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
+            "role": "dimension",
+            "semantic_type": "person_id",
             "description": ""
           },
           {
@@ -38841,7 +38841,7 @@
         ],
         "category": "politica",
         "registry_source": "open-politica",
-        "clean_rows": 3099,
+        "clean_rows": 3118,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-politica/camera_ddl/*/camera_ddl_*_clean.parquet",
@@ -39208,8 +39208,8 @@
           {
             "name": "deputato_id",
             "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
+            "role": "dimension",
+            "semantic_type": "person_id",
             "description": ""
           },
           {
@@ -39365,7 +39365,7 @@
         ],
         "category": "politica",
         "registry_source": "open-politica",
-        "clean_rows": 10360,
+        "clean_rows": 10390,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-politica/camera_relatori/2026/camera_relatori_2026_clean.parquet",
@@ -39382,8 +39382,8 @@
           {
             "name": "deputato_id",
             "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
+            "role": "dimension",
+            "semantic_type": "person_id",
             "description": ""
           },
           {
@@ -39433,7 +39433,7 @@
         ],
         "category": "politica",
         "registry_source": "open-politica",
-        "clean_rows": 3321,
+        "clean_rows": 3483,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-politica/camera_votazioni_sparql/*/camera_votazioni_sparql_*_clean.parquet",
@@ -39578,7 +39578,7 @@
         ],
         "category": "politica",
         "registry_source": "open-politica",
-        "clean_rows": 7747588,
+        "clean_rows": 7811946,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-politica/camera_voti/2026/camera_voti_2026_clean.parquet",
@@ -39588,8 +39588,8 @@
           {
             "name": "deputato_id",
             "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
+            "role": "dimension",
+            "semantic_type": "person_id",
             "description": ""
           },
           {
@@ -39916,7 +39916,7 @@
         ],
         "category": "politica",
         "registry_source": "open-politica",
-        "clean_rows": 124716,
+        "clean_rows": 125953,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-politica/dait_amministratori_locali/2026/dait_amministratori_locali_2026_clean.parquet",
@@ -40833,7 +40833,7 @@
         ],
         "category": "politica",
         "registry_source": "open-politica",
-        "clean_rows": 1052,
+        "clean_rows": 1053,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-politica/senato_commissioni/2026/senato_commissioni_2026_clean.parquet",
@@ -40929,7 +40929,7 @@
         ],
         "category": "politica",
         "registry_source": "open-politica",
-        "clean_rows": 5200,
+        "clean_rows": 5226,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-politica/senato_ddl/*/senato_ddl_*_clean.parquet",
@@ -40946,8 +40946,8 @@
           {
             "name": "atto_num",
             "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "atto_num",
+            "role": "dimension",
+            "semantic_type": "ddl_id",
             "description": "Alias di id_ddl per join cross-repo con senato-akn (atto_num == id_ddl)"
           },
           {
@@ -41174,7 +41174,7 @@
         ],
         "category": "politica",
         "registry_source": "open-politica",
-        "clean_rows": 38275,
+        "clean_rows": 38567,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-politica/senato_firmatari/2026/senato_firmatari_2026_clean.parquet",
@@ -41368,7 +41368,7 @@
         ],
         "category": "politica",
         "registry_source": "open-politica",
-        "clean_rows": 36168,
+        "clean_rows": 37105,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-politica/senato_interventi/2026/senato_interventi_2026_clean.parquet",
@@ -41437,7 +41437,7 @@
         ],
         "category": "politica",
         "registry_source": "open-politica",
-        "clean_rows": 1182928,
+        "clean_rows": 1210487,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-politica/senato_votazioni/2026/senato_votazioni_2026_clean.parquet",

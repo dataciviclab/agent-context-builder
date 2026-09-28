@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T04:02:10.748675",
+  "generated_at": "2026-09-28T13:05:28.006509",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -58,10 +58,17 @@
       "category": "other"
     },
     {
-      "number": 33,
-      "title": "fix(extract): use IN-list batch for full senato extraction",
+      "number": 3,
+      "title": "feat: aggiungi dashboard PNRR Intelligence",
+      "repo": "open-pnrr",
+      "url": "https://github.com/dataciviclab/open-pnrr/pull/3",
+      "category": "other"
+    },
+    {
+      "number": 35,
+      "title": "chore(post-merge): aggiorna registry (33)",
       "repo": "open-politica",
-      "url": "https://github.com/dataciviclab/open-politica/pull/33",
+      "url": "https://github.com/dataciviclab/open-politica/pull/35",
       "category": "other"
     },
     {
@@ -1584,8 +1591,8 @@
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-09-27T09:13:01.875927+00:00",
-    "probe_date": "2026-09-27",
+    "generated_at": "2026-09-28T09:41:28.292023+00:00",
+    "probe_date": "2026-09-28",
     "sources_total": 36,
     "green": 36,
     "yellow": 0,
@@ -5407,12 +5414,12 @@
       "repo": "open-politica",
       "available": true,
       "source_repo": "dataciviclab/open-politica",
-      "updated_at": "2026-09-26",
+      "updated_at": "2026-09-28",
       "datasets": 30,
       "marts": 60,
       "signals": 30,
       "codelists": 0,
-      "entities": 9,
+      "entities": 8,
       "gcs": 30,
       "reason": "",
       "signals_detail": [
@@ -5423,11 +5430,11 @@
           "label": "decreti_legge",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260816T213506Z_a908897d",
+            "run_id": "20260928T085232Z_dc5973d1",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-08-16T21:35:06.189115+00:00",
-            "finished_at": "2026-08-16T21:35:06.312442+00:00"
+            "started_at": "2026-09-28T08:52:32.379243+00:00",
+            "finished_at": "2026-09-28T08:52:32.493806+00:00"
           }
         },
         {
@@ -5437,11 +5444,11 @@
           "label": "elezioni_voto",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260816T213507Z_764659c5",
+            "run_id": "20260928T085232Z_a7889cd1",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-08-16T21:35:07.812039+00:00",
-            "finished_at": "2026-08-16T21:35:27.553780+00:00"
+            "started_at": "2026-09-28T08:52:32.829172+00:00",
+            "finished_at": "2026-09-28T08:52:34.008519+00:00"
           }
         },
         {
@@ -5451,11 +5458,11 @@
           "label": "osservatorio_parlamento",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260816T213528Z_65a17005",
+            "run_id": "20260928T085234Z_1c3434f1",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-08-16T21:35:28.225179+00:00",
-            "finished_at": "2026-08-16T21:35:28.537710+00:00"
+            "started_at": "2026-09-28T08:52:34.365111+00:00",
+            "finished_at": "2026-09-28T08:52:34.642849+00:00"
           }
         },
         {
@@ -5465,11 +5472,11 @@
           "label": "profilo_politico",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260816T213529Z_94676388",
+            "run_id": "20260928T085235Z_8b6a6c90",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-08-16T21:35:29.263357+00:00",
-            "finished_at": "2026-08-16T21:35:30.346612+00:00"
+            "started_at": "2026-09-28T08:52:35.032648+00:00",
+            "finished_at": "2026-09-28T08:52:36.146025+00:00"
           }
         },
         {
@@ -5479,11 +5486,11 @@
           "label": "senato_corpus_parlamento",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260818T075053Z_9c91ea18",
+            "run_id": "20260928T085236Z_5c531cd4",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-08-18T07:50:53.834560+00:00",
-            "finished_at": "2026-08-18T07:50:55.810682+00:00"
+            "started_at": "2026-09-28T08:52:36.754136+00:00",
+            "finished_at": "2026-09-28T08:52:42.489594+00:00"
           }
         },
         {
@@ -5493,11 +5500,11 @@
           "label": "camera_commissioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260901T162222Z_e8e64272",
+            "run_id": "20260928T084324Z_5480c056",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-01T16:22:22.961045+00:00",
-            "finished_at": "2026-09-01T16:22:25.028668+00:00"
+            "started_at": "2026-09-28T08:43:24.966467+00:00",
+            "finished_at": "2026-09-28T08:43:26.579853+00:00"
           }
         },
         {
@@ -5507,11 +5514,11 @@
           "label": "camera_ddl",
           "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20260916T105615Z_7342d366",
+            "run_id": "20260928T084342Z_7ff5b62f",
             "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-09-16T10:56:15.984844+00:00",
-            "finished_at": "2026-09-16T10:56:17.804750+00:00"
+            "started_at": "2026-09-28T08:43:42.709912+00:00",
+            "finished_at": "2026-09-28T08:43:44.258747+00:00"
           }
         },
         {
@@ -5521,11 +5528,11 @@
           "label": "camera_deputati_legislature",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260816T212643Z_a07bc625",
+            "run_id": "20260928T084344Z_497e7515",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-08-16T21:26:43.239396+00:00",
-            "finished_at": "2026-08-16T21:26:54.661467+00:00"
+            "started_at": "2026-09-28T08:43:44.617933+00:00",
+            "finished_at": "2026-09-28T08:43:56.546316+00:00"
           }
         },
         {
@@ -5535,11 +5542,11 @@
           "label": "camera_gruppi",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260816T212655Z_3671ba44",
+            "run_id": "20260928T084356Z_1f8f6375",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-08-16T21:26:55.258127+00:00",
-            "finished_at": "2026-08-16T21:26:56.138341+00:00"
+            "started_at": "2026-09-28T08:43:56.886783+00:00",
+            "finished_at": "2026-09-28T08:43:57.841698+00:00"
           }
         },
         {
@@ -5549,11 +5556,11 @@
           "label": "camera_incarichi",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260816T212656Z_99d89846",
+            "run_id": "20260928T084358Z_d3eba35f",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-08-16T21:26:56.725968+00:00",
-            "finished_at": "2026-08-16T21:26:59.068625+00:00"
+            "started_at": "2026-09-28T08:43:58.171772+00:00",
+            "finished_at": "2026-09-28T08:44:00.082470+00:00"
           }
         },
         {
@@ -5563,11 +5570,11 @@
           "label": "camera_interventi",
           "detail": "anni 2022-2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260816T212816Z_d1848014",
+            "run_id": "20260928T084519Z_64f114a9",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-08-16T21:28:16.929007+00:00",
-            "finished_at": "2026-08-16T21:28:24.635599+00:00"
+            "started_at": "2026-09-28T08:45:19.484044+00:00",
+            "finished_at": "2026-09-28T08:45:26.975731+00:00"
           }
         },
         {
@@ -5577,11 +5584,11 @@
           "label": "camera_leggi",
           "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20260916T105624Z_3e70dede",
+            "run_id": "20260928T084534Z_18c130db",
             "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-09-16T10:56:24.235674+00:00",
-            "finished_at": "2026-09-16T10:56:25.064503+00:00"
+            "started_at": "2026-09-28T08:45:34.126912+00:00",
+            "finished_at": "2026-09-28T08:45:35.074745+00:00"
           }
         },
         {
@@ -5591,11 +5598,11 @@
           "label": "camera_relatori",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260816T212825Z_ae9b34a4",
+            "run_id": "20260928T084535Z_4058f3f8",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-08-16T21:28:25.243888+00:00",
-            "finished_at": "2026-08-16T21:28:29.065586+00:00"
+            "started_at": "2026-09-28T08:45:35.424246+00:00",
+            "finished_at": "2026-09-28T08:45:39.633475+00:00"
           }
         },
         {
@@ -5605,11 +5612,11 @@
           "label": "camera_votazioni_sparql",
           "detail": "anni 2018-2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260816T212857Z_d2621363",
+            "run_id": "20260928T084609Z_0b0737fd",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-08-16T21:28:57.481351+00:00",
-            "finished_at": "2026-08-16T21:28:59.975572+00:00"
+            "started_at": "2026-09-28T08:46:09.424175+00:00",
+            "finished_at": "2026-09-28T08:46:12.776159+00:00"
           }
         },
         {
@@ -5619,11 +5626,11 @@
           "label": "camera_voti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260816T212900Z_9b5fd741",
+            "run_id": "20260928T084613Z_02b510f6",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-08-16T21:29:00.602457+00:00",
-            "finished_at": "2026-08-16T21:29:03.023631+00:00"
+            "started_at": "2026-09-28T08:46:13.142073+00:00",
+            "finished_at": "2026-09-28T08:46:15.492058+00:00"
           }
         },
         {
@@ -5633,11 +5640,11 @@
           "label": "dait_amministratori_locali",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260816T212905Z_e8608053",
+            "run_id": "20260928T084617Z_f9852368",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-08-16T21:29:05.216395+00:00",
-            "finished_at": "2026-08-16T21:29:08.812771+00:00"
+            "started_at": "2026-09-28T08:46:17.839766+00:00",
+            "finished_at": "2026-09-28T08:46:20.929147+00:00"
           }
         },
         {
@@ -5647,11 +5654,11 @@
           "label": "elezioni_comunali",
           "detail": "anni 2016-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20260816T212919Z_d55d880f",
+            "run_id": "20260928T084629Z_b50765a4",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-08-16T21:29:19.986123+00:00",
-            "finished_at": "2026-08-16T21:29:21.925448+00:00"
+            "started_at": "2026-09-28T08:46:29.096331+00:00",
+            "finished_at": "2026-09-28T08:46:30.762444+00:00"
           }
         },
         {
@@ -5661,11 +5668,11 @@
           "label": "elezioni_europee",
           "detail": "anni 1979-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20260816T213001Z_e8f9d9ee",
+            "run_id": "20260928T084706Z_4d06d5b8",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-08-16T21:30:01.348416+00:00",
-            "finished_at": "2026-08-16T21:30:09.206330+00:00"
+            "started_at": "2026-09-28T08:47:06.273445+00:00",
+            "finished_at": "2026-09-28T08:47:13.456079+00:00"
           }
         },
         {
@@ -5675,11 +5682,11 @@
           "label": "elezioni_politiche",
           "detail": "anno 2022 \u2014 mart: si",
           "run": {
-            "run_id": "20260829T163943Z_fff9dc7b",
+            "run_id": "20260928T084713Z_4d2c016d",
             "year": 2022,
             "status": "SUCCESS",
-            "started_at": "2026-08-29T16:39:43.956428+00:00",
-            "finished_at": "2026-08-29T16:41:18.796396+00:00"
+            "started_at": "2026-09-28T08:47:13.789049+00:00",
+            "finished_at": "2026-09-28T08:48:43.612611+00:00"
           }
         },
         {
@@ -5689,11 +5696,11 @@
           "label": "elezioni_referendum",
           "detail": "anni 1995-2022 \u2014 mart: si",
           "run": {
-            "run_id": "20260816T213203Z_9a90b4b6",
+            "run_id": "20260928T084857Z_2dffccdb",
             "year": 2022,
             "status": "SUCCESS",
-            "started_at": "2026-08-16T21:32:03.740443+00:00",
-            "finished_at": "2026-08-16T21:32:06.776170+00:00"
+            "started_at": "2026-09-28T08:48:57.795968+00:00",
+            "finished_at": "2026-09-28T08:49:00.419701+00:00"
           }
         },
         {
@@ -5703,11 +5710,11 @@
           "label": "elezioni_regionali",
           "detail": "anni 2018-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20260816T213222Z_40d219f8",
+            "run_id": "20260928T084913Z_53a07e17",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-08-16T21:32:22.272740+00:00",
-            "finished_at": "2026-08-16T21:32:23.902644+00:00"
+            "started_at": "2026-09-28T08:49:13.966512+00:00",
+            "finished_at": "2026-09-28T08:49:15.337031+00:00"
           }
         },
         {
@@ -5717,11 +5724,11 @@
           "label": "membri_governo",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260816T213224Z_7b019bf8",
+            "run_id": "20260928T084915Z_49aa4896",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-08-16T21:32:24.509345+00:00",
-            "finished_at": "2026-08-16T21:32:28.427933+00:00"
+            "started_at": "2026-09-28T08:49:15.664612+00:00",
+            "finished_at": "2026-09-28T08:49:21.464397+00:00"
           }
         },
         {
@@ -5731,11 +5738,11 @@
           "label": "ponte_persona",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260816T213505Z_82d1bfdd",
+            "run_id": "20260928T085231Z_14869004",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-08-16T21:35:05.431340+00:00",
-            "finished_at": "2026-08-16T21:35:05.550867+00:00"
+            "started_at": "2026-09-28T08:52:31.982789+00:00",
+            "finished_at": "2026-09-28T08:52:32.072673+00:00"
           }
         },
         {
@@ -5745,11 +5752,11 @@
           "label": "senato_anagrafica",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260816T213229Z_e5c3cc5d",
+            "run_id": "20260928T084921Z_5494de04",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-08-16T21:32:29.043422+00:00",
-            "finished_at": "2026-08-16T21:33:23.595757+00:00"
+            "started_at": "2026-09-28T08:49:21.808966+00:00",
+            "finished_at": "2026-09-28T08:49:24.593832+00:00"
           }
         },
         {
@@ -5759,11 +5766,11 @@
           "label": "senato_commissioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260816T213324Z_3bf2cd4d",
+            "run_id": "20260928T084924Z_b2253179",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-08-16T21:33:24.193918+00:00",
-            "finished_at": "2026-08-16T21:33:29.379993+00:00"
+            "started_at": "2026-09-28T08:49:24.935239+00:00",
+            "finished_at": "2026-09-28T08:49:28.585613+00:00"
           }
         },
         {
@@ -5773,11 +5780,11 @@
           "label": "senato_ddl",
           "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20260916T105816Z_327cc068",
+            "run_id": "20260928T085127Z_f2604a66",
             "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-09-16T10:58:16.073983+00:00",
-            "finished_at": "2026-09-16T10:58:35.899376+00:00"
+            "started_at": "2026-09-28T08:51:27.915127+00:00",
+            "finished_at": "2026-09-28T08:51:43.265259+00:00"
           }
         },
         {
@@ -5787,11 +5794,11 @@
           "label": "senato_firmatari",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260816T213359Z_653086be",
+            "run_id": "20260928T085143Z_61fc0531",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-08-16T21:33:59.669839+00:00",
-            "finished_at": "2026-08-16T21:34:31.276763+00:00"
+            "started_at": "2026-09-28T08:51:43.625477+00:00",
+            "finished_at": "2026-09-28T08:52:08.433551+00:00"
           }
         },
         {
@@ -5801,11 +5808,11 @@
           "label": "senato_gruppi",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260816T213431Z_6697baee",
+            "run_id": "20260928T085208Z_447668d9",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-08-16T21:34:31.865440+00:00",
-            "finished_at": "2026-08-16T21:34:34.540674+00:00"
+            "started_at": "2026-09-28T08:52:08.778989+00:00",
+            "finished_at": "2026-09-28T08:52:11.608794+00:00"
           }
         },
         {
@@ -5815,11 +5822,11 @@
           "label": "senato_interventi",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260816T213435Z_2bb2e08f",
+            "run_id": "20260928T085211Z_d0a8c085",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-08-16T21:34:35.138300+00:00",
-            "finished_at": "2026-08-16T21:35:03.026133+00:00"
+            "started_at": "2026-09-28T08:52:11.946051+00:00",
+            "finished_at": "2026-09-28T08:52:30.281778+00:00"
           }
         },
         {
@@ -5829,11 +5836,11 @@
           "label": "senato_votazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260816T213503Z_2468d0b0",
+            "run_id": "20260928T085230Z_32baf7f6",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-08-16T21:35:03.642590+00:00",
-            "finished_at": "2026-08-16T21:35:04.338570+00:00"
+            "started_at": "2026-09-28T08:52:30.621092+00:00",
+            "finished_at": "2026-09-28T08:52:31.236337+00:00"
           }
         }
       ]
