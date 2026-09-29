@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T12:15:49.497408",
+  "generated_at": "2026-09-29T14:44:45.936194",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -26,6 +26,7 @@
     "open-conto-annuale",
     "open-ispra",
     "open-mur",
+    "open-noipa",
     "open-pnrr",
     "open-politica",
     "open-siope",
@@ -55,6 +56,13 @@
       "title": "feat(candidates): bootstrap gse_cer_elenco candidate",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/836",
+      "category": "other"
+    },
+    {
+      "number": 38,
+      "title": "feat: selective pipeline \u2014 migrate local_file to script, eliminate run_pipeline.sh",
+      "repo": "open-politica",
+      "url": "https://github.com/dataciviclab/open-politica/pull/38",
       "category": "other"
     },
     {
@@ -262,6 +270,13 @@
       "repo": "open-consip",
       "url": "https://github.com/dataciviclab/open-consip/issues/3",
       "category": "intake"
+    },
+    {
+      "number": 5,
+      "title": "feat(dataset): ingesting RON (Rete Ondametrica Nazionale) \u2014 boe meteo-ondametriche",
+      "repo": "open-ispra",
+      "url": "https://github.com/dataciviclab/open-ispra/issues/5",
+      "category": "other"
     },
     {
       "number": 4,
@@ -1437,6 +1452,14 @@
       "untracked_files": 0
     },
     "open-mur": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
+    "open-noipa": {
       "available": false,
       "reason": "local_disabled",
       "dirty": null,
@@ -4255,11 +4278,11 @@
           "label": "inpa_bandi_open",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260929T104559Z_8a1aebc1",
+            "run_id": "20260929T122219Z_f71b5c74",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-29T10:45:59.704023+00:00",
-            "finished_at": "2026-09-29T10:46:19.725791+00:00"
+            "started_at": "2026-09-29T12:22:19.995183+00:00",
+            "finished_at": "2026-09-29T12:22:37.187371+00:00"
           }
         },
         {
@@ -4269,11 +4292,11 @@
           "label": "inpa_comunicazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260929T104620Z_3026b69d",
+            "run_id": "20260929T122237Z_ce135dbc",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-29T10:46:20.203631+00:00",
-            "finished_at": "2026-09-29T10:46:46.093914+00:00"
+            "started_at": "2026-09-29T12:22:37.666247+00:00",
+            "finished_at": "2026-09-29T12:23:03.548219+00:00"
           }
         }
       ]
@@ -5265,6 +5288,105 @@
             "status": "SUCCESS",
             "started_at": "2026-09-24T16:07:59.748185+00:00",
             "finished_at": "2026-09-24T16:12:05.561926+00:00"
+          }
+        }
+      ]
+    },
+    {
+      "repo": "open-noipa",
+      "available": true,
+      "source_repo": "dataciviclab/open-noipa",
+      "updated_at": "2026-09-29",
+      "datasets": 6,
+      "marts": 6,
+      "signals": 6,
+      "codelists": 0,
+      "entities": 1,
+      "gcs": 6,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "noipa_amministrati",
+          "source_id": "noipa_sparql",
+          "status": "ok",
+          "label": "noipa_amministrati",
+          "detail": "anni 2019-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260929T102910Z_277386b6",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-29T10:29:10.962817+00:00",
+            "finished_at": "2026-09-29T10:29:26.085396+00:00"
+          }
+        },
+        {
+          "id": "noipa_assenze",
+          "source_id": "noipa_sparql",
+          "status": "ok",
+          "label": "noipa_assenze",
+          "detail": "anni 2019-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260929T103613Z_5acdd516",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-29T10:36:13.410058+00:00",
+            "finished_at": "2026-09-29T10:37:06.872507+00:00"
+          }
+        },
+        {
+          "id": "noipa_contratti",
+          "source_id": "noipa_sparql",
+          "status": "ok",
+          "label": "noipa_contratti",
+          "detail": "anni 2019-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260929T104043Z_ba37c52b",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-29T10:40:43.161207+00:00",
+            "finished_at": "2026-09-29T10:41:01.755156+00:00"
+          }
+        },
+        {
+          "id": "noipa_pendolarismo",
+          "source_id": "noipa_sparql",
+          "status": "ok",
+          "label": "noipa_pendolarismo",
+          "detail": "anni 2021-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260929T104251Z_8504cfe7",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-29T10:42:51.116503+00:00",
+            "finished_at": "2026-09-29T10:43:08.156775+00:00"
+          }
+        },
+        {
+          "id": "noipa_ritenute_fiscali",
+          "source_id": "noipa_sparql",
+          "status": "ok",
+          "label": "noipa_ritenute_fiscali",
+          "detail": "anni 2019-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260929T104515Z_005ec8ba",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-29T10:45:15.037396+00:00",
+            "finished_at": "2026-09-29T10:45:30.910126+00:00"
+          }
+        },
+        {
+          "id": "noipa_ritenute_previdenziali",
+          "source_id": "noipa_sparql",
+          "status": "ok",
+          "label": "noipa_ritenute_previdenziali",
+          "detail": "anni 2019-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260929T105224Z_ca678c2c",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-29T10:52:24.506934+00:00",
+            "finished_at": "2026-09-29T10:53:10.334831+00:00"
           }
         }
       ]

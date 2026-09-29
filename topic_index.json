@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "generated_at": "2026-09-29T12:15:49.497408",
+  "generated_at": "2026-09-29T14:44:45.936194",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -97,6 +97,10 @@
     "open-mur": {
       "description": "Iscritti, laureati, personale, contribuzione studentesca \u2014 puliti, arricchiti e pronti per l'analisi.",
       "url": "https://github.com/dataciviclab/open-mur"
+    },
+    "open-noipa": {
+      "description": "Personale PA italiana \u2014 dati NoiPA/MEF 2019-2026 (stipendi, contributi, pendolarismo, assenze)",
+      "url": "https://github.com/dataciviclab/open-noipa"
     },
     "open-pnrr": {
       "description": "194 miliardi, 285k progetti, 7 dataset: i dati ufficiali del PNRR, puliti e interrogabili",
@@ -32445,7 +32449,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 1690,
+        "clean_rows": 1711,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_bandi_open/2026/inpa_bandi_open_2026_clean.parquet",
@@ -32657,7 +32661,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 5294,
+        "clean_rows": 5300,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_comunicazioni/2026/inpa_comunicazioni_2026_clean.parquet",
@@ -37256,6 +37260,571 @@
         ],
         "mart_refs": [
           "mur_tasso_abbandono__mart_tasso_abbandono"
+        ]
+      }
+    ],
+    "noipa_sparql": [
+      {
+        "slug": "noipa_amministrati",
+        "url_slug": "noipa-amministrati",
+        "name": "Noipa Amministrati",
+        "description": "Anagrafica personale PA \u2014 distribuzione per comune, fascia di eta', genere. Dati NoiPA/MEF (2019-2026), CSV aggregati dal portale open data.\n",
+        "source": "",
+        "source_id": "noipa_sparql",
+        "period": {
+          "start": 2019,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "pa",
+          "personale",
+          "anagrafica",
+          "mef",
+          "noipa"
+        ],
+        "category": "pubblica-amministrazione",
+        "registry_source": "open-noipa",
+        "clean_rows": 168152,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-noipa/noipa_amministrati/*/noipa_amministrati_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "comune_della_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "eta_min",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "eta_max",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sesso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "month",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "noipa_amministrati__mart_amministrati"
+        ]
+      },
+      {
+        "slug": "noipa_assenze",
+        "url_slug": "noipa-assenze",
+        "name": "Noipa Assenze",
+        "description": "Assenze contabilizzate personale PA \u2014 per causale, granularit\u00e0 oraria/giornaliera, comune, amministrazione, genere, eta'. Dati NoiPA/MEF (2021-2026), CSV aggregati dal portale open data.\n",
+        "source": "",
+        "source_id": "noipa_sparql",
+        "period": {
+          "start": 2019,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "pa",
+          "personale",
+          "assenze",
+          "malattia",
+          "mef",
+          "noipa"
+        ],
+        "category": "pubblica-amministrazione",
+        "registry_source": "open-noipa",
+        "clean_rows": 1352850,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-noipa/noipa_assenze/*/noipa_assenze_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "comune_della_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "amministrazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "eta_min",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "eta_max",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sesso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "motivazione_assenza",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "granularita_assenza",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "month",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "noipa_assenze__mart_assenze"
+        ]
+      },
+      {
+        "slug": "noipa_contratti",
+        "url_slug": "noipa-contratti",
+        "name": "Noipa Contratti",
+        "description": "Contratti e inquadramenti personale PA \u2014 distribuzione per provincia, amministrazione, comparto, livello. Dati NoiPA/MEF (2019-2026).\n",
+        "source": "",
+        "source_id": "noipa_sparql",
+        "period": {
+          "start": 2019,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "pa",
+          "personale",
+          "contratti",
+          "comparto",
+          "inquadramento",
+          "mef",
+          "noipa"
+        ],
+        "category": "pubblica-amministrazione",
+        "registry_source": "open-noipa",
+        "clean_rows": 232423,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-noipa/noipa_contratti/*/noipa_contratti_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "provincia_della_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "amministrazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "eta_min",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "eta_max",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sesso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "inquadramento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "month",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "noipa_contratti__mart_contratti"
+        ]
+      },
+      {
+        "slug": "noipa_pendolarismo",
+        "url_slug": "noipa-pendolarismo",
+        "name": "Noipa Pendolarismo",
+        "description": "Pendolarismo personale PA \u2014 distribuzione per provincia, comune, distanza domicilio-lavoro. Dati NoiPA/MEF (2021-2026), CSV aggregati dal portale open data.\n",
+        "source": "",
+        "source_id": "noipa_sparql",
+        "period": {
+          "start": 2021,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "pa",
+          "personale",
+          "pendolarismo",
+          "mobilita",
+          "mef",
+          "noipa"
+        ],
+        "category": "pubblica-amministrazione",
+        "registry_source": "open-noipa",
+        "clean_rows": 202913,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-noipa/noipa_pendolarismo/*/noipa_pendolarismo_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "provincia_della_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "comune_della_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stesso_comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ente",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "distance_min_KM",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "distance_max_KM",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_amministrati",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "month",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "noipa_pendolarismo__mart_pendolarismo"
+        ]
+      },
+      {
+        "slug": "noipa_ritenute_fiscali",
+        "url_slug": "noipa-ritenute-fiscali",
+        "name": "Noipa Ritenute Fiscali",
+        "description": "Ritenute fiscali (IRPEF) personale PA \u2014 imponibile, importo IRPEF, numero cedolini per comune, amministrazione, genere, eta'. Dati NoiPA/MEF (2019-2026).\n",
+        "source": "",
+        "source_id": "noipa_sparql",
+        "period": {
+          "start": 2019,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "pa",
+          "personale",
+          "redditi",
+          "irpef",
+          "ritenute",
+          "mef",
+          "noipa"
+        ],
+        "category": "pubblica-amministrazione",
+        "registry_source": "open-noipa",
+        "clean_rows": 222819,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-noipa/noipa_ritenute_fiscali/*/noipa_ritenute_fiscali_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "comune_della_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "amministrazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "eta_min",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "eta_max",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sesso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imponibile_fiscale",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_IRPEF",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_cedolini",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "month",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "noipa_ritenute_fiscali__mart_ritenute_fiscali"
+        ]
+      },
+      {
+        "slug": "noipa_ritenute_previdenziali",
+        "url_slug": "noipa-ritenute-previdenziali",
+        "name": "Noipa Ritenute Previdenziali",
+        "description": "Ritenute previdenziali personale PA \u2014 contributi INPS dipendente/datore per tipo, comune, amministrazione, genere, eta'. Dati NoiPA/MEF (2019-2026).\n",
+        "source": "",
+        "source_id": "noipa_sparql",
+        "period": {
+          "start": 2019,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "pa",
+          "personale",
+          "previdenza",
+          "inps",
+          "contributi",
+          "mef",
+          "noipa"
+        ],
+        "category": "pubblica-amministrazione",
+        "registry_source": "open-noipa",
+        "clean_rows": 1045685,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-noipa/noipa_ritenute_previdenziali/*/noipa_ritenute_previdenziali_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "comune_della_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "amministrazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "eta_min",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "eta_max",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sesso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ritenuta_previdenziale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_lavoratore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_datore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_cedolini",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "month",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "noipa_ritenute_previdenziali__mart_ritenute_previdenziali"
         ]
       }
     ],
