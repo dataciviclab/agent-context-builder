@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "generated_at": "2026-09-29T04:35:57.898969",
+  "generated_at": "2026-09-29T12:15:49.497408",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -25642,7 +25642,7 @@
         ],
         "category": "energia",
         "registry_source": "italia-dipendenze",
-        "clean_rows": 55,
+        "clean_rows": 355,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia_dipendenze/eurostat_nrg_bal_c/2026/eurostat_nrg_bal_c_2026_clean.parquet",
@@ -32445,7 +32445,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 1696,
+        "clean_rows": 1690,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_bandi_open/2026/inpa_bandi_open_2026_clean.parquet",
@@ -32657,7 +32657,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 5236,
+        "clean_rows": 5294,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_comunicazioni/2026/inpa_comunicazioni_2026_clean.parquet",
@@ -33096,7 +33096,8 @@
         ],
         "mart_refs": [
           "comtrade_bilateral__mart_trade_bilateral",
-          "comtrade_bilateral__mart_trade_concentration"
+          "comtrade_bilateral__mart_trade_concentration",
+          "comtrade_bilateral__mart_trade_balance"
         ]
       }
     ],
