@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T14:44:45.936194",
+  "generated_at": "2026-09-29T21:58:02.767961",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -56,20 +56,6 @@
       "title": "feat(candidates): bootstrap gse_cer_elenco candidate",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/836",
-      "category": "other"
-    },
-    {
-      "number": 38,
-      "title": "feat: selective pipeline \u2014 migrate local_file to script, eliminate run_pipeline.sh",
-      "repo": "open-politica",
-      "url": "https://github.com/dataciviclab/open-politica/pull/38",
-      "category": "other"
-    },
-    {
-      "number": 37,
-      "title": "feat: add senato_sindisp \u2014 sindacato ispettivo del Senato",
-      "repo": "open-politica",
-      "url": "https://github.com/dataciviclab/open-politica/pull/37",
       "category": "other"
     },
     {
@@ -286,6 +272,34 @@
       "category": "other"
     },
     {
+      "number": 5,
+      "title": "feat: noipa_accredito_stipendi \u2014 digitalizzazione pagamenti",
+      "repo": "open-noipa",
+      "url": "https://github.com/dataciviclab/open-noipa/issues/5",
+      "category": "infrastructure"
+    },
+    {
+      "number": 4,
+      "title": "feat: noipa_detrazioni_familiari \u2014 famiglia e fisco",
+      "repo": "open-noipa",
+      "url": "https://github.com/dataciviclab/open-noipa/issues/4",
+      "category": "infrastructure"
+    },
+    {
+      "number": 3,
+      "title": "feat: noipa_motivo_cessazione \u2014 perch\u00e9 se ne vanno",
+      "repo": "open-noipa",
+      "url": "https://github.com/dataciviclab/open-noipa/issues/3",
+      "category": "infrastructure"
+    },
+    {
+      "number": 2,
+      "title": "feat: noipa_motivo_assunzione \u2014 perch\u00e9 la PA assume",
+      "repo": "open-noipa",
+      "url": "https://github.com/dataciviclab/open-noipa/issues/2",
+      "category": "infrastructure"
+    },
+    {
       "number": 15,
       "title": "intake: senato_sindisp \u2014 Sindacato ispettivo del Senato (interrogazioni, interpellanze, mozioni)",
       "repo": "open-politica",
@@ -321,13 +335,34 @@
       "category": "other"
     }
   ],
-  "open_discussions": 134,
+  "open_discussions": 139,
   "discussions": [
     {
-      "number": 10,
-      "title": "[Domanda] Le Spese Correnti stanno comprimendo gli investimenti?",
+      "number": 30,
+      "title": "A cosa va ogni euro dello Stato? Breakdown della spesa per tipo (2020-2025)",
       "repo": "bilancio-pubblico",
-      "url": "https://github.com/dataciviclab/bilancio-pubblico/discussions/10",
+      "url": "https://github.com/dataciviclab/bilancio-pubblico/discussions/30",
+      "category": "Domande"
+    },
+    {
+      "number": 29,
+      "title": "Promesse vs Realt\u00e0: il governo spende sempre pi\u00f9 di quanto previsto in Legge di Bilancio?",
+      "repo": "bilancio-pubblico",
+      "url": "https://github.com/dataciviclab/bilancio-pubblico/discussions/29",
+      "category": "Domande"
+    },
+    {
+      "number": 28,
+      "title": "Dove va la spesa dello Stato? Le 10 missioni pi\u00f9 costose (2008-2025)",
+      "repo": "bilancio-pubblico",
+      "url": "https://github.com/dataciviclab/bilancio-pubblico/discussions/28",
+      "category": "Domande"
+    },
+    {
+      "number": 17,
+      "title": "Quanto paga lo Stato ogni anno in interessi sul debito?",
+      "repo": "bilancio-pubblico",
+      "url": "https://github.com/dataciviclab/bilancio-pubblico/discussions/17",
       "category": "Domande"
     },
     {
@@ -338,17 +373,17 @@
       "category": "Domande"
     },
     {
+      "number": 10,
+      "title": "[Domanda] Le Spese Correnti stanno comprimendo gli investimenti?",
+      "repo": "bilancio-pubblico",
+      "url": "https://github.com/dataciviclab/bilancio-pubblico/discussions/10",
+      "category": "Domande"
+    },
+    {
       "number": 9,
       "title": "[Domanda] Lo Stato italiano \u00e8 strutturalmente in deficit?",
       "repo": "bilancio-pubblico",
       "url": "https://github.com/dataciviclab/bilancio-pubblico/discussions/9",
-      "category": "Domande"
-    },
-    {
-      "number": 17,
-      "title": "Quanto paga lo Stato ogni anno in interessi sul debito?",
-      "repo": "bilancio-pubblico",
-      "url": "https://github.com/dataciviclab/bilancio-pubblico/discussions/17",
       "category": "Domande"
     },
     {
@@ -1094,6 +1129,41 @@
       "category": "Announcements"
     },
     {
+      "number": 43,
+      "title": "PNRR tracciato nella legge: 72 riferimenti alle 6 missioni del Piano",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/43",
+      "category": "Analisi"
+    },
+    {
+      "number": 42,
+      "title": "Abrogazioni: 5.506 relazioni tra leggi \u2014 chi abroga chi in Italia?",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/42",
+      "category": "Analisi"
+    },
+    {
+      "number": 22,
+      "title": "Dati dinamici via API: l'obbligo del D.Lgs 200/2021 \u00e8 realt\u00e0 o lettera morta?",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/22",
+      "category": "Idee"
+    },
+    {
+      "number": 18,
+      "title": "Cosa ci dice (e cosa non ci dice) italia-corpus? Limiti e potenziale del dataset",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/18",
+      "category": "Generale"
+    },
+    {
+      "number": 30,
+      "title": "Data di pubblicazione in Gazzetta Ufficiale \u2014 estrarla dal body",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/30",
+      "category": "Idee"
+    },
+    {
       "number": 15,
       "title": "La \"dittatura del decreto\"? 50 anni di decretazione d'urgenza in Italia",
       "repo": "italia-corpus",
@@ -1108,20 +1178,6 @@
       "category": "Analisi"
     },
     {
-      "number": 30,
-      "title": "Data di pubblicazione in Gazzetta Ufficiale \u2014 estrarla dal body",
-      "repo": "italia-corpus",
-      "url": "https://github.com/dataciviclab/italia-corpus/discussions/30",
-      "category": "Idee"
-    },
-    {
-      "number": 22,
-      "title": "Dati dinamici via API: l'obbligo del D.Lgs 200/2021 \u00e8 realt\u00e0 o lettera morta?",
-      "repo": "italia-corpus",
-      "url": "https://github.com/dataciviclab/italia-corpus/discussions/22",
-      "category": "Idee"
-    },
-    {
       "number": 21,
       "title": "Art. 52 CAD: 20 anni di \"open data by default\" in Italia \u2014 missione compiuta o lettera morta?",
       "repo": "italia-corpus",
@@ -1134,13 +1190,6 @@
       "repo": "italia-corpus",
       "url": "https://github.com/dataciviclab/italia-corpus/discussions/20",
       "category": "Idee"
-    },
-    {
-      "number": 18,
-      "title": "Cosa ci dice (e cosa non ci dice) italia-corpus? Limiti e potenziale del dataset",
-      "repo": "italia-corpus",
-      "url": "https://github.com/dataciviclab/italia-corpus/discussions/18",
-      "category": "Generale"
     },
     {
       "number": 17,
@@ -5508,13 +5557,13 @@
       "repo": "open-politica",
       "available": true,
       "source_repo": "dataciviclab/open-politica",
-      "updated_at": "2026-09-28",
-      "datasets": 30,
-      "marts": 60,
-      "signals": 30,
+      "updated_at": "2026-09-29",
+      "datasets": 31,
+      "marts": 62,
+      "signals": 31,
       "codelists": 0,
       "entities": 8,
-      "gcs": 30,
+      "gcs": 31,
       "reason": "",
       "signals_detail": [
         {
@@ -5846,11 +5895,11 @@
           "label": "senato_anagrafica",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260928T084921Z_5494de04",
+            "run_id": "20260929T200055Z_decb0dfc",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-28T08:49:21.808966+00:00",
-            "finished_at": "2026-09-28T08:49:24.593832+00:00"
+            "started_at": "2026-09-29T20:00:55.035694+00:00",
+            "finished_at": "2026-09-29T20:00:58.326903+00:00"
           }
         },
         {
@@ -5924,6 +5973,20 @@
           }
         },
         {
+          "id": "senato_sindisp",
+          "source_id": "dati_senato",
+          "status": "ok",
+          "label": "senato_sindisp",
+          "detail": "anni 13-19 \u2014 mart: si",
+          "run": {
+            "run_id": "20260929T200335Z_9d29041b",
+            "year": 19,
+            "status": "SUCCESS",
+            "started_at": "2026-09-29T20:03:35.005429+00:00",
+            "finished_at": "2026-09-29T20:03:55.660125+00:00"
+          }
+        },
+        {
           "id": "senato_votazioni",
           "source_id": "dati_senato",
           "status": "ok",
@@ -5943,9 +6006,9 @@
       "repo": "open-siope",
       "available": true,
       "source_repo": "dataciviclab/open-siope",
-      "updated_at": "2026-09-05",
+      "updated_at": "2026-09-29",
       "datasets": 10,
-      "marts": 22,
+      "marts": 15,
       "signals": 10,
       "codelists": 0,
       "entities": 6,
@@ -5959,11 +6022,11 @@
           "label": "siope_bilancio_unificato",
           "detail": "anni 2021-2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260905T103327Z_ca244715",
+            "run_id": "20260929T183016Z_2f1b34a4",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-05T10:33:27.977106+00:00",
-            "finished_at": "2026-09-05T10:33:44.361169+00:00"
+            "started_at": "2026-09-29T18:30:16.471299+00:00",
+            "finished_at": "2026-09-29T18:30:33.775511+00:00"
           }
         },
         {
@@ -5973,11 +6036,11 @@
           "label": "siope_entrate",
           "detail": "anni 2021-2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260905T101939Z_d78d4052",
+            "run_id": "20260929T181806Z_e10a0e21",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-05T10:19:39.880581+00:00",
-            "finished_at": "2026-09-05T10:20:19.697077+00:00"
+            "started_at": "2026-09-29T18:18:06.596558+00:00",
+            "finished_at": "2026-09-29T18:18:42.924431+00:00"
           }
         },
         {
@@ -5987,11 +6050,11 @@
           "label": "siope_uscite",
           "detail": "anni 2021-2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260905T103004Z_dc9b3429",
+            "run_id": "20260929T182630Z_165b358a",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-05T10:30:04.740374+00:00",
-            "finished_at": "2026-09-05T10:31:32.281698+00:00"
+            "started_at": "2026-09-29T18:26:30.065844+00:00",
+            "finished_at": "2026-09-29T18:27:44.054693+00:00"
           }
         },
         {
@@ -6001,11 +6064,11 @@
           "label": "siope_anag_codgest_entrate_seed",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260905T101442Z_62c0e57d",
+            "run_id": "20260929T181355Z_df8703a1",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-05T10:14:42.381685+00:00",
-            "finished_at": "2026-09-05T10:14:44.740090+00:00"
+            "started_at": "2026-09-29T18:13:55.712232+00:00",
+            "finished_at": "2026-09-29T18:13:57.866378+00:00"
           }
         },
         {
@@ -6015,11 +6078,11 @@
           "label": "siope_anag_codgest_uscite_seed",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260905T101445Z_253b555a",
+            "run_id": "20260929T181359Z_1607c359",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-05T10:14:45.985693+00:00",
-            "finished_at": "2026-09-05T10:14:48.199040+00:00"
+            "started_at": "2026-09-29T18:13:59.087330+00:00",
+            "finished_at": "2026-09-29T18:14:01.402886+00:00"
           }
         },
         {
@@ -6029,11 +6092,11 @@
           "label": "siope_anag_comparti_seed",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260905T101431Z_2eeabc51",
+            "run_id": "20260929T181345Z_43c6d454",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-05T10:14:31.486337+00:00",
-            "finished_at": "2026-09-05T10:14:34.362430+00:00"
+            "started_at": "2026-09-29T18:13:45.155995+00:00",
+            "finished_at": "2026-09-29T18:13:48.569363+00:00"
           }
         },
         {
@@ -6043,11 +6106,11 @@
           "label": "siope_anag_comuni_seed",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260905T101452Z_981129f7",
+            "run_id": "20260929T181405Z_85970572",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-05T10:14:52.597139+00:00",
-            "finished_at": "2026-09-05T10:14:54.756970+00:00"
+            "started_at": "2026-09-29T18:14:05.322253+00:00",
+            "finished_at": "2026-09-29T18:14:07.348937+00:00"
           }
         },
         {
@@ -6057,11 +6120,11 @@
           "label": "siope_anag_enti_seed",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260905T101439Z_516248cc",
+            "run_id": "20260929T181353Z_1c30face",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-05T10:14:39.054480+00:00",
-            "finished_at": "2026-09-05T10:14:41.461108+00:00"
+            "started_at": "2026-09-29T18:13:53.101561+00:00",
+            "finished_at": "2026-09-29T18:13:54.907189+00:00"
           }
         },
         {
@@ -6071,11 +6134,11 @@
           "label": "siope_anag_reg_prov_seed",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260905T101449Z_3395c434",
+            "run_id": "20260929T181402Z_d05c68fb",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-05T10:14:49.166684+00:00",
-            "finished_at": "2026-09-05T10:14:51.630749+00:00"
+            "started_at": "2026-09-29T18:14:02.621385+00:00",
+            "finished_at": "2026-09-29T18:14:04.491223+00:00"
           }
         },
         {
@@ -6085,11 +6148,11 @@
           "label": "siope_anag_sottocomparti_seed",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260905T101435Z_2948fdf4",
+            "run_id": "20260929T181349Z_f9899c4f",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-05T10:14:35.273339+00:00",
-            "finished_at": "2026-09-05T10:14:37.865579+00:00"
+            "started_at": "2026-09-29T18:13:49.754654+00:00",
+            "finished_at": "2026-09-29T18:13:51.936048+00:00"
           }
         }
       ]

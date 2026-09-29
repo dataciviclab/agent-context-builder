@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "generated_at": "2026-09-29T14:44:45.936194",
+  "generated_at": "2026-09-29T21:58:02.767961",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -41987,6 +41987,153 @@
         ]
       },
       {
+        "slug": "senato_sindisp",
+        "url_slug": "senato-sindisp",
+        "name": "Senato Sindisp",
+        "description": "",
+        "source": "",
+        "source_id": "dati_senato",
+        "period": {
+          "start": 1996,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "politica",
+          "senato",
+          "sindacato-ispettivo",
+          "interrogazioni",
+          "interpellanze",
+          "mozioni"
+        ],
+        "category": "politica",
+        "registry_source": "open-politica",
+        "clean_rows": 36254,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-politica/senato_sindisp/*/senato_sindisp_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "atto_id",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_presentazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "esito",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "url_testo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "label_atto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "senatore_id",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "senator_id",
+            "description": ""
+          },
+          {
+            "name": "presentatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_iniziativa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "legislatura",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_senatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cognome_senatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_nascita",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "luogo_nascita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "senato_sindisp__mart_sintesi",
+          "senato_sindisp__mart_per_senatore"
+        ]
+      },
+      {
         "slug": "senato_votazioni",
         "url_slug": "senato-votazioni",
         "name": "Senato Votazioni",
@@ -42205,7 +42352,7 @@
             "description": ""
           },
           {
-            "name": "macro_categoria_v2",
+            "name": "macro_categoria",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
@@ -42424,7 +42571,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "open-siope",
-        "clean_rows": 18062,
+        "clean_rows": 18105,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/siope/siope_anag_enti_seed/2026/siope_anag_enti_seed_2026_clean.parquet",
@@ -42641,7 +42788,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "open-siope",
-        "clean_rows": 1220714,
+        "clean_rows": 1241266,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/siope/siope_bilancio_unificato/*/siope_bilancio_unificato_*_clean.parquet",
@@ -42790,6 +42937,7 @@
           }
         ],
         "mart_refs": [
+          "siope_bilancio_unificato__mart_anno_comparto",
           "siope_bilancio_unificato__mart_sintesi",
           "siope_bilancio_unificato__mart_trend",
           "siope_bilancio_unificato__mart_enti"
@@ -42816,7 +42964,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "open-siope",
-        "clean_rows": 3003498,
+        "clean_rows": 3023499,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/siope/siope_entrate/*/siope_entrate_*_clean.parquet",
@@ -42943,7 +43091,7 @@
             "description": ""
           },
           {
-            "name": "macro_categoria_v2",
+            "name": "macro_categoria",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
@@ -42965,12 +43113,8 @@
           }
         ],
         "mart_refs": [
-          "siope_entrate__mart_pro",
-          "siope_entrate__mart_reg",
-          "siope_entrate__mart_san",
-          "siope_entrate__mart_uni",
-          "siope_entrate__mart_sintesi",
-          "siope_entrate__mart_trend"
+          "siope_entrate__mart_anno_comparto",
+          "siope_entrate__mart_ente"
         ]
       },
       {
@@ -42994,7 +43138,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "open-siope",
-        "clean_rows": 6282127,
+        "clean_rows": 6299370,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/siope/siope_uscite/*/siope_uscite_*_clean.parquet",
@@ -43150,12 +43294,8 @@
           }
         ],
         "mart_refs": [
-          "siope_uscite__mart_pro",
-          "siope_uscite__mart_reg",
-          "siope_uscite__mart_san",
-          "siope_uscite__mart_uni",
-          "siope_uscite__mart_sintesi",
-          "siope_uscite__mart_trend"
+          "siope_uscite__mart_anno_comparto",
+          "siope_uscite__mart_ente"
         ]
       }
     ],
