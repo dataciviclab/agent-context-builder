@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T12:01:58.399229",
+  "generated_at": "2026-09-30T20:17:37.617993",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -21,6 +21,7 @@
     "italia-corpus",
     "italia-dipendenze",
     "lab-connectors",
+    "oecd-benchmark",
     "open-coesione",
     "open-consip",
     "open-conto-annuale",
@@ -279,6 +280,13 @@
       "category": "other"
     },
     {
+      "number": 13,
+      "title": "noipa_assenze: campo `numero` non interpretabile \u2014 valori impossibili come giorni/mese",
+      "repo": "open-noipa",
+      "url": "https://github.com/dataciviclab/open-noipa/issues/13",
+      "category": "other"
+    },
+    {
       "number": 5,
       "title": "feat: noipa_accredito_stipendi \u2014 digitalizzazione pagamenti",
       "repo": "open-noipa",
@@ -342,7 +350,7 @@
       "category": "other"
     }
   ],
-  "open_discussions": 144,
+  "open_discussions": 150,
   "discussions": [
     {
       "number": 30,
@@ -1206,6 +1214,48 @@
       "category": "Idee"
     },
     {
+      "number": 10,
+      "title": "64 milioni di giorni di malattia al mese: quanto costa l'assenza nella PA?",
+      "repo": "open-noipa",
+      "url": "https://github.com/dataciviclab/open-noipa/discussions/10",
+      "category": "Analisi"
+    },
+    {
+      "number": 12,
+      "title": "Quanto costa ogni dipendente pubblico? Il datore di lavoro paga il 73% dei contributi",
+      "repo": "open-noipa",
+      "url": "https://github.com/dataciviclab/open-noipa/discussions/12",
+      "category": "Analisi"
+    },
+    {
+      "number": 11,
+      "title": "La PA invecchia: a Salerno il 49% dei dipendenti ha pi\u00f9 di 55 anni, il 7% ha meno di 35",
+      "repo": "open-noipa",
+      "url": "https://github.com/dataciviclab/open-noipa/discussions/11",
+      "category": "Analisi"
+    },
+    {
+      "number": 9,
+      "title": "Quanto guadagna un dipendente pubblico? Da Roma (\u20ac3.054) a Civitavecchia (\u20ac11.853)",
+      "repo": "open-noipa",
+      "url": "https://github.com/dataciviclab/open-noipa/discussions/9",
+      "category": "Analisi"
+    },
+    {
+      "number": 8,
+      "title": "Pendolarismo PA: il 62% dei dipendenti pubblici commuta, a Roma \u00e8 il 70%",
+      "repo": "open-noipa",
+      "url": "https://github.com/dataciviclab/open-noipa/discussions/8",
+      "category": "Analisi"
+    },
+    {
+      "number": 7,
+      "title": "La PA italiana ha 2,08 milioni di dipendenti: dove lavorano e cosa fanno?",
+      "repo": "open-noipa",
+      "url": "https://github.com/dataciviclab/open-noipa/discussions/7",
+      "category": "Domande"
+    },
+    {
       "number": 68,
       "title": "Manutenzione strade e scuole: stiamo lasciando cadere il patrimonio pubblico?",
       "repo": "open-siope",
@@ -1503,6 +1553,14 @@
       "untracked_files": 0
     },
     "lab-connectors": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
+    "oecd-benchmark": {
       "available": false,
       "reason": "local_disabled",
       "dirty": null,
@@ -4325,7 +4383,7 @@
       "repo": "inpa-reclutamento",
       "available": true,
       "source_repo": "dataciviclab/inpa-reclutamento",
-      "updated_at": "2026-09-29",
+      "updated_at": "2026-09-30",
       "datasets": 4,
       "marts": 12,
       "signals": 4,
@@ -4369,11 +4427,11 @@
           "label": "inpa_bandi_open",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260929T122219Z_f71b5c74",
+            "run_id": "20260930T120739Z_2b34ebf8",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-29T12:22:19.995183+00:00",
-            "finished_at": "2026-09-29T12:22:37.187371+00:00"
+            "started_at": "2026-09-30T12:07:39.960813+00:00",
+            "finished_at": "2026-09-30T12:08:00.720745+00:00"
           }
         },
         {
@@ -4383,11 +4441,11 @@
           "label": "inpa_comunicazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260929T122237Z_ce135dbc",
+            "run_id": "20260930T120801Z_8213553b",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-29T12:22:37.666247+00:00",
-            "finished_at": "2026-09-29T12:23:03.548219+00:00"
+            "started_at": "2026-09-30T12:08:01.176132+00:00",
+            "finished_at": "2026-09-30T12:08:28.250106+00:00"
           }
         }
       ]
@@ -4488,6 +4546,175 @@
       "entities": 0,
       "gcs": 0,
       "reason": "registry_not_found"
+    },
+    {
+      "repo": "oecd-benchmark",
+      "available": true,
+      "source_repo": "dataciviclab/oecd-benchmark",
+      "updated_at": "2026-09-29",
+      "datasets": 11,
+      "marts": 19,
+      "signals": 11,
+      "codelists": 0,
+      "entities": 3,
+      "gcs": 11,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "oecd_education_attainment",
+          "source_id": "oecd",
+          "status": "ok",
+          "label": "oecd_education_attainment",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260929T222522Z_e270c04a",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-29T22:25:22.521102+00:00",
+            "finished_at": "2026-09-29T22:26:59.345052+00:00"
+          }
+        },
+        {
+          "id": "oecd_air_emissions",
+          "source_id": "oecd",
+          "status": "ok",
+          "label": "oecd_air_emissions",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260929T222659Z_357b220f",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-29T22:26:59.395339+00:00",
+            "finished_at": "2026-09-29T22:27:01.591929+00:00"
+          }
+        },
+        {
+          "id": "oecd_forest",
+          "source_id": "oecd",
+          "status": "ok",
+          "label": "oecd_forest",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260929T222701Z_10fc35da",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-29T22:27:01.631307+00:00",
+            "finished_at": "2026-09-29T22:27:03.256047+00:00"
+          }
+        },
+        {
+          "id": "oecd_green_transition",
+          "source_id": "oecd",
+          "status": "ok",
+          "label": "oecd_green_transition",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260929T222703Z_0cc7d6ec",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-29T22:27:03.296754+00:00",
+            "finished_at": "2026-09-29T22:27:05.356259+00:00"
+          }
+        },
+        {
+          "id": "oecd_fua_economy",
+          "source_id": "oecd",
+          "status": "ok",
+          "label": "oecd_fua_economy",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260929T222705Z_2be81d0e",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-29T22:27:05.398134+00:00",
+            "finished_at": "2026-09-29T22:27:11.572708+00:00"
+          }
+        },
+        {
+          "id": "oecd_fua_ghg",
+          "source_id": "oecd",
+          "status": "ok",
+          "label": "oecd_fua_ghg",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260929T222711Z_c0926a5c",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-29T22:27:11.625050+00:00",
+            "finished_at": "2026-09-29T22:28:11.299006+00:00"
+          }
+        },
+        {
+          "id": "oecd_health_expenditure",
+          "source_id": "oecd",
+          "status": "ok",
+          "label": "oecd_health_expenditure",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260929T222811Z_88383b8e",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-29T22:28:11.350171+00:00",
+            "finished_at": "2026-09-29T22:28:20.636664+00:00"
+          }
+        },
+        {
+          "id": "oecd_regional_gdp",
+          "source_id": "oecd",
+          "status": "ok",
+          "label": "oecd_regional_gdp",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260929T222820Z_29e25e8d",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-29T22:28:20.685769+00:00",
+            "finished_at": "2026-09-29T22:29:35.152223+00:00"
+          }
+        },
+        {
+          "id": "oecd_tax_revenue",
+          "source_id": "oecd",
+          "status": "ok",
+          "label": "oecd_tax_revenue",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260929T222935Z_0d70973b",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-29T22:29:35.200289+00:00",
+            "finished_at": "2026-09-29T22:29:39.506317+00:00"
+          }
+        },
+        {
+          "id": "oecd_taxing_wages",
+          "source_id": "oecd",
+          "status": "ok",
+          "label": "oecd_taxing_wages",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260929T222939Z_05c1cf6a",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-29T22:29:39.668436+00:00",
+            "finished_at": "2026-09-29T22:29:49.106467+00:00"
+          }
+        },
+        {
+          "id": "oecd_unemployment",
+          "source_id": "oecd",
+          "status": "ok",
+          "label": "oecd_unemployment",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20260929T222949Z_474fe87d",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-09-29T22:29:49.187951+00:00",
+            "finished_at": "2026-09-29T22:30:04.074203+00:00"
+          }
+        }
+      ]
     },
     {
       "repo": "open-coesione",
