@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "generated_at": "2026-10-01T12:34:39.186827",
+  "generated_at": "2026-10-01T22:24:44.440577",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -7318,7 +7318,7 @@
         ],
         "category": "giurisprudenza",
         "registry_source": "costituzione-italiana",
-        "clean_rows": 1008,
+        "clean_rows": 1065,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/costituzione-italiana/atti_promovimento_corte_costituzionale/2026/atti_promovimento_corte_costituzionale_2026_clean.parquet",
@@ -7523,7 +7523,7 @@
         ],
         "category": "giurisprudenza",
         "registry_source": "costituzione-italiana",
-        "clean_rows": 266831,
+        "clean_rows": 267345,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/costituzione-italiana/massime_corte_costituzionale/2026/massime_corte_costituzionale_2026_clean.parquet",
@@ -7711,7 +7711,7 @@
         ],
         "category": "giurisprudenza",
         "registry_source": "costituzione-italiana",
-        "clean_rows": 22389,
+        "clean_rows": 22391,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/costituzione-italiana/pronunce_corte_costituzionale/2026/pronunce_corte_costituzionale_2026_clean.parquet",
@@ -7996,7 +7996,7 @@
         ],
         "category": "normativa",
         "registry_source": "costituzione-italiana",
-        "clean_rows": 18182,
+        "clean_rows": 19040,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/costituzione-italiana/citazioni_costituzionali/2026/citazioni_costituzionali_2026_clean.parquet",
@@ -29591,7 +29591,7 @@
         ],
         "category": "giustizia",
         "registry_source": "giustizia-amministrativa",
-        "clean_rows": 270887,
+        "clean_rows": 272017,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/giustizia-amministrativa/ga_decreti/2026/ga_decreti_2026_clean.parquet",
@@ -29742,7 +29742,7 @@
         ],
         "category": "giustizia",
         "registry_source": "giustizia-amministrativa",
-        "clean_rows": 298344,
+        "clean_rows": 299543,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/giustizia-amministrativa/ga_ordinanze/2026/ga_ordinanze_2026_clean.parquet",
@@ -29893,7 +29893,7 @@
         ],
         "category": "giustizia",
         "registry_source": "giustizia-amministrativa",
-        "clean_rows": 29290,
+        "clean_rows": 29415,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/giustizia-amministrativa/ga_provvedimenti/2026/ga_provvedimenti_2026_clean.parquet",
@@ -30002,7 +30002,7 @@
         ],
         "category": "giustizia",
         "registry_source": "giustizia-amministrativa",
-        "clean_rows": 418328,
+        "clean_rows": 420262,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/giustizia-amministrativa/ga_ricorsi_definiti/2026/ga_ricorsi_definiti_2026_clean.parquet",
@@ -30083,7 +30083,7 @@
         ],
         "category": "giustizia",
         "registry_source": "giustizia-amministrativa",
-        "clean_rows": 202580,
+        "clean_rows": 203846,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/giustizia-amministrativa/ga_ricorsi_pervenuti_class/2026/ga_ricorsi_pervenuti_class_2026_clean.parquet",
@@ -30157,7 +30157,7 @@
         ],
         "category": "giustizia",
         "registry_source": "giustizia-amministrativa",
-        "clean_rows": 495618,
+        "clean_rows": 497613,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/giustizia-amministrativa/ga_sentenze/2026/ga_sentenze_2026_clean.parquet",
@@ -30308,7 +30308,7 @@
         ],
         "category": "giustizia",
         "registry_source": "giustizia-amministrativa",
-        "clean_rows": 34631,
+        "clean_rows": 34764,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/giustizia-amministrativa/openga_ricorsi_appalto/2026/openga_ricorsi_appalto_2026_clean.parquet",
@@ -30609,7 +30609,7 @@
           },
           {
             "name": "data",
-            "type": "VARCHAR",
+            "type": "DATE",
             "role": "dimension",
             "semantic_type": "",
             "description": ""
@@ -30623,7 +30623,8 @@
           }
         ],
         "mart_refs": [
-          "camcom_cancellazioni__mart_cancellazioni_provincia"
+          "camcom_cancellazioni__mart_cancellazioni_provincia",
+          "camcom_cancellazioni__mart_serie_italia_ateco"
         ]
       },
       {
@@ -30671,7 +30672,7 @@
           },
           {
             "name": "data",
-            "type": "VARCHAR",
+            "type": "DATE",
             "role": "dimension",
             "semantic_type": "",
             "description": ""
@@ -30685,7 +30686,8 @@
           }
         ],
         "mart_refs": [
-          "camcom_iscrizioni__mart_iscrizioni_provincia"
+          "camcom_iscrizioni__mart_iscrizioni_provincia",
+          "camcom_iscrizioni__mart_serie_italia_ateco"
         ]
       },
       {
@@ -30746,7 +30748,9 @@
           }
         ],
         "mart_refs": [
-          "camcom_stock_italia__mart_provincia_ateco"
+          "camcom_stock_italia__mart_provincia_ateco",
+          "camcom_stock_italia__mart_serie_italia_ateco",
+          "camcom_stock_italia__mart_serie_territorio"
         ]
       },
       {
@@ -30830,7 +30834,8 @@
         ],
         "mart_refs": [
           "camcom_stock_italia_6cifre__mart_6cifre_regione",
-          "camcom_stock_italia_6cifre__mart_6cifre_provincia"
+          "camcom_stock_italia_6cifre__mart_6cifre_provincia",
+          "camcom_stock_italia_6cifre__mart_gerarchia"
         ]
       },
       {
@@ -30893,7 +30898,8 @@
           }
         ],
         "mart_refs": [
-          "camcom_stock_marche__mart_comune_ateco"
+          "camcom_stock_marche__mart_comune_ateco",
+          "camcom_stock_marche__mart_serie_comune"
         ]
       },
       {
@@ -30979,7 +30985,8 @@
         ],
         "mart_refs": [
           "camcom_stock_marche_6cifre__mart_6cifre_provincia",
-          "camcom_stock_marche_6cifre__mart_6cifre_comune"
+          "camcom_stock_marche_6cifre__mart_6cifre_comune",
+          "camcom_stock_marche_6cifre__mart_gerarchia"
         ]
       },
       {
@@ -31041,7 +31048,8 @@
           }
         ],
         "mart_refs": [
-          "camcom_variazione__mart_variazione_provincia"
+          "camcom_variazione__mart_variazione_provincia",
+          "camcom_variazione__mart_serie_italia_ateco"
         ]
       }
     ],
@@ -32453,7 +32461,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 1733,
+        "clean_rows": 1728,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_bandi_open/2026/inpa_bandi_open_2026_clean.parquet",
@@ -32665,7 +32673,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 5331,
+        "clean_rows": 5376,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_comunicazioni/2026/inpa_comunicazioni_2026_clean.parquet",
@@ -34243,7 +34251,7 @@
         ],
         "category": "economia",
         "registry_source": "oecd-benchmark",
-        "clean_rows": 322153,
+        "clean_rows": 322187,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/oecd-benchmark/oecd_unemployment/2026/oecd_unemployment_2026_clean.parquet",
@@ -35972,7 +35980,7 @@
         ],
         "category": "ambiente",
         "registry_source": "open-ispra",
-        "clean_rows": 9644221,
+        "clean_rows": 9844221,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-ispra/ispra_pest/2021/ispra_pest_2021_clean.parquet",
@@ -38451,7 +38459,7 @@
         ],
         "category": "pubblica-amministrazione",
         "registry_source": "open-noipa",
-        "clean_rows": 168152,
+        "clean_rows": 188504,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-noipa/noipa_amministrati/*/noipa_amministrati_*_clean.parquet",
@@ -38527,7 +38535,7 @@
         ],
         "category": "pubblica-amministrazione",
         "registry_source": "open-noipa",
-        "clean_rows": 1352850,
+        "clean_rows": 1519631,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-noipa/noipa_assenze/*/noipa_assenze_*_clean.parquet",
@@ -38625,7 +38633,7 @@
         ],
         "category": "pubblica-amministrazione",
         "registry_source": "open-noipa",
-        "clean_rows": 232423,
+        "clean_rows": 261303,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-noipa/noipa_contratti/*/noipa_contratti_*_clean.parquet",
@@ -38813,7 +38821,7 @@
         ],
         "category": "pubblica-amministrazione",
         "registry_source": "open-noipa",
-        "clean_rows": 222819,
+        "clean_rows": 250136,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-noipa/noipa_ritenute_fiscali/*/noipa_ritenute_fiscali_*_clean.parquet",
@@ -38911,7 +38919,7 @@
         ],
         "category": "pubblica-amministrazione",
         "registry_source": "open-noipa",
-        "clean_rows": 1045685,
+        "clean_rows": 1166754,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-noipa/noipa_ritenute_previdenziali/*/noipa_ritenute_previdenziali_*_clean.parquet",
@@ -39456,7 +39464,7 @@
           {
             "name": "valore_programmato",
             "type": "DOUBLE",
-            "role": "metric",
+            "role": "dimension",
             "semantic_type": "target_value",
             "description": ""
           },
@@ -40475,6 +40483,81 @@
     ],
     "dati_camera": [
       {
+        "slug": "camera_atti_dibattito",
+        "url_slug": "camera-atti-dibattito",
+        "name": "Camera Atti Dibattito",
+        "description": "",
+        "source": "",
+        "source_id": "dati_camera",
+        "period": {
+          "start": 2006,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "politica",
+          "camera",
+          "dibattito",
+          "iter",
+          "accountability"
+        ],
+        "category": "politica",
+        "registry_source": "open-politica",
+        "clean_rows": 20338,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-politica/camera_atti_dibattito/*/camera_atti_dibattito_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "atto_id",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "atto_uri",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "legislatura",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "atto_id_leg",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "target_uri",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ruolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "camera_atti_dibattito__mart_dibattiti_per_atto"
+        ]
+      },
+      {
         "slug": "camera_commissioni",
         "url_slug": "camera-commissioni",
         "name": "Camera Commissioni",
@@ -40755,6 +40838,96 @@
         "mart_refs": [
           "camera_deputati_legislature__mart_legislatura_genere",
           "camera_deputati_legislature__mart_top_mandati"
+        ]
+      },
+      {
+        "slug": "camera_firmatari",
+        "url_slug": "camera-firmatari",
+        "name": "Camera Firmatari",
+        "description": "",
+        "source": "",
+        "source_id": "dati_camera",
+        "period": {
+          "start": 1946,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "politica",
+          "camera",
+          "firmatari",
+          "ddl",
+          "accountability"
+        ],
+        "category": "politica",
+        "registry_source": "open-politica",
+        "clean_rows": 23663,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-politica/camera_firmatari/*/camera_firmatari_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "atto_id",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "atto_uri",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "legislatura",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "atto_id_leg",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "deputato_uri",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "persona_id",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "person_id",
+            "description": ""
+          },
+          {
+            "name": "deputato_label",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ruolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "camera_firmatari__mart_firmatari_per_atto",
+          "camera_firmatari__mart_firmatari_per_deputato"
         ]
       },
       {
@@ -43153,6 +43326,110 @@
         ]
       },
       {
+        "slug": "senato_relatori",
+        "url_slug": "senato-relatori",
+        "name": "Senato Relatori",
+        "description": "",
+        "source": "",
+        "source_id": "dati_senato",
+        "period": {
+          "start": 1996,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "politica",
+          "senato",
+          "relatori",
+          "ddl",
+          "accountability"
+        ],
+        "category": "politica",
+        "registry_source": "open-politica",
+        "clean_rows": 30336,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-politica/senato_relatori/2026/senato_relatori_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "ddl_id",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "ddl_id",
+            "description": ""
+          },
+          {
+            "name": "ddl_uri",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ddl_uri_num",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "senatore_id",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "senator_id",
+            "description": ""
+          },
+          {
+            "name": "senatore_uri",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "relatore_uri",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "relatore_label",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "organo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_relatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "has_senatore_id",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "senato_relatori__mart_relatori_per_ddl",
+          "senato_relatori__mart_relatori_per_senatore"
+        ]
+      },
+      {
         "slug": "senato_sindisp",
         "url_slug": "senato-sindisp",
         "name": "Senato Sindisp",
@@ -43443,6 +43720,117 @@
         "mart_refs": [
           "senato_votazioni__mart_sintesi",
           "senato_votazioni__mart_voto_senatore"
+        ]
+      },
+      {
+        "slug": "senato_votazioni_oggetto",
+        "url_slug": "senato-votazioni-oggetto",
+        "name": "Senato Votazioni Oggetto",
+        "description": "",
+        "source": "",
+        "source_id": "dati_senato",
+        "period": {
+          "start": 1996,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "politica",
+          "senato",
+          "votazioni",
+          "ddl",
+          "iter",
+          "accountability"
+        ],
+        "category": "politica",
+        "registry_source": "open-politica",
+        "clean_rows": 29246,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-politica/senato_votazioni_oggetto/2026/senato_votazioni_oggetto_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "votazione_id",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "votazione_uri",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "oggetto_id",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "oggetto_uri",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ddl_id",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "ddl_id",
+            "description": ""
+          },
+          {
+            "name": "ddl_uri",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ddl_uri_num",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "legislatura",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "esito",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_votazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "has_ddl",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "senato_votazioni_oggetto__mart_votazioni_per_ddl"
         ]
       }
     ],
@@ -46796,7 +47184,7 @@
         ],
         "category": "politica",
         "registry_source": "senato-akn",
-        "clean_rows": 9936,
+        "clean_rows": 9947,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/senato-akn/senato_corpus/2026/senato_corpus_2026_clean.parquet",
@@ -47021,7 +47409,7 @@
         ],
         "category": "politica",
         "registry_source": "senato-akn",
-        "clean_rows": 364428,
+        "clean_rows": 365924,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/senato-akn/senato_dibattito/2026/senato_dibattito_2026_clean.parquet",
@@ -47147,7 +47535,7 @@
         ],
         "category": "politica",
         "registry_source": "senato-akn",
-        "clean_rows": 1004482,
+        "clean_rows": 1005356,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/senato-akn/senato_emendamenti/2026/senato_emendamenti_2026_clean.parquet",
@@ -47646,7 +48034,7 @@
         ],
         "category": "economia",
         "registry_source": "sistema-bancario",
-        "clean_rows": 1429726,
+        "clean_rows": 1449358,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/sistema-bancario/ecb_bsi/2026/ecb_bsi_2026_clean.parquet",
@@ -47863,7 +48251,7 @@
         ],
         "category": "economia",
         "registry_source": "sistema-bancario",
-        "clean_rows": 533728,
+        "clean_rows": 539518,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/sistema-bancario/ecb_mir/2026/ecb_mir_2026_clean.parquet",
