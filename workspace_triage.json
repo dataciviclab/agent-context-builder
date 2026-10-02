@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T11:59:58.846516",
+  "generated_at": "2026-10-02T17:48:55.978778",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -60,10 +60,10 @@
       "category": "other"
     },
     {
-      "number": 493,
-      "title": "fix(support): external multi-anno restituisce lista URL, non glob",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/493",
+      "number": 6,
+      "title": "feat(openga): pareri, sentenze brevi, tipi di decisione + fix grano cross",
+      "repo": "giustizia-amministrativa",
+      "url": "https://github.com/dataciviclab/giustizia-amministrativa/pull/6",
       "category": "other"
     },
     {
@@ -322,6 +322,13 @@
       "category": "infrastructure"
     },
     {
+      "number": 45,
+      "title": "fix(senato-ddl): urn_normattiva \u2014 no URN su placeholder 2100; namespace legge.costituzionale",
+      "repo": "open-politica",
+      "url": "https://github.com/dataciviclab/open-politica/issues/45",
+      "category": "other"
+    },
+    {
       "number": 15,
       "title": "intake: senato_sindisp \u2014 Sindacato ispettivo del Senato (interrogazioni, interpellanze, mozioni)",
       "repo": "open-politica",
@@ -357,7 +364,7 @@
       "category": "other"
     }
   ],
-  "open_discussions": 168,
+  "open_discussions": 169,
   "discussions": [
     {
       "number": 30,
@@ -1191,6 +1198,13 @@
       "repo": "imprese-italia",
       "url": "https://github.com/dataciviclab/imprese-italia/discussions/8",
       "category": "Domande"
+    },
+    {
+      "number": 53,
+      "title": "Otto testi per capire la legislazione italiana: da dove partiamo?",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/53",
+      "category": "Analisi"
     },
     {
       "number": 16,
@@ -2220,7 +2234,7 @@
       "repo": "appalti-pubblici",
       "available": true,
       "source_repo": "dataciviclab/appalti-pubblici",
-      "updated_at": "2026-09-12",
+      "updated_at": "2026-10-02",
       "datasets": 9,
       "marts": 19,
       "signals": 9,
@@ -2236,11 +2250,11 @@
           "label": "anac_cross",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260912T140216Z_ef2df8d0",
+            "run_id": "20261002T123539Z_2d198f5c",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-12T14:02:16.125430+00:00",
-            "finished_at": "2026-09-12T14:06:13.491689+00:00"
+            "started_at": "2026-10-02T12:35:39.442694+00:00",
+            "finished_at": "2026-10-02T12:36:55.208125+00:00"
           }
         },
         {
@@ -2250,11 +2264,11 @@
           "label": "anac_aggiudicatari",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260912T134851Z_891547fc",
+            "run_id": "20261002T122218Z_4346f10d",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-12T13:48:51.616977+00:00",
-            "finished_at": "2026-09-12T13:50:07.367667+00:00"
+            "started_at": "2026-10-02T12:22:18.863935+00:00",
+            "finished_at": "2026-10-02T12:23:16.087537+00:00"
           }
         },
         {
@@ -2264,11 +2278,11 @@
           "label": "anac_aggiudicazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260912T135008Z_2eb65d9b",
+            "run_id": "20261002T122317Z_a4eda0b3",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-12T13:50:08.181792+00:00",
-            "finished_at": "2026-09-12T13:51:35.843436+00:00"
+            "started_at": "2026-10-02T12:23:17.445902+00:00",
+            "finished_at": "2026-10-02T12:24:17.256783+00:00"
           }
         },
         {
@@ -2278,11 +2292,11 @@
           "label": "anac_bandi_gara",
           "detail": "anni 2016-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20260912T135749Z_bd3f3708",
+            "run_id": "20261002T123132Z_617bbc29",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-09-12T13:57:49.081888+00:00",
-            "finished_at": "2026-09-12T13:59:53.767964+00:00"
+            "started_at": "2026-10-02T12:31:32.604157+00:00",
+            "finished_at": "2026-10-02T12:33:18.850490+00:00"
           }
         },
         {
@@ -2292,11 +2306,11 @@
           "label": "anac_collaudo",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260912T135955Z_b09fe06f",
+            "run_id": "20261002T123320Z_8deddda7",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-12T13:59:55.019418+00:00",
-            "finished_at": "2026-09-12T14:00:02.716683+00:00"
+            "started_at": "2026-10-02T12:33:20.799450+00:00",
+            "finished_at": "2026-10-02T12:33:27.681394+00:00"
           }
         },
         {
@@ -2306,11 +2320,11 @@
           "label": "anac_cup",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260912T140003Z_4ab99ae0",
+            "run_id": "20261002T123328Z_b7100866",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-12T14:00:03.278808+00:00",
-            "finished_at": "2026-09-12T14:00:36.027693+00:00"
+            "started_at": "2026-10-02T12:33:28.751261+00:00",
+            "finished_at": "2026-10-02T12:33:59.753440+00:00"
           }
         },
         {
@@ -2320,11 +2334,11 @@
           "label": "anac_partecipanti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260912T140036Z_45e68c8b",
+            "run_id": "20261002T123400Z_8334a58f",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-12T14:00:36.592292+00:00",
-            "finished_at": "2026-09-12T14:01:47.934903+00:00"
+            "started_at": "2026-10-02T12:34:00.768899+00:00",
+            "finished_at": "2026-10-02T12:35:11.655234+00:00"
           }
         },
         {
@@ -2334,11 +2348,11 @@
           "label": "anac_stati_avanzamento",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260912T140148Z_f2454a8d",
+            "run_id": "20261002T123513Z_f7f0d2c0",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-12T14:01:48.498204+00:00",
-            "finished_at": "2026-09-12T14:02:03.893708+00:00"
+            "started_at": "2026-10-02T12:35:13.302608+00:00",
+            "finished_at": "2026-10-02T12:35:25.599970+00:00"
           }
         },
         {
@@ -2348,11 +2362,11 @@
           "label": "anac_subappalti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260912T140204Z_887eba61",
+            "run_id": "20261002T123526Z_a7708cc2",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-12T14:02:04.462595+00:00",
-            "finished_at": "2026-09-12T14:02:15.568151+00:00"
+            "started_at": "2026-10-02T12:35:26.640487+00:00",
+            "finished_at": "2026-10-02T12:35:39.125722+00:00"
           }
         }
       ]
@@ -2361,7 +2375,7 @@
       "repo": "bilancio-pubblico",
       "available": true,
       "source_repo": "dataciviclab/bilancio-pubblico",
-      "updated_at": "2026-09-05",
+      "updated_at": "2026-10-02",
       "datasets": 5,
       "marts": 14,
       "signals": 5,
@@ -2377,11 +2391,11 @@
           "label": "bdap_entrate_stato",
           "detail": "anno 2025 \u2014 mart: si",
           "run": {
-            "run_id": "20260904T112245Z_bc85f25e",
+            "run_id": "20261002T123854Z_8a663921",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-09-04T11:22:45.505658+00:00",
-            "finished_at": "2026-09-04T11:22:49.996793+00:00"
+            "started_at": "2026-10-02T12:38:54.127094+00:00",
+            "finished_at": "2026-10-02T12:38:58.317856+00:00"
           }
         },
         {
@@ -2391,11 +2405,11 @@
           "label": "bdap_lb_spese_missione",
           "detail": "anni 2017-2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260904T112434Z_524cdbb5",
+            "run_id": "20261002T124043Z_1baf91a7",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-04T11:24:34.636638+00:00",
-            "finished_at": "2026-09-04T11:24:46.448881+00:00"
+            "started_at": "2026-10-02T12:40:43.867316+00:00",
+            "finished_at": "2026-10-02T12:40:56.493260+00:00"
           }
         },
         {
@@ -2405,11 +2419,11 @@
           "label": "bdap_pagamenti_stato",
           "detail": "anni 2014-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20260904T112507Z_35b2f9a4",
+            "run_id": "20261002T124119Z_8e250370",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-09-04T11:25:07.127095+00:00",
-            "finished_at": "2026-09-04T11:25:08.468415+00:00"
+            "started_at": "2026-10-02T12:41:19.059148+00:00",
+            "finished_at": "2026-10-02T12:41:20.448795+00:00"
           }
         },
         {
@@ -2419,11 +2433,11 @@
           "label": "bdap_saldi_stato",
           "detail": "anno 2025 \u2014 mart: si",
           "run": {
-            "run_id": "20260904T112511Z_e31285f8",
+            "run_id": "20261002T124122Z_53afc633",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-09-04T11:25:11.207157+00:00",
-            "finished_at": "2026-09-04T11:25:12.773361+00:00"
+            "started_at": "2026-10-02T12:41:22.957134+00:00",
+            "finished_at": "2026-10-02T12:41:23.878929+00:00"
           }
         },
         {
@@ -2433,11 +2447,11 @@
           "label": "bdap_spese_stato",
           "detail": "anno 2025 \u2014 mart: si",
           "run": {
-            "run_id": "20260904T112518Z_14300f14",
+            "run_id": "20261002T124128Z_ea3f8454",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-09-04T11:25:18.585992+00:00",
-            "finished_at": "2026-09-04T11:25:25.110904+00:00"
+            "started_at": "2026-10-02T12:41:28.010802+00:00",
+            "finished_at": "2026-10-02T12:41:34.799492+00:00"
           }
         }
       ]
@@ -3097,7 +3111,7 @@
       "repo": "dcl-bologna",
       "available": true,
       "source_repo": "dataciviclab/dcl-bologna",
-      "updated_at": "2026-09-03",
+      "updated_at": "2026-10-02",
       "datasets": 15,
       "marts": 29,
       "signals": 15,
@@ -3113,11 +3127,11 @@
           "label": "bolognawifi_matrice",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260903T172548Z_502df4d3",
+            "run_id": "20261002T133228Z_2dfb0ab4",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-03T17:25:48.330581+00:00",
-            "finished_at": "2026-09-03T17:27:55.786181+00:00"
+            "started_at": "2026-10-02T13:32:28.086193+00:00",
+            "finished_at": "2026-10-02T13:35:16.010440+00:00"
           }
         },
         {
@@ -3127,11 +3141,11 @@
           "label": "centraline_aria",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260903T172756Z_b0202ffc",
+            "run_id": "20261002T133516Z_a10a37cb",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-03T17:27:56.842428+00:00",
-            "finished_at": "2026-09-03T17:28:03.696252+00:00"
+            "started_at": "2026-10-02T13:35:16.685607+00:00",
+            "finished_at": "2026-10-02T13:35:26.224719+00:00"
           }
         },
         {
@@ -3141,11 +3155,11 @@
           "label": "colonnine_bici",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260903T172804Z_32937f1a",
+            "run_id": "20261002T133527Z_8c1d36ab",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-03T17:28:04.308177+00:00",
-            "finished_at": "2026-09-03T17:29:13.950208+00:00"
+            "started_at": "2026-10-02T13:35:27.318509+00:00",
+            "finished_at": "2026-10-02T13:36:54.001720+00:00"
           }
         },
         {
@@ -3155,11 +3169,11 @@
           "label": "convivenze",
           "detail": "anno 2024 \u2014 mart: si",
           "run": {
-            "run_id": "20260903T172914Z_04fcdff0",
+            "run_id": "20261002T133654Z_f26048b8",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-09-03T17:29:14.626743+00:00",
-            "finished_at": "2026-09-03T17:29:24.210872+00:00"
+            "started_at": "2026-10-02T13:36:54.735764+00:00",
+            "finished_at": "2026-10-02T13:37:04.829415+00:00"
           }
         },
         {
@@ -3169,11 +3183,11 @@
           "label": "emigrati_destinazione",
           "detail": "anno 2024 \u2014 mart: si",
           "run": {
-            "run_id": "20260903T172924Z_a5b5a7d3",
+            "run_id": "20261002T133705Z_dab7d8df",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-09-03T17:29:24.764916+00:00",
-            "finished_at": "2026-09-03T17:29:33.195360+00:00"
+            "started_at": "2026-10-02T13:37:05.433232+00:00",
+            "finished_at": "2026-10-02T13:37:12.589440+00:00"
           }
         },
         {
@@ -3183,11 +3197,11 @@
           "label": "esercizi_somministrazione",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260903T172933Z_9bd06f60",
+            "run_id": "20261002T133713Z_0d9a18b6",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-03T17:29:33.827466+00:00",
-            "finished_at": "2026-09-03T17:29:38.218828+00:00"
+            "started_at": "2026-10-02T13:37:13.226696+00:00",
+            "finished_at": "2026-10-02T13:37:17.853943+00:00"
           }
         },
         {
@@ -3197,11 +3211,11 @@
           "label": "famiglie_tipologia",
           "detail": "anno 2024 \u2014 mart: si",
           "run": {
-            "run_id": "20260903T172938Z_c1756c79",
+            "run_id": "20261002T133718Z_2963e93e",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-09-03T17:29:38.929885+00:00",
-            "finished_at": "2026-09-03T17:29:45.722688+00:00"
+            "started_at": "2026-10-02T13:37:18.658698+00:00",
+            "finished_at": "2026-10-02T13:37:26.244270+00:00"
           }
         },
         {
@@ -3211,11 +3225,11 @@
           "label": "incarichi",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260903T172946Z_b8a5eaab",
+            "run_id": "20261002T133726Z_74bd0b8c",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-03T17:29:46.281208+00:00",
-            "finished_at": "2026-09-03T17:29:47.774158+00:00"
+            "started_at": "2026-10-02T13:37:26.871831+00:00",
+            "finished_at": "2026-10-02T13:37:28.930972+00:00"
           }
         },
         {
@@ -3225,11 +3239,11 @@
           "label": "indici_fragilita",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260903T172948Z_4a45c1b1",
+            "run_id": "20261002T133729Z_cac966a9",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-03T17:29:48.373238+00:00",
-            "finished_at": "2026-09-03T17:29:49.241288+00:00"
+            "started_at": "2026-10-02T13:37:29.552315+00:00",
+            "finished_at": "2026-10-02T13:37:30.859893+00:00"
           }
         },
         {
@@ -3239,11 +3253,11 @@
           "label": "popolazione_quartiere",
           "detail": "anno 2024 \u2014 mart: si",
           "run": {
-            "run_id": "20260903T172949Z_63116a81",
+            "run_id": "20261002T133731Z_6e5ba067",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-09-03T17:29:49.797731+00:00",
-            "finished_at": "2026-09-03T17:30:19.542166+00:00"
+            "started_at": "2026-10-02T13:37:31.456200+00:00",
+            "finished_at": "2026-10-02T13:37:53.515902+00:00"
           }
         },
         {
@@ -3253,11 +3267,11 @@
           "label": "precipitazioni_bologna",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260903T173020Z_992ae566",
+            "run_id": "20261002T133754Z_ce0f77f4",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-03T17:30:20.204968+00:00",
-            "finished_at": "2026-09-03T17:30:22.210218+00:00"
+            "started_at": "2026-10-02T13:37:54.127387+00:00",
+            "finished_at": "2026-10-02T13:37:55.529733+00:00"
           }
         },
         {
@@ -3267,11 +3281,11 @@
           "label": "reddito_mediano",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260903T173022Z_1b1b1c16",
+            "run_id": "20261002T133756Z_30da09f1",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-03T17:30:22.826370+00:00",
-            "finished_at": "2026-09-03T17:30:23.569025+00:00"
+            "started_at": "2026-10-02T13:37:56.171959+00:00",
+            "finished_at": "2026-10-02T13:37:56.921492+00:00"
           }
         },
         {
@@ -3281,11 +3295,11 @@
           "label": "spire_traffico",
           "detail": "anni 2022-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20260903T173416Z_6ab5eb9f",
+            "run_id": "20261002T134136Z_f4811cd2",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-09-03T17:34:16.375103+00:00",
-            "finished_at": "2026-09-03T17:35:29.999386+00:00"
+            "started_at": "2026-10-02T13:41:36.376480+00:00",
+            "finished_at": "2026-10-02T13:42:42.046901+00:00"
           }
         },
         {
@@ -3295,11 +3309,11 @@
           "label": "temperature_bologna",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260903T173531Z_6ccb0e73",
+            "run_id": "20261002T134243Z_68181dad",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-03T17:35:31.241408+00:00",
-            "finished_at": "2026-09-03T17:36:27.480312+00:00"
+            "started_at": "2026-10-02T13:42:43.399809+00:00",
+            "finished_at": "2026-10-02T13:42:44.998874+00:00"
           }
         },
         {
@@ -3309,11 +3323,11 @@
           "label": "varchi_ztl",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260903T181314Z_797e0776",
+            "run_id": "20261002T134245Z_7988ecdb",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-03T18:13:14.111202+00:00",
-            "finished_at": "2026-09-03T18:13:32.475710+00:00"
+            "started_at": "2026-10-02T13:42:45.066642+00:00",
+            "finished_at": "2026-10-02T13:43:03.835339+00:00"
           }
         }
       ]
@@ -4420,7 +4434,7 @@
       "repo": "indice-pa",
       "available": true,
       "source_repo": "dataciviclab/indice-pa",
-      "updated_at": "2026-09-15",
+      "updated_at": "2026-10-02",
       "datasets": 8,
       "marts": 14,
       "signals": 8,
@@ -4436,11 +4450,11 @@
           "label": "who_is_who_pa",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260915T130918Z_7044161a",
+            "run_id": "20261002T124132Z_1839e817",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-15T13:09:18.081462+00:00",
-            "finished_at": "2026-09-15T13:09:19.034408+00:00"
+            "started_at": "2026-10-02T12:41:32.768677+00:00",
+            "finished_at": "2026-10-02T12:41:34.112574+00:00"
           }
         },
         {
@@ -4450,11 +4464,11 @@
           "label": "ipa_aree_organizzative_omogenee",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260915T130745Z_5b817dba",
+            "run_id": "20261002T123910Z_6458b08b",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-15T13:07:45.173708+00:00",
-            "finished_at": "2026-09-15T13:08:02.719218+00:00"
+            "started_at": "2026-10-02T12:39:10.490134+00:00",
+            "finished_at": "2026-10-02T12:39:39.808339+00:00"
           }
         },
         {
@@ -4464,11 +4478,11 @@
           "label": "ipa_categorie_enti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260915T130804Z_46254706",
+            "run_id": "20261002T123941Z_d6cb64a6",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-15T13:08:04.189768+00:00",
-            "finished_at": "2026-09-15T13:08:05.988870+00:00"
+            "started_at": "2026-10-02T12:39:41.612641+00:00",
+            "finished_at": "2026-10-02T12:39:42.922231+00:00"
           }
         },
         {
@@ -4478,11 +4492,11 @@
           "label": "ipa_enti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260915T130809Z_d9eee054",
+            "run_id": "20261002T123948Z_3d8d14d8",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-15T13:08:09.463136+00:00",
-            "finished_at": "2026-09-15T13:08:13.473929+00:00"
+            "started_at": "2026-10-02T12:39:48.346375+00:00",
+            "finished_at": "2026-10-02T12:39:53.498209+00:00"
           }
         },
         {
@@ -4492,11 +4506,11 @@
           "label": "ipa_rtd",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260915T130814Z_26534af9",
+            "run_id": "20261002T123955Z_64263236",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-15T13:08:14.295281+00:00",
-            "finished_at": "2026-09-15T13:08:24.574121+00:00"
+            "started_at": "2026-10-02T12:39:55.391434+00:00",
+            "finished_at": "2026-10-02T12:40:11.246172+00:00"
           }
         },
         {
@@ -4506,11 +4520,11 @@
           "label": "ipa_servizi_digitali",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260915T130826Z_344813a5",
+            "run_id": "20261002T124012Z_bbd3aea9",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-15T13:08:26.133599+00:00",
-            "finished_at": "2026-09-15T13:08:30.682797+00:00"
+            "started_at": "2026-10-02T12:40:12.884021+00:00",
+            "finished_at": "2026-10-02T12:40:18.714070+00:00"
           }
         },
         {
@@ -4520,11 +4534,11 @@
           "label": "ipa_servizi_uo",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260915T130831Z_4cad3f2f",
+            "run_id": "20261002T124020Z_efa0d8c0",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-15T13:08:31.569437+00:00",
-            "finished_at": "2026-09-15T13:08:34.308338+00:00"
+            "started_at": "2026-10-02T12:40:20.304896+00:00",
+            "finished_at": "2026-10-02T12:40:23.900872+00:00"
           }
         },
         {
@@ -4534,11 +4548,11 @@
           "label": "ipa_unita_organizzative",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260915T130835Z_af58a156",
+            "run_id": "20261002T124024Z_25c79fe9",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-15T13:08:35.164594+00:00",
-            "finished_at": "2026-09-15T13:09:17.708873+00:00"
+            "started_at": "2026-10-02T12:40:24.911538+00:00",
+            "finished_at": "2026-10-02T12:41:32.244430+00:00"
           }
         }
       ]
@@ -4547,7 +4561,7 @@
       "repo": "inpa-reclutamento",
       "available": true,
       "source_repo": "dataciviclab/inpa-reclutamento",
-      "updated_at": "2026-10-01",
+      "updated_at": "2026-10-02",
       "datasets": 4,
       "marts": 12,
       "signals": 4,
@@ -4591,11 +4605,11 @@
           "label": "inpa_bandi_open",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T124118Z_75957d28",
+            "run_id": "20261002T120525Z_6c827a85",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:41:18.014736+00:00",
-            "finished_at": "2026-10-01T12:41:37.701652+00:00"
+            "started_at": "2026-10-02T12:05:25.541979+00:00",
+            "finished_at": "2026-10-02T12:05:42.350330+00:00"
           }
         },
         {
@@ -4605,11 +4619,11 @@
           "label": "inpa_comunicazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T124138Z_6c1ad8e1",
+            "run_id": "20261002T120542Z_3fccd5b2",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:41:38.175448+00:00",
-            "finished_at": "2026-10-01T12:42:05.742408+00:00"
+            "started_at": "2026-10-02T12:05:42.815858+00:00",
+            "finished_at": "2026-10-02T12:06:09.819198+00:00"
           }
         }
       ]
@@ -7371,7 +7385,7 @@
       "repo": "terzo-settore",
       "available": true,
       "source_repo": "dataciviclab/terzo-settore",
-      "updated_at": "2026-09-10",
+      "updated_at": "2026-10-02",
       "datasets": 11,
       "marts": 20,
       "signals": 11,
@@ -7387,11 +7401,11 @@
           "label": "ets_5xmille",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260910T112057Z_f81a0d03",
+            "run_id": "20261002T143049Z_6af078a1",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-10T11:20:57.689832+00:00",
-            "finished_at": "2026-09-10T11:20:59.572669+00:00"
+            "started_at": "2026-10-02T14:30:49.752398+00:00",
+            "finished_at": "2026-10-02T14:30:50.402280+00:00"
           }
         },
         {
@@ -7401,11 +7415,11 @@
           "label": "ets_anac",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260909T151758Z_e6a587c7",
+            "run_id": "20261002T143050Z_6c10a7bf",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-09T15:17:58.636673+00:00",
-            "finished_at": "2026-09-09T15:19:29.270792+00:00"
+            "started_at": "2026-10-02T14:30:50.843377+00:00",
+            "finished_at": "2026-10-02T14:34:35.750690+00:00"
           }
         },
         {
@@ -7415,11 +7429,11 @@
           "label": "ets_fts",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260910T160105Z_c7ac0c8a",
+            "run_id": "20261002T143647Z_19c6ab35",
             "year": 2026,
-            "status": "RUNNING",
-            "started_at": "2026-09-10T16:01:05.971548+00:00",
-            "finished_at": ""
+            "status": "SUCCESS",
+            "started_at": "2026-10-02T14:36:47.300462+00:00",
+            "finished_at": "2026-10-02T14:36:53.882847+00:00"
           }
         },
         {
@@ -7429,11 +7443,11 @@
           "label": "ets_mef",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260909T145104Z_2bfe4465",
+            "run_id": "20261002T143654Z_e314d45d",
             "year": 2026,
-            "status": "FAILED",
-            "started_at": "2026-09-09T14:51:04.886578+00:00",
-            "finished_at": "2026-09-09T14:51:06.870644+00:00"
+            "status": "SUCCESS",
+            "started_at": "2026-10-02T14:36:54.250880+00:00",
+            "finished_at": "2026-10-02T14:37:00.383578+00:00"
           }
         },
         {
@@ -7443,11 +7457,11 @@
           "label": "ets_opencoesione",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260910T133708Z_bbfd5afa",
+            "run_id": "20261002T143700Z_530f61a3",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-10T13:37:08.198717+00:00",
-            "finished_at": "2026-09-10T13:37:13.983264+00:00"
+            "started_at": "2026-10-02T14:37:00.750979+00:00",
+            "finished_at": "2026-10-02T14:37:38.406445+00:00"
           }
         },
         {
@@ -7457,11 +7471,11 @@
           "label": "ets_pnrr",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260909T145335Z_9bd64121",
+            "run_id": "20261002T143436Z_d6346392",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-09T14:53:35.374439+00:00",
-            "finished_at": "2026-09-09T14:53:37.365593+00:00"
+            "started_at": "2026-10-02T14:34:36.168923+00:00",
+            "finished_at": "2026-10-02T14:34:39.672242+00:00"
           }
         },
         {
@@ -7471,11 +7485,11 @@
           "label": "ets_rna",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260909T145436Z_4bf9bfef",
+            "run_id": "20261002T143440Z_78eb51c7",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-09T14:54:36.828164+00:00",
-            "finished_at": "2026-09-09T14:54:42.810331+00:00"
+            "started_at": "2026-10-02T14:34:40.043408+00:00",
+            "finished_at": "2026-10-02T14:36:46.906062+00:00"
           }
         },
         {
@@ -7485,11 +7499,11 @@
           "label": "ets_unified",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260910T163847Z_14098606",
+            "run_id": "20261002T143738Z_818c4bd9",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-10T16:38:47.399134+00:00",
-            "finished_at": "2026-09-10T16:38:47.884082+00:00"
+            "started_at": "2026-10-02T14:37:38.836402+00:00",
+            "finished_at": "2026-10-02T14:37:42.548664+00:00"
           }
         },
         {
@@ -7499,11 +7513,11 @@
           "label": "ade_cinque_per_mille",
           "detail": "anni 2022-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20260910T105635Z_2b5c7453",
+            "run_id": "20261002T143028Z_7761812a",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-09-10T10:56:35.867032+00:00",
-            "finished_at": "2026-09-10T10:56:44.877743+00:00"
+            "started_at": "2026-10-02T14:30:28.550135+00:00",
+            "finished_at": "2026-10-02T14:30:48.321728+00:00"
           }
         },
         {
@@ -7513,11 +7527,11 @@
           "label": "istat_non_profit_2023",
           "detail": "anno 2023 \u2014 mart: si",
           "run": {
-            "run_id": "20260909T155603Z_b47a4746",
+            "run_id": "20261002T143048Z_aee5bce6",
             "year": 2023,
             "status": "SUCCESS",
-            "started_at": "2026-09-09T15:56:03.696903+00:00",
-            "finished_at": "2026-09-09T15:56:03.416192+00:00"
+            "started_at": "2026-10-02T14:30:48.790599+00:00",
+            "finished_at": "2026-10-02T14:30:49.296671+00:00"
           }
         },
         {
@@ -7527,11 +7541,11 @@
           "label": "runts",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260910T163104Z_a17e84d0",
+            "run_id": "20261002T142821Z_50b7e6ea",
             "year": 2026,
-            "status": "FAILED",
-            "started_at": "2026-09-10T16:31:04.275263+00:00",
-            "finished_at": "2026-09-10T16:31:04.338068+00:00"
+            "status": "SUCCESS",
+            "started_at": "2026-10-02T14:28:21.111154+00:00",
+            "finished_at": "2026-10-02T14:29:49.826460+00:00"
           }
         }
       ]

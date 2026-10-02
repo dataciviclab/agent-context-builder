@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "generated_at": "2026-10-02T11:59:58.846516",
+  "generated_at": "2026-10-02T17:48:55.978778",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -3664,14 +3664,14 @@
             "name": "codice_programma",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "programma_code",
             "description": ""
           },
           {
             "name": "programma",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "programma_code",
             "description": ""
           },
           {
@@ -4132,14 +4132,14 @@
             "name": "codice_programma",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "programma_code",
             "description": ""
           },
           {
             "name": "programma",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "programma_code",
             "description": ""
           },
           {
@@ -18813,7 +18813,7 @@
         ],
         "category": "ambiente",
         "registry_source": "dcl-bologna",
-        "clean_rows": 52530,
+        "clean_rows": 56239,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/bologna/centraline_aria/2026/centraline_aria_2026_clean.parquet",
@@ -18881,7 +18881,7 @@
         ],
         "category": "ambiente",
         "registry_source": "dcl-bologna",
-        "clean_rows": 9376,
+        "clean_rows": 9405,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/bologna/precipitazioni_bologna/2026/precipitazioni_bologna_2026_clean.parquet",
@@ -18934,7 +18934,7 @@
         ],
         "category": "ambiente",
         "registry_source": "dcl-bologna",
-        "clean_rows": 9376,
+        "clean_rows": 9405,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/bologna/temperature_bologna/2026/temperature_bologna_2026_clean.parquet",
@@ -19003,7 +19003,7 @@
         ],
         "category": "trasporti",
         "registry_source": "dcl-bologna",
-        "clean_rows": 541064,
+        "clean_rows": 553688,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/bologna/colonnine_bici/2026/colonnine_bici_2026_clean.parquet",
@@ -19255,7 +19255,7 @@
         ],
         "category": "trasporti",
         "registry_source": "dcl-bologna",
-        "clean_rows": 18868611,
+        "clean_rows": 19106691,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/bologna/varchi_ztl/2026/varchi_ztl_2026_clean.parquet",
@@ -20260,7 +20260,7 @@
         ],
         "category": "pa",
         "registry_source": "dcl-bologna",
-        "clean_rows": 752,
+        "clean_rows": 755,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/bologna/incarichi/2026/incarichi_2026_clean.parquet",
@@ -31075,7 +31075,7 @@
         ],
         "category": "pa",
         "registry_source": "indice-pa",
-        "clean_rows": 39396,
+        "clean_rows": 39430,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/indice-pa/ipa_aree_organizzative_omogenee/2026/ipa_aree_organizzative_omogenee_2026_clean.parquet",
@@ -31377,7 +31377,7 @@
         ],
         "category": "pa",
         "registry_source": "indice-pa",
-        "clean_rows": 23730,
+        "clean_rows": 23753,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/indice-pa/ipa_enti/2026/ipa_enti_2026_clean.parquet",
@@ -31621,7 +31621,7 @@
         ],
         "category": "pa",
         "registry_source": "indice-pa",
-        "clean_rows": 20886,
+        "clean_rows": 20967,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/indice-pa/ipa_rtd/2026/ipa_rtd_2026_clean.parquet",
@@ -31837,7 +31837,7 @@
         ],
         "category": "pa",
         "registry_source": "indice-pa",
-        "clean_rows": 10141,
+        "clean_rows": 10170,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/indice-pa/ipa_servizi_digitali/2026/ipa_servizi_digitali_2026_clean.parquet",
@@ -31933,7 +31933,7 @@
         ],
         "category": "pa",
         "registry_source": "indice-pa",
-        "clean_rows": 6223,
+        "clean_rows": 6228,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/indice-pa/ipa_servizi_uo/2026/ipa_servizi_uo_2026_clean.parquet",
@@ -32036,7 +32036,7 @@
         ],
         "category": "pa",
         "registry_source": "indice-pa",
-        "clean_rows": 122713,
+        "clean_rows": 122817,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/indice-pa/ipa_unita_organizzative/2026/ipa_unita_organizzative_2026_clean.parquet",
@@ -32461,7 +32461,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 1728,
+        "clean_rows": 1767,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_bandi_open/2026/inpa_bandi_open_2026_clean.parquet",
@@ -32673,7 +32673,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 5376,
+        "clean_rows": 5426,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_comunicazioni/2026/inpa_comunicazioni_2026_clean.parquet",
@@ -49177,7 +49177,7 @@
             "name": "programma",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "programma_code",
             "description": ""
           },
           {
@@ -49191,7 +49191,7 @@
             "name": "descrizione_missione",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "obiettivo_code",
             "description": ""
           }
         ],
@@ -49456,7 +49456,7 @@
         ],
         "category": "terzo-settore",
         "registry_source": "terzo-settore",
-        "clean_rows": null,
+        "clean_rows": 153295,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/terzo_settore/runts/2026/runts_2026_clean.parquet",
