@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T17:48:55.978778",
+  "generated_at": "2026-10-02T21:54:05.668467",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -46,6 +46,13 @@
   "open_prs": null,
   "prs": [
     {
+      "number": 21,
+      "title": "feat: compose iter_costituzionale \u2014 DDL Camera/Senato \u00d7 revisioni",
+      "repo": "costituzione-italiana",
+      "url": "https://github.com/dataciviclab/costituzione-italiana/pull/21",
+      "category": "other"
+    },
+    {
       "number": 264,
       "title": "feat(mit-incidentalita): plateau 2013, indice di mortalit\u00e0 e stagionalit\u00e0",
       "repo": "data-explorer",
@@ -60,10 +67,10 @@
       "category": "other"
     },
     {
-      "number": 6,
-      "title": "feat(openga): pareri, sentenze brevi, tipi di decisione + fix grano cross",
-      "repo": "giustizia-amministrativa",
-      "url": "https://github.com/dataciviclab/giustizia-amministrativa/pull/6",
+      "number": 52,
+      "title": "feat(pattern-c): SPARQL hardcoded Leg19 \u2192 years legislatura 13-19",
+      "repo": "open-politica",
+      "url": "https://github.com/dataciviclab/open-politica/pull/52",
       "category": "other"
     },
     {
@@ -320,20 +327,6 @@
       "repo": "open-noipa",
       "url": "https://github.com/dataciviclab/open-noipa/issues/2",
       "category": "infrastructure"
-    },
-    {
-      "number": 45,
-      "title": "fix(senato-ddl): urn_normattiva \u2014 no URN su placeholder 2100; namespace legge.costituzionale",
-      "repo": "open-politica",
-      "url": "https://github.com/dataciviclab/open-politica/issues/45",
-      "category": "other"
-    },
-    {
-      "number": 15,
-      "title": "intake: senato_sindisp \u2014 Sindacato ispettivo del Senato (interrogazioni, interpellanze, mozioni)",
-      "repo": "open-politica",
-      "url": "https://github.com/dataciviclab/open-politica/issues/15",
-      "category": "intake"
     },
     {
       "number": 471,
@@ -4166,13 +4159,13 @@
       "repo": "giustizia-amministrativa",
       "available": true,
       "source_repo": "dataciviclab/giustizia-amministrativa",
-      "updated_at": "2026-10-01",
-      "datasets": 9,
-      "marts": 18,
-      "signals": 9,
+      "updated_at": "2026-10-02",
+      "datasets": 13,
+      "marts": 27,
+      "signals": 13,
       "codelists": 0,
       "entities": 5,
-      "gcs": 9,
+      "gcs": 13,
       "reason": "",
       "signals_detail": [
         {
@@ -4182,11 +4175,25 @@
           "label": "ga_cross",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T123844Z_4cf2676d",
+            "run_id": "20261002T185710Z_353b255a",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:38:44.728320+00:00",
-            "finished_at": "2026-10-01T12:38:45.075400+00:00"
+            "started_at": "2026-10-02T18:57:10.137590+00:00",
+            "finished_at": "2026-10-02T18:57:10.501384+00:00"
+          }
+        },
+        {
+          "id": "compose:ga_definizioni",
+          "source_id": "dataciviclab_composite",
+          "status": "ok",
+          "label": "ga_definizioni",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261002T185710Z_91245ed5",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-10-02T18:57:10.942613+00:00",
+            "finished_at": "2026-10-02T18:57:11.115042+00:00"
           }
         },
         {
@@ -4196,11 +4203,11 @@
           "label": "ga_decreti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T122540Z_c0f9fd0f",
+            "run_id": "20261002T184023Z_2babc5d9",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:25:40.409745+00:00",
-            "finished_at": "2026-10-01T12:27:43.266862+00:00"
+            "started_at": "2026-10-02T18:40:23.726116+00:00",
+            "finished_at": "2026-10-02T18:42:26.227001+00:00"
           }
         },
         {
@@ -4210,11 +4217,25 @@
           "label": "ga_ordinanze",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T122743Z_d8d8a385",
+            "run_id": "20261002T184226Z_b16ed5fe",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:27:43.693076+00:00",
-            "finished_at": "2026-10-01T12:29:53.435952+00:00"
+            "started_at": "2026-10-02T18:42:26.643913+00:00",
+            "finished_at": "2026-10-02T18:44:35.378620+00:00"
+          }
+        },
+        {
+          "id": "ga_pareri",
+          "source_id": "openga",
+          "status": "ok",
+          "label": "ga_pareri",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261002T184435Z_8a98134e",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-10-02T18:44:35.801800+00:00",
+            "finished_at": "2026-10-02T18:44:45.431781+00:00"
           }
         },
         {
@@ -4224,11 +4245,11 @@
           "label": "ga_provvedimenti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T122953Z_662246c5",
+            "run_id": "20261002T184445Z_71719212",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:29:53.859078+00:00",
-            "finished_at": "2026-10-01T12:31:10.443112+00:00"
+            "started_at": "2026-10-02T18:44:45.873471+00:00",
+            "finished_at": "2026-10-02T18:46:03.529376+00:00"
           }
         },
         {
@@ -4238,11 +4259,11 @@
           "label": "ga_ricorsi_definiti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T123110Z_04470fcb",
+            "run_id": "20261002T184604Z_07c13d17",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:31:10.863354+00:00",
-            "finished_at": "2026-10-01T12:33:10.004270+00:00"
+            "started_at": "2026-10-02T18:46:04.014672+00:00",
+            "finished_at": "2026-10-02T18:48:06.003082+00:00"
           }
         },
         {
@@ -4252,11 +4273,25 @@
           "label": "ga_ricorsi_pervenuti_class",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T123310Z_7d29bbd3",
+            "run_id": "20261002T184806Z_28c9f7a5",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:33:10.433392+00:00",
-            "finished_at": "2026-10-01T12:34:45.586183+00:00"
+            "started_at": "2026-10-02T18:48:06.413988+00:00",
+            "finished_at": "2026-10-02T18:49:46.465327+00:00"
+          }
+        },
+        {
+          "id": "ga_ricorsi_tipo_decisione",
+          "source_id": "openga",
+          "status": "ok",
+          "label": "ga_ricorsi_tipo_decisione",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261002T184946Z_16b52391",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-10-02T18:49:46.888814+00:00",
+            "finished_at": "2026-10-02T18:51:05.256102+00:00"
           }
         },
         {
@@ -4266,11 +4301,25 @@
           "label": "ga_sentenze",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T123446Z_6ce9d86f",
+            "run_id": "20261002T185251Z_45fcf28b",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:34:46.011788+00:00",
-            "finished_at": "2026-10-01T12:37:12.183379+00:00"
+            "started_at": "2026-10-02T18:52:51.759849+00:00",
+            "finished_at": "2026-10-02T18:55:21.018661+00:00"
+          }
+        },
+        {
+          "id": "ga_sentenze_brevi",
+          "source_id": "openga",
+          "status": "ok",
+          "label": "ga_sentenze_brevi",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261002T185105Z_da77b261",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-10-02T18:51:05.676532+00:00",
+            "finished_at": "2026-10-02T18:52:51.334352+00:00"
           }
         },
         {
@@ -4280,11 +4329,11 @@
           "label": "openga_ricorsi_appalto",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T123712Z_5f6f6019",
+            "run_id": "20261002T185521Z_26dcdaa8",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:37:12.610477+00:00",
-            "finished_at": "2026-10-01T12:38:40.722847+00:00"
+            "started_at": "2026-10-02T18:55:21.451565+00:00",
+            "finished_at": "2026-10-02T18:57:06.086227+00:00"
           }
         },
         {
@@ -4294,11 +4343,11 @@
           "label": "openga_ricorsi_cds",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T123841Z_28325a4b",
+            "run_id": "20261002T185706Z_7a7a115e",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:38:41.142575+00:00",
-            "finished_at": "2026-10-01T12:38:44.282145+00:00"
+            "started_at": "2026-10-02T18:57:06.497817+00:00",
+            "finished_at": "2026-10-02T18:57:09.691375+00:00"
           }
         }
       ]
@@ -6004,9 +6053,9 @@
       "repo": "open-politica",
       "available": true,
       "source_repo": "dataciviclab/open-politica",
-      "updated_at": "2026-10-01",
+      "updated_at": "2026-10-02",
       "datasets": 35,
-      "marts": 68,
+      "marts": 69,
       "signals": 35,
       "codelists": 0,
       "entities": 8,
@@ -6202,11 +6251,11 @@
           "label": "camera_leggi",
           "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20260928T084534Z_18c130db",
+            "run_id": "20261002T200948Z_9d77562d",
             "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-09-28T08:45:34.126912+00:00",
-            "finished_at": "2026-09-28T08:45:35.074745+00:00"
+            "started_at": "2026-10-02T20:09:48.006753+00:00",
+            "finished_at": "2026-10-02T20:09:49.768273+00:00"
           }
         },
         {
@@ -6398,11 +6447,11 @@
           "label": "senato_ddl",
           "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20260928T085127Z_f2604a66",
+            "run_id": "20261002T182651Z_3c77ad40",
             "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-09-28T08:51:27.915127+00:00",
-            "finished_at": "2026-09-28T08:51:43.265259+00:00"
+            "started_at": "2026-10-02T18:26:51.418289+00:00",
+            "finished_at": "2026-10-02T18:27:05.031906+00:00"
           }
         },
         {
