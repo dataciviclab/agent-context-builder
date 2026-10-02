@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T22:24:44.440577",
+  "generated_at": "2026-10-02T04:23:56.677756",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -71,6 +71,13 @@
       "title": "feat: dashboard Streamlit Imprese Italia",
       "repo": "imprese-italia",
       "url": "https://github.com/dataciviclab/imprese-italia/pull/6",
+      "category": "other"
+    },
+    {
+      "number": 493,
+      "title": "fix(support): external multi-anno restituisce lista URL, non glob",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/493",
       "category": "other"
     },
     {
@@ -1822,7 +1829,8 @@
   },
   "warnings": [
     "GitHub fetch failed \u2014 dataciviclab:analisi: https://api.github.com/repos/dataciviclab/dataciviclab/contents/analisi: HTTP 404",
-    "GitHub fetch failed \u2014 dataciviclab:analisi/registry/active.md: https://raw.githubusercontent.com/dataciviclab/dataciviclab/main/analisi/registry/active.md: HTTP 404"
+    "GitHub fetch failed \u2014 dataciviclab:analisi/registry/active.md: https://raw.githubusercontent.com/dataciviclab/dataciviclab/main/analisi/registry/active.md: HTTP 404",
+    "Many open PRs: 6"
   ],
   "radar": {
     "available": true,
