@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T04:23:56.677756",
+  "generated_at": "2026-10-02T11:59:58.846516",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -57,20 +57,6 @@
       "title": "feat(candidates): bootstrap gse_cer_elenco candidate",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/836",
-      "category": "other"
-    },
-    {
-      "number": 18,
-      "title": "chore(post-merge): aggiorna registry (schedule)",
-      "repo": "debito-pubblico-intelligence",
-      "url": "https://github.com/dataciviclab/debito-pubblico-intelligence/pull/18",
-      "category": "other"
-    },
-    {
-      "number": 6,
-      "title": "feat: dashboard Streamlit Imprese Italia",
-      "repo": "imprese-italia",
-      "url": "https://github.com/dataciviclab/imprese-italia/pull/6",
       "category": "other"
     },
     {
@@ -252,6 +238,13 @@
       "category": "intake"
     },
     {
+      "number": 46,
+      "title": "TLS: rimuovere verify=False workaround quando IPZS fixa la catena",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/issues/46",
+      "category": "other"
+    },
+    {
       "number": 28,
       "title": "Estrarre firma presidente della Repubblica e presidente del Consiglio dal body",
       "repo": "italia-corpus",
@@ -364,7 +357,7 @@
       "category": "other"
     }
   ],
-  "open_discussions": 162,
+  "open_discussions": 168,
   "discussions": [
     {
       "number": 30,
@@ -1200,6 +1193,13 @@
       "category": "Domande"
     },
     {
+      "number": 16,
+      "title": "Finding: Recepimento direttive UE \u2014 ritardo stabile a 3 anni (ma copertura CELEX ancora bassa)",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/16",
+      "category": "Analisi"
+    },
+    {
       "number": 43,
       "title": "PNRR tracciato nella legge: 72 riferimenti alle 6 missioni del Piano",
       "repo": "italia-corpus",
@@ -1211,6 +1211,48 @@
       "title": "Abrogazioni: 5.506 relazioni tra leggi \u2014 chi abroga chi in Italia?",
       "repo": "italia-corpus",
       "url": "https://github.com/dataciviclab/italia-corpus/discussions/42",
+      "category": "Analisi"
+    },
+    {
+      "number": 52,
+      "title": "I padri fondatori: DPR pubblicazione (6.755 refs), Codice Penale, riforma PA",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/52",
+      "category": "Analisi"
+    },
+    {
+      "number": 51,
+      "title": "Qualit\u00e0 per materia: giustizia 85, strutturale 68 \u2014 cosa distingue",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/51",
+      "category": "Analisi"
+    },
+    {
+      "number": 50,
+      "title": "Strutturale: il 77% degli atti \u00e8 abrogato \u2014 la legislazione \"usa e getta\"",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/50",
+      "category": "Analisi"
+    },
+    {
+      "number": 49,
+      "title": "47,5% di atti orfani: la legislazione che nessuno cita nel grafo",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/49",
+      "category": "Analisi"
+    },
+    {
+      "number": 48,
+      "title": "25 materie del corpus italiano: fisco domina, strutturale \u00e8 il pi\u00f9 fragile",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/48",
+      "category": "Analisi"
+    },
+    {
+      "number": 47,
+      "title": "Un terzo del corpus risulta abrogato: 7.354 atti morti su 22.016",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/47",
       "category": "Analisi"
     },
     {
@@ -1239,13 +1281,6 @@
       "title": "La \"dittatura del decreto\"? 50 anni di decretazione d'urgenza in Italia",
       "repo": "italia-corpus",
       "url": "https://github.com/dataciviclab/italia-corpus/discussions/15",
-      "category": "Analisi"
-    },
-    {
-      "number": 16,
-      "title": "Finding: Recepimento direttive UE \u2014 ritardo stabile a 3 anni (ma copertura CELEX ancora bassa)",
-      "repo": "italia-corpus",
-      "url": "https://github.com/dataciviclab/italia-corpus/discussions/16",
       "category": "Analisi"
     },
     {
@@ -1829,17 +1864,16 @@
   },
   "warnings": [
     "GitHub fetch failed \u2014 dataciviclab:analisi: https://api.github.com/repos/dataciviclab/dataciviclab/contents/analisi: HTTP 404",
-    "GitHub fetch failed \u2014 dataciviclab:analisi/registry/active.md: https://raw.githubusercontent.com/dataciviclab/dataciviclab/main/analisi/registry/active.md: HTTP 404",
-    "Many open PRs: 6"
+    "GitHub fetch failed \u2014 dataciviclab:analisi/registry/active.md: https://raw.githubusercontent.com/dataciviclab/dataciviclab/main/analisi/registry/active.md: HTTP 404"
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-10-01T10:03:05.257394+00:00",
-    "probe_date": "2026-10-01",
+    "generated_at": "2026-10-02T09:45:57.964479+00:00",
+    "probe_date": "2026-10-02",
     "sources_total": 36,
-    "green": 35,
+    "green": 34,
     "yellow": 1,
-    "red": 0,
+    "red": 1,
     "persistent_red": 0,
     "sources": [
       {
@@ -1892,9 +1926,9 @@
       },
       {
         "id": "dati_camera",
-        "status": "GREEN",
+        "status": "RED",
         "protocol": "sparql",
-        "http_code": "200",
+        "http_code": "502",
         "note": null,
         "red_streak": 0
       },
@@ -2132,6 +2166,14 @@
       }
     ],
     "unhealthy": [
+      {
+        "id": "dati_camera",
+        "status": "RED",
+        "protocol": "sparql",
+        "http_code": "502",
+        "note": null,
+        "red_streak": 0
+      },
       {
         "id": "opencivitas",
         "status": "YELLOW",
@@ -3280,7 +3322,7 @@
       "repo": "debito-pubblico-intelligence",
       "available": true,
       "source_repo": "dataciviclab/debito-pubblico-intelligence",
-      "updated_at": "2026-09-04",
+      "updated_at": "2026-10-01",
       "datasets": 8,
       "marts": 12,
       "signals": 8,
@@ -3296,11 +3338,11 @@
           "label": "eurostat_debito_pil",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260904T131542Z_9a3841c6",
+            "run_id": "20261001T204104Z_28b23d32",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-04T13:15:42.207353+00:00",
-            "finished_at": "2026-09-04T13:15:43.775304+00:00"
+            "started_at": "2026-10-01T20:41:04.219527+00:00",
+            "finished_at": "2026-10-01T20:41:05.883094+00:00"
           }
         },
         {
@@ -3310,11 +3352,11 @@
           "label": "eurostat_rendimento_10y",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260904T131543Z_01b10274",
+            "run_id": "20261001T204105Z_9a9c7113",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-04T13:15:43.813542+00:00",
-            "finished_at": "2026-09-04T13:15:45.620615+00:00"
+            "started_at": "2026-10-01T20:41:05.936068+00:00",
+            "finished_at": "2026-10-01T20:41:08.494218+00:00"
           }
         },
         {
@@ -3324,11 +3366,11 @@
           "label": "fpi_debito_pa",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260904T131545Z_2902cef2",
+            "run_id": "20261001T204108Z_1f844490",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-04T13:15:45.660580+00:00",
-            "finished_at": "2026-09-04T13:15:48.788366+00:00"
+            "started_at": "2026-10-01T20:41:08.551830+00:00",
+            "finished_at": "2026-10-01T20:41:13.782741+00:00"
           }
         },
         {
@@ -3338,11 +3380,11 @@
           "label": "mef_composizione",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260904T131548Z_b458d1f1",
+            "run_id": "20261001T204113Z_f4a5447a",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-04T13:15:48.848162+00:00",
-            "finished_at": "2026-09-04T13:15:52.190111+00:00"
+            "started_at": "2026-10-01T20:41:13.863654+00:00",
+            "finished_at": "2026-10-01T20:41:17.896254+00:00"
           }
         },
         {
@@ -3352,11 +3394,11 @@
           "label": "mef_scadenze_isin",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260904T131552Z_8b02d1bb",
+            "run_id": "20261001T204117Z_952dbad1",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-04T13:15:52.226851+00:00",
-            "finished_at": "2026-09-04T13:15:54.525709+00:00"
+            "started_at": "2026-10-01T20:41:17.948295+00:00",
+            "finished_at": "2026-10-01T20:41:21.433508+00:00"
           }
         },
         {
@@ -3366,11 +3408,11 @@
           "label": "mef_titoli_12m",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260904T131554Z_87159110",
+            "run_id": "20261001T204121Z_8dd8f341",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-04T13:15:54.569218+00:00",
-            "finished_at": "2026-09-04T13:15:56.674970+00:00"
+            "started_at": "2026-10-01T20:41:21.493713+00:00",
+            "finished_at": "2026-10-01T20:41:24.439612+00:00"
           }
         },
         {
@@ -3380,11 +3422,11 @@
           "label": "mef_vita_media",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260904T131556Z_d9c32961",
+            "run_id": "20261001T204124Z_b764ab46",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-04T13:15:56.710501+00:00",
-            "finished_at": "2026-09-04T13:15:58.263807+00:00"
+            "started_at": "2026-10-01T20:41:24.487372+00:00",
+            "finished_at": "2026-10-01T20:41:26.450008+00:00"
           }
         },
         {
@@ -3394,11 +3436,11 @@
           "label": "ocpi_serie_storiche",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260904T131558Z_29bfa88e",
+            "run_id": "20261001T204126Z_140a2608",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-04T13:15:58.299309+00:00",
-            "finished_at": "2026-09-04T13:16:00.618062+00:00"
+            "started_at": "2026-10-01T20:41:26.498278+00:00",
+            "finished_at": "2026-10-01T20:41:29.223690+00:00"
           }
         }
       ]
