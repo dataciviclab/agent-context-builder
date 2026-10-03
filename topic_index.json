@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "generated_at": "2026-10-03T04:05:43.029481",
+  "generated_at": "2026-10-03T11:13:07.719058",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -1549,6 +1549,230 @@
           "anac_cross__mart_imprese",
           "anac_cross__mart_ritardi_per_sa",
           "anac_cross__mart_competitivita"
+        ]
+      },
+      {
+        "slug": "iter_costituzionale",
+        "url_slug": "iter-costituzionale",
+        "name": "Iter Costituzionale",
+        "description": "Iter delle proposte di revisione costituzionale: DDL Camera/Senato (natura costituzionale) joinate alle leggi di revisione promulgate. Join tri-tier: high = chiavi strutturate (URN camera / data+numero reale), medium = titolo. Il clean \u00e8 DDL-centrico: raw = revisioni locali.\n",
+        "source": "",
+        "source_id": "dataciviclab_composite",
+        "period": {
+          "start": 1947,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "costituzione",
+          "parlamento",
+          "ddl",
+          "revisione_costituzionale",
+          "compose"
+        ],
+        "category": "normativa",
+        "registry_source": "costituzione-italiana",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/costituzione-italiana/iter_costituzionale/2026/iter_costituzionale_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "camera_o_senato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "atto_num",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "ddl_id",
+            "description": ""
+          },
+          {
+            "name": "atto_uri",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "titolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_presentazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "legislatura",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "proponente",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_legge",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_legge",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "urn_normattiva",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "natura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ddl_numero",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rev_urn",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rev_data",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rev_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rev_titolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rev_articoli",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rev_n_articoli",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rev_tipo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "urn_camera",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "gu_pubblicazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "join_method",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "join_quality",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "join_tier",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ha_legge",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stato_avanzato",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "iter_costituzionale__mart_ddl_per_stato",
+          "iter_costituzionale__mart_funnel_conversione",
+          "iter_costituzionale__mart_revisioni_con_iter"
         ]
       },
       {
@@ -7500,7 +7724,7 @@
         ],
         "category": "giurisprudenza",
         "registry_source": "costituzione-italiana",
-        "clean_rows": 1065,
+        "clean_rows": 1066,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/costituzione-italiana/atti_promovimento_corte_costituzionale/2026/atti_promovimento_corte_costituzionale_2026_clean.parquet",
@@ -7893,7 +8117,7 @@
         ],
         "category": "giurisprudenza",
         "registry_source": "costituzione-italiana",
-        "clean_rows": 22391,
+        "clean_rows": 22395,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/costituzione-italiana/pronunce_corte_costituzionale/2026/pronunce_corte_costituzionale_2026_clean.parquet",
@@ -8554,7 +8778,7 @@
         ],
         "category": "pa",
         "registry_source": "dataset-incubator",
-        "clean_rows": 23022,
+        "clean_rows": 23387,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/anpr_mobilita_residenziale/2026/anpr_mobilita_residenziale_2026_clean.parquet",
@@ -10383,120 +10607,6 @@
         ],
         "mart_refs": [
           "comuni_master__mart_comuni_master"
-        ]
-      }
-    ],
-    "dataciviclab/costituzione-italiana": [
-      {
-        "slug": "costituzione_master",
-        "url_slug": "costituzione-master",
-        "name": "Costituzione Master",
-        "description": "Metriche aggregate per ogni articolo della Costituzione: modifiche costituzionali, giudizi di legittimit\u00e0, esiti delle pronunce (accolte/respinte/inammissibili), citazioni nella legislazione ordinaria, e dataset del DataCivicLab che ne monitorano l'attuazione. Fonte: JOIN tra i 6 parquet di dataciviclab/costituzione-italiana.",
-        "source": "dataciviclab/costituzione-italiana",
-        "source_id": "costituzione-italiana",
-        "period": {
-          "start": 2026,
-          "end": 2026
-        },
-        "stage": "published",
-        "tags": [
-          "normativa",
-          "costituzione",
-          "master"
-        ],
-        "category": "normativa",
-        "registry_source": "dataset-incubator",
-        "clean_rows": null,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/costituzione_master/2026/costituzione_master_2026_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "articolo",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Numero dell'articolo della Costituzione (1-139)"
-          },
-          {
-            "name": "parte",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Parte della Costituzione (es. Principi fondamentali, Parte prima, Parte seconda)"
-          },
-          {
-            "name": "heading",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Intestazione dell'articolo (es. Art. 1, Art. 32)"
-          },
-          {
-            "name": "testo_preview",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Primi 200 caratteri del testo dell'articolo"
-          },
-          {
-            "name": "n_modifiche",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero di leggi di revisione costituzionale che hanno modificato l'articolo"
-          },
-          {
-            "name": "n_giudizi",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero di volte che l'articolo \u00e8 stato evocato come parametro in giudizi di legittimit\u00e0 costituzionale"
-          },
-          {
-            "name": "n_accolte",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero di pronunce della Corte Costituzionale che hanno dichiarato l'illegittimit\u00e0 costituzionale in cui l'articolo \u00e8 stato evocato (da massime.parquet)"
-          },
-          {
-            "name": "n_respinte",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero di pronunce in cui l'articolo \u00e8 stato evocato ma la questione \u00e8 stata dichiarata non fondata (da massime.parquet)"
-          },
-          {
-            "name": "n_inammissibili",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero di pronunce in cui l'articolo \u00e8 stato evocato ma la questione \u00e8 stata dichiarata inammissibile (da massime.parquet)"
-          },
-          {
-            "name": "n_citazioni_legislative",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero di volte che l'articolo \u00e8 citato nella legislazione ordinaria italiana (da citazioni-legislative.parquet)"
-          },
-          {
-            "name": "n_indicatori",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero di dataset del DataCivicLab che monitorano l'attuazione dell'articolo"
-          },
-          {
-            "name": "dataset_slugs",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Lista degli slug dei dataset Lab collegati all'articolo"
-          }
         ]
       }
     ],
@@ -41086,8 +41196,8 @@
         "clean_rows": 778,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/open-politica/camera_commissioni/2026/camera_commissioni_2026_clean.parquet",
-          "multi_file": false
+          "path": "gs://dataciviclab-clean/open-politica/camera_commissioni/*/camera_commissioni_*_clean.parquet",
+          "multi_file": true
         },
         "columns": [
           {
@@ -41808,11 +41918,11 @@
         ],
         "category": "politica",
         "registry_source": "open-politica",
-        "clean_rows": 10390,
+        "clean_rows": 10396,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/open-politica/camera_relatori/2026/camera_relatori_2026_clean.parquet",
-          "multi_file": false
+          "path": "gs://dataciviclab-clean/open-politica/camera_relatori/*/camera_relatori_*_clean.parquet",
+          "multi_file": true
         },
         "columns": [
           {
@@ -43203,8 +43313,8 @@
         "clean_rows": 212,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/open-politica/senato_anagrafica/2026/senato_anagrafica_2026_clean.parquet",
-          "multi_file": false
+          "path": "gs://dataciviclab-clean/open-politica/senato_anagrafica/*/senato_anagrafica_*_clean.parquet",
+          "multi_file": true
         },
         "columns": [
           {
@@ -43279,8 +43389,8 @@
         "clean_rows": 1053,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/open-politica/senato_commissioni/2026/senato_commissioni_2026_clean.parquet",
-          "multi_file": false
+          "path": "gs://dataciviclab-clean/open-politica/senato_commissioni/*/senato_commissioni_*_clean.parquet",
+          "multi_file": true
         },
         "columns": [
           {
@@ -43617,11 +43727,11 @@
         ],
         "category": "politica",
         "registry_source": "open-politica",
-        "clean_rows": 38567,
+        "clean_rows": 38763,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/open-politica/senato_firmatari/2026/senato_firmatari_2026_clean.parquet",
-          "multi_file": false
+          "path": "gs://dataciviclab-clean/open-politica/senato_firmatari/*/senato_firmatari_*_clean.parquet",
+          "multi_file": true
         },
         "columns": [
           {
@@ -43724,8 +43834,8 @@
         "clean_rows": 288,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/open-politica/senato_gruppi/2026/senato_gruppi_2026_clean.parquet",
-          "multi_file": false
+          "path": "gs://dataciviclab-clean/open-politica/senato_gruppi/*/senato_gruppi_*_clean.parquet",
+          "multi_file": true
         },
         "columns": [
           {
@@ -43811,11 +43921,11 @@
         ],
         "category": "politica",
         "registry_source": "open-politica",
-        "clean_rows": 37105,
+        "clean_rows": 37313,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/open-politica/senato_interventi/2026/senato_interventi_2026_clean.parquet",
-          "multi_file": false
+          "path": "gs://dataciviclab-clean/open-politica/senato_interventi/*/senato_interventi_*_clean.parquet",
+          "multi_file": true
         },
         "columns": [
           {
@@ -43985,7 +44095,7 @@
         ],
         "category": "politica",
         "registry_source": "open-politica",
-        "clean_rows": 36254,
+        "clean_rows": 36403,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-politica/senato_sindisp/*/senato_sindisp_*_clean.parquet",

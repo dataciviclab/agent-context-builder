@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T04:05:43.029481",
+  "generated_at": "2026-10-03T11:13:07.719058",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -46,13 +46,6 @@
   "open_prs": null,
   "prs": [
     {
-      "number": 21,
-      "title": "feat: compose iter_costituzionale \u2014 DDL Camera/Senato \u00d7 revisioni",
-      "repo": "costituzione-italiana",
-      "url": "https://github.com/dataciviclab/costituzione-italiana/pull/21",
-      "category": "other"
-    },
-    {
       "number": 264,
       "title": "feat(mit-incidentalita): plateau 2013, indice di mortalit\u00e0 e stagionalit\u00e0",
       "repo": "data-explorer",
@@ -64,13 +57,6 @@
       "title": "feat(candidates): bootstrap gse_cer_elenco candidate",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/836",
-      "category": "other"
-    },
-    {
-      "number": 52,
-      "title": "feat(pattern-c): SPARQL hardcoded Leg19 \u2192 years legislatura 13-19",
-      "repo": "open-politica",
-      "url": "https://github.com/dataciviclab/open-politica/pull/52",
       "category": "other"
     },
     {
@@ -1875,12 +1861,12 @@
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-10-02T09:45:57.964479+00:00",
-    "probe_date": "2026-10-02",
+    "generated_at": "2026-10-03T09:05:43.490193+00:00",
+    "probe_date": "2026-10-03",
     "sources_total": 36,
     "green": 34,
-    "yellow": 1,
-    "red": 1,
+    "yellow": 2,
+    "red": 0,
     "persistent_red": 0,
     "sources": [
       {
@@ -1933,9 +1919,9 @@
       },
       {
         "id": "dati_camera",
-        "status": "RED",
+        "status": "GREEN",
         "protocol": "sparql",
-        "http_code": "502",
+        "http_code": "200",
         "note": null,
         "red_streak": 0
       },
@@ -1949,10 +1935,10 @@
       },
       {
         "id": "dati_cultura",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "sparql",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
@@ -2174,11 +2160,11 @@
     ],
     "unhealthy": [
       {
-        "id": "dati_camera",
-        "status": "RED",
+        "id": "dati_cultura",
+        "status": "YELLOW",
         "protocol": "sparql",
-        "http_code": "502",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
@@ -2200,11 +2186,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-09-24",
+    "generated_at": "2026-10-03",
     "summary": {
-      "total": 48,
+      "total": 44,
       "by_status": {
-        "ok": 48
+        "ok": 44
       }
     },
     "actionable": []
@@ -2453,15 +2439,29 @@
       "repo": "costituzione-italiana",
       "available": true,
       "source_repo": "dataciviclab/costituzione-italiana",
-      "updated_at": "2026-10-01",
-      "datasets": 8,
-      "marts": 13,
-      "signals": 8,
+      "updated_at": "2026-10-03",
+      "datasets": 9,
+      "marts": 16,
+      "signals": 9,
       "codelists": 0,
-      "entities": 1,
-      "gcs": 8,
+      "entities": 3,
+      "gcs": 9,
       "reason": "",
       "signals_detail": [
+        {
+          "id": "compose:iter_costituzionale",
+          "source_id": "dataciviclab_composite",
+          "status": "ok",
+          "label": "iter_costituzionale",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261003T093551Z_e4ff6462",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-10-03T09:35:51.720610+00:00",
+            "finished_at": "2026-10-03T09:36:14.951506+00:00"
+          }
+        },
         {
           "id": "compose:sentenze_complete",
           "source_id": "corte_costituzionale",
@@ -2469,11 +2469,11 @@
           "label": "sentenze_complete",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T125520Z_6efb496c",
+            "run_id": "20261003T093550Z_f68c9513",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:55:20.589901+00:00",
-            "finished_at": "2026-10-01T12:55:21.798368+00:00"
+            "started_at": "2026-10-03T09:35:50.222170+00:00",
+            "finished_at": "2026-10-03T09:35:51.310651+00:00"
           }
         },
         {
@@ -2483,11 +2483,11 @@
           "label": "articoli_costituzione",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T125334Z_1cf05e83",
+            "run_id": "20261003T093353Z_67a63592",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:53:34.178966+00:00",
-            "finished_at": "2026-10-01T12:53:34.774085+00:00"
+            "started_at": "2026-10-03T09:33:53.271633+00:00",
+            "finished_at": "2026-10-03T09:33:53.966985+00:00"
           }
         },
         {
@@ -2497,11 +2497,11 @@
           "label": "atti_promovimento_corte_costituzionale",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T125433Z_f1710a41",
+            "run_id": "20261003T093448Z_4d8c17e1",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:54:33.019090+00:00",
-            "finished_at": "2026-10-01T12:54:35.116335+00:00"
+            "started_at": "2026-10-03T09:34:48.643209+00:00",
+            "finished_at": "2026-10-03T09:34:51.287248+00:00"
           }
         },
         {
@@ -2511,11 +2511,11 @@
           "label": "citazioni_costituzionali",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T125500Z_36211167",
+            "run_id": "20261003T093526Z_4fe3a4ed",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:55:00.010263+00:00",
-            "finished_at": "2026-10-01T12:55:00.950617+00:00"
+            "started_at": "2026-10-03T09:35:26.581273+00:00",
+            "finished_at": "2026-10-03T09:35:27.803648+00:00"
           }
         },
         {
@@ -2525,11 +2525,11 @@
           "label": "giudici_corte_costituzionale",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T125519Z_eae965a0",
+            "run_id": "20261003T093548Z_18c4d277",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:55:19.304715+00:00",
-            "finished_at": "2026-10-01T12:55:20.325688+00:00"
+            "started_at": "2026-10-03T09:35:48.627414+00:00",
+            "finished_at": "2026-10-03T09:35:49.821704+00:00"
           }
         },
         {
@@ -2539,11 +2539,11 @@
           "label": "massime_corte_costituzionale",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T125435Z_c5a7512a",
+            "run_id": "20261003T093451Z_504e7410",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:54:35.386857+00:00",
-            "finished_at": "2026-10-01T12:54:59.705136+00:00"
+            "started_at": "2026-10-03T09:34:51.678329+00:00",
+            "finished_at": "2026-10-03T09:35:26.201378+00:00"
           }
         },
         {
@@ -2553,11 +2553,11 @@
           "label": "pronunce_corte_costituzionale",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T125501Z_60438c07",
+            "run_id": "20261003T093528Z_36fa0622",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:55:01.207142+00:00",
-            "finished_at": "2026-10-01T12:55:19.041829+00:00"
+            "started_at": "2026-10-03T09:35:28.163133+00:00",
+            "finished_at": "2026-10-03T09:35:48.239169+00:00"
           }
         },
         {
@@ -2567,11 +2567,11 @@
           "label": "revisioni_costituzionali",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T125335Z_029779cc",
+            "run_id": "20261003T093354Z_202ac30a",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:53:35.159875+00:00",
-            "finished_at": "2026-10-01T12:54:32.772305+00:00"
+            "started_at": "2026-10-03T09:33:54.351691+00:00",
+            "finished_at": "2026-10-03T09:34:48.254529+00:00"
           }
         }
       ]
@@ -2606,13 +2606,13 @@
       "repo": "dataset-incubator",
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
-      "updated_at": "2026-09-24",
-      "datasets": 54,
-      "marts": 75,
-      "signals": 48,
+      "updated_at": "2026-10-03",
+      "datasets": 53,
+      "marts": 71,
+      "signals": 44,
       "codelists": 0,
       "entities": 13,
-      "gcs": 54,
+      "gcs": 53,
       "reason": "",
       "signals_detail": [
         {
@@ -2643,11 +2643,11 @@
           "label": "anpr_mobilita_residenziale",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260924T180432Z_21553806",
+            "run_id": "20261003T095812Z_6260faed",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-24T18:04:32.935691+00:00",
-            "finished_at": "2026-09-24T18:04:33.784486+00:00"
+            "started_at": "2026-10-03T09:58:12.551662+00:00",
+            "finished_at": "2026-10-03T09:58:13.974182+00:00"
           }
         },
         {
@@ -2903,27 +2903,6 @@
           "detail": "anno 2022 \u2014 mart: si"
         },
         {
-          "id": "mur_contribuzione_universitaria",
-          "source_id": "mur_ustat",
-          "status": "ok",
-          "label": "mur_contribuzione_universitaria",
-          "detail": "anni 2017-2024 \u2014 mart: si"
-        },
-        {
-          "id": "mur_immatricolati",
-          "source_id": "mur_ustat",
-          "status": "ok",
-          "label": "mur_immatricolati",
-          "detail": "anno 2025 \u2014 mart: si"
-        },
-        {
-          "id": "mur_iscritti",
-          "source_id": "mur_ustat",
-          "status": "ok",
-          "label": "mur_iscritti",
-          "detail": "anno 2025 \u2014 mart: si"
-        },
-        {
           "id": "penale_flussi",
           "source_id": "giustizia_statistiche",
           "status": "ok",
@@ -3027,13 +3006,6 @@
             "started_at": "2026-07-30T16:04:10.845383+00:00",
             "finished_at": "2026-07-30T16:04:10.866765+00:00"
           }
-        },
-        {
-          "id": "compose:costituzione_master",
-          "source_id": "costituzione-italiana",
-          "status": "ok",
-          "label": "costituzione_master",
-          "detail": "anno 2026 \u2014 mart: si"
         },
         {
           "id": "compose:malasanita_compose",
@@ -6053,7 +6025,7 @@
       "repo": "open-politica",
       "available": true,
       "source_repo": "dataciviclab/open-politica",
-      "updated_at": "2026-10-02",
+      "updated_at": "2026-10-03",
       "datasets": 35,
       "marts": 69,
       "signals": 35,
@@ -6151,13 +6123,13 @@
           "source_id": "dati_camera",
           "status": "ok",
           "label": "camera_commissioni",
-          "detail": "anno 2026 \u2014 mart: si",
+          "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20260928T084324Z_5480c056",
-            "year": 2026,
+            "run_id": "20261003T103015Z_bbdd1414",
+            "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-09-28T08:43:24.966467+00:00",
-            "finished_at": "2026-09-28T08:43:26.579853+00:00"
+            "started_at": "2026-10-03T10:30:15.450234+00:00",
+            "finished_at": "2026-10-03T10:30:16.656745+00:00"
           }
         },
         {
@@ -6181,11 +6153,11 @@
           "label": "camera_deputati_legislature",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260928T084344Z_497e7515",
+            "run_id": "20261003T103030Z_d6a317d3",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-28T08:43:44.617933+00:00",
-            "finished_at": "2026-09-28T08:43:56.546316+00:00"
+            "started_at": "2026-10-03T10:30:30.377450+00:00",
+            "finished_at": "2026-10-03T10:30:42.210214+00:00"
           }
         },
         {
@@ -6263,13 +6235,13 @@
           "source_id": "dati_camera",
           "status": "ok",
           "label": "camera_relatori",
-          "detail": "anno 2026 \u2014 mart: si",
+          "detail": "anni 16-19 \u2014 mart: si",
           "run": {
-            "run_id": "20260928T084535Z_4058f3f8",
-            "year": 2026,
+            "run_id": "20261003T103026Z_d71bb541",
+            "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-09-28T08:45:35.424246+00:00",
-            "finished_at": "2026-09-28T08:45:39.633475+00:00"
+            "started_at": "2026-10-03T10:30:26.854312+00:00",
+            "finished_at": "2026-10-03T10:30:30.294742+00:00"
           }
         },
         {
@@ -6405,11 +6377,11 @@
           "label": "ponte_persona",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260928T085231Z_14869004",
+            "run_id": "20261003T103049Z_77e78f07",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-28T08:52:31.982789+00:00",
-            "finished_at": "2026-09-28T08:52:32.072673+00:00"
+            "started_at": "2026-10-03T10:30:49.853183+00:00",
+            "finished_at": "2026-10-03T10:30:50.565638+00:00"
           }
         },
         {
@@ -6417,13 +6389,13 @@
           "source_id": "dati_senato",
           "status": "ok",
           "label": "senato_anagrafica",
-          "detail": "anno 2026 \u2014 mart: si",
+          "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20260929T200055Z_decb0dfc",
-            "year": 2026,
+            "run_id": "20261003T103056Z_ae6975d7",
+            "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-09-29T20:00:55.035694+00:00",
-            "finished_at": "2026-09-29T20:00:58.326903+00:00"
+            "started_at": "2026-10-03T10:30:56.729530+00:00",
+            "finished_at": "2026-10-03T10:30:57.991533+00:00"
           }
         },
         {
@@ -6431,13 +6403,13 @@
           "source_id": "dati_senato",
           "status": "ok",
           "label": "senato_commissioni",
-          "detail": "anno 2026 \u2014 mart: si",
+          "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20260928T084924Z_b2253179",
-            "year": 2026,
+            "run_id": "20261003T103126Z_086c5fdb",
+            "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-09-28T08:49:24.935239+00:00",
-            "finished_at": "2026-09-28T08:49:28.585613+00:00"
+            "started_at": "2026-10-03T10:31:26.194887+00:00",
+            "finished_at": "2026-10-03T10:31:28.189534+00:00"
           }
         },
         {
@@ -6459,13 +6431,13 @@
           "source_id": "dati_senato",
           "status": "ok",
           "label": "senato_firmatari",
-          "detail": "anno 2026 \u2014 mart: si",
+          "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20260928T085143Z_61fc0531",
-            "year": 2026,
+            "run_id": "20261003T103521Z_1060eeef",
+            "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-09-28T08:51:43.625477+00:00",
-            "finished_at": "2026-09-28T08:52:08.433551+00:00"
+            "started_at": "2026-10-03T10:35:21.823310+00:00",
+            "finished_at": "2026-10-03T10:35:53.650775+00:00"
           }
         },
         {
@@ -6473,13 +6445,13 @@
           "source_id": "dati_senato",
           "status": "ok",
           "label": "senato_gruppi",
-          "detail": "anno 2026 \u2014 mart: si",
+          "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20260928T085208Z_447668d9",
-            "year": 2026,
+            "run_id": "20261003T103610Z_087f5c25",
+            "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-09-28T08:52:08.778989+00:00",
-            "finished_at": "2026-09-28T08:52:11.608794+00:00"
+            "started_at": "2026-10-03T10:36:10.126553+00:00",
+            "finished_at": "2026-10-03T10:36:12.422501+00:00"
           }
         },
         {
@@ -6487,13 +6459,13 @@
           "source_id": "dati_senato",
           "status": "ok",
           "label": "senato_interventi",
-          "detail": "anno 2026 \u2014 mart: si",
+          "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20260928T085211Z_d0a8c085",
-            "year": 2026,
+            "run_id": "20261003T103847Z_7a15fcd5",
+            "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-09-28T08:52:11.946051+00:00",
-            "finished_at": "2026-09-28T08:52:30.281778+00:00"
+            "started_at": "2026-10-03T10:38:47.148063+00:00",
+            "finished_at": "2026-10-03T10:39:06.474800+00:00"
           }
         },
         {
@@ -6517,11 +6489,11 @@
           "label": "senato_sindisp",
           "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20260929T200335Z_9d29041b",
+            "run_id": "20261003T100539Z_9ae4713e",
             "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-09-29T20:03:35.005429+00:00",
-            "finished_at": "2026-09-29T20:03:55.660125+00:00"
+            "started_at": "2026-10-03T10:05:39.898249+00:00",
+            "finished_at": "2026-10-03T10:06:13.737861+00:00"
           }
         },
         {
