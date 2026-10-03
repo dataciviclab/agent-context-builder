@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T11:13:07.719058",
+  "generated_at": "2026-10-03T15:50:07.511925",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -313,6 +313,13 @@
       "repo": "open-noipa",
       "url": "https://github.com/dataciviclab/open-noipa/issues/2",
       "category": "infrastructure"
+    },
+    {
+      "number": 494,
+      "title": "support external: bucket/pattern/slug non risolve multi-anno (clean=None)",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/494",
+      "category": "other"
     },
     {
       "number": 471,
@@ -4582,7 +4589,7 @@
       "repo": "inpa-reclutamento",
       "available": true,
       "source_repo": "dataciviclab/inpa-reclutamento",
-      "updated_at": "2026-10-02",
+      "updated_at": "2026-10-03",
       "datasets": 4,
       "marts": 12,
       "signals": 4,
@@ -4626,11 +4633,11 @@
           "label": "inpa_bandi_open",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261002T120525Z_6c827a85",
+            "run_id": "20261003T111817Z_d9394b4d",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-02T12:05:25.541979+00:00",
-            "finished_at": "2026-10-02T12:05:42.350330+00:00"
+            "started_at": "2026-10-03T11:18:17.320556+00:00",
+            "finished_at": "2026-10-03T11:18:32.427836+00:00"
           }
         },
         {
@@ -4640,11 +4647,11 @@
           "label": "inpa_comunicazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261002T120542Z_3fccd5b2",
+            "run_id": "20261003T111832Z_e17321c5",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-02T12:05:42.815858+00:00",
-            "finished_at": "2026-10-02T12:06:09.819198+00:00"
+            "started_at": "2026-10-03T11:18:32.955071+00:00",
+            "finished_at": "2026-10-03T11:19:03.428617+00:00"
           }
         }
       ]
@@ -6041,11 +6048,11 @@
           "label": "decreti_legge",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260928T085232Z_dc5973d1",
+            "run_id": "20261003T144106Z_7d3311db",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-28T08:52:32.379243+00:00",
-            "finished_at": "2026-09-28T08:52:32.493806+00:00"
+            "started_at": "2026-10-03T14:41:06.272451+00:00",
+            "finished_at": "2026-10-03T14:41:08.251720+00:00"
           }
         },
         {
@@ -6055,11 +6062,11 @@
           "label": "elezioni_voto",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260928T085232Z_a7889cd1",
+            "run_id": "20261003T144108Z_e3f5f3d7",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-28T08:52:32.829172+00:00",
-            "finished_at": "2026-09-28T08:52:34.008519+00:00"
+            "started_at": "2026-10-03T14:41:08.474109+00:00",
+            "finished_at": "2026-10-03T14:41:18.209007+00:00"
           }
         },
         {
@@ -6069,11 +6076,11 @@
           "label": "osservatorio_parlamento",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260928T085234Z_1c3434f1",
+            "run_id": "20261003T144118Z_cf52878a",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-28T08:52:34.365111+00:00",
-            "finished_at": "2026-09-28T08:52:34.642849+00:00"
+            "started_at": "2026-10-03T14:41:18.449403+00:00",
+            "finished_at": "2026-10-03T14:41:37.223514+00:00"
           }
         },
         {
@@ -6083,11 +6090,11 @@
           "label": "profilo_politico",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260928T085235Z_8b6a6c90",
+            "run_id": "20261003T144137Z_d75171a4",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-28T08:52:35.032648+00:00",
-            "finished_at": "2026-09-28T08:52:36.146025+00:00"
+            "started_at": "2026-10-03T14:41:37.455034+00:00",
+            "finished_at": "2026-10-03T14:42:03.505333+00:00"
           }
         },
         {
@@ -6097,11 +6104,11 @@
           "label": "senato_corpus_parlamento",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260928T085236Z_5c531cd4",
+            "run_id": "20261003T144203Z_a0d60408",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-28T08:52:36.754136+00:00",
-            "finished_at": "2026-09-28T08:52:42.489594+00:00"
+            "started_at": "2026-10-03T14:42:03.728158+00:00",
+            "finished_at": "2026-10-03T14:42:07.723629+00:00"
           }
         },
         {
