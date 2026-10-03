@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T15:50:07.511925",
+  "generated_at": "2026-10-03T20:40:36.565296",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -6033,12 +6033,12 @@
       "available": true,
       "source_repo": "dataciviclab/open-politica",
       "updated_at": "2026-10-03",
-      "datasets": 35,
-      "marts": 69,
-      "signals": 35,
+      "datasets": 37,
+      "marts": 72,
+      "signals": 37,
       "codelists": 0,
       "entities": 8,
-      "gcs": 35,
+      "gcs": 37,
       "reason": "",
       "signals_detail": [
         {
@@ -6084,6 +6084,20 @@
           }
         },
         {
+          "id": "compose:ponti_parlamento",
+          "source_id": "dataciviclab_composite",
+          "status": "ok",
+          "label": "ponti_parlamento",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261003T173017Z_b4ae6743",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-10-03T17:30:17.903441+00:00",
+            "finished_at": "2026-10-03T17:30:30.517746+00:00"
+          }
+        },
+        {
           "id": "compose:profilo_politico",
           "source_id": "dataciviclab_composite",
           "status": "ok",
@@ -6109,6 +6123,20 @@
             "status": "SUCCESS",
             "started_at": "2026-10-03T14:42:03.728158+00:00",
             "finished_at": "2026-10-03T14:42:07.723629+00:00"
+          }
+        },
+        {
+          "id": "compose:voti_ddl_dettaglio",
+          "source_id": "dataciviclab_composite",
+          "status": "ok",
+          "label": "voti_ddl_dettaglio",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261003T173030Z_67b41b0c",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-10-03T17:30:30.732260+00:00",
+            "finished_at": "2026-10-03T17:30:36.064781+00:00"
           }
         },
         {

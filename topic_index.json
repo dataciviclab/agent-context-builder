@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "generated_at": "2026-10-03T15:50:07.511925",
+  "generated_at": "2026-10-03T20:40:36.565296",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -2936,6 +2936,67 @@
         ]
       },
       {
+        "slug": "ponti_parlamento",
+        "url_slug": "ponti-parlamento",
+        "name": "Ponti Parlamento",
+        "description": "",
+        "source": "",
+        "source_id": "dataciviclab_composite",
+        "period": {
+          "start": 1996,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "politica",
+          "ponti",
+          "accountability",
+          "iter",
+          "catena-legislativa"
+        ],
+        "category": "politica",
+        "registry_source": "open-politica",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-politica/ponti_parlamento/2026/ponti_parlamento_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "ponte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "metrica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fonte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ponti_parlamento__mart_ponti_sintesi"
+        ]
+      },
+      {
         "slug": "profilo_politico",
         "url_slug": "profilo-politico",
         "name": "Profilo Politico",
@@ -3260,6 +3321,146 @@
           "senato_corpus_parlamento__mart_atto_corpus",
           "senato_corpus_parlamento__mart_decreti_peso",
           "senato_corpus_parlamento__mart_intensita_emendativa"
+        ]
+      },
+      {
+        "slug": "voti_ddl_dettaglio",
+        "url_slug": "voti-ddl-dettaglio",
+        "name": "Voti Ddl Dettaglio",
+        "description": "",
+        "source": "",
+        "source_id": "dataciviclab_composite",
+        "period": {
+          "start": 2022,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "politica",
+          "senato",
+          "votazioni",
+          "ddl",
+          "accountability",
+          "catena-legislativa"
+        ],
+        "category": "politica",
+        "registry_source": "open-politica",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-politica/voti_ddl_dettaglio/2026/voti_ddl_dettaglio_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "votazione_id",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "senatore_id",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "senator_id",
+            "description": ""
+          },
+          {
+            "name": "nome",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cognome",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "voto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ddl_id",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "ddl_id",
+            "description": ""
+          },
+          {
+            "name": "oggetto_id",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "esito_votazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_votazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "legislatura",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ddl_titolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ddl_stato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_legge",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "urn_normattiva",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "voti_ddl_dettaglio__mart_voti_ddl",
+          "voti_ddl_dettaglio__mart_voti_ddl_sintesi"
         ]
       },
       {
