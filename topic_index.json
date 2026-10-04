@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "generated_at": "2026-10-04T11:52:44.966842",
+  "generated_at": "2026-10-04T13:44:48.990207",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -93,6 +93,10 @@
     "open-conto-annuale": {
       "description": "1,8 milioni di microdati sul personale della PA italiana \u2014 chi lavora nel pubblico, dove e con quali ruoli.",
       "url": "https://github.com/dataciviclab/open-conto-annuale"
+    },
+    "open-inps": {
+      "description": "17 dataset INPS aperti: pensioni, mercato del lavoro, welfare (NASpI, RdC/PdC, DIS-COLL) in parquet, con compose e dashboard.",
+      "url": "https://github.com/dataciviclab/open-inps"
     },
     "open-ispra": {
       "description": "Dati ambientali ISPRA: acque, suolo, mari, pesticidi, frane. Open data italiani in formato standardizzato.",
@@ -2584,6 +2588,78 @@
         ],
         "mart_refs": [
           "consip_composto__mart_riepilogo"
+        ]
+      },
+      {
+        "slug": "inps_analisi",
+        "url_slug": "inps-analisi",
+        "name": "Inps Analisi",
+        "description": "Compose INPS: incrocio multi-dataset per analisi di genere, territorio e lifecycle.",
+        "source": "",
+        "source_id": "dataciviclab_composite",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "inps",
+          "compose",
+          "welfare",
+          "lavoro",
+          "pensioni",
+          "analisi"
+        ],
+        "category": "welfare",
+        "registry_source": "open-inps",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-inps/inps_analisi/2026/inps_analisi_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "metrica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sesso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valore",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "inps_analisi__mart_nazionale",
+          "inps_analisi__mart_territoriale",
+          "inps_analisi__mart_lifecycle",
+          "inps_analisi__mart_benchmark"
         ]
       },
       {
@@ -11713,8 +11789,8 @@
           "pdc"
         ],
         "category": "welfare-lavoro",
-        "registry_source": "dataset-incubator",
-        "clean_rows": 7976,
+        "registry_source": "open-inps",
+        "clean_rows": 311,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inps_rdc_pdc/2020/inps_rdc_pdc_2020_clean.parquet",
@@ -36702,6 +36778,1550 @@
         ],
         "mart_refs": [
           "consip_rdo_td_stipulate__mart_competizione_mepa"
+        ]
+      }
+    ],
+    "inps": [
+      {
+        "slug": "inps_assegno_unico",
+        "url_slug": "inps-assegno-unico",
+        "name": "Inps Assegno Unico",
+        "description": "Assegno Unico Universale: figli e nuclei beneficiari per regione, ISEE, disabilit\u00e0 (2022-2024).",
+        "source": "",
+        "source_id": "inps",
+        "period": {
+          "start": 2022,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "welfare",
+          "inps",
+          "assegno-unico",
+          "famiglia"
+        ],
+        "category": "welfare",
+        "registry_source": "open-inps",
+        "clean_rows": 220,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-inps/inps_assegno_unico/2026/inps_assegno_unico_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "dimensione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "fascia_isee",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_figli",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_medio_figlio",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_medio_nucleo",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "inps_assegno_unico__mart_au_regione",
+          "inps_assegno_unico__mart_au_isee"
+        ]
+      },
+      {
+        "slug": "inps_cig",
+        "url_slug": "inps-cig",
+        "name": "Inps Cig",
+        "description": "CIG ore autorizzate per gestione, ramo, settore, regione (2023-2026).",
+        "source": "",
+        "source_id": "inps",
+        "period": {
+          "start": 2023,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "lavoro",
+          "inps",
+          "cig",
+          "cassa-integrazione",
+          "ammortizzatori"
+        ],
+        "category": "lavoro",
+        "registry_source": "open-inps",
+        "clean_rows": 386,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-inps/inps_cig/2026/inps_cig_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "dimensione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "gestione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ramo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "mese",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          },
+          {
+            "name": "oretot",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "inps_cig__mart_cig_regione",
+          "inps_cig__mart_cig_ramo",
+          "inps_cig__mart_cig_mensile"
+        ]
+      },
+      {
+        "slug": "inps_dipendenti_pubblici",
+        "url_slug": "inps-dipendenti-pubblici",
+        "name": "Inps Dipendenti Pubblici",
+        "description": "Dipendenti pubblici: enti, retribuzioni e giornate lavorate per regione e forma giuridica (2022-2026).",
+        "source": "",
+        "source_id": "inps",
+        "period": {
+          "start": 2022,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "lavoro",
+          "inps",
+          "pubblico",
+          "dipendenti-pubblici"
+        ],
+        "category": "lavoro",
+        "registry_source": "open-inps",
+        "clean_rows": 450,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-inps/inps_dipendenti_pubblici/2026/inps_dipendenti_pubblici_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "dimensione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "tipo_ente",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "forma_giuridica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_enti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "giorni_totali",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "retribuzione_totale",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "inps_dipendenti_pubblici__mart_dp_regione",
+          "inps_dipendenti_pubblici__mart_dp_forma_giuridica"
+        ]
+      },
+      {
+        "slug": "inps_dis_coll",
+        "url_slug": "inps-dis-coll",
+        "name": "Inps Dis Coll",
+        "description": "DIS-COLL nazionale per sesso: beneficiari (397) e trattamenti (398), 2020-2024. Complemento NASpI per co.co.co. Solo grana nazionale (tagli territoriali API non additivi).",
+        "source": "",
+        "source_id": "inps",
+        "period": {
+          "start": 2020,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "welfare",
+          "inps",
+          "dis-coll",
+          "disoccupazione",
+          "parasubordinati"
+        ],
+        "category": "welfare",
+        "registry_source": "open-inps",
+        "clean_rows": 22,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-inps/inps_dis_coll/2026/inps_dis_coll_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "dimensione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_dato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sesso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_trattamenti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "giorni_teorici",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "giorni_pagati",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_fonte",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "inps_dis_coll__mart_dis_coll_nazionale"
+        ]
+      },
+      {
+        "slug": "inps_flussi_settore",
+        "url_slug": "inps-flussi-settore",
+        "name": "Inps Flussi Settore",
+        "description": "Assunzioni e cessazioni per settore NACE Rev.2/2.1, nazionale (obs 407/406/528/530, 2014-2026).",
+        "source": "",
+        "source_id": "inps",
+        "period": {
+          "start": 2014,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "lavoro",
+          "inps",
+          "settore",
+          "nace",
+          "mercato-lavoro"
+        ],
+        "category": "lavoro",
+        "registry_source": "open-inps",
+        "clean_rows": 3808,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-inps/inps_flussi_settore/2026/inps_flussi_settore_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "dimensione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flusso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nace_class",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sesso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "settore_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "settore_nace",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "settore_label_api",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_flusso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_rapporti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "inps_flussi_settore__mart_flussi_settore"
+        ]
+      },
+      {
+        "slug": "inps_lavoratori_pubblici",
+        "url_slug": "inps-lavoratori-pubblici",
+        "name": "Inps Lavoratori Pubblici",
+        "description": "Lavoratori pubblici: retribuzioni, giornate e unit\u00e0 per gruppo contrattuale, et\u00e0, tipo contratto e regione (obs 435, 2014-2024). Nessuna dimensione genere (campo SESSO rotto sull'API).",
+        "source": "",
+        "source_id": "inps",
+        "period": {
+          "start": 2014,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "lavoro",
+          "inps",
+          "pubblico",
+          "retribuzioni",
+          "pa"
+        ],
+        "category": "lavoro",
+        "registry_source": "open-inps",
+        "clean_rows": 2810,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-inps/inps_lavoratori_pubblici/2026/inps_lavoratori_pubblici_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "dimensione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "gruppo_contrattuale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "classe_eta",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tempo_parziale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "n_lavoratori",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "retribuzioni_totali",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "giornate_lavorate",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "settimane_retribuite",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unita_lavorative",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "inps_lavoratori_pubblici__mart_lavoratori_pa_gruppo",
+          "inps_lavoratori_pubblici__mart_lavoratori_pa_eta",
+          "inps_lavoratori_pubblici__mart_lavoratori_pa_tipo_contratto",
+          "inps_lavoratori_pubblici__mart_lavoratori_pa_regione"
+        ]
+      },
+      {
+        "slug": "inps_lavoratori_redditi",
+        "url_slug": "inps-lavoratori-redditi",
+        "name": "Inps Lavoratori Redditi",
+        "description": "Lavoratori, redditi da lavoro e settimane lavorate per posizione prevalente, regione, et\u00e0 e cittadinanza (obs 465, 2014-2024).",
+        "source": "",
+        "source_id": "inps",
+        "period": {
+          "start": 2014,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "lavoro",
+          "redditi",
+          "inps",
+          "settimane",
+          "mercato-lavoro"
+        ],
+        "category": "lavoro",
+        "registry_source": "open-inps",
+        "clean_rows": 1105,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-inps/inps_lavoratori_redditi/2026/inps_lavoratori_redditi_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "dimensione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sesso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "posizione_prevalente",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "classe_eta",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cittadinanza",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stato_pensionato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_lavoratori",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_cumulato",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "settimane_lavorate",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "inps_lavoratori_redditi__mart_lavoratori_redditi_posizione",
+          "inps_lavoratori_redditi__mart_lavoratori_redditi_regione",
+          "inps_lavoratori_redditi__mart_lavoratori_redditi_eta",
+          "inps_lavoratori_redditi__mart_lavoratori_redditi_cittadinanza"
+        ]
+      },
+      {
+        "slug": "inps_naspi",
+        "url_slug": "inps-naspi",
+        "name": "Inps Naspi",
+        "description": "NASpI: beneficiari e trattamenti per sesso, eta, durata, regione (obs 395+396).",
+        "source": "",
+        "source_id": "inps",
+        "period": {
+          "start": 2020,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "lavoro",
+          "inps",
+          "naspi",
+          "disoccupazione",
+          "politiche-passive"
+        ],
+        "category": "lavoro",
+        "registry_source": "open-inps",
+        "clean_rows": 550,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-inps/inps_naspi/2026/inps_naspi_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "dimensione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fonte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sesso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "classe_eta",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "durata_mesi",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_beneficiari",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "inps_naspi__mart_naspi_regione",
+          "inps_naspi__mart_naspi_eta",
+          "inps_naspi__mart_naspi_durata"
+        ]
+      },
+      {
+        "slug": "inps_pensionamento_flussi",
+        "url_slug": "inps-pensionamento-flussi",
+        "name": "Inps Pensionamento Flussi",
+        "description": "Flussi trimestrali di pensionamento per anno decorrenza 2021-2026: regione, gestione e categoria (obs 475).",
+        "source": "",
+        "source_id": "inps",
+        "period": {
+          "start": 2021,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "pensioni",
+          "inps",
+          "pensionamento",
+          "flussi",
+          "trimestrale"
+        ],
+        "category": "pensioni",
+        "registry_source": "open-inps",
+        "clean_rows": 2019,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-inps/inps_pensionamento_flussi/2026/inps_pensionamento_flussi_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "dimensione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "trimestre",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sesso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "gestione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_pensioni",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "eta_media_decorrenza",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_medio_decorrenza_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "inps_pensionamento_flussi__mart_pensionamento_regione",
+          "inps_pensionamento_flussi__mart_pensionamento_gestione",
+          "inps_pensionamento_flussi__mart_pensionamento_categoria"
+        ]
+      },
+      {
+        "slug": "inps_pensioni_liquidate",
+        "url_slug": "inps-pensioni-liquidate",
+        "name": "Inps Pensioni Liquidate",
+        "description": "Nuove pensioni INPS liquidate, per sesso, classe importo e regione.",
+        "source": "",
+        "source_id": "inps",
+        "period": {
+          "start": 2021,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "pensioni",
+          "inps",
+          "previdenza",
+          "welfare"
+        ],
+        "category": "pensioni",
+        "registry_source": "open-inps",
+        "clean_rows": 470,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-inps/inps_pensioni_liquidate/2026/inps_pensioni_liquidate_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "dimensione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sesso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "classe_importo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "n_pensioni",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_medio_mensile_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "inps_pensioni_liquidate__mart_liquidate_importo",
+          "inps_pensioni_liquidate__mart_liquidate_regione"
+        ]
+      },
+      {
+        "slug": "inps_pensioni_serie",
+        "url_slug": "inps-pensioni-serie",
+        "name": "Inps Pensioni Serie",
+        "description": "Serie storica pensioni INPS: vigenti 1998-2026 e liquidate 1997-2025, per sesso, categoria, gestione e regione (obs 390+376).",
+        "source": "",
+        "source_id": "inps",
+        "period": {
+          "start": 1997,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "pensioni",
+          "inps",
+          "previdenza",
+          "serie-storica"
+        ],
+        "category": "pensioni",
+        "registry_source": "open-inps",
+        "clean_rows": 3602,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-inps/inps_pensioni_serie/2026/inps_pensioni_serie_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "dimensione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_pensione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sesso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_gestione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "n_pensioni",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_medio_mensile_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "eta_media",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "inps_pensioni_serie__mart_pensioni_serie_categoria",
+          "inps_pensioni_serie__mart_pensioni_serie_tipogest",
+          "inps_pensioni_serie__mart_pensioni_serie_regione"
+        ]
+      },
+      {
+        "slug": "inps_pensioni_vigenti",
+        "url_slug": "inps-pensioni-vigenti",
+        "name": "Inps Pensioni Vigenti",
+        "description": "Stock di pensioni INPS in pagamento, per sesso, classe importo, eta e regione.",
+        "source": "",
+        "source_id": "inps",
+        "period": {
+          "start": 2022,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "pensioni",
+          "inps",
+          "previdenza",
+          "welfare"
+        ],
+        "category": "pensioni",
+        "registry_source": "open-inps",
+        "clean_rows": 620,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-inps/inps_pensioni_vigenti/2026/inps_pensioni_vigenti_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "dimensione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sesso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "classe_importo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "classe_eta",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "n_pensioni",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_totale_migliaia_eur",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_medio_mensile_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "inps_pensioni_vigenti__mart_vigenti_importo",
+          "inps_pensioni_vigenti__mart_vigenti_eta",
+          "inps_pensioni_vigenti__mart_vigenti_regione"
+        ]
+      },
+      {
+        "slug": "inps_rapporti_cessazioni",
+        "url_slug": "inps-rapporti-cessazioni",
+        "name": "Inps Rapporti Cessazioni",
+        "description": "Cessazioni di rapporti di lavoro per provincia: tipologia e motivo, per sesso e eta (obs 490, 2014-2026).",
+        "source": "",
+        "source_id": "inps",
+        "period": {
+          "start": 2014,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "lavoro",
+          "inps",
+          "cessazioni",
+          "mercato-lavoro"
+        ],
+        "category": "lavoro",
+        "registry_source": "open-inps",
+        "clean_rows": 27300,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-inps/inps_rapporti_cessazioni/2026/inps_rapporti_cessazioni_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "dimensione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sesso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_cessazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "motivo_cessazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "n_cessazioni",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "inps_rapporti_cessazioni__mart_cessazioni_regione",
+          "inps_rapporti_cessazioni__mart_cessazioni_provincia",
+          "inps_rapporti_cessazioni__mart_cessazioni_motivo"
+        ]
+      },
+      {
+        "slug": "inps_rapporti_lavoro",
+        "url_slug": "inps-rapporti-lavoro",
+        "name": "Inps Rapporti Lavoro",
+        "description": "Nuovi rapporti di lavoro per provincia: assunzioni, cessazioni, per sesso, eta, settore, tipo contratto.",
+        "source": "",
+        "source_id": "inps",
+        "period": {
+          "start": 2014,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "lavoro",
+          "inps",
+          "assunzioni",
+          "mercato-lavoro"
+        ],
+        "category": "lavoro",
+        "registry_source": "open-inps",
+        "clean_rows": 6734,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-inps/inps_rapporti_lavoro/2026/inps_rapporti_lavoro_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "dimensione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sesso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_rapporto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "classe_eta",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_rapporti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "inps_rapporti_lavoro__mart_rapporti_regione",
+          "inps_rapporti_lavoro__mart_rapporti_provincia",
+          "inps_rapporti_lavoro__mart_rapporti_eta"
+        ]
+      },
+      {
+        "slug": "inps_rdc_pdc",
+        "url_slug": "inps-rdc-pdc",
+        "name": "Inps Rdc Pdc",
+        "description": "Nuclei beneficiari RdC/PdC con almeno una mensilit\u00e0 (obs 452, 2019-2023): misura, regione, componenti, disabili e minori.",
+        "source": "",
+        "source_id": "inps",
+        "period": {
+          "start": 2019,
+          "end": 2023
+        },
+        "stage": "incubating",
+        "tags": [
+          "welfare",
+          "inps",
+          "rdc",
+          "pdc",
+          "reddito-cittadinanza"
+        ],
+        "category": "welfare",
+        "registry_source": "open-inps",
+        "clean_rows": 311,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-inps/inps_rdc_pdc/2026/inps_rdc_pdc_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "dimensione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "misura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "componenti_nucleo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "con_disabili",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "con_minori",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_nuclei",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_componenti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_medio_mensile_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "inps_rdc_pdc__mart_rdc_pdc_nazionale",
+          "inps_rdc_pdc__mart_rdc_pdc_regione",
+          "inps_rdc_pdc__mart_rdc_pdc_componenti",
+          "inps_rdc_pdc__mart_rdc_pdc_fragili"
+        ]
+      },
+      {
+        "slug": "inps_retribuzioni",
+        "url_slug": "inps-retribuzioni",
+        "name": "Inps Retribuzioni",
+        "description": "Retribuzioni e lavoratori del settore privato per provincia, sesso, qualifica, contratto (obs 347+492).",
+        "source": "",
+        "source_id": "inps",
+        "period": {
+          "start": 2014,
+          "end": 2023
+        },
+        "stage": "incubating",
+        "tags": [
+          "lavoro",
+          "inps",
+          "retribuzioni",
+          "redditi",
+          "privato"
+        ],
+        "category": "lavoro",
+        "registry_source": "open-inps",
+        "clean_rows": 540,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-inps/inps_retribuzioni/2026/inps_retribuzioni_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "fonte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "dimensione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sesso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "classe_eta",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_lavoratori",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "somma_retribuzioni",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unita_lavorative",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "inps_retribuzioni__mart_retribuzioni_regione",
+          "inps_retribuzioni__mart_retribuzioni_eta"
         ]
       }
     ],
