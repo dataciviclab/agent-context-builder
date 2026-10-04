@@ -1,6 +1,6 @@
 {
   "schema_version": 6,
-  "generated_at": "2026-10-04T13:44:48.990207",
+  "generated_at": "2026-10-04T16:32:37.097539",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -33353,7 +33353,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 1734,
+        "clean_rows": 1699,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_bandi_open/2026/inpa_bandi_open_2026_clean.parquet",
@@ -37147,7 +37147,7 @@
         ],
         "category": "lavoro",
         "registry_source": "open-inps",
-        "clean_rows": 3808,
+        "clean_rows": 9403,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-inps/inps_flussi_settore/2026/inps_flussi_settore_2026_clean.parquet",
@@ -37211,6 +37211,13 @@
             "description": ""
           },
           {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
             "name": "tipo_flusso",
             "type": "VARCHAR",
             "role": "dimension",
@@ -37226,7 +37233,8 @@
           }
         ],
         "mart_refs": [
-          "inps_flussi_settore__mart_flussi_settore"
+          "inps_flussi_settore__mart_flussi_settore",
+          "inps_flussi_settore__mart_flussi_settore_regione"
         ]
       },
       {
@@ -37864,7 +37872,7 @@
         ],
         "category": "pensioni",
         "registry_source": "open-inps",
-        "clean_rows": 620,
+        "clean_rows": null,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-inps/inps_pensioni_vigenti/2026/inps_pensioni_vigenti_2026_clean.parquet",
@@ -38248,7 +38256,7 @@
         ],
         "category": "lavoro",
         "registry_source": "open-inps",
-        "clean_rows": 540,
+        "clean_rows": null,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-inps/inps_retribuzioni/2026/inps_retribuzioni_2026_clean.parquet",

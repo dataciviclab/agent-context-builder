@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T13:44:48.990207",
+  "generated_at": "2026-10-04T16:32:37.097539",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -61,10 +61,17 @@
       "category": "other"
     },
     {
-      "number": 9,
-      "title": "chore(post-merge): aggiorna registry (schedule)",
-      "repo": "inpa-reclutamento",
-      "url": "https://github.com/dataciviclab/inpa-reclutamento/pull/9",
+      "number": 55,
+      "title": "fix(tls): rimuove workaround verify=False, IPZS serve catena completa",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/pull/55",
+      "category": "other"
+    },
+    {
+      "number": 496,
+      "title": "feat(registry): semantic civic keys \u2014 alias estesi + warning colonne untyped",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/496",
       "category": "other"
     },
     {
@@ -292,13 +299,6 @@
       "title": "feat: Priority B catalogo \u2014 stranieri, parasubordinati, ISEE",
       "repo": "open-inps",
       "url": "https://github.com/dataciviclab/open-inps/issues/5",
-      "category": "infrastructure"
-    },
-    {
-      "number": 4,
-      "title": "feat: flussi per settore NACE \u00d7 regione (grana leggera)",
-      "repo": "open-inps",
-      "url": "https://github.com/dataciviclab/open-inps/issues/4",
       "category": "infrastructure"
     },
     {
@@ -4633,7 +4633,7 @@
       "repo": "inpa-reclutamento",
       "available": true,
       "source_repo": "dataciviclab/inpa-reclutamento",
-      "updated_at": "2026-10-03",
+      "updated_at": "2026-10-04",
       "datasets": 4,
       "marts": 12,
       "signals": 4,
@@ -4677,11 +4677,11 @@
           "label": "inpa_bandi_open",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261003T111817Z_d9394b4d",
+            "run_id": "20261004T115649Z_9ea7c830",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-03T11:18:17.320556+00:00",
-            "finished_at": "2026-10-03T11:18:32.427836+00:00"
+            "started_at": "2026-10-04T11:56:49.201218+00:00",
+            "finished_at": "2026-10-04T11:57:05.253695+00:00"
           }
         },
         {
@@ -4691,11 +4691,11 @@
           "label": "inpa_comunicazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261003T111832Z_e17321c5",
+            "run_id": "20261004T115705Z_f111ea6b",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-03T11:18:32.955071+00:00",
-            "finished_at": "2026-10-03T11:19:03.428617+00:00"
+            "started_at": "2026-10-04T11:57:05.617701+00:00",
+            "finished_at": "2026-10-04T11:57:33.526398+00:00"
           }
         }
       ]
@@ -5556,7 +5556,7 @@
       "source_repo": "dataciviclab/open-inps",
       "updated_at": "2026-10-04",
       "datasets": 17,
-      "marts": 47,
+      "marts": 48,
       "signals": 17,
       "codelists": 0,
       "entities": 3,
@@ -5570,11 +5570,11 @@
           "label": "inps_analisi",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261004T114048Z_cf2f91d9",
+            "run_id": "20261004T101735Z_cc53460d",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-04T11:40:48.652862+00:00",
-            "finished_at": "2026-10-04T11:40:48.919170+00:00"
+            "started_at": "2026-10-04T10:17:35.962106+00:00",
+            "finished_at": "2026-10-04T10:17:36.984622+00:00"
           }
         },
         {
@@ -5584,11 +5584,11 @@
           "label": "inps_assegno_unico",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261004T112500Z_3154dd54",
+            "run_id": "20261003T194610Z_567f6bc9",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-04T11:25:00.751755+00:00",
-            "finished_at": "2026-10-04T11:26:25.956429+00:00"
+            "started_at": "2026-10-03T19:46:10.952946+00:00",
+            "finished_at": "2026-10-03T19:46:41.320791+00:00"
           }
         },
         {
@@ -5598,11 +5598,11 @@
           "label": "inps_cig",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261004T112626Z_2fe17a33",
+            "run_id": "20260917T173334Z_aa3ea8c4",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-04T11:26:26.283398+00:00",
-            "finished_at": "2026-10-04T11:27:10.135174+00:00"
+            "started_at": "2026-09-17T17:33:34.309674+00:00",
+            "finished_at": "2026-09-17T17:33:46.804718+00:00"
           }
         },
         {
@@ -5612,11 +5612,11 @@
           "label": "inps_dipendenti_pubblici",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261004T112710Z_8dbab065",
+            "run_id": "20260917T184611Z_2e1bfac1",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-04T11:27:10.472039+00:00",
-            "finished_at": "2026-10-04T11:27:19.549079+00:00"
+            "started_at": "2026-09-17T18:46:11.577537+00:00",
+            "finished_at": "2026-09-17T18:46:48.627127+00:00"
           }
         },
         {
@@ -5626,11 +5626,11 @@
           "label": "inps_dis_coll",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261004T112719Z_26e73486",
+            "run_id": "20261003T222149Z_c677573b",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-04T11:27:19.881173+00:00",
-            "finished_at": "2026-10-04T11:27:27.644860+00:00"
+            "started_at": "2026-10-03T22:21:49.001899+00:00",
+            "finished_at": "2026-10-03T22:21:55.607431+00:00"
           }
         },
         {
@@ -5640,11 +5640,11 @@
           "label": "inps_flussi_settore",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261004T112727Z_547d9e4a",
+            "run_id": "20261004T141251Z_08e5deae",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-04T11:27:27.983341+00:00",
-            "finished_at": "2026-10-04T11:28:15.963640+00:00"
+            "started_at": "2026-10-04T14:12:51.989468+00:00",
+            "finished_at": "2026-10-04T14:14:42.560524+00:00"
           }
         },
         {
@@ -5654,11 +5654,11 @@
           "label": "inps_lavoratori_pubblici",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261004T112816Z_811c21e2",
+            "run_id": "20261003T215459Z_e54dbad0",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-04T11:28:16.315071+00:00",
-            "finished_at": "2026-10-04T11:29:11.761456+00:00"
+            "started_at": "2026-10-03T21:54:59.334589+00:00",
+            "finished_at": "2026-10-03T21:55:43.808332+00:00"
           }
         },
         {
@@ -5668,11 +5668,11 @@
           "label": "inps_lavoratori_redditi",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261004T112912Z_c3ef1e7a",
+            "run_id": "20261003T220153Z_75c399cf",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-04T11:29:12.144797+00:00",
-            "finished_at": "2026-10-04T11:29:47.786879+00:00"
+            "started_at": "2026-10-03T22:01:53.565835+00:00",
+            "finished_at": "2026-10-03T22:02:28.838735+00:00"
           }
         },
         {
@@ -5682,11 +5682,11 @@
           "label": "inps_naspi",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261004T112948Z_98ff3607",
+            "run_id": "20260917T172847Z_64fea3f0",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-04T11:29:48.165935+00:00",
-            "finished_at": "2026-10-04T11:30:29.554113+00:00"
+            "started_at": "2026-09-17T17:28:47.878741+00:00",
+            "finished_at": "2026-09-17T17:29:02.592025+00:00"
           }
         },
         {
@@ -5696,11 +5696,11 @@
           "label": "inps_pensionamento_flussi",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261004T113029Z_7931e05e",
+            "run_id": "20261003T214518Z_d6f3020d",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-04T11:30:29.911353+00:00",
-            "finished_at": "2026-10-04T11:31:02.254614+00:00"
+            "started_at": "2026-10-03T21:45:18.899637+00:00",
+            "finished_at": "2026-10-03T21:45:38.273753+00:00"
           }
         },
         {
@@ -5710,11 +5710,11 @@
           "label": "inps_pensioni_liquidate",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261004T113102Z_d7cfd078",
+            "run_id": "20260917T170023Z_08e05434",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-04T11:31:02.617138+00:00",
-            "finished_at": "2026-10-04T11:31:14.661799+00:00"
+            "started_at": "2026-09-17T17:00:23.019703+00:00",
+            "finished_at": "2026-09-17T17:00:43.245035+00:00"
           }
         },
         {
@@ -5724,11 +5724,11 @@
           "label": "inps_pensioni_serie",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261004T113115Z_9f5f716c",
+            "run_id": "20261003T213036Z_4a26df31",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-04T11:31:15.012988+00:00",
-            "finished_at": "2026-10-04T11:32:08.919419+00:00"
+            "started_at": "2026-10-03T21:30:36.695925+00:00",
+            "finished_at": "2026-10-03T21:31:12.303802+00:00"
           }
         },
         {
@@ -5738,11 +5738,11 @@
           "label": "inps_pensioni_vigenti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261004T113209Z_d933c859",
+            "run_id": "20260917T170110Z_2b5fce93",
             "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-10-04T11:32:09.300712+00:00",
-            "finished_at": "2026-10-04T11:32:33.018783+00:00"
+            "status": "RUNNING",
+            "started_at": "2026-09-17T17:01:10.750376+00:00",
+            "finished_at": ""
           }
         },
         {
@@ -5752,11 +5752,11 @@
           "label": "inps_rapporti_cessazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261004T113233Z_3533b2db",
+            "run_id": "20261003T200655Z_04045bb6",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-04T11:32:33.378614+00:00",
-            "finished_at": "2026-10-04T11:35:37.017657+00:00"
+            "started_at": "2026-10-03T20:06:55.543254+00:00",
+            "finished_at": "2026-10-03T20:10:11.522005+00:00"
           }
         },
         {
@@ -5766,11 +5766,11 @@
           "label": "inps_rapporti_lavoro",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261004T113537Z_ca09524a",
+            "run_id": "20261003T194646Z_ae11f7d4",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-04T11:35:37.391329+00:00",
-            "finished_at": "2026-10-04T11:36:11.957447+00:00"
+            "started_at": "2026-10-03T19:46:46.839168+00:00",
+            "finished_at": "2026-10-03T19:47:37.033928+00:00"
           }
         },
         {
@@ -5780,11 +5780,11 @@
           "label": "inps_rdc_pdc",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261004T113612Z_c88afd24",
+            "run_id": "20261003T220901Z_5fefbf31",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-04T11:36:12.331921+00:00",
-            "finished_at": "2026-10-04T11:36:32.000117+00:00"
+            "started_at": "2026-10-03T22:09:01.677894+00:00",
+            "finished_at": "2026-10-03T22:09:22.182656+00:00"
           }
         },
         {
@@ -5794,11 +5794,11 @@
           "label": "inps_retribuzioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261004T113632Z_d04582c7",
+            "run_id": "20260917T181803Z_ef6a688e",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-04T11:36:32.381324+00:00",
-            "finished_at": "2026-10-04T11:40:48.226199+00:00"
+            "started_at": "2026-09-17T18:18:03.873505+00:00",
+            "finished_at": "2026-09-17T18:18:04.035612+00:00"
           }
         }
       ]
