@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T13:47:53.154442",
+  "generated_at": "2026-10-05T17:23:14.680383",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -22,6 +22,7 @@
     "italia-dipendenze",
     "lab-connectors",
     "oecd-benchmark",
+    "open-aci",
     "open-coesione",
     "open-consip",
     "open-conto-annuale",
@@ -68,17 +69,24 @@
       "category": "other"
     },
     {
-      "number": 4,
-      "title": "feat: batch selettivo pipeline + benchmark G7 health",
-      "repo": "oecd-benchmark",
-      "url": "https://github.com/dataciviclab/oecd-benchmark/pull/4",
+      "number": 6,
+      "title": "feat(dashboard): dashboard Streamlit v1 + fix risk_profile compose",
+      "repo": "italia-dipendenze",
+      "url": "https://github.com/dataciviclab/italia-dipendenze/pull/6",
       "category": "other"
     },
     {
-      "number": 25,
-      "title": "chore(post-merge): aggiorna registry (schedule)",
+      "number": 6,
+      "title": "fix: health torna a solo ITA (timeout CI)",
+      "repo": "oecd-benchmark",
+      "url": "https://github.com/dataciviclab/oecd-benchmark/pull/6",
+      "category": "other"
+    },
+    {
+      "number": 26,
+      "title": "feat(dashboard): deep dive RNA \u2014 mart concedenti/regimi/temporale/concentrazione + pagina Chi eroga",
       "repo": "rna-aiuti-stato",
-      "url": "https://github.com/dataciviclab/rna-aiuti-stato/pull/25",
+      "url": "https://github.com/dataciviclab/rna-aiuti-stato/pull/26",
       "category": "other"
     },
     {
@@ -1758,6 +1766,14 @@
       "branches_ahead": [],
       "untracked_files": 0
     },
+    "open-aci": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
     "open-coesione": {
       "available": false,
       "reason": "local_disabled",
@@ -1930,7 +1946,7 @@
   "warnings": [
     "GitHub fetch failed \u2014 dataciviclab:analisi: https://api.github.com/repos/dataciviclab/dataciviclab/contents/analisi: HTTP 404",
     "GitHub fetch failed \u2014 dataciviclab:analisi/registry/active.md: https://raw.githubusercontent.com/dataciviclab/dataciviclab/main/analisi/registry/active.md: HTTP 404",
-    "Many open PRs: 8"
+    "Many open PRs: 9"
   ],
   "radar": {
     "available": true,
@@ -4791,7 +4807,7 @@
       "repo": "inpa-reclutamento",
       "available": true,
       "source_repo": "dataciviclab/inpa-reclutamento",
-      "updated_at": "2026-10-04",
+      "updated_at": "2026-10-05",
       "datasets": 4,
       "marts": 12,
       "signals": 4,
@@ -4835,11 +4851,11 @@
           "label": "inpa_bandi_open",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261004T115649Z_9ea7c830",
+            "run_id": "20261005T135706Z_9fdaf31b",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-04T11:56:49.201218+00:00",
-            "finished_at": "2026-10-04T11:57:05.253695+00:00"
+            "started_at": "2026-10-05T13:57:06.797160+00:00",
+            "finished_at": "2026-10-05T13:57:22.730564+00:00"
           }
         },
         {
@@ -4849,11 +4865,11 @@
           "label": "inpa_comunicazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261004T115705Z_f111ea6b",
+            "run_id": "20261005T135723Z_8ea41893",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-04T11:57:05.617701+00:00",
-            "finished_at": "2026-10-04T11:57:33.526398+00:00"
+            "started_at": "2026-10-05T13:57:23.065061+00:00",
+            "finished_at": "2026-10-05T13:57:51.575037+00:00"
           }
         }
       ]
@@ -5120,6 +5136,91 @@
             "status": "SUCCESS",
             "started_at": "2026-10-01T12:10:37.446964+00:00",
             "finished_at": "2026-10-01T12:10:52.814565+00:00"
+          }
+        }
+      ]
+    },
+    {
+      "repo": "open-aci",
+      "available": true,
+      "source_repo": "dataciviclab/open-aci",
+      "updated_at": "2026-10-04",
+      "datasets": 5,
+      "marts": 14,
+      "signals": 5,
+      "codelists": 0,
+      "entities": 4,
+      "gcs": 5,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "aci_autotrend_mensile",
+          "source_id": "aci",
+          "status": "ok",
+          "label": "aci_autotrend_mensile",
+          "detail": "anni 2019-2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261004T164545Z_322f210c",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-10-04T16:45:45.659612+00:00",
+            "finished_at": "2026-10-04T16:45:46.938120+00:00"
+          }
+        },
+        {
+          "id": "aci_parco_veicolare",
+          "source_id": "aci",
+          "status": "ok",
+          "label": "aci_parco_veicolare",
+          "detail": "anni 2024-2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261004T164557Z_ebb20d5a",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-10-04T16:45:57.574158+00:00",
+            "finished_at": "2026-10-04T16:46:05.618895+00:00"
+          }
+        },
+        {
+          "id": "aci_prime_iscrizioni_autovetture",
+          "source_id": "aci",
+          "status": "ok",
+          "label": "aci_prime_iscrizioni_autovetture",
+          "detail": "anni 2017-2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261004T164654Z_30bc7d0f",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-10-04T16:46:54.357062+00:00",
+            "finished_at": "2026-10-04T16:46:58.051579+00:00"
+          }
+        },
+        {
+          "id": "aci_radiazioni_classe_euro",
+          "source_id": "aci",
+          "status": "ok",
+          "label": "aci_radiazioni_classe_euro",
+          "detail": "anni 2017-2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261004T164744Z_bf7301b6",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-10-04T16:47:44.554741+00:00",
+            "finished_at": "2026-10-04T16:47:48.054741+00:00"
+          }
+        },
+        {
+          "id": "aci_usato_proprieta",
+          "source_id": "aci",
+          "status": "ok",
+          "label": "aci_usato_proprieta",
+          "detail": "anni 2024-2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261004T164752Z_0b9d27a7",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-10-04T16:47:52.133324+00:00",
+            "finished_at": "2026-10-04T16:47:54.399363+00:00"
           }
         }
       ]
@@ -7020,7 +7121,7 @@
       "repo": "open-siope",
       "available": true,
       "source_repo": "dataciviclab/open-siope",
-      "updated_at": "2026-09-29",
+      "updated_at": "2026-10-05",
       "datasets": 10,
       "marts": 15,
       "signals": 10,
@@ -7036,11 +7137,11 @@
           "label": "siope_bilancio_unificato",
           "detail": "anni 2021-2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260929T183016Z_2f1b34a4",
+            "run_id": "20261005T141823Z_74b4a1f6",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-29T18:30:16.471299+00:00",
-            "finished_at": "2026-09-29T18:30:33.775511+00:00"
+            "started_at": "2026-10-05T14:18:23.243185+00:00",
+            "finished_at": "2026-10-05T14:18:47.147959+00:00"
           }
         },
         {
@@ -7050,11 +7151,11 @@
           "label": "siope_entrate",
           "detail": "anni 2021-2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260929T181806Z_e10a0e21",
+            "run_id": "20261005T140633Z_de90fcd9",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-29T18:18:06.596558+00:00",
-            "finished_at": "2026-09-29T18:18:42.924431+00:00"
+            "started_at": "2026-10-05T14:06:33.251792+00:00",
+            "finished_at": "2026-10-05T14:07:08.789706+00:00"
           }
         },
         {
@@ -7064,11 +7165,11 @@
           "label": "siope_uscite",
           "detail": "anni 2021-2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260929T182630Z_165b358a",
+            "run_id": "20261005T141418Z_42c57e0c",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-29T18:26:30.065844+00:00",
-            "finished_at": "2026-09-29T18:27:44.054693+00:00"
+            "started_at": "2026-10-05T14:14:18.671679+00:00",
+            "finished_at": "2026-10-05T14:15:33.806804+00:00"
           }
         },
         {
@@ -7078,11 +7179,11 @@
           "label": "siope_anag_codgest_entrate_seed",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260929T181355Z_df8703a1",
+            "run_id": "20261005T140238Z_220a8d85",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-29T18:13:55.712232+00:00",
-            "finished_at": "2026-09-29T18:13:57.866378+00:00"
+            "started_at": "2026-10-05T14:02:38.116136+00:00",
+            "finished_at": "2026-10-05T14:02:41.269509+00:00"
           }
         },
         {
@@ -7092,11 +7193,11 @@
           "label": "siope_anag_codgest_uscite_seed",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260929T181359Z_1607c359",
+            "run_id": "20261005T140242Z_944a607e",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-29T18:13:59.087330+00:00",
-            "finished_at": "2026-09-29T18:14:01.402886+00:00"
+            "started_at": "2026-10-05T14:02:42.289334+00:00",
+            "finished_at": "2026-10-05T14:02:44.509339+00:00"
           }
         },
         {
@@ -7106,11 +7207,11 @@
           "label": "siope_anag_comparti_seed",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260929T181345Z_43c6d454",
+            "run_id": "20261005T140228Z_d2be905e",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-29T18:13:45.155995+00:00",
-            "finished_at": "2026-09-29T18:13:48.569363+00:00"
+            "started_at": "2026-10-05T14:02:28.961316+00:00",
+            "finished_at": "2026-10-05T14:02:31.413511+00:00"
           }
         },
         {
@@ -7120,11 +7221,11 @@
           "label": "siope_anag_comuni_seed",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260929T181405Z_85970572",
+            "run_id": "20261005T140248Z_b6632181",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-29T18:14:05.322253+00:00",
-            "finished_at": "2026-09-29T18:14:07.348937+00:00"
+            "started_at": "2026-10-05T14:02:48.325787+00:00",
+            "finished_at": "2026-10-05T14:02:50.187925+00:00"
           }
         },
         {
@@ -7134,11 +7235,11 @@
           "label": "siope_anag_enti_seed",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260929T181353Z_1c30face",
+            "run_id": "20261005T140235Z_7e8218ad",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-29T18:13:53.101561+00:00",
-            "finished_at": "2026-09-29T18:13:54.907189+00:00"
+            "started_at": "2026-10-05T14:02:35.238056+00:00",
+            "finished_at": "2026-10-05T14:02:37.104856+00:00"
           }
         },
         {
@@ -7148,11 +7249,11 @@
           "label": "siope_anag_reg_prov_seed",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260929T181402Z_d05c68fb",
+            "run_id": "20261005T140245Z_8334e258",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-29T18:14:02.621385+00:00",
-            "finished_at": "2026-09-29T18:14:04.491223+00:00"
+            "started_at": "2026-10-05T14:02:45.540688+00:00",
+            "finished_at": "2026-10-05T14:02:47.513496+00:00"
           }
         },
         {
@@ -7162,11 +7263,11 @@
           "label": "siope_anag_sottocomparti_seed",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260929T181349Z_f9899c4f",
+            "run_id": "20261005T140232Z_5ce330f2",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-29T18:13:49.754654+00:00",
-            "finished_at": "2026-09-29T18:13:51.936048+00:00"
+            "started_at": "2026-10-05T14:02:32.387066+00:00",
+            "finished_at": "2026-10-05T14:02:34.252145+00:00"
           }
         }
       ]
@@ -7175,7 +7276,7 @@
       "repo": "opencivitas",
       "available": true,
       "source_repo": "dataciviclab/opencivitas",
-      "updated_at": "2026-09-07",
+      "updated_at": "2026-10-05",
       "datasets": 5,
       "marts": 6,
       "signals": 5,
@@ -7191,11 +7292,11 @@
           "label": "opencivitas_determinanti",
           "detail": "anni 2015-2022 \u2014 mart: si",
           "run": {
-            "run_id": "20260907T141309Z_dc7e0a7c",
+            "run_id": "20261005T135445Z_56ae31b9",
             "year": 2022,
             "status": "SUCCESS",
-            "started_at": "2026-09-07T14:13:09.284539+00:00",
-            "finished_at": "2026-09-07T14:13:13.723743+00:00"
+            "started_at": "2026-10-05T13:54:45.931820+00:00",
+            "finished_at": "2026-10-05T13:54:50.490181+00:00"
           }
         },
         {
@@ -7205,11 +7306,11 @@
           "label": "opencivitas_fsc_rso",
           "detail": "anni 2017-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20260907T141334Z_24e7a139",
+            "run_id": "20261005T135515Z_ed58811a",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-09-07T14:13:34.259211+00:00",
-            "finished_at": "2026-09-07T14:13:37.195174+00:00"
+            "started_at": "2026-10-05T13:55:15.643683+00:00",
+            "finished_at": "2026-10-05T13:55:19.093486+00:00"
           }
         },
         {
@@ -7219,11 +7320,11 @@
           "label": "opencivitas_indicatori",
           "detail": "anni 2015-2022 \u2014 mart: si",
           "run": {
-            "run_id": "20260907T141725Z_63f68ed2",
+            "run_id": "20261005T135858Z_cfde3cd7",
             "year": 2022,
             "status": "SUCCESS",
-            "started_at": "2026-09-07T14:17:25.098014+00:00",
-            "finished_at": "2026-09-07T14:18:01.185050+00:00"
+            "started_at": "2026-10-05T13:58:58.710715+00:00",
+            "finished_at": "2026-10-05T13:59:35.145946+00:00"
           }
         },
         {
@@ -7233,11 +7334,11 @@
           "label": "opencivitas_fsc_enti_rso",
           "detail": "anno 2025 \u2014 mart: si",
           "run": {
-            "run_id": "20260907T141153Z_18be125c",
+            "run_id": "20261005T135224Z_f4c56b3f",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-09-07T14:11:53.625166+00:00",
-            "finished_at": "2026-09-07T14:11:56.131119+00:00"
+            "started_at": "2026-10-05T13:52:24.737840+00:00",
+            "finished_at": "2026-10-05T13:52:27.382295+00:00"
           }
         },
         {
@@ -7247,11 +7348,11 @@
           "label": "opencivitas_glossario",
           "detail": "anni 2015-2022 \u2014 mart: si",
           "run": {
-            "run_id": "20260907T141235Z_0d1337ee",
+            "run_id": "20261005T135403Z_6d82c4b0",
             "year": 2022,
             "status": "SUCCESS",
-            "started_at": "2026-09-07T14:12:35.155325+00:00",
-            "finished_at": "2026-09-07T14:12:41.054301+00:00"
+            "started_at": "2026-10-05T13:54:03.035546+00:00",
+            "finished_at": "2026-10-05T13:54:17.900554+00:00"
           }
         }
       ]
@@ -7670,7 +7771,7 @@
       "repo": "rna-aiuti-stato",
       "available": true,
       "source_repo": "dataciviclab/rna-aiuti-stato",
-      "updated_at": "2026-09-05",
+      "updated_at": "2026-10-05",
       "datasets": 2,
       "marts": 11,
       "signals": 2,
@@ -7686,11 +7787,11 @@
           "label": "rna_aiuti_stato",
           "detail": "anni 2017-2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260905T094950Z_7e13ee38",
+            "run_id": "20261005T131249Z_897a5db9",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-05T09:49:50.065452+00:00",
-            "finished_at": "2026-09-05T09:49:55.595752+00:00"
+            "started_at": "2026-10-05T13:12:49.952595+00:00",
+            "finished_at": "2026-10-05T13:12:54.935981+00:00"
           }
         },
         {
@@ -7700,11 +7801,11 @@
           "label": "rna_misure",
           "detail": "anno 2027 \u2014 mart: si",
           "run": {
-            "run_id": "20260905T094956Z_041038c1",
+            "run_id": "20261005T131255Z_add3bcde",
             "year": 2027,
             "status": "SUCCESS",
-            "started_at": "2026-09-05T09:49:56.215714+00:00",
-            "finished_at": "2026-09-05T09:49:56.666560+00:00"
+            "started_at": "2026-10-05T13:12:55.735334+00:00",
+            "finished_at": "2026-10-05T13:12:56.214246+00:00"
           }
         }
       ]
