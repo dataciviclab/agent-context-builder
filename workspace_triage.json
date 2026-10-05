@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T17:23:14.680383",
+  "generated_at": "2026-10-05T23:49:03.387158",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -76,17 +76,17 @@
       "category": "other"
     },
     {
-      "number": 6,
-      "title": "fix: health torna a solo ITA (timeout CI)",
+      "number": 8,
+      "title": "feat: tax revenue benchmark multi-paese (DF_RSOECD)",
       "repo": "oecd-benchmark",
-      "url": "https://github.com/dataciviclab/oecd-benchmark/pull/6",
+      "url": "https://github.com/dataciviclab/oecd-benchmark/pull/8",
       "category": "other"
     },
     {
-      "number": 26,
-      "title": "feat(dashboard): deep dive RNA \u2014 mart concedenti/regimi/temporale/concentrazione + pagina Chi eroga",
-      "repo": "rna-aiuti-stato",
-      "url": "https://github.com/dataciviclab/rna-aiuti-stato/pull/26",
+      "number": 5,
+      "title": "feat: ripristina opencoesione-progetti e mart layer per dashboard",
+      "repo": "open-coesione",
+      "url": "https://github.com/dataciviclab/open-coesione/pull/5",
       "category": "other"
     },
     {
@@ -1946,7 +1946,7 @@
   "warnings": [
     "GitHub fetch failed \u2014 dataciviclab:analisi: https://api.github.com/repos/dataciviclab/dataciviclab/contents/analisi: HTTP 404",
     "GitHub fetch failed \u2014 dataciviclab:analisi/registry/active.md: https://raw.githubusercontent.com/dataciviclab/dataciviclab/main/analisi/registry/active.md: HTTP 404",
-    "Many open PRs: 9"
+    "Many open PRs: 11"
   ],
   "radar": {
     "available": true,
@@ -4975,7 +4975,7 @@
       "repo": "oecd-benchmark",
       "available": true,
       "source_repo": "dataciviclab/oecd-benchmark",
-      "updated_at": "2026-10-01",
+      "updated_at": "2026-10-05",
       "datasets": 11,
       "marts": 19,
       "signals": 11,
@@ -5075,11 +5075,11 @@
           "label": "oecd_health_expenditure",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T120941Z_8fa8b816",
+            "run_id": "20261005T175245Z_1b4c86ae",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:09:41.663958+00:00",
-            "finished_at": "2026-10-01T12:09:44.037698+00:00"
+            "started_at": "2026-10-05T17:52:45.158719+00:00",
+            "finished_at": "2026-10-05T17:52:54.414691+00:00"
           }
         },
         {
@@ -7773,7 +7773,7 @@
       "source_repo": "dataciviclab/rna-aiuti-stato",
       "updated_at": "2026-10-05",
       "datasets": 2,
-      "marts": 11,
+      "marts": 16,
       "signals": 2,
       "codelists": 0,
       "entities": 4,
@@ -7787,11 +7787,11 @@
           "label": "rna_aiuti_stato",
           "detail": "anni 2017-2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261005T131249Z_897a5db9",
+            "run_id": "20261005T193256Z_fbd59e3e",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-05T13:12:49.952595+00:00",
-            "finished_at": "2026-10-05T13:12:54.935981+00:00"
+            "started_at": "2026-10-05T19:32:56.642681+00:00",
+            "finished_at": "2026-10-05T19:33:03.864815+00:00"
           }
         },
         {
@@ -7801,11 +7801,11 @@
           "label": "rna_misure",
           "detail": "anno 2027 \u2014 mart: si",
           "run": {
-            "run_id": "20261005T131255Z_add3bcde",
+            "run_id": "20261005T193304Z_4410087b",
             "year": 2027,
             "status": "SUCCESS",
-            "started_at": "2026-10-05T13:12:55.735334+00:00",
-            "finished_at": "2026-10-05T13:12:56.214246+00:00"
+            "started_at": "2026-10-05T19:33:04.586676+00:00",
+            "finished_at": "2026-10-05T19:33:05.191656+00:00"
           }
         }
       ]

@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-10-05T17:23:14.680383
+**Generated**: 2026-10-05T23:49:03.387158
 
 ## Stato
 
@@ -12,4 +12,5 @@ Radar: 36 fonti GREEN 17 · Registry: 35 repo · 392 dataset
 - [PR] dataset-incubator#836: feat(candidates): bootstrap gse_cer_elenco candidate
 - [PR] italia-corpus#55: fix(tls): rimuove workaround verify=False, IPZS serve catena completa
 - [PR] italia-dipendenze#6: feat(dashboard): dashboard Streamlit v1 + fix risk_profile compose
-- [PR] oecd-benchmark#6: fix: health torna a solo ITA (timeout CI)
+- [PR] oecd-benchmark#8: feat: tax revenue benchmark multi-paese (DF_RSOECD)
+- [PR] 2 dependabot bump (skipped)
