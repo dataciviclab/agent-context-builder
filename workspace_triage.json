@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T04:25:58.121734",
+  "generated_at": "2026-10-05T13:47:53.154442",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -65,6 +65,27 @@
       "title": "fix(tls): rimuove workaround verify=False, IPZS serve catena completa",
       "repo": "italia-corpus",
       "url": "https://github.com/dataciviclab/italia-corpus/pull/55",
+      "category": "other"
+    },
+    {
+      "number": 4,
+      "title": "feat: batch selettivo pipeline + benchmark G7 health",
+      "repo": "oecd-benchmark",
+      "url": "https://github.com/dataciviclab/oecd-benchmark/pull/4",
+      "category": "other"
+    },
+    {
+      "number": 25,
+      "title": "chore(post-merge): aggiorna registry (schedule)",
+      "repo": "rna-aiuti-stato",
+      "url": "https://github.com/dataciviclab/rna-aiuti-stato/pull/25",
+      "category": "other"
+    },
+    {
+      "number": 11,
+      "title": "feat(open-cooperazione): dataset OSC cooperazione + dashboard",
+      "repo": "terzo-settore",
+      "url": "https://github.com/dataciviclab/terzo-settore/pull/11",
       "category": "other"
     },
     {
@@ -1908,15 +1929,16 @@
   },
   "warnings": [
     "GitHub fetch failed \u2014 dataciviclab:analisi: https://api.github.com/repos/dataciviclab/dataciviclab/contents/analisi: HTTP 404",
-    "GitHub fetch failed \u2014 dataciviclab:analisi/registry/active.md: https://raw.githubusercontent.com/dataciviclab/dataciviclab/main/analisi/registry/active.md: HTTP 404"
+    "GitHub fetch failed \u2014 dataciviclab:analisi/registry/active.md: https://raw.githubusercontent.com/dataciviclab/dataciviclab/main/analisi/registry/active.md: HTTP 404",
+    "Many open PRs: 8"
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-10-04T09:42:41.932074+00:00",
-    "probe_date": "2026-10-04",
+    "generated_at": "2026-10-05T10:23:25.463067+00:00",
+    "probe_date": "2026-10-05",
     "sources_total": 36,
-    "green": 34,
-    "yellow": 2,
+    "green": 17,
+    "yellow": 19,
     "red": 0,
     "persistent_red": 0,
     "sources": [
@@ -1930,18 +1952,18 @@
       },
       {
         "id": "anac",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "ckan",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
         "id": "inps",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "ckan",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
@@ -1954,10 +1976,10 @@
       },
       {
         "id": "inail_opendata",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "ckan",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
@@ -1986,10 +2008,10 @@
       },
       {
         "id": "dati_cultura",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "sparql",
-        "http_code": "502",
-        "note": "Retry timeout/connection: RED",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
@@ -2010,26 +2032,26 @@
       },
       {
         "id": "lavoro_opendata",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "ckan",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
         "id": "mur_ustat",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "ckan",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
         "id": "opencoesione",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "ckan",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
@@ -2074,10 +2096,10 @@
       },
       {
         "id": "mit_opendata",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "ckan",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
@@ -2114,18 +2136,18 @@
       },
       {
         "id": "ministero_interno",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "ckan",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
         "id": "agid",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "ckan",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
@@ -2138,84 +2160,124 @@
       },
       {
         "id": "mimit_rna",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "ckan",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
         "id": "ministero_turismo_opendata",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "ckan",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
         "id": "ministero_salute",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "ckan",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
         "id": "agcm",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "ckan",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
         "id": "unioncamere",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "ckan",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
         "id": "pagopa",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "ckan",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
         "id": "art_opendata",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "ckan",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
         "id": "aci",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "ckan",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
         "id": "adm_opendata",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "ckan",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       }
     ],
     "unhealthy": [
       {
-        "id": "dati_cultura",
+        "id": "anac",
         "status": "YELLOW",
-        "protocol": "sparql",
-        "http_code": "502",
-        "note": "Retry timeout/connection: RED",
+        "protocol": "ckan",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "red_streak": 0
+      },
+      {
+        "id": "inps",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "red_streak": 0
+      },
+      {
+        "id": "inail_opendata",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "red_streak": 0
+      },
+      {
+        "id": "lavoro_opendata",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "red_streak": 0
+      },
+      {
+        "id": "mur_ustat",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "red_streak": 0
+      },
+      {
+        "id": "opencoesione",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
@@ -2224,6 +2286,102 @@
         "protocol": "html",
         "http_code": "404",
         "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "mit_opendata",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "red_streak": 0
+      },
+      {
+        "id": "ministero_interno",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "red_streak": 0
+      },
+      {
+        "id": "agid",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "red_streak": 0
+      },
+      {
+        "id": "mimit_rna",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "red_streak": 0
+      },
+      {
+        "id": "ministero_turismo_opendata",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "red_streak": 0
+      },
+      {
+        "id": "ministero_salute",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "red_streak": 0
+      },
+      {
+        "id": "agcm",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "red_streak": 0
+      },
+      {
+        "id": "unioncamere",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "red_streak": 0
+      },
+      {
+        "id": "pagopa",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "red_streak": 0
+      },
+      {
+        "id": "art_opendata",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "red_streak": 0
+      },
+      {
+        "id": "aci",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "red_streak": 0
+      },
+      {
+        "id": "adm_opendata",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       }
     ]
