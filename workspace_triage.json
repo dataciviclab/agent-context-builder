@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T05:12:30.246574",
+  "generated_at": "2026-10-06T12:52:58.923296",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -69,24 +69,10 @@
       "category": "other"
     },
     {
-      "number": 6,
-      "title": "feat(dashboard): dashboard Streamlit v1 + fix risk_profile compose",
-      "repo": "italia-dipendenze",
-      "url": "https://github.com/dataciviclab/italia-dipendenze/pull/6",
-      "category": "other"
-    },
-    {
-      "number": 8,
-      "title": "feat: tax revenue benchmark multi-paese (DF_RSOECD)",
-      "repo": "oecd-benchmark",
-      "url": "https://github.com/dataciviclab/oecd-benchmark/pull/8",
-      "category": "other"
-    },
-    {
-      "number": 5,
-      "title": "feat: ripristina opencoesione-progetti e mart layer per dashboard",
+      "number": 7,
+      "title": "feat(dashboard): Streamlit v1 su mart OpenCoesione",
       "repo": "open-coesione",
-      "url": "https://github.com/dataciviclab/open-coesione/pull/5",
+      "url": "https://github.com/dataciviclab/open-coesione/pull/7",
       "category": "other"
     },
     {
@@ -1946,15 +1932,15 @@
   "warnings": [
     "GitHub fetch failed \u2014 dataciviclab:analisi: https://api.github.com/repos/dataciviclab/dataciviclab/contents/analisi: HTTP 404",
     "GitHub fetch failed \u2014 dataciviclab:analisi/registry/active.md: https://raw.githubusercontent.com/dataciviclab/dataciviclab/main/analisi/registry/active.md: HTTP 404",
-    "Many open PRs: 11"
+    "Many open PRs: 9"
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-10-05T10:23:25.463067+00:00",
-    "probe_date": "2026-10-05",
+    "generated_at": "2026-10-06T10:11:36.524055+00:00",
+    "probe_date": "2026-10-06",
     "sources_total": 36,
-    "green": 17,
-    "yellow": 19,
+    "green": 34,
+    "yellow": 2,
     "red": 0,
     "persistent_red": 0,
     "sources": [
@@ -1968,10 +1954,10 @@
       },
       {
         "id": "anac",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
@@ -1979,7 +1965,7 @@
         "status": "YELLOW",
         "protocol": "ckan",
         "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "note": "Retry timeout/connection: Connection error (ConnectionError)",
         "red_streak": 0
       },
       {
@@ -1992,10 +1978,10 @@
       },
       {
         "id": "inail_opendata",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
@@ -2048,26 +2034,26 @@
       },
       {
         "id": "lavoro_opendata",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
         "id": "mur_ustat",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
         "id": "opencoesione",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
@@ -2112,10 +2098,10 @@
       },
       {
         "id": "mit_opendata",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
@@ -2152,18 +2138,18 @@
       },
       {
         "id": "ministero_interno",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
         "id": "agid",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
@@ -2176,124 +2162,84 @@
       },
       {
         "id": "mimit_rna",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
         "id": "ministero_turismo_opendata",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
         "id": "ministero_salute",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
         "id": "agcm",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
         "id": "unioncamere",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
         "id": "pagopa",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
         "id": "art_opendata",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
         "id": "aci",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
         "id": "adm_opendata",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       }
     ],
     "unhealthy": [
       {
-        "id": "anac",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
-      {
         "id": "inps",
         "status": "YELLOW",
         "protocol": "ckan",
         "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
-      {
-        "id": "inail_opendata",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
-      {
-        "id": "lavoro_opendata",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
-      {
-        "id": "mur_ustat",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
-      {
-        "id": "opencoesione",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "note": "Retry timeout/connection: Connection error (ConnectionError)",
         "red_streak": 0
       },
       {
@@ -2302,102 +2248,6 @@
         "protocol": "html",
         "http_code": "404",
         "note": null,
-        "red_streak": 0
-      },
-      {
-        "id": "mit_opendata",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
-      {
-        "id": "ministero_interno",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
-      {
-        "id": "agid",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
-      {
-        "id": "mimit_rna",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
-      {
-        "id": "ministero_turismo_opendata",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
-      {
-        "id": "ministero_salute",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
-      {
-        "id": "agcm",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
-      {
-        "id": "unioncamere",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
-      {
-        "id": "pagopa",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
-      {
-        "id": "art_opendata",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
-      {
-        "id": "aci",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
-      {
-        "id": "adm_opendata",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       }
     ]
@@ -4891,7 +4741,7 @@
       "repo": "italia-dipendenze",
       "available": true,
       "source_repo": "dataciviclab/italia-dipendenze",
-      "updated_at": "2026-10-01",
+      "updated_at": "2026-10-06",
       "datasets": 3,
       "marts": 7,
       "signals": 4,
@@ -4907,11 +4757,11 @@
           "label": "resource_dependency_compose",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T123417Z_ca702e11",
+            "run_id": "20261006T120348Z_439555b9",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:34:17.541467+00:00",
-            "finished_at": "2026-10-01T12:34:17.611703+00:00"
+            "started_at": "2026-10-06T12:03:48.349672+00:00",
+            "finished_at": "2026-10-06T12:03:48.408339+00:00"
           }
         },
         {
@@ -4921,11 +4771,11 @@
           "label": "comtrade_bilateral",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T123202Z_f62c66f9",
+            "run_id": "20261006T120123Z_4df67634",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:32:02.602502+00:00",
-            "finished_at": "2026-10-01T12:32:34.585850+00:00"
+            "started_at": "2026-10-06T12:01:23.313948+00:00",
+            "finished_at": "2026-10-06T12:02:12.128341+00:00"
           }
         },
         {
@@ -4935,11 +4785,11 @@
           "label": "eurostat_nrg_bal_c",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T123234Z_10c83cf0",
+            "run_id": "20261006T120212Z_cd9d00d4",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:32:34.679216+00:00",
-            "finished_at": "2026-10-01T12:34:16.935202+00:00"
+            "started_at": "2026-10-06T12:02:12.194704+00:00",
+            "finished_at": "2026-10-06T12:03:47.866145+00:00"
           }
         },
         {
@@ -4949,11 +4799,11 @@
           "label": "fao_fertilizer_consumption",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T123416Z_7c5f2a7a",
+            "run_id": "20261006T120347Z_7b13db77",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:34:16.999346+00:00",
-            "finished_at": "2026-10-01T12:34:17.466470+00:00"
+            "started_at": "2026-10-06T12:03:47.910447+00:00",
+            "finished_at": "2026-10-06T12:03:48.294028+00:00"
           }
         }
       ]
@@ -4975,7 +4825,7 @@
       "repo": "oecd-benchmark",
       "available": true,
       "source_repo": "dataciviclab/oecd-benchmark",
-      "updated_at": "2026-10-05",
+      "updated_at": "2026-10-06",
       "datasets": 11,
       "marts": 19,
       "signals": 11,
@@ -5103,11 +4953,11 @@
           "label": "oecd_tax_revenue",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T121030Z_1db72f66",
+            "run_id": "20261006T085048Z_a453b991",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:10:30.429825+00:00",
-            "finished_at": "2026-10-01T12:10:34.628945+00:00"
+            "started_at": "2026-10-06T08:50:48.283340+00:00",
+            "finished_at": "2026-10-06T08:53:18.804517+00:00"
           }
         },
         {
@@ -5229,15 +5079,43 @@
       "repo": "open-coesione",
       "available": true,
       "source_repo": "dataciviclab/open-coesione",
-      "updated_at": "2026-10-01",
-      "datasets": 5,
-      "marts": 10,
-      "signals": 5,
+      "updated_at": "2026-10-06",
+      "datasets": 8,
+      "marts": 26,
+      "signals": 8,
       "codelists": 0,
-      "entities": 9,
-      "gcs": 5,
+      "entities": 10,
+      "gcs": 8,
       "reason": "",
       "signals_detail": [
+        {
+          "id": "opencoesione_fasi",
+          "source_id": "opencoesione",
+          "status": "ok",
+          "label": "opencoesione_fasi",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261006T085605Z_4e6eaeaa",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-10-06T08:56:05.746394+00:00",
+            "finished_at": "2026-10-06T08:56:15.600643+00:00"
+          }
+        },
+        {
+          "id": "opencoesione_impegni",
+          "source_id": "opencoesione",
+          "status": "ok",
+          "label": "opencoesione_impegni",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261006T085616Z_8eadb302",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-10-06T08:56:16.410488+00:00",
+            "finished_at": "2026-10-06T08:56:22.615334+00:00"
+          }
+        },
         {
           "id": "opencoesione_indicatori",
           "source_id": "opencoesione",
@@ -5245,11 +5123,11 @@
           "label": "opencoesione_indicatori",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T122958Z_5b851373",
+            "run_id": "20261006T085623Z_d7827a37",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:29:58.615755+00:00",
-            "finished_at": "2026-10-01T12:30:02.952328+00:00"
+            "started_at": "2026-10-06T08:56:23.354776+00:00",
+            "finished_at": "2026-10-06T08:56:30.174240+00:00"
           }
         },
         {
@@ -5259,11 +5137,11 @@
           "label": "opencoesione_localizzazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T123003Z_4aa8b5d6",
+            "run_id": "20261006T085630Z_36d40bf1",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:30:03.993169+00:00",
-            "finished_at": "2026-10-01T12:30:10.952823+00:00"
+            "started_at": "2026-10-06T08:56:30.770855+00:00",
+            "finished_at": "2026-10-06T08:56:42.190428+00:00"
           }
         },
         {
@@ -5273,11 +5151,25 @@
           "label": "opencoesione_pagamenti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T123011Z_9561bfa1",
+            "run_id": "20261006T085642Z_d051f53f",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:30:11.868973+00:00",
-            "finished_at": "2026-10-01T12:30:20.144797+00:00"
+            "started_at": "2026-10-06T08:56:42.989340+00:00",
+            "finished_at": "2026-10-06T08:56:54.403526+00:00"
+          }
+        },
+        {
+          "id": "opencoesione_progetti",
+          "source_id": "opencoesione",
+          "status": "ok",
+          "label": "opencoesione_progetti",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261006T085654Z_08028ea3",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-10-06T08:56:54.987912+00:00",
+            "finished_at": "2026-10-06T08:57:19.248464+00:00"
           }
         },
         {
@@ -5287,11 +5179,11 @@
           "label": "opencoesione_progetti_esteso",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T123020Z_5ea95242",
+            "run_id": "20261006T085719Z_77d6905b",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:30:20.863848+00:00",
-            "finished_at": "2026-10-01T12:30:24.534461+00:00"
+            "started_at": "2026-10-06T08:57:19.839678+00:00",
+            "finished_at": "2026-10-06T08:57:25.841964+00:00"
           }
         },
         {
@@ -5301,11 +5193,11 @@
           "label": "opencoesione_soggetti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T123025Z_37464000",
+            "run_id": "20261006T085726Z_b72485f0",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:30:25.761341+00:00",
-            "finished_at": "2026-10-01T12:30:39.910830+00:00"
+            "started_at": "2026-10-06T08:57:26.468155+00:00",
+            "finished_at": "2026-10-06T08:57:50.120208+00:00"
           }
         }
       ]
