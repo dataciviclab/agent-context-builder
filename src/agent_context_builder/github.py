@@ -247,6 +247,46 @@ class GitHubCollector:
             self.fetch_errors[f"{repo}:{path}"] = str(exc)
             return None
 
+    def list_files(
+        self, repo: str, path: str, ref: str = "main", suffix: str = ""
+    ) -> list[str] | None:
+        """List files inside a GitHub repo path (Contents API).
+
+        Complements :meth:`list_directory` (which returns only folders).
+        Used to discover markdown pages such as data-explorer dataset pages.
+
+        Args:
+            repo: Repository name (under self.org)
+            path: Directory path within the repo
+            ref: Branch or tag (default: main)
+            suffix: Optional filename suffix filter (e.g. ``".md"``)
+
+        Returns:
+            Sorted list of file names (not full paths), or None on failure.
+        """
+        url = f"{self.base_url}/repos/{self.org}/{repo}/contents/{path}"
+        params: dict[str, str] = {"ref": ref}
+        try:
+            result = self._http.get(url, params=params, headers=self._headers())
+            response = self._raise_on_bad_status(result, url)
+            items = response.json()
+            if not isinstance(items, list):
+                raise RuntimeError(f"{url}: path is not a directory")
+            files: list[str] = []
+            for item in items:
+                if item.get("type") != "file":
+                    continue
+                name = item.get("name", "")
+                if not name or name.startswith(("_", ".")):
+                    continue
+                if suffix and not name.endswith(suffix):
+                    continue
+                files.append(name)
+            return sorted(files)
+        except Exception as exc:
+            self.fetch_errors[f"{repo}:{path}"] = str(exc)
+            return None
+
     def get_raw_file(self, repo: str, path: str, ref: str = "main") -> str | None:
         """Fetch raw file content from GitHub.
 

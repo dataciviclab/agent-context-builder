@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 from pathlib import Path
 from unittest.mock import MagicMock
 
@@ -278,7 +279,7 @@ def test_render_triage_source_health_unavailable():
 
 def test_render_signals_cached_across_bootstrap_and_triage():
     """Each remote file is fetched exactly once across bootstrap + triage."""
-    gh = make_github_mock()
+    gh = make_github_mock(list_files=[])
 
     def _raw_file_side_effect(repo, path, ref="main"):
         if path == "data/catalog/catalog_signals.json":
@@ -293,15 +294,24 @@ def test_render_signals_cached_across_bootstrap_and_triage():
     renderer.render_session_bootstrap()
     renderer.render_workspace_triage()
 
-    # 3 files fetched via get_raw_file: radar_summary + catalog_signals +
-    # registry.json (cross-repo, repo1 bootstrap) + registry.json
-    # (dataset-incubator, triage pipeline_state) + 1 list_directory (analisi/)
-    assert gh.get_raw_file.call_count == 4
-    assert gh.list_directory.call_count == 1
-    paths_fetched = [call.args[1] for call in gh.get_raw_file.call_args_list]
-    assert "data/radar/radar_summary.json" in paths_fetched
-    assert "data/catalog/catalog_signals.json" in paths_fetched
-    assert "registry/registry.json" in paths_fetched
+    # Explorer analyses discovery uses list_files (data-explorer/src/dataset),
+    # not list_directory (removed hub analisi/ path).
+    assert gh.list_files.call_count == 1
+    assert gh.list_directory.call_count == 0
+    fetched = [(c.args[0], c.args[1]) for c in gh.get_raw_file.call_args_list]
+    paths = {p for _, p in fetched}
+    assert "data/radar/radar_summary.json" in paths
+    assert "data/catalog/catalog_signals.json" in paths
+    assert "registry/registry.json" in paths
+    # Each (repo, path) fetched once — caching works across bootstrap + triage
+    assert len(fetched) == len(set(fetched))
+    # Known fetches: radar + signals + repo1 registry + dataset-incubator registry
+    assert set(fetched) >= {
+        ("source-observatory", "data/radar/radar_summary.json"),
+        ("source-observatory", "data/catalog/catalog_signals.json"),
+        ("repo1", "registry/registry.json"),
+        ("dataset-incubator", "registry/registry.json"),
+    }
 
 
 # ── Topic index ───────────────────────────────────────────────────────────
@@ -440,88 +450,145 @@ def test_render_bootstrap_registry_section_hidden_when_unavailable():
 # ── Topic index v3: analyses ───────────────────────────────────────────────
 
 
-def _sample_analysis_readme(slug: str, discussion: int | None = None) -> str:
-    """Simulate an analysis README.md with frontmatter."""
-    if slug == "irpef-comunale":
-        return f"""---
+def _sample_dataset_page(slug: str) -> str:
+    """Simulate a data-explorer dataset page with frontmatter."""
+    pages = {
+        "irpef-comunale": """---
 title: IRPEF Comunale 2019-2023
 description: Analisi IRPEF
-date: 2026-05-24
-topics: economia, finanza-pubblica
-status: active
 dataset_slug: irpef_comunale
-discussion: {discussion or 88}
+source: MEF
+period: "2019-2023"
+data_driven: true
 ---
 # IRPEF Comunale
 Content...
-"""
-    elif slug == "aifa-spesa-consumo":
-        return """---
+""",
+        "aifa-spesa-consumo": """---
 title: AIFA Spesa farmaceutica 2018-2024
 description: Spesa farmaci
-date: 2026-05-24
-topics: sanita
-status: active
 dataset_slug: aifa_spesa_consumo
+data_driven: true
 ---
 # AIFA Spesa
 Content...
+""",
+    }
+    return pages.get(slug, "")
+
+
+def _themes_json() -> str:
+    return """{
+  "schema_version": 1,
+  "temi": [
+    {
+      "slug": "finanza-pubblica",
+      "name": "Finanza pubblica",
+      "icon": "$",
+      "description": "Conti pubblici",
+      "categories": ["finanza-pubblica", "economia"]
+    },
+    {
+      "slug": "sanita",
+      "name": "Sanita",
+      "categories": ["sanita"]
+    }
+  ]
+}
 """
-    return ""
 
 
-def test_render_topic_index_v3_with_analyses():
-    """Topic index includes analyses and analyses_by_dataset."""
-    config = _cfg(repos=["repo1", "dataciviclab"])
-    gh = make_github_mock()
+def _nav_registry_json() -> str:
+    """Registry with categories for navigation graph tests."""
+    return json.dumps(
+        {
+            "schema_version": 1,
+            "repo": "repo1",
+            "datasets": [
+                {
+                    "slug": "irpef_comunale",
+                    "name": "IRPEF Comunale",
+                    "stage": "published",
+                    "category": "finanza-pubblica",
+                    "source_id": "mef",
+                    "source": "MEF",
+                    "columns": [],
+                },
+                {
+                    "slug": "aifa_spesa_consumo",
+                    "name": "AIFA Spesa",
+                    "stage": "incubating",
+                    "category": "sanita",
+                    "source_id": "aifa",
+                    "source": "AIFA",
+                    "columns": [],
+                },
+            ],
+            "marts": [],
+            "signals": [],
+        }
+    )
 
-    # Discovery via directory listing (no active.md needed)
-    gh.list_directory.return_value = ["irpef-comunale", "aifa-spesa-consumo"]
+
+def test_render_topic_index_v7_with_analyses():
+    """Topic index v7: analyses from data-explorer + navigation sections."""
+    config = _cfg(repos=["repo1", "data-explorer"])
+    gh = make_github_mock(
+        list_files=["irpef-comunale.md", "aifa-spesa-consumo.md", "TEMPLATE-x.md"]
+    )
 
     def _raw_file_side_effect(repo, path, ref="main"):
-        if path == "registry/registry.json":
-            return sample_di_registry_json()
-        if repo == "dataciviclab" and path.startswith("analisi/") and path.endswith("/README.md"):
-            slug = path.split("/")[1]
-            disc = 88 if slug == "irpef-comunale" else None
-            return _sample_analysis_readme(slug, discussion=disc)
+        if repo == "repo1" and path == "registry/registry.json":
+            return _nav_registry_json()
+        if repo == "data-explorer" and path.startswith("src/dataset/"):
+            slug = path.split("/")[-1].removesuffix(".md")
+            return _sample_dataset_page(slug)
+        if repo == "data-explorer" and path == "catalog/themes.json":
+            return _themes_json()
         return None
 
     gh.get_raw_file.side_effect = _raw_file_side_effect
     result = _r(config, gh=gh).render_topic_index()
 
-    assert result["schema_version"] == 6
+    assert result["schema_version"] == 7
     assert "analyses" in result
     assert "analyses_by_dataset" in result
+    assert "domains" in result
+    assert "explorer_themes" in result
+    assert "by_repo" in result
+    assert "by_slug" in result
 
-    # Check analyses content
     analyses = result["analyses"]
     assert len(analyses) == 2
-
     irpef = next(a for a in analyses if a["slug"] == "irpef-comunale")
     assert irpef["name"] == "IRPEF Comunale 2019-2023"
     assert irpef["datasets"] == ["irpef_comunale"]
-    assert irpef["discussion"] == 88
-    assert irpef["status"] == "active"
-    assert "issue" not in irpef  # None → omitted
-    assert "path" not in irpef  # removed in v4
+    assert irpef["status"] == "published"
+    assert irpef["source"] == "MEF"
+    assert result["analyses_by_dataset"]["irpef_comunale"] == ["irpef-comunale"]
 
-    aifa = next(a for a in analyses if a["slug"] == "aifa-spesa-consumo")
-    assert aifa["name"] == "AIFA Spesa farmaceutica 2018-2024"
-    assert aifa["datasets"] == ["aifa_spesa_consumo"]
-    assert "discussion" not in aifa  # None → omitted
-    assert "issue" not in aifa
+    # Navigation graph
+    domains = {d["slug"]: d for d in result["domains"]}
+    assert "finanza-pubblica" in domains
+    assert "irpef_comunale" in domains["finanza-pubblica"]["datasets"]
+    themes = {t["slug"]: t for t in result["explorer_themes"]}
+    assert themes["sanita"]["datasets"] == ["aifa_spesa_consumo"]
 
-    # Check reverse lookup
-    abd = result["analyses_by_dataset"]
-    assert abd["irpef_comunale"] == ["irpef-comunale"]
-    assert abd["aifa_spesa_consumo"] == ["aifa-spesa-consumo"]
+    repo_card = result["repos"]["repo1"]
+    assert repo_card["role"] == "dati"
+    assert repo_card["n_datasets"] == 2
+    assert repo_card["n_published"] == 1
+    assert repo_card["domain"] in ("finanza-pubblica", "sanita")
+    assert set(repo_card["sources"]) == {"mef", "aifa"}
+
+    assert result["by_repo"]["repo1"] == ["aifa_spesa_consumo", "irpef_comunale"]
+    assert result["by_slug"]["irpef_comunale"]["registry_source"] == "repo1"
 
 
-def test_render_topic_index_v2_when_no_analyses():
-    """Topic index stays at v4 even without analyses (schema is always 4)."""
+def test_render_topic_index_v7_without_analyses_still_navigation():
+    """Schema v7 always includes navigation keys even without analyses."""
     config = _cfg(repos=["repo1"])
-    gh = make_github_mock(raw_file=sample_di_registry_json())
+    gh = make_github_mock(list_files=[])
 
     def _raw_file_side_effect(repo, path, ref="main"):
         if path == "registry/registry.json":
@@ -531,6 +598,35 @@ def test_render_topic_index_v2_when_no_analyses():
     gh.get_raw_file.side_effect = _raw_file_side_effect
     result = _r(config, gh=gh).render_topic_index()
 
-    assert result["schema_version"] == 6
-    assert "analyses" not in result
-    assert "analyses_by_dataset" not in result
+    assert result["schema_version"] == 7
+    assert result["analyses"] == []
+    assert result["analyses_by_dataset"] == {}
+    assert "domains" in result
+    assert "explorer_themes" in result
+    assert "by_repo" in result
+    assert "by_slug" in result
+    # Backward-compat: datasets still grouped by source key
+    assert any(
+        any(d["slug"] == "irpef_comunale" for d in slugs) for slugs in result["datasets"].values()
+    )
+
+
+def test_render_topic_index_consumer_contract_keys():
+    """Consumer contract: data-explorer/lab-dashboard keys still present."""
+    config = _cfg(repos=["repo1"])
+    gh = make_github_mock(list_files=[])
+
+    def _raw_file_side_effect(repo, path, ref="main"):
+        if path == "registry/registry.json":
+            return sample_di_registry_json()
+        return None
+
+    gh.get_raw_file.side_effect = _raw_file_side_effect
+    result = _r(config, gh=gh).render_topic_index()
+
+    # data-explorer _registry.py expects datasets dict + registry_source + location
+    assert isinstance(result["datasets"], dict)
+    flat = next(iter(result["datasets"].values()))
+    assert "registry_source" in flat[0]
+    # lab-dashboard Grafo expects explorer_themes list
+    assert isinstance(result["explorer_themes"], list)

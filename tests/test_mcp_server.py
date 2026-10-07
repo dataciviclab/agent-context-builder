@@ -567,3 +567,238 @@ def test_search_tool_no_token(monkeypatch):
     assert "issues" in result
     assert "datasets" in result
     assert "analyses" in result
+
+
+# ---------------------------------------------------------------------------
+# Navigation tools: lab_map / find / explore (schema v7)
+# ---------------------------------------------------------------------------
+
+_SAMPLE_V7_INDEX = json.dumps(
+    {
+        "schema_version": 7,
+        "repos": {
+            "rifiuti-urbani": {
+                "description": "Rifiuti urbani ISPRA",
+                "url": "https://github.com/dataciviclab/rifiuti-urbani",
+                "role": "dati",
+                "domain": "territorio-ambiente",
+                "n_datasets": 1,
+                "n_published": 1,
+                "sources": ["ispra"],
+            },
+            "toolkit": {
+                "description": "Pipeline engine",
+                "url": "https://github.com/dataciviclab/toolkit",
+                "role": "infra",
+                "domain": None,
+                "n_datasets": 0,
+                "n_published": 0,
+                "sources": [],
+            },
+        },
+        "datasets": {
+            "ispra": [
+                {
+                    "slug": "ispra_ru_base",
+                    "name": "Rifiuti Urbani",
+                    "stage": "published",
+                    "source_id": "ispra",
+                    "registry_source": "rifiuti-urbani",
+                    "category": "ambiente",
+                }
+            ]
+        },
+        "domains": [
+            {
+                "slug": "territorio-ambiente",
+                "name": "Territorio e ambiente",
+                "description": "Ambiente",
+                "repos": ["rifiuti-urbani"],
+                "datasets": ["ispra_ru_base"],
+                "dataset_count": 1,
+            }
+        ],
+        "explorer_themes": [
+            {
+                "slug": "territorio-ambiente",
+                "name": "Territorio e ambiente",
+                "datasets": ["ispra_ru_base"],
+            }
+        ],
+        "analyses": [
+            {
+                "slug": "rifiuti-urbani",
+                "name": "Rifiuti urbani",
+                "datasets": ["ispra_ru_base"],
+                "status": "published",
+            }
+        ],
+        "analyses_by_dataset": {"ispra_ru_base": ["rifiuti-urbani"]},
+        "by_repo": {"rifiuti-urbani": ["ispra_ru_base"]},
+        "by_domain": {"territorio-ambiente": ["ispra_ru_base"]},
+        "by_slug": {
+            "ispra_ru_base": {
+                "name": "Rifiuti Urbani",
+                "stage": "published",
+                "source_id": "ispra",
+                "registry_source": "rifiuti-urbani",
+                "domain": "territorio-ambiente",
+                "category": "ambiente",
+            }
+        },
+    }
+)
+
+
+@pytest.mark.contract
+def test_lab_map_resource():
+    """lab_map returns navigation tree from topic_index."""
+    fake = FakeHttpClient()
+    _patch_fetch(fake, "topic_index.json", text=_SAMPLE_V7_INDEX)
+    mcp_server._http = fake
+    result = mcp_server.lab_map()
+    mcp_server._http = None
+
+    content = result["content"]
+    assert content["ok"] is True
+    assert content["totals"]["datasets"] == 1
+    assert content["totals"]["published"] == 1
+    assert any(d["slug"] == "territorio-ambiente" for d in content["domains"])
+    assert any(r["repo"] == "rifiuti-urbani" for r in content["repos"])
+    assert content["sources"]["ispra"] == 1
+
+
+@pytest.mark.contract
+def test_lab_map_domain_filter():
+    fake = FakeHttpClient()
+    _patch_fetch(fake, "topic_index.json", text=_SAMPLE_V7_INDEX)
+    mcp_server._http = fake
+    result = mcp_server.lab_map(domain="territorio-ambiente")
+    mcp_server._http = None
+
+    content = result["content"]
+    assert len(content["domains"]) == 1
+    assert content["domains"][0]["slug"] == "territorio-ambiente"
+
+
+@pytest.mark.contract
+def test_find_ranks_dataset_with_parents():
+    fake = FakeHttpClient()
+    _patch_fetch(fake, "topic_index.json", text=_SAMPLE_V7_INDEX)
+    mcp_server._http = fake
+    result = mcp_server.find(query="ispra_ru_base", limit=5)
+    mcp_server._http = None
+
+    content = result["content"]
+    assert content["ok"] is True
+    assert content["results"]
+    top = content["results"][0]
+    assert top["type"] == "dataset"
+    assert top["slug"] == "ispra_ru_base"
+    assert top["parent_repo"] == "rifiuti-urbani"
+    assert top["parent_domain"] == "territorio-ambiente"
+
+
+@pytest.mark.contract
+def test_find_type_filter_repo():
+    fake = FakeHttpClient()
+    _patch_fetch(fake, "topic_index.json", text=_SAMPLE_V7_INDEX)
+    mcp_server._http = fake
+    result = mcp_server.find(query="toolkit", type="repo")
+    mcp_server._http = None
+
+    content = result["content"]
+    assert content["results"]
+    assert content["results"][0]["type"] == "repo"
+    assert content["results"][0]["role"] == "infra"
+
+
+@pytest.mark.contract
+def test_find_include_github_off_by_default():
+    fake = FakeHttpClient()
+    _patch_fetch(fake, "topic_index.json", text=_SAMPLE_V7_INDEX)
+    mcp_server._http = fake
+    result = mcp_server.find(query="rifiuti")
+    mcp_server._http = None
+    assert "issues" not in result["content"]
+
+
+@pytest.mark.contract
+def test_explore_dataset():
+    fake = FakeHttpClient()
+    _patch_fetch(fake, "topic_index.json", text=_SAMPLE_V7_INDEX)
+    mcp_server._http = fake
+    result = mcp_server.explore(ref="ispra_ru_base")
+    mcp_server._http = None
+
+    card = result["content"]
+    assert card["found"] is True
+    assert card["type"] == "dataset"
+    assert card["registry_source"] == "rifiuti-urbani"
+    assert card["analyses"] == ["rifiuti-urbani"]
+    assert card["repo"]["role"] == "dati"
+
+
+@pytest.mark.contract
+def test_explore_repo():
+    fake = FakeHttpClient()
+    _patch_fetch(fake, "topic_index.json", text=_SAMPLE_V7_INDEX)
+    mcp_server._http = fake
+    result = mcp_server.explore(ref="rifiuti-urbani")
+    mcp_server._http = None
+
+    card = result["content"]
+    assert card["found"] is True
+    assert card["type"] == "repo"
+    assert card["datasets"] == ["ispra_ru_base"]
+    assert card["n_published"] == 1
+
+
+@pytest.mark.contract
+def test_explore_domain():
+    fake = FakeHttpClient()
+    _patch_fetch(fake, "topic_index.json", text=_SAMPLE_V7_INDEX)
+    mcp_server._http = fake
+    result = mcp_server.explore(ref="territorio-ambiente")
+    mcp_server._http = None
+
+    card = result["content"]
+    assert card["found"] is True
+    assert card["type"] == "domain"
+    assert "ispra_ru_base" in card["datasets"]
+
+
+@pytest.mark.contract
+def test_explore_not_found():
+    fake = FakeHttpClient()
+    _patch_fetch(fake, "topic_index.json", text=_SAMPLE_V7_INDEX)
+    mcp_server._http = fake
+    result = mcp_server.explore(ref="does-not-exist")
+    mcp_server._http = None
+    assert result["content"]["found"] is False
+
+
+@pytest.mark.contract
+def test_topic_index_v7_summary_includes_domains():
+    fake = FakeHttpClient()
+    _patch_fetch(fake, "topic_index.json", text=_SAMPLE_V7_INDEX)
+    mcp_server._http = fake
+    result = mcp_server.topic_index()
+    mcp_server._http = None
+    assert result["domains"] == 1
+    assert result["total"] == 1
+
+
+@pytest.mark.contract
+def test_search_uses_navigation_index_when_v7():
+    fake = FakeHttpClient()
+    _patch_fetch(fake, "topic_index.json", text=_SAMPLE_V7_INDEX)
+    mcp_server._http = fake
+    result = mcp_server.search(query="rifiuti")
+    mcp_server._http = None
+    content = result
+    assert content["ok"] is True
+    # search returns top-level keys (not nested content)
+    assert "datasets" in content
+    slugs = [d["slug"] for d in content["datasets"]]
+    assert "ispra_ru_base" in slugs

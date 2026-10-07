@@ -3,8 +3,11 @@
 Tools:
   session_bootstrap  — quick orientation (markdown)
   workspace_triage   — machine-readable state (compact + sections)
+  lab_map            — navigation tree: domains → repos → sources
+  find               — ranked cross-entity search (dataset/repo/domain/source/analysis)
+  explore            — deep-dive any Lab entity by ref
   topic_index        — dataset/analysis exploration (resolve for deep-dive)
-  search             — cross-cutting search (compact results)
+  search             — legacy cross-cutting search (wraps find + GitHub issues)
   refresh_context    — trigger CI rebuild (action)
 
 Configuration:
@@ -26,6 +29,8 @@ from typing import Any
 from lab_connectors.http import HttpClient
 from lab_connectors.mcp import create_mcp_server, get_mcp_logger, guard_timed
 
+from .navigation import explore_ref, lab_map_summary, search_index
+
 _REPO = os.environ.get("ACB_REPO", "dataciviclab/agent-context-builder")
 _BRANCH = os.environ.get("ACB_BRANCH", "context")
 _RAW_BASE = f"https://raw.githubusercontent.com/{_REPO}/{_BRANCH}"
@@ -40,8 +45,8 @@ mcp = create_mcp_server(
     name="dataciviclab-context",
     instructions=(
         "DataCivicLab context artifacts, generated from GitHub every 6 hours. "
-        "Start with session_bootstrap for orientation, then workspace_triage "
-        "for actionable state, search for discovery, topic_index for deep-dive."
+        "Start with session_bootstrap for orientation, then lab_map for structure, "
+        "find for discovery, explore for deep-dive, workspace_triage for state."
     ),
 )
 
@@ -222,11 +227,123 @@ def workspace_triage(section: str | None = None) -> dict[str, object]:
     return guard_timed(_exec, "workspace_triage")
 
 
+def _load_topic_index() -> dict[str, Any]:
+    raw = _fetch("topic_index.json")
+    data = json.loads(raw)
+    return data if isinstance(data, dict) else {}
+
+
 @mcp.tool(
     description=(
-        "Dataset/analysis exploration. "
+        "Lab navigation map — domains → repos → sources. "
+        "Use domain= to focus on one editorial theme."
+    ),
+    structured_output=True,
+)
+def lab_map(domain: str | None = None) -> dict[str, object]:
+    def _exec() -> dict[str, object]:
+        data = _load_topic_index()
+        summary = lab_map_summary(data, domain=domain)
+        return {"content": summary, "ok": True}
+
+    return guard_timed(_exec, "lab_map")
+
+
+@mcp.tool(
+    description=(
+        "Ranked search across datasets, repos, domains, sources, and analyses. "
+        "Filters: type= (dataset|repo|domain|source|analysis), domain=, limit=. "
+        "Returns type + parent pointers. Use explore(ref) for details."
+    ),
+    structured_output=True,
+)
+def find(
+    query: str,
+    type: str | None = None,
+    domain: str | None = None,
+    limit: int = 10,
+    include_github: bool = False,
+) -> dict[str, object]:
+    def _exec() -> dict[str, object]:
+        data = _load_topic_index()
+        results = search_index(data, query, entity_type=type, domain=domain, limit=limit)
+        payload: dict[str, Any] = {
+            "query": query,
+            "total": len(results),
+            "results": results,
+            "ok": True,
+        }
+        if include_github:
+            token = _get_env("GITHUB_TOKEN")
+            payload["issues"] = _search_github_issues(query, token, limit)
+            payload["total"] += len(payload["issues"])
+        return {"content": payload, "ok": True}
+
+    return guard_timed(_exec, "find")
+
+
+@mcp.tool(
+    description=(
+        "Deep-dive any Lab entity by ref: dataset slug, repo name, domain slug, "
+        "source id, or analysis slug. Returns card + children + routing hints."
+    ),
+    structured_output=True,
+)
+def explore(ref: str) -> dict[str, object]:
+    def _exec() -> dict[str, object]:
+        data = _load_topic_index()
+        card = explore_ref(data, ref)
+        if not card.get("found"):
+            # Fallback: try legacy topic_index resolve semantics
+            result = _legacy_resolve(data, ref)
+            card = {**card, **result}
+        return {"content": card, "ok": True}
+
+    return guard_timed(_exec, "explore")
+
+
+def _legacy_resolve(data: dict[str, Any], resolve: str) -> dict[str, Any]:
+    """Best-effort resolve matching old topic_index(resolve=) behaviour."""
+    resolve_lower = resolve.lower()
+    extra: dict[str, Any] = {}
+    seen: set[str] = set()
+    datasets_found: list[dict[str, Any]] = []
+    for source, ds_list in (data.get("datasets") or {}).items():
+        for ds in ds_list or []:
+            slug = ds.get("slug", "")
+            if slug.lower() == resolve_lower and slug not in seen:
+                seen.add(slug)
+                datasets_found.append(
+                    {
+                        "slug": slug,
+                        "name": ds.get("name", ""),
+                        "source": source,
+                        "stage": ds.get("stage", "published"),
+                    }
+                )
+            elif resolve_lower in {s.lower() for s in (ds.get("tags") or [])}:
+                if slug not in seen:
+                    seen.add(slug)
+                    datasets_found.append(
+                        {
+                            "slug": slug,
+                            "name": ds.get("name", ""),
+                            "source": source,
+                            "stage": ds.get("stage", "published"),
+                        }
+                    )
+    if datasets_found:
+        extra["datasets"] = datasets_found
+        extra["found"] = True
+    return extra
+
+
+@mcp.tool(
+    description=(
+        "Dataset/analysis exploration (legacy). "
         "Without resolve: returns compact summary (counts by source, stage). "
-        "With resolve (slug, name, or source): returns sub-graph with related entities."
+        "With resolve (slug, name, or source): returns sub-graph with related entities. "
+        "Prefer explore() and find() for navigation."
     ),
     structured_output=True,
 )
@@ -251,15 +368,21 @@ def topic_index(resolve: str | None = None) -> dict[str, object]:
                 "top_sources": {s: n for s, n in top_sources},
                 "n_sources": len(by_source),
                 "analyses": len(data.get("analyses", [])),
+                "domains": len(data.get("domains", [])),
                 "ok": True,
             }
 
-        # Resolve: sub-graph
+        # Prefer navigation explore when schema v7 indexes are present
+        if data.get("by_slug") or data.get("domains"):
+            card = explore_ref(data, resolve)
+            if card.get("found"):
+                return {"content": card, "ok": True}
+
+        # Resolve: sub-graph (legacy path)
         resolve_lower = resolve.lower()
         result: dict[str, Any] = {"resolve": resolve, "found": False}
         seen_slugs: set[str] = set()
 
-        # Search datasets
         for source, ds_list in data.get("datasets", {}).items():
             for ds in ds_list:
                 slug = ds.get("slug", "")
@@ -277,7 +400,6 @@ def topic_index(resolve: str | None = None) -> dict[str, object]:
                     )
                     result["found"] = True
 
-        # Search analyses
         for a in data.get("analyses", []):
             a_slug = a.get("slug", "")
             if a_slug.lower() == resolve_lower or resolve_lower in [
@@ -293,7 +415,6 @@ def topic_index(resolve: str | None = None) -> dict[str, object]:
                 )
                 result["found"] = True
 
-        # Search by source name
         entries = data.get("datasets", {})
         if resolve_lower in {s.lower() for s in entries}:
             for source, ds_list in entries.items():
@@ -321,8 +442,8 @@ def topic_index(resolve: str | None = None) -> dict[str, object]:
 
 @mcp.tool(
     description=(
-        "Cross-cutting search across issues, PRs, datasets, and analyses. "
-        "Returns compact results (slug/name/type). Use topic_index(resolve=slug) for details."
+        "Legacy cross-cutting search across issues, PRs, datasets, and analyses. "
+        "Prefer find() for ranked navigation. Returns compact results."
     ),
     structured_output=True,
 )
@@ -333,25 +454,50 @@ def search(query: str, limit: int = 10) -> dict[str, object]:
         # GitHub Issues + PRs
         issues = _search_github_issues(query, token, limit)
 
-        # Local search
+        # Local search via navigation index (v7) or legacy topic_index fields
         try:
-            topic_raw = _fetch("topic_index.json", retries=0)
-            topic_data = json.loads(topic_raw)
+            topic_data = _load_topic_index()
         except Exception:
             topic_data = {}
 
-        local = (
-            _search_topic_index(query, topic_data)
-            if topic_data
-            else {"datasets": [], "analyses": []}
-        )
+        if topic_data.get("by_slug") or topic_data.get("datasets"):
+            ranked = search_index(topic_data, query, limit=limit)
+            datasets = [
+                {
+                    "slug": r["slug"],
+                    "name": r.get("name", ""),
+                    "stage": r.get("stage", "published"),
+                }
+                for r in ranked
+                if r.get("type") == "dataset"
+            ]
+            analyses = [
+                {
+                    "slug": r["slug"],
+                    "name": r.get("name", ""),
+                    "datasets": r.get("datasets") or [],
+                }
+                for r in ranked
+                if r.get("type") == "analysis"
+            ]
+        else:
+            local = (
+                _search_topic_index(query, topic_data)
+                if topic_data
+                else {
+                    "datasets": [],
+                    "analyses": [],
+                }
+            )
+            datasets = local["datasets"]
+            analyses = local["analyses"]
 
         return {
             "query": query,
-            "total": len(issues) + len(local["datasets"]) + len(local["analyses"]),
+            "total": len(issues) + len(datasets) + len(analyses),
             "issues": issues,
-            "datasets": local["datasets"],
-            "analyses": local["analyses"],
+            "datasets": datasets,
+            "analyses": analyses,
             "ok": True,
         }
 
