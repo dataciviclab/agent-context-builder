@@ -37,14 +37,6 @@ class ExplorerTheme:
     categories: list[str] = field(default_factory=list)
 
 
-@dataclass
-class ExplorerData:
-    """Cached data-explorer artifact bundle."""
-
-    analyses: list[Analysis] = field(default_factory=list)
-    themes: list[ExplorerTheme] = field(default_factory=list)
-
-
 class ExplorerFetcher:
     """Fetch data-explorer pages and themes via GitHub raw/contents."""
 
@@ -52,12 +44,6 @@ class ExplorerFetcher:
         self.collector = collector
         self._analyses: list[Analysis] | None = None
         self._themes: list[ExplorerTheme] | None = None
-
-    def fetch(self) -> ExplorerData:
-        return ExplorerData(
-            analyses=self.fetch_analyses(),
-            themes=self.fetch_themes(),
-        )
 
     def fetch_analyses(self) -> list[Analysis]:
         """Parse dataset pages from ``data-explorer/src/dataset/*.md``.
@@ -183,7 +169,3 @@ def _parse_themes(raw: str) -> list[ExplorerTheme]:
             )
         )
     return themes
-
-
-# Re-export legacy name used by older imports/tests.
-DataciviclabFetcher = ExplorerFetcher

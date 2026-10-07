@@ -27,7 +27,7 @@ from pathlib import Path
 from typing import Any
 
 from lab_connectors.http import HttpClient
-from lab_connectors.mcp import create_mcp_server, get_mcp_logger, guard_timed
+from lab_connectors.mcp import TtlCache, create_mcp_server, get_mcp_logger, guard_timed
 
 from .navigation import explore_ref, lab_map_summary, search_index
 
@@ -38,6 +38,11 @@ _API_BASE = f"https://api.github.com/repos/{_REPO}"
 
 _REFRESH_MIN_INTERVAL = 60
 _last_refresh_attempt: float | None = None
+
+# Artifact cache: agents often call lab_map/find/explore in sequence on the
+# same topic_index.json. TTL keeps freshness after CI rebuilds (~6h cadence).
+_ARTIFACT_TTL_SECONDS = int(os.environ.get("ACB_ARTIFACT_TTL_SECONDS", "120"))
+_artifact_cache: TtlCache[str, str] = TtlCache(ttl_seconds=_ARTIFACT_TTL_SECONDS)
 
 _log = get_mcp_logger("agent-context-builder", level=os.environ.get("ACB_LOG_LEVEL", "INFO"))
 
@@ -124,7 +129,13 @@ def _get_http() -> HttpClient:
     return _http
 
 
-def _fetch(path: str, retries: int = 1, backoff: float = 1.0) -> str:
+def _fetch(path: str, retries: int = 1, backoff: float = 1.0, use_cache: bool = True) -> str:
+    """Fetch a context-branch artifact, with optional TTL cache."""
+    if use_cache:
+        cached = _artifact_cache.get(path)
+        if cached is not None:
+            return cached
+
     url = f"{_RAW_BASE}/{path}"
     client = _get_http()
     last_err: Exception | None = None
@@ -138,7 +149,10 @@ def _fetch(path: str, retries: int = 1, backoff: float = 1.0) -> str:
                 time.sleep(backoff * (2**attempt))
             continue
         if result.is_ok and result.response is not None:
-            return result.response.text
+            text = result.response.text
+            if use_cache:
+                _artifact_cache.set(path, text)
+            return text
         last_err = Exception(
             f"HTTP {result.response.status_code if result.response else 'N/A'}: {result.err}"
         )
@@ -543,6 +557,7 @@ def refresh_context() -> dict[str, object]:
             return {"ok": False, "error": f"Errore di rete: {result.err}"}
 
         if result.response.status_code == 204:
+            _artifact_cache.clear()
             return {"ok": True, "message": "Build triggerato. Aggiornamento entro ~1 minuto."}
         elif result.response.status_code == 422:
             return {"ok": False, "error": "Build rifiutato (422). Verifica workflow su main."}

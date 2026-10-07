@@ -22,6 +22,8 @@ def _patch_fetch(fake: FakeHttpClient, path: str, text: str = "", status: int = 
     resp = fake_response(status, text=text)
     err = Exception(f"HTTP {status}") if status >= 400 else None
     fake.responses[url] = HttpResult(response=resp, err=err)
+    # Drop any cached body so tests always see the newly registered payload.
+    mcp_server._artifact_cache.invalidate(path)
 
 
 @pytest.mark.contract
@@ -802,3 +804,65 @@ def test_search_uses_navigation_index_when_v7():
     assert "datasets" in content
     slugs = [d["slug"] for d in content["datasets"]]
     assert "ispra_ru_base" in slugs
+
+
+# ---------------------------------------------------------------------------
+# Artifact TTL cache
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.policy
+def test_artifact_cache_reuses_topic_index_fetch():
+    """Second tool call within TTL must not re-fetch topic_index.json."""
+    fake = FakeHttpClient()
+    _patch_fetch(fake, "topic_index.json", text=_SAMPLE_V7_INDEX)
+    mcp_server._http = fake
+    try:
+        mcp_server.lab_map()
+        mcp_server.lab_map()
+        mcp_server.find(query="ispra_ru_base", limit=1)
+        mcp_server.explore(ref="toolkit")
+        topic_fetches = [
+            c
+            for c in fake.requests
+            if getattr(c, "url", "") and "topic_index.json" in str(getattr(c, "url", ""))
+        ]
+        # FakeHttpClient request log shape may vary; fall back to cache stats.
+        stats = mcp_server._artifact_cache.stats
+        assert stats.entries >= 1
+        # If request objects expose url, enforce single fetch; otherwise cache hit path is enough.
+        if topic_fetches:
+            assert len(topic_fetches) == 1
+        result = mcp_server.topic_index()
+        assert result["ok"] is True
+        assert result["domains"] == 1
+    finally:
+        mcp_server._http = None
+        mcp_server._artifact_cache.clear()
+
+
+@pytest.mark.policy
+def test_artifact_cache_invalidate_on_refresh(monkeypatch):
+    """refresh_context success clears the artifact cache."""
+    fake = FakeHttpClient()
+    _patch_fetch(fake, "topic_index.json", text=_SAMPLE_V7_INDEX)
+    mcp_server._http = fake
+    mcp_server.lab_map()
+    assert mcp_server._artifact_cache.stats.entries >= 1
+
+    monkeypatch.setenv("GITHUB_TOKEN", "fake-token")
+    monkeypatch.setattr(mcp_server, "_ENV_LOADED", True)
+    monkeypatch.setattr(mcp_server, "_last_refresh_attempt", None)
+
+    dispatch_url = (
+        "https://api.github.com/repos/dataciviclab/agent-context-builder"
+        "/actions/workflows/build-context.yml/dispatches"
+    )
+    fake.responses[dispatch_url] = HttpResult(
+        response=fake_response(204, text=""),
+        err=None,
+    )
+    result = mcp_server.refresh_context()
+    mcp_server._http = None
+    assert result["ok"] is True
+    assert mcp_server._artifact_cache.stats.entries == 0

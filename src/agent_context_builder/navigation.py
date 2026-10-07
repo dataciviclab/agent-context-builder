@@ -616,25 +616,29 @@ def explore_ref(topic_index: dict[str, Any], ref: str) -> dict[str, Any]:
 
     # Source (source_id)
     source_ds: list[str] = []
+    seen_source_ds: set[str] = set()
     for source_key, items in datasets_by_source.items():
         if source_key.lower() == ref_l:
             for item in items or []:
-                if item.get("slug"):
-                    source_ds.append(item["slug"])
+                slug = item.get("slug")
+                if slug and slug not in seen_source_ds:
+                    seen_source_ds.add(slug)
+                    source_ds.append(slug)
             result.update(
                 {
                     "type": "source",
                     "slug": source_key,
                     "name": source_key,
                     "n_datasets": len(source_ds),
-                    "datasets": source_ds[:50],
+                    "datasets": sorted(source_ds)[:50],
                     "found": True,
                 }
             )
             return result
     for slug, meta in by_slug.items():
         sid = meta.get("source_id") or ""
-        if sid and sid.lower() == ref_l:
+        if sid and sid.lower() == ref_l and slug not in seen_source_ds:
+            seen_source_ds.add(slug)
             source_ds.append(slug)
     if source_ds:
         result.update(

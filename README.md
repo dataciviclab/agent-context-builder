@@ -105,6 +105,16 @@ workspace_triage(section="radar")
 }
 ```
 
+Env opzionale:
+
+| Variabile | Default | Effetto |
+|---|---|---|
+| `ACB_ARTIFACT_TTL_SECONDS` | `120` | TTL cache artifact (`topic_index.json`, …) nei tool MCP |
+| `ACB_BRANCH` | `context` | Branch dove vivono gli artifact |
+| `ACB_LOG_LEVEL` | `INFO` | Logging MCP |
+
+La cache viene invalidata da `refresh_context()` dopo un build CI riuscito.
+
 ## Utilizzo locale
 
 ```bash

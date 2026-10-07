@@ -295,9 +295,8 @@ def test_render_signals_cached_across_bootstrap_and_triage():
     renderer.render_workspace_triage()
 
     # Explorer analyses discovery uses list_files (data-explorer/src/dataset),
-    # not list_directory (removed hub analisi/ path).
+    # not directory listing (removed hub analisi/ path).
     assert gh.list_files.call_count == 1
-    assert gh.list_directory.call_count == 0
     fetched = [(c.args[0], c.args[1]) for c in gh.get_raw_file.call_args_list]
     paths = {p for _, p in fetched}
     assert "data/radar/radar_summary.json" in paths

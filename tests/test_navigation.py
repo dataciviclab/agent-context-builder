@@ -206,5 +206,16 @@ def test_explore_ref_analysis_and_source():
     assert src["datasets"] == ["ispra_ru_base"]
 
 
+def test_explore_ref_source_dedupes_slugs():
+    """Same dataset slug under one source must appear once."""
+    idx = _index()
+    # Inject duplicate entry under ispra source
+    idx["datasets"]["ispra"].append(dict(FLAT[0]))
+    src = explore_ref(idx, "ispra")
+    assert src["found"] is True
+    assert src["datasets"] == ["ispra_ru_base"]
+    assert src["n_datasets"] == 1
+
+
 def test_explore_ref_not_found():
     assert explore_ref(_index(), "nope")["found"] is False
