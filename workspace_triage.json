@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-07T12:46:52.281683",
+  "generated_at": "2026-10-07T14:02:18.446560",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -45,15 +45,8 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": null,
+  "open_prs": 4,
   "prs": [
-    {
-      "number": 87,
-      "title": "feat(navigation): topic_index v7 + lab_map/find/explore MCP tools",
-      "repo": "agent-context-builder",
-      "url": "https://github.com/dataciviclab/agent-context-builder/pull/87",
-      "category": "other"
-    },
     {
       "number": 264,
       "title": "feat(mit-incidentalita): plateau 2013, indice di mortalit\u00e0 e stagionalit\u00e0",
@@ -81,16 +74,9 @@
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/pull/496",
       "category": "other"
-    },
-    {
-      "number": 486,
-      "title": "fix: handle BOM in normalized CSV reader",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/486",
-      "category": "other"
     }
   ],
-  "open_issues": null,
+  "open_issues": 40,
   "issues": [
     {
       "number": 59,
@@ -149,20 +135,6 @@
       "category": "intake"
     },
     {
-      "number": 675,
-      "title": "intake: inps_precariato \u2014 Assunzioni precarie per regione, sesso, et\u00e0 e tipologia (2014-2024)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/675",
-      "category": "intake"
-    },
-    {
-      "number": 674,
-      "title": "intake: inps_imprese_provincia \u2014 Imprese per provincia (2013-2022)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/674",
-      "category": "intake"
-    },
-    {
       "number": 664,
       "title": "intake: art_importi_fissi_taxi \u2014 scatto bandiera, diritto chiamata e corsa minima TAXI per comune (2002-2024)",
       "repo": "dataset-incubator",
@@ -202,13 +174,6 @@
       "title": "intake: richiedenti-asilo-italia \u2014 Domande e decisioni protezione internazionale (Comm. Naz. Asilo)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/597",
-      "category": "intake"
-    },
-    {
-      "number": 436,
-      "title": "intake: inps_stipendi_comune \u2014 Stipendi lavoratori dipendenti per comune (2009-2018)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/436",
       "category": "intake"
     },
     {
@@ -460,6 +425,13 @@
       "category": "Domande"
     },
     {
+      "number": 395,
+      "title": "FTS EU Grants \u2014 13 domande sui finanziamenti UE in Italia (2020-2025)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/395",
+      "category": "Domanda"
+    },
+    {
       "number": 393,
       "title": "ANPR Mobilit\u00e0 Residenziale \u2014 13 domande che possiamo fare ai dati (2022-2026)",
       "repo": "dataciviclab",
@@ -590,13 +562,6 @@
       "title": "ANAC Bandi di Gara \u2014 11 domande sugli appalti pubblici italiani (2016-2025)",
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/397",
-      "category": "Domanda"
-    },
-    {
-      "number": 395,
-      "title": "FTS EU Grants \u2014 13 domande sui finanziamenti UE in Italia (2020-2025)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/395",
       "category": "Domanda"
     },
     {
@@ -1580,10 +1545,7 @@
       "category": "Domande"
     }
   ],
-  "github_fetch_errors": {
-    "dataciviclab:analisi": "https://api.github.com/repos/dataciviclab/dataciviclab/contents/analisi: HTTP 404",
-    "dataciviclab:analisi/registry/active.md": "https://raw.githubusercontent.com/dataciviclab/dataciviclab/main/analisi/registry/active.md: HTTP 404"
-  },
+  "github_fetch_errors": {},
   "git_state": {
     "agent-context-builder": {
       "available": false,
@@ -1923,9 +1885,7 @@
     }
   },
   "warnings": [
-    "GitHub fetch failed \u2014 dataciviclab:analisi: https://api.github.com/repos/dataciviclab/dataciviclab/contents/analisi: HTTP 404",
-    "GitHub fetch failed \u2014 dataciviclab:analisi/registry/active.md: https://raw.githubusercontent.com/dataciviclab/dataciviclab/main/analisi/registry/active.md: HTTP 404",
-    "Many open PRs: 8"
+    "Many open PRs: 6"
   ],
   "radar": {
     "available": true,
@@ -4650,7 +4610,7 @@
       "repo": "inpa-reclutamento",
       "available": true,
       "source_repo": "dataciviclab/inpa-reclutamento",
-      "updated_at": "2026-10-05",
+      "updated_at": "2026-10-07",
       "datasets": 4,
       "marts": 12,
       "signals": 4,
@@ -4694,11 +4654,11 @@
           "label": "inpa_bandi_open",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261005T135706Z_9fdaf31b",
+            "run_id": "20261007T125325Z_7276d355",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-05T13:57:06.797160+00:00",
-            "finished_at": "2026-10-05T13:57:22.730564+00:00"
+            "started_at": "2026-10-07T12:53:25.015170+00:00",
+            "finished_at": "2026-10-07T12:54:39.249949+00:00"
           }
         },
         {
@@ -4708,11 +4668,11 @@
           "label": "inpa_comunicazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261005T135723Z_8ea41893",
+            "run_id": "20261007T125439Z_0fe4addd",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-05T13:57:23.065061+00:00",
-            "finished_at": "2026-10-05T13:57:51.575037+00:00"
+            "started_at": "2026-10-07T12:54:39.717800+00:00",
+            "finished_at": "2026-10-07T12:55:40.720821+00:00"
           }
         }
       ]
