@@ -127,7 +127,7 @@ class RadarSummary:
 
 @dataclass
 class Analysis:
-    """Analysis entry from dataciviclab/analisi/."""
+    """Public analysis / dataset page (data-explorer ``src/dataset/*.md``)."""
 
     slug: str
     name: str
@@ -136,6 +136,9 @@ class Analysis:
     issue: int | None = None
     path: str = ""
     status: str = "active"
+    description: str = ""
+    source: str = ""
+    period: str | None = None
 
 
 def parse_radar_summary(raw: str) -> RadarSummary:

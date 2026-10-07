@@ -119,6 +119,7 @@ def make_github_mock(
     fetch_errors=None,
     raw_file=None,
     repos_info=None,
+    list_files=None,
 ):
     """Build a ``MagicMock(spec=GitHubCollector)`` with configured returns.
 
@@ -130,6 +131,7 @@ def make_github_mock(
     m.fetch_errors = fetch_errors or {}
     m.get_raw_file.return_value = raw_file
     m.get_repos_info.return_value = repos_info or {}
+    m.list_files.return_value = list_files if list_files is not None else []
     errors = fetch_errors or {}
     if errors:
         msgs = " ".join(errors.values()).lower()

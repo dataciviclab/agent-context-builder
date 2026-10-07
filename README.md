@@ -1,8 +1,8 @@
 # agent-context-builder
 
 Genera contesto operativo compatto per agenti [DataCivicLab](https://github.com/dataciviclab).
-ACB è il **layer di contesto**: ogni 6 ore scansiona i repo del Lab e produce
-artifact che dicono ad agenti e umani *"cosa è successo e cosa serve attenzione"*.
+ACB è il **layer di navigazione e contesto**: ogni 6 ore scansiona i repo del Lab e produce
+artifact che dicono ad agenti e umani *"dove cerco, cosa ho, cosa è successo"*.
 
 ## Artifact
 
@@ -10,12 +10,22 @@ artifact che dicono ad agenti e umani *"cosa è successo e cosa serve attenzione
 |---|---|---|
 | `session_bootstrap.md` | — | Orientamento rapido (markdown) |
 | `workspace_triage.json` | v1 | Stato Lab: radar, PR, issues, discussions, registry, pipeline |
-| `topic_index.json` | v6 | Catalogo: 211 dataset (registry_source, url_slug, columns, location, clean_rows), 18 analisi |
+| `topic_index.json` | v7 | Navigation index: domains → repos → sources → datasets + analisi pubbliche |
 
 Branch `context`:
 ```text
 https://raw.githubusercontent.com/dataciviclab/agent-context-builder/context/topic_index.json
 https://raw.githubusercontent.com/dataciviclab/agent-context-builder/context/workspace_triage.json
+```
+
+## Gerarchia di navigazione
+
+```
+domain (tema editoriale)
+  └── repo (ownership + pipeline)
+        └── source (fonte esterna)
+              └── dataset (artefatto)
+                    └── analysis / signal
 ```
 
 ## Fonti consumate
@@ -25,6 +35,8 @@ https://raw.githubusercontent.com/dataciviclab/agent-context-builder/context/wor
 | tutti i repo config | `registry/registry.json` | Dataset (slug, columns, location, stage), signals, marts |
 | `source-observatory` | `data/radar/radar_summary.json` | Radar 36 fonti (GREEN/YELLOW/RED) |
 | `source-observatory` | `data/catalog/catalog_signals.json` | Drift inventariale |
+| `data-explorer` | `catalog/themes.json` | Temi editoriali (domain layer) |
+| `data-explorer` | `src/dataset/*.md` | Pagine pubbliche / analisi (frontmatter YAML) |
 
 ### Auto-discovery repo
 
@@ -48,9 +60,12 @@ Esposti via `agent-context-mcp` (server MCP `dataciviclab-context`).
 | Tool | Quando usarlo |
 |---|---|
 | `session_bootstrap()` | Prima chiamata — orientamento rapido |
+| `lab_map(domain=)` | Struttura del Lab: domains → repos → sources |
+| `find(query, type=, domain=)` | Ricerca ranked su dataset/repo/domain/source/analysis |
+| `explore(ref)` | Deep-dive di qualsiasi entità (slug repo, dataset, domain, source) |
 | `workspace_triage(section=)` | Stato precisi: radar, prs, issues, registry, pipeline |
-| `topic_index(resolve=)` | Deep-dive su dataset/analisi per slug o fonte |
-| `search(query)` | Ricerca cross-cutting: issues, PR, dataset, analisi |
+| `topic_index(resolve=)` | Legacy deep-dive (delega a explore quando v7) |
+| `search(query)` | Legacy search (wraps find + GitHub issues) |
 | `refresh_context()` | Trigger rebuild CI |
 
 ### Esempi
@@ -60,17 +75,21 @@ Esposti via `agent-context-mcp` (server MCP `dataciviclab-context`).
 session_bootstrap()
 # → markdown con radar, PR, issues, discussions
 
+# Struttura del Lab
+lab_map()
+# → {domains: [...], repos: [...], sources: {...}, totals: {...}}
+
+# Trovare un dataset
+find("rifiuti", type="dataset")
+# → results[{type, slug, name, parent_repo, parent_domain, score}]
+
+# Contesto di un repo
+explore("open-ispra")
+# → {type: repo, role, domain, datasets: [...], sources: [...]}
+
 # Stato radar
 workspace_triage(section="radar")
 # → {"green": 35, "yellow": 0, "red": 1, ...}
-
-# Deep-dive dataset
-topic_index(resolve="ispra_ru_base")
-# → {slug, name, source, period, stage, gcs_path, analyses: [...]
-
-# Ricerca
-search("rifiuti")
-# → {issues: [...], datasets: [{slug, name, stage}], analyses: [...]}
 ```
 
 ### Configurazione
@@ -86,6 +105,16 @@ search("rifiuti")
 }
 ```
 
+Env opzionale:
+
+| Variabile | Default | Effetto |
+|---|---|---|
+| `ACB_ARTIFACT_TTL_SECONDS` | `120` | TTL cache artifact (`topic_index.json`, …) nei tool MCP |
+| `ACB_BRANCH` | `context` | Branch dove vivono gli artifact |
+| `ACB_LOG_LEVEL` | `INFO` | Logging MCP |
+
+La cache viene invalidata da `refresh_context()` dopo un build CI riuscito.
+
 ## Utilizzo locale
 
 ```bash
@@ -97,7 +126,7 @@ agent-context build --config dataciviclab.config.yml --out generated/
 
 ```bash
 pip install -e ".[dev]"
-pytest          # 147 test
+pytest          # test suite
 ruff check src/ tests/
 mypy src/ tests/
 ```

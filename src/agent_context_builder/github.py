@@ -207,25 +207,21 @@ class GitHubCollector:
             )
         return prs
 
-    def list_directory(self, repo: str, path: str, ref: str = "main") -> list[str] | None:
-        """List directories inside a GitHub repo path.
+    def list_files(
+        self, repo: str, path: str, ref: str = "main", suffix: str = ""
+    ) -> list[str] | None:
+        """List files inside a GitHub repo path (Contents API).
 
-        Uses the GitHub Contents API::
-
-            GET /repos/{org}/{repo}/contents/{path}?ref={ref}
-
-        Returns a list of directory (folder) names, or None on failure.
-        Useful for discovering analysis slugs or other directory-structured
-        content without a separate registry file.
+        Used to discover markdown pages such as data-explorer dataset pages.
 
         Args:
             repo: Repository name (under self.org)
             path: Directory path within the repo
             ref: Branch or tag (default: main)
+            suffix: Optional filename suffix filter (e.g. ``".md"``)
 
         Returns:
-            List of subdirectory names, or None on failure.
-            Skips hidden directories (starting with ``_`` or ``.``).
+            Sorted list of file names (not full paths), or None on failure.
         """
         url = f"{self.base_url}/repos/{self.org}/{repo}/contents/{path}"
         params: dict[str, str] = {"ref": ref}
@@ -234,15 +230,18 @@ class GitHubCollector:
             response = self._raise_on_bad_status(result, url)
             items = response.json()
             if not isinstance(items, list):
-                # GitHub returns a single object if path is a file, not a directory
                 raise RuntimeError(f"{url}: path is not a directory")
-            dirs: list[str] = []
+            files: list[str] = []
             for item in items:
-                if item.get("type") == "dir":
-                    name = item["name"]
-                    if not name.startswith(("_", ".")):
-                        dirs.append(name)
-            return sorted(dirs)
+                if item.get("type") != "file":
+                    continue
+                name = item.get("name", "")
+                if not name or name.startswith(("_", ".")):
+                    continue
+                if suffix and not name.endswith(suffix):
+                    continue
+                files.append(name)
+            return sorted(files)
         except Exception as exc:
             self.fetch_errors[f"{repo}:{path}"] = str(exc)
             return None

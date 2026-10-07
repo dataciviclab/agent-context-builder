@@ -9,13 +9,20 @@ from .config import Config
 from .discussions import DiscussionCollector
 from .git_local import GitLocalCollector
 from .github import GitHubCollector
+from .navigation import (
+    build_domains,
+    build_explorer_themes,
+    build_repo_cards,
+    build_reverse_indexes,
+    category_to_domain,
+)
 from .signals import (
     Analysis,
     DIRegistry,
     RadarSummary,
     SourceObservatorySignals,
 )
-from .sources.dcl import DataciviclabFetcher
+from .sources.explorer import ExplorerFetcher
 from .sources.registry import RegistryFetcher
 from .sources.so import SourceObservatoryFetcher
 from .triage import build_workspace_triage
@@ -47,7 +54,7 @@ class Renderer:
         self.discussion_collector = discussion_collector
         self.fixed_timestamp = fixed_timestamp or datetime.now().isoformat()
         self._so_fetcher = SourceObservatoryFetcher(self.github_collector)
-        self._dcl_fetcher = DataciviclabFetcher(self.github_collector)
+        self._explorer_fetcher = ExplorerFetcher(self.github_collector)
         self._registry_fetcher = RegistryFetcher(self.github_collector)
 
     def render_session_bootstrap(self) -> str:
@@ -132,11 +139,10 @@ class Renderer:
             lines.append("")
 
         # ── ANALYSES ──────────────────────────────────────────────────────
-        analyses = self._fetch_dcl_analyses()
+        analyses = self._fetch_explorer_analyses()
         if analyses:
-            active = [a for a in analyses if a.status == "active"]
+            active = [a for a in analyses if a.status in ("active", "published")]
             if active:
-                # Show top-3 most recent (by discussion number, higher = more recent)
                 with_disc = sorted(
                     [a for a in active if a.discussion is not None],
                     key=lambda a: a.discussion or 0,
@@ -146,9 +152,9 @@ class Renderer:
                 refs = ", ".join(
                     f"{a.slug} (#{a.discussion})" if a.discussion else a.slug for a in recent
                 )
-                lines.append(f"## Analisi attive ({len(active)})")
+                lines.append(f"## Analisi pubbliche ({len(active)})")
                 lines.append("")
-                lines.append(f"Ultimo update: {refs}")
+                lines.append(f"Ultime pagine Explorer: {refs}")
                 lines.append("")
 
         # ── INFRA (compact) ───────────────────────────────────────────────
@@ -216,36 +222,34 @@ class Renderer:
         return (merged, slug_to_repo) if merged.datasets else None
 
     def render_topic_index(self) -> dict[str, Any]:
-        """Render topic_index.json (schema v6).
+        """Render topic_index.json (schema v7 — navigation index).
 
         Returns:
-            - repos: GitHub description per repo (auto from API)
-            - datasets: all datasets grouped by source, with full metadata
+            - repos: description/url + role, domain, dataset counts, sources
+            - datasets: all datasets grouped by source_id (backward compat)
+            - domains: editorial themes with linked repos/datasets
+            - explorer_themes: compact themes for lab-dashboard Grafo
             - operational_topics: YAML-defined topics for agent navigation
-            - analyses: list of analyses from dataciviclab/analisi/
+            - analyses: public pages from data-explorer src/dataset/
             - analyses_by_dataset: reverse lookup dataset → analyses
+            - by_repo / by_domain / by_slug: precomputed reverse indexes
         """
         # Repos with description from GitHub
         repos_info = self.github_collector.get_repos_info(self.config.repos)
-        repos_section = {
-            name: {"description": info.description, "url": info.url}
-            for name, info in repos_info.items()
-        }
 
         # Datasets grouped by source — full details for downstream consumers
-        # (data-explorer, lab-dashboard, dataciviclab)
         result_catalog = self._fetch_di_registry()
-        datasets_by_stage: dict[str, list[dict[str, Any]]] = {}
+        datasets_by_source: dict[str, list[dict[str, Any]]] = {}
+        flat_datasets: list[dict[str, Any]] = []
         if result_catalog:
             catalog, slug_to_repo = result_catalog
-            # Build signal lookup for clean_rows
             signals_by_id: dict[str, Any] = {}
             for sig in catalog.signals:
                 if sig.run is not None:
                     signals_by_id[sig.id] = sig.run
 
             for ds in catalog.datasets:
-                source = ds.source or ds.source_id or "unknown"
+                source = ds.source_id or ds.source or "unknown"
                 run = signals_by_id.get(ds.slug)
                 clean_rows = None
                 if run is not None:
@@ -267,14 +271,12 @@ class Renderer:
                     "registry_source": slug_to_repo.get(ds.slug, ""),
                     "clean_rows": clean_rows,
                 }
-                # Location (GCS path + multi_file flag)
                 if ds.location and ds.location.path:
                     entry["location"] = {
                         "type": ds.location.type,
                         "path": ds.location.path,
                         "multi_file": ds.location.multi_file,
                     }
-                # Columns (schema)
                 if ds.columns:
                     entry["columns"] = [
                         {
@@ -286,10 +288,20 @@ class Renderer:
                         }
                         for c in ds.columns
                     ]
-                # Mart references
                 if ds.mart_refs:
                     entry["mart_refs"] = ds.mart_refs
-                datasets_by_stage.setdefault(source, []).append(entry)
+                datasets_by_source.setdefault(source, []).append(entry)
+                flat_datasets.append(entry)
+
+        # Editorial themes + navigation graph
+        themes = self._explorer_fetcher.fetch_themes()
+        cat_map = category_to_domain(themes)
+        domains = build_domains(themes, flat_datasets, cat_map)
+        explorer_themes = build_explorer_themes(themes, flat_datasets, cat_map)
+        repo_cards = build_repo_cards(
+            repos_info, flat_datasets, cat_map, config_repos=self.config.repos
+        )
+        reverse = build_reverse_indexes(flat_datasets, cat_map)
 
         # YAML-defined operational topics (agent navigation hints)
         operational_topics = {}
@@ -300,43 +312,47 @@ class Renderer:
                 "next": topic.next,
             }
 
-        # ── Analyses from dataciviclab ──────────────────────────────────
+        # ── Analyses / public pages from data-explorer ───────────────────
         analyses_list: list[dict[str, Any]] = []
         analyses_by_dataset: dict[str, list[str]] = {}
-        analyses = self._fetch_dcl_analyses()
-        if analyses:
-            for a in analyses:
-                ae: dict[str, Any] = {
-                    "slug": a.slug,
-                    "name": a.name,
-                    "datasets": a.datasets,
-                    "status": a.status,
-                }
-                if a.discussion is not None:
-                    ae["discussion"] = a.discussion
-                if a.issue is not None:
-                    ae["issue"] = a.issue
-                analyses_list.append(ae)
-
-                # Build reverse lookup: dataset_slug → [analysis_slug, ...]
-                for ds_slug in a.datasets:
-                    analyses_by_dataset.setdefault(ds_slug, []).append(a.slug)
+        analyses = self._fetch_explorer_analyses()
+        for a in analyses:
+            ae: dict[str, Any] = {
+                "slug": a.slug,
+                "name": a.name,
+                "datasets": a.datasets,
+                "status": a.status,
+            }
+            if a.description:
+                ae["description"] = a.description
+            if a.source:
+                ae["source"] = a.source
+            if a.period:
+                ae["period"] = a.period
+            if a.discussion is not None:
+                ae["discussion"] = a.discussion
+            if a.issue is not None:
+                ae["issue"] = a.issue
+            analyses_list.append(ae)
+            for ds_slug in a.datasets:
+                analyses_by_dataset.setdefault(ds_slug, []).append(a.slug)
 
         result: dict[str, Any] = {
-            "schema_version": 6,
+            "schema_version": 7,
             "generated_at": self.fixed_timestamp,
-            "repos": repos_section,
-            "datasets": datasets_by_stage,
+            "repos": repo_cards,
+            "datasets": datasets_by_source,
+            "domains": domains,
+            "explorer_themes": explorer_themes,
             "operational_topics": operational_topics,
+            "analyses": analyses_list,
+            "analyses_by_dataset": analyses_by_dataset,
+            "by_repo": reverse["by_repo"],
+            "by_domain": reverse["by_domain"],
+            "by_slug": reverse["by_slug"],
         }
-
-        if analyses_list:
-            result["analyses"] = analyses_list
-            result["analyses_by_dataset"] = analyses_by_dataset
-
         return result
 
-    def _fetch_dcl_analyses(self) -> list[Analysis]:
-        """Fetch analyses from dataciviclab via DCL fetcher."""
-        data = self._dcl_fetcher.fetch()
-        return data.analyses
+    def _fetch_explorer_analyses(self) -> list[Analysis]:
+        """Fetch public pages/analyses from data-explorer."""
+        return self._explorer_fetcher.fetch_analyses()
