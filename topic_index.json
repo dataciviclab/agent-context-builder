@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-08T12:55:50.956912",
+  "generated_at": "2026-10-08T23:00:40.294920",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -3375,6 +3375,27 @@
             "name": "titolo",
             "type": "VARCHAR",
             "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ddl_id",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "ddl_id",
+            "description": ""
+          },
+          {
+            "name": "ddl_ramo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_id_ddl_iter",
+            "type": "BIGINT",
+            "role": "metric",
             "semantic_type": "",
             "description": ""
           }
@@ -10141,6 +10162,34 @@
           },
           {
             "name": "relatore_nomina",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "relatore_giudice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "presidente_giudice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "presidente_eletto_da",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "presidente_nomina",
             "type": "DATE",
             "role": "dimension",
             "semantic_type": "",
@@ -45749,7 +45798,7 @@
         ],
         "category": "politica",
         "registry_source": "open-politica",
-        "clean_rows": 10396,
+        "clean_rows": 10413,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-politica/camera_relatori/*/camera_relatori_*_clean.parquet",
@@ -45788,6 +45837,34 @@
             "name": "legislatura",
             "type": "INTEGER",
             "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "atto_camera",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "atto_id",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "atto_legislatura",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "atto_id_leg",
+            "type": "VARCHAR",
+            "role": "dimension",
             "semantic_type": "",
             "description": ""
           }
