@@ -1,17 +1,16 @@
 # Session Bootstrap
 
-**Generated**: 2026-10-08T04:50:27.583628
+**Generated**: 2026-10-08T12:55:50.956912
 
 ## Stato
 
-Radar: 36 fonti GREEN 34 · Registry: 35 repo · 396 dataset
+Radar: 36 fonti GREEN 33 · Registry: 36 repo · 400 dataset
 
 ## Richiede attenzione
 
+- [PR] costituzione-italiana#25: chore(standard): allinea repo allo standard Lab — fase 1
 - [PR] dataset-incubator#836: feat(candidates): bootstrap gse_cer_elenco candidate
-- [PR] italia-corpus#56: feat(akn): relazioni AKN strutturate + pipeline Normattiva lineare
-- [PR] italia-corpus#55: fix(tls): rimuove workaround verify=False, IPZS serve catena completa
-- [PR] toolkit#496: feat(registry): alias semantic_types estesi per chiavi civiche reali
+- [PR] toolkit#497: feat(support): external repo+slug+layer via registry produttore
 
 ## Analisi pubbliche (45)
 

@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-08T04:50:27.583628",
+  "generated_at": "2026-10-08T12:55:50.956912",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -211,9 +211,11 @@
       "url": "https://github.com/dataciviclab/italia-corpus",
       "role": "dati",
       "domain": null,
-      "n_datasets": 0,
+      "n_datasets": 4,
       "n_published": 0,
-      "sources": []
+      "sources": [
+        "italia_corpus"
+      ]
     },
     "italia-dipendenze": {
       "description": "Quanto dipende l'Italia dall'estero per le risorse che tiene in funzione?",
@@ -9493,7 +9495,7 @@
         ],
         "category": "giurisprudenza",
         "registry_source": "costituzione-italiana",
-        "clean_rows": 1066,
+        "clean_rows": 1050,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/costituzione-italiana/atti_promovimento_corte_costituzionale/2026/atti_promovimento_corte_costituzionale_2026_clean.parquet",
@@ -9698,7 +9700,7 @@
         ],
         "category": "giurisprudenza",
         "registry_source": "costituzione-italiana",
-        "clean_rows": 267345,
+        "clean_rows": 267411,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/costituzione-italiana/massime_corte_costituzionale/2026/massime_corte_costituzionale_2026_clean.parquet",
@@ -9886,7 +9888,7 @@
         ],
         "category": "giurisprudenza",
         "registry_source": "costituzione-italiana",
-        "clean_rows": 22395,
+        "clean_rows": 22398,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/costituzione-italiana/pronunce_corte_costituzionale/2026/pronunce_corte_costituzionale_2026_clean.parquet",
@@ -10303,6 +10305,679 @@
         ],
         "mart_refs": [
           "revisioni_costituzionali__mart_revisioni_per_articolo"
+        ]
+      },
+      {
+        "slug": "akn_act_meta",
+        "url_slug": "akn-act-meta",
+        "name": "Akn Act Meta",
+        "description": "Metadati AKN per atto (EIV, ELI, mod counts, workflow). Una riga per atto con XML AKN processato. PK = fonte_file.",
+        "source": "",
+        "source_id": "italia_corpus",
+        "period": {
+          "start": 1874,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "normativa",
+          "akn",
+          "metadati",
+          "eiv"
+        ],
+        "category": "normativa",
+        "registry_source": "italia-corpus",
+        "clean_rows": 20774,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/italia-corpus/akn_act_meta/2026/akn_act_meta_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "fonte_file",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fonte_urn",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fonte_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "eiv_raw",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "eiv",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "eli_version",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "eli_type_document",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "eli_date_document",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_refs",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_event_ref",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_repeal_events",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_active_mods",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "mod_types_json",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "has_workflow",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_passive_ref",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "event_types_json",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "akn_act_meta__mart_eiv_per_decennio",
+          "akn_act_meta__mart_modifiche_anno"
+        ]
+      },
+      {
+        "slug": "akn_relations",
+        "url_slug": "akn-relations",
+        "name": "Akn Relations",
+        "description": "Relazioni AKN tipizzate dal corpus Normattiva (citation, insertion, repeal, substitution, eventRef, passiveRef). Una riga per relazione estratta dall'XML.",
+        "source": "",
+        "source_id": "italia_corpus",
+        "period": {
+          "start": 1874,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "normativa",
+          "akn",
+          "grafo",
+          "relazioni"
+        ],
+        "category": "normativa",
+        "registry_source": "italia-corpus",
+        "clean_rows": 394811,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/italia-corpus/akn_relations/2026/akn_relations_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "edge_id",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fonte_urn",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fonte_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "target_urn",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rel_type",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "origin",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "detail",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "akn_relations__mart_relazioni_per_tipo",
+          "akn_relations__mart_modifiche_tipizzate"
+        ]
+      },
+      {
+        "slug": "normativa",
+        "url_slug": "normativa",
+        "name": "Normativa",
+        "description": "Corpus normativa Italia (Normattiva \u2192 AKN/MD): una riga per file atto del corpus. PK tecnico = filename (univoco). urn pu\u00f2 ripetersi (ORIGINALE + VIGENZA). Include qualit\u00e0 grafo, materia tematica, sunsetting e metadati AKN (EIV).",
+        "source": "",
+        "source_id": "italia_corpus",
+        "period": {
+          "start": 1874,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "normativa",
+          "corpus",
+          "legislazione",
+          "italia"
+        ],
+        "category": "normativa",
+        "registry_source": "italia-corpus",
+        "clean_rows": 22017,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/italia-corpus/normativa/2026/normativa_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "filename",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "collezione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "oggetto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "celex",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno_atto",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno_dir",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ritardo",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "urn",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_redazionale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "vigente",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "lunghezza_caratteri",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "lunghezza_parole",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "riferimenti_interni",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "duplicato",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_citazioni",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "orfano",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "qualita_score",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "materia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sunsetting_score",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "eta_anni",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anni_senza_citazioni",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ingresso_in_vigore",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "akn_n_refs",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "akn_n_active_mods",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "akn_n_passive_ref",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "akn_n_repeal_events",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "akn_mod_types",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "akn_has_workflow",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "akn_meta_source",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_articoli_cost",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "articoli_cost",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "abrogato_da",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_abrogazioni",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "atto_id",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "normativa__mart_atti_per_tipo",
+          "normativa__mart_materia_stato",
+          "normativa__mart_candidati_sunsetting"
+        ]
+      },
+      {
+        "slug": "riferimenti",
+        "url_slug": "riferimenti",
+        "name": "Riferimenti",
+        "description": "Grafo riferimenti del corpus normativa: archi fonte\u2192bersaglio da regex markdown e citazioni AKN. PK = fonte_source_path + bersaglio_source_path + origine. Le colonne *_filename restano nel formato engine per legal-graph.",
+        "source": "",
+        "source_id": "italia_corpus",
+        "period": {
+          "start": 1874,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "normativa",
+          "grafo",
+          "citazioni",
+          "riferimenti"
+        ],
+        "category": "normativa",
+        "registry_source": "italia-corpus",
+        "clean_rows": 136460,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/italia-corpus/riferimenti/2026/riferimenti_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "fonte_source_path",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "bersaglio_source_path",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fonte_source_file",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "bersaglio_source_file",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fonte_filename",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "bersaglio_filename",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fonte_anno",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "bersaglio_anno",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fonte_stato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "bersaglio_stato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fonte_materia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "bersaglio_materia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "peso",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "risolto",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "origine",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rel_type",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "riferimenti__mart_debt_legale",
+          "riferimenti__mart_citazioni_per_origine",
+          "riferimenti__mart_top_bersagli"
         ]
       }
     ],
@@ -55440,6 +56115,12 @@
       "inpa_comunicazioni",
       "inpa_insight"
     ],
+    "italia-corpus": [
+      "akn_act_meta",
+      "akn_relations",
+      "normativa",
+      "riferimenti"
+    ],
     "italia-dipendenze": [
       "comtrade_bilateral",
       "eurostat_nrg_bal_c",
@@ -57445,6 +58126,38 @@
       "registry_source": "inpa-reclutamento",
       "domain": null,
       "category": "pa"
+    },
+    "akn_act_meta": {
+      "name": "Akn Act Meta",
+      "stage": "incubating",
+      "source_id": "italia_corpus",
+      "registry_source": "italia-corpus",
+      "domain": null,
+      "category": "normativa"
+    },
+    "akn_relations": {
+      "name": "Akn Relations",
+      "stage": "incubating",
+      "source_id": "italia_corpus",
+      "registry_source": "italia-corpus",
+      "domain": null,
+      "category": "normativa"
+    },
+    "normativa": {
+      "name": "Normativa",
+      "stage": "incubating",
+      "source_id": "italia_corpus",
+      "registry_source": "italia-corpus",
+      "domain": null,
+      "category": "normativa"
+    },
+    "riferimenti": {
+      "name": "Riferimenti",
+      "stage": "incubating",
+      "source_id": "italia_corpus",
+      "registry_source": "italia-corpus",
+      "domain": null,
+      "category": "normativa"
     },
     "comtrade_bilateral": {
       "name": "Comtrade Bilateral",
