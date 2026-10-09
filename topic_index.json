@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-09T04:53:41.349469",
+  "generated_at": "2026-10-09T12:41:48.096358",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -7228,7 +7228,7 @@
             "name": "codi_catastale",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "cadastral_code",
             "description": ""
           },
           {
@@ -7270,7 +7270,7 @@
             "name": "codice_regione_istat",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "region_code",
             "description": ""
           }
         ],
@@ -7898,7 +7898,7 @@
             "name": "fondo",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "fondo_code",
             "description": ""
           },
           {
@@ -46377,7 +46377,7 @@
         ],
         "category": "politica",
         "registry_source": "open-politica",
-        "clean_rows": 125953,
+        "clean_rows": 127805,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-politica/dait_amministratori_locali/2026/dait_amministratori_locali_2026_clean.parquet",
@@ -46389,6 +46389,13 @@
             "type": "INTEGER",
             "role": "dimension",
             "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "livello_ente",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
             "description": ""
           },
           {
@@ -46420,10 +46427,10 @@
             "description": ""
           },
           {
-            "name": "denominazione_comune",
+            "name": "denominazione_ente",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "municipality_name",
+            "semantic_type": "",
             "description": ""
           },
           {
@@ -46504,6 +46511,13 @@
             "description": ""
           },
           {
+            "name": "data_elezione_max_carica",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "lista_appartenenza",
             "type": "VARCHAR",
             "role": "dimension",
@@ -46528,7 +46542,8 @@
         "mart_refs": [
           "dait_amministratori_locali__mart_profilo_carica",
           "dait_amministratori_locali__mart_profilo_demografico",
-          "dait_amministratori_locali__mart_territorio"
+          "dait_amministratori_locali__mart_territorio",
+          "dait_amministratori_locali__mart_profilo_livello"
         ]
       }
     ],
