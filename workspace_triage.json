@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T12:41:48.096358",
+  "generated_at": "2026-10-09T20:00:55.938407",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -15,6 +15,7 @@
     "energia-italia",
     "eurostat",
     "giustizia-amministrativa",
+    "giustizia-statistiche",
     "imprese-italia",
     "indice-pa",
     "inpa-reclutamento",
@@ -76,7 +77,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 41,
+  "open_issues": 44,
   "issues": [
     {
       "number": 59,
@@ -230,6 +231,27 @@
       "title": "intake: ga-ricorsi-pendenti \u2014 stock pendenti per tutte le sedi OpenGA",
       "repo": "giustizia-amministrativa",
       "url": "https://github.com/dataciviclab/giustizia-amministrativa/issues/10",
+      "category": "intake"
+    },
+    {
+      "number": 6,
+      "title": "Intake: UCP \u2014 Unit\u00e0 casi procedimenti (uffici specializzati 2021-2025)",
+      "repo": "giustizia-statistiche",
+      "url": "https://github.com/dataciviclab/giustizia-statistiche/issues/6",
+      "category": "intake"
+    },
+    {
+      "number": 5,
+      "title": "Intake: monitoraggio OCC \u2014 crisi di sovraindebitamento",
+      "repo": "giustizia-statistiche",
+      "url": "https://github.com/dataciviclab/giustizia-statistiche/issues/5",
+      "category": "intake"
+    },
+    {
+      "number": 4,
+      "title": "Intake: mediazione civile (flussi semestrali per organismo)",
+      "repo": "giustizia-statistiche",
+      "url": "https://github.com/dataciviclab/giustizia-statistiche/issues/4",
       "category": "intake"
     },
     {
@@ -1686,6 +1708,14 @@
       "untracked_files": 0
     },
     "giustizia-amministrativa": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
+    "giustizia-statistiche": {
       "available": false,
       "reason": "local_disabled",
       "dirty": null,
@@ -4385,6 +4415,175 @@
       ]
     },
     {
+      "repo": "giustizia-statistiche",
+      "available": true,
+      "source_repo": "dataciviclab/giustizia-statistiche",
+      "updated_at": "2026-10-09",
+      "datasets": 11,
+      "marts": 17,
+      "signals": 11,
+      "codelists": 0,
+      "entities": 1,
+      "gcs": 11,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "civile_flussi",
+          "source_id": "giustizia_statistiche",
+          "status": "ok",
+          "label": "civile_flussi",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261009T195345Z_3afb3d79",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-10-09T19:53:45.407479+00:00",
+            "finished_at": "2026-10-09T19:54:15.471440+00:00"
+          }
+        },
+        {
+          "id": "durata_civile",
+          "source_id": "giustizia_statistiche",
+          "status": "ok",
+          "label": "durata_civile",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261009T195415Z_471b1939",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-10-09T19:54:15.531188+00:00",
+            "finished_at": "2026-10-09T19:54:19.961182+00:00"
+          }
+        },
+        {
+          "id": "durata_penale_classi",
+          "source_id": "giustizia_statistiche",
+          "status": "ok",
+          "label": "durata_penale_classi",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261009T195421Z_5fdcb15a",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-10-09T19:54:21.853984+00:00",
+            "finished_at": "2026-10-09T19:54:24.769944+00:00"
+          }
+        },
+        {
+          "id": "durata_penale_medie",
+          "source_id": "giustizia_statistiche",
+          "status": "ok",
+          "label": "durata_penale_medie",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261009T195426Z_b14b09db",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-10-09T19:54:26.824786+00:00",
+            "finished_at": "2026-10-09T19:54:29.634831+00:00"
+          }
+        },
+        {
+          "id": "giustizia_civile_indicatori",
+          "source_id": "giustizia_statistiche",
+          "status": "ok",
+          "label": "giustizia_civile_indicatori",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261009T195429Z_84191ac3",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-10-09T19:54:29.692651+00:00",
+            "finished_at": "2026-10-09T19:54:36.951352+00:00"
+          }
+        },
+        {
+          "id": "giustizia_penale_indicatori",
+          "source_id": "giustizia_statistiche",
+          "status": "ok",
+          "label": "giustizia_penale_indicatori",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261009T195437Z_02a73886",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-10-09T19:54:37.020853+00:00",
+            "finished_at": "2026-10-09T19:54:39.589422+00:00"
+          }
+        },
+        {
+          "id": "intercettazioni",
+          "source_id": "giustizia_statistiche",
+          "status": "ok",
+          "label": "intercettazioni",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261009T195440Z_68d75cb2",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-10-09T19:54:40.072532+00:00",
+            "finished_at": "2026-10-09T19:54:41.344449+00:00"
+          }
+        },
+        {
+          "id": "monitoraggio_mensile_civile",
+          "source_id": "giustizia_statistiche",
+          "status": "ok",
+          "label": "monitoraggio_mensile_civile",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261009T195441Z_4b00e1da",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-10-09T19:54:41.772869+00:00",
+            "finished_at": "2026-10-09T19:55:16.219006+00:00"
+          }
+        },
+        {
+          "id": "monitoraggio_pnrr_giustizia",
+          "source_id": "giustizia_statistiche",
+          "status": "ok",
+          "label": "monitoraggio_pnrr_giustizia",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261009T195516Z_ed526477",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-10-09T19:55:16.279654+00:00",
+            "finished_at": "2026-10-09T19:55:18.726670+00:00"
+          }
+        },
+        {
+          "id": "penale_flussi",
+          "source_id": "giustizia_statistiche",
+          "status": "ok",
+          "label": "penale_flussi",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261009T195519Z_137ecf64",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-10-09T19:55:19.146156+00:00",
+            "finished_at": "2026-10-09T19:55:22.893109+00:00"
+          }
+        },
+        {
+          "id": "spese_giustizia",
+          "source_id": "giustizia_statistiche",
+          "status": "ok",
+          "label": "spese_giustizia",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261009T195523Z_7ae27093",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-10-09T19:55:23.304844+00:00",
+            "finished_at": "2026-10-09T19:55:24.858195+00:00"
+          }
+        }
+      ]
+    },
+    {
       "repo": "imprese-italia",
       "available": true,
       "source_repo": "dataciviclab/imprese-italia",
@@ -4642,7 +4841,7 @@
       "repo": "inpa-reclutamento",
       "available": true,
       "source_repo": "dataciviclab/inpa-reclutamento",
-      "updated_at": "2026-10-07",
+      "updated_at": "2026-10-09",
       "datasets": 4,
       "marts": 12,
       "signals": 4,
@@ -4686,11 +4885,11 @@
           "label": "inpa_bandi_open",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261007T125325Z_7276d355",
+            "run_id": "20261009T124802Z_acdf644f",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-07T12:53:25.015170+00:00",
-            "finished_at": "2026-10-07T12:54:39.249949+00:00"
+            "started_at": "2026-10-09T12:48:02.872521+00:00",
+            "finished_at": "2026-10-09T12:48:17.396223+00:00"
           }
         },
         {
@@ -4700,11 +4899,11 @@
           "label": "inpa_comunicazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261007T125439Z_0fe4addd",
+            "run_id": "20261009T124817Z_4a1ff7b3",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-07T12:54:39.717800+00:00",
-            "finished_at": "2026-10-07T12:55:40.720821+00:00"
+            "started_at": "2026-10-09T12:48:17.880510+00:00",
+            "finished_at": "2026-10-09T12:48:47.061554+00:00"
           }
         }
       ]
@@ -5413,25 +5612,39 @@
       "source_repo": "dataciviclab/open-conto-annuale",
       "updated_at": "2026-10-09",
       "datasets": 23,
-      "marts": 54,
-      "signals": 23,
+      "marts": 56,
+      "signals": 24,
       "codelists": 0,
       "entities": 5,
       "gcs": 23,
       "reason": "",
       "signals_detail": [
         {
+          "id": "compose:contorno_comparti",
+          "source_id": "dataciviclab_composite",
+          "status": "ok",
+          "label": "contorno_comparti",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261009T133651Z_a200fa88",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-10-09T13:36:51.805422+00:00",
+            "finished_at": "2026-10-09T13:36:51.900595+00:00"
+          }
+        },
+        {
           "id": "anzianita",
           "source_id": "openbdap",
           "status": "ok",
           "label": "anzianita",
-          "detail": "anni 2015-2024 \u2014 mart: si",
+          "detail": "anni 2011-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261009T111142Z_6bbeb889",
+            "run_id": "20261009T133437Z_57ea72a5",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-09T11:11:42.966299+00:00",
-            "finished_at": "2026-10-09T11:11:44.156512+00:00"
+            "started_at": "2026-10-09T13:34:37.942669+00:00",
+            "finished_at": "2026-10-09T13:34:39.136850+00:00"
           }
         },
         {
@@ -5439,13 +5652,13 @@
           "source_id": "openbdap",
           "status": "ok",
           "label": "assenze",
-          "detail": "anni 2015-2024 \u2014 mart: si",
+          "detail": "anni 2011-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261009T111028Z_b1853ae7",
+            "run_id": "20261009T133254Z_da9bad3a",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-09T11:10:28.889699+00:00",
-            "finished_at": "2026-10-09T11:10:30.306489+00:00"
+            "started_at": "2026-10-09T13:32:54.393588+00:00",
+            "finished_at": "2026-10-09T13:32:55.787599+00:00"
           }
         },
         {
@@ -5453,13 +5666,13 @@
           "source_id": "openbdap",
           "status": "ok",
           "label": "comandati",
-          "detail": "anni 2015-2024 \u2014 mart: si",
+          "detail": "anni 2011-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261009T111208Z_c5513f65",
+            "run_id": "20261009T133512Z_8aef7299",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-09T11:12:08.505448+00:00",
-            "finished_at": "2026-10-09T11:12:09.531853+00:00"
+            "started_at": "2026-10-09T13:35:12.562854+00:00",
+            "finished_at": "2026-10-09T13:35:13.549900+00:00"
           }
         },
         {
@@ -5467,13 +5680,13 @@
           "source_id": "openbdap",
           "status": "ok",
           "label": "composizione_retribuzione",
-          "detail": "anni 2015-2024 \u2014 mart: si",
+          "detail": "anni 2011-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261009T111058Z_0954690a",
+            "run_id": "20261009T133336Z_60515354",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-09T11:10:58.417700+00:00",
-            "finished_at": "2026-10-09T11:11:00.509081+00:00"
+            "started_at": "2026-10-09T13:33:36.613783+00:00",
+            "finished_at": "2026-10-09T13:33:38.711125+00:00"
           }
         },
         {
@@ -5481,13 +5694,13 @@
           "source_id": "openbdap",
           "status": "ok",
           "label": "contrattazione",
-          "detail": "anni 2015-2024 \u2014 mart: si",
+          "detail": "anni 2011-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261009T111221Z_3c05c055",
+            "run_id": "20261009T133529Z_408971ef",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-09T11:12:21.221049+00:00",
-            "finished_at": "2026-10-09T11:12:22.444411+00:00"
+            "started_at": "2026-10-09T13:35:29.540731+00:00",
+            "finished_at": "2026-10-09T13:35:30.745890+00:00"
           }
         },
         {
@@ -5495,13 +5708,13 @@
           "source_id": "openbdap",
           "status": "ok",
           "label": "costo_lavoro",
-          "detail": "anni 2015-2024 \u2014 mart: si",
+          "detail": "anni 2011-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261009T111113Z_fc9fdf57",
+            "run_id": "20261009T133356Z_099c9bfb",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-09T11:11:13.047280+00:00",
-            "finished_at": "2026-10-09T11:11:14.275838+00:00"
+            "started_at": "2026-10-09T13:33:56.587165+00:00",
+            "finished_at": "2026-10-09T13:33:57.808841+00:00"
           }
         },
         {
@@ -5509,13 +5722,13 @@
           "source_id": "openbdap",
           "status": "ok",
           "label": "distribuzione",
-          "detail": "anni 2015-2024 \u2014 mart: si",
+          "detail": "anni 2011-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261009T111250Z_8625142c",
+            "run_id": "20261009T133608Z_a787d5a9",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-09T11:12:50.221396+00:00",
-            "finished_at": "2026-10-09T11:12:51.038236+00:00"
+            "started_at": "2026-10-09T13:36:08.103530+00:00",
+            "finished_at": "2026-10-09T13:36:08.907203+00:00"
           }
         },
         {
@@ -5523,13 +5736,13 @@
           "source_id": "openbdap",
           "status": "ok",
           "label": "flessibili",
-          "detail": "anni 2015-2024 \u2014 mart: si",
+          "detail": "anni 2011-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261009T111230Z_ef42adeb",
+            "run_id": "20261009T133542Z_6efa9fed",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-09T11:12:30.801347+00:00",
-            "finished_at": "2026-10-09T11:12:31.539517+00:00"
+            "started_at": "2026-10-09T13:35:42.128014+00:00",
+            "finished_at": "2026-10-09T13:35:42.849815+00:00"
           }
         },
         {
@@ -5537,13 +5750,13 @@
           "source_id": "openbdap",
           "status": "ok",
           "label": "modalita_flessibile",
-          "detail": "anni 2015-2024 \u2014 mart: si",
+          "detail": "anni 2011-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261009T111308Z_86f1d24d",
+            "run_id": "20261009T133633Z_4bab2f18",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-09T11:13:08.756261+00:00",
-            "finished_at": "2026-10-09T11:13:09.485507+00:00"
+            "started_at": "2026-10-09T13:36:33.071081+00:00",
+            "finished_at": "2026-10-09T13:36:33.795341+00:00"
           }
         },
         {
@@ -5551,13 +5764,13 @@
           "source_id": "openbdap",
           "status": "ok",
           "label": "occupazione",
-          "detail": "anni 2015-2024 \u2014 mart: si",
+          "detail": "anni 2011-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261009T111321Z_35ce7719",
+            "run_id": "20261009T133650Z_c02b17d5",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-09T11:13:21.185082+00:00",
-            "finished_at": "2026-10-09T11:13:22.142641+00:00"
+            "started_at": "2026-10-09T13:36:50.258353+00:00",
+            "finished_at": "2026-10-09T13:36:51.204687+00:00"
           }
         },
         {
@@ -5565,13 +5778,13 @@
           "source_id": "openbdap",
           "status": "ok",
           "label": "passaggi",
-          "detail": "anni 2015-2024 \u2014 mart: si",
+          "detail": "anni 2011-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261009T111239Z_a80a219c",
+            "run_id": "20261009T133552Z_83a18cd1",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-09T11:12:39.078178+00:00",
-            "finished_at": "2026-10-09T11:12:39.764156+00:00"
+            "started_at": "2026-10-09T13:35:52.703441+00:00",
+            "finished_at": "2026-10-09T13:35:53.386009+00:00"
           }
         },
         {
@@ -5579,13 +5792,13 @@
           "source_id": "openbdap",
           "status": "ok",
           "label": "personale",
-          "detail": "anni 2015-2024 \u2014 mart: si",
+          "detail": "anni 2011-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261009T111128Z_3b5afa63",
+            "run_id": "20261009T133417Z_f3462db0",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-09T11:11:28.369633+00:00",
-            "finished_at": "2026-10-09T11:11:29.625353+00:00"
+            "started_at": "2026-10-09T13:34:17.867683+00:00",
+            "finished_at": "2026-10-09T13:34:19.114779+00:00"
           }
         },
         {
@@ -5593,13 +5806,13 @@
           "source_id": "openbdap",
           "status": "ok",
           "label": "retribuzione_media",
-          "detail": "anni 2015-2024 \u2014 mart: si",
+          "detail": "anni 2011-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261009T111259Z_7d523ac7",
+            "run_id": "20261009T133621Z_6e31cc62",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-09T11:12:59.998306+00:00",
-            "finished_at": "2026-10-09T11:13:00.814683+00:00"
+            "started_at": "2026-10-09T13:36:21.250478+00:00",
+            "finished_at": "2026-10-09T13:36:22.041991+00:00"
           }
         },
         {
@@ -5607,13 +5820,13 @@
           "source_id": "openbdap",
           "status": "ok",
           "label": "titoli_studio",
-          "detail": "anni 2015-2024 \u2014 mart: si",
+          "detail": "anni 2011-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261009T111156Z_12c101c3",
+            "run_id": "20261009T133456Z_f7bccb47",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-09T11:11:56.212581+00:00",
-            "finished_at": "2026-10-09T11:11:57.249780+00:00"
+            "started_at": "2026-10-09T13:34:56.205169+00:00",
+            "finished_at": "2026-10-09T13:34:57.220673+00:00"
           }
         },
         {
@@ -5623,11 +5836,11 @@
           "label": "ca_anag_causali_seed",
           "detail": "anno 2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261009T111008Z_ac47892f",
+            "run_id": "20261009T133226Z_9d39da75",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-09T11:10:08.318081+00:00",
-            "finished_at": "2026-10-09T11:10:08.695112+00:00"
+            "started_at": "2026-10-09T13:32:26.612773+00:00",
+            "finished_at": "2026-10-09T13:32:26.985707+00:00"
           }
         },
         {
@@ -5637,11 +5850,11 @@
           "label": "ca_anag_comparti_seed",
           "detail": "anno 2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261009T111005Z_b4cb43a4",
+            "run_id": "20261009T133224Z_122f597b",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-09T11:10:05.799925+00:00",
-            "finished_at": "2026-10-09T11:10:06.180218+00:00"
+            "started_at": "2026-10-09T13:32:24.124931+00:00",
+            "finished_at": "2026-10-09T13:32:24.510051+00:00"
           }
         },
         {
@@ -5651,11 +5864,11 @@
           "label": "ca_anag_enti_seed",
           "detail": "anno 2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261009T111004Z_816730a0",
+            "run_id": "20261009T133223Z_f4443973",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-09T11:10:04.705094+00:00",
-            "finished_at": "2026-10-09T11:10:05.392851+00:00"
+            "started_at": "2026-10-09T13:32:23.020867+00:00",
+            "finished_at": "2026-10-09T13:32:23.718906+00:00"
           }
         },
         {
@@ -5665,11 +5878,11 @@
           "label": "ca_anag_fondi_seed",
           "detail": "anno 2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261009T111011Z_f91e4f88",
+            "run_id": "20261009T133230Z_7a5fd89c",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-09T11:10:11.830239+00:00",
-            "finished_at": "2026-10-09T11:10:12.253778+00:00"
+            "started_at": "2026-10-09T13:32:30.095547+00:00",
+            "finished_at": "2026-10-09T13:32:30.512849+00:00"
           }
         },
         {
@@ -5679,11 +5892,11 @@
           "label": "ca_anag_qualifiche_seed",
           "detail": "anno 2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261009T111006Z_daff764d",
+            "run_id": "20261009T133224Z_621d5766",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-09T11:10:06.580483+00:00",
-            "finished_at": "2026-10-09T11:10:07.116554+00:00"
+            "started_at": "2026-10-09T13:32:24.905395+00:00",
+            "finished_at": "2026-10-09T13:32:25.430451+00:00"
           }
         },
         {
@@ -5693,11 +5906,11 @@
           "label": "ca_anag_territorio_seed",
           "detail": "anno 2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261009T111009Z_882681f9",
+            "run_id": "20261009T133227Z_222b902b",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-09T11:10:09.092428+00:00",
-            "finished_at": "2026-10-09T11:10:09.748061+00:00"
+            "started_at": "2026-10-09T13:32:27.378204+00:00",
+            "finished_at": "2026-10-09T13:32:28.030166+00:00"
           }
         },
         {
@@ -5707,11 +5920,11 @@
           "label": "ca_anag_titoli_studio_seed",
           "detail": "anno 2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261009T111010Z_5a7e9121",
+            "run_id": "20261009T133228Z_91deb92e",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-09T11:10:10.148158+00:00",
-            "finished_at": "2026-10-09T11:10:10.520832+00:00"
+            "started_at": "2026-10-09T13:32:28.430818+00:00",
+            "finished_at": "2026-10-09T13:32:28.801102+00:00"
           }
         },
         {
@@ -5721,11 +5934,11 @@
           "label": "ca_anag_voci_fua_seed",
           "detail": "anno 2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261009T111010Z_309c7482",
+            "run_id": "20261009T133229Z_87896c80",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-09T11:10:10.921181+00:00",
-            "finished_at": "2026-10-09T11:10:11.429073+00:00"
+            "started_at": "2026-10-09T13:32:29.199698+00:00",
+            "finished_at": "2026-10-09T13:32:29.701323+00:00"
           }
         },
         {
@@ -5735,11 +5948,11 @@
           "label": "ca_anag_voci_spesa_seed",
           "detail": "anno 2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261009T111007Z_979234d2",
+            "run_id": "20261009T133225Z_7000f05d",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-09T11:10:07.521105+00:00",
-            "finished_at": "2026-10-09T11:10:07.917496+00:00"
+            "started_at": "2026-10-09T13:32:25.824087+00:00",
+            "finished_at": "2026-10-09T13:32:26.215373+00:00"
           }
         }
       ]
@@ -6524,12 +6737,12 @@
       "available": true,
       "source_repo": "dataciviclab/open-politica",
       "updated_at": "2026-10-09",
-      "datasets": 37,
-      "marts": 73,
-      "signals": 37,
+      "datasets": 38,
+      "marts": 75,
+      "signals": 38,
       "codelists": 0,
       "entities": 8,
-      "gcs": 37,
+      "gcs": 38,
       "reason": "",
       "signals_detail": [
         {
@@ -6810,6 +7023,20 @@
             "status": "SUCCESS",
             "started_at": "2026-10-09T11:43:59.397303+00:00",
             "finished_at": "2026-10-09T11:44:03.724417+00:00"
+          }
+        },
+        {
+          "id": "dait_amministratori_storico",
+          "source_id": "dait",
+          "status": "ok",
+          "label": "dait_amministratori_storico",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261009T153306Z_f4e4f393",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-10-09T15:33:06.322312+00:00",
+            "finished_at": "2026-10-09T15:37:02.473223+00:00"
           }
         },
         {
