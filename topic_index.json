@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-10T12:00:51.180867",
+  "generated_at": "2026-10-10T16:44:52.489377",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -164,7 +164,7 @@
       "url": "https://github.com/dataciviclab/giustizia-amministrativa",
       "role": "dati",
       "domain": "giustizia",
-      "n_datasets": 13,
+      "n_datasets": 14,
       "n_published": 0,
       "sources": [
         "dataciviclab_composite",
@@ -176,9 +176,10 @@
       "url": "https://github.com/dataciviclab/giustizia-statistiche",
       "role": "dati",
       "domain": "giustizia",
-      "n_datasets": 11,
+      "n_datasets": 16,
       "n_published": 0,
       "sources": [
+        "dataciviclab_composite",
         "giustizia_statistiche"
       ]
     },
@@ -269,6 +270,17 @@
       "n_published": 0,
       "sources": [
         "aci"
+      ]
+    },
+    "open-ccnl": {
+      "description": "Archivio nazionale CCNL: anagrafica, metriche Uniemens, territorio e confluenze (CNEL open data)",
+      "url": "https://github.com/dataciviclab/open-ccnl",
+      "role": "dati",
+      "domain": "welfare-lavoro",
+      "n_datasets": 4,
+      "n_published": 0,
+      "sources": [
+        "cnel_archivio"
       ]
     },
     "open-coesione": {
@@ -2556,7 +2568,8 @@
         "mart_refs": [
           "ga_cross__mart_panoramica",
           "ga_cross__mart_sede_flusso",
-          "ga_cross__mart_esiti"
+          "ga_cross__mart_esiti",
+          "ga_cross__mart_sede_stock"
         ]
       },
       {
@@ -2718,6 +2731,159 @@
           "ga_definizioni__mart_mezzi_anno",
           "ga_definizioni__mart_sintesi_sede",
           "ga_definizioni__mart_outlier_sedi"
+        ]
+      },
+      {
+        "slug": "quadro_distretto",
+        "url_slug": "quadro-distretto",
+        "name": "Quadro Distretto",
+        "description": "Compose giustizia penale/civile: per distretto (snapshot 2025) - flussi civile e penale, clearance e disposition time, quota penale oltre 2 anni, spesa erario, pendenti PNRR vs target 2026.",
+        "source": "",
+        "source_id": "dataciviclab_composite",
+        "period": {
+          "start": 2025,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "giustizia",
+          "compose",
+          "quadro",
+          "distretto",
+          "cross"
+        ],
+        "category": "giustizia",
+        "registry_source": "giustizia-statistiche",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia-statistiche/quadro_distretto/2025/quadro_distretto_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "distretto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "civ_sopravvenuti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "civ_definiti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "civ_pendenti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pen_sopravvenuti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pen_definiti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pen_pendenti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "civ_clearance",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "civ_disposition_gg",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pen_clearance",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pen_disposition_gg",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "quota_penale_oltre_2anni",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "spesa_totale",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pnrr_pendenti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pnrr_cohort_2026",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pnrr_cohort_baseline_2026",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "quadro_distretto__mart_quadro",
+          "quadro_distretto__mart_nazionale"
         ]
       },
       {
@@ -36220,6 +36386,75 @@
         ]
       },
       {
+        "slug": "ga_ricorsi_pendenti",
+        "url_slug": "ga-ricorsi-pendenti",
+        "name": "Ga Ricorsi Pendenti",
+        "description": "Stock mensile dei ricorsi pendenti in giudizio presso le sedi della Giustizia Amministrativa (CdS, CGA Sicilia, TAR, TRGA), per sede e periodo. Fonte OpenGA.",
+        "source": "",
+        "source_id": "openga",
+        "period": {
+          "start": 2020,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "giustizia",
+          "giustizia-amministrativa",
+          "contenzioso",
+          "pendenti",
+          "stock"
+        ],
+        "category": "giustizia",
+        "registry_source": "giustizia-amministrativa",
+        "clean_rows": 2145,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia-amministrativa/ga_ricorsi_pendenti/2026/ga_ricorsi_pendenti_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "mese",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          },
+          {
+            "name": "codice_sede",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_ricorsi_pendenti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ga_ricorsi_pendenti__mart_pendenti_per_sede",
+          "ga_ricorsi_pendenti__mart_pendenti_nazionale"
+        ]
+      },
+      {
         "slug": "ga_ricorsi_pervenuti_class",
         "url_slug": "ga-ricorsi-pervenuti-class",
         "name": "Ga Ricorsi Pervenuti Class",
@@ -36834,7 +37069,7 @@
         ],
         "category": "giustizia",
         "registry_source": "giustizia-amministrativa",
-        "clean_rows": 130,
+        "clean_rows": 2145,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/giustizia-amministrativa/openga_ricorsi_cds/2026/openga_ricorsi_cds_2026_clean.parquet",
@@ -37516,6 +37751,124 @@
         ]
       },
       {
+        "slug": "mediazione_civile",
+        "url_slug": "mediazione-civile",
+        "name": "Mediazione Civile",
+        "description": "",
+        "source": "",
+        "source_id": "giustizia_statistiche",
+        "period": {
+          "start": 2024,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "giustizia",
+          "civile",
+          "mediazione",
+          "alternative-disputa",
+          "statistiche-giudiziarie"
+        ],
+        "category": "giustizia",
+        "registry_source": "giustizia-statistiche",
+        "clean_rows": 8756,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia-statistiche/mediazione_civile/2026/mediazione_civile_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "semestre",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "distretto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipologia_organismo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "natura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pendenti_iniziali",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "iscritti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "mancata_comparizione",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "accordo_raggiunto",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "accordo_non_raggiunto",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_definiti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pendenti_finali",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mediazione_civile__mediazione_civile",
+          "mediazione_civile__mart_nazionale_trend"
+        ]
+      },
+      {
         "slug": "monitoraggio_mensile_civile",
         "url_slug": "monitoraggio-mensile-civile",
         "name": "Monitoraggio Mensile Civile",
@@ -37620,6 +37973,159 @@
         ],
         "mart_refs": [
           "monitoraggio_mensile_civile__monitoraggio_mensile_civile"
+        ]
+      },
+      {
+        "slug": "monitoraggio_occ",
+        "url_slug": "monitoraggio-occ",
+        "name": "Monitoraggio Occ",
+        "description": "",
+        "source": "",
+        "source_id": "giustizia_statistiche",
+        "period": {
+          "start": 2024,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "giustizia",
+          "sovraindebitamento",
+          "occ",
+          "flussi",
+          "statistiche-giudiziarie"
+        ],
+        "category": "giustizia",
+        "registry_source": "giustizia-statistiche",
+        "clean_rows": 216,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia-statistiche/monitoraggio_occ/2025/monitoraggio_occ_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "macro_area",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "distretto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipologia_procedimento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pendenti_iniziali",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "iscritti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "aperte",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "definiti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rinuncia",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "chiuse_per_rinuncia",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "definiti_istanze_non_ammissibili",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "definiti_diniego_omologazione",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "definiti_sentenza_omologazione",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "definiti_sentenza_ammissione",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "chiuse_accolte",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "chiuse_rigettate",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pendenti_finali",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "monitoraggio_occ__monitoraggio_occ",
+          "monitoraggio_occ__mart_nazionale_trend"
         ]
       },
       {
@@ -37912,6 +38418,277 @@
         "mart_refs": [
           "spese_giustizia__spese_giustizia",
           "spese_giustizia__mart_nazionale_trend"
+        ]
+      },
+      {
+        "slug": "ucp_dettaglio",
+        "url_slug": "ucp-dettaglio",
+        "name": "Ucp Dettaglio",
+        "description": "",
+        "source": "",
+        "source_id": "giustizia_statistiche",
+        "period": {
+          "start": 2021,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "giustizia",
+          "penale",
+          "ucp",
+          "riforma-cartoline",
+          "statistiche-giudiziarie"
+        ],
+        "category": "giustizia",
+        "registry_source": "giustizia-statistiche",
+        "clean_rows": 741,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia-statistiche/ucp_dettaglio/2025/ucp_dettaglio_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "corte_appello",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "identificativo_ucp",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "us_num",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "supporto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "us_segreteria_del_pm",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "us_dibattimento_mod_21",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "us_definizione_affari_seriali_semplici",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "us_spese_di_giustizia",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "us_affari_civili",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "us_dibattimento_mod_21_bis",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "us_impugnazioni",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "us_esecuzione_penale",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "us_trattazione_giudizio_direttissimo",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "us_convalide_di_arresto",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pr_pagg_spr_supp",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pers_amm_ass",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "vpo_ass",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tiroc_art73",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tiroc_art37",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "borse_studio",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ucp_dettaglio__ucp_dettaglio",
+          "ucp_dettaglio__mart_sintesi"
+        ]
+      },
+      {
+        "slug": "ucp_numero",
+        "url_slug": "ucp-numero",
+        "name": "Ucp Numero",
+        "description": "",
+        "source": "",
+        "source_id": "giustizia_statistiche",
+        "period": {
+          "start": 2021,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "giustizia",
+          "penale",
+          "ucp",
+          "riforma-cartoline",
+          "statistiche-giudiziarie"
+        ],
+        "category": "giustizia",
+        "registry_source": "giustizia-statistiche",
+        "clean_rows": 700,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia-statistiche/ucp_numero/2025/ucp_numero_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "ufficio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "corte_appello",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "stato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "num_ucp_istituiti",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ucp_numero__ucp_numero",
+          "ucp_numero__mart_nazionale_trend"
         ]
       }
     ],
@@ -39813,7 +40590,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 1907,
+        "clean_rows": 1855,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_bandi_open/2026/inpa_bandi_open_2026_clean.parquet",
@@ -40025,7 +40802,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 5619,
+        "clean_rows": 5625,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_comunicazioni/2026/inpa_comunicazioni_2026_clean.parquet",
@@ -42133,6 +42910,539 @@
         "mart_refs": [
           "aci_usato_proprieta__mart_usato_categoria",
           "aci_usato_proprieta__mart_usato_sintesi"
+        ]
+      }
+    ],
+    "cnel_archivio": [
+      {
+        "slug": "ccnl_applicazione",
+        "url_slug": "ccnl-applicazione",
+        "name": "Ccnl Applicazione",
+        "description": "Applicazione dei CCNL: datori di lavoro e dipendenti (Uniemens/INPS) 2018-2025, con F/M dal 2023.",
+        "source": "",
+        "source_id": "cnel_archivio",
+        "period": {
+          "start": 2018,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "welfare-lavoro",
+          "ccnl",
+          "cnel",
+          "uniemens",
+          "headcount"
+        ],
+        "category": "welfare-lavoro",
+        "registry_source": "open-ccnl",
+        "clean_rows": 13184,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-ccnl/ccnl_applicazione/2026/ccnl_applicazione_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "codice_ccnl",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sottosezione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "status",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_ccnl",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "titolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "firmatari_datoriali",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "firmatari_sindacali",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "n_datori",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_dipendenti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_dipendenti_f",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_dipendenti_m",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "filtri_conto_annuale_ppaa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fonte_note",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ccnl_applicazione__mart_ccnl_serie",
+          "ccnl_applicazione__mart_ccnl_top",
+          "ccnl_applicazione__mart_ccnl_mercati"
+        ]
+      },
+      {
+        "slug": "ccnl_confluenze",
+        "url_slug": "ccnl-confluenze",
+        "name": "Ccnl Confluenze",
+        "description": "Mappa delle confluenze dei codici CCNL: codici storici confluiti in CCNL vigenti.",
+        "source": "",
+        "source_id": "cnel_archivio",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "welfare-lavoro",
+          "ccnl",
+          "cnel",
+          "confluenze",
+          "grafo-storico"
+        ],
+        "category": "welfare-lavoro",
+        "registry_source": "open-ccnl",
+        "clean_rows": 611,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-ccnl/ccnl_confluenze/2026/ccnl_confluenze_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "fonte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_confluito",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "confluenze_intermedie",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_vigente",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "titolo_confluito",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "titolo_vigente",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sezione_ateco",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "ateco_code",
+            "description": ""
+          },
+          {
+            "name": "sezione_ateco_desc",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "inizio_storia",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fine_storia",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ccnl_confluenze__mart_ccnl_confluenze",
+          "ccnl_confluenze__mart_ccnl_vigenti_confluenze"
+        ]
+      },
+      {
+        "slug": "ccnl_metadata",
+        "url_slug": "ccnl-metadata",
+        "name": "Ccnl Metadata",
+        "description": "Anagrafica CCNL CNEL: archivio corrente e storico (codici, tipologie, date, firmatari, ATECO).",
+        "source": "",
+        "source_id": "cnel_archivio",
+        "period": {
+          "start": 1990,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "welfare-lavoro",
+          "ccnl",
+          "cnel",
+          "contrattazione-collettiva",
+          "anagrafica"
+        ],
+        "category": "welfare-lavoro",
+        "registry_source": "open-ccnl",
+        "clean_rows": 7685,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-ccnl/ccnl_metadata/2026/ccnl_metadata_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "archivio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "id_accordo",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "id_ccnl",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_ccnl",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "identificativo_accordo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ambito",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipologia_accordo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "titolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "titolo_ccnl",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "stato_aa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_stipula",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_decorrenza",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_scadenza_contrattuale",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_scadenza_economica",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_pubblicazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ultimo_accordo_vigente",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "visibile_online",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "parti_datoriali",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "parti_sindacali",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "settori",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "settori_descrizione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "settori_ateco",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "settori_ateco_descrizione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sottosettori_descrizione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ccnl_metadata__mart_ccnl_codici",
+          "ccnl_metadata__mart_ccnl_ateco"
+        ]
+      },
+      {
+        "slug": "ccnl_territorio",
+        "url_slug": "ccnl-territorio",
+        "name": "Ccnl Territorio",
+        "description": "Applicazione CCNL per provincia e genere (INPS Uniemens) \u2014 fogli provinciali 2023-2025.",
+        "source": "",
+        "source_id": "cnel_archivio",
+        "period": {
+          "start": 2023,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "welfare-lavoro",
+          "ccnl",
+          "cnel",
+          "territorio",
+          "provincia",
+          "uniemens"
+        ],
+        "category": "welfare-lavoro",
+        "registry_source": "open-ccnl",
+        "clean_rows": 166507,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-ccnl/ccnl_territorio/2026/ccnl_territorio_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "codice_ccnl",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "sigla_provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "sesso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_dipendenti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ccnl_territorio__mart_ccnl_provincia",
+          "ccnl_territorio__mart_ccnl_regione",
+          "ccnl_territorio__mart_provincia_sintesi"
         ]
       }
     ],
@@ -55456,9 +56766,14 @@
         "dataset-incubator",
         "dcl-bologna",
         "eurostat",
+        "open-ccnl",
         "open-mur"
       ],
       "datasets": [
+        "ccnl_applicazione",
+        "ccnl_confluenze",
+        "ccnl_metadata",
+        "ccnl_territorio",
         "convivenze",
         "dipendenti_pubblici",
         "emigrati_destinazione",
@@ -55496,7 +56811,7 @@
         "popolazione_istat_comunale_2019_2025",
         "popolazione_quartiere"
       ],
-      "dataset_count": 36
+      "dataset_count": 40
     },
     {
       "slug": "giustizia",
@@ -55524,6 +56839,7 @@
         "ga_pareri",
         "ga_provvedimenti",
         "ga_ricorsi_definiti",
+        "ga_ricorsi_pendenti",
         "ga_ricorsi_pervenuti_class",
         "ga_ricorsi_tipo_decisione",
         "ga_sentenze",
@@ -55531,14 +56847,19 @@
         "giustizia_civile_indicatori",
         "giustizia_penale_indicatori",
         "intercettazioni",
+        "mediazione_civile",
         "monitoraggio_mensile_civile",
+        "monitoraggio_occ",
         "monitoraggio_pnrr_giustizia",
         "openga_ricorsi_appalto",
         "openga_ricorsi_cds",
         "penale_flussi",
-        "spese_giustizia"
+        "quadro_distretto",
+        "spese_giustizia",
+        "ucp_dettaglio",
+        "ucp_numero"
       ],
-      "dataset_count": 25
+      "dataset_count": 31
     },
     {
       "slug": "terzo-settore",
@@ -55832,6 +57153,10 @@
       "slug": "welfare-lavoro",
       "name": "Welfare e lavoro",
       "datasets": [
+        "ccnl_applicazione",
+        "ccnl_confluenze",
+        "ccnl_metadata",
+        "ccnl_territorio",
         "convivenze",
         "dipendenti_pubblici",
         "emigrati_destinazione",
@@ -55886,6 +57211,7 @@
         "ga_pareri",
         "ga_provvedimenti",
         "ga_ricorsi_definiti",
+        "ga_ricorsi_pendenti",
         "ga_ricorsi_pervenuti_class",
         "ga_ricorsi_tipo_decisione",
         "ga_sentenze",
@@ -55893,12 +57219,17 @@
         "giustizia_civile_indicatori",
         "giustizia_penale_indicatori",
         "intercettazioni",
+        "mediazione_civile",
         "monitoraggio_mensile_civile",
+        "monitoraggio_occ",
         "monitoraggio_pnrr_giustizia",
         "openga_ricorsi_appalto",
         "openga_ricorsi_cds",
         "penale_flussi",
-        "spese_giustizia"
+        "quadro_distretto",
+        "spese_giustizia",
+        "ucp_dettaglio",
+        "ucp_numero"
       ]
     },
     {
@@ -56788,6 +58119,7 @@
       "ga_pareri",
       "ga_provvedimenti",
       "ga_ricorsi_definiti",
+      "ga_ricorsi_pendenti",
       "ga_ricorsi_pervenuti_class",
       "ga_ricorsi_tipo_decisione",
       "ga_sentenze",
@@ -56803,10 +58135,15 @@
       "giustizia_civile_indicatori",
       "giustizia_penale_indicatori",
       "intercettazioni",
+      "mediazione_civile",
       "monitoraggio_mensile_civile",
+      "monitoraggio_occ",
       "monitoraggio_pnrr_giustizia",
       "penale_flussi",
-      "spese_giustizia"
+      "quadro_distretto",
+      "spese_giustizia",
+      "ucp_dettaglio",
+      "ucp_numero"
     ],
     "imprese-italia": [
       "camcom_cancellazioni",
@@ -56863,6 +58200,12 @@
       "aci_prime_iscrizioni_autovetture",
       "aci_radiazioni_classe_euro",
       "aci_usato_proprieta"
+    ],
+    "open-ccnl": [
+      "ccnl_applicazione",
+      "ccnl_confluenze",
+      "ccnl_metadata",
+      "ccnl_territorio"
     ],
     "open-coesione": [
       "opencoesione_fasi",
@@ -57232,6 +58575,7 @@
       "ga_pareri",
       "ga_provvedimenti",
       "ga_ricorsi_definiti",
+      "ga_ricorsi_pendenti",
       "ga_ricorsi_pervenuti_class",
       "ga_ricorsi_tipo_decisione",
       "ga_sentenze",
@@ -57239,12 +58583,17 @@
       "giustizia_civile_indicatori",
       "giustizia_penale_indicatori",
       "intercettazioni",
+      "mediazione_civile",
       "monitoraggio_mensile_civile",
+      "monitoraggio_occ",
       "monitoraggio_pnrr_giustizia",
       "openga_ricorsi_appalto",
       "openga_ricorsi_cds",
       "penale_flussi",
-      "spese_giustizia"
+      "quadro_distretto",
+      "spese_giustizia",
+      "ucp_dettaglio",
+      "ucp_numero"
     ],
     "politica": [
       "camera_atti_dibattito",
@@ -57373,6 +58722,10 @@
       "runts"
     ],
     "welfare-lavoro": [
+      "ccnl_applicazione",
+      "ccnl_confluenze",
+      "ccnl_metadata",
+      "ccnl_territorio",
       "convivenze",
       "dipendenti_pubblici",
       "emigrati_destinazione",
@@ -58596,6 +59949,14 @@
       "domain": "giustizia",
       "category": "giustizia"
     },
+    "ga_ricorsi_pendenti": {
+      "name": "Ga Ricorsi Pendenti",
+      "stage": "incubating",
+      "source_id": "openga",
+      "registry_source": "giustizia-amministrativa",
+      "domain": "giustizia",
+      "category": "giustizia"
+    },
     "ga_ricorsi_pervenuti_class": {
       "name": "Ga Ricorsi Pervenuti Class",
       "stage": "incubating",
@@ -58700,8 +60061,24 @@
       "domain": "giustizia",
       "category": "giustizia"
     },
+    "mediazione_civile": {
+      "name": "Mediazione Civile",
+      "stage": "incubating",
+      "source_id": "giustizia_statistiche",
+      "registry_source": "giustizia-statistiche",
+      "domain": "giustizia",
+      "category": "giustizia"
+    },
     "monitoraggio_mensile_civile": {
       "name": "Monitoraggio Mensile Civile",
+      "stage": "incubating",
+      "source_id": "giustizia_statistiche",
+      "registry_source": "giustizia-statistiche",
+      "domain": "giustizia",
+      "category": "giustizia"
+    },
+    "monitoraggio_occ": {
+      "name": "Monitoraggio Occ",
       "stage": "incubating",
       "source_id": "giustizia_statistiche",
       "registry_source": "giustizia-statistiche",
@@ -58724,8 +60101,32 @@
       "domain": "giustizia",
       "category": "giustizia"
     },
+    "quadro_distretto": {
+      "name": "Quadro Distretto",
+      "stage": "incubating",
+      "source_id": "dataciviclab_composite",
+      "registry_source": "giustizia-statistiche",
+      "domain": "giustizia",
+      "category": "giustizia"
+    },
     "spese_giustizia": {
       "name": "Spese Giustizia",
+      "stage": "incubating",
+      "source_id": "giustizia_statistiche",
+      "registry_source": "giustizia-statistiche",
+      "domain": "giustizia",
+      "category": "giustizia"
+    },
+    "ucp_dettaglio": {
+      "name": "Ucp Dettaglio",
+      "stage": "incubating",
+      "source_id": "giustizia_statistiche",
+      "registry_source": "giustizia-statistiche",
+      "domain": "giustizia",
+      "category": "giustizia"
+    },
+    "ucp_numero": {
+      "name": "Ucp Numero",
       "stage": "incubating",
       "source_id": "giustizia_statistiche",
       "registry_source": "giustizia-statistiche",
@@ -59067,6 +60468,38 @@
       "registry_source": "open-aci",
       "domain": "territorio-ambiente",
       "category": "trasporti"
+    },
+    "ccnl_applicazione": {
+      "name": "Ccnl Applicazione",
+      "stage": "incubating",
+      "source_id": "cnel_archivio",
+      "registry_source": "open-ccnl",
+      "domain": "welfare-lavoro",
+      "category": "welfare-lavoro"
+    },
+    "ccnl_confluenze": {
+      "name": "Ccnl Confluenze",
+      "stage": "incubating",
+      "source_id": "cnel_archivio",
+      "registry_source": "open-ccnl",
+      "domain": "welfare-lavoro",
+      "category": "welfare-lavoro"
+    },
+    "ccnl_metadata": {
+      "name": "Ccnl Metadata",
+      "stage": "incubating",
+      "source_id": "cnel_archivio",
+      "registry_source": "open-ccnl",
+      "domain": "welfare-lavoro",
+      "category": "welfare-lavoro"
+    },
+    "ccnl_territorio": {
+      "name": "Ccnl Territorio",
+      "stage": "incubating",
+      "source_id": "cnel_archivio",
+      "registry_source": "open-ccnl",
+      "domain": "welfare-lavoro",
+      "category": "welfare-lavoro"
     },
     "opencoesione_fasi": {
       "name": "Opencoesione Fasi",
