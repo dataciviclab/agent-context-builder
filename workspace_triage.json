@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-10T04:39:11.307577",
+  "generated_at": "2026-10-10T12:00:51.180867",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -46,20 +46,13 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 5,
+  "open_prs": 4,
   "prs": [
     {
       "number": 454,
       "title": "workspace: contratto path/ruoli, Makefile setup, setup.sh deprecato",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/pull/454",
-      "category": "other"
-    },
-    {
-      "number": 864,
-      "title": "chore: remove 7 migrated datasets (open-aci, open-inps, giustizia-statistiche)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/864",
       "category": "other"
     },
     {
@@ -84,7 +77,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 44,
+  "open_issues": 43,
   "issues": [
     {
       "number": 59,
@@ -248,13 +241,6 @@
       "category": "intake"
     },
     {
-      "number": 5,
-      "title": "Intake: monitoraggio OCC \u2014 crisi di sovraindebitamento",
-      "repo": "giustizia-statistiche",
-      "url": "https://github.com/dataciviclab/giustizia-statistiche/issues/5",
-      "category": "intake"
-    },
-    {
       "number": 4,
       "title": "Intake: mediazione civile (flussi semestrali per organismo)",
       "repo": "giustizia-statistiche",
@@ -395,7 +381,7 @@
       "category": "other"
     }
   ],
-  "open_discussions": 174,
+  "open_discussions": 179,
   "discussions": [
     {
       "number": 30,
@@ -1350,6 +1336,41 @@
       "category": "Idee"
     },
     {
+      "number": 26,
+      "title": "Part-time: Funzioni Locali al 15%, Sanit\u00e0 in calo del 27%",
+      "repo": "open-conto-annuale",
+      "url": "https://github.com/dataciviclab/open-conto-annuale/discussions/26",
+      "category": "Analisi"
+    },
+    {
+      "number": 25,
+      "title": "Sanit\u00e0: 56,7 giorni di assenze, 73,2% donne \u2014 il comparto pi\u00f9 assenteista",
+      "repo": "open-conto-annuale",
+      "url": "https://github.com/dataciviclab/open-conto-annuale/discussions/25",
+      "category": "Analisi"
+    },
+    {
+      "number": 24,
+      "title": "Lo stipendio cresce del 2,6% in 13 anni \u2014 se lavori in Istruzione",
+      "repo": "open-conto-annuale",
+      "url": "https://github.com/dataciviclab/open-conto-annuale/discussions/24",
+      "category": "Analisi"
+    },
+    {
+      "number": 23,
+      "title": "Le donne sono il 60,2% della PA \u2014 +5 punti in 13 anni",
+      "repo": "open-conto-annuale",
+      "url": "https://github.com/dataciviclab/open-conto-annuale/discussions/23",
+      "category": "Analisi"
+    },
+    {
+      "number": 22,
+      "title": "Istruzione +241k, Funzioni Locali -98k: la PA cambia forma",
+      "repo": "open-conto-annuale",
+      "url": "https://github.com/dataciviclab/open-conto-annuale/discussions/22",
+      "category": "Analisi"
+    },
+    {
       "number": 10,
       "title": "64 milioni di giorni di malattia al mese: quanto costa l'assenza nella PA?",
       "repo": "open-noipa",
@@ -1966,11 +1987,11 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "generated_at": "2026-10-09T10:27:38.327640+00:00",
-    "probe_date": "2026-10-09",
+    "generated_at": "2026-10-10T09:45:39.577691+00:00",
+    "probe_date": "2026-10-10",
     "sources_total": 36,
-    "green": 35,
-    "yellow": 1,
+    "green": 34,
+    "yellow": 2,
     "red": 0,
     "persistent_red": 0,
     "sources": [
@@ -1992,10 +2013,10 @@
       },
       {
         "id": "inps",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "ckan",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
@@ -2265,6 +2286,14 @@
     ],
     "unhealthy": [
       {
+        "id": "inps",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "red_streak": 0
+      },
+      {
         "id": "opencivitas",
         "status": "YELLOW",
         "protocol": "html",
@@ -2285,9 +2314,9 @@
     "available": true,
     "generated_at": "2026-10-03",
     "summary": {
-      "total": 44,
+      "total": 37,
       "by_status": {
-        "ok": 44
+        "ok": 37
       }
     },
     "actionable": []
@@ -2704,21 +2733,14 @@
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
       "updated_at": "2026-10-03",
-      "datasets": 53,
-      "marts": 71,
-      "signals": 44,
+      "datasets": 46,
+      "marts": 62,
+      "signals": 37,
       "codelists": 0,
       "entities": 13,
-      "gcs": 53,
+      "gcs": 46,
       "reason": "",
       "signals_detail": [
-        {
-          "id": "aci_prime_iscrizioni_autovetture",
-          "source_id": "aci",
-          "status": "ok",
-          "label": "aci_prime_iscrizioni_autovetture",
-          "detail": "anno 2024 \u2014 mart: si"
-        },
         {
           "id": "aifa_spesa_consumo",
           "source_id": "aifa",
@@ -2783,20 +2805,6 @@
           "detail": "anno 2026 \u2014 mart: si"
         },
         {
-          "id": "civile_flussi",
-          "source_id": "giustizia_statistiche",
-          "status": "ok",
-          "label": "civile_flussi",
-          "detail": "anno 2025 \u2014 mart: si",
-          "run": {
-            "run_id": "20260731T114731Z_3dec8a0d",
-            "year": 2025,
-            "status": "SUCCESS",
-            "started_at": "2026-07-31T11:47:31.726712+00:00",
-            "finished_at": "2026-07-31T11:48:42.007615+00:00"
-          }
-        },
-        {
           "id": "dipendenti_pubblici",
           "source_id": "openbdap",
           "status": "ok",
@@ -2832,53 +2840,11 @@
           }
         },
         {
-          "id": "giustizia_penale_indicatori",
-          "source_id": "giustizia_statistiche",
-          "status": "ok",
-          "label": "giustizia_penale_indicatori",
-          "detail": "anno 2025 \u2014 mart: si",
-          "run": {
-            "run_id": "20260731T114716Z_f5866314",
-            "year": 2025,
-            "status": "SUCCESS",
-            "started_at": "2026-07-31T11:47:16.516103+00:00",
-            "finished_at": "2026-07-31T11:47:21.231718+00:00"
-          }
-        },
-        {
           "id": "inps_pensioni_trimestrale",
           "source_id": "inps",
           "status": "ok",
           "label": "inps_pensioni_trimestrale",
           "detail": "anno 2024 \u2014 mart: si"
-        },
-        {
-          "id": "inps_rdc_pdc",
-          "source_id": "inps_open_data",
-          "status": "ok",
-          "label": "inps_rdc_pdc",
-          "detail": "anno 2020 \u2014 mart: si",
-          "run": {
-            "run_id": "20260802T144644Z_466a9d69",
-            "year": 2020,
-            "status": "SUCCESS",
-            "started_at": "2026-08-02T14:46:44.923044+00:00",
-            "finished_at": "2026-08-02T14:46:47.376092+00:00"
-          }
-        },
-        {
-          "id": "intercettazioni",
-          "source_id": "giustizia_statistiche",
-          "status": "ok",
-          "label": "intercettazioni",
-          "detail": "anno 2025 \u2014 mart: si",
-          "run": {
-            "run_id": "20260731T114851Z_0639a702",
-            "year": 2025,
-            "status": "SUCCESS",
-            "started_at": "2026-07-31T11:48:51.291161+00:00",
-            "finished_at": "2026-07-31T11:48:53.648463+00:00"
-          }
         },
         {
           "id": "ispra_emissioni_ghg",
@@ -2979,39 +2945,11 @@
           "detail": "anno 2020 \u2014 mart: si"
         },
         {
-          "id": "monitoraggio_mensile_civile",
-          "source_id": "giustizia_statistiche",
-          "status": "ok",
-          "label": "monitoraggio_mensile_civile",
-          "detail": "anno 2025 \u2014 mart: si",
-          "run": {
-            "run_id": "20260731T115219Z_a7c39d31",
-            "year": 2025,
-            "status": "SUCCESS",
-            "started_at": "2026-07-31T11:52:19.225482+00:00",
-            "finished_at": "2026-07-31T11:53:38.894285+00:00"
-          }
-        },
-        {
           "id": "mortalita_istat_evitabile",
           "source_id": "istat_situas",
           "status": "ok",
           "label": "mortalita_istat_evitabile",
           "detail": "anno 2022 \u2014 mart: si"
-        },
-        {
-          "id": "penale_flussi",
-          "source_id": "giustizia_statistiche",
-          "status": "ok",
-          "label": "penale_flussi",
-          "detail": "anno 2025 \u2014 mart: si",
-          "run": {
-            "run_id": "20260731T115341Z_c860293c",
-            "year": 2025,
-            "status": "SUCCESS",
-            "started_at": "2026-07-31T11:53:41.149534+00:00",
-            "finished_at": "2026-07-31T11:53:49.224335+00:00"
-          }
         },
         {
           "id": "pensioni_pa_dag",

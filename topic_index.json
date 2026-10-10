@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-10T04:39:11.307577",
+  "generated_at": "2026-10-10T12:00:51.180867",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -176,8 +176,8 @@
       "url": "https://github.com/dataciviclab/giustizia-statistiche",
       "role": "dati",
       "domain": "giustizia",
-      "n_datasets": 16,
-      "n_published": 4,
+      "n_datasets": 11,
+      "n_published": 0,
       "sources": [
         "giustizia_statistiche"
       ]
@@ -265,8 +265,8 @@
       "url": "https://github.com/dataciviclab/open-aci",
       "role": "dati",
       "domain": "territorio-ambiente",
-      "n_datasets": 6,
-      "n_published": 1,
+      "n_datasets": 5,
+      "n_published": 0,
       "sources": [
         "aci"
       ]
@@ -309,13 +309,12 @@
       "description": "17 dataset INPS aperti: pensioni, mercato del lavoro, welfare (NASpI, RdC/PdC, DIS-COLL) in parquet, con compose e dashboard.",
       "url": "https://github.com/dataciviclab/open-inps",
       "role": "dati",
-      "domain": "welfare-lavoro",
-      "n_datasets": 18,
-      "n_published": 1,
+      "domain": null,
+      "n_datasets": 17,
+      "n_published": 0,
       "sources": [
         "dataciviclab_composite",
-        "inps",
-        "inps_open_data"
+        "inps"
       ]
     },
     "open-ispra": {
@@ -11040,464 +11039,6 @@
         ]
       }
     ],
-    "aci": [
-      {
-        "slug": "aci_prime_iscrizioni_autovetture",
-        "url_slug": "aci-prime-iscrizioni-autovetture",
-        "name": "Aci Prime Iscrizioni Autovetture",
-        "description": "Prime iscrizioni di autovetture nuove in Italia per comune e tipo alimentazione (2017-2024). Fonte: ACI - Automobile Club Italia.",
-        "source": "ACI \u2014 Automobile Club Italia (lod.aci.it)",
-        "source_id": "aci",
-        "period": {
-          "start": 2017,
-          "end": 2024
-        },
-        "stage": "published",
-        "tags": [
-          "trasporti",
-          "aci",
-          "prime",
-          "iscrizioni",
-          "autovetture"
-        ],
-        "category": "trasporti",
-        "registry_source": "open-aci",
-        "clean_rows": 37678,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/aci_prime_iscrizioni_autovetture/2024/aci_prime_iscrizioni_autovetture_2024_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": "Anno di immatricolazione"
-          },
-          {
-            "name": "comune",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "municipality_name",
-            "description": "Comune di immatricolazione"
-          },
-          {
-            "name": "provincia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "province_code",
-            "description": "Provincia del comune"
-          },
-          {
-            "name": "alimentazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Tipo alimentazione (Benzina, Gasolio, Elettrica, Ibrido, ...)"
-          },
-          {
-            "name": "prime_iscrizioni",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero di autovetture nuove immatricolate"
-          }
-        ]
-      },
-      {
-        "slug": "aci_autotrend_mensile",
-        "url_slug": "aci-autotrend-mensile",
-        "name": "Aci Autotrend Mensile",
-        "description": "Auto-Trend ACI: prime iscrizioni, usato netto e radiazioni per mese e ufficio PRA (provincia), 2019-2025. Fonte aci.gov.it open data (CSV + ODS).",
-        "source": "",
-        "source_id": "aci",
-        "period": {
-          "start": 2019,
-          "end": 2025
-        },
-        "stage": "incubating",
-        "tags": [
-          "trasporti",
-          "aci",
-          "autotrend",
-          "mercato-auto",
-          "mensile",
-          "provincia",
-          "parco-auto"
-        ],
-        "category": "trasporti",
-        "registry_source": "open-aci",
-        "clean_rows": 3852,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/open-aci/aci_autotrend_mensile/*/aci_autotrend_mensile_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "mese",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "month",
-            "description": ""
-          },
-          {
-            "name": "mese_num",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "ufficio_pra",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "formalita",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "quantita",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "aci_autotrend_mensile__mart_anno_formalita",
-          "aci_autotrend_mensile__mart_anno_mese_formalita",
-          "aci_autotrend_mensile__mart_anno_provincia_formalita",
-          "aci_autotrend_mensile__mart_trend_mensile"
-        ]
-      },
-      {
-        "slug": "aci_parco_veicolare",
-        "url_slug": "aci-parco-veicolare",
-        "name": "Aci Parco Veicolare",
-        "description": "Autoritratto ACI \u2014 parco autovetture circolanti per alimentazione (stock al 31/12), 2024-2025. Fonte aci.gov.it open data.",
-        "source": "",
-        "source_id": "aci",
-        "period": {
-          "start": 2024,
-          "end": 2025
-        },
-        "stage": "incubating",
-        "tags": [
-          "trasporti",
-          "aci",
-          "autoritratto",
-          "parco-veicolare",
-          "alimentazione",
-          "stock",
-          "elettrica"
-        ],
-        "category": "trasporti",
-        "registry_source": "open-aci",
-        "clean_rows": 14,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/open-aci/aci_parco_veicolare/*/aci_parco_veicolare_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "anno_riferimento",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "alimentazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "veicoli",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "aci_parco_veicolare__mart_av_alimentazione",
-          "aci_parco_veicolare__mart_quota_alimentazione"
-        ]
-      },
-      {
-        "slug": "aci_prime_iscrizioni_autovetture",
-        "url_slug": "aci-prime-iscrizioni-autovetture",
-        "name": "Aci Prime Iscrizioni Autovetture",
-        "description": "Prime iscrizioni di autovetture nuove in Italia per comune e tipo di alimentazione (2017-2025). Fonte ACI via dati.gov.it / lod.aci.it.",
-        "source": "",
-        "source_id": "aci",
-        "period": {
-          "start": 2017,
-          "end": 2025
-        },
-        "stage": "incubating",
-        "tags": [
-          "trasporti",
-          "aci",
-          "prime-iscrizioni",
-          "autovetture",
-          "alimentazione",
-          "parco-auto"
-        ],
-        "category": "trasporti",
-        "registry_source": "open-aci",
-        "clean_rows": 37678,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/open-aci/aci_prime_iscrizioni_autovetture/*/aci_prime_iscrizioni_autovetture_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "comune",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "municipality_name",
-            "description": ""
-          },
-          {
-            "name": "provincia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "province_code",
-            "description": ""
-          },
-          {
-            "name": "codice_istat",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "municipality_code",
-            "description": ""
-          },
-          {
-            "name": "regione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "region_code",
-            "description": ""
-          },
-          {
-            "name": "popolazione_residente",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "alimentazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "prime_iscrizioni",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "aci_prime_iscrizioni_autovetture__mart_anno_alimentazione",
-          "aci_prime_iscrizioni_autovetture__mart_regione_alimentazione",
-          "aci_prime_iscrizioni_autovetture__mart_quota_alimentazione"
-        ]
-      },
-      {
-        "slug": "aci_radiazioni_classe_euro",
-        "url_slug": "aci-radiazioni-classe-euro",
-        "name": "Aci Radiazioni Classe Euro",
-        "description": "Radiazioni per demolizione di autovetture per comune e classe euro (2017-2025). Fonte ACI via dati.gov.it / lod.aci.it.",
-        "source": "",
-        "source_id": "aci",
-        "period": {
-          "start": 2017,
-          "end": 2025
-        },
-        "stage": "incubating",
-        "tags": [
-          "trasporti",
-          "aci",
-          "radiazioni",
-          "demolizione",
-          "classe-euro",
-          "parco-auto"
-        ],
-        "category": "trasporti",
-        "registry_source": "open-aci",
-        "clean_rows": 43286,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/open-aci/aci_radiazioni_classe_euro/*/aci_radiazioni_classe_euro_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "comune",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "municipality_name",
-            "description": ""
-          },
-          {
-            "name": "provincia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "province_code",
-            "description": ""
-          },
-          {
-            "name": "codice_istat",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "municipality_code",
-            "description": ""
-          },
-          {
-            "name": "regione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "region_code",
-            "description": ""
-          },
-          {
-            "name": "popolazione_residente",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "classe_euro",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "radiazioni",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "aci_radiazioni_classe_euro__mart_anno_classe_euro",
-          "aci_radiazioni_classe_euro__mart_regione_classe_euro",
-          "aci_radiazioni_classe_euro__mart_quota_classe_euro"
-        ]
-      },
-      {
-        "slug": "aci_usato_proprieta",
-        "url_slug": "aci-usato-proprieta",
-        "name": "Aci Usato Proprieta",
-        "description": "Autoritratto ACI \u2014 passaggi di propriet\u00e0 (mercato usato) per categoria veicolo, con split minivolture, 2024-2025. Fonte aci.gov.it open data.",
-        "source": "",
-        "source_id": "aci",
-        "period": {
-          "start": 2024,
-          "end": 2025
-        },
-        "stage": "incubating",
-        "tags": [
-          "trasporti",
-          "aci",
-          "autoritratto",
-          "usato",
-          "passaggi-proprieta",
-          "minivolture"
-        ],
-        "category": "trasporti",
-        "registry_source": "open-aci",
-        "clean_rows": 10,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/open-aci/aci_usato_proprieta/*/aci_usato_proprieta_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "anno_riferimento",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "categoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "minivolture",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "non_minivolture",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "totale",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "aci_usato_proprieta__mart_usato_categoria",
-          "aci_usato_proprieta__mart_usato_sintesi"
-        ]
-      }
-    ],
     "aifa": [
       {
         "slug": "aifa_spesa_consumo",
@@ -12423,1483 +11964,6 @@
         ],
         "mart_refs": [
           "sai_strutture_italia__strutture_regione"
-        ]
-      }
-    ],
-    "giustizia_statistiche": [
-      {
-        "slug": "civile_flussi",
-        "url_slug": "civile-flussi",
-        "name": "Flussi Civile \u2014 Giustizia civile italiana",
-        "description": "Flussi della giustizia civile italiana: sopravvenuti, definiti e pendenti per anno, ufficio, distretto, materia. Serie storica 2014-2025 (file snapshot 2025).",
-        "source": "https://datiestatistiche.giustizia.it/ (Ministero della Giustizia \u2014 Direzione Generale di Statistica)",
-        "source_id": "giustizia_statistiche",
-        "period": {
-          "start": 2014,
-          "end": 2025
-        },
-        "stage": "published",
-        "tags": [
-          "giustizia",
-          "statistiche-giudiziarie"
-        ],
-        "category": "giustizia",
-        "registry_source": "giustizia-statistiche",
-        "clean_rows": 123203,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/civile_flussi/2025/civile_flussi_2025_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": "Anno giudiziario di riferimento"
-          },
-          {
-            "name": "fonte",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Fonte del dato (DGM/ISTAT/altro)"
-          },
-          {
-            "name": "tipo_ufficio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Tipologia di ufficio giudiziario (Tribunale, Procura, ecc.)"
-          },
-          {
-            "name": "distretto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Distretto giudiziario di appartenenza"
-          },
-          {
-            "name": "sede",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Sede centrale o distaccata del tribunale"
-          },
-          {
-            "name": "macromateria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Macro-categoria della materia controversa"
-          },
-          {
-            "name": "materia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Materia specifica della controversia"
-          },
-          {
-            "name": "dettaglio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Dettaglio aggiuntivo della materia"
-          },
-          {
-            "name": "sopravvenuti",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero di cause sopravvenute nel periodo"
-          },
-          {
-            "name": "definiti_totale",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero di cause definite (totale, tutte le fasi)"
-          },
-          {
-            "name": "definiti_con_sentenza",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero di cause definite con sentenza"
-          },
-          {
-            "name": "pendenti_finali",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero di cause pendenti a fine periodo"
-          }
-        ],
-        "mart_refs": [
-          "civile_flussi__mart_summary"
-        ]
-      },
-      {
-        "slug": "giustizia_penale_indicatori",
-        "url_slug": "giustizia-penale-indicatori",
-        "name": "Giustizia Penale \u2014 Clearance Rate e Disposition Time",
-        "description": "Indicatori di efficienza della giustizia penale: clearance rate (casi definiti/casi sopravvenuti) e disposition time (durata media in giorni) per distretto e tipo ufficio. Sheet Tribunali, anni 2014-2024. Fonte: Ministero della Giustizia \u2014 DG Statistica.",
-        "source": "Ministero della Giustizia \u2014 Direzione Generale di Statistica e Analisi Organizzativa",
-        "source_id": "giustizia_statistiche",
-        "period": {
-          "start": 2014,
-          "end": 2025
-        },
-        "stage": "incubating",
-        "tags": [
-          "giustizia",
-          "statistiche-giudiziarie"
-        ],
-        "category": "giustizia",
-        "registry_source": "giustizia-statistiche",
-        "clean_rows": 10478,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/giustizia_penale_indicatori/2025/giustizia_penale_indicatori_2025_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": "Anno di riferimento"
-          },
-          {
-            "name": "tipo_ufficio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Tipo di ufficio giudiziario (es. Tribunale Ordinario, Tribunale per i Minorenni)"
-          },
-          {
-            "name": "distretto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Distretto di Corte d'Appello"
-          },
-          {
-            "name": "sede",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Sede dell'ufficio giudiziario"
-          },
-          {
-            "name": "sezione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Sezione dell'ufficio (es. Penale, GIP, Esecuzioni)"
-          },
-          {
-            "name": "clearance_rate",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Clearance rate: rapporto tra procedimenti definiti e sopravvenuti"
-          },
-          {
-            "name": "disposition_time_gg",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Durata media dei procedimenti in giorni"
-          }
-        ],
-        "mart_refs": [
-          "giustizia_penale_indicatori__giustizia_penale_indicatori"
-        ]
-      },
-      {
-        "slug": "intercettazioni",
-        "url_slug": "intercettazioni",
-        "name": "Intercettazioni",
-        "description": "Bersagli intercettazioni per tipologia (telefoniche, ambientali, informatiche, trojan), distretto e tipo ufficio. Fonte: Ministero della Giustizia \u2014 DG Statistica.",
-        "source": "Ministero della Giustizia \u2014 DG Statistica (datiestatistiche.giustizia.it)",
-        "source_id": "giustizia_statistiche",
-        "period": {
-          "start": 2014,
-          "end": 2025
-        },
-        "stage": "published",
-        "tags": [
-          "giustizia",
-          "statistiche-giudiziarie"
-        ],
-        "category": "giustizia",
-        "registry_source": "giustizia-statistiche",
-        "clean_rows": 3952,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/intercettazioni/2025/intercettazioni_2025_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": "Anno di riferimento"
-          },
-          {
-            "name": "tipo_ufficio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Tipo di procura (ordinaria, minorenni, generale)"
-          },
-          {
-            "name": "distretto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Distretto di Corte d'Appello"
-          },
-          {
-            "name": "tipologia_intercettazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Tipologia di intercettazione (Telefoniche, Ambientali, Informatiche, Trojan)"
-          },
-          {
-            "name": "n_bersagli",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero di bersagli intercettati"
-          }
-        ],
-        "mart_refs": [
-          "intercettazioni__intercettazioni"
-        ]
-      },
-      {
-        "slug": "monitoraggio_mensile_civile",
-        "url_slug": "monitoraggio-mensile-civile",
-        "name": "Monitoraggio Mensile Civile",
-        "description": "Iscritti e definiti civili per mese, sede e materia. Monitoraggio mensile dei tribunali. Fonte: Ministero della Giustizia \u2014 DG Statistica.",
-        "source": "Ministero della Giustizia \u2014 DG Statistica (datiestatistiche.giustizia.it)",
-        "source_id": "giustizia_statistiche",
-        "period": {
-          "start": 2019,
-          "end": 2025
-        },
-        "stage": "published",
-        "tags": [
-          "giustizia",
-          "statistiche-giudiziarie"
-        ],
-        "category": "giustizia",
-        "registry_source": "giustizia-statistiche",
-        "clean_rows": 144490,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/monitoraggio_mensile_civile/2025/monitoraggio_mensile_civile_2025_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": "Anno di riferimento"
-          },
-          {
-            "name": "mese",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "month",
-            "description": "Mese (01-12)"
-          },
-          {
-            "name": "fonte",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Sistema fonte (SICID/SIECIC)"
-          },
-          {
-            "name": "tipo_ufficio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Tipo di ufficio (Tribunale)"
-          },
-          {
-            "name": "distretto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Distretto di Corte d'Appello"
-          },
-          {
-            "name": "sede",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Sede dell'ufficio giudiziario"
-          },
-          {
-            "name": "materia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Materia del contendere"
-          },
-          {
-            "name": "iscritti",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Procedimenti iscritti (nuovi)"
-          },
-          {
-            "name": "definiti",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Procedimenti definiti (chiusi)"
-          },
-          {
-            "name": "area",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Area geografica (Nord-ovest, Nord-est, Centro, Sud, Isole)"
-          },
-          {
-            "name": "flag_dato",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Tipologia dato (Consolidati/Provvisori)"
-          }
-        ],
-        "mart_refs": [
-          "monitoraggio_mensile_civile__monitoraggio_mensile_civile"
-        ]
-      },
-      {
-        "slug": "penale_flussi",
-        "url_slug": "penale-flussi",
-        "name": "Penale Flussi",
-        "description": "Flussi dei procedimenti penali: sopravvenuti, definiti e pendenti per ufficio giudiziario. Fonte: Ministero della Giustizia \u2014 DG Statistica.",
-        "source": "Ministero della Giustizia \u2014 DG Statistica (datiestatistiche.giustizia.it)",
-        "source_id": "giustizia_statistiche",
-        "period": {
-          "start": 2014,
-          "end": 2025
-        },
-        "stage": "published",
-        "tags": [
-          "giustizia",
-          "statistiche-giudiziarie"
-        ],
-        "category": "giustizia",
-        "registry_source": "giustizia-statistiche",
-        "clean_rows": 17652,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/penale_flussi/2025/penale_flussi_2025_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": "Anno di riferimento"
-          },
-          {
-            "name": "tipo_ufficio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Tipo di ufficio giudiziario"
-          },
-          {
-            "name": "sezione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Sezione/attivit\u00e0 dell'ufficio"
-          },
-          {
-            "name": "distretto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Distretto di Corte d'Appello"
-          },
-          {
-            "name": "sede",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Circondario/sede dell'ufficio"
-          },
-          {
-            "name": "sopravvenuti",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Procedimenti sopravvenuti (iscritti)"
-          },
-          {
-            "name": "definiti_totale",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Procedimenti definiti (chiusi)"
-          },
-          {
-            "name": "pendenti_finali",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Procedimenti pendenti a fine periodo"
-          }
-        ],
-        "mart_refs": [
-          "penale_flussi__penale_flussi"
-        ]
-      },
-      {
-        "slug": "civile_flussi",
-        "url_slug": "civile-flussi",
-        "name": "Civile Flussi",
-        "description": "",
-        "source": "",
-        "source_id": "giustizia_statistiche",
-        "period": {
-          "start": 2014,
-          "end": 2025
-        },
-        "stage": "incubating",
-        "tags": [
-          "giustizia",
-          "statistiche-giudiziarie"
-        ],
-        "category": "giustizia",
-        "registry_source": "giustizia-statistiche",
-        "clean_rows": 123203,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/giustizia-statistiche/civile_flussi/2025/civile_flussi_2025_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "fonte",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "tipo_ufficio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "distretto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "sede",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "macromateria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "materia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "dettaglio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "sopravvenuti",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "definiti_totale",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "definiti_con_sentenza",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "pendenti_finali",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "civile_flussi__mart_summary"
-        ]
-      },
-      {
-        "slug": "durata_civile",
-        "url_slug": "durata-civile",
-        "name": "Durata Civile",
-        "description": "",
-        "source": "",
-        "source_id": "giustizia_statistiche",
-        "period": {
-          "start": 2014,
-          "end": 2025
-        },
-        "stage": "incubating",
-        "tags": [
-          "giustizia",
-          "civile",
-          "durata",
-          "siecic",
-          "sicid",
-          "statistiche-giudiziarie"
-        ],
-        "category": "giustizia",
-        "registry_source": "giustizia-statistiche",
-        "clean_rows": 21840,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/giustizia-statistiche/durata_civile/2025/durata_civile_2025_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "registro",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "ripartizione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "distretto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "tipo_ufficio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "sede",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "livello_aggregazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "materia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "definiti",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "durata_media_gg",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "durata_civile__durata_civile",
-          "durata_civile__mart_nazionale_trend"
-        ]
-      },
-      {
-        "slug": "durata_penale_classi",
-        "url_slug": "durata-penale-classi",
-        "name": "Durata Penale Classi",
-        "description": "",
-        "source": "",
-        "source_id": "giustizia_statistiche",
-        "period": {
-          "start": 2014,
-          "end": 2025
-        },
-        "stage": "incubating",
-        "tags": [
-          "giustizia",
-          "penale",
-          "durata",
-          "classi-tempo",
-          "statistiche-giudiziarie"
-        ],
-        "category": "giustizia",
-        "registry_source": "giustizia-statistiche",
-        "clean_rows": 45600,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/giustizia-statistiche/durata_penale_classi/2025/durata_penale_classi_2025_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "ufficio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "distretto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "sede",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "sezione_ufficio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "classe_tempo",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "definiti",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "durata_penale_classi__durata_penale_classi",
-          "durata_penale_classi__mart_classi_sintesi"
-        ]
-      },
-      {
-        "slug": "durata_penale_medie",
-        "url_slug": "durata-penale-medie",
-        "name": "Durata Penale Medie",
-        "description": "",
-        "source": "",
-        "source_id": "giustizia_statistiche",
-        "period": {
-          "start": 2014,
-          "end": 2025
-        },
-        "stage": "incubating",
-        "tags": [
-          "giustizia",
-          "penale",
-          "durata",
-          "statistiche-giudiziarie"
-        ],
-        "category": "giustizia",
-        "registry_source": "giustizia-statistiche",
-        "clean_rows": 16697,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/giustizia-statistiche/durata_penale_medie/2025/durata_penale_medie_2025_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "dettaglio_territoriale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "ufficio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "distretto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "sede",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "sezione_ufficio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "durata_media_gg",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "durata_penale_medie__durata_penale_medie"
-        ]
-      },
-      {
-        "slug": "giustizia_civile_indicatori",
-        "url_slug": "giustizia-civile-indicatori",
-        "name": "Giustizia Civile Indicatori",
-        "description": "",
-        "source": "",
-        "source_id": "giustizia_statistiche",
-        "period": {
-          "start": 2014,
-          "end": 2025
-        },
-        "stage": "incubating",
-        "tags": [
-          "giustizia",
-          "civile",
-          "clearance-rate",
-          "disposition-time",
-          "statistiche-giudiziarie"
-        ],
-        "category": "giustizia",
-        "registry_source": "giustizia-statistiche",
-        "clean_rows": 76799,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/giustizia-statistiche/giustizia_civile_indicatori/2025/giustizia_civile_indicatori_2025_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "fonte",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "tipo_ufficio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "distretto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "sede",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "macromateria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "materia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "clearance_rate",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "disposition_time_gg",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "giustizia_civile_indicatori__giustizia_civile_indicatori",
-          "giustizia_civile_indicatori__mart_civile_trend"
-        ]
-      },
-      {
-        "slug": "giustizia_penale_indicatori",
-        "url_slug": "giustizia-penale-indicatori",
-        "name": "Giustizia Penale Indicatori",
-        "description": "",
-        "source": "",
-        "source_id": "giustizia_statistiche",
-        "period": {
-          "start": 2014,
-          "end": 2025
-        },
-        "stage": "incubating",
-        "tags": [
-          "giustizia",
-          "statistiche-giudiziarie"
-        ],
-        "category": "giustizia",
-        "registry_source": "giustizia-statistiche",
-        "clean_rows": 10478,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/giustizia-statistiche/giustizia_penale_indicatori/2025/giustizia_penale_indicatori_2025_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "tipo_ufficio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "distretto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "sede",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "sezione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "clearance_rate",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "disposition_time_gg",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "giustizia_penale_indicatori__giustizia_penale_indicatori",
-          "giustizia_penale_indicatori__mart_penale_trend"
-        ]
-      },
-      {
-        "slug": "intercettazioni",
-        "url_slug": "intercettazioni",
-        "name": "Intercettazioni",
-        "description": "",
-        "source": "",
-        "source_id": "giustizia_statistiche",
-        "period": {
-          "start": 2014,
-          "end": 2025
-        },
-        "stage": "incubating",
-        "tags": [
-          "giustizia",
-          "statistiche-giudiziarie"
-        ],
-        "category": "giustizia",
-        "registry_source": "giustizia-statistiche",
-        "clean_rows": 3952,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/giustizia-statistiche/intercettazioni/2025/intercettazioni_2025_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "tipo_ufficio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "distretto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "tipologia_intercettazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "n_bersagli",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "intercettazioni__intercettazioni"
-        ]
-      },
-      {
-        "slug": "monitoraggio_mensile_civile",
-        "url_slug": "monitoraggio-mensile-civile",
-        "name": "Monitoraggio Mensile Civile",
-        "description": "",
-        "source": "",
-        "source_id": "giustizia_statistiche",
-        "period": {
-          "start": 2019,
-          "end": 2025
-        },
-        "stage": "incubating",
-        "tags": [
-          "giustizia",
-          "statistiche-giudiziarie"
-        ],
-        "category": "giustizia",
-        "registry_source": "giustizia-statistiche",
-        "clean_rows": 144490,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/giustizia-statistiche/monitoraggio_mensile_civile/2025/monitoraggio_mensile_civile_2025_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "mese",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "month",
-            "description": ""
-          },
-          {
-            "name": "fonte",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "tipo_ufficio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "distretto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "sede",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "materia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "iscritti",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "definiti",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "area",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "flag_dato",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "monitoraggio_mensile_civile__monitoraggio_mensile_civile"
-        ]
-      },
-      {
-        "slug": "monitoraggio_pnrr_giustizia",
-        "url_slug": "monitoraggio-pnrr-giustizia",
-        "name": "Monitoraggio Pnrr Giustizia",
-        "description": "",
-        "source": "",
-        "source_id": "giustizia_statistiche",
-        "period": {
-          "start": 2019,
-          "end": 2026
-        },
-        "stage": "incubating",
-        "tags": [
-          "giustizia",
-          "pnrr",
-          "pendenti",
-          "arretrato",
-          "statistiche-giudiziarie"
-        ],
-        "category": "giustizia",
-        "registry_source": "giustizia-statistiche",
-        "clean_rows": 2720,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/giustizia-statistiche/monitoraggio_pnrr_giustizia/2026/monitoraggio_pnrr_giustizia_2026_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "materia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "periodo",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "month",
-            "description": ""
-          },
-          {
-            "name": "tipo_ufficio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "ripartizione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "distretto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "sede",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "definiti",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "pendenti_fine_periodo",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "pendenti_20191231",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "arretrato",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "baseline_obiettivo_2024",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "pendenti_obiettivo_2024",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "baseline_obiettivo_2026",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "pendenti_obiettivo_2026",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "monitoraggio_pnrr_giustizia__monitoraggio_pnrr_giustizia",
-          "monitoraggio_pnrr_giustizia__mart_nazionale_trend"
-        ]
-      },
-      {
-        "slug": "penale_flussi",
-        "url_slug": "penale-flussi",
-        "name": "Penale Flussi",
-        "description": "",
-        "source": "",
-        "source_id": "giustizia_statistiche",
-        "period": {
-          "start": 2014,
-          "end": 2025
-        },
-        "stage": "incubating",
-        "tags": [
-          "giustizia",
-          "statistiche-giudiziarie"
-        ],
-        "category": "giustizia",
-        "registry_source": "giustizia-statistiche",
-        "clean_rows": 17652,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/giustizia-statistiche/penale_flussi/2025/penale_flussi_2025_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "tipo_ufficio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "sezione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "distretto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "sede",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "sopravvenuti",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "definiti_totale",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "pendenti_finali",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "penale_flussi__penale_flussi"
-        ]
-      },
-      {
-        "slug": "spese_giustizia",
-        "url_slug": "spese-giustizia",
-        "name": "Spese Giustizia",
-        "description": "",
-        "source": "",
-        "source_id": "giustizia_statistiche",
-        "period": {
-          "start": 2014,
-          "end": 2025
-        },
-        "stage": "incubating",
-        "tags": [
-          "giustizia",
-          "spese-giustizia",
-          "statistiche-giudiziarie"
-        ],
-        "category": "giustizia",
-        "registry_source": "giustizia-statistiche",
-        "clean_rows": 6594,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/giustizia-statistiche/spese_giustizia/2025/spese_giustizia_2025_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "distretto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "tipo_spesa",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "dettaglio_tipo_spesa",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "importo",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "spese_giustizia__spese_giustizia",
-          "spese_giustizia__mart_nazionale_trend"
         ]
       }
     ],
@@ -17052,203 +15116,6 @@
         "mart_refs": [
           "inps_retribuzioni__mart_retribuzioni_regione",
           "inps_retribuzioni__mart_retribuzioni_eta"
-        ]
-      }
-    ],
-    "inps_open_data": [
-      {
-        "slug": "inps_rdc_pdc",
-        "url_slug": "inps-rdc-pdc",
-        "name": "INPS RdC/PdC \u2014 Nuclei percettori per comune (2020)",
-        "description": "Nuclei familiari percettori di Reddito di Cittadinanza (RdC) e Pensione di Cittadinanza (PdC) per comune ISTAT. Snapshot luglio 2020. Include takeup rate, composizione familiare, genere e importo medio.",
-        "source": "INPS \u2014 Open Data (opendata.inps.it)",
-        "source_id": "inps_open_data",
-        "period": {
-          "start": 2020,
-          "end": 2020
-        },
-        "stage": "published",
-        "tags": [
-          "welfare-lavoro",
-          "inps",
-          "rdc",
-          "pdc"
-        ],
-        "category": "welfare-lavoro",
-        "registry_source": "open-inps",
-        "clean_rows": 311,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/inps_rdc_pdc/2020/inps_rdc_pdc_2020_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": "Anno di riferimento (2020)"
-          },
-          {
-            "name": "codice_catastale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "cadastral_code",
-            "description": "Codice catastale Belfiore del comune (dal CSV INPS, es. A001)"
-          },
-          {
-            "name": "codice_istat",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "municipality_code",
-            "description": "Codice ISTAT del comune (6 cifre)"
-          },
-          {
-            "name": "comune",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "municipality_name",
-            "description": "Denominazione del comune"
-          },
-          {
-            "name": "regione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "region_code",
-            "description": "Nome della regione di appartenenza (dal support istat_elenco_comuni)"
-          },
-          {
-            "name": "sigla_provincia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "province_code",
-            "description": "Sigla automobilistica della provincia (dal support istat_elenco_comuni)"
-          },
-          {
-            "name": "codice_regione",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "region_code",
-            "description": "Codice ISTAT della regione"
-          },
-          {
-            "name": "codice_provincia",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "province_code",
-            "description": "Codice ISTAT della provincia"
-          },
-          {
-            "name": "superficie_km2",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Superficie territoriale del comune in km\u00b2 (dal support istat_elenco_comuni)"
-          },
-          {
-            "name": "nuclei_rdc",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Nuclei familiari percettori di Reddito di Cittadinanza (luglio 2020)"
-          },
-          {
-            "name": "nuclei_pdc",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Nuclei familiari percettori di Pensione di Cittadinanza (luglio 2020)"
-          },
-          {
-            "name": "individui_coinvolti",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Individui coinvolti nei nuclei RdC/PdC"
-          },
-          {
-            "name": "componenti_per_famiglia",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero medio di componenti per nucleo familiare"
-          },
-          {
-            "name": "donne_per_famiglia",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero medio di donne per nucleo familiare"
-          },
-          {
-            "name": "minori_18_per_famiglia",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero medio di minori sotto i 18 anni per nucleo"
-          },
-          {
-            "name": "anziani_75_per_famiglia",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero medio di anziani sopra i 75 anni per nucleo"
-          },
-          {
-            "name": "importo_medio_mensile",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Importo medio mensile per nucleo (\u20ac)"
-          },
-          {
-            "name": "dev_standard_importo",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Deviazione standard dell'importo medio mensile"
-          },
-          {
-            "name": "uomini_residenti",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Uomini residenti al 1-1-2020"
-          },
-          {
-            "name": "donne_residenti",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Donne residenti al 1-1-2020"
-          },
-          {
-            "name": "popolazione_residente",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Popolazione residente al 1-1-2020"
-          },
-          {
-            "name": "takeup",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Takeup rate RdC (nuclei percettori / popolazione residente)"
-          },
-          {
-            "name": "takeup_donne",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Takeup rate RdC femminile (donne coinvolte / donne residenti)"
-          }
-        ],
-        "mart_refs": [
-          "inps_rdc_pdc__mart_incidenza_comune",
-          "inps_rdc_pdc__mart_sintesi_regione",
-          "inps_rdc_pdc__mart_top_comuni"
         ]
       }
     ],
@@ -39022,6 +36889,1032 @@
         ]
       }
     ],
+    "giustizia_statistiche": [
+      {
+        "slug": "civile_flussi",
+        "url_slug": "civile-flussi",
+        "name": "Civile Flussi",
+        "description": "",
+        "source": "",
+        "source_id": "giustizia_statistiche",
+        "period": {
+          "start": 2014,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "giustizia",
+          "statistiche-giudiziarie"
+        ],
+        "category": "giustizia",
+        "registry_source": "giustizia-statistiche",
+        "clean_rows": 123203,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia-statistiche/civile_flussi/2025/civile_flussi_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "fonte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_ufficio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "distretto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "macromateria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "materia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "dettaglio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sopravvenuti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "definiti_totale",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "definiti_con_sentenza",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pendenti_finali",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "civile_flussi__mart_summary"
+        ]
+      },
+      {
+        "slug": "durata_civile",
+        "url_slug": "durata-civile",
+        "name": "Durata Civile",
+        "description": "",
+        "source": "",
+        "source_id": "giustizia_statistiche",
+        "period": {
+          "start": 2014,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "giustizia",
+          "civile",
+          "durata",
+          "siecic",
+          "sicid",
+          "statistiche-giudiziarie"
+        ],
+        "category": "giustizia",
+        "registry_source": "giustizia-statistiche",
+        "clean_rows": 21840,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia-statistiche/durata_civile/2025/durata_civile_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "registro",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ripartizione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "distretto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_ufficio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "livello_aggregazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "materia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "definiti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "durata_media_gg",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "durata_civile__durata_civile",
+          "durata_civile__mart_nazionale_trend"
+        ]
+      },
+      {
+        "slug": "durata_penale_classi",
+        "url_slug": "durata-penale-classi",
+        "name": "Durata Penale Classi",
+        "description": "",
+        "source": "",
+        "source_id": "giustizia_statistiche",
+        "period": {
+          "start": 2014,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "giustizia",
+          "penale",
+          "durata",
+          "classi-tempo",
+          "statistiche-giudiziarie"
+        ],
+        "category": "giustizia",
+        "registry_source": "giustizia-statistiche",
+        "clean_rows": 45600,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia-statistiche/durata_penale_classi/2025/durata_penale_classi_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "ufficio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "distretto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sezione_ufficio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "classe_tempo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "definiti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "durata_penale_classi__durata_penale_classi",
+          "durata_penale_classi__mart_classi_sintesi"
+        ]
+      },
+      {
+        "slug": "durata_penale_medie",
+        "url_slug": "durata-penale-medie",
+        "name": "Durata Penale Medie",
+        "description": "",
+        "source": "",
+        "source_id": "giustizia_statistiche",
+        "period": {
+          "start": 2014,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "giustizia",
+          "penale",
+          "durata",
+          "statistiche-giudiziarie"
+        ],
+        "category": "giustizia",
+        "registry_source": "giustizia-statistiche",
+        "clean_rows": 16697,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia-statistiche/durata_penale_medie/2025/durata_penale_medie_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "dettaglio_territoriale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ufficio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "distretto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sezione_ufficio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "durata_media_gg",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "durata_penale_medie__durata_penale_medie"
+        ]
+      },
+      {
+        "slug": "giustizia_civile_indicatori",
+        "url_slug": "giustizia-civile-indicatori",
+        "name": "Giustizia Civile Indicatori",
+        "description": "",
+        "source": "",
+        "source_id": "giustizia_statistiche",
+        "period": {
+          "start": 2014,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "giustizia",
+          "civile",
+          "clearance-rate",
+          "disposition-time",
+          "statistiche-giudiziarie"
+        ],
+        "category": "giustizia",
+        "registry_source": "giustizia-statistiche",
+        "clean_rows": 76799,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia-statistiche/giustizia_civile_indicatori/2025/giustizia_civile_indicatori_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "fonte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_ufficio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "distretto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "macromateria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "materia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "clearance_rate",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "disposition_time_gg",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "giustizia_civile_indicatori__giustizia_civile_indicatori",
+          "giustizia_civile_indicatori__mart_civile_trend"
+        ]
+      },
+      {
+        "slug": "giustizia_penale_indicatori",
+        "url_slug": "giustizia-penale-indicatori",
+        "name": "Giustizia Penale Indicatori",
+        "description": "",
+        "source": "",
+        "source_id": "giustizia_statistiche",
+        "period": {
+          "start": 2014,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "giustizia",
+          "statistiche-giudiziarie"
+        ],
+        "category": "giustizia",
+        "registry_source": "giustizia-statistiche",
+        "clean_rows": 10478,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia-statistiche/giustizia_penale_indicatori/2025/giustizia_penale_indicatori_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "tipo_ufficio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "distretto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sezione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "clearance_rate",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "disposition_time_gg",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "giustizia_penale_indicatori__giustizia_penale_indicatori",
+          "giustizia_penale_indicatori__mart_penale_trend"
+        ]
+      },
+      {
+        "slug": "intercettazioni",
+        "url_slug": "intercettazioni",
+        "name": "Intercettazioni",
+        "description": "",
+        "source": "",
+        "source_id": "giustizia_statistiche",
+        "period": {
+          "start": 2014,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "giustizia",
+          "statistiche-giudiziarie"
+        ],
+        "category": "giustizia",
+        "registry_source": "giustizia-statistiche",
+        "clean_rows": 3952,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia-statistiche/intercettazioni/2025/intercettazioni_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "tipo_ufficio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "distretto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipologia_intercettazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_bersagli",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "intercettazioni__intercettazioni"
+        ]
+      },
+      {
+        "slug": "monitoraggio_mensile_civile",
+        "url_slug": "monitoraggio-mensile-civile",
+        "name": "Monitoraggio Mensile Civile",
+        "description": "",
+        "source": "",
+        "source_id": "giustizia_statistiche",
+        "period": {
+          "start": 2019,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "giustizia",
+          "statistiche-giudiziarie"
+        ],
+        "category": "giustizia",
+        "registry_source": "giustizia-statistiche",
+        "clean_rows": 144490,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia-statistiche/monitoraggio_mensile_civile/2025/monitoraggio_mensile_civile_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "mese",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          },
+          {
+            "name": "fonte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_ufficio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "distretto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "materia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "iscritti",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "definiti",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "area",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_dato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "monitoraggio_mensile_civile__monitoraggio_mensile_civile"
+        ]
+      },
+      {
+        "slug": "monitoraggio_pnrr_giustizia",
+        "url_slug": "monitoraggio-pnrr-giustizia",
+        "name": "Monitoraggio Pnrr Giustizia",
+        "description": "",
+        "source": "",
+        "source_id": "giustizia_statistiche",
+        "period": {
+          "start": 2019,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "giustizia",
+          "pnrr",
+          "pendenti",
+          "arretrato",
+          "statistiche-giudiziarie"
+        ],
+        "category": "giustizia",
+        "registry_source": "giustizia-statistiche",
+        "clean_rows": 2720,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia-statistiche/monitoraggio_pnrr_giustizia/2026/monitoraggio_pnrr_giustizia_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "materia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "periodo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          },
+          {
+            "name": "tipo_ufficio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ripartizione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "distretto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "definiti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pendenti_fine_periodo",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pendenti_20191231",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "arretrato",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "baseline_obiettivo_2024",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pendenti_obiettivo_2024",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "baseline_obiettivo_2026",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pendenti_obiettivo_2026",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "monitoraggio_pnrr_giustizia__monitoraggio_pnrr_giustizia",
+          "monitoraggio_pnrr_giustizia__mart_nazionale_trend"
+        ]
+      },
+      {
+        "slug": "penale_flussi",
+        "url_slug": "penale-flussi",
+        "name": "Penale Flussi",
+        "description": "",
+        "source": "",
+        "source_id": "giustizia_statistiche",
+        "period": {
+          "start": 2014,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "giustizia",
+          "statistiche-giudiziarie"
+        ],
+        "category": "giustizia",
+        "registry_source": "giustizia-statistiche",
+        "clean_rows": 17652,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia-statistiche/penale_flussi/2025/penale_flussi_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "tipo_ufficio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sezione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "distretto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sopravvenuti",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "definiti_totale",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pendenti_finali",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "penale_flussi__penale_flussi"
+        ]
+      },
+      {
+        "slug": "spese_giustizia",
+        "url_slug": "spese-giustizia",
+        "name": "Spese Giustizia",
+        "description": "",
+        "source": "",
+        "source_id": "giustizia_statistiche",
+        "period": {
+          "start": 2014,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "giustizia",
+          "spese-giustizia",
+          "statistiche-giudiziarie"
+        ],
+        "category": "giustizia",
+        "registry_source": "giustizia-statistiche",
+        "clean_rows": 6594,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia-statistiche/spese_giustizia/2025/spese_giustizia_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "distretto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_spesa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "dettaglio_tipo_spesa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "spese_giustizia__spese_giustizia",
+          "spese_giustizia__mart_nazionale_trend"
+        ]
+      }
+    ],
     "camcom-marche": [
       {
         "slug": "camcom_cancellazioni",
@@ -42847,6 +41740,399 @@
         "mart_refs": [
           "oecd_unemployment__mart_italia",
           "oecd_unemployment__mart_benchmark"
+        ]
+      }
+    ],
+    "aci": [
+      {
+        "slug": "aci_autotrend_mensile",
+        "url_slug": "aci-autotrend-mensile",
+        "name": "Aci Autotrend Mensile",
+        "description": "Auto-Trend ACI: prime iscrizioni, usato netto e radiazioni per mese e ufficio PRA (provincia), 2019-2025. Fonte aci.gov.it open data (CSV + ODS).",
+        "source": "",
+        "source_id": "aci",
+        "period": {
+          "start": 2019,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "trasporti",
+          "aci",
+          "autotrend",
+          "mercato-auto",
+          "mensile",
+          "provincia",
+          "parco-auto"
+        ],
+        "category": "trasporti",
+        "registry_source": "open-aci",
+        "clean_rows": 3852,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-aci/aci_autotrend_mensile/*/aci_autotrend_mensile_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "mese",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          },
+          {
+            "name": "mese_num",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ufficio_pra",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "formalita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "quantita",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "aci_autotrend_mensile__mart_anno_formalita",
+          "aci_autotrend_mensile__mart_anno_mese_formalita",
+          "aci_autotrend_mensile__mart_anno_provincia_formalita",
+          "aci_autotrend_mensile__mart_trend_mensile"
+        ]
+      },
+      {
+        "slug": "aci_parco_veicolare",
+        "url_slug": "aci-parco-veicolare",
+        "name": "Aci Parco Veicolare",
+        "description": "Autoritratto ACI \u2014 parco autovetture circolanti per alimentazione (stock al 31/12), 2024-2025. Fonte aci.gov.it open data.",
+        "source": "",
+        "source_id": "aci",
+        "period": {
+          "start": 2024,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "trasporti",
+          "aci",
+          "autoritratto",
+          "parco-veicolare",
+          "alimentazione",
+          "stock",
+          "elettrica"
+        ],
+        "category": "trasporti",
+        "registry_source": "open-aci",
+        "clean_rows": 14,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-aci/aci_parco_veicolare/*/aci_parco_veicolare_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno_riferimento",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "alimentazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "veicoli",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "aci_parco_veicolare__mart_av_alimentazione",
+          "aci_parco_veicolare__mart_quota_alimentazione"
+        ]
+      },
+      {
+        "slug": "aci_prime_iscrizioni_autovetture",
+        "url_slug": "aci-prime-iscrizioni-autovetture",
+        "name": "Aci Prime Iscrizioni Autovetture",
+        "description": "Prime iscrizioni di autovetture nuove in Italia per comune e tipo di alimentazione (2017-2025). Fonte ACI via dati.gov.it / lod.aci.it.",
+        "source": "",
+        "source_id": "aci",
+        "period": {
+          "start": 2017,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "trasporti",
+          "aci",
+          "prime-iscrizioni",
+          "autovetture",
+          "alimentazione",
+          "parco-auto"
+        ],
+        "category": "trasporti",
+        "registry_source": "open-aci",
+        "clean_rows": 37678,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-aci/aci_prime_iscrizioni_autovetture/*/aci_prime_iscrizioni_autovetture_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_name",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "codice_istat",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_code",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "popolazione_residente",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "alimentazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "prime_iscrizioni",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "aci_prime_iscrizioni_autovetture__mart_anno_alimentazione",
+          "aci_prime_iscrizioni_autovetture__mart_regione_alimentazione",
+          "aci_prime_iscrizioni_autovetture__mart_quota_alimentazione"
+        ]
+      },
+      {
+        "slug": "aci_radiazioni_classe_euro",
+        "url_slug": "aci-radiazioni-classe-euro",
+        "name": "Aci Radiazioni Classe Euro",
+        "description": "Radiazioni per demolizione di autovetture per comune e classe euro (2017-2025). Fonte ACI via dati.gov.it / lod.aci.it.",
+        "source": "",
+        "source_id": "aci",
+        "period": {
+          "start": 2017,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "trasporti",
+          "aci",
+          "radiazioni",
+          "demolizione",
+          "classe-euro",
+          "parco-auto"
+        ],
+        "category": "trasporti",
+        "registry_source": "open-aci",
+        "clean_rows": 43286,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-aci/aci_radiazioni_classe_euro/*/aci_radiazioni_classe_euro_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_name",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "codice_istat",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_code",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "popolazione_residente",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "classe_euro",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "radiazioni",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "aci_radiazioni_classe_euro__mart_anno_classe_euro",
+          "aci_radiazioni_classe_euro__mart_regione_classe_euro",
+          "aci_radiazioni_classe_euro__mart_quota_classe_euro"
+        ]
+      },
+      {
+        "slug": "aci_usato_proprieta",
+        "url_slug": "aci-usato-proprieta",
+        "name": "Aci Usato Proprieta",
+        "description": "Autoritratto ACI \u2014 passaggi di propriet\u00e0 (mercato usato) per categoria veicolo, con split minivolture, 2024-2025. Fonte aci.gov.it open data.",
+        "source": "",
+        "source_id": "aci",
+        "period": {
+          "start": 2024,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "trasporti",
+          "aci",
+          "autoritratto",
+          "usato",
+          "passaggi-proprieta",
+          "minivolture"
+        ],
+        "category": "trasporti",
+        "registry_source": "open-aci",
+        "clean_rows": 10,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-aci/aci_usato_proprieta/*/aci_usato_proprieta_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno_riferimento",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "minivolture",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "non_minivolture",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "aci_usato_proprieta__mart_usato_categoria",
+          "aci_usato_proprieta__mart_usato_sintesi"
         ]
       }
     ],
@@ -56170,7 +55456,6 @@
         "dataset-incubator",
         "dcl-bologna",
         "eurostat",
-        "open-inps",
         "open-mur"
       ],
       "datasets": [
@@ -56193,7 +55478,6 @@
         "famiglie_tipologia",
         "indici_fragilita",
         "inps_pensioni_trimestrale",
-        "inps_rdc_pdc",
         "istat_housing_crowding",
         "istat_ipab_aree",
         "istat_occupazione_provinciale",
@@ -56212,7 +55496,7 @@
         "popolazione_istat_comunale_2019_2025",
         "popolazione_quartiere"
       ],
-      "dataset_count": 37
+      "dataset_count": 36
     },
     {
       "slug": "giustizia",
@@ -56567,7 +55851,6 @@
         "famiglie_tipologia",
         "indici_fragilita",
         "inps_pensioni_trimestrale",
-        "inps_rdc_pdc",
         "istat_housing_crowding",
         "istat_ipab_aree",
         "istat_occupazione_provinciale",
@@ -58109,7 +57392,6 @@
       "famiglie_tipologia",
       "indici_fragilita",
       "inps_pensioni_trimestrale",
-      "inps_rdc_pdc",
       "istat_housing_crowding",
       "istat_ipab_aree",
       "istat_occupazione_provinciale",
@@ -58314,14 +57596,6 @@
       "domain": null,
       "category": "giurisprudenza"
     },
-    "aci_prime_iscrizioni_autovetture": {
-      "name": "Aci Prime Iscrizioni Autovetture",
-      "stage": "incubating",
-      "source_id": "aci",
-      "registry_source": "open-aci",
-      "domain": "territorio-ambiente",
-      "category": "trasporti"
-    },
     "aifa_spesa_consumo": {
       "name": "AIFA Spesa Farmaceutica Convenzionata",
       "stage": "published",
@@ -58370,14 +57644,6 @@
       "domain": null,
       "category": "immigrazione"
     },
-    "civile_flussi": {
-      "name": "Civile Flussi",
-      "stage": "incubating",
-      "source_id": "giustizia_statistiche",
-      "registry_source": "giustizia-statistiche",
-      "domain": "giustizia",
-      "category": "giustizia"
-    },
     "comuni_master": {
       "name": "Comuni Master \u2014 hub territoriale completo",
       "stage": "published",
@@ -58410,14 +57676,6 @@
       "domain": "finanza-pubblica",
       "category": "finanza-pubblica"
     },
-    "giustizia_penale_indicatori": {
-      "name": "Giustizia Penale Indicatori",
-      "stage": "incubating",
-      "source_id": "giustizia_statistiche",
-      "registry_source": "giustizia-statistiche",
-      "domain": "giustizia",
-      "category": "giustizia"
-    },
     "inps_pensioni_trimestrale": {
       "name": "INPS Pensioni \u2014 trimestrale",
       "stage": "published",
@@ -58425,22 +57683,6 @@
       "registry_source": "dataset-incubator",
       "domain": "welfare-lavoro",
       "category": "welfare-lavoro"
-    },
-    "inps_rdc_pdc": {
-      "name": "Inps Rdc Pdc",
-      "stage": "incubating",
-      "source_id": "inps",
-      "registry_source": "open-inps",
-      "domain": null,
-      "category": "welfare"
-    },
-    "intercettazioni": {
-      "name": "Intercettazioni",
-      "stage": "incubating",
-      "source_id": "giustizia_statistiche",
-      "registry_source": "giustizia-statistiche",
-      "domain": "giustizia",
-      "category": "giustizia"
     },
     "irpef_comunale": {
       "name": "Irpef Comunale",
@@ -58594,14 +57836,6 @@
       "domain": "finanza-pubblica",
       "category": "appalti"
     },
-    "monitoraggio_mensile_civile": {
-      "name": "Monitoraggio Mensile Civile",
-      "stage": "incubating",
-      "source_id": "giustizia_statistiche",
-      "registry_source": "giustizia-statistiche",
-      "domain": "giustizia",
-      "category": "giustizia"
-    },
     "opencoesione_progetti": {
       "name": "Opencoesione Progetti",
       "stage": "incubating",
@@ -58617,14 +57851,6 @@
       "registry_source": "open-coesione",
       "domain": "finanza-pubblica",
       "category": "finanza-pubblica"
-    },
-    "penale_flussi": {
-      "name": "Penale Flussi",
-      "stage": "incubating",
-      "source_id": "giustizia_statistiche",
-      "registry_source": "giustizia-statistiche",
-      "domain": "giustizia",
-      "category": "giustizia"
     },
     "pensioni_pa_dag": {
       "name": "Pensioni Pa Dag",
@@ -59418,6 +58644,14 @@
       "domain": "giustizia",
       "category": "giustizia"
     },
+    "civile_flussi": {
+      "name": "Civile Flussi",
+      "stage": "incubating",
+      "source_id": "giustizia_statistiche",
+      "registry_source": "giustizia-statistiche",
+      "domain": "giustizia",
+      "category": "giustizia"
+    },
     "durata_civile": {
       "name": "Durata Civile",
       "stage": "incubating",
@@ -59450,8 +58684,40 @@
       "domain": "giustizia",
       "category": "giustizia"
     },
+    "giustizia_penale_indicatori": {
+      "name": "Giustizia Penale Indicatori",
+      "stage": "incubating",
+      "source_id": "giustizia_statistiche",
+      "registry_source": "giustizia-statistiche",
+      "domain": "giustizia",
+      "category": "giustizia"
+    },
+    "intercettazioni": {
+      "name": "Intercettazioni",
+      "stage": "incubating",
+      "source_id": "giustizia_statistiche",
+      "registry_source": "giustizia-statistiche",
+      "domain": "giustizia",
+      "category": "giustizia"
+    },
+    "monitoraggio_mensile_civile": {
+      "name": "Monitoraggio Mensile Civile",
+      "stage": "incubating",
+      "source_id": "giustizia_statistiche",
+      "registry_source": "giustizia-statistiche",
+      "domain": "giustizia",
+      "category": "giustizia"
+    },
     "monitoraggio_pnrr_giustizia": {
       "name": "Monitoraggio Pnrr Giustizia",
+      "stage": "incubating",
+      "source_id": "giustizia_statistiche",
+      "registry_source": "giustizia-statistiche",
+      "domain": "giustizia",
+      "category": "giustizia"
+    },
+    "penale_flussi": {
+      "name": "Penale Flussi",
       "stage": "incubating",
       "source_id": "giustizia_statistiche",
       "registry_source": "giustizia-statistiche",
@@ -59772,6 +59038,14 @@
     },
     "aci_parco_veicolare": {
       "name": "Aci Parco Veicolare",
+      "stage": "incubating",
+      "source_id": "aci",
+      "registry_source": "open-aci",
+      "domain": "territorio-ambiente",
+      "category": "trasporti"
+    },
+    "aci_prime_iscrizioni_autovetture": {
+      "name": "Aci Prime Iscrizioni Autovetture",
       "stage": "incubating",
       "source_id": "aci",
       "registry_source": "open-aci",
@@ -60233,6 +59507,14 @@
       "registry_source": "open-inps",
       "domain": null,
       "category": "lavoro"
+    },
+    "inps_rdc_pdc": {
+      "name": "Inps Rdc Pdc",
+      "stage": "incubating",
+      "source_id": "inps",
+      "registry_source": "open-inps",
+      "domain": null,
+      "category": "welfare"
     },
     "inps_retribuzioni": {
       "name": "Inps Retribuzioni",
