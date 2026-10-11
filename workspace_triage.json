@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11T04:23:41.971598",
+  "generated_at": "2026-10-11T12:13:32.067043",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -47,7 +47,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 3,
+  "open_prs": 5,
   "prs": [
     {
       "number": 454,
@@ -69,9 +69,23 @@
       "repo": "italia-corpus",
       "url": "https://github.com/dataciviclab/italia-corpus/pull/60",
       "category": "other"
+    },
+    {
+      "number": 10,
+      "title": "feat(dashboard): dashboard Streamlit sul layer tabellare",
+      "repo": "open-ccnl",
+      "url": "https://github.com/dataciviclab/open-ccnl/pull/10",
+      "category": "other"
+    },
+    {
+      "number": 8,
+      "title": "feat(bilancio): 3 dataset CKAN \u2014 missioni COFOG, conto economico, rendiconto gestionale",
+      "repo": "open-inps",
+      "url": "https://github.com/dataciviclab/open-inps/pull/8",
+      "category": "other"
     }
   ],
-  "open_issues": 40,
+  "open_issues": 39,
   "issues": [
     {
       "number": 59,
@@ -249,13 +263,6 @@
       "category": "intake"
     },
     {
-      "number": 7,
-      "title": "chore: promozione Lab \u2014 explorer e dashboard pubblica",
-      "repo": "open-inps",
-      "url": "https://github.com/dataciviclab/open-inps/issues/7",
-      "category": "infrastructure"
-    },
-    {
       "number": 6,
       "title": "feat: Priority B catalogo \u2014 agricoltura e politiche attive",
       "repo": "open-inps",
@@ -354,7 +361,7 @@
       "category": "other"
     }
   ],
-  "open_discussions": 184,
+  "open_discussions": 189,
   "discussions": [
     {
       "number": 30,
@@ -1146,6 +1153,41 @@
       "repo": "eurostat",
       "url": "https://github.com/dataciviclab/eurostat/discussions/24",
       "category": "Announcements"
+    },
+    {
+      "number": 16,
+      "title": "Le spese giustizia sono salite a 1.048 mln \u2014 Palermo spende pi\u00f9 di Roma",
+      "repo": "giustizia-statistiche",
+      "url": "https://github.com/dataciviclab/giustizia-statistiche/discussions/16",
+      "category": "Analisi"
+    },
+    {
+      "number": 15,
+      "title": "Venezia ha +33.741 pendenti dal 2019 \u2014 il distretto che peggiora di pi\u00f9 nel PNRR",
+      "repo": "giustizia-statistiche",
+      "url": "https://github.com/dataciviclab/giustizia-statistiche/discussions/15",
+      "category": "Analisi"
+    },
+    {
+      "number": 14,
+      "title": "Le intercettazioni sono calate del 32% dal 2014 \u2014 137,6k \u2192 93,6k bersagli",
+      "repo": "giustizia-statistiche",
+      "url": "https://github.com/dataciviclab/giustizia-statistiche/discussions/14",
+      "category": "Analisi"
+    },
+    {
+      "number": 13,
+      "title": "Milano \u00e8 ferma a 1,01 \u2014 1.412 giorni di disposition time, il pi\u00f9 alto d'Italia",
+      "repo": "giustizia-statistiche",
+      "url": "https://github.com/dataciviclab/giustizia-statistiche/discussions/13",
+      "category": "Analisi"
+    },
+    {
+      "number": 12,
+      "title": "Roma ha triplicato il clearance rate civile \u2014 da 1,10 a 3,40 in 11 anni",
+      "repo": "giustizia-statistiche",
+      "url": "https://github.com/dataciviclab/giustizia-statistiche/discussions/12",
+      "category": "Analisi"
     },
     {
       "number": 13,
@@ -2003,11 +2045,11 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "generated_at": "2026-10-10T09:45:39.577691+00:00",
-    "probe_date": "2026-10-10",
+    "generated_at": "2026-10-11T09:58:00.058144+00:00",
+    "probe_date": "2026-10-11",
     "sources_total": 36,
-    "green": 34,
-    "yellow": 2,
+    "green": 35,
+    "yellow": 1,
     "red": 0,
     "persistent_red": 0,
     "sources": [
@@ -2029,10 +2071,10 @@
       },
       {
         "id": "inps",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
@@ -2302,14 +2344,6 @@
     ],
     "unhealthy": [
       {
-        "id": "inps",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
-      {
         "id": "opencivitas",
         "status": "YELLOW",
         "protocol": "html",
@@ -2328,11 +2362,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-10-03",
+    "generated_at": "2026-10-11",
     "summary": {
-      "total": 37,
+      "total": 38,
       "by_status": {
-        "ok": 37
+        "ok": 38
       }
     },
     "actionable": []
@@ -2748,15 +2782,29 @@
       "repo": "dataset-incubator",
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
-      "updated_at": "2026-10-03",
-      "datasets": 46,
-      "marts": 62,
-      "signals": 37,
+      "updated_at": "2026-10-11",
+      "datasets": 47,
+      "marts": 65,
+      "signals": 38,
       "codelists": 0,
       "entities": 13,
-      "gcs": 46,
+      "gcs": 47,
       "reason": "",
       "signals_detail": [
+        {
+          "id": "adm_accertato_accise",
+          "source_id": "adm_opendata",
+          "status": "ok",
+          "label": "adm_accertato_accise",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20261011T120816Z_cdeb5079",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-10-11T12:08:16.711204+00:00",
+            "finished_at": "2026-10-11T12:08:18.866976+00:00"
+          }
+        },
         {
           "id": "aifa_spesa_consumo",
           "source_id": "aifa",

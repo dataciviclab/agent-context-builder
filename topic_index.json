@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-11T04:23:41.971598",
+  "generated_at": "2026-10-11T12:13:32.067043",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -71,9 +71,10 @@
       "url": "https://github.com/dataciviclab/dataset-incubator",
       "role": "infra",
       "domain": "welfare-lavoro",
-      "n_datasets": 34,
+      "n_datasets": 35,
       "n_published": 29,
       "sources": [
+        "adm_opendata",
         "aifa",
         "anpr",
         "art_opendata",
@@ -11202,6 +11203,107 @@
           "riferimenti__mart_debt_legale",
           "riferimenti__mart_citazioni_per_origine",
           "riferimenti__mart_top_bersagli"
+        ]
+      }
+    ],
+    "adm_opendata": [
+      {
+        "slug": "adm_accertato_accise",
+        "url_slug": "adm-accertato-accise",
+        "name": "Adm Accertato Accise",
+        "description": "",
+        "source": "",
+        "source_id": "adm_opendata",
+        "period": {
+          "start": 2022,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "accise",
+          "dogane",
+          "fiscalita",
+          "energia",
+          "regioni"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 713,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/adm_accertato_accise/2024/adm_accertato_accise_2024_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "settore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "direzione_regionale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_capitolo",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_articolo",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_tributo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_accisa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "accertato",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "adm_accertato_accise__mart_accertato_regione_anno",
+          "adm_accertato_accise__mart_sintesi_area",
+          "adm_accertato_accise__mart_trend_regioni"
         ]
       }
     ],
@@ -56738,6 +56840,7 @@
         "sistema-bancario"
       ],
       "datasets": [
+        "adm_accertato_accise",
         "anac_aggiudicatari",
         "anac_aggiudicazioni",
         "anac_bandi_gara",
@@ -56858,7 +56961,7 @@
         "ted_contract_notices",
         "wb_financial"
       ],
-      "dataset_count": 119
+      "dataset_count": 120
     },
     {
       "slug": "sanita",
@@ -57146,6 +57249,7 @@
       "slug": "finanza-pubblica",
       "name": "Finanza pubblica",
       "datasets": [
+        "adm_accertato_accise",
         "anac_aggiudicatari",
         "anac_aggiudicazioni",
         "anac_bandi_gara",
@@ -58125,6 +58229,7 @@
       "sentenze_complete"
     ],
     "dataset-incubator": [
+      "adm_accertato_accise",
       "aifa_spesa_consumo",
       "anpr_mobilita_residenziale",
       "art_taxi_ncc",
@@ -58578,6 +58683,7 @@
   },
   "by_domain": {
     "finanza-pubblica": [
+      "adm_accertato_accise",
       "anac_aggiudicatari",
       "anac_aggiudicazioni",
       "anac_bandi_gara",
@@ -59085,6 +59191,14 @@
       "registry_source": "costituzione-italiana",
       "domain": null,
       "category": "giurisprudenza"
+    },
+    "adm_accertato_accise": {
+      "name": "Adm Accertato Accise",
+      "stage": "incubating",
+      "source_id": "adm_opendata",
+      "registry_source": "dataset-incubator",
+      "domain": "finanza-pubblica",
+      "category": "finanza-pubblica"
     },
     "aifa_spesa_consumo": {
       "name": "AIFA Spesa Farmaceutica Convenzionata",
