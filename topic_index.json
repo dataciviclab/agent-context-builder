@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-11T12:13:32.067043",
+  "generated_at": "2026-10-11T21:35:08.091060",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -71,7 +71,7 @@
       "url": "https://github.com/dataciviclab/dataset-incubator",
       "role": "infra",
       "domain": "welfare-lavoro",
-      "n_datasets": 35,
+      "n_datasets": 38,
       "n_published": 29,
       "sources": [
         "adm_opendata",
@@ -80,12 +80,14 @@
         "art_opendata",
         "centri_d_italia",
         "dataciviclab_composite",
+        "ec_ameco",
         "fts",
         "inps",
         "istat_dbnomics",
         "istat_sdmx",
         "istat_situas",
         "liberiamoli_tutti",
+        "mase_dgsaie",
         "mim_opendata",
         "ministero_salute",
         "ministero_salute_posti_letto",
@@ -323,7 +325,7 @@
       "url": "https://github.com/dataciviclab/open-inps",
       "role": "dati",
       "domain": null,
-      "n_datasets": 17,
+      "n_datasets": 20,
       "n_published": 0,
       "sources": [
         "dataciviclab_composite",
@@ -11460,6 +11462,98 @@
         ]
       }
     ],
+    "ec_ameco": [
+      {
+        "slug": "ameco",
+        "url_slug": "ameco",
+        "name": "Ameco",
+        "description": "",
+        "source": "",
+        "source_id": "ec_ameco",
+        "period": {
+          "start": 1960,
+          "end": 2027
+        },
+        "stage": "incubating",
+        "tags": [
+          "economia",
+          "previsioni",
+          "commissione-europea",
+          "debito",
+          "pil",
+          "ameco"
+        ],
+        "category": "economia",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 1475,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/ameco/2026/ameco_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "paese",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "paese_nome",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "serie",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "titolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "valore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_dato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ameco__mart_sintesi_paese"
+        ]
+      }
+    ],
     "anpr": [
       {
         "slug": "anpr_mobilita_residenziale",
@@ -13916,6 +14010,276 @@
         "mart_refs": [
           "inps_assegno_unico__mart_au_regione",
           "inps_assegno_unico__mart_au_isee"
+        ]
+      },
+      {
+        "slug": "inps_bilancio_ce",
+        "url_slug": "inps-bilancio-ce",
+        "name": "Inps Bilancio Ce",
+        "description": "Conto Economico INPS (generale + GIAS, CKAN 2023-2024 con comparative 2022): voci di conto e importi in euro.",
+        "source": "",
+        "source_id": "inps",
+        "period": {
+          "start": 2022,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "bilancio",
+          "inps",
+          "conto-economico",
+          "entrate",
+          "spese",
+          "gias"
+        ],
+        "category": "bilancio",
+        "registry_source": "open-inps",
+        "clean_rows": 615,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-inps/inps_bilancio_ce/2026/inps_bilancio_ce_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "fonte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "voce",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "inps_bilancio_ce__mart_ce_voci",
+          "inps_bilancio_ce__mart_ce_aggregati",
+          "inps_bilancio_ce__mart_ce_confronto_fonti"
+        ]
+      },
+      {
+        "slug": "inps_bilancio_gestionale",
+        "url_slug": "inps-bilancio-gestionale",
+        "name": "Inps Bilancio Gestionale",
+        "description": "Rendiconto gestionale INPS (entrate e uscite per capitolo) da CKAN open data 2023-2024: accertato/impegnato, previsioni e residui.",
+        "source": "",
+        "source_id": "inps",
+        "period": {
+          "start": 2023,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "bilancio",
+          "inps",
+          "rendiconto",
+          "gestionale",
+          "contributi",
+          "entrate",
+          "spese"
+        ],
+        "category": "bilancio",
+        "registry_source": "open-inps",
+        "clean_rows": 1897,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-inps/inps_bilancio_gestionale/2026/inps_bilancio_gestionale_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "tipo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "denominazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "previsioni_iniziali_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "previsioni_definitive_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_esercizio_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "residui_iniziali_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "residui_totali_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "previsioni_cassa_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "incassi_pagamenti_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "residui_finali_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "inps_bilancio_gestionale__mart_rg_top_entrate",
+          "inps_bilancio_gestionale__mart_rg_top_uscite",
+          "inps_bilancio_gestionale__mart_rg_contributi_lavoratori"
+        ]
+      },
+      {
+        "slug": "inps_bilancio_missioni",
+        "url_slug": "inps-bilancio-missioni",
+        "name": "Inps Bilancio Missioni",
+        "description": "Bilancio INPS per Missioni/Programmi/COFOG (CKAN 2023-2024, con comparative 2022): spesa per competenza e cassa.",
+        "source": "",
+        "source_id": "inps",
+        "period": {
+          "start": 2022,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "bilancio",
+          "inps",
+          "spesa-pubblica",
+          "cofog",
+          "missioni",
+          "welfare"
+        ],
+        "category": "bilancio",
+        "registry_source": "open-inps",
+        "clean_rows": 132,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-inps/inps_bilancio_missioni/2026/inps_bilancio_missioni_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "missione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "programma_code",
+            "description": ""
+          },
+          {
+            "name": "programma",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "programma_code",
+            "description": ""
+          },
+          {
+            "name": "gruppo_cofog",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "prestazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "competenza_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cassa_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "inps_bilancio_missioni__mart_bilancio_missioni",
+          "inps_bilancio_missioni__mart_bilancio_prestazioni",
+          "inps_bilancio_missioni__mart_bilancio_confronto"
         ]
       },
       {
@@ -18994,17 +19358,25 @@
           "economia",
           "istat",
           "asia",
-          "ul"
+          "ul",
+          "comuni"
         ],
         "category": "economia",
         "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "clean_rows": 662890,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_asia_ul/2020/istat_asia_ul_2020_clean.parquet",
           "multi_file": false
         },
         "columns": [
+          {
+            "name": "data_type",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
           {
             "name": "codice_comune",
             "type": "VARCHAR",
@@ -19027,12 +19399,36 @@
             "description": "Sezione ATECO 2007 (lettera o codice aggregato)"
           },
           {
-            "name": "unita_locali",
+            "name": "valore",
             "type": "DOUBLE",
             "role": "metric",
             "semantic_type": "",
-            "description": "Numero di unit\u00c3  locali"
+            "description": ""
+          },
+          {
+            "name": "denominazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "sigla_provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
           }
+        ],
+        "mart_refs": [
+          "istat_asia_ul__mart_asia_ul_comuni"
         ]
       }
     ],
@@ -19182,7 +19578,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "clean_rows": 968,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_gini_regionale/2023/istat_gini_regionale_2023_clean.parquet",
@@ -19212,14 +19608,14 @@
           },
           {
             "name": "pres_aff_imp",
-            "type": "BIGINT",
+            "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
             "description": "Serie: 1=con fitti imputati, 2=senza fitti imputati"
           },
           {
             "name": "anno",
-            "type": "BIGINT",
+            "type": "INTEGER",
             "role": "dimension",
             "semantic_type": "year",
             "description": "Anno di riferimento (2003-2024)"
@@ -19231,6 +19627,9 @@
             "semantic_type": "",
             "description": "Indice di Gini sul reddito netto (0-1, piu alto = piu diseguale)"
           }
+        ],
+        "mart_refs": [
+          "istat_gini_regionale__mart_gini_regionale"
         ]
       },
       {
@@ -19253,7 +19652,7 @@
         ],
         "category": "welfare-lavoro",
         "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "clean_rows": 990,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_housing_crowding/2024/istat_housing_crowding_2024_clean.parquet",
@@ -19292,12 +19691,12 @@
             "name": "indicatore",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
-            "description": "Nome dell'indicatore"
+            "semantic_type": "indicatore_code",
+            "description": ""
           },
           {
             "name": "misura_codice",
-            "type": "BIGINT",
+            "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
             "description": "Codice della misura (10 = per hundred values)"
@@ -19307,11 +19706,11 @@
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
-            "description": "Descrizione della misura"
+            "description": ""
           },
           {
             "name": "titolo_godimento_codice",
-            "type": "BIGINT",
+            "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
             "description": "Codice titolo di godimento: 1=owner-occupied, 2=rent"
@@ -19326,128 +19725,128 @@
           {
             "name": "numero_componenti_nucleo",
             "type": "INTEGER",
-            "role": "dimension",
+            "role": "metric",
             "semantic_type": "",
-            "description": "Numero di componenti del nucleo familiare"
+            "description": ""
           },
           {
             "name": "numero_componenti_nucleo_label",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
-            "description": "Label numero componenti nucleo"
+            "description": ""
           },
           {
             "name": "tipologia_nucleo_codice",
-            "type": "BIGINT",
+            "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
-            "description": "Codice tipologia nucleo"
+            "description": ""
           },
           {
             "name": "tipologia_nucleo_label",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
-            "description": "Label tipologia nucleo"
+            "description": ""
           },
           {
             "name": "numero_figli",
             "type": "INTEGER",
-            "role": "dimension",
+            "role": "metric",
             "semantic_type": "",
-            "description": "Numero di figli"
+            "description": ""
           },
           {
             "name": "numero_figli_label",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
-            "description": "Label numero figli"
+            "description": ""
           },
           {
             "name": "numero_anziani",
             "type": "INTEGER",
-            "role": "dimension",
+            "role": "metric",
             "semantic_type": "",
-            "description": "Numero di anziani nel nucleo"
+            "description": ""
           },
           {
             "name": "numero_anziani_label",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
-            "description": "Label numero anziani"
+            "description": ""
           },
           {
             "name": "quintile_reddito_codice",
-            "type": "BIGINT",
+            "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
-            "description": "Codice quintile di reddito"
+            "description": ""
           },
           {
             "name": "quintile_reddito_label",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
-            "description": "Label quintile di reddito"
+            "description": ""
           },
           {
             "name": "sesso_percettore_principale_codice",
-            "type": "BIGINT",
+            "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
-            "description": "Codice sesso percettore principale"
+            "description": ""
           },
           {
             "name": "sesso_percettore_principale_label",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
-            "description": "Label sesso percettore principale"
+            "description": ""
           },
           {
             "name": "eta_percettore_principale_codice",
-            "type": "BIGINT",
+            "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
-            "description": "Codice eta percettore principale"
+            "description": ""
           },
           {
             "name": "eta_percettore_principale_label",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
-            "description": "Label eta percettore principale"
+            "description": ""
           },
           {
             "name": "titolo_studio_percettore_codice",
-            "type": "BIGINT",
+            "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
-            "description": "Codice titolo di studio"
+            "description": ""
           },
           {
             "name": "titolo_studio_percettore_label",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
-            "description": "Label titolo di studio"
+            "description": ""
           },
           {
             "name": "condizione_professionale_percettore_codice",
-            "type": "BIGINT",
+            "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
-            "description": "Codice condizione professionale"
+            "description": ""
           },
           {
             "name": "condizione_professionale_percettore_label",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
-            "description": "Label condizione professionale"
+            "description": ""
           },
           {
             "name": "componenti_per_100mq",
@@ -19456,6 +19855,9 @@
             "semantic_type": "",
             "description": "Indice di densita abitativa (componenti per 100 mq)"
           }
+        ],
+        "mart_refs": [
+          "istat_housing_crowding__mart_crowding_tenure_italy"
         ]
       },
       {
@@ -19478,7 +19880,7 @@
         ],
         "category": "welfare-lavoro",
         "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "clean_rows": 1024,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_ipab_aree/2024/istat_ipab_aree_2024_clean.parquet",
@@ -19534,6 +19936,9 @@
             "semantic_type": "",
             "description": "Indice dei prezzi delle abitazioni (base 2015=100)"
           }
+        ],
+        "mart_refs": [
+          "istat_ipab_aree__ipab_aree"
         ]
       },
       {
@@ -19555,7 +19960,7 @@
         ],
         "category": "welfare-lavoro",
         "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "clean_rows": 15118,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_occupazione_provinciale/2025/istat_occupazione_provinciale_2025_clean.parquet",
@@ -19587,12 +19992,12 @@
             "name": "indicatore",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "indicatore_code",
             "description": "Tipo di indicatore: EMP_R = tasso di occupazione"
           },
           {
             "name": "sesso_codice",
-            "type": "BIGINT",
+            "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
             "description": "Codice sesso: 1=maschi, 2=femmine, 9=totale"
@@ -19625,6 +20030,9 @@
             "semantic_type": "",
             "description": "Tasso di occupazione percentuale (0-100)"
           }
+        ],
+        "mart_refs": [
+          "istat_occupazione_provinciale__mart_occupazione_provinciale"
         ]
       },
       {
@@ -19647,7 +20055,7 @@
         ],
         "category": "economia",
         "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "clean_rows": 10584,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_pil_territoriale/2024/istat_pil_territoriale_2024_clean.parquet",
@@ -19717,6 +20125,9 @@
             "semantic_type": "",
             "description": "Valore in milioni di euro"
           }
+        ],
+        "mart_refs": [
+          "istat_pil_territoriale__pil_territoriale"
         ]
       },
       {
@@ -20351,6 +20762,209 @@
           "iva_regionale__mart_regioni_anno",
           "iva_regionale__mart_sintesi_nazionale",
           "iva_regionale__mart_trend_regioni"
+        ]
+      }
+    ],
+    "mase_dgsaie": [
+      {
+        "slug": "mase_prezzi_carburanti_mensili",
+        "url_slug": "mase-prezzi-carburanti-mensili",
+        "name": "Mase Prezzi Carburanti Mensili",
+        "description": "",
+        "source": "",
+        "source_id": "mase_dgsaie",
+        "period": {
+          "start": 1996,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "energia",
+          "carburanti",
+          "prezzi",
+          "accise",
+          "fiscalita",
+          "serie-storica"
+        ],
+        "category": "energia",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 2282,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/mase_prezzi_carburanti_mensili/2026/mase_prezzi_carburanti_mensili_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "mese",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          },
+          {
+            "name": "nome_mese",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_prodotto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "prodotto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "prezzo_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "accisa_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "iva_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "netto_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "quota_accisa_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mase_prezzi_carburanti_mensili__mart_mensile_prodotto"
+        ]
+      },
+      {
+        "slug": "mase_prezzi_carburanti_settimanali",
+        "url_slug": "mase-prezzi-carburanti-settimanali",
+        "name": "Mase Prezzi Carburanti Settimanali",
+        "description": "",
+        "source": "",
+        "source_id": "mase_dgsaie",
+        "period": {
+          "start": 2005,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "energia",
+          "carburanti",
+          "prezzi",
+          "accise",
+          "fiscalita"
+        ],
+        "category": "energia",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 6880,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/mase_prezzi_carburanti_settimanali/2026/mase_prezzi_carburanti_settimanali_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "data_rilevazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_prodotto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "prodotto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "prezzo_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "accisa_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "iva_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "netto_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "variazione_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "quota_accisa_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mase_prezzi_carburanti_settimanali__mart_settimanale_prodotto",
+          "mase_prezzi_carburanti_settimanali__mart_tagli_accisa"
         ]
       }
     ],
@@ -40692,7 +41306,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 1855,
+        "clean_rows": 1790,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_bandi_open/2026/inpa_bandi_open_2026_clean.parquet",
@@ -56788,6 +57402,8 @@
         "ispra_urban",
         "istat_investimenti_mitigazione",
         "istat_subsidi_ambientali",
+        "mase_prezzi_carburanti_mensili",
+        "mase_prezzi_carburanti_settimanali",
         "mit_incidentalita_mensile",
         "oecd_air_emissions",
         "oecd_forest",
@@ -56806,7 +57422,7 @@
         "terna_emissioni_co2",
         "varchi_ztl"
       ],
-      "dataset_count": 55
+      "dataset_count": 57
     },
     {
       "slug": "finanza-pubblica",
@@ -56841,6 +57457,7 @@
       ],
       "datasets": [
         "adm_accertato_accise",
+        "ameco",
         "anac_aggiudicatari",
         "anac_aggiudicazioni",
         "anac_bandi_gara",
@@ -56961,7 +57578,7 @@
         "ted_contract_notices",
         "wb_financial"
       ],
-      "dataset_count": 120
+      "dataset_count": 121
     },
     {
       "slug": "sanita",
@@ -57226,6 +57843,8 @@
         "ispra_urban",
         "istat_investimenti_mitigazione",
         "istat_subsidi_ambientali",
+        "mase_prezzi_carburanti_mensili",
+        "mase_prezzi_carburanti_settimanali",
         "mit_incidentalita_mensile",
         "oecd_air_emissions",
         "oecd_forest",
@@ -57250,6 +57869,7 @@
       "name": "Finanza pubblica",
       "datasets": [
         "adm_accertato_accise",
+        "ameco",
         "anac_aggiudicatari",
         "anac_aggiudicazioni",
         "anac_bandi_gara",
@@ -58231,6 +58851,7 @@
     "dataset-incubator": [
       "adm_accertato_accise",
       "aifa_spesa_consumo",
+      "ameco",
       "anpr_mobilita_residenziale",
       "art_taxi_ncc",
       "bdap_anagrafe_enti",
@@ -58248,6 +58869,8 @@
       "istat_ipab_aree",
       "istat_occupazione_provinciale",
       "istat_pil_territoriale",
+      "mase_prezzi_carburanti_mensili",
+      "mase_prezzi_carburanti_settimanali",
       "mim_alunni_corso_eta",
       "mim_anagrafica_scuole_statali",
       "mim_scuola_infanzia",
@@ -58499,6 +59122,9 @@
     "open-inps": [
       "inps_analisi",
       "inps_assegno_unico",
+      "inps_bilancio_ce",
+      "inps_bilancio_gestionale",
+      "inps_bilancio_missioni",
       "inps_cig",
       "inps_dipendenti_pubblici",
       "inps_dis_coll",
@@ -58684,6 +59310,7 @@
   "by_domain": {
     "finanza-pubblica": [
       "adm_accertato_accise",
+      "ameco",
       "anac_aggiudicatari",
       "anac_aggiudicazioni",
       "anac_bandi_gara",
@@ -58931,6 +59558,8 @@
       "ispra_urban",
       "istat_investimenti_mitigazione",
       "istat_subsidi_ambientali",
+      "mase_prezzi_carburanti_mensili",
+      "mase_prezzi_carburanti_settimanali",
       "mit_incidentalita_mensile",
       "oecd_air_emissions",
       "oecd_forest",
@@ -59208,6 +59837,14 @@
       "domain": "sanita",
       "category": "sanita"
     },
+    "ameco": {
+      "name": "Ameco",
+      "stage": "incubating",
+      "source_id": "ec_ameco",
+      "registry_source": "dataset-incubator",
+      "domain": "finanza-pubblica",
+      "category": "economia"
+    },
     "anpr_mobilita_residenziale": {
       "name": "ANPR \u2014 Mobilita Residenziale Interregionale (2022-2026)",
       "stage": "published",
@@ -59391,6 +60028,22 @@
       "registry_source": "dichiarazioni-italia",
       "domain": "finanza-pubblica",
       "category": "finanza-pubblica"
+    },
+    "mase_prezzi_carburanti_mensili": {
+      "name": "Mase Prezzi Carburanti Mensili",
+      "stage": "incubating",
+      "source_id": "mase_dgsaie",
+      "registry_source": "dataset-incubator",
+      "domain": "territorio-ambiente",
+      "category": "energia"
+    },
+    "mase_prezzi_carburanti_settimanali": {
+      "name": "Mase Prezzi Carburanti Settimanali",
+      "stage": "incubating",
+      "source_id": "mase_dgsaie",
+      "registry_source": "dataset-incubator",
+      "domain": "territorio-ambiente",
+      "category": "energia"
     },
     "mef_irpef_regionale": {
       "name": "Mef Irpef Regionale",
@@ -61095,6 +61748,30 @@
       "registry_source": "open-inps",
       "domain": null,
       "category": "welfare"
+    },
+    "inps_bilancio_ce": {
+      "name": "Inps Bilancio Ce",
+      "stage": "incubating",
+      "source_id": "inps",
+      "registry_source": "open-inps",
+      "domain": null,
+      "category": "bilancio"
+    },
+    "inps_bilancio_gestionale": {
+      "name": "Inps Bilancio Gestionale",
+      "stage": "incubating",
+      "source_id": "inps",
+      "registry_source": "open-inps",
+      "domain": null,
+      "category": "bilancio"
+    },
+    "inps_bilancio_missioni": {
+      "name": "Inps Bilancio Missioni",
+      "stage": "incubating",
+      "source_id": "inps",
+      "registry_source": "open-inps",
+      "domain": null,
+      "category": "bilancio"
     },
     "inps_cig": {
       "name": "Inps Cig",

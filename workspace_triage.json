@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11T12:13:32.067043",
+  "generated_at": "2026-10-11T21:35:08.091060",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -47,7 +47,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 5,
+  "open_prs": 4,
   "prs": [
     {
       "number": 454,
@@ -71,21 +71,14 @@
       "category": "other"
     },
     {
-      "number": 10,
-      "title": "feat(dashboard): dashboard Streamlit sul layer tabellare",
-      "repo": "open-ccnl",
-      "url": "https://github.com/dataciviclab/open-ccnl/pull/10",
-      "category": "other"
-    },
-    {
-      "number": 8,
-      "title": "feat(bilancio): 3 dataset CKAN \u2014 missioni COFOG, conto economico, rendiconto gestionale",
-      "repo": "open-inps",
-      "url": "https://github.com/dataciviclab/open-inps/pull/8",
+      "number": 421,
+      "title": "feat(catalog): engine per-repo \u2014 so-catalog, [tool.observatory], catalog.schema.json",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/421",
       "category": "other"
     }
   ],
-  "open_issues": 39,
+  "open_issues": 37,
   "issues": [
     {
       "number": 59,
@@ -326,24 +319,10 @@
       "category": "infrastructure"
     },
     {
-      "number": 494,
-      "title": "support external: bucket/pattern/slug non risolve multi-anno (clean=None)",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/494",
-      "category": "other"
-    },
-    {
       "number": 471,
       "title": "registry: derive codelists section from support: ids (not codelists/*.csv glob) \u2014 unblocks eurostat CSV removal",
       "repo": "toolkit",
       "url": "https://github.com/dataciviclab/toolkit/issues/471",
-      "category": "other"
-    },
-    {
-      "number": 444,
-      "title": "pipeline: plugin SDMX costruisce chiave incompleta (7 dim attese, 5 fornite) + fallback in 302 loop",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/444",
       "category": "other"
     },
     {
@@ -2364,9 +2343,9 @@
     "available": true,
     "generated_at": "2026-10-11",
     "summary": {
-      "total": 38,
+      "total": 41,
       "by_status": {
-        "ok": 38
+        "ok": 41
       }
     },
     "actionable": []
@@ -2783,12 +2762,12 @@
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
       "updated_at": "2026-10-11",
-      "datasets": 47,
-      "marts": 65,
-      "signals": 38,
+      "datasets": 50,
+      "marts": 69,
+      "signals": 41,
       "codelists": 0,
-      "entities": 13,
-      "gcs": 47,
+      "entities": 14,
+      "gcs": 50,
       "reason": "",
       "signals_detail": [
         {
@@ -2817,6 +2796,20 @@
             "status": "SUCCESS",
             "started_at": "2026-07-30T08:49:48.164156+00:00",
             "finished_at": "2026-07-30T08:50:08.017957+00:00"
+          }
+        },
+        {
+          "id": "ameco",
+          "source_id": "ec_ameco",
+          "status": "ok",
+          "label": "ameco",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261011T201002Z_4dcd29d4",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-10-11T20:10:02.198630+00:00",
+            "finished_at": "2026-10-11T20:10:18.365816+00:00"
           }
         },
         {
@@ -2929,28 +2922,56 @@
           "source_id": "istat_dbnomics",
           "status": "ok",
           "label": "istat_asia_ul",
-          "detail": "anno 2020 \u2014 mart: si"
+          "detail": "anno 2020 \u2014 mart: si",
+          "run": {
+            "run_id": "20261011T190348Z_e8649e60",
+            "year": 2020,
+            "status": "SUCCESS",
+            "started_at": "2026-10-11T19:03:48.113950+00:00",
+            "finished_at": "2026-10-11T19:19:37.523667+00:00"
+          }
         },
         {
           "id": "istat_gini_regionale",
-          "source_id": "istat_sdmx",
+          "source_id": "istat_dbnomics",
           "status": "ok",
           "label": "istat_gini_regionale",
-          "detail": "anno 2023 \u2014 mart: si"
+          "detail": "anno 2023 \u2014 mart: si",
+          "run": {
+            "run_id": "20261011T184330Z_8671f9dd",
+            "year": 2023,
+            "status": "SUCCESS",
+            "started_at": "2026-10-11T18:43:30.225986+00:00",
+            "finished_at": "2026-10-11T18:43:32.535760+00:00"
+          }
         },
         {
           "id": "istat_housing_crowding",
           "source_id": "istat_sdmx",
           "status": "ok",
           "label": "istat_housing_crowding",
-          "detail": "anno 2024 \u2014 mart: si"
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20261011T205153Z_844bf376",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-10-11T20:51:53.373119+00:00",
+            "finished_at": "2026-10-11T20:52:44.360104+00:00"
+          }
         },
         {
           "id": "istat_ipab_aree",
-          "source_id": "istat_sdmx",
+          "source_id": "istat_dbnomics",
           "status": "ok",
           "label": "istat_ipab_aree",
-          "detail": "anno 2024 \u2014 mart: si"
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20261011T184334Z_88a7e363",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-10-11T18:43:34.708034+00:00",
+            "finished_at": "2026-10-11T18:43:36.294714+00:00"
+          }
         },
         {
           "id": "istat_occupazione_provinciale",
@@ -2959,11 +2980,39 @@
           "label": "istat_occupazione_provinciale",
           "detail": "anno 2025 \u2014 mart: si",
           "run": {
-            "run_id": "20260806T103246Z_04b24585",
+            "run_id": "20261011T210307Z_b4d6e811",
             "year": 2025,
-            "status": "FAILED",
-            "started_at": "2026-08-06T10:32:46.528792+00:00",
-            "finished_at": "2026-08-06T10:34:59.409896+00:00"
+            "status": "SUCCESS",
+            "started_at": "2026-10-11T21:03:07.643067+00:00",
+            "finished_at": "2026-10-11T21:03:21.403110+00:00"
+          }
+        },
+        {
+          "id": "mase_prezzi_carburanti_mensili",
+          "source_id": "mase_dgsaie",
+          "status": "ok",
+          "label": "mase_prezzi_carburanti_mensili",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261011T130824Z_b25b0ef3",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-10-11T13:08:24.435544+00:00",
+            "finished_at": "2026-10-11T13:08:30.497325+00:00"
+          }
+        },
+        {
+          "id": "mase_prezzi_carburanti_settimanali",
+          "source_id": "mase_dgsaie",
+          "status": "ok",
+          "label": "mase_prezzi_carburanti_settimanali",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261011T130831Z_53730c4c",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-10-11T13:08:31.866126+00:00",
+            "finished_at": "2026-10-11T13:08:36.720287+00:00"
           }
         },
         {
@@ -3139,7 +3188,14 @@
           "source_id": "istat_sdmx",
           "status": "ok",
           "label": "istat_pil_territoriale",
-          "detail": "anno 2024 \u2014 mart: si"
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20261011T210321Z_9107a4b4",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-10-11T21:03:21.839119+00:00",
+            "finished_at": "2026-10-11T21:03:29.465657+00:00"
+          }
         },
         {
           "id": "mim_anagrafica_scuole_statali",
@@ -4934,7 +4990,7 @@
       "repo": "inpa-reclutamento",
       "available": true,
       "source_repo": "dataciviclab/inpa-reclutamento",
-      "updated_at": "2026-10-10",
+      "updated_at": "2026-10-11",
       "datasets": 4,
       "marts": 12,
       "signals": 4,
@@ -4978,11 +5034,11 @@
           "label": "inpa_bandi_open",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261010T120613Z_57340e27",
+            "run_id": "20261011T121930Z_ab863618",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-10T12:06:13.629549+00:00",
-            "finished_at": "2026-10-10T12:06:28.533198+00:00"
+            "started_at": "2026-10-11T12:19:30.181461+00:00",
+            "finished_at": "2026-10-11T12:19:46.363875+00:00"
           }
         },
         {
@@ -4992,11 +5048,11 @@
           "label": "inpa_comunicazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261010T120628Z_305e6068",
+            "run_id": "20261011T121946Z_63e1deeb",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-10T12:06:28.925391+00:00",
-            "finished_at": "2026-10-10T12:06:57.947709+00:00"
+            "started_at": "2026-10-11T12:19:46.801831+00:00",
+            "finished_at": "2026-10-11T12:20:15.810651+00:00"
           }
         }
       ]
@@ -6153,13 +6209,13 @@
       "repo": "open-inps",
       "available": true,
       "source_repo": "dataciviclab/open-inps",
-      "updated_at": "2026-10-04",
-      "datasets": 17,
-      "marts": 48,
-      "signals": 17,
+      "updated_at": "2026-10-11",
+      "datasets": 20,
+      "marts": 57,
+      "signals": 20,
       "codelists": 0,
-      "entities": 3,
-      "gcs": 17,
+      "entities": 4,
+      "gcs": 20,
       "reason": "",
       "signals_detail": [
         {
@@ -6188,6 +6244,48 @@
             "status": "SUCCESS",
             "started_at": "2026-10-03T19:46:10.952946+00:00",
             "finished_at": "2026-10-03T19:46:41.320791+00:00"
+          }
+        },
+        {
+          "id": "inps_bilancio_ce",
+          "source_id": "inps",
+          "status": "ok",
+          "label": "inps_bilancio_ce",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261011T122339Z_aacd2dda",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-10-11T12:23:39.222967+00:00",
+            "finished_at": "2026-10-11T12:23:44.940192+00:00"
+          }
+        },
+        {
+          "id": "inps_bilancio_gestionale",
+          "source_id": "inps",
+          "status": "ok",
+          "label": "inps_bilancio_gestionale",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261011T122355Z_5ce1b6db",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-10-11T12:23:55.977275+00:00",
+            "finished_at": "2026-10-11T12:24:03.090735+00:00"
+          }
+        },
+        {
+          "id": "inps_bilancio_missioni",
+          "source_id": "inps",
+          "status": "ok",
+          "label": "inps_bilancio_missioni",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261011T122407Z_c1a39215",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-10-11T12:24:07.989002+00:00",
+            "finished_at": "2026-10-11T12:24:11.568292+00:00"
           }
         },
         {
