@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-10T21:15:31.104204",
+  "generated_at": "2026-10-11T04:23:41.971598",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -277,7 +277,7 @@
       "url": "https://github.com/dataciviclab/open-ccnl",
       "role": "dati",
       "domain": "welfare-lavoro",
-      "n_datasets": 4,
+      "n_datasets": 5,
       "n_published": 0,
       "sources": [
         "cnel_archivio"
@@ -43048,6 +43048,139 @@
         ]
       },
       {
+        "slug": "ccnl_argomenti",
+        "url_slug": "ccnl-argomenti",
+        "name": "Ccnl Argomenti",
+        "description": "Analisi Avanzata CNEL: accordi classificati per sotto-argomento (88 voci ufficiali: minimi, TFR, scatti...).",
+        "source": "",
+        "source_id": "cnel_archivio",
+        "period": {
+          "start": 1980,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "welfare-lavoro",
+          "ccnl",
+          "cnel",
+          "analisi-avanzata",
+          "argomenti"
+        ],
+        "category": "welfare-lavoro",
+        "registry_source": "open-ccnl",
+        "clean_rows": 95899,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-ccnl/ccnl_argomenti/2026/ccnl_argomenti_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "id_accordo",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_ccnl",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_argomento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_argomento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_macro",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_macro",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipologia_accordo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_stipula",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_decorrenza",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_scadenza_contrattuale",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "titolo_ccnl",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "settori_ateco",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stato_aa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ultimo_accordo_vigente",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ccnl_argomenti__mart_argomenti_stats",
+          "ccnl_argomenti__mart_codici_argomenti",
+          "ccnl_argomenti__mart_codici_pivot"
+        ]
+      },
+      {
         "slug": "ccnl_confluenze",
         "url_slug": "ccnl-confluenze",
         "name": "Ccnl Confluenze",
@@ -56771,6 +56904,7 @@
       ],
       "datasets": [
         "ccnl_applicazione",
+        "ccnl_argomenti",
         "ccnl_confluenze",
         "ccnl_metadata",
         "ccnl_territorio",
@@ -56811,7 +56945,7 @@
         "popolazione_istat_comunale_2019_2025",
         "popolazione_quartiere"
       ],
-      "dataset_count": 40
+      "dataset_count": 41
     },
     {
       "slug": "giustizia",
@@ -57154,6 +57288,7 @@
       "name": "Welfare e lavoro",
       "datasets": [
         "ccnl_applicazione",
+        "ccnl_argomenti",
         "ccnl_confluenze",
         "ccnl_metadata",
         "ccnl_territorio",
@@ -58203,6 +58338,7 @@
     ],
     "open-ccnl": [
       "ccnl_applicazione",
+      "ccnl_argomenti",
       "ccnl_confluenze",
       "ccnl_metadata",
       "ccnl_territorio"
@@ -58723,6 +58859,7 @@
     ],
     "welfare-lavoro": [
       "ccnl_applicazione",
+      "ccnl_argomenti",
       "ccnl_confluenze",
       "ccnl_metadata",
       "ccnl_territorio",
@@ -60471,6 +60608,14 @@
     },
     "ccnl_applicazione": {
       "name": "Ccnl Applicazione",
+      "stage": "incubating",
+      "source_id": "cnel_archivio",
+      "registry_source": "open-ccnl",
+      "domain": "welfare-lavoro",
+      "category": "welfare-lavoro"
+    },
+    "ccnl_argomenti": {
+      "name": "Ccnl Argomenti",
       "stage": "incubating",
       "source_id": "cnel_archivio",
       "registry_source": "open-ccnl",

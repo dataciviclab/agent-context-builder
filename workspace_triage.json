@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-10T21:15:31.104204",
+  "generated_at": "2026-10-11T04:23:41.971598",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -5367,12 +5367,12 @@
       "available": true,
       "source_repo": "dataciviclab/open-ccnl",
       "updated_at": "2026-10-10",
-      "datasets": 4,
-      "marts": 13,
-      "signals": 5,
+      "datasets": 5,
+      "marts": 16,
+      "signals": 6,
       "codelists": 0,
       "entities": 5,
-      "gcs": 4,
+      "gcs": 5,
       "reason": "",
       "signals_detail": [
         {
@@ -5382,11 +5382,11 @@
           "label": "ccnl_analisi",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261010T153839Z_d6669f7e",
+            "run_id": "20261010T212521Z_aaf0879e",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-10T15:38:39.327075+00:00",
-            "finished_at": "2026-10-10T15:38:39.454122+00:00"
+            "started_at": "2026-10-10T21:25:21.040297+00:00",
+            "finished_at": "2026-10-10T21:25:21.168581+00:00"
           }
         },
         {
@@ -5396,11 +5396,25 @@
           "label": "ccnl_applicazione",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261010T153805Z_2ec8cac7",
+            "run_id": "20261010T211001Z_5c14e16d",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-10T15:38:05.390821+00:00",
-            "finished_at": "2026-10-10T15:38:08.252090+00:00"
+            "started_at": "2026-10-10T21:10:01.918964+00:00",
+            "finished_at": "2026-10-10T21:10:04.938634+00:00"
+          }
+        },
+        {
+          "id": "ccnl_argomenti",
+          "source_id": "cnel_archivio",
+          "status": "ok",
+          "label": "ccnl_argomenti",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261010T211005Z_2f5a1f98",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-10-10T21:10:05.384823+00:00",
+            "finished_at": "2026-10-10T21:24:51.058112+00:00"
           }
         },
         {
@@ -5410,11 +5424,11 @@
           "label": "ccnl_confluenze",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261010T153808Z_6697f2b7",
+            "run_id": "20261010T212451Z_08c55424",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-10T15:38:08.722648+00:00",
-            "finished_at": "2026-10-10T15:38:11.029089+00:00"
+            "started_at": "2026-10-10T21:24:51.476671+00:00",
+            "finished_at": "2026-10-10T21:24:54.519979+00:00"
           }
         },
         {
@@ -5424,11 +5438,11 @@
           "label": "ccnl_metadata",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261010T153811Z_bc67ced5",
+            "run_id": "20261010T212454Z_420a973d",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-10T15:38:11.474707+00:00",
-            "finished_at": "2026-10-10T15:38:31.209818+00:00"
+            "started_at": "2026-10-10T21:24:54.926243+00:00",
+            "finished_at": "2026-10-10T21:25:12.600386+00:00"
           }
         },
         {
@@ -5438,11 +5452,11 @@
           "label": "ccnl_territorio",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261010T153831Z_f7d5b4e2",
+            "run_id": "20261010T212513Z_7c0b0390",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-10T15:38:31.649332+00:00",
-            "finished_at": "2026-10-10T15:38:38.841374+00:00"
+            "started_at": "2026-10-10T21:25:13.016584+00:00",
+            "finished_at": "2026-10-10T21:25:20.579505+00:00"
           }
         }
       ]
