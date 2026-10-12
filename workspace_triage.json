@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T14:36:28.606417",
+  "generated_at": "2026-10-12T21:12:29.393237",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -47,7 +47,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 6,
+  "open_prs": 8,
   "prs": [
     {
       "number": 454,
@@ -57,10 +57,17 @@
       "category": "other"
     },
     {
-      "number": 884,
-      "title": "feat(inail): candidate inail-malattie-professionali \u2014 375K casi, 24 colonne",
+      "number": 887,
+      "title": "feat(istat): promuovi 3 dataset Tier 1 ISTAT economia ",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/884",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/887",
+      "category": "other"
+    },
+    {
+      "number": 885,
+      "title": "feat(candidates): eu-call-open + catena FTS call_id/project_id",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/885",
       "category": "other"
     },
     {
@@ -71,10 +78,10 @@
       "category": "other"
     },
     {
-      "number": 142,
-      "title": "feat(jvs): eurostat-jvs-nace2 \u2014 tasso vacanza trimestrale per NACE",
-      "repo": "eurostat",
-      "url": "https://github.com/dataciviclab/eurostat/pull/142",
+      "number": 61,
+      "title": "chore(post-merge): aggiorna registry (schedule)",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/pull/61",
       "category": "other"
     },
     {
@@ -85,14 +92,21 @@
       "category": "other"
     },
     {
-      "number": 422,
-      "title": "feat(catalog): datasets_in_use.upstream \u2014 mappa esplicita dataset \u2194 item fonte",
+      "number": 7,
+      "title": "feat(fsc-rso): migra a CSV portale Liferay + estensione 2026",
+      "repo": "opencivitas",
+      "url": "https://github.com/dataciviclab/opencivitas/pull/7",
+      "category": "other"
+    },
+    {
+      "number": 426,
+      "title": "feat(cli): so-source \u2014 probe, inventory, report, status per singola fonte",
       "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/422",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/426",
       "category": "other"
     }
   ],
-  "open_issues": 37,
+  "open_issues": 40,
   "issues": [
     {
       "number": 59,
@@ -331,6 +345,27 @@
       "repo": "open-noipa",
       "url": "https://github.com/dataciviclab/open-noipa/issues/2",
       "category": "infrastructure"
+    },
+    {
+      "number": 6,
+      "title": "Nuovo dataset FPRCM 2026 \u2014 flusso presente sul portale, non nel repo",
+      "repo": "opencivitas",
+      "url": "https://github.com/dataciviclab/opencivitas/issues/6",
+      "category": "other"
+    },
+    {
+      "number": 5,
+      "title": "indicatori 2023+: migrazione a formato portale Liferay",
+      "repo": "opencivitas",
+      "url": "https://github.com/dataciviclab/opencivitas/issues/5",
+      "category": "other"
+    },
+    {
+      "number": 424,
+      "title": "opencivitas: fonte centrale punta al vecchio /it/open-data (404) \u2014 aggiornare a docs.opencivitas.it",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/issues/424",
+      "category": "other"
     },
     {
       "number": 471,
@@ -2036,7 +2071,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 6"
+    "Many open PRs: 8"
   ],
   "radar": {
     "available": true,
@@ -2359,9 +2394,9 @@
     "available": true,
     "generated_at": "2026-10-12",
     "summary": {
-      "total": 43,
+      "total": 44,
       "by_status": {
-        "ok": 43
+        "ok": 44
       }
     },
     "actionable": []
@@ -2792,12 +2827,12 @@
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
       "updated_at": "2026-10-12",
-      "datasets": 52,
-      "marts": 75,
-      "signals": 43,
+      "datasets": 53,
+      "marts": 79,
+      "signals": 44,
       "codelists": 0,
       "entities": 14,
-      "gcs": 52,
+      "gcs": 53,
       "reason": "",
       "signals_detail": [
         {
@@ -2924,6 +2959,20 @@
             "status": "SUCCESS",
             "started_at": "2026-08-03T14:26:18.297828+00:00",
             "finished_at": "2026-08-03T14:26:18.530459+00:00"
+          }
+        },
+        {
+          "id": "inail_malattie_professionali",
+          "source_id": "inail_opendata",
+          "status": "ok",
+          "label": "inail_malattie_professionali",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261012T171021Z_c7ffdf6d",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-10-12T17:10:21.920145+00:00",
+            "finished_at": "2026-10-12T17:11:12.666343+00:00"
           }
         },
         {
@@ -3881,13 +3930,13 @@
       "repo": "eurostat",
       "available": true,
       "source_repo": "dataciviclab/eurostat",
-      "updated_at": "2026-09-27",
-      "datasets": 33,
-      "marts": 94,
-      "signals": 33,
+      "updated_at": "2026-10-12",
+      "datasets": 34,
+      "marts": 97,
+      "signals": 34,
       "codelists": 16,
       "entities": 3,
-      "gcs": 33,
+      "gcs": 34,
       "reason": "",
       "signals_detail": [
         {
@@ -4154,6 +4203,20 @@
             "status": "SUCCESS",
             "started_at": "2026-09-27T15:07:18.335908+00:00",
             "finished_at": "2026-09-27T15:07:19.692037+00:00"
+          }
+        },
+        {
+          "id": "eurostat_jvs_nace2",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_jvs_nace2",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261012T163627Z_422c9752",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-10-12T16:36:27.679748+00:00",
+            "finished_at": "2026-10-12T16:36:39.963887+00:00"
           }
         },
         {
@@ -5048,7 +5111,7 @@
       "repo": "inpa-reclutamento",
       "available": true,
       "source_repo": "dataciviclab/inpa-reclutamento",
-      "updated_at": "2026-10-11",
+      "updated_at": "2026-10-12",
       "datasets": 4,
       "marts": 12,
       "signals": 4,
@@ -5092,11 +5155,11 @@
           "label": "inpa_bandi_open",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261011T121930Z_ab863618",
+            "run_id": "20261012T144525Z_45a5f7a6",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-11T12:19:30.181461+00:00",
-            "finished_at": "2026-10-11T12:19:46.363875+00:00"
+            "started_at": "2026-10-12T14:45:25.585569+00:00",
+            "finished_at": "2026-10-12T14:45:44.876997+00:00"
           }
         },
         {
@@ -5106,11 +5169,11 @@
           "label": "inpa_comunicazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261011T121946Z_63e1deeb",
+            "run_id": "20261012T144545Z_ce1a3469",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-11T12:19:46.801831+00:00",
-            "finished_at": "2026-10-11T12:20:15.810651+00:00"
+            "started_at": "2026-10-12T14:45:45.353321+00:00",
+            "finished_at": "2026-10-12T14:46:13.370186+00:00"
           }
         }
       ]

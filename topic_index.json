@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-12T14:36:28.606417",
+  "generated_at": "2026-10-12T21:12:29.393237",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -71,7 +71,7 @@
       "url": "https://github.com/dataciviclab/dataset-incubator",
       "role": "infra",
       "domain": "welfare-lavoro",
-      "n_datasets": 40,
+      "n_datasets": 41,
       "n_published": 29,
       "sources": [
         "adm_opendata",
@@ -82,6 +82,7 @@
         "dataciviclab_composite",
         "ec_ameco",
         "fts",
+        "inail_opendata",
         "inps",
         "istat_dbnomics",
         "istat_sdmx",
@@ -157,7 +158,7 @@
       "url": "https://github.com/dataciviclab/eurostat",
       "role": "dati",
       "domain": "welfare-lavoro",
-      "n_datasets": 33,
+      "n_datasets": 34,
       "n_published": 0,
       "sources": [
         "eurostat"
@@ -13765,6 +13766,199 @@
           "fts_eu_grants__mart_sintesi_programma",
           "fts_eu_grants__mart_sintesi_beneficiario",
           "fts_eu_grants__mart_top_beneficiari"
+        ]
+      }
+    ],
+    "inail_opendata": [
+      {
+        "slug": "inail_malattie_professionali",
+        "url_slug": "inail-malattie-professionali",
+        "name": "Inail Malattie Professionali",
+        "description": "Malattie professionali denunciate all'INAIL: settore, agente causale, ICD10, grado menomazione, indennizzo. Snapshot al 2026-04-30 con protocolli 2021-2025.",
+        "source": "",
+        "source_id": "inail_opendata",
+        "period": {
+          "start": 2021,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "welfare-lavoro",
+          "inail",
+          "malattie-professionali",
+          "sicurezza-lavoro",
+          "settore",
+          "icd10"
+        ],
+        "category": "welfare-lavoro",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 375046,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/inail_malattie_professionali/2026/inail_malattie_professionali_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "data_rilevazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_protocollo",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_definizione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_morte",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sede_inail",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "genere",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "luogo_nascita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "settore_correlato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sub_settore_correlato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "icd10_denunciato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "icd10_accertato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "agente_causale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "qualificazione_legge",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "malattia_asbesto_correlata",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "definizione_caso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "definizione_lavoratore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "esito_mortale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "indennizzo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "grado_menomazione_lavoratore",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "grado_menomazione_caso",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "giorni_indennizzati",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "gestione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "inail_malattie_professionali__mart_casi_settore",
+          "inail_malattie_professionali__mart_casi_agente",
+          "inail_malattie_professionali__mart_menomazione",
+          "inail_malattie_professionali__mart_genere"
         ]
       }
     ],
@@ -31902,6 +32096,147 @@
         ]
       },
       {
+        "slug": "eurostat_jvs_nace2",
+        "url_slug": "eurostat-jvs-nace2",
+        "name": "Eurostat Jvs Nace2",
+        "description": "Job vacancy statistics by NACE Rev. 2 \u2014 posti vacanti, posti occupati e tasso vacanza per trimestre, EU countries",
+        "source": "",
+        "source_id": "eurostat",
+        "period": {
+          "start": 2001,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "welfare-lavoro",
+          "domanda-lavoro",
+          "vacancy",
+          "eurostat",
+          "nuts2",
+          "trimestrale"
+        ],
+        "category": "welfare-lavoro",
+        "registry_source": "eurostat",
+        "clean_rows": 724260,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/eurostat/eurostat_jvs_nace2/2026/eurostat_jvs_nace2_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "freq",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "s_adj",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nace_r2",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sizeclas",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "indic_em",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "geo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "nuts_code",
+            "description": ""
+          },
+          {
+            "name": "year",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "quarter",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "freq_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "geo_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nuts_level",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "country",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "value",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_desc_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "eurostat_jvs_nace2__mart_quarterly",
+          "eurostat_jvs_nace2__mart_italia",
+          "eurostat_jvs_nace2__mart_confronto"
+        ]
+      },
+      {
         "slug": "eurostat_labour_productivity_nuts3",
         "url_slug": "eurostat-labour-productivity-nuts3",
         "name": "Eurostat Labour Productivity Nuts3",
@@ -41688,7 +42023,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 1790,
+        "clean_rows": 1828,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_bandi_open/2026/inpa_bandi_open_2026_clean.parquet",
@@ -41900,7 +42235,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 5625,
+        "clean_rows": 5649,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_comunicazioni/2026/inpa_comunicazioni_2026_clean.parquet",
@@ -58023,12 +58358,14 @@
         "eurostat_energy_poverty_nuts2",
         "eurostat_fertility_nuts3",
         "eurostat_income_inequality_nuts2",
+        "eurostat_jvs_nace2",
         "eurostat_pop_density_nuts3",
         "eurostat_pop_nuts3",
         "eurostat_pop_structure_nuts3",
         "eurostat_poverty_risk_nuts2",
         "eurostat_tertiary_education_nuts2",
         "famiglie_tipologia",
+        "inail_malattie_professionali",
         "indici_fragilita",
         "inps_pensioni_trimestrale",
         "istat_housing_crowding",
@@ -58051,7 +58388,7 @@
         "popolazione_istat_comunale_2019_2025",
         "popolazione_quartiere"
       ],
-      "dataset_count": 43
+      "dataset_count": 45
     },
     {
       "slug": "giustizia",
@@ -58414,12 +58751,14 @@
         "eurostat_energy_poverty_nuts2",
         "eurostat_fertility_nuts3",
         "eurostat_income_inequality_nuts2",
+        "eurostat_jvs_nace2",
         "eurostat_pop_density_nuts3",
         "eurostat_pop_nuts3",
         "eurostat_pop_structure_nuts3",
         "eurostat_poverty_risk_nuts2",
         "eurostat_tertiary_education_nuts2",
         "famiglie_tipologia",
+        "inail_malattie_professionali",
         "indici_fragilita",
         "inps_pensioni_trimestrale",
         "istat_housing_crowding",
@@ -59250,6 +59589,7 @@
       "dipendenti_pubblici",
       "farmacie",
       "fts_eu_grants",
+      "inail_malattie_professionali",
       "inps_pensioni_trimestrale",
       "istat_asia_ul",
       "istat_elenco_comuni",
@@ -59350,6 +59690,7 @@
       "eurostat_gva_nuts3",
       "eurostat_hospital_beds_nuts2",
       "eurostat_income_inequality_nuts2",
+      "eurostat_jvs_nace2",
       "eurostat_labour_productivity_nuts3",
       "eurostat_nama10_gdp",
       "eurostat_namq10_gdp",
@@ -60001,12 +60342,14 @@
       "eurostat_energy_poverty_nuts2",
       "eurostat_fertility_nuts3",
       "eurostat_income_inequality_nuts2",
+      "eurostat_jvs_nace2",
       "eurostat_pop_density_nuts3",
       "eurostat_pop_nuts3",
       "eurostat_pop_structure_nuts3",
       "eurostat_poverty_risk_nuts2",
       "eurostat_tertiary_education_nuts2",
       "famiglie_tipologia",
+      "inail_malattie_professionali",
       "indici_fragilita",
       "inps_pensioni_trimestrale",
       "istat_housing_crowding",
@@ -60318,6 +60661,14 @@
       "registry_source": "dataset-incubator",
       "domain": "finanza-pubblica",
       "category": "finanza-pubblica"
+    },
+    "inail_malattie_professionali": {
+      "name": "Inail Malattie Professionali",
+      "stage": "incubating",
+      "source_id": "inail_opendata",
+      "registry_source": "dataset-incubator",
+      "domain": "welfare-lavoro",
+      "category": "welfare-lavoro"
     },
     "inps_pensioni_trimestrale": {
       "name": "INPS Pensioni \u2014 trimestrale",
@@ -61097,6 +61448,14 @@
     },
     "eurostat_income_inequality_nuts2": {
       "name": "Eurostat Income Inequality Nuts2",
+      "stage": "incubating",
+      "source_id": "eurostat",
+      "registry_source": "eurostat",
+      "domain": "welfare-lavoro",
+      "category": "welfare-lavoro"
+    },
+    "eurostat_jvs_nace2": {
+      "name": "Eurostat Jvs Nace2",
       "stage": "incubating",
       "source_id": "eurostat",
       "registry_source": "eurostat",

@@ -1,18 +1,18 @@
 # Session Bootstrap
 
-**Generated**: 2026-10-12T14:36:28.606417
+**Generated**: 2026-10-12T21:12:29.393237
 
 ## Stato
 
-Radar: 36 fonti GREEN 35 · Registry: 38 repo · 426 dataset
+Radar: 36 fonti GREEN 35 · Registry: 38 repo · 428 dataset
 
 ## Richiede attenzione
 
 - [PR] dataciviclab#454: workspace: contratto path/ruoli, Makefile setup, setup.sh deprecato
-- [PR] dataset-incubator#884: feat(inail): candidate inail-malattie-professionali — 375K casi, 24 colonne
+- [PR] dataset-incubator#887: feat(istat): promuovi 3 dataset Tier 1 ISTAT economia 
+- [PR] dataset-incubator#885: feat(candidates): eu-call-open + catena FTS call_id/project_id
 - [PR] dataset-incubator#836: feat(candidates): bootstrap gse_cer_elenco candidate
-- [PR] eurostat#142: feat(jvs): eurostat-jvs-nace2 — tasso vacanza trimestrale per NACE
-- [PR] italia-corpus#60: chore(mcp): deprecate legal_search/crossref verso MCP legal-graph
+- [PR] italia-corpus#61: chore(post-merge): aggiorna registry (schedule)
 
 ## Analisi pubbliche (45)
 
