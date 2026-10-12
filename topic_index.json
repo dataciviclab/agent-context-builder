@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-12T04:39:59.973805",
+  "generated_at": "2026-10-12T14:36:28.606417",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -28,7 +28,7 @@
       "url": "https://github.com/dataciviclab/bilancio-pubblico",
       "role": "dati",
       "domain": "finanza-pubblica",
-      "n_datasets": 5,
+      "n_datasets": 6,
       "n_published": 5,
       "sources": [
         "openbdap"
@@ -71,7 +71,7 @@
       "url": "https://github.com/dataciviclab/dataset-incubator",
       "role": "infra",
       "domain": "welfare-lavoro",
-      "n_datasets": 38,
+      "n_datasets": 40,
       "n_published": 29,
       "sources": [
         "adm_opendata",
@@ -86,6 +86,7 @@
         "istat_dbnomics",
         "istat_sdmx",
         "istat_situas",
+        "lavoro_opendata",
         "liberiamoli_tutti",
         "mase_dgsaie",
         "mim_opendata",
@@ -112,7 +113,7 @@
       "url": "https://github.com/dataciviclab/debito-pubblico-intelligence",
       "role": "dati",
       "domain": "finanza-pubblica",
-      "n_datasets": 8,
+      "n_datasets": 9,
       "n_published": 0,
       "sources": [
         "banca_ditalia",
@@ -167,7 +168,7 @@
       "url": "https://github.com/dataciviclab/giustizia-amministrativa",
       "role": "dati",
       "domain": "giustizia",
-      "n_datasets": 14,
+      "n_datasets": 13,
       "n_published": 0,
       "sources": [
         "dataciviclab_composite",
@@ -5171,14 +5172,14 @@
             "name": "codice_missione",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "programma_code",
             "description": ""
           },
           {
             "name": "missione",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "programma_code",
             "description": ""
           },
           {
@@ -5317,14 +5318,14 @@
             "name": "codice_missione",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "programma_code",
             "description": ""
           },
           {
             "name": "missione",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "programma_code",
             "description": ""
           },
           {
@@ -5602,6 +5603,104 @@
         ]
       },
       {
+        "slug": "bdap_spesa_statale_regionalizzata",
+        "url_slug": "bdap-spesa-statale-regionalizzata",
+        "name": "Bdap Spesa Statale Regionalizzata",
+        "description": "Spesa del Bilancio dello Stato per territorio destinatario (SRS_SPE_BIL_SPESR_001). Italia + ripartizioni + regioni, per Titolo/Categoria/Missione. Al netto degli interessi sul debito \u2014 quota regionalizzata (non confrontabile 1:1 con bdap_spese_stato per tutte le missioni, es. 034 debito quasi assente). Serie OpenBDAP: 2008\u20132023 (package spd_srs_spe_bil_spesr_01_YYYY). Processati: 2008\u20132014, 2016\u20132018, 2020\u20132022. Mancano dump UUID: 2015, 2019, 2023 (landing esistenti).\n",
+        "source": "",
+        "source_id": "openbdap",
+        "period": {
+          "start": 2008,
+          "end": 2022
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "bdap",
+          "spesa",
+          "regionalizzata",
+          "territorio",
+          "bilancio-stato"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "bilancio-pubblico",
+        "clean_rows": 20268,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bilancio-pubblico/bdap_spesa_statale_regionalizzata/*/bdap_spesa_statale_regionalizzata_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "territorio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "livello_territoriale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "titolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_missione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "programma_code",
+            "description": ""
+          },
+          {
+            "name": "missione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "programma_code",
+            "description": ""
+          },
+          {
+            "name": "misura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "bdap_spesa_statale_regionalizzata__mart_per_missione_italia",
+          "bdap_spesa_statale_regionalizzata__mart_per_missione_regione"
+        ]
+      },
+      {
         "slug": "bdap_spese_stato",
         "url_slug": "bdap-spese-stato",
         "name": "Bdap Spese Stato",
@@ -5639,14 +5738,14 @@
             "name": "codice_missione",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "programma_code",
             "description": ""
           },
           {
             "name": "missione",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "programma_code",
             "description": ""
           },
           {
@@ -21381,6 +21480,270 @@
         ]
       }
     ],
+    "lavoro_opendata": [
+      {
+        "slug": "minlavoro_agevolazioni",
+        "url_slug": "minlavoro-agevolazioni",
+        "name": "Minlavoro Agevolazioni",
+        "description": "Agevolazioni fiscali all'assunzione (decontribuzione, detassazione, altre) dichiarate dalle imprese. Cross-section e serie regionali 2016-2024. Join naturale con minlavoro-flussi su (regione, anno).",
+        "source": "",
+        "source_id": "lavoro_opendata",
+        "period": {
+          "start": 2016,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "welfare-lavoro",
+          "minlavoro",
+          "agevolazioni",
+          "decontribuzione",
+          "detassazione",
+          "incentivi"
+        ],
+        "category": "welfare-lavoro",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 2868,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/minlavoro_agevolazioni/2024/minlavoro_agevolazioni_2024_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "tabella_id",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_agevolazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "mese",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          },
+          {
+            "name": "settore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipologia_contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "indicatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "indicatore_code",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "valore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "minlavoro_agevolazioni__mart_agevolazioni_regione",
+          "minlavoro_agevolazioni__mart_agevolazioni_anno"
+        ]
+      },
+      {
+        "slug": "minlavoro_flussi",
+        "url_slug": "minlavoro-flussi",
+        "name": "Minlavoro Flussi",
+        "description": "Comunicazioni obbligatorie MinLavoro: attivazioni, cessazioni, trasformazioni, tirocini e somministrazione. Fonde Nota trimestrale (2019-2023) e Rapporto Annuale (2021-2023) in schema long unico.",
+        "source": "",
+        "source_id": "lavoro_opendata",
+        "period": {
+          "start": 2019,
+          "end": 2023
+        },
+        "stage": "incubating",
+        "tags": [
+          "welfare-lavoro",
+          "minlavoro",
+          "flussi",
+          "assunzioni",
+          "cessazioni",
+          "tirocini",
+          "somministrazione"
+        ],
+        "category": "welfare-lavoro",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 23598,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/minlavoro_flussi/2023/minlavoro_flussi_2023_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "fonte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tabella_id",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_flusso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "trimestre",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "geo_level",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "geo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "nuts_code",
+            "description": ""
+          },
+          {
+            "name": "genere",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "is_totale_genere",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipologia_contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "settore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "classe_eta",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "motivo_cessazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "durata_fascia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "qualifica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "indicatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "indicatore_code",
+            "description": ""
+          },
+          {
+            "name": "valore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "minlavoro_flussi__mart_flussi_anno",
+          "minlavoro_flussi__mart_flussi_regione",
+          "minlavoro_flussi__mart_trasformazioni",
+          "minlavoro_flussi__mart_gap_genere"
+        ]
+      }
+    ],
     "mit_opendata": [
       {
         "slug": "mit_incidentalita_mensile",
@@ -34050,6 +34413,98 @@
         ]
       },
       {
+        "slug": "mef_riepilogo_emissioni_scadenze",
+        "url_slug": "mef-riepilogo-emissioni-scadenze",
+        "name": "Mef Riepilogo Emissioni Scadenze",
+        "description": "Riepilogo MEF Tesoro emissioni e scadenze Titoli di Stato (BTP, BOT): grano ISIN \u00d7 anno \u00d7 sezione (EMISSIONI/SCADENZE). Ponte flusso BDAP 034 \u2194 stock/scadenze titoli. Pattern DPI: preprocess.py per CSV irregolari.\n",
+        "source": "",
+        "source_id": "mef_tesoro",
+        "period": {
+          "start": 2020,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "debito",
+          "titoli",
+          "emissioni",
+          "scadenze",
+          "isin",
+          "mef"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "debito-pubblico-intelligence",
+        "clean_rows": 166,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/debito_pubblico_intelligence/mef_riepilogo_emissioni_scadenze/2026/mef_riepilogo_emissioni_scadenze_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "tipologia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sezione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "isin",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "scadenza",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_tenore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_mld",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_abs_mld",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mef_riepilogo_emissioni_scadenze__mart_per_anno_tipologia",
+          "mef_riepilogo_emissioni_scadenze__mart_scadenze_per_anno"
+        ]
+      },
+      {
         "slug": "mef_scadenze_isin",
         "url_slug": "mef-scadenze-isin",
         "name": "Mef Scadenze Isin",
@@ -34071,7 +34526,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "debito-pubblico-intelligence",
-        "clean_rows": 466,
+        "clean_rows": 470,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/debito_pubblico_intelligence/mef_scadenze_isin/2026/mef_scadenze_isin_2026_clean.parquet",
@@ -34223,7 +34678,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "debito-pubblico-intelligence",
-        "clean_rows": 61,
+        "clean_rows": 94,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/debito_pubblico_intelligence/mef_vita_media/2026/mef_vita_media_2026_clean.parquet",
@@ -37764,79 +38219,6 @@
         "mart_refs": [
           "openga_ricorsi_appalto__mart_ricorsi_sede_classificazione",
           "openga_ricorsi_appalto__mart_ricorsi_territorio_settore"
-        ]
-      },
-      {
-        "slug": "openga_ricorsi_cds",
-        "url_slug": "openga-ricorsi-cds",
-        "name": "Openga Ricorsi Cds",
-        "description": "",
-        "source": "",
-        "source_id": "openga",
-        "period": {
-          "start": 2023,
-          "end": 2026
-        },
-        "stage": "incubating",
-        "tags": [
-          "giustizia",
-          "giustizia-amministrativa",
-          "contenzioso"
-        ],
-        "category": "giustizia",
-        "registry_source": "giustizia-amministrativa",
-        "clean_rows": 2145,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/giustizia-amministrativa/openga_ricorsi_cds/2026/openga_ricorsi_cds_2026_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "BIGINT",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "anno_mese_riferimento",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "mese",
-            "type": "BIGINT",
-            "role": "dimension",
-            "semantic_type": "month",
-            "description": ""
-          },
-          {
-            "name": "codice_sede",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "nome_sede",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "numero_ricorsi_pendenti",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "openga_ricorsi_cds__ricorsi_annuali"
         ]
       }
     ],
@@ -57472,6 +57854,7 @@
         "bdap_lb_spese_missione",
         "bdap_pagamenti_stato",
         "bdap_saldi_stato",
+        "bdap_spesa_statale_regionalizzata",
         "bdap_spese_stato",
         "camcom_cancellazioni",
         "camcom_iscrizioni",
@@ -57529,6 +57912,7 @@
         "mef_patrimonio_enti",
         "mef_patrimonio_immobili",
         "mef_rappresentanti_partecipate",
+        "mef_riepilogo_emissioni_scadenze",
         "mef_scadenze_isin",
         "mef_titoli_12m",
         "mef_vita_media",
@@ -57578,7 +57962,7 @@
         "ted_contract_notices",
         "wb_financial"
       ],
-      "dataset_count": 121
+      "dataset_count": 123
     },
     {
       "slug": "sanita",
@@ -57653,6 +58037,8 @@
         "mim_alunni_corso_eta",
         "mim_anagrafica_scuole_statali",
         "mim_scuola_infanzia",
+        "minlavoro_agevolazioni",
+        "minlavoro_flussi",
         "mur_contribuzione_universitaria",
         "mur_formazione_post_laurea",
         "mur_immatricolati",
@@ -57665,7 +58051,7 @@
         "popolazione_istat_comunale_2019_2025",
         "popolazione_quartiere"
       ],
-      "dataset_count": 41
+      "dataset_count": 43
     },
     {
       "slug": "giustizia",
@@ -57706,14 +58092,13 @@
         "monitoraggio_occ",
         "monitoraggio_pnrr_giustizia",
         "openga_ricorsi_appalto",
-        "openga_ricorsi_cds",
         "penale_flussi",
         "quadro_distretto",
         "spese_giustizia",
         "ucp_dettaglio",
         "ucp_numero"
       ],
-      "dataset_count": 31
+      "dataset_count": 30
     },
     {
       "slug": "terzo-settore",
@@ -57884,6 +58269,7 @@
         "bdap_lb_spese_missione",
         "bdap_pagamenti_stato",
         "bdap_saldi_stato",
+        "bdap_spesa_statale_regionalizzata",
         "bdap_spese_stato",
         "camcom_cancellazioni",
         "camcom_iscrizioni",
@@ -57941,6 +58327,7 @@
         "mef_patrimonio_enti",
         "mef_patrimonio_immobili",
         "mef_rappresentanti_partecipate",
+        "mef_riepilogo_emissioni_scadenze",
         "mef_scadenze_isin",
         "mef_titoli_12m",
         "mef_vita_media",
@@ -58041,6 +58428,8 @@
         "mim_alunni_corso_eta",
         "mim_anagrafica_scuole_statali",
         "mim_scuola_infanzia",
+        "minlavoro_agevolazioni",
+        "minlavoro_flussi",
         "mur_contribuzione_universitaria",
         "mur_formazione_post_laurea",
         "mur_immatricolati",
@@ -58083,7 +58472,6 @@
         "monitoraggio_occ",
         "monitoraggio_pnrr_giustizia",
         "openga_ricorsi_appalto",
-        "openga_ricorsi_cds",
         "penale_flussi",
         "quadro_distretto",
         "spese_giustizia",
@@ -58835,6 +59223,7 @@
       "bdap_lb_spese_missione",
       "bdap_pagamenti_stato",
       "bdap_saldi_stato",
+      "bdap_spesa_statale_regionalizzata",
       "bdap_spese_stato"
     ],
     "costituzione-italiana": [
@@ -58874,6 +59263,8 @@
       "mim_alunni_corso_eta",
       "mim_anagrafica_scuole_statali",
       "mim_scuola_infanzia",
+      "minlavoro_agevolazioni",
+      "minlavoro_flussi",
       "mit_incidentalita_mensile",
       "mit_opere_incompiute_2020",
       "pensioni_pa_dag",
@@ -58910,6 +59301,7 @@
       "eurostat_rendimento_10y",
       "fpi_debito_pa",
       "mef_composizione",
+      "mef_riepilogo_emissioni_scadenze",
       "mef_scadenze_isin",
       "mef_titoli_12m",
       "mef_vita_media",
@@ -58987,8 +59379,7 @@
       "ga_ricorsi_tipo_decisione",
       "ga_sentenze",
       "ga_sentenze_brevi",
-      "openga_ricorsi_appalto",
-      "openga_ricorsi_cds"
+      "openga_ricorsi_appalto"
     ],
     "giustizia-statistiche": [
       "civile_flussi",
@@ -59325,6 +59716,7 @@
       "bdap_lb_spese_missione",
       "bdap_pagamenti_stato",
       "bdap_saldi_stato",
+      "bdap_spesa_statale_regionalizzata",
       "bdap_spese_stato",
       "camcom_cancellazioni",
       "camcom_iscrizioni",
@@ -59382,6 +59774,7 @@
       "mef_patrimonio_enti",
       "mef_patrimonio_immobili",
       "mef_rappresentanti_partecipate",
+      "mef_riepilogo_emissioni_scadenze",
       "mef_scadenze_isin",
       "mef_titoli_12m",
       "mef_vita_media",
@@ -59457,7 +59850,6 @@
       "monitoraggio_occ",
       "monitoraggio_pnrr_giustizia",
       "openga_ricorsi_appalto",
-      "openga_ricorsi_cds",
       "penale_flussi",
       "quadro_distretto",
       "spese_giustizia",
@@ -59623,6 +60015,8 @@
       "mim_alunni_corso_eta",
       "mim_anagrafica_scuole_statali",
       "mim_scuola_infanzia",
+      "minlavoro_agevolazioni",
+      "minlavoro_flussi",
       "mur_contribuzione_universitaria",
       "mur_formazione_post_laurea",
       "mur_immatricolati",
@@ -59736,6 +60130,14 @@
     "bdap_saldi_stato": {
       "name": "Bdap Saldi Stato",
       "stage": "published",
+      "source_id": "openbdap",
+      "registry_source": "bilancio-pubblico",
+      "domain": "finanza-pubblica",
+      "category": "finanza-pubblica"
+    },
+    "bdap_spesa_statale_regionalizzata": {
+      "name": "Bdap Spesa Statale Regionalizzata",
+      "stage": "incubating",
       "source_id": "openbdap",
       "registry_source": "bilancio-pubblico",
       "domain": "finanza-pubblica",
@@ -60077,6 +60479,22 @@
       "domain": "welfare-lavoro",
       "category": "istruzione"
     },
+    "minlavoro_agevolazioni": {
+      "name": "Minlavoro Agevolazioni",
+      "stage": "incubating",
+      "source_id": "lavoro_opendata",
+      "registry_source": "dataset-incubator",
+      "domain": "welfare-lavoro",
+      "category": "welfare-lavoro"
+    },
+    "minlavoro_flussi": {
+      "name": "Minlavoro Flussi",
+      "stage": "incubating",
+      "source_id": "lavoro_opendata",
+      "registry_source": "dataset-incubator",
+      "domain": "welfare-lavoro",
+      "category": "welfare-lavoro"
+    },
     "mit_incidentalita_mensile": {
       "name": "MIT Incidentalit\u00e0 Stradale Mensile",
       "stage": "incubating",
@@ -60367,6 +60785,14 @@
     },
     "mef_composizione": {
       "name": "Mef Composizione",
+      "stage": "incubating",
+      "source_id": "mef_tesoro",
+      "registry_source": "debito-pubblico-intelligence",
+      "domain": "finanza-pubblica",
+      "category": "finanza-pubblica"
+    },
+    "mef_riepilogo_emissioni_scadenze": {
+      "name": "Mef Riepilogo Emissioni Scadenze",
       "stage": "incubating",
       "source_id": "mef_tesoro",
       "registry_source": "debito-pubblico-intelligence",
@@ -60895,14 +61321,6 @@
     },
     "openga_ricorsi_appalto": {
       "name": "Openga Ricorsi Appalto",
-      "stage": "incubating",
-      "source_id": "openga",
-      "registry_source": "giustizia-amministrativa",
-      "domain": "giustizia",
-      "category": "giustizia"
-    },
-    "openga_ricorsi_cds": {
-      "name": "Openga Ricorsi Cds",
       "stage": "incubating",
       "source_id": "openga",
       "registry_source": "giustizia-amministrativa",
