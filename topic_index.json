@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-13T00:14:05.941067",
+  "generated_at": "2026-10-13T13:41:41.877466",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -71,7 +71,7 @@
       "url": "https://github.com/dataciviclab/dataset-incubator",
       "role": "infra",
       "domain": "welfare-lavoro",
-      "n_datasets": 41,
+      "n_datasets": 44,
       "n_published": 29,
       "sources": [
         "adm_opendata",
@@ -412,7 +412,7 @@
       "url": "https://github.com/dataciviclab/opencivitas",
       "role": "dati",
       "domain": "finanza-pubblica",
-      "n_datasets": 5,
+      "n_datasets": 7,
       "n_published": 0,
       "sources": [
         "opencivitas"
@@ -19636,6 +19636,104 @@
     ],
     "istat_dbnomics": [
       {
+        "slug": "istat_asia_imprese_addetti",
+        "url_slug": "istat-asia-imprese-addetti",
+        "name": "Istat Asia Imprese Addetti",
+        "description": "",
+        "source": "",
+        "source_id": "istat_dbnomics",
+        "period": {
+          "start": 2012,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "economia",
+          "istat",
+          "asia",
+          "imprese",
+          "addetti",
+          "nace",
+          "nuts1"
+        ],
+        "category": "economia",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 10296,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/istat_asia_imprese_addetti/2024/istat_asia_imprese_addetti_2024_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "territorio_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "territorio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "livello",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nace_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nace",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "indicatore_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "indicatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "indicatore_code",
+            "description": ""
+          },
+          {
+            "name": "valore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "istat_asia_imprese_addetti__mart_asia_imprese_anno"
+        ]
+      },
+      {
         "slug": "istat_asia_ul",
         "url_slug": "istat-asia-ul",
         "name": "Istat Asia Ul",
@@ -19722,6 +19820,209 @@
         ],
         "mart_refs": [
           "istat_asia_ul__mart_asia_ul_comuni"
+        ]
+      },
+      {
+        "slug": "istat_sbs_imprese",
+        "url_slug": "istat-sbs-imprese",
+        "name": "Istat Sbs Imprese",
+        "description": "",
+        "source": "",
+        "source_id": "istat_dbnomics",
+        "period": {
+          "start": 2008,
+          "end": 2023
+        },
+        "stage": "incubating",
+        "tags": [
+          "economia",
+          "istat",
+          "sbs",
+          "imprese",
+          "fatturato",
+          "valore-aggiunto"
+        ],
+        "category": "economia",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 20796,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/istat_sbs_imprese/2023/istat_sbs_imprese_2023_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "territorio_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "territorio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "grain",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nace_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nace",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "indicatore_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "indicatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "indicatore_code",
+            "description": ""
+          },
+          {
+            "name": "valore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unita_misura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "istat_sbs_imprese__mart_sbs_anno"
+        ]
+      },
+      {
+        "slug": "istat_va_branca",
+        "url_slug": "istat-va-branca",
+        "name": "Istat Va Branca",
+        "description": "",
+        "source": "",
+        "source_id": "istat_dbnomics",
+        "period": {
+          "start": 1995,
+          "end": 2023
+        },
+        "stage": "incubating",
+        "tags": [
+          "economia",
+          "istat",
+          "va",
+          "pil",
+          "branca",
+          "nace",
+          "conti-territoriali"
+        ],
+        "category": "economia",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 49770,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/istat_va_branca/2023/istat_va_branca_2023_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "territorio_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "territorio_nome",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "livello",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "nace_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_dato_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_dato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valutazione_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valore_mln_eu",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "istat_va_branca__mart_va_branca",
+          "istat_va_branca__mart_va_branca_share"
         ]
       }
     ],
@@ -53176,6 +53477,218 @@
         ]
       },
       {
+        "slug": "opencivitas_fprcm",
+        "url_slug": "opencivitas-fprcm",
+        "name": "Opencivitas Fprcm",
+        "description": "",
+        "source": "",
+        "source_id": "opencivitas",
+        "period": {
+          "start": 2022,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "opencivitas",
+          "fprcm",
+          "province"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "opencivitas",
+        "clean_rows": 86,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/opencivitas/opencivitas_fprcm/*/opencivitas_fprcm_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "username",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "sogei_code",
+            "description": ""
+          },
+          {
+            "name": "ente",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipologia_ente",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "provincia_istat_cod",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione_istat_cod",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "popolazione",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "capacita_fiscale",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fabbisogni_standard",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "contributo_fondamentali_prov",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_contributi_fondi_correnti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "join_enti_ok",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "opencivitas_fprcm__mart_compose_province"
+        ]
+      },
+      {
+        "slug": "opencivitas_fprcm_enti",
+        "url_slug": "opencivitas-fprcm-enti",
+        "name": "Opencivitas Fprcm Enti",
+        "description": "",
+        "source": "",
+        "source_id": "opencivitas",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "opencivitas",
+          "fprcm",
+          "enti",
+          "province"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "opencivitas",
+        "clean_rows": 86,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/opencivitas/opencivitas_fprcm_enti/2026/opencivitas_fprcm_enti_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "username",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "sogei_code",
+            "description": ""
+          },
+          {
+            "name": "denominazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipologia_ente",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "provincia_istat_cod",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione_istat_cod",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "opencivitas_fprcm_enti__mart_enti"
+        ]
+      },
+      {
         "slug": "opencivitas_fsc_enti_rso",
         "url_slug": "opencivitas-fsc-enti-rso",
         "name": "Opencivitas Fsc Enti Rso",
@@ -53373,7 +53886,7 @@
         "source_id": "opencivitas",
         "period": {
           "start": 2015,
-          "end": 2022
+          "end": 2023
         },
         "stage": "incubating",
         "tags": [
@@ -53383,7 +53896,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "opencivitas",
-        "clean_rows": 582,
+        "clean_rows": 578,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/opencivitas/opencivitas_glossario/*/opencivitas_glossario_*_clean.parquet",
@@ -53460,7 +53973,7 @@
         "source_id": "opencivitas",
         "period": {
           "start": 2015,
-          "end": 2022
+          "end": 2023
         },
         "stage": "incubating",
         "tags": [
@@ -53470,7 +53983,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "opencivitas",
-        "clean_rows": 2670752,
+        "clean_rows": 2677968,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/opencivitas/opencivitas_indicatori/*/opencivitas_indicatori_*_clean.parquet",
@@ -58234,9 +58747,12 @@
         "irap_vp_regime",
         "ires_redditi_regione",
         "irpef_comunale",
+        "istat_asia_imprese_addetti",
         "istat_asia_ul",
         "istat_gini_regionale",
         "istat_pil_territoriale",
+        "istat_sbs_imprese",
+        "istat_va_branca",
         "iva_regionale",
         "iva_sez_attivita",
         "mef_adempimenti",
@@ -58260,6 +58776,8 @@
         "oecd_unemployment",
         "op_cup_lab",
         "opencivitas_determinanti",
+        "opencivitas_fprcm",
+        "opencivitas_fprcm_enti",
         "opencivitas_fsc_enti_rso",
         "opencivitas_fsc_rso",
         "opencivitas_glossario",
@@ -58297,7 +58815,7 @@
         "ted_contract_notices",
         "wb_financial"
       ],
-      "dataset_count": 123
+      "dataset_count": 128
     },
     {
       "slug": "sanita",
@@ -58651,9 +59169,12 @@
         "irap_vp_regime",
         "ires_redditi_regione",
         "irpef_comunale",
+        "istat_asia_imprese_addetti",
         "istat_asia_ul",
         "istat_gini_regionale",
         "istat_pil_territoriale",
+        "istat_sbs_imprese",
+        "istat_va_branca",
         "iva_regionale",
         "iva_sez_attivita",
         "mef_adempimenti",
@@ -58677,6 +59198,8 @@
         "oecd_unemployment",
         "op_cup_lab",
         "opencivitas_determinanti",
+        "opencivitas_fprcm",
+        "opencivitas_fprcm_enti",
         "opencivitas_fsc_enti_rso",
         "opencivitas_fsc_rso",
         "opencivitas_glossario",
@@ -59591,6 +60114,7 @@
       "fts_eu_grants",
       "inail_malattie_professionali",
       "inps_pensioni_trimestrale",
+      "istat_asia_imprese_addetti",
       "istat_asia_ul",
       "istat_elenco_comuni",
       "istat_gini_regionale",
@@ -59598,6 +60122,8 @@
       "istat_ipab_aree",
       "istat_occupazione_provinciale",
       "istat_pil_territoriale",
+      "istat_sbs_imprese",
+      "istat_va_branca",
       "mase_prezzi_carburanti_mensili",
       "mase_prezzi_carburanti_settimanali",
       "mim_alunni_corso_eta",
@@ -59968,6 +60494,8 @@
     ],
     "opencivitas": [
       "opencivitas_determinanti",
+      "opencivitas_fprcm",
+      "opencivitas_fprcm_enti",
       "opencivitas_fsc_enti_rso",
       "opencivitas_fsc_rso",
       "opencivitas_glossario",
@@ -60102,9 +60630,12 @@
       "irap_vp_regime",
       "ires_redditi_regione",
       "irpef_comunale",
+      "istat_asia_imprese_addetti",
       "istat_asia_ul",
       "istat_gini_regionale",
       "istat_pil_territoriale",
+      "istat_sbs_imprese",
+      "istat_va_branca",
       "iva_regionale",
       "iva_sez_attivita",
       "mef_adempimenti",
@@ -60128,6 +60659,8 @@
       "oecd_unemployment",
       "op_cup_lab",
       "opencivitas_determinanti",
+      "opencivitas_fprcm",
+      "opencivitas_fprcm_enti",
       "opencivitas_fsc_enti_rso",
       "opencivitas_fsc_rso",
       "opencivitas_glossario",
@@ -60718,6 +61251,14 @@
       "domain": "territorio-ambiente",
       "category": "ambiente"
     },
+    "istat_asia_imprese_addetti": {
+      "name": "Istat Asia Imprese Addetti",
+      "stage": "incubating",
+      "source_id": "istat_dbnomics",
+      "registry_source": "dataset-incubator",
+      "domain": "finanza-pubblica",
+      "category": "economia"
+    },
     "istat_asia_ul": {
       "name": "Istat Asia Ul",
       "stage": "published",
@@ -60770,6 +61311,22 @@
       "name": "PIL regionale e provinciale",
       "stage": "published",
       "source_id": "istat_sdmx",
+      "registry_source": "dataset-incubator",
+      "domain": "finanza-pubblica",
+      "category": "economia"
+    },
+    "istat_sbs_imprese": {
+      "name": "Istat Sbs Imprese",
+      "stage": "incubating",
+      "source_id": "istat_dbnomics",
+      "registry_source": "dataset-incubator",
+      "domain": "finanza-pubblica",
+      "category": "economia"
+    },
+    "istat_va_branca": {
+      "name": "Istat Va Branca",
+      "stage": "incubating",
+      "source_id": "istat_dbnomics",
       "registry_source": "dataset-incubator",
       "domain": "finanza-pubblica",
       "category": "economia"
@@ -63296,6 +63853,22 @@
     },
     "opencivitas_determinanti": {
       "name": "Opencivitas Determinanti",
+      "stage": "incubating",
+      "source_id": "opencivitas",
+      "registry_source": "opencivitas",
+      "domain": "finanza-pubblica",
+      "category": "finanza-pubblica"
+    },
+    "opencivitas_fprcm": {
+      "name": "Opencivitas Fprcm",
+      "stage": "incubating",
+      "source_id": "opencivitas",
+      "registry_source": "opencivitas",
+      "domain": "finanza-pubblica",
+      "category": "finanza-pubblica"
+    },
+    "opencivitas_fprcm_enti": {
+      "name": "Opencivitas Fprcm Enti",
       "stage": "incubating",
       "source_id": "opencivitas",
       "registry_source": "opencivitas",

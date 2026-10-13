@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T00:14:05.941067",
+  "generated_at": "2026-10-13T13:41:41.877466",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -47,20 +47,13 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 6,
+  "open_prs": 5,
   "prs": [
     {
       "number": 454,
       "title": "workspace: contratto path/ruoli, Makefile setup, setup.sh deprecato",
       "repo": "dataciviclab",
       "url": "https://github.com/dataciviclab/dataciviclab/pull/454",
-      "category": "other"
-    },
-    {
-      "number": 887,
-      "title": "feat(istat): promuovi 3 dataset Tier 1 ISTAT economia ",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/887",
       "category": "other"
     },
     {
@@ -78,21 +71,21 @@
       "category": "other"
     },
     {
-      "number": 61,
-      "title": "chore(post-merge): aggiorna registry (schedule)",
-      "repo": "italia-corpus",
-      "url": "https://github.com/dataciviclab/italia-corpus/pull/61",
-      "category": "other"
-    },
-    {
       "number": 60,
       "title": "chore(mcp): deprecate legal_search/crossref verso MCP legal-graph",
       "repo": "italia-corpus",
       "url": "https://github.com/dataciviclab/italia-corpus/pull/60",
       "category": "other"
+    },
+    {
+      "number": 11,
+      "title": "feat(dashboard): pagine FSC e Province (FPRCM), fix anni indicatori",
+      "repo": "opencivitas",
+      "url": "https://github.com/dataciviclab/opencivitas/pull/11",
+      "category": "other"
     }
   ],
-  "open_issues": 40,
+  "open_issues": 38,
   "issues": [
     {
       "number": 59,
@@ -331,20 +324,6 @@
       "repo": "open-noipa",
       "url": "https://github.com/dataciviclab/open-noipa/issues/2",
       "category": "infrastructure"
-    },
-    {
-      "number": 6,
-      "title": "Nuovo dataset FPRCM 2026 \u2014 flusso presente sul portale, non nel repo",
-      "repo": "opencivitas",
-      "url": "https://github.com/dataciviclab/opencivitas/issues/6",
-      "category": "other"
-    },
-    {
-      "number": 5,
-      "title": "indicatori 2023+: migrazione a formato portale Liferay",
-      "repo": "opencivitas",
-      "url": "https://github.com/dataciviclab/opencivitas/issues/5",
-      "category": "other"
     },
     {
       "number": 424,
@@ -2056,25 +2035,23 @@
       "untracked_files": 0
     }
   },
-  "warnings": [
-    "Many open PRs: 6"
-  ],
+  "warnings": [],
   "radar": {
     "available": true,
-    "generated_at": "2026-10-12T10:40:44.770564+00:00",
-    "probe_date": "2026-10-12",
+    "generated_at": "2026-10-13T10:34:07.094468+00:00",
+    "probe_date": "2026-10-13",
     "sources_total": 36,
-    "green": 35,
-    "yellow": 1,
+    "green": 34,
+    "yellow": 2,
     "red": 0,
     "persistent_red": 0,
     "sources": [
       {
         "id": "istat_sdmx",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "sdmx",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
@@ -2360,6 +2337,14 @@
     ],
     "unhealthy": [
       {
+        "id": "istat_sdmx",
+        "status": "YELLOW",
+        "protocol": "sdmx",
+        "http_code": "-",
+        "note": "Timeout (ReadTimeout)",
+        "red_streak": 0
+      },
+      {
         "id": "opencivitas",
         "status": "YELLOW",
         "protocol": "html",
@@ -2378,11 +2363,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-10-12",
+    "generated_at": "2026-10-13",
     "summary": {
-      "total": 44,
+      "total": 47,
       "by_status": {
-        "ok": 44
+        "ok": 47
       }
     },
     "actionable": []
@@ -2812,13 +2797,13 @@
       "repo": "dataset-incubator",
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
-      "updated_at": "2026-10-12",
-      "datasets": 53,
-      "marts": 79,
-      "signals": 44,
+      "updated_at": "2026-10-13",
+      "datasets": 56,
+      "marts": 83,
+      "signals": 47,
       "codelists": 0,
       "entities": 14,
-      "gcs": 53,
+      "gcs": 56,
       "reason": "",
       "signals_detail": [
         {
@@ -2983,6 +2968,20 @@
           }
         },
         {
+          "id": "istat_asia_imprese_addetti",
+          "source_id": "istat_dbnomics",
+          "status": "ok",
+          "label": "istat_asia_imprese_addetti",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20261013T090325Z_1e0baba4",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-10-13T09:03:25.808511+00:00",
+            "finished_at": "2026-10-13T09:03:36.052093+00:00"
+          }
+        },
+        {
           "id": "istat_asia_ul",
           "source_id": "istat_dbnomics",
           "status": "ok",
@@ -3050,6 +3049,34 @@
             "status": "SUCCESS",
             "started_at": "2026-10-11T21:03:07.643067+00:00",
             "finished_at": "2026-10-11T21:03:21.403110+00:00"
+          }
+        },
+        {
+          "id": "istat_sbs_imprese",
+          "source_id": "istat_dbnomics",
+          "status": "ok",
+          "label": "istat_sbs_imprese",
+          "detail": "anno 2023 \u2014 mart: si",
+          "run": {
+            "run_id": "20261013T090336Z_b667eff1",
+            "year": 2023,
+            "status": "SUCCESS",
+            "started_at": "2026-10-13T09:03:36.345763+00:00",
+            "finished_at": "2026-10-13T09:03:51.138433+00:00"
+          }
+        },
+        {
+          "id": "istat_va_branca",
+          "source_id": "istat_dbnomics",
+          "status": "ok",
+          "label": "istat_va_branca",
+          "detail": "anno 2023 \u2014 mart: si",
+          "run": {
+            "run_id": "20261013T090351Z_83ee4762",
+            "year": 2023,
+            "status": "SUCCESS",
+            "started_at": "2026-10-13T09:03:51.427682+00:00",
+            "finished_at": "2026-10-13T09:04:08.538447+00:00"
           }
         },
         {
@@ -5168,7 +5195,7 @@
       "repo": "italia-corpus",
       "available": true,
       "source_repo": "dataciviclab/italia-corpus",
-      "updated_at": "2026-10-08",
+      "updated_at": "2026-10-12",
       "datasets": 4,
       "marts": 10,
       "signals": 4,
@@ -5184,11 +5211,11 @@
           "label": "akn_act_meta",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261008T114414Z_42dbf879",
+            "run_id": "20261012T163527Z_19d081ed",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-08T11:44:14.609748+00:00",
-            "finished_at": "2026-10-08T11:44:15.167567+00:00"
+            "started_at": "2026-10-12T16:35:27.570173+00:00",
+            "finished_at": "2026-10-12T16:35:27.777719+00:00"
           }
         },
         {
@@ -5198,11 +5225,11 @@
           "label": "akn_relations",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261008T114415Z_ecad9008",
+            "run_id": "20261012T163528Z_d463b5ca",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-08T11:44:15.540489+00:00",
-            "finished_at": "2026-10-08T11:44:17.097453+00:00"
+            "started_at": "2026-10-12T16:35:28.078832+00:00",
+            "finished_at": "2026-10-12T16:35:29.120951+00:00"
           }
         },
         {
@@ -5212,11 +5239,11 @@
           "label": "normativa",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261008T114417Z_2481b66c",
+            "run_id": "20261012T163529Z_fa096bd7",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-08T11:44:17.487454+00:00",
-            "finished_at": "2026-10-08T11:44:18.207588+00:00"
+            "started_at": "2026-10-12T16:35:29.424862+00:00",
+            "finished_at": "2026-10-12T16:35:29.691442+00:00"
           }
         },
         {
@@ -5226,11 +5253,11 @@
           "label": "riferimenti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261008T114418Z_10d37d59",
+            "run_id": "20261012T163530Z_0af55dd3",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-08T11:44:18.567367+00:00",
-            "finished_at": "2026-10-08T11:44:19.278105+00:00"
+            "started_at": "2026-10-12T16:35:30.009855+00:00",
+            "finished_at": "2026-10-12T16:35:30.451293+00:00"
           }
         }
       ]
@@ -7835,13 +7862,13 @@
       "repo": "opencivitas",
       "available": true,
       "source_repo": "dataciviclab/opencivitas",
-      "updated_at": "2026-10-12",
-      "datasets": 5,
-      "marts": 6,
-      "signals": 5,
+      "updated_at": "2026-10-13",
+      "datasets": 7,
+      "marts": 8,
+      "signals": 7,
       "codelists": 0,
       "entities": 6,
-      "gcs": 5,
+      "gcs": 7,
       "reason": "",
       "signals_detail": [
         {
@@ -7851,11 +7878,25 @@
           "label": "opencivitas_determinanti",
           "detail": "anni 2015-2022 \u2014 mart: si",
           "run": {
-            "run_id": "20261012T212010Z_d330b775",
+            "run_id": "20261013T102531Z_f79a0935",
             "year": 2022,
             "status": "SUCCESS",
-            "started_at": "2026-10-12T21:20:10.449199+00:00",
-            "finished_at": "2026-10-12T21:20:15.812245+00:00"
+            "started_at": "2026-10-13T10:25:31.690428+00:00",
+            "finished_at": "2026-10-13T10:25:36.202133+00:00"
+          }
+        },
+        {
+          "id": "opencivitas_fprcm",
+          "source_id": "opencivitas",
+          "status": "ok",
+          "label": "opencivitas_fprcm",
+          "detail": "anni 2022-2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261013T102702Z_d697332b",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-10-13T10:27:02.323524+00:00",
+            "finished_at": "2026-10-13T10:27:03.502694+00:00"
           }
         },
         {
@@ -7865,11 +7906,11 @@
           "label": "opencivitas_fsc_rso",
           "detail": "anni 2017-2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261012T212136Z_0be629ec",
+            "run_id": "20261013T102646Z_f486b368",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-12T21:21:36.009415+00:00",
-            "finished_at": "2026-10-12T21:21:45.858007+00:00"
+            "started_at": "2026-10-13T10:26:46.480323+00:00",
+            "finished_at": "2026-10-13T10:26:55.588746+00:00"
           }
         },
         {
@@ -7877,13 +7918,27 @@
           "source_id": "opencivitas",
           "status": "ok",
           "label": "opencivitas_indicatori",
-          "detail": "anni 2015-2022 \u2014 mart: si",
+          "detail": "anni 2015-2023 \u2014 mart: si",
           "run": {
-            "run_id": "20261012T212606Z_778d9e8a",
-            "year": 2022,
+            "run_id": "20261013T103147Z_ee207f62",
+            "year": 2023,
             "status": "SUCCESS",
-            "started_at": "2026-10-12T21:26:06.584277+00:00",
-            "finished_at": "2026-10-12T21:26:47.467738+00:00"
+            "started_at": "2026-10-13T10:31:47.292054+00:00",
+            "finished_at": "2026-10-13T10:34:21.570250+00:00"
+          }
+        },
+        {
+          "id": "opencivitas_fprcm_enti",
+          "source_id": "opencivitas",
+          "status": "ok",
+          "label": "opencivitas_fprcm_enti",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261013T102312Z_502307ce",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-10-13T10:23:12.745707+00:00",
+            "finished_at": "2026-10-13T10:23:13.892092+00:00"
           }
         },
         {
@@ -7893,11 +7948,11 @@
           "label": "opencivitas_fsc_enti_rso",
           "detail": "anno 2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261012T211751Z_73a453d3",
+            "run_id": "20261013T102307Z_db5025f0",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-10-12T21:17:51.869068+00:00",
-            "finished_at": "2026-10-12T21:17:54.718017+00:00"
+            "started_at": "2026-10-13T10:23:07.907410+00:00",
+            "finished_at": "2026-10-13T10:23:11.662486+00:00"
           }
         },
         {
@@ -7905,13 +7960,13 @@
           "source_id": "opencivitas",
           "status": "ok",
           "label": "opencivitas_glossario",
-          "detail": "anni 2015-2022 \u2014 mart: si",
+          "detail": "anni 2015-2023 \u2014 mart: si",
           "run": {
-            "run_id": "20261012T211923Z_c177db89",
-            "year": 2022,
+            "run_id": "20261013T102454Z_de5afb9b",
+            "year": 2023,
             "status": "SUCCESS",
-            "started_at": "2026-10-12T21:19:23.377579+00:00",
-            "finished_at": "2026-10-12T21:19:36.268197+00:00"
+            "started_at": "2026-10-13T10:24:54.335571+00:00",
+            "finished_at": "2026-10-13T10:24:59.102400+00:00"
           }
         }
       ]
