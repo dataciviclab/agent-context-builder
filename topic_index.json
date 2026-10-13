@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-12T21:12:29.393237",
+  "generated_at": "2026-10-13T00:14:05.941067",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -53251,7 +53251,7 @@
         "source_id": "opencivitas",
         "period": {
           "start": 2017,
-          "end": 2025
+          "end": 2026
         },
         "stage": "incubating",
         "tags": [
@@ -53261,7 +53261,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "opencivitas",
-        "clean_rows": 6573,
+        "clean_rows": 6572,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/opencivitas/opencivitas_fsc_rso/*/opencivitas_fsc_rso_*_clean.parquet",
