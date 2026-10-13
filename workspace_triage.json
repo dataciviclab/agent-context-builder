@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T13:41:41.877466",
+  "generated_at": "2026-10-13T22:21:32.600969",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -47,7 +47,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 5,
+  "open_prs": 4,
   "prs": [
     {
       "number": 454,
@@ -71,21 +71,14 @@
       "category": "other"
     },
     {
-      "number": 60,
-      "title": "chore(mcp): deprecate legal_search/crossref verso MCP legal-graph",
-      "repo": "italia-corpus",
-      "url": "https://github.com/dataciviclab/italia-corpus/pull/60",
-      "category": "other"
-    },
-    {
-      "number": 11,
-      "title": "feat(dashboard): pagine FSC e Province (FPRCM), fix anni indicatori",
-      "repo": "opencivitas",
-      "url": "https://github.com/dataciviclab/opencivitas/pull/11",
+      "number": 91,
+      "title": "fix(http): sopprimi InsecureRequestWarning a livello di modulo",
+      "repo": "lab-connectors",
+      "url": "https://github.com/dataciviclab/lab-connectors/pull/91",
       "category": "other"
     }
   ],
-  "open_issues": 38,
+  "open_issues": 39,
   "issues": [
     {
       "number": 59,
@@ -233,6 +226,13 @@
       "repo": "giustizia-amministrativa",
       "url": "https://github.com/dataciviclab/giustizia-amministrativa/issues/11",
       "category": "intake"
+    },
+    {
+      "number": 63,
+      "title": "chore(lab_tools): riordino script \u2014 separare library da eseguibili",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/issues/63",
+      "category": "other"
     },
     {
       "number": 28,
@@ -5124,7 +5124,7 @@
       "repo": "inpa-reclutamento",
       "available": true,
       "source_repo": "dataciviclab/inpa-reclutamento",
-      "updated_at": "2026-10-12",
+      "updated_at": "2026-10-13",
       "datasets": 4,
       "marts": 12,
       "signals": 4,
@@ -5168,11 +5168,11 @@
           "label": "inpa_bandi_open",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261012T144525Z_45a5f7a6",
+            "run_id": "20261013T134743Z_c3325553",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-12T14:45:25.585569+00:00",
-            "finished_at": "2026-10-12T14:45:44.876997+00:00"
+            "started_at": "2026-10-13T13:47:43.220008+00:00",
+            "finished_at": "2026-10-13T13:48:02.385700+00:00"
           }
         },
         {
@@ -5182,11 +5182,11 @@
           "label": "inpa_comunicazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261012T144545Z_ce1a3469",
+            "run_id": "20261013T134802Z_54deab6c",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-12T14:45:45.353321+00:00",
-            "finished_at": "2026-10-12T14:46:13.370186+00:00"
+            "started_at": "2026-10-13T13:48:02.733080+00:00",
+            "finished_at": "2026-10-13T13:48:31.528629+00:00"
           }
         }
       ]
