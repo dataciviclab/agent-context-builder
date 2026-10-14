@@ -108,118 +108,8 @@ def test_topic_index_http_error():
 
 
 # ---------------------------------------------------------------------------
-# topic_index(resolve=...) — sub-graph traversal
+# topic_index(resolve=...) — delegates to explore (schema v7 only)
 # ---------------------------------------------------------------------------
-
-
-_SAMPLE_V3_INDEX = json.dumps(
-    {
-        "schema_version": 4,
-        "datasets": {
-            "ISPRA": [
-                {
-                    "slug": "ispra_ru_base",
-                    "name": "Rifiuti Urbani",
-                    "period": {"start": 2020, "end": 2024},
-                    "stage": "published",
-                },
-                {
-                    "slug": "ispra_consumo_suolo",
-                    "name": "Consumo Suolo",
-                    "period": {"start": 2024, "end": 2024},
-                    "stage": "incubating",
-                },
-            ],
-            "MEF": [
-                {
-                    "slug": "irpef_comunale",
-                    "name": "IRPEF Comunale",
-                    "period": {"start": 2019, "end": 2023},
-                    "stage": "published",
-                },
-            ],
-        },
-        "analyses": [
-            {
-                "slug": "irpef-comunale",
-                "name": "IRPEF Comunale 2019-2023",
-                "datasets": ["irpef_comunale"],
-                "status": "active",
-                "discussion": 88,
-            },
-        ],
-        "analyses_by_dataset": {
-            "irpef_comunale": ["irpef-comunale"],
-        },
-    }
-)
-
-
-@pytest.mark.contract
-def test_topic_index_resolve_by_dataset_slug():
-    """resolve finds a published dataset and its related analyses."""
-    fake = FakeHttpClient()
-    _patch_fetch(fake, "topic_index.json", text=_SAMPLE_V3_INDEX)
-
-    mcp_server._http = fake
-    result = mcp_server.topic_index(resolve="irpef_comunale")
-    mcp_server._http = None
-
-    data = result["content"]
-    assert data["resolve"] == "irpef_comunale"
-    assert data["found"] is True
-    # Published dataset found
-    assert len(data["datasets"]) == 1
-    assert data["datasets"][0]["slug"] == "irpef_comunale"
-    assert data["datasets"][0]["stage"] == "published"
-    # Analysis found via datasets list match (irpef_comunale in analysis.datasets)
-    assert len(data["analyses"]) == 1
-    assert data["analyses"][0]["slug"] == "irpef-comunale"
-    # No duplicates in analyses
-    assert len(data["analyses"]) == 1
-
-
-@pytest.mark.contract
-def test_topic_index_resolve_by_source_dedup():
-    """resolve by source name deduplicates datasets and sources across sections."""
-    fake = FakeHttpClient()
-    _patch_fetch(fake, "topic_index.json", text=_SAMPLE_V3_INDEX)
-
-    mcp_server._http = fake
-    result = mcp_server.topic_index(resolve="ISPRA")
-    mcp_server._http = None
-
-    data = result["content"]
-    assert data["resolve"] == "ISPRA"
-    assert data["found"] is True
-
-    # sources should appear exactly once
-    assert len(data["datasets"]) >= 1
-    # sources no longer in output
-
-    # datasets should include both published and incubating, deduped
-    slugs = [d["slug"] for d in data["datasets"]]
-    assert len(slugs) == 2
-    assert "ispra_ru_base" in slugs
-    assert "ispra_consumo_suolo" in slugs
-    stages = {d["slug"]: d["stage"] for d in data["datasets"]}
-    assert stages["ispra_ru_base"] == "published"
-    assert stages["ispra_consumo_suolo"] == "incubating"
-
-
-@pytest.mark.contract
-def test_topic_index_resolve_not_found():
-    """resolve returns found=False when nothing matches."""
-    fake = FakeHttpClient()
-    _patch_fetch(fake, "topic_index.json", text=_SAMPLE_V3_INDEX)
-
-    mcp_server._http = fake
-    result = mcp_server.topic_index(resolve="nonexistent")
-    mcp_server._http = None
-
-    data = result["content"]
-    assert data["resolve"] == "nonexistent"
-    assert data["found"] is False
 
 
 # ---------------------------------------------------------------------------
@@ -344,110 +234,6 @@ def test_refresh_context_api_error(monkeypatch):
 
 
 # ── search ─────────────────────────────────────────────────────────────────
-
-
-@pytest.mark.contract
-def test_search_topic_index_matches_name():
-    """_search_topic_index matches dataset slug, name and source case-insensitive."""
-    topic = {
-        "datasets": {
-            "ISPRA": [
-                {
-                    "slug": "ispra_ru_base",
-                    "name": "Rifiuti Urbani",
-                    "period": {"start": 2020},
-                    "stage": "published",
-                },
-            ],
-            "MEF": [
-                {
-                    "slug": "irpef_comunale",
-                    "name": "IRPEF Comunale",
-                    "period": {"start": 2019},
-                    "stage": "published",
-                },
-            ],
-        },
-        "analyses": [
-            {
-                "slug": "irpef-comunale",
-                "name": "IRPEF Comunale 2019-2023",
-                "datasets": ["irpef_comunale"],
-                "status": "active",
-            },
-        ],
-    }
-    result = mcp_server._search_topic_index("rifiuti", topic)
-    assert len(result["datasets"]) == 1
-    assert result["datasets"][0]["slug"] == "ispra_ru_base"
-
-    result2 = mcp_server._search_topic_index("irpef", topic)
-    assert len(result2["datasets"]) == 1
-    assert len(result2["analyses"]) == 1
-    assert result2["analyses"][0]["slug"] == "irpef-comunale"
-
-
-@pytest.mark.contract
-def test_search_topic_index_no_match():
-    """_search_topic_index returns empty lists when nothing matches."""
-    topic = {
-        "datasets": {
-            "ISTAT": [{"slug": "popolazione", "name": "Popolazione", "stage": "published"}]
-        },
-        "analyses": [],
-    }
-    result = mcp_server._search_topic_index("clima", topic)
-    assert result["datasets"] == []
-    assert result["analyses"] == []
-
-
-@pytest.mark.contract
-def test_search_topic_index_word_boundary():
-    """_search_topic_index uses word boundary on name: 'pubblica' ∌ 'pubblicati'."""
-    topic = {
-        "datasets": {
-            "Terna": [
-                {
-                    "slug": "terna_capacita_rinnovabile",
-                    "name": "Terna Capacità Rinnovabile",
-                    "period": {"start": 2015},
-                    "stage": "published",
-                },
-            ],
-            "MEF": [
-                {
-                    "slug": "dipendenti_pubblici",
-                    "name": "Dipendenti Pubblici",
-                    "period": {"start": 2010},
-                    "stage": "published",
-                },
-            ],
-        },
-        "analyses": [],
-    }
-    # 'pubblica' in source "dati pubblicati su terna.com" era un falso positivo
-    # Con word boundary: NON deve matchare
-    source_terna = "Terna S.p.A. — dati pubblicati su terna.com"
-    topic["datasets"]["Terna"][0]["source"] = source_terna
-    topic["datasets"]["MEF"][0]["source"] = "MEF"
-
-    result = mcp_server._search_topic_index("pubblica", topic)
-    slugs = [d["slug"] for d in result["datasets"]]
-    assert "terna_capacita_rinnovabile" not in slugs, (
-        "word boundary: 'pubblica' non deve matchare 'pubblicati'"
-    )
-    # 'pubblici' DEVE matchare (parola intera in nome/slug)
-    result2 = mcp_server._search_topic_index("pubblici", topic)
-    slugs2 = [d["slug"] for d in result2["datasets"]]
-    assert "dipendenti_pubblici" in slugs2, (
-        "'pubblici' deve matchare 'dipendenti_pubblici' via slug (substring)"
-    )
-
-
-@pytest.mark.contract
-def test_search_topic_index_empty_topic():
-    """_search_topic_index handles empty topic data gracefully."""
-    assert mcp_server._search_topic_index("test", {}) == {"datasets": [], "analyses": []}
 
 
 @pytest.mark.adapter
@@ -650,6 +436,33 @@ _SAMPLE_V7_INDEX = json.dumps(
         },
     }
 )
+
+
+@pytest.mark.contract
+def test_topic_index_resolve_delegates_to_explore():
+    """resolve= uses explore_ref on the v7 index (no legacy sub-graph path)."""
+    fake = FakeHttpClient()
+    _patch_fetch(fake, "topic_index.json", text=_SAMPLE_V7_INDEX)
+    mcp_server._http = fake
+    result = mcp_server.topic_index(resolve="ispra_ru_base")
+    mcp_server._http = None
+
+    data = result["content"]
+    assert data["found"] is True
+    assert data["type"] == "dataset"
+    assert data["slug"] == "ispra_ru_base"
+
+
+@pytest.mark.contract
+def test_topic_index_resolve_not_found():
+    """resolve returns found=False via explore when ref does not exist."""
+    fake = FakeHttpClient()
+    _patch_fetch(fake, "topic_index.json", text=_SAMPLE_V7_INDEX)
+    mcp_server._http = fake
+    result = mcp_server.topic_index(resolve="nonexistent")
+    mcp_server._http = None
+
+    assert result["content"]["found"] is False
 
 
 @pytest.mark.contract

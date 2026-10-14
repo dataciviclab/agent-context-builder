@@ -6,7 +6,7 @@ Tools:
   lab_map            — navigation tree: domains → repos → sources
   find               — ranked cross-entity search (dataset/repo/domain/source/analysis)
   explore            — deep-dive any Lab entity by ref
-  topic_index        — dataset/analysis exploration (resolve for deep-dive)
+  topic_index        — compact summary (resolve delegates to explore)
   search             — legacy cross-cutting search (wraps find + GitHub issues)
   refresh_context    — trigger CI rebuild (action)
 
@@ -28,7 +28,7 @@ from typing import Any
 from lab_connectors.http import HttpClient
 from lab_connectors.mcp import TtlCache, create_mcp_server, get_mcp_logger, guard_timed
 
-from .navigation import explore_ref, lab_map_summary, query_matches, search_index
+from .navigation import explore_ref, lab_map_summary, search_index
 
 _REPO = os.environ.get("ACB_REPO", "dataciviclab/agent-context-builder")
 _BRANCH = os.environ.get("ACB_BRANCH", "context")
@@ -305,58 +305,16 @@ def find(
 def explore(ref: str) -> dict[str, object]:
     def _exec() -> dict[str, object]:
         data = _load_topic_index()
-        card = explore_ref(data, ref)
-        if not card.get("found"):
-            # Fallback: try legacy topic_index resolve semantics
-            result = _legacy_resolve(data, ref)
-            card = {**card, **result}
-        return {"content": card, "ok": True}
+        return {"content": explore_ref(data, ref), "ok": True}
 
     return guard_timed(_exec, "explore")
 
 
-def _legacy_resolve(data: dict[str, Any], resolve: str) -> dict[str, Any]:
-    """Best-effort resolve matching old topic_index(resolve=) behaviour."""
-    resolve_lower = resolve.lower()
-    extra: dict[str, Any] = {}
-    seen: set[str] = set()
-    datasets_found: list[dict[str, Any]] = []
-    for source, ds_list in (data.get("datasets") or {}).items():
-        for ds in ds_list or []:
-            slug = ds.get("slug", "")
-            if slug.lower() == resolve_lower and slug not in seen:
-                seen.add(slug)
-                datasets_found.append(
-                    {
-                        "slug": slug,
-                        "name": ds.get("name", ""),
-                        "source": source,
-                        "stage": ds.get("stage", "published"),
-                    }
-                )
-            elif resolve_lower in {s.lower() for s in (ds.get("tags") or [])}:
-                if slug not in seen:
-                    seen.add(slug)
-                    datasets_found.append(
-                        {
-                            "slug": slug,
-                            "name": ds.get("name", ""),
-                            "source": source,
-                            "stage": ds.get("stage", "published"),
-                        }
-                    )
-    if datasets_found:
-        extra["datasets"] = datasets_found
-        extra["found"] = True
-    return extra
-
-
 @mcp.tool(
     description=(
-        "Dataset/analysis exploration (legacy). "
+        "Dataset/analysis summary (legacy). "
         "Without resolve: returns compact summary (counts by source, stage). "
-        "With resolve (slug, name, or source): returns sub-graph with related entities. "
-        "Prefer explore() and find() for navigation."
+        "With resolve: delegates to explore(). Prefer explore() and find()."
     ),
     structured_output=True,
 )
@@ -385,70 +343,9 @@ def topic_index(resolve: str | None = None) -> dict[str, object]:
                 "ok": True,
             }
 
-        # Prefer navigation explore when schema v7 indexes are present
-        if data.get("by_slug") or data.get("domains"):
-            card = explore_ref(data, resolve)
-            if card.get("found"):
-                return {"content": card, "ok": True}
-
-        # Resolve: sub-graph (legacy path)
-        resolve_lower = resolve.lower()
-        result: dict[str, Any] = {"resolve": resolve, "found": False}
-        seen_slugs: set[str] = set()
-
-        for source, ds_list in data.get("datasets", {}).items():
-            for ds in ds_list:
-                slug = ds.get("slug", "")
-                if slug.lower() == resolve_lower and slug not in seen_slugs:
-                    seen_slugs.add(slug)
-                    result.setdefault("datasets", []).append(
-                        {
-                            "slug": slug,
-                            "name": ds.get("name", ""),
-                            "source": source,
-                            "period": ds.get("period"),
-                            "stage": ds.get("stage", "published"),
-                            "gcs_path": ds.get("location", {}).get("path", ""),
-                        }
-                    )
-                    result["found"] = True
-
-        for a in data.get("analyses", []):
-            a_slug = a.get("slug", "")
-            if a_slug.lower() == resolve_lower or resolve_lower in [
-                d.lower() for d in a.get("datasets", [])
-            ]:
-                result.setdefault("analyses", []).append(
-                    {
-                        "slug": a_slug,
-                        "name": a.get("name", ""),
-                        "datasets": a.get("datasets", []),
-                        "status": a.get("status", ""),
-                    }
-                )
-                result["found"] = True
-
-        entries = data.get("datasets", {})
-        if resolve_lower in {s.lower() for s in entries}:
-            for source, ds_list in entries.items():
-                if source.lower() == resolve_lower:
-                    result["found"] = True
-                    for ds in ds_list:
-                        slug = ds.get("slug", "")
-                        if slug not in seen_slugs:
-                            seen_slugs.add(slug)
-                            result.setdefault("datasets", []).append(
-                                {
-                                    "slug": slug,
-                                    "name": ds.get("name", ""),
-                                    "source": source,
-                                    "period": ds.get("period"),
-                                    "stage": ds.get("stage", "published"),
-                                }
-                            )
-
-        result["count"] = len(result.get("datasets", []))
-        return {"content": result, "ok": True}
+        # Resolve always delegates to the navigation index (schema v7)
+        card = explore_ref(data, resolve)
+        return {"content": card, "ok": True}
 
     return guard_timed(_exec, "topic_index")
 
@@ -467,43 +364,30 @@ def search(query: str, limit: int = 10) -> dict[str, object]:
         # GitHub Issues + PRs
         issues = _search_github_issues(query, token, limit)
 
-        # Local search via navigation index (v7) or legacy topic_index fields
         try:
             topic_data = _load_topic_index()
         except Exception:
             topic_data = {}
 
-        if topic_data.get("by_slug") or topic_data.get("datasets"):
-            ranked = search_index(topic_data, query, limit=limit)
-            datasets = [
-                {
-                    "slug": r["slug"],
-                    "name": r.get("name", ""),
-                    "stage": r.get("stage", "published"),
-                }
-                for r in ranked
-                if r.get("type") == "dataset"
-            ]
-            analyses = [
-                {
-                    "slug": r["slug"],
-                    "name": r.get("name", ""),
-                    "datasets": r.get("datasets") or [],
-                }
-                for r in ranked
-                if r.get("type") == "analysis"
-            ]
-        else:
-            local = (
-                _search_topic_index(query, topic_data)
-                if topic_data
-                else {
-                    "datasets": [],
-                    "analyses": [],
-                }
-            )
-            datasets = local["datasets"]
-            analyses = local["analyses"]
+        ranked = search_index(topic_data, query, limit=limit) if topic_data else []
+        datasets = [
+            {
+                "slug": r["slug"],
+                "name": r.get("name", ""),
+                "stage": r.get("stage", "published"),
+            }
+            for r in ranked
+            if r.get("type") == "dataset"
+        ]
+        analyses = [
+            {
+                "slug": r["slug"],
+                "name": r.get("name", ""),
+                "datasets": r.get("datasets") or [],
+            }
+            for r in ranked
+            if r.get("type") == "analysis"
+        ]
 
         return {
             "query": query,
@@ -606,42 +490,6 @@ def _search_github_issues(
         }
         for item in items
     ]
-
-
-def _search_topic_index(query: str, topic_data: dict) -> dict[str, list[dict[str, object]]]:
-    datasets_found: list[dict[str, object]] = []
-    analyses_found: list[dict[str, object]] = []
-    seen_slugs: set[str] = set()
-
-    for source, ds_list in topic_data.get("datasets", {}).items():
-        for ds in ds_list:
-            slug = ds.get("slug", "")
-            name = ds.get("name", "")
-            tags = " ".join(ds.get("tags") or [])
-            description = ds.get("description") or ""
-            if slug not in seen_slugs and (
-                query.lower() in slug.lower()
-                or query_matches(query, name, source, tags, description)
-            ):
-                seen_slugs.add(slug)
-                datasets_found.append(
-                    {"slug": slug, "name": name, "stage": ds.get("stage", "published")}
-                )
-
-    for a in topic_data.get("analyses", []):
-        a_slug = a.get("slug", "")
-        a_name = a.get("name", "")
-        a_datasets = " ".join(a.get("datasets", []))
-        if (
-            query.lower() in a_slug.lower()
-            or query_matches(query, a_name)
-            or query.lower() in a_datasets.lower()
-        ):
-            analyses_found.append(
-                {"slug": a_slug, "name": a_name, "datasets": a.get("datasets", [])}
-            )
-
-    return {"datasets": datasets_found, "analyses": analyses_found}
 
 
 def main() -> None:
