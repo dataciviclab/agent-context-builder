@@ -57,6 +57,18 @@ FLAT = [
         "registry_source": "open-conto-annuale",
         "category": "finanza-pubblica",
     },
+    {
+        "slug": "anac_bandi_gara",
+        "name": "Anac Bandi Gara",
+        "stage": "published",
+        "source_id": "anac",
+        "registry_source": "appalti-pubblici",
+        "category": "appalti",
+        "tags": ["appalti", "anac", "bandi", "gara"],
+        "description": (
+            "Bandi di gara pubblici italiani (CIG): oggetto, importi, stazione appaltante"
+        ),
+    },
 ]
 
 
@@ -75,7 +87,7 @@ def _index() -> dict:
     return {
         "schema_version": 7,
         "repos": repos,
-        "datasets": {"ispra": [FLAT[0]], "bdap": [FLAT[1]]},
+        "datasets": {"ispra": [FLAT[0]], "bdap": [FLAT[1]], "anac": [FLAT[2]]},
         "domains": build_domains(THEMES, FLAT, cat_map),
         "explorer_themes": build_explorer_themes(THEMES, FLAT, cat_map),
         "analyses": [
@@ -158,8 +170,8 @@ def test_search_index_source_and_analysis():
 
 def test_lab_map_summary_tree():
     summary = lab_map_summary(_index())
-    assert summary["totals"]["datasets"] == 2
-    assert summary["totals"]["published"] == 1
+    assert summary["totals"]["datasets"] == 3
+    assert summary["totals"]["published"] == 2
     assert any(d["slug"] == "territorio-ambiente" for d in summary["domains"])
     assert any(r["repo"] == "rifiuti-urbani" for r in summary["repos"])
     assert summary["sources"]["ispra"] == 1
@@ -167,7 +179,7 @@ def test_lab_map_summary_tree():
 
 def test_lab_map_summary_domain_filter():
     summary = lab_map_summary(_index(), domain="finanza-pubblica")
-    assert summary["totals"]["datasets"] == 2  # totals remain global
+    assert summary["totals"]["datasets"] == 3  # totals remain global
     assert len(summary["domains"]) == 1
     assert summary["repos"] == [] or all(
         r["domain"] == "finanza-pubblica" for r in summary["repos"]
@@ -219,3 +231,68 @@ def test_explore_ref_source_dedupes_slugs():
 
 def test_explore_ref_not_found():
     assert explore_ref(_index(), "nope")["found"] is False
+
+
+# ── Tokenized natural-language queries (regression: multi-word discovery) ────
+
+
+def test_tokenize_query_drops_stopwords_and_accents():
+    from agent_context_builder.navigation import _tokenize_query
+
+    assert _tokenize_query("bandi di gara") == ["bandi", "gara"]
+    assert _tokenize_query("appalti pubblici ANAC") == ["appalti", "pubblici", "anac"]
+    assert _tokenize_query("spesa più recente") == ["spesa", "recente"]
+    assert _tokenize_query("di delle dei") == []
+
+
+def test_field_words_split_snake_case():
+    from agent_context_builder.navigation import _field_words
+
+    assert _field_words("anac_bandi_gara") == ["anac", "bandi", "gara"]
+
+
+def test_word_forms_match_plural_gender():
+    from agent_context_builder.navigation import _word_forms
+
+    assert _word_forms("gara") & _word_forms("gare")
+    assert _word_forms("pubblico") & _word_forms("pubblici")
+    assert _word_forms("appalto") & _word_forms("appalti")
+
+
+def test_query_matches_cross_text_tokens():
+    from agent_context_builder.navigation import query_matches
+
+    # tokens spread across separate texts (old per-field AND would fail)
+    assert query_matches("appalti anac", "appalti", "anac")
+    assert not query_matches("appalti anac banane", "appalti", "anac")
+    # stopword-only query never matches
+    assert not query_matches("di dei")
+
+
+def test_search_index_natural_query_cross_field():
+    """Regression: 'appalti pubblici anac' must find anac_bandi_gara.
+
+    Tokens live in different fields (category, description, source_id) —
+    the old matcher required all words inside a single field.
+    """
+    results = search_index(_index(), "appalti pubblici anac", entity_type="dataset")
+    assert results
+    assert results[0]["slug"] == "anac_bandi_gara"
+
+
+def test_search_index_stopword_query_finds_snake_case_slug():
+    """Regression: 'bandi di gara' must find anac_bandi_gara despite 'di'."""
+    results = search_index(_index(), "bandi di gara", entity_type="dataset")
+    slugs = [r["slug"] for r in results]
+    assert "anac_bandi_gara" in slugs
+
+
+def test_search_index_morphology_plural():
+    """'gare' matches name/tags containing 'gara' (final-vowel strip)."""
+    results = search_index(_index(), "bandi gare anac", entity_type="dataset")
+    assert results and results[0]["slug"] == "anac_bandi_gara"
+
+
+def test_search_index_single_word_still_works():
+    results = search_index(_index(), "rifiuti", entity_type="dataset")
+    assert results and results[0]["slug"] == "ispra_ru_base"
