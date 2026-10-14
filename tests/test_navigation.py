@@ -5,6 +5,7 @@ from __future__ import annotations
 import pytest
 
 from agent_context_builder.navigation import (
+    _tokenize_query,
     build_domains,
     build_explorer_themes,
     build_repo_cards,
@@ -296,3 +297,23 @@ def test_search_index_morphology_plural():
 def test_search_index_single_word_still_works():
     results = search_index(_index(), "rifiuti", entity_type="dataset")
     assert results and results[0]["slug"] == "ispra_ru_base"
+
+
+def test_search_index_single_stopword_returns_nothing():
+    """Regression: 'e' used to substring-match every slug (score 80)."""
+    assert search_index(_index(), "e", entity_type="dataset") == []
+    assert search_index(_index(), "di dei delle", entity_type="dataset") == []
+
+
+def test_search_index_natural_question_drops_function_words():
+    """Regression: question/function words are stopwords, not required tokens."""
+    assert _tokenize_query("quanti bandi di gara ha anac") == ["bandi", "gara", "anac"]
+    results = search_index(_index(), "quanti bandi di gara ha anac", entity_type="dataset")
+    assert results and results[0]["slug"] == "anac_bandi_gara"
+
+
+def test_search_index_token_extends_field_word():
+    """'sanitaria' must match a 'sanita' category (token ⊇ field word)."""
+    from agent_context_builder.navigation import query_matches
+
+    assert query_matches("spesa sanitaria", "spesa", "sanita")

@@ -235,8 +235,10 @@ _STOPWORDS = frozenset(
         "alle",
         "allo",
         "anche",
+        "avere",
         "chi",
         "ci",
+        "circa",
         "come",
         "cui",
         "da",
@@ -253,9 +255,14 @@ _STOPWORDS = frozenset(
         "dove",
         "ed",
         "e",
+        "era",
+        "erano",
+        "essere",
         "fra",
         "gia",
         "gli",
+        "ha",
+        "hanno",
         "i",
         "il",
         "in",
@@ -271,20 +278,28 @@ _STOPWORDS = frozenset(
         "o",
         "oppure",
         "per",
+        "perche",
         "piu",
         "quale",
         "quali",
+        "quanti",
+        "quante",
         "quando",
         "si",
+        "sono",
         "sugli",
         "sulle",
         "sullo",
         "sul",
         "su",
+        "sui",
+        "tutto",
+        "tutti",
         "tra",
         "un",
         "una",
         "uno",
+        "verso",
     }
 )
 
@@ -336,13 +351,16 @@ def _token_in_field(token: str, value: str | None) -> bool:
     """True if a query token matches anywhere in a field value.
 
     Matches whole words (with light morphology) or as a typed prefix of a
-    field word ("pension" → "pensioni").
+    field word ("pension" → "pensioni"). Also matches when the token extends
+    a field word ("sanitaria" → "sanita").
     """
     token_forms = _word_forms(token)
     for field_word in _field_words(value):
         if _word_forms(field_word) & token_forms:
             return True
         if len(token) >= 3 and field_word.startswith(token):
+            return True
+        if len(token) >= 4 and len(field_word) >= 4 and token.startswith(field_word):
             return True
     return False
 
@@ -372,13 +390,15 @@ def _score_entity(query: str, fields: list[tuple[str | None, str]]) -> int:
     if not q:
         return 0
     score = 0
+    # Length guards: a 1-char query ("e") is a substring of almost everything;
+    # exact match needs at least 2 chars to be meaningful.
     for value, kind in fields:
         v = _norm(value)
         if not v:
             continue
-        if v == q:
+        if len(q) >= 2 and v == q:
             score = max(score, {"slug": 100, "name": 80, "text": 40, "tag": 30}.get(kind, 20))
-        elif q in v:
+        elif len(q) >= 3 and q in v:
             score = max(score, {"slug": 80, "name": 60, "text": 30, "tag": 25}.get(kind, 15))
 
     tokens = _tokenize_query(query)
