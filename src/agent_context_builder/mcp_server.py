@@ -21,7 +21,6 @@ from __future__ import annotations
 
 import json
 import os
-import re
 import time
 from pathlib import Path
 from typing import Any
@@ -29,7 +28,7 @@ from typing import Any
 from lab_connectors.http import HttpClient
 from lab_connectors.mcp import TtlCache, create_mcp_server, get_mcp_logger, guard_timed
 
-from .navigation import explore_ref, lab_map_summary, search_index
+from .navigation import explore_ref, lab_map_summary, query_matches, search_index
 
 _REPO = os.environ.get("ACB_REPO", "dataciviclab/agent-context-builder")
 _BRANCH = os.environ.get("ACB_BRANCH", "context")
@@ -609,15 +608,6 @@ def _search_github_issues(
     ]
 
 
-def _word_match(query: str, text: str) -> bool:
-    words = query.lower().split()
-    text_lower = text.lower()
-    for word in words:
-        if not re.search(r"\b" + re.escape(word) + r"\b", text_lower):
-            return False
-    return True
-
-
 def _search_topic_index(query: str, topic_data: dict) -> dict[str, list[dict[str, object]]]:
     datasets_found: list[dict[str, object]] = []
     analyses_found: list[dict[str, object]] = []
@@ -627,10 +617,11 @@ def _search_topic_index(query: str, topic_data: dict) -> dict[str, list[dict[str
         for ds in ds_list:
             slug = ds.get("slug", "")
             name = ds.get("name", "")
+            tags = " ".join(ds.get("tags") or [])
+            description = ds.get("description") or ""
             if slug not in seen_slugs and (
                 query.lower() in slug.lower()
-                or _word_match(query, name)
-                or _word_match(query, source)
+                or query_matches(query, name, source, tags, description)
             ):
                 seen_slugs.add(slug)
                 datasets_found.append(
@@ -643,7 +634,7 @@ def _search_topic_index(query: str, topic_data: dict) -> dict[str, list[dict[str
         a_datasets = " ".join(a.get("datasets", []))
         if (
             query.lower() in a_slug.lower()
-            or _word_match(query, a_name)
+            or query_matches(query, a_name)
             or query.lower() in a_datasets.lower()
         ):
             analyses_found.append(

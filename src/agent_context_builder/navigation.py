@@ -14,6 +14,8 @@ Hierarchy:
 
 from __future__ import annotations
 
+import re
+import unicodedata
 from collections import Counter, defaultdict
 from typing import Any
 
@@ -196,6 +198,10 @@ def build_reverse_indexes(
             "registry_source": repo,
             "domain": domain,
             "category": ds.get("category"),
+            # Discovery fields — kept in the projection so search works even
+            # when only by_slug is present (backward-compatible additive).
+            "tags": ds.get("tags"),
+            "description": ds.get("description"),
         }
 
     return {
@@ -217,40 +223,200 @@ def flatten_datasets(datasets_by_source: dict[str, list[dict[str, Any]]]) -> lis
 
 # ── Query helpers (work on a built topic_index dict) ─────────────────────────
 
+# Function words that pollute natural-language queries ("bandi di gara",
+# "appalti pubblici anac"). Matched after de-accenting, so "piu" covers "più".
+_STOPWORDS = frozenset(
+    {
+        "a",
+        "ad",
+        "agli",
+        "ai",
+        "al",
+        "alle",
+        "allo",
+        "anche",
+        "avere",
+        "chi",
+        "ci",
+        "circa",
+        "come",
+        "cui",
+        "da",
+        "dagli",
+        "dai",
+        "dal",
+        "dalle",
+        "del",
+        "dello",
+        "delle",
+        "dei",
+        "degli",
+        "di",
+        "dove",
+        "ed",
+        "e",
+        "era",
+        "erano",
+        "essere",
+        "fra",
+        "gia",
+        "gli",
+        "ha",
+        "hanno",
+        "i",
+        "il",
+        "in",
+        "la",
+        "le",
+        "lo",
+        "ma",
+        "nei",
+        "negli",
+        "nel",
+        "nello",
+        "non",
+        "o",
+        "oppure",
+        "per",
+        "perche",
+        "piu",
+        "quale",
+        "quali",
+        "quanti",
+        "quante",
+        "quando",
+        "si",
+        "sono",
+        "sugli",
+        "sulle",
+        "sullo",
+        "sul",
+        "su",
+        "sui",
+        "tutto",
+        "tutti",
+        "tra",
+        "un",
+        "una",
+        "uno",
+        "verso",
+    }
+)
+
+_FIELD_TOKEN_WEIGHTS = {"slug": 50, "name": 55, "text": 35, "tag": 28}
+
 
 def _norm(text: str | None) -> str:
     return (text or "").strip().lower()
 
 
-def _word_match(query: str, text: str | None) -> bool:
-    import re
+def _deaccent(text: str) -> str:
+    return "".join(c for c in unicodedata.normalize("NFKD", text) if not unicodedata.combining(c))
 
-    words = _norm(query).split()
-    text_lower = _norm(text)
-    if not words:
+
+def _field_words(value: str | None) -> list[str]:
+    """Lowercase alphanumeric words; underscores/punctuation are separators.
+
+    Makes snake_case slugs word-matchable: "anac_bandi_gara" →
+    ["anac", "bandi", "gara"].
+    """
+    v = _deaccent(_norm(value))
+    return [w for w in re.split(r"[^a-z0-9]+", v) if w]
+
+
+def _tokenize_query(query: str) -> list[str]:
+    """Query tokens minus Italian stopwords (order preserved, deduped)."""
+    tokens: list[str] = []
+    for word in _field_words(query):
+        if len(word) < 2 or word in _STOPWORDS:
+            continue
+        if word not in tokens:
+            tokens.append(word)
+    return tokens
+
+
+def _word_forms(word: str) -> set[str]:
+    """Word plus a light morphological variant (final-vowel strip).
+
+    Covers common Italian singular/plural and gender pairs without a full
+    stemmer: gara≈gare, pubblico≈pubblici, appalto≈appalti.
+    """
+    forms = {word}
+    if len(word) >= 4 and word[-1] in "aeiou":
+        forms.add(word[:-1])
+    return forms
+
+
+def _token_in_field(token: str, value: str | None) -> bool:
+    """True if a query token matches anywhere in a field value.
+
+    Matches whole words (with light morphology) or as a typed prefix of a
+    field word ("pension" → "pensioni"). Also matches when the token extends
+    a field word ("sanitaria" → "sanita").
+    """
+    token_forms = _word_forms(token)
+    for field_word in _field_words(value):
+        if _word_forms(field_word) & token_forms:
+            return True
+        if len(token) >= 3 and field_word.startswith(token):
+            return True
+        if len(token) >= 4 and len(field_word) >= 4 and token.startswith(field_word):
+            return True
+    return False
+
+
+def query_matches(query: str, *texts: str | None) -> bool:
+    """True if every non-stopword query token matches at least one text.
+
+    Token match is cross-text: words may be spread across the values.
+    Empty/stopword-only queries never match.
+    """
+    tokens = _tokenize_query(query)
+    if not tokens:
         return False
-    for word in words:
-        if not re.search(r"\b" + re.escape(word) + r"\b", text_lower):
-            return False
-    return True
+    return all(any(_token_in_field(tok, text) for text in texts) for tok in tokens)
 
 
 def _score_entity(query: str, fields: list[tuple[str | None, str]]) -> int:
-    """Score an entity against a query. fields: (value, weight_name)."""
+    """Score an entity against a query. fields: (value, weight_name).
+
+    Tiers:
+      1. exact whole-query match on a field
+      2. whole-query substring on a field
+      3. all non-stopword tokens match across the entity's fields (cross-field
+         AND) — natural-language queries like "appalti pubblici anac"
+    """
     q = _norm(query)
     if not q:
         return 0
     score = 0
+    # Length guards: a 1-char query ("e") is a substring of almost everything;
+    # exact match needs at least 2 chars to be meaningful.
     for value, kind in fields:
         v = _norm(value)
         if not v:
             continue
-        if v == q:
+        if len(q) >= 2 and v == q:
             score = max(score, {"slug": 100, "name": 80, "text": 40, "tag": 30}.get(kind, 20))
-        elif q in v:
+        elif len(q) >= 3 and q in v:
             score = max(score, {"slug": 80, "name": 60, "text": 30, "tag": 25}.get(kind, 15))
-        elif _word_match(query, value):
-            score = max(score, {"slug": 50, "name": 55, "text": 35, "tag": 28}.get(kind, 18))
+
+    tokens = _tokenize_query(query)
+    if tokens:
+        matched_kinds: set[str] = set()
+        all_matched = True
+        for token in tokens:
+            token_hit = False
+            for value, kind in fields:
+                if _token_in_field(token, value):
+                    matched_kinds.add(kind)
+                    token_hit = True
+            if not token_hit:
+                all_matched = False
+                break
+        if all_matched and matched_kinds:
+            best = max(_FIELD_TOKEN_WEIGHTS.get(kind, 18) for kind in matched_kinds)
+            score = max(score, best)
     return score
 
 
@@ -272,23 +438,47 @@ def search_index(
     by_slug = topic_index.get("by_slug") or {}
     datasets_by_source = topic_index.get("datasets") or {}
 
-    # Datasets — use by_slug if present, else scan datasets
+    # Datasets — prefer full entries (they carry tags/description, the main
+    # discovery fields); enrich with by_slug meta (registry_source, domain).
+    # Slugs present only in by_slug are kept (older/partial artifacts).
     dataset_entries: list[dict[str, Any]] = []
-    if by_slug:
-        for slug, meta in by_slug.items():
-            dataset_entries.append(
-                {
-                    "slug": slug,
-                    "name": meta.get("name") or slug,
-                    "stage": meta.get("stage"),
-                    "source_id": meta.get("source_id"),
-                    "registry_source": meta.get("registry_source") or "",
-                    "domain": meta.get("domain"),
-                    "category": meta.get("category"),
-                }
-            )
-    else:
-        dataset_entries = flatten_datasets(datasets_by_source)
+    full_entries = flatten_datasets(datasets_by_source)
+    seen_slugs: set[str] = set()
+    for ds in full_entries:
+        slug = ds.get("slug")
+        if not slug or slug in seen_slugs:
+            continue
+        seen_slugs.add(slug)
+        meta = by_slug.get(slug) or {}
+        dataset_entries.append(
+            {
+                "slug": slug,
+                "name": ds.get("name") or slug,
+                "stage": ds.get("stage") or meta.get("stage"),
+                "source_id": ds.get("source_id") or meta.get("source_id"),
+                "registry_source": ds.get("registry_source") or meta.get("registry_source") or "",
+                "domain": meta.get("domain"),
+                "category": ds.get("category") or meta.get("category"),
+                "tags": ds.get("tags") or meta.get("tags"),
+                "description": ds.get("description") or meta.get("description"),
+            }
+        )
+    for slug, meta in by_slug.items():
+        if slug in seen_slugs:
+            continue
+        dataset_entries.append(
+            {
+                "slug": slug,
+                "name": meta.get("name") or slug,
+                "stage": meta.get("stage"),
+                "source_id": meta.get("source_id"),
+                "registry_source": meta.get("registry_source") or "",
+                "domain": meta.get("domain"),
+                "category": meta.get("category"),
+                "tags": meta.get("tags"),
+                "description": meta.get("description"),
+            }
+        )
 
     if type_filter in (None, "dataset", "datasets"):
         for ds in dataset_entries:
@@ -300,6 +490,8 @@ def search_index(
                     (ds.get("source_id"), "tag"),
                     (ds.get("category"), "tag"),
                     (ds.get("registry_source"), "tag"),
+                    (ds.get("description"), "text"),
+                    (" ".join(ds.get("tags") or []), "tag"),
                 ],
             )
             if score <= 0:
