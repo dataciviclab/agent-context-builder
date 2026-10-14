@@ -312,10 +312,3 @@ def test_search_index_natural_question_drops_function_words():
     assert _tokenize_query("quanti bandi di gara ha anac") == ["bandi", "gara", "anac"]
     results = search_index(_index(), "quanti bandi di gara ha anac", entity_type="dataset")
     assert results and results[0]["slug"] == "anac_bandi_gara"
-
-
-def test_search_index_token_extends_field_word():
-    """'sanitaria' must match a 'sanita' category (token ⊇ field word)."""
-    from agent_context_builder.navigation import query_matches
-
-    assert query_matches("spesa sanitaria", "spesa", "sanita")

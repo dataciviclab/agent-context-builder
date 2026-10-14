@@ -225,6 +225,7 @@ def flatten_datasets(datasets_by_source: dict[str, list[dict[str, Any]]]) -> lis
 
 # Function words that pollute natural-language queries ("bandi di gara",
 # "appalti pubblici anac"). Matched after de-accenting, so "piu" covers "più".
+# Curated minimal set — not a full Italian stopword list.
 _STOPWORDS = frozenset(
     {
         "a",
@@ -235,10 +236,8 @@ _STOPWORDS = frozenset(
         "alle",
         "allo",
         "anche",
-        "avere",
         "chi",
         "ci",
-        "circa",
         "come",
         "cui",
         "da",
@@ -255,11 +254,7 @@ _STOPWORDS = frozenset(
         "dove",
         "ed",
         "e",
-        "era",
-        "erano",
-        "essere",
         "fra",
-        "gia",
         "gli",
         "ha",
         "hanno",
@@ -278,12 +273,10 @@ _STOPWORDS = frozenset(
         "o",
         "oppure",
         "per",
-        "perche",
         "piu",
         "quale",
         "quali",
         "quanti",
-        "quante",
         "quando",
         "si",
         "sono",
@@ -293,16 +286,14 @@ _STOPWORDS = frozenset(
         "sul",
         "su",
         "sui",
-        "tutto",
-        "tutti",
         "tra",
         "un",
         "una",
         "uno",
-        "verso",
     }
 )
 
+# Field weights for the token tier (all tokens matched across the entity).
 _FIELD_TOKEN_WEIGHTS = {"slug": 50, "name": 55, "text": 35, "tag": 28}
 
 
@@ -348,19 +339,17 @@ def _word_forms(word: str) -> set[str]:
 
 
 def _token_in_field(token: str, value: str | None) -> bool:
-    """True if a query token matches anywhere in a field value.
+    """Match a query token against any word in a field value.
 
-    Matches whole words (with light morphology) or as a typed prefix of a
-    field word ("pension" → "pensioni"). Also matches when the token extends
-    a field word ("sanitaria" → "sanita").
+    Whole word (with light morphology) or typed prefix ("pension" →
+    "pensioni"). Snake_case slugs are word-split, so "bandi" matches
+    "anac_bandi_gara".
     """
     token_forms = _word_forms(token)
     for field_word in _field_words(value):
         if _word_forms(field_word) & token_forms:
             return True
         if len(token) >= 3 and field_word.startswith(token):
-            return True
-        if len(token) >= 4 and len(field_word) >= 4 and token.startswith(field_word):
             return True
     return False
 

@@ -64,7 +64,7 @@ Esposti via `agent-context-mcp` (server MCP `dataciviclab-context`).
 | `find(query, type=, domain=)` | Ricerca ranked su dataset/repo/domain/source/analysis |
 | `explore(ref)` | Deep-dive di qualsiasi entità (slug repo, dataset, domain, source) |
 | `workspace_triage(section=)` | Stato precisi: radar, prs, issues, registry, pipeline |
-| `topic_index(resolve=)` | Legacy deep-dive (delega a explore quando v7) |
+| `topic_index(resolve=)` | Legacy summary (resolve delega a explore) |
 | `search(query)` | Legacy search (wraps find + GitHub issues) |
 | `refresh_context()` | Trigger rebuild CI |
 
