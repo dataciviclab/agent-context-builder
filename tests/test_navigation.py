@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from typing import Any
+
 import pytest
 
 from agent_context_builder.navigation import (
@@ -41,7 +43,7 @@ THEMES = [
     ),
 ]
 
-FLAT = [
+FLAT: list[dict[str, Any]] = [
     {
         "slug": "ispra_ru_base",
         "name": "Rifiuti Urbani",
