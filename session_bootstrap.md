@@ -1,10 +1,10 @@
 # Session Bootstrap
 
-**Generated**: 2026-10-14T03:48:47.202812
+**Generated**: 2026-10-14T11:20:02.260589
 
 ## Stato
 
-Radar: 36 fonti GREEN 34 · Registry: 38 repo · 433 dataset
+Radar: 36 fonti GREEN 35 · Registry: 38 repo · 433 dataset
 
 ## Richiede attenzione
 
@@ -12,6 +12,7 @@ Radar: 36 fonti GREEN 34 · Registry: 38 repo · 433 dataset
 - [PR] dataset-incubator#885: feat(candidates): eu-call-open + catena FTS call_id/project_id
 - [PR] dataset-incubator#836: feat(candidates): bootstrap gse_cer_elenco candidate
 - [PR] lab-connectors#91: fix(http): sopprimi InsecureRequestWarning a livello di modulo
+- [PR] 1 dependabot bump (skipped)
 
 ## Analisi pubbliche (45)
 

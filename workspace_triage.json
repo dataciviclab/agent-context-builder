@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T03:48:47.202812",
+  "generated_at": "2026-10-14T11:20:02.260589",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -357,6 +357,13 @@
   "open_discussions": 189,
   "discussions": [
     {
+      "number": 10,
+      "title": "[Domanda] Le Spese Correnti stanno comprimendo gli investimenti?",
+      "repo": "bilancio-pubblico",
+      "url": "https://github.com/dataciviclab/bilancio-pubblico/discussions/10",
+      "category": "Domande"
+    },
+    {
       "number": 30,
       "title": "A cosa va ogni euro dello Stato? Breakdown della spesa per tipo (2020-2025)",
       "repo": "bilancio-pubblico",
@@ -389,13 +396,6 @@
       "title": "[Domanda] L\u2019Avanzo Primario \u00e8 un mito o una realt\u00e0?",
       "repo": "bilancio-pubblico",
       "url": "https://github.com/dataciviclab/bilancio-pubblico/discussions/14",
-      "category": "Domande"
-    },
-    {
-      "number": 10,
-      "title": "[Domanda] Le Spese Correnti stanno comprimendo gli investimenti?",
-      "repo": "bilancio-pubblico",
-      "url": "https://github.com/dataciviclab/bilancio-pubblico/discussions/10",
       "category": "Domande"
     },
     {
@@ -2038,20 +2038,20 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "generated_at": "2026-10-13T10:34:07.094468+00:00",
-    "probe_date": "2026-10-13",
+    "generated_at": "2026-10-14T08:37:45.400666+00:00",
+    "probe_date": "2026-10-14",
     "sources_total": 36,
-    "green": 34,
-    "yellow": 2,
+    "green": 35,
+    "yellow": 1,
     "red": 0,
     "persistent_red": 0,
     "sources": [
       {
         "id": "istat_sdmx",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "sdmx",
-        "http_code": "-",
-        "note": "Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
@@ -2336,14 +2336,6 @@
       }
     ],
     "unhealthy": [
-      {
-        "id": "istat_sdmx",
-        "status": "YELLOW",
-        "protocol": "sdmx",
-        "http_code": "-",
-        "note": "Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
       {
         "id": "opencivitas",
         "status": "YELLOW",
