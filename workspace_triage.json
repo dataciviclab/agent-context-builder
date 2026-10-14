@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T14:20:37.027022",
+  "generated_at": "2026-10-14T16:41:02.626665",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -47,8 +47,15 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 4,
+  "open_prs": 5,
   "prs": [
+    {
+      "number": 91,
+      "title": "chore: remove pre-v7 legacy paths and slim search engine",
+      "repo": "agent-context-builder",
+      "url": "https://github.com/dataciviclab/agent-context-builder/pull/91",
+      "category": "other"
+    },
     {
       "number": 454,
       "title": "workspace: contratto path/ruoli, Makefile setup, setup.sh deprecato",
@@ -71,10 +78,10 @@
       "category": "other"
     },
     {
-      "number": 91,
-      "title": "fix(http): sopprimi InsecureRequestWarning a livello di modulo",
-      "repo": "lab-connectors",
-      "url": "https://github.com/dataciviclab/lab-connectors/pull/91",
+      "number": 510,
+      "title": "docs(mcp): routing find \u2014 discovery org-wide via ACB, toolkit = vista live",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/510",
       "category": "other"
     }
   ],
@@ -2035,7 +2042,9 @@
       "untracked_files": 0
     }
   },
-  "warnings": [],
+  "warnings": [
+    "Many open PRs: 6"
+  ],
   "radar": {
     "available": true,
     "generated_at": "2026-10-14T08:37:45.400666+00:00",
