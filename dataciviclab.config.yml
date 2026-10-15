@@ -63,9 +63,6 @@ topics:
     repos:
       - toolkit
       - dataset-incubator
-    paths:
-      - toolkit/docs/
-      - dataset-incubator/workflows/post-merge-candidate.md
     next: Vedi post-merge-candidate.md per il flusso completo run + push GCS
 
   governance:
@@ -73,10 +70,6 @@ topics:
     repos:
       - dataciviclab
       - dataset-incubator
-    paths:
-      - dataciviclab/docs/workflows.md
-      - dataciviclab/docs/dataset-project-flow.md
-      - dataset-incubator/PROMOTION_CHECKLIST.md
     next: Vedi dataset-project-flow.md per il ciclo intake → promozione
 
   infrastructure:
@@ -85,8 +78,4 @@ topics:
       - lab-connectors
       - toolkit
       - data-explorer
-    paths:
-      - lab-connectors/lab_connectors/http/
-      - lab-connectors/lab_connectors/gcs/paths.py
-      - lab-connectors/lab_connectors/mcp/
     next: lab-connectors è dipendenza pip di toolkit, data-explorer e ACB

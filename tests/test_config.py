@@ -11,10 +11,9 @@ pytestmark = pytest.mark.pure_unit
 
 def test_topic_creation():
     """Test Topic creation."""
-    topic = Topic(name="test", repos=["repo1"], paths=["path1"])
+    topic = Topic(name="test", repos=["repo1"])
     assert topic.name == "test"
     assert topic.repos == ["repo1"]
-    assert topic.paths == ["path1"]
 
 
 def test_config_creation():
@@ -64,8 +63,6 @@ topics:
   test-topic:
     repos:
       - repo1
-    paths:
-      - path1
 """
     )
 
