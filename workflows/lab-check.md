@@ -3,14 +3,14 @@ name: lab-check
 description: Check rapido delle novità e dello stato del Lab tramite MCP dataciviclab-context.
 license: MIT
 metadata:
-  version: "0.2"
+  version: "0.3"
   owner: "DataCivicLab"
   tags: [context, triage, check, mcp]
 ---
 
 # Workflow: lab-check
 
-Obiettivo: orientarsi rapidamente su PR, issue, discussion, topic e blocchi operativi via MCP.
+Obiettivo: orientarsi rapidamente su PR, issue, discussion, dataset, fonti e blocchi operativi via MCP.
 
 ## Quando usarlo
 
@@ -29,9 +29,11 @@ Precondizione: server MCP `dataciviclab-context` accessibile.
 ## Passi canonici
 
 1. **session_bootstrap**: prima chiamata. Leggi repo attivi, PR, issue, discussion e warning.
-2. **topic_index**: usalo se la sessione è tematica e serve capire dove guardare. Struttura v2: `repos`, `datasets_by_source`, `operational_topics`.
-3. **workspace_triage**: usalo se il problema riguarda stato incrociato di repo o issue.
-4. **refresh_context**: solo se i dati sono palesemente obsoleti dopo merge/push. Attendere la CI.
+2. **lab_map**: struttura del Lab (domains → repos → sources). Usa `domain=` per una macro-area.
+3. **find**: discovery con query naturale (es. `find("bandi anac", type="dataset")`). Restituisce type + parent pointer.
+4. **explore**: deep-dive su un ref trovato (slug repo, dataset, domain, source, analysis).
+5. **workspace_triage**: se il problema riguarda stato incrociato di repo o issue (`section=radar|prs|issues|discussions|registry|source_health|pipeline`).
+6. **refresh_context**: solo se i dati sono palesemente obsoleti dopo merge/push. Attendere la CI.
 
 ## Stop rules ed errori
 
@@ -44,7 +46,7 @@ Precondizione: server MCP `dataciviclab-context` accessibile.
 
 Il workflow è completo quando hai uno di questi esiti:
 
-- artifact identificato: PR, issue, discussion o topic;
+- artifact identificato: PR, issue, discussion, dataset o fonte;
 - nessuna novità critica: puoi continuare il task già noto;
 - contesto bloccato: serve refresh o debug MCP.
 
