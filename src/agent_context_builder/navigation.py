@@ -412,6 +412,36 @@ def _score_entity(query: str, fields: list[tuple[str | None, str]]) -> int:
     return score
 
 
+def _columns_index_text(columns: list[dict[str, Any]] | None) -> tuple[str, str]:
+    """Join column names+descriptions and semantic types for search indexing.
+
+    The topic_index already carries full column defs (~6k across the Lab);
+    indexing them lets find() answer "which dataset has a CIG column?"
+    without a separate pipeline.
+    """
+    if not columns:
+        return "", ""
+    names = " ".join(
+        filter(
+            None,
+            (str(c.get("name") or "") for c in columns),
+        )
+    )
+    descs = " ".join(
+        filter(
+            None,
+            (str(c.get("description") or "") for c in columns),
+        )
+    )
+    sem = " ".join(
+        filter(
+            None,
+            (str(c.get("semantic_type") or "") for c in columns),
+        )
+    )
+    return f"{names} {descs}".strip(), sem
+
+
 def search_index(
     topic_index: dict[str, Any],
     query: str,
@@ -453,11 +483,13 @@ def search_index(
                 "category": ds.get("category") or meta.get("category"),
                 "tags": ds.get("tags") or meta.get("tags"),
                 "description": ds.get("description") or meta.get("description"),
+                "columns": ds.get("columns") or meta.get("columns"),
             }
         )
 
     if type_filter in (None, "dataset", "datasets"):
         for ds in dataset_entries:
+            col_text, col_sem = _columns_index_text(ds.get("columns"))
             score = _score_entity(
                 query,
                 [
@@ -468,6 +500,11 @@ def search_index(
                     (ds.get("registry_source"), "tag"),
                     (ds.get("description"), "text"),
                     (" ".join(ds.get("tags") or []), "tag"),
+                    # Column schema already lives in the artifact — names +
+                    # descriptions as discovery text, semantic_type as a
+                    # structured tag ("cig_code" → query "cig").
+                    (col_text, "text"),
+                    (col_sem, "tag"),
                 ],
             )
             if score <= 0:
