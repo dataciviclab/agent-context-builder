@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T03:30:11.929842",
+  "generated_at": "2026-10-15T10:58:02.947630",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -57,13 +57,6 @@
       "category": "other"
     },
     {
-      "number": 889,
-      "title": "feat(istat): proiezioni demografiche 2025\u20132080",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/889",
-      "category": "other"
-    },
-    {
       "number": 885,
       "title": "feat(candidates): eu-call-open + catena FTS call_id/project_id",
       "repo": "dataset-incubator",
@@ -75,6 +68,13 @@
       "title": "feat(candidates): bootstrap gse_cer_elenco candidate",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/836",
+      "category": "other"
+    },
+    {
+      "number": 11,
+      "title": "feat(dashboard): pagina Sostenibilit\u00e0 \u2014 identit\u00e0 contabile, leve e proiezione ISTAT 2050",
+      "repo": "open-inps",
+      "url": "https://github.com/dataciviclab/open-inps/pull/11",
       "category": "other"
     },
     {
@@ -2047,8 +2047,8 @@
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-10-14T08:37:45.400666+00:00",
-    "probe_date": "2026-10-14",
+    "generated_at": "2026-10-15T08:13:59.679177+00:00",
+    "probe_date": "2026-10-15",
     "sources_total": 36,
     "green": 35,
     "yellow": 1,
@@ -2364,11 +2364,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-10-13",
+    "generated_at": "2026-10-15",
     "summary": {
-      "total": 47,
+      "total": 48,
       "by_status": {
-        "ok": 47
+        "ok": 48
       }
     },
     "actionable": []
@@ -2798,13 +2798,13 @@
       "repo": "dataset-incubator",
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
-      "updated_at": "2026-10-13",
-      "datasets": 56,
-      "marts": 83,
-      "signals": 47,
+      "updated_at": "2026-10-15",
+      "datasets": 57,
+      "marts": 85,
+      "signals": 48,
       "codelists": 0,
       "entities": 14,
-      "gcs": 56,
+      "gcs": 57,
       "reason": "",
       "signals_detail": [
         {
@@ -3050,6 +3050,20 @@
             "status": "SUCCESS",
             "started_at": "2026-10-11T21:03:07.643067+00:00",
             "finished_at": "2026-10-11T21:03:21.403110+00:00"
+          }
+        },
+        {
+          "id": "istat_proiezioni_demografiche",
+          "source_id": "istat_demo",
+          "status": "ok",
+          "label": "istat_proiezioni_demografiche",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261015T095150Z_86e289c4",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-10-15T09:51:50.803428+00:00",
+            "finished_at": "2026-10-15T09:52:09.613928+00:00"
           }
         },
         {

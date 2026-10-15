@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-15T03:30:11.929842",
+  "generated_at": "2026-10-15T10:58:02.947630",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -71,7 +71,7 @@
       "url": "https://github.com/dataciviclab/dataset-incubator",
       "role": "infra",
       "domain": "welfare-lavoro",
-      "n_datasets": 44,
+      "n_datasets": 45,
       "n_published": 29,
       "sources": [
         "adm_opendata",
@@ -85,6 +85,7 @@
         "inail_opendata",
         "inps",
         "istat_dbnomics",
+        "istat_demo",
         "istat_sdmx",
         "istat_situas",
         "lavoro_opendata",
@@ -21092,6 +21093,78 @@
         "mart_refs": [
           "istat_subsidi_ambientali__mart_sussidi_per_cea",
           "istat_subsidi_ambientali__mart_trend_sussidi"
+        ]
+      }
+    ],
+    "istat_demo": [
+      {
+        "slug": "istat_proiezioni_demografiche",
+        "url_slug": "istat-proiezioni-demografiche",
+        "name": "Istat Proiezioni Demografiche",
+        "description": "",
+        "source": "",
+        "source_id": "istat_demo",
+        "period": {
+          "start": 2025,
+          "end": 2080
+        },
+        "stage": "incubating",
+        "tags": [
+          "demografia",
+          "welfare-lavoro",
+          "istat",
+          "proiezioni",
+          "popolazione",
+          "forecast"
+        ],
+        "category": "welfare-lavoro",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 413952,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/istat_proiezioni_demografiche/2025/istat_proiezioni_demografiche_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "territorio_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "sesso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "eta",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "popolazione",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "istat_proiezioni_demografiche__mart_regioni",
+          "istat_proiezioni_demografiche__mart_italia"
         ]
       }
     ],
@@ -58889,6 +58962,7 @@
         "istat_housing_crowding",
         "istat_ipab_aree",
         "istat_occupazione_provinciale",
+        "istat_proiezioni_demografiche",
         "mim_alunni_corso_eta",
         "mim_anagrafica_scuole_statali",
         "mim_scuola_infanzia",
@@ -58906,7 +58980,7 @@
         "popolazione_istat_comunale_2019_2025",
         "popolazione_quartiere"
       ],
-      "dataset_count": 45
+      "dataset_count": 46
     },
     {
       "slug": "giustizia",
@@ -59287,6 +59361,7 @@
         "istat_housing_crowding",
         "istat_ipab_aree",
         "istat_occupazione_provinciale",
+        "istat_proiezioni_demografiche",
         "mim_alunni_corso_eta",
         "mim_anagrafica_scuole_statali",
         "mim_scuola_infanzia",
@@ -60122,6 +60197,7 @@
       "istat_ipab_aree",
       "istat_occupazione_provinciale",
       "istat_pil_territoriale",
+      "istat_proiezioni_demografiche",
       "istat_sbs_imprese",
       "istat_va_branca",
       "mase_prezzi_carburanti_mensili",
@@ -60888,6 +60964,7 @@
       "istat_housing_crowding",
       "istat_ipab_aree",
       "istat_occupazione_provinciale",
+      "istat_proiezioni_demografiche",
       "mim_alunni_corso_eta",
       "mim_anagrafica_scuole_statali",
       "mim_scuola_infanzia",
@@ -61669,6 +61746,23 @@
         "territoriale"
       ],
       "description": "PIL, Valore Aggiunto e Imposte nette per nazione, macro-aree, regioni e province. Fonte: ISTAT Conti economici territoriali (DCCN_PILT). Serie 1995-2024."
+    },
+    "istat_proiezioni_demografiche": {
+      "name": "Istat Proiezioni Demografiche",
+      "stage": "incubating",
+      "source_id": "istat_demo",
+      "registry_source": "dataset-incubator",
+      "domain": "welfare-lavoro",
+      "category": "welfare-lavoro",
+      "tags": [
+        "demografia",
+        "welfare-lavoro",
+        "istat",
+        "proiezioni",
+        "popolazione",
+        "forecast"
+      ],
+      "description": ""
     },
     "istat_sbs_imprese": {
       "name": "Istat Sbs Imprese",
