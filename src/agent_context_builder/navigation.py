@@ -295,6 +295,9 @@ _STOPWORDS = frozenset(
 
 # Field weights for the token tier (all tokens matched across the entity).
 _FIELD_TOKEN_WEIGHTS = {"slug": 50, "name": 55, "text": 35, "tag": 28}
+# Tier weights for exact whole-query and substring matches.
+_EXACT_WEIGHTS = {"slug": 100, "name": 80, "text": 40, "tag": 30}
+_SUBSTR_WEIGHTS = {"slug": 80, "name": 60, "text": 30, "tag": 25}
 
 
 def _norm(text: str | None) -> str:
@@ -386,9 +389,9 @@ def _score_entity(query: str, fields: list[tuple[str | None, str]]) -> int:
         if not v:
             continue
         if len(q) >= 2 and v == q:
-            score = max(score, {"slug": 100, "name": 80, "text": 40, "tag": 30}.get(kind, 20))
+            score = max(score, _EXACT_WEIGHTS.get(kind, 20))
         elif len(q) >= 3 and q in v:
-            score = max(score, {"slug": 80, "name": 60, "text": 30, "tag": 25}.get(kind, 15))
+            score = max(score, _SUBSTR_WEIGHTS.get(kind, 15))
 
     tokens = _tokenize_query(query)
     if tokens:
@@ -427,13 +430,13 @@ def search_index(
     by_slug = topic_index.get("by_slug") or {}
     datasets_by_source = topic_index.get("datasets") or {}
 
-    # Datasets — prefer full entries (they carry tags/description, the main
-    # discovery fields); enrich with by_slug meta (registry_source, domain).
-    # Slugs present only in by_slug are kept (older/partial artifacts).
+    # Datasets — full entries carry tags/description (the main discovery
+    # fields); by_slug meta enriches with registry_source and domain. Both
+    # are built from the same flat list in render_topic_index, so by_slug
+    # never holds slugs missing from datasets.
     dataset_entries: list[dict[str, Any]] = []
-    full_entries = flatten_datasets(datasets_by_source)
     seen_slugs: set[str] = set()
-    for ds in full_entries:
+    for ds in flatten_datasets(datasets_by_source):
         slug = ds.get("slug")
         if not slug or slug in seen_slugs:
             continue
@@ -450,22 +453,6 @@ def search_index(
                 "category": ds.get("category") or meta.get("category"),
                 "tags": ds.get("tags") or meta.get("tags"),
                 "description": ds.get("description") or meta.get("description"),
-            }
-        )
-    for slug, meta in by_slug.items():
-        if slug in seen_slugs:
-            continue
-        dataset_entries.append(
-            {
-                "slug": slug,
-                "name": meta.get("name") or slug,
-                "stage": meta.get("stage"),
-                "source_id": meta.get("source_id"),
-                "registry_source": meta.get("registry_source") or "",
-                "domain": meta.get("domain"),
-                "category": meta.get("category"),
-                "tags": meta.get("tags"),
-                "description": meta.get("description"),
             }
         )
 
@@ -696,23 +683,9 @@ def explore_ref(topic_index: dict[str, Any], ref: str) -> dict[str, Any]:
     by_domain = topic_index.get("by_domain") or {}
 
     def _dataset_card(slug: str) -> dict[str, Any] | None:
+        # by_slug is always built from the same flat list as datasets
+        # (render_topic_index) — no scan fallback needed.
         meta = by_slug.get(slug)
-        if meta is None:
-            # scan datasets grouped by source
-            for items in datasets_by_source.values():
-                for item in items or []:
-                    if item.get("slug") == slug:
-                        meta = {
-                            "name": item.get("name") or slug,
-                            "stage": item.get("stage"),
-                            "source_id": item.get("source_id"),
-                            "registry_source": item.get("registry_source") or "",
-                            "domain": None,
-                            "category": item.get("category"),
-                        }
-                        break
-                if meta is not None:
-                    break
         if meta is None:
             return None
         return {
