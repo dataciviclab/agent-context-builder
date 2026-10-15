@@ -1,53 +1,45 @@
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
 
 [project]
-name = "agent-context-builder"
+name = "dataciviclab-agent-context-builder"
 version = "0.1.0"
 description = "Autonomous context generation for agents: compact bootstrap, workspace triage, topic index"
 readme = "README.md"
-license = {text = "MIT"}
 requires-python = ">=3.12"
+license = "MIT"
 authors = [
-    {name = "DataCivicLab", email = "dev@dataciviclab.org"}
+    {name = "DataCivicLab"}
 ]
 keywords = ["agent", "context", "github", "triage"]
-classifiers = [
-    "Development Status :: 3 - Alpha",
-    "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-]
 
 dependencies = [
     "click>=8.0",
     "pydantic>=2.0",
     "pyyaml>=6.0",
-    "requests>=2.28",
     "lab-connectors[mcp] @ git+https://github.com/dataciviclab/lab-connectors.git",
 ]
 
 [project.optional-dependencies]
 dev = [
-    "pytest>=7.0",
-    "pytest-cov>=4.0",
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
     "pytest-timeout>=2.3.0",
-    "ruff>=0.1",
-    "mypy>=1.0",
+    "ruff>=0.5",
+    "mypy>=1.20",
 ]
 
 [project.scripts]
 agent-context = "agent_context_builder.cli:main"
 agent-context-mcp = "agent_context_builder.mcp_server:main"
 
-[tool.hatch.metadata]
-allow-direct-references = true
+[project.urls]
+Repository = "https://github.com/dataciviclab/agent-context-builder"
 
-[tool.hatch.build.targets.wheel]
-packages = ["src/agent_context_builder"]
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["agent_context_builder*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -63,7 +55,7 @@ markers = [
 
 [tool.ruff]
 line-length = 100
-target-version = "py310"
+target-version = "py312"
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I"]
