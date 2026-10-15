@@ -305,17 +305,35 @@ def _norm(text: str | None) -> str:
 
 
 def _deaccent(text: str) -> str:
+    # Fast path: most Lab fields (slugs, tags, semantic_types, ASCII names)
+    # have no accented characters, so skip normalize entirely.
+    if text.isascii():
+        return text
     return "".join(c for c in unicodedata.normalize("NFKD", text) if not unicodedata.combining(c))
 
 
-def _field_words(value: str | None) -> list[str]:
+# Per-search cache: field value → word list. Passed down through
+# search_index → _score_entity → _token_in_words so each distinct field
+# string is tokenized once per query, not once per (token × entity).
+_WordCache = dict[str, list[str]]
+
+
+def _field_words(value: str | None, cache: _WordCache | None = None) -> list[str]:
     """Lowercase alphanumeric words; underscores/punctuation are separators.
 
     Makes snake_case slugs word-matchable: "anac_bandi_gara" →
-    ["anac", "bandi", "gara"].
+    ["anac", "bandi", "gara"]. When a cache dict is supplied, repeated
+    values reuse the precomputed word list.
     """
+    if value is None:
+        return []
+    if cache is not None and value in cache:
+        return cache[value]
     v = _deaccent(_norm(value))
-    return [w for w in re.split(r"[^a-z0-9]+", v) if w]
+    words = [w for w in re.split(r"[^a-z0-9]+", v) if w]
+    if cache is not None:
+        cache[value] = words
+    return words
 
 
 def _tokenize_query(query: str) -> list[str]:
@@ -341,15 +359,13 @@ def _word_forms(word: str) -> set[str]:
     return forms
 
 
-def _token_in_field(token: str, value: str | None) -> bool:
-    """Match a query token against any word in a field value.
+def _token_in_words(token: str, words: list[str], token_forms: set[str]) -> bool:
+    """Match a query token against a pre-tokenized field (word list).
 
-    Whole word (with light morphology) or typed prefix ("pension" →
-    "pensioni"). Snake_case slugs are word-split, so "bandi" matches
-    "anac_bandi_gara".
+    Uses a token_forms set computed once per query — the common case, since
+    the same token is tested against every field of every entity.
     """
-    token_forms = _word_forms(token)
-    for field_word in _field_words(value):
+    for field_word in words:
         if _word_forms(field_word) & token_forms:
             return True
         if len(token) >= 3 and field_word.startswith(token):
@@ -366,10 +382,19 @@ def query_matches(query: str, *texts: str | None) -> bool:
     tokens = _tokenize_query(query)
     if not tokens:
         return False
-    return all(any(_token_in_field(tok, text) for text in texts) for tok in tokens)
+    token_forms_list = [_word_forms(t) for t in tokens]
+    field_words_list = [_field_words(text) for text in texts]
+    return all(
+        any(_token_in_words(tok, words, tf) for words in field_words_list)
+        for tok, tf in zip(tokens, token_forms_list)
+    )
 
 
-def _score_entity(query: str, fields: list[tuple[str | None, str]]) -> int:
+def _score_entity(
+    query: str,
+    fields: list[tuple[str | None, str]],
+    word_cache: _WordCache | None = None,
+) -> int:
     """Score an entity against a query. fields: (value, weight_name).
 
     Tiers:
@@ -394,22 +419,64 @@ def _score_entity(query: str, fields: list[tuple[str | None, str]]) -> int:
             score = max(score, _SUBSTR_WEIGHTS.get(kind, 15))
 
     tokens = _tokenize_query(query)
-    if tokens:
-        matched_kinds: set[str] = set()
-        all_matched = True
-        for token in tokens:
-            token_hit = False
-            for value, kind in fields:
-                if _token_in_field(token, value):
-                    matched_kinds.add(kind)
-                    token_hit = True
-            if not token_hit:
-                all_matched = False
-                break
-        if all_matched and matched_kinds:
-            best = max(_FIELD_TOKEN_WEIGHTS.get(kind, 18) for kind in matched_kinds)
-            score = max(score, best)
+    if not tokens:
+        return score
+    token_forms_list = [_word_forms(t) for t in tokens]
+    # Tokenize each field once per entity (not once per token×field). Empty
+    # fields are dropped so they are never re-scanned. The shared word_cache
+    # dedupes identical field values across entities in one search.
+    prepared = []
+    for value, kind in fields:
+        if not value:
+            continue
+        words = _field_words(value, word_cache)
+        if words:
+            prepared.append((kind, words))
+    matched_kinds: set[str] = set()
+    all_matched = True
+    for tok, tok_forms in zip(tokens, token_forms_list):
+        token_hit = False
+        for kind, words in prepared:
+            if _token_in_words(tok, words, tok_forms):
+                matched_kinds.add(kind)
+                token_hit = True
+        if not token_hit:
+            all_matched = False
+            break
+    if all_matched and matched_kinds:
+        best = max(_FIELD_TOKEN_WEIGHTS.get(kind, 18) for kind in matched_kinds)
+        score = max(score, best)
     return score
+
+
+def _columns_index_text(columns: list[dict[str, Any]] | None) -> tuple[str, str]:
+    """Join column names+descriptions and semantic types for search indexing.
+
+    The topic_index already carries full column defs (~6k across the Lab);
+    indexing them lets find() answer "which dataset has a CIG column?"
+    without a separate pipeline.
+    """
+    if not columns:
+        return "", ""
+    names = " ".join(
+        filter(
+            None,
+            (str(c.get("name") or "") for c in columns),
+        )
+    )
+    descs = " ".join(
+        filter(
+            None,
+            (str(c.get("description") or "") for c in columns),
+        )
+    )
+    sem = " ".join(
+        filter(
+            None,
+            (str(c.get("semantic_type") or "") for c in columns),
+        )
+    )
+    return f"{names} {descs}".strip(), sem
 
 
 def search_index(
@@ -426,6 +493,9 @@ def search_index(
     """
     results: list[dict[str, Any]] = []
     type_filter = entity_type.lower() if entity_type else None
+    # Shared word cache for the whole query: identical field values (e.g.
+    # source_id "anac" repeated across 9 datasets) tokenize once.
+    word_cache: _WordCache = {}
 
     by_slug = topic_index.get("by_slug") or {}
     datasets_by_source = topic_index.get("datasets") or {}
@@ -453,11 +523,13 @@ def search_index(
                 "category": ds.get("category") or meta.get("category"),
                 "tags": ds.get("tags") or meta.get("tags"),
                 "description": ds.get("description") or meta.get("description"),
+                "columns": ds.get("columns") or meta.get("columns"),
             }
         )
 
     if type_filter in (None, "dataset", "datasets"):
         for ds in dataset_entries:
+            col_text, col_sem = _columns_index_text(ds.get("columns"))
             score = _score_entity(
                 query,
                 [
@@ -468,7 +540,13 @@ def search_index(
                     (ds.get("registry_source"), "tag"),
                     (ds.get("description"), "text"),
                     (" ".join(ds.get("tags") or []), "tag"),
+                    # Column schema already lives in the artifact — names +
+                    # descriptions as discovery text, semantic_type as a
+                    # structured tag ("cig_code" → query "cig").
+                    (col_text, "text"),
+                    (col_sem, "tag"),
                 ],
+                word_cache,
             )
             if score <= 0:
                 continue
@@ -499,6 +577,7 @@ def search_index(
                     (card.get("role"), "tag"),
                     (card.get("domain"), "tag"),
                 ],
+                word_cache,
             )
             if score <= 0:
                 continue
@@ -529,6 +608,7 @@ def search_index(
                     (dom.get("name"), "name"),
                     (dom.get("description"), "text"),
                 ],
+                word_cache,
             )
             if score <= 0:
                 continue
@@ -556,6 +636,7 @@ def search_index(
                     (a.get("description"), "text"),
                     (a.get("source"), "tag"),
                 ],
+                word_cache,
             )
             if score <= 0:
                 continue
@@ -578,7 +659,7 @@ def search_index(
             if sid:
                 source_counts[sid] = source_counts.get(sid, 0) + 1
         for sid, count in source_counts.items():
-            score = _score_entity(query, [(sid, "slug")])
+            score = _score_entity(query, [(sid, "slug")], word_cache)
             if score <= 0:
                 continue
             results.append(

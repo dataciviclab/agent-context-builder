@@ -71,6 +71,22 @@ FLAT: list[dict[str, Any]] = [
         "description": (
             "Bandi di gara pubblici italiani (CIG): oggetto, importi, stazione appaltante"
         ),
+        "columns": [
+            {
+                "name": "cig",
+                "type": "VARCHAR",
+                "role": "dimension",
+                "semantic_type": "cig_code",
+                "description": "Codice identificativo gara",
+            },
+            {
+                "name": "importo",
+                "type": "DOUBLE",
+                "role": "metric",
+                "semantic_type": "",
+                "description": "Importo aggiudicazione",
+            },
+        ],
     },
 ]
 
@@ -293,6 +309,20 @@ def test_search_index_stopword_query_finds_snake_case_slug():
 def test_search_index_morphology_plural():
     """'gare' matches name/tags containing 'gara' (final-vowel strip)."""
     results = search_index(_index(), "bandi gare anac", entity_type="dataset")
+    assert results and results[0]["slug"] == "anac_bandi_gara"
+
+
+def test_search_index_column_name():
+    """Regression: a query matching a column name (not in slug/name/tags/desc)
+    must find the dataset — columns are now an indexed field."""
+    # 'importo' lives only in the column name, not in any other field
+    results = search_index(_index(), "importo aggiudicazione", entity_type="dataset")
+    assert results and results[0]["slug"] == "anac_bandi_gara"
+
+
+def test_search_index_column_semantic_type():
+    """semantic_type 'cig_code' is indexed as a tag: query 'cig' finds it."""
+    results = search_index(_index(), "cig", entity_type="dataset")
     assert results and results[0]["slug"] == "anac_bandi_gara"
 
 
