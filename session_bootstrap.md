@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-10-16T10:50:42.906242
+**Generated**: 2026-10-16T11:31:36.170181
 
 ## Stato
 
@@ -11,6 +11,7 @@ Radar: 36 fonti GREEN 34 · RED 1 · Registry: 38 repo · 419 dataset
 - [PR] dataciviclab#454: workspace: contratto path/ruoli, Makefile setup, setup.sh deprecato
 - [PR] dataset-incubator#885: feat(candidates): eu-call-open + catena FTS call_id/project_id
 - [PR] dataset-incubator#836: feat(candidates): bootstrap gse_cer_elenco candidate
+- [PR] lab-connectors#93: breaking: rimosso mcp_servers/github-discussions — migrato a dcl-mcp
 - [PR] toolkit#510: docs(mcp): routing find — discovery org-wide via ACB, toolkit = vista live
 - [PR] 1 dependabot bump (skipped)
 
