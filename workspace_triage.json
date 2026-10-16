@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T03:25:59.736652",
+  "generated_at": "2026-10-16T08:21:56.246794",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -2038,12 +2038,12 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "generated_at": "2026-10-15T08:13:59.679177+00:00",
-    "probe_date": "2026-10-15",
+    "generated_at": "2026-10-16T08:06:07.813580+00:00",
+    "probe_date": "2026-10-16",
     "sources_total": 36,
-    "green": 35,
+    "green": 34,
     "yellow": 1,
-    "red": 0,
+    "red": 1,
     "persistent_red": 0,
     "sources": [
       {
@@ -2104,9 +2104,9 @@
       },
       {
         "id": "dati_senato",
-        "status": "GREEN",
+        "status": "RED",
         "protocol": "sparql",
-        "http_code": "200",
+        "http_code": "503",
         "note": null,
         "red_streak": 0
       },
@@ -2336,6 +2336,14 @@
       }
     ],
     "unhealthy": [
+      {
+        "id": "dati_senato",
+        "status": "RED",
+        "protocol": "sparql",
+        "http_code": "503",
+        "note": null,
+        "red_streak": 0
+      },
       {
         "id": "opencivitas",
         "status": "YELLOW",
