@@ -53,52 +53,26 @@ python scripts/discover_registries.py --org dataciviclab --config dataciviclab.c
 python scripts/discover_registries.py --org dataciviclab --config dataciviclab.config.yml --apply
 ```
 
-## Tool MCP
+## Tool MCP — migrato a dcl-mcp
 
-Esposti via `agent-context-mcp` (server MCP `dataciviclab-context`).
+Il server MCP (`session_bootstrap`, `lab_map`, `find`, `explore`,
+`workspace_triage`, `refresh_context`) non vive più qui: è migrato in
+[`dataciviclab/dcl-mcp`](https://github.com/dataciviclab/dcl-mcp) insieme
+ai tool Discussions e al nuovo `gcs_query`. ACB resta il **builder**:
+CLI + CI che producono gli artifact sul branch `context`, che dcl-mcp
+consuma da remoto.
 
-| Tool | Quando usarlo |
-|---|---|
-| `session_bootstrap()` | Prima chiamata — orientamento rapido |
-| `lab_map(domain=)` | Struttura del Lab: domains → repos → sources |
-| `find(query, type=, domain=)` | Ricerca ranked su dataset/repo/domain/source/analysis |
-| `explore(ref)` | Deep-dive di qualsiasi entità (slug repo, dataset, domain, source) |
-| `workspace_triage(section=)` | Stato precisi: radar, prs, issues, registry, pipeline |
-| `topic_index(resolve=)` | Legacy summary (resolve delega a explore) |
-| `search(query)` | Legacy search (wraps find + GitHub issues) |
-| `refresh_context()` | Trigger rebuild CI |
+Per l'uso degli artefatti via MCP, vedi il README di dcl-mcp. Le env
+`ACB_REPO` / `ACB_BRANCH` / `ACB_ARTIFACT_TTL_SECONDS` continuano a
+valere lì (puntano a questa repo come sorgente).
 
-### Esempi
-
-```python
-# Orientamento
-session_bootstrap()
-# → markdown con radar, PR, issues, discussions
-
-# Struttura del Lab
-lab_map()
-# → {domains: [...], repos: [...], sources: {...}, totals: {...}}
-
-# Trovare un dataset
-find("rifiuti", type="dataset")
-# → results[{type, slug, name, parent_repo, parent_domain, score}]
-
-# Contesto di un repo
-explore("open-ispra")
-# → {type: repo, role, domain, datasets: [...], sources: [...]}
-
-# Stato radar
-workspace_triage(section="radar")
-# → {"green": 35, "yellow": 0, "red": 1, ...}
-```
-
-### Configurazione
+### Configurazione (dcl-mcp)
 
 ```json
 {
   "mcpServers": {
-    "dataciviclab-context": {
-      "command": "agent-context-mcp",
+    "dataciviclab": {
+      "command": "dcl-mcp",
       "env": { "GITHUB_TOKEN": "<opzionale>" }
     }
   }
