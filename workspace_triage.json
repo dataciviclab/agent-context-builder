@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T16:11:30.277632",
+  "generated_at": "2026-10-16T20:35:28.899192",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -47,7 +47,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 2,
+  "open_prs": 3,
   "prs": [
     {
       "number": 885,
@@ -61,6 +61,13 @@
       "title": "feat(candidates): bootstrap gse_cer_elenco candidate",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/836",
+      "category": "other"
+    },
+    {
+      "number": 429,
+      "title": "feat(catalog): referenced-item drift \u2014 verifica upstream vs inventario",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/429",
       "category": "other"
     }
   ],
@@ -3823,7 +3830,7 @@
       "repo": "energia-italia",
       "available": true,
       "source_repo": "dataciviclab/energia-italia",
-      "updated_at": "2026-10-15",
+      "updated_at": "2026-10-16",
       "datasets": 7,
       "marts": 11,
       "signals": 7,
@@ -3839,11 +3846,11 @@
           "label": "gme_pun_storico",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261015T191000Z_d41570d9",
+            "run_id": "20261016T185624Z_7d6c6d3f",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-15T19:10:00.646607+00:00",
-            "finished_at": "2026-10-15T19:10:03.258982+00:00"
+            "started_at": "2026-10-16T18:56:24.088720+00:00",
+            "finished_at": "2026-10-16T18:56:27.323485+00:00"
           }
         },
         {
@@ -3853,11 +3860,11 @@
           "label": "terna_bilancio_elettrico",
           "detail": "anni 2022-2023 \u2014 mart: si",
           "run": {
-            "run_id": "20261015T191006Z_518a9708",
+            "run_id": "20261016T185629Z_0b4b830b",
             "year": 2023,
             "status": "SUCCESS",
-            "started_at": "2026-10-15T19:10:06.091878+00:00",
-            "finished_at": "2026-10-15T19:10:07.137676+00:00"
+            "started_at": "2026-10-16T18:56:29.633443+00:00",
+            "finished_at": "2026-10-16T18:56:30.670231+00:00"
           }
         },
         {
@@ -3867,11 +3874,11 @@
           "label": "terna_capacita_rinnovabile",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261015T191024Z_5dbb445a",
+            "run_id": "20261016T185646Z_63f55885",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-15T19:10:24.844672+00:00",
-            "finished_at": "2026-10-15T19:10:26.059777+00:00"
+            "started_at": "2026-10-16T18:56:46.615964+00:00",
+            "finished_at": "2026-10-16T18:56:47.588398+00:00"
           }
         },
         {
@@ -3881,11 +3888,11 @@
           "label": "terna_copertura_domanda",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261015T191040Z_1972289d",
+            "run_id": "20261016T185700Z_dd8bd5f7",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-15T19:10:40.365448+00:00",
-            "finished_at": "2026-10-15T19:10:41.158528+00:00"
+            "started_at": "2026-10-16T18:57:00.563717+00:00",
+            "finished_at": "2026-10-16T18:57:01.181033+00:00"
           }
         },
         {
@@ -3895,11 +3902,11 @@
           "label": "terna_elettricita_per_fonte",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261015T191057Z_26b40da5",
+            "run_id": "20261016T185714Z_78a2f62f",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-15T19:10:57.285743+00:00",
-            "finished_at": "2026-10-15T19:10:58.122869+00:00"
+            "started_at": "2026-10-16T18:57:14.741959+00:00",
+            "finished_at": "2026-10-16T18:57:15.711597+00:00"
           }
         },
         {
@@ -3909,11 +3916,11 @@
           "label": "terna_elettricita_per_settore",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261015T191112Z_21ed2946",
+            "run_id": "20261016T185833Z_9f1486dc",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-15T19:11:12.995769+00:00",
-            "finished_at": "2026-10-15T19:11:14.265915+00:00"
+            "started_at": "2026-10-16T18:58:33.865501+00:00",
+            "finished_at": "2026-10-16T18:58:34.904761+00:00"
           }
         },
         {
@@ -3923,11 +3930,11 @@
           "label": "terna_emissioni_co2",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261015T191128Z_a09af393",
+            "run_id": "20261016T185846Z_08818aee",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-15T19:11:28.006462+00:00",
-            "finished_at": "2026-10-15T19:11:28.887164+00:00"
+            "started_at": "2026-10-16T18:58:46.461504+00:00",
+            "finished_at": "2026-10-16T18:58:47.050380+00:00"
           }
         }
       ]
@@ -8406,7 +8413,7 @@
       "repo": "rna-aiuti-stato",
       "available": true,
       "source_repo": "dataciviclab/rna-aiuti-stato",
-      "updated_at": "2026-10-05",
+      "updated_at": "2026-10-16",
       "datasets": 2,
       "marts": 16,
       "signals": 2,
@@ -8422,11 +8429,11 @@
           "label": "rna_aiuti_stato",
           "detail": "anni 2017-2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261005T193256Z_fbd59e3e",
+            "run_id": "20261016T184317Z_a2149199",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-05T19:32:56.642681+00:00",
-            "finished_at": "2026-10-05T19:33:03.864815+00:00"
+            "started_at": "2026-10-16T18:43:17.178113+00:00",
+            "finished_at": "2026-10-16T18:43:25.957215+00:00"
           }
         },
         {
@@ -8436,11 +8443,11 @@
           "label": "rna_misure",
           "detail": "anno 2027 \u2014 mart: si",
           "run": {
-            "run_id": "20261005T193304Z_4410087b",
+            "run_id": "20261016T184326Z_9dee921f",
             "year": 2027,
             "status": "SUCCESS",
-            "started_at": "2026-10-05T19:33:04.586676+00:00",
-            "finished_at": "2026-10-05T19:33:05.191656+00:00"
+            "started_at": "2026-10-16T18:43:26.678829+00:00",
+            "finished_at": "2026-10-16T18:43:27.200218+00:00"
           }
         }
       ]

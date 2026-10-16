@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-16T16:11:30.277632",
+  "generated_at": "2026-10-16T20:35:28.899192",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -29687,7 +29687,7 @@
         ],
         "category": "energia",
         "registry_source": "energia-italia",
-        "clean_rows": 100,
+        "clean_rows": 209,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/energia_italia/terna_bilancio_elettrico/*/terna_bilancio_elettrico_*_clean.parquet",
@@ -30007,7 +30007,7 @@
         ],
         "category": "energia",
         "registry_source": "energia-italia",
-        "clean_rows": 100,
+        "clean_rows": 428,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/energia_italia/terna_elettricita_per_settore/*/terna_elettricita_per_settore_*_clean.parquet",
@@ -52789,7 +52789,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "rna-aiuti-stato",
-        "clean_rows": 667594,
+        "clean_rows": 831819,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/rna_aiuti_stato/*/rna_aiuti_stato_*_clean.parquet",
@@ -53049,7 +53049,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "rna-aiuti-stato",
-        "clean_rows": 20907,
+        "clean_rows": 20914,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/rna_misure/2027/rna_misure_2027_clean.parquet",
