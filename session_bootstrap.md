@@ -1,15 +1,16 @@
 # Session Bootstrap
 
-**Generated**: 2026-10-17T03:16:05.657949
+**Generated**: 2026-10-17T10:14:51.746349
 
 ## Stato
 
-Radar: 36 fonti GREEN 34 · RED 1 · Registry: 38 repo · 419 dataset
+Radar: 36 fonti GREEN 35 · Registry: 38 repo · 419 dataset
 
 ## Richiede attenzione
 
 - [PR] dataset-incubator#885: feat(candidates): eu-call-open + catena FTS call_id/project_id
 - [PR] dataset-incubator#836: feat(candidates): bootstrap gse_cer_elenco candidate
+- [PR] italia-corpus#64: feat: Normattiva API fetch + evidence contesto riferimenti
 - [PR] source-observatory#429: feat(catalog): referenced-item drift — verifica upstream vs inventario
 - [PR] toolkit#512: fix(registry): time_coverage del config vince sull'period editoriale stale
 - [PR] 1 dependabot bump (skipped)

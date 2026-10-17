@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T03:16:05.657949",
+  "generated_at": "2026-10-17T10:14:51.746349",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -47,7 +47,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 4,
+  "open_prs": 5,
   "prs": [
     {
       "number": 885,
@@ -61,6 +61,13 @@
       "title": "feat(candidates): bootstrap gse_cer_elenco candidate",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/836",
+      "category": "other"
+    },
+    {
+      "number": 64,
+      "title": "feat: Normattiva API fetch + evidence contesto riferimenti",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/pull/64",
       "category": "other"
     },
     {
@@ -2028,15 +2035,17 @@
       "untracked_files": 0
     }
   },
-  "warnings": [],
+  "warnings": [
+    "Many open PRs: 6"
+  ],
   "radar": {
     "available": true,
-    "generated_at": "2026-10-16T08:06:07.813580+00:00",
-    "probe_date": "2026-10-16",
+    "generated_at": "2026-10-17T07:43:42.769728+00:00",
+    "probe_date": "2026-10-17",
     "sources_total": 36,
-    "green": 34,
+    "green": 35,
     "yellow": 1,
-    "red": 1,
+    "red": 0,
     "persistent_red": 0,
     "sources": [
       {
@@ -2097,9 +2106,9 @@
       },
       {
         "id": "dati_senato",
-        "status": "RED",
+        "status": "GREEN",
         "protocol": "sparql",
-        "http_code": "503",
+        "http_code": "200",
         "note": null,
         "red_streak": 0
       },
@@ -2329,14 +2338,6 @@
       }
     ],
     "unhealthy": [
-      {
-        "id": "dati_senato",
-        "status": "RED",
-        "protocol": "sparql",
-        "http_code": "503",
-        "note": null,
-        "red_streak": 0
-      },
       {
         "id": "opencivitas",
         "status": "YELLOW",
