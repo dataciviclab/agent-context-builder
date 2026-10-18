@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T03:20:25.758651",
+  "generated_at": "2026-10-18T10:30:42.740918",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -71,7 +71,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 42,
+  "open_issues": 44,
   "issues": [
     {
       "number": 6,
@@ -228,13 +228,6 @@
       "category": "intake"
     },
     {
-      "number": 68,
-      "title": "Espandi fetch URN: 10 \u2192 100 leggi ordinarie mancanti",
-      "repo": "italia-corpus",
-      "url": "https://github.com/dataciviclab/italia-corpus/issues/68",
-      "category": "other"
-    },
-    {
       "number": 67,
       "title": "Sync vigenza da Normattiva API \u2192 campo stato",
       "repo": "italia-corpus",
@@ -340,6 +333,27 @@
       "category": "infrastructure"
     },
     {
+      "number": 76,
+      "title": "intake: senato_documenti \u2014 Atti non legislativi del Senato (petizioni, Corte dei conti, atti UE, sentenze)",
+      "repo": "open-politica",
+      "url": "https://github.com/dataciviclab/open-politica/issues/76",
+      "category": "intake"
+    },
+    {
+      "number": 75,
+      "title": "intake: camera_iter \u2014 Iter legislativo Camera (assegnazioni, stati, trasmissioni, pareri)",
+      "repo": "open-politica",
+      "url": "https://github.com/dataciviclab/open-politica/issues/75",
+      "category": "intake"
+    },
+    {
+      "number": 74,
+      "title": "intake: camera_sindisp \u2014 Sindacato ispettivo della Camera (interrogazioni, interpellanze, mozioni, ODG)",
+      "repo": "open-politica",
+      "url": "https://github.com/dataciviclab/open-politica/issues/74",
+      "category": "intake"
+    },
+    {
       "number": 424,
       "title": "opencivitas: fonte centrale punta al vecchio /it/open-data (404) \u2014 aggiornare a docs.opencivitas.it",
       "repo": "source-observatory",
@@ -368,7 +382,7 @@
       "category": "other"
     }
   ],
-  "open_discussions": 189,
+  "open_discussions": 191,
   "discussions": [
     {
       "number": 10,
@@ -1239,6 +1253,20 @@
       "category": "Domande"
     },
     {
+      "number": 72,
+      "title": "Il corpus ha due met\u00e0: 5.686 leggi dormienti e 25 hub che reggono l'ordinamento",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/72",
+      "category": "Analisi"
+    },
+    {
+      "number": 71,
+      "title": "La legge di bilancio non \u00e8 un bilancio: 21 articoli, ~1.000 commi, 260 leggi citate",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/71",
+      "category": "Idee"
+    },
+    {
       "number": 53,
       "title": "Otto testi per capire la legislazione italiana: da dove partiamo?",
       "repo": "italia-corpus",
@@ -2052,8 +2080,8 @@
   "warnings": [],
   "radar": {
     "available": true,
-    "generated_at": "2026-10-17T07:43:42.769728+00:00",
-    "probe_date": "2026-10-17",
+    "generated_at": "2026-10-18T07:57:56.221421+00:00",
+    "probe_date": "2026-10-18",
     "sources_total": 36,
     "green": 35,
     "yellow": 1,
