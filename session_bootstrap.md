@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-10-18T20:11:43.452867
+**Generated**: 2026-10-19T03:32:34.297966
 
 ## Stato
 
@@ -10,6 +10,7 @@ Radar: 36 fonti GREEN 35 · Registry: 38 repo · 419 dataset
 
 - [PR] dataset-incubator#885: feat(candidates): eu-call-open + catena FTS call_id/project_id
 - [PR] dataset-incubator#836: feat(candidates): bootstrap gse_cer_elenco candidate
+- [PR] open-politica#77: feat(camera-sindisp): sindacato ispettivo Camera 13–19 (atti, firmatari, destinatari)
 - [PR] source-observatory#429: feat(catalog): referenced-item drift — verifica upstream vs inventario
 - [PR] 1 dependabot bump (skipped)
 
