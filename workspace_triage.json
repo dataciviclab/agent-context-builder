@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T03:32:34.297966",
+  "generated_at": "2026-10-19T12:19:47.304269",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -47,8 +47,22 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 4,
+  "open_prs": 12,
   "prs": [
+    {
+      "number": 12,
+      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
+      "repo": "appalti-pubblici",
+      "url": "https://github.com/dataciviclab/appalti-pubblici/pull/12",
+      "category": "other"
+    },
+    {
+      "number": 11,
+      "title": "feat(esecuzione): avvio, fine, sospensioni e varianti ANAC",
+      "repo": "appalti-pubblici",
+      "url": "https://github.com/dataciviclab/appalti-pubblici/pull/11",
+      "category": "other"
+    },
     {
       "number": 885,
       "title": "feat(candidates): eu-call-open + catena FTS call_id/project_id",
@@ -64,10 +78,52 @@
       "category": "other"
     },
     {
+      "number": 146,
+      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/pull/146",
+      "category": "other"
+    },
+    {
+      "number": 18,
+      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
+      "repo": "giustizia-amministrativa",
+      "url": "https://github.com/dataciviclab/giustizia-amministrativa/pull/18",
+      "category": "other"
+    },
+    {
+      "number": 13,
+      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
+      "repo": "indice-pa",
+      "url": "https://github.com/dataciviclab/indice-pa/pull/13",
+      "category": "other"
+    },
+    {
+      "number": 11,
+      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
+      "repo": "oecd-benchmark",
+      "url": "https://github.com/dataciviclab/oecd-benchmark/pull/11",
+      "category": "other"
+    },
+    {
+      "number": 13,
+      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
+      "repo": "open-mur",
+      "url": "https://github.com/dataciviclab/open-mur/pull/13",
+      "category": "other"
+    },
+    {
       "number": 77,
       "title": "feat(camera-sindisp): sindacato ispettivo Camera 13\u201319 (atti, firmatari, destinatari)",
       "repo": "open-politica",
       "url": "https://github.com/dataciviclab/open-politica/pull/77",
+      "category": "other"
+    },
+    {
+      "number": 6,
+      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
+      "repo": "sistema-bancario",
+      "url": "https://github.com/dataciviclab/sistema-bancario/pull/6",
       "category": "other"
     },
     {
@@ -389,7 +445,7 @@
       "category": "other"
     }
   ],
-  "open_discussions": 191,
+  "open_discussions": 193,
   "discussions": [
     {
       "number": 10,
@@ -1020,6 +1076,20 @@
       "repo": "dcl-bologna",
       "url": "https://github.com/dataciviclab/dcl-bologna/discussions/1",
       "category": "Announcements"
+    },
+    {
+      "number": 14,
+      "title": "Il decennio perduto delle rinnovabili: 37,9% nel 2014, dieci anni fermo, 39,9% nel 2024",
+      "repo": "energia-italia",
+      "url": "https://github.com/dataciviclab/energia-italia/discussions/14",
+      "category": "Analisi"
+    },
+    {
+      "number": 13,
+      "title": "8 regioni producono pi\u00f9 di quanto consumano \u2014 ma il surplus non \u00e8 sempre verde",
+      "repo": "energia-italia",
+      "url": "https://github.com/dataciviclab/energia-italia/discussions/13",
+      "category": "Analisi"
     },
     {
       "number": 93,
@@ -2084,15 +2154,17 @@
       "untracked_files": 0
     }
   },
-  "warnings": [],
+  "warnings": [
+    "Many open PRs: 13"
+  ],
   "radar": {
     "available": true,
-    "generated_at": "2026-10-18T07:57:56.221421+00:00",
-    "probe_date": "2026-10-18",
+    "generated_at": "2026-10-19T08:46:07.308009+00:00",
+    "probe_date": "2026-10-19",
     "sources_total": 36,
-    "green": 35,
+    "green": 34,
     "yellow": 1,
-    "red": 0,
+    "red": 1,
     "persistent_red": 0,
     "sources": [
       {
@@ -2145,9 +2217,9 @@
       },
       {
         "id": "dati_camera",
-        "status": "GREEN",
+        "status": "RED",
         "protocol": "sparql",
-        "http_code": "200",
+        "http_code": "502",
         "note": null,
         "red_streak": 0
       },
@@ -2386,6 +2458,14 @@
     ],
     "unhealthy": [
       {
+        "id": "dati_camera",
+        "status": "RED",
+        "protocol": "sparql",
+        "http_code": "502",
+        "note": null,
+        "red_streak": 0
+      },
+      {
         "id": "opencivitas",
         "status": "YELLOW",
         "protocol": "html",
@@ -2397,7 +2477,7 @@
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-10-12T11:16:11+00:00",
+    "captured_at": "2026-10-19T09:12:56+00:00",
     "sources_checked": 36,
     "regressions": [],
     "alerts": []

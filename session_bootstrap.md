@@ -1,17 +1,18 @@
 # Session Bootstrap
 
-**Generated**: 2026-10-19T03:32:34.297966
+**Generated**: 2026-10-19T12:19:47.304269
 
 ## Stato
 
-Radar: 36 fonti GREEN 35 · Registry: 38 repo · 419 dataset
+Radar: 36 fonti GREEN 34 · RED 1 · Registry: 38 repo · 419 dataset
 
 ## Richiede attenzione
 
+- [PR] appalti-pubblici#12: chore(post-catalog): aggiorna source catalog (schedule)
+- [PR] appalti-pubblici#11: feat(esecuzione): avvio, fine, sospensioni e varianti ANAC
 - [PR] dataset-incubator#885: feat(candidates): eu-call-open + catena FTS call_id/project_id
 - [PR] dataset-incubator#836: feat(candidates): bootstrap gse_cer_elenco candidate
-- [PR] open-politica#77: feat(camera-sindisp): sindacato ispettivo Camera 13–19 (atti, firmatari, destinatari)
-- [PR] source-observatory#429: feat(catalog): referenced-item drift — verifica upstream vs inventario
+- [PR] eurostat#146: chore(post-catalog): aggiorna source catalog (schedule)
 - [PR] 1 dependabot bump (skipped)
 
 ## Analisi pubbliche (45)
