@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T12:19:47.304269",
+  "generated_at": "2026-10-19T22:03:41.951241",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -47,7 +47,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 12,
+  "open_prs": 14,
   "prs": [
     {
       "number": 12,
@@ -99,6 +99,20 @@
       "category": "other"
     },
     {
+      "number": 23,
+      "title": "chore(post-merge): aggiorna registry (schedule)",
+      "repo": "inpa-reclutamento",
+      "url": "https://github.com/dataciviclab/inpa-reclutamento/pull/23",
+      "category": "other"
+    },
+    {
+      "number": 73,
+      "title": "chore(post-merge): aggiorna registry (schedule)",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/pull/73",
+      "category": "other"
+    },
+    {
       "number": 11,
       "title": "chore(post-catalog): aggiorna source catalog (schedule)",
       "repo": "oecd-benchmark",
@@ -134,8 +148,15 @@
       "category": "other"
     }
   ],
-  "open_issues": 44,
+  "open_issues": 46,
   "issues": [
+    {
+      "number": 13,
+      "title": "feat(anac_cross): arricchisci con codice IPA della stazione appaltante",
+      "repo": "appalti-pubblici",
+      "url": "https://github.com/dataciviclab/appalti-pubblici/issues/13",
+      "category": "other"
+    },
     {
       "number": 6,
       "title": "fix: sal_in_ritardo sempre 0 in anac_cross \u2014 flag_ritardo = 'S' non esiste pi\u00f9",
@@ -415,6 +436,13 @@
       "repo": "open-politica",
       "url": "https://github.com/dataciviclab/open-politica/issues/74",
       "category": "intake"
+    },
+    {
+      "number": 25,
+      "title": "feat(op_cup_lab): arricchisci con codice IPA e metadati ente dal soggetto titolare",
+      "repo": "opere-pubbliche",
+      "url": "https://github.com/dataciviclab/opere-pubbliche/issues/25",
+      "category": "other"
     },
     {
       "number": 424,
@@ -2155,7 +2183,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 13"
+    "Many open PRs: 15"
   ],
   "radar": {
     "available": true,
