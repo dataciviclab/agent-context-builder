@@ -56,7 +56,7 @@ python scripts/discover_registries.py --org dataciviclab --config dataciviclab.c
 ## Tool MCP — migrato a dcl-mcp
 
 Il server MCP (`session_bootstrap`, `lab_map`, `find`, `explore`,
-`workspace_triage`, `refresh_context`) non vive più qui: è migrato in
+`workspace_triage`) non vive più qui: è migrato in
 [`dataciviclab/dcl-mcp`](https://github.com/dataciviclab/dcl-mcp) insieme
 ai tool Discussions e al nuovo `gcs_query`. ACB resta il **builder**:
 CLI + CI che producono gli artifact sul branch `context`, che dcl-mcp
@@ -87,7 +87,8 @@ Env opzionale:
 | `ACB_BRANCH` | `context` | Branch dove vivono gli artifact |
 | `ACB_LOG_LEVEL` | `INFO` | Logging MCP |
 
-La cache viene invalidata da `refresh_context()` dopo un build CI riuscito.
+Il rebuild degli artifact è un'azione CLI/CI: non è esposto come tool MCP
+(dcl-mcp punta agli esterni). I consumer rileggono dopo il TTL.
 
 ## Utilizzo locale
 
