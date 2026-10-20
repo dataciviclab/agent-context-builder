@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T03:42:45.581247",
+  "generated_at": "2026-10-20T11:00:41.203995",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -47,15 +47,8 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 14,
+  "open_prs": 5,
   "prs": [
-    {
-      "number": 12,
-      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
-      "repo": "appalti-pubblici",
-      "url": "https://github.com/dataciviclab/appalti-pubblici/pull/12",
-      "category": "other"
-    },
     {
       "number": 11,
       "title": "feat(esecuzione): avvio, fine, sospensioni e varianti ANAC",
@@ -78,66 +71,10 @@
       "category": "other"
     },
     {
-      "number": 146,
-      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
-      "repo": "eurostat",
-      "url": "https://github.com/dataciviclab/eurostat/pull/146",
-      "category": "other"
-    },
-    {
-      "number": 18,
-      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
-      "repo": "giustizia-amministrativa",
-      "url": "https://github.com/dataciviclab/giustizia-amministrativa/pull/18",
-      "category": "other"
-    },
-    {
-      "number": 13,
-      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
-      "repo": "indice-pa",
-      "url": "https://github.com/dataciviclab/indice-pa/pull/13",
-      "category": "other"
-    },
-    {
-      "number": 23,
-      "title": "chore(post-merge): aggiorna registry (schedule)",
-      "repo": "inpa-reclutamento",
-      "url": "https://github.com/dataciviclab/inpa-reclutamento/pull/23",
-      "category": "other"
-    },
-    {
-      "number": 73,
-      "title": "chore(post-merge): aggiorna registry (schedule)",
-      "repo": "italia-corpus",
-      "url": "https://github.com/dataciviclab/italia-corpus/pull/73",
-      "category": "other"
-    },
-    {
-      "number": 11,
-      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
-      "repo": "oecd-benchmark",
-      "url": "https://github.com/dataciviclab/oecd-benchmark/pull/11",
-      "category": "other"
-    },
-    {
-      "number": 13,
-      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
-      "repo": "open-mur",
-      "url": "https://github.com/dataciviclab/open-mur/pull/13",
-      "category": "other"
-    },
-    {
-      "number": 77,
-      "title": "feat(camera-sindisp): sindacato ispettivo Camera 13\u201319 (atti, firmatari, destinatari)",
+      "number": 81,
+      "title": "fix(camera-iter): evento_id per URI non standard + verifica completezza",
       "repo": "open-politica",
-      "url": "https://github.com/dataciviclab/open-politica/pull/77",
-      "category": "other"
-    },
-    {
-      "number": 6,
-      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
-      "repo": "sistema-bancario",
-      "url": "https://github.com/dataciviclab/sistema-bancario/pull/6",
+      "url": "https://github.com/dataciviclab/open-politica/pull/81",
       "category": "other"
     },
     {
@@ -148,7 +85,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 46,
+  "open_issues": 48,
   "issues": [
     {
       "number": 13,
@@ -260,6 +197,27 @@
       "title": "\ud83d\udce5 Dataset: Eventi cultura (30k, daily, geo)",
       "repo": "dcl-bologna",
       "url": "https://github.com/dataciviclab/dcl-bologna/issues/5",
+      "category": "intake"
+    },
+    {
+      "number": 17,
+      "title": "Intake: irena-lcoe \u2014 costi di generazione per tecnologia (2010-2024)",
+      "repo": "energia-italia",
+      "url": "https://github.com/dataciviclab/energia-italia/issues/17",
+      "category": "intake"
+    },
+    {
+      "number": 16,
+      "title": "Intake: terna-generation-oraria \u2014 mix orario per fonte, picchi e flussi (2019-2026)",
+      "repo": "energia-italia",
+      "url": "https://github.com/dataciviclab/energia-italia/issues/16",
+      "category": "intake"
+    },
+    {
+      "number": 15,
+      "title": "Intake: terna-load-oraria \u2014 carico elettrico orario per zona (2019-2026)",
+      "repo": "energia-italia",
+      "url": "https://github.com/dataciviclab/energia-italia/issues/15",
       "category": "intake"
     },
     {
@@ -428,13 +386,6 @@
       "title": "intake: camera_iter \u2014 Iter legislativo Camera (assegnazioni, stati, trasmissioni, pareri)",
       "repo": "open-politica",
       "url": "https://github.com/dataciviclab/open-politica/issues/75",
-      "category": "intake"
-    },
-    {
-      "number": 74,
-      "title": "intake: camera_sindisp \u2014 Sindacato ispettivo della Camera (interrogazioni, interpellanze, mozioni, ODG)",
-      "repo": "open-politica",
-      "url": "https://github.com/dataciviclab/open-politica/issues/74",
       "category": "intake"
     },
     {
@@ -2183,16 +2134,16 @@
     }
   },
   "warnings": [
-    "Many open PRs: 16"
+    "Many open PRs: 6"
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-10-19T08:46:07.308009+00:00",
-    "probe_date": "2026-10-19",
+    "generated_at": "2026-10-20T08:27:12.019885+00:00",
+    "probe_date": "2026-10-20",
     "sources_total": 36,
-    "green": 34,
+    "green": 35,
     "yellow": 1,
-    "red": 1,
+    "red": 0,
     "persistent_red": 0,
     "sources": [
       {
@@ -2245,9 +2196,9 @@
       },
       {
         "id": "dati_camera",
-        "status": "RED",
+        "status": "GREEN",
         "protocol": "sparql",
-        "http_code": "502",
+        "http_code": "200",
         "note": null,
         "red_streak": 0
       },
@@ -2485,14 +2436,6 @@
       }
     ],
     "unhealthy": [
-      {
-        "id": "dati_camera",
-        "status": "RED",
-        "protocol": "sparql",
-        "http_code": "502",
-        "note": null,
-        "red_streak": 0
-      },
       {
         "id": "opencivitas",
         "status": "YELLOW",
@@ -5329,7 +5272,7 @@
       "repo": "inpa-reclutamento",
       "available": true,
       "source_repo": "dataciviclab/inpa-reclutamento",
-      "updated_at": "2026-10-18",
+      "updated_at": "2026-10-19",
       "datasets": 4,
       "marts": 12,
       "signals": 4,
@@ -5373,11 +5316,11 @@
           "label": "inpa_bandi_open",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261018T103527Z_2540c049",
+            "run_id": "20261019T123047Z_47a8399e",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-18T10:35:27.621446+00:00",
-            "finished_at": "2026-10-18T10:35:56.758401+00:00"
+            "started_at": "2026-10-19T12:30:47.068178+00:00",
+            "finished_at": "2026-10-19T12:30:57.401918+00:00"
           }
         },
         {
@@ -5387,11 +5330,11 @@
           "label": "inpa_comunicazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261018T103557Z_60870c16",
+            "run_id": "20261019T123057Z_0adfc6fc",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-18T10:35:57.280822+00:00",
-            "finished_at": "2026-10-18T10:37:17.061304+00:00"
+            "started_at": "2026-10-19T12:30:57.898482+00:00",
+            "finished_at": "2026-10-19T12:31:30.501021+00:00"
           }
         }
       ]
@@ -5400,7 +5343,7 @@
       "repo": "italia-corpus",
       "available": true,
       "source_repo": "dataciviclab/italia-corpus",
-      "updated_at": "2026-10-17",
+      "updated_at": "2026-10-19",
       "datasets": 4,
       "marts": 10,
       "signals": 4,
@@ -5416,11 +5359,11 @@
           "label": "akn_act_meta",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261017T105611Z_94ff6167",
+            "run_id": "20261019T142733Z_df048592",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-17T10:56:11.958397+00:00",
-            "finished_at": "2026-10-17T10:56:12.221267+00:00"
+            "started_at": "2026-10-19T14:27:33.950618+00:00",
+            "finished_at": "2026-10-19T14:27:34.222175+00:00"
           }
         },
         {
@@ -5430,11 +5373,11 @@
           "label": "akn_relations",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261017T105612Z_72b8ca6b",
+            "run_id": "20261019T142734Z_97d815fa",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-17T10:56:12.612549+00:00",
-            "finished_at": "2026-10-17T10:56:13.895365+00:00"
+            "started_at": "2026-10-19T14:27:34.628638+00:00",
+            "finished_at": "2026-10-19T14:27:35.927167+00:00"
           }
         },
         {
@@ -5444,11 +5387,11 @@
           "label": "normativa",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261017T105614Z_061e11d9",
+            "run_id": "20261019T142736Z_f6fb88c4",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-17T10:56:14.285673+00:00",
-            "finished_at": "2026-10-17T10:56:14.614808+00:00"
+            "started_at": "2026-10-19T14:27:36.336722+00:00",
+            "finished_at": "2026-10-19T14:27:36.680281+00:00"
           }
         },
         {
@@ -5458,11 +5401,11 @@
           "label": "riferimenti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261017T105615Z_d3e01201",
+            "run_id": "20261019T142737Z_c8c80652",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-17T10:56:15.013067+00:00",
-            "finished_at": "2026-10-17T10:56:15.658212+00:00"
+            "started_at": "2026-10-19T14:27:37.109517+00:00",
+            "finished_at": "2026-10-19T14:27:38.060746+00:00"
           }
         }
       ]
@@ -6548,9 +6491,9 @@
       "repo": "open-inps",
       "available": true,
       "source_repo": "dataciviclab/open-inps",
-      "updated_at": "2026-10-11",
+      "updated_at": "2026-10-20",
       "datasets": 20,
-      "marts": 57,
+      "marts": 58,
       "signals": 20,
       "codelists": 0,
       "entities": 4,
@@ -6830,11 +6773,11 @@
           "label": "inps_retribuzioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260917T181803Z_ef6a688e",
+            "run_id": "20261020T100706Z_903a0f3f",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-17T18:18:03.873505+00:00",
-            "finished_at": "2026-09-17T18:18:04.035612+00:00"
+            "started_at": "2026-10-20T10:07:06.500122+00:00",
+            "finished_at": "2026-10-20T10:14:30.382503+00:00"
           }
         }
       ]
@@ -7365,13 +7308,13 @@
       "repo": "open-politica",
       "available": true,
       "source_repo": "dataciviclab/open-politica",
-      "updated_at": "2026-10-17",
-      "datasets": 38,
-      "marts": 75,
-      "signals": 38,
+      "updated_at": "2026-10-20",
+      "datasets": 42,
+      "marts": 85,
+      "signals": 42,
       "codelists": 0,
       "entities": 8,
-      "gcs": 38,
+      "gcs": 42,
       "reason": "",
       "signals_detail": [
         {
@@ -7507,11 +7450,11 @@
           "label": "camera_ddl",
           "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20260928T084342Z_7ff5b62f",
+            "run_id": "20261020T100503Z_d2d8fac1",
             "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-09-28T08:43:42.709912+00:00",
-            "finished_at": "2026-09-28T08:43:44.258747+00:00"
+            "started_at": "2026-10-20T10:05:03.422118+00:00",
+            "finished_at": "2026-10-20T10:05:05.147559+00:00"
           }
         },
         {
@@ -7585,6 +7528,20 @@
           }
         },
         {
+          "id": "camera_iter",
+          "source_id": "dati_camera",
+          "status": "ok",
+          "label": "camera_iter",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261020T084812Z_6acc94f2",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-10-20T08:48:12.332615+00:00",
+            "finished_at": "2026-10-20T08:54:55.377186+00:00"
+          }
+        },
+        {
           "id": "camera_leggi",
           "source_id": "dati_camera",
           "status": "ok",
@@ -7610,6 +7567,48 @@
             "status": "SUCCESS",
             "started_at": "2026-10-08T18:14:59.356366+00:00",
             "finished_at": "2026-10-08T18:15:03.332843+00:00"
+          }
+        },
+        {
+          "id": "camera_sindisp",
+          "source_id": "dati_camera",
+          "status": "ok",
+          "label": "camera_sindisp",
+          "detail": "anni 13-19 \u2014 mart: si",
+          "run": {
+            "run_id": "20261020T100844Z_7fcf9560",
+            "year": 19,
+            "status": "SUCCESS",
+            "started_at": "2026-10-20T10:08:44.651087+00:00",
+            "finished_at": "2026-10-20T10:09:33.893852+00:00"
+          }
+        },
+        {
+          "id": "camera_sindisp_destinatari",
+          "source_id": "dati_camera",
+          "status": "ok",
+          "label": "camera_sindisp_destinatari",
+          "detail": "anni 13-19 \u2014 mart: si",
+          "run": {
+            "run_id": "20261020T101037Z_698a7262",
+            "year": 19,
+            "status": "SUCCESS",
+            "started_at": "2026-10-20T10:10:37.249665+00:00",
+            "finished_at": "2026-10-20T10:10:43.028728+00:00"
+          }
+        },
+        {
+          "id": "camera_sindisp_firmatari",
+          "source_id": "dati_camera",
+          "status": "ok",
+          "label": "camera_sindisp_firmatari",
+          "detail": "anni 13-19 \u2014 mart: si",
+          "run": {
+            "run_id": "20261020T101738Z_c331b173",
+            "year": 19,
+            "status": "SUCCESS",
+            "started_at": "2026-10-20T10:17:38.904404+00:00",
+            "finished_at": "2026-10-20T10:18:23.104938+00:00"
           }
         },
         {

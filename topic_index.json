@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-20T03:42:45.581247",
+  "generated_at": "2026-10-20T11:00:41.203995",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -383,7 +383,7 @@
       "url": "https://github.com/dataciviclab/open-politica",
       "role": "dati",
       "domain": "politica",
-      "n_datasets": 38,
+      "n_datasets": 42,
       "n_published": 0,
       "sources": [
         "dait",
@@ -11235,7 +11235,7 @@
         ],
         "category": "normativa",
         "registry_source": "italia-corpus",
-        "clean_rows": 136460,
+        "clean_rows": 136441,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia-corpus/riferimenti/2026/riferimenti_2026_clean.parquet",
@@ -16028,7 +16028,7 @@
         ],
         "category": "lavoro",
         "registry_source": "open-inps",
-        "clean_rows": null,
+        "clean_rows": 720,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-inps/inps_retribuzioni/2026/inps_retribuzioni_2026_clean.parquet",
@@ -16078,6 +16078,27 @@
             "description": ""
           },
           {
+            "name": "settore_label",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "settore_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "settore_nace",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "n_lavoratori",
             "type": "DOUBLE",
             "role": "metric",
@@ -16085,14 +16106,28 @@
             "description": ""
           },
           {
-            "name": "somma_retribuzioni",
+            "name": "retribuzione_totale",
             "type": "DOUBLE",
             "role": "metric",
             "semantic_type": "",
             "description": ""
           },
           {
-            "name": "unita_lavorative",
+            "name": "settimane_retribuite",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "settimane_utili",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "giornate_retribuite",
             "type": "DOUBLE",
             "role": "metric",
             "semantic_type": "",
@@ -16101,7 +16136,8 @@
         ],
         "mart_refs": [
           "inps_retribuzioni__mart_retribuzioni_regione",
-          "inps_retribuzioni__mart_retribuzioni_eta"
+          "inps_retribuzioni__mart_retribuzioni_eta",
+          "inps_retribuzioni__mart_retribuzioni_settore"
         ]
       }
     ],
@@ -35119,7 +35155,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 1869,
+        "clean_rows": 1868,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_bandi_open/2026/inpa_bandi_open_2026_clean.parquet",
@@ -35338,7 +35374,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 5807,
+        "clean_rows": 5841,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_comunicazioni/2026/inpa_comunicazioni_2026_clean.parquet",
@@ -46133,7 +46169,7 @@
         ],
         "category": "politica",
         "registry_source": "open-politica",
-        "clean_rows": 3118,
+        "clean_rows": 3148,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-politica/camera_ddl/*/camera_ddl_*_clean.parquet",
@@ -46622,6 +46658,155 @@
         ]
       },
       {
+        "slug": "camera_iter",
+        "url_slug": "camera-iter",
+        "name": "Camera Iter",
+        "description": "",
+        "source": "",
+        "source_id": "dati_camera",
+        "period": {
+          "start": 2008,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "politica",
+          "camera",
+          "iter",
+          "iter-legislativo",
+          "commissioni",
+          "trasmissione",
+          "accountability"
+        ],
+        "category": "politica",
+        "registry_source": "open-politica",
+        "clean_rows": 125825,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-politica/camera_iter/2026/camera_iter_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "evento_id",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "evento_uri",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_evento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "legislatura",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "atto_id",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "atto_source",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_anomala",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "organo_id",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "organo_label",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "esito",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "target_uri",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provenienza",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "senato_atto_num",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "identifier",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "camera_iter__mart_iter_per_atto",
+          "camera_iter__mart_tempi",
+          "camera_iter__mart_commissioni"
+        ]
+      },
+      {
         "slug": "camera_leggi",
         "url_slug": "camera-leggi",
         "name": "Camera Leggi",
@@ -46850,6 +47035,315 @@
         "mart_refs": [
           "camera_relatori__mart_sintesi",
           "camera_relatori__mart_top_relatori"
+        ]
+      },
+      {
+        "slug": "camera_sindisp",
+        "url_slug": "camera-sindisp",
+        "name": "Camera Sindisp",
+        "description": "",
+        "source": "",
+        "source_id": "dati_camera",
+        "period": {
+          "start": 1996,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "politica",
+          "camera",
+          "sindacato-ispettivo",
+          "interrogazioni",
+          "interpellanze",
+          "mozioni",
+          "accountability"
+        ],
+        "category": "politica",
+        "registry_source": "open-politica",
+        "clean_rows": 31063,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-politica/camera_sindisp/*/camera_sindisp_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "atto_id",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "atto_key",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ddl_numero",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_presentazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "titolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ramo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "primo_firmatario_uri",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "primo_firmatario_label",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "concluso",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "risposta_uri",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ha_risposta",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "legislatura",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "camera_sindisp__mart_sintesi",
+          "camera_sindisp__mart_anni",
+          "camera_sindisp__mart_odg_ddl",
+          "camera_sindisp__mart_odg_ddl_sintesi"
+        ]
+      },
+      {
+        "slug": "camera_sindisp_destinatari",
+        "url_slug": "camera-sindisp-destinatari",
+        "name": "Camera Sindisp Destinatari",
+        "description": "",
+        "source": "",
+        "source_id": "dati_camera",
+        "period": {
+          "start": 1996,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "politica",
+          "camera",
+          "sindacato-ispettivo",
+          "governo",
+          "ministri",
+          "accountability"
+        ],
+        "category": "politica",
+        "registry_source": "open-politica",
+        "clean_rows": 28024,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-politica/camera_sindisp_destinatari/*/camera_sindisp_destinatari_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "atto_id",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "destinatario_uri",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "organo_id",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "destinatario_label",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ha_risposta",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "legislatura",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "camera_sindisp_destinatari__mart_per_ministro"
+        ]
+      },
+      {
+        "slug": "camera_sindisp_firmatari",
+        "url_slug": "camera-sindisp-firmatari",
+        "name": "Camera Sindisp Firmatari",
+        "description": "",
+        "source": "",
+        "source_id": "dati_camera",
+        "period": {
+          "start": 1996,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "politica",
+          "camera",
+          "sindacato-ispettivo",
+          "firmatari",
+          "accountability"
+        ],
+        "category": "politica",
+        "registry_source": "open-politica",
+        "clean_rows": 132005,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-politica/camera_sindisp_firmatari/*/camera_sindisp_firmatari_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "atto_id",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "firmatario_uri",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "persona_id",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "person_id",
+            "description": ""
+          },
+          {
+            "name": "ruolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "firmatario_label",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "legislatura",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "camera_sindisp_firmatari__mart_firmatari_per_atto",
+          "camera_sindisp_firmatari__mart_per_deputato"
         ]
       },
       {
@@ -56480,8 +56974,12 @@
         "camera_gruppi",
         "camera_incarichi",
         "camera_interventi",
+        "camera_iter",
         "camera_leggi",
         "camera_relatori",
+        "camera_sindisp",
+        "camera_sindisp_destinatari",
+        "camera_sindisp_firmatari",
         "camera_votazioni_sparql",
         "camera_voti",
         "dait_amministratori_locali",
@@ -56514,7 +57012,7 @@
         "senato_votazioni_oggetto",
         "voti_ddl_dettaglio"
       ],
-      "dataset_count": 41
+      "dataset_count": 45
     }
   ],
   "explorer_themes": [
@@ -56844,8 +57342,12 @@
         "camera_gruppi",
         "camera_incarichi",
         "camera_interventi",
+        "camera_iter",
         "camera_leggi",
         "camera_relatori",
+        "camera_sindisp",
+        "camera_sindisp_destinatari",
+        "camera_sindisp_firmatari",
         "camera_votazioni_sparql",
         "camera_voti",
         "dait_amministratori_locali",
@@ -57920,8 +58422,12 @@
       "camera_gruppi",
       "camera_incarichi",
       "camera_interventi",
+      "camera_iter",
       "camera_leggi",
       "camera_relatori",
+      "camera_sindisp",
+      "camera_sindisp_destinatari",
+      "camera_sindisp_firmatari",
       "camera_votazioni_sparql",
       "camera_voti",
       "dait_amministratori_locali",
@@ -58210,8 +58716,12 @@
       "camera_gruppi",
       "camera_incarichi",
       "camera_interventi",
+      "camera_iter",
       "camera_leggi",
       "camera_relatori",
+      "camera_sindisp",
+      "camera_sindisp_destinatari",
+      "camera_sindisp_firmatari",
       "camera_votazioni_sparql",
       "camera_voti",
       "dait_amministratori_locali",
@@ -63437,6 +63947,24 @@
       ],
       "description": ""
     },
+    "camera_iter": {
+      "name": "Camera Iter",
+      "stage": "incubating",
+      "source_id": "dati_camera",
+      "registry_source": "open-politica",
+      "domain": "politica",
+      "category": "politica",
+      "tags": [
+        "politica",
+        "camera",
+        "iter",
+        "iter-legislativo",
+        "commissioni",
+        "trasmissione",
+        "accountability"
+      ],
+      "description": ""
+    },
     "camera_leggi": {
       "name": "Camera Leggi",
       "stage": "incubating",
@@ -63466,6 +63994,57 @@
         "relatori",
         "iter",
         "produzione"
+      ],
+      "description": ""
+    },
+    "camera_sindisp": {
+      "name": "Camera Sindisp",
+      "stage": "incubating",
+      "source_id": "dati_camera",
+      "registry_source": "open-politica",
+      "domain": "politica",
+      "category": "politica",
+      "tags": [
+        "politica",
+        "camera",
+        "sindacato-ispettivo",
+        "interrogazioni",
+        "interpellanze",
+        "mozioni",
+        "accountability"
+      ],
+      "description": ""
+    },
+    "camera_sindisp_destinatari": {
+      "name": "Camera Sindisp Destinatari",
+      "stage": "incubating",
+      "source_id": "dati_camera",
+      "registry_source": "open-politica",
+      "domain": "politica",
+      "category": "politica",
+      "tags": [
+        "politica",
+        "camera",
+        "sindacato-ispettivo",
+        "governo",
+        "ministri",
+        "accountability"
+      ],
+      "description": ""
+    },
+    "camera_sindisp_firmatari": {
+      "name": "Camera Sindisp Firmatari",
+      "stage": "incubating",
+      "source_id": "dati_camera",
+      "registry_source": "open-politica",
+      "domain": "politica",
+      "category": "politica",
+      "tags": [
+        "politica",
+        "camera",
+        "sindacato-ispettivo",
+        "firmatari",
+        "accountability"
       ],
       "description": ""
     },
