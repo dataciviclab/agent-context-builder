@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T16:26:55.311635",
+  "generated_at": "2026-10-20T19:11:17.880624",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -14,6 +14,7 @@
     "dichiarazioni-italia",
     "energia-italia",
     "eurostat",
+    "filiere-agroalimentari",
     "giustizia-amministrativa",
     "giustizia-statistiche",
     "imprese-italia",
@@ -58,7 +59,7 @@
     },
     {
       "number": 278,
-      "title": "feat(cross-view): aggiungi \"Chi cattura la crescita?\"",
+      "title": "feat(cross-view): Chi cattura la crescita? \u2014 macro, settori e dentro i settori",
       "repo": "data-explorer",
       "url": "https://github.com/dataciviclab/data-explorer/pull/278",
       "category": "other"
@@ -1876,6 +1877,14 @@
       "branches_ahead": [],
       "untracked_files": 0
     },
+    "filiere-agroalimentari": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
     "giustizia-amministrativa": {
       "available": false,
       "reason": "local_disabled",
@@ -2455,7 +2464,7 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-10-15",
+    "generated_at": "2026-10-20",
     "summary": {
       "total": 48,
       "by_status": {
@@ -2889,9 +2898,9 @@
       "repo": "dataset-incubator",
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
-      "updated_at": "2026-10-15",
+      "updated_at": "2026-10-20",
       "datasets": 46,
-      "marts": 85,
+      "marts": 89,
       "signals": 48,
       "codelists": 0,
       "entities": 13,
@@ -3162,13 +3171,13 @@
           "source_id": "istat_dbnomics",
           "status": "ok",
           "label": "istat_sbs_imprese",
-          "detail": "anno 2023 \u2014 mart: si",
+          "detail": "anno 2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261013T090336Z_b667eff1",
-            "year": 2023,
+            "run_id": "20261020T182704Z_94d75e69",
+            "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-13T09:03:36.345763+00:00",
-            "finished_at": "2026-10-13T09:03:51.138433+00:00"
+            "started_at": "2026-10-20T18:27:04.565319+00:00",
+            "finished_at": "2026-10-20T18:27:30.433564+00:00"
           }
         },
         {
@@ -4574,6 +4583,105 @@
             "status": "SUCCESS",
             "started_at": "2026-09-27T15:12:36.227469+00:00",
             "finished_at": "2026-09-27T15:12:39.016167+00:00"
+          }
+        }
+      ]
+    },
+    {
+      "repo": "filiere-agroalimentari",
+      "available": true,
+      "source_repo": "dataciviclab/filiere-agroalimentari",
+      "updated_at": "2026-10-20",
+      "datasets": 5,
+      "marts": 13,
+      "signals": 6,
+      "codelists": 0,
+      "entities": 3,
+      "gcs": 5,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "compose:filiere_valore_aggiunto",
+          "source_id": "dataciviclab_composite",
+          "status": "ok",
+          "label": "filiere_valore_aggiunto",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20261020T190333Z_fcfeb481",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-10-20T19:03:33.303552+00:00",
+            "finished_at": "2026-10-20T19:03:35.552485+00:00"
+          }
+        },
+        {
+          "id": "eurostat_hicp_prezzi_consumo",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_hicp_prezzi_consumo",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261020T190052Z_c5f210c4",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-10-20T19:00:52.502522+00:00",
+            "finished_at": "2026-10-20T19:00:54.104400+00:00"
+          }
+        },
+        {
+          "id": "eurostat_prezzi_agricoli",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_prezzi_agricoli",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20261020T190055Z_8e592c22",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-10-20T19:00:55.363331+00:00",
+            "finished_at": "2026-10-20T19:00:57.632647+00:00"
+          }
+        },
+        {
+          "id": "istat_nic_prezzi_consumo",
+          "source_id": "istat_dbnomics",
+          "status": "ok",
+          "label": "istat_nic_prezzi_consumo",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261020T190057Z_f37aa512",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-10-20T19:00:57.934516+00:00",
+            "finished_at": "2026-10-20T19:01:04.856912+00:00"
+          }
+        },
+        {
+          "id": "istat_prezzi_agricoli",
+          "source_id": "istat_sdmx",
+          "status": "ok",
+          "label": "istat_prezzi_agricoli",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261020T190105Z_195608d9",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-10-20T19:01:05.180534+00:00",
+            "finished_at": "2026-10-20T19:01:19.212449+00:00"
+          }
+        },
+        {
+          "id": "rica_area_redditi",
+          "source_id": "rica_crea",
+          "status": "ok",
+          "label": "rica_area_redditi",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20261020T190119Z_6bc1c9f9",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-10-20T19:01:19.503544+00:00",
+            "finished_at": "2026-10-20T19:03:32.980304+00:00"
           }
         }
       ]

@@ -1,15 +1,15 @@
 # Session Bootstrap
 
-**Generated**: 2026-10-20T16:26:55.311635
+**Generated**: 2026-10-20T19:11:17.880624
 
 ## Stato
 
-Radar: 36 fonti GREEN 35 · Registry: 38 repo · 425 dataset
+Radar: 36 fonti GREEN 35 · Registry: 39 repo · 430 dataset
 
 ## Richiede attenzione
 
 - [PR] appalti-pubblici#11: feat(esecuzione): avvio, fine, sospensioni e varianti ANAC
-- [PR] data-explorer#278: feat(cross-view): aggiungi "Chi cattura la crescita?"
+- [PR] data-explorer#278: feat(cross-view): Chi cattura la crescita? — macro, settori e dentro i settori
 - [PR] dataset-incubator#885: feat(candidates): eu-call-open + catena FTS call_id/project_id
 - [PR] dataset-incubator#836: feat(candidates): bootstrap gse_cer_elenco candidate
 - [PR] source-observatory#429: feat(catalog): referenced-item drift — verifica upstream vs inventario
