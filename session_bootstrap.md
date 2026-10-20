@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-10-19T22:03:41.951241
+**Generated**: 2026-10-20T03:42:45.581247
 
 ## Stato
 
@@ -13,7 +13,7 @@ Radar: 36 fonti GREEN 34 · RED 1 · Registry: 38 repo · 419 dataset
 - [PR] dataset-incubator#885: feat(candidates): eu-call-open + catena FTS call_id/project_id
 - [PR] dataset-incubator#836: feat(candidates): bootstrap gse_cer_elenco candidate
 - [PR] eurostat#146: chore(post-catalog): aggiorna source catalog (schedule)
-- [PR] 1 dependabot bump (skipped)
+- [PR] 2 dependabot bump (skipped)
 
 ## Analisi pubbliche (45)
 
