@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-20T21:19:47.930685",
+  "generated_at": "2026-10-20T22:25:08.262204",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -169,10 +169,12 @@
       "url": "https://github.com/dataciviclab/filiere-agroalimentari",
       "role": "dati",
       "domain": "finanza-pubblica",
-      "n_datasets": 5,
+      "n_datasets": 7,
       "n_published": 0,
       "sources": [
+        "dataciviclab_composite",
         "eurostat",
+        "eurostat_sbs",
         "istat_dbnomics",
         "istat_sdmx",
         "rica_crea"
@@ -2455,6 +2457,35 @@
         ],
         "mart_refs": [
           "comuni_master__mart_comuni_master"
+        ]
+      },
+      {
+        "slug": "filiere_valore_aggiunto",
+        "url_slug": "filiere-valore-aggiunto",
+        "name": "Filiere Valore Aggiunto",
+        "description": "Valore aggiunto per stadio della filiera agroalimentare: agricoltura (RICA), trasformazione (SBS NACE 10/11/12) e retail alimentare (Eurostat SBS 4711 + 4721-4725 + 4729 + 4781).",
+        "source": "",
+        "source_id": "dataciviclab_composite",
+        "period": {
+          "start": 2008,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "economia",
+          "agricoltura",
+          "filiera",
+          "valore-aggiunto",
+          "compose",
+          "sbs",
+          "rica"
+        ],
+        "category": "economia",
+        "registry_source": "filiere-agroalimentari",
+        "clean_rows": null,
+        "mart_refs": [
+          "filiere_valore_aggiunto__mart_filiere_stadi",
+          "filiere_valore_aggiunto__mart_filiere_dettaglio"
         ]
       },
       {
@@ -30815,6 +30846,142 @@
         ]
       }
     ],
+    "eurostat_sbs": [
+      {
+        "slug": "eurostat_sbs_food_retail",
+        "url_slug": "eurostat-sbs-food-retail",
+        "name": "Eurostat Sbs Food Retail",
+        "description": "Retail alimentare italiano: valore aggiunto, costo del lavoro, ore e imprese per NACE 4711, 4721-4725, 4729 e 4781. Fonti Eurostat SBS (sbs_na_dt_r2 2008-2020; sbs_ovw_act 2021-2024).",
+        "source": "",
+        "source_id": "eurostat_sbs",
+        "period": {
+          "start": 2008,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "economia",
+          "agricoltura",
+          "filiera",
+          "retail",
+          "alimentare",
+          "sbs",
+          "eurostat"
+        ],
+        "category": "economia",
+        "registry_source": "filiere-agroalimentari",
+        "clean_rows": 135,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/filiere-agroalimentari/eurostat_sbs_food_retail/2024/eurostat_sbs_food_retail_2024_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "nace_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nace",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "segmento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "va_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "costo_lavoro_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imprese",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "quota_lavoro_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "va_per_ora_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fonte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fonte_dataset",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "definizione_costo_lavoro",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nota",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "eurostat_sbs_food_retail__mart_retail_alimentare",
+          "eurostat_sbs_food_retail__mart_retail_alimentare_dettaglio"
+        ]
+      }
+    ],
     "rica_crea": [
       {
         "slug": "rica_area_redditi",
@@ -57543,7 +57710,9 @@
         "eurostat_prezzi_agricoli",
         "eurostat_rd_expenditure_nuts2",
         "eurostat_rendimento_10y",
+        "eurostat_sbs_food_retail",
         "eurostat_tourism_nuts3",
+        "filiere_valore_aggiunto",
         "fpi_debito_pa",
         "fts_eu_grants",
         "irap_italia_estero",
@@ -57621,7 +57790,7 @@
         "ted_contract_notices",
         "wb_financial"
       ],
-      "dataset_count": 133
+      "dataset_count": 135
     },
     {
       "slug": "sanita",
@@ -57972,7 +58141,9 @@
         "eurostat_prezzi_agricoli",
         "eurostat_rd_expenditure_nuts2",
         "eurostat_rendimento_10y",
+        "eurostat_sbs_food_retail",
         "eurostat_tourism_nuts3",
+        "filiere_valore_aggiunto",
         "fpi_debito_pa",
         "fts_eu_grants",
         "irap_italia_estero",
@@ -59052,6 +59223,8 @@
     "filiere-agroalimentari": [
       "eurostat_hicp_prezzi_consumo",
       "eurostat_prezzi_agricoli",
+      "eurostat_sbs_food_retail",
+      "filiere_valore_aggiunto",
       "istat_nic_prezzi_consumo",
       "istat_prezzi_agricoli",
       "rica_area_redditi"
@@ -59454,7 +59627,9 @@
       "eurostat_prezzi_agricoli",
       "eurostat_rd_expenditure_nuts2",
       "eurostat_rendimento_10y",
+      "eurostat_sbs_food_retail",
       "eurostat_tourism_nuts3",
+      "filiere_valore_aggiunto",
       "fpi_debito_pa",
       "fts_eu_grants",
       "irap_italia_estero",
@@ -62032,6 +62207,42 @@
         "filiera"
       ],
       "description": "Prezzi assoluti annuali dei prodotti agricoli alla produzione in Italia, in EUR per 100 kg/litri/pezzi. Copre colture e prodotti animali, 2000-2024. Fonte Eurostat."
+    },
+    "eurostat_sbs_food_retail": {
+      "name": "Eurostat Sbs Food Retail",
+      "stage": "incubating",
+      "source_id": "eurostat_sbs",
+      "registry_source": "filiere-agroalimentari",
+      "domain": "finanza-pubblica",
+      "category": "economia",
+      "tags": [
+        "economia",
+        "agricoltura",
+        "filiera",
+        "retail",
+        "alimentare",
+        "sbs",
+        "eurostat"
+      ],
+      "description": "Retail alimentare italiano: valore aggiunto, costo del lavoro, ore e imprese per NACE 4711, 4721-4725, 4729 e 4781. Fonti Eurostat SBS (sbs_na_dt_r2 2008-2020; sbs_ovw_act 2021-2024)."
+    },
+    "filiere_valore_aggiunto": {
+      "name": "Filiere Valore Aggiunto",
+      "stage": "incubating",
+      "source_id": "dataciviclab_composite",
+      "registry_source": "filiere-agroalimentari",
+      "domain": "finanza-pubblica",
+      "category": "economia",
+      "tags": [
+        "economia",
+        "agricoltura",
+        "filiera",
+        "valore-aggiunto",
+        "compose",
+        "sbs",
+        "rica"
+      ],
+      "description": "Valore aggiunto per stadio della filiera agroalimentare: agricoltura (RICA), trasformazione (SBS NACE 10/11/12) e retail alimentare (Eurostat SBS 4711 + 4721-4725 + 4729 + 4781)."
     },
     "istat_nic_prezzi_consumo": {
       "name": "Istat Nic Prezzi Consumo",

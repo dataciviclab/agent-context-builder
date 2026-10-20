@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T21:19:47.930685",
+  "generated_at": "2026-10-20T22:25:08.262204",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -86,7 +86,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 47,
+  "open_issues": 46,
   "issues": [
     {
       "number": 13,
@@ -373,13 +373,6 @@
       "title": "intake: senato_documenti \u2014 Atti non legislativi del Senato (petizioni, Corte dei conti, atti UE, sentenze)",
       "repo": "open-politica",
       "url": "https://github.com/dataciviclab/open-politica/issues/76",
-      "category": "intake"
-    },
-    {
-      "number": 75,
-      "title": "intake: camera_iter \u2014 Iter legislativo Camera (assegnazioni, stati, trasmissioni, pareri)",
-      "repo": "open-politica",
-      "url": "https://github.com/dataciviclab/open-politica/issues/75",
       "category": "intake"
     },
     {
@@ -4592,12 +4585,12 @@
       "available": true,
       "source_repo": "dataciviclab/filiere-agroalimentari",
       "updated_at": "2026-10-20",
-      "datasets": 5,
-      "marts": 13,
-      "signals": 6,
+      "datasets": 7,
+      "marts": 15,
+      "signals": 7,
       "codelists": 0,
       "entities": 3,
-      "gcs": 5,
+      "gcs": 6,
       "reason": "",
       "signals_detail": [
         {
@@ -4607,11 +4600,11 @@
           "label": "filiere_valore_aggiunto",
           "detail": "anno 2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261020T190333Z_fcfeb481",
+            "run_id": "20261020T220656Z_07a16310",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-20T19:03:33.303552+00:00",
-            "finished_at": "2026-10-20T19:03:35.552485+00:00"
+            "started_at": "2026-10-20T22:06:56.228023+00:00",
+            "finished_at": "2026-10-20T22:06:57.420007+00:00"
           }
         },
         {
@@ -4621,11 +4614,11 @@
           "label": "eurostat_hicp_prezzi_consumo",
           "detail": "anno 2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261020T190052Z_c5f210c4",
+            "run_id": "20261020T220405Z_c24fa9b5",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-10-20T19:00:52.502522+00:00",
-            "finished_at": "2026-10-20T19:00:54.104400+00:00"
+            "started_at": "2026-10-20T22:04:05.688916+00:00",
+            "finished_at": "2026-10-20T22:04:07.408707+00:00"
           }
         },
         {
@@ -4635,11 +4628,25 @@
           "label": "eurostat_prezzi_agricoli",
           "detail": "anno 2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261020T190055Z_8e592c22",
+            "run_id": "20261020T220408Z_ac9c1bbb",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-20T19:00:55.363331+00:00",
-            "finished_at": "2026-10-20T19:00:57.632647+00:00"
+            "started_at": "2026-10-20T22:04:08.583072+00:00",
+            "finished_at": "2026-10-20T22:04:10.865879+00:00"
+          }
+        },
+        {
+          "id": "eurostat_sbs_food_retail",
+          "source_id": "eurostat_sbs",
+          "status": "ok",
+          "label": "eurostat_sbs_food_retail",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20261020T220411Z_4d5f415c",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-10-20T22:04:11.286331+00:00",
+            "finished_at": "2026-10-20T22:04:12.538939+00:00"
           }
         },
         {
@@ -4649,11 +4656,11 @@
           "label": "istat_nic_prezzi_consumo",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261020T190057Z_f37aa512",
+            "run_id": "20261020T220412Z_0cd641ce",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-20T19:00:57.934516+00:00",
-            "finished_at": "2026-10-20T19:01:04.856912+00:00"
+            "started_at": "2026-10-20T22:04:12.972364+00:00",
+            "finished_at": "2026-10-20T22:04:16.636665+00:00"
           }
         },
         {
@@ -4663,11 +4670,11 @@
           "label": "istat_prezzi_agricoli",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261020T190105Z_195608d9",
+            "run_id": "20261020T220417Z_7624fa75",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-20T19:01:05.180534+00:00",
-            "finished_at": "2026-10-20T19:01:19.212449+00:00"
+            "started_at": "2026-10-20T22:04:17.064312+00:00",
+            "finished_at": "2026-10-20T22:04:36.554035+00:00"
           }
         },
         {
@@ -4677,11 +4684,11 @@
           "label": "rica_area_redditi",
           "detail": "anno 2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261020T190119Z_6bc1c9f9",
+            "run_id": "20261020T220436Z_3ff5e139",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-20T19:01:19.503544+00:00",
-            "finished_at": "2026-10-20T19:03:32.980304+00:00"
+            "started_at": "2026-10-20T22:04:36.984232+00:00",
+            "finished_at": "2026-10-20T22:06:55.789308+00:00"
           }
         }
       ]
