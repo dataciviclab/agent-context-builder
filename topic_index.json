@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-20T11:00:41.203995",
+  "generated_at": "2026-10-20T16:26:55.311635",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -145,10 +145,11 @@
       "url": "https://github.com/dataciviclab/energia-italia",
       "role": "dati",
       "domain": "territorio-ambiente",
-      "n_datasets": 7,
+      "n_datasets": 9,
       "n_published": 0,
       "sources": [
         "gme",
+        "irena",
         "terna_opendata"
       ]
     },
@@ -29708,6 +29709,166 @@
         ]
       }
     ],
+    "irena": [
+      {
+        "slug": "irena_costi_tecnologia",
+        "url_slug": "irena-costi-tecnologia",
+        "name": "Irena Costi Tecnologia",
+        "description": "",
+        "source": "",
+        "source_id": "irena",
+        "period": {
+          "start": 2010,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "energia",
+          "costi",
+          "capex",
+          "capacity-factor",
+          "rinnovabili",
+          "confronti-internazionali"
+        ],
+        "category": "energia",
+        "registry_source": "energia-italia",
+        "clean_rows": 7,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/energia_italia/irena_costi_tecnologia/2024/irena_costi_tecnologia_2024_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "tecnologia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "capex_2010_usd_kw",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "capex_2024_usd_kw",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "capex_var_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cf_2010_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cf_2023_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cf_var_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "lcoe_2010_usd_kwh",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "lcoe_2024_usd_kwh",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "lcoe_var_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "irena_costi_tecnologia__mart_costi_tecnologia"
+        ]
+      },
+      {
+        "slug": "irena_lcoe",
+        "url_slug": "irena-lcoe",
+        "name": "Irena Lcoe",
+        "description": "",
+        "source": "",
+        "source_id": "irena",
+        "period": {
+          "start": 2010,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "energia",
+          "costi",
+          "lcoe",
+          "rinnovabili",
+          "confronti-internazionali"
+        ],
+        "category": "energia",
+        "registry_source": "energia-italia",
+        "clean_rows": 104,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/energia_italia/irena_lcoe/2024/irena_lcoe_2024_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "tecnologia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "lcoe_usd_kwh",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "irena_lcoe__mart_lcoe_tecnologia"
+        ]
+      }
+    ],
     "terna_opendata": [
       {
         "slug": "terna_bilancio_elettrico",
@@ -46680,7 +46841,7 @@
         ],
         "category": "politica",
         "registry_source": "open-politica",
-        "clean_rows": 125825,
+        "clean_rows": 126667,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-politica/camera_iter/2026/camera_iter_2026_clean.parquet",
@@ -56584,6 +56745,8 @@
         "eurostat_soil_erosion_nuts3",
         "eurostat_tran_sf_roadnu",
         "gme_pun_storico",
+        "irena_costi_tecnologia",
+        "irena_lcoe",
         "ispra_bathw",
         "ispra_consumo_suolo",
         "ispra_emissioni_ghg",
@@ -56622,7 +56785,7 @@
         "terna_emissioni_co2",
         "varchi_ztl"
       ],
-      "dataset_count": 52
+      "dataset_count": 54
     },
     {
       "slug": "finanza-pubblica",
@@ -57035,6 +57198,8 @@
         "eurostat_soil_erosion_nuts3",
         "eurostat_tran_sf_roadnu",
         "gme_pun_storico",
+        "irena_costi_tecnologia",
+        "irena_lcoe",
         "ispra_bathw",
         "ispra_consumo_suolo",
         "ispra_emissioni_ghg",
@@ -58161,6 +58326,8 @@
     ],
     "energia-italia": [
       "gme_pun_storico",
+      "irena_costi_tecnologia",
+      "irena_lcoe",
       "terna_bilancio_elettrico",
       "terna_capacita_rinnovabile",
       "terna_copertura_domanda",
@@ -58782,6 +58949,8 @@
       "eurostat_soil_erosion_nuts3",
       "eurostat_tran_sf_roadnu",
       "gme_pun_storico",
+      "irena_costi_tecnologia",
+      "irena_lcoe",
       "ispra_bathw",
       "ispra_consumo_suolo",
       "ispra_emissioni_ghg",
@@ -60434,6 +60603,39 @@
         "pun",
         "psv",
         "mercato"
+      ],
+      "description": ""
+    },
+    "irena_costi_tecnologia": {
+      "name": "Irena Costi Tecnologia",
+      "stage": "incubating",
+      "source_id": "irena",
+      "registry_source": "energia-italia",
+      "domain": "territorio-ambiente",
+      "category": "energia",
+      "tags": [
+        "energia",
+        "costi",
+        "capex",
+        "capacity-factor",
+        "rinnovabili",
+        "confronti-internazionali"
+      ],
+      "description": ""
+    },
+    "irena_lcoe": {
+      "name": "Irena Lcoe",
+      "stage": "incubating",
+      "source_id": "irena",
+      "registry_source": "energia-italia",
+      "domain": "territorio-ambiente",
+      "category": "energia",
+      "tags": [
+        "energia",
+        "costi",
+        "lcoe",
+        "rinnovabili",
+        "confronti-internazionali"
       ],
       "description": ""
     },

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T11:00:41.203995",
+  "generated_at": "2026-10-20T16:26:55.311635",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -57,6 +57,13 @@
       "category": "other"
     },
     {
+      "number": 278,
+      "title": "feat(cross-view): aggiungi \"Chi cattura la crescita?\"",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/278",
+      "category": "other"
+    },
+    {
       "number": 885,
       "title": "feat(candidates): eu-call-open + catena FTS call_id/project_id",
       "repo": "dataset-incubator",
@@ -71,13 +78,6 @@
       "category": "other"
     },
     {
-      "number": 81,
-      "title": "fix(camera-iter): evento_id per URI non standard + verifica completezza",
-      "repo": "open-politica",
-      "url": "https://github.com/dataciviclab/open-politica/pull/81",
-      "category": "other"
-    },
-    {
       "number": 429,
       "title": "feat(catalog): referenced-item drift \u2014 verifica upstream vs inventario",
       "repo": "source-observatory",
@@ -85,7 +85,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 48,
+  "open_issues": 47,
   "issues": [
     {
       "number": 13,
@@ -197,13 +197,6 @@
       "title": "\ud83d\udce5 Dataset: Eventi cultura (30k, daily, geo)",
       "repo": "dcl-bologna",
       "url": "https://github.com/dataciviclab/dcl-bologna/issues/5",
-      "category": "intake"
-    },
-    {
-      "number": 17,
-      "title": "Intake: irena-lcoe \u2014 costi di generazione per tecnologia (2010-2024)",
-      "repo": "energia-italia",
-      "url": "https://github.com/dataciviclab/energia-italia/issues/17",
       "category": "intake"
     },
     {
@@ -424,7 +417,7 @@
       "category": "other"
     }
   ],
-  "open_discussions": 193,
+  "open_discussions": 194,
   "discussions": [
     {
       "number": 10,
@@ -1055,6 +1048,13 @@
       "repo": "dcl-bologna",
       "url": "https://github.com/dataciviclab/dcl-bologna/discussions/1",
       "category": "Announcements"
+    },
+    {
+      "number": 22,
+      "title": "Quanto rende un MW rinnovabile in Italia? Costi globali, rendimento italiano, prezzi di mercato",
+      "repo": "energia-italia",
+      "url": "https://github.com/dataciviclab/energia-italia/discussions/22",
+      "category": "Analisi"
     },
     {
       "number": 14,
@@ -3936,13 +3936,13 @@
       "repo": "energia-italia",
       "available": true,
       "source_repo": "dataciviclab/energia-italia",
-      "updated_at": "2026-10-17",
-      "datasets": 7,
-      "marts": 13,
-      "signals": 8,
+      "updated_at": "2026-10-20",
+      "datasets": 9,
+      "marts": 15,
+      "signals": 10,
       "codelists": 0,
       "entities": 4,
-      "gcs": 7,
+      "gcs": 9,
       "reason": "",
       "signals_detail": [
         {
@@ -3952,11 +3952,11 @@
           "label": "energia_incroci",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261017T141025Z_134e9974",
+            "run_id": "20261020T153710Z_18213737",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-17T14:10:25.288717+00:00",
-            "finished_at": "2026-10-17T14:10:25.390330+00:00"
+            "started_at": "2026-10-20T15:37:10.051385+00:00",
+            "finished_at": "2026-10-20T15:37:10.124786+00:00"
           }
         },
         {
@@ -3966,11 +3966,39 @@
           "label": "gme_pun_storico",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261017T140446Z_9aea3547",
+            "run_id": "20261020T153159Z_93e3c1f2",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-17T14:04:46.268423+00:00",
-            "finished_at": "2026-10-17T14:04:50.544567+00:00"
+            "started_at": "2026-10-20T15:31:59.585908+00:00",
+            "finished_at": "2026-10-20T15:32:02.383040+00:00"
+          }
+        },
+        {
+          "id": "irena_costi_tecnologia",
+          "source_id": "irena",
+          "status": "ok",
+          "label": "irena_costi_tecnologia",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20261020T153202Z_1e3c5df5",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-10-20T15:32:02.979866+00:00",
+            "finished_at": "2026-10-20T15:32:05.495189+00:00"
+          }
+        },
+        {
+          "id": "irena_lcoe",
+          "source_id": "irena",
+          "status": "ok",
+          "label": "irena_lcoe",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20261020T153205Z_38e5fa16",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-10-20T15:32:05.886307+00:00",
+            "finished_at": "2026-10-20T15:32:08.584375+00:00"
           }
         },
         {
@@ -3980,11 +4008,11 @@
           "label": "terna_bilancio_elettrico",
           "detail": "anni 2022-2023 \u2014 mart: si",
           "run": {
-            "run_id": "20261017T140454Z_9d0224fa",
+            "run_id": "20261020T153211Z_7e0faa2a",
             "year": 2023,
             "status": "SUCCESS",
-            "started_at": "2026-10-17T14:04:54.292285+00:00",
-            "finished_at": "2026-10-17T14:04:55.848166+00:00"
+            "started_at": "2026-10-20T15:32:11.781196+00:00",
+            "finished_at": "2026-10-20T15:32:12.553141+00:00"
           }
         },
         {
@@ -3994,11 +4022,11 @@
           "label": "terna_capacita_rinnovabile",
           "detail": "anni 2000-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261017T140552Z_98129216",
+            "run_id": "20261020T153300Z_bb64856d",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-17T14:05:52.546401+00:00",
-            "finished_at": "2026-10-17T14:05:53.737410+00:00"
+            "started_at": "2026-10-20T15:33:00.069602+00:00",
+            "finished_at": "2026-10-20T15:33:01.066545+00:00"
           }
         },
         {
@@ -4008,11 +4036,11 @@
           "label": "terna_copertura_domanda",
           "detail": "anni 2005-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261017T140626Z_ba4536eb",
+            "run_id": "20261020T153331Z_476fac60",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-17T14:06:26.364852+00:00",
-            "finished_at": "2026-10-17T14:06:27.217422+00:00"
+            "started_at": "2026-10-20T15:33:31.042136+00:00",
+            "finished_at": "2026-10-20T15:33:31.873324+00:00"
           }
         },
         {
@@ -4022,11 +4050,11 @@
           "label": "terna_elettricita_per_fonte",
           "detail": "anni 2000-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261017T140716Z_fcf5c09d",
+            "run_id": "20261020T153414Z_0a5574ed",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-17T14:07:16.491285+00:00",
-            "finished_at": "2026-10-17T14:07:17.754788+00:00"
+            "started_at": "2026-10-20T15:34:14.958725+00:00",
+            "finished_at": "2026-10-20T15:34:16.008149+00:00"
           }
         },
         {
@@ -4036,11 +4064,11 @@
           "label": "terna_elettricita_per_settore",
           "detail": "anni 2000-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261017T140942Z_9e5d63e9",
+            "run_id": "20261020T153630Z_aee4a264",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-17T14:09:42.676624+00:00",
-            "finished_at": "2026-10-17T14:09:43.706318+00:00"
+            "started_at": "2026-10-20T15:36:30.654461+00:00",
+            "finished_at": "2026-10-20T15:36:32.116774+00:00"
           }
         },
         {
@@ -4050,11 +4078,11 @@
           "label": "terna_emissioni_co2",
           "detail": "anni 2000-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261017T141024Z_f32ebd50",
+            "run_id": "20261020T153709Z_3210f683",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-17T14:10:24.122582+00:00",
-            "finished_at": "2026-10-17T14:10:25.169488+00:00"
+            "started_at": "2026-10-20T15:37:09.292208+00:00",
+            "finished_at": "2026-10-20T15:37:09.972641+00:00"
           }
         }
       ]
@@ -7534,11 +7562,11 @@
           "label": "camera_iter",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261020T084812Z_6acc94f2",
+            "run_id": "20261020T111659Z_a8b31f0c",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-20T08:48:12.332615+00:00",
-            "finished_at": "2026-10-20T08:54:55.377186+00:00"
+            "started_at": "2026-10-20T11:16:59.673847+00:00",
+            "finished_at": "2026-10-20T11:22:54.988662+00:00"
           }
         },
         {
