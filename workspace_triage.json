@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T03:34:32.204161",
+  "generated_at": "2026-10-21T11:17:26.549846",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -48,8 +48,15 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 7,
+  "open_prs": 8,
   "prs": [
+    {
+      "number": 14,
+      "title": "fix(anac-cross): sal_in_ritardo con flag 'IN RITARDO' e SAL senza giorni (#6)",
+      "repo": "appalti-pubblici",
+      "url": "https://github.com/dataciviclab/appalti-pubblici/pull/14",
+      "category": "other"
+    },
     {
       "number": 11,
       "title": "feat(esecuzione): avvio, fine, sospensioni e varianti ANAC",
@@ -65,10 +72,10 @@
       "category": "other"
     },
     {
-      "number": 897,
-      "title": "feat(eurostat): candidate richiedenti-asilo-italia \u2014 domande e decisioni 2008-2025 (#597)",
+      "number": 898,
+      "title": "chore(post-merge): aggiorna registry (schedule)",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/897",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/898",
       "category": "other"
     },
     {
@@ -86,22 +93,29 @@
       "category": "other"
     },
     {
-      "number": 8,
-      "title": "feat(energia): NRG_BAL_C via sdmx, dipendenza netta e commercio petrolio",
-      "repo": "italia-dipendenze",
-      "url": "https://github.com/dataciviclab/italia-dipendenze/pull/8",
-      "category": "other"
-    },
-    {
       "number": 429,
       "title": "feat(catalog): referenced-item drift \u2014 verifica upstream vs inventario",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/pull/429",
       "category": "other"
+    },
+    {
+      "number": 515,
+      "title": "fix: mart_name, pulizia mart orfani e codelists da support id (#425, #426, #471)",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/515",
+      "category": "other"
     }
   ],
-  "open_issues": 46,
+  "open_issues": 47,
   "issues": [
+    {
+      "number": 15,
+      "title": "anac_stati_avanzamento: importo_sal cumulativo o incrementale? SUM attuale gonfia gli importi",
+      "repo": "appalti-pubblici",
+      "url": "https://github.com/dataciviclab/appalti-pubblici/issues/15",
+      "category": "other"
+    },
     {
       "number": 13,
       "title": "feat(anac_cross): arricchisci con codice IPA della stazione appaltante",
@@ -184,13 +198,6 @@
       "title": "intake: mim_alunni_italiani_stranieri \u2014 Alunni italiani e stranieri per corso di studi 2015-2024",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/638",
-      "category": "intake"
-    },
-    {
-      "number": 597,
-      "title": "intake: richiedenti-asilo-italia \u2014 Domande e decisioni protezione internazionale (Comm. Naz. Asilo)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/597",
       "category": "intake"
     },
     {
@@ -401,6 +408,13 @@
       "title": "opencivitas: fonte centrale punta al vecchio /it/open-data (404) \u2014 aggiornare a docs.opencivitas.it",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/424",
+      "category": "other"
+    },
+    {
+      "number": 514,
+      "title": "config: chiavi sconosciute in raw.sources[] scartate in silenzio (caso extractor, 1.51.0)",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/514",
       "category": "other"
     },
     {
@@ -2150,24 +2164,24 @@
     }
   },
   "warnings": [
-    "Many open PRs: 8"
+    "Many open PRs: 9"
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-10-20T08:27:12.019885+00:00",
-    "probe_date": "2026-10-20",
+    "generated_at": "2026-10-21T08:35:26.533274+00:00",
+    "probe_date": "2026-10-21",
     "sources_total": 36,
-    "green": 35,
-    "yellow": 1,
+    "green": 33,
+    "yellow": 3,
     "red": 0,
     "persistent_red": 0,
     "sources": [
       {
         "id": "istat_sdmx",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "sdmx",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
@@ -2180,10 +2194,10 @@
       },
       {
         "id": "inps",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "ckan",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
@@ -2452,6 +2466,22 @@
       }
     ],
     "unhealthy": [
+      {
+        "id": "istat_sdmx",
+        "status": "YELLOW",
+        "protocol": "sdmx",
+        "http_code": "-",
+        "note": "Timeout (ReadTimeout)",
+        "red_streak": 0
+      },
+      {
+        "id": "inps",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "red_streak": 0
+      },
       {
         "id": "opencivitas",
         "status": "YELLOW",
@@ -5571,9 +5601,9 @@
       "repo": "italia-dipendenze",
       "available": true,
       "source_repo": "dataciviclab/italia-dipendenze",
-      "updated_at": "2026-10-06",
-      "datasets": 3,
-      "marts": 7,
+      "updated_at": "2026-10-21",
+      "datasets": 4,
+      "marts": 8,
       "signals": 4,
       "codelists": 0,
       "entities": 3,
@@ -5587,11 +5617,11 @@
           "label": "resource_dependency_compose",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261006T120348Z_439555b9",
+            "run_id": "20261021T074441Z_99ae934a",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-06T12:03:48.349672+00:00",
-            "finished_at": "2026-10-06T12:03:48.408339+00:00"
+            "started_at": "2026-10-21T07:44:41.332734+00:00",
+            "finished_at": "2026-10-21T07:44:41.421426+00:00"
           }
         },
         {
@@ -5601,11 +5631,11 @@
           "label": "comtrade_bilateral",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261006T120123Z_4df67634",
+            "run_id": "20261021T074213Z_3f120964",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-06T12:01:23.313948+00:00",
-            "finished_at": "2026-10-06T12:02:12.128341+00:00"
+            "started_at": "2026-10-21T07:42:13.517654+00:00",
+            "finished_at": "2026-10-21T07:44:35.215975+00:00"
           }
         },
         {
@@ -5615,11 +5645,11 @@
           "label": "eurostat_nrg_bal_c",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261006T120212Z_cd9d00d4",
+            "run_id": "20261021T074437Z_916d8fcc",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-06T12:02:12.194704+00:00",
-            "finished_at": "2026-10-06T12:03:47.866145+00:00"
+            "started_at": "2026-10-21T07:44:37.716972+00:00",
+            "finished_at": "2026-10-21T07:44:40.678067+00:00"
           }
         },
         {
@@ -5629,11 +5659,11 @@
           "label": "fao_fertilizer_consumption",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261006T120347Z_7b13db77",
+            "run_id": "20261021T074440Z_43b79e40",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-06T12:03:47.910447+00:00",
-            "finished_at": "2026-10-06T12:03:48.294028+00:00"
+            "started_at": "2026-10-21T07:44:40.771551+00:00",
+            "finished_at": "2026-10-21T07:44:41.247195+00:00"
           }
         }
       ]

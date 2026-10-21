@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-21T03:34:32.204161",
+  "generated_at": "2026-10-21T11:17:26.549846",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -254,9 +254,10 @@
       "url": "https://github.com/dataciviclab/italia-dipendenze",
       "role": "dati",
       "domain": "territorio-ambiente",
-      "n_datasets": 3,
+      "n_datasets": 4,
       "n_published": 0,
       "sources": [
+        "dataciviclab_composite",
         "eurostat",
         "faostat",
         "un_comtrade"
@@ -3307,6 +3308,34 @@
         ],
         "mart_refs": [
           "who_is_who_pa__who_is_who_pa"
+        ]
+      },
+      {
+        "slug": "resource_dependency_compose",
+        "url_slug": "resource-dependency-compose",
+        "name": "Resource Dependency Compose",
+        "description": "Italy Resource & Dependency Map \u2014 joins energy balance, bilateral trade, and fertilizer consumption",
+        "source": "",
+        "source_id": "dataciviclab_composite",
+        "period": {
+          "start": 1990,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "dipendenze",
+          "risorse",
+          "compose",
+          "energia",
+          "commercio",
+          "agricoltura"
+        ],
+        "category": "economia-reale",
+        "registry_source": "italia-dipendenze",
+        "clean_rows": null,
+        "mart_refs": [
+          "resource_dependency_compose__mart_resource_dependency",
+          "resource_dependency_compose__mart_energy_vs_trade"
         ]
       },
       {
@@ -27145,7 +27174,7 @@
         "source": "",
         "source_id": "eurostat",
         "period": {
-          "start": 2020,
+          "start": 1990,
           "end": 2024
         },
         "stage": "incubating",
@@ -27160,7 +27189,7 @@
         ],
         "category": "energia",
         "registry_source": "italia-dipendenze",
-        "clean_rows": 355,
+        "clean_rows": 11235,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia_dipendenze/eurostat_nrg_bal_c/2026/eurostat_nrg_bal_c_2026_clean.parquet",
@@ -27224,6 +27253,27 @@
             "description": ""
           },
           {
+            "name": "freq",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_label",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "source",
             "type": "VARCHAR",
             "role": "dimension",
@@ -27246,7 +27296,8 @@
           }
         ],
         "mart_refs": [
-          "eurostat_nrg_bal_c__mart_energy_balance"
+          "eurostat_nrg_bal_c__mart_energy_balance",
+          "eurostat_nrg_bal_c__mart_energy_final_consumption"
         ]
       }
     ],
@@ -36721,7 +36772,7 @@
         ],
         "category": "commercio",
         "registry_source": "italia-dipendenze",
-        "clean_rows": 682,
+        "clean_rows": 8064,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia_dipendenze/comtrade_bilateral/2026/comtrade_bilateral_2026_clean.parquet",
@@ -59298,7 +59349,8 @@
     "italia-dipendenze": [
       "comtrade_bilateral",
       "eurostat_nrg_bal_c",
-      "fao_fertilizer_consumption"
+      "fao_fertilizer_consumption",
+      "resource_dependency_compose"
     ],
     "oecd-benchmark": [
       "oecd_air_emissions",
@@ -63177,6 +63229,23 @@
         "italia"
       ],
       "description": "Fertilizer consumption by nutrient \u2014 Italy (FAO RFN dataset via OWID)"
+    },
+    "resource_dependency_compose": {
+      "name": "Resource Dependency Compose",
+      "stage": "incubating",
+      "source_id": "dataciviclab_composite",
+      "registry_source": "italia-dipendenze",
+      "domain": null,
+      "category": "economia-reale",
+      "tags": [
+        "dipendenze",
+        "risorse",
+        "compose",
+        "energia",
+        "commercio",
+        "agricoltura"
+      ],
+      "description": "Italy Resource & Dependency Map \u2014 joins energy balance, bilateral trade, and fertilizer consumption"
     },
     "oecd_air_emissions": {
       "name": "Oecd Air Emissions",
