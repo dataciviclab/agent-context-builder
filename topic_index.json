@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-21T11:17:26.549846",
+  "generated_at": "2026-10-21T16:43:46.821438",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -16,7 +16,7 @@
       "url": "https://github.com/dataciviclab/appalti-pubblici",
       "role": "dati",
       "domain": "finanza-pubblica",
-      "n_datasets": 9,
+      "n_datasets": 13,
       "n_published": 0,
       "sources": [
         "anac",
@@ -71,7 +71,7 @@
       "url": "https://github.com/dataciviclab/dataset-incubator",
       "role": "infra",
       "domain": "welfare-lavoro",
-      "n_datasets": 46,
+      "n_datasets": 48,
       "n_published": 30,
       "sources": [
         "adm_opendata",
@@ -81,6 +81,7 @@
         "centri_d_italia",
         "dataciviclab_composite",
         "ec_ameco",
+        "eurostat",
         "fts",
         "inail_opendata",
         "inps",
@@ -855,6 +856,116 @@
         ]
       },
       {
+        "slug": "anac_avvio_contratto",
+        "url_slug": "anac-avvio-contratto",
+        "name": "Anac Avvio Contratto",
+        "description": "",
+        "source": "",
+        "source_id": "anac",
+        "period": {
+          "start": 2000,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "appalti",
+          "anac",
+          "avvio",
+          "contratto",
+          "esecuzione"
+        ],
+        "category": "appalti",
+        "registry_source": "appalti-pubblici",
+        "clean_rows": 1925829,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/appalti_pubblici/anac_avvio_contratto/2026/anac_avvio_contratto_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "cig",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cig_code",
+            "description": ""
+          },
+          {
+            "name": "data_stipula_contratto",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_esecutivita_contratto",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_termine_contrattuale",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_verbale_consegna_definitiva",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_inizio_effettiva",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_verbale_prima_consegna",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "consegna_frazionata",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "consegna_sotto_riserva",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "id_aggiudicazione",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_appr_prog_ese",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "anac_avvio_contratto__mart_avvio_contratto"
+        ]
+      },
+      {
         "slug": "anac_bandi_gara",
         "url_slug": "anac-bandi-gara",
         "name": "Anac Bandi Gara",
@@ -1193,7 +1304,7 @@
             "name": "CF_SA_DELEGANTE",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "fiscal_code",
             "description": ""
           },
           {
@@ -1207,7 +1318,7 @@
             "name": "CF_SA_DELEGATA",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "fiscal_code",
             "description": ""
           },
           {
@@ -1424,7 +1535,7 @@
         ],
         "category": "appalti",
         "registry_source": "appalti-pubblici",
-        "clean_rows": 7167369,
+        "clean_rows": 7228216,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/appalti_pubblici/anac_cup/2026/anac_cup_2026_clean.parquet",
@@ -1448,6 +1559,103 @@
         ],
         "mart_refs": [
           "anac_cup__mart_cup"
+        ]
+      },
+      {
+        "slug": "anac_fine_contratto",
+        "url_slug": "anac-fine-contratto",
+        "name": "Anac Fine Contratto",
+        "description": "",
+        "source": "",
+        "source_id": "anac",
+        "period": {
+          "start": 2000,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "appalti",
+          "anac",
+          "fine",
+          "contratto",
+          "esecuzione"
+        ],
+        "category": "appalti",
+        "registry_source": "appalti-pubblici",
+        "clean_rows": 1070254,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/appalti_pubblici/anac_fine_contratto/2026/anac_fine_contratto_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "cig",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cig_code",
+            "description": ""
+          },
+          {
+            "name": "cod_motivo_risoluzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "motivo_risoluzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cod_motivo_interruzione_anticipata",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "motivo_interruzione_anticipata",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_conclusione_anticipata",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_effettiva_ultimazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "id_aggiudicazione",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "giorni_proroga",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "anac_fine_contratto__mart_fine_contratto",
+          "anac_fine_contratto__mart_motivi_fine"
         ]
       },
       {
@@ -1514,6 +1722,74 @@
         ],
         "mart_refs": [
           "anac_partecipanti__mart_top_partecipanti"
+        ]
+      },
+      {
+        "slug": "anac_sospensioni",
+        "url_slug": "anac-sospensioni",
+        "name": "Anac Sospensioni",
+        "description": "",
+        "source": "",
+        "source_id": "anac",
+        "period": {
+          "start": 2000,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "appalti",
+          "anac",
+          "sospensioni",
+          "ritardi",
+          "esecuzione"
+        ],
+        "category": "appalti",
+        "registry_source": "appalti-pubblici",
+        "clean_rows": 227747,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/appalti_pubblici/anac_sospensioni/2026/anac_sospensioni_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "cig",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cig_code",
+            "description": ""
+          },
+          {
+            "name": "data_sospensione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_ripresa",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_motivo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "id_aggiudicazione",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "anac_sospensioni__mart_sospensioni"
         ]
       },
       {
@@ -1760,6 +2036,95 @@
         "mart_refs": [
           "anac_subappalti__mart_top_subappalti"
         ]
+      },
+      {
+        "slug": "anac_varianti",
+        "url_slug": "anac-varianti",
+        "name": "Anac Varianti",
+        "description": "",
+        "source": "",
+        "source_id": "anac",
+        "period": {
+          "start": 2000,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "appalti",
+          "anac",
+          "varianti",
+          "modifiche",
+          "esecuzione"
+        ],
+        "category": "appalti",
+        "registry_source": "appalti-pubblici",
+        "clean_rows": 321294,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/appalti_pubblici/anac_varianti/2026/anac_varianti_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "id_variante",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cod_motivo_variante",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "motivo_variante",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_approvazione_variante",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cig",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cig_code",
+            "description": ""
+          },
+          {
+            "name": "id_aggiudicazione",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cig_proroga",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_atto_aggiuntivo",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "anac_varianti__mart_varianti"
+        ]
       }
     ],
     "dataciviclab_composite": [
@@ -1929,6 +2294,111 @@
             "role": "dimension",
             "semantic_type": "cup_code",
             "description": ""
+          },
+          {
+            "name": "data_stipula_contratto",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_inizio_effettiva",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_termine_contrattuale",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "giorni_aggiudicazione_stipula",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "giorni_stipula_inizio",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_effettiva_ultimazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "motivo_risoluzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "motivo_interruzione_anticipata",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "giorni_scostamento_termine",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_sospensioni",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "giorni_sospensione",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_sospensioni_senza_ripresa",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_varianti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_varianti_distinte",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_varianti_con_proroga",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
           }
         ],
         "mart_refs": [
@@ -1936,7 +2406,9 @@
           "anac_cross__mart_lifecycle",
           "anac_cross__mart_imprese",
           "anac_cross__mart_ritardi_per_sa",
-          "anac_cross__mart_competitivita"
+          "anac_cross__mart_competitivita",
+          "anac_cross__mart_esecuzione",
+          "anac_cross__mart_ritardi_contratto"
         ]
       },
       {
@@ -2458,6 +2930,32 @@
         ],
         "mart_refs": [
           "comuni_master__mart_comuni_master"
+        ]
+      },
+      {
+        "slug": "malasanita_compose",
+        "url_slug": "malasanita-compose",
+        "name": "Malasanita Compose",
+        "description": "",
+        "source": "",
+        "source_id": "dataciviclab_composite",
+        "period": {
+          "start": 2022,
+          "end": 2022
+        },
+        "stage": "incubating",
+        "tags": [
+          "sanita",
+          "malasanita",
+          "compose"
+        ],
+        "category": "sanita",
+        "registry_source": "dataset-incubator",
+        "clean_rows": null,
+        "mart_refs": [
+          "malasanita_compose__mart_compose_regioni_v1",
+          "malasanita_compose__mart_compose_regioni_v2",
+          "malasanita_compose__mart_compose_regioni_v3"
         ]
       },
       {
@@ -19490,2271 +19988,96 @@
         ]
       }
     ],
-    "liberiamoli_tutti": [
+    "eurostat": [
       {
-        "slug": "sbarchi_migranti_italia",
-        "url_slug": "sbarchi-migranti-italia",
-        "name": "Sbarchi Migranti Italia",
-        "description": "Arrivi giornalieri di migranti via mare in Italia (2019-2025). Dati estratti da PDF del Ministero dell'Interno.",
-        "source": "onData \u2014 liberiamoli-tutti",
-        "source_id": "liberiamoli_tutti",
+        "slug": "richiedenti_asilo_italia",
+        "url_slug": "richiedenti-asilo-italia",
+        "name": "Richiedenti Asilo Italia",
+        "description": "",
+        "source": "",
+        "source_id": "eurostat",
         "period": {
-          "start": 2019,
+          "start": 2008,
           "end": 2025
         },
-        "stage": "published",
+        "stage": "incubating",
         "tags": [
           "immigrazione",
-          "migranti",
-          "sbarchi"
+          "asilo",
+          "protezione-internazionale",
+          "richiedenti-asilo"
         ],
         "category": "immigrazione",
         "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "clean_rows": 30454,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/sbarchi_migranti_italia/2025/sbarchi_migranti_italia_2025_clean.parquet",
+          "path": "gs://dataciviclab-clean/richiedenti_asilo_italia/2026/richiedenti_asilo_italia_2026_clean.parquet",
           "multi_file": false
         },
         "columns": [
           {
-            "name": "data_sbarchi",
-            "type": "DATE",
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "cittadinanza_codice",
+            "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
-            "description": "Data dell'arrivo"
+            "description": ""
+          },
+          {
+            "name": "cittadinanza",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "misura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "dettaglio_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "dettaglio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
           },
           {
             "name": "valore",
             "type": "BIGINT",
             "role": "metric",
             "semantic_type": "",
-            "description": "Numero di arrivi registrati nel giorno"
+            "description": ""
           },
           {
-            "name": "note",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Note sull'evento di sbarco"
-          },
-          {
-            "name": "fonte",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Fonte del dato (Ministero dell'Interno / onData)"
-          }
-        ]
-      }
-    ],
-    "ted": [
-      {
-        "slug": "ted_contract_notices",
-        "url_slug": "ted-contract-notices",
-        "name": "Bandi di gara UE in Italia (TED Contract Notices)",
-        "description": "Bandi di gara pubblici sopra soglia UE pubblicati da stazioni appaltanti italiane su TED (Tenders Electronic Daily). Per ogni bando: stazione appaltante, oggetto, CPV, valore stimato, tipo procedura, localizzazione NUTS, criteri di aggiudicazione, flag fondi UE, accordo quadro. Fonte: data.europa.eu, 2020-2023.",
-        "source": "data.europa.eu \u2014 TED (Tenders Electronic Daily)",
-        "source_id": "ted",
-        "period": {
-          "start": 2020,
-          "end": 2023
-        },
-        "stage": "published",
-        "tags": [
-          "appalti",
-          "ted",
-          "contract",
-          "notices"
-        ],
-        "category": "appalti",
-        "registry_source": "dataset-incubator",
-        "clean_rows": null,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/ted_contract_notices/*/ted_contract_notices_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "id_notice_cn",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Identificativo unico del bando (notice ID)"
-          },
-          {
-            "name": "ted_notice_url",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "URL della notice su ted.europa.eu"
-          },
-          {
-            "name": "anno_pubblicazione",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Anno di pubblicazione del bando"
-          },
-          {
-            "name": "id_tipo_notice",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Tipo di notice (2=Contract Notice)"
-          },
-          {
-            "name": "data_invio",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Data di invio alla Gazzetta Ufficiale UE"
-          },
-          {
-            "name": "xsd_version",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Versione dello schema XSD TED"
-          },
-          {
-            "name": "flag_cancellato",
-            "type": "BOOLEAN",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Bando cancellato"
-          },
-          {
-            "name": "n_correzioni",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero di correzioni/avvisi"
-          },
-          {
-            "name": "future_can_id",
-            "type": "BIGINT",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "ID della future Contract Award Notice collegata"
-          },
-          {
-            "name": "flag_future_can_estimated",
-            "type": "BOOLEAN",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Future CAN ID \u00e8 stimato"
-          },
-          {
-            "name": "flag_multipla_stazione",
+            "name": "aggregato",
             "type": "BOOLEAN",
             "role": "dimension",
             "semantic_type": "",
-            "description": "Flag: pi\u00f9 stazioni appaltanti coinvolte"
-          },
-          {
-            "name": "stazione_appaltante_nome",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Nome della stazione appaltante"
-          },
-          {
-            "name": "stazione_appaltante_codice_nazionale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Codice nazionale (AUSA/CIG) della stazione"
-          },
-          {
-            "name": "stazione_appaltante_indirizzo",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Indirizzo della stazione appaltante"
-          },
-          {
-            "name": "stazione_appaltante_citta",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Citt\u00e0 della stazione appaltante"
-          },
-          {
-            "name": "stazione_appaltante_cap",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "CAP della stazione appaltante"
-          },
-          {
-            "name": "paese",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "country_code",
-            "description": "Paese della stazione appaltante (IT)"
-          },
-          {
-            "name": "flag_multi_paese",
-            "type": "BOOLEAN",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Bando con stazioni in pi\u00f9 paesi"
-          },
-          {
-            "name": "paesi_coinvolti",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Lista paesi coinvolti"
-          },
-          {
-            "name": "tipo_stazione_appaltante",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Tipo di stazione (codice: 1=Ministero, 3=Ente locale, ...)"
-          },
-          {
-            "name": "codice_istituzione_ue",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Codice istituzionale UE"
-          },
-          {
-            "name": "attivita_principale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Attivit\u00e0 principale della stazione (es. General public services)"
-          },
-          {
-            "name": "flag_per_conto_terzi",
-            "type": "BOOLEAN",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Appalto per conto di terzi"
-          },
-          {
-            "name": "flag_appalto_congiunto",
-            "type": "BOOLEAN",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Appalto congiunto"
-          },
-          {
-            "name": "flag_aggiudicato_centrale",
-            "type": "BOOLEAN",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Aggiudicato da centrale di committenza"
-          },
-          {
-            "name": "tipo_contratto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Tipo di contratto: S=Servizi, W=Lavori, U=Utilities/forniture"
-          },
-          {
-            "name": "nuts_luogo_esecuzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Codice NUTS del luogo di esecuzione"
-          },
-          {
-            "name": "flag_accordo_quadro",
-            "type": "BOOLEAN",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Accordo quadro"
-          },
-          {
-            "name": "accordo_quadro_stima",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Valore stimato dell'accordo quadro"
-          },
-          {
-            "name": "flag_operatore_unico",
-            "type": "BOOLEAN",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Operatore unico nell'accordo quadro"
-          },
-          {
-            "name": "n_operatori_accordo",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero operatori nell'accordo quadro"
-          },
-          {
-            "name": "n_max_operatori_accordo",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero massimo operatori"
-          },
-          {
-            "name": "flag_sistema_dinamico",
-            "type": "BOOLEAN",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Sistema dinamico di acquisizione"
-          },
-          {
-            "name": "cpv_codice",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Codice CPV principale (8 cifre)"
-          },
-          {
-            "name": "id_lotto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Numero del lotto"
-          },
-          {
-            "name": "cpv_codici_aggiuntivi",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Codici CPV aggiuntivi (separati da ---)"
-          },
-          {
-            "name": "flag_gpa",
-            "type": "BOOLEAN",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Coperto dal GPA (Accordo Appalti Pubblici WTO)"
-          },
-          {
-            "name": "n_lotti",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero totale di lotti"
-          },
-          {
-            "name": "lotti_presentati",
-            "type": "VARCHAR",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Lotti per cui sono state presentate offerte"
-          },
-          {
-            "name": "flag_varianti",
-            "type": "BOOLEAN",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Sono ammesse varianti"
-          },
-          {
-            "name": "valore_euro",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Valore stimato del bando in EUR"
-          },
-          {
-            "name": "valore_euro_fin_1",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Valore finanziario complementare 1"
-          },
-          {
-            "name": "valore_euro_fin_2",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Valore finanziario complementare 2"
-          },
-          {
-            "name": "flag_opzioni",
-            "type": "BOOLEAN",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Il contratto prevede opzioni"
-          },
-          {
-            "name": "flag_fondi_ue",
-            "type": "BOOLEAN",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Il contratto \u00e8 collegato a fondi UE"
-          },
-          {
-            "name": "flag_rinnovo",
-            "type": "BOOLEAN",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Il contratto \u00e8 rinnovabile"
-          },
-          {
-            "name": "durata_mesi",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Durata prevista del contratto in mesi"
-          },
-          {
-            "name": "data_inizio_contratto",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Data inizio prevista"
-          },
-          {
-            "name": "data_fine_contratto",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Data fine prevista"
-          },
-          {
-            "name": "tipo_procedura",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Tipo di procedura (OPE=Aperta, RES=Ristretta, NEG=Negoziata, ...)"
-          },
-          {
-            "name": "flag_accelerata",
-            "type": "BOOLEAN",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Procedura accelerata"
-          },
-          {
-            "name": "n_operatori_inviati",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero operatori invitati"
-          },
-          {
-            "name": "n_min_operatori",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero minimo operatori"
-          },
-          {
-            "name": "n_max_operatori",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero massimo operatori"
-          },
-          {
-            "name": "codice_criterio_aggiudicazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Codice criterio: M=Prezzo, L=OEPV"
-          },
-          {
-            "name": "peso_prezzo",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Peso del prezzo nella valutazione"
-          },
-          {
-            "name": "criteri_qualitativi",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Descrizione criteri qualitativi"
-          },
-          {
-            "name": "pesi_criteri",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Pesi percentuali criteri qualitativi"
-          },
-          {
-            "name": "flag_asta_elettronica",
-            "type": "BOOLEAN",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Asta elettronica"
-          },
-          {
-            "name": "data_scadenza_offerte",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Data scadenza presentazione offerte"
-          },
-          {
-            "name": "flag_lingua_qualsiasi_ce",
-            "type": "BOOLEAN",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Qualsiasi lingua UE ammessa"
-          },
-          {
-            "name": "lingue_ammesse",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Lingue ammesse per le offerte"
-          },
-          {
-            "name": "altre_lingue_ammesse",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Altre lingue ammesse"
-          },
-          {
-            "name": "flag_appalto_ricorrente",
-            "type": "BOOLEAN",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Appalto ricorrente"
-          }
-        ]
-      }
-    ],
-    "comune_bologna_opendata": [
-      {
-        "slug": "bolognawifi_matrice",
-        "url_slug": "bolognawifi-matrice",
-        "name": "Matrice spostamenti pedonali WiFi",
-        "description": "Flussi di spostamento tra zone WiFi pubbliche (2021-2025) \u2014 proxy della mobilit\u00e0 pedonale per zona e ora",
-        "source": "OpenData Comune di Bologna \u2014 BolognaWiFi",
-        "source_id": "comune_bologna_opendata",
-        "period": {
-          "start": 2021,
-          "end": 2025
-        },
-        "stage": "incubating",
-        "tags": [
-          "mobilita",
-          "pedoni",
-          "wifi",
-          "spostamenti",
-          "bologna"
-        ],
-        "category": "trasporti",
-        "registry_source": "dcl-bologna",
-        "clean_rows": 1469826,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/bologna/bolognawifi_matrice/2026/bolognawifi_matrice_2026_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": "Anno di riferimento"
-          },
-          {
-            "name": "data",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Data della misurazione"
-          },
-          {
-            "name": "ora",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Ora della misurazione"
-          },
-          {
-            "name": "giorno_num",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero giorno settimana (1=Luned\u00ec)"
-          },
-          {
-            "name": "giorno_label",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Giorno settimana"
-          },
-          {
-            "name": "id_origine",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Zona di origine"
-          },
-          {
-            "name": "label_origine",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Nome zona di origine"
-          },
-          {
-            "name": "id_destinazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Zona di destinazione"
-          },
-          {
-            "name": "label_destinazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Nome zona di destinazione"
-          },
-          {
-            "name": "totale",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Flusso di dispositivi"
-          },
-          {
-            "name": "percentile_50",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Percentile 50 della distribuzione"
+            "description": ""
           }
         ],
         "mart_refs": [
-          "bolognawifi_matrice__mart_wifi_anno",
-          "bolognawifi_matrice__mart_wifi_ora",
-          "bolognawifi_matrice__mart_wifi_od"
+          "richiedenti_asilo_italia__mart_asilo_annuale",
+          "richiedenti_asilo_italia__mart_asilo_italia"
         ]
       },
-      {
-        "slug": "centraline_aria",
-        "url_slug": "centraline-aria",
-        "name": "Centraline qualit\u00e0 dell'aria",
-        "description": "Rilevazioni orarie degli inquinanti atmosferici per stazione di monitoraggio",
-        "source": "OpenData Comune di Bologna \u2014 Arpae",
-        "source_id": "comune_bologna_opendata",
-        "period": {
-          "start": 2025,
-          "end": 2026
-        },
-        "stage": "incubating",
-        "tags": [
-          "ambiente",
-          "aria",
-          "inquinamento",
-          "bologna"
-        ],
-        "category": "ambiente",
-        "registry_source": "dcl-bologna",
-        "clean_rows": 56239,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/bologna/centraline_aria/2026/centraline_aria_2026_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": "Anno di riferimento"
-          },
-          {
-            "name": "reftime",
-            "type": "TIMESTAMP",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Data e ora rilevazione"
-          },
-          {
-            "name": "stazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Nome stazione di monitoraggio"
-          },
-          {
-            "name": "agente_atm",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Inquinante misurato"
-          },
-          {
-            "name": "value",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Concentrazione rilevata"
-          }
-        ],
-        "mart_refs": [
-          "centraline_aria__mart_aria_stazione",
-          "centraline_aria__mart_aria_ora"
-        ]
-      },
-      {
-        "slug": "colonnine_bici",
-        "url_slug": "colonnine-bici",
-        "name": "Conta-bici per colonnina",
-        "description": "Passaggi di biciclette rilevati dalle colonnine conta-bici, per via e direzione",
-        "source": "OpenData Comune di Bologna \u2014 Mobilit\u00e0 sostenibile",
-        "source_id": "comune_bologna_opendata",
-        "period": {
-          "start": 2018,
-          "end": 2026
-        },
-        "stage": "incubating",
-        "tags": [
-          "trasporti",
-          "mobilita",
-          "bici",
-          "bologna"
-        ],
-        "category": "trasporti",
-        "registry_source": "dcl-bologna",
-        "clean_rows": 553688,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/bologna/colonnine_bici/2026/colonnine_bici_2026_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": "Anno di riferimento"
-          },
-          {
-            "name": "data",
-            "type": "TIMESTAMP",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Data e ora rilevazione"
-          },
-          {
-            "name": "colonnina",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Nome colonnina"
-          },
-          {
-            "name": "quartiere",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Quartiere"
-          },
-          {
-            "name": "zona",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Zona"
-          },
-          {
-            "name": "via",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Via della colonnina"
-          },
-          {
-            "name": "direzione_centro",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Passaggi verso il centro"
-          },
-          {
-            "name": "direzione_periferia",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Passaggi verso la periferia"
-          },
-          {
-            "name": "totale",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Totale passaggi"
-          },
-          {
-            "name": "longitudine",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "latitudine",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "colonnine_bici__mart_colonnine_anno",
-          "colonnine_bici__mart_colonnine_quartiere",
-          "colonnine_bici__mart_colonnine_ora"
-        ]
-      },
-      {
-        "slug": "convivenze",
-        "url_slug": "convivenze",
-        "name": "Popolazione in convivenza",
-        "description": "Residenti in convivenza (case di riposo, studentati, istituti) per quartiere e tipologia",
-        "source": "OpenData Comune di Bologna \u2014 Ufficio di Statistica",
-        "source_id": "comune_bologna_opendata",
-        "period": {
-          "start": 1986,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "demografia",
-          "convivenze",
-          "bologna"
-        ],
-        "category": "welfare-lavoro",
-        "registry_source": "dcl-bologna",
-        "clean_rows": 92633,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/bologna/convivenze/2024/convivenze_2024_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": "Anno di riferimento"
-          },
-          {
-            "name": "quartiere",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Quartiere"
-          },
-          {
-            "name": "zona",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Zona"
-          },
-          {
-            "name": "centro_storico_zone_periferiche",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "cittadinanza",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Cittadinanza"
-          },
-          {
-            "name": "dimensione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Dimensione della convivenza"
-          },
-          {
-            "name": "eta_quinquennali",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "eta_grandi",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "eta_singolo",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "sesso",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "residenti",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Residenti in convivenza"
-          }
-        ],
-        "mart_refs": [
-          "convivenze__mart_convivenze_tipo"
-        ]
-      },
-      {
-        "slug": "emigrati_destinazione",
-        "url_slug": "emigrati-destinazione",
-        "name": "Emigrati per destinazione",
-        "description": "Emigrati dal Comune per quartiere e destinazione (comune, regione, estero)",
-        "source": "OpenData Comune di Bologna \u2014 Ufficio di Statistica",
-        "source_id": "comune_bologna_opendata",
-        "period": {
-          "start": 1986,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "demografia",
-          "emigrazione",
-          "bologna"
-        ],
-        "category": "welfare-lavoro",
-        "registry_source": "dcl-bologna",
-        "clean_rows": 81806,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/bologna/emigrati_destinazione/2024/emigrati_destinazione_2024_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": "Anno di riferimento"
-          },
-          {
-            "name": "destinazione_comuni_regioni",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Destinazione (comune o regione)"
-          },
-          {
-            "name": "destinazione_comuni_e_aree_italia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Destinazione dettagliata"
-          },
-          {
-            "name": "quartiere",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Quartiere di partenza"
-          },
-          {
-            "name": "zona",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "sesso",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Sesso"
-          },
-          {
-            "name": "numero_emigrati",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero di emigrati"
-          }
-        ],
-        "mart_refs": [
-          "emigrati_destinazione__mart_emigrati_quartiere"
-        ]
-      },
-      {
-        "slug": "esercizi_somministrazione",
-        "url_slug": "esercizi-somministrazione",
-        "name": "Esercizi Somministrazione",
-        "description": "",
-        "source": "",
-        "source_id": "comune_bologna_opendata",
-        "period": {
-          "start": 1976,
-          "end": 2026
-        },
-        "stage": "incubating",
-        "tags": [
-          "commercio",
-          "esercizi",
-          "tessuto_commerciale",
-          "bologna"
-        ],
-        "category": "economia",
-        "registry_source": "dcl-bologna",
-        "clean_rows": 17981,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/bologna/esercizi_somministrazione/2026/esercizi_somministrazione_2026_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "stato",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "country_code",
-            "description": ""
-          },
-          {
-            "name": "quartiere",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "zona",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "area_statistica",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "centro_storico",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "settore",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "sottoarea",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "tipologia_esercizio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "esercizio_via",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "civico",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "bottega_storica",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "inserito_in_centro_commercale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "attivita_secondaria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "data_inizio_attivita",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "data_cessazione_attivita",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "latitudine",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "longitudine",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "esercizi_somministrazione__mart_esercizi_quartiere",
-          "esercizi_somministrazione__mart_esercizi_stato"
-        ]
-      },
-      {
-        "slug": "famiglie_tipologia",
-        "url_slug": "famiglie-tipologia",
-        "name": "Famiglie per tipologia",
-        "description": "Famiglie per tipologia, quartiere e caratteristiche del capofamiglia",
-        "source": "OpenData Comune di Bologna \u2014 Ufficio di Statistica",
-        "source_id": "comune_bologna_opendata",
-        "period": {
-          "start": 1986,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "demografia",
-          "famiglie",
-          "bologna"
-        ],
-        "category": "welfare-lavoro",
-        "registry_source": "dcl-bologna",
-        "clean_rows": 78270,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/bologna/famiglie_tipologia/2024/famiglie_tipologia_2024_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": "Anno di riferimento"
-          },
-          {
-            "name": "quartiere",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Quartiere"
-          },
-          {
-            "name": "zona",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Zona"
-          },
-          {
-            "name": "eta",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Et\u00e0 capofamiglia"
-          },
-          {
-            "name": "tipo_capofamiglia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Tipologia del capofamiglia"
-          },
-          {
-            "name": "sesso",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Sesso capofamiglia"
-          },
-          {
-            "name": "cittadinanza_del_capofamiglia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Cittadinanza del capofamiglia"
-          },
-          {
-            "name": "numero_famiglie",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero di famiglie"
-          }
-        ],
-        "mart_refs": [
-          "famiglie_tipologia__mart_famiglie_tipo",
-          "famiglie_tipologia__mart_famiglie_quartiere"
-        ]
-      },
-      {
-        "slug": "incarichi",
-        "url_slug": "incarichi",
-        "name": "Incarichi di collaborazione Comune",
-        "description": "Incarichi di collaborazione, consulenza e lavoro del Comune di Bologna",
-        "source": "OpenData Comune di Bologna \u2014 Amministrazione trasparente",
-        "source_id": "comune_bologna_opendata",
-        "period": {
-          "start": 2012,
-          "end": 2026
-        },
-        "stage": "incubating",
-        "tags": [
-          "pa",
-          "incarichi",
-          "trasparenza",
-          "bologna"
-        ],
-        "category": "pa",
-        "registry_source": "dcl-bologna",
-        "clean_rows": 755,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/bologna/incarichi/2026/incarichi_2026_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "id",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Identificativo incarico"
-          },
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": "Anno di riferimento"
-          },
-          {
-            "name": "anno_pg_atto",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Anno protocollo atto"
-          },
-          {
-            "name": "durata_dal",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Data inizio incarico"
-          },
-          {
-            "name": "durata_al",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Data fine incarico"
-          },
-          {
-            "name": "oggetto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Oggetto dell'incarico"
-          },
-          {
-            "name": "classificazione_incarichi",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Classificazione"
-          },
-          {
-            "name": "descrizione_classificazione_incarichi",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "norma_o_titolo_a_base_dell_attribuzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "importo_euro",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Importo in euro"
-          },
-          {
-            "name": "n_pg_atto",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "settore_dipartimento_area",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Settore del Comune"
-          },
-          {
-            "name": "servizio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Servizio"
-          },
-          {
-            "name": "uo",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "dirigente",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Dirigente"
-          },
-          {
-            "name": "responsabile",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Responsabile"
-          },
-          {
-            "name": "ragione_sociale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Soggetto incaricato"
-          },
-          {
-            "name": "partita_iva",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "fiscal_code",
-            "description": "Partita IVA del soggetto"
-          },
-          {
-            "name": "codice_fiscale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "fiscal_code",
-            "description": "Codice fiscale del soggetto"
-          },
-          {
-            "name": "curriculum_link",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Link al curriculum"
-          }
-        ],
-        "mart_refs": [
-          "incarichi__mart_incarichi_anno",
-          "incarichi__mart_incarichi_tipo",
-          "incarichi__mart_incarichi_soggetti"
-        ]
-      },
-      {
-        "slug": "indici_fragilita",
-        "url_slug": "indici-fragilita",
-        "name": "Indici di fragilit\u00e0 per area statistica",
-        "description": "Indici sintetici di fragilit\u00e0 demografica, sociale ed economica per area statistica",
-        "source": "OpenData Comune di Bologna \u2014 Ufficio di Statistica",
-        "source_id": "comune_bologna_opendata",
-        "period": {
-          "start": 2021,
-          "end": 2023
-        },
-        "stage": "incubating",
-        "tags": [
-          "demografia",
-          "welfare",
-          "fragilita",
-          "bologna"
-        ],
-        "category": "welfare-lavoro",
-        "registry_source": "dcl-bologna",
-        "clean_rows": 270,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/bologna/indici_fragilita/2026/indici_fragilita_2026_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": "Anno di riferimento"
-          },
-          {
-            "name": "area_statistica",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Area statistica"
-          },
-          {
-            "name": "quartiere",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Quartiere"
-          },
-          {
-            "name": "zona_pross",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Zona di prossimit\u00e0"
-          },
-          {
-            "name": "aree_escl",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "pop_res",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Popolazione residente"
-          },
-          {
-            "name": "var_5y_pop",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "saldonat",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "ultra80",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "soli_65",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Quota over 65 soli"
-          },
-          {
-            "name": "imem_italia",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "imem_stra",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "stra_0_19",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "minori1gen",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "perc_laur",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Quota laureati"
-          },
-          {
-            "name": "perfragsan",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "peraffit",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Quota famiglie in affitto"
-          },
-          {
-            "name": "rmpe_fam",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Reddito medio famiglie"
-          },
-          {
-            "name": "perfam_r60",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "integrazione",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "spazinsuff",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "bil",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "bqe",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "frag_demo",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Indice fragilit\u00e0 demografica"
-          },
-          {
-            "name": "frag_soc",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Indice fragilit\u00e0 sociale"
-          },
-          {
-            "name": "frag_econ",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Indice fragilit\u00e0 economica"
-          },
-          {
-            "name": "frag_compl",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Indice fragilit\u00e0 complessiva"
-          },
-          {
-            "name": "cluster_an",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Cluster gerarchico della fonte"
-          },
-          {
-            "name": "codareast",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "indici_fragilita__mart_fragilita_area",
-          "indici_fragilita__mart_fragilita_quartiere"
-        ]
-      },
-      {
-        "slug": "popolazione_quartiere",
-        "url_slug": "popolazione-quartiere",
-        "name": "Popolazione per quartiere",
-        "description": "Popolazione residente per quartiere, zona, et\u00e0 e cittadinanza (serie 1986-2024)",
-        "source": "OpenData Comune di Bologna \u2014 Ufficio di Statistica",
-        "source_id": "comune_bologna_opendata",
-        "period": {
-          "start": 1986,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "demografia",
-          "popolazione",
-          "bologna"
-        ],
-        "category": "welfare-lavoro",
-        "registry_source": "dcl-bologna",
-        "clean_rows": 239075,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/bologna/popolazione_quartiere/2024/popolazione_quartiere_2024_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": "Anno di riferimento"
-          },
-          {
-            "name": "cittadinanza",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Cittadinanza"
-          },
-          {
-            "name": "eta_singolo",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Et\u00e0 singola"
-          },
-          {
-            "name": "eta_grandi",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Grande classe di et\u00e0"
-          },
-          {
-            "name": "eta_quinquennali",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "quartiere",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Quartiere"
-          },
-          {
-            "name": "zona",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Zona"
-          },
-          {
-            "name": "centro_storico_zone_periferiche",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "sesso",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Sesso"
-          },
-          {
-            "name": "residenti",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Popolazione residente"
-          }
-        ],
-        "mart_refs": [
-          "popolazione_quartiere__mart_pop_quartiere",
-          "popolazione_quartiere__mart_pop_trend"
-        ]
-      },
-      {
-        "slug": "precipitazioni_bologna",
-        "url_slug": "precipitazioni-bologna",
-        "name": "Precipitazioni giornaliere",
-        "description": "Precipitazioni giornaliere in millimetri, con stagione di riferimento",
-        "source": "OpenData Comune di Bologna \u2014 Arpae",
-        "source_id": "comune_bologna_opendata",
-        "period": {
-          "start": 2001,
-          "end": 2026
-        },
-        "stage": "incubating",
-        "tags": [
-          "ambiente",
-          "meteo",
-          "precipitazioni",
-          "bologna"
-        ],
-        "category": "ambiente",
-        "registry_source": "dcl-bologna",
-        "clean_rows": 9405,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/bologna/precipitazioni_bologna/2026/precipitazioni_bologna_2026_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "date",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Data"
-          },
-          {
-            "name": "pioggia_mm",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Precipitazione in millimetri"
-          },
-          {
-            "name": "stagione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Stagione"
-          }
-        ],
-        "mart_refs": [
-          "precipitazioni_bologna__mart_precipitazioni_anno"
-        ]
-      },
-      {
-        "slug": "reddito_mediano",
-        "url_slug": "reddito-mediano",
-        "name": "Reddito mediano per area statistica",
-        "description": "Reddito imponibile mediano e numero contribuenti per area statistica (2016-2024)",
-        "source": "OpenData Comune di Bologna \u2014 Ufficio di Statistica",
-        "source_id": "comune_bologna_opendata",
-        "period": {
-          "start": 2016,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "economia",
-          "reddito",
-          "aree",
-          "bologna"
-        ],
-        "category": "finanza-pubblica",
-        "registry_source": "dcl-bologna",
-        "clean_rows": 817,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/bologna/reddito_mediano/2026/reddito_mediano_2026_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": "Anno di riferimento"
-          },
-          {
-            "name": "area_statistica",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Area statistica"
-          },
-          {
-            "name": "reddito_imponibile_mediano",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Reddito imponibile mediano (euro correnti)"
-          },
-          {
-            "name": "numero_contribuenti",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero contribuenti residenti"
-          }
-        ],
-        "mart_refs": [
-          "reddito_mediano__mart_reddito_area"
-        ]
-      },
-      {
-        "slug": "spire_traffico",
-        "url_slug": "spire-traffico",
-        "name": "Traffico fuori ZTL (spire)",
-        "description": "Passaggi veicolari sulle strade fuori ZTL rilevati dalle spire, per via e fascia oraria",
-        "source": "OpenData Comune di Bologna \u2014 Mobilit\u00e0 sostenibile",
-        "source_id": "comune_bologna_opendata",
-        "period": {
-          "start": 2022,
-          "end": 2025
-        },
-        "stage": "incubating",
-        "tags": [
-          "trasporti",
-          "mobilita",
-          "traffico",
-          "spire",
-          "bologna"
-        ],
-        "category": "trasporti",
-        "registry_source": "dcl-bologna",
-        "clean_rows": 7315776,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/bologna/spire_traffico/*/spire_traffico_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": "Anno di riferimento"
-          },
-          {
-            "name": "data",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Data"
-          },
-          {
-            "name": "id_uni",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Identificativo spira"
-          },
-          {
-            "name": "chiave",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "nome_via",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Via"
-          },
-          {
-            "name": "tipologia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Tipologia rilevatore"
-          },
-          {
-            "name": "direzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Direzione"
-          },
-          {
-            "name": "giorno_settimana",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "livello",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Livello di flusso"
-          },
-          {
-            "name": "codice_via",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "fascia_oraria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Fascia oraria"
-          },
-          {
-            "name": "ora_inizio",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Ora di inizio fascia"
-          },
-          {
-            "name": "passaggi",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Passaggi veicolari"
-          },
-          {
-            "name": "longitudine",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "latitudine",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "spire_traffico__mart_spire_sintesi",
-          "spire_traffico__mart_spire_ora",
-          "spire_traffico__mart_spire_trend"
-        ]
-      },
-      {
-        "slug": "temperature_bologna",
-        "url_slug": "temperature-bologna",
-        "name": "Temperature giornaliere",
-        "description": "Temperature media, minima e massima giornaliera, con stagione di riferimento",
-        "source": "OpenData Comune di Bologna \u2014 Arpae",
-        "source_id": "comune_bologna_opendata",
-        "period": {
-          "start": 2001,
-          "end": 2026
-        },
-        "stage": "incubating",
-        "tags": [
-          "ambiente",
-          "meteo",
-          "temperatura",
-          "bologna"
-        ],
-        "category": "ambiente",
-        "registry_source": "dcl-bologna",
-        "clean_rows": 9405,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/bologna/temperature_bologna/2026/temperature_bologna_2026_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "date",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Data"
-          },
-          {
-            "name": "avg",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Temperatura media"
-          },
-          {
-            "name": "max",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Temperatura massima"
-          },
-          {
-            "name": "min",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Temperatura minima"
-          },
-          {
-            "name": "stagione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Stagione"
-          }
-        ],
-        "mart_refs": [
-          "temperature_bologna__mart_temperatura_anno"
-        ]
-      },
-      {
-        "slug": "varchi_ztl",
-        "url_slug": "varchi-ztl",
-        "name": "Passaggi veicolari ZTL",
-        "description": "Passaggi veicolari ai varchi ZTL per tipologia veicolo, direzione e ora",
-        "source": "OpenData Comune di Bologna \u2014 Mobilit\u00e0 sostenibile",
-        "source_id": "comune_bologna_opendata",
-        "period": {
-          "start": 2019,
-          "end": 2026
-        },
-        "stage": "incubating",
-        "tags": [
-          "trasporti",
-          "mobilita",
-          "traffico",
-          "ztl",
-          "bologna"
-        ],
-        "category": "trasporti",
-        "registry_source": "dcl-bologna",
-        "clean_rows": 19106691,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/bologna/varchi_ztl/2026/varchi_ztl_2026_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": "Anno di riferimento"
-          },
-          {
-            "name": "data",
-            "type": "TIMESTAMP",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Data e ora"
-          },
-          {
-            "name": "varco",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero varco"
-          },
-          {
-            "name": "nome_varco",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Nome varco"
-          },
-          {
-            "name": "direzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Direzione di controllo"
-          },
-          {
-            "name": "tipologia_varco",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "totale_passaggi",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Totale passaggi"
-          },
-          {
-            "name": "auto_furgoni",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Auto e furgoni"
-          },
-          {
-            "name": "moto_ciclomotori",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Moto e ciclomotori"
-          },
-          {
-            "name": "bus_camion",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Bus e camion"
-          },
-          {
-            "name": "non_classificato",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "sintatticamente_corretta",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "lista_bianca_regolare",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Passaggi autorizzati regolari"
-          },
-          {
-            "name": "lista_bianca_fuori_fascia",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "lista_speciale",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "lista_nera",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "transito_generico_irregolare",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Transiti irregolari (semantica non documentata)"
-          },
-          {
-            "name": "segnalazioni",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Segnalazioni"
-          },
-          {
-            "name": "longitudine",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "latitudine",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "varchi_ztl__mart_varchi_ora",
-          "varchi_ztl__mart_varchi_varco"
-        ]
-      }
-    ],
-    "eurostat": [
       {
         "slug": "eurostat_debito_pil",
         "url_slug": "eurostat-debito-pil",
@@ -27298,6 +25621,2270 @@
         "mart_refs": [
           "eurostat_nrg_bal_c__mart_energy_balance",
           "eurostat_nrg_bal_c__mart_energy_final_consumption"
+        ]
+      }
+    ],
+    "liberiamoli_tutti": [
+      {
+        "slug": "sbarchi_migranti_italia",
+        "url_slug": "sbarchi-migranti-italia",
+        "name": "Sbarchi Migranti Italia",
+        "description": "Arrivi giornalieri di migranti via mare in Italia (2019-2025). Dati estratti da PDF del Ministero dell'Interno.",
+        "source": "onData \u2014 liberiamoli-tutti",
+        "source_id": "liberiamoli_tutti",
+        "period": {
+          "start": 2019,
+          "end": 2025
+        },
+        "stage": "published",
+        "tags": [
+          "immigrazione",
+          "migranti",
+          "sbarchi"
+        ],
+        "category": "immigrazione",
+        "registry_source": "dataset-incubator",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/sbarchi_migranti_italia/2025/sbarchi_migranti_italia_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "data_sbarchi",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Data dell'arrivo"
+          },
+          {
+            "name": "valore",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Numero di arrivi registrati nel giorno"
+          },
+          {
+            "name": "note",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Note sull'evento di sbarco"
+          },
+          {
+            "name": "fonte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Fonte del dato (Ministero dell'Interno / onData)"
+          }
+        ]
+      }
+    ],
+    "ted": [
+      {
+        "slug": "ted_contract_notices",
+        "url_slug": "ted-contract-notices",
+        "name": "Bandi di gara UE in Italia (TED Contract Notices)",
+        "description": "Bandi di gara pubblici sopra soglia UE pubblicati da stazioni appaltanti italiane su TED (Tenders Electronic Daily). Per ogni bando: stazione appaltante, oggetto, CPV, valore stimato, tipo procedura, localizzazione NUTS, criteri di aggiudicazione, flag fondi UE, accordo quadro. Fonte: data.europa.eu, 2020-2023.",
+        "source": "data.europa.eu \u2014 TED (Tenders Electronic Daily)",
+        "source_id": "ted",
+        "period": {
+          "start": 2020,
+          "end": 2023
+        },
+        "stage": "published",
+        "tags": [
+          "appalti",
+          "ted",
+          "contract",
+          "notices"
+        ],
+        "category": "appalti",
+        "registry_source": "dataset-incubator",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/ted_contract_notices/*/ted_contract_notices_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "id_notice_cn",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Identificativo unico del bando (notice ID)"
+          },
+          {
+            "name": "ted_notice_url",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "URL della notice su ted.europa.eu"
+          },
+          {
+            "name": "anno_pubblicazione",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Anno di pubblicazione del bando"
+          },
+          {
+            "name": "id_tipo_notice",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Tipo di notice (2=Contract Notice)"
+          },
+          {
+            "name": "data_invio",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Data di invio alla Gazzetta Ufficiale UE"
+          },
+          {
+            "name": "xsd_version",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Versione dello schema XSD TED"
+          },
+          {
+            "name": "flag_cancellato",
+            "type": "BOOLEAN",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Bando cancellato"
+          },
+          {
+            "name": "n_correzioni",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Numero di correzioni/avvisi"
+          },
+          {
+            "name": "future_can_id",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "ID della future Contract Award Notice collegata"
+          },
+          {
+            "name": "flag_future_can_estimated",
+            "type": "BOOLEAN",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Future CAN ID \u00e8 stimato"
+          },
+          {
+            "name": "flag_multipla_stazione",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Flag: pi\u00f9 stazioni appaltanti coinvolte"
+          },
+          {
+            "name": "stazione_appaltante_nome",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Nome della stazione appaltante"
+          },
+          {
+            "name": "stazione_appaltante_codice_nazionale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Codice nazionale (AUSA/CIG) della stazione"
+          },
+          {
+            "name": "stazione_appaltante_indirizzo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Indirizzo della stazione appaltante"
+          },
+          {
+            "name": "stazione_appaltante_citta",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Citt\u00e0 della stazione appaltante"
+          },
+          {
+            "name": "stazione_appaltante_cap",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "CAP della stazione appaltante"
+          },
+          {
+            "name": "paese",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": "Paese della stazione appaltante (IT)"
+          },
+          {
+            "name": "flag_multi_paese",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Bando con stazioni in pi\u00f9 paesi"
+          },
+          {
+            "name": "paesi_coinvolti",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Lista paesi coinvolti"
+          },
+          {
+            "name": "tipo_stazione_appaltante",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Tipo di stazione (codice: 1=Ministero, 3=Ente locale, ...)"
+          },
+          {
+            "name": "codice_istituzione_ue",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Codice istituzionale UE"
+          },
+          {
+            "name": "attivita_principale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Attivit\u00e0 principale della stazione (es. General public services)"
+          },
+          {
+            "name": "flag_per_conto_terzi",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Appalto per conto di terzi"
+          },
+          {
+            "name": "flag_appalto_congiunto",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Appalto congiunto"
+          },
+          {
+            "name": "flag_aggiudicato_centrale",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Aggiudicato da centrale di committenza"
+          },
+          {
+            "name": "tipo_contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Tipo di contratto: S=Servizi, W=Lavori, U=Utilities/forniture"
+          },
+          {
+            "name": "nuts_luogo_esecuzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Codice NUTS del luogo di esecuzione"
+          },
+          {
+            "name": "flag_accordo_quadro",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Accordo quadro"
+          },
+          {
+            "name": "accordo_quadro_stima",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Valore stimato dell'accordo quadro"
+          },
+          {
+            "name": "flag_operatore_unico",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Operatore unico nell'accordo quadro"
+          },
+          {
+            "name": "n_operatori_accordo",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Numero operatori nell'accordo quadro"
+          },
+          {
+            "name": "n_max_operatori_accordo",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Numero massimo operatori"
+          },
+          {
+            "name": "flag_sistema_dinamico",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Sistema dinamico di acquisizione"
+          },
+          {
+            "name": "cpv_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Codice CPV principale (8 cifre)"
+          },
+          {
+            "name": "id_lotto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Numero del lotto"
+          },
+          {
+            "name": "cpv_codici_aggiuntivi",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Codici CPV aggiuntivi (separati da ---)"
+          },
+          {
+            "name": "flag_gpa",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Coperto dal GPA (Accordo Appalti Pubblici WTO)"
+          },
+          {
+            "name": "n_lotti",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Numero totale di lotti"
+          },
+          {
+            "name": "lotti_presentati",
+            "type": "VARCHAR",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Lotti per cui sono state presentate offerte"
+          },
+          {
+            "name": "flag_varianti",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Sono ammesse varianti"
+          },
+          {
+            "name": "valore_euro",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Valore stimato del bando in EUR"
+          },
+          {
+            "name": "valore_euro_fin_1",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Valore finanziario complementare 1"
+          },
+          {
+            "name": "valore_euro_fin_2",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Valore finanziario complementare 2"
+          },
+          {
+            "name": "flag_opzioni",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Il contratto prevede opzioni"
+          },
+          {
+            "name": "flag_fondi_ue",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Il contratto \u00e8 collegato a fondi UE"
+          },
+          {
+            "name": "flag_rinnovo",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Il contratto \u00e8 rinnovabile"
+          },
+          {
+            "name": "durata_mesi",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Durata prevista del contratto in mesi"
+          },
+          {
+            "name": "data_inizio_contratto",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Data inizio prevista"
+          },
+          {
+            "name": "data_fine_contratto",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Data fine prevista"
+          },
+          {
+            "name": "tipo_procedura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Tipo di procedura (OPE=Aperta, RES=Ristretta, NEG=Negoziata, ...)"
+          },
+          {
+            "name": "flag_accelerata",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Procedura accelerata"
+          },
+          {
+            "name": "n_operatori_inviati",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Numero operatori invitati"
+          },
+          {
+            "name": "n_min_operatori",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Numero minimo operatori"
+          },
+          {
+            "name": "n_max_operatori",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Numero massimo operatori"
+          },
+          {
+            "name": "codice_criterio_aggiudicazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Codice criterio: M=Prezzo, L=OEPV"
+          },
+          {
+            "name": "peso_prezzo",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Peso del prezzo nella valutazione"
+          },
+          {
+            "name": "criteri_qualitativi",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Descrizione criteri qualitativi"
+          },
+          {
+            "name": "pesi_criteri",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Pesi percentuali criteri qualitativi"
+          },
+          {
+            "name": "flag_asta_elettronica",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Asta elettronica"
+          },
+          {
+            "name": "data_scadenza_offerte",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Data scadenza presentazione offerte"
+          },
+          {
+            "name": "flag_lingua_qualsiasi_ce",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Qualsiasi lingua UE ammessa"
+          },
+          {
+            "name": "lingue_ammesse",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Lingue ammesse per le offerte"
+          },
+          {
+            "name": "altre_lingue_ammesse",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Altre lingue ammesse"
+          },
+          {
+            "name": "flag_appalto_ricorrente",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Appalto ricorrente"
+          }
+        ]
+      }
+    ],
+    "comune_bologna_opendata": [
+      {
+        "slug": "bolognawifi_matrice",
+        "url_slug": "bolognawifi-matrice",
+        "name": "Matrice spostamenti pedonali WiFi",
+        "description": "Flussi di spostamento tra zone WiFi pubbliche (2021-2025) \u2014 proxy della mobilit\u00e0 pedonale per zona e ora",
+        "source": "OpenData Comune di Bologna \u2014 BolognaWiFi",
+        "source_id": "comune_bologna_opendata",
+        "period": {
+          "start": 2021,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "mobilita",
+          "pedoni",
+          "wifi",
+          "spostamenti",
+          "bologna"
+        ],
+        "category": "trasporti",
+        "registry_source": "dcl-bologna",
+        "clean_rows": 1469826,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bologna/bolognawifi_matrice/2026/bolognawifi_matrice_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": "Anno di riferimento"
+          },
+          {
+            "name": "data",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Data della misurazione"
+          },
+          {
+            "name": "ora",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Ora della misurazione"
+          },
+          {
+            "name": "giorno_num",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Numero giorno settimana (1=Luned\u00ec)"
+          },
+          {
+            "name": "giorno_label",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Giorno settimana"
+          },
+          {
+            "name": "id_origine",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Zona di origine"
+          },
+          {
+            "name": "label_origine",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Nome zona di origine"
+          },
+          {
+            "name": "id_destinazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Zona di destinazione"
+          },
+          {
+            "name": "label_destinazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Nome zona di destinazione"
+          },
+          {
+            "name": "totale",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Flusso di dispositivi"
+          },
+          {
+            "name": "percentile_50",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Percentile 50 della distribuzione"
+          }
+        ],
+        "mart_refs": [
+          "bolognawifi_matrice__mart_wifi_anno",
+          "bolognawifi_matrice__mart_wifi_ora",
+          "bolognawifi_matrice__mart_wifi_od"
+        ]
+      },
+      {
+        "slug": "centraline_aria",
+        "url_slug": "centraline-aria",
+        "name": "Centraline qualit\u00e0 dell'aria",
+        "description": "Rilevazioni orarie degli inquinanti atmosferici per stazione di monitoraggio",
+        "source": "OpenData Comune di Bologna \u2014 Arpae",
+        "source_id": "comune_bologna_opendata",
+        "period": {
+          "start": 2025,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "aria",
+          "inquinamento",
+          "bologna"
+        ],
+        "category": "ambiente",
+        "registry_source": "dcl-bologna",
+        "clean_rows": 56239,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bologna/centraline_aria/2026/centraline_aria_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": "Anno di riferimento"
+          },
+          {
+            "name": "reftime",
+            "type": "TIMESTAMP",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Data e ora rilevazione"
+          },
+          {
+            "name": "stazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Nome stazione di monitoraggio"
+          },
+          {
+            "name": "agente_atm",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Inquinante misurato"
+          },
+          {
+            "name": "value",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Concentrazione rilevata"
+          }
+        ],
+        "mart_refs": [
+          "centraline_aria__mart_aria_stazione",
+          "centraline_aria__mart_aria_ora"
+        ]
+      },
+      {
+        "slug": "colonnine_bici",
+        "url_slug": "colonnine-bici",
+        "name": "Conta-bici per colonnina",
+        "description": "Passaggi di biciclette rilevati dalle colonnine conta-bici, per via e direzione",
+        "source": "OpenData Comune di Bologna \u2014 Mobilit\u00e0 sostenibile",
+        "source_id": "comune_bologna_opendata",
+        "period": {
+          "start": 2018,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "trasporti",
+          "mobilita",
+          "bici",
+          "bologna"
+        ],
+        "category": "trasporti",
+        "registry_source": "dcl-bologna",
+        "clean_rows": 553688,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bologna/colonnine_bici/2026/colonnine_bici_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": "Anno di riferimento"
+          },
+          {
+            "name": "data",
+            "type": "TIMESTAMP",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Data e ora rilevazione"
+          },
+          {
+            "name": "colonnina",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Nome colonnina"
+          },
+          {
+            "name": "quartiere",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Quartiere"
+          },
+          {
+            "name": "zona",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Zona"
+          },
+          {
+            "name": "via",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Via della colonnina"
+          },
+          {
+            "name": "direzione_centro",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Passaggi verso il centro"
+          },
+          {
+            "name": "direzione_periferia",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Passaggi verso la periferia"
+          },
+          {
+            "name": "totale",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Totale passaggi"
+          },
+          {
+            "name": "longitudine",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "latitudine",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "colonnine_bici__mart_colonnine_anno",
+          "colonnine_bici__mart_colonnine_quartiere",
+          "colonnine_bici__mart_colonnine_ora"
+        ]
+      },
+      {
+        "slug": "convivenze",
+        "url_slug": "convivenze",
+        "name": "Popolazione in convivenza",
+        "description": "Residenti in convivenza (case di riposo, studentati, istituti) per quartiere e tipologia",
+        "source": "OpenData Comune di Bologna \u2014 Ufficio di Statistica",
+        "source_id": "comune_bologna_opendata",
+        "period": {
+          "start": 1986,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "demografia",
+          "convivenze",
+          "bologna"
+        ],
+        "category": "welfare-lavoro",
+        "registry_source": "dcl-bologna",
+        "clean_rows": 92633,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bologna/convivenze/2024/convivenze_2024_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": "Anno di riferimento"
+          },
+          {
+            "name": "quartiere",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Quartiere"
+          },
+          {
+            "name": "zona",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Zona"
+          },
+          {
+            "name": "centro_storico_zone_periferiche",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cittadinanza",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Cittadinanza"
+          },
+          {
+            "name": "dimensione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Dimensione della convivenza"
+          },
+          {
+            "name": "eta_quinquennali",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "eta_grandi",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "eta_singolo",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sesso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "residenti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Residenti in convivenza"
+          }
+        ],
+        "mart_refs": [
+          "convivenze__mart_convivenze_tipo"
+        ]
+      },
+      {
+        "slug": "emigrati_destinazione",
+        "url_slug": "emigrati-destinazione",
+        "name": "Emigrati per destinazione",
+        "description": "Emigrati dal Comune per quartiere e destinazione (comune, regione, estero)",
+        "source": "OpenData Comune di Bologna \u2014 Ufficio di Statistica",
+        "source_id": "comune_bologna_opendata",
+        "period": {
+          "start": 1986,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "demografia",
+          "emigrazione",
+          "bologna"
+        ],
+        "category": "welfare-lavoro",
+        "registry_source": "dcl-bologna",
+        "clean_rows": 81806,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bologna/emigrati_destinazione/2024/emigrati_destinazione_2024_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": "Anno di riferimento"
+          },
+          {
+            "name": "destinazione_comuni_regioni",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Destinazione (comune o regione)"
+          },
+          {
+            "name": "destinazione_comuni_e_aree_italia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Destinazione dettagliata"
+          },
+          {
+            "name": "quartiere",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Quartiere di partenza"
+          },
+          {
+            "name": "zona",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sesso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Sesso"
+          },
+          {
+            "name": "numero_emigrati",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Numero di emigrati"
+          }
+        ],
+        "mart_refs": [
+          "emigrati_destinazione__mart_emigrati_quartiere"
+        ]
+      },
+      {
+        "slug": "esercizi_somministrazione",
+        "url_slug": "esercizi-somministrazione",
+        "name": "Esercizi Somministrazione",
+        "description": "",
+        "source": "",
+        "source_id": "comune_bologna_opendata",
+        "period": {
+          "start": 1976,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "commercio",
+          "esercizi",
+          "tessuto_commerciale",
+          "bologna"
+        ],
+        "category": "economia",
+        "registry_source": "dcl-bologna",
+        "clean_rows": 17981,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bologna/esercizi_somministrazione/2026/esercizi_somministrazione_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "stato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "quartiere",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "zona",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "area_statistica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "centro_storico",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "settore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sottoarea",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipologia_esercizio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "esercizio_via",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "civico",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "bottega_storica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "inserito_in_centro_commercale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "attivita_secondaria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_inizio_attivita",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_cessazione_attivita",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "latitudine",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "longitudine",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "esercizi_somministrazione__mart_esercizi_quartiere",
+          "esercizi_somministrazione__mart_esercizi_stato"
+        ]
+      },
+      {
+        "slug": "famiglie_tipologia",
+        "url_slug": "famiglie-tipologia",
+        "name": "Famiglie per tipologia",
+        "description": "Famiglie per tipologia, quartiere e caratteristiche del capofamiglia",
+        "source": "OpenData Comune di Bologna \u2014 Ufficio di Statistica",
+        "source_id": "comune_bologna_opendata",
+        "period": {
+          "start": 1986,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "demografia",
+          "famiglie",
+          "bologna"
+        ],
+        "category": "welfare-lavoro",
+        "registry_source": "dcl-bologna",
+        "clean_rows": 78270,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bologna/famiglie_tipologia/2024/famiglie_tipologia_2024_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": "Anno di riferimento"
+          },
+          {
+            "name": "quartiere",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Quartiere"
+          },
+          {
+            "name": "zona",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Zona"
+          },
+          {
+            "name": "eta",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Et\u00e0 capofamiglia"
+          },
+          {
+            "name": "tipo_capofamiglia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Tipologia del capofamiglia"
+          },
+          {
+            "name": "sesso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Sesso capofamiglia"
+          },
+          {
+            "name": "cittadinanza_del_capofamiglia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Cittadinanza del capofamiglia"
+          },
+          {
+            "name": "numero_famiglie",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Numero di famiglie"
+          }
+        ],
+        "mart_refs": [
+          "famiglie_tipologia__mart_famiglie_tipo",
+          "famiglie_tipologia__mart_famiglie_quartiere"
+        ]
+      },
+      {
+        "slug": "incarichi",
+        "url_slug": "incarichi",
+        "name": "Incarichi di collaborazione Comune",
+        "description": "Incarichi di collaborazione, consulenza e lavoro del Comune di Bologna",
+        "source": "OpenData Comune di Bologna \u2014 Amministrazione trasparente",
+        "source_id": "comune_bologna_opendata",
+        "period": {
+          "start": 2012,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "pa",
+          "incarichi",
+          "trasparenza",
+          "bologna"
+        ],
+        "category": "pa",
+        "registry_source": "dcl-bologna",
+        "clean_rows": 755,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bologna/incarichi/2026/incarichi_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "id",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Identificativo incarico"
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": "Anno di riferimento"
+          },
+          {
+            "name": "anno_pg_atto",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Anno protocollo atto"
+          },
+          {
+            "name": "durata_dal",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Data inizio incarico"
+          },
+          {
+            "name": "durata_al",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Data fine incarico"
+          },
+          {
+            "name": "oggetto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Oggetto dell'incarico"
+          },
+          {
+            "name": "classificazione_incarichi",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Classificazione"
+          },
+          {
+            "name": "descrizione_classificazione_incarichi",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "norma_o_titolo_a_base_dell_attribuzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_euro",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Importo in euro"
+          },
+          {
+            "name": "n_pg_atto",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "settore_dipartimento_area",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Settore del Comune"
+          },
+          {
+            "name": "servizio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Servizio"
+          },
+          {
+            "name": "uo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "dirigente",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Dirigente"
+          },
+          {
+            "name": "responsabile",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Responsabile"
+          },
+          {
+            "name": "ragione_sociale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Soggetto incaricato"
+          },
+          {
+            "name": "partita_iva",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": "Partita IVA del soggetto"
+          },
+          {
+            "name": "codice_fiscale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": "Codice fiscale del soggetto"
+          },
+          {
+            "name": "curriculum_link",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Link al curriculum"
+          }
+        ],
+        "mart_refs": [
+          "incarichi__mart_incarichi_anno",
+          "incarichi__mart_incarichi_tipo",
+          "incarichi__mart_incarichi_soggetti"
+        ]
+      },
+      {
+        "slug": "indici_fragilita",
+        "url_slug": "indici-fragilita",
+        "name": "Indici di fragilit\u00e0 per area statistica",
+        "description": "Indici sintetici di fragilit\u00e0 demografica, sociale ed economica per area statistica",
+        "source": "OpenData Comune di Bologna \u2014 Ufficio di Statistica",
+        "source_id": "comune_bologna_opendata",
+        "period": {
+          "start": 2021,
+          "end": 2023
+        },
+        "stage": "incubating",
+        "tags": [
+          "demografia",
+          "welfare",
+          "fragilita",
+          "bologna"
+        ],
+        "category": "welfare-lavoro",
+        "registry_source": "dcl-bologna",
+        "clean_rows": 270,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bologna/indici_fragilita/2026/indici_fragilita_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": "Anno di riferimento"
+          },
+          {
+            "name": "area_statistica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Area statistica"
+          },
+          {
+            "name": "quartiere",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Quartiere"
+          },
+          {
+            "name": "zona_pross",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Zona di prossimit\u00e0"
+          },
+          {
+            "name": "aree_escl",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pop_res",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Popolazione residente"
+          },
+          {
+            "name": "var_5y_pop",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "saldonat",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ultra80",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "soli_65",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Quota over 65 soli"
+          },
+          {
+            "name": "imem_italia",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imem_stra",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stra_0_19",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "minori1gen",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perc_laur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Quota laureati"
+          },
+          {
+            "name": "perfragsan",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "peraffit",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Quota famiglie in affitto"
+          },
+          {
+            "name": "rmpe_fam",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Reddito medio famiglie"
+          },
+          {
+            "name": "perfam_r60",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "integrazione",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "spazinsuff",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "bil",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "bqe",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "frag_demo",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Indice fragilit\u00e0 demografica"
+          },
+          {
+            "name": "frag_soc",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Indice fragilit\u00e0 sociale"
+          },
+          {
+            "name": "frag_econ",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Indice fragilit\u00e0 economica"
+          },
+          {
+            "name": "frag_compl",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Indice fragilit\u00e0 complessiva"
+          },
+          {
+            "name": "cluster_an",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Cluster gerarchico della fonte"
+          },
+          {
+            "name": "codareast",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "indici_fragilita__mart_fragilita_area",
+          "indici_fragilita__mart_fragilita_quartiere"
+        ]
+      },
+      {
+        "slug": "popolazione_quartiere",
+        "url_slug": "popolazione-quartiere",
+        "name": "Popolazione per quartiere",
+        "description": "Popolazione residente per quartiere, zona, et\u00e0 e cittadinanza (serie 1986-2024)",
+        "source": "OpenData Comune di Bologna \u2014 Ufficio di Statistica",
+        "source_id": "comune_bologna_opendata",
+        "period": {
+          "start": 1986,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "demografia",
+          "popolazione",
+          "bologna"
+        ],
+        "category": "welfare-lavoro",
+        "registry_source": "dcl-bologna",
+        "clean_rows": 239075,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bologna/popolazione_quartiere/2024/popolazione_quartiere_2024_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": "Anno di riferimento"
+          },
+          {
+            "name": "cittadinanza",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Cittadinanza"
+          },
+          {
+            "name": "eta_singolo",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Et\u00e0 singola"
+          },
+          {
+            "name": "eta_grandi",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Grande classe di et\u00e0"
+          },
+          {
+            "name": "eta_quinquennali",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "quartiere",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Quartiere"
+          },
+          {
+            "name": "zona",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Zona"
+          },
+          {
+            "name": "centro_storico_zone_periferiche",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sesso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Sesso"
+          },
+          {
+            "name": "residenti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Popolazione residente"
+          }
+        ],
+        "mart_refs": [
+          "popolazione_quartiere__mart_pop_quartiere",
+          "popolazione_quartiere__mart_pop_trend"
+        ]
+      },
+      {
+        "slug": "precipitazioni_bologna",
+        "url_slug": "precipitazioni-bologna",
+        "name": "Precipitazioni giornaliere",
+        "description": "Precipitazioni giornaliere in millimetri, con stagione di riferimento",
+        "source": "OpenData Comune di Bologna \u2014 Arpae",
+        "source_id": "comune_bologna_opendata",
+        "period": {
+          "start": 2001,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "meteo",
+          "precipitazioni",
+          "bologna"
+        ],
+        "category": "ambiente",
+        "registry_source": "dcl-bologna",
+        "clean_rows": 9405,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bologna/precipitazioni_bologna/2026/precipitazioni_bologna_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "date",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Data"
+          },
+          {
+            "name": "pioggia_mm",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Precipitazione in millimetri"
+          },
+          {
+            "name": "stagione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Stagione"
+          }
+        ],
+        "mart_refs": [
+          "precipitazioni_bologna__mart_precipitazioni_anno"
+        ]
+      },
+      {
+        "slug": "reddito_mediano",
+        "url_slug": "reddito-mediano",
+        "name": "Reddito mediano per area statistica",
+        "description": "Reddito imponibile mediano e numero contribuenti per area statistica (2016-2024)",
+        "source": "OpenData Comune di Bologna \u2014 Ufficio di Statistica",
+        "source_id": "comune_bologna_opendata",
+        "period": {
+          "start": 2016,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "economia",
+          "reddito",
+          "aree",
+          "bologna"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "dcl-bologna",
+        "clean_rows": 817,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bologna/reddito_mediano/2026/reddito_mediano_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": "Anno di riferimento"
+          },
+          {
+            "name": "area_statistica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Area statistica"
+          },
+          {
+            "name": "reddito_imponibile_mediano",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Reddito imponibile mediano (euro correnti)"
+          },
+          {
+            "name": "numero_contribuenti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Numero contribuenti residenti"
+          }
+        ],
+        "mart_refs": [
+          "reddito_mediano__mart_reddito_area"
+        ]
+      },
+      {
+        "slug": "spire_traffico",
+        "url_slug": "spire-traffico",
+        "name": "Traffico fuori ZTL (spire)",
+        "description": "Passaggi veicolari sulle strade fuori ZTL rilevati dalle spire, per via e fascia oraria",
+        "source": "OpenData Comune di Bologna \u2014 Mobilit\u00e0 sostenibile",
+        "source_id": "comune_bologna_opendata",
+        "period": {
+          "start": 2022,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "trasporti",
+          "mobilita",
+          "traffico",
+          "spire",
+          "bologna"
+        ],
+        "category": "trasporti",
+        "registry_source": "dcl-bologna",
+        "clean_rows": 7315776,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bologna/spire_traffico/*/spire_traffico_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": "Anno di riferimento"
+          },
+          {
+            "name": "data",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Data"
+          },
+          {
+            "name": "id_uni",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Identificativo spira"
+          },
+          {
+            "name": "chiave",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_via",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Via"
+          },
+          {
+            "name": "tipologia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Tipologia rilevatore"
+          },
+          {
+            "name": "direzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Direzione"
+          },
+          {
+            "name": "giorno_settimana",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "livello",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Livello di flusso"
+          },
+          {
+            "name": "codice_via",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fascia_oraria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Fascia oraria"
+          },
+          {
+            "name": "ora_inizio",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Ora di inizio fascia"
+          },
+          {
+            "name": "passaggi",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Passaggi veicolari"
+          },
+          {
+            "name": "longitudine",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "latitudine",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "spire_traffico__mart_spire_sintesi",
+          "spire_traffico__mart_spire_ora",
+          "spire_traffico__mart_spire_trend"
+        ]
+      },
+      {
+        "slug": "temperature_bologna",
+        "url_slug": "temperature-bologna",
+        "name": "Temperature giornaliere",
+        "description": "Temperature media, minima e massima giornaliera, con stagione di riferimento",
+        "source": "OpenData Comune di Bologna \u2014 Arpae",
+        "source_id": "comune_bologna_opendata",
+        "period": {
+          "start": 2001,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "meteo",
+          "temperatura",
+          "bologna"
+        ],
+        "category": "ambiente",
+        "registry_source": "dcl-bologna",
+        "clean_rows": 9405,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bologna/temperature_bologna/2026/temperature_bologna_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "date",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Data"
+          },
+          {
+            "name": "avg",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Temperatura media"
+          },
+          {
+            "name": "max",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Temperatura massima"
+          },
+          {
+            "name": "min",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Temperatura minima"
+          },
+          {
+            "name": "stagione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Stagione"
+          }
+        ],
+        "mart_refs": [
+          "temperature_bologna__mart_temperatura_anno"
+        ]
+      },
+      {
+        "slug": "varchi_ztl",
+        "url_slug": "varchi-ztl",
+        "name": "Passaggi veicolari ZTL",
+        "description": "Passaggi veicolari ai varchi ZTL per tipologia veicolo, direzione e ora",
+        "source": "OpenData Comune di Bologna \u2014 Mobilit\u00e0 sostenibile",
+        "source_id": "comune_bologna_opendata",
+        "period": {
+          "start": 2019,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "trasporti",
+          "mobilita",
+          "traffico",
+          "ztl",
+          "bologna"
+        ],
+        "category": "trasporti",
+        "registry_source": "dcl-bologna",
+        "clean_rows": 19106691,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bologna/varchi_ztl/2026/varchi_ztl_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": "Anno di riferimento"
+          },
+          {
+            "name": "data",
+            "type": "TIMESTAMP",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Data e ora"
+          },
+          {
+            "name": "varco",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Numero varco"
+          },
+          {
+            "name": "nome_varco",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Nome varco"
+          },
+          {
+            "name": "direzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Direzione di controllo"
+          },
+          {
+            "name": "tipologia_varco",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_passaggi",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Totale passaggi"
+          },
+          {
+            "name": "auto_furgoni",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Auto e furgoni"
+          },
+          {
+            "name": "moto_ciclomotori",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Moto e ciclomotori"
+          },
+          {
+            "name": "bus_camion",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Bus e camion"
+          },
+          {
+            "name": "non_classificato",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sintatticamente_corretta",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "lista_bianca_regolare",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Passaggi autorizzati regolari"
+          },
+          {
+            "name": "lista_bianca_fuori_fascia",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "lista_speciale",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "lista_nera",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "transito_generico_irregolare",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Transiti irregolari (semantica non documentata)"
+          },
+          {
+            "name": "segnalazioni",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Segnalazioni"
+          },
+          {
+            "name": "longitudine",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "latitudine",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "varchi_ztl__mart_varchi_ora",
+          "varchi_ztl__mart_varchi_varco"
         ]
       }
     ],
@@ -36201,7 +36788,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 1868,
+        "clean_rows": 1933,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_bandi_open/2026/inpa_bandi_open_2026_clean.parquet",
@@ -36420,7 +37007,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 5841,
+        "clean_rows": 5907,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_comunicazioni/2026/inpa_comunicazioni_2026_clean.parquet",
@@ -57709,13 +58296,17 @@
         "ameco",
         "anac_aggiudicatari",
         "anac_aggiudicazioni",
+        "anac_avvio_contratto",
         "anac_bandi_gara",
         "anac_collaudo",
         "anac_cross",
         "anac_cup",
+        "anac_fine_contratto",
         "anac_partecipanti",
+        "anac_sospensioni",
         "anac_stati_avanzamento",
         "anac_subappalti",
+        "anac_varianti",
         "banche_unified",
         "bdap_entrate_stato",
         "bdap_lb_spese_missione",
@@ -57841,7 +58432,7 @@
         "ted_contract_notices",
         "wb_financial"
       ],
-      "dataset_count": 135
+      "dataset_count": 139
     },
     {
       "slug": "sanita",
@@ -57861,13 +58452,14 @@
         "eurostat_hospital_beds_nuts2",
         "eurostat_physicians_nuts2",
         "farmacie",
+        "malasanita_compose",
         "personale_ssn",
         "posti_letto_stabilimento",
         "reparti_ricovero",
         "strutture_asl",
         "strutture_ricovero_asl"
       ],
-      "dataset_count": 10
+      "dataset_count": 11
     },
     {
       "slug": "welfare-lavoro",
@@ -58140,13 +58732,17 @@
         "ameco",
         "anac_aggiudicatari",
         "anac_aggiudicazioni",
+        "anac_avvio_contratto",
         "anac_bandi_gara",
         "anac_collaudo",
         "anac_cross",
         "anac_cup",
+        "anac_fine_contratto",
         "anac_partecipanti",
+        "anac_sospensioni",
         "anac_stati_avanzamento",
         "anac_subappalti",
+        "anac_varianti",
         "banche_unified",
         "bdap_entrate_stato",
         "bdap_lb_spese_missione",
@@ -58282,6 +58878,7 @@
         "eurostat_hospital_beds_nuts2",
         "eurostat_physicians_nuts2",
         "farmacie",
+        "malasanita_compose",
         "personale_ssn",
         "posti_letto_stabilimento",
         "reparti_ricovero",
@@ -59112,13 +59709,17 @@
     "appalti-pubblici": [
       "anac_aggiudicatari",
       "anac_aggiudicazioni",
+      "anac_avvio_contratto",
       "anac_bandi_gara",
       "anac_collaudo",
       "anac_cross",
       "anac_cup",
+      "anac_fine_contratto",
       "anac_partecipanti",
+      "anac_sospensioni",
       "anac_stati_avanzamento",
-      "anac_subappalti"
+      "anac_subappalti",
+      "anac_varianti"
     ],
     "bilancio-pubblico": [
       "bdap_entrate_stato",
@@ -59166,6 +59767,7 @@
       "istat_proiezioni_demografiche",
       "istat_sbs_imprese",
       "istat_va_branca",
+      "malasanita_compose",
       "mase_prezzi_carburanti_mensili",
       "mase_prezzi_carburanti_settimanali",
       "mim_alunni_corso_eta",
@@ -59180,6 +59782,7 @@
       "popolazione_istat_comunale_2019_2025",
       "posti_letto_stabilimento",
       "reparti_ricovero",
+      "richiedenti_asilo_italia",
       "sai_progetti_italia",
       "sai_strutture_italia",
       "sbarchi_migranti_italia",
@@ -59627,13 +60230,17 @@
       "ameco",
       "anac_aggiudicatari",
       "anac_aggiudicazioni",
+      "anac_avvio_contratto",
       "anac_bandi_gara",
       "anac_collaudo",
       "anac_cross",
       "anac_cup",
+      "anac_fine_contratto",
       "anac_partecipanti",
+      "anac_sospensioni",
       "anac_stati_avanzamento",
       "anac_subappalti",
+      "anac_varianti",
       "banche_unified",
       "bdap_entrate_stato",
       "bdap_lb_spese_missione",
@@ -59844,6 +60451,7 @@
       "eurostat_hospital_beds_nuts2",
       "eurostat_physicians_nuts2",
       "farmacie",
+      "malasanita_compose",
       "personale_ssn",
       "posti_letto_stabilimento",
       "reparti_ricovero",
@@ -59998,6 +60606,22 @@
       ],
       "description": ""
     },
+    "anac_avvio_contratto": {
+      "name": "Anac Avvio Contratto",
+      "stage": "incubating",
+      "source_id": "anac",
+      "registry_source": "appalti-pubblici",
+      "domain": "finanza-pubblica",
+      "category": "appalti",
+      "tags": [
+        "appalti",
+        "anac",
+        "avvio",
+        "contratto",
+        "esecuzione"
+      ],
+      "description": ""
+    },
     "anac_bandi_gara": {
       "name": "Anac Bandi Gara",
       "stage": "incubating",
@@ -60056,6 +60680,22 @@
       ],
       "description": ""
     },
+    "anac_fine_contratto": {
+      "name": "Anac Fine Contratto",
+      "stage": "incubating",
+      "source_id": "anac",
+      "registry_source": "appalti-pubblici",
+      "domain": "finanza-pubblica",
+      "category": "appalti",
+      "tags": [
+        "appalti",
+        "anac",
+        "fine",
+        "contratto",
+        "esecuzione"
+      ],
+      "description": ""
+    },
     "anac_partecipanti": {
       "name": "Anac Partecipanti",
       "stage": "incubating",
@@ -60067,6 +60707,22 @@
         "appalti",
         "anac",
         "partecipanti"
+      ],
+      "description": ""
+    },
+    "anac_sospensioni": {
+      "name": "Anac Sospensioni",
+      "stage": "incubating",
+      "source_id": "anac",
+      "registry_source": "appalti-pubblici",
+      "domain": "finanza-pubblica",
+      "category": "appalti",
+      "tags": [
+        "appalti",
+        "anac",
+        "sospensioni",
+        "ritardi",
+        "esecuzione"
       ],
       "description": ""
     },
@@ -60096,6 +60752,22 @@
         "appalti",
         "anac",
         "subappalti"
+      ],
+      "description": ""
+    },
+    "anac_varianti": {
+      "name": "Anac Varianti",
+      "stage": "incubating",
+      "source_id": "anac",
+      "registry_source": "appalti-pubblici",
+      "domain": "finanza-pubblica",
+      "category": "appalti",
+      "tags": [
+        "appalti",
+        "anac",
+        "varianti",
+        "modifiche",
+        "esecuzione"
       ],
       "description": ""
     },
@@ -60731,6 +61403,20 @@
       ],
       "description": ""
     },
+    "malasanita_compose": {
+      "name": "Malasanita Compose",
+      "stage": "incubating",
+      "source_id": "dataciviclab_composite",
+      "registry_source": "dataset-incubator",
+      "domain": "sanita",
+      "category": "sanita",
+      "tags": [
+        "sanita",
+        "malasanita",
+        "compose"
+      ],
+      "description": ""
+    },
     "mase_prezzi_carburanti_mensili": {
       "name": "Mase Prezzi Carburanti Mensili",
       "stage": "incubating",
@@ -60946,6 +61632,21 @@
         "ricovero"
       ],
       "description": "Dati di struttura e attivit\u00e0 dei reparti di ricovero \u2014 posti letto, dimessi, discipline, degenza per struttura \u2014 Ministero della Salute 2022"
+    },
+    "richiedenti_asilo_italia": {
+      "name": "Richiedenti Asilo Italia",
+      "stage": "incubating",
+      "source_id": "eurostat",
+      "registry_source": "dataset-incubator",
+      "domain": null,
+      "category": "immigrazione",
+      "tags": [
+        "immigrazione",
+        "asilo",
+        "protezione-internazionale",
+        "richiedenti-asilo"
+      ],
+      "description": ""
     },
     "sai_progetti_italia": {
       "name": "SAI Progetti \u2014 Progetti del Sistema Accoglienza e Integrazione (2018-2024)",

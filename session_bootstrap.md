@@ -1,18 +1,18 @@
 # Session Bootstrap
 
-**Generated**: 2026-10-21T11:17:26.549846
+**Generated**: 2026-10-21T16:43:46.821438
 
 ## Stato
 
-Radar: 36 fonti GREEN 33 · Registry: 39 repo · 433 dataset
+Radar: 36 fonti GREEN 33 · Registry: 39 repo · 439 dataset
 
 ## Richiede attenzione
 
-- [PR] appalti-pubblici#14: fix(anac-cross): sal_in_ritardo con flag 'IN RITARDO' e SAL senza giorni (#6)
-- [PR] appalti-pubblici#11: feat(esecuzione): avvio, fine, sospensioni e varianti ANAC
 - [PR] data-explorer#278: feat(cross-view): Chi cattura la crescita? — macro, settori e dentro i settori
 - [PR] dataset-incubator#885: feat(candidates): eu-call-open + catena FTS call_id/project_id
 - [PR] dataset-incubator#836: feat(candidates): bootstrap gse_cer_elenco candidate
+- [PR] italia-dipendenze#10: feat(commercio): split HS6 raffinati e QA raffinazione
+- [PR] source-observatory#429: feat(catalog): referenced-item drift — verifica upstream vs inventario
 - [PR] 1 dependabot bump (skipped)
 
 ## Analisi pubbliche (45)
