@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T11:16:19.090834",
+  "generated_at": "2026-10-22T16:44:15.781602",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -93,7 +93,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 43,
+  "open_issues": 32,
   "issues": [
     {
       "number": 15,
@@ -177,55 +177,6 @@
       "title": "\ud83d\udce5 Dataset: Eventi cultura (30k, daily, geo)",
       "repo": "dcl-bologna",
       "url": "https://github.com/dataciviclab/dcl-bologna/issues/5",
-      "category": "intake"
-    },
-    {
-      "number": 16,
-      "title": "Intake: terna-generation-oraria \u2014 mix orario per fonte, picchi e flussi (2019-2026)",
-      "repo": "energia-italia",
-      "url": "https://github.com/dataciviclab/energia-italia/issues/16",
-      "category": "intake"
-    },
-    {
-      "number": 15,
-      "title": "Intake: terna-load-oraria \u2014 carico elettrico orario per zona (2019-2026)",
-      "repo": "energia-italia",
-      "url": "https://github.com/dataciviclab/energia-italia/issues/15",
-      "category": "intake"
-    },
-    {
-      "number": 9,
-      "title": "Intake: terna-hydro-power \u2014 produzione idroelettrica per tipo impianto (2000-2024)",
-      "repo": "energia-italia",
-      "url": "https://github.com/dataciviclab/energia-italia/issues/9",
-      "category": "intake"
-    },
-    {
-      "number": 8,
-      "title": "Intake: terna-storage-accumuli \u2014 accumulo elettrico per regione/fonte (2024-2025)",
-      "repo": "energia-italia",
-      "url": "https://github.com/dataciviclab/energia-italia/issues/8",
-      "category": "intake"
-    },
-    {
-      "number": 90,
-      "title": "dataset: Internet access by NACE and NUTS 2 region (ISOC_R_CI_IN_EN2)",
-      "repo": "eurostat",
-      "url": "https://github.com/dataciviclab/eurostat/issues/90",
-      "category": "intake"
-    },
-    {
-      "number": 88,
-      "title": "dataset: Cultural employment by NUTS 2 region (CULT_EMP_REG)",
-      "repo": "eurostat",
-      "url": "https://github.com/dataciviclab/eurostat/issues/88",
-      "category": "intake"
-    },
-    {
-      "number": 66,
-      "title": "dataset: National road freight transport by region of unloading NUTS3 (ROAD_GO_NA_RU3G)",
-      "repo": "eurostat",
-      "url": "https://github.com/dataciviclab/eurostat/issues/66",
       "category": "intake"
     },
     {
@@ -367,34 +318,6 @@
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/424",
       "category": "other"
-    },
-    {
-      "number": 514,
-      "title": "config: chiavi sconosciute in raw.sources[] scartate in silenzio (caso extractor, 1.51.0)",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/514",
-      "category": "other"
-    },
-    {
-      "number": 471,
-      "title": "registry: derive codelists section from support: ids (not codelists/*.csv glob) \u2014 unblocks eurostat CSV removal",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/471",
-      "category": "other"
-    },
-    {
-      "number": 426,
-      "title": "pulizia automatica parquet mart non pi\u00f9 dichiarati in dataset.yml",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/426",
-      "category": "other"
-    },
-    {
-      "number": 425,
-      "title": "pipeline: mart_index \u00e8 un indovinello \u2014 sostituire con mart_name",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/issues/425",
-      "category": "other"
     }
   ],
   "open_discussions": 195,
@@ -461,6 +384,13 @@
       "repo": "bilancio-pubblico",
       "url": "https://github.com/dataciviclab/bilancio-pubblico/discussions/12",
       "category": "Domande"
+    },
+    {
+      "number": 414,
+      "title": "PIL territoriale \u2014 11 domande su 30 anni di economia italiana regione per regione (1995-2024)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/414",
+      "category": "Domanda"
     },
     {
       "number": 456,
@@ -572,13 +502,6 @@
       "title": "IRPEF Comunale \u2014 11 domande su redditi e imposta comune per comune (2019-2024)",
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/441",
-      "category": "Domanda"
-    },
-    {
-      "number": 414,
-      "title": "PIL territoriale \u2014 11 domande su 30 anni di economia italiana regione per regione (1995-2024)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/414",
       "category": "Domanda"
     },
     {
