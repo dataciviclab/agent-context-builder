@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-10-22T16:44:15.781602
+**Generated**: 2026-10-22T21:15:19.449938
 
 ## Stato
 
@@ -12,7 +12,7 @@ Radar: 36 fonti GREEN 35 · Registry: 39 repo · 439 dataset
 - [PR] data-explorer#278: feat(cross-view): Chi cattura la crescita? — macro, settori e dentro i settori
 - [PR] dataset-incubator#885: feat(candidates): eu-call-open + catena FTS call_id/project_id
 - [PR] dataset-incubator#836: feat(candidates): bootstrap gse_cer_elenco candidate
-- [PR] source-observatory#429: feat(catalog): referenced-item drift — verifica upstream vs inventario
+- [PR] energia-italia#23: feat(dataset): terna-hydro-power + terna-storage-accumuli + mart flessibilità
 - [PR] 1 dependabot bump (skipped)
 
 ## Analisi pubbliche (45)
