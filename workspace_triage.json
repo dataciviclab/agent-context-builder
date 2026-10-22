@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T03:34:09.305871",
+  "generated_at": "2026-10-22T11:16:19.090834",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -48,8 +48,15 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 5,
+  "open_prs": 6,
   "prs": [
+    {
+      "number": 18,
+      "title": "fix(anac-sal): classifica le serie e usa importo_quota per i totali (#15)",
+      "repo": "appalti-pubblici",
+      "url": "https://github.com/dataciviclab/appalti-pubblici/pull/18",
+      "category": "other"
+    },
     {
       "number": 278,
       "title": "feat(cross-view): Chi cattura la crescita? \u2014 macro, settori e dentro i settori",
@@ -390,7 +397,7 @@
       "category": "other"
     }
   ],
-  "open_discussions": 194,
+  "open_discussions": 195,
   "discussions": [
     {
       "number": 10,
@@ -454,6 +461,13 @@
       "repo": "bilancio-pubblico",
       "url": "https://github.com/dataciviclab/bilancio-pubblico/discussions/12",
       "category": "Domande"
+    },
+    {
+      "number": 456,
+      "title": "Concorsi solo in Gazzetta Ufficiale: un caveat di copertura per inpa-reclutamento",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/456",
+      "category": "Datasets"
     },
     {
       "number": 395,
@@ -2115,24 +2129,24 @@
     }
   },
   "warnings": [
-    "Many open PRs: 6"
+    "Many open PRs: 7"
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-10-21T08:35:26.533274+00:00",
-    "probe_date": "2026-10-21",
+    "generated_at": "2026-10-22T08:32:44.205469+00:00",
+    "probe_date": "2026-10-22",
     "sources_total": 36,
-    "green": 33,
-    "yellow": 3,
+    "green": 35,
+    "yellow": 1,
     "red": 0,
     "persistent_red": 0,
     "sources": [
       {
         "id": "istat_sdmx",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "sdmx",
-        "http_code": "-",
-        "note": "Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
@@ -2145,10 +2159,10 @@
       },
       {
         "id": "inps",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
@@ -2417,22 +2431,6 @@
       }
     ],
     "unhealthy": [
-      {
-        "id": "istat_sdmx",
-        "status": "YELLOW",
-        "protocol": "sdmx",
-        "http_code": "-",
-        "note": "Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
-      {
-        "id": "inps",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
       {
         "id": "opencivitas",
         "status": "YELLOW",
