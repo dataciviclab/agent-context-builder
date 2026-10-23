@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T03:39:15.342942",
+  "generated_at": "2026-10-23T11:07:41.978938",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -48,8 +48,15 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 9,
+  "open_prs": 10,
   "prs": [
+    {
+      "number": 20,
+      "title": "feat(anac-smartcig): intake affidamenti diretti sotto soglia (#2)",
+      "repo": "appalti-pubblici",
+      "url": "https://github.com/dataciviclab/appalti-pubblici/pull/20",
+      "category": "other"
+    },
     {
       "number": 19,
       "title": "feat(anac-cross): codice IPA della stazione appaltante (#13)",
@@ -2143,15 +2150,15 @@
     }
   },
   "warnings": [
-    "Many open PRs: 10"
+    "Many open PRs: 11"
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-10-22T08:32:44.205469+00:00",
-    "probe_date": "2026-10-22",
+    "generated_at": "2026-10-23T08:29:23.497850+00:00",
+    "probe_date": "2026-10-23",
     "sources_total": 36,
-    "green": 35,
-    "yellow": 1,
+    "green": 34,
+    "yellow": 2,
     "red": 0,
     "persistent_red": 0,
     "sources": [
@@ -2181,10 +2188,10 @@
       },
       {
         "id": "openbdap",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "ckan",
         "http_code": "200",
-        "note": null,
+        "note": "CKAN API returned non-JSON content",
         "red_streak": 0
       },
       {
@@ -2445,6 +2452,14 @@
       }
     ],
     "unhealthy": [
+      {
+        "id": "openbdap",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "200",
+        "note": "CKAN API returned non-JSON content",
+        "red_streak": 0
+      },
       {
         "id": "opencivitas",
         "status": "YELLOW",
