@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-23T21:04:19.495974",
+  "generated_at": "2026-10-23T21:13:41.895917",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -468,6 +468,17 @@
       "n_published": 0,
       "sources": [
         "mef_de"
+      ]
+    },
+    "pil-intelligence": {
+      "description": "Come sta realmente l'economia italiana? Le province convergono o divergono?",
+      "url": "https://github.com/dataciviclab/pil-intelligence",
+      "role": "dati",
+      "domain": "finanza-pubblica",
+      "n_datasets": 1,
+      "n_published": 0,
+      "sources": [
+        "dataciviclab_composite"
       ]
     },
     "rifiuti-urbani": {
@@ -5360,6 +5371,44 @@
         "mart_refs": [
           "op_cup_lab__mart_territorio",
           "op_cup_lab__mart_fonti"
+        ]
+      },
+      {
+        "slug": "pil_intelligence",
+        "url_slug": "pil-intelligence",
+        "name": "Pil Intelligence",
+        "description": "PIL intelligence: indicatori cross geo x year, GVA per settore, trend, e riconciliazione del PIL tra Eurostat, ISTAT e identit\u00e0 di contabilit\u00e0 nazionale",
+        "source": "",
+        "source_id": "dataciviclab_composite",
+        "period": {
+          "start": 1975,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "economia",
+          "pil",
+          "gdp",
+          "intelligence",
+          "nuts3",
+          "nace",
+          "compose",
+          "riconciliazione"
+        ],
+        "category": "economia",
+        "registry_source": "pil-intelligence",
+        "clean_rows": null,
+        "mart_refs": [
+          "pil_intelligence__mart_hub",
+          "pil_intelligence__mart_settori",
+          "pil_intelligence__mart_settori_trend",
+          "pil_intelligence__mart_trend_integrato",
+          "pil_intelligence__mart_domanda",
+          "pil_intelligence__mart_trimestrale",
+          "pil_intelligence__mart_riconciliazione",
+          "pil_intelligence__mart_pil_componenti",
+          "pil_intelligence__mart_imprese_sintesi",
+          "pil_intelligence__mart_convergenza"
         ]
       },
       {
@@ -58288,6 +58337,7 @@
         "opere-pubbliche",
         "partecipate-monitor",
         "patrimonio-territorio",
+        "pil-intelligence",
         "rna-aiuti-stato",
         "sistema-bancario"
       ],
@@ -58407,6 +58457,7 @@
         "opencoesione_progetti_esteso",
         "opencoesione_soggetti",
         "opencup_progetti",
+        "pil_intelligence",
         "pnrr_avanzamento_indicatori",
         "pnrr_gare",
         "pnrr_indicatori_target",
@@ -58432,7 +58483,7 @@
         "ted_contract_notices",
         "wb_financial"
       ],
-      "dataset_count": 139
+      "dataset_count": 140
     },
     {
       "slug": "sanita",
@@ -58843,6 +58894,7 @@
         "opencoesione_progetti_esteso",
         "opencoesione_soggetti",
         "opencup_progetti",
+        "pil_intelligence",
         "pnrr_avanzamento_indicatori",
         "pnrr_gare",
         "pnrr_indicatori_target",
@@ -60176,6 +60228,9 @@
       "mef_patrimonio_enti",
       "mef_patrimonio_immobili"
     ],
+    "pil-intelligence": [
+      "pil_intelligence"
+    ],
     "rifiuti-urbani": [
       "ispra_rs_export",
       "ispra_rs_gestione",
@@ -60341,6 +60396,7 @@
       "opencoesione_progetti_esteso",
       "opencoesione_soggetti",
       "opencup_progetti",
+      "pil_intelligence",
       "pnrr_avanzamento_indicatori",
       "pnrr_gare",
       "pnrr_indicatori_target",
@@ -66892,6 +66948,25 @@
         "geolocalizzazione"
       ],
       "description": ""
+    },
+    "pil_intelligence": {
+      "name": "Pil Intelligence",
+      "stage": "incubating",
+      "source_id": "dataciviclab_composite",
+      "registry_source": "pil-intelligence",
+      "domain": "finanza-pubblica",
+      "category": "economia",
+      "tags": [
+        "economia",
+        "pil",
+        "gdp",
+        "intelligence",
+        "nuts3",
+        "nace",
+        "compose",
+        "riconciliazione"
+      ],
+      "description": "PIL intelligence: indicatori cross geo x year, GVA per settore, trend, e riconciliazione del PIL tra Eurostat, ISTAT e identit\u00e0 di contabilit\u00e0 nazionale"
     },
     "ispra_rs_export": {
       "name": "Ispra Rs Export",

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T21:04:19.495974",
+  "generated_at": "2026-10-23T21:13:41.895917",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -40,6 +40,7 @@
     "opere-pubbliche",
     "partecipate-monitor",
     "patrimonio-territorio",
+    "pil-intelligence",
     "rifiuti-urbani",
     "rna-aiuti-stato",
     "senato-akn",
@@ -48,15 +49,8 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 12,
+  "open_prs": 11,
   "prs": [
-    {
-      "number": 98,
-      "title": "chore: auto-discover registries (2026-10-23)",
-      "repo": "agent-context-builder",
-      "url": "https://github.com/dataciviclab/agent-context-builder/pull/98",
-      "category": "other"
-    },
     {
       "number": 20,
       "title": "feat(anac-smartcig): intake affidamenti diretti sotto soglia (#2)",
@@ -135,7 +129,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 42,
+  "open_issues": 43,
   "issues": [
     {
       "number": 15,
@@ -394,6 +388,13 @@
       "title": "feat(op_cup_lab): arricchisci con codice IPA e metadati ente dal soggetto titolare",
       "repo": "opere-pubbliche",
       "url": "https://github.com/dataciviclab/opere-pubbliche/issues/25",
+      "category": "other"
+    },
+    {
+      "number": 1,
+      "title": "Integrare eurostat-business-demography-nuts3 nel mart_hub",
+      "repo": "pil-intelligence",
+      "url": "https://github.com/dataciviclab/pil-intelligence/issues/1",
       "category": "other"
     },
     {
@@ -2106,6 +2107,14 @@
       "branches_ahead": [],
       "untracked_files": 0
     },
+    "pil-intelligence": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
     "rifiuti-urbani": {
       "available": false,
       "reason": "local_disabled",
@@ -2164,7 +2173,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 13"
+    "Many open PRs: 12"
   ],
   "radar": {
     "available": true,
@@ -8633,6 +8642,35 @@
             "status": "SUCCESS",
             "started_at": "2026-10-01T12:28:10.768195+00:00",
             "finished_at": "2026-10-01T12:30:58.219402+00:00"
+          }
+        }
+      ]
+    },
+    {
+      "repo": "pil-intelligence",
+      "available": true,
+      "source_repo": "dataciviclab/pil-intelligence",
+      "updated_at": "2026-10-22",
+      "datasets": 1,
+      "marts": 10,
+      "signals": 1,
+      "codelists": 0,
+      "entities": 0,
+      "gcs": 0,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "compose:pil_intelligence",
+          "source_id": "dataciviclab_composite",
+          "status": "ok",
+          "label": "pil_intelligence",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261022T221037Z_6cc2480e",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-10-22T22:10:37.490923+00:00",
+            "finished_at": "2026-10-22T22:11:08.287224+00:00"
           }
         }
       ]
