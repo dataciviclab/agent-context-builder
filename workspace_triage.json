@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T21:15:19.449938",
+  "generated_at": "2026-10-23T03:39:15.342942",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -48,8 +48,15 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 8,
+  "open_prs": 9,
   "prs": [
+    {
+      "number": 19,
+      "title": "feat(anac-cross): codice IPA della stazione appaltante (#13)",
+      "repo": "appalti-pubblici",
+      "url": "https://github.com/dataciviclab/appalti-pubblici/pull/19",
+      "category": "other"
+    },
     {
       "number": 18,
       "title": "fix(anac-sal): classifica le serie e usa importo_quota per i totali (#15)",
@@ -107,7 +114,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 43,
+  "open_issues": 42,
   "issues": [
     {
       "number": 15,
@@ -268,13 +275,6 @@
       "title": "chore(lab_tools): riordino script \u2014 separare library da eseguibili",
       "repo": "italia-corpus",
       "url": "https://github.com/dataciviclab/italia-corpus/issues/63",
-      "category": "other"
-    },
-    {
-      "number": 28,
-      "title": "Estrarre firma presidente della Repubblica e presidente del Consiglio dal body",
-      "repo": "italia-corpus",
-      "url": "https://github.com/dataciviclab/italia-corpus/issues/28",
       "category": "other"
     },
     {
@@ -2143,7 +2143,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 9"
+    "Many open PRs: 10"
   ],
   "radar": {
     "available": true,
