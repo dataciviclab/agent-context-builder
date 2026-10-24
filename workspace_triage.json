@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T10:24:21.265731",
+  "generated_at": "2026-10-24T15:29:50.732292",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -94,10 +94,10 @@
       "category": "other"
     },
     {
-      "number": 23,
-      "title": "feat(dataset): terna-hydro-power + terna-storage-accumuli + mart flessibilit\u00e0",
-      "repo": "energia-italia",
-      "url": "https://github.com/dataciviclab/energia-italia/pull/23",
+      "number": 74,
+      "title": "feat(vigenza): stato da edge AKN + colonna vigenza_fonte (issue #67)",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/pull/74",
       "category": "other"
     },
     {
@@ -122,7 +122,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 43,
+  "open_issues": 45,
   "issues": [
     {
       "number": 15,
@@ -223,20 +223,6 @@
       "category": "intake"
     },
     {
-      "number": 9,
-      "title": "Intake: terna-hydro-power \u2014 produzione idroelettrica per tipo impianto (2000-2024)",
-      "repo": "energia-italia",
-      "url": "https://github.com/dataciviclab/energia-italia/issues/9",
-      "category": "intake"
-    },
-    {
-      "number": 8,
-      "title": "Intake: terna-storage-accumuli \u2014 accumulo elettrico per regione/fonte (2024-2025)",
-      "repo": "energia-italia",
-      "url": "https://github.com/dataciviclab/energia-italia/issues/8",
-      "category": "intake"
-    },
-    {
       "number": 90,
       "title": "dataset: Internet access by NACE and NUTS 2 region (ISOC_R_CI_IN_EN2)",
       "repo": "eurostat",
@@ -258,6 +244,27 @@
       "category": "intake"
     },
     {
+      "number": 6,
+      "title": "source-check: AGEA \u2014 beneficiari PAC",
+      "repo": "filiere-agroalimentari",
+      "url": "https://github.com/dataciviclab/filiere-agroalimentari/issues/6",
+      "category": "other"
+    },
+    {
+      "number": 5,
+      "title": "source-check: MIMIT Osservaprezzi \u2014 livelli prezzi retail",
+      "repo": "filiere-agroalimentari",
+      "url": "https://github.com/dataciviclab/filiere-agroalimentari/issues/5",
+      "category": "other"
+    },
+    {
+      "number": 4,
+      "title": "source-check: ISMEA Mercati \u2014 prezzi origine e ingresso",
+      "repo": "filiere-agroalimentari",
+      "url": "https://github.com/dataciviclab/filiere-agroalimentari/issues/4",
+      "category": "other"
+    },
+    {
       "number": 12,
       "title": "intake: filoni OpenGA per tipologia (pervenuti + provvedimenti) \u2014 priorita' bassa",
       "repo": "giustizia-amministrativa",
@@ -270,6 +277,13 @@
       "repo": "giustizia-amministrativa",
       "url": "https://github.com/dataciviclab/giustizia-amministrativa/issues/11",
       "category": "intake"
+    },
+    {
+      "number": 75,
+      "title": "Spike: vigenza act-level via API Normattiva per atti ORIGINALE-only",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/issues/75",
+      "category": "other"
     },
     {
       "number": 67,
@@ -4046,13 +4060,13 @@
       "repo": "energia-italia",
       "available": true,
       "source_repo": "dataciviclab/energia-italia",
-      "updated_at": "2026-10-20",
-      "datasets": 9,
-      "marts": 15,
-      "signals": 10,
+      "updated_at": "2026-10-24",
+      "datasets": 12,
+      "marts": 20,
+      "signals": 12,
       "codelists": 0,
       "entities": 4,
-      "gcs": 9,
+      "gcs": 11,
       "reason": "",
       "signals_detail": [
         {
@@ -4062,11 +4076,11 @@
           "label": "energia_incroci",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261020T153710Z_18213737",
+            "run_id": "20261024T142048Z_43f8710a",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-20T15:37:10.051385+00:00",
-            "finished_at": "2026-10-20T15:37:10.124786+00:00"
+            "started_at": "2026-10-24T14:20:48.492914+00:00",
+            "finished_at": "2026-10-24T14:20:48.590460+00:00"
           }
         },
         {
@@ -4076,11 +4090,11 @@
           "label": "gme_pun_storico",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261020T153159Z_93e3c1f2",
+            "run_id": "20261024T141528Z_defd0f0d",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-20T15:31:59.585908+00:00",
-            "finished_at": "2026-10-20T15:32:02.383040+00:00"
+            "started_at": "2026-10-24T14:15:28.423443+00:00",
+            "finished_at": "2026-10-24T14:15:31.155722+00:00"
           }
         },
         {
@@ -4090,11 +4104,11 @@
           "label": "irena_costi_tecnologia",
           "detail": "anno 2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261020T153202Z_1e3c5df5",
+            "run_id": "20261024T141531Z_8d15166c",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-20T15:32:02.979866+00:00",
-            "finished_at": "2026-10-20T15:32:05.495189+00:00"
+            "started_at": "2026-10-24T14:15:31.648621+00:00",
+            "finished_at": "2026-10-24T14:15:33.815433+00:00"
           }
         },
         {
@@ -4104,11 +4118,11 @@
           "label": "irena_lcoe",
           "detail": "anno 2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261020T153205Z_38e5fa16",
+            "run_id": "20261024T141534Z_b957fa79",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-20T15:32:05.886307+00:00",
-            "finished_at": "2026-10-20T15:32:08.584375+00:00"
+            "started_at": "2026-10-24T14:15:34.180403+00:00",
+            "finished_at": "2026-10-24T14:15:36.430669+00:00"
           }
         },
         {
@@ -4118,11 +4132,11 @@
           "label": "terna_bilancio_elettrico",
           "detail": "anni 2022-2023 \u2014 mart: si",
           "run": {
-            "run_id": "20261020T153211Z_7e0faa2a",
+            "run_id": "20261024T141539Z_e05614f1",
             "year": 2023,
             "status": "SUCCESS",
-            "started_at": "2026-10-20T15:32:11.781196+00:00",
-            "finished_at": "2026-10-20T15:32:12.553141+00:00"
+            "started_at": "2026-10-24T14:15:39.160962+00:00",
+            "finished_at": "2026-10-24T14:15:40.175903+00:00"
           }
         },
         {
@@ -4132,11 +4146,11 @@
           "label": "terna_capacita_rinnovabile",
           "detail": "anni 2000-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261020T153300Z_bb64856d",
+            "run_id": "20261024T141623Z_6fcc8f1c",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-20T15:33:00.069602+00:00",
-            "finished_at": "2026-10-20T15:33:01.066545+00:00"
+            "started_at": "2026-10-24T14:16:23.015311+00:00",
+            "finished_at": "2026-10-24T14:16:23.913695+00:00"
           }
         },
         {
@@ -4146,11 +4160,11 @@
           "label": "terna_copertura_domanda",
           "detail": "anni 2005-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261020T153331Z_476fac60",
+            "run_id": "20261024T141650Z_f0ab6cd8",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-20T15:33:31.042136+00:00",
-            "finished_at": "2026-10-20T15:33:31.873324+00:00"
+            "started_at": "2026-10-24T14:16:50.902151+00:00",
+            "finished_at": "2026-10-24T14:16:51.531923+00:00"
           }
         },
         {
@@ -4160,11 +4174,11 @@
           "label": "terna_elettricita_per_fonte",
           "detail": "anni 2000-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261020T153414Z_0a5574ed",
+            "run_id": "20261024T141732Z_2fc6fdc8",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-20T15:34:14.958725+00:00",
-            "finished_at": "2026-10-20T15:34:16.008149+00:00"
+            "started_at": "2026-10-24T14:17:32.376974+00:00",
+            "finished_at": "2026-10-24T14:17:33.334531+00:00"
           }
         },
         {
@@ -4174,11 +4188,11 @@
           "label": "terna_elettricita_per_settore",
           "detail": "anni 2000-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261020T153630Z_aee4a264",
+            "run_id": "20261024T141926Z_0e89996b",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-20T15:36:30.654461+00:00",
-            "finished_at": "2026-10-20T15:36:32.116774+00:00"
+            "started_at": "2026-10-24T14:19:26.789643+00:00",
+            "finished_at": "2026-10-24T14:19:27.684848+00:00"
           }
         },
         {
@@ -4188,11 +4202,39 @@
           "label": "terna_emissioni_co2",
           "detail": "anni 2000-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261020T153709Z_3210f683",
+            "run_id": "20261024T142004Z_6a6a569a",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-20T15:37:09.292208+00:00",
-            "finished_at": "2026-10-20T15:37:09.972641+00:00"
+            "started_at": "2026-10-24T14:20:04.690111+00:00",
+            "finished_at": "2026-10-24T14:20:05.486890+00:00"
+          }
+        },
+        {
+          "id": "terna_hydro_power",
+          "source_id": "terna_opendata",
+          "status": "ok",
+          "label": "terna_hydro_power",
+          "detail": "anni 2000-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20261024T142045Z_1dd8fbb6",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-10-24T14:20:45.055093+00:00",
+            "finished_at": "2026-10-24T14:20:45.919201+00:00"
+          }
+        },
+        {
+          "id": "terna_storage_accumuli",
+          "source_id": "terna_opendata",
+          "status": "ok",
+          "label": "terna_storage_accumuli",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20261024T142046Z_30562926",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-10-24T14:20:46.549038+00:00",
+            "finished_at": "2026-10-24T14:20:48.412280+00:00"
           }
         }
       ]
@@ -5523,7 +5565,7 @@
       "repo": "inpa-reclutamento",
       "available": true,
       "source_repo": "dataciviclab/inpa-reclutamento",
-      "updated_at": "2026-10-23",
+      "updated_at": "2026-10-24",
       "datasets": 4,
       "marts": 12,
       "signals": 4,
@@ -5567,11 +5609,11 @@
           "label": "inpa_bandi_open",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261023T111241Z_ced02a75",
+            "run_id": "20261024T103057Z_74453f0f",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-23T11:12:41.247732+00:00",
-            "finished_at": "2026-10-23T11:12:49.332688+00:00"
+            "started_at": "2026-10-24T10:30:57.539188+00:00",
+            "finished_at": "2026-10-24T10:31:05.616401+00:00"
           }
         },
         {
@@ -5581,11 +5623,11 @@
           "label": "inpa_comunicazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261023T111249Z_c9603d6e",
+            "run_id": "20261024T103106Z_044e0ef5",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-23T11:12:49.701905+00:00",
-            "finished_at": "2026-10-23T11:13:20.179451+00:00"
+            "started_at": "2026-10-24T10:31:06.107897+00:00",
+            "finished_at": "2026-10-24T10:31:35.671604+00:00"
           }
         }
       ]
