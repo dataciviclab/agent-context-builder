@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T21:13:41.895917",
+  "generated_at": "2026-10-24T03:33:06.780895",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -49,7 +49,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 11,
+  "open_prs": 10,
   "prs": [
     {
       "number": 20,
@@ -98,13 +98,6 @@
       "title": "feat(dataset): terna-hydro-power + terna-storage-accumuli + mart flessibilit\u00e0",
       "repo": "energia-italia",
       "url": "https://github.com/dataciviclab/energia-italia/pull/23",
-      "category": "other"
-    },
-    {
-      "number": 12,
-      "title": "feat(comext): raffinati per gruppo CN8 (gasolio/jet/olio combustibile/lubrificanti)",
-      "repo": "italia-dipendenze",
-      "url": "https://github.com/dataciviclab/italia-dipendenze/pull/12",
       "category": "other"
     },
     {
@@ -2173,7 +2166,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 12"
+    "Many open PRs: 11"
   ],
   "radar": {
     "available": true,
@@ -5672,13 +5665,13 @@
       "repo": "italia-dipendenze",
       "available": true,
       "source_repo": "dataciviclab/italia-dipendenze",
-      "updated_at": "2026-10-21",
-      "datasets": 4,
-      "marts": 8,
-      "signals": 4,
+      "updated_at": "2026-10-23",
+      "datasets": 5,
+      "marts": 12,
+      "signals": 5,
       "codelists": 0,
       "entities": 3,
-      "gcs": 3,
+      "gcs": 4,
       "reason": "",
       "signals_detail": [
         {
@@ -5688,11 +5681,25 @@
           "label": "resource_dependency_compose",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261021T183829Z_aace5494",
+            "run_id": "20261023T213721Z_d677d6c0",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-21T18:38:29.168916+00:00",
-            "finished_at": "2026-10-21T18:38:29.254782+00:00"
+            "started_at": "2026-10-23T21:37:21.599988+00:00",
+            "finished_at": "2026-10-23T21:37:21.709741+00:00"
+          }
+        },
+        {
+          "id": "comext_oil",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "comext_oil",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261023T213555Z_319d9764",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-10-23T21:35:55.717038+00:00",
+            "finished_at": "2026-10-23T21:36:11.520728+00:00"
           }
         },
         {
@@ -5702,11 +5709,11 @@
           "label": "comtrade_bilateral",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261021T183736Z_d555f6cf",
+            "run_id": "20261023T213611Z_898e4ecf",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-21T18:37:36.697316+00:00",
-            "finished_at": "2026-10-21T18:38:22.532172+00:00"
+            "started_at": "2026-10-23T21:36:11.609705+00:00",
+            "finished_at": "2026-10-23T21:37:13.222914+00:00"
           }
         },
         {
@@ -5716,11 +5723,11 @@
           "label": "eurostat_nrg_bal_c",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261021T183825Z_da88a9c7",
+            "run_id": "20261023T213716Z_31917e5a",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-21T18:38:25.322351+00:00",
-            "finished_at": "2026-10-21T18:38:28.523943+00:00"
+            "started_at": "2026-10-23T21:37:16.971737+00:00",
+            "finished_at": "2026-10-23T21:37:20.933779+00:00"
           }
         },
         {
@@ -5730,11 +5737,11 @@
           "label": "fao_fertilizer_consumption",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261021T183828Z_e73f54f5",
+            "run_id": "20261023T213721Z_4fdfcc29",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-21T18:38:28.615708+00:00",
-            "finished_at": "2026-10-21T18:38:29.084950+00:00"
+            "started_at": "2026-10-23T21:37:21.021284+00:00",
+            "finished_at": "2026-10-23T21:37:21.514797+00:00"
           }
         }
       ]

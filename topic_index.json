@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-23T21:13:41.895917",
+  "generated_at": "2026-10-24T03:33:06.780895",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -255,7 +255,7 @@
       "url": "https://github.com/dataciviclab/italia-dipendenze",
       "role": "dati",
       "domain": "territorio-ambiente",
-      "n_datasets": 4,
+      "n_datasets": 5,
       "n_published": 0,
       "sources": [
         "dataciviclab_composite",
@@ -3844,7 +3844,8 @@
         "clean_rows": null,
         "mart_refs": [
           "resource_dependency_compose__mart_resource_dependency",
-          "resource_dependency_compose__mart_energy_vs_trade"
+          "resource_dependency_compose__mart_energy_vs_trade",
+          "resource_dependency_compose__mart_refined_dependency"
         ]
       },
       {
@@ -25536,6 +25537,129 @@
         "mart_refs": [
           "eurostat_prezzi_agricoli__mart_prezzi_prodotti",
           "eurostat_prezzi_agricoli__mart_copertura"
+        ]
+      },
+      {
+        "slug": "comext_oil",
+        "url_slug": "comext-oil",
+        "name": "Comext Oil",
+        "description": "Eurostat Comext DS-045409 \u2014 Italy oil products by CN8 group and partner",
+        "source": "",
+        "source_id": "eurostat",
+        "period": {
+          "start": 2020,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "energia",
+          "petrolio",
+          "raffinati",
+          "gasolio",
+          "jet",
+          "comext",
+          "eurostat",
+          "italia",
+          "commercio"
+        ],
+        "category": "energia",
+        "registry_source": "italia-dipendenze",
+        "clean_rows": 2086,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/italia_dipendenze/comext_oil/2026/comext_oil_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "year",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "product_group",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flow",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flow_label",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partner_code",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "partner_name",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "value_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "quantity_100kg",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unit_value_eur_per_kg",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "source",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "method",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_quality",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "comext_oil__mart_comext_oil_concentration",
+          "comext_oil__mart_comext_oil_balance",
+          "comext_oil__mart_comext_oil_partners"
         ]
       },
       {
@@ -58259,6 +58383,7 @@
         "bolognawifi_matrice",
         "centraline_aria",
         "colonnine_bici",
+        "comext_oil",
         "eurostat_area_nuts3",
         "eurostat_nrg_bal_c",
         "eurostat_nrg_chddr2_a_nuts3",
@@ -58306,7 +58431,7 @@
         "terna_emissioni_co2",
         "varchi_ztl"
       ],
-      "dataset_count": 54
+      "dataset_count": 55
     },
     {
       "slug": "finanza-pubblica",
@@ -58727,6 +58852,7 @@
         "bolognawifi_matrice",
         "centraline_aria",
         "colonnine_bici",
+        "comext_oil",
         "eurostat_area_nuts3",
         "eurostat_nrg_bal_c",
         "eurostat_nrg_chddr2_a_nuts3",
@@ -60002,6 +60128,7 @@
       "riferimenti"
     ],
     "italia-dipendenze": [
+      "comext_oil",
       "comtrade_bilateral",
       "eurostat_nrg_bal_c",
       "fao_fertilizer_consumption",
@@ -60523,6 +60650,7 @@
       "bolognawifi_matrice",
       "centraline_aria",
       "colonnine_bici",
+      "comext_oil",
       "eurostat_area_nuts3",
       "eurostat_nrg_bal_c",
       "eurostat_nrg_chddr2_a_nuts3",
@@ -63935,6 +64063,26 @@
         "riferimenti"
       ],
       "description": "Grafo riferimenti del corpus normativa: archi fonte\u2192bersaglio da regex markdown e citazioni AKN. PK = fonte_source_path + bersaglio_source_path + origine. Le colonne *_filename restano nel formato engine per legal-graph."
+    },
+    "comext_oil": {
+      "name": "Comext Oil",
+      "stage": "incubating",
+      "source_id": "eurostat",
+      "registry_source": "italia-dipendenze",
+      "domain": "territorio-ambiente",
+      "category": "energia",
+      "tags": [
+        "energia",
+        "petrolio",
+        "raffinati",
+        "gasolio",
+        "jet",
+        "comext",
+        "eurostat",
+        "italia",
+        "commercio"
+      ],
+      "description": "Eurostat Comext DS-045409 \u2014 Italy oil products by CN8 group and partner"
     },
     "comtrade_bilateral": {
       "name": "Comtrade Bilateral",
