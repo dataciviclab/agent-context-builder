@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-24T15:29:50.732292",
+  "generated_at": "2026-10-24T20:21:00.914136",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -146,7 +146,7 @@
       "url": "https://github.com/dataciviclab/energia-italia",
       "role": "dati",
       "domain": "territorio-ambiente",
-      "n_datasets": 12,
+      "n_datasets": 13,
       "n_published": 0,
       "sources": [
         "dataciviclab_composite",
@@ -31687,6 +31687,76 @@
         ]
       },
       {
+        "slug": "terna_generation_oraria",
+        "url_slug": "terna-generation-oraria",
+        "name": "Terna Generation Oraria",
+        "description": "Generazione elettrica oraria per fonte (Terna ActualGeneration), 2019-2025",
+        "source": "",
+        "source_id": "terna_opendata",
+        "period": {
+          "start": 2019,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "energia",
+          "elettricit\u00e0",
+          "generazione",
+          "oraria",
+          "mix-energetico"
+        ],
+        "category": "energia",
+        "registry_source": "energia-italia",
+        "clean_rows": 210204,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/energia_italia/terna_generation_oraria/*/terna_generation_oraria_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "data_ora",
+            "type": "TIMESTAMP",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "fonte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "generazione_gw",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "passo_ore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "terna_generation_oraria__mart_mix_annuale",
+          "terna_generation_oraria__mart_mix_mensile",
+          "terna_generation_oraria__mart_profilo_orario"
+        ]
+      },
+      {
         "slug": "terna_hydro_power",
         "url_slug": "terna-hydro-power",
         "name": "Terna Hydro Power",
@@ -58652,11 +58722,12 @@
         "terna_elettricita_per_fonte",
         "terna_elettricita_per_settore",
         "terna_emissioni_co2",
+        "terna_generation_oraria",
         "terna_hydro_power",
         "terna_storage_accumuli",
         "varchi_ztl"
       ],
-      "dataset_count": 58
+      "dataset_count": 59
     },
     {
       "slug": "finanza-pubblica",
@@ -59124,6 +59195,7 @@
         "terna_elettricita_per_fonte",
         "terna_elettricita_per_settore",
         "terna_emissioni_co2",
+        "terna_generation_oraria",
         "terna_hydro_power",
         "terna_storage_accumuli",
         "varchi_ztl"
@@ -60244,6 +60316,7 @@
       "terna_elettricita_per_fonte",
       "terna_elettricita_per_settore",
       "terna_emissioni_co2",
+      "terna_generation_oraria",
       "terna_hydro_power",
       "terna_storage_accumuli"
     ],
@@ -60928,6 +61001,7 @@
       "terna_elettricita_per_fonte",
       "terna_elettricita_per_settore",
       "terna_emissioni_co2",
+      "terna_generation_oraria",
       "terna_hydro_power",
       "terna_storage_accumuli",
       "varchi_ztl"
@@ -62787,6 +62861,22 @@
         "regioni"
       ],
       "description": ""
+    },
+    "terna_generation_oraria": {
+      "name": "Terna Generation Oraria",
+      "stage": "incubating",
+      "source_id": "terna_opendata",
+      "registry_source": "energia-italia",
+      "domain": "territorio-ambiente",
+      "category": "energia",
+      "tags": [
+        "energia",
+        "elettricit\u00e0",
+        "generazione",
+        "oraria",
+        "mix-energetico"
+      ],
+      "description": "Generazione elettrica oraria per fonte (Terna ActualGeneration), 2019-2025"
     },
     "terna_hydro_power": {
       "name": "Terna Hydro Power",
