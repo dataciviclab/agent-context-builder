@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T10:52:02.076882",
+  "generated_at": "2026-10-25T15:39:44.432672",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -49,7 +49,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 9,
+  "open_prs": 10,
   "prs": [
     {
       "number": 20,
@@ -91,6 +91,13 @@
       "title": "feat(candidates): bootstrap gse_cer_elenco candidate",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/836",
+      "category": "other"
+    },
+    {
+      "number": 77,
+      "title": "feat(vigenza): status autorevole Normattiva (ricerca classeProvvedimento)",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/pull/77",
       "category": "other"
     },
     {
@@ -419,7 +426,7 @@
       "category": "other"
     }
   ],
-  "open_discussions": 198,
+  "open_discussions": 197,
   "discussions": [
     {
       "number": 10,
@@ -1332,17 +1339,17 @@
       "category": "Domande"
     },
     {
+      "number": 50,
+      "title": "Strutturale: il 77% degli atti \u00e8 abrogato \u2014 la legislazione \"usa e getta\"",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/discussions/50",
+      "category": "Analisi"
+    },
+    {
       "number": 42,
       "title": "Abrogazioni: 5.506 relazioni tra leggi \u2014 chi abroga chi in Italia?",
       "repo": "italia-corpus",
       "url": "https://github.com/dataciviclab/italia-corpus/discussions/42",
-      "category": "Analisi"
-    },
-    {
-      "number": 76,
-      "title": "Quanto del corpus possiamo certificare? Il 46% degli atti ha stato non verificabile",
-      "repo": "italia-corpus",
-      "url": "https://github.com/dataciviclab/italia-corpus/discussions/76",
       "category": "Analisi"
     },
     {
@@ -1399,13 +1406,6 @@
       "title": "Qualit\u00e0 per materia: giustizia 85, strutturale 68 \u2014 cosa distingue",
       "repo": "italia-corpus",
       "url": "https://github.com/dataciviclab/italia-corpus/discussions/51",
-      "category": "Analisi"
-    },
-    {
-      "number": 50,
-      "title": "Strutturale: il 77% degli atti \u00e8 abrogato \u2014 la legislazione \"usa e getta\"",
-      "repo": "italia-corpus",
-      "url": "https://github.com/dataciviclab/italia-corpus/discussions/50",
       "category": "Analisi"
     },
     {
@@ -2180,7 +2180,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 10"
+    "Many open PRs: 11"
   ],
   "radar": {
     "available": true,
@@ -5587,7 +5587,7 @@
       "repo": "inpa-reclutamento",
       "available": true,
       "source_repo": "dataciviclab/inpa-reclutamento",
-      "updated_at": "2026-10-24",
+      "updated_at": "2026-10-25",
       "datasets": 4,
       "marts": 12,
       "signals": 4,
@@ -5631,11 +5631,11 @@
           "label": "inpa_bandi_open",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261024T103057Z_74453f0f",
+            "run_id": "20261025T105730Z_f7b76e89",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-24T10:30:57.539188+00:00",
-            "finished_at": "2026-10-24T10:31:05.616401+00:00"
+            "started_at": "2026-10-25T10:57:30.239111+00:00",
+            "finished_at": "2026-10-25T10:57:37.205537+00:00"
           }
         },
         {
@@ -5645,11 +5645,11 @@
           "label": "inpa_comunicazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261024T103106Z_044e0ef5",
+            "run_id": "20261025T105737Z_abe751aa",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-24T10:31:06.107897+00:00",
-            "finished_at": "2026-10-24T10:31:35.671604+00:00"
+            "started_at": "2026-10-25T10:57:37.655183+00:00",
+            "finished_at": "2026-10-25T10:58:09.695983+00:00"
           }
         }
       ]
