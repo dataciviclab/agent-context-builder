@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-27T03:57:59.125358",
+  "generated_at": "2026-10-27T11:42:06.464563",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -131,7 +131,7 @@
       "url": "https://github.com/dataciviclab/dichiarazioni-italia",
       "role": "dati",
       "domain": "finanza-pubblica",
-      "n_datasets": 7,
+      "n_datasets": 8,
       "n_published": 0,
       "sources": [
         "mef_finanze"
@@ -29610,6 +29610,97 @@
     ],
     "mef_finanze": [
       {
+        "slug": "irap_imposta_regione",
+        "url_slug": "irap-imposta-regione",
+        "name": "Irap Imposta Regione",
+        "description": "IRAP: base imponibile e totale imposta per regione (vista totale, P.A. incluse). Anno d'imposta 2014-2023.",
+        "source": "",
+        "source_id": "mef_finanze",
+        "period": {
+          "start": 2014,
+          "end": 2023
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "irap",
+          "regionale",
+          "gettito",
+          "imposta",
+          "base-imponibile"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "dichiarazioni-italia",
+        "clean_rows": 21,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/dichiarazioni-italia/irap_imposta_regione/*/irap_imposta_regione_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "cod_regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "contribuenti",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "base_imponibile_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "base_imponibile_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "irap_imposta_regione__mart_regioni_anno",
+          "irap_imposta_regione__mart_imposta_anno"
+        ]
+      },
+      {
         "slug": "irap_italia_estero",
         "url_slug": "irap-italia-estero",
         "name": "Irap Italia Estero",
@@ -29617,8 +29708,8 @@
         "source": "",
         "source_id": "mef_finanze",
         "period": {
-          "start": 2015,
-          "end": 2024
+          "start": 2014,
+          "end": 2023
         },
         "stage": "incubating",
         "tags": [
@@ -29720,8 +29811,8 @@
         "source": "",
         "source_id": "mef_finanze",
         "period": {
-          "start": 2015,
-          "end": 2024
+          "start": 2014,
+          "end": 2023
         },
         "stage": "incubating",
         "tags": [
@@ -29878,8 +29969,8 @@
         "source": "",
         "source_id": "mef_finanze",
         "period": {
-          "start": 2015,
-          "end": 2024
+          "start": 2014,
+          "end": 2023
         },
         "stage": "incubating",
         "tags": [
@@ -58910,6 +59001,7 @@
         "filiere_valore_aggiunto",
         "fpi_debito_pa",
         "fts_eu_grants",
+        "irap_imposta_regione",
         "irap_italia_estero",
         "irap_vp_regime",
         "ires_redditi_regione",
@@ -58986,7 +59078,7 @@
         "ted_contract_notices",
         "wb_financial"
       ],
-      "dataset_count": 140
+      "dataset_count": 141
     },
     {
       "slug": "sanita",
@@ -59353,6 +59445,7 @@
         "filiere_valore_aggiunto",
         "fpi_debito_pa",
         "fts_eu_grants",
+        "irap_imposta_regione",
         "irap_italia_estero",
         "irap_vp_regime",
         "ires_redditi_regione",
@@ -60380,6 +60473,7 @@
       "ocpi_serie_storiche"
     ],
     "dichiarazioni-italia": [
+      "irap_imposta_regione",
       "irap_italia_estero",
       "irap_vp_regime",
       "ires_redditi_regione",
@@ -60861,6 +60955,7 @@
       "filiere_valore_aggiunto",
       "fpi_debito_pa",
       "fts_eu_grants",
+      "irap_imposta_regione",
       "irap_italia_estero",
       "irap_vp_regime",
       "ires_redditi_regione",
@@ -62685,6 +62780,23 @@
         "serie-storiche"
       ],
       "description": ""
+    },
+    "irap_imposta_regione": {
+      "name": "Irap Imposta Regione",
+      "stage": "incubating",
+      "source_id": "mef_finanze",
+      "registry_source": "dichiarazioni-italia",
+      "domain": "finanza-pubblica",
+      "category": "finanza-pubblica",
+      "tags": [
+        "finanza-pubblica",
+        "irap",
+        "regionale",
+        "gettito",
+        "imposta",
+        "base-imponibile"
+      ],
+      "description": "IRAP: base imponibile e totale imposta per regione (vista totale, P.A. incluse). Anno d'imposta 2014-2023."
     },
     "irap_italia_estero": {
       "name": "Irap Italia Estero",

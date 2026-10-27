@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T03:57:59.125358",
+  "generated_at": "2026-10-27T11:42:06.464563",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -73,13 +73,6 @@
       "category": "other"
     },
     {
-      "number": 278,
-      "title": "feat(cross-view): Chi cattura la crescita? \u2014 macro, settori e dentro i settori",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/278",
-      "category": "other"
-    },
-    {
       "number": 885,
       "title": "feat(candidates): eu-call-open + catena FTS call_id/project_id",
       "repo": "dataset-incubator",
@@ -91,6 +84,13 @@
       "title": "feat(candidates): bootstrap gse_cer_elenco candidate",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/836",
+      "category": "other"
+    },
+    {
+      "number": 16,
+      "title": "feat(irap): IRAP delle P.A. e per settore \u2014 completa il filone imposta",
+      "repo": "dichiarazioni-italia",
+      "url": "https://github.com/dataciviclab/dichiarazioni-italia/pull/16",
       "category": "other"
     },
     {
@@ -108,7 +108,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 44,
+  "open_issues": 48,
   "issues": [
     {
       "number": 15,
@@ -193,6 +193,34 @@
       "repo": "dcl-bologna",
       "url": "https://github.com/dataciviclab/dcl-bologna/issues/5",
       "category": "intake"
+    },
+    {
+      "number": 20,
+      "title": "Dataset candidati: enti non commerciali/ONLUS, societ\u00e0 di persone, titolari di partita IVA",
+      "repo": "dichiarazioni-italia",
+      "url": "https://github.com/dataciviclab/dichiarazioni-italia/issues/20",
+      "category": "other"
+    },
+    {
+      "number": 19,
+      "title": "Dataset candidato: IRES \u2014 imposta, basi imponibili e gruppi (consolidato)",
+      "repo": "dichiarazioni-italia",
+      "url": "https://github.com/dataciviclab/dichiarazioni-italia/issues/19",
+      "category": "other"
+    },
+    {
+      "number": 18,
+      "title": "Dataset candidato: IVA per aliquota (4/5/10/22%) per regione e settore",
+      "repo": "dichiarazioni-italia",
+      "url": "https://github.com/dataciviclab/dichiarazioni-italia/issues/18",
+      "category": "other"
+    },
+    {
+      "number": 17,
+      "title": "Dataset candidato: IRPEF \u2014 imposta lorda per tipologia di contribuente e regione",
+      "repo": "dichiarazioni-italia",
+      "url": "https://github.com/dataciviclab/dichiarazioni-italia/issues/17",
+      "category": "other"
     },
     {
       "number": 90,
@@ -2180,25 +2208,25 @@
     }
   },
   "warnings": [
-    "Many open PRs: 9"
+    "Many open PRs: 8"
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-10-26T08:48:08.897275+00:00",
-    "probe_date": "2026-10-26",
+    "generated_at": "2026-10-27T08:59:51.417675+00:00",
+    "probe_date": "2026-10-27",
     "sources_total": 36,
     "green": 33,
-    "yellow": 2,
-    "red": 1,
-    "persistent_red": 1,
+    "yellow": 3,
+    "red": 0,
+    "persistent_red": 0,
     "sources": [
       {
         "id": "istat_sdmx",
-        "status": "RED",
+        "status": "YELLOW",
         "protocol": "sdmx",
-        "http_code": "500",
-        "note": null,
-        "red_streak": 2
+        "http_code": "-",
+        "note": "Timeout (ReadTimeout)",
+        "red_streak": 0
       },
       {
         "id": "anac",
@@ -2484,11 +2512,11 @@
     "unhealthy": [
       {
         "id": "istat_sdmx",
-        "status": "RED",
+        "status": "YELLOW",
         "protocol": "sdmx",
-        "http_code": "500",
-        "note": null,
-        "red_streak": 2
+        "http_code": "-",
+        "note": "Timeout (ReadTimeout)",
+        "red_streak": 0
       },
       {
         "id": "openbdap",
@@ -3955,15 +3983,29 @@
       "repo": "dichiarazioni-italia",
       "available": true,
       "source_repo": "dataciviclab/dichiarazioni-italia",
-      "updated_at": "2026-10-26",
-      "datasets": 7,
-      "marts": 12,
-      "signals": 7,
+      "updated_at": "2026-10-27",
+      "datasets": 8,
+      "marts": 14,
+      "signals": 8,
       "codelists": 0,
       "entities": 4,
-      "gcs": 7,
+      "gcs": 8,
       "reason": "",
       "signals_detail": [
+        {
+          "id": "irap_imposta_regione",
+          "source_id": "mef_finanze",
+          "status": "ok",
+          "label": "irap_imposta_regione",
+          "detail": "anni 2015-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20261027T094715Z_d06fb194",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-10-27T09:47:15.675234+00:00",
+            "finished_at": "2026-10-27T09:47:16.651661+00:00"
+          }
+        },
         {
           "id": "irap_italia_estero",
           "source_id": "mef_finanze",
@@ -3971,11 +4013,11 @@
           "label": "irap_italia_estero",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261026T232655Z_0c9372f8",
+            "run_id": "20261027T094741Z_71645aec",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-26T23:26:55.137469+00:00",
-            "finished_at": "2026-10-26T23:26:56.051138+00:00"
+            "started_at": "2026-10-27T09:47:41.167897+00:00",
+            "finished_at": "2026-10-27T09:47:42.049568+00:00"
           }
         },
         {
@@ -3985,11 +4027,11 @@
           "label": "irap_vp_regime",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261026T232732Z_a4f40a61",
+            "run_id": "20261027T094820Z_34fda419",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-26T23:27:32.405807+00:00",
-            "finished_at": "2026-10-26T23:27:34.191469+00:00"
+            "started_at": "2026-10-27T09:48:20.354604+00:00",
+            "finished_at": "2026-10-27T09:48:22.345335+00:00"
           }
         },
         {
@@ -3999,11 +4041,11 @@
           "label": "ires_redditi_regione",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261026T232758Z_a95ef283",
+            "run_id": "20261027T094846Z_4f9ed057",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-26T23:27:58.914543+00:00",
-            "finished_at": "2026-10-26T23:27:59.864107+00:00"
+            "started_at": "2026-10-27T09:48:46.627120+00:00",
+            "finished_at": "2026-10-27T09:48:47.516781+00:00"
           }
         },
         {
@@ -4013,11 +4055,11 @@
           "label": "irpef_comunale",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261026T232835Z_809a9ebb",
+            "run_id": "20261027T094921Z_efe06b7f",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-26T23:28:35.559419+00:00",
-            "finished_at": "2026-10-26T23:28:38.876614+00:00"
+            "started_at": "2026-10-27T09:49:21.879588+00:00",
+            "finished_at": "2026-10-27T09:49:25.117728+00:00"
           }
         },
         {
@@ -4027,11 +4069,11 @@
           "label": "iva_regionale",
           "detail": "anni 2015-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261026T232914Z_63bf3c8c",
+            "run_id": "20261027T094952Z_f13ef258",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-10-26T23:29:14.099495+00:00",
-            "finished_at": "2026-10-26T23:29:15.281521+00:00"
+            "started_at": "2026-10-27T09:49:52.347625+00:00",
+            "finished_at": "2026-10-27T09:49:53.294373+00:00"
           }
         },
         {
@@ -4041,11 +4083,11 @@
           "label": "iva_sez_attivita",
           "detail": "anni 2015-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261026T232943Z_5e9d8cf2",
+            "run_id": "20261027T095020Z_51c5fd80",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-10-26T23:29:43.110233+00:00",
-            "finished_at": "2026-10-26T23:29:44.030863+00:00"
+            "started_at": "2026-10-27T09:50:20.065707+00:00",
+            "finished_at": "2026-10-27T09:50:21.002009+00:00"
           }
         },
         {
@@ -4055,11 +4097,11 @@
           "label": "mef_irpef_regionale",
           "detail": "anni 2017-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261026T233015Z_25cce6f6",
+            "run_id": "20261027T095057Z_2e48962a",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-10-26T23:30:15.440036+00:00",
-            "finished_at": "2026-10-26T23:30:16.867641+00:00"
+            "started_at": "2026-10-27T09:50:57.318971+00:00",
+            "finished_at": "2026-10-27T09:50:58.804876+00:00"
           }
         }
       ]
