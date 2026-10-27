@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-10-27T11:42:06.464563
+**Generated**: 2026-10-27T17:34:19.753245
 
 ## Stato
 
@@ -10,9 +10,9 @@ Radar: 36 fonti GREEN 33 · Registry: 40 repo · 447 dataset
 
 - [PR] appalti-pubblici#20: feat(anac-smartcig): intake affidamenti diretti sotto soglia (#2)
 - [PR] appalti-pubblici#19: feat(anac-cross): codice IPA della stazione appaltante (#13)
-- [PR] appalti-pubblici#18: fix(anac-sal): classifica le serie e usa importo_quota per i totali (#15)
 - [PR] dataset-incubator#885: feat(candidates): eu-call-open + catena FTS call_id/project_id
 - [PR] dataset-incubator#836: feat(candidates): bootstrap gse_cer_elenco candidate
+- [PR] dichiarazioni-italia#16: feat(irap): IRAP delle P.A. e per settore — completa il filone imposta
 
 ## Analisi pubbliche (45)
 

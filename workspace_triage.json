@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T11:42:06.464563",
+  "generated_at": "2026-10-27T17:34:19.753245",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -66,13 +66,6 @@
       "category": "other"
     },
     {
-      "number": 18,
-      "title": "fix(anac-sal): classifica le serie e usa importo_quota per i totali (#15)",
-      "repo": "appalti-pubblici",
-      "url": "https://github.com/dataciviclab/appalti-pubblici/pull/18",
-      "category": "other"
-    },
-    {
       "number": 885,
       "title": "feat(candidates): eu-call-open + catena FTS call_id/project_id",
       "repo": "dataset-incubator",
@@ -94,6 +87,13 @@
       "category": "other"
     },
     {
+      "number": 29,
+      "title": "chore(post-merge): aggiorna registry (schedule)",
+      "repo": "inpa-reclutamento",
+      "url": "https://github.com/dataciviclab/inpa-reclutamento/pull/29",
+      "category": "other"
+    },
+    {
       "number": 516,
       "title": "fix(config): errore su chiavi sconosciute in raw.sources[] (#514)",
       "repo": "toolkit",
@@ -110,13 +110,6 @@
   ],
   "open_issues": 48,
   "issues": [
-    {
-      "number": 15,
-      "title": "anac_stati_avanzamento: importo_sal cumulativo o incrementale? SUM attuale gonfia gli importi",
-      "repo": "appalti-pubblici",
-      "url": "https://github.com/dataciviclab/appalti-pubblici/issues/15",
-      "category": "other"
-    },
     {
       "number": 13,
       "title": "feat(anac_cross): arricchisci con codice IPA della stazione appaltante",
@@ -416,6 +409,13 @@
       "title": "opencivitas: fonte centrale punta al vecchio /it/open-data (404) \u2014 aggiornare a docs.opencivitas.it",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/424",
+      "category": "other"
+    },
+    {
+      "number": 520,
+      "title": "[Bug] clean.read: numeri in formato italiano tipizzati DOUBLE dallo sniff \u2192 macro normalize_italian_* corrompono i valori",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/520",
       "category": "other"
     },
     {
@@ -3999,11 +3999,11 @@
           "label": "irap_imposta_regione",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261027T094715Z_d06fb194",
+            "run_id": "20261027T164409Z_516a2f32",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-27T09:47:15.675234+00:00",
-            "finished_at": "2026-10-27T09:47:16.651661+00:00"
+            "started_at": "2026-10-27T16:44:09.373800+00:00",
+            "finished_at": "2026-10-27T16:44:10.314627+00:00"
           }
         },
         {
@@ -4013,11 +4013,11 @@
           "label": "irap_italia_estero",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261027T094741Z_71645aec",
+            "run_id": "20261027T164435Z_334abd7c",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-27T09:47:41.167897+00:00",
-            "finished_at": "2026-10-27T09:47:42.049568+00:00"
+            "started_at": "2026-10-27T16:44:35.778251+00:00",
+            "finished_at": "2026-10-27T16:44:36.729268+00:00"
           }
         },
         {
@@ -4027,11 +4027,11 @@
           "label": "irap_vp_regime",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261027T094820Z_34fda419",
+            "run_id": "20261027T164518Z_054fcdb6",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-27T09:48:20.354604+00:00",
-            "finished_at": "2026-10-27T09:48:22.345335+00:00"
+            "started_at": "2026-10-27T16:45:18.822824+00:00",
+            "finished_at": "2026-10-27T16:45:21.082243+00:00"
           }
         },
         {
@@ -4041,11 +4041,11 @@
           "label": "ires_redditi_regione",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261027T094846Z_4f9ed057",
+            "run_id": "20261027T164545Z_bec3cae1",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-27T09:48:46.627120+00:00",
-            "finished_at": "2026-10-27T09:48:47.516781+00:00"
+            "started_at": "2026-10-27T16:45:45.775250+00:00",
+            "finished_at": "2026-10-27T16:45:46.719571+00:00"
           }
         },
         {
@@ -4055,11 +4055,11 @@
           "label": "irpef_comunale",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261027T094921Z_efe06b7f",
+            "run_id": "20261027T164623Z_fa64fd18",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-10-27T09:49:21.879588+00:00",
-            "finished_at": "2026-10-27T09:49:25.117728+00:00"
+            "started_at": "2026-10-27T16:46:23.683457+00:00",
+            "finished_at": "2026-10-27T16:46:27.209170+00:00"
           }
         },
         {
@@ -4069,11 +4069,11 @@
           "label": "iva_regionale",
           "detail": "anni 2015-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261027T094952Z_f13ef258",
+            "run_id": "20261027T164655Z_a1ff6870",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-10-27T09:49:52.347625+00:00",
-            "finished_at": "2026-10-27T09:49:53.294373+00:00"
+            "started_at": "2026-10-27T16:46:55.724904+00:00",
+            "finished_at": "2026-10-27T16:46:56.764809+00:00"
           }
         },
         {
@@ -4083,11 +4083,11 @@
           "label": "iva_sez_attivita",
           "detail": "anni 2015-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261027T095020Z_51c5fd80",
+            "run_id": "20261027T164726Z_32fd97de",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-10-27T09:50:20.065707+00:00",
-            "finished_at": "2026-10-27T09:50:21.002009+00:00"
+            "started_at": "2026-10-27T16:47:26.874003+00:00",
+            "finished_at": "2026-10-27T16:47:27.888837+00:00"
           }
         },
         {
@@ -4097,11 +4097,11 @@
           "label": "mef_irpef_regionale",
           "detail": "anni 2017-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261027T095057Z_2e48962a",
+            "run_id": "20261027T164802Z_ba4ffd22",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-10-27T09:50:57.318971+00:00",
-            "finished_at": "2026-10-27T09:50:58.804876+00:00"
+            "started_at": "2026-10-27T16:48:02.777749+00:00",
+            "finished_at": "2026-10-27T16:48:04.372531+00:00"
           }
         }
       ]
