@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-27T17:34:19.753245",
+  "generated_at": "2026-10-27T21:52:50.087966",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -131,7 +131,7 @@
       "url": "https://github.com/dataciviclab/dichiarazioni-italia",
       "role": "dati",
       "domain": "finanza-pubblica",
-      "n_datasets": 8,
+      "n_datasets": 10,
       "n_published": 0,
       "sources": [
         "mef_finanze"
@@ -1903,6 +1903,20 @@
             "role": "metric",
             "semantic_type": "",
             "description": ""
+          },
+          {
+            "name": "tipo_serie",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_quota",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
           }
         ],
         "mart_refs": [
@@ -2269,6 +2283,20 @@
             "description": ""
           },
           {
+            "name": "n_serie_sal",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_serie_anomale",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "esito_collaudo",
             "type": "VARCHAR",
             "role": "dimension",
@@ -2301,6 +2329,20 @@
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "cup_code",
+            "description": ""
+          },
+          {
+            "name": "n_cup",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cups",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
             "description": ""
           },
           {
@@ -29610,6 +29652,104 @@
     ],
     "mef_finanze": [
       {
+        "slug": "irap_imposta_pa_regione",
+        "url_slug": "irap-imposta-pa-regione",
+        "name": "Irap Imposta Pa Regione",
+        "description": "IRAP delle P.A.: base imponibile e imposta netta delle attivit\u00e0 istituzionali per regione. Anno d'imposta 2014-2023.",
+        "source": "",
+        "source_id": "mef_finanze",
+        "period": {
+          "start": 2014,
+          "end": 2023
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "irap",
+          "regionale",
+          "gettito",
+          "imposta",
+          "pubblica-amministrazione"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "dichiarazioni-italia",
+        "clean_rows": 21,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/dichiarazioni-italia/irap_imposta_pa_regione/*/irap_imposta_pa_regione_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "cod_regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "base_imponibile_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "base_imponibile_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_netta_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_netta_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_debito_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_credito_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "irap_imposta_pa_regione__mart_regioni_anno",
+          "irap_imposta_pa_regione__mart_imposta_anno"
+        ]
+      },
+      {
         "slug": "irap_imposta_regione",
         "url_slug": "irap-imposta-regione",
         "name": "Irap Imposta Regione",
@@ -29698,6 +29838,97 @@
         "mart_refs": [
           "irap_imposta_regione__mart_regioni_anno",
           "irap_imposta_regione__mart_imposta_anno"
+        ]
+      },
+      {
+        "slug": "irap_imposta_settore",
+        "url_slug": "irap-imposta-settore",
+        "name": "Irap Imposta Settore",
+        "description": "IRAP: base imponibile e totale imposta per sezione di attivit\u00e0 (ATECO). Anno d'imposta 2014-2023.",
+        "source": "",
+        "source_id": "mef_finanze",
+        "period": {
+          "start": 2014,
+          "end": 2023
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "irap",
+          "settore",
+          "ateaco",
+          "gettito",
+          "imposta"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "dichiarazioni-italia",
+        "clean_rows": 22,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/dichiarazioni-italia/irap_imposta_settore/*/irap_imposta_settore_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "sezione_attivita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "contribuenti",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "base_imponibile_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "base_imponibile_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "irap_imposta_settore__mart_settori_anno",
+          "irap_imposta_settore__mart_imposta_anno"
         ]
       },
       {
@@ -37425,7 +37656,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 1817,
+        "clean_rows": 1846,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_bandi_open/2026/inpa_bandi_open_2026_clean.parquet",
@@ -37644,7 +37875,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 6058,
+        "clean_rows": 6121,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_comunicazioni/2026/inpa_comunicazioni_2026_clean.parquet",
@@ -59001,7 +59232,9 @@
         "filiere_valore_aggiunto",
         "fpi_debito_pa",
         "fts_eu_grants",
+        "irap_imposta_pa_regione",
         "irap_imposta_regione",
+        "irap_imposta_settore",
         "irap_italia_estero",
         "irap_vp_regime",
         "ires_redditi_regione",
@@ -59078,7 +59311,7 @@
         "ted_contract_notices",
         "wb_financial"
       ],
-      "dataset_count": 141
+      "dataset_count": 143
     },
     {
       "slug": "sanita",
@@ -59445,7 +59678,9 @@
         "filiere_valore_aggiunto",
         "fpi_debito_pa",
         "fts_eu_grants",
+        "irap_imposta_pa_regione",
         "irap_imposta_regione",
+        "irap_imposta_settore",
         "irap_italia_estero",
         "irap_vp_regime",
         "ires_redditi_regione",
@@ -60473,7 +60708,9 @@
       "ocpi_serie_storiche"
     ],
     "dichiarazioni-italia": [
+      "irap_imposta_pa_regione",
       "irap_imposta_regione",
+      "irap_imposta_settore",
       "irap_italia_estero",
       "irap_vp_regime",
       "ires_redditi_regione",
@@ -60955,7 +61192,9 @@
       "filiere_valore_aggiunto",
       "fpi_debito_pa",
       "fts_eu_grants",
+      "irap_imposta_pa_regione",
       "irap_imposta_regione",
+      "irap_imposta_settore",
       "irap_italia_estero",
       "irap_vp_regime",
       "ires_redditi_regione",
@@ -62781,6 +63020,23 @@
       ],
       "description": ""
     },
+    "irap_imposta_pa_regione": {
+      "name": "Irap Imposta Pa Regione",
+      "stage": "incubating",
+      "source_id": "mef_finanze",
+      "registry_source": "dichiarazioni-italia",
+      "domain": "finanza-pubblica",
+      "category": "finanza-pubblica",
+      "tags": [
+        "finanza-pubblica",
+        "irap",
+        "regionale",
+        "gettito",
+        "imposta",
+        "pubblica-amministrazione"
+      ],
+      "description": "IRAP delle P.A.: base imponibile e imposta netta delle attivit\u00e0 istituzionali per regione. Anno d'imposta 2014-2023."
+    },
     "irap_imposta_regione": {
       "name": "Irap Imposta Regione",
       "stage": "incubating",
@@ -62797,6 +63053,23 @@
         "base-imponibile"
       ],
       "description": "IRAP: base imponibile e totale imposta per regione (vista totale, P.A. incluse). Anno d'imposta 2014-2023."
+    },
+    "irap_imposta_settore": {
+      "name": "Irap Imposta Settore",
+      "stage": "incubating",
+      "source_id": "mef_finanze",
+      "registry_source": "dichiarazioni-italia",
+      "domain": "finanza-pubblica",
+      "category": "finanza-pubblica",
+      "tags": [
+        "finanza-pubblica",
+        "irap",
+        "settore",
+        "ateaco",
+        "gettito",
+        "imposta"
+      ],
+      "description": "IRAP: base imponibile e totale imposta per sezione di attivit\u00e0 (ATECO). Anno d'imposta 2014-2023."
     },
     "irap_italia_estero": {
       "name": "Irap Italia Estero",
