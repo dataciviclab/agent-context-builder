@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-26T22:21:58.306464",
+  "generated_at": "2026-10-27T03:57:59.125358",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -134,11 +134,7 @@
       "n_datasets": 7,
       "n_published": 0,
       "sources": [
-        "mef_finanze",
-        "mef_irap",
-        "mef_ires",
-        "mef_irpef",
-        "mef_iva"
+        "mef_finanze"
       ]
     },
     "energia-italia": {
@@ -29612,14 +29608,14 @@
         ]
       }
     ],
-    "mef_irap": [
+    "mef_finanze": [
       {
         "slug": "irap_italia_estero",
         "url_slug": "irap-italia-estero",
         "name": "Irap Italia Estero",
         "description": "",
         "source": "",
-        "source_id": "mef_irap",
+        "source_id": "mef_finanze",
         "period": {
           "start": 2015,
           "end": 2024
@@ -29722,7 +29718,7 @@
         "name": "Irap Vp Regime",
         "description": "",
         "source": "",
-        "source_id": "mef_irap",
+        "source_id": "mef_finanze",
         "period": {
           "start": 2015,
           "end": 2024
@@ -29873,16 +29869,14 @@
         "mart_refs": [
           "irap_vp_regime__mart_regioni_anno"
         ]
-      }
-    ],
-    "mef_ires": [
+      },
       {
         "slug": "ires_redditi_regione",
         "url_slug": "ires-redditi-regione",
         "name": "Ires Redditi Regione",
         "description": "",
         "source": "",
-        "source_id": "mef_ires",
+        "source_id": "mef_finanze",
         "period": {
           "start": 2015,
           "end": 2024
@@ -29984,16 +29978,14 @@
         "mart_refs": [
           "ires_redditi_regione__mart_regioni_anno"
         ]
-      }
-    ],
-    "mef_irpef": [
+      },
       {
         "slug": "irpef_comunale",
         "url_slug": "irpef-comunale",
         "name": "Irpef Comunale",
         "description": "",
         "source": "",
-        "source_id": "mef_irpef",
+        "source_id": "mef_finanze",
         "period": {
           "start": 2015,
           "end": 2024
@@ -30385,12 +30377,273 @@
         ]
       },
       {
+        "slug": "iva_regionale",
+        "url_slug": "iva-regionale",
+        "name": "Iva Regionale",
+        "description": "",
+        "source": "",
+        "source_id": "mef_finanze",
+        "period": {
+          "start": 2014,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "iva",
+          "regionale"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "dichiarazioni-italia",
+        "clean_rows": 21,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/dichiarazioni-italia/iva_regionale/*/iva_regionale_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "cod_regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "contribuenti",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "volume_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "volume_affari_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "acquisti_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "acquisti_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "va_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "va_fiscale_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_dovuta_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_dovuta_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_credito_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_credito_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "iva_regionale__mart_regioni_anno",
+          "iva_regionale__mart_sintesi_nazionale",
+          "iva_regionale__mart_trend_regioni"
+        ]
+      },
+      {
+        "slug": "iva_sez_attivita",
+        "url_slug": "iva-sez-attivita",
+        "name": "Iva Sez Attivita",
+        "description": "",
+        "source": "",
+        "source_id": "mef_finanze",
+        "period": {
+          "start": 2015,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "iva",
+          "settore",
+          "ateaco"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "dichiarazioni-italia",
+        "clean_rows": 23,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/dichiarazioni-italia/iva_sez_attivita/*/iva_sez_attivita_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "sezione_attivita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "contribuenti",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "volume_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "volume_affari_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "acquisti_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "acquisti_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "va_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "va_fiscale_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_dovuta_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_dovuta_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_credito_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_credito_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "iva_sez_attivita__mart_settori_anno"
+        ]
+      },
+      {
         "slug": "mef_irpef_regionale",
         "url_slug": "mef-irpef-regionale",
         "name": "Mef Irpef Regionale",
         "description": "",
         "source": "",
-        "source_id": "mef_irpef",
+        "source_id": "mef_finanze",
         "period": {
           "start": 2017,
           "end": 2025
@@ -30707,271 +30960,6 @@
         ],
         "mart_refs": [
           "mef_irpef_regionale__irpef_regione_classe"
-        ]
-      }
-    ],
-    "mef_finanze": [
-      {
-        "slug": "iva_regionale",
-        "url_slug": "iva-regionale",
-        "name": "Iva Regionale",
-        "description": "",
-        "source": "",
-        "source_id": "mef_finanze",
-        "period": {
-          "start": 2014,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "finanza-pubblica",
-          "iva",
-          "regionale"
-        ],
-        "category": "finanza-pubblica",
-        "registry_source": "dichiarazioni-italia",
-        "clean_rows": 21,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/dichiarazioni-italia/iva_regionale/*/iva_regionale_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "regione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "region_code",
-            "description": ""
-          },
-          {
-            "name": "cod_regione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "region_code",
-            "description": ""
-          },
-          {
-            "name": "contribuenti",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "volume_frequenza",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "volume_affari_eur",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "acquisti_frequenza",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "acquisti_eur",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "va_frequenza",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "va_fiscale_eur",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "imposta_dovuta_frequenza",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "imposta_dovuta_eur",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "imposta_credito_frequenza",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "imposta_credito_eur",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "iva_regionale__mart_regioni_anno",
-          "iva_regionale__mart_sintesi_nazionale",
-          "iva_regionale__mart_trend_regioni"
-        ]
-      }
-    ],
-    "mef_iva": [
-      {
-        "slug": "iva_sez_attivita",
-        "url_slug": "iva-sez-attivita",
-        "name": "Iva Sez Attivita",
-        "description": "",
-        "source": "",
-        "source_id": "mef_iva",
-        "period": {
-          "start": 2015,
-          "end": 2025
-        },
-        "stage": "incubating",
-        "tags": [
-          "finanza-pubblica",
-          "iva",
-          "settore",
-          "ateaco"
-        ],
-        "category": "finanza-pubblica",
-        "registry_source": "dichiarazioni-italia",
-        "clean_rows": 23,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/dichiarazioni-italia/iva_sez_attivita/*/iva_sez_attivita_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "sezione_attivita",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codice",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "contribuenti",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "volume_frequenza",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "volume_affari_eur",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "acquisti_frequenza",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "acquisti_eur",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "va_frequenza",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "va_fiscale_eur",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "imposta_dovuta_frequenza",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "imposta_dovuta_eur",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "imposta_credito_frequenza",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "imposta_credito_eur",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "iva_sez_attivita__mart_settori_anno"
         ]
       }
     ],
@@ -62701,7 +62689,7 @@
     "irap_italia_estero": {
       "name": "Irap Italia Estero",
       "stage": "incubating",
-      "source_id": "mef_irap",
+      "source_id": "mef_finanze",
       "registry_source": "dichiarazioni-italia",
       "domain": "finanza-pubblica",
       "category": "finanza-pubblica",
@@ -62717,7 +62705,7 @@
     "irap_vp_regime": {
       "name": "Irap Vp Regime",
       "stage": "incubating",
-      "source_id": "mef_irap",
+      "source_id": "mef_finanze",
       "registry_source": "dichiarazioni-italia",
       "domain": "finanza-pubblica",
       "category": "finanza-pubblica",
@@ -62732,7 +62720,7 @@
     "ires_redditi_regione": {
       "name": "Ires Redditi Regione",
       "stage": "incubating",
-      "source_id": "mef_ires",
+      "source_id": "mef_finanze",
       "registry_source": "dichiarazioni-italia",
       "domain": "finanza-pubblica",
       "category": "finanza-pubblica",
@@ -62747,7 +62735,7 @@
     "irpef_comunale": {
       "name": "Irpef Comunale",
       "stage": "incubating",
-      "source_id": "mef_irpef",
+      "source_id": "mef_finanze",
       "registry_source": "dichiarazioni-italia",
       "domain": "finanza-pubblica",
       "category": "finanza-pubblica",
@@ -62774,7 +62762,7 @@
     "iva_sez_attivita": {
       "name": "Iva Sez Attivita",
       "stage": "incubating",
-      "source_id": "mef_iva",
+      "source_id": "mef_finanze",
       "registry_source": "dichiarazioni-italia",
       "domain": "finanza-pubblica",
       "category": "finanza-pubblica",
@@ -62789,7 +62777,7 @@
     "mef_irpef_regionale": {
       "name": "Mef Irpef Regionale",
       "stage": "incubating",
-      "source_id": "mef_irpef",
+      "source_id": "mef_finanze",
       "registry_source": "dichiarazioni-italia",
       "domain": "finanza-pubblica",
       "category": "finanza-pubblica",
