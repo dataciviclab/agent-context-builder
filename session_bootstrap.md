@@ -1,10 +1,10 @@
 # Session Bootstrap
 
-**Generated**: 2026-10-28T04:21:25.801867
+**Generated**: 2026-10-28T12:14:43.407521
 
 ## Stato
 
-Radar: 36 fonti GREEN 33 · Registry: 40 repo · 449 dataset
+Radar: 36 fonti GREEN 34 · Registry: 40 repo · 449 dataset
 
 ## Richiede attenzione
 
@@ -12,7 +12,7 @@ Radar: 36 fonti GREEN 33 · Registry: 40 repo · 449 dataset
 - [PR] appalti-pubblici#19: feat(anac-cross): codice IPA della stazione appaltante (#13)
 - [PR] dataset-incubator#885: feat(candidates): eu-call-open + catena FTS call_id/project_id
 - [PR] dataset-incubator#836: feat(candidates): bootstrap gse_cer_elenco candidate
-- [PR] toolkit#521: feat(read): all_varchar + padding NULL + guardia macro normalize_italian_* (#520)
+- [PR] dichiarazioni-italia#24: feat(acsp): società di persone — 4 dataset IRPEF (redditi dichiarati)
 
 ## Analisi pubbliche (45)
 

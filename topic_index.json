@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-28T04:21:25.801867",
+  "generated_at": "2026-10-28T12:14:43.407521",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -334,7 +334,7 @@
       "n_datasets": 23,
       "n_published": 0,
       "sources": [
-        "openbdap"
+        "conto_annuale"
       ]
     },
     "open-inps": {
@@ -7396,3036 +7396,6 @@
           "dipendenti_pubblici__mart_turnover_enti",
           "dipendenti_pubblici__mart_part_time",
           "dipendenti_pubblici__mart_tipo_istituzione"
-        ]
-      },
-      {
-        "slug": "anzianita",
-        "url_slug": "anzianita",
-        "name": "Anzianita",
-        "description": "Distribuzione per fascia di anzianit\u00e0 di servizio del personale delle PA italiane (2020-2024), arricchita con anagrafica enti, comparti e qualifiche.",
-        "source": "",
-        "source_id": "openbdap",
-        "period": {
-          "start": 2017,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "pa",
-          "conto-annuale",
-          "anzianita",
-          "dipendenti-pubblici"
-        ],
-        "category": "pa",
-        "registry_source": "open-conto-annuale",
-        "clean_rows": 155657,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/conto-annuale/anzianita/*/anzianita_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "contratto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "categoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "qualifica",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "fascia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "uomini",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "donne",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_tipo_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_tipo_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_istituzione",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_fiscale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "fiscal_code",
-            "description": ""
-          },
-          {
-            "name": "codi_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_aggregato",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_aggregato",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_contratto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_macrocategoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_macrocategoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_categoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_qualifica",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "anzianita__anzianita_comparti",
-          "anzianita__mart_sintesi",
-          "anzianita__mart_trend"
-        ]
-      },
-      {
-        "slug": "assenze",
-        "url_slug": "assenze",
-        "name": "Assenze",
-        "description": "Giornate di assenza per causale del personale delle PA italiane (2020-2024), arricchite con anagrafica enti, comparti, qualifiche e tipologie di causale.",
-        "source": "",
-        "source_id": "openbdap",
-        "period": {
-          "start": 2017,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "pa",
-          "conto-annuale",
-          "assenze",
-          "dipendenti-pubblici"
-        ],
-        "category": "pa",
-        "registry_source": "open-conto-annuale",
-        "clean_rows": 196647,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/conto-annuale/assenze/*/assenze_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "contratto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "categoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "qualifica",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "causale_assenza",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "assenze_uomini",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "assenze_donne",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_tipo_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_tipo_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_istituzione",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_fiscale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "fiscal_code",
-            "description": ""
-          },
-          {
-            "name": "codi_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_aggregato",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_aggregato",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_contratto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_macrocategoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_macrocategoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_categoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_qualifica",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codice_tipo_causale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "tipo_causale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "descrizione_causale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "assenze__assenze_comparti",
-          "assenze__mart_sintesi",
-          "assenze__mart_trend"
-        ]
-      },
-      {
-        "slug": "ca_anag_causali_seed",
-        "url_slug": "ca-anag-causali-seed",
-        "name": "Ca Anag Causali Seed",
-        "description": "Anagrafica delle causali di assenza del Conto Annuale \u2014 dizionario di supporto.",
-        "source": "",
-        "source_id": "openbdap",
-        "period": {
-          "start": 2024,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "pa",
-          "conto-annuale",
-          "anagrafica",
-          "causali",
-          "support"
-        ],
-        "category": "pa",
-        "registry_source": "open-conto-annuale",
-        "clean_rows": 29,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/conto-annuale/ca_anag_causali_seed/2024/ca_anag_causali_seed_2024_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "BIGINT",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "codice_tipo_causale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "tipo_causale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codice_causale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "descrizione_causale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "ca_anag_causali_seed__ca_anag_causali_seed"
-        ]
-      },
-      {
-        "slug": "ca_anag_comparti_seed",
-        "url_slug": "ca-anag-comparti-seed",
-        "name": "Ca Anag Comparti Seed",
-        "description": "Anagrafica dei comparti e contratti del Conto Annuale \u2014 dizionario di supporto.",
-        "source": "",
-        "source_id": "openbdap",
-        "period": {
-          "start": 2024,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "pa",
-          "conto-annuale",
-          "anagrafica",
-          "comparti",
-          "support"
-        ],
-        "category": "pa",
-        "registry_source": "open-conto-annuale",
-        "clean_rows": 47,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/conto-annuale/ca_anag_comparti_seed/2024/ca_anag_comparti_seed_2024_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "BIGINT",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "codi_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_aggregato",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_aggregato",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_contratto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_contratto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "ca_anag_comparti_seed__ca_anag_comparti_seed"
-        ]
-      },
-      {
-        "slug": "ca_anag_enti_seed",
-        "url_slug": "ca-anag-enti-seed",
-        "name": "Ca Anag Enti Seed",
-        "description": "Anagrafica degli enti del Conto Annuale (tipo istituzione, codice e denominazione) \u2014 dizionario di supporto.",
-        "source": "",
-        "source_id": "openbdap",
-        "period": {
-          "start": 2024,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "pa",
-          "conto-annuale",
-          "anagrafica",
-          "enti",
-          "support"
-        ],
-        "category": "pa",
-        "registry_source": "open-conto-annuale",
-        "clean_rows": 12843,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/conto-annuale/ca_anag_enti_seed/2024/ca_anag_enti_seed_2024_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "BIGINT",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "codi_tipo_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_tipo_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_istituzione",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_fiscale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "fiscal_code",
-            "description": ""
-          },
-          {
-            "name": "istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "ca_anag_enti_seed__ca_anag_enti_seed"
-        ]
-      },
-      {
-        "slug": "ca_anag_fondi_seed",
-        "url_slug": "ca-anag-fondi-seed",
-        "name": "Ca Anag Fondi Seed",
-        "description": "Anagrafica dei fondi di contrattazione (natura e tipo voce di spesa) del Conto Annuale \u2014 dizionario di supporto.",
-        "source": "",
-        "source_id": "openbdap",
-        "period": {
-          "start": 2024,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "pa",
-          "conto-annuale",
-          "anagrafica",
-          "fondi",
-          "support"
-        ],
-        "category": "pa",
-        "registry_source": "open-conto-annuale",
-        "clean_rows": 304,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/conto-annuale/ca_anag_fondi_seed/2024/ca_anag_fondi_seed_2024_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "BIGINT",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "codi_contratto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_macrocategoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_fondo",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_fondo",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_natura",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_natura",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_tipo_voce_spesa",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "tipo_voce_spesa",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "ca_anag_fondi_seed__ca_anag_fondi_seed"
-        ]
-      },
-      {
-        "slug": "ca_anag_qualifiche_seed",
-        "url_slug": "ca-anag-qualifiche-seed",
-        "name": "Ca Anag Qualifiche Seed",
-        "description": "Anagrafica di contratti, macrocategorie, categorie e qualifiche del Conto Annuale \u2014 dizionario di supporto.",
-        "source": "",
-        "source_id": "openbdap",
-        "period": {
-          "start": 2024,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "pa",
-          "conto-annuale",
-          "anagrafica",
-          "qualifiche",
-          "support"
-        ],
-        "category": "pa",
-        "registry_source": "open-conto-annuale",
-        "clean_rows": 1465,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/conto-annuale/ca_anag_qualifiche_seed/2024/ca_anag_qualifiche_seed_2024_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "BIGINT",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "codi_contratto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_macrocategoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_macrocategoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_categoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_categoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_qualifica",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_qualifica",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "ca_anag_qualifiche_seed__ca_anag_qualifiche_seed"
-        ]
-      },
-      {
-        "slug": "ca_anag_territorio_seed",
-        "url_slug": "ca-anag-territorio-seed",
-        "name": "Ca Anag Territorio Seed",
-        "description": "Anagrafica di comuni, province e regioni del Conto Annuale, con mapping codice catastale \u2192 regione ISTAT \u2014 dizionario di supporto.",
-        "source": "",
-        "source_id": "openbdap",
-        "period": {
-          "start": 2024,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "pa",
-          "conto-annuale",
-          "anagrafica",
-          "territorio",
-          "support"
-        ],
-        "category": "pa",
-        "registry_source": "open-conto-annuale",
-        "clean_rows": 7901,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/conto-annuale/ca_anag_territorio_seed/2024/ca_anag_territorio_seed_2024_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "BIGINT",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "codi_catastale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "cadastral_code",
-            "description": ""
-          },
-          {
-            "name": "desc_codice_catastale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_provincia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_provincia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_regione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_regione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codice_regione_istat",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "region_code",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "ca_anag_territorio_seed__ca_anag_territorio_seed"
-        ]
-      },
-      {
-        "slug": "ca_anag_titoli_studio_seed",
-        "url_slug": "ca-anag-titoli-studio-seed",
-        "name": "Ca Anag Titoli Studio Seed",
-        "description": "Anagrafica dei titoli di studio del Conto Annuale \u2014 dizionario di supporto.",
-        "source": "",
-        "source_id": "openbdap",
-        "period": {
-          "start": 2024,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "pa",
-          "conto-annuale",
-          "anagrafica",
-          "titoli-studio",
-          "support"
-        ],
-        "category": "pa",
-        "registry_source": "open-conto-annuale",
-        "clean_rows": 6,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/conto-annuale/ca_anag_titoli_studio_seed/2024/ca_anag_titoli_studio_seed_2024_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "BIGINT",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "codi_titolo",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_titolo",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "ca_anag_titoli_studio_seed__ca_anag_titoli_studio_seed"
-        ]
-      },
-      {
-        "slug": "ca_anag_voci_fua_seed",
-        "url_slug": "ca-anag-voci-fua-seed",
-        "name": "Ca Anag Voci Fua Seed",
-        "description": "Anagrafica delle voci di spesa FUA (Fondo Unico di Amministrazione) del Conto Annuale \u2014 dizionario di supporto.",
-        "source": "",
-        "source_id": "openbdap",
-        "period": {
-          "start": 2024,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "pa",
-          "conto-annuale",
-          "anagrafica",
-          "voci-fua",
-          "support"
-        ],
-        "category": "pa",
-        "registry_source": "open-conto-annuale",
-        "clean_rows": 1485,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/conto-annuale/ca_anag_voci_fua_seed/2024/ca_anag_voci_fua_seed_2024_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "BIGINT",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "codi_contratto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_tipo_voce_spesa",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "tipo_voce_spesa",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_voce_spesa",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_voce_spesa",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "flag_segno",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "ca_anag_voci_fua_seed__ca_anag_voci_fua_seed"
-        ]
-      },
-      {
-        "slug": "ca_anag_voci_spesa_seed",
-        "url_slug": "ca-anag-voci-spesa-seed",
-        "name": "Ca Anag Voci Spesa Seed",
-        "description": "Anagrafica delle voci di spesa del Conto Annuale (voce e tipo voce) \u2014 dizionario di supporto.",
-        "source": "",
-        "source_id": "openbdap",
-        "period": {
-          "start": 2024,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "pa",
-          "conto-annuale",
-          "anagrafica",
-          "voci-spesa",
-          "support"
-        ],
-        "category": "pa",
-        "registry_source": "open-conto-annuale",
-        "clean_rows": 178,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/conto-annuale/ca_anag_voci_spesa_seed/2024/ca_anag_voci_spesa_seed_2024_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "BIGINT",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "codi_tipo_voce_spesa",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_voce_spesa",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_voce_spesa",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "flag_segno",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "voce_spesa",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "ca_anag_voci_spesa_seed__ca_anag_voci_spesa_seed"
-        ]
-      },
-      {
-        "slug": "comandati",
-        "url_slug": "comandati",
-        "name": "Comandati",
-        "description": "Personale comandato, distaccato o fuori ruolo nelle PA italiane (2020-2024), arricchito con anagrafica enti e comparti.",
-        "source": "",
-        "source_id": "openbdap",
-        "period": {
-          "start": 2017,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "pa",
-          "conto-annuale",
-          "comandati",
-          "dipendenti-pubblici"
-        ],
-        "category": "pa",
-        "registry_source": "open-conto-annuale",
-        "clean_rows": 16263,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/conto-annuale/comandati/*/comandati_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "contratto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "categoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "qualifica",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "comand_dist_u",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "comand_dist_d",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "fuori_ruolo_u",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "fuori_ruolo_d",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_tipo_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_istituzione",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "comandati__comandati_comparti",
-          "comandati__mart_sintesi",
-          "comandati__mart_trend"
-        ]
-      },
-      {
-        "slug": "composizione_retribuzione",
-        "url_slug": "composizione-retribuzione",
-        "name": "Composizione Retribuzione",
-        "description": "Importi retributivi per voce di spesa e qualifica del personale delle PA italiane (2020-2024), arricchiti con anagrafica enti, comparti, qualifiche e voci di spesa.",
-        "source": "",
-        "source_id": "openbdap",
-        "period": {
-          "start": 2017,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "pa",
-          "conto-annuale",
-          "retribuzione",
-          "spesa",
-          "dipendenti-pubblici"
-        ],
-        "category": "pa",
-        "registry_source": "open-conto-annuale",
-        "clean_rows": 550897,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/conto-annuale/composizione_retribuzione/*/composizione_retribuzione_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "contratto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "categoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "qualifica",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "voce_spesa",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "importo",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_tipo_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_tipo_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_istituzione",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_fiscale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "fiscal_code",
-            "description": ""
-          },
-          {
-            "name": "codi_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_aggregato",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_aggregato",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_contratto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_macrocategoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_macrocategoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_categoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_qualifica",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_tipo_voce_spesa",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_voce_spesa",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "flag_segno",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "composizione_retribuzione__retribuzioni_comparti",
-          "composizione_retribuzione__retribuzioni_entrate",
-          "composizione_retribuzione__mart_sintesi",
-          "composizione_retribuzione__mart_trend"
-        ]
-      },
-      {
-        "slug": "contrattazione",
-        "url_slug": "contrattazione",
-        "name": "Contrattazione",
-        "description": "Spese di contrattazione integrativa delle PA italiane (2020-2024), arricchite con anagrafica enti e comparti.",
-        "source": "",
-        "source_id": "openbdap",
-        "period": {
-          "start": 2017,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "pa",
-          "conto-annuale",
-          "contrattazione",
-          "dipendenti-pubblici"
-        ],
-        "category": "pa",
-        "registry_source": "open-conto-annuale",
-        "clean_rows": 215242,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/conto-annuale/contrattazione/*/contrattazione_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "contratto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "macrocategoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "tipo_voce_spesa",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "natura",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "fondo",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "fondo_code",
-            "description": ""
-          },
-          {
-            "name": "voce_spesa_fua",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "importo",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_tipo_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_istituzione",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "contrattazione__contrattazione_comparti",
-          "contrattazione__mart_sintesi",
-          "contrattazione__mart_trend"
-        ]
-      },
-      {
-        "slug": "costo_lavoro",
-        "url_slug": "costo-lavoro",
-        "name": "Costo Lavoro",
-        "description": "Costo del lavoro del personale delle PA italiane per voce di spesa (2020-2024), arricchito con anagrafica enti, comparti e voci di spesa.",
-        "source": "",
-        "source_id": "openbdap",
-        "period": {
-          "start": 2017,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "pa",
-          "conto-annuale",
-          "costo-lavoro",
-          "spesa",
-          "dipendenti-pubblici"
-        ],
-        "category": "pa",
-        "registry_source": "open-conto-annuale",
-        "clean_rows": 259961,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/conto-annuale/costo_lavoro/*/costo_lavoro_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "contratto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "voce_spesa",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "totale_spesa",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_tipo_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_tipo_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_istituzione",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_fiscale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "fiscal_code",
-            "description": ""
-          },
-          {
-            "name": "codi_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_aggregato",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_aggregato",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_contratto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_tipo_voce_spesa",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_voce_spesa",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "flag_segno",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "costo_lavoro__costo_lavoro_comparti",
-          "costo_lavoro__mart_sintesi",
-          "costo_lavoro__mart_trend"
-        ]
-      },
-      {
-        "slug": "distribuzione",
-        "url_slug": "distribuzione",
-        "name": "Distribuzione",
-        "description": "Distribuzione geografica per regione del personale delle PA italiane (2020-2024), arricchita con anagrafica enti e comparti.",
-        "source": "",
-        "source_id": "openbdap",
-        "period": {
-          "start": 2017,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "pa",
-          "conto-annuale",
-          "distribuzione",
-          "territorio",
-          "dipendenti-pubblici"
-        ],
-        "category": "pa",
-        "registry_source": "open-conto-annuale",
-        "clean_rows": 62765,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/conto-annuale/distribuzione/*/distribuzione_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "regione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "region_code",
-            "description": ""
-          },
-          {
-            "name": "istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "contratto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "categoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "qualifica",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "uomini",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "donne",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_tipo_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_istituzione",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "distribuzione__distribuzione_comparti",
-          "distribuzione__distribuzione_italia",
-          "distribuzione__mart_sintesi",
-          "distribuzione__mart_trend"
-        ]
-      },
-      {
-        "slug": "flessibili",
-        "url_slug": "flessibili",
-        "name": "Flessibili",
-        "description": "Lavoratori flessibili delle PA italiane per tipologia di contratto (2020-2024), arricchiti con anagrafica enti e comparti.",
-        "source": "",
-        "source_id": "openbdap",
-        "period": {
-          "start": 2017,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "pa",
-          "conto-annuale",
-          "lavoro-flessibile",
-          "dipendenti-pubblici"
-        ],
-        "category": "pa",
-        "registry_source": "open-conto-annuale",
-        "clean_rows": 11306,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/conto-annuale/flessibili/*/flessibili_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "contratto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "macrocategoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "categoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "td_u",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "td_d",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "fl_u",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "fl_d",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "int_u",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "int_d",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "lsu_u",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "lsu_d",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_tipo_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_istituzione",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "flessibili__flessibili_comparti",
-          "flessibili__mart_sintesi",
-          "flessibili__mart_trend"
-        ]
-      },
-      {
-        "slug": "modalita_flessibile",
-        "url_slug": "modalita-flessibile",
-        "name": "Modalita Flessibile",
-        "description": "Modalit\u00e0 di lavoro flessibile (telelavoro, lavoro agile, coworking, turnazione) nelle PA italiane (2021-2024), arricchite con anagrafica enti e comparti.",
-        "source": "",
-        "source_id": "openbdap",
-        "period": {
-          "start": 2021,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "pa",
-          "conto-annuale",
-          "lavoro-agile",
-          "telelavoro",
-          "dipendenti-pubblici"
-        ],
-        "category": "pa",
-        "registry_source": "open-conto-annuale",
-        "clean_rows": 8169,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/conto-annuale/modalita_flessibile/*/modalita_flessibile_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "contratto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "macrocategoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "categoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "tl_u",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "tl_d",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "agile_u",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "agile_d",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "cowork_u",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "cowork_d",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "turn_u",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "turn_d",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_tipo_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_istituzione",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "modalita_flessibile__modalita_flessibile_comparti",
-          "modalita_flessibile__mart_sintesi",
-          "modalita_flessibile__mart_trend"
-        ]
-      },
-      {
-        "slug": "occupazione",
-        "url_slug": "occupazione",
-        "name": "Occupazione",
-        "description": "Occupazione del personale delle PA italiane per regime orario (tempo pieno, part-time) e genere (2020-2024), arricchita con anagrafica enti e comparti.",
-        "source": "",
-        "source_id": "openbdap",
-        "period": {
-          "start": 2017,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "pa",
-          "conto-annuale",
-          "occupazione",
-          "tempo-pieno",
-          "part-time",
-          "dipendenti-pubblici"
-        ],
-        "category": "pa",
-        "registry_source": "open-conto-annuale",
-        "clean_rows": 52913,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/conto-annuale/occupazione/*/occupazione_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "contratto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "categoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "qualifica",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "tp_u",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "tp_d",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "pti_u",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "pti_d",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "pts_u",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "pts_d",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_tipo_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_istituzione",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "occupazione__occupazione_comparti",
-          "occupazione__mart_sintesi",
-          "occupazione__mart_trend"
-        ]
-      },
-      {
-        "slug": "passaggi",
-        "url_slug": "passaggi",
-        "name": "Passaggi",
-        "description": "Passaggi di qualifica e categoria del personale delle PA italiane (2020-2024), arricchiti con anagrafica enti e comparti.",
-        "source": "",
-        "source_id": "openbdap",
-        "period": {
-          "start": 2017,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "pa",
-          "conto-annuale",
-          "passaggi",
-          "dipendenti-pubblici"
-        ],
-        "category": "pa",
-        "registry_source": "open-conto-annuale",
-        "clean_rows": 17131,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/conto-annuale/passaggi/*/passaggi_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "contratto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "numero_passaggi",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "categoria_partenza",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "qualifica_partenza",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "categoria_arrivo",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "qualifica_arrivo",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "tipo_passaggio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_tipo_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_tipo_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_istituzione",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_fiscale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "fiscal_code",
-            "description": ""
-          },
-          {
-            "name": "codi_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_aggregato",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_aggregato",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_contratto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "passaggi__passaggi_comparti",
-          "passaggi__mart_sintesi",
-          "passaggi__mart_trend"
-        ]
-      },
-      {
-        "slug": "personale",
-        "url_slug": "personale",
-        "name": "Personale",
-        "description": "Distribuzione per fascia di et\u00e0 del personale delle PA italiane (2020-2024), arricchita con anagrafica enti, comparti e qualifiche.",
-        "source": "",
-        "source_id": "openbdap",
-        "period": {
-          "start": 2017,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "pa",
-          "conto-annuale",
-          "personale",
-          "eta",
-          "dipendenti-pubblici"
-        ],
-        "category": "pa",
-        "registry_source": "open-conto-annuale",
-        "clean_rows": 174758,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/conto-annuale/personale/*/personale_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "contratto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "categoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "qualifica",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "fascia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "uomini",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "donne",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "tipo_rilevazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_tipo_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_tipo_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_istituzione",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_fiscale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "fiscal_code",
-            "description": ""
-          },
-          {
-            "name": "codi_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_aggregato",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_aggregato",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_contratto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_macrocategoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_macrocategoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_categoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_qualifica",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "personale__personale_eta_comparti",
-          "personale__personale_eta_italia",
-          "personale__mart_sintesi",
-          "personale__mart_trend"
-        ]
-      },
-      {
-        "slug": "retribuzione_media",
-        "url_slug": "retribuzione-media",
-        "name": "Retribuzione Media",
-        "description": "Retribuzione media per componente stipendiale del personale delle PA italiane (2020-2024), arricchita con anagrafica enti e comparti.",
-        "source": "",
-        "source_id": "openbdap",
-        "period": {
-          "start": 2017,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "pa",
-          "conto-annuale",
-          "retribuzione-media",
-          "dipendenti-pubblici"
-        ],
-        "category": "pa",
-        "registry_source": "open-conto-annuale",
-        "clean_rows": 33619,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/conto-annuale/retribuzione_media/*/retribuzione_media_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "contratto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "categoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "stipendio",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "ria",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "tredicesima",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "straordinario",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "indennita_fisse",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "altre_accessorie",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_tipo_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_istituzione",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "retribuzione_media__retribuzione_media_comparti",
-          "retribuzione_media__mart_sintesi",
-          "retribuzione_media__mart_trend"
-        ]
-      },
-      {
-        "slug": "titoli_studio",
-        "url_slug": "titoli-studio",
-        "name": "Titoli Studio",
-        "description": "Titoli di studio del personale delle PA italiane (2020-2024), arricchiti con anagrafica enti, comparti e qualifiche.",
-        "source": "",
-        "source_id": "openbdap",
-        "period": {
-          "start": 2017,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "pa",
-          "conto-annuale",
-          "titoli-studio",
-          "dipendenti-pubblici"
-        ],
-        "category": "pa",
-        "registry_source": "open-conto-annuale",
-        "clean_rows": 91943,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/conto-annuale/titoli_studio/*/titoli_studio_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "contratto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "categoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "qualifica",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "titolo_studio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "uomini",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "donne",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_tipo_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_tipo_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_istituzione",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_istituzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_fiscale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "fiscal_code",
-            "description": ""
-          },
-          {
-            "name": "codi_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_comparto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_aggregato",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_aggregato",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_contratto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codi_macrocategoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_macrocategoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_categoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "desc_qualifica",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "titoli_studio__titoli_studio_comparti",
-          "titoli_studio__mart_sintesi",
-          "titoli_studio__mart_trend"
         ]
       }
     ],
@@ -43899,6 +40869,3038 @@
         ]
       }
     ],
+    "conto_annuale": [
+      {
+        "slug": "anzianita",
+        "url_slug": "anzianita",
+        "name": "Anzianita",
+        "description": "Distribuzione per fascia di anzianit\u00e0 di servizio del personale delle PA italiane (2020-2024), arricchita con anagrafica enti, comparti e qualifiche.",
+        "source": "",
+        "source_id": "conto_annuale",
+        "period": {
+          "start": 2017,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "pa",
+          "conto-annuale",
+          "anzianita",
+          "dipendenti-pubblici"
+        ],
+        "category": "pa",
+        "registry_source": "open-conto-annuale",
+        "clean_rows": 155657,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/conto-annuale/anzianita/*/anzianita_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "qualifica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fascia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "uomini",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "donne",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_tipo_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_tipo_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_istituzione",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_fiscale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "codi_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_aggregato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_aggregato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_macrocategoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_macrocategoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_qualifica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "anzianita__anzianita_comparti",
+          "anzianita__mart_sintesi",
+          "anzianita__mart_trend"
+        ]
+      },
+      {
+        "slug": "assenze",
+        "url_slug": "assenze",
+        "name": "Assenze",
+        "description": "Giornate di assenza per causale del personale delle PA italiane (2020-2024), arricchite con anagrafica enti, comparti, qualifiche e tipologie di causale.",
+        "source": "",
+        "source_id": "conto_annuale",
+        "period": {
+          "start": 2017,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "pa",
+          "conto-annuale",
+          "assenze",
+          "dipendenti-pubblici"
+        ],
+        "category": "pa",
+        "registry_source": "open-conto-annuale",
+        "clean_rows": 196647,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/conto-annuale/assenze/*/assenze_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "qualifica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "causale_assenza",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "assenze_uomini",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "assenze_donne",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_tipo_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_tipo_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_istituzione",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_fiscale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "codi_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_aggregato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_aggregato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_macrocategoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_macrocategoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_qualifica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_tipo_causale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_causale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_causale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "assenze__assenze_comparti",
+          "assenze__mart_sintesi",
+          "assenze__mart_trend"
+        ]
+      },
+      {
+        "slug": "ca_anag_causali_seed",
+        "url_slug": "ca-anag-causali-seed",
+        "name": "Ca Anag Causali Seed",
+        "description": "Anagrafica delle causali di assenza del Conto Annuale \u2014 dizionario di supporto.",
+        "source": "",
+        "source_id": "conto_annuale",
+        "period": {
+          "start": 2024,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "pa",
+          "conto-annuale",
+          "anagrafica",
+          "causali",
+          "support"
+        ],
+        "category": "pa",
+        "registry_source": "open-conto-annuale",
+        "clean_rows": 29,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/conto-annuale/ca_anag_causali_seed/2024/ca_anag_causali_seed_2024_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "codice_tipo_causale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_causale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_causale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_causale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ca_anag_causali_seed__ca_anag_causali_seed"
+        ]
+      },
+      {
+        "slug": "ca_anag_comparti_seed",
+        "url_slug": "ca-anag-comparti-seed",
+        "name": "Ca Anag Comparti Seed",
+        "description": "Anagrafica dei comparti e contratti del Conto Annuale \u2014 dizionario di supporto.",
+        "source": "",
+        "source_id": "conto_annuale",
+        "period": {
+          "start": 2024,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "pa",
+          "conto-annuale",
+          "anagrafica",
+          "comparti",
+          "support"
+        ],
+        "category": "pa",
+        "registry_source": "open-conto-annuale",
+        "clean_rows": 47,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/conto-annuale/ca_anag_comparti_seed/2024/ca_anag_comparti_seed_2024_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "codi_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_aggregato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_aggregato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ca_anag_comparti_seed__ca_anag_comparti_seed"
+        ]
+      },
+      {
+        "slug": "ca_anag_enti_seed",
+        "url_slug": "ca-anag-enti-seed",
+        "name": "Ca Anag Enti Seed",
+        "description": "Anagrafica degli enti del Conto Annuale (tipo istituzione, codice e denominazione) \u2014 dizionario di supporto.",
+        "source": "",
+        "source_id": "conto_annuale",
+        "period": {
+          "start": 2024,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "pa",
+          "conto-annuale",
+          "anagrafica",
+          "enti",
+          "support"
+        ],
+        "category": "pa",
+        "registry_source": "open-conto-annuale",
+        "clean_rows": 12843,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/conto-annuale/ca_anag_enti_seed/2024/ca_anag_enti_seed_2024_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "codi_tipo_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_tipo_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_istituzione",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_fiscale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ca_anag_enti_seed__ca_anag_enti_seed"
+        ]
+      },
+      {
+        "slug": "ca_anag_fondi_seed",
+        "url_slug": "ca-anag-fondi-seed",
+        "name": "Ca Anag Fondi Seed",
+        "description": "Anagrafica dei fondi di contrattazione (natura e tipo voce di spesa) del Conto Annuale \u2014 dizionario di supporto.",
+        "source": "",
+        "source_id": "conto_annuale",
+        "period": {
+          "start": 2024,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "pa",
+          "conto-annuale",
+          "anagrafica",
+          "fondi",
+          "support"
+        ],
+        "category": "pa",
+        "registry_source": "open-conto-annuale",
+        "clean_rows": 304,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/conto-annuale/ca_anag_fondi_seed/2024/ca_anag_fondi_seed_2024_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "codi_contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_macrocategoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_fondo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_fondo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_natura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_natura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_tipo_voce_spesa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_voce_spesa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ca_anag_fondi_seed__ca_anag_fondi_seed"
+        ]
+      },
+      {
+        "slug": "ca_anag_qualifiche_seed",
+        "url_slug": "ca-anag-qualifiche-seed",
+        "name": "Ca Anag Qualifiche Seed",
+        "description": "Anagrafica di contratti, macrocategorie, categorie e qualifiche del Conto Annuale \u2014 dizionario di supporto.",
+        "source": "",
+        "source_id": "conto_annuale",
+        "period": {
+          "start": 2024,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "pa",
+          "conto-annuale",
+          "anagrafica",
+          "qualifiche",
+          "support"
+        ],
+        "category": "pa",
+        "registry_source": "open-conto-annuale",
+        "clean_rows": 1465,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/conto-annuale/ca_anag_qualifiche_seed/2024/ca_anag_qualifiche_seed_2024_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "codi_contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_macrocategoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_macrocategoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_qualifica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_qualifica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ca_anag_qualifiche_seed__ca_anag_qualifiche_seed"
+        ]
+      },
+      {
+        "slug": "ca_anag_territorio_seed",
+        "url_slug": "ca-anag-territorio-seed",
+        "name": "Ca Anag Territorio Seed",
+        "description": "Anagrafica di comuni, province e regioni del Conto Annuale, con mapping codice catastale \u2192 regione ISTAT \u2014 dizionario di supporto.",
+        "source": "",
+        "source_id": "conto_annuale",
+        "period": {
+          "start": 2024,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "pa",
+          "conto-annuale",
+          "anagrafica",
+          "territorio",
+          "support"
+        ],
+        "category": "pa",
+        "registry_source": "open-conto-annuale",
+        "clean_rows": 7901,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/conto-annuale/ca_anag_territorio_seed/2024/ca_anag_territorio_seed_2024_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "codi_catastale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cadastral_code",
+            "description": ""
+          },
+          {
+            "name": "desc_codice_catastale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_regione_istat",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ca_anag_territorio_seed__ca_anag_territorio_seed"
+        ]
+      },
+      {
+        "slug": "ca_anag_titoli_studio_seed",
+        "url_slug": "ca-anag-titoli-studio-seed",
+        "name": "Ca Anag Titoli Studio Seed",
+        "description": "Anagrafica dei titoli di studio del Conto Annuale \u2014 dizionario di supporto.",
+        "source": "",
+        "source_id": "conto_annuale",
+        "period": {
+          "start": 2024,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "pa",
+          "conto-annuale",
+          "anagrafica",
+          "titoli-studio",
+          "support"
+        ],
+        "category": "pa",
+        "registry_source": "open-conto-annuale",
+        "clean_rows": 6,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/conto-annuale/ca_anag_titoli_studio_seed/2024/ca_anag_titoli_studio_seed_2024_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "codi_titolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_titolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ca_anag_titoli_studio_seed__ca_anag_titoli_studio_seed"
+        ]
+      },
+      {
+        "slug": "ca_anag_voci_fua_seed",
+        "url_slug": "ca-anag-voci-fua-seed",
+        "name": "Ca Anag Voci Fua Seed",
+        "description": "Anagrafica delle voci di spesa FUA (Fondo Unico di Amministrazione) del Conto Annuale \u2014 dizionario di supporto.",
+        "source": "",
+        "source_id": "conto_annuale",
+        "period": {
+          "start": 2024,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "pa",
+          "conto-annuale",
+          "anagrafica",
+          "voci-fua",
+          "support"
+        ],
+        "category": "pa",
+        "registry_source": "open-conto-annuale",
+        "clean_rows": 1485,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/conto-annuale/ca_anag_voci_fua_seed/2024/ca_anag_voci_fua_seed_2024_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "codi_contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_tipo_voce_spesa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_voce_spesa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_voce_spesa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_voce_spesa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_segno",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ca_anag_voci_fua_seed__ca_anag_voci_fua_seed"
+        ]
+      },
+      {
+        "slug": "ca_anag_voci_spesa_seed",
+        "url_slug": "ca-anag-voci-spesa-seed",
+        "name": "Ca Anag Voci Spesa Seed",
+        "description": "Anagrafica delle voci di spesa del Conto Annuale (voce e tipo voce) \u2014 dizionario di supporto.",
+        "source": "",
+        "source_id": "conto_annuale",
+        "period": {
+          "start": 2024,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "pa",
+          "conto-annuale",
+          "anagrafica",
+          "voci-spesa",
+          "support"
+        ],
+        "category": "pa",
+        "registry_source": "open-conto-annuale",
+        "clean_rows": 178,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/conto-annuale/ca_anag_voci_spesa_seed/2024/ca_anag_voci_spesa_seed_2024_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "codi_tipo_voce_spesa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_voce_spesa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_voce_spesa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_segno",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "voce_spesa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ca_anag_voci_spesa_seed__ca_anag_voci_spesa_seed"
+        ]
+      },
+      {
+        "slug": "comandati",
+        "url_slug": "comandati",
+        "name": "Comandati",
+        "description": "Personale comandato, distaccato o fuori ruolo nelle PA italiane (2020-2024), arricchito con anagrafica enti e comparti.",
+        "source": "",
+        "source_id": "conto_annuale",
+        "period": {
+          "start": 2017,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "pa",
+          "conto-annuale",
+          "comandati",
+          "dipendenti-pubblici"
+        ],
+        "category": "pa",
+        "registry_source": "open-conto-annuale",
+        "clean_rows": 16263,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/conto-annuale/comandati/*/comandati_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "qualifica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "comand_dist_u",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "comand_dist_d",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fuori_ruolo_u",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fuori_ruolo_d",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_tipo_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_istituzione",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "comandati__comandati_comparti",
+          "comandati__mart_sintesi",
+          "comandati__mart_trend"
+        ]
+      },
+      {
+        "slug": "composizione_retribuzione",
+        "url_slug": "composizione-retribuzione",
+        "name": "Composizione Retribuzione",
+        "description": "Importi retributivi per voce di spesa e qualifica del personale delle PA italiane (2020-2024), arricchiti con anagrafica enti, comparti, qualifiche e voci di spesa.",
+        "source": "",
+        "source_id": "conto_annuale",
+        "period": {
+          "start": 2017,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "pa",
+          "conto-annuale",
+          "retribuzione",
+          "spesa",
+          "dipendenti-pubblici"
+        ],
+        "category": "pa",
+        "registry_source": "open-conto-annuale",
+        "clean_rows": 550897,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/conto-annuale/composizione_retribuzione/*/composizione_retribuzione_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "qualifica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "voce_spesa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_tipo_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_tipo_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_istituzione",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_fiscale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "codi_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_aggregato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_aggregato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_macrocategoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_macrocategoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_qualifica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_tipo_voce_spesa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_voce_spesa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_segno",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "composizione_retribuzione__retribuzioni_comparti",
+          "composizione_retribuzione__retribuzioni_entrate",
+          "composizione_retribuzione__mart_sintesi",
+          "composizione_retribuzione__mart_trend"
+        ]
+      },
+      {
+        "slug": "contrattazione",
+        "url_slug": "contrattazione",
+        "name": "Contrattazione",
+        "description": "Spese di contrattazione integrativa delle PA italiane (2020-2024), arricchite con anagrafica enti e comparti.",
+        "source": "",
+        "source_id": "conto_annuale",
+        "period": {
+          "start": 2017,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "pa",
+          "conto-annuale",
+          "contrattazione",
+          "dipendenti-pubblici"
+        ],
+        "category": "pa",
+        "registry_source": "open-conto-annuale",
+        "clean_rows": 215242,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/conto-annuale/contrattazione/*/contrattazione_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "macrocategoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_voce_spesa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "natura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fondo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fondo_code",
+            "description": ""
+          },
+          {
+            "name": "voce_spesa_fua",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_tipo_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_istituzione",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "contrattazione__contrattazione_comparti",
+          "contrattazione__mart_sintesi",
+          "contrattazione__mart_trend"
+        ]
+      },
+      {
+        "slug": "costo_lavoro",
+        "url_slug": "costo-lavoro",
+        "name": "Costo Lavoro",
+        "description": "Costo del lavoro del personale delle PA italiane per voce di spesa (2020-2024), arricchito con anagrafica enti, comparti e voci di spesa.",
+        "source": "",
+        "source_id": "conto_annuale",
+        "period": {
+          "start": 2017,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "pa",
+          "conto-annuale",
+          "costo-lavoro",
+          "spesa",
+          "dipendenti-pubblici"
+        ],
+        "category": "pa",
+        "registry_source": "open-conto-annuale",
+        "clean_rows": 259961,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/conto-annuale/costo_lavoro/*/costo_lavoro_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "voce_spesa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_spesa",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_tipo_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_tipo_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_istituzione",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_fiscale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "codi_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_aggregato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_aggregato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_tipo_voce_spesa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_voce_spesa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_segno",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "costo_lavoro__costo_lavoro_comparti",
+          "costo_lavoro__mart_sintesi",
+          "costo_lavoro__mart_trend"
+        ]
+      },
+      {
+        "slug": "distribuzione",
+        "url_slug": "distribuzione",
+        "name": "Distribuzione",
+        "description": "Distribuzione geografica per regione del personale delle PA italiane (2020-2024), arricchita con anagrafica enti e comparti.",
+        "source": "",
+        "source_id": "conto_annuale",
+        "period": {
+          "start": 2017,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "pa",
+          "conto-annuale",
+          "distribuzione",
+          "territorio",
+          "dipendenti-pubblici"
+        ],
+        "category": "pa",
+        "registry_source": "open-conto-annuale",
+        "clean_rows": 62765,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/conto-annuale/distribuzione/*/distribuzione_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "qualifica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "uomini",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "donne",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_tipo_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_istituzione",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "distribuzione__distribuzione_comparti",
+          "distribuzione__distribuzione_italia",
+          "distribuzione__mart_sintesi",
+          "distribuzione__mart_trend"
+        ]
+      },
+      {
+        "slug": "flessibili",
+        "url_slug": "flessibili",
+        "name": "Flessibili",
+        "description": "Lavoratori flessibili delle PA italiane per tipologia di contratto (2020-2024), arricchiti con anagrafica enti e comparti.",
+        "source": "",
+        "source_id": "conto_annuale",
+        "period": {
+          "start": 2017,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "pa",
+          "conto-annuale",
+          "lavoro-flessibile",
+          "dipendenti-pubblici"
+        ],
+        "category": "pa",
+        "registry_source": "open-conto-annuale",
+        "clean_rows": 11306,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/conto-annuale/flessibili/*/flessibili_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "macrocategoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "td_u",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "td_d",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fl_u",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fl_d",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "int_u",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "int_d",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "lsu_u",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "lsu_d",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_tipo_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_istituzione",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "flessibili__flessibili_comparti",
+          "flessibili__mart_sintesi",
+          "flessibili__mart_trend"
+        ]
+      },
+      {
+        "slug": "modalita_flessibile",
+        "url_slug": "modalita-flessibile",
+        "name": "Modalita Flessibile",
+        "description": "Modalit\u00e0 di lavoro flessibile (telelavoro, lavoro agile, coworking, turnazione) nelle PA italiane (2021-2024), arricchite con anagrafica enti e comparti.",
+        "source": "",
+        "source_id": "conto_annuale",
+        "period": {
+          "start": 2021,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "pa",
+          "conto-annuale",
+          "lavoro-agile",
+          "telelavoro",
+          "dipendenti-pubblici"
+        ],
+        "category": "pa",
+        "registry_source": "open-conto-annuale",
+        "clean_rows": 8169,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/conto-annuale/modalita_flessibile/*/modalita_flessibile_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "macrocategoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tl_u",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tl_d",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "agile_u",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "agile_d",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cowork_u",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cowork_d",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "turn_u",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "turn_d",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_tipo_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_istituzione",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "modalita_flessibile__modalita_flessibile_comparti",
+          "modalita_flessibile__mart_sintesi",
+          "modalita_flessibile__mart_trend"
+        ]
+      },
+      {
+        "slug": "occupazione",
+        "url_slug": "occupazione",
+        "name": "Occupazione",
+        "description": "Occupazione del personale delle PA italiane per regime orario (tempo pieno, part-time) e genere (2020-2024), arricchita con anagrafica enti e comparti.",
+        "source": "",
+        "source_id": "conto_annuale",
+        "period": {
+          "start": 2017,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "pa",
+          "conto-annuale",
+          "occupazione",
+          "tempo-pieno",
+          "part-time",
+          "dipendenti-pubblici"
+        ],
+        "category": "pa",
+        "registry_source": "open-conto-annuale",
+        "clean_rows": 52913,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/conto-annuale/occupazione/*/occupazione_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "qualifica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tp_u",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tp_d",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pti_u",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pti_d",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pts_u",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pts_d",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_tipo_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_istituzione",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "occupazione__occupazione_comparti",
+          "occupazione__mart_sintesi",
+          "occupazione__mart_trend"
+        ]
+      },
+      {
+        "slug": "passaggi",
+        "url_slug": "passaggi",
+        "name": "Passaggi",
+        "description": "Passaggi di qualifica e categoria del personale delle PA italiane (2020-2024), arricchiti con anagrafica enti e comparti.",
+        "source": "",
+        "source_id": "conto_annuale",
+        "period": {
+          "start": 2017,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "pa",
+          "conto-annuale",
+          "passaggi",
+          "dipendenti-pubblici"
+        ],
+        "category": "pa",
+        "registry_source": "open-conto-annuale",
+        "clean_rows": 17131,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/conto-annuale/passaggi/*/passaggi_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_passaggi",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria_partenza",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "qualifica_partenza",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria_arrivo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "qualifica_arrivo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_passaggio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_tipo_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_tipo_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_istituzione",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_fiscale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "codi_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_aggregato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_aggregato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "passaggi__passaggi_comparti",
+          "passaggi__mart_sintesi",
+          "passaggi__mart_trend"
+        ]
+      },
+      {
+        "slug": "personale",
+        "url_slug": "personale",
+        "name": "Personale",
+        "description": "Distribuzione per fascia di et\u00e0 del personale delle PA italiane (2020-2024), arricchita con anagrafica enti, comparti e qualifiche.",
+        "source": "",
+        "source_id": "conto_annuale",
+        "period": {
+          "start": 2017,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "pa",
+          "conto-annuale",
+          "personale",
+          "eta",
+          "dipendenti-pubblici"
+        ],
+        "category": "pa",
+        "registry_source": "open-conto-annuale",
+        "clean_rows": 174758,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/conto-annuale/personale/*/personale_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "qualifica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fascia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "uomini",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "donne",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_rilevazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_tipo_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_tipo_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_istituzione",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_fiscale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "codi_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_aggregato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_aggregato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_macrocategoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_macrocategoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_qualifica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "personale__personale_eta_comparti",
+          "personale__personale_eta_italia",
+          "personale__mart_sintesi",
+          "personale__mart_trend"
+        ]
+      },
+      {
+        "slug": "retribuzione_media",
+        "url_slug": "retribuzione-media",
+        "name": "Retribuzione Media",
+        "description": "Retribuzione media per componente stipendiale del personale delle PA italiane (2020-2024), arricchita con anagrafica enti e comparti.",
+        "source": "",
+        "source_id": "conto_annuale",
+        "period": {
+          "start": 2017,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "pa",
+          "conto-annuale",
+          "retribuzione-media",
+          "dipendenti-pubblici"
+        ],
+        "category": "pa",
+        "registry_source": "open-conto-annuale",
+        "clean_rows": 33619,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/conto-annuale/retribuzione_media/*/retribuzione_media_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stipendio",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ria",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tredicesima",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "straordinario",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "indennita_fisse",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "altre_accessorie",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_tipo_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_istituzione",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "retribuzione_media__retribuzione_media_comparti",
+          "retribuzione_media__mart_sintesi",
+          "retribuzione_media__mart_trend"
+        ]
+      },
+      {
+        "slug": "titoli_studio",
+        "url_slug": "titoli-studio",
+        "name": "Titoli Studio",
+        "description": "Titoli di studio del personale delle PA italiane (2020-2024), arricchiti con anagrafica enti, comparti e qualifiche.",
+        "source": "",
+        "source_id": "conto_annuale",
+        "period": {
+          "start": 2017,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "pa",
+          "conto-annuale",
+          "titoli-studio",
+          "dipendenti-pubblici"
+        ],
+        "category": "pa",
+        "registry_source": "open-conto-annuale",
+        "clean_rows": 91943,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/conto-annuale/titoli_studio/*/titoli_studio_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "qualifica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "titolo_studio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "uomini",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "donne",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_tipo_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_tipo_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_istituzione",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_istituzione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_fiscale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "codi_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_comparto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_aggregato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_aggregato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_contratto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codi_macrocategoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_macrocategoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "desc_qualifica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "titoli_studio__titoli_studio_comparti",
+          "titoli_studio__mart_sintesi",
+          "titoli_studio__mart_trend"
+        ]
+      }
+    ],
     "ispra_linked_data": [
       {
         "slug": "ispra_bathw",
@@ -65645,7 +65647,7 @@
     "anzianita": {
       "name": "Anzianita",
       "stage": "incubating",
-      "source_id": "openbdap",
+      "source_id": "conto_annuale",
       "registry_source": "open-conto-annuale",
       "domain": null,
       "category": "pa",
@@ -65660,7 +65662,7 @@
     "assenze": {
       "name": "Assenze",
       "stage": "incubating",
-      "source_id": "openbdap",
+      "source_id": "conto_annuale",
       "registry_source": "open-conto-annuale",
       "domain": null,
       "category": "pa",
@@ -65675,7 +65677,7 @@
     "ca_anag_causali_seed": {
       "name": "Ca Anag Causali Seed",
       "stage": "incubating",
-      "source_id": "openbdap",
+      "source_id": "conto_annuale",
       "registry_source": "open-conto-annuale",
       "domain": null,
       "category": "pa",
@@ -65691,7 +65693,7 @@
     "ca_anag_comparti_seed": {
       "name": "Ca Anag Comparti Seed",
       "stage": "incubating",
-      "source_id": "openbdap",
+      "source_id": "conto_annuale",
       "registry_source": "open-conto-annuale",
       "domain": null,
       "category": "pa",
@@ -65707,7 +65709,7 @@
     "ca_anag_enti_seed": {
       "name": "Ca Anag Enti Seed",
       "stage": "incubating",
-      "source_id": "openbdap",
+      "source_id": "conto_annuale",
       "registry_source": "open-conto-annuale",
       "domain": null,
       "category": "pa",
@@ -65723,7 +65725,7 @@
     "ca_anag_fondi_seed": {
       "name": "Ca Anag Fondi Seed",
       "stage": "incubating",
-      "source_id": "openbdap",
+      "source_id": "conto_annuale",
       "registry_source": "open-conto-annuale",
       "domain": null,
       "category": "pa",
@@ -65739,7 +65741,7 @@
     "ca_anag_qualifiche_seed": {
       "name": "Ca Anag Qualifiche Seed",
       "stage": "incubating",
-      "source_id": "openbdap",
+      "source_id": "conto_annuale",
       "registry_source": "open-conto-annuale",
       "domain": null,
       "category": "pa",
@@ -65755,7 +65757,7 @@
     "ca_anag_territorio_seed": {
       "name": "Ca Anag Territorio Seed",
       "stage": "incubating",
-      "source_id": "openbdap",
+      "source_id": "conto_annuale",
       "registry_source": "open-conto-annuale",
       "domain": null,
       "category": "pa",
@@ -65771,7 +65773,7 @@
     "ca_anag_titoli_studio_seed": {
       "name": "Ca Anag Titoli Studio Seed",
       "stage": "incubating",
-      "source_id": "openbdap",
+      "source_id": "conto_annuale",
       "registry_source": "open-conto-annuale",
       "domain": null,
       "category": "pa",
@@ -65787,7 +65789,7 @@
     "ca_anag_voci_fua_seed": {
       "name": "Ca Anag Voci Fua Seed",
       "stage": "incubating",
-      "source_id": "openbdap",
+      "source_id": "conto_annuale",
       "registry_source": "open-conto-annuale",
       "domain": null,
       "category": "pa",
@@ -65803,7 +65805,7 @@
     "ca_anag_voci_spesa_seed": {
       "name": "Ca Anag Voci Spesa Seed",
       "stage": "incubating",
-      "source_id": "openbdap",
+      "source_id": "conto_annuale",
       "registry_source": "open-conto-annuale",
       "domain": null,
       "category": "pa",
@@ -65819,7 +65821,7 @@
     "comandati": {
       "name": "Comandati",
       "stage": "incubating",
-      "source_id": "openbdap",
+      "source_id": "conto_annuale",
       "registry_source": "open-conto-annuale",
       "domain": null,
       "category": "pa",
@@ -65834,7 +65836,7 @@
     "composizione_retribuzione": {
       "name": "Composizione Retribuzione",
       "stage": "incubating",
-      "source_id": "openbdap",
+      "source_id": "conto_annuale",
       "registry_source": "open-conto-annuale",
       "domain": null,
       "category": "pa",
@@ -65850,7 +65852,7 @@
     "contrattazione": {
       "name": "Contrattazione",
       "stage": "incubating",
-      "source_id": "openbdap",
+      "source_id": "conto_annuale",
       "registry_source": "open-conto-annuale",
       "domain": null,
       "category": "pa",
@@ -65865,7 +65867,7 @@
     "costo_lavoro": {
       "name": "Costo Lavoro",
       "stage": "incubating",
-      "source_id": "openbdap",
+      "source_id": "conto_annuale",
       "registry_source": "open-conto-annuale",
       "domain": null,
       "category": "pa",
@@ -65881,7 +65883,7 @@
     "distribuzione": {
       "name": "Distribuzione",
       "stage": "incubating",
-      "source_id": "openbdap",
+      "source_id": "conto_annuale",
       "registry_source": "open-conto-annuale",
       "domain": null,
       "category": "pa",
@@ -65897,7 +65899,7 @@
     "flessibili": {
       "name": "Flessibili",
       "stage": "incubating",
-      "source_id": "openbdap",
+      "source_id": "conto_annuale",
       "registry_source": "open-conto-annuale",
       "domain": null,
       "category": "pa",
@@ -65912,7 +65914,7 @@
     "modalita_flessibile": {
       "name": "Modalita Flessibile",
       "stage": "incubating",
-      "source_id": "openbdap",
+      "source_id": "conto_annuale",
       "registry_source": "open-conto-annuale",
       "domain": null,
       "category": "pa",
@@ -65928,7 +65930,7 @@
     "occupazione": {
       "name": "Occupazione",
       "stage": "incubating",
-      "source_id": "openbdap",
+      "source_id": "conto_annuale",
       "registry_source": "open-conto-annuale",
       "domain": null,
       "category": "pa",
@@ -65945,7 +65947,7 @@
     "passaggi": {
       "name": "Passaggi",
       "stage": "incubating",
-      "source_id": "openbdap",
+      "source_id": "conto_annuale",
       "registry_source": "open-conto-annuale",
       "domain": null,
       "category": "pa",
@@ -65960,7 +65962,7 @@
     "personale": {
       "name": "Personale",
       "stage": "incubating",
-      "source_id": "openbdap",
+      "source_id": "conto_annuale",
       "registry_source": "open-conto-annuale",
       "domain": null,
       "category": "pa",
@@ -65976,7 +65978,7 @@
     "retribuzione_media": {
       "name": "Retribuzione Media",
       "stage": "incubating",
-      "source_id": "openbdap",
+      "source_id": "conto_annuale",
       "registry_source": "open-conto-annuale",
       "domain": null,
       "category": "pa",
@@ -65991,7 +65993,7 @@
     "titoli_studio": {
       "name": "Titoli Studio",
       "stage": "incubating",
-      "source_id": "openbdap",
+      "source_id": "conto_annuale",
       "registry_source": "open-conto-annuale",
       "domain": null,
       "category": "pa",

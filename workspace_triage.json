@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T04:21:25.801867",
+  "generated_at": "2026-10-28T12:14:43.407521",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -49,7 +49,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 7,
+  "open_prs": 10,
   "prs": [
     {
       "number": 20,
@@ -80,6 +80,27 @@
       "category": "other"
     },
     {
+      "number": 24,
+      "title": "feat(acsp): societ\u00e0 di persone \u2014 4 dataset IRPEF (redditi dichiarati)",
+      "repo": "dichiarazioni-italia",
+      "url": "https://github.com/dataciviclab/dichiarazioni-italia/pull/24",
+      "category": "other"
+    },
+    {
+      "number": 438,
+      "title": "refactor(engine): confine del motore e dieta delle dipendenze",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/438",
+      "category": "other"
+    },
+    {
+      "number": 437,
+      "title": "fix(drift): verifica HTTP degli URL consumati \u2014 l'inventario non \u00e8 autorevole",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/437",
+      "category": "other"
+    },
+    {
       "number": 521,
       "title": "feat(read): all_varchar + padding NULL + guardia macro normalize_italian_* (#520)",
       "repo": "toolkit",
@@ -101,7 +122,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 48,
+  "open_issues": 51,
   "issues": [
     {
       "number": 13,
@@ -276,6 +297,27 @@
       "title": "chore(lab_tools): riordino script \u2014 separare library da eseguibili",
       "repo": "italia-corpus",
       "url": "https://github.com/dataciviclab/italia-corpus/issues/63",
+      "category": "other"
+    },
+    {
+      "number": 10,
+      "title": "chore(catalog): abilita il drift sui 3 dataset scaricati via script",
+      "repo": "open-consip",
+      "url": "https://github.com/dataciviclab/open-consip/issues/10",
+      "category": "other"
+    },
+    {
+      "number": 9,
+      "title": "fix(pipeline): fallisce da runner GHA \u2014 connect timeout su dati.consip.it",
+      "repo": "open-consip",
+      "url": "https://github.com/dataciviclab/open-consip/issues/9",
+      "category": "other"
+    },
+    {
+      "number": 8,
+      "title": "fix(consip_consumi_convenzione): finestra anni 2023-2025 \u2192 2024-2026",
+      "repo": "open-consip",
+      "url": "https://github.com/dataciviclab/open-consip/issues/8",
       "category": "other"
     },
     {
@@ -2201,24 +2243,24 @@
     }
   },
   "warnings": [
-    "Many open PRs: 7"
+    "Many open PRs: 10"
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-10-27T08:59:51.417675+00:00",
-    "probe_date": "2026-10-27",
+    "generated_at": "2026-10-28T09:34:30.349376+00:00",
+    "probe_date": "2026-10-28",
     "sources_total": 36,
-    "green": 33,
-    "yellow": 3,
+    "green": 34,
+    "yellow": 2,
     "red": 0,
     "persistent_red": 0,
     "sources": [
       {
         "id": "istat_sdmx",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "sdmx",
-        "http_code": "-",
-        "note": "Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
@@ -2239,10 +2281,10 @@
       },
       {
         "id": "openbdap",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "ckan",
         "http_code": "200",
-        "note": "CKAN API returned non-JSON content",
+        "note": null,
         "red_streak": 0
       },
       {
@@ -2279,10 +2321,10 @@
       },
       {
         "id": "dati_cultura",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "sparql",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
@@ -2504,19 +2546,11 @@
     ],
     "unhealthy": [
       {
-        "id": "istat_sdmx",
+        "id": "dati_cultura",
         "status": "YELLOW",
-        "protocol": "sdmx",
+        "protocol": "sparql",
         "http_code": "-",
-        "note": "Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
-      {
-        "id": "openbdap",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "200",
-        "note": "CKAN API returned non-JSON content",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
@@ -6571,7 +6605,7 @@
         },
         {
           "id": "anzianita",
-          "source_id": "openbdap",
+          "source_id": "conto_annuale",
           "status": "ok",
           "label": "anzianita",
           "detail": "anni 2011-2024 \u2014 mart: si",
@@ -6585,7 +6619,7 @@
         },
         {
           "id": "assenze",
-          "source_id": "openbdap",
+          "source_id": "conto_annuale",
           "status": "ok",
           "label": "assenze",
           "detail": "anni 2011-2024 \u2014 mart: si",
@@ -6599,7 +6633,7 @@
         },
         {
           "id": "comandati",
-          "source_id": "openbdap",
+          "source_id": "conto_annuale",
           "status": "ok",
           "label": "comandati",
           "detail": "anni 2011-2024 \u2014 mart: si",
@@ -6613,7 +6647,7 @@
         },
         {
           "id": "composizione_retribuzione",
-          "source_id": "openbdap",
+          "source_id": "conto_annuale",
           "status": "ok",
           "label": "composizione_retribuzione",
           "detail": "anni 2011-2024 \u2014 mart: si",
@@ -6627,7 +6661,7 @@
         },
         {
           "id": "contrattazione",
-          "source_id": "openbdap",
+          "source_id": "conto_annuale",
           "status": "ok",
           "label": "contrattazione",
           "detail": "anni 2011-2024 \u2014 mart: si",
@@ -6641,7 +6675,7 @@
         },
         {
           "id": "costo_lavoro",
-          "source_id": "openbdap",
+          "source_id": "conto_annuale",
           "status": "ok",
           "label": "costo_lavoro",
           "detail": "anni 2011-2024 \u2014 mart: si",
@@ -6655,7 +6689,7 @@
         },
         {
           "id": "distribuzione",
-          "source_id": "openbdap",
+          "source_id": "conto_annuale",
           "status": "ok",
           "label": "distribuzione",
           "detail": "anni 2011-2024 \u2014 mart: si",
@@ -6669,7 +6703,7 @@
         },
         {
           "id": "flessibili",
-          "source_id": "openbdap",
+          "source_id": "conto_annuale",
           "status": "ok",
           "label": "flessibili",
           "detail": "anni 2011-2024 \u2014 mart: si",
@@ -6683,7 +6717,7 @@
         },
         {
           "id": "modalita_flessibile",
-          "source_id": "openbdap",
+          "source_id": "conto_annuale",
           "status": "ok",
           "label": "modalita_flessibile",
           "detail": "anni 2011-2024 \u2014 mart: si",
@@ -6697,7 +6731,7 @@
         },
         {
           "id": "occupazione",
-          "source_id": "openbdap",
+          "source_id": "conto_annuale",
           "status": "ok",
           "label": "occupazione",
           "detail": "anni 2011-2024 \u2014 mart: si",
@@ -6711,7 +6745,7 @@
         },
         {
           "id": "passaggi",
-          "source_id": "openbdap",
+          "source_id": "conto_annuale",
           "status": "ok",
           "label": "passaggi",
           "detail": "anni 2011-2024 \u2014 mart: si",
@@ -6725,7 +6759,7 @@
         },
         {
           "id": "personale",
-          "source_id": "openbdap",
+          "source_id": "conto_annuale",
           "status": "ok",
           "label": "personale",
           "detail": "anni 2011-2024 \u2014 mart: si",
@@ -6739,7 +6773,7 @@
         },
         {
           "id": "retribuzione_media",
-          "source_id": "openbdap",
+          "source_id": "conto_annuale",
           "status": "ok",
           "label": "retribuzione_media",
           "detail": "anni 2011-2024 \u2014 mart: si",
@@ -6753,7 +6787,7 @@
         },
         {
           "id": "titoli_studio",
-          "source_id": "openbdap",
+          "source_id": "conto_annuale",
           "status": "ok",
           "label": "titoli_studio",
           "detail": "anni 2011-2024 \u2014 mart: si",
@@ -6767,7 +6801,7 @@
         },
         {
           "id": "ca_anag_causali_seed",
-          "source_id": "openbdap",
+          "source_id": "conto_annuale",
           "status": "ok",
           "label": "ca_anag_causali_seed",
           "detail": "anno 2024 \u2014 mart: si",
@@ -6781,7 +6815,7 @@
         },
         {
           "id": "ca_anag_comparti_seed",
-          "source_id": "openbdap",
+          "source_id": "conto_annuale",
           "status": "ok",
           "label": "ca_anag_comparti_seed",
           "detail": "anno 2024 \u2014 mart: si",
@@ -6795,7 +6829,7 @@
         },
         {
           "id": "ca_anag_enti_seed",
-          "source_id": "openbdap",
+          "source_id": "conto_annuale",
           "status": "ok",
           "label": "ca_anag_enti_seed",
           "detail": "anno 2024 \u2014 mart: si",
@@ -6809,7 +6843,7 @@
         },
         {
           "id": "ca_anag_fondi_seed",
-          "source_id": "openbdap",
+          "source_id": "conto_annuale",
           "status": "ok",
           "label": "ca_anag_fondi_seed",
           "detail": "anno 2024 \u2014 mart: si",
@@ -6823,7 +6857,7 @@
         },
         {
           "id": "ca_anag_qualifiche_seed",
-          "source_id": "openbdap",
+          "source_id": "conto_annuale",
           "status": "ok",
           "label": "ca_anag_qualifiche_seed",
           "detail": "anno 2024 \u2014 mart: si",
@@ -6837,7 +6871,7 @@
         },
         {
           "id": "ca_anag_territorio_seed",
-          "source_id": "openbdap",
+          "source_id": "conto_annuale",
           "status": "ok",
           "label": "ca_anag_territorio_seed",
           "detail": "anno 2024 \u2014 mart: si",
@@ -6851,7 +6885,7 @@
         },
         {
           "id": "ca_anag_titoli_studio_seed",
-          "source_id": "openbdap",
+          "source_id": "conto_annuale",
           "status": "ok",
           "label": "ca_anag_titoli_studio_seed",
           "detail": "anno 2024 \u2014 mart: si",
@@ -6865,7 +6899,7 @@
         },
         {
           "id": "ca_anag_voci_fua_seed",
-          "source_id": "openbdap",
+          "source_id": "conto_annuale",
           "status": "ok",
           "label": "ca_anag_voci_fua_seed",
           "detail": "anno 2024 \u2014 mart: si",
@@ -6879,7 +6913,7 @@
         },
         {
           "id": "ca_anag_voci_spesa_seed",
-          "source_id": "openbdap",
+          "source_id": "conto_annuale",
           "status": "ok",
           "label": "ca_anag_voci_spesa_seed",
           "detail": "anno 2024 \u2014 mart: si",
