@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-28T12:14:43.407521",
+  "generated_at": "2026-10-28T22:16:38.843546",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -131,7 +131,7 @@
       "url": "https://github.com/dataciviclab/dichiarazioni-italia",
       "role": "dati",
       "domain": "finanza-pubblica",
-      "n_datasets": 10,
+      "n_datasets": 15,
       "n_published": 0,
       "sources": [
         "mef_finanze"
@@ -26622,6 +26622,1307 @@
     ],
     "mef_finanze": [
       {
+        "slug": "acsp_imprese_regione",
+        "url_slug": "acsp-imprese-regione",
+        "name": "Acsp Imprese Regione",
+        "description": "Redditi dichiarati e determinazione del reddito d'impresa delle societ\u00e0 di persone con reddito d'impresa per regione. Anno d'imposta 2014-2024.",
+        "source": "",
+        "source_id": "mef_finanze",
+        "period": {
+          "start": 2014,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "irpef",
+          "societa-di-persone",
+          "imprese",
+          "regionale",
+          "redditi"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "dichiarazioni-italia",
+        "clean_rows": 21,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/dichiarazioni-italia/acsp_imprese_regione/*/acsp_imprese_regione_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "cod_regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "numero_imprenditori",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_impresa_ordinaria_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_impresa_ordinaria_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_impresa_semplificata_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_impresa_semplificata_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_partecipazione_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_partecipazione_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "capitali_diversi_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "capitali_diversi_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "redditi_tassazione_separata_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "redditi_tassazione_separata_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_reddito_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_reddito_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_perdita_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_perdita_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "utile_conto_economico_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "utile_conto_economico_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_conto_economico_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_conto_economico_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "variazioni_aumento_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "variazioni_aumento_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "variazioni_diminuzione_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "variazioni_diminuzione_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "erogazioni_liberali_blocco1_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "erogazioni_liberali_blocco1_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_impresa_blocco1_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_impresa_blocco1_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_impresa_blocco1_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_impresa_blocco1_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ricavi_vendite_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ricavi_vendite_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "componenti_positivi_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "componenti_positivi_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "componenti_negativi_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "componenti_negativi_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "differenza_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "differenza_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "erogazioni_liberali_blocco2_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "erogazioni_liberali_blocco2_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_impresa_blocco2_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_impresa_blocco2_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_impresa_blocco2_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_impresa_blocco2_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "altri_ricavi_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "altri_ricavi_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "acsp_imprese_regione__mart_regione_anno",
+          "acsp_imprese_regione__mart_anno"
+        ]
+      },
+      {
+        "slug": "acsp_professionisti_regione",
+        "url_slug": "acsp-professionisti-regione",
+        "name": "Acsp Professionisti Regione",
+        "description": "Redditi e compensi dichiarati dalle societ\u00e0 di persone professionali per regione. Anno d'imposta 2018-2024.",
+        "source": "",
+        "source_id": "mef_finanze",
+        "period": {
+          "start": 2018,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "irpef",
+          "societa-di-persone",
+          "professionisti",
+          "regionale",
+          "redditi"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "dichiarazioni-italia",
+        "clean_rows": 21,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/dichiarazioni-italia/acsp_professionisti_regione/*/acsp_professionisti_regione_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "cod_regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "numero_societa",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_lavoro_autonomo_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_lavoro_autonomo_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_lavoro_autonomo_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_lavoro_autonomo_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_partecipazione_associazione_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_partecipazione_associazione_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "capitali_diversi_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "capitali_diversi_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_reddito_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_reddito_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_perdita_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_perdita_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "compensi_non_annotati_isa_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "compensi_non_annotati_isa_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "compensi_non_annotati_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "compensi_non_annotati_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "compensi_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "compensi_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "spese_immobili_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "spese_immobili_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "spese_lavoro_dipendente_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "spese_lavoro_dipendente_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "compensi_terzi_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "compensi_terzi_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_spese_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_spese_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "acsp_professionisti_regione__mart_regione_anno",
+          "acsp_professionisti_regione__mart_anno"
+        ]
+      },
+      {
+        "slug": "acsp_tutte_classi_reddito",
+        "url_slug": "acsp-tutte-classi-reddito",
+        "name": "Acsp Tutte Classi Reddito",
+        "description": "Redditi dichiarati dalle societ\u00e0 di persone (tutte le tipologie) per classe di reddito. Anno d'imposta 2013-2024.",
+        "source": "",
+        "source_id": "mef_finanze",
+        "period": {
+          "start": 2013,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "irpef",
+          "societa-di-persone",
+          "classi-di-reddito",
+          "redditi"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "dichiarazioni-italia",
+        "clean_rows": 33,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/dichiarazioni-italia/acsp_tutte_classi_reddito/*/acsp_tutte_classi_reddito_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "classe_reddito",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_societa",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_reddito_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_reddito_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_perdita_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_perdita_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_continuita_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_continuita_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_continuita_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_continuita_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_impresa_ordinaria_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_impresa_ordinaria_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_impresa_semplificata_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_impresa_semplificata_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_lavoro_autonomo_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_lavoro_autonomo_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "terreni_imponibile_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "terreni_imponibile_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "terreni_non_imponibile_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "terreni_non_imponibile_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fabbricati_imponibile_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fabbricati_imponibile_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fabbricati_non_imponibile_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fabbricati_non_imponibile_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "capitali_diversi_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "capitali_diversi_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "acsp_tutte_classi_reddito__mart_classe_reddito_anno",
+          "acsp_tutte_classi_reddito__mart_anno"
+        ]
+      },
+      {
+        "slug": "acsp_tutte_classi_volume",
+        "url_slug": "acsp-tutte-classi-volume",
+        "name": "Acsp Tutte Classi Volume",
+        "description": "Redditi dichiarati dalle societ\u00e0 di persone (tutte le tipologie) per classe di volume d'affari. Anno d'imposta 2013-2024.",
+        "source": "",
+        "source_id": "mef_finanze",
+        "period": {
+          "start": 2013,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "irpef",
+          "societa-di-persone",
+          "classi-di-volume",
+          "redditi"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "dichiarazioni-italia",
+        "clean_rows": 38,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/dichiarazioni-italia/acsp_tutte_classi_volume/*/acsp_tutte_classi_volume_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "classe_volume_affari",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_societa",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_reddito_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_reddito_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_perdita_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_perdita_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_continuita_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_continuita_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_continuita_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_continuita_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_impresa_ordinaria_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_impresa_ordinaria_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_impresa_semplificata_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_impresa_semplificata_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_lavoro_autonomo_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_lavoro_autonomo_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "terreni_imponibile_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "terreni_imponibile_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "terreni_non_imponibile_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "terreni_non_imponibile_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fabbricati_imponibile_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fabbricati_imponibile_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fabbricati_non_imponibile_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fabbricati_non_imponibile_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "capitali_diversi_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "capitali_diversi_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "acsp_tutte_classi_volume__mart_classe_volume_affari_anno",
+          "acsp_tutte_classi_volume__mart_anno"
+        ]
+      },
+      {
+        "slug": "acsp_tutte_regione",
+        "url_slug": "acsp-tutte-regione",
+        "name": "Acsp Tutte Regione",
+        "description": "Redditi dichiarati dalle societ\u00e0 di persone (tutte le tipologie) per regione. Anno d'imposta 2013-2024.",
+        "source": "",
+        "source_id": "mef_finanze",
+        "period": {
+          "start": 2013,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "irpef",
+          "societa-di-persone",
+          "regionale",
+          "redditi"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "dichiarazioni-italia",
+        "clean_rows": 21,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/dichiarazioni-italia/acsp_tutte_regione/*/acsp_tutte_regione_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "cod_regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "numero_societa",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_reddito_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_reddito_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_perdita_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_perdita_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_continuita_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_continuita_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_continuita_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_continuita_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_impresa_ordinaria_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_impresa_ordinaria_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_impresa_semplificata_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_impresa_semplificata_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_lavoro_autonomo_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_lavoro_autonomo_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "terreni_imponibile_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "terreni_imponibile_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "terreni_non_imponibile_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "terreni_non_imponibile_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fabbricati_imponibile_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fabbricati_imponibile_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fabbricati_non_imponibile_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fabbricati_non_imponibile_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "capitali_diversi_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "capitali_diversi_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "acsp_tutte_regione__mart_regione_anno",
+          "acsp_tutte_regione__mart_anno"
+        ]
+      },
+      {
         "slug": "irap_imposta_pa_regione",
         "url_slug": "irap-imposta-pa-regione",
         "name": "Irap Imposta Pa Regione",
@@ -29658,7 +30959,7 @@
         ],
         "category": "giustizia",
         "registry_source": "giustizia-amministrativa",
-        "clean_rows": 272017,
+        "clean_rows": 273418,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/giustizia-amministrativa/ga_decreti/2026/ga_decreti_2026_clean.parquet",
@@ -29809,7 +31110,7 @@
         ],
         "category": "giustizia",
         "registry_source": "giustizia-amministrativa",
-        "clean_rows": 299543,
+        "clean_rows": 301580,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/giustizia-amministrativa/ga_ordinanze/2026/ga_ordinanze_2026_clean.parquet",
@@ -29961,7 +31262,7 @@
         ],
         "category": "giustizia",
         "registry_source": "giustizia-amministrativa",
-        "clean_rows": 22829,
+        "clean_rows": 22993,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/giustizia-amministrativa/ga_pareri/2026/ga_pareri_2026_clean.parquet",
@@ -30112,7 +31413,7 @@
         ],
         "category": "giustizia",
         "registry_source": "giustizia-amministrativa",
-        "clean_rows": 29415,
+        "clean_rows": 29676,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/giustizia-amministrativa/ga_provvedimenti/2026/ga_provvedimenti_2026_clean.parquet",
@@ -30221,7 +31522,7 @@
         ],
         "category": "giustizia",
         "registry_source": "giustizia-amministrativa",
-        "clean_rows": 420262,
+        "clean_rows": 423463,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/giustizia-amministrativa/ga_ricorsi_definiti/2026/ga_ricorsi_definiti_2026_clean.parquet",
@@ -30304,7 +31605,7 @@
         ],
         "category": "giustizia",
         "registry_source": "giustizia-amministrativa",
-        "clean_rows": 2145,
+        "clean_rows": 2178,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/giustizia-amministrativa/ga_ricorsi_pendenti/2026/ga_ricorsi_pendenti_2026_clean.parquet",
@@ -30371,7 +31672,7 @@
         ],
         "category": "giustizia",
         "registry_source": "giustizia-amministrativa",
-        "clean_rows": 203846,
+        "clean_rows": 205881,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/giustizia-amministrativa/ga_ricorsi_pervenuti_class/2026/ga_ricorsi_pervenuti_class_2026_clean.parquet",
@@ -30446,7 +31747,7 @@
         ],
         "category": "giustizia",
         "registry_source": "giustizia-amministrativa",
-        "clean_rows": 3842,
+        "clean_rows": 3874,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/giustizia-amministrativa/ga_ricorsi_tipo_decisione/2026/ga_ricorsi_tipo_decisione_2026_clean.parquet",
@@ -30534,7 +31835,7 @@
         ],
         "category": "giustizia",
         "registry_source": "giustizia-amministrativa",
-        "clean_rows": 497613,
+        "clean_rows": 501531,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/giustizia-amministrativa/ga_sentenze/2026/ga_sentenze_2026_clean.parquet",
@@ -30686,7 +31987,7 @@
         ],
         "category": "giustizia",
         "registry_source": "giustizia-amministrativa",
-        "clean_rows": 190416,
+        "clean_rows": 191955,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/giustizia-amministrativa/ga_sentenze_brevi/2026/ga_sentenze_brevi_2026_clean.parquet",
@@ -30767,7 +32068,7 @@
         ],
         "category": "giustizia",
         "registry_source": "giustizia-amministrativa",
-        "clean_rows": 34764,
+        "clean_rows": 35116,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/giustizia-amministrativa/openga_ricorsi_appalto/2026/openga_ricorsi_appalto_2026_clean.parquet",
@@ -34626,7 +35927,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 1846,
+        "clean_rows": 1884,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_bandi_open/2026/inpa_bandi_open_2026_clean.parquet",
@@ -34845,7 +36146,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 6121,
+        "clean_rows": 6166,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_comunicazioni/2026/inpa_comunicazioni_2026_clean.parquet",
@@ -39365,7 +40666,7 @@
         ],
         "category": "pa",
         "registry_source": "open-consip",
-        "clean_rows": 25468,
+        "clean_rows": 25515,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-consip/consip_amministrazioni/*/consip_amministrazioni_*_clean.parquet",
@@ -39482,7 +40783,7 @@
         ],
         "category": "appalti",
         "registry_source": "open-consip",
-        "clean_rows": 1785,
+        "clean_rows": 1854,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-consip/consip_bandi_e_gare/*/consip_bandi_e_gare_*_clean.parquet",
@@ -39726,7 +41027,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "open-consip",
-        "clean_rows": 244660,
+        "clean_rows": 279476,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-consip/consip_cataloghi/*/consip_cataloghi_*_clean.parquet",
@@ -39837,8 +41138,8 @@
         "source": "",
         "source_id": "consip_open_data",
         "period": {
-          "start": 2023,
-          "end": 2025
+          "start": 2024,
+          "end": 2026
         },
         "stage": "incubating",
         "tags": [
@@ -39849,7 +41150,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "open-consip",
-        "clean_rows": 7115,
+        "clean_rows": 6208,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-consip/consip_consumi_convenzione/*/consip_consumi_convenzione_*_clean.parquet",
@@ -39967,7 +41268,7 @@
         ],
         "category": "appalti",
         "registry_source": "open-consip",
-        "clean_rows": 21358,
+        "clean_rows": 21907,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-consip/consip_gare_asp/*/consip_gare_asp_*_clean.parquet",
@@ -40175,7 +41476,7 @@
         ],
         "category": "economia",
         "registry_source": "open-consip",
-        "clean_rows": 315058,
+        "clean_rows": 321290,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-consip/consip_operatori_economici/*/consip_operatori_economici_*_clean.parquet",
@@ -40314,7 +41615,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "open-consip",
-        "clean_rows": 11328,
+        "clean_rows": 13181,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-consip/consip_ordini_convenzione/*/consip_ordini_convenzione_*_clean.parquet",
@@ -40459,7 +41760,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "open-consip",
-        "clean_rows": 69853,
+        "clean_rows": 83908,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-consip/consip_ordini_mepa/*/consip_ordini_mepa_*_clean.parquet",
@@ -40605,7 +41906,7 @@
         ],
         "category": "appalti",
         "registry_source": "open-consip",
-        "clean_rows": 1019679,
+        "clean_rows": 1039750,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-consip/consip_partecipazioni/*/consip_partecipazioni_*_clean.parquet",
@@ -40730,7 +42031,7 @@
         ],
         "category": "appalti",
         "registry_source": "open-consip",
-        "clean_rows": 12813,
+        "clean_rows": 14571,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-consip/consip_rdo_td_stipulate/*/consip_rdo_td_stipulate_*_clean.parquet",
@@ -59169,6 +60470,11 @@
         "sistema-bancario"
       ],
       "datasets": [
+        "acsp_imprese_regione",
+        "acsp_professionisti_regione",
+        "acsp_tutte_classi_reddito",
+        "acsp_tutte_classi_volume",
+        "acsp_tutte_regione",
         "adm_accertato_accise",
         "ameco",
         "anac_aggiudicatari",
@@ -59313,7 +60619,7 @@
         "ted_contract_notices",
         "wb_financial"
       ],
-      "dataset_count": 143
+      "dataset_count": 148
     },
     {
       "slug": "sanita",
@@ -59615,6 +60921,11 @@
       "slug": "finanza-pubblica",
       "name": "Finanza pubblica",
       "datasets": [
+        "acsp_imprese_regione",
+        "acsp_professionisti_regione",
+        "acsp_tutte_classi_reddito",
+        "acsp_tutte_classi_volume",
+        "acsp_tutte_regione",
         "adm_accertato_accise",
         "ameco",
         "anac_aggiudicatari",
@@ -60710,6 +62021,11 @@
       "ocpi_serie_storiche"
     ],
     "dichiarazioni-italia": [
+      "acsp_imprese_regione",
+      "acsp_professionisti_regione",
+      "acsp_tutte_classi_reddito",
+      "acsp_tutte_classi_volume",
+      "acsp_tutte_regione",
       "irap_imposta_pa_regione",
       "irap_imposta_regione",
       "irap_imposta_settore",
@@ -61129,6 +62445,11 @@
   },
   "by_domain": {
     "finanza-pubblica": [
+      "acsp_imprese_regione",
+      "acsp_professionisti_regione",
+      "acsp_tutte_classi_reddito",
+      "acsp_tutte_classi_volume",
+      "acsp_tutte_regione",
       "adm_accertato_accise",
       "ameco",
       "anac_aggiudicatari",
@@ -63021,6 +64342,83 @@
         "serie-storiche"
       ],
       "description": ""
+    },
+    "acsp_imprese_regione": {
+      "name": "Acsp Imprese Regione",
+      "stage": "incubating",
+      "source_id": "mef_finanze",
+      "registry_source": "dichiarazioni-italia",
+      "domain": "finanza-pubblica",
+      "category": "finanza-pubblica",
+      "tags": [
+        "irpef",
+        "societa-di-persone",
+        "imprese",
+        "regionale",
+        "redditi"
+      ],
+      "description": "Redditi dichiarati e determinazione del reddito d'impresa delle societ\u00e0 di persone con reddito d'impresa per regione. Anno d'imposta 2014-2024."
+    },
+    "acsp_professionisti_regione": {
+      "name": "Acsp Professionisti Regione",
+      "stage": "incubating",
+      "source_id": "mef_finanze",
+      "registry_source": "dichiarazioni-italia",
+      "domain": "finanza-pubblica",
+      "category": "finanza-pubblica",
+      "tags": [
+        "irpef",
+        "societa-di-persone",
+        "professionisti",
+        "regionale",
+        "redditi"
+      ],
+      "description": "Redditi e compensi dichiarati dalle societ\u00e0 di persone professionali per regione. Anno d'imposta 2018-2024."
+    },
+    "acsp_tutte_classi_reddito": {
+      "name": "Acsp Tutte Classi Reddito",
+      "stage": "incubating",
+      "source_id": "mef_finanze",
+      "registry_source": "dichiarazioni-italia",
+      "domain": "finanza-pubblica",
+      "category": "finanza-pubblica",
+      "tags": [
+        "irpef",
+        "societa-di-persone",
+        "classi-di-reddito",
+        "redditi"
+      ],
+      "description": "Redditi dichiarati dalle societ\u00e0 di persone (tutte le tipologie) per classe di reddito. Anno d'imposta 2013-2024."
+    },
+    "acsp_tutte_classi_volume": {
+      "name": "Acsp Tutte Classi Volume",
+      "stage": "incubating",
+      "source_id": "mef_finanze",
+      "registry_source": "dichiarazioni-italia",
+      "domain": "finanza-pubblica",
+      "category": "finanza-pubblica",
+      "tags": [
+        "irpef",
+        "societa-di-persone",
+        "classi-di-volume",
+        "redditi"
+      ],
+      "description": "Redditi dichiarati dalle societ\u00e0 di persone (tutte le tipologie) per classe di volume d'affari. Anno d'imposta 2013-2024."
+    },
+    "acsp_tutte_regione": {
+      "name": "Acsp Tutte Regione",
+      "stage": "incubating",
+      "source_id": "mef_finanze",
+      "registry_source": "dichiarazioni-italia",
+      "domain": "finanza-pubblica",
+      "category": "finanza-pubblica",
+      "tags": [
+        "irpef",
+        "societa-di-persone",
+        "regionale",
+        "redditi"
+      ],
+      "description": "Redditi dichiarati dalle societ\u00e0 di persone (tutte le tipologie) per regione. Anno d'imposta 2013-2024."
     },
     "irap_imposta_pa_regione": {
       "name": "Irap Imposta Pa Regione",
