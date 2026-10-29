@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-29T04:41:00.519164",
+  "generated_at": "2026-10-29T12:24:15.029606",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -131,7 +131,7 @@
       "url": "https://github.com/dataciviclab/dichiarazioni-italia",
       "role": "dati",
       "domain": "finanza-pubblica",
-      "n_datasets": 15,
+      "n_datasets": 16,
       "n_published": 0,
       "sources": [
         "mef_finanze"
@@ -26621,6 +26621,727 @@
       }
     ],
     "mef_finanze": [
+      {
+        "slug": "abpf_titolari_piva_regione",
+        "url_slug": "abpf-titolari-piva-regione",
+        "name": "Abpf Titolari Piva Regione",
+        "description": "IRPEF delle persone fisiche titolari di partita IVA: redditi, imposta, addizionali, IVA e regimi agevolati per regione. Anno d'imposta 2015-2024.",
+        "source": "",
+        "source_id": "mef_finanze",
+        "period": {
+          "start": 2015,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "irpef",
+          "partita-iva",
+          "lavoro-autonomo",
+          "regionale",
+          "redditi",
+          "imposta"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "dichiarazioni-italia",
+        "clean_rows": 21,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/dichiarazioni-italia/abpf_titolari_piva_regione/*/abpf_titolari_piva_regione_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "cod_regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "numero_titolari",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "acconti_versati_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "acconti_versati_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "addizionale_comunale_dovuta_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "addizionale_comunale_dovuta_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "addizionale_regionale_dovuta_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "addizionale_regionale_dovuta_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "altri_redditi_da_lavoro_autonomo_e_redditi_da_recupero_start_up_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "altri_redditi_da_lavoro_autonomo_e_redditi_da_recupero_start_up_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "eccedenza_d_imposta_risultante_dalla_precedente_dichiarazione_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "eccedenza_d_imposta_risultante_dalla_precedente_dichiarazione_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_lorda_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_lorda_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_netta_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_netta_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "irpef_a_credito_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "irpef_a_credito_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "irpef_a_debito_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "irpef_a_debito_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "iva_a_debito_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "iva_a_debito_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "iva_detraibile_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "iva_detraibile_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_da_lavoro_autonomo_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_da_lavoro_autonomo_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_da_lavoro_autonomo_con_continuita_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_da_lavoro_autonomo_con_continuita_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_da_partecipazione_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_da_partecipazione_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_di_impresa_in_contabilita_ordinaria_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_di_impresa_in_contabilita_ordinaria_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_di_impresa_in_contabilita_ordinaria_con_continuita_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_di_impresa_in_contabilita_ordinaria_con_continuita_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_di_impresa_in_contabilita_semplificata_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_di_impresa_in_contabilita_semplificata_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_di_impresa_in_contabilita_semplificata_con_continuita_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "perdita_di_impresa_in_contabilita_semplificata_con_continuita_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "plusvalenze_di_natura_finanziaria_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "plusvalenze_di_natura_finanziaria_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "redditi_diversi_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "redditi_diversi_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_agricolo_dichiarato_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_agricolo_dichiarato_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_complessivo_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_complessivo_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_complessivo_al_netto_della_cedolare_secca_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_complessivo_al_netto_della_cedolare_secca_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_d_impresa_dichiarato_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_d_impresa_dichiarato_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_da_allevamento_e_produzione_di_vegetali_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_da_allevamento_e_produzione_di_vegetali_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_da_fabbricati_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_da_fabbricati_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_da_lavoro_autonomo_con_continuita_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_da_lavoro_autonomo_con_continuita_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_da_lavoro_autonomo_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_da_lavoro_autonomo_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_da_partecipazione_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_da_partecipazione_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_dei_terreni_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_dei_terreni_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_di_capitale_sez_ia_e_ib_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_di_capitale_sez_ia_e_ib_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_di_impresa_in_contabilita_ordinaria_con_continuita_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_di_impresa_in_contabilita_ordinaria_con_continuita_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_di_impresa_in_contabilita_ordinaria_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_di_impresa_in_contabilita_ordinaria_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_di_impresa_in_contabilita_semplificata_con_continuita_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_di_impresa_in_contabilita_semplificata_con_continuita_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_di_impresa_in_contabilita_semplificata_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_di_impresa_in_contabilita_semplificata_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_di_lavoro_dipendente_e_assimilati_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_di_lavoro_dipendente_e_assimilati_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_di_spettanza_dell_imprenditore_in_contabilita_ordinaria_con_continuita_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_di_spettanza_dell_imprenditore_in_contabilita_ordinaria_con_continuita_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_di_spettanza_dell_imprenditore_in_contabilita_ordinaria_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_di_spettanza_dell_imprenditore_in_contabilita_ordinaria_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_di_spettanza_dell_imprenditore_in_contabilita_semplificata_con_continuita_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_di_spettanza_dell_imprenditore_in_contabilita_semplificata_con_continuita_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_di_spettanza_dell_imprenditore_in_contabilita_semplificata_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_di_spettanza_dell_imprenditore_in_contabilita_semplificata_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_imponibile_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_imponibile_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_imponibile_addizionale_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_imponibile_addizionale_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_netto_regime_di_vantaggio_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_netto_regime_di_vantaggio_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_netto_regime_forfetario_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_netto_regime_forfetario_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_professionale_dichiarato_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_professionale_dichiarato_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tassazione_separata_con_opzione_tassazione_ordinaria_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tassazione_separata_con_opzione_tassazione_ordinaria_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "volume_d_affari_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "volume_d_affari_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "abpf_titolari_piva_regione__mart_regione_anno",
+          "abpf_titolari_piva_regione__mart_anno"
+        ]
+      },
       {
         "slug": "acsp_imprese_regione",
         "url_slug": "acsp-imprese-regione",
@@ -60470,6 +61191,7 @@
         "sistema-bancario"
       ],
       "datasets": [
+        "abpf_titolari_piva_regione",
         "acsp_imprese_regione",
         "acsp_professionisti_regione",
         "acsp_tutte_classi_reddito",
@@ -60619,7 +61341,7 @@
         "ted_contract_notices",
         "wb_financial"
       ],
-      "dataset_count": 148
+      "dataset_count": 149
     },
     {
       "slug": "sanita",
@@ -60921,6 +61643,7 @@
       "slug": "finanza-pubblica",
       "name": "Finanza pubblica",
       "datasets": [
+        "abpf_titolari_piva_regione",
         "acsp_imprese_regione",
         "acsp_professionisti_regione",
         "acsp_tutte_classi_reddito",
@@ -62021,6 +62744,7 @@
       "ocpi_serie_storiche"
     ],
     "dichiarazioni-italia": [
+      "abpf_titolari_piva_regione",
       "acsp_imprese_regione",
       "acsp_professionisti_regione",
       "acsp_tutte_classi_reddito",
@@ -62445,6 +63169,7 @@
   },
   "by_domain": {
     "finanza-pubblica": [
+      "abpf_titolari_piva_regione",
       "acsp_imprese_regione",
       "acsp_professionisti_regione",
       "acsp_tutte_classi_reddito",
@@ -64342,6 +65067,23 @@
         "serie-storiche"
       ],
       "description": ""
+    },
+    "abpf_titolari_piva_regione": {
+      "name": "Abpf Titolari Piva Regione",
+      "stage": "incubating",
+      "source_id": "mef_finanze",
+      "registry_source": "dichiarazioni-italia",
+      "domain": "finanza-pubblica",
+      "category": "finanza-pubblica",
+      "tags": [
+        "irpef",
+        "partita-iva",
+        "lavoro-autonomo",
+        "regionale",
+        "redditi",
+        "imposta"
+      ],
+      "description": "IRPEF delle persone fisiche titolari di partita IVA: redditi, imposta, addizionali, IVA e regimi agevolati per regione. Anno d'imposta 2015-2024."
     },
     "acsp_imprese_regione": {
       "name": "Acsp Imprese Regione",

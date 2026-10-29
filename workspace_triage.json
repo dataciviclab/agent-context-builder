@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T04:41:00.519164",
+  "generated_at": "2026-10-29T12:24:15.029606",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -80,10 +80,10 @@
       "category": "other"
     },
     {
-      "number": 31,
-      "title": "feat(abpf): titolari di partita IVA \u2014 redditi, imposta e regimi agevolati",
+      "number": 33,
+      "title": "feat(irpef): irpef_imposta_tipologia \u2014 chi paga l'IRPEF in Italia",
       "repo": "dichiarazioni-italia",
-      "url": "https://github.com/dataciviclab/dichiarazioni-italia/pull/31",
+      "url": "https://github.com/dataciviclab/dichiarazioni-italia/pull/33",
       "category": "other"
     },
     {
@@ -101,7 +101,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 49,
+  "open_issues": 50,
   "issues": [
     {
       "number": 13,
@@ -270,6 +270,13 @@
       "repo": "giustizia-amministrativa",
       "url": "https://github.com/dataciviclab/giustizia-amministrativa/issues/11",
       "category": "intake"
+    },
+    {
+      "number": 84,
+      "title": "Copertura: 88.210 relazioni di modifica AKN perse perch\u00e9 76.548 atti bersaglio non sono nel corpus (96% esiste in Normattiva)",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/issues/84",
+      "category": "other"
     },
     {
       "number": 81,
@@ -3975,15 +3982,29 @@
       "repo": "dichiarazioni-italia",
       "available": true,
       "source_repo": "dataciviclab/dichiarazioni-italia",
-      "updated_at": "2026-10-28",
-      "datasets": 15,
-      "marts": 28,
-      "signals": 15,
+      "updated_at": "2026-10-29",
+      "datasets": 16,
+      "marts": 30,
+      "signals": 16,
       "codelists": 0,
       "entities": 4,
-      "gcs": 15,
+      "gcs": 16,
       "reason": "",
       "signals_detail": [
+        {
+          "id": "abpf_titolari_piva_regione",
+          "source_id": "mef_finanze",
+          "status": "ok",
+          "label": "abpf_titolari_piva_regione",
+          "detail": "anni 2016-2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261029T094114Z_83b3c6dc",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-10-29T09:41:14.509356+00:00",
+            "finished_at": "2026-10-29T09:41:16.065998+00:00"
+          }
+        },
         {
           "id": "acsp_imprese_regione",
           "source_id": "mef_finanze",

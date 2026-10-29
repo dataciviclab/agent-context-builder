@@ -1,10 +1,10 @@
 # Session Bootstrap
 
-**Generated**: 2026-10-29T04:41:00.519164
+**Generated**: 2026-10-29T12:24:15.029606
 
 ## Stato
 
-Radar: 36 fonti GREEN 34 · Registry: 40 repo · 454 dataset
+Radar: 36 fonti GREEN 34 · Registry: 40 repo · 455 dataset
 
 ## Richiede attenzione
 
@@ -12,7 +12,7 @@ Radar: 36 fonti GREEN 34 · Registry: 40 repo · 454 dataset
 - [PR] appalti-pubblici#19: feat(anac-cross): codice IPA della stazione appaltante (#13)
 - [PR] dataset-incubator#885: feat(candidates): eu-call-open + catena FTS call_id/project_id
 - [PR] dataset-incubator#836: feat(candidates): bootstrap gse_cer_elenco candidate
-- [PR] dichiarazioni-italia#31: feat(abpf): titolari di partita IVA — redditi, imposta e regimi agevolati
+- [PR] dichiarazioni-italia#33: feat(irpef): irpef_imposta_tipologia — chi paga l'IRPEF in Italia
 
 ## Analisi pubbliche (45)
 
