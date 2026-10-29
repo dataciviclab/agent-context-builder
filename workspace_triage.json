@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T12:24:15.029606",
+  "generated_at": "2026-10-29T22:29:42.230909",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -49,7 +49,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 7,
+  "open_prs": 10,
   "prs": [
     {
       "number": 20,
@@ -80,10 +80,31 @@
       "category": "other"
     },
     {
-      "number": 33,
-      "title": "feat(irpef): irpef_imposta_tipologia \u2014 chi paga l'IRPEF in Italia",
+      "number": 38,
+      "title": "docs(mef-irpef-regionale): allinea notes.md al fix di #35",
       "repo": "dichiarazioni-italia",
-      "url": "https://github.com/dataciviclab/dichiarazioni-italia/pull/33",
+      "url": "https://github.com/dataciviclab/dichiarazioni-italia/pull/38",
+      "category": "other"
+    },
+    {
+      "number": 37,
+      "title": "refactor(dashboard): una pagina per imposta (+ allineamento a #35)",
+      "repo": "dichiarazioni-italia",
+      "url": "https://github.com/dataciviclab/dichiarazioni-italia/pull/37",
+      "category": "other"
+    },
+    {
+      "number": 91,
+      "title": "fix(riferimenti): chiave = PK esatta del clean (la guardia dava falsi duplicati)",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/pull/91",
+      "category": "other"
+    },
+    {
+      "number": 522,
+      "title": "fix(preflight): passa client fonte e considera HEAD 404 con GET riuscito",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/522",
       "category": "other"
     },
     {
@@ -101,7 +122,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 50,
+  "open_issues": 52,
   "issues": [
     {
       "number": 13,
@@ -270,6 +291,20 @@
       "repo": "giustizia-amministrativa",
       "url": "https://github.com/dataciviclab/giustizia-amministrativa/issues/11",
       "category": "intake"
+    },
+    {
+      "number": 86,
+      "title": "T0: alias URN + indice identit\u00e0 + edge esterni (copertura edge 17,4% \u2192 ~39% senza nuovi byte)",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/issues/86",
+      "category": "other"
+    },
+    {
+      "number": 85,
+      "title": "Policy di identit\u00e0 dell'atto: `filename` vs URN (1.222 URN con pi\u00f9 espressioni) \u2014 prerequisito per T0.3 e per lo scaling collezioni",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/issues/85",
+      "category": "other"
     },
     {
       "number": 84,
@@ -2215,7 +2250,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 7"
+    "Many open PRs: 10"
   ],
   "radar": {
     "available": true,
@@ -3983,12 +4018,12 @@
       "available": true,
       "source_repo": "dataciviclab/dichiarazioni-italia",
       "updated_at": "2026-10-29",
-      "datasets": 16,
-      "marts": 30,
-      "signals": 16,
+      "datasets": 17,
+      "marts": 32,
+      "signals": 17,
       "codelists": 0,
       "entities": 4,
-      "gcs": 16,
+      "gcs": 17,
       "reason": "",
       "signals_detail": [
         {
@@ -4174,6 +4209,20 @@
           }
         },
         {
+          "id": "irpef_imposta_tipologia",
+          "source_id": "mef_finanze",
+          "status": "ok",
+          "label": "irpef_imposta_tipologia",
+          "detail": "anni 2013-2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261029T124731Z_f295a158",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-10-29T12:47:31.996727+00:00",
+            "finished_at": "2026-10-29T12:47:34.051470+00:00"
+          }
+        },
+        {
           "id": "iva_regionale",
           "source_id": "mef_finanze",
           "status": "ok",
@@ -4194,11 +4243,11 @@
           "label": "iva_sez_attivita",
           "detail": "anni 2015-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261028T181133Z_945977ee",
+            "run_id": "20261029T215314Z_14f80f5f",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-10-28T18:11:33.622978+00:00",
-            "finished_at": "2026-10-28T18:11:34.359090+00:00"
+            "started_at": "2026-10-29T21:53:14.685336+00:00",
+            "finished_at": "2026-10-29T21:53:15.857116+00:00"
           }
         },
         {
@@ -4208,11 +4257,11 @@
           "label": "mef_irpef_regionale",
           "detail": "anni 2017-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261028T181159Z_dcde02d3",
+            "run_id": "20261029T215342Z_e67903bb",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-10-28T18:11:59.955696+00:00",
-            "finished_at": "2026-10-28T18:12:01.162558+00:00"
+            "started_at": "2026-10-29T21:53:42.829861+00:00",
+            "finished_at": "2026-10-29T21:53:44.046962+00:00"
           }
         }
       ]
@@ -5472,8 +5521,8 @@
       "repo": "imprese-italia",
       "available": true,
       "source_repo": "dataciviclab/imprese-italia",
-      "updated_at": "2026-10-01",
-      "datasets": 7,
+      "updated_at": "2026-10-29",
+      "datasets": 8,
       "marts": 21,
       "signals": 8,
       "codelists": 0,
@@ -5488,11 +5537,11 @@
           "label": "demografia_imprese",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T190812Z_915252c2",
+            "run_id": "20261029T215555Z_ae11e946",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T19:08:12.872507+00:00",
-            "finished_at": "2026-10-01T19:08:13.008505+00:00"
+            "started_at": "2026-10-29T21:55:55.015910+00:00",
+            "finished_at": "2026-10-29T21:55:55.154196+00:00"
           }
         },
         {
@@ -5502,11 +5551,11 @@
           "label": "camcom_cancellazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T190753Z_13671702",
+            "run_id": "20261029T215534Z_69268f13",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T19:07:53.578039+00:00",
-            "finished_at": "2026-10-01T19:07:57.107296+00:00"
+            "started_at": "2026-10-29T21:55:34.681502+00:00",
+            "finished_at": "2026-10-29T21:55:36.043278+00:00"
           }
         },
         {
@@ -5516,11 +5565,11 @@
           "label": "camcom_iscrizioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T190757Z_c379a091",
+            "run_id": "20261029T215537Z_c813814c",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T19:07:57.172680+00:00",
-            "finished_at": "2026-10-01T19:07:59.280919+00:00"
+            "started_at": "2026-10-29T21:55:37.622275+00:00",
+            "finished_at": "2026-10-29T21:55:38.930733+00:00"
           }
         },
         {
@@ -5530,11 +5579,11 @@
           "label": "camcom_stock_italia",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T190759Z_61cee68c",
+            "run_id": "20261029T215540Z_deb68bc0",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T19:07:59.345752+00:00",
-            "finished_at": "2026-10-01T19:08:01.443295+00:00"
+            "started_at": "2026-10-29T21:55:40.636000+00:00",
+            "finished_at": "2026-10-29T21:55:42.055825+00:00"
           }
         },
         {
@@ -5544,11 +5593,11 @@
           "label": "camcom_stock_italia_6cifre",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T190801Z_4e8023e2",
+            "run_id": "20261029T215544Z_468aeb3a",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T19:08:01.519330+00:00",
-            "finished_at": "2026-10-01T19:08:05.453972+00:00"
+            "started_at": "2026-10-29T21:55:44.061096+00:00",
+            "finished_at": "2026-10-29T21:55:46.046106+00:00"
           }
         },
         {
@@ -5558,11 +5607,11 @@
           "label": "camcom_stock_marche",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T190805Z_437d37bf",
+            "run_id": "20261029T215547Z_bd1b0eea",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T19:08:05.529950+00:00",
-            "finished_at": "2026-10-01T19:08:08.007944+00:00"
+            "started_at": "2026-10-29T21:55:47.816324+00:00",
+            "finished_at": "2026-10-29T21:55:49.000046+00:00"
           }
         },
         {
@@ -5572,11 +5621,11 @@
           "label": "camcom_stock_marche_6cifre",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T190808Z_0dabbef8",
+            "run_id": "20261029T215551Z_1a27c617",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T19:08:08.074400+00:00",
-            "finished_at": "2026-10-01T19:08:11.122067+00:00"
+            "started_at": "2026-10-29T21:55:51.044631+00:00",
+            "finished_at": "2026-10-29T21:55:52.348011+00:00"
           }
         },
         {
@@ -5586,11 +5635,11 @@
           "label": "camcom_variazione",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T190811Z_6d277e07",
+            "run_id": "20261029T215553Z_43a68e65",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T19:08:11.194817+00:00",
-            "finished_at": "2026-10-01T19:08:12.772597+00:00"
+            "started_at": "2026-10-29T21:55:53.808011+00:00",
+            "finished_at": "2026-10-29T21:55:54.916608+00:00"
           }
         }
       ]
@@ -5754,7 +5803,7 @@
       "repo": "inpa-reclutamento",
       "available": true,
       "source_repo": "dataciviclab/inpa-reclutamento",
-      "updated_at": "2026-10-28",
+      "updated_at": "2026-10-29",
       "datasets": 4,
       "marts": 12,
       "signals": 4,
@@ -5798,11 +5847,11 @@
           "label": "inpa_bandi_open",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261028T122049Z_7ff51d9c",
+            "run_id": "20261029T123016Z_2910533e",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-28T12:20:49.979693+00:00",
-            "finished_at": "2026-10-28T12:21:03.748654+00:00"
+            "started_at": "2026-10-29T12:30:16.387938+00:00",
+            "finished_at": "2026-10-29T12:30:31.521028+00:00"
           }
         },
         {
@@ -5812,11 +5861,11 @@
           "label": "inpa_comunicazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261028T122104Z_591a0473",
+            "run_id": "20261029T123031Z_5c9b3834",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-28T12:21:04.122798+00:00",
-            "finished_at": "2026-10-28T12:21:35.484439+00:00"
+            "started_at": "2026-10-29T12:30:31.905845+00:00",
+            "finished_at": "2026-10-29T12:31:05.099881+00:00"
           }
         }
       ]
