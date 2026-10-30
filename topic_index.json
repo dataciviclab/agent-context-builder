@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-30T12:15:27.545978",
+  "generated_at": "2026-10-30T14:29:12.234977",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -202,6 +202,17 @@
         "giustizia_statistiche"
       ]
     },
+    "gu-monitor": {
+      "description": "La Gazzetta Ufficiale italiana monitorata in tempo reale: cosa decide lo Stato, quando lo decide, chi lo decide.",
+      "url": "https://github.com/dataciviclab/gu-monitor",
+      "role": "dati",
+      "domain": null,
+      "n_datasets": 1,
+      "n_published": 0,
+      "sources": [
+        "gazzetta_ufficiale"
+      ]
+    },
     "imprese-italia": {
       "description": "Demografia d'impresa italiana: stock, flussi, variazioni e specializzazione territoriale dal Registro delle Imprese",
       "url": "https://github.com/dataciviclab/imprese-italia",
@@ -238,7 +249,7 @@
       ]
     },
     "italia-corpus": {
-      "description": "La legislazione italiana a portata di ricerca \u2014 leggi, decreti e codici da Normattiva in formato aperto.",
+      "description": "La legislazione italiana a portata di ricerca \u2014 22.402 atti da Normattiva in formato aperto.",
       "url": "https://github.com/dataciviclab/italia-corpus",
       "role": "dati",
       "domain": null,
@@ -34639,6 +34650,127 @@
         ]
       }
     ],
+    "gazzetta_ufficiale": [
+      {
+        "slug": "gu_atti",
+        "url_slug": "gu-atti",
+        "name": "Gu Atti",
+        "description": "Atti pubblicati sulla Gazzetta Ufficiale della Repubblica Italiana, nelle 7 serie (Serie Generale, Corte Costituzionale, Unione Europea, Regioni, Concorsi, Contratti Pubblici, Parte II). Un record per atto, con estremi, oggetto, ente emittente e URN NIR quando l'atto \u00e8 normativo.\n",
+        "source": "",
+        "source_id": "gazzetta_ufficiale",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "diritto",
+          "normativa",
+          "gazzetta-ufficiale",
+          "atti-pubblici",
+          "monitoraggio"
+        ],
+        "category": "normativa",
+        "registry_source": "gu-monitor",
+        "clean_rows": 25711,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/gu-monitor/gu_atti/2026/gu_atti_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "id",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "serie",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "gazzetta_numero",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_pubblicazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "titolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "estremi",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_atto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ente",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "topic_str",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "urn_normattiva",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "link",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "gu_atti__mart_atti_per_serie_giorno",
+          "gu_atti__mart_atti_per_tipo",
+          "gu_atti__mart_normativi_urn"
+        ]
+      }
+    ],
     "camcom-marche": [
       {
         "slug": "camcom_cancellazioni",
@@ -62960,6 +63092,9 @@
       "ucp_dettaglio",
       "ucp_numero"
     ],
+    "gu-monitor": [
+      "gu_atti"
+    ],
     "imprese-italia": [
       "camcom_cancellazioni",
       "camcom_iscrizioni",
@@ -66786,6 +66921,22 @@
         "statistiche-giudiziarie"
       ],
       "description": ""
+    },
+    "gu_atti": {
+      "name": "Gu Atti",
+      "stage": "incubating",
+      "source_id": "gazzetta_ufficiale",
+      "registry_source": "gu-monitor",
+      "domain": null,
+      "category": "normativa",
+      "tags": [
+        "diritto",
+        "normativa",
+        "gazzetta-ufficiale",
+        "atti-pubblici",
+        "monitoraggio"
+      ],
+      "description": "Atti pubblicati sulla Gazzetta Ufficiale della Repubblica Italiana, nelle 7 serie (Serie Generale, Corte Costituzionale, Unione Europea, Regioni, Concorsi, Contratti Pubblici, Parte II). Un record per atto, con estremi, oggetto, ente emittente e URN NIR quando l'atto \u00e8 normativo.\n"
     },
     "camcom_cancellazioni": {
       "name": "Camcom Cancellazioni",

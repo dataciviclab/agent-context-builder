@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T12:15:27.545978",
+  "generated_at": "2026-10-30T14:29:12.234977",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -17,6 +17,7 @@
     "filiere-agroalimentari",
     "giustizia-amministrativa",
     "giustizia-statistiche",
+    "gu-monitor",
     "imprese-italia",
     "indice-pa",
     "inpa-reclutamento",
@@ -49,7 +50,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 7,
+  "open_prs": 8,
   "prs": [
     {
       "number": 20,
@@ -80,6 +81,13 @@
       "category": "other"
     },
     {
+      "number": 32,
+      "title": "chore(post-merge): aggiorna registry (schedule)",
+      "repo": "inpa-reclutamento",
+      "url": "https://github.com/dataciviclab/inpa-reclutamento/pull/32",
+      "category": "other"
+    },
+    {
       "number": 11,
       "title": "refactor(pnrr): migra i 7 dataset da script a http_file",
       "repo": "open-pnrr",
@@ -101,7 +109,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 51,
+  "open_issues": 50,
   "issues": [
     {
       "number": 13,
@@ -293,13 +301,6 @@
       "category": "other"
     },
     {
-      "number": 75,
-      "title": "Spike: vigenza act-level via API Normattiva per atti ORIGINALE-only",
-      "repo": "italia-corpus",
-      "url": "https://github.com/dataciviclab/italia-corpus/issues/75",
-      "category": "other"
-    },
-    {
       "number": 63,
       "title": "chore(lab_tools): riordino script \u2014 separare library da eseguibili",
       "repo": "italia-corpus",
@@ -461,7 +462,7 @@
       "category": "other"
     }
   ],
-  "open_discussions": 198,
+  "open_discussions": 199,
   "discussions": [
     {
       "number": 10,
@@ -525,6 +526,20 @@
       "repo": "bilancio-pubblico",
       "url": "https://github.com/dataciviclab/bilancio-pubblico/discussions/12",
       "category": "Domande"
+    },
+    {
+      "number": 460,
+      "title": "I codici dei contratti abrogati (2006, 2016) sono ancora citati da 523 atti vigenti",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/460",
+      "category": "Analisi"
+    },
+    {
+      "number": 459,
+      "title": "Perch\u00e9 1.088 atti vigenti citano ancora la riforma PA del 1993 (abrogata)?",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/459",
+      "category": "Analisi"
     },
     {
       "number": 458,
@@ -1035,13 +1050,6 @@
       "title": "[Metodo] Gestione dei dati mancanti (missing data)",
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/35",
-      "category": "Metodo"
-    },
-    {
-      "number": 37,
-      "title": "[Metodo] Normalizzazione dei dati (pro capite, per km\u00b2, ecc.)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/37",
       "category": "Metodo"
     },
     {
@@ -1972,6 +1980,14 @@
       "branches_ahead": [],
       "untracked_files": 0
     },
+    "gu-monitor": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
     "imprese-italia": {
       "available": false,
       "reason": "local_disabled",
@@ -2222,7 +2238,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 7"
+    "Many open PRs: 8"
   ],
   "radar": {
     "available": true,
@@ -5485,6 +5501,35 @@
             "status": "SUCCESS",
             "started_at": "2026-10-10T14:22:06.267562+00:00",
             "finished_at": "2026-10-10T14:22:07.202373+00:00"
+          }
+        }
+      ]
+    },
+    {
+      "repo": "gu-monitor",
+      "available": true,
+      "source_repo": "dataciviclab/gu-monitor",
+      "updated_at": "2026-10-30",
+      "datasets": 1,
+      "marts": 3,
+      "signals": 1,
+      "codelists": 0,
+      "entities": 1,
+      "gcs": 1,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "gu_atti",
+          "source_id": "gazzetta_ufficiale",
+          "status": "ok",
+          "label": "gu_atti",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261030T141518Z_5bdbf757",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-10-30T14:15:18.276262+00:00",
+            "finished_at": "2026-10-30T14:15:18.547201+00:00"
           }
         }
       ]
