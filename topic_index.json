@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-29T22:29:42.230909",
+  "generated_at": "2026-10-30T04:40:48.137316",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -57217,7 +57217,7 @@
             "name": "codice_comune_amministrazione",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "municipality_code",
             "description": ""
           },
           {
@@ -57280,7 +57280,7 @@
             "name": "soggetto_ricevente_cf",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "fiscal_code",
             "description": ""
           },
           {
@@ -57591,7 +57591,7 @@
             "name": "codice_comune_amministrazione",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "municipality_code",
             "description": ""
           },
           {
@@ -57647,7 +57647,7 @@
             "name": "soggetto_cedente_cf",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "fiscal_code",
             "description": ""
           },
           {
@@ -57703,7 +57703,7 @@
             "name": "codice_comune_bene",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "municipality_code",
             "description": ""
           },
           {
@@ -59117,7 +59117,7 @@
         ],
         "category": "economia",
         "registry_source": "sistema-bancario",
-        "clean_rows": 830090,
+        "clean_rows": 845312,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/sistema-bancario/ecb_bls/2026/ecb_bls_2026_clean.parquet",
@@ -59202,7 +59202,7 @@
         ],
         "category": "economia",
         "registry_source": "sistema-bancario",
-        "clean_rows": 1449358,
+        "clean_rows": 1468058,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/sistema-bancario/ecb_bsi/2026/ecb_bsi_2026_clean.parquet",
@@ -59294,7 +59294,7 @@
         "source": "",
         "source_id": "ecb",
         "period": {
-          "start": 2024,
+          "start": 2015,
           "end": 2026
         },
         "stage": "incubating",
@@ -59307,7 +59307,7 @@
         ],
         "category": "economia",
         "registry_source": "sistema-bancario",
-        "clean_rows": 1416526,
+        "clean_rows": 1416436,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/sistema-bancario/ecb_cbd2/2026/ecb_cbd2_2026_clean.parquet",
@@ -59419,7 +59419,7 @@
         ],
         "category": "economia",
         "registry_source": "sistema-bancario",
-        "clean_rows": 539518,
+        "clean_rows": 540539,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/sistema-bancario/ecb_mir/2026/ecb_mir_2026_clean.parquet",
@@ -59527,7 +59527,7 @@
         ],
         "category": "economia",
         "registry_source": "sistema-bancario",
-        "clean_rows": 10922,
+        "clean_rows": 11016,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/sistema-bancario/wb_financial/2025/wb_financial_2025_clean.parquet",

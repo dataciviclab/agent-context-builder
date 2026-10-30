@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T22:29:42.230909",
+  "generated_at": "2026-10-30T04:40:48.137316",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -49,7 +49,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 10,
+  "open_prs": 7,
   "prs": [
     {
       "number": 20,
@@ -80,31 +80,10 @@
       "category": "other"
     },
     {
-      "number": 38,
-      "title": "docs(mef-irpef-regionale): allinea notes.md al fix di #35",
-      "repo": "dichiarazioni-italia",
-      "url": "https://github.com/dataciviclab/dichiarazioni-italia/pull/38",
-      "category": "other"
-    },
-    {
-      "number": 37,
-      "title": "refactor(dashboard): una pagina per imposta (+ allineamento a #35)",
-      "repo": "dichiarazioni-italia",
-      "url": "https://github.com/dataciviclab/dichiarazioni-italia/pull/37",
-      "category": "other"
-    },
-    {
-      "number": 91,
-      "title": "fix(riferimenti): chiave = PK esatta del clean (la guardia dava falsi duplicati)",
-      "repo": "italia-corpus",
-      "url": "https://github.com/dataciviclab/italia-corpus/pull/91",
-      "category": "other"
-    },
-    {
-      "number": 522,
-      "title": "fix(preflight): passa client fonte e considera HEAD 404 con GET riuscito",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/522",
+      "number": 11,
+      "title": "refactor(pnrr): migra i 7 dataset da script a http_file",
+      "repo": "open-pnrr",
+      "url": "https://github.com/dataciviclab/open-pnrr/pull/11",
       "category": "other"
     },
     {
@@ -122,7 +101,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 52,
+  "open_issues": 51,
   "issues": [
     {
       "number": 13,
@@ -293,24 +272,17 @@
       "category": "intake"
     },
     {
+      "number": 94,
+      "title": "[data] I codici sono gusci: il testo sta negli <attachments> e il parser lo ignora (16/40)",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/issues/94",
+      "category": "other"
+    },
+    {
       "number": 86,
       "title": "T0: alias URN + indice identit\u00e0 + edge esterni (copertura edge 17,4% \u2192 ~39% senza nuovi byte)",
       "repo": "italia-corpus",
       "url": "https://github.com/dataciviclab/italia-corpus/issues/86",
-      "category": "other"
-    },
-    {
-      "number": 85,
-      "title": "Policy di identit\u00e0 dell'atto: `filename` vs URN (1.222 URN con pi\u00f9 espressioni) \u2014 prerequisito per T0.3 e per lo scaling collezioni",
-      "repo": "italia-corpus",
-      "url": "https://github.com/dataciviclab/italia-corpus/issues/85",
-      "category": "other"
-    },
-    {
-      "number": 84,
-      "title": "Copertura: 88.210 relazioni di modifica AKN perse perch\u00e9 76.548 atti bersaglio non sono nel corpus (96% esiste in Normattiva)",
-      "repo": "italia-corpus",
-      "url": "https://github.com/dataciviclab/italia-corpus/issues/84",
       "category": "other"
     },
     {
@@ -2250,7 +2222,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 10"
+    "Many open PRs: 7"
   ],
   "radar": {
     "available": true,
@@ -8880,7 +8852,7 @@
       "repo": "patrimonio-territorio",
       "available": true,
       "source_repo": "dataciviclab/patrimonio-territorio",
-      "updated_at": "2026-10-01",
+      "updated_at": "2026-10-30",
       "datasets": 3,
       "marts": 4,
       "signals": 3,
@@ -8896,11 +8868,11 @@
           "label": "mef_patrimonio_detenzioni",
           "detail": "anno 2023 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T122718Z_023cb56b",
+            "run_id": "20261030T005814Z_127c322a",
             "year": 2023,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:27:18.042762+00:00",
-            "finished_at": "2026-10-01T12:28:07.758484+00:00"
+            "started_at": "2026-10-30T00:58:14.010180+00:00",
+            "finished_at": "2026-10-30T00:58:53.103558+00:00"
           }
         },
         {
@@ -8910,11 +8882,11 @@
           "label": "mef_patrimonio_enti",
           "detail": "anno 2023 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T122808Z_d2951778",
+            "run_id": "20261030T005855Z_3a391735",
             "year": 2023,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:28:08.158782+00:00",
-            "finished_at": "2026-10-01T12:28:10.369085+00:00"
+            "started_at": "2026-10-30T00:58:55.137356+00:00",
+            "finished_at": "2026-10-30T00:58:56.368238+00:00"
           }
         },
         {
@@ -8924,11 +8896,11 @@
           "label": "mef_patrimonio_immobili",
           "detail": "anno 2023 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T122810Z_c3e6a500",
+            "run_id": "20261030T005856Z_61527a9f",
             "year": 2023,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:28:10.768195+00:00",
-            "finished_at": "2026-10-01T12:30:58.219402+00:00"
+            "started_at": "2026-10-30T00:58:56.681737+00:00",
+            "finished_at": "2026-10-30T01:00:51.533688+00:00"
           }
         }
       ]
@@ -9263,7 +9235,7 @@
       "repo": "sistema-bancario",
       "available": true,
       "source_repo": "dataciviclab/sistema-bancario",
-      "updated_at": "2026-10-01",
+      "updated_at": "2026-10-30",
       "datasets": 7,
       "marts": 14,
       "signals": 7,
@@ -9279,11 +9251,11 @@
           "label": "banche_unified",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T120409Z_64b68358",
+            "run_id": "20261030T011055Z_f7de8f22",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:04:09.366839+00:00",
-            "finished_at": "2026-10-01T12:04:09.587714+00:00"
+            "started_at": "2026-10-30T01:10:55.500069+00:00",
+            "finished_at": "2026-10-30T01:10:55.668166+00:00"
           }
         },
         {
@@ -9293,11 +9265,11 @@
           "label": "eba_panel",
           "detail": "anno 2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T115704Z_850fd0aa",
+            "run_id": "20261030T010731Z_38a5c608",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T11:57:04.955810+00:00",
-            "finished_at": "2026-10-01T11:57:09.135937+00:00"
+            "started_at": "2026-10-30T01:07:31.950438+00:00",
+            "finished_at": "2026-10-30T01:07:35.899678+00:00"
           }
         },
         {
@@ -9307,11 +9279,11 @@
           "label": "ecb_bls",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T115712Z_1c9c8929",
+            "run_id": "20261030T010738Z_53c5f79f",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T11:57:12.916149+00:00",
-            "finished_at": "2026-10-01T11:57:38.576295+00:00"
+            "started_at": "2026-10-30T01:07:38.446907+00:00",
+            "finished_at": "2026-10-30T01:08:00.985072+00:00"
           }
         },
         {
@@ -9321,11 +9293,11 @@
           "label": "ecb_bsi",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T115844Z_e3c569a0",
+            "run_id": "20261030T010812Z_4fcbb26a",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T11:58:44.502499+00:00",
-            "finished_at": "2026-10-01T12:00:43.436527+00:00"
+            "started_at": "2026-10-30T01:08:12.650507+00:00",
+            "finished_at": "2026-10-30T01:09:29.318706+00:00"
           }
         },
         {
@@ -9335,11 +9307,11 @@
           "label": "ecb_cbd2",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T120149Z_eae14f7c",
+            "run_id": "20261030T010932Z_8ad164cd",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:01:49.312157+00:00",
-            "finished_at": "2026-10-01T12:03:11.921049+00:00"
+            "started_at": "2026-10-30T01:09:32.439629+00:00",
+            "finished_at": "2026-10-30T01:10:19.291099+00:00"
           }
         },
         {
@@ -9349,11 +9321,11 @@
           "label": "ecb_mir",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T120322Z_1b8fcbd2",
+            "run_id": "20261030T011021Z_c64359d8",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:03:22.910367+00:00",
-            "finished_at": "2026-10-01T12:03:42.249260+00:00"
+            "started_at": "2026-10-30T01:10:21.730626+00:00",
+            "finished_at": "2026-10-30T01:10:38.351607+00:00"
           }
         },
         {
@@ -9363,11 +9335,11 @@
           "label": "wb_financial",
           "detail": "anno 2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T120342Z_1c4d84ee",
+            "run_id": "20261030T011038Z_e2cdae05",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:03:42.718558+00:00",
-            "finished_at": "2026-10-01T12:04:08.935058+00:00"
+            "started_at": "2026-10-30T01:10:38.689961+00:00",
+            "finished_at": "2026-10-30T01:10:55.142965+00:00"
           }
         }
       ]
