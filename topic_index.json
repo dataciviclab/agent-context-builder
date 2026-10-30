@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-30T21:59:12.454350",
+  "generated_at": "2026-10-30T22:29:07.920765",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -253,7 +253,7 @@
       "url": "https://github.com/dataciviclab/italia-corpus",
       "role": "dati",
       "domain": null,
-      "n_datasets": 4,
+      "n_datasets": 5,
       "n_published": 0,
       "sources": [
         "italia_corpus"
@@ -8412,7 +8412,7 @@
         ],
         "category": "normativa",
         "registry_source": "italia-corpus",
-        "clean_rows": 20774,
+        "clean_rows": 20783,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia-corpus/akn_act_meta/2026/akn_act_meta_2026_clean.parquet",
@@ -8557,7 +8557,7 @@
         ],
         "category": "normativa",
         "registry_source": "italia-corpus",
-        "clean_rows": 394811,
+        "clean_rows": 501546,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia-corpus/akn_relations/2026/akn_relations_2026_clean.parquet",
@@ -8612,11 +8612,184 @@
             "role": "dimension",
             "semantic_type": "",
             "description": ""
+          },
+          {
+            "name": "contesto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
           }
         ],
         "mart_refs": [
           "akn_relations__mart_relazioni_per_tipo",
           "akn_relations__mart_modifiche_tipizzate"
+        ]
+      },
+      {
+        "slug": "atti_index",
+        "url_slug": "atti-index",
+        "name": "Atti Index",
+        "description": "Catalogo ufficiale Normattiva (una riga per atto, ~205k): identit\u00e0 (codice_redazionale + data GU), stato dalla classe ufficiale (3 = lista abrogati), appartenenza al corpus (in_corpus) e URN quando determinabile. Serve a dire quanto manca e ad agganciare le citazioni a un'identit\u00e0. Metadati, nessun testo.\n",
+        "source": "",
+        "source_id": "italia_corpus",
+        "period": {
+          "start": 1861,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "normativa",
+          "catalogo",
+          "identita",
+          "copertura",
+          "normattiva"
+        ],
+        "category": "normativa",
+        "registry_source": "italia-corpus",
+        "clean_rows": 205116,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/italia-corpus/atti_index/2026/atti_index_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "codice_redazionale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_gu",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "classe",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "denominazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "numero",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_emanazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_gu",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "titolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "in_corpus",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "corpus_urn",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "corpus_filename",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_slug",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "emittente",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "urn",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "urn_fonte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fetched_at",
+            "type": "TIMESTAMP",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "atti_index__mart_catalogo_copertura"
         ]
       },
       {
@@ -8639,7 +8812,7 @@
         ],
         "category": "normativa",
         "registry_source": "italia-corpus",
-        "clean_rows": 22017,
+        "clean_rows": 22402,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia-corpus/normativa/2026/normativa_2026_clean.parquet",
@@ -8726,6 +8899,27 @@
           {
             "name": "codice_redazionale",
             "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "versione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "snapshot_data",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "is_current",
+            "type": "BOOLEAN",
             "role": "dimension",
             "semantic_type": "",
             "description": ""
@@ -8946,7 +9140,7 @@
         ],
         "category": "normativa",
         "registry_source": "italia-corpus",
-        "clean_rows": 136439,
+        "clean_rows": 200080,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia-corpus/riferimenti/2026/riferimenti_2026_clean.parquet",
@@ -9068,6 +9262,13 @@
           {
             "name": "contesto",
             "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "clausola_lettura",
+            "type": "BOOLEAN",
             "role": "dimension",
             "semantic_type": "",
             "description": ""
@@ -63276,6 +63477,7 @@
     "italia-corpus": [
       "akn_act_meta",
       "akn_relations",
+      "atti_index",
       "normativa",
       "riferimenti"
     ],
@@ -67492,6 +67694,22 @@
         "relazioni"
       ],
       "description": "Relazioni AKN tipizzate dal corpus Normattiva (citation, insertion, repeal, substitution, eventRef, passiveRef). Una riga per relazione estratta dall'XML."
+    },
+    "atti_index": {
+      "name": "Atti Index",
+      "stage": "incubating",
+      "source_id": "italia_corpus",
+      "registry_source": "italia-corpus",
+      "domain": null,
+      "category": "normativa",
+      "tags": [
+        "normativa",
+        "catalogo",
+        "identita",
+        "copertura",
+        "normattiva"
+      ],
+      "description": "Catalogo ufficiale Normattiva (una riga per atto, ~205k): identit\u00e0 (codice_redazionale + data GU), stato dalla classe ufficiale (3 = lista abrogati), appartenenza al corpus (in_corpus) e URN quando determinabile. Serve a dire quanto manca e ad agganciare le citazioni a un'identit\u00e0. Metadati, nessun testo.\n"
     },
     "normativa": {
       "name": "Normativa",

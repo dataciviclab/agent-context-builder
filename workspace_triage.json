@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T21:59:12.454350",
+  "generated_at": "2026-10-30T22:29:07.920765",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -50,7 +50,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 11,
+  "open_prs": 9,
   "prs": [
     {
       "number": 20,
@@ -81,13 +81,6 @@
       "category": "other"
     },
     {
-      "number": 52,
-      "title": "chore(dashboard): allinea ai dati pubblicati (perimetro IRAP 2022, comune fantasma, lorda/detrazioni)",
-      "repo": "dichiarazioni-italia",
-      "url": "https://github.com/dataciviclab/dichiarazioni-italia/pull/52",
-      "category": "other"
-    },
-    {
       "number": 11,
       "title": "refactor(store): event log su GCS, fuori da git",
       "repo": "gu-monitor",
@@ -99,13 +92,6 @@
       "title": "chore(post-merge): aggiorna registry (schedule)",
       "repo": "inpa-reclutamento",
       "url": "https://github.com/dataciviclab/inpa-reclutamento/pull/32",
-      "category": "other"
-    },
-    {
-      "number": 107,
-      "title": "chore(post-merge): aggiorna registry (106)",
-      "repo": "italia-corpus",
-      "url": "https://github.com/dataciviclab/italia-corpus/pull/107",
       "category": "other"
     },
     {
@@ -2301,7 +2287,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 11"
+    "Many open PRs: 9"
   ],
   "radar": {
     "available": true,
@@ -5968,13 +5954,13 @@
       "repo": "italia-corpus",
       "available": true,
       "source_repo": "dataciviclab/italia-corpus",
-      "updated_at": "2026-10-26",
-      "datasets": 4,
-      "marts": 10,
-      "signals": 4,
+      "updated_at": "2026-10-30",
+      "datasets": 5,
+      "marts": 11,
+      "signals": 5,
       "codelists": 0,
-      "entities": 1,
-      "gcs": 4,
+      "entities": 2,
+      "gcs": 5,
       "reason": "",
       "signals_detail": [
         {
@@ -5984,11 +5970,11 @@
           "label": "akn_act_meta",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261026T140112Z_dce1c0a3",
+            "run_id": "20261030T214945Z_b6920bae",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-26T14:01:12.815914+00:00",
-            "finished_at": "2026-10-26T14:01:13.310091+00:00"
+            "started_at": "2026-10-30T21:49:45.662374+00:00",
+            "finished_at": "2026-10-30T21:49:45.874863+00:00"
           }
         },
         {
@@ -5998,11 +5984,25 @@
           "label": "akn_relations",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261026T140113Z_b2d4d060",
+            "run_id": "20261030T214946Z_07b4f318",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-26T14:01:13.716380+00:00",
-            "finished_at": "2026-10-26T14:01:14.843310+00:00"
+            "started_at": "2026-10-30T21:49:46.147926+00:00",
+            "finished_at": "2026-10-30T21:49:47.415856+00:00"
+          }
+        },
+        {
+          "id": "atti_index",
+          "source_id": "italia_corpus",
+          "status": "ok",
+          "label": "atti_index",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261030T214947Z_d7fb9ba8",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-10-30T21:49:47.679407+00:00",
+            "finished_at": "2026-10-30T21:49:48.448635+00:00"
           }
         },
         {
@@ -6012,11 +6012,11 @@
           "label": "normativa",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261026T140115Z_e8ec3f84",
+            "run_id": "20261030T214948Z_75a32bc9",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-26T14:01:15.253573+00:00",
-            "finished_at": "2026-10-26T14:01:15.612910+00:00"
+            "started_at": "2026-10-30T21:49:48.704401+00:00",
+            "finished_at": "2026-10-30T21:49:48.976923+00:00"
           }
         },
         {
@@ -6026,11 +6026,11 @@
           "label": "riferimenti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261026T140116Z_501796f6",
+            "run_id": "20261030T214949Z_23adca53",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-26T14:01:16.037670+00:00",
-            "finished_at": "2026-10-26T14:01:16.652917+00:00"
+            "started_at": "2026-10-30T21:49:49.237341+00:00",
+            "finished_at": "2026-10-30T21:49:49.891607+00:00"
           }
         }
       ]

@@ -1,10 +1,10 @@
 # Session Bootstrap
 
-**Generated**: 2026-10-30T21:59:12.454350
+**Generated**: 2026-10-30T22:29:07.920765
 
 ## Stato
 
-Radar: 36 fonti GREEN 34 · Registry: 41 repo · 459 dataset
+Radar: 36 fonti GREEN 34 · Registry: 41 repo · 460 dataset
 
 ## Richiede attenzione
 
@@ -12,7 +12,7 @@ Radar: 36 fonti GREEN 34 · Registry: 41 repo · 459 dataset
 - [PR] appalti-pubblici#19: feat(anac-cross): codice IPA della stazione appaltante (#13)
 - [PR] dataset-incubator#885: feat(candidates): eu-call-open + catena FTS call_id/project_id
 - [PR] dataset-incubator#836: feat(candidates): bootstrap gse_cer_elenco candidate
-- [PR] dichiarazioni-italia#52: chore(dashboard): allinea ai dati pubblicati (perimetro IRAP 2022, comune fantasma, lorda/detrazioni)
+- [PR] gu-monitor#11: refactor(store): event log su GCS, fuori da git
 
 ## Analisi pubbliche (45)
 
