@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T14:29:12.234977",
+  "generated_at": "2026-10-30T21:59:12.454350",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -50,7 +50,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 8,
+  "open_prs": 11,
   "prs": [
     {
       "number": 20,
@@ -81,10 +81,31 @@
       "category": "other"
     },
     {
+      "number": 52,
+      "title": "chore(dashboard): allinea ai dati pubblicati (perimetro IRAP 2022, comune fantasma, lorda/detrazioni)",
+      "repo": "dichiarazioni-italia",
+      "url": "https://github.com/dataciviclab/dichiarazioni-italia/pull/52",
+      "category": "other"
+    },
+    {
+      "number": 11,
+      "title": "refactor(store): event log su GCS, fuori da git",
+      "repo": "gu-monitor",
+      "url": "https://github.com/dataciviclab/gu-monitor/pull/11",
+      "category": "other"
+    },
+    {
       "number": 32,
       "title": "chore(post-merge): aggiorna registry (schedule)",
       "repo": "inpa-reclutamento",
       "url": "https://github.com/dataciviclab/inpa-reclutamento/pull/32",
+      "category": "other"
+    },
+    {
+      "number": 107,
+      "title": "chore(post-merge): aggiorna registry (106)",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/pull/107",
       "category": "other"
     },
     {
@@ -189,6 +210,13 @@
       "category": "intake"
     },
     {
+      "number": 40,
+      "title": "[QA] irpef_comunale \u2014 la riga \"Mancante/errata\" entra come 22\u00aa regione in mart_sintesi",
+      "repo": "dichiarazioni-italia",
+      "url": "https://github.com/dataciviclab/dichiarazioni-italia/issues/40",
+      "category": "other"
+    },
+    {
       "number": 25,
       "title": "[Dati] ACSP a.i. 2017 \u2014 anomalia nella fonte: reddito impresa semplificata \u221259% e perdite +186%",
       "repo": "dichiarazioni-italia",
@@ -214,13 +242,6 @@
       "title": "Dataset candidato: IVA per aliquota (4/5/10/22%) per regione e settore",
       "repo": "dichiarazioni-italia",
       "url": "https://github.com/dataciviclab/dichiarazioni-italia/issues/18",
-      "category": "other"
-    },
-    {
-      "number": 17,
-      "title": "Dataset candidato: IRPEF \u2014 imposta lorda per tipologia di contribuente e regione",
-      "repo": "dichiarazioni-italia",
-      "url": "https://github.com/dataciviclab/dichiarazioni-italia/issues/17",
       "category": "other"
     },
     {
@@ -462,7 +483,7 @@
       "category": "other"
     }
   ],
-  "open_discussions": 199,
+  "open_discussions": 205,
   "discussions": [
     {
       "number": 10,
@@ -1121,6 +1142,48 @@
       "repo": "dcl-bologna",
       "url": "https://github.com/dataciviclab/dcl-bologna/discussions/1",
       "category": "Announcements"
+    },
+    {
+      "number": 47,
+      "title": "12 domande sui 18 dataset delle dichiarazioni fiscali",
+      "repo": "dichiarazioni-italia",
+      "url": "https://github.com/dataciviclab/dichiarazioni-italia/discussions/47",
+      "category": "Domande"
+    },
+    {
+      "number": 46,
+      "title": "[Dati] Una riga \"Mancante/errata\" \u00e8 conteggiata come 22\u00aa regione nei dati IRPEF comunali",
+      "repo": "dichiarazioni-italia",
+      "url": "https://github.com/dataciviclab/dichiarazioni-italia/discussions/46",
+      "category": "Analisi"
+    },
+    {
+      "number": 45,
+      "title": "Il forfetario \u00e8 passato dallo 0,9% al 29,3% del reddito delle partite IVA",
+      "repo": "dichiarazioni-italia",
+      "url": "https://github.com/dataciviclab/dichiarazioni-italia/discussions/45",
+      "category": "Analisi"
+    },
+    {
+      "number": 44,
+      "title": "Chi paga l'IRPEF: dipendenti e pensionati l'85%, le partite IVA il 5% con 6,4 volte la media",
+      "repo": "dichiarazioni-italia",
+      "url": "https://github.com/dataciviclab/dichiarazioni-italia/discussions/44",
+      "category": "Analisi"
+    },
+    {
+      "number": 43,
+      "title": "Lo Stato paga un terzo dell'IRAP a se stesso \u2014 e in Lazio due terzi",
+      "repo": "dichiarazioni-italia",
+      "url": "https://github.com/dataciviclab/dichiarazioni-italia/discussions/43",
+      "category": "Analisi"
+    },
+    {
+      "number": 42,
+      "title": "Il crollo del 37% dei dichiaranti IRAP non \u00e8 una crisi: \u00e8 una legge del 2021",
+      "repo": "dichiarazioni-italia",
+      "url": "https://github.com/dataciviclab/dichiarazioni-italia/discussions/42",
+      "category": "Analisi"
     },
     {
       "number": 26,
@@ -2238,7 +2301,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 8"
+    "Many open PRs: 11"
   ],
   "radar": {
     "available": true,
@@ -4005,13 +4068,13 @@
       "repo": "dichiarazioni-italia",
       "available": true,
       "source_repo": "dataciviclab/dichiarazioni-italia",
-      "updated_at": "2026-10-29",
-      "datasets": 17,
-      "marts": 32,
-      "signals": 17,
+      "updated_at": "2026-10-30",
+      "datasets": 18,
+      "marts": 34,
+      "signals": 18,
       "codelists": 0,
       "entities": 4,
-      "gcs": 17,
+      "gcs": 18,
       "reason": "",
       "signals_detail": [
         {
@@ -4180,6 +4243,20 @@
             "status": "SUCCESS",
             "started_at": "2026-10-28T18:10:17.311574+00:00",
             "finished_at": "2026-10-28T18:10:18.013110+00:00"
+          }
+        },
+        {
+          "id": "irpef_calcolo_tipologia",
+          "source_id": "mef_finanze",
+          "status": "ok",
+          "label": "irpef_calcolo_tipologia",
+          "detail": "anni 2014-2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261030T195046Z_a04b6385",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-10-30T19:50:46.346033+00:00",
+            "finished_at": "2026-10-30T19:50:51.256879+00:00"
           }
         },
         {

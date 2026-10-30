@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-30T14:29:12.234977",
+  "generated_at": "2026-10-30T21:59:12.454350",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -131,7 +131,7 @@
       "url": "https://github.com/dataciviclab/dichiarazioni-italia",
       "role": "dati",
       "domain": "finanza-pubblica",
-      "n_datasets": 17,
+      "n_datasets": 18,
       "n_published": 0,
       "sources": [
         "mef_finanze"
@@ -29334,6 +29334,153 @@
         ],
         "mart_refs": [
           "ires_redditi_regione__mart_regioni_anno"
+        ]
+      },
+      {
+        "slug": "irpef_calcolo_tipologia",
+        "url_slug": "irpef-calcolo-tipologia",
+        "name": "Irpef Calcolo Tipologia",
+        "description": "IRPEF: calcolo dell'imposta (reddito complessivo, imponibile, imposta lorda, detrazioni, imposta netta) per tipologia di contribuente e regione. Anno d'imposta 2013-2024.",
+        "source": "",
+        "source_id": "mef_finanze",
+        "period": {
+          "start": 2013,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "irpef",
+          "regionale",
+          "imposta",
+          "detrazioni",
+          "calcolo"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "dichiarazioni-italia",
+        "clean_rows": 126,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/dichiarazioni-italia/irpef_calcolo_tipologia/*/irpef_calcolo_tipologia_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "cod_regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "cod_tipologia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipologia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "contribuenti",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_complessivo_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_complessivo_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_imponibile_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_imponibile_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_lorda_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_lorda_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "detrazioni_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "detrazioni_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_netta_frequenza",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "imposta_netta_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "irpef_calcolo_tipologia__mart_tipologie_anno",
+          "irpef_calcolo_tipologia__mart_regioni_anno"
         ]
       },
       {
@@ -61501,6 +61648,7 @@
         "irap_italia_estero",
         "irap_vp_regime",
         "ires_redditi_regione",
+        "irpef_calcolo_tipologia",
         "irpef_comunale",
         "irpef_imposta_tipologia",
         "istat_asia_imprese_addetti",
@@ -61575,7 +61723,7 @@
         "ted_contract_notices",
         "wb_financial"
       ],
-      "dataset_count": 151
+      "dataset_count": 152
     },
     {
       "slug": "sanita",
@@ -61955,6 +62103,7 @@
         "irap_italia_estero",
         "irap_vp_regime",
         "ires_redditi_regione",
+        "irpef_calcolo_tipologia",
         "irpef_comunale",
         "irpef_imposta_tipologia",
         "istat_asia_imprese_addetti",
@@ -62992,6 +63141,7 @@
       "irap_italia_estero",
       "irap_vp_regime",
       "ires_redditi_regione",
+      "irpef_calcolo_tipologia",
       "irpef_comunale",
       "irpef_imposta_tipologia",
       "iva_regionale",
@@ -63488,6 +63638,7 @@
       "irap_italia_estero",
       "irap_vp_regime",
       "ires_redditi_regione",
+      "irpef_calcolo_tipologia",
       "irpef_comunale",
       "irpef_imposta_tipologia",
       "istat_asia_imprese_addetti",
@@ -65501,6 +65652,23 @@
         "reddito-impresa"
       ],
       "description": ""
+    },
+    "irpef_calcolo_tipologia": {
+      "name": "Irpef Calcolo Tipologia",
+      "stage": "incubating",
+      "source_id": "mef_finanze",
+      "registry_source": "dichiarazioni-italia",
+      "domain": "finanza-pubblica",
+      "category": "finanza-pubblica",
+      "tags": [
+        "finanza-pubblica",
+        "irpef",
+        "regionale",
+        "imposta",
+        "detrazioni",
+        "calcolo"
+      ],
+      "description": "IRPEF: calcolo dell'imposta (reddito complessivo, imponibile, imposta lorda, detrazioni, imposta netta) per tipologia di contribuente e regione. Anno d'imposta 2013-2024."
     },
     "irpef_comunale": {
       "name": "Irpef Comunale",
