@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T11:47:18.664799",
+  "generated_at": "2026-10-31T16:54:48.914603",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -81,10 +81,10 @@
       "category": "other"
     },
     {
-      "number": 15,
+      "number": 33,
       "title": "chore(post-merge): aggiorna registry (schedule)",
-      "repo": "gu-monitor",
-      "url": "https://github.com/dataciviclab/gu-monitor/pull/15",
+      "repo": "inpa-reclutamento",
+      "url": "https://github.com/dataciviclab/inpa-reclutamento/pull/33",
       "category": "other"
     },
     {
@@ -109,7 +109,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 50,
+  "open_issues": 51,
   "issues": [
     {
       "number": 13,
@@ -277,6 +277,13 @@
       "title": "intake: ga-provvedimenti-class-esito \u2014 provvedimenti pubblicati per classificazione ed esito",
       "repo": "giustizia-amministrativa",
       "url": "https://github.com/dataciviclab/giustizia-amministrativa/issues/11",
+      "category": "intake"
+    },
+    {
+      "number": 17,
+      "title": "Intake: modalit\u00e0 di definizione penale \u2014 prescrizioni e archiviazioni (richiesta dati in corso)",
+      "repo": "giustizia-statistiche",
+      "url": "https://github.com/dataciviclab/giustizia-statistiche/issues/17",
       "category": "intake"
     },
     {
@@ -1354,6 +1361,13 @@
       "category": "Announcements"
     },
     {
+      "number": 13,
+      "title": "Milano \u00e8 ferma a 1,01 \u2014 1.412 giorni di disposition time, il pi\u00f9 alto d'Italia",
+      "repo": "giustizia-statistiche",
+      "url": "https://github.com/dataciviclab/giustizia-statistiche/discussions/13",
+      "category": "Analisi"
+    },
+    {
       "number": 16,
       "title": "Le spese giustizia sono salite a 1.048 mln \u2014 Palermo spende pi\u00f9 di Roma",
       "repo": "giustizia-statistiche",
@@ -1372,13 +1386,6 @@
       "title": "Le intercettazioni sono calate del 32% dal 2014 \u2014 137,6k \u2192 93,6k bersagli",
       "repo": "giustizia-statistiche",
       "url": "https://github.com/dataciviclab/giustizia-statistiche/discussions/14",
-      "category": "Analisi"
-    },
-    {
-      "number": 13,
-      "title": "Milano \u00e8 ferma a 1,01 \u2014 1.412 giorni di disposition time, il pi\u00f9 alto d'Italia",
-      "repo": "giustizia-statistiche",
-      "url": "https://github.com/dataciviclab/giustizia-statistiche/discussions/13",
       "category": "Analisi"
     },
     {
@@ -5326,13 +5333,13 @@
       "repo": "giustizia-statistiche",
       "available": true,
       "source_repo": "dataciviclab/giustizia-statistiche",
-      "updated_at": "2026-10-10",
-      "datasets": 16,
-      "marts": 27,
-      "signals": 16,
+      "updated_at": "2026-10-31",
+      "datasets": 18,
+      "marts": 29,
+      "signals": 18,
       "codelists": 0,
       "entities": 2,
-      "gcs": 16,
+      "gcs": 18,
       "reason": "",
       "signals_detail": [
         {
@@ -5342,11 +5349,11 @@
           "label": "quadro_distretto",
           "detail": "anno 2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261010T142207Z_84811422",
+            "run_id": "20261031T150756Z_c5f2ec14",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-10-10T14:22:07.282229+00:00",
-            "finished_at": "2026-10-10T14:22:07.443474+00:00"
+            "started_at": "2026-10-31T15:07:56.801415+00:00",
+            "finished_at": "2026-10-31T15:07:56.966485+00:00"
           }
         },
         {
@@ -5356,11 +5363,11 @@
           "label": "civile_flussi",
           "detail": "anno 2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261010T142035Z_c497fa97",
+            "run_id": "20261031T150617Z_e983f8bf",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-10-10T14:20:35.137487+00:00",
-            "finished_at": "2026-10-10T14:20:56.623380+00:00"
+            "started_at": "2026-10-31T15:06:17.601672+00:00",
+            "finished_at": "2026-10-31T15:06:44.148594+00:00"
           }
         },
         {
@@ -5370,11 +5377,11 @@
           "label": "durata_civile",
           "detail": "anno 2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261010T142056Z_847e88a6",
+            "run_id": "20261031T150644Z_5106cf0b",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-10-10T14:20:56.667741+00:00",
-            "finished_at": "2026-10-10T14:21:01.141989+00:00"
+            "started_at": "2026-10-31T15:06:44.192017+00:00",
+            "finished_at": "2026-10-31T15:06:48.156234+00:00"
           }
         },
         {
@@ -5384,11 +5391,11 @@
           "label": "durata_penale_classi",
           "detail": "anno 2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261010T142103Z_7fd96147",
+            "run_id": "20261031T150649Z_22d56c7e",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-10-10T14:21:03.644973+00:00",
-            "finished_at": "2026-10-10T14:21:07.317227+00:00"
+            "started_at": "2026-10-31T15:06:49.756374+00:00",
+            "finished_at": "2026-10-31T15:06:52.331233+00:00"
           }
         },
         {
@@ -5398,11 +5405,11 @@
           "label": "durata_penale_medie",
           "detail": "anno 2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261010T142109Z_2063c11b",
+            "run_id": "20261031T150654Z_c6aa2659",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-10-10T14:21:09.777349+00:00",
-            "finished_at": "2026-10-10T14:21:13.065320+00:00"
+            "started_at": "2026-10-31T15:06:54.035156+00:00",
+            "finished_at": "2026-10-31T15:06:56.324705+00:00"
           }
         },
         {
@@ -5412,11 +5419,11 @@
           "label": "giustizia_civile_indicatori",
           "detail": "anno 2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261010T142113Z_64047b7d",
+            "run_id": "20261031T150656Z_0180ca77",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-10-10T14:21:13.108792+00:00",
-            "finished_at": "2026-10-10T14:21:19.199176+00:00"
+            "started_at": "2026-10-31T15:06:56.377836+00:00",
+            "finished_at": "2026-10-31T15:07:02.812526+00:00"
           }
         },
         {
@@ -5426,11 +5433,11 @@
           "label": "giustizia_penale_indicatori",
           "detail": "anno 2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261010T142119Z_fff46235",
+            "run_id": "20261031T150702Z_1be23428",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-10-10T14:21:19.250948+00:00",
-            "finished_at": "2026-10-10T14:21:21.669515+00:00"
+            "started_at": "2026-10-31T15:07:02.872942+00:00",
+            "finished_at": "2026-10-31T15:07:05.144096+00:00"
           }
         },
         {
@@ -5440,11 +5447,11 @@
           "label": "intercettazioni",
           "detail": "anno 2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261010T142122Z_82c0444a",
+            "run_id": "20261031T150705Z_093f0b90",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-10-10T14:21:22.215040+00:00",
-            "finished_at": "2026-10-10T14:21:23.668066+00:00"
+            "started_at": "2026-10-31T15:07:05.547567+00:00",
+            "finished_at": "2026-10-31T15:07:06.705986+00:00"
           }
         },
         {
@@ -5454,11 +5461,11 @@
           "label": "mediazione_civile",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261010T142123Z_7158dd86",
+            "run_id": "20261031T150706Z_459ad834",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-10T14:21:23.708774+00:00",
-            "finished_at": "2026-10-10T14:21:26.558256+00:00"
+            "started_at": "2026-10-31T15:07:06.760443+00:00",
+            "finished_at": "2026-10-31T15:07:08.908025+00:00"
           }
         },
         {
@@ -5468,11 +5475,11 @@
           "label": "monitoraggio_mensile_civile",
           "detail": "anno 2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261010T142127Z_a1b3b28f",
+            "run_id": "20261031T150709Z_6cca13b8",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-10-10T14:21:27.083938+00:00",
-            "finished_at": "2026-10-10T14:21:51.987722+00:00"
+            "started_at": "2026-10-31T15:07:09.321662+00:00",
+            "finished_at": "2026-10-31T15:07:38.636047+00:00"
           }
         },
         {
@@ -5482,11 +5489,11 @@
           "label": "monitoraggio_occ",
           "detail": "anno 2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261010T142153Z_55683937",
+            "run_id": "20261031T150739Z_a868841a",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-10-10T14:21:53.722191+00:00",
-            "finished_at": "2026-10-10T14:21:54.538527+00:00"
+            "started_at": "2026-10-31T15:07:39.901455+00:00",
+            "finished_at": "2026-10-31T15:07:40.511486+00:00"
           }
         },
         {
@@ -5496,11 +5503,11 @@
           "label": "monitoraggio_pnrr_giustizia",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261010T142154Z_f975037f",
+            "run_id": "20261031T150740Z_cd381dbd",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-10T14:21:54.589520+00:00",
-            "finished_at": "2026-10-10T14:21:57.032001+00:00"
+            "started_at": "2026-10-31T15:07:40.563912+00:00",
+            "finished_at": "2026-10-31T15:07:42.528231+00:00"
           }
         },
         {
@@ -5510,11 +5517,39 @@
           "label": "penale_flussi",
           "detail": "anno 2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261010T142157Z_5ee8359b",
+            "run_id": "20261031T150742Z_610248ed",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-10-10T14:21:57.613387+00:00",
-            "finished_at": "2026-10-10T14:22:00.969988+00:00"
+            "started_at": "2026-10-31T15:07:42.947332+00:00",
+            "finished_at": "2026-10-31T15:07:45.901051+00:00"
+          }
+        },
+        {
+          "id": "sorveglianza_esecuzione",
+          "source_id": "giustizia_statistiche",
+          "status": "ok",
+          "label": "sorveglianza_esecuzione",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261031T150747Z_f24d4a8b",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-10-31T15:07:47.331278+00:00",
+            "finished_at": "2026-10-31T15:07:48.467704+00:00"
+          }
+        },
+        {
+          "id": "sorveglianza_misure",
+          "source_id": "giustizia_statistiche",
+          "status": "ok",
+          "label": "sorveglianza_misure",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261031T150749Z_6fa0b958",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-10-31T15:07:49.949102+00:00",
+            "finished_at": "2026-10-31T15:07:51.722046+00:00"
           }
         },
         {
@@ -5524,11 +5559,11 @@
           "label": "spese_giustizia",
           "detail": "anno 2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261010T142201Z_28138923",
+            "run_id": "20261031T150752Z_b5ef60fe",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-10-10T14:22:01.508802+00:00",
-            "finished_at": "2026-10-10T14:22:03.116456+00:00"
+            "started_at": "2026-10-31T15:07:52.146606+00:00",
+            "finished_at": "2026-10-31T15:07:53.561887+00:00"
           }
         },
         {
@@ -5538,11 +5573,11 @@
           "label": "ucp_dettaglio",
           "detail": "anno 2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261010T142203Z_8aa198ce",
+            "run_id": "20261031T150753Z_dd9b77a7",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-10-10T14:22:03.166773+00:00",
-            "finished_at": "2026-10-10T14:22:04.949564+00:00"
+            "started_at": "2026-10-31T15:07:53.615087+00:00",
+            "finished_at": "2026-10-31T15:07:55.055585+00:00"
           }
         },
         {
@@ -5552,11 +5587,11 @@
           "label": "ucp_numero",
           "detail": "anno 2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261010T142206Z_eff96286",
+            "run_id": "20261031T150756Z_cf0dc442",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-10-10T14:22:06.267562+00:00",
-            "finished_at": "2026-10-10T14:22:07.202373+00:00"
+            "started_at": "2026-10-31T15:07:56.048223+00:00",
+            "finished_at": "2026-10-31T15:07:56.711580+00:00"
           }
         }
       ]
@@ -5581,11 +5616,11 @@
           "label": "gu_atti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261031T090650Z_a4e3e088",
+            "run_id": "20261031T113937Z_c9e85ac3",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-31T09:06:50.701086+00:00",
-            "finished_at": "2026-10-31T09:06:51.052234+00:00"
+            "started_at": "2026-10-31T11:39:37.641110+00:00",
+            "finished_at": "2026-10-31T11:39:37.988101+00:00"
           }
         }
       ]
@@ -9293,7 +9328,7 @@
       "repo": "senato-akn",
       "available": true,
       "source_repo": "dataciviclab/senato-akn",
-      "updated_at": "2026-10-01",
+      "updated_at": "2026-10-31",
       "datasets": 3,
       "marts": 7,
       "signals": 3,
@@ -9309,11 +9344,11 @@
           "label": "senato_corpus",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T121748Z_c511497a",
+            "run_id": "20261031T160315Z_2a47f0cb",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:17:48.361958+00:00",
-            "finished_at": "2026-10-01T12:17:50.061389+00:00"
+            "started_at": "2026-10-31T16:03:15.172308+00:00",
+            "finished_at": "2026-10-31T16:03:17.296896+00:00"
           }
         },
         {
@@ -9323,11 +9358,11 @@
           "label": "senato_dibattito",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T121750Z_8a08387d",
+            "run_id": "20261031T160317Z_028ee4f1",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:17:50.476950+00:00",
-            "finished_at": "2026-10-01T12:17:55.842447+00:00"
+            "started_at": "2026-10-31T16:03:17.704609+00:00",
+            "finished_at": "2026-10-31T16:03:23.804734+00:00"
           }
         },
         {
@@ -9337,11 +9372,11 @@
           "label": "senato_emendamenti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T121756Z_322c872e",
+            "run_id": "20261031T160324Z_c06641e7",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:17:56.245734+00:00",
-            "finished_at": "2026-10-01T12:18:02.990754+00:00"
+            "started_at": "2026-10-31T16:03:24.196883+00:00",
+            "finished_at": "2026-10-31T16:03:31.967600+00:00"
           }
         }
       ]

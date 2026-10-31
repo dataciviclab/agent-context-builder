@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-31T11:47:18.664799",
+  "generated_at": "2026-10-31T16:54:48.914603",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -195,7 +195,7 @@
       "url": "https://github.com/dataciviclab/giustizia-statistiche",
       "role": "dati",
       "domain": "giustizia",
-      "n_datasets": 16,
+      "n_datasets": 18,
       "n_published": 0,
       "sources": [
         "dataciviclab_composite",
@@ -3514,6 +3514,34 @@
           },
           {
             "name": "pnrr_cohort_baseline_2026",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sorv_concesse",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sorv_revocate",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sorv_revoca_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sorv_stock_alternative",
             "type": "DOUBLE",
             "role": "metric",
             "semantic_type": "",
@@ -34206,7 +34234,7 @@
         ],
         "category": "giustizia",
         "registry_source": "giustizia-statistiche",
-        "clean_rows": 144490,
+        "clean_rows": 146291,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/giustizia-statistiche/monitoraggio_mensile_civile/2025/monitoraggio_mensile_civile_2025_clean.parquet",
@@ -34674,6 +34702,199 @@
         ]
       },
       {
+        "slug": "sorveglianza_esecuzione",
+        "url_slug": "sorveglianza-esecuzione",
+        "name": "Sorveglianza Esecuzione",
+        "description": "",
+        "source": "",
+        "source_id": "giustizia_statistiche",
+        "period": {
+          "start": 2020,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "giustizia",
+          "penale",
+          "sorveglianza",
+          "misure-alternative",
+          "esecuzione-penale",
+          "statistiche-giudiziarie"
+        ],
+        "category": "giustizia",
+        "registry_source": "giustizia-statistiche",
+        "clean_rows": 11148,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia-statistiche/sorveglianza_esecuzione/2025/sorveglianza_esecuzione_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "tipologia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_ufficio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "distretto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "oggetto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "natura_misura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provvedimenti",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "sorveglianza_esecuzione__sorveglianza_esecuzione"
+        ]
+      },
+      {
+        "slug": "sorveglianza_misure",
+        "url_slug": "sorveglianza-misure",
+        "name": "Sorveglianza Misure",
+        "description": "",
+        "source": "",
+        "source_id": "giustizia_statistiche",
+        "period": {
+          "start": 2020,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "giustizia",
+          "penale",
+          "sorveglianza",
+          "misure-alternative",
+          "statistiche-giudiziarie"
+        ],
+        "category": "giustizia",
+        "registry_source": "giustizia-statistiche",
+        "clean_rows": 45411,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia-statistiche/sorveglianza_misure/2025/sorveglianza_misure_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "periodo_tipo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "semestre",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_ufficio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "distretto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "misura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "oggetto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "natura_misura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provvedimenti",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "sorveglianza_misure__sorveglianza_misure"
+        ]
+      },
+      {
         "slug": "spese_giustizia",
         "url_slug": "spese-giustizia",
         "name": "Spese Giustizia",
@@ -35034,7 +35255,7 @@
         ],
         "category": "normativa",
         "registry_source": "gu-monitor",
-        "clean_rows": 25829,
+        "clean_rows": 25950,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/gu-monitor/gu_atti/2026/gu_atti_2026_clean.parquet",
@@ -35043,6 +35264,13 @@
         "columns": [
           {
             "name": "id",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_genere",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
@@ -35105,7 +35333,7 @@
             "description": ""
           },
           {
-            "name": "topic_str",
+            "name": "sezione",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
@@ -58928,7 +59156,7 @@
         "slug": "senato_corpus",
         "url_slug": "senato-corpus",
         "name": "Senato Corpus",
-        "description": "Corpus Akoma Ntoso del Senato (Leg14\u2013Leg19): ogni documento legislativo (ddlpres, emend, ddlcomm, ddlmess) con famiglia, peso testuale e articoli. Deriva dall'estrazione XML di senato-akn; atto_num collega a senato_ddl via ddl_url (/ddl/N).",
+        "description": "Corpus Akoma Ntoso del Senato (ddlpres Leg16\u2013Leg19, ddlmess Leg17\u2013Leg19, ddlcomm Leg16\u2013Leg19): ogni disegno di legge, messaggio e relazione di commissione con famiglia, peso testuale e articoli. Emendamenti e dibattito sono dataset separati. Deriva dall'estrazione XML di senato-akn; atto_num collega a senato_ddl via ddl_url (/ddl/N).",
         "source": "",
         "source_id": "senato_akn",
         "period": {
@@ -58945,7 +59173,7 @@
         ],
         "category": "politica",
         "registry_source": "senato-akn",
-        "clean_rows": 9947,
+        "clean_rows": 10000,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/senato-akn/senato_corpus/2026/senato_corpus_2026_clean.parquet",
@@ -59152,7 +59380,7 @@
         "slug": "senato_dibattito",
         "url_slug": "senato-dibattito",
         "name": "Senato Dibattito",
-        "description": "Ogni intervento parlamentare nelle legislature Leg14\u2013Leg19 (Aula `resaula` e Commissione `sommcomm`), dal corpus Akoma Ntoso. Una riga = un intervento, con oratore (bridge osr:Persona \u2192 senato_anagrafica) e testo.",
+        "description": "Ogni intervento parlamentare (Aula `resaula` e Commissione `sommcomm`) dal corpus Akoma Ntoso. Copertura reale Leg18\u2013Leg19; in Leg17 l'upstream ha solo 3 resoconti d'Aula (1 seduta pubblicata) e nessun resoconto di Commissione, Leg14\u2013Leg16 non hanno dibattito. Una riga = un intervento, con oratore (bridge osr:Persona \u2192 senato_anagrafica) e testo.",
         "source": "",
         "source_id": "senato_akn",
         "period": {
@@ -59170,7 +59398,7 @@
         ],
         "category": "politica",
         "registry_source": "senato-akn",
-        "clean_rows": 365924,
+        "clean_rows": 369702,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/senato-akn/senato_dibattito/2026/senato_dibattito_2026_clean.parquet",
@@ -59296,7 +59524,7 @@
         ],
         "category": "politica",
         "registry_source": "senato-akn",
-        "clean_rows": 1005356,
+        "clean_rows": 1008234,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/senato-akn/senato_emendamenti/2026/senato_emendamenti_2026_clean.parquet",
@@ -62173,11 +62401,13 @@
         "openga_ricorsi_appalto",
         "penale_flussi",
         "quadro_distretto",
+        "sorveglianza_esecuzione",
+        "sorveglianza_misure",
         "spese_giustizia",
         "ucp_dettaglio",
         "ucp_numero"
       ],
-      "dataset_count": 30
+      "dataset_count": 32
     },
     {
       "slug": "terzo-settore",
@@ -62593,6 +62823,8 @@
         "openga_ricorsi_appalto",
         "penale_flussi",
         "quadro_distretto",
+        "sorveglianza_esecuzione",
+        "sorveglianza_misure",
         "spese_giustizia",
         "ucp_dettaglio",
         "ucp_numero"
@@ -63552,6 +63784,8 @@
       "monitoraggio_pnrr_giustizia",
       "penale_flussi",
       "quadro_distretto",
+      "sorveglianza_esecuzione",
+      "sorveglianza_misure",
       "spese_giustizia",
       "ucp_dettaglio",
       "ucp_numero"
@@ -64056,6 +64290,8 @@
       "openga_ricorsi_appalto",
       "penale_flussi",
       "quadro_distretto",
+      "sorveglianza_esecuzione",
+      "sorveglianza_misure",
       "spese_giustizia",
       "ucp_dettaglio",
       "ucp_numero"
@@ -67358,6 +67594,39 @@
         "cross"
       ],
       "description": "Compose giustizia penale/civile: per distretto (snapshot 2025) - flussi civile e penale, clearance e disposition time, quota penale oltre 2 anni, spesa erario, pendenti PNRR vs target 2026."
+    },
+    "sorveglianza_esecuzione": {
+      "name": "Sorveglianza Esecuzione",
+      "stage": "incubating",
+      "source_id": "giustizia_statistiche",
+      "registry_source": "giustizia-statistiche",
+      "domain": "giustizia",
+      "category": "giustizia",
+      "tags": [
+        "giustizia",
+        "penale",
+        "sorveglianza",
+        "misure-alternative",
+        "esecuzione-penale",
+        "statistiche-giudiziarie"
+      ],
+      "description": ""
+    },
+    "sorveglianza_misure": {
+      "name": "Sorveglianza Misure",
+      "stage": "incubating",
+      "source_id": "giustizia_statistiche",
+      "registry_source": "giustizia-statistiche",
+      "domain": "giustizia",
+      "category": "giustizia",
+      "tags": [
+        "giustizia",
+        "penale",
+        "sorveglianza",
+        "misure-alternative",
+        "statistiche-giudiziarie"
+      ],
+      "description": ""
     },
     "spese_giustizia": {
       "name": "Spese Giustizia",
@@ -71141,7 +71410,7 @@
         "akoma-ntoso",
         "legislativo"
       ],
-      "description": "Corpus Akoma Ntoso del Senato (Leg14\u2013Leg19): ogni documento legislativo (ddlpres, emend, ddlcomm, ddlmess) con famiglia, peso testuale e articoli. Deriva dall'estrazione XML di senato-akn; atto_num collega a senato_ddl via ddl_url (/ddl/N)."
+      "description": "Corpus Akoma Ntoso del Senato (ddlpres Leg16\u2013Leg19, ddlmess Leg17\u2013Leg19, ddlcomm Leg16\u2013Leg19): ogni disegno di legge, messaggio e relazione di commissione con famiglia, peso testuale e articoli. Emendamenti e dibattito sono dataset separati. Deriva dall'estrazione XML di senato-akn; atto_num collega a senato_ddl via ddl_url (/ddl/N)."
     },
     "senato_dibattito": {
       "name": "Senato Dibattito",
@@ -71158,7 +71427,7 @@
         "resoconti",
         "oratori"
       ],
-      "description": "Ogni intervento parlamentare nelle legislature Leg14\u2013Leg19 (Aula `resaula` e Commissione `sommcomm`), dal corpus Akoma Ntoso. Una riga = un intervento, con oratore (bridge osr:Persona \u2192 senato_anagrafica) e testo."
+      "description": "Ogni intervento parlamentare (Aula `resaula` e Commissione `sommcomm`) dal corpus Akoma Ntoso. Copertura reale Leg18\u2013Leg19; in Leg17 l'upstream ha solo 3 resoconti d'Aula (1 seduta pubblicata) e nessun resoconto di Commissione, Leg14\u2013Leg16 non hanno dibattito. Una riga = un intervento, con oratore (bridge osr:Persona \u2192 senato_anagrafica) e testo."
     },
     "senato_emendamenti": {
       "name": "Senato Emendamenti",
