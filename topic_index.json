@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-31T04:24:53.112108",
+  "generated_at": "2026-10-31T11:47:18.664799",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -35034,7 +35034,7 @@
         ],
         "category": "normativa",
         "registry_source": "gu-monitor",
-        "clean_rows": 25711,
+        "clean_rows": 25829,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/gu-monitor/gu_atti/2026/gu_atti_2026_clean.parquet",
@@ -37242,7 +37242,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 1882,
+        "clean_rows": 1913,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_bandi_open/2026/inpa_bandi_open_2026_clean.parquet",
@@ -37461,7 +37461,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 6206,
+        "clean_rows": 6268,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_comunicazioni/2026/inpa_comunicazioni_2026_clean.parquet",
@@ -46976,7 +46976,7 @@
         "slug": "ispra_rs_gestione",
         "url_slug": "ispra-rs-gestione",
         "name": "Ispra Rs Gestione",
-        "description": "",
+        "description": "Gestione dei rifiuti speciali per operazione (recupero R1-R13, smaltimento D1-D15), ripartizione merceologica e area geografica.",
         "source": "",
         "source_id": "ispra_linked_data",
         "period": {
@@ -46992,7 +46992,7 @@
         ],
         "category": "ambiente",
         "registry_source": "rifiuti-urbani",
-        "clean_rows": 28,
+        "clean_rows": 276,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/rifiuti-urbani/ispra_rs_gestione/*/ispra_rs_gestione_*_clean.parquet",
@@ -47014,28 +47014,35 @@
             "description": ""
           },
           {
-            "name": "rs_np_t",
-            "type": "DOUBLE",
-            "role": "metric",
+            "name": "ripartizione",
+            "type": "VARCHAR",
+            "role": "dimension",
             "semantic_type": "",
             "description": ""
           },
           {
-            "name": "rs_p_t",
-            "type": "DOUBLE",
-            "role": "metric",
+            "name": "tipo_operazione",
+            "type": "VARCHAR",
+            "role": "dimension",
             "semantic_type": "",
             "description": ""
           },
           {
-            "name": "rs_cer_nd_t",
-            "type": "DOUBLE",
-            "role": "metric",
+            "name": "codice",
+            "type": "VARCHAR",
+            "role": "dimension",
             "semantic_type": "",
             "description": ""
           },
           {
-            "name": "totale_t",
+            "name": "natura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "quantita_t",
             "type": "DOUBLE",
             "role": "metric",
             "semantic_type": "",
@@ -47050,7 +47057,7 @@
         "slug": "ispra_rs_impianti",
         "url_slug": "ispra-rs-impianti",
         "name": "Ispra Rs Impianti",
-        "description": "",
+        "description": "Censimento ISPRA degli impianti che gestiscono rifiuti speciali: impianti e rifiuti trattati per tipologia e ripartizione geografica.",
         "source": "",
         "source_id": "ispra_linked_data",
         "period": {
@@ -47066,7 +47073,7 @@
         ],
         "category": "ambiente",
         "registry_source": "rifiuti-urbani",
-        "clean_rows": 4,
+        "clean_rows": 55,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/rifiuti-urbani/ispra_rs_impianti/*/ispra_rs_impianti_*_clean.parquet",
@@ -47081,6 +47088,20 @@
             "description": ""
           },
           {
+            "name": "tipo_impianto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "area_geografica",
             "type": "VARCHAR",
             "role": "dimension",
@@ -47089,27 +47110,27 @@
           },
           {
             "name": "numero_impianti",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rs_non_pericolosi_t",
             "type": "DOUBLE",
             "role": "metric",
             "semantic_type": "",
             "description": ""
           },
           {
-            "name": "fanghi_t",
+            "name": "rs_pericolosi_t",
             "type": "DOUBLE",
             "role": "metric",
             "semantic_type": "",
             "description": ""
           },
           {
-            "name": "altri_rs_t",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "totale_rs_t",
+            "name": "totale_t",
             "type": "DOUBLE",
             "role": "metric",
             "semantic_type": "",
@@ -47197,7 +47218,7 @@
         "slug": "ispra_rs_produzione",
         "url_slug": "ispra-rs-produzione",
         "name": "Ispra Rs Produzione",
-        "description": "",
+        "description": "Produzione di rifiuti speciali per attivit\u00e0 economica e per capitolo EER, con ripartizione pericolosi/non pericolosi e area geografica.",
         "source": "",
         "source_id": "ispra_linked_data",
         "period": {
@@ -47213,7 +47234,7 @@
         ],
         "category": "ambiente",
         "registry_source": "rifiuti-urbani",
-        "clean_rows": 317,
+        "clean_rows": 1244,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/rifiuti-urbani/ispra_rs_produzione/*/ispra_rs_produzione_*_clean.parquet",
@@ -47228,6 +47249,20 @@
             "description": ""
           },
           {
+            "name": "dimensione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "etichetta",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "area_geografica",
             "type": "VARCHAR",
             "role": "dimension",
@@ -47235,21 +47270,28 @@
             "description": ""
           },
           {
-            "name": "rs_np_t",
+            "name": "ripartizione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "np_t",
             "type": "DOUBLE",
             "role": "metric",
             "semantic_type": "",
             "description": ""
           },
           {
-            "name": "rs_p_t",
+            "name": "p_t",
             "type": "DOUBLE",
             "role": "metric",
             "semantic_type": "",
             "description": ""
           },
           {
-            "name": "rs_cer_nd_t",
+            "name": "cer_nd_t",
             "type": "DOUBLE",
             "role": "metric",
             "semantic_type": "",
@@ -47880,7 +47922,7 @@
         "slug": "ispra_ru_gestione",
         "url_slug": "ispra-ru-gestione",
         "name": "Ispra Ru Gestione",
-        "description": "",
+        "description": "Impianti che trattano rifiuti urbani (ISPRA): numero impianti e rifiuti trattati per tipologia impianto e ripartizione geografica.",
         "source": "",
         "source_id": "ispra_linked_data",
         "period": {
@@ -47892,6 +47934,7 @@
           "ambiente",
           "ispra",
           "ru",
+          "impianti",
           "gestione"
         ],
         "category": "ambiente",
@@ -47911,6 +47954,13 @@
             "description": ""
           },
           {
+            "name": "tipo_impianto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "area_geografica",
             "type": "VARCHAR",
             "role": "dimension",
@@ -47919,7 +47969,7 @@
           },
           {
             "name": "numero_impianti",
-            "type": "BIGINT",
+            "type": "INTEGER",
             "role": "metric",
             "semantic_type": "",
             "description": ""
@@ -70883,7 +70933,7 @@
         "rs",
         "gestione"
       ],
-      "description": ""
+      "description": "Gestione dei rifiuti speciali per operazione (recupero R1-R13, smaltimento D1-D15), ripartizione merceologica e area geografica."
     },
     "ispra_rs_impianti": {
       "name": "Ispra Rs Impianti",
@@ -70898,7 +70948,7 @@
         "rs",
         "impianti"
       ],
-      "description": ""
+      "description": "Censimento ISPRA degli impianti che gestiscono rifiuti speciali: impianti e rifiuti trattati per tipologia e ripartizione geografica."
     },
     "ispra_rs_import": {
       "name": "Ispra Rs Import",
@@ -70927,7 +70977,7 @@
         "rs",
         "produzione"
       ],
-      "description": ""
+      "description": "Produzione di rifiuti speciali per attivit\u00e0 economica e per capitolo EER, con ripartizione pericolosi/non pericolosi e area geografica."
     },
     "ispra_ru_base": {
       "name": "Ispra Ru Base",
@@ -71014,9 +71064,10 @@
         "ambiente",
         "ispra",
         "ru",
+        "impianti",
         "gestione"
       ],
-      "description": ""
+      "description": "Impianti che trattano rifiuti urbani (ISPRA): numero impianti e rifiuti trattati per tipologia impianto e ripartizione geografica."
     },
     "ispra_ru_import": {
       "name": "Ispra Ru Import",
