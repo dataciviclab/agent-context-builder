@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-30T22:29:07.920765",
+  "generated_at": "2026-10-31T04:24:53.112108",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -4239,7 +4239,7 @@
         "source": "",
         "source_id": "dataciviclab_composite",
         "period": {
-          "start": 2022,
+          "start": 1996,
           "end": 2026
         },
         "stage": "incubating",
@@ -4326,6 +4326,20 @@
             "name": "n_id_ddl_iter",
             "type": "BIGINT",
             "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_dl",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_dl_fonte",
+            "type": "VARCHAR",
+            "role": "dimension",
             "semantic_type": "",
             "description": ""
           }
@@ -46926,6 +46940,13 @@
             "description": ""
           },
           {
+            "name": "is_aggregato",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "rifiuti_non_pericolosi_t",
             "type": "DOUBLE",
             "role": "metric",
@@ -47140,6 +47161,13 @@
             "description": ""
           },
           {
+            "name": "is_aggregato",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "rifiuti_non_pericolosi_t",
             "type": "DOUBLE",
             "role": "metric",
@@ -47257,7 +47285,7 @@
         ],
         "category": "ambiente",
         "registry_source": "rifiuti-urbani",
-        "clean_rows": 7762,
+        "clean_rows": 7782,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/rifiuti-urbani/ispra_ru_base/*/ispra_ru_base_*_clean.parquet",
@@ -47308,6 +47336,20 @@
           },
           {
             "name": "dato_riferito_a",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_dato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "aggregazione",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
@@ -47742,6 +47784,13 @@
             "description": ""
           },
           {
+            "name": "is_aggregato",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "rifiuti_non_pericolosi_t",
             "type": "DOUBLE",
             "role": "metric",
@@ -47806,6 +47855,13 @@
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "is_aggregato",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
             "description": ""
           },
           {
@@ -47953,6 +48009,13 @@
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "is_aggregato",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
             "description": ""
           },
           {
