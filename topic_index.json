@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-01T12:46:26.990140",
+  "generated_at": "2026-11-01T17:37:52.700046",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -28,7 +28,7 @@
       "url": "https://github.com/dataciviclab/bilancio-pubblico",
       "role": "dati",
       "domain": "finanza-pubblica",
-      "n_datasets": 6,
+      "n_datasets": 11,
       "n_published": 5,
       "sources": [
         "openbdap"
@@ -309,7 +309,7 @@
       "url": "https://github.com/dataciviclab/open-ccnl",
       "role": "dati",
       "domain": "welfare-lavoro",
-      "n_datasets": 5,
+      "n_datasets": 6,
       "n_published": 0,
       "sources": [
         "cnel_archivio"
@@ -5336,7 +5336,7 @@
             "name": "pnrr_missione",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "programma_code",
             "description": ""
           },
           {
@@ -5798,6 +5798,105 @@
     ],
     "openbdap": [
       {
+        "slug": "bdap_dlb_spese_serie",
+        "url_slug": "bdap-dlb-spese-serie",
+        "name": "Bdap Dlb Spese Serie",
+        "description": "Disegno di Legge di Bilancio Presentato \u2014 Spese per Amministrazione/Missione/Programma/Macroaggregato, serie storica. Previsioni del governo su tre annualit\u00e0 (A1 = anno di bilancio, A2/A3 = anni successivi). Missione e programma sono vuoti negli anni pi\u00f9 vecchi.",
+        "source": "",
+        "source_id": "openbdap",
+        "period": {
+          "start": 2003,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "bdap",
+          "spese",
+          "disegno-legge-bilancio",
+          "bilancio-stato",
+          "serie-storica"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "bilancio-pubblico",
+        "clean_rows": 39531,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bilancio-pubblico/bdap_dlb_spese_serie/2026/bdap_dlb_spese_serie_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "annualita",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stato_previsione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "amministrazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "missione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "programma_code",
+            "description": ""
+          },
+          {
+            "name": "programma",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "programma_code",
+            "description": ""
+          },
+          {
+            "name": "macroaggregato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cp",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cs",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "bdap_dlb_spese_serie__mart_dlb_spese_anno",
+          "bdap_dlb_spese_serie__mart_dlb_spese_missione",
+          "bdap_dlb_spese_serie__mart_dlb_spese_amministrazione"
+        ]
+      },
+      {
         "slug": "bdap_entrate_stato",
         "url_slug": "bdap-entrate-stato",
         "name": "Bdap Entrate Stato",
@@ -6097,6 +6196,105 @@
         ]
       },
       {
+        "slug": "bdap_lb_spese_serie",
+        "url_slug": "bdap-lb-spese-serie",
+        "name": "Bdap Lb Spese Serie",
+        "description": "Legge di Bilancio Pubblicata \u2014 Spese per Amministrazione/Missione/Programma/Macroaggregato, serie storica. Previsioni iniziali su tre annualit\u00e0 (A1 = anno di bilancio, A2/A3 = anni successivi). Missione e programma sono vuoti negli anni pi\u00f9 vecchi.",
+        "source": "",
+        "source_id": "openbdap",
+        "period": {
+          "start": 2003,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "bdap",
+          "spese",
+          "legge-bilancio",
+          "bilancio-stato",
+          "serie-storica"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "bilancio-pubblico",
+        "clean_rows": 41625,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bilancio-pubblico/bdap_lb_spese_serie/2026/bdap_lb_spese_serie_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "annualita",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stato_previsione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "amministrazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "missione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "programma_code",
+            "description": ""
+          },
+          {
+            "name": "programma",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "programma_code",
+            "description": ""
+          },
+          {
+            "name": "macroaggregato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cp",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cs",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "bdap_lb_spese_serie__mart_lb_spese_anno",
+          "bdap_lb_spese_serie__mart_lb_spese_missione",
+          "bdap_lb_spese_serie__mart_lb_spese_amministrazione"
+        ]
+      },
+      {
         "slug": "bdap_pagamenti_stato",
         "url_slug": "bdap-pagamenti-stato",
         "name": "Bdap Pagamenti Stato",
@@ -6241,6 +6439,517 @@
           "bdap_pagamenti_stato__mart_pagamenti_missione_categoria",
           "bdap_pagamenti_stato__mart_pagamenti_anno",
           "bdap_pagamenti_stato__mart_costo_debito_bilancio"
+        ]
+      },
+      {
+        "slug": "bdap_rnd_entrate_articolo",
+        "url_slug": "bdap-rnd-entrate-articolo",
+        "name": "Bdap Rnd Entrate Articolo",
+        "description": "Rendiconto Pubblicato Elaborabile \u2014 Entrate per articolo, 2011-2025. Previsioni iniziali/variazioni/definitive, versato, rimasto da versare, rimasto da riscuotere e totale per CP/CS/RS. E' il consuntivo delle entrate: accertato e riscosso ricostruibili dalle colonne di totale e riscosso.",
+        "source": "",
+        "source_id": "openbdap",
+        "period": {
+          "start": 2011,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "bdap",
+          "entrate",
+          "rendiconto",
+          "consuntivo",
+          "bilancio-stato"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "bilancio-pubblico",
+        "clean_rows": 2068,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bilancio-pubblico/bdap_rnd_entrate_articolo/*/bdap_rnd_entrate_articolo_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "stato_previsione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "amministrazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "capitolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "articolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_titolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "titolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "natura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipologia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "prev_iniziali_cp",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "variazioni_cp",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "prev_def_cp",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "versato_cp",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rimasto_versare_cp",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rimasto_riscuotere_cp",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_cp",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "prev_def_cs",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "versato_cs",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "riscosso_rs",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_rs",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "bdap_rnd_entrate_articolo__mart_articolo",
+          "bdap_rnd_entrate_articolo__mart_anno",
+          "bdap_rnd_entrate_articolo__mart_titolo",
+          "bdap_rnd_entrate_articolo__mart_amministrazione"
+        ]
+      },
+      {
+        "slug": "bdap_rnd_spese_capitolo",
+        "url_slug": "bdap-rnd-spese-capitolo",
+        "name": "Bdap Rnd Spese Capitolo",
+        "description": "Rendiconto Pubblicato Elaborabile \u2014 Spese per capitolo, 2011-2025. Previsioni iniziali/variazioni/definitive, pagato, rimasto da pagare, totale ed economie per CP/CS/RS. E' il consuntivo di competenza: l'impegnato e' ricostruibile come pagato + rimasto da pagare.",
+        "source": "",
+        "source_id": "openbdap",
+        "period": {
+          "start": 2011,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "bdap",
+          "spese",
+          "rendiconto",
+          "consuntivo",
+          "residui",
+          "capitolo",
+          "bilancio-stato"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "bilancio-pubblico",
+        "clean_rows": 5395,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bilancio-pubblico/bdap_rnd_spese_capitolo/*/bdap_rnd_spese_capitolo_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "stato_previsione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "amministrazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "capitolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "denominazione_capitolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_titolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "titolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_missione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "programma_code",
+            "description": ""
+          },
+          {
+            "name": "missione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "programma_code",
+            "description": ""
+          },
+          {
+            "name": "codice_programma",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "programma_code",
+            "description": ""
+          },
+          {
+            "name": "programma",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "programma_code",
+            "description": ""
+          },
+          {
+            "name": "prev_iniziali_cp",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "variazioni_cp",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "prev_def_cp",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pagato_cp",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rimasto_cp",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_cp",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "economie_cp",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "prev_def_cs",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pagato_cs",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "prev_def_rs",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pagato_rs",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rimasto_rs",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_rs",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "bdap_rnd_spese_capitolo__mart_capitolo",
+          "bdap_rnd_spese_capitolo__mart_anno",
+          "bdap_rnd_spese_capitolo__mart_missione",
+          "bdap_rnd_spese_capitolo__mart_amministrazione"
+        ]
+      },
+      {
+        "slug": "bdap_rnd_spese_serie",
+        "url_slug": "bdap-rnd-spese-serie",
+        "name": "Bdap Rnd Spese Serie",
+        "description": "Rendiconto Pubblicato \u2014 Spese per Amministrazione/Missione/Programma/Macroaggregato, serie storica. Previsioni definitive CP/CS (NON consuntivo di cassa: per pagato e residui serve il Rendiconto Elaborabile per Capitolo).",
+        "source": "",
+        "source_id": "openbdap",
+        "period": {
+          "start": 2008,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "bdap",
+          "spese",
+          "rendiconto",
+          "bilancio-stato",
+          "serie-storica"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "bilancio-pubblico",
+        "clean_rows": 12609,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bilancio-pubblico/bdap_rnd_spese_serie/2025/bdap_rnd_spese_serie_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "annualita",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stato_previsione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "amministrazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "missione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "programma_code",
+            "description": ""
+          },
+          {
+            "name": "programma",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "programma_code",
+            "description": ""
+          },
+          {
+            "name": "macroaggregato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cp",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cs",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "bdap_rnd_spese_serie__mart_rnd_spese_anno",
+          "bdap_rnd_spese_serie__mart_rnd_spese_missione",
+          "bdap_rnd_spese_serie__mart_rnd_spese_amministrazione"
         ]
       },
       {
@@ -6442,7 +7151,7 @@
         "source_id": "openbdap",
         "period": {
           "start": 2008,
-          "end": 2022
+          "end": 2023
         },
         "stage": "incubating",
         "tags": [
@@ -7594,7 +8303,7 @@
         ],
         "category": "giurisprudenza",
         "registry_source": "costituzione-italiana",
-        "clean_rows": 1050,
+        "clean_rows": 1082,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/costituzione-italiana/atti_promovimento_corte_costituzionale/2026/atti_promovimento_corte_costituzionale_2026_clean.parquet",
@@ -7799,7 +8508,7 @@
         ],
         "category": "giurisprudenza",
         "registry_source": "costituzione-italiana",
-        "clean_rows": 267411,
+        "clean_rows": 267525,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/costituzione-italiana/massime_corte_costituzionale/2026/massime_corte_costituzionale_2026_clean.parquet",
@@ -7987,7 +8696,7 @@
         ],
         "category": "giurisprudenza",
         "registry_source": "costituzione-italiana",
-        "clean_rows": 22398,
+        "clean_rows": 22414,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/costituzione-italiana/pronunce_corte_costituzionale/2026/pronunce_corte_costituzionale_2026_clean.parquet",
@@ -8300,7 +9009,7 @@
         ],
         "category": "normativa",
         "registry_source": "costituzione-italiana",
-        "clean_rows": 19040,
+        "clean_rows": 16163,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/costituzione-italiana/citazioni_costituzionali/2026/citazioni_costituzionali_2026_clean.parquet",
@@ -12611,7 +13320,7 @@
         ],
         "category": "lavoro",
         "registry_source": "open-inps",
-        "clean_rows": 386,
+        "clean_rows": 389,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-inps/inps_cig/2026/inps_cig_2026_clean.parquet",
@@ -12873,7 +13582,7 @@
         ],
         "category": "lavoro",
         "registry_source": "open-inps",
-        "clean_rows": 9403,
+        "clean_rows": 9241,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-inps/inps_flussi_settore/2026/inps_flussi_settore_2026_clean.parquet",
@@ -13308,7 +14017,7 @@
         ],
         "category": "pensioni",
         "registry_source": "open-inps",
-        "clean_rows": 2019,
+        "clean_rows": 2088,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-inps/inps_pensionamento_flussi/2026/inps_pensionamento_flussi_2026_clean.parquet",
@@ -13598,7 +14307,7 @@
         ],
         "category": "pensioni",
         "registry_source": "open-inps",
-        "clean_rows": null,
+        "clean_rows": 620,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-inps/inps_pensioni_vigenti/2026/inps_pensioni_vigenti_2026_clean.parquet",
@@ -14766,7 +15475,7 @@
         ],
         "category": "economia",
         "registry_source": "filiere-agroalimentari",
-        "clean_rows": 762,
+        "clean_rows": 780,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/filiere-agroalimentari/istat_nic_prezzi_consumo/2026/istat_nic_prezzi_consumo_2026_clean.parquet",
@@ -17542,7 +18251,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "debito-pubblico-intelligence",
-        "clean_rows": 11974,
+        "clean_rows": 12003,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/debito_pubblico_intelligence/eurostat_rendimento_10y/2026/eurostat_rendimento_10y_2026_clean.parquet",
@@ -17685,7 +18394,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -17833,7 +18542,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -17995,7 +18704,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -18143,7 +18852,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -18277,7 +18986,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -18417,7 +19126,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -18571,7 +19280,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -18733,7 +19442,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -18908,7 +19617,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -19070,7 +19779,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -19219,7 +19928,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -19293,7 +20002,7 @@
         ],
         "category": "welfare-lavoro",
         "registry_source": "eurostat",
-        "clean_rows": 1840,
+        "clean_rows": 1855,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/eurostat/eurostat_energy_poverty_nuts2/2026/eurostat_energy_poverty_nuts2_2026_clean.parquet",
@@ -19367,7 +20076,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -19515,7 +20224,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -19648,7 +20357,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -19796,7 +20505,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -19942,7 +20651,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -20076,7 +20785,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -20136,7 +20845,7 @@
         ],
         "category": "welfare-lavoro",
         "registry_source": "eurostat",
-        "clean_rows": 8533,
+        "clean_rows": 8602,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/eurostat/eurostat_income_inequality_nuts2/2026/eurostat_income_inequality_nuts2_2026_clean.parquet",
@@ -20210,7 +20919,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -20499,7 +21208,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -20559,7 +21268,7 @@
         ],
         "category": "economia",
         "registry_source": "eurostat",
-        "clean_rows": 1833756,
+        "clean_rows": 1808358,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/eurostat/eurostat_nama10_gdp/2026/eurostat_nama10_gdp_2026_clean.parquet",
@@ -20647,7 +21356,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -20705,7 +21414,7 @@
         ],
         "category": "economia",
         "registry_source": "eurostat",
-        "clean_rows": 12730086,
+        "clean_rows": 13158405,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/eurostat/eurostat_namq10_gdp/2026/eurostat_namq10_gdp_2026_clean.parquet",
@@ -20807,7 +21516,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -20953,7 +21662,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -21116,7 +21825,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -21249,7 +21958,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -21383,7 +22092,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -21531,7 +22240,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -21693,7 +22402,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -21752,7 +22461,7 @@
         ],
         "category": "welfare-lavoro",
         "registry_source": "eurostat",
-        "clean_rows": 9706,
+        "clean_rows": 9775,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/eurostat/eurostat_poverty_risk_nuts2/2026/eurostat_poverty_risk_nuts2_2026_clean.parquet",
@@ -21826,7 +22535,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -21886,7 +22595,7 @@
         ],
         "category": "economia",
         "registry_source": "eurostat",
-        "clean_rows": 909090,
+        "clean_rows": 911340,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/eurostat/eurostat_rd_expenditure_nuts2/2026/eurostat_rd_expenditure_nuts2_2026_clean.parquet",
@@ -21974,7 +22683,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -22136,7 +22845,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -22311,7 +23020,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -22371,7 +23080,7 @@
         ],
         "category": "economia",
         "registry_source": "eurostat",
-        "clean_rows": 1208556,
+        "clean_rows": 1206432,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/eurostat/eurostat_tourism_nuts3/2026/eurostat_tourism_nuts3_2026_clean.parquet",
@@ -22473,7 +23182,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -22607,7 +23316,7 @@
             "name": "nuts_parent_code",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "nuts_code",
             "description": ""
           },
           {
@@ -23798,7 +24507,7 @@
         ],
         "category": "ambiente",
         "registry_source": "dcl-bologna",
-        "clean_rows": 56239,
+        "clean_rows": 63908,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/bologna/centraline_aria/2026/centraline_aria_2026_clean.parquet",
@@ -23866,7 +24575,7 @@
         ],
         "category": "trasporti",
         "registry_source": "dcl-bologna",
-        "clean_rows": 553688,
+        "clean_rows": 570224,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/bologna/colonnine_bici/2026/colonnine_bici_2026_clean.parquet",
@@ -24405,7 +25114,7 @@
         ],
         "category": "pa",
         "registry_source": "dcl-bologna",
-        "clean_rows": 755,
+        "clean_rows": 758,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/bologna/incarichi/2026/incarichi_2026_clean.parquet",
@@ -24917,7 +25626,7 @@
         ],
         "category": "ambiente",
         "registry_source": "dcl-bologna",
-        "clean_rows": 9405,
+        "clean_rows": 9435,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/bologna/precipitazioni_bologna/2026/precipitazioni_bologna_2026_clean.parquet",
@@ -25170,7 +25879,7 @@
         ],
         "category": "ambiente",
         "registry_source": "dcl-bologna",
-        "clean_rows": 9405,
+        "clean_rows": 9435,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/bologna/temperature_bologna/2026/temperature_bologna_2026_clean.parquet",
@@ -25238,7 +25947,7 @@
         ],
         "category": "trasporti",
         "registry_source": "dcl-bologna",
-        "clean_rows": 19106691,
+        "clean_rows": 19337091,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/bologna/varchi_ztl/2026/varchi_ztl_2026_clean.parquet",
@@ -25414,7 +26123,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "debito-pubblico-intelligence",
-        "clean_rows": 115287,
+        "clean_rows": 115392,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/debito_pubblico_intelligence/fpi_debito_pa/2026/fpi_debito_pa_2026_clean.parquet",
@@ -26086,7 +26795,7 @@
             "name": "partecipata_codice_fiscale",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "fiscal_code",
             "description": ""
           },
           {
@@ -26664,7 +27373,7 @@
             "name": "amm_cf",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "fiscal_code",
             "description": ""
           },
           {
@@ -26699,7 +27408,7 @@
             "name": "societa_cf",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "fiscal_code",
             "description": ""
           },
           {
@@ -35873,7 +36582,7 @@
         ],
         "category": "pa",
         "registry_source": "indice-pa",
-        "clean_rows": 39408,
+        "clean_rows": 39427,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/indice-pa/ipa_aree_organizzative_omogenee/2026/ipa_aree_organizzative_omogenee_2026_clean.parquet",
@@ -36178,7 +36887,7 @@
         ],
         "category": "pa",
         "registry_source": "indice-pa",
-        "clean_rows": 40622,
+        "clean_rows": 40644,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/indice-pa/ipa_domicili_digitali/2026/ipa_domicili_digitali_2026_clean.parquet",
@@ -36284,7 +36993,7 @@
         ],
         "category": "pa",
         "registry_source": "indice-pa",
-        "clean_rows": 103039,
+        "clean_rows": 103227,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/indice-pa/ipa_domicili_digitali_uo/2026/ipa_domicili_digitali_uo_2026_clean.parquet",
@@ -36379,7 +37088,7 @@
         ],
         "category": "pa",
         "registry_source": "indice-pa",
-        "clean_rows": 23761,
+        "clean_rows": 23771,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/indice-pa/ipa_enti/2026/ipa_enti_2026_clean.parquet",
@@ -36623,7 +37332,7 @@
         ],
         "category": "pa",
         "registry_source": "indice-pa",
-        "clean_rows": 20981,
+        "clean_rows": 20995,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/indice-pa/ipa_rtd/2026/ipa_rtd_2026_clean.parquet",
@@ -36839,7 +37548,7 @@
         ],
         "category": "pa",
         "registry_source": "indice-pa",
-        "clean_rows": 10178,
+        "clean_rows": 10191,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/indice-pa/ipa_servizi_digitali/2026/ipa_servizi_digitali_2026_clean.parquet",
@@ -36935,7 +37644,7 @@
         ],
         "category": "pa",
         "registry_source": "indice-pa",
-        "clean_rows": 6225,
+        "clean_rows": 6224,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/indice-pa/ipa_servizi_uo/2026/ipa_servizi_uo_2026_clean.parquet",
@@ -37038,7 +37747,7 @@
         ],
         "category": "pa",
         "registry_source": "indice-pa",
-        "clean_rows": 123019,
+        "clean_rows": 123103,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/indice-pa/ipa_unita_organizzative/2026/ipa_unita_organizzative_2026_clean.parquet",
@@ -37470,7 +38179,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 1913,
+        "clean_rows": 1837,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_bandi_open/2026/inpa_bandi_open_2026_clean.parquet",
@@ -37689,7 +38398,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 6268,
+        "clean_rows": 6296,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_comunicazioni/2026/inpa_comunicazioni_2026_clean.parquet",
@@ -38533,7 +39242,7 @@
         ],
         "category": "economia",
         "registry_source": "oecd-benchmark",
-        "clean_rows": 58531,
+        "clean_rows": 57331,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/oecd-benchmark/oecd_fua_economy/2026/oecd_fua_economy_2026_clean.parquet",
@@ -38631,7 +39340,7 @@
         ],
         "category": "ambiente",
         "registry_source": "oecd-benchmark",
-        "clean_rows": 1603350,
+        "clean_rows": 1586970,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/oecd-benchmark/oecd_fua_ghg/2026/oecd_fua_ghg_2026_clean.parquet",
@@ -39043,8 +39752,8 @@
         "source": "",
         "source_id": "oecd",
         "period": {
-          "start": 2000,
-          "end": 2023
+          "start": 1965,
+          "end": 2022
         },
         "stage": "incubating",
         "tags": [
@@ -39302,7 +40011,7 @@
         ],
         "category": "economia",
         "registry_source": "oecd-benchmark",
-        "clean_rows": 322187,
+        "clean_rows": 322949,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/oecd-benchmark/oecd_unemployment/2026/oecd_unemployment_2026_clean.parquet",
@@ -39809,6 +40518,34 @@
     ],
     "cnel_archivio": [
       {
+        "slug": "ccnl_analisi",
+        "url_slug": "ccnl-analisi",
+        "name": "Ccnl Analisi",
+        "description": "Intelligence CCNL: join peso Uniemens \u00d7 anagrafica depositi \u00d7 ATECO \u00d7 storia confluenze.",
+        "source": "",
+        "source_id": "cnel_archivio",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "welfare-lavoro",
+          "ccnl",
+          "cnel",
+          "compose",
+          "intelligence"
+        ],
+        "category": "welfare-lavoro",
+        "registry_source": "open-ccnl",
+        "clean_rows": null,
+        "mart_refs": [
+          "ccnl_analisi__mart_ccnl_intelligence",
+          "ccnl_analisi__mart_ccnl_settori",
+          "ccnl_analisi__mart_ccnl_geo"
+        ]
+      },
+      {
         "slug": "ccnl_applicazione",
         "url_slug": "ccnl-applicazione",
         "name": "Ccnl Applicazione",
@@ -40199,7 +40936,7 @@
         ],
         "category": "welfare-lavoro",
         "registry_source": "open-ccnl",
-        "clean_rows": 7685,
+        "clean_rows": 7717,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-ccnl/ccnl_metadata/2026/ccnl_metadata_2026_clean.parquet",
@@ -41166,7 +41903,7 @@
             "name": "COD_ATECO",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "ateco_code",
             "description": ""
           },
           {
@@ -41762,7 +42499,7 @@
             "name": "COD_ATECO",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "ateco_code",
             "description": ""
           },
           {
@@ -42064,7 +42801,7 @@
             "name": "OC_CODICE_FISCALE_SOGG",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "fiscal_code",
             "description": ""
           },
           {
@@ -42092,7 +42829,7 @@
             "name": "COD_COMUNE_SEDE_SOGG",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "municipality_code",
             "description": ""
           },
           {
@@ -42113,7 +42850,7 @@
             "name": "COD_ATECO_SOGG",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "ateco_code",
             "description": ""
           },
           {
@@ -42155,7 +42892,7 @@
             "name": "CODICE_FISCALE_SOGGETTO",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "fiscal_code",
             "description": ""
           },
           {
@@ -46836,7 +47573,7 @@
         ],
         "category": "ambiente",
         "registry_source": "open-ispra",
-        "clean_rows": 9844221,
+        "clean_rows": 9831558,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-ispra/ispra_pest/2021/ispra_pest_2021_clean.parquet",
@@ -49685,7 +50422,7 @@
         ],
         "category": "pubblica-amministrazione",
         "registry_source": "open-noipa",
-        "clean_rows": 202913,
+        "clean_rows": 226672,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-noipa/noipa_pendolarismo/*/noipa_pendolarismo_*_clean.parquet",
@@ -57544,7 +58281,7 @@
         ],
         "category": "support",
         "registry_source": "opere-pubbliche",
-        "clean_rows": 22851925,
+        "clean_rows": 22965419,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/opere_pubbliche/opencup_fonti/2026/opencup_fonti_2026_clean.parquet",
@@ -57598,7 +58335,7 @@
         ],
         "category": "support",
         "registry_source": "opere-pubbliche",
-        "clean_rows": 13630083,
+        "clean_rows": 13691455,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/opere_pubbliche/opencup_localizzazione/2026/opencup_localizzazione_2026_clean.parquet",
@@ -57700,7 +58437,7 @@
         ],
         "category": "appalti",
         "registry_source": "opere-pubbliche",
-        "clean_rows": 11973988,
+        "clean_rows": 12031370,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/opere_pubbliche/opencup_progetti/2026/opencup_progetti_2026_clean.parquet",
@@ -57753,7 +58490,7 @@
             "name": "piva_soggetto_titolare",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "fiscal_code",
             "description": ""
           },
           {
@@ -57852,7 +58589,7 @@
         ],
         "category": "support",
         "registry_source": "opere-pubbliche",
-        "clean_rows": 54449,
+        "clean_rows": 54605,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/opere_pubbliche/opencup_soggetti/2026/opencup_soggetti_2026_clean.parquet",
@@ -57870,7 +58607,7 @@
             "name": "piva_codfiscale_sog_titolare",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "fiscal_code",
             "description": ""
           },
           {
@@ -57891,7 +58628,7 @@
             "name": "codice_comune_sogg_titolare",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "municipality_code",
             "description": ""
           },
           {
@@ -60052,7 +60789,7 @@
         ],
         "category": "economia",
         "registry_source": "sistema-bancario",
-        "clean_rows": 1468058,
+        "clean_rows": 1469110,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/sistema-bancario/ecb_bsi/2026/ecb_bsi_2026_clean.parquet",
@@ -61202,7 +61939,7 @@
             "name": "missione",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "programma_code",
             "description": ""
           },
           {
@@ -61475,7 +62212,7 @@
         ],
         "category": "terzo-settore",
         "registry_source": "terzo-settore",
-        "clean_rows": 1703,
+        "clean_rows": 1715,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/terzo_settore/open_cooperazione/2026/open_cooperazione_2026_clean.parquet",
@@ -61937,7 +62674,7 @@
         ],
         "category": "terzo-settore",
         "registry_source": "terzo-settore",
-        "clean_rows": 153453,
+        "clean_rows": 154244,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/terzo_settore/runts/2026/runts_2026_clean.parquet",
@@ -62163,9 +62900,14 @@
         "anac_subappalti",
         "anac_varianti",
         "banche_unified",
+        "bdap_dlb_spese_serie",
         "bdap_entrate_stato",
         "bdap_lb_spese_missione",
+        "bdap_lb_spese_serie",
         "bdap_pagamenti_stato",
+        "bdap_rnd_entrate_articolo",
+        "bdap_rnd_spese_capitolo",
+        "bdap_rnd_spese_serie",
         "bdap_saldi_stato",
         "bdap_spesa_statale_regionalizzata",
         "bdap_spese_stato",
@@ -62294,7 +63036,7 @@
         "ted_contract_notices",
         "wb_financial"
       ],
-      "dataset_count": 152
+      "dataset_count": 157
     },
     {
       "slug": "sanita",
@@ -62340,6 +63082,7 @@
         "open-mur"
       ],
       "datasets": [
+        "ccnl_analisi",
         "ccnl_applicazione",
         "ccnl_argomenti",
         "ccnl_confluenze",
@@ -62387,7 +63130,7 @@
         "popolazione_istat_comunale_2019_2025",
         "popolazione_quartiere"
       ],
-      "dataset_count": 46
+      "dataset_count": 47
     },
     {
       "slug": "giustizia",
@@ -62620,9 +63363,14 @@
         "anac_subappalti",
         "anac_varianti",
         "banche_unified",
+        "bdap_dlb_spese_serie",
         "bdap_entrate_stato",
         "bdap_lb_spese_missione",
+        "bdap_lb_spese_serie",
         "bdap_pagamenti_stato",
+        "bdap_rnd_entrate_articolo",
+        "bdap_rnd_spese_capitolo",
+        "bdap_rnd_spese_serie",
         "bdap_saldi_stato",
         "bdap_spesa_statale_regionalizzata",
         "bdap_spese_stato",
@@ -62773,6 +63521,7 @@
       "slug": "welfare-lavoro",
       "name": "Welfare e lavoro",
       "datasets": [
+        "ccnl_analisi",
         "ccnl_applicazione",
         "ccnl_argomenti",
         "ccnl_confluenze",
@@ -63607,9 +64356,14 @@
       "anac_varianti"
     ],
     "bilancio-pubblico": [
+      "bdap_dlb_spese_serie",
       "bdap_entrate_stato",
       "bdap_lb_spese_missione",
+      "bdap_lb_spese_serie",
       "bdap_pagamenti_stato",
+      "bdap_rnd_entrate_articolo",
+      "bdap_rnd_spese_capitolo",
+      "bdap_rnd_spese_serie",
       "bdap_saldi_stato",
       "bdap_spesa_statale_regionalizzata",
       "bdap_spese_stato"
@@ -63885,6 +64639,7 @@
       "aci_usato_proprieta"
     ],
     "open-ccnl": [
+      "ccnl_analisi",
       "ccnl_applicazione",
       "ccnl_argomenti",
       "ccnl_confluenze",
@@ -64160,9 +64915,14 @@
       "anac_subappalti",
       "anac_varianti",
       "banche_unified",
+      "bdap_dlb_spese_serie",
       "bdap_entrate_stato",
       "bdap_lb_spese_missione",
+      "bdap_lb_spese_serie",
       "bdap_pagamenti_stato",
+      "bdap_rnd_entrate_articolo",
+      "bdap_rnd_spese_capitolo",
+      "bdap_rnd_spese_serie",
       "bdap_saldi_stato",
       "bdap_spesa_statale_regionalizzata",
       "bdap_spese_stato",
@@ -64462,6 +65222,7 @@
       "runts"
     ],
     "welfare-lavoro": [
+      "ccnl_analisi",
       "ccnl_applicazione",
       "ccnl_argomenti",
       "ccnl_confluenze",
@@ -64704,6 +65465,23 @@
       ],
       "description": ""
     },
+    "bdap_dlb_spese_serie": {
+      "name": "Bdap Dlb Spese Serie",
+      "stage": "incubating",
+      "source_id": "openbdap",
+      "registry_source": "bilancio-pubblico",
+      "domain": "finanza-pubblica",
+      "category": "finanza-pubblica",
+      "tags": [
+        "finanza-pubblica",
+        "bdap",
+        "spese",
+        "disegno-legge-bilancio",
+        "bilancio-stato",
+        "serie-storica"
+      ],
+      "description": "Disegno di Legge di Bilancio Presentato \u2014 Spese per Amministrazione/Missione/Programma/Macroaggregato, serie storica. Previsioni del governo su tre annualit\u00e0 (A1 = anno di bilancio, A2/A3 = anni successivi). Missione e programma sono vuoti negli anni pi\u00f9 vecchi."
+    },
     "bdap_entrate_stato": {
       "name": "Bdap Entrate Stato",
       "stage": "published",
@@ -64735,6 +65513,23 @@
       ],
       "description": "Legge di Bilancio Pubblicata \u2014 Spese per Missione DPCM Art.3. Previsioni iniziali del governo per amministrazione, programma e capitolo. Confronto con rendiconto e pagamenti."
     },
+    "bdap_lb_spese_serie": {
+      "name": "Bdap Lb Spese Serie",
+      "stage": "incubating",
+      "source_id": "openbdap",
+      "registry_source": "bilancio-pubblico",
+      "domain": "finanza-pubblica",
+      "category": "finanza-pubblica",
+      "tags": [
+        "finanza-pubblica",
+        "bdap",
+        "spese",
+        "legge-bilancio",
+        "bilancio-stato",
+        "serie-storica"
+      ],
+      "description": "Legge di Bilancio Pubblicata \u2014 Spese per Amministrazione/Missione/Programma/Macroaggregato, serie storica. Previsioni iniziali su tre annualit\u00e0 (A1 = anno di bilancio, A2/A3 = anni successivi). Missione e programma sono vuoti negli anni pi\u00f9 vecchi."
+    },
     "bdap_pagamenti_stato": {
       "name": "Bdap Pagamenti Stato",
       "stage": "published",
@@ -64750,6 +65545,59 @@
         "bilancio-stato"
       ],
       "description": "Consuntivo pagamenti Bilancio dello Stato per Amministrazione/Missione/Categoria Economica. 2014-2025."
+    },
+    "bdap_rnd_entrate_articolo": {
+      "name": "Bdap Rnd Entrate Articolo",
+      "stage": "incubating",
+      "source_id": "openbdap",
+      "registry_source": "bilancio-pubblico",
+      "domain": "finanza-pubblica",
+      "category": "finanza-pubblica",
+      "tags": [
+        "finanza-pubblica",
+        "bdap",
+        "entrate",
+        "rendiconto",
+        "consuntivo",
+        "bilancio-stato"
+      ],
+      "description": "Rendiconto Pubblicato Elaborabile \u2014 Entrate per articolo, 2011-2025. Previsioni iniziali/variazioni/definitive, versato, rimasto da versare, rimasto da riscuotere e totale per CP/CS/RS. E' il consuntivo delle entrate: accertato e riscosso ricostruibili dalle colonne di totale e riscosso."
+    },
+    "bdap_rnd_spese_capitolo": {
+      "name": "Bdap Rnd Spese Capitolo",
+      "stage": "incubating",
+      "source_id": "openbdap",
+      "registry_source": "bilancio-pubblico",
+      "domain": "finanza-pubblica",
+      "category": "finanza-pubblica",
+      "tags": [
+        "finanza-pubblica",
+        "bdap",
+        "spese",
+        "rendiconto",
+        "consuntivo",
+        "residui",
+        "capitolo",
+        "bilancio-stato"
+      ],
+      "description": "Rendiconto Pubblicato Elaborabile \u2014 Spese per capitolo, 2011-2025. Previsioni iniziali/variazioni/definitive, pagato, rimasto da pagare, totale ed economie per CP/CS/RS. E' il consuntivo di competenza: l'impegnato e' ricostruibile come pagato + rimasto da pagare."
+    },
+    "bdap_rnd_spese_serie": {
+      "name": "Bdap Rnd Spese Serie",
+      "stage": "incubating",
+      "source_id": "openbdap",
+      "registry_source": "bilancio-pubblico",
+      "domain": "finanza-pubblica",
+      "category": "finanza-pubblica",
+      "tags": [
+        "finanza-pubblica",
+        "bdap",
+        "spese",
+        "rendiconto",
+        "bilancio-stato",
+        "serie-storica"
+      ],
+      "description": "Rendiconto Pubblicato \u2014 Spese per Amministrazione/Missione/Programma/Macroaggregato, serie storica. Previsioni definitive CP/CS (NON consuntivo di cassa: per pagato e residui serve il Rendiconto Elaborabile per Capitolo)."
     },
     "bdap_saldi_stato": {
       "name": "Bdap Saldi Stato",
@@ -68493,6 +69341,22 @@
         "minivolture"
       ],
       "description": "Autoritratto ACI \u2014 passaggi di propriet\u00e0 (mercato usato) per categoria veicolo, con split minivolture, 2024-2025. Fonte aci.gov.it open data."
+    },
+    "ccnl_analisi": {
+      "name": "Ccnl Analisi",
+      "stage": "incubating",
+      "source_id": "cnel_archivio",
+      "registry_source": "open-ccnl",
+      "domain": "welfare-lavoro",
+      "category": "welfare-lavoro",
+      "tags": [
+        "welfare-lavoro",
+        "ccnl",
+        "cnel",
+        "compose",
+        "intelligence"
+      ],
+      "description": "Intelligence CCNL: join peso Uniemens \u00d7 anagrafica depositi \u00d7 ATECO \u00d7 storia confluenze."
     },
     "ccnl_applicazione": {
       "name": "Ccnl Applicazione",
