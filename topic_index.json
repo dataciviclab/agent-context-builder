@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-10-31T21:04:29.136727",
+  "generated_at": "2026-11-01T04:43:42.361716",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -59188,6 +59188,13 @@
             "description": "Numero dell'atto nella directory AttoNNNNN: coincide con /ddl/N (ddl_url in senato_ddl) \u2014 chiave del bridge verso open-politica"
           },
           {
+            "name": "fase",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "legislatura",
             "type": "VARCHAR",
             "role": "dimension",
@@ -59507,7 +59514,7 @@
         "slug": "senato_emendamenti",
         "url_slug": "senato-emendamenti",
         "name": "Senato Emendamenti",
-        "description": "Ogni emendamento presentato nelle legislature Leg14\u2013Leg19 (Aula `emend` e Commissione `emendc`), dal corpus Akoma Ntoso. Un documento per riga, con la fase dell'atto a cui si riferisce (S.NNN) \u2014 bridge verso senato_ddl.",
+        "description": "Ogni emendamento presentato nelle legislature Leg14\u2013Leg19 (Aula `emend` e Commissione `emendc`), dal corpus Akoma Ntoso. Un documento per riga, deduplicato dalle copie che l'upstream replica in pi\u00f9 directory Atto; la `fase` (S.NNN) \u00e8 l'atto a cui si riferisce ed \u00e8 la chiave del bridge verso senato_ddl.",
         "source": "",
         "source_id": "senato_akn",
         "period": {
@@ -59524,7 +59531,7 @@
         ],
         "category": "politica",
         "registry_source": "senato-akn",
-        "clean_rows": 1008234,
+        "clean_rows": 763690,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/senato-akn/senato_emendamenti/2026/senato_emendamenti_2026_clean.parquet",
@@ -59649,10 +59656,32 @@
             "role": "dimension",
             "semantic_type": "",
             "description": ""
+          },
+          {
+            "name": "n_copie",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_atti_dir",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_atti_fase",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
           }
         ],
         "mart_refs": [
-          "senato_emendamenti__mart_emendamenti_per_atto"
+          "senato_emendamenti__mart_emendamenti_per_atto",
+          "senato_emendamenti__mart_emendamenti_per_fase"
         ]
       }
     ],
@@ -71443,7 +71472,7 @@
         "iter",
         "intensita"
       ],
-      "description": "Ogni emendamento presentato nelle legislature Leg14\u2013Leg19 (Aula `emend` e Commissione `emendc`), dal corpus Akoma Ntoso. Un documento per riga, con la fase dell'atto a cui si riferisce (S.NNN) \u2014 bridge verso senato_ddl."
+      "description": "Ogni emendamento presentato nelle legislature Leg14\u2013Leg19 (Aula `emend` e Commissione `emendc`), dal corpus Akoma Ntoso. Un documento per riga, deduplicato dalle copie che l'upstream replica in pi\u00f9 directory Atto; la `fase` (S.NNN) \u00e8 l'atto a cui si riferisce ed \u00e8 la chiave del bridge verso senato_ddl."
     },
     "banche_unified": {
       "name": "Banche Unified",
