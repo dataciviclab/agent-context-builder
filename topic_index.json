@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-01T17:37:52.700046",
+  "generated_at": "2026-11-01T21:45:38.473676",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -298,7 +298,7 @@
       "url": "https://github.com/dataciviclab/open-aci",
       "role": "dati",
       "domain": "territorio-ambiente",
-      "n_datasets": 5,
+      "n_datasets": 10,
       "n_published": 0,
       "sources": [
         "aci"
@@ -26193,11 +26193,11 @@
         "slug": "mef_composizione",
         "url_slug": "mef-composizione",
         "name": "Mef Composizione",
-        "description": "",
+        "description": "Composizione dei Titoli di Stato in circolazione, serie mensile dall'archivio MEF (un CSV per mese). Grano: mese \u00d7 tipologia, con `famiglia` stabile per aggregare voci che cambiano nome e `sottoinsieme` per le righe \"di cui ...\".\n",
         "source": "",
         "source_id": "mef_tesoro",
         "period": {
-          "start": 2026,
+          "start": 2021,
           "end": 2026
         },
         "stage": "incubating",
@@ -26210,7 +26210,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "debito-pubblico-intelligence",
-        "clean_rows": 15,
+        "clean_rows": 924,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/debito_pubblico_intelligence/mef_composizione/2026/mef_composizione_2026_clean.parquet",
@@ -26218,7 +26218,21 @@
         },
         "columns": [
           {
+            "name": "data_ref",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "tipologia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "famiglia",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
@@ -26235,6 +26249,20 @@
             "name": "valore_mln_eur",
             "type": "DOUBLE",
             "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sottoinsieme",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "aggregato",
+            "type": "BOOLEAN",
+            "role": "dimension",
             "semantic_type": "",
             "description": ""
           }
@@ -26316,16 +26344,23 @@
             "description": ""
           },
           {
-            "name": "importo_mld",
+            "name": "importo_mln",
             "type": "DOUBLE",
             "role": "metric",
             "semantic_type": "",
             "description": ""
           },
           {
-            "name": "importo_abs_mld",
+            "name": "importo_abs_mln",
             "type": "DOUBLE",
             "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "grano",
+            "type": "VARCHAR",
+            "role": "dimension",
             "semantic_type": "",
             "description": ""
           }
@@ -26425,6 +26460,27 @@
             "type": "DATE",
             "role": "dimension",
             "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "classe_strumento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_famiglia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
             "description": ""
           }
         ],
@@ -40202,6 +40258,420 @@
           "aci_autotrend_mensile__mart_anno_mese_formalita",
           "aci_autotrend_mensile__mart_anno_provincia_formalita",
           "aci_autotrend_mensile__mart_trend_mensile"
+        ]
+      },
+      {
+        "slug": "aci_parco_comune",
+        "url_slug": "aci-parco-comune",
+        "name": "Aci Parco Comune",
+        "description": "Parco veicolare per comune e categoria (stock al 31/12), 2024-2025. Fonte ACI Autoritratto, open data. ATTENZIONE: veicoli registrati al domicilio dell'intestatario, non circolanti nel comune.",
+        "source": "",
+        "source_id": "aci",
+        "period": {
+          "start": 2024,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "trasporti",
+          "aci",
+          "parco-veicolare",
+          "comuni",
+          "autovetture",
+          "motocicli",
+          "autocarri",
+          "autoritratto"
+        ],
+        "category": "trasporti",
+        "registry_source": "open-aci",
+        "clean_rows": 69385,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-aci/aci_parco_comune/*/aci_parco_comune_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_name",
+            "description": ""
+          },
+          {
+            "name": "codice_istat",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_code",
+            "description": ""
+          },
+          {
+            "name": "categoria_veicolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "veicoli",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "popolazione_residente",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "join_qualita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "aci_parco_comune__mart_comune_categoria",
+          "aci_parco_comune__mart_auto_per_1000",
+          "aci_parco_comune__mart_provincia"
+        ]
+      },
+      {
+        "slug": "aci_parco_comune_classe_euro",
+        "url_slug": "aci-parco-comune-classe-euro",
+        "name": "Aci Parco Comune Classe Euro",
+        "description": "Autovetture per comune e classe ambientale Euro (stock al 31/12), 2024-2025. Fonte ACI Autoritratto, open data. ATTENZIONE: veicoli registrati al domicilio dell'intestatario, non circolanti nel comune.",
+        "source": "",
+        "source_id": "aci",
+        "period": {
+          "start": 2024,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "trasporti",
+          "aci",
+          "parco-veicolare",
+          "classe-euro",
+          "emissioni",
+          "comuni",
+          "autoritratto"
+        ],
+        "category": "trasporti",
+        "registry_source": "open-aci",
+        "clean_rows": 89798,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-aci/aci_parco_comune_classe_euro/*/aci_parco_comune_classe_euro_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_name",
+            "description": ""
+          },
+          {
+            "name": "codice_istat",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_code",
+            "description": ""
+          },
+          {
+            "name": "classe_euro",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "autovetture",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "aci_parco_comune_classe_euro__mart_comune_euro"
+        ]
+      },
+      {
+        "slug": "aci_parco_provincia_eta",
+        "url_slug": "aci-parco-provincia-eta",
+        "name": "Aci Parco Provincia Eta",
+        "description": "Autovetture per provincia e classe di anno di immatricolazione (stock al 31/12/2025). Fonte ACI Autoritratto. Misura l'anzianit\u00e0 reale del parco, complementare alle classi Euro. Edizione 2024 esclusa: classi di anzianit\u00e0 diverse, serie non confrontabile.",
+        "source": "",
+        "source_id": "aci",
+        "period": {
+          "start": 2025,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "trasporti",
+          "aci",
+          "parco-veicolare",
+          "provincia",
+          "eta-veicoli",
+          "rinnovo",
+          "anzianita"
+        ],
+        "category": "trasporti",
+        "registry_source": "open-aci",
+        "clean_rows": 856,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-aci/aci_parco_provincia_eta/2025/aci_parco_provincia_eta_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "classe_eta",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "autovetture",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "aci_parco_provincia_eta__mart_provincia_eta"
+        ]
+      },
+      {
+        "slug": "aci_parco_provincia_soggetto",
+        "url_slug": "aci-parco-provincia-soggetto",
+        "name": "Aci Parco Provincia Soggetto",
+        "description": "Autovetture per provincia distinte tra persona fisica e persona giuridica (stock al 31/12), 2024-2025, con quota aziendale e auto per 1000 abitanti corretta. Fonte ACI Autoritratto.",
+        "source": "",
+        "source_id": "aci",
+        "period": {
+          "start": 2024,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "trasporti",
+          "aci",
+          "parco-veicolare",
+          "provincia",
+          "flotte",
+          "noleggio",
+          "leasing",
+          "famiglie"
+        ],
+        "category": "trasporti",
+        "registry_source": "open-aci",
+        "clean_rows": 107,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-aci/aci_parco_provincia_soggetto/*/aci_parco_provincia_soggetto_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "auto_persona_fisica",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "auto_persona_giuridica",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "auto_non_definito",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "auto_totali",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "aci_parco_provincia_soggetto__mart_provincia_soggetto",
+          "aci_parco_provincia_soggetto__mart_auto_per_1000_famiglie"
+        ]
+      },
+      {
+        "slug": "aci_parco_regione_alimentazione",
+        "url_slug": "aci-parco-regione-alimentazione",
+        "name": "Aci Parco Regione Alimentazione",
+        "description": "Parco autovetture per regione, alimentazione e classe di cilindrata (stock al 31/12), 2021-2023. Fonte ACI Annuario statistico, open data (ODS). ATTENZIONE: veicoli registrati al domicilio dell'intestatario, non circolanti sul territorio.",
+        "source": "",
+        "source_id": "aci",
+        "period": {
+          "start": 2021,
+          "end": 2023
+        },
+        "stage": "incubating",
+        "tags": [
+          "trasporti",
+          "aci",
+          "parco-veicolare",
+          "alimentazione",
+          "regioni",
+          "elettrico",
+          "ibrido",
+          "annuario",
+          "nuts2"
+        ],
+        "category": "trasporti",
+        "registry_source": "open-aci",
+        "clean_rows": 1293,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-aci/aci_parco_regione_alimentazione/*/aci_parco_regione_alimentazione_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "alimentazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "classe_cilindrata",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "veicoli",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "aci_parco_regione_alimentazione__mart_regione_alimentazione",
+          "aci_parco_regione_alimentazione__mart_italia_alimentazione"
         ]
       },
       {
@@ -62782,6 +63252,11 @@
       ],
       "datasets": [
         "aci_autotrend_mensile",
+        "aci_parco_comune",
+        "aci_parco_comune_classe_euro",
+        "aci_parco_provincia_eta",
+        "aci_parco_provincia_soggetto",
+        "aci_parco_regione_alimentazione",
         "aci_parco_veicolare",
         "aci_prime_iscrizioni_autovetture",
         "aci_radiazioni_classe_euro",
@@ -62842,7 +63317,7 @@
         "terna_storage_accumuli",
         "varchi_ztl"
       ],
-      "dataset_count": 60
+      "dataset_count": 65
     },
     {
       "slug": "finanza-pubblica",
@@ -63276,6 +63751,11 @@
       "name": "Territorio e ambiente",
       "datasets": [
         "aci_autotrend_mensile",
+        "aci_parco_comune",
+        "aci_parco_comune_classe_euro",
+        "aci_parco_provincia_eta",
+        "aci_parco_provincia_soggetto",
+        "aci_parco_regione_alimentazione",
         "aci_parco_veicolare",
         "aci_prime_iscrizioni_autovetture",
         "aci_radiazioni_classe_euro",
@@ -64633,6 +65113,11 @@
     ],
     "open-aci": [
       "aci_autotrend_mensile",
+      "aci_parco_comune",
+      "aci_parco_comune_classe_euro",
+      "aci_parco_provincia_eta",
+      "aci_parco_provincia_soggetto",
+      "aci_parco_regione_alimentazione",
       "aci_parco_veicolare",
       "aci_prime_iscrizioni_autovetture",
       "aci_radiazioni_classe_euro",
@@ -65147,6 +65632,11 @@
     ],
     "territorio-ambiente": [
       "aci_autotrend_mensile",
+      "aci_parco_comune",
+      "aci_parco_comune_classe_euro",
+      "aci_parco_provincia_eta",
+      "aci_parco_provincia_soggetto",
+      "aci_parco_regione_alimentazione",
       "aci_parco_veicolare",
       "aci_prime_iscrizioni_autovetture",
       "aci_radiazioni_classe_euro",
@@ -66802,7 +67292,7 @@
         "composizione",
         "mef"
       ],
-      "description": ""
+      "description": "Composizione dei Titoli di Stato in circolazione, serie mensile dall'archivio MEF (un CSV per mese). Grano: mese \u00d7 tipologia, con `famiglia` stabile per aggregare voci che cambiano nome e `sottoinsieme` per le righe \"di cui ...\".\n"
     },
     "mef_riepilogo_emissioni_scadenze": {
       "name": "Mef Riepilogo Emissioni Scadenze",
@@ -69272,6 +69762,100 @@
         "parco-auto"
       ],
       "description": "Auto-Trend ACI: prime iscrizioni, usato netto e radiazioni per mese e ufficio PRA (provincia), 2019-2025. Fonte aci.gov.it open data (CSV + ODS)."
+    },
+    "aci_parco_comune": {
+      "name": "Aci Parco Comune",
+      "stage": "incubating",
+      "source_id": "aci",
+      "registry_source": "open-aci",
+      "domain": "territorio-ambiente",
+      "category": "trasporti",
+      "tags": [
+        "trasporti",
+        "aci",
+        "parco-veicolare",
+        "comuni",
+        "autovetture",
+        "motocicli",
+        "autocarri",
+        "autoritratto"
+      ],
+      "description": "Parco veicolare per comune e categoria (stock al 31/12), 2024-2025. Fonte ACI Autoritratto, open data. ATTENZIONE: veicoli registrati al domicilio dell'intestatario, non circolanti nel comune."
+    },
+    "aci_parco_comune_classe_euro": {
+      "name": "Aci Parco Comune Classe Euro",
+      "stage": "incubating",
+      "source_id": "aci",
+      "registry_source": "open-aci",
+      "domain": "territorio-ambiente",
+      "category": "trasporti",
+      "tags": [
+        "trasporti",
+        "aci",
+        "parco-veicolare",
+        "classe-euro",
+        "emissioni",
+        "comuni",
+        "autoritratto"
+      ],
+      "description": "Autovetture per comune e classe ambientale Euro (stock al 31/12), 2024-2025. Fonte ACI Autoritratto, open data. ATTENZIONE: veicoli registrati al domicilio dell'intestatario, non circolanti nel comune."
+    },
+    "aci_parco_provincia_eta": {
+      "name": "Aci Parco Provincia Eta",
+      "stage": "incubating",
+      "source_id": "aci",
+      "registry_source": "open-aci",
+      "domain": "territorio-ambiente",
+      "category": "trasporti",
+      "tags": [
+        "trasporti",
+        "aci",
+        "parco-veicolare",
+        "provincia",
+        "eta-veicoli",
+        "rinnovo",
+        "anzianita"
+      ],
+      "description": "Autovetture per provincia e classe di anno di immatricolazione (stock al 31/12/2025). Fonte ACI Autoritratto. Misura l'anzianit\u00e0 reale del parco, complementare alle classi Euro. Edizione 2024 esclusa: classi di anzianit\u00e0 diverse, serie non confrontabile."
+    },
+    "aci_parco_provincia_soggetto": {
+      "name": "Aci Parco Provincia Soggetto",
+      "stage": "incubating",
+      "source_id": "aci",
+      "registry_source": "open-aci",
+      "domain": "territorio-ambiente",
+      "category": "trasporti",
+      "tags": [
+        "trasporti",
+        "aci",
+        "parco-veicolare",
+        "provincia",
+        "flotte",
+        "noleggio",
+        "leasing",
+        "famiglie"
+      ],
+      "description": "Autovetture per provincia distinte tra persona fisica e persona giuridica (stock al 31/12), 2024-2025, con quota aziendale e auto per 1000 abitanti corretta. Fonte ACI Autoritratto."
+    },
+    "aci_parco_regione_alimentazione": {
+      "name": "Aci Parco Regione Alimentazione",
+      "stage": "incubating",
+      "source_id": "aci",
+      "registry_source": "open-aci",
+      "domain": "territorio-ambiente",
+      "category": "trasporti",
+      "tags": [
+        "trasporti",
+        "aci",
+        "parco-veicolare",
+        "alimentazione",
+        "regioni",
+        "elettrico",
+        "ibrido",
+        "annuario",
+        "nuts2"
+      ],
+      "description": "Parco autovetture per regione, alimentazione e classe di cilindrata (stock al 31/12), 2021-2023. Fonte ACI Annuario statistico, open data (ODS). ATTENZIONE: veicoli registrati al domicilio dell'intestatario, non circolanti sul territorio."
     },
     "aci_parco_veicolare": {
       "name": "Aci Parco Veicolare",

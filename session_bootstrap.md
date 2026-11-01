@@ -1,10 +1,10 @@
 # Session Bootstrap
 
-**Generated**: 2026-11-01T17:37:52.700046
+**Generated**: 2026-11-01T21:45:38.473676
 
 ## Stato
 
-Radar: 36 fonti GREEN 34 · Registry: 41 repo · 468 dataset
+Radar: 36 fonti GREEN 34 · Registry: 41 repo · 473 dataset
 
 ## Richiede attenzione
 
@@ -12,7 +12,7 @@ Radar: 36 fonti GREEN 34 · Registry: 41 repo · 468 dataset
 - [PR] appalti-pubblici#19: feat(anac-cross): codice IPA della stazione appaltante (#13)
 - [PR] dataset-incubator#885: feat(candidates): eu-call-open + catena FTS call_id/project_id
 - [PR] dataset-incubator#836: feat(candidates): bootstrap gse_cer_elenco candidate
-- [PR] eurostat#149: feat(transport): 4 dataflow Eurostat su mobilita, merci, parco e reti
+- [PR] debito-pubblico-intelligence#25: feat(costo-debito): compose debt_service + tassi a breve, pagina e bdap sui mart
 
 ## Analisi pubbliche (45)
 
