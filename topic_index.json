@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-02T04:45:22.465799",
+  "generated_at": "2026-11-02T14:55:23.957914",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -26241,6 +26241,13 @@
             "description": ""
           },
           {
+            "name": "controparte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "descrizione",
             "type": "VARCHAR",
             "role": "dimension",
@@ -26266,7 +26273,10 @@
           "fpi_debito_pa__mart_debito_ap",
           "fpi_debito_pa__mart_fabbisogno",
           "fpi_debito_pa__mart_detentori",
-          "fpi_debito_pa__mart_variazione_mensile"
+          "fpi_debito_pa__mart_variazione_mensile",
+          "fpi_debito_pa__mart_vita_residua",
+          "fpi_debito_pa__mart_valuta",
+          "fpi_debito_pa__mart_liquidita"
         ]
       }
     ],

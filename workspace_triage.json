@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T04:45:22.465799",
+  "generated_at": "2026-11-02T14:55:23.957914",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -50,7 +50,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 9,
+  "open_prs": 12,
   "prs": [
     {
       "number": 20,
@@ -88,6 +88,20 @@
       "category": "other"
     },
     {
+      "number": 17,
+      "title": "chore(post-merge): aggiorna registry (schedule)",
+      "repo": "gu-monitor",
+      "url": "https://github.com/dataciviclab/gu-monitor/pull/17",
+      "category": "other"
+    },
+    {
+      "number": 15,
+      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
+      "repo": "oecd-benchmark",
+      "url": "https://github.com/dataciviclab/oecd-benchmark/pull/15",
+      "category": "other"
+    },
+    {
       "number": 11,
       "title": "refactor(pnrr): migra i 7 dataset da script a http_file",
       "repo": "open-pnrr",
@@ -99,6 +113,13 @@
       "title": "fix(make): un dataset fallito non ferma gli altri",
       "repo": "open-politica",
       "url": "https://github.com/dataciviclab/open-politica/pull/87",
+      "category": "other"
+    },
+    {
+      "number": 17,
+      "title": "feat(dati): esposizioni SA+IRB, volumi, conto economico, composizione, determinanti BLS, prestiti per settore",
+      "repo": "sistema-bancario",
+      "url": "https://github.com/dataciviclab/sistema-bancario/pull/17",
       "category": "other"
     },
     {
@@ -2301,7 +2322,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 9"
+    "Many open PRs: 12"
   ],
   "radar": {
     "available": true,
@@ -2623,7 +2644,7 @@
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-10-26T09:18:43+00:00",
+    "captured_at": "2026-11-02T11:38:24+00:00",
     "sources_checked": 36,
     "regressions": [],
     "alerts": []
@@ -3997,9 +4018,9 @@
       "repo": "debito-pubblico-intelligence",
       "available": true,
       "source_repo": "dataciviclab/debito-pubblico-intelligence",
-      "updated_at": "2026-11-01",
+      "updated_at": "2026-11-02",
       "datasets": 11,
-      "marts": 17,
+      "marts": 20,
       "signals": 11,
       "codelists": 0,
       "entities": 2,
@@ -4013,11 +4034,11 @@
           "label": "debt_service",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T220946Z_b1a8fdb6",
+            "run_id": "20261102T144822Z_8607542a",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T22:09:46.855179+00:00",
-            "finished_at": "2026-11-01T22:09:46.920468+00:00"
+            "started_at": "2026-11-02T14:48:22.414201+00:00",
+            "finished_at": "2026-11-02T14:48:22.451786+00:00"
           }
         },
         {
@@ -4027,11 +4048,11 @@
           "label": "eurostat_debito_pil",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T220807Z_f8d2b8f0",
+            "run_id": "20261102T144702Z_61a99c8b",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T22:08:07.977288+00:00",
-            "finished_at": "2026-11-01T22:08:09.507041+00:00"
+            "started_at": "2026-11-02T14:47:02.540316+00:00",
+            "finished_at": "2026-11-02T14:47:04.279517+00:00"
           }
         },
         {
@@ -4041,11 +4062,11 @@
           "label": "eurostat_rendimento_10y",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T220809Z_e0a7013e",
+            "run_id": "20261102T144704Z_ac130915",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T22:08:09.556733+00:00",
-            "finished_at": "2026-11-01T22:08:11.869959+00:00"
+            "started_at": "2026-11-02T14:47:04.310656+00:00",
+            "finished_at": "2026-11-02T14:47:06.355419+00:00"
           }
         },
         {
@@ -4055,11 +4076,11 @@
           "label": "eurostat_tassi_breve",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T220811Z_05d128a5",
+            "run_id": "20261102T144706Z_af3e6ac9",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T22:08:11.921591+00:00",
-            "finished_at": "2026-11-01T22:08:13.448037+00:00"
+            "started_at": "2026-11-02T14:47:06.388091+00:00",
+            "finished_at": "2026-11-02T14:47:07.921319+00:00"
           }
         },
         {
@@ -4069,11 +4090,11 @@
           "label": "fpi_debito_pa",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T220813Z_8c570cee",
+            "run_id": "20261102T144707Z_03e6b072",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T22:08:13.501617+00:00",
-            "finished_at": "2026-11-01T22:08:19.138136+00:00"
+            "started_at": "2026-11-02T14:47:07.957013+00:00",
+            "finished_at": "2026-11-02T14:47:11.148967+00:00"
           }
         },
         {
@@ -4083,11 +4104,11 @@
           "label": "mef_composizione",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T220819Z_07f23370",
+            "run_id": "20261102T144711Z_a2556f7a",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T22:08:19.218912+00:00",
-            "finished_at": "2026-11-01T22:09:11.668670+00:00"
+            "started_at": "2026-11-02T14:47:11.220143+00:00",
+            "finished_at": "2026-11-02T14:47:53.317936+00:00"
           }
         },
         {
@@ -4097,11 +4118,11 @@
           "label": "mef_riepilogo_emissioni_scadenze",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T220911Z_316049a9",
+            "run_id": "20261102T144753Z_c32c68cc",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T22:09:11.724729+00:00",
-            "finished_at": "2026-11-01T22:09:35.588927+00:00"
+            "started_at": "2026-11-02T14:47:53.352479+00:00",
+            "finished_at": "2026-11-02T14:48:13.158893+00:00"
           }
         },
         {
@@ -4111,11 +4132,11 @@
           "label": "mef_scadenze_isin",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T220935Z_1db1470b",
+            "run_id": "20261102T144813Z_c719d1aa",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T22:09:35.655345+00:00",
-            "finished_at": "2026-11-01T22:09:38.500022+00:00"
+            "started_at": "2026-11-02T14:48:13.197508+00:00",
+            "finished_at": "2026-11-02T14:48:15.960269+00:00"
           }
         },
         {
@@ -4125,11 +4146,11 @@
           "label": "mef_titoli_12m",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T220938Z_b4e8a549",
+            "run_id": "20261102T144815Z_41ae0571",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T22:09:38.559706+00:00",
-            "finished_at": "2026-11-01T22:09:41.113668+00:00"
+            "started_at": "2026-11-02T14:48:15.993898+00:00",
+            "finished_at": "2026-11-02T14:48:18.123945+00:00"
           }
         },
         {
@@ -4139,11 +4160,11 @@
           "label": "mef_vita_media",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T220941Z_bdf92bab",
+            "run_id": "20261102T144818Z_1cc79015",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T22:09:41.160923+00:00",
-            "finished_at": "2026-11-01T22:09:43.048288+00:00"
+            "started_at": "2026-11-02T14:48:18.152253+00:00",
+            "finished_at": "2026-11-02T14:48:19.745656+00:00"
           }
         },
         {
@@ -4153,11 +4174,11 @@
           "label": "ocpi_serie_storiche",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T220943Z_bd1619f1",
+            "run_id": "20261102T144819Z_790ac7c6",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T22:09:43.098567+00:00",
-            "finished_at": "2026-11-01T22:09:46.409671+00:00"
+            "started_at": "2026-11-02T14:48:19.772694+00:00",
+            "finished_at": "2026-11-02T14:48:22.108709+00:00"
           }
         }
       ]
@@ -6094,7 +6115,7 @@
       "repo": "italia-corpus",
       "available": true,
       "source_repo": "dataciviclab/italia-corpus",
-      "updated_at": "2026-10-30",
+      "updated_at": "2026-11-02",
       "datasets": 5,
       "marts": 11,
       "signals": 5,
@@ -6110,11 +6131,11 @@
           "label": "akn_act_meta",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261030T214945Z_b6920bae",
+            "run_id": "20261102T120229Z_601ffc95",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-30T21:49:45.662374+00:00",
-            "finished_at": "2026-10-30T21:49:45.874863+00:00"
+            "started_at": "2026-11-02T12:02:29.600755+00:00",
+            "finished_at": "2026-11-02T12:02:29.892731+00:00"
           }
         },
         {
@@ -6124,11 +6145,11 @@
           "label": "akn_relations",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261030T214946Z_07b4f318",
+            "run_id": "20261102T120230Z_621fc5ab",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-30T21:49:46.147926+00:00",
-            "finished_at": "2026-10-30T21:49:47.415856+00:00"
+            "started_at": "2026-11-02T12:02:30.301574+00:00",
+            "finished_at": "2026-11-02T12:02:32.029880+00:00"
           }
         },
         {
@@ -6138,11 +6159,11 @@
           "label": "atti_index",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261030T214947Z_d7fb9ba8",
+            "run_id": "20261102T120232Z_69ad3b33",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-30T21:49:47.679407+00:00",
-            "finished_at": "2026-10-30T21:49:48.448635+00:00"
+            "started_at": "2026-11-02T12:02:32.431690+00:00",
+            "finished_at": "2026-11-02T12:02:33.544670+00:00"
           }
         },
         {
@@ -6152,11 +6173,11 @@
           "label": "normativa",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261030T214948Z_75a32bc9",
+            "run_id": "20261102T120233Z_f0d512b0",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-30T21:49:48.704401+00:00",
-            "finished_at": "2026-10-30T21:49:48.976923+00:00"
+            "started_at": "2026-11-02T12:02:33.937520+00:00",
+            "finished_at": "2026-11-02T12:02:34.327332+00:00"
           }
         },
         {
@@ -6166,11 +6187,11 @@
           "label": "riferimenti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261030T214949Z_23adca53",
+            "run_id": "20261102T120234Z_b89b8d29",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-30T21:49:49.237341+00:00",
-            "finished_at": "2026-10-30T21:49:49.891607+00:00"
+            "started_at": "2026-11-02T12:02:34.750297+00:00",
+            "finished_at": "2026-11-02T12:02:35.631926+00:00"
           }
         }
       ]
