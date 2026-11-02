@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-01T21:45:38.473676",
+  "generated_at": "2026-11-02T04:45:22.465799",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -117,10 +117,11 @@
       "url": "https://github.com/dataciviclab/debito-pubblico-intelligence",
       "role": "dati",
       "domain": "finanza-pubblica",
-      "n_datasets": 9,
+      "n_datasets": 11,
       "n_published": 0,
       "sources": [
         "banca_ditalia",
+        "dataciviclab_composite",
         "eurostat",
         "mef_tesoro",
         "ocpi"
@@ -3018,6 +3019,33 @@
           "malasanita_compose__mart_compose_regioni_v1",
           "malasanita_compose__mart_compose_regioni_v2",
           "malasanita_compose__mart_compose_regioni_v3"
+        ]
+      },
+      {
+        "slug": "debt_service",
+        "url_slug": "debt-service",
+        "name": "Debt Service",
+        "description": "Compose del costo del debito: incrocia i titoli in circolazione (mef_scadenze_isin) con i tassi correnti (eurostat_tassi_breve, eurostat_rendimento_10y). Due marts: interessi annui per famiglia e costo del rifinanziamento dei titoli in scadenza nei prossimi 12 mesi. Le ipotesi di tasso sono colonne, non costanti nel codice.\n",
+        "source": "",
+        "source_id": "dataciviclab_composite",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "debito",
+          "costo",
+          "rifinanziamento",
+          "compose"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "debito-pubblico-intelligence",
+        "clean_rows": null,
+        "mart_refs": [
+          "debt_service__mart_interessi_annui",
+          "debt_service__mart_debt_service_12m"
         ]
       },
       {
@@ -18282,6 +18310,60 @@
         ],
         "mart_refs": [
           "eurostat_rendimento_10y__mart_rendimento_10y"
+        ]
+      },
+      {
+        "slug": "eurostat_tassi_breve",
+        "url_slug": "eurostat-tassi-breve",
+        "name": "Eurostat Tassi Breve",
+        "description": "Tassi del mercato monetario dell'area euro (1, 3, 6 e 12 mesi), mensili. Servono a dare un tasso corrente a BOT e CCTeu nel calcolo del costo del debito: senza questi, la cedola dei CCTeu resta il solo spread e il costo viene sottostimato di ~4 mld/anno.\n",
+        "source": "",
+        "source_id": "eurostat",
+        "period": {
+          "start": 1990,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "tassi",
+          "euribor",
+          "mercato-monetario",
+          "eurostat"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "debito-pubblico-intelligence",
+        "clean_rows": 1227,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/debito_pubblico_intelligence/eurostat_tassi_breve/2026/eurostat_tassi_breve_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "mese",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          },
+          {
+            "name": "scadenza_mesi",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tasso_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "eurostat_tassi_breve__mart_tassi_breve"
         ]
       },
       {
@@ -60963,6 +61045,13 @@
             "description": ""
           },
           {
+            "name": "margine_interesse_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "cet1_pct",
             "type": "DOUBLE",
             "role": "metric",
@@ -60970,7 +61059,21 @@
             "description": ""
           },
           {
+            "name": "tier1_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "npl_ratio_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "copertura_npl_pct",
             "type": "DOUBLE",
             "role": "metric",
             "semantic_type": "",
@@ -60999,20 +61102,6 @@
           },
           {
             "name": "deposits_mld",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "obbligazioni_mld",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "capitale_mld",
             "type": "DOUBLE",
             "role": "metric",
             "semantic_type": "",
@@ -61050,7 +61139,7 @@
         "slug": "eba_panel",
         "url_slug": "eba-panel",
         "name": "Eba Panel",
-        "description": "",
+        "description": "Panel per singola banca europea: CET1, ROE, leverage, totale attivo (EBA, 2012-2025)",
         "source": "",
         "source_id": "eba",
         "period": {
@@ -61064,11 +61153,12 @@
           "panel",
           "banche-singole",
           "corep",
-          "finrep"
+          "finrep",
+          "esposizioni"
         ],
         "category": "economia",
         "registry_source": "sistema-bancario",
-        "clean_rows": 514121,
+        "clean_rows": 316280,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/sistema-bancario/eba_panel/2025/eba_panel_2025_clean.parquet",
@@ -61118,6 +61208,20 @@
             "description": ""
           },
           {
+            "name": "finrep",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "lei",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "periodo",
             "type": "INTEGER",
             "role": "dimension",
@@ -61125,15 +61229,57 @@
             "description": ""
           },
           {
-            "name": "codice_variabile",
+            "name": "cadenza",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
             "description": ""
           },
           {
-            "name": "nome_variabile",
+            "name": "metrica",
             "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "classe_esposizione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "paese_controparte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_paese_controparte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "controparte_aggregata",
+            "type": "BOOLEAN",
             "role": "dimension",
             "semantic_type": "",
             "description": ""
@@ -61148,7 +61294,9 @@
         ],
         "mart_refs": [
           "eba_panel__mart_banche_kpi",
-          "eba_panel__mart_banche_snapshot"
+          "eba_panel__mart_banche_snapshot",
+          "eba_panel__mart_esposizioni",
+          "eba_panel__mart_banche_anagrafica"
         ]
       }
     ],
@@ -61157,11 +61305,11 @@
         "slug": "ecb_bls",
         "url_slug": "ecb-bls",
         "name": "Ecb Bls",
-        "description": "",
+        "description": "Bank Lending Survey: condizioni e domanda di credito per imprese e famiglie, indici di diffusione (BCE, 2003-2026)",
         "source": "",
         "source_id": "ecb",
         "period": {
-          "start": 2007,
+          "start": 2003,
           "end": 2026
         },
         "stage": "incubating",
@@ -61169,12 +61317,13 @@
           "banche",
           "bce",
           "bls",
-          "credit-standards",
-          "domanda-credito"
+          "credito",
+          "survey",
+          "sistema-bancario"
         ],
         "category": "economia",
         "registry_source": "sistema-bancario",
-        "clean_rows": 845312,
+        "clean_rows": 15634,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/sistema-bancario/ecb_bls/2026/ecb_bls_2026_clean.parquet",
@@ -61189,7 +61338,14 @@
             "description": ""
           },
           {
-            "name": "voce",
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "trimestre",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
@@ -61203,6 +61359,27 @@
             "description": ""
           },
           {
+            "name": "metrica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "valore",
             "type": "DOUBLE",
             "role": "metric",
@@ -61210,21 +61387,21 @@
             "description": ""
           },
           {
-            "name": "num_banche",
+            "name": "serie_id",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
             "description": ""
           },
           {
-            "name": "anno",
-            "type": "INTEGER",
+            "name": "chiave",
+            "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "year",
+            "semantic_type": "",
             "description": ""
           },
           {
-            "name": "trimestre",
+            "name": "frequenza",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
@@ -61240,11 +61417,11 @@
         "slug": "ecb_bsi",
         "url_slug": "ecb-bsi",
         "name": "Ecb Bsi",
-        "description": "",
+        "description": "Bilanci delle banche per paese: attivo, prestiti, depositi per detentore, capitale e riserve (BCE, 2003-2026)",
         "source": "",
         "source_id": "ecb",
         "period": {
-          "start": 2020,
+          "start": 2003,
           "end": 2026
         },
         "stage": "incubating",
@@ -61252,14 +61429,13 @@
           "banche",
           "bce",
           "bsi",
-          "bilanci-mfi",
-          "depositi",
-          "prestiti",
-          "moneta"
+          "bilanci",
+          "sistema-bancario",
+          "europa"
         ],
         "category": "economia",
         "registry_source": "sistema-bancario",
-        "clean_rows": 1469110,
+        "clean_rows": 16783,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/sistema-bancario/ecb_bsi/2026/ecb_bsi_2026_clean.parquet",
@@ -61274,7 +61450,14 @@
             "description": ""
           },
           {
-            "name": "voce",
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "trimestre",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
@@ -61288,28 +61471,14 @@
             "description": ""
           },
           {
-            "name": "valore",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "frequenza",
+            "name": "metrica",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
             "description": ""
           },
           {
-            "name": "settore",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "scadenza",
+            "name": "descrizione",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
@@ -61323,14 +61492,28 @@
             "description": ""
           },
           {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
+            "name": "valore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
             "description": ""
           },
           {
-            "name": "trimestre",
+            "name": "serie_id",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "chiave",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "frequenza",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
@@ -61347,7 +61530,7 @@
         "slug": "ecb_cbd2",
         "url_slug": "ecb-cbd2",
         "name": "Ecb Cbd2",
-        "description": "",
+        "description": "KPI del sistema bancario per paese: redditivit\u00e0, capitale, NPL per settore controparte, liquidit\u00e0 (BCE, 2015-2026)",
         "source": "",
         "source_id": "ecb",
         "period": {
@@ -61360,11 +61543,12 @@
           "bce",
           "cbd2",
           "sistema-bancario",
-          "europa"
+          "europa",
+          "kpi"
         ],
         "category": "economia",
         "registry_source": "sistema-bancario",
-        "clean_rows": 1416436,
+        "clean_rows": 19212,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/sistema-bancario/ecb_cbd2/2026/ecb_cbd2_2026_clean.parquet",
@@ -61379,10 +61563,17 @@
             "description": ""
           },
           {
-            "name": "indicatore",
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "trimestre",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "indicatore_code",
+            "semantic_type": "",
             "description": ""
           },
           {
@@ -61393,6 +61584,27 @@
             "description": ""
           },
           {
+            "name": "metrica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "valore",
             "type": "DOUBLE",
             "role": "metric",
@@ -61400,49 +61612,21 @@
             "description": ""
           },
           {
+            "name": "serie_id",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "chiave",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "frequenza",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "settore",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "framework",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "portfolio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "tipo_esposizione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "trimestre",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
@@ -61458,11 +61642,11 @@
         "slug": "ecb_mir",
         "url_slug": "ecb-mir",
         "name": "Ecb Mir",
-        "description": "",
+        "description": "Tassi bancari sui nuovi contratti: mutui, prestiti alle imprese, consumo e depositi (BCE, 2003-2026)",
         "source": "",
         "source_id": "ecb",
         "period": {
-          "start": 2020,
+          "start": 2003,
           "end": 2026
         },
         "stage": "incubating",
@@ -61470,13 +61654,14 @@
           "banche",
           "bce",
           "mir",
-          "tassi-interesse",
-          "prestiti",
-          "depositi"
+          "tassi",
+          "mutui",
+          "depositi",
+          "sistema-bancario"
         ],
         "category": "economia",
         "registry_source": "sistema-bancario",
-        "clean_rows": 540539,
+        "clean_rows": 51363,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/sistema-bancario/ecb_mir/2026/ecb_mir_2026_clean.parquet",
@@ -61491,14 +61676,14 @@
             "description": ""
           },
           {
-            "name": "voce",
-            "type": "VARCHAR",
+            "name": "anno",
+            "type": "INTEGER",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "year",
             "description": ""
           },
           {
-            "name": "scadenza",
+            "name": "trimestre",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
@@ -61512,6 +61697,27 @@
             "description": ""
           },
           {
+            "name": "metrica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "valore",
             "type": "DOUBLE",
             "role": "metric",
@@ -61519,35 +61725,21 @@
             "description": ""
           },
           {
-            "name": "tipo_dato",
+            "name": "serie_id",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
             "description": ""
           },
           {
-            "name": "copertura_attivita",
+            "name": "chiave",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
             "description": ""
           },
           {
-            "name": "settore",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "trimestre",
+            "name": "frequenza",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
@@ -61565,7 +61757,7 @@
         "slug": "wb_financial",
         "url_slug": "wb-financial",
         "name": "Wb Financial",
-        "description": "",
+        "description": "Indicatori storici del settore finanziario: NPL, credito/PIL, filiali e ATM per abitante (World Bank, 1960-2025)",
         "source": "",
         "source_id": "worldbank",
         "period": {
@@ -61584,7 +61776,7 @@
         ],
         "category": "economia",
         "registry_source": "sistema-bancario",
-        "clean_rows": 11016,
+        "clean_rows": 33293,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/sistema-bancario/wb_financial/2025/wb_financial_2025_clean.parquet",
@@ -61630,6 +61822,13 @@
             "name": "valore",
             "type": "DOUBLE",
             "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "e_aggregato",
+            "type": "BOOLEAN",
+            "role": "dimension",
             "semantic_type": "",
             "description": ""
           }
@@ -63403,6 +63602,7 @@
         "consip_ordini_mepa",
         "consip_partecipazioni",
         "consip_rdo_td_stipulate",
+        "debt_service",
         "demografia_imprese",
         "eba_panel",
         "ecb_bls",
@@ -63426,6 +63626,7 @@
         "eurostat_rd_expenditure_nuts2",
         "eurostat_rendimento_10y",
         "eurostat_sbs_food_retail",
+        "eurostat_tassi_breve",
         "eurostat_tourism_nuts3",
         "filiere_valore_aggiunto",
         "fpi_debito_pa",
@@ -63511,7 +63712,7 @@
         "ted_contract_notices",
         "wb_financial"
       ],
-      "dataset_count": 157
+      "dataset_count": 159
     },
     {
       "slug": "sanita",
@@ -63871,6 +64072,7 @@
         "consip_ordini_mepa",
         "consip_partecipazioni",
         "consip_rdo_td_stipulate",
+        "debt_service",
         "demografia_imprese",
         "eba_panel",
         "ecb_bls",
@@ -63894,6 +64096,7 @@
         "eurostat_rd_expenditure_nuts2",
         "eurostat_rendimento_10y",
         "eurostat_sbs_food_retail",
+        "eurostat_tassi_breve",
         "eurostat_tourism_nuts3",
         "filiere_valore_aggiunto",
         "fpi_debito_pa",
@@ -64927,8 +65130,10 @@
       "varchi_ztl"
     ],
     "debito-pubblico-intelligence": [
+      "debt_service",
       "eurostat_debito_pil",
       "eurostat_rendimento_10y",
+      "eurostat_tassi_breve",
       "fpi_debito_pa",
       "mef_composizione",
       "mef_riepilogo_emissioni_scadenze",
@@ -65428,6 +65633,7 @@
       "consip_ordini_mepa",
       "consip_partecipazioni",
       "consip_rdo_td_stipulate",
+      "debt_service",
       "demografia_imprese",
       "eba_panel",
       "ecb_bls",
@@ -65451,6 +65657,7 @@
       "eurostat_rd_expenditure_nuts2",
       "eurostat_rendimento_10y",
       "eurostat_sbs_food_retail",
+      "eurostat_tassi_breve",
       "eurostat_tourism_nuts3",
       "filiere_valore_aggiunto",
       "fpi_debito_pa",
@@ -67229,6 +67436,22 @@
       ],
       "description": "Passaggi veicolari ai varchi ZTL per tipologia veicolo, direzione e ora"
     },
+    "debt_service": {
+      "name": "Debt Service",
+      "stage": "incubating",
+      "source_id": "dataciviclab_composite",
+      "registry_source": "debito-pubblico-intelligence",
+      "domain": "finanza-pubblica",
+      "category": "finanza-pubblica",
+      "tags": [
+        "finanza-pubblica",
+        "debito",
+        "costo",
+        "rifinanziamento",
+        "compose"
+      ],
+      "description": "Compose del costo del debito: incrocia i titoli in circolazione (mef_scadenze_isin) con i tassi correnti (eurostat_tassi_breve, eurostat_rendimento_10y). Due marts: interessi annui per famiglia e costo del rifinanziamento dei titoli in scadenza nei prossimi 12 mesi. Le ipotesi di tasso sono colonne, non costanti nel codice.\n"
+    },
     "eurostat_debito_pil": {
       "name": "Eurostat Debito Pil",
       "stage": "incubating",
@@ -67261,6 +67484,22 @@
         "btp-bund"
       ],
       "description": ""
+    },
+    "eurostat_tassi_breve": {
+      "name": "Eurostat Tassi Breve",
+      "stage": "incubating",
+      "source_id": "eurostat",
+      "registry_source": "debito-pubblico-intelligence",
+      "domain": "finanza-pubblica",
+      "category": "finanza-pubblica",
+      "tags": [
+        "finanza-pubblica",
+        "tassi",
+        "euribor",
+        "mercato-monetario",
+        "eurostat"
+      ],
+      "description": "Tassi del mercato monetario dell'area euro (1, 3, 6 e 12 mesi), mensili. Servono a dare un tasso corrente a BOT e CCTeu nel calcolo del costo del debito: senza questi, la cedola dei CCTeu resta il solo spread e il costo viene sottostimato di ~4 mld/anno.\n"
     },
     "fpi_debito_pa": {
       "name": "Fpi Debito Pa",
@@ -72950,9 +73189,10 @@
         "panel",
         "banche-singole",
         "corep",
-        "finrep"
+        "finrep",
+        "esposizioni"
       ],
-      "description": ""
+      "description": "Panel per singola banca europea: CET1, ROE, leverage, totale attivo (EBA, 2012-2025)"
     },
     "ecb_bls": {
       "name": "Ecb Bls",
@@ -72965,10 +73205,11 @@
         "banche",
         "bce",
         "bls",
-        "credit-standards",
-        "domanda-credito"
+        "credito",
+        "survey",
+        "sistema-bancario"
       ],
-      "description": ""
+      "description": "Bank Lending Survey: condizioni e domanda di credito per imprese e famiglie, indici di diffusione (BCE, 2003-2026)"
     },
     "ecb_bsi": {
       "name": "Ecb Bsi",
@@ -72981,12 +73222,11 @@
         "banche",
         "bce",
         "bsi",
-        "bilanci-mfi",
-        "depositi",
-        "prestiti",
-        "moneta"
+        "bilanci",
+        "sistema-bancario",
+        "europa"
       ],
-      "description": ""
+      "description": "Bilanci delle banche per paese: attivo, prestiti, depositi per detentore, capitale e riserve (BCE, 2003-2026)"
     },
     "ecb_cbd2": {
       "name": "Ecb Cbd2",
@@ -73000,9 +73240,10 @@
         "bce",
         "cbd2",
         "sistema-bancario",
-        "europa"
+        "europa",
+        "kpi"
       ],
-      "description": ""
+      "description": "KPI del sistema bancario per paese: redditivit\u00e0, capitale, NPL per settore controparte, liquidit\u00e0 (BCE, 2015-2026)"
     },
     "ecb_mir": {
       "name": "Ecb Mir",
@@ -73015,11 +73256,12 @@
         "banche",
         "bce",
         "mir",
-        "tassi-interesse",
-        "prestiti",
-        "depositi"
+        "tassi",
+        "mutui",
+        "depositi",
+        "sistema-bancario"
       ],
-      "description": ""
+      "description": "Tassi bancari sui nuovi contratti: mutui, prestiti alle imprese, consumo e depositi (BCE, 2003-2026)"
     },
     "wb_financial": {
       "name": "Wb Financial",
@@ -73037,7 +73279,7 @@
         "filiali",
         "storico"
       ],
-      "description": ""
+      "description": "Indicatori storici del settore finanziario: NPL, credito/PIL, filiali e ATM per abitante (World Bank, 1960-2025)"
     },
     "ade_cinque_per_mille": {
       "name": "Ade Cinque Per Mille",
