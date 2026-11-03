@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-03T00:37:12.269675",
+  "generated_at": "2026-11-03T13:43:43.894759",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -157,7 +157,7 @@
       "url": "https://github.com/dataciviclab/eurostat",
       "role": "dati",
       "domain": "welfare-lavoro",
-      "n_datasets": 34,
+      "n_datasets": 38,
       "n_published": 0,
       "sources": [
         "eurostat"
@@ -23674,6 +23674,600 @@
         ]
       },
       {
+        "slug": "eurostat_tran_hv_frmod",
+        "url_slug": "eurostat-tran-hv-frmod",
+        "name": "Eurostat Tran Hv Frmod",
+        "description": "Modal split del trasporto merci: quota % delle tonnellate-km su strada, ferrovia e vie navigabili. Nazionale, 2005-2024, confronto UE.",
+        "source": "",
+        "source_id": "eurostat",
+        "period": {
+          "start": 2005,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "trasporti",
+          "merci",
+          "modal-split",
+          "logistica",
+          "gomma",
+          "ferro",
+          "eurostat",
+          "benchmark"
+        ],
+        "category": "trasporti",
+        "registry_source": "eurostat",
+        "clean_rows": 2480,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/eurostat/eurostat_tran_hv_frmod/2026/eurostat_tran_hv_frmod_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "freq",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unit",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tra_mode",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "geo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "nuts_code",
+            "description": ""
+          },
+          {
+            "name": "year",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "freq_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unit_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tra_mode_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "geo_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nuts_level",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "country",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "nuts_parent_code",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "nuts_code",
+            "description": ""
+          },
+          {
+            "name": "nuts_parent_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "value",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_desc_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "eurostat_tran_hv_frmod__mart_modal_split_merci",
+          "eurostat_tran_hv_frmod__mart_benchmark_it"
+        ]
+      },
+      {
+        "slug": "eurostat_tran_hv_psmod",
+        "url_slug": "eurostat-tran-hv-psmod",
+        "name": "Eurostat Tran Hv Psmod",
+        "description": "Modal split del trasporto passeggeri: quota % dei passeggeri-km per modo (auto, bus, treno). Nazionale, 1990-2024, confronto UE.",
+        "source": "",
+        "source_id": "eurostat",
+        "period": {
+          "start": 1990,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "trasporti",
+          "mobilita",
+          "modal-split",
+          "passeggeri",
+          "dipendenza-auto",
+          "eurostat",
+          "benchmark"
+        ],
+        "category": "trasporti",
+        "registry_source": "eurostat",
+        "clean_rows": 5180,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/eurostat/eurostat_tran_hv_psmod/2026/eurostat_tran_hv_psmod_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "freq",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unit",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "vehicle",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "geo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "nuts_code",
+            "description": ""
+          },
+          {
+            "name": "year",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "freq_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unit_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "vehicle_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "geo_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nuts_level",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "country",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "nuts_parent_code",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "nuts_code",
+            "description": ""
+          },
+          {
+            "name": "nuts_parent_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "value",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_desc_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "eurostat_tran_hv_psmod__mart_modal_split",
+          "eurostat_tran_hv_psmod__mart_benchmark_it"
+        ]
+      },
+      {
+        "slug": "eurostat_tran_r_net",
+        "url_slug": "eurostat-tran-r-net",
+        "name": "Eurostat Tran R Net",
+        "description": "Estensione delle reti di trasporto: autostrade, altre strade, linee ferroviarie (totali, elettrificate, doppio binario), vie navigabili. Paese e regioni NUTS, 1990-2024.",
+        "source": "",
+        "source_id": "eurostat",
+        "period": {
+          "start": 1990,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "trasporti",
+          "infrastrutture",
+          "autostrade",
+          "ferrovia",
+          "rete",
+          "eurostat",
+          "nuts2"
+        ],
+        "category": "trasporti",
+        "registry_source": "eurostat",
+        "clean_rows": 136115,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/eurostat/eurostat_tran_r_net/2026/eurostat_tran_r_net_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "freq",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unit",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tra_infr",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "geo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "nuts_code",
+            "description": ""
+          },
+          {
+            "name": "year",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "freq_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unit_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tra_infr_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "geo_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nuts_level",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "country",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "nuts_parent_code",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "nuts_code",
+            "description": ""
+          },
+          {
+            "name": "nuts_parent_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "value",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_desc_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "eurostat_tran_r_net__mart_rete",
+          "eurostat_tran_r_net__mart_rete_it_regioni"
+        ]
+      },
+      {
+        "slug": "eurostat_tran_r_vehst",
+        "url_slug": "eurostat-tran-r-vehst",
+        "name": "Eurostat Tran R Vehst",
+        "description": "Parco veicolare per tipo (auto, bus, camion, moto): valori assoluti e per 1000 abitanti, paese e regioni NUTS, 1990-2024. ATTENZIONE: il per-1000 regionale \u00e8 gonfiato dalle sedi di noleggio/leasing (Valle d'Aosta, Trento) \u2014 vedi commento in sql/mart_auto_per_1000.sql.",
+        "source": "",
+        "source_id": "eurostat",
+        "period": {
+          "start": 1990,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "trasporti",
+          "parco-veicolare",
+          "auto",
+          "moto",
+          "camion",
+          "motorizzazione",
+          "eurostat",
+          "nuts2"
+        ],
+        "category": "trasporti",
+        "registry_source": "eurostat",
+        "clean_rows": 190295,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/eurostat/eurostat_tran_r_vehst/2026/eurostat_tran_r_vehst_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "freq",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unit",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "vehicle",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "geo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "nuts_code",
+            "description": ""
+          },
+          {
+            "name": "year",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "freq_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unit_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "vehicle_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "geo_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nuts_level",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "country",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "nuts_parent_code",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "nuts_code",
+            "description": ""
+          },
+          {
+            "name": "nuts_parent_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "value",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_desc_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "eurostat_tran_r_vehst__mart_parco",
+          "eurostat_tran_r_vehst__mart_auto_per_1000"
+        ]
+      },
+      {
         "slug": "eurostat_tran_sf_roadnu",
         "url_slug": "eurostat-tran-sf-roadnu",
         "name": "Eurostat Tran Sf Roadnu",
@@ -36483,7 +37077,7 @@
         ],
         "category": "normativa",
         "registry_source": "gu-monitor",
-        "clean_rows": 25950,
+        "clean_rows": 26013,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/gu-monitor/gu_atti/2026/gu_atti_2026_clean.parquet",
@@ -54638,7 +55232,7 @@
         ],
         "category": "politica",
         "registry_source": "open-politica",
-        "clean_rows": 3148,
+        "clean_rows": 3172,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-politica/camera_ddl/*/camera_ddl_*_clean.parquet",
@@ -55529,7 +56123,7 @@
         ],
         "category": "politica",
         "registry_source": "open-politica",
-        "clean_rows": 31063,
+        "clean_rows": 31479,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-politica/camera_sindisp/*/camera_sindisp_*_clean.parquet",
@@ -55685,7 +56279,7 @@
         ],
         "category": "politica",
         "registry_source": "open-politica",
-        "clean_rows": 28024,
+        "clean_rows": 28014,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-politica/camera_sindisp_destinatari/*/camera_sindisp_destinatari_*_clean.parquet",
@@ -55760,7 +56354,7 @@
         ],
         "category": "politica",
         "registry_source": "open-politica",
-        "clean_rows": 132005,
+        "clean_rows": 133800,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-politica/camera_sindisp_firmatari/*/camera_sindisp_firmatari_*_clean.parquet",
@@ -65223,6 +65817,10 @@
         "eurostat_nrg_chddr2_a_nuts3",
         "eurostat_nrg_chddr2_m_nuts3",
         "eurostat_soil_erosion_nuts3",
+        "eurostat_tran_hv_frmod",
+        "eurostat_tran_hv_psmod",
+        "eurostat_tran_r_net",
+        "eurostat_tran_r_vehst",
         "eurostat_tran_sf_roadnu",
         "gme_pun_storico",
         "irena_costi_tecnologia",
@@ -65275,7 +65873,7 @@
         "terna_storage_accumuli",
         "varchi_ztl"
       ],
-      "dataset_count": 71
+      "dataset_count": 75
     },
     {
       "slug": "finanza-pubblica",
@@ -65735,6 +66333,10 @@
         "eurostat_nrg_chddr2_a_nuts3",
         "eurostat_nrg_chddr2_m_nuts3",
         "eurostat_soil_erosion_nuts3",
+        "eurostat_tran_hv_frmod",
+        "eurostat_tran_hv_psmod",
+        "eurostat_tran_r_net",
+        "eurostat_tran_r_vehst",
         "eurostat_tran_sf_roadnu",
         "gme_pun_storico",
         "irena_costi_tecnologia",
@@ -66987,6 +67589,10 @@
       "eurostat_soil_erosion_nuts3",
       "eurostat_tertiary_education_nuts2",
       "eurostat_tourism_nuts3",
+      "eurostat_tran_hv_frmod",
+      "eurostat_tran_hv_psmod",
+      "eurostat_tran_r_net",
+      "eurostat_tran_r_vehst",
       "eurostat_tran_sf_roadnu"
     ],
     "filiere-agroalimentari": [
@@ -67645,6 +68251,10 @@
       "eurostat_nrg_chddr2_a_nuts3",
       "eurostat_nrg_chddr2_m_nuts3",
       "eurostat_soil_erosion_nuts3",
+      "eurostat_tran_hv_frmod",
+      "eurostat_tran_hv_psmod",
+      "eurostat_tran_r_net",
+      "eurostat_tran_r_vehst",
       "eurostat_tran_sf_roadnu",
       "gme_pun_storico",
       "irena_costi_tecnologia",
@@ -70472,6 +71082,80 @@
         "nuts3"
       ],
       "description": "Nights spent at tourist accommodation establishments by NUTS 3 region"
+    },
+    "eurostat_tran_hv_frmod": {
+      "name": "Eurostat Tran Hv Frmod",
+      "stage": "incubating",
+      "source_id": "eurostat",
+      "registry_source": "eurostat",
+      "domain": "territorio-ambiente",
+      "category": "trasporti",
+      "tags": [
+        "trasporti",
+        "merci",
+        "modal-split",
+        "logistica",
+        "gomma",
+        "ferro",
+        "eurostat",
+        "benchmark"
+      ],
+      "description": "Modal split del trasporto merci: quota % delle tonnellate-km su strada, ferrovia e vie navigabili. Nazionale, 2005-2024, confronto UE."
+    },
+    "eurostat_tran_hv_psmod": {
+      "name": "Eurostat Tran Hv Psmod",
+      "stage": "incubating",
+      "source_id": "eurostat",
+      "registry_source": "eurostat",
+      "domain": "territorio-ambiente",
+      "category": "trasporti",
+      "tags": [
+        "trasporti",
+        "mobilita",
+        "modal-split",
+        "passeggeri",
+        "dipendenza-auto",
+        "eurostat",
+        "benchmark"
+      ],
+      "description": "Modal split del trasporto passeggeri: quota % dei passeggeri-km per modo (auto, bus, treno). Nazionale, 1990-2024, confronto UE."
+    },
+    "eurostat_tran_r_net": {
+      "name": "Eurostat Tran R Net",
+      "stage": "incubating",
+      "source_id": "eurostat",
+      "registry_source": "eurostat",
+      "domain": "territorio-ambiente",
+      "category": "trasporti",
+      "tags": [
+        "trasporti",
+        "infrastrutture",
+        "autostrade",
+        "ferrovia",
+        "rete",
+        "eurostat",
+        "nuts2"
+      ],
+      "description": "Estensione delle reti di trasporto: autostrade, altre strade, linee ferroviarie (totali, elettrificate, doppio binario), vie navigabili. Paese e regioni NUTS, 1990-2024."
+    },
+    "eurostat_tran_r_vehst": {
+      "name": "Eurostat Tran R Vehst",
+      "stage": "incubating",
+      "source_id": "eurostat",
+      "registry_source": "eurostat",
+      "domain": "territorio-ambiente",
+      "category": "trasporti",
+      "tags": [
+        "trasporti",
+        "parco-veicolare",
+        "auto",
+        "moto",
+        "camion",
+        "motorizzazione",
+        "eurostat",
+        "nuts2"
+      ],
+      "description": "Parco veicolare per tipo (auto, bus, camion, moto): valori assoluti e per 1000 abitanti, paese e regioni NUTS, 1990-2024. ATTENZIONE: il per-1000 regionale \u00e8 gonfiato dalle sedi di noleggio/leasing (Valle d'Aosta, Trento) \u2014 vedi commento in sql/mart_auto_per_1000.sql."
     },
     "eurostat_tran_sf_roadnu": {
       "name": "Eurostat Tran Sf Roadnu",

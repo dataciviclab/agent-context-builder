@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T00:37:12.269675",
+  "generated_at": "2026-11-03T13:43:43.894759",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -50,7 +50,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 11,
+  "open_prs": 13,
   "prs": [
     {
       "number": 20,
@@ -64,6 +64,20 @@
       "title": "feat(anac-cross): codice IPA della stazione appaltante (#13)",
       "repo": "appalti-pubblici",
       "url": "https://github.com/dataciviclab/appalti-pubblici/pull/19",
+      "category": "other"
+    },
+    {
+      "number": 901,
+      "title": "feat(mase): 3 candidate energia \u2014 gas import, gas consumi, consumi petroliferi",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/901",
+      "category": "other"
+    },
+    {
+      "number": 900,
+      "title": "chore: migra i dataset MIM nel repo open-mim",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/900",
       "category": "other"
     },
     {
@@ -81,10 +95,10 @@
       "category": "other"
     },
     {
-      "number": 149,
-      "title": "feat(transport): 4 dataflow Eurostat su mobilita, merci, parco e reti",
+      "number": 153,
+      "title": "feat(migration): sette dataflow Eurostat su immigrazione (popolazione, permessi, cittadinanza, rimpatri, flussi)",
       "repo": "eurostat",
-      "url": "https://github.com/dataciviclab/eurostat/pull/149",
+      "url": "https://github.com/dataciviclab/eurostat/pull/153",
       "category": "other"
     },
     {
@@ -116,10 +130,10 @@
       "category": "other"
     },
     {
-      "number": 528,
-      "title": "fix(clean): robust read disattiva il parallel scanner con null_padding",
+      "number": 531,
+      "title": "fix(streaming): pipeline in streaming per dataset grandi (Eurostat migrazione)",
       "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/528",
+      "url": "https://github.com/dataciviclab/toolkit/pull/531",
       "category": "other"
     },
     {
@@ -2315,7 +2329,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 12"
+    "Many open PRs: 13"
   ],
   "radar": {
     "available": true,
@@ -4658,13 +4672,13 @@
       "repo": "eurostat",
       "available": true,
       "source_repo": "dataciviclab/eurostat",
-      "updated_at": "2026-11-01",
-      "datasets": 34,
-      "marts": 97,
-      "signals": 34,
+      "updated_at": "2026-11-03",
+      "datasets": 38,
+      "marts": 105,
+      "signals": 38,
       "codelists": 16,
       "entities": 3,
-      "gcs": 34,
+      "gcs": 38,
       "reason": "",
       "signals_detail": [
         {
@@ -5127,6 +5141,62 @@
             "status": "SUCCESS",
             "started_at": "2026-11-01T16:37:33.873403+00:00",
             "finished_at": "2026-11-01T16:37:47.556027+00:00"
+          }
+        },
+        {
+          "id": "eurostat_tran_hv_frmod",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_tran_hv_frmod",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261103T084447Z_733e9465",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-03T08:44:47.957597+00:00",
+            "finished_at": "2026-11-03T08:44:49.418932+00:00"
+          }
+        },
+        {
+          "id": "eurostat_tran_hv_psmod",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_tran_hv_psmod",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261103T084449Z_d0e7d817",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-03T08:44:49.922665+00:00",
+            "finished_at": "2026-11-03T08:44:51.280350+00:00"
+          }
+        },
+        {
+          "id": "eurostat_tran_r_net",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_tran_r_net",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261103T084451Z_722c327f",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-03T08:44:51.801824+00:00",
+            "finished_at": "2026-11-03T08:44:54.904337+00:00"
+          }
+        },
+        {
+          "id": "eurostat_tran_r_vehst",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_tran_r_vehst",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261103T084454Z_d13b99fa",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-03T08:44:54.998148+00:00",
+            "finished_at": "2026-11-03T08:44:59.687307+00:00"
           }
         },
         {
@@ -5726,7 +5796,7 @@
       "repo": "gu-monitor",
       "available": true,
       "source_repo": "dataciviclab/gu-monitor",
-      "updated_at": "2026-11-02",
+      "updated_at": "2026-11-03",
       "datasets": 1,
       "marts": 3,
       "signals": 1,
@@ -5742,11 +5812,11 @@
           "label": "gu_atti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261102T143912Z_d1346ea6",
+            "run_id": "20261103T133220Z_f81d2cd8",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-02T14:39:12.117416+00:00",
-            "finished_at": "2026-11-02T14:39:12.408089+00:00"
+            "started_at": "2026-11-03T13:32:20.755241+00:00",
+            "finished_at": "2026-11-03T13:32:21.120265+00:00"
           }
         }
       ]
@@ -8255,7 +8325,7 @@
       "repo": "open-politica",
       "available": true,
       "source_repo": "dataciviclab/open-politica",
-      "updated_at": "2026-10-30",
+      "updated_at": "2026-11-03",
       "datasets": 42,
       "marts": 85,
       "signals": 42,
@@ -8397,11 +8467,11 @@
           "label": "camera_ddl",
           "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20261020T100503Z_d2d8fac1",
+            "run_id": "20261103T093535Z_22f4d4d8",
             "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-10-20T10:05:03.422118+00:00",
-            "finished_at": "2026-10-20T10:05:05.147559+00:00"
+            "started_at": "2026-11-03T09:35:35.298387+00:00",
+            "finished_at": "2026-11-03T09:35:37.358957+00:00"
           }
         },
         {
@@ -8523,11 +8593,11 @@
           "label": "camera_sindisp",
           "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20261020T100844Z_7fcf9560",
+            "run_id": "20261103T093939Z_3269f72f",
             "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-10-20T10:08:44.651087+00:00",
-            "finished_at": "2026-10-20T10:09:33.893852+00:00"
+            "started_at": "2026-11-03T09:39:39.104681+00:00",
+            "finished_at": "2026-11-03T09:40:19.466608+00:00"
           }
         },
         {
@@ -8537,11 +8607,11 @@
           "label": "camera_sindisp_destinatari",
           "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20261020T101037Z_698a7262",
+            "run_id": "20261103T100149Z_3b0d5b8e",
             "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-10-20T10:10:37.249665+00:00",
-            "finished_at": "2026-10-20T10:10:43.028728+00:00"
+            "started_at": "2026-11-03T10:01:49.306195+00:00",
+            "finished_at": "2026-11-03T10:01:56.457970+00:00"
           }
         },
         {
@@ -8551,11 +8621,11 @@
           "label": "camera_sindisp_firmatari",
           "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20261020T101738Z_c331b173",
+            "run_id": "20261103T095441Z_3a7b9164",
             "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-10-20T10:17:38.904404+00:00",
-            "finished_at": "2026-10-20T10:18:23.104938+00:00"
+            "started_at": "2026-11-03T09:54:41.969902+00:00",
+            "finished_at": "2026-11-03T09:55:39.472156+00:00"
           }
         },
         {
