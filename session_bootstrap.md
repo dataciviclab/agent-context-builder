@@ -1,10 +1,10 @@
 # Session Bootstrap
 
-**Generated**: 2026-11-02T14:55:23.957914
+**Generated**: 2026-11-03T00:37:12.269675
 
 ## Stato
 
-Radar: 36 fonti GREEN 34 · Registry: 41 repo · 475 dataset
+Radar: 36 fonti GREEN 34 · Registry: 41 repo · 487 dataset
 
 ## Richiede attenzione
 
@@ -13,6 +13,7 @@ Radar: 36 fonti GREEN 34 · Registry: 41 repo · 475 dataset
 - [PR] dataset-incubator#885: feat(candidates): eu-call-open + catena FTS call_id/project_id
 - [PR] dataset-incubator#836: feat(candidates): bootstrap gse_cer_elenco candidate
 - [PR] eurostat#149: feat(transport): 4 dataflow Eurostat su mobilita, merci, parco e reti
+- [PR] 1 dependabot bump (skipped)
 
 ## Analisi pubbliche (45)
 

@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-02T14:55:23.957914",
+  "generated_at": "2026-11-03T00:37:12.269675",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -379,7 +379,7 @@
       "url": "https://github.com/dataciviclab/open-mur",
       "role": "dati",
       "domain": "welfare-lavoro",
-      "n_datasets": 12,
+      "n_datasets": 18,
       "n_published": 0,
       "sources": [
         "mur_ustat"
@@ -496,7 +496,7 @@
       "url": "https://github.com/dataciviclab/rifiuti-urbani",
       "role": "dati",
       "domain": "territorio-ambiente",
-      "n_datasets": 13,
+      "n_datasets": 19,
       "n_published": 0,
       "sources": [
         "dataciviclab_composite",
@@ -5594,6 +5594,362 @@
         ]
       },
       {
+        "slug": "rifiuti_regioni",
+        "url_slug": "rifiuti-regioni",
+        "name": "Rifiuti Regioni",
+        "description": "Compose regionale: RD%, costi, mix impiantistico, movimentazione e rifiuti speciali per regione e anno.",
+        "source": "",
+        "source_id": "dataciviclab_composite",
+        "period": {
+          "start": 2018,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "ispra",
+          "ru",
+          "rs",
+          "compose",
+          "regione"
+        ],
+        "category": "ambiente",
+        "registry_source": "rifiuti-urbani",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/rifiuti-urbani/rifiuti_regioni/*/rifiuti_regioni_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "n_comuni",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "popolazione",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_ru_tonnellate",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_rd_tonnellate",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "percentuale_rd",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "kg_ru_per_abitante",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "kg_rd_per_abitante",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ctot_euro_ab",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "crt_euro_ab",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cts_euro_ab",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "crd_euro_ab",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ctr_euro_ab",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "csl_euro_ab",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cc_euro_ab",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ck_euro_ab",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "quota_cts_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "quota_ctr_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "quota_costo_fisso_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rapporto_recupero_smaltimento",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "costo_per_punto_rd_euro",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "costo_per_tonnellata_euro",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_impianti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "discarica_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "incenerimento_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "coincenerimento_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tmb_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "compostaggio_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "trattamento_integrato_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "digestione_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "trattamenti_finali_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pct_discarica_su_trattamenti_finali",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pct_riciclo_organico_su_trattamenti_finali",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "import_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "export_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "saldo_export_import_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "export_su_prodotto_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flussi_extraregionali_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rs_np_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rs_p_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rs_totale_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rs_recupero_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rs_smaltimento_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rs_giacenza_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rs_recupero_su_gestito_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "rifiuti_regioni__mart_regioni"
+        ]
+      },
+      {
         "slug": "rifiuti_urbani_unified",
         "url_slug": "rifiuti-urbani-unified",
         "name": "Rifiuti Urbani Unified",
@@ -5748,7 +6104,21 @@
             "description": ""
           },
           {
+            "name": "cts_euro_ab",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "crd_euro_ab",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ctr_euro_ab",
             "type": "DOUBLE",
             "role": "metric",
             "semantic_type": "",
@@ -5820,7 +6190,8 @@
         ],
         "mart_refs": [
           "rifiuti_urbani_unified__mart_comuni",
-          "rifiuti_urbani_unified__mart_sintesi"
+          "rifiuti_urbani_unified__mart_sintesi",
+          "rifiuti_urbani_unified__mart_costi_fase"
         ]
       }
     ],
@@ -38327,7 +38698,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 1837,
+        "clean_rows": 1844,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_bandi_open/2026/inpa_bandi_open_2026_clean.parquet",
@@ -38546,7 +38917,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 6296,
+        "clean_rows": 6327,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_comunicazioni/2026/inpa_comunicazioni_2026_clean.parquet",
@@ -48581,6 +48952,88 @@
         ]
       },
       {
+        "slug": "ispra_rs_gestione_regionale",
+        "url_slug": "ispra-rs-gestione-regionale",
+        "name": "Ispra Rs Gestione Regionale",
+        "description": "Gestione dei rifiuti speciali per regione (ISPRA): operazioni di recupero R1-R13 e smaltimento D1-D15, con flussi e giacenze separati.",
+        "source": "",
+        "source_id": "ispra_linked_data",
+        "period": {
+          "start": 2014,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "ispra",
+          "rs",
+          "gestione",
+          "regione"
+        ],
+        "category": "ambiente",
+        "registry_source": "rifiuti-urbani",
+        "clean_rows": 1449,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/rifiuti-urbani/ispra_rs_gestione_regionale/*/ispra_rs_gestione_regionale_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "area_geografica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ripartizione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_operazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "natura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "quantita_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ispra_rs_gestione_regionale__mart_gestione"
+        ]
+      },
+      {
         "slug": "ispra_rs_impianti",
         "url_slug": "ispra-rs-impianti",
         "name": "Ispra Rs Impianti",
@@ -48669,6 +49122,95 @@
         ]
       },
       {
+        "slug": "ispra_rs_impianti_regionali",
+        "url_slug": "ispra-rs-impianti-regionali",
+        "name": "Ispra Rs Impianti Regionali",
+        "description": "Censimento ISPRA degli impianti che gestiscono rifiuti speciali per regione: numero impianti e rifiuti trattati per tipologia.",
+        "source": "",
+        "source_id": "ispra_linked_data",
+        "period": {
+          "start": 2018,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "ispra",
+          "rs",
+          "impianti",
+          "regione"
+        ],
+        "category": "ambiente",
+        "registry_source": "rifiuti-urbani",
+        "clean_rows": 240,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/rifiuti-urbani/ispra_rs_impianti_regionali/*/ispra_rs_impianti_regionali_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "tipo_impianto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "area_geografica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_impianti",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rs_non_pericolosi_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rs_pericolosi_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ispra_rs_impianti_regionali__mart_impianti"
+        ]
+      },
+      {
         "slug": "ispra_rs_import",
         "url_slug": "ispra-rs-import",
         "name": "Ispra Rs Import",
@@ -48749,7 +49291,7 @@
         "source": "",
         "source_id": "ispra_linked_data",
         "period": {
-          "start": 2018,
+          "start": 2014,
           "end": 2024
         },
         "stage": "incubating",
@@ -48837,6 +49379,102 @@
         ]
       },
       {
+        "slug": "ispra_rs_produzione_regionale",
+        "url_slug": "ispra-rs-produzione-regionale",
+        "name": "Ispra Rs Produzione Regionale",
+        "description": "Produzione di rifiuti speciali per regione (ISPRA): non pericolosi, pericolosi e CER non determinato.",
+        "source": "",
+        "source_id": "ispra_linked_data",
+        "period": {
+          "start": 2014,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "ispra",
+          "rs",
+          "produzione",
+          "regione"
+        ],
+        "category": "ambiente",
+        "registry_source": "rifiuti-urbani",
+        "clean_rows": 21,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/rifiuti-urbani/ispra_rs_produzione_regionale/*/ispra_rs_produzione_regionale_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "dimensione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "etichetta",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "area_geografica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ripartizione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "np_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "p_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cer_nd_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ispra_rs_produzione_regionale__mart_produzione"
+        ]
+      },
+      {
         "slug": "ispra_ru_base",
         "url_slug": "ispra-ru-base",
         "name": "Ispra Ru Base",
@@ -48844,7 +49482,7 @@
         "source": "",
         "source_id": "ispra_linked_data",
         "period": {
-          "start": 2018,
+          "start": 2010,
           "end": 2024
         },
         "stage": "incubating",
@@ -49453,7 +50091,7 @@
         "source": "",
         "source_id": "ispra_linked_data",
         "period": {
-          "start": 2018,
+          "start": 2015,
           "end": 2024
         },
         "stage": "incubating",
@@ -49549,6 +50187,228 @@
         ]
       },
       {
+        "slug": "ispra_ru_gestione_impianti",
+        "url_slug": "ispra-ru-gestione-impianti",
+        "name": "Ispra Ru Gestione Impianti",
+        "description": "Elenco completo degli impianti che trattano rifiuti urbani (ISPRA), aggregato per tipo impianto e comune: tonnellate trattate per frazione.",
+        "source": "",
+        "source_id": "ispra_linked_data",
+        "period": {
+          "start": 2015,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "ispra",
+          "ru",
+          "impianti",
+          "gestione",
+          "comune"
+        ],
+        "category": "ambiente",
+        "registry_source": "rifiuti-urbani",
+        "clean_rows": 580,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/rifiuti-urbani/ispra_ru_gestione_impianti/*/ispra_ru_gestione_impianti_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "tipo_impianto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_name",
+            "description": ""
+          },
+          {
+            "name": "n_impianti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "frazione_umida_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "verde_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tot_ru_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fanghi_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "altro_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ispra_ru_gestione_impianti__mart_impianti"
+        ]
+      },
+      {
+        "slug": "ispra_ru_gestione_regionale",
+        "url_slug": "ispra-ru-gestione-regionale",
+        "name": "Ispra Ru Gestione Regionale",
+        "description": "Impianti che trattano rifiuti urbani (ISPRA) per regione: numero impianti e rifiuti trattati per tipologia impianto.",
+        "source": "",
+        "source_id": "ispra_linked_data",
+        "period": {
+          "start": 2015,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "ambiente",
+          "ispra",
+          "ru",
+          "impianti",
+          "gestione",
+          "regione"
+        ],
+        "category": "ambiente",
+        "registry_source": "rifiuti-urbani",
+        "clean_rows": 108,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/rifiuti-urbani/ispra_ru_gestione_regionale/*/ispra_ru_gestione_regionale_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "tipo_impianto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "area_geografica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_impianti",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "frazione_umida_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "verde_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tot_ru_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fanghi_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "altro_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ispra_ru_gestione_regionale__mart_gestione"
+        ]
+      },
+      {
         "slug": "ispra_ru_import",
         "url_slug": "ispra-ru-import",
         "name": "Ispra Ru Import",
@@ -49623,6 +50483,604 @@
       }
     ],
     "mur_ustat": [
+      {
+        "slug": "mur_afam_diplomati",
+        "url_slug": "mur-afam-diplomati",
+        "name": "Mur Afam Diplomati",
+        "description": "",
+        "source": "",
+        "source_id": "mur_ustat",
+        "period": {
+          "start": 2010,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "istruzione",
+          "afam",
+          "diplomati",
+          "accademie",
+          "conservatori"
+        ],
+        "category": "istruzione",
+        "registry_source": "open-mur",
+        "clean_rows": 66166,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open_mur/mur_afam_diplomati/2025/mur_afam_diplomati_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "cod_istituto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_istituto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_istituto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "area_istituto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "comune_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "cod_reg_istat",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "area_corso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_corso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "scuola",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "classe",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "corso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "genere",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "diplomati",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mur_afam_diplomati__mart_afam_diplomati_area"
+        ]
+      },
+      {
+        "slug": "mur_afam_iscritti",
+        "url_slug": "mur-afam-iscritti",
+        "name": "Mur Afam Iscritti",
+        "description": "",
+        "source": "",
+        "source_id": "mur_ustat",
+        "period": {
+          "start": 2010,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "istruzione",
+          "afam",
+          "iscritti",
+          "accademie",
+          "conservatori"
+        ],
+        "category": "istruzione",
+        "registry_source": "open-mur",
+        "clean_rows": 122580,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open_mur/mur_afam_iscritti/2025/mur_afam_iscritti_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno_accademico",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cod_istituto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_istituto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_istituto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "area_istituto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "comune_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "cod_reg_istat",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "area_corso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_corso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "scuola",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "classe",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "corso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "genere",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "iscritti",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mur_afam_iscritti__mart_afam_iscritti_area"
+        ]
+      },
+      {
+        "slug": "mur_afam_istituti",
+        "url_slug": "mur-afam-istituti",
+        "name": "Mur Afam Istituti",
+        "description": "Anagrafica istituti AFAM: codice, tipo, area, sede, regione/provincia ISTAT.",
+        "source": "",
+        "source_id": "mur_ustat",
+        "period": {
+          "start": 2025,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "istruzione",
+          "afam",
+          "anagrafica",
+          "istituti",
+          "accademie",
+          "conservatori",
+          "support"
+        ],
+        "category": "support",
+        "registry_source": "open-mur",
+        "clean_rows": 204,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open_mur/mur_afam_istituti/2025/mur_afam_istituti_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "cod_istituto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "id_istituto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_istituto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_istituto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_sigla",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cod_tipo_istituto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "area_istituto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "status",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "comune_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cap",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "indirizzo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cod_ripgeo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ripartizione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cod_reg_istat",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "cod_prov_istat",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "web",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stato_attivita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_chiusura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "annotazioni",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mur_afam_istituti__mart_afam_istituti"
+        ]
+      },
+      {
+        "slug": "mur_afam_personale",
+        "url_slug": "mur-afam-personale",
+        "name": "Mur Afam Personale",
+        "description": "",
+        "source": "",
+        "source_id": "mur_ustat",
+        "period": {
+          "start": 2010,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "istruzione",
+          "afam",
+          "personale",
+          "docenti",
+          "ata",
+          "accademie",
+          "conservatori"
+        ],
+        "category": "istruzione",
+        "registry_source": "open-mur",
+        "clean_rows": 18755,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open_mur/mur_afam_personale/2025/mur_afam_personale_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno_accademico",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cod_istituto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_istituto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_istituto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "area_istituto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "comune_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "cod_reg_istat",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "tipo_personale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "qualifica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "genere",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mur_afam_personale__mart_afam_personale"
+        ]
+      },
       {
         "slug": "mur_anagrafica_atenei",
         "url_slug": "mur-anagrafica-atenei",
@@ -49706,6 +51164,20 @@
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "sigla_provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "cod_provincia_istat",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
             "description": ""
           },
           {
@@ -49906,6 +51378,132 @@
         ]
       },
       {
+        "slug": "mur_esoneri",
+        "url_slug": "mur-esoneri",
+        "name": "Mur Esoneri",
+        "description": "",
+        "source": "",
+        "source_id": "mur_ustat",
+        "period": {
+          "start": 2015,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "istruzione",
+          "mur",
+          "esoneri",
+          "diritto-allo-studio",
+          "contribuzione",
+          "universita"
+        ],
+        "category": "istruzione",
+        "registry_source": "open-mur",
+        "clean_rows": 1435,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open_mur/mur_esoneri/*/mur_esoneri_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno_accademico",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cod_ateneo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_ateneo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_esonero",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_esonero",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_esonero",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "laurea",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "dottorato",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "specializzazione",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "master",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "macro_area",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mur_esoneri__mart_esoneri_per_ateneo",
+          "mur_esoneri__mart_esoneri_per_causa"
+        ]
+      },
+      {
         "slug": "mur_formazione_post_laurea",
         "url_slug": "mur-formazione-post-laurea",
         "name": "Mur Formazione Post Laurea",
@@ -50067,6 +51665,132 @@
         ],
         "mart_refs": [
           "mur_immatricolati__mart_immatricolati_area"
+        ]
+      },
+      {
+        "slug": "mur_interventi",
+        "url_slug": "mur-interventi",
+        "name": "Mur Interventi",
+        "description": "",
+        "source": "",
+        "source_id": "mur_ustat",
+        "period": {
+          "start": 2015,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "istruzione",
+          "mur",
+          "interventi",
+          "borse-di-studio",
+          "diritto-allo-studio",
+          "universita"
+        ],
+        "category": "istruzione",
+        "registry_source": "open-mur",
+        "clean_rows": 2982,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open_mur/mur_interventi/*/mur_interventi_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno_accademico",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cod_ateneo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_ateneo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_intervento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_intervento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "laurea",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "laurea_extra_ue",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "dottorato",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "specializzazione",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "master",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "macro_area",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mur_interventi__mart_interventi_per_ateneo",
+          "mur_interventi__mart_interventi_per_tipo"
         ]
       },
       {
@@ -50532,7 +52256,7 @@
         ],
         "category": "istruzione",
         "registry_source": "open-mur",
-        "clean_rows": 28719,
+        "clean_rows": 27030,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open_mur/mur_personale_ateneo/2025/mur_personale_ateneo_2025_clean.parquet",
@@ -61168,7 +62892,7 @@
         ],
         "category": "economia",
         "registry_source": "sistema-bancario",
-        "clean_rows": 316280,
+        "clean_rows": 1100357,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/sistema-bancario/eba_panel/2025/eba_panel_2025_clean.parquet",
@@ -61253,6 +62977,20 @@
             "description": ""
           },
           {
+            "name": "metodo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "classe_esposizione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "descrizione",
             "type": "VARCHAR",
             "role": "dimension",
@@ -61261,13 +62999,6 @@
           },
           {
             "name": "unita",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "classe_esposizione",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
@@ -61300,12 +63031,21 @@
             "role": "metric",
             "semantic_type": "",
             "description": ""
+          },
+          {
+            "name": "voci_origine",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
           }
         ],
         "mart_refs": [
           "eba_panel__mart_banche_kpi",
           "eba_panel__mart_banche_snapshot",
           "eba_panel__mart_esposizioni",
+          "eba_panel__mart_esposizioni_metodo",
+          "eba_panel__mart_banche_bilancio",
           "eba_panel__mart_banche_anagrafica"
         ]
       }
@@ -61333,7 +63073,7 @@
         ],
         "category": "economia",
         "registry_source": "sistema-bancario",
-        "clean_rows": 15634,
+        "clean_rows": 23858,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/sistema-bancario/ecb_bls/2026/ecb_bls_2026_clean.parquet",
@@ -61445,7 +63185,7 @@
         ],
         "category": "economia",
         "registry_source": "sistema-bancario",
-        "clean_rows": 16783,
+        "clean_rows": 31313,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/sistema-bancario/ecb_bsi/2026/ecb_bsi_2026_clean.parquet",
@@ -61533,7 +63273,8 @@
         "mart_refs": [
           "ecb_bsi__mart_bsi_balance",
           "ecb_bsi__mart_bsi_deposits",
-          "ecb_bsi__mart_bsi_snapshot"
+          "ecb_bsi__mart_bsi_snapshot",
+          "ecb_bsi__mart_bsi_crediti"
         ]
       },
       {
@@ -61645,7 +63386,8 @@
         ],
         "mart_refs": [
           "ecb_cbd2__mart_bank_kpi",
-          "ecb_cbd2__mart_bank_snapshot"
+          "ecb_cbd2__mart_bank_snapshot",
+          "ecb_cbd2__mart_benchmark"
         ]
       },
       {
@@ -61671,7 +63413,7 @@
         ],
         "category": "economia",
         "registry_source": "sistema-bancario",
-        "clean_rows": 51363,
+        "clean_rows": 72951,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/sistema-bancario/ecb_mir/2026/ecb_mir_2026_clean.parquet",
@@ -61758,7 +63500,8 @@
         ],
         "mart_refs": [
           "ecb_mir__mart_mir_rates",
-          "ecb_mir__mart_mir_snapshot"
+          "ecb_mir__mart_mir_snapshot",
+          "ecb_mir__mart_mir_volumi"
         ]
       }
     ],
@@ -63492,15 +65235,20 @@
         "ispra_rmn",
         "ispra_rs_export",
         "ispra_rs_gestione",
+        "ispra_rs_gestione_regionale",
         "ispra_rs_impianti",
+        "ispra_rs_impianti_regionali",
         "ispra_rs_import",
         "ispra_rs_produzione",
+        "ispra_rs_produzione_regionale",
         "ispra_ru_base",
         "ispra_ru_costi_kg",
         "ispra_ru_costi_procapite",
         "ispra_ru_export",
         "ispra_ru_flussi",
         "ispra_ru_gestione",
+        "ispra_ru_gestione_impianti",
+        "ispra_ru_gestione_regionale",
         "ispra_ru_import",
         "ispra_urban",
         "mase_prezzi_carburanti_mensili",
@@ -63511,6 +65259,7 @@
         "oecd_fua_ghg",
         "oecd_green_transition",
         "precipitazioni_bologna",
+        "rifiuti_regioni",
         "rifiuti_urbani_unified",
         "spire_traffico",
         "temperature_bologna",
@@ -63526,7 +65275,7 @@
         "terna_storage_accumuli",
         "varchi_ztl"
       ],
-      "dataset_count": 65
+      "dataset_count": 71
     },
     {
       "slug": "finanza-pubblica",
@@ -63804,9 +65553,14 @@
         "mim_scuola_infanzia",
         "minlavoro_agevolazioni",
         "minlavoro_flussi",
+        "mur_afam_diplomati",
+        "mur_afam_iscritti",
+        "mur_afam_personale",
         "mur_contribuzione_universitaria",
+        "mur_esoneri",
         "mur_formazione_post_laurea",
         "mur_immatricolati",
+        "mur_interventi",
         "mur_iscritti",
         "mur_laureati",
         "mur_laureati_voto",
@@ -63816,7 +65570,7 @@
         "popolazione_istat_comunale_2019_2025",
         "popolazione_quartiere"
       ],
-      "dataset_count": 47
+      "dataset_count": 52
     },
     {
       "slug": "giustizia",
@@ -63993,15 +65747,20 @@
         "ispra_rmn",
         "ispra_rs_export",
         "ispra_rs_gestione",
+        "ispra_rs_gestione_regionale",
         "ispra_rs_impianti",
+        "ispra_rs_impianti_regionali",
         "ispra_rs_import",
         "ispra_rs_produzione",
+        "ispra_rs_produzione_regionale",
         "ispra_ru_base",
         "ispra_ru_costi_kg",
         "ispra_ru_costi_procapite",
         "ispra_ru_export",
         "ispra_ru_flussi",
         "ispra_ru_gestione",
+        "ispra_ru_gestione_impianti",
+        "ispra_ru_gestione_regionale",
         "ispra_ru_import",
         "ispra_urban",
         "mase_prezzi_carburanti_mensili",
@@ -64012,6 +65771,7 @@
         "oecd_fua_ghg",
         "oecd_green_transition",
         "precipitazioni_bologna",
+        "rifiuti_regioni",
         "rifiuti_urbani_unified",
         "spire_traffico",
         "temperature_bologna",
@@ -64250,9 +66010,14 @@
         "mim_scuola_infanzia",
         "minlavoro_agevolazioni",
         "minlavoro_flussi",
+        "mur_afam_diplomati",
+        "mur_afam_iscritti",
+        "mur_afam_personale",
         "mur_contribuzione_universitaria",
+        "mur_esoneri",
         "mur_formazione_post_laurea",
         "mur_immatricolati",
+        "mur_interventi",
         "mur_iscritti",
         "mur_laureati",
         "mur_laureati_voto",
@@ -65427,11 +67192,17 @@
       "ispra_urban"
     ],
     "open-mur": [
+      "mur_afam_diplomati",
+      "mur_afam_iscritti",
+      "mur_afam_istituti",
+      "mur_afam_personale",
       "mur_anagrafica_atenei",
       "mur_contribuzione_universitaria",
       "mur_crosswalk_stem",
+      "mur_esoneri",
       "mur_formazione_post_laurea",
       "mur_immatricolati",
+      "mur_interventi",
       "mur_iscritti",
       "mur_laureati",
       "mur_laureati_voto",
@@ -65546,16 +67317,22 @@
     "rifiuti-urbani": [
       "ispra_rs_export",
       "ispra_rs_gestione",
+      "ispra_rs_gestione_regionale",
       "ispra_rs_impianti",
+      "ispra_rs_impianti_regionali",
       "ispra_rs_import",
       "ispra_rs_produzione",
+      "ispra_rs_produzione_regionale",
       "ispra_ru_base",
       "ispra_ru_costi_kg",
       "ispra_ru_costi_procapite",
       "ispra_ru_export",
       "ispra_ru_flussi",
       "ispra_ru_gestione",
+      "ispra_ru_gestione_impianti",
+      "ispra_ru_gestione_regionale",
       "ispra_ru_import",
+      "rifiuti_regioni",
       "rifiuti_urbani_unified"
     ],
     "rna-aiuti-stato": [
@@ -65880,15 +67657,20 @@
       "ispra_rmn",
       "ispra_rs_export",
       "ispra_rs_gestione",
+      "ispra_rs_gestione_regionale",
       "ispra_rs_impianti",
+      "ispra_rs_impianti_regionali",
       "ispra_rs_import",
       "ispra_rs_produzione",
+      "ispra_rs_produzione_regionale",
       "ispra_ru_base",
       "ispra_ru_costi_kg",
       "ispra_ru_costi_procapite",
       "ispra_ru_export",
       "ispra_ru_flussi",
       "ispra_ru_gestione",
+      "ispra_ru_gestione_impianti",
+      "ispra_ru_gestione_regionale",
       "ispra_ru_import",
       "ispra_urban",
       "mase_prezzi_carburanti_mensili",
@@ -65899,6 +67681,7 @@
       "oecd_fua_ghg",
       "oecd_green_transition",
       "precipitazioni_bologna",
+      "rifiuti_regioni",
       "rifiuti_urbani_unified",
       "spire_traffico",
       "temperature_bologna",
@@ -65965,9 +67748,14 @@
       "mim_scuola_infanzia",
       "minlavoro_agevolazioni",
       "minlavoro_flussi",
+      "mur_afam_diplomati",
+      "mur_afam_iscritti",
+      "mur_afam_personale",
       "mur_contribuzione_universitaria",
+      "mur_esoneri",
       "mur_formazione_post_laurea",
       "mur_immatricolati",
+      "mur_interventi",
       "mur_iscritti",
       "mur_laureati",
       "mur_laureati_voto",
@@ -71374,6 +73162,74 @@
       ],
       "description": "Qualita ambientale urbana in Italia (1970-2019). Indicatori ambientali per comune da linked.isprambiente.it. 27 anni, ~245-600 comuni."
     },
+    "mur_afam_diplomati": {
+      "name": "Mur Afam Diplomati",
+      "stage": "incubating",
+      "source_id": "mur_ustat",
+      "registry_source": "open-mur",
+      "domain": "welfare-lavoro",
+      "category": "istruzione",
+      "tags": [
+        "istruzione",
+        "afam",
+        "diplomati",
+        "accademie",
+        "conservatori"
+      ],
+      "description": ""
+    },
+    "mur_afam_iscritti": {
+      "name": "Mur Afam Iscritti",
+      "stage": "incubating",
+      "source_id": "mur_ustat",
+      "registry_source": "open-mur",
+      "domain": "welfare-lavoro",
+      "category": "istruzione",
+      "tags": [
+        "istruzione",
+        "afam",
+        "iscritti",
+        "accademie",
+        "conservatori"
+      ],
+      "description": ""
+    },
+    "mur_afam_istituti": {
+      "name": "Mur Afam Istituti",
+      "stage": "incubating",
+      "source_id": "mur_ustat",
+      "registry_source": "open-mur",
+      "domain": null,
+      "category": "support",
+      "tags": [
+        "istruzione",
+        "afam",
+        "anagrafica",
+        "istituti",
+        "accademie",
+        "conservatori",
+        "support"
+      ],
+      "description": "Anagrafica istituti AFAM: codice, tipo, area, sede, regione/provincia ISTAT."
+    },
+    "mur_afam_personale": {
+      "name": "Mur Afam Personale",
+      "stage": "incubating",
+      "source_id": "mur_ustat",
+      "registry_source": "open-mur",
+      "domain": "welfare-lavoro",
+      "category": "istruzione",
+      "tags": [
+        "istruzione",
+        "afam",
+        "personale",
+        "docenti",
+        "ata",
+        "accademie",
+        "conservatori"
+      ],
+      "description": ""
+    },
     "mur_anagrafica_atenei": {
       "name": "Mur Anagrafica Atenei",
       "stage": "incubating",
@@ -71423,6 +73279,23 @@
       ],
       "description": "Crosswalk classi di laurea \u2192 ISCED-F 2013 con flag STEM. Support puro."
     },
+    "mur_esoneri": {
+      "name": "Mur Esoneri",
+      "stage": "incubating",
+      "source_id": "mur_ustat",
+      "registry_source": "open-mur",
+      "domain": "welfare-lavoro",
+      "category": "istruzione",
+      "tags": [
+        "istruzione",
+        "mur",
+        "esoneri",
+        "diritto-allo-studio",
+        "contribuzione",
+        "universita"
+      ],
+      "description": ""
+    },
     "mur_formazione_post_laurea": {
       "name": "Mur Formazione Post Laurea",
       "stage": "incubating",
@@ -71452,6 +73325,23 @@
         "istruzione",
         "mur",
         "immatricolati"
+      ],
+      "description": ""
+    },
+    "mur_interventi": {
+      "name": "Mur Interventi",
+      "stage": "incubating",
+      "source_id": "mur_ustat",
+      "registry_source": "open-mur",
+      "domain": "welfare-lavoro",
+      "category": "istruzione",
+      "tags": [
+        "istruzione",
+        "mur",
+        "interventi",
+        "borse-di-studio",
+        "diritto-allo-studio",
+        "universita"
       ],
       "description": ""
     },
@@ -72930,6 +74820,22 @@
       ],
       "description": "Gestione dei rifiuti speciali per operazione (recupero R1-R13, smaltimento D1-D15), ripartizione merceologica e area geografica."
     },
+    "ispra_rs_gestione_regionale": {
+      "name": "Ispra Rs Gestione Regionale",
+      "stage": "incubating",
+      "source_id": "ispra_linked_data",
+      "registry_source": "rifiuti-urbani",
+      "domain": "territorio-ambiente",
+      "category": "ambiente",
+      "tags": [
+        "ambiente",
+        "ispra",
+        "rs",
+        "gestione",
+        "regione"
+      ],
+      "description": "Gestione dei rifiuti speciali per regione (ISPRA): operazioni di recupero R1-R13 e smaltimento D1-D15, con flussi e giacenze separati."
+    },
     "ispra_rs_impianti": {
       "name": "Ispra Rs Impianti",
       "stage": "incubating",
@@ -72944,6 +74850,22 @@
         "impianti"
       ],
       "description": "Censimento ISPRA degli impianti che gestiscono rifiuti speciali: impianti e rifiuti trattati per tipologia e ripartizione geografica."
+    },
+    "ispra_rs_impianti_regionali": {
+      "name": "Ispra Rs Impianti Regionali",
+      "stage": "incubating",
+      "source_id": "ispra_linked_data",
+      "registry_source": "rifiuti-urbani",
+      "domain": "territorio-ambiente",
+      "category": "ambiente",
+      "tags": [
+        "ambiente",
+        "ispra",
+        "rs",
+        "impianti",
+        "regione"
+      ],
+      "description": "Censimento ISPRA degli impianti che gestiscono rifiuti speciali per regione: numero impianti e rifiuti trattati per tipologia."
     },
     "ispra_rs_import": {
       "name": "Ispra Rs Import",
@@ -72973,6 +74895,22 @@
         "produzione"
       ],
       "description": "Produzione di rifiuti speciali per attivit\u00e0 economica e per capitolo EER, con ripartizione pericolosi/non pericolosi e area geografica."
+    },
+    "ispra_rs_produzione_regionale": {
+      "name": "Ispra Rs Produzione Regionale",
+      "stage": "incubating",
+      "source_id": "ispra_linked_data",
+      "registry_source": "rifiuti-urbani",
+      "domain": "territorio-ambiente",
+      "category": "ambiente",
+      "tags": [
+        "ambiente",
+        "ispra",
+        "rs",
+        "produzione",
+        "regione"
+      ],
+      "description": "Produzione di rifiuti speciali per regione (ISPRA): non pericolosi, pericolosi e CER non determinato."
     },
     "ispra_ru_base": {
       "name": "Ispra Ru Base",
@@ -73064,6 +75002,40 @@
       ],
       "description": "Impianti che trattano rifiuti urbani (ISPRA): numero impianti e rifiuti trattati per tipologia impianto e ripartizione geografica."
     },
+    "ispra_ru_gestione_impianti": {
+      "name": "Ispra Ru Gestione Impianti",
+      "stage": "incubating",
+      "source_id": "ispra_linked_data",
+      "registry_source": "rifiuti-urbani",
+      "domain": "territorio-ambiente",
+      "category": "ambiente",
+      "tags": [
+        "ambiente",
+        "ispra",
+        "ru",
+        "impianti",
+        "gestione",
+        "comune"
+      ],
+      "description": "Elenco completo degli impianti che trattano rifiuti urbani (ISPRA), aggregato per tipo impianto e comune: tonnellate trattate per frazione."
+    },
+    "ispra_ru_gestione_regionale": {
+      "name": "Ispra Ru Gestione Regionale",
+      "stage": "incubating",
+      "source_id": "ispra_linked_data",
+      "registry_source": "rifiuti-urbani",
+      "domain": "territorio-ambiente",
+      "category": "ambiente",
+      "tags": [
+        "ambiente",
+        "ispra",
+        "ru",
+        "impianti",
+        "gestione",
+        "regione"
+      ],
+      "description": "Impianti che trattano rifiuti urbani (ISPRA) per regione: numero impianti e rifiuti trattati per tipologia impianto."
+    },
     "ispra_ru_import": {
       "name": "Ispra Ru Import",
       "stage": "incubating",
@@ -73077,6 +75049,23 @@
         "ru_import"
       ],
       "description": ""
+    },
+    "rifiuti_regioni": {
+      "name": "Rifiuti Regioni",
+      "stage": "incubating",
+      "source_id": "dataciviclab_composite",
+      "registry_source": "rifiuti-urbani",
+      "domain": "territorio-ambiente",
+      "category": "ambiente",
+      "tags": [
+        "ambiente",
+        "ispra",
+        "ru",
+        "rs",
+        "compose",
+        "regione"
+      ],
+      "description": "Compose regionale: RD%, costi, mix impiantistico, movimentazione e rifiuti speciali per regione e anno."
     },
     "rifiuti_urbani_unified": {
       "name": "Rifiuti Urbani Unified",
