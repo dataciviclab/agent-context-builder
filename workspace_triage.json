@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T14:06:13.798740",
+  "generated_at": "2026-11-03T22:57:47.336852",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -51,7 +51,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 12,
+  "open_prs": 13,
   "prs": [
     {
       "number": 20,
@@ -65,6 +65,20 @@
       "title": "feat(anac-cross): codice IPA della stazione appaltante (#13)",
       "repo": "appalti-pubblici",
       "url": "https://github.com/dataciviclab/appalti-pubblici/pull/19",
+      "category": "other"
+    },
+    {
+      "number": 903,
+      "title": "intake(istat): due candidate trasporti via DBnomics (merci strada, ferroviario)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/903",
+      "category": "other"
+    },
+    {
+      "number": 902,
+      "title": "intake(istat): quattro dataset immigrazione per territorio (DBnomics)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/902",
       "category": "other"
     },
     {
@@ -89,13 +103,6 @@
       "category": "other"
     },
     {
-      "number": 153,
-      "title": "feat(migration): sette dataflow Eurostat su immigrazione (popolazione, permessi, cittadinanza, rimpatri, flussi)",
-      "repo": "eurostat",
-      "url": "https://github.com/dataciviclab/eurostat/pull/153",
-      "category": "other"
-    },
-    {
       "number": 15,
       "title": "chore(post-catalog): aggiorna source catalog (schedule)",
       "repo": "oecd-benchmark",
@@ -117,10 +124,10 @@
       "category": "other"
     },
     {
-      "number": 87,
-      "title": "fix(make): un dataset fallito non ferma gli altri",
-      "repo": "open-politica",
-      "url": "https://github.com/dataciviclab/open-politica/pull/87",
+      "number": 537,
+      "title": "docs(advanced): incrementale disponibile ma non usato; non sostituisce lo script-level",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/537",
       "category": "other"
     },
     {
@@ -138,7 +145,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 52,
+  "open_issues": 53,
   "issues": [
     {
       "number": 13,
@@ -156,7 +163,7 @@
     },
     {
       "number": 899,
-      "title": "intake: mase_gas_import \u2014 Import di gas naturale per paese di origine e punto di ingresso (2002-2024)",
+      "title": "intake: mase_gas_import \u2014 Import di gas naturale per paese di origine (1990-2024)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/899",
       "category": "intake"
@@ -180,27 +187,6 @@
       "title": "intake: art_tariffe_taxi_corsa \u2014 prezzi corse TAXI per comune (2008-2024)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/663",
-      "category": "intake"
-    },
-    {
-      "number": 640,
-      "title": "intake: mim_docenti_titolari \u2014 Docenti a tempo indeterminato per grado, genere, et\u00e0 2016-2024",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/640",
-      "category": "intake"
-    },
-    {
-      "number": 639,
-      "title": "intake: mim_alunni_secondaria_indirizzo \u2014 Alunni secondaria per grado e indirizzo 2015-2024",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/639",
-      "category": "intake"
-    },
-    {
-      "number": 638,
-      "title": "intake: mim_alunni_italiani_stranieri \u2014 Alunni italiani e stranieri per corso di studi 2015-2024",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/638",
       "category": "intake"
     },
     {
@@ -407,6 +393,27 @@
       "category": "other"
     },
     {
+      "number": 7,
+      "title": "intake: mim-alunni-secondaria-indirizzo (ALUSECGR)",
+      "repo": "open-mim",
+      "url": "https://github.com/dataciviclab/open-mim/issues/7",
+      "category": "intake"
+    },
+    {
+      "number": 6,
+      "title": "intake: mim-edilizia-scolastica (EDIUNITASTRUTURA)",
+      "repo": "open-mim",
+      "url": "https://github.com/dataciviclab/open-mim/issues/6",
+      "category": "intake"
+    },
+    {
+      "number": 5,
+      "title": "intake: mim-alunni-cittadinanza (ALUITASTRACITSTA/PAR)",
+      "repo": "open-mim",
+      "url": "https://github.com/dataciviclab/open-mim/issues/5",
+      "category": "intake"
+    },
+    {
       "number": 13,
       "title": "noipa_assenze: campo `numero` non interpretabile \u2014 valori impossibili come giorni/mese",
       "repo": "open-noipa",
@@ -481,6 +488,13 @@
       "title": "opencivitas: fonte centrale punta al vecchio /it/open-data (404) \u2014 aggiornare a docs.opencivitas.it",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/424",
+      "category": "other"
+    },
+    {
+      "number": 534,
+      "title": "[Task] ADR-006 \u2014 ingestione incrementale fonti stream: contratto + stato nel data plane",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/534",
       "category": "other"
     },
     {
@@ -2331,7 +2345,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 12"
+    "Many open PRs: 13"
   ],
   "radar": {
     "available": true,
@@ -4633,12 +4647,12 @@
       "available": true,
       "source_repo": "dataciviclab/eurostat",
       "updated_at": "2026-11-03",
-      "datasets": 38,
-      "marts": 105,
-      "signals": 38,
+      "datasets": 45,
+      "marts": 119,
+      "signals": 45,
       "codelists": 16,
       "entities": 3,
-      "gcs": 38,
+      "gcs": 45,
       "reason": "",
       "signals_detail": [
         {
@@ -4933,6 +4947,104 @@
             "status": "SUCCESS",
             "started_at": "2026-11-01T16:32:57.917371+00:00",
             "finished_at": "2026-11-01T16:33:01.190530+00:00"
+          }
+        },
+        {
+          "id": "eurostat_migr_acq",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_migr_acq",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261103T150451Z_b0b46516",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-03T15:04:51.647600+00:00",
+            "finished_at": "2026-11-03T15:04:58.513976+00:00"
+          }
+        },
+        {
+          "id": "eurostat_migr_eirtn",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_migr_eirtn",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261103T150500Z_f28e25af",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-03T15:05:00.172379+00:00",
+            "finished_at": "2026-11-03T15:05:05.518700+00:00"
+          }
+        },
+        {
+          "id": "eurostat_migr_emi1ctz",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_migr_emi1ctz",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261103T150505Z_f429b5bc",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-03T15:05:05.620565+00:00",
+            "finished_at": "2026-11-03T15:05:11.611761+00:00"
+          }
+        },
+        {
+          "id": "eurostat_migr_imm1ctz",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_migr_imm1ctz",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261103T150511Z_9d822422",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-03T15:05:11.715327+00:00",
+            "finished_at": "2026-11-03T15:05:17.643723+00:00"
+          }
+        },
+        {
+          "id": "eurostat_migr_pop1ctz",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_migr_pop1ctz",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261103T150517Z_9426db18",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-03T15:05:17.741647+00:00",
+            "finished_at": "2026-11-03T15:05:23.261332+00:00"
+          }
+        },
+        {
+          "id": "eurostat_migr_resfirst",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_migr_resfirst",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261103T150524Z_8a2523cd",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-03T15:05:24.914124+00:00",
+            "finished_at": "2026-11-03T15:05:51.409707+00:00"
+          }
+        },
+        {
+          "id": "eurostat_migr_resvalid",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_migr_resvalid",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261103T150551Z_ec6805cd",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-03T15:05:51.503706+00:00",
+            "finished_at": "2026-11-03T15:06:26.244292+00:00"
           }
         },
         {
@@ -7807,14 +7919,28 @@
       "available": true,
       "source_repo": "dataciviclab/open-mim",
       "updated_at": "2026-11-03",
-      "datasets": 7,
-      "marts": 20,
-      "signals": 7,
+      "datasets": 9,
+      "marts": 27,
+      "signals": 9,
       "codelists": 0,
       "entities": 5,
-      "gcs": 6,
+      "gcs": 7,
       "reason": "",
       "signals_detail": [
+        {
+          "id": "compose:personale_scuola",
+          "source_id": "dataciviclab_composite",
+          "status": "ok",
+          "label": "personale_scuola",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20261103T191355Z_ed8bafdc",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-11-03T19:13:55.081297+00:00",
+            "finished_at": "2026-11-03T19:13:55.168144+00:00"
+          }
+        },
         {
           "id": "compose:scuola_base",
           "source_id": "dataciviclab_composite",
@@ -7822,11 +7948,11 @@
           "label": "scuola_base",
           "detail": "anno 2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261103T120313Z_80b07cf3",
+            "run_id": "20261103T191355Z_caa54a43",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-11-03T12:03:13.251785+00:00",
-            "finished_at": "2026-11-03T12:03:13.677958+00:00"
+            "started_at": "2026-11-03T19:13:55.566362+00:00",
+            "finished_at": "2026-11-03T19:13:55.988355+00:00"
           }
         },
         {
@@ -7836,11 +7962,25 @@
           "label": "mim_alunni_corso_eta",
           "detail": "anni 2016-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261103T120158Z_3ab65c7e",
+            "run_id": "20261103T191235Z_e4785e9f",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-11-03T12:01:58.158282+00:00",
-            "finished_at": "2026-11-03T12:02:17.765571+00:00"
+            "started_at": "2026-11-03T19:12:35.030550+00:00",
+            "finished_at": "2026-11-03T19:12:50.907790+00:00"
+          }
+        },
+        {
+          "id": "mim_docenti_supplenti",
+          "source_id": "mim_opendata",
+          "status": "ok",
+          "label": "mim_docenti_supplenti",
+          "detail": "anni 2016-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20261103T191305Z_dc768294",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-11-03T19:13:05.639981+00:00",
+            "finished_at": "2026-11-03T19:13:07.628330+00:00"
           }
         },
         {
@@ -7850,11 +7990,11 @@
           "label": "mim_docenti_titolari",
           "detail": "anni 2016-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261103T120233Z_3e6d47b5",
+            "run_id": "20261103T191320Z_c1459dee",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-11-03T12:02:33.120202+00:00",
-            "finished_at": "2026-11-03T12:02:34.593196+00:00"
+            "started_at": "2026-11-03T19:13:20.409579+00:00",
+            "finished_at": "2026-11-03T19:13:21.584154+00:00"
           }
         },
         {
@@ -7864,11 +8004,11 @@
           "label": "mim_personale_ata",
           "detail": "anni 2016-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261103T120255Z_7e153527",
+            "run_id": "20261103T191340Z_c6afaa32",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-11-03T12:02:55.788487+00:00",
-            "finished_at": "2026-11-03T12:02:56.613894+00:00"
+            "started_at": "2026-11-03T19:13:40.060941+00:00",
+            "finished_at": "2026-11-03T19:13:40.771572+00:00"
           }
         },
         {
@@ -7878,11 +8018,11 @@
           "label": "mim_personale_ata_supplenti",
           "detail": "anni 2016-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261103T120245Z_dc1b855e",
+            "run_id": "20261103T191331Z_a60d5b0c",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-11-03T12:02:45.568348+00:00",
-            "finished_at": "2026-11-03T12:02:46.627078+00:00"
+            "started_at": "2026-11-03T19:13:31.561284+00:00",
+            "finished_at": "2026-11-03T19:13:32.450437+00:00"
           }
         },
         {
@@ -7892,11 +8032,11 @@
           "label": "mim_scuola_infanzia",
           "detail": "anni 2018-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261103T120310Z_dbfbdd3e",
+            "run_id": "20261103T191353Z_8aacb8f9",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-11-03T12:03:10.898029+00:00",
-            "finished_at": "2026-11-03T12:03:12.646186+00:00"
+            "started_at": "2026-11-03T19:13:53.117153+00:00",
+            "finished_at": "2026-11-03T19:13:54.565023+00:00"
           }
         },
         {
@@ -7906,11 +8046,11 @@
           "label": "mim_anagrafica_scuole_statali",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261103T115831Z_bc419a1b",
+            "run_id": "20261103T190950Z_bae7624a",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-11-03T11:58:31.557982+00:00",
-            "finished_at": "2026-11-03T11:58:48.687405+00:00"
+            "started_at": "2026-11-03T19:09:50.096967+00:00",
+            "finished_at": "2026-11-03T19:10:03.996946+00:00"
           }
         }
       ]
