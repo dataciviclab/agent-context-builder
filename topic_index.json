@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-03T13:43:43.894759",
+  "generated_at": "2026-11-03T14:06:13.798740",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -70,9 +70,9 @@
       "description": "Incubazione dei dataset del Lab \u2014 intake, verifica e promozione dei filoni dati.",
       "url": "https://github.com/dataciviclab/dataset-incubator",
       "role": "infra",
-      "domain": "welfare-lavoro",
-      "n_datasets": 48,
-      "n_published": 30,
+      "domain": "finanza-pubblica",
+      "n_datasets": 45,
+      "n_published": 28,
       "sources": [
         "adm_opendata",
         "aifa",
@@ -93,7 +93,6 @@
         "lavoro_opendata",
         "liberiamoli_tutti",
         "mase_dgsaie",
-        "mim_opendata",
         "ministero_salute",
         "ministero_salute_posti_letto",
         "mit_opendata",
@@ -372,6 +371,18 @@
       "sources": [
         "ispra",
         "ispra_linked_data"
+      ]
+    },
+    "open-mim": {
+      "description": "Scuola statale italiana: docenti, ATA e alunni dai dati MIM",
+      "url": "https://github.com/dataciviclab/open-mim",
+      "role": "dati",
+      "domain": "welfare-lavoro",
+      "n_datasets": 7,
+      "n_published": 0,
+      "sources": [
+        "dataciviclab_composite",
+        "mim_opendata"
       ]
     },
     "open-mur": {
@@ -4285,6 +4296,35 @@
           "inps_analisi__mart_territoriale",
           "inps_analisi__mart_lifecycle",
           "inps_analisi__mart_benchmark"
+        ]
+      },
+      {
+        "slug": "scuola_base",
+        "url_slug": "scuola-base",
+        "name": "Scuola Base",
+        "description": "Base analitica della scuola statale: alunni, docenti e ATA per provincia e ordine scolastico, con rapporti e quote.",
+        "source": "",
+        "source_id": "dataciviclab_composite",
+        "period": {
+          "start": 2016,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "istruzione",
+          "scuola",
+          "compose",
+          "alunni",
+          "docenti",
+          "ata",
+          "territorio"
+        ],
+        "category": "istruzione",
+        "registry_source": "open-mim",
+        "clean_rows": null,
+        "mart_refs": [
+          "scuola_base__mart_scuola_ordine",
+          "scuola_base__mart_scuola_provincia"
         ]
       },
       {
@@ -17245,419 +17285,6 @@
         "mart_refs": [
           "mase_prezzi_carburanti_settimanali__mart_settimanale_prodotto",
           "mase_prezzi_carburanti_settimanali__mart_tagli_accisa"
-        ]
-      }
-    ],
-    "mim_opendata": [
-      {
-        "slug": "mim_alunni_corso_eta",
-        "url_slug": "mim-alunni-corso-eta",
-        "name": "Alunni per corso ed et\u00e0 \u2014 MIM",
-        "description": "Alunni delle scuole statali italiane per ordine scolastico, anno di corso e fascia d'eta. Dato MIM a livello di singola scuola, arricchito con anagrafica scuole (regione, provincia, comune). Include gerarchia territoriale (nazionale \u2192 regione \u2192 provincia) per drill-down. Fonte: dati.istruzione.it.",
-        "source": "https://dati.istruzione.it/opendata/ \u2014 Ministero dell'Istruzione e del Merito (MIM)",
-        "source_id": "mim_opendata",
-        "period": {
-          "start": 2016,
-          "end": 2025
-        },
-        "stage": "published",
-        "tags": [
-          "istruzione",
-          "mim",
-          "alunni",
-          "corso",
-          "eta"
-        ],
-        "category": "istruzione",
-        "registry_source": "dataset-incubator",
-        "clean_rows": 301840,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/mim_alunni_corso_eta/*/mim_alunni_corso_eta_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "anno_scolastico",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Anno scolastico di riferimento (es. 202324 = 2023/24)"
-          },
-          {
-            "name": "codice_scuola",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "school_code",
-            "description": "Codice meccanografico ministeriale della scuola"
-          },
-          {
-            "name": "denominazione_scuola",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Denominazione della scuola"
-          },
-          {
-            "name": "ordine_scuola",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Ordine scolastico: Primaria, Secondaria I grado, Secondaria II grado"
-          },
-          {
-            "name": "grado_istruzione_scuola",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Classificazione ministeriale del grado di istruzione"
-          },
-          {
-            "name": "caratteristica_scuola",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Tipologia della scuola (statale, paritaria, ecc.)"
-          },
-          {
-            "name": "anno_corso",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Anno di corso (1, 2, 3, ...)"
-          },
-          {
-            "name": "fascia_eta",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Fascia d'et\u00e0 degli alunni (es. 6 anni, 7 anni, ...)"
-          },
-          {
-            "name": "alunni",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero di alunni"
-          },
-          {
-            "name": "area_geografica",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Area geografica: Nord, Centro, Sud, Isole"
-          },
-          {
-            "name": "regione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "region_code",
-            "description": "Regione"
-          },
-          {
-            "name": "provincia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "province_code",
-            "description": "Provincia (sigla)"
-          },
-          {
-            "name": "comune",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "municipality_name",
-            "description": "Comune"
-          },
-          {
-            "name": "codice_comune_scuola",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "cadastral_code",
-            "description": "Codice ISTAT del comune"
-          },
-          {
-            "name": "cap_scuola",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "CAP della scuola"
-          },
-          {
-            "name": "denominazione_istituto_riferimento",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Denominazione istituto di riferimento"
-          }
-        ],
-        "mart_refs": [
-          "mim_alunni_corso_eta__mart_trend_ordine",
-          "mim_alunni_corso_eta__mart_sintesi_regione",
-          "mim_alunni_corso_eta__mart_ripetenti_provincia",
-          "mim_alunni_corso_eta__mart_comune"
-        ]
-      },
-      {
-        "slug": "mim_anagrafica_scuole_statali",
-        "url_slug": "mim-anagrafica-scuole-statali",
-        "name": "Mim Anagrafica Scuole Statali",
-        "description": "MIM - Anagrafica scuole statali: codici scuola, denominazione, indirizzo, comune, provincia, regione, grado istruzione e caratteristica, anno scolastico 2024/2025.",
-        "source": "MIM - dati.istruzione.it",
-        "source_id": "mim_opendata",
-        "period": {
-          "start": 2024,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "istruzione",
-          "mim",
-          "anagrafica",
-          "scuole",
-          "statali"
-        ],
-        "category": "istruzione",
-        "registry_source": "dataset-incubator",
-        "clean_rows": 50515,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/mim_anagrafica_scuole_statali/2024/mim_anagrafica_scuole_statali_2024_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno_scolastico",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Anno scolastico di riferimento"
-          },
-          {
-            "name": "codice_scuola",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "school_code",
-            "description": "Codice unico meccanografico della scuola"
-          },
-          {
-            "name": "codice_istituto_riferimento",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Codice istituto di riferimento (dirigenza scolastica)"
-          },
-          {
-            "name": "denominazione_istituto_riferimento",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Denominazione istituto di riferimento"
-          },
-          {
-            "name": "denominazione_scuola",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Denominazione della scuola"
-          },
-          {
-            "name": "area_geografica",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Area geografica (Nord, Centro, Sud, Isole)"
-          },
-          {
-            "name": "regione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "region_code",
-            "description": "Regione"
-          },
-          {
-            "name": "provincia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "province_code",
-            "description": "Provincia (sigla)"
-          },
-          {
-            "name": "codice_comune_scuola",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "cadastral_code",
-            "description": "Codice ISTAT del comune"
-          },
-          {
-            "name": "comune",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "municipality_name",
-            "description": "Comune"
-          },
-          {
-            "name": "cap_scuola",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "CAP della scuola"
-          },
-          {
-            "name": "indirizzo_scuola",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Indirizzo della scuola"
-          },
-          {
-            "name": "caratteristica_scuola",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Caratteristica della scuola (campagna, montana, ecc.)"
-          },
-          {
-            "name": "grado_istruzione_scuola",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Grado istruzione (primaria, secondaria I grado, secondaria II grado, ecc.)"
-          }
-        ],
-        "mart_refs": [
-          "mim_anagrafica_scuole_statali__mart_scuole_statali_geo"
-        ]
-      },
-      {
-        "slug": "mim_scuola_infanzia",
-        "url_slug": "mim-scuola-infanzia",
-        "name": "MIM \u2014 Bambini Scuola Infanzia per Cittadinanza (2018-2025)",
-        "description": "Bambini italiani e non italiani iscritti alle scuole dell'infanzia statali, per scuola e anno scolastico. Arricchito con anagrafica territoriale MIM. 8 anni, ~13.000 scuole/anno.",
-        "source": "MIM \u2014 dati.istruzione.it (INFANZIASTRACITSTA)",
-        "source_id": "mim_opendata",
-        "period": {
-          "start": 2018,
-          "end": 2025
-        },
-        "stage": "published",
-        "tags": [
-          "istruzione",
-          "mim",
-          "scuola",
-          "infanzia"
-        ],
-        "category": "istruzione",
-        "registry_source": "dataset-incubator",
-        "clean_rows": 13027,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/mim_scuola_infanzia/*/mim_scuola_infanzia_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "anno_scolastico",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Anno scolastico (es. 202425 = 2024/2025)"
-          },
-          {
-            "name": "codice_scuola",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "school_code",
-            "description": "Codice unico ministeriale della scuola"
-          },
-          {
-            "name": "denominazione_scuola",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Denominazione della scuola"
-          },
-          {
-            "name": "grado_istruzione_scuola",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Grado di istruzione (es. SCUOLA INFANZIA)"
-          },
-          {
-            "name": "caratteristica_scuola",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Tipologia (NORMALE, SPECIALE, ecc.)"
-          },
-          {
-            "name": "bambini_italiani",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero bambini con cittadinanza italiana"
-          },
-          {
-            "name": "bambini_non_italiani",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Numero bambini con cittadinanza non italiana"
-          },
-          {
-            "name": "bambini_totale",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Totale bambini (italiani + non italiani)"
-          },
-          {
-            "name": "area_geografica",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Area geografica (Nord Ovest, Nord Est, Centro, Sud, Isole)"
-          },
-          {
-            "name": "regione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "region_code",
-            "description": "Regione"
-          },
-          {
-            "name": "provincia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "province_code",
-            "description": "Provincia"
-          },
-          {
-            "name": "comune",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "municipality_name",
-            "description": "Comune"
-          },
-          {
-            "name": "codice_comune_scuola",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "cadastral_code",
-            "description": "Codice catastale del comune"
-          },
-          {
-            "name": "denominazione_istituto_riferimento",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Denominazione istituto comprensivo di riferimento"
-          }
-        ],
-        "mart_refs": [
-          "mim_scuola_infanzia__mart_trend_cittadinanza",
-          "mim_scuola_infanzia__mart_sintesi_regione",
-          "mim_scuola_infanzia__mart_comune"
         ]
       }
     ],
@@ -39292,7 +38919,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 1844,
+        "clean_rows": 1861,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_bandi_open/2026/inpa_bandi_open_2026_clean.parquet",
@@ -39511,7 +39138,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 6327,
+        "clean_rows": 6361,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_comunicazioni/2026/inpa_comunicazioni_2026_clean.parquet",
@@ -51073,6 +50700,696 @@
         ],
         "mart_refs": [
           "ispra_ru_import__mart_import"
+        ]
+      }
+    ],
+    "mim_opendata": [
+      {
+        "slug": "mim_alunni_corso_eta",
+        "url_slug": "mim-alunni-corso-eta",
+        "name": "Mim Alunni Corso Eta",
+        "description": "",
+        "source": "",
+        "source_id": "mim_opendata",
+        "period": {
+          "start": 2016,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "istruzione",
+          "mim",
+          "alunni",
+          "corso",
+          "eta"
+        ],
+        "category": "istruzione",
+        "registry_source": "open-mim",
+        "clean_rows": 301840,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-mim/mim_alunni_corso_eta/*/mim_alunni_corso_eta_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno_scolastico",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_scuola",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "school_code",
+            "description": ""
+          },
+          {
+            "name": "denominazione_scuola",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ordine_scuola",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "grado_istruzione_scuola",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "caratteristica_scuola",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno_corso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fascia_eta",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "alunni",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "area_geografica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_name",
+            "description": ""
+          },
+          {
+            "name": "codice_comune_scuola",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cadastral_code",
+            "description": ""
+          },
+          {
+            "name": "cap_scuola",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "denominazione_istituto_riferimento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mim_alunni_corso_eta__mart_trend_ordine",
+          "mim_alunni_corso_eta__mart_sintesi_regione",
+          "mim_alunni_corso_eta__mart_ripetenti_provincia",
+          "mim_alunni_corso_eta__mart_comune"
+        ]
+      },
+      {
+        "slug": "mim_anagrafica_scuole_statali",
+        "url_slug": "mim-anagrafica-scuole-statali",
+        "name": "Mim Anagrafica Scuole Statali",
+        "description": "",
+        "source": "",
+        "source_id": "mim_opendata",
+        "period": {
+          "start": 2015,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "istruzione",
+          "mim",
+          "anagrafica",
+          "scuole",
+          "statali"
+        ],
+        "category": "istruzione",
+        "registry_source": "open-mim",
+        "clean_rows": 50515,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-mim/mim_anagrafica_scuole_statali/*/mim_anagrafica_scuole_statali_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno_scolastico",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_scuola",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "school_code",
+            "description": ""
+          },
+          {
+            "name": "codice_istituto_riferimento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "denominazione_istituto_riferimento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "denominazione_scuola",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "area_geografica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "codice_comune_scuola",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cadastral_code",
+            "description": ""
+          },
+          {
+            "name": "comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_name",
+            "description": ""
+          },
+          {
+            "name": "cap_scuola",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "indirizzo_scuola",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "caratteristica_scuola",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "grado_istruzione_scuola",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mim_anagrafica_scuole_statali__mart_scuole_statali_geo"
+        ]
+      },
+      {
+        "slug": "mim_docenti_titolari",
+        "url_slug": "mim-docenti-titolari",
+        "name": "Mim Docenti Titolari",
+        "description": "",
+        "source": "",
+        "source_id": "mim_opendata",
+        "period": {
+          "start": 2016,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "istruzione",
+          "mim",
+          "docenti",
+          "personale-scuola",
+          "genere",
+          "territorio"
+        ],
+        "category": "istruzione",
+        "registry_source": "open-mim",
+        "clean_rows": 3292,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-mim/mim_docenti_titolari/*/mim_docenti_titolari_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "anno_scolastico",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "ordine_scuola",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_posto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fascia_eta",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "docenti_maschile",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "docenti_femminile",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "docenti_totale",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mim_docenti_titolari__mart_sintesi_provincia",
+          "mim_docenti_titolari__mart_trend_ordine",
+          "mim_docenti_titolari__mart_fasce_eta"
+        ]
+      },
+      {
+        "slug": "mim_personale_ata",
+        "url_slug": "mim-personale-ata",
+        "name": "Mim Personale Ata",
+        "description": "",
+        "source": "",
+        "source_id": "mim_opendata",
+        "period": {
+          "start": 2016,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "istruzione",
+          "mim",
+          "ata",
+          "personale-scuola",
+          "genere",
+          "territorio"
+        ],
+        "category": "istruzione",
+        "registry_source": "open-mim",
+        "clean_rows": 416,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-mim/mim_personale_ata/*/mim_personale_ata_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "anno_scolastico",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "fascia_eta",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ata_maschile",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ata_femminile",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ata_totale",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mim_personale_ata__mart_sintesi_provincia",
+          "mim_personale_ata__mart_trend_anno",
+          "mim_personale_ata__mart_fasce_eta"
+        ]
+      },
+      {
+        "slug": "mim_personale_ata_supplenti",
+        "url_slug": "mim-personale-ata-supplenti",
+        "name": "Mim Personale Ata Supplenti",
+        "description": "",
+        "source": "",
+        "source_id": "mim_opendata",
+        "period": {
+          "start": 2016,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "istruzione",
+          "mim",
+          "ata",
+          "supplenti",
+          "precariato",
+          "territorio"
+        ],
+        "category": "istruzione",
+        "registry_source": "open-mim",
+        "clean_rows": 828,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-mim/mim_personale_ata_supplenti/*/mim_personale_ata_supplenti_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "anno_scolastico",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "tipo_supplenza",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fascia_eta",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ata_supplenti_maschile",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ata_supplenti_femminile",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ata_supplenti_totale",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mim_personale_ata_supplenti__mart_sintesi_provincia",
+          "mim_personale_ata_supplenti__mart_trend_anno",
+          "mim_personale_ata_supplenti__mart_fasce_eta",
+          "mim_personale_ata_supplenti__mart_tipologia"
+        ]
+      },
+      {
+        "slug": "mim_scuola_infanzia",
+        "url_slug": "mim-scuola-infanzia",
+        "name": "Mim Scuola Infanzia",
+        "description": "",
+        "source": "",
+        "source_id": "mim_opendata",
+        "period": {
+          "start": 2018,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "istruzione",
+          "mim",
+          "scuola",
+          "infanzia"
+        ],
+        "category": "istruzione",
+        "registry_source": "open-mim",
+        "clean_rows": 13027,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-mim/mim_scuola_infanzia/*/mim_scuola_infanzia_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno_scolastico",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_scuola",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "school_code",
+            "description": ""
+          },
+          {
+            "name": "denominazione_scuola",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "grado_istruzione_scuola",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "caratteristica_scuola",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "bambini_italiani",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "bambini_non_italiani",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "bambini_totale",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "area_geografica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_name",
+            "description": ""
+          },
+          {
+            "name": "codice_comune_scuola",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cadastral_code",
+            "description": ""
+          },
+          {
+            "name": "denominazione_istituto_riferimento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mim_scuola_infanzia__mart_trend_cittadinanza",
+          "mim_scuola_infanzia__mart_sintesi_regione",
+          "mim_scuola_infanzia__mart_comune"
         ]
       }
     ],
@@ -66112,6 +66429,7 @@
         "dcl-bologna",
         "eurostat",
         "open-ccnl",
+        "open-mim",
         "open-mur"
       ],
       "datasets": [
@@ -66148,6 +66466,9 @@
         "istat_proiezioni_demografiche",
         "mim_alunni_corso_eta",
         "mim_anagrafica_scuole_statali",
+        "mim_docenti_titolari",
+        "mim_personale_ata",
+        "mim_personale_ata_supplenti",
         "mim_scuola_infanzia",
         "minlavoro_agevolazioni",
         "minlavoro_flussi",
@@ -66166,9 +66487,10 @@
         "mur_personale_ateneo",
         "pensioni_pa_dag",
         "popolazione_istat_comunale_2019_2025",
-        "popolazione_quartiere"
+        "popolazione_quartiere",
+        "scuola_base"
       ],
-      "dataset_count": 52
+      "dataset_count": 56
     },
     {
       "slug": "giustizia",
@@ -66609,6 +66931,9 @@
         "istat_proiezioni_demografiche",
         "mim_alunni_corso_eta",
         "mim_anagrafica_scuole_statali",
+        "mim_docenti_titolari",
+        "mim_personale_ata",
+        "mim_personale_ata_supplenti",
         "mim_scuola_infanzia",
         "minlavoro_agevolazioni",
         "minlavoro_flussi",
@@ -66627,7 +66952,8 @@
         "mur_personale_ateneo",
         "pensioni_pa_dag",
         "popolazione_istat_comunale_2019_2025",
-        "popolazione_quartiere"
+        "popolazione_quartiere",
+        "scuola_base"
       ]
     },
     {
@@ -67469,9 +67795,6 @@
       "malasanita_compose",
       "mase_prezzi_carburanti_mensili",
       "mase_prezzi_carburanti_settimanali",
-      "mim_alunni_corso_eta",
-      "mim_anagrafica_scuole_statali",
-      "mim_scuola_infanzia",
       "minlavoro_agevolazioni",
       "minlavoro_flussi",
       "mit_incidentalita_mensile",
@@ -67796,6 +68119,15 @@
       "ispra_places",
       "ispra_rmn",
       "ispra_urban"
+    ],
+    "open-mim": [
+      "mim_alunni_corso_eta",
+      "mim_anagrafica_scuole_statali",
+      "mim_docenti_titolari",
+      "mim_personale_ata",
+      "mim_personale_ata_supplenti",
+      "mim_scuola_infanzia",
+      "scuola_base"
     ],
     "open-mur": [
       "mur_afam_diplomati",
@@ -68355,6 +68687,9 @@
       "istat_proiezioni_demografiche",
       "mim_alunni_corso_eta",
       "mim_anagrafica_scuole_statali",
+      "mim_docenti_titolari",
+      "mim_personale_ata",
+      "mim_personale_ata_supplenti",
       "mim_scuola_infanzia",
       "minlavoro_agevolazioni",
       "minlavoro_flussi",
@@ -68373,7 +68708,8 @@
       "mur_personale_ateneo",
       "pensioni_pa_dag",
       "popolazione_istat_comunale_2019_2025",
-      "popolazione_quartiere"
+      "popolazione_quartiere",
+      "scuola_base"
     ]
   },
   "by_slug": {
@@ -69335,53 +69671,6 @@
         "fiscalita"
       ],
       "description": ""
-    },
-    "mim_alunni_corso_eta": {
-      "name": "Alunni per corso ed et\u00e0 \u2014 MIM",
-      "stage": "published",
-      "source_id": "mim_opendata",
-      "registry_source": "dataset-incubator",
-      "domain": "welfare-lavoro",
-      "category": "istruzione",
-      "tags": [
-        "istruzione",
-        "mim",
-        "alunni",
-        "corso",
-        "eta"
-      ],
-      "description": "Alunni delle scuole statali italiane per ordine scolastico, anno di corso e fascia d'eta. Dato MIM a livello di singola scuola, arricchito con anagrafica scuole (regione, provincia, comune). Include gerarchia territoriale (nazionale \u2192 regione \u2192 provincia) per drill-down. Fonte: dati.istruzione.it."
-    },
-    "mim_anagrafica_scuole_statali": {
-      "name": "Mim Anagrafica Scuole Statali",
-      "stage": "incubating",
-      "source_id": "mim_opendata",
-      "registry_source": "dataset-incubator",
-      "domain": "welfare-lavoro",
-      "category": "istruzione",
-      "tags": [
-        "istruzione",
-        "mim",
-        "anagrafica",
-        "scuole",
-        "statali"
-      ],
-      "description": "MIM - Anagrafica scuole statali: codici scuola, denominazione, indirizzo, comune, provincia, regione, grado istruzione e caratteristica, anno scolastico 2024/2025."
-    },
-    "mim_scuola_infanzia": {
-      "name": "MIM \u2014 Bambini Scuola Infanzia per Cittadinanza (2018-2025)",
-      "stage": "published",
-      "source_id": "mim_opendata",
-      "registry_source": "dataset-incubator",
-      "domain": "welfare-lavoro",
-      "category": "istruzione",
-      "tags": [
-        "istruzione",
-        "mim",
-        "scuola",
-        "infanzia"
-      ],
-      "description": "Bambini italiani e non italiani iscritti alle scuole dell'infanzia statali, per scuola e anno scolastico. Arricchito con anagrafica territoriale MIM. 8 anni, ~13.000 scuole/anno."
     },
     "minlavoro_agevolazioni": {
       "name": "Minlavoro Agevolazioni",
@@ -73845,6 +74134,122 @@
         "comuni"
       ],
       "description": "Qualita ambientale urbana in Italia (1970-2019). Indicatori ambientali per comune da linked.isprambiente.it. 27 anni, ~245-600 comuni."
+    },
+    "mim_alunni_corso_eta": {
+      "name": "Mim Alunni Corso Eta",
+      "stage": "incubating",
+      "source_id": "mim_opendata",
+      "registry_source": "open-mim",
+      "domain": "welfare-lavoro",
+      "category": "istruzione",
+      "tags": [
+        "istruzione",
+        "mim",
+        "alunni",
+        "corso",
+        "eta"
+      ],
+      "description": ""
+    },
+    "mim_anagrafica_scuole_statali": {
+      "name": "Mim Anagrafica Scuole Statali",
+      "stage": "incubating",
+      "source_id": "mim_opendata",
+      "registry_source": "open-mim",
+      "domain": "welfare-lavoro",
+      "category": "istruzione",
+      "tags": [
+        "istruzione",
+        "mim",
+        "anagrafica",
+        "scuole",
+        "statali"
+      ],
+      "description": ""
+    },
+    "mim_docenti_titolari": {
+      "name": "Mim Docenti Titolari",
+      "stage": "incubating",
+      "source_id": "mim_opendata",
+      "registry_source": "open-mim",
+      "domain": "welfare-lavoro",
+      "category": "istruzione",
+      "tags": [
+        "istruzione",
+        "mim",
+        "docenti",
+        "personale-scuola",
+        "genere",
+        "territorio"
+      ],
+      "description": ""
+    },
+    "mim_personale_ata": {
+      "name": "Mim Personale Ata",
+      "stage": "incubating",
+      "source_id": "mim_opendata",
+      "registry_source": "open-mim",
+      "domain": "welfare-lavoro",
+      "category": "istruzione",
+      "tags": [
+        "istruzione",
+        "mim",
+        "ata",
+        "personale-scuola",
+        "genere",
+        "territorio"
+      ],
+      "description": ""
+    },
+    "mim_personale_ata_supplenti": {
+      "name": "Mim Personale Ata Supplenti",
+      "stage": "incubating",
+      "source_id": "mim_opendata",
+      "registry_source": "open-mim",
+      "domain": "welfare-lavoro",
+      "category": "istruzione",
+      "tags": [
+        "istruzione",
+        "mim",
+        "ata",
+        "supplenti",
+        "precariato",
+        "territorio"
+      ],
+      "description": ""
+    },
+    "mim_scuola_infanzia": {
+      "name": "Mim Scuola Infanzia",
+      "stage": "incubating",
+      "source_id": "mim_opendata",
+      "registry_source": "open-mim",
+      "domain": "welfare-lavoro",
+      "category": "istruzione",
+      "tags": [
+        "istruzione",
+        "mim",
+        "scuola",
+        "infanzia"
+      ],
+      "description": ""
+    },
+    "scuola_base": {
+      "name": "Scuola Base",
+      "stage": "incubating",
+      "source_id": "dataciviclab_composite",
+      "registry_source": "open-mim",
+      "domain": "welfare-lavoro",
+      "category": "istruzione",
+      "tags": [
+        "istruzione",
+        "scuola",
+        "compose",
+        "alunni",
+        "docenti",
+        "ata",
+        "territorio"
+      ],
+      "description": "Base analitica della scuola statale: alunni, docenti e ATA per provincia e ordine scolastico, con rapporti e quote."
     },
     "mur_afam_diplomati": {
       "name": "Mur Afam Diplomati",
