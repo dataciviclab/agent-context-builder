@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-04T05:04:42.863411",
+  "generated_at": "2026-11-04T13:52:33.080968",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -11020,7 +11020,7 @@
         ],
         "category": "immigrazione",
         "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "clean_rows": 47213,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/centri_accoglienza_italia/2026/centri_accoglienza_italia_2026_clean.parquet",
@@ -11044,7 +11044,7 @@
           {
             "name": "centro_id",
             "type": "BIGINT",
-            "role": "dimension",
+            "role": "metric",
             "semantic_type": "",
             "description": "Identificativo univoco del centro di accoglienza"
           },
@@ -11058,7 +11058,7 @@
           {
             "name": "comune_id",
             "type": "BIGINT",
-            "role": "dimension",
+            "role": "metric",
             "semantic_type": "",
             "description": "ID interno del comune sede del centro"
           },
@@ -11073,7 +11073,7 @@
             "name": "comune_codice_istat",
             "type": "BIGINT",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "municipality_code",
             "description": "Codice ISTAT del comune (6 cifre, join con comuni_master)"
           },
           {
@@ -11087,13 +11087,13 @@
             "name": "comune_codice_catastale",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "cadastral_code",
             "description": "Codice catastale Belfiore del comune"
           },
           {
             "name": "provincia_cm_id",
             "type": "BIGINT",
-            "role": "dimension",
+            "role": "metric",
             "semantic_type": "",
             "description": "ID interno della provincia"
           },
@@ -11108,7 +11108,7 @@
             "name": "provincia_cm_codice_istat",
             "type": "BIGINT",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "province_code",
             "description": "Codice ISTAT della provincia"
           },
           {
@@ -11128,7 +11128,7 @@
           {
             "name": "regione_id",
             "type": "BIGINT",
-            "role": "dimension",
+            "role": "metric",
             "semantic_type": "",
             "description": "ID interno della regione"
           },
@@ -11143,7 +11143,7 @@
             "name": "regione_codice_istat",
             "type": "BIGINT",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "region_code",
             "description": "Codice ISTAT della regione (2 cifre)"
           },
           {
@@ -11230,6 +11230,9 @@
             "semantic_type": "",
             "description": "Tipologia di ospiti accolti (UOMINI, NUCLEI FAMILIARI, ecc.)"
           }
+        ],
+        "mart_refs": [
+          "centri_accoglienza_italia__centri_regione"
         ]
       },
       {
@@ -11251,7 +11254,7 @@
         ],
         "category": "immigrazione",
         "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "clean_rows": 6103,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/sai_progetti_italia/2026/sai_progetti_italia_2026_clean.parquet",
@@ -11310,7 +11313,7 @@
           {
             "name": "comune_id",
             "type": "BIGINT",
-            "role": "dimension",
+            "role": "metric",
             "semantic_type": "",
             "description": "ID interno del comune capofila"
           },
@@ -11325,7 +11328,7 @@
             "name": "comune_codice_istat",
             "type": "BIGINT",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "municipality_code",
             "description": "Codice ISTAT del comune (6 cifre, join con comuni_master)"
           },
           {
@@ -11339,13 +11342,13 @@
             "name": "comune_codice_catastale",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "cadastral_code",
             "description": "Codice catastale Belfiore del comune"
           },
           {
             "name": "provincia_cm_id",
             "type": "BIGINT",
-            "role": "dimension",
+            "role": "metric",
             "semantic_type": "",
             "description": "ID interno della provincia"
           },
@@ -11360,7 +11363,7 @@
             "name": "provincia_cm_codice_istat",
             "type": "BIGINT",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "province_code",
             "description": "Codice ISTAT della provincia"
           },
           {
@@ -11380,7 +11383,7 @@
           {
             "name": "regione_id",
             "type": "BIGINT",
-            "role": "dimension",
+            "role": "metric",
             "semantic_type": "",
             "description": "ID interno della regione"
           },
@@ -11395,7 +11398,7 @@
             "name": "regione_codice_istat",
             "type": "BIGINT",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "region_code",
             "description": "Codice ISTAT della regione (2 cifre)"
           },
           {
@@ -11405,6 +11408,9 @@
             "semantic_type": "",
             "description": "Popolazione residente della regione"
           }
+        ],
+        "mart_refs": [
+          "sai_progetti_italia__progetti_regione"
         ]
       },
       {
@@ -11426,7 +11432,7 @@
         ],
         "category": "immigrazione",
         "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "clean_rows": 46299,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/sai_strutture_italia/2026/sai_strutture_italia_2026_clean.parquet",
@@ -11471,8 +11477,8 @@
           {
             "name": "comune_codice_istat",
             "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
+            "role": "dimension",
+            "semantic_type": "municipality_code",
             "description": "Codice ISTAT del comune (6 cifre, join con comuni_master)"
           },
           {
@@ -11486,7 +11492,7 @@
             "name": "comune_codice_catastale",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "",
+            "semantic_type": "cadastral_code",
             "description": "Codice catastale Belfiore del comune"
           },
           {
@@ -11506,8 +11512,8 @@
           {
             "name": "provincia_cm_codice_istat",
             "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
+            "role": "dimension",
+            "semantic_type": "province_code",
             "description": "Codice ISTAT della provincia"
           },
           {
@@ -11541,8 +11547,8 @@
           {
             "name": "regione_codice_istat",
             "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
+            "role": "dimension",
+            "semantic_type": "region_code",
             "description": "Codice ISTAT della regione (2 cifre)"
           },
           {
@@ -25829,7 +25835,7 @@
         "source_id": "liberiamoli_tutti",
         "period": {
           "start": 2019,
-          "end": 2025
+          "end": 2026
         },
         "stage": "published",
         "tags": [
@@ -25839,10 +25845,10 @@
         ],
         "category": "immigrazione",
         "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "clean_rows": 2465,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/sbarchi_migranti_italia/2025/sbarchi_migranti_italia_2025_clean.parquet",
+          "path": "gs://dataciviclab-clean/sbarchi_migranti_italia/2026/sbarchi_migranti_italia_2026_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -25874,6 +25880,9 @@
             "semantic_type": "",
             "description": "Fonte del dato (Ministero dell'Interno / onData)"
           }
+        ],
+        "mart_refs": [
+          "sbarchi_migranti_italia__mart_sbarchi_mensili"
         ]
       }
     ],
@@ -59135,7 +59144,7 @@
         ],
         "category": "politica",
         "registry_source": "open-politica",
-        "clean_rows": 10342,
+        "clean_rows": 10343,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-politica/elezioni_comunali/*/elezioni_comunali_*_clean.parquet",

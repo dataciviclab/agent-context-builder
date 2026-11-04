@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T05:04:42.863411",
+  "generated_at": "2026-11-04T13:52:33.080968",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -51,7 +51,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 13,
+  "open_prs": 15,
   "prs": [
     {
       "number": 20,
@@ -100,6 +100,20 @@
       "title": "feat(candidates): bootstrap gse_cer_elenco candidate",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/836",
+      "category": "other"
+    },
+    {
+      "number": 155,
+      "title": "feat(migration): due dataflow Eurostat su asilo (domande + decisioni)",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/pull/155",
+      "category": "other"
+    },
+    {
+      "number": 19,
+      "title": "chore(post-merge): aggiorna registry (schedule)",
+      "repo": "gu-monitor",
+      "url": "https://github.com/dataciviclab/gu-monitor/pull/19",
       "category": "other"
     },
     {
@@ -2345,7 +2359,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 13"
+    "Many open PRs: 15"
   ],
   "radar": {
     "available": true,
@@ -2674,7 +2688,7 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-10-21",
+    "generated_at": "2026-11-04",
     "summary": {
       "total": 46,
       "by_status": {
@@ -3234,7 +3248,7 @@
       "repo": "dataset-incubator",
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
-      "updated_at": "2026-10-21",
+      "updated_at": "2026-11-04",
       "datasets": 45,
       "marts": 83,
       "signals": 46,
@@ -3332,7 +3346,14 @@
           "source_id": "centri_d_italia",
           "status": "ok",
           "label": "centri_accoglienza_italia",
-          "detail": "anno 2026 \u2014 mart: si"
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261104T105356Z_1bb063bc",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-04T10:53:56.108771+00:00",
+            "finished_at": "2026-11-04T10:53:59.132376+00:00"
+          }
         },
         {
           "id": "dipendenti_pubblici",
@@ -3654,21 +3675,42 @@
           "source_id": "centri_d_italia",
           "status": "ok",
           "label": "sai_progetti_italia",
-          "detail": "anno 2026 \u2014 mart: si"
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261104T105402Z_df59f622",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-04T10:54:02.227574+00:00",
+            "finished_at": "2026-11-04T10:54:04.035476+00:00"
+          }
         },
         {
           "id": "sai_strutture_italia",
           "source_id": "centri_d_italia",
           "status": "ok",
           "label": "sai_strutture_italia",
-          "detail": "anno 2026 \u2014 mart: si"
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261104T105407Z_81cdbf59",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-04T10:54:07.221172+00:00",
+            "finished_at": "2026-11-04T10:54:10.028753+00:00"
+          }
         },
         {
           "id": "sbarchi_migranti_italia",
           "source_id": "liberiamoli_tutti",
           "status": "ok",
           "label": "sbarchi_migranti_italia",
-          "detail": "anno 2025 \u2014 mart: si"
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261104T105411Z_9d96c8c6",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-04T10:54:11.090447+00:00",
+            "finished_at": "2026-11-04T10:54:11.621822+00:00"
+          }
         },
         {
           "id": "strutture_asl",
@@ -8538,7 +8580,7 @@
       "repo": "open-politica",
       "available": true,
       "source_repo": "dataciviclab/open-politica",
-      "updated_at": "2026-11-03",
+      "updated_at": "2026-11-04",
       "datasets": 42,
       "marts": 85,
       "signals": 42,
@@ -8902,13 +8944,13 @@
           "source_id": "eligendo",
           "status": "ok",
           "label": "elezioni_comunali",
-          "detail": "anni 2016-2024 \u2014 mart: si",
+          "detail": "anni 1964-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20260928T084629Z_b50765a4",
+            "run_id": "20261104T110234Z_34e4e3b0",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-09-28T08:46:29.096331+00:00",
-            "finished_at": "2026-09-28T08:46:30.762444+00:00"
+            "started_at": "2026-11-04T11:02:34.886783+00:00",
+            "finished_at": "2026-11-04T11:02:38.267408+00:00"
           }
         },
         {
@@ -8944,13 +8986,13 @@
           "source_id": "eligendo",
           "status": "ok",
           "label": "elezioni_referendum",
-          "detail": "anni 1995-2022 \u2014 mart: si",
+          "detail": "anni 1974-2022 \u2014 mart: si",
           "run": {
-            "run_id": "20260928T084857Z_2dffccdb",
+            "run_id": "20261104T110316Z_7f56a32f",
             "year": 2022,
             "status": "SUCCESS",
-            "started_at": "2026-09-28T08:48:57.795968+00:00",
-            "finished_at": "2026-09-28T08:49:00.419701+00:00"
+            "started_at": "2026-11-04T11:03:16.586263+00:00",
+            "finished_at": "2026-11-04T11:03:19.994317+00:00"
           }
         },
         {
@@ -8958,13 +9000,13 @@
           "source_id": "eligendo",
           "status": "ok",
           "label": "elezioni_regionali",
-          "detail": "anni 2018-2024 \u2014 mart: si",
+          "detail": "anni 1970-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20260928T084913Z_53a07e17",
+            "run_id": "20261104T110430Z_282e011e",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-09-28T08:49:13.966512+00:00",
-            "finished_at": "2026-09-28T08:49:15.337031+00:00"
+            "started_at": "2026-11-04T11:04:30.209352+00:00",
+            "finished_at": "2026-11-04T11:04:32.979051+00:00"
           }
         },
         {
