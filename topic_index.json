@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-04T18:27:09.826724",
+  "generated_at": "2026-11-04T22:01:21.680403",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -155,7 +155,7 @@
       "url": "https://github.com/dataciviclab/eurostat",
       "role": "dati",
       "domain": "welfare-lavoro",
-      "n_datasets": 47,
+      "n_datasets": 48,
       "n_published": 0,
       "sources": [
         "eurostat"
@@ -286,7 +286,7 @@
       "url": "https://github.com/dataciviclab/oecd-benchmark",
       "role": "dati",
       "domain": "finanza-pubblica",
-      "n_datasets": 11,
+      "n_datasets": 12,
       "n_published": 0,
       "sources": [
         "oecd"
@@ -353,9 +353,10 @@
       "url": "https://github.com/dataciviclab/open-elezioni",
       "role": "dati",
       "domain": "politica",
-      "n_datasets": 5,
+      "n_datasets": 12,
       "n_published": 0,
       "sources": [
+        "dait",
         "dait_sut",
         "eligendo"
       ]
@@ -434,15 +435,12 @@
       "url": "https://github.com/dataciviclab/open-politica",
       "role": "dati",
       "domain": "politica",
-      "n_datasets": 49,
+      "n_datasets": 34,
       "n_published": 0,
       "sources": [
-        "dait",
         "dataciviclab_composite",
         "dati_camera",
-        "dati_senato",
-        "eligendo",
-        "ministero_interno_dait"
+        "dati_senato"
       ]
     },
     "open-siope": {
@@ -4483,151 +4481,6 @@
         "mart_refs": [
           "decreti_legge__mart_sintesi",
           "decreti_legge__mart_dettaglio"
-        ]
-      },
-      {
-        "slug": "elezioni_voto",
-        "url_slug": "elezioni-voto",
-        "name": "Elezioni Voto",
-        "description": "",
-        "source": "",
-        "source_id": "dataciviclab_composite",
-        "period": {
-          "start": 1979,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "politica",
-          "elezioni",
-          "voto"
-        ],
-        "category": "politica",
-        "registry_source": "open-politica",
-        "clean_rows": null,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/open-politica/elezioni_voto/2026/elezioni_voto_2026_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "data_elezione",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "tipo_elezione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "regione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "region_code",
-            "description": ""
-          },
-          {
-            "name": "provincia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "province_code",
-            "description": ""
-          },
-          {
-            "name": "comune",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "municipality_name",
-            "description": ""
-          },
-          {
-            "name": "circoscrizione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "elettori",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "votanti",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "schede_bianche",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "affluenza_pct",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "lista",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "voti_lista",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "candidato",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "voti_candidato",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "turno",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "seggi_lista",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "elezioni_voto__mart_sintesi",
-          "elezioni_voto__mart_trend",
-          "elezioni_voto__mart_liste"
         ]
       },
       {
@@ -24115,6 +23968,141 @@
         ]
       },
       {
+        "slug": "eurostat_ltc_beds",
+        "url_slug": "eurostat-ltc-beds",
+        "name": "Eurostat Ltc Beds",
+        "description": "Beds in nursing and other residential long-term care facilities",
+        "source": "",
+        "source_id": "eurostat",
+        "period": {
+          "start": 1980,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "sanita",
+          "rsa",
+          "posti-letto",
+          "long-term-care",
+          "eurostat",
+          "benchmark",
+          "paesi"
+        ],
+        "category": "sanita",
+        "registry_source": "eurostat",
+        "clean_rows": 5106,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/eurostat/eurostat_ltc_beds/2026/eurostat_ltc_beds_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "freq",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unit",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "geo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "nuts_code",
+            "description": ""
+          },
+          {
+            "name": "year",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "freq_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unit_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "geo_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nuts_level",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "country",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "nuts_parent_code",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "nuts_code",
+            "description": ""
+          },
+          {
+            "name": "nuts_parent_label_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "value",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_desc_en",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "eurostat_ltc_beds__mart_geo_benchmark",
+          "eurostat_ltc_beds__mart_sintesi",
+          "eurostat_ltc_beds__mart_trend"
+        ]
+      },
+      {
         "slug": "eurostat_migr_acq",
         "url_slug": "eurostat-migr-acq",
         "name": "Eurostat Migr Acq",
@@ -42668,6 +42656,105 @@
         ]
       },
       {
+        "slug": "oecd_share_prices",
+        "url_slug": "oecd-share-prices",
+        "name": "Oecd Share Prices",
+        "description": "Indici dei prezzi azionari (base 2015=100, mensile) per Italia e paesi benchmark \u2014 OECD Financial Market, 1955-2026 (Italia dal 1957)",
+        "source": "",
+        "source_id": "oecd",
+        "period": {
+          "start": 1955,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "mercati",
+          "azioni",
+          "borsa",
+          "indici",
+          "prezzi",
+          "oecd",
+          "benchmark"
+        ],
+        "category": "economia",
+        "registry_source": "oecd-benchmark",
+        "clean_rows": 4663,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/oecd-benchmark/oecd_share_prices/2026/oecd_share_prices_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "mese",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          },
+          {
+            "name": "periodo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          },
+          {
+            "name": "ref_area",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "paese",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "misura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "base_periodo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "oecd_share_prices__mart_italia",
+          "oecd_share_prices__mart_benchmark"
+        ]
+      },
+      {
         "slug": "oecd_tax_revenue",
         "url_slug": "oecd-tax-revenue",
         "name": "Oecd Tax Revenue",
@@ -50839,7 +50926,7 @@
           "locali"
         ],
         "category": "politica",
-        "registry_source": "open-politica",
+        "registry_source": "open-elezioni",
         "clean_rows": 127805,
         "location": {
           "type": "gcs",
@@ -51058,487 +51145,11 @@
           "serie-storica"
         ],
         "category": "politica",
-        "registry_source": "open-politica",
+        "registry_source": "open-elezioni",
         "clean_rows": 6075430,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-elezioni/dait_amministratori_storico/2025/dait_amministratori_storico_2025_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno_snapshot",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codice_regione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "region_code",
-            "description": ""
-          },
-          {
-            "name": "descrizione_regione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codice_provincia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "province_code",
-            "description": ""
-          },
-          {
-            "name": "descrizione_provincia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codice_comune",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "municipality_code",
-            "description": ""
-          },
-          {
-            "name": "descrizione_comune",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codice_dait_completo",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "sigla_provincia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "province_code",
-            "description": ""
-          },
-          {
-            "name": "istat_codice_comune",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "popolazione_censita",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "maggioritario_proporzionale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "descrizione_tempo_gestione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "data_elezione",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "data_ballottaggio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "consiglieri_spettanti",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "consiglieri_eletti",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "assessori_assegnati",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "cognome",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "nome",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "sesso",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "data_nascita",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "sede_nascita",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "livello_carica",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "descrizione_carica",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "data_inizio_carica",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "data_cessazione",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "incarico",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "data_inizio_incarico",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "data_fine_incarico",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "funzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "data_inizio_funzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "data_fine_funzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "lista_appartenenza",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "titolo_studio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "professione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "dait_amministratori_storico__mart_genere_anno",
-          "dait_amministratori_storico__mart_profilo_anno"
-        ]
-      },
-      {
-        "slug": "dait_amministratori_locali",
-        "url_slug": "dait-amministratori-locali",
-        "name": "Dait Amministratori Locali",
-        "description": "",
-        "source": "",
-        "source_id": "dait",
-        "period": {
-          "start": 2026,
-          "end": 2026
-        },
-        "stage": "incubating",
-        "tags": [
-          "politica",
-          "dait",
-          "amministratori",
-          "locali"
-        ],
-        "category": "politica",
-        "registry_source": "open-politica",
-        "clean_rows": 127805,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/open-politica/dait_amministratori_locali/2026/dait_amministratori_locali_2026_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "livello_ente",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codice_regione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "region_code",
-            "description": ""
-          },
-          {
-            "name": "codice_provincia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "province_code",
-            "description": ""
-          },
-          {
-            "name": "codice_comune",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "municipality_code",
-            "description": ""
-          },
-          {
-            "name": "codice_dait_completo",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "denominazione_ente",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "sigla_provincia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "province_code",
-            "description": ""
-          },
-          {
-            "name": "popolazione_censita",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "cognome",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "nome",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "sesso",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "data_nascita",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "luogo_nascita",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "descrizione_carica",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "incarico",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "data_elezione",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "data_entrata_in_carica",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "data_elezione_max_carica",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "lista_appartenenza",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "titolo_studio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "professione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "dait_amministratori_locali__mart_profilo_carica",
-          "dait_amministratori_locali__mart_profilo_demografico",
-          "dait_amministratori_locali__mart_territorio",
-          "dait_amministratori_locali__mart_profilo_livello"
-        ]
-      },
-      {
-        "slug": "dait_amministratori_storico",
-        "url_slug": "dait-amministratori-storico",
-        "name": "Dait Amministratori Storico",
-        "description": "",
-        "source": "",
-        "source_id": "dait",
-        "period": {
-          "start": 1986,
-          "end": 2025
-        },
-        "stage": "incubating",
-        "tags": [
-          "politica",
-          "dait",
-          "amministratori",
-          "locali",
-          "storico",
-          "serie-storica"
-        ],
-        "category": "politica",
-        "registry_source": "open-politica",
-        "clean_rows": 6075430,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/open-politica/dait_amministratori_storico/2025/dait_amministratori_storico_2025_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -51819,7 +51430,7 @@
           "elezioni"
         ],
         "category": "politica",
-        "registry_source": "open-politica",
+        "registry_source": "open-elezioni",
         "clean_rows": 10343,
         "location": {
           "type": "gcs",
@@ -51983,7 +51594,7 @@
           "europee"
         ],
         "category": "politica",
-        "registry_source": "open-politica",
+        "registry_source": "open-elezioni",
         "clean_rows": 93984,
         "location": {
           "type": "gcs",
@@ -52112,7 +51723,7 @@
           "politiche"
         ],
         "category": "politica",
-        "registry_source": "open-politica",
+        "registry_source": "open-elezioni",
         "clean_rows": 3784837,
         "location": {
           "type": "gcs",
@@ -52485,7 +52096,7 @@
           "referendum"
         ],
         "category": "politica",
-        "registry_source": "open-politica",
+        "registry_source": "open-elezioni",
         "clean_rows": 39515,
         "location": {
           "type": "gcs",
@@ -52642,7 +52253,7 @@
           "elezioni"
         ],
         "category": "politica",
-        "registry_source": "open-politica",
+        "registry_source": "open-elezioni",
         "clean_rows": 15266,
         "location": {
           "type": "gcs",
@@ -52759,486 +52370,6 @@
             "name": "match_sut",
             "type": "BOOLEAN",
             "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "elezioni_regionali__mart_voti_lista_comune"
-        ]
-      },
-      {
-        "slug": "elezioni_comunali",
-        "url_slug": "elezioni-comunali",
-        "name": "Elezioni Comunali",
-        "description": "",
-        "source": "",
-        "source_id": "eligendo",
-        "period": {
-          "start": 2016,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "politica",
-          "elezioni"
-        ],
-        "category": "politica",
-        "registry_source": "open-politica",
-        "clean_rows": 10343,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/open-politica/elezioni_comunali/*/elezioni_comunali_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "data_elezione",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "regione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "region_code",
-            "description": ""
-          },
-          {
-            "name": "provincia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "province_code",
-            "description": ""
-          },
-          {
-            "name": "comune",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "municipality_name",
-            "description": ""
-          },
-          {
-            "name": "turno",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "candidato",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "lista",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "voti_candidato",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "voti_lista",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "seggi_lista",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "elettori",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "elettori_maschi",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "votanti",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "votanti_maschi",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "schede_bianche",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "elezioni_comunali__mart_voti_lista_comune"
-        ]
-      },
-      {
-        "slug": "elezioni_europee",
-        "url_slug": "elezioni-europee",
-        "name": "Elezioni Europee",
-        "description": "",
-        "source": "",
-        "source_id": "eligendo",
-        "period": {
-          "start": 1979,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "politica",
-          "elezioni",
-          "europee"
-        ],
-        "category": "politica",
-        "registry_source": "open-politica",
-        "clean_rows": 93984,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/open-politica/elezioni_europee/*/elezioni_europee_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "data_elezione",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "circoscrizione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "regione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "region_code",
-            "description": ""
-          },
-          {
-            "name": "provincia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "province_code",
-            "description": ""
-          },
-          {
-            "name": "comune",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "municipality_name",
-            "description": ""
-          },
-          {
-            "name": "lista",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "voti_lista",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "elettori",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "votanti",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "schede_bianche",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "elezioni_europee__mart_voti_lista_comune"
-        ]
-      },
-      {
-        "slug": "elezioni_referendum",
-        "url_slug": "elezioni-referendum",
-        "name": "Elezioni Referendum",
-        "description": "",
-        "source": "",
-        "source_id": "eligendo",
-        "period": {
-          "start": 1995,
-          "end": 2022
-        },
-        "stage": "incubating",
-        "tags": [
-          "politica",
-          "elezioni",
-          "referendum"
-        ],
-        "category": "politica",
-        "registry_source": "open-politica",
-        "clean_rows": 39515,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/open-politica/elezioni_referendum/*/elezioni_referendum_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "data_elezione",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "regione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "region_code",
-            "description": ""
-          },
-          {
-            "name": "provincia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "province_code",
-            "description": ""
-          },
-          {
-            "name": "comune",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "municipality_name",
-            "description": ""
-          },
-          {
-            "name": "elettori_uomini",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "elettori",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "votanti_uomini",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "votanti",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "voti_si",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "voti_no",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "schede_nulle",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "schede_bianche",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "schede_contestate",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "num_quesito",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "elezioni_referendum__mart_voti_quesito_comune",
-          "elezioni_referendum__mart_trend"
-        ]
-      },
-      {
-        "slug": "elezioni_regionali",
-        "url_slug": "elezioni-regionali",
-        "name": "Elezioni Regionali",
-        "description": "",
-        "source": "",
-        "source_id": "eligendo",
-        "period": {
-          "start": 2018,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "politica",
-          "elezioni"
-        ],
-        "category": "politica",
-        "registry_source": "open-politica",
-        "clean_rows": 15266,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/open-politica/elezioni_regionali/*/elezioni_regionali_*_clean.parquet",
-          "multi_file": true
-        },
-        "columns": [
-          {
-            "name": "data_elezione",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "regione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "region_code",
-            "description": ""
-          },
-          {
-            "name": "circoscrizione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "provincia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "province_code",
-            "description": ""
-          },
-          {
-            "name": "comune",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "municipality_name",
-            "description": ""
-          },
-          {
-            "name": "elettori",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "votanti",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "schede_bianche",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "candidato",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "voti_candidato",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "lista",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "voti_lista",
-            "type": "BIGINT",
-            "role": "metric",
             "semantic_type": "",
             "description": ""
           }
@@ -62294,189 +61425,6 @@
         ]
       }
     ],
-    "ministero_interno_dait": [
-      {
-        "slug": "elezioni_politiche",
-        "url_slug": "elezioni-politiche",
-        "name": "Elezioni Politiche",
-        "description": "",
-        "source": "",
-        "source_id": "ministero_interno_dait",
-        "period": {
-          "start": 1948,
-          "end": 2022
-        },
-        "stage": "incubating",
-        "tags": [
-          "politica",
-          "elezioni",
-          "politiche"
-        ],
-        "category": "politica",
-        "registry_source": "open-politica",
-        "clean_rows": 3784837,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/open-politica/elezioni_politiche/2022/elezioni_politiche_2022_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "data_elezione",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "camera_senato",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "circoscrizione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "provincia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "province_code",
-            "description": ""
-          },
-          {
-            "name": "comune",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "municipality_name",
-            "description": ""
-          },
-          {
-            "name": "collegio_plurinominale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "collegio_uninominale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "elettori_totali",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "elettori_maschi",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "votanti_totali",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "votanti_maschi",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "schede_biache",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "lista",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "voti_lista",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "descr_lista",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "cognome",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "nome",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "luogo_nascita",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "data_nascita",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "sesso",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "voti_candidato",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "elezioni_politiche__mart_voti_elezioni_politiche",
-          "elezioni_politiche__mart_voti_per_lista",
-          "elezioni_politiche__mart_candidati",
-          "elezioni_politiche__mart_trend"
-        ]
-      }
-    ],
     "dati_senato": [
       {
         "slug": "senato_anagrafica",
@@ -70469,6 +69417,7 @@
         "ocpi_serie_storiche",
         "oecd_fua_economy",
         "oecd_regional_gdp",
+        "oecd_share_prices",
         "oecd_tax_revenue",
         "oecd_taxing_wages",
         "oecd_unemployment",
@@ -70515,7 +69464,7 @@
         "ted_contract_notices",
         "wb_financial"
       ],
-      "dataset_count": 159
+      "dataset_count": 160
     },
     {
       "slug": "sanita",
@@ -70533,6 +69482,7 @@
         "aifa_spesa_consumo",
         "bdap_lea",
         "eurostat_hospital_beds_nuts2",
+        "eurostat_ltc_beds",
         "eurostat_physicians_nuts2",
         "farmacie",
         "malasanita_compose",
@@ -70542,7 +69492,7 @@
         "strutture_asl",
         "strutture_ricovero_asl"
       ],
-      "dataset_count": 11
+      "dataset_count": 12
     },
     {
       "slug": "welfare-lavoro",
@@ -70738,7 +69688,6 @@
         "elezioni_provinciali",
         "elezioni_referendum",
         "elezioni_regionali",
-        "elezioni_voto",
         "membri_governo",
         "osservatorio_parlamento",
         "ponte_persona",
@@ -70760,7 +69709,7 @@
         "senato_votazioni_oggetto",
         "voti_ddl_dettaglio"
       ],
-      "dataset_count": 46
+      "dataset_count": 45
     }
   ],
   "explorer_themes": [
@@ -70966,6 +69915,7 @@
         "ocpi_serie_storiche",
         "oecd_fua_economy",
         "oecd_regional_gdp",
+        "oecd_share_prices",
         "oecd_tax_revenue",
         "oecd_taxing_wages",
         "oecd_unemployment",
@@ -71020,6 +69970,7 @@
         "aifa_spesa_consumo",
         "bdap_lea",
         "eurostat_hospital_beds_nuts2",
+        "eurostat_ltc_beds",
         "eurostat_physicians_nuts2",
         "farmacie",
         "malasanita_compose",
@@ -71179,7 +70130,6 @@
         "elezioni_provinciali",
         "elezioni_referendum",
         "elezioni_regionali",
-        "elezioni_voto",
         "membri_governo",
         "osservatorio_parlamento",
         "ponte_persona",
@@ -72044,6 +70994,7 @@
       "eurostat_income_inequality_nuts2",
       "eurostat_jvs_nace2",
       "eurostat_labour_productivity_nuts3",
+      "eurostat_ltc_beds",
       "eurostat_migr_acq",
       "eurostat_migr_asylum_app",
       "eurostat_migr_asylum_dec",
@@ -72170,6 +71121,7 @@
       "oecd_green_transition",
       "oecd_health_expenditure",
       "oecd_regional_gdp",
+      "oecd_share_prices",
       "oecd_tax_revenue",
       "oecd_taxing_wages",
       "oecd_unemployment"
@@ -72243,7 +71195,14 @@
       "titoli_studio"
     ],
     "open-elezioni": [
+      "dait_amministratori_locali",
+      "dait_amministratori_storico",
+      "elezioni_comunali",
+      "elezioni_europee",
+      "elezioni_politiche",
       "elezioni_provinciali",
+      "elezioni_referendum",
+      "elezioni_regionali",
       "sut_codici_comuni",
       "sut_collegi_camera_comuni",
       "sut_collegi_senato_comuni",
@@ -72346,15 +71305,7 @@
       "camera_sindisp_firmatari",
       "camera_votazioni_sparql",
       "camera_voti",
-      "dait_amministratori_locali",
-      "dait_amministratori_storico",
       "decreti_legge",
-      "elezioni_comunali",
-      "elezioni_europee",
-      "elezioni_politiche",
-      "elezioni_referendum",
-      "elezioni_regionali",
-      "elezioni_voto",
       "membri_governo",
       "osservatorio_parlamento",
       "ponte_persona",
@@ -72585,6 +71536,7 @@
       "ocpi_serie_storiche",
       "oecd_fua_economy",
       "oecd_regional_gdp",
+      "oecd_share_prices",
       "oecd_tax_revenue",
       "oecd_taxing_wages",
       "oecd_unemployment",
@@ -72691,7 +71643,6 @@
       "elezioni_provinciali",
       "elezioni_referendum",
       "elezioni_regionali",
-      "elezioni_voto",
       "membri_governo",
       "osservatorio_parlamento",
       "ponte_persona",
@@ -72717,6 +71668,7 @@
       "aifa_spesa_consumo",
       "bdap_lea",
       "eurostat_hospital_beds_nuts2",
+      "eurostat_ltc_beds",
       "eurostat_physicians_nuts2",
       "farmacie",
       "malasanita_compose",
@@ -75416,6 +74368,24 @@
       ],
       "description": "Nominal Labour productivity by NUTS 3 region"
     },
+    "eurostat_ltc_beds": {
+      "name": "Eurostat Ltc Beds",
+      "stage": "incubating",
+      "source_id": "eurostat",
+      "registry_source": "eurostat",
+      "domain": "sanita",
+      "category": "sanita",
+      "tags": [
+        "sanita",
+        "rsa",
+        "posti-letto",
+        "long-term-care",
+        "eurostat",
+        "benchmark",
+        "paesi"
+      ],
+      "description": "Beds in nursing and other residential long-term care facilities"
+    },
     "eurostat_migr_acq": {
       "name": "Eurostat Migr Acq",
       "stage": "incubating",
@@ -77125,6 +76095,24 @@
       ],
       "description": ""
     },
+    "oecd_share_prices": {
+      "name": "Oecd Share Prices",
+      "stage": "incubating",
+      "source_id": "oecd",
+      "registry_source": "oecd-benchmark",
+      "domain": "finanza-pubblica",
+      "category": "economia",
+      "tags": [
+        "mercati",
+        "azioni",
+        "borsa",
+        "indici",
+        "prezzi",
+        "oecd",
+        "benchmark"
+      ],
+      "description": "Indici dei prezzi azionari (base 2015=100, mensile) per Italia e paesi benchmark \u2014 OECD Financial Market, 1955-2026 (Italia dal 1957)"
+    },
     "oecd_tax_revenue": {
       "name": "Oecd Tax Revenue",
       "stage": "incubating",
@@ -78110,7 +77098,7 @@
       "name": "Dait Amministratori Locali",
       "stage": "incubating",
       "source_id": "dait",
-      "registry_source": "open-politica",
+      "registry_source": "open-elezioni",
       "domain": "politica",
       "category": "politica",
       "tags": [
@@ -78125,7 +77113,7 @@
       "name": "Dait Amministratori Storico",
       "stage": "incubating",
       "source_id": "dait",
-      "registry_source": "open-politica",
+      "registry_source": "open-elezioni",
       "domain": "politica",
       "category": "politica",
       "tags": [
@@ -78142,7 +77130,7 @@
       "name": "Elezioni Comunali",
       "stage": "incubating",
       "source_id": "eligendo",
-      "registry_source": "open-politica",
+      "registry_source": "open-elezioni",
       "domain": "politica",
       "category": "politica",
       "tags": [
@@ -78155,7 +77143,7 @@
       "name": "Elezioni Europee",
       "stage": "incubating",
       "source_id": "eligendo",
-      "registry_source": "open-politica",
+      "registry_source": "open-elezioni",
       "domain": "politica",
       "category": "politica",
       "tags": [
@@ -78168,8 +77156,8 @@
     "elezioni_politiche": {
       "name": "Elezioni Politiche",
       "stage": "incubating",
-      "source_id": "ministero_interno_dait",
-      "registry_source": "open-politica",
+      "source_id": "eligendo",
+      "registry_source": "open-elezioni",
       "domain": "politica",
       "category": "politica",
       "tags": [
@@ -78197,7 +77185,7 @@
       "name": "Elezioni Referendum",
       "stage": "incubating",
       "source_id": "eligendo",
-      "registry_source": "open-politica",
+      "registry_source": "open-elezioni",
       "domain": "politica",
       "category": "politica",
       "tags": [
@@ -78211,7 +77199,7 @@
       "name": "Elezioni Regionali",
       "stage": "incubating",
       "source_id": "eligendo",
-      "registry_source": "open-politica",
+      "registry_source": "open-elezioni",
       "domain": "politica",
       "category": "politica",
       "tags": [
@@ -79655,20 +78643,6 @@
         "decreti-legge",
         "conversione",
         "iter"
-      ],
-      "description": ""
-    },
-    "elezioni_voto": {
-      "name": "Elezioni Voto",
-      "stage": "incubating",
-      "source_id": "dataciviclab_composite",
-      "registry_source": "open-politica",
-      "domain": "politica",
-      "category": "politica",
-      "tags": [
-        "politica",
-        "elezioni",
-        "voto"
       ],
       "description": ""
     },
