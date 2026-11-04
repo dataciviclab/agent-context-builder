@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T13:52:33.080968",
+  "generated_at": "2026-11-04T18:27:09.826724",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -30,6 +30,7 @@
     "open-coesione",
     "open-consip",
     "open-conto-annuale",
+    "open-elezioni",
     "open-inps",
     "open-ispra",
     "open-mim",
@@ -51,7 +52,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 15,
+  "open_prs": 11,
   "prs": [
     {
       "number": 20,
@@ -75,20 +76,6 @@
       "category": "other"
     },
     {
-      "number": 902,
-      "title": "intake(istat): quattro dataset immigrazione per territorio (DBnomics)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/902",
-      "category": "other"
-    },
-    {
-      "number": 901,
-      "title": "feat(mase): 3 candidate energia \u2014 gas import, gas consumi, consumi petroliferi",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/901",
-      "category": "other"
-    },
-    {
       "number": 885,
       "title": "feat(candidates): eu-call-open + catena FTS call_id/project_id",
       "repo": "dataset-incubator",
@@ -103,24 +90,10 @@
       "category": "other"
     },
     {
-      "number": 155,
-      "title": "feat(migration): due dataflow Eurostat su asilo (domande + decisioni)",
-      "repo": "eurostat",
-      "url": "https://github.com/dataciviclab/eurostat/pull/155",
-      "category": "other"
-    },
-    {
-      "number": 19,
-      "title": "chore(post-merge): aggiorna registry (schedule)",
-      "repo": "gu-monitor",
-      "url": "https://github.com/dataciviclab/gu-monitor/pull/19",
-      "category": "other"
-    },
-    {
-      "number": 15,
-      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
+      "number": 16,
+      "title": "feat: dataset oecd-share-prices (prezzi azionari, 6 paesi)",
       "repo": "oecd-benchmark",
-      "url": "https://github.com/dataciviclab/oecd-benchmark/pull/15",
+      "url": "https://github.com/dataciviclab/oecd-benchmark/pull/16",
       "category": "other"
     },
     {
@@ -159,7 +132,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 53,
+  "open_issues": 55,
   "issues": [
     {
       "number": 13,
@@ -176,10 +149,10 @@
       "category": "intake"
     },
     {
-      "number": 899,
-      "title": "intake: mase_gas_import \u2014 Import di gas naturale per paese di origine (1990-2024)",
+      "number": 908,
+      "title": "intake: ISTAT presidi residenziali socio-assistenziali e socio-sanitari (RSA)",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/899",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/908",
       "category": "intake"
     },
     {
@@ -258,6 +231,20 @@
       "repo": "dichiarazioni-italia",
       "url": "https://github.com/dataciviclab/dichiarazioni-italia/issues/18",
       "category": "other"
+    },
+    {
+      "number": 158,
+      "title": "bug: health marts use HAB_P (inhabitants per unit) as \"per 100k\" \u2014 ranks and trends inverted",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/issues/158",
+      "category": "bug"
+    },
+    {
+      "number": 157,
+      "title": "intake: eurostat-ltc-beds (HLTH_RS_BDLTC) \u2014 LTC beds, EU27 comparison",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/issues/157",
+      "category": "intake"
     },
     {
       "number": 90,
@@ -2197,6 +2184,14 @@
       "branches_ahead": [],
       "untracked_files": 0
     },
+    "open-elezioni": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
     "open-inps": {
       "available": false,
       "reason": "local_disabled",
@@ -2359,7 +2354,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 15"
+    "Many open PRs: 11"
   ],
   "radar": {
     "available": true,
@@ -2690,9 +2685,9 @@
     "available": true,
     "generated_at": "2026-11-04",
     "summary": {
-      "total": 46,
+      "total": 52,
       "by_status": {
-        "ok": 46
+        "ok": 52
       }
     },
     "actionable": []
@@ -3249,12 +3244,12 @@
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
       "updated_at": "2026-11-04",
-      "datasets": 45,
-      "marts": 83,
-      "signals": 46,
-      "codelists": 0,
+      "datasets": 51,
+      "marts": 102,
+      "signals": 52,
+      "codelists": 2,
       "entities": 12,
-      "gcs": 44,
+      "gcs": 50,
       "reason": "",
       "signals_detail": [
         {
@@ -3454,6 +3449,20 @@
           }
         },
         {
+          "id": "istat_cittadinanze",
+          "source_id": "istat_dbnomics",
+          "status": "ok",
+          "label": "istat_cittadinanze",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261104T173140Z_c73f4735",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-04T17:31:40.879504+00:00",
+            "finished_at": "2026-11-04T17:31:55.595797+00:00"
+          }
+        },
+        {
           "id": "istat_gini_regionale",
           "source_id": "istat_dbnomics",
           "status": "ok",
@@ -3496,6 +3505,20 @@
           }
         },
         {
+          "id": "istat_migrazioni",
+          "source_id": "istat_dbnomics",
+          "status": "ok",
+          "label": "istat_migrazioni",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261104T173156Z_bbb2e022",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-04T17:31:56.136255+00:00",
+            "finished_at": "2026-11-04T17:31:59.373270+00:00"
+          }
+        },
+        {
           "id": "istat_occupazione_provinciale",
           "source_id": "istat_sdmx",
           "status": "ok",
@@ -3507,6 +3530,20 @@
             "status": "SUCCESS",
             "started_at": "2026-10-11T21:03:07.643067+00:00",
             "finished_at": "2026-10-11T21:03:21.403110+00:00"
+          }
+        },
+        {
+          "id": "istat_permessi",
+          "source_id": "istat_dbnomics",
+          "status": "ok",
+          "label": "istat_permessi",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261104T173159Z_82172401",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-04T17:31:59.875295+00:00",
+            "finished_at": "2026-11-04T17:33:22.627509+00:00"
           }
         },
         {
@@ -3538,6 +3575,20 @@
           }
         },
         {
+          "id": "istat_stranieri_residenti",
+          "source_id": "istat_dbnomics",
+          "status": "ok",
+          "label": "istat_stranieri_residenti",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261104T173323Z_f55ab875",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-04T17:33:23.132812+00:00",
+            "finished_at": "2026-11-04T17:40:37.511607+00:00"
+          }
+        },
+        {
           "id": "istat_va_branca",
           "source_id": "istat_dbnomics",
           "status": "ok",
@@ -3549,6 +3600,48 @@
             "status": "SUCCESS",
             "started_at": "2026-10-13T09:03:51.427682+00:00",
             "finished_at": "2026-10-13T09:04:08.538447+00:00"
+          }
+        },
+        {
+          "id": "mase_consumi_petroliferi",
+          "source_id": "mase_dgsaie",
+          "status": "ok",
+          "label": "mase_consumi_petroliferi",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261104T152903Z_5c2ab7f6",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-11-04T15:29:03.653488+00:00",
+            "finished_at": "2026-11-04T15:29:41.543450+00:00"
+          }
+        },
+        {
+          "id": "mase_gas_consumi",
+          "source_id": "mase_dgsaie",
+          "status": "ok",
+          "label": "mase_gas_consumi",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261104T152942Z_eff284d3",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-11-04T15:29:42.046256+00:00",
+            "finished_at": "2026-11-04T15:30:18.837847+00:00"
+          }
+        },
+        {
+          "id": "mase_gas_import",
+          "source_id": "mase_dgsaie",
+          "status": "ok",
+          "label": "mase_gas_import",
+          "detail": "anno 2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20261104T153019Z_db388cf4",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-11-04T15:30:19.409461+00:00",
+            "finished_at": "2026-11-04T15:30:42.640477+00:00"
           }
         },
         {
@@ -3655,20 +3748,6 @@
           "status": "ok",
           "label": "reparti_ricovero",
           "detail": "anno 2022 \u2014 mart: si"
-        },
-        {
-          "id": "richiedenti_asilo_italia",
-          "source_id": "eurostat",
-          "status": "ok",
-          "label": "richiedenti_asilo_italia",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20261021T111715Z_44f01359",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-10-21T11:17:15.945146+00:00",
-            "finished_at": "2026-10-21T11:17:18.916968+00:00"
-          }
         },
         {
           "id": "sai_progetti_italia",
@@ -4688,13 +4767,13 @@
       "repo": "eurostat",
       "available": true,
       "source_repo": "dataciviclab/eurostat",
-      "updated_at": "2026-11-03",
-      "datasets": 45,
-      "marts": 119,
-      "signals": 45,
+      "updated_at": "2026-11-04",
+      "datasets": 47,
+      "marts": 125,
+      "signals": 47,
       "codelists": 16,
       "entities": 3,
-      "gcs": 45,
+      "gcs": 47,
       "reason": "",
       "signals_detail": [
         {
@@ -5003,6 +5082,34 @@
             "status": "SUCCESS",
             "started_at": "2026-11-03T15:04:51.647600+00:00",
             "finished_at": "2026-11-03T15:04:58.513976+00:00"
+          }
+        },
+        {
+          "id": "eurostat_migr_asylum_app",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_migr_asylum_app",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261104T143114Z_e62f0079",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-04T14:31:14.841808+00:00",
+            "finished_at": "2026-11-04T14:31:21.601175+00:00"
+          }
+        },
+        {
+          "id": "eurostat_migr_asylum_dec",
+          "source_id": "eurostat",
+          "status": "ok",
+          "label": "eurostat_migr_asylum_dec",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261104T143122Z_371edadc",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-04T14:31:22.111738+00:00",
+            "finished_at": "2026-11-04T14:31:40.365088+00:00"
           }
         },
         {
@@ -5910,7 +6017,7 @@
       "repo": "gu-monitor",
       "available": true,
       "source_repo": "dataciviclab/gu-monitor",
-      "updated_at": "2026-11-03",
+      "updated_at": "2026-11-04",
       "datasets": 1,
       "marts": 3,
       "signals": 1,
@@ -5926,11 +6033,11 @@
           "label": "gu_atti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261103T133220Z_f81d2cd8",
+            "run_id": "20261104T134333Z_1db14c2a",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-03T13:32:20.755241+00:00",
-            "finished_at": "2026-11-03T13:32:21.120265+00:00"
+            "started_at": "2026-11-04T13:43:33.290932+00:00",
+            "finished_at": "2026-11-04T13:43:33.642512+00:00"
           }
         }
       ]
@@ -6221,7 +6328,7 @@
       "repo": "inpa-reclutamento",
       "available": true,
       "source_repo": "dataciviclab/inpa-reclutamento",
-      "updated_at": "2026-11-03",
+      "updated_at": "2026-11-04",
       "datasets": 4,
       "marts": 12,
       "signals": 4,
@@ -6265,11 +6372,11 @@
           "label": "inpa_bandi_open",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261103T134852Z_b6f0c5d0",
+            "run_id": "20261104T135657Z_9a5a24e5",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-03T13:48:52.002877+00:00",
-            "finished_at": "2026-11-03T13:49:05.968793+00:00"
+            "started_at": "2026-11-04T13:56:57.447978+00:00",
+            "finished_at": "2026-11-04T13:57:12.232654+00:00"
           }
         },
         {
@@ -6279,11 +6386,11 @@
           "label": "inpa_comunicazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261103T134906Z_76be1ce2",
+            "run_id": "20261104T135712Z_bd566ed4",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-03T13:49:06.357542+00:00",
-            "finished_at": "2026-11-03T13:49:40.654034+00:00"
+            "started_at": "2026-11-04T13:57:12.786135+00:00",
+            "finished_at": "2026-11-04T13:57:46.176946+00:00"
           }
         }
       ]
@@ -7530,6 +7637,189 @@
             "status": "SUCCESS",
             "started_at": "2026-10-09T13:32:25.824087+00:00",
             "finished_at": "2026-10-09T13:32:26.215373+00:00"
+          }
+        }
+      ]
+    },
+    {
+      "repo": "open-elezioni",
+      "available": true,
+      "source_repo": "dataciviclab/open-elezioni",
+      "updated_at": "2026-11-04",
+      "datasets": 12,
+      "marts": 20,
+      "signals": 12,
+      "codelists": 0,
+      "entities": 4,
+      "gcs": 12,
+      "reason": "",
+      "signals_detail": [
+        {
+          "id": "dait_amministratori_locali",
+          "source_id": "dait",
+          "status": "ok",
+          "label": "dait_amministratori_locali",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261104T180428Z_4d35882e",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-04T18:04:28.661156+00:00",
+            "finished_at": "2026-11-04T18:04:32.611688+00:00"
+          }
+        },
+        {
+          "id": "dait_amministratori_storico",
+          "source_id": "dait",
+          "status": "ok",
+          "label": "dait_amministratori_storico",
+          "detail": "anno 2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261104T180432Z_6b17bb82",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-11-04T18:04:32.944200+00:00",
+            "finished_at": "2026-11-04T18:08:04.193805+00:00"
+          }
+        },
+        {
+          "id": "elezioni_comunali",
+          "source_id": "eligendo",
+          "status": "ok",
+          "label": "elezioni_comunali",
+          "detail": "anni 1964-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20261104T181001Z_794f8a5e",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-11-04T18:10:01.920184+00:00",
+            "finished_at": "2026-11-04T18:10:04.323939+00:00"
+          }
+        },
+        {
+          "id": "elezioni_europee",
+          "source_id": "eligendo",
+          "status": "ok",
+          "label": "elezioni_europee",
+          "detail": "anni 1979-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20261104T181034Z_531608b8",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-11-04T18:10:34.361909+00:00",
+            "finished_at": "2026-11-04T18:10:42.103942+00:00"
+          }
+        },
+        {
+          "id": "elezioni_politiche",
+          "source_id": "eligendo",
+          "status": "ok",
+          "label": "elezioni_politiche",
+          "detail": "anno 2022 \u2014 mart: si",
+          "run": {
+            "run_id": "20261104T181042Z_f8f951e1",
+            "year": 2022,
+            "status": "SUCCESS",
+            "started_at": "2026-11-04T18:10:42.382584+00:00",
+            "finished_at": "2026-11-04T18:12:01.284296+00:00"
+          }
+        },
+        {
+          "id": "elezioni_referendum",
+          "source_id": "eligendo",
+          "status": "ok",
+          "label": "elezioni_referendum",
+          "detail": "anni 1974-2022 \u2014 mart: si",
+          "run": {
+            "run_id": "20261104T181229Z_7c780244",
+            "year": 2022,
+            "status": "SUCCESS",
+            "started_at": "2026-11-04T18:12:29.341338+00:00",
+            "finished_at": "2026-11-04T18:12:31.502721+00:00"
+          }
+        },
+        {
+          "id": "elezioni_regionali",
+          "source_id": "eligendo",
+          "status": "ok",
+          "label": "elezioni_regionali",
+          "detail": "anni 1970-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20261104T181319Z_f6d53c7a",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-11-04T18:13:19.858037+00:00",
+            "finished_at": "2026-11-04T18:13:21.304425+00:00"
+          }
+        },
+        {
+          "id": "elezioni_provinciali",
+          "source_id": "eligendo",
+          "status": "ok",
+          "label": "elezioni_provinciali",
+          "detail": "anni 2004-2011 \u2014 mart: si",
+          "run": {
+            "run_id": "20261104T181340Z_558412d6",
+            "year": 2011,
+            "status": "SUCCESS",
+            "started_at": "2026-11-04T18:13:40.165081+00:00",
+            "finished_at": "2026-11-04T18:13:42.044255+00:00"
+          }
+        },
+        {
+          "id": "sut_codici_comuni",
+          "source_id": "dait_sut",
+          "status": "ok",
+          "label": "sut_codici_comuni",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261104T180411Z_410e19bf",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-04T18:04:11.750009+00:00",
+            "finished_at": "2026-11-04T18:04:12.741313+00:00"
+          }
+        },
+        {
+          "id": "sut_collegi_camera_comuni",
+          "source_id": "dait_sut",
+          "status": "ok",
+          "label": "sut_collegi_camera_comuni",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261104T180415Z_f35d37f3",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-04T18:04:15.102678+00:00",
+            "finished_at": "2026-11-04T18:04:15.951230+00:00"
+          }
+        },
+        {
+          "id": "sut_collegi_senato_comuni",
+          "source_id": "dait_sut",
+          "status": "ok",
+          "label": "sut_collegi_senato_comuni",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261104T180418Z_c3f2b4a1",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-04T18:04:18.387637+00:00",
+            "finished_at": "2026-11-04T18:04:19.271996+00:00"
+          }
+        },
+        {
+          "id": "sut_comuni_bridge",
+          "source_id": "dait_sut",
+          "status": "ok",
+          "label": "sut_comuni_bridge",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261104T180419Z_c1158c7b",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-04T18:04:19.572666+00:00",
+            "finished_at": "2026-11-04T18:04:24.526194+00:00"
           }
         }
       ]
