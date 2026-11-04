@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-04T22:01:21.680403",
+  "generated_at": "2026-11-04T23:17:08.016176",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -71,7 +71,7 @@
       "url": "https://github.com/dataciviclab/dataset-incubator",
       "role": "infra",
       "domain": "finanza-pubblica",
-      "n_datasets": 51,
+      "n_datasets": 53,
       "n_published": 28,
       "sources": [
         "adm_opendata",
@@ -16046,6 +16046,193 @@
         "mart_refs": [
           "istat_stranieri_residenti__mart_stranieri_residenti",
           "istat_stranieri_residenti__mart_stranieri_residenti_serie"
+        ]
+      },
+      {
+        "slug": "istat_trasporto_ferroviario",
+        "url_slug": "istat-trasporto-ferroviario",
+        "name": "Istat Trasporto Ferroviario",
+        "description": "ISTAT 117_1057 via DBnomics",
+        "source": "",
+        "source_id": "istat_dbnomics",
+        "period": {
+          "start": 2004,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "trasporti",
+          "ferrovia",
+          "merci",
+          "intermodale",
+          "istat",
+          "dbnomics"
+        ],
+        "category": "trasporti",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 4114,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/istat_trasporto_ferroviario/2026/istat_trasporto_ferroviario_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "area",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "merce_nst",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unita_carico",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "paese_origine",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "paese_destinazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria_trasporto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "istat_trasporto_ferroviario__mart_ferrovia_intermodale"
+        ]
+      },
+      {
+        "slug": "istat_trasporto_merci_strada",
+        "url_slug": "istat-trasporto-merci-strada",
+        "name": "Istat Trasporto Merci Strada",
+        "description": "ISTAT 121_330 via DBnomics \u2014 tonnellate-km per regione di carico e scarico",
+        "source": "",
+        "source_id": "istat_dbnomics",
+        "period": {
+          "start": 2008,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "trasporti",
+          "merci",
+          "strada",
+          "istat",
+          "dbnomics",
+          "origine-destinazione"
+        ],
+        "category": "trasporti",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 93899,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/istat_trasporto_merci_strada/2026/istat_trasporto_merci_strada_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione_carico",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione_scarico",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "merce_nst",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_trasporto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "classe_distanza",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "istat_trasporto_merci_strada__mart_merci_per_direttrice"
         ]
       },
       {
@@ -69240,6 +69427,8 @@
         "ispra_ru_gestione_regionale",
         "ispra_ru_import",
         "ispra_urban",
+        "istat_trasporto_ferroviario",
+        "istat_trasporto_merci_strada",
         "mase_consumi_petroliferi",
         "mase_gas_consumi",
         "mase_gas_import",
@@ -69267,7 +69456,7 @@
         "terna_storage_accumuli",
         "varchi_ztl"
       ],
-      "dataset_count": 78
+      "dataset_count": 80
     },
     {
       "slug": "finanza-pubblica",
@@ -69769,6 +69958,8 @@
         "ispra_ru_gestione_regionale",
         "ispra_ru_import",
         "ispra_urban",
+        "istat_trasporto_ferroviario",
+        "istat_trasporto_merci_strada",
         "mase_consumi_petroliferi",
         "mase_gas_consumi",
         "mase_gas_import",
@@ -70884,6 +71075,8 @@
       "istat_proiezioni_demografiche",
       "istat_sbs_imprese",
       "istat_stranieri_residenti",
+      "istat_trasporto_ferroviario",
+      "istat_trasporto_merci_strada",
       "istat_va_branca",
       "malasanita_compose",
       "mase_consumi_petroliferi",
@@ -71731,6 +71924,8 @@
       "ispra_ru_gestione_regionale",
       "ispra_ru_import",
       "ispra_urban",
+      "istat_trasporto_ferroviario",
+      "istat_trasporto_merci_strada",
       "mase_consumi_petroliferi",
       "mase_gas_consumi",
       "mase_gas_import",
@@ -72787,6 +72982,40 @@
         "province"
       ],
       "description": ""
+    },
+    "istat_trasporto_ferroviario": {
+      "name": "Istat Trasporto Ferroviario",
+      "stage": "incubating",
+      "source_id": "istat_dbnomics",
+      "registry_source": "dataset-incubator",
+      "domain": "territorio-ambiente",
+      "category": "trasporti",
+      "tags": [
+        "trasporti",
+        "ferrovia",
+        "merci",
+        "intermodale",
+        "istat",
+        "dbnomics"
+      ],
+      "description": "ISTAT 117_1057 via DBnomics"
+    },
+    "istat_trasporto_merci_strada": {
+      "name": "Istat Trasporto Merci Strada",
+      "stage": "incubating",
+      "source_id": "istat_dbnomics",
+      "registry_source": "dataset-incubator",
+      "domain": "territorio-ambiente",
+      "category": "trasporti",
+      "tags": [
+        "trasporti",
+        "merci",
+        "strada",
+        "istat",
+        "dbnomics",
+        "origine-destinazione"
+      ],
+      "description": "ISTAT 121_330 via DBnomics \u2014 tonnellate-km per regione di carico e scarico"
     },
     "istat_va_branca": {
       "name": "Istat Va Branca",

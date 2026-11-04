@@ -1,10 +1,10 @@
 # Session Bootstrap
 
-**Generated**: 2026-11-04T22:01:21.680403
+**Generated**: 2026-11-04T23:17:08.016176
 
 ## Stato
 
-Radar: 36 fonti GREEN 34 · Registry: 43 repo · 518 dataset
+Radar: 36 fonti GREEN 34 · Registry: 43 repo · 520 dataset
 
 ## Richiede attenzione
 
