@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T05:27:32.353823",
+  "generated_at": "2026-11-05T14:06:17.471219",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -52,7 +52,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 12,
+  "open_prs": 14,
   "prs": [
     {
       "number": 20,
@@ -66,13 +66,6 @@
       "title": "feat(anac-cross): codice IPA della stazione appaltante (#13)",
       "repo": "appalti-pubblici",
       "url": "https://github.com/dataciviclab/appalti-pubblici/pull/19",
-      "category": "other"
-    },
-    {
-      "number": 43,
-      "title": "feat(note-integrative): programmazione per obiettivi \u2014 4 dataset",
-      "repo": "bilancio-pubblico",
-      "url": "https://github.com/dataciviclab/bilancio-pubblico/pull/43",
       "category": "other"
     },
     {
@@ -101,6 +94,27 @@
       "title": "feat(candidates): bootstrap gse_cer_elenco candidate",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/836",
+      "category": "other"
+    },
+    {
+      "number": 20,
+      "title": "chore(post-merge): aggiorna registry (schedule)",
+      "repo": "gu-monitor",
+      "url": "https://github.com/dataciviclab/gu-monitor/pull/20",
+      "category": "other"
+    },
+    {
+      "number": 9,
+      "title": "chore(ispra): standard (macro + time_coverage) + fix places/urban (livelli, mart)",
+      "repo": "open-ispra",
+      "url": "https://github.com/dataciviclab/open-ispra/pull/9",
+      "category": "other"
+    },
+    {
+      "number": 8,
+      "title": "feat(consumo-suolo): aggiorna alla fonte SNPA 2025 (serie 2006-2025)",
+      "repo": "open-ispra",
+      "url": "https://github.com/dataciviclab/open-ispra/pull/8",
       "category": "other"
     },
     {
@@ -139,7 +153,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 54,
+  "open_issues": 56,
   "issues": [
     {
       "number": 13,
@@ -450,6 +464,13 @@
       "category": "infrastructure"
     },
     {
+      "number": 109,
+      "title": "intake: senato_emendamenti_lod \u2014 registro ufficiale emendamenti Senato + join con AKN",
+      "repo": "open-politica",
+      "url": "https://github.com/dataciviclab/open-politica/issues/109",
+      "category": "intake"
+    },
+    {
       "number": 76,
       "title": "intake: senato_documenti \u2014 Atti non legislativi del Senato (petizioni, Corte dei conti, atti UE, sentenze)",
       "repo": "open-politica",
@@ -468,6 +489,13 @@
       "title": "Integrare eurostat-business-demography-nuts3 nel mart_hub",
       "repo": "pil-intelligence",
       "url": "https://github.com/dataciviclab/pil-intelligence/issues/1",
+      "category": "other"
+    },
+    {
+      "number": 31,
+      "title": "Download RNA instabili: file 500 su GET completo, troncamenti silenziosi, run verdi con parquet incompleti",
+      "repo": "rna-aiuti-stato",
+      "url": "https://github.com/dataciviclab/rna-aiuti-stato/issues/31",
       "category": "other"
     },
     {
@@ -2354,7 +2382,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 12"
+    "Many open PRs: 14"
   ],
   "radar": {
     "available": true,
@@ -2683,7 +2711,7 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-11-04",
+    "generated_at": "2026-11-05",
     "summary": {
       "total": 54,
       "by_status": {
@@ -2907,13 +2935,13 @@
       "repo": "bilancio-pubblico",
       "available": true,
       "source_repo": "dataciviclab/bilancio-pubblico",
-      "updated_at": "2026-11-01",
-      "datasets": 11,
-      "marts": 33,
-      "signals": 11,
+      "updated_at": "2026-11-05",
+      "datasets": 16,
+      "marts": 38,
+      "signals": 16,
       "codelists": 0,
-      "entities": 2,
-      "gcs": 11,
+      "entities": 4,
+      "gcs": 16,
       "reason": "",
       "signals_detail": [
         {
@@ -2970,6 +2998,62 @@
             "status": "SUCCESS",
             "started_at": "2026-11-01T20:46:15.728626+00:00",
             "finished_at": "2026-11-01T20:46:25.860611+00:00"
+          }
+        },
+        {
+          "id": "bdap_ni_azioni",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "bdap_ni_azioni",
+          "detail": "anni 2018-2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261105T100447Z_0762197d",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-11-05T10:04:47.347902+00:00",
+            "finished_at": "2026-11-05T10:04:55.816403+00:00"
+          }
+        },
+        {
+          "id": "bdap_ni_indicatori",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "bdap_ni_indicatori",
+          "detail": "anni 2018-2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261105T100604Z_c304a9b8",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-11-05T10:06:04.711688+00:00",
+            "finished_at": "2026-11-05T10:06:14.459527+00:00"
+          }
+        },
+        {
+          "id": "bdap_ni_obiettivi",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "bdap_ni_obiettivi",
+          "detail": "anni 2018-2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261105T100653Z_42f2a3bb",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-11-05T10:06:53.725378+00:00",
+            "finished_at": "2026-11-05T10:06:58.712001+00:00"
+          }
+        },
+        {
+          "id": "bdap_ni_priorita",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "bdap_ni_priorita",
+          "detail": "anni 2018-2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261105T100748Z_042a1b37",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-11-05T10:07:48.847458+00:00",
+            "finished_at": "2026-11-05T10:07:52.787787+00:00"
           }
         },
         {
@@ -3068,6 +3152,20 @@
             "status": "SUCCESS",
             "started_at": "2026-11-01T20:54:01.237613+00:00",
             "finished_at": "2026-11-01T20:54:08.085431+00:00"
+          }
+        },
+        {
+          "id": "bdap_ni_amministrazioni",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "bdap_ni_amministrazioni",
+          "detail": "anni 2018-2025 \u2014 mart: si",
+          "run": {
+            "run_id": "20261105T100717Z_e33315ea",
+            "year": 2025,
+            "status": "SUCCESS",
+            "started_at": "2026-11-05T10:07:17.578165+00:00",
+            "finished_at": "2026-11-05T10:07:20.586413+00:00"
           }
         }
       ]
@@ -3243,7 +3341,7 @@
       "repo": "dataset-incubator",
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
-      "updated_at": "2026-11-04",
+      "updated_at": "2026-11-05",
       "datasets": 53,
       "marts": 104,
       "signals": 54,
@@ -3357,11 +3455,11 @@
           "label": "dipendenti_pubblici",
           "detail": "anni 2010-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20260731T163751Z_089f4aa1",
+            "run_id": "20261105T125203Z_4ac41294",
             "year": 2024,
-            "status": "DRY_RUN",
-            "started_at": "2026-07-31T16:37:51.902532+00:00",
-            "finished_at": "2026-07-31T16:37:51.906743+00:00"
+            "status": "SUCCESS",
+            "started_at": "2026-11-05T12:52:03.393705+00:00",
+            "finished_at": "2026-11-05T12:52:23.279265+00:00"
           }
         },
         {
@@ -9222,11 +9320,11 @@
           "label": "camera_votazioni_sparql",
           "detail": "anni 2018-2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261104T235118Z_f000ac4d",
+            "run_id": "20261105T121257Z_ed640f59",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-04T23:51:18.356677+00:00",
-            "finished_at": "2026-11-04T23:51:21.074896+00:00"
+            "started_at": "2026-11-05T12:12:57.478714+00:00",
+            "finished_at": "2026-11-05T12:13:00.594315+00:00"
           }
         },
         {
@@ -9236,11 +9334,11 @@
           "label": "camera_voti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260928T084613Z_02b510f6",
+            "run_id": "20261105T101828Z_e095d5ce",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-28T08:46:13.142073+00:00",
-            "finished_at": "2026-09-28T08:46:15.492058+00:00"
+            "started_at": "2026-11-05T10:18:28.807407+00:00",
+            "finished_at": "2026-11-05T10:48:55.551828+00:00"
           }
         },
         {
@@ -9390,11 +9488,11 @@
           "label": "senato_votazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260928T085230Z_32baf7f6",
+            "run_id": "20261105T112346Z_e13bd985",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-28T08:52:30.621092+00:00",
-            "finished_at": "2026-09-28T08:52:31.236337+00:00"
+            "started_at": "2026-11-05T11:23:46.273968+00:00",
+            "finished_at": "2026-11-05T11:51:25.413582+00:00"
           }
         },
         {

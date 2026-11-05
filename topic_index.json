@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-05T05:27:32.353823",
+  "generated_at": "2026-11-05T14:06:17.471219",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -28,7 +28,7 @@
       "url": "https://github.com/dataciviclab/bilancio-pubblico",
       "role": "dati",
       "domain": "finanza-pubblica",
-      "n_datasets": 11,
+      "n_datasets": 16,
       "n_published": 5,
       "sources": [
         "openbdap"
@@ -6627,6 +6627,845 @@
         ]
       },
       {
+        "slug": "bdap_ni_amministrazioni",
+        "url_slug": "bdap-ni-amministrazioni",
+        "name": "Bdap Ni Amministrazioni",
+        "description": "Anagrafica delle amministrazioni centrali delle Note Integrative: codice STP, denominazione e forma breve, per anno e fase.",
+        "source": "",
+        "source_id": "openbdap",
+        "period": {
+          "start": 2018,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "bdap",
+          "note-integrative",
+          "anagrafica",
+          "support"
+        ],
+        "category": "support",
+        "registry_source": "bilancio-pubblico",
+        "clean_rows": 15,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bilancio-pubblico/bdap_ni_amministrazioni/*/bdap_ni_amministrazioni_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "fase",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stp",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "amministrazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "amministrazione_breve",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "bdap_ni_amministrazioni__mart_amministrazioni"
+        ]
+      },
+      {
+        "slug": "bdap_ni_azioni",
+        "url_slug": "bdap-ni-azioni",
+        "name": "Bdap Ni Azioni",
+        "description": "Note Integrative \u2014 Azioni di bilancio con stanziamento triennale di competenza e cassa (disegno di legge, legge) e consuntivo di gestione (rendiconto).",
+        "source": "",
+        "source_id": "openbdap",
+        "period": {
+          "start": 2018,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "bdap",
+          "note-integrative",
+          "programmazione",
+          "azioni",
+          "stanziamenti"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "bilancio-pubblico",
+        "clean_rows": 2457,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bilancio-pubblico/bdap_ni_azioni/*/bdap_ni_azioni_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "fase",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stp",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "amministrazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "missione_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "missione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "programma_code",
+            "description": ""
+          },
+          {
+            "name": "programma_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "programma",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "programma_code",
+            "description": ""
+          },
+          {
+            "name": "azione_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "azione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "previsione_cp_anno1",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "previsione_cp_anno2",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "previsione_cp_anno3",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "previsione_cs_anno1",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "previsione_cs_anno2",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "previsione_cs_anno3",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stanziamento_iniziale_cp",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stanziamento_iniziale_cs",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stanziamento_definitivo_cp",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stanziamento_definitivo_cs",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "impegnato_cp",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pagato_cp",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pagato_cs",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "criteri",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "note_gestione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_osservazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "bdap_ni_azioni__mart_azioni_anno"
+        ]
+      },
+      {
+        "slug": "bdap_ni_indicatori",
+        "url_slug": "bdap-ni-indicatori",
+        "name": "Bdap Ni Indicatori",
+        "description": "Note Integrative \u2014 Indicatori di risultato con target triennale e valore a rendiconto: il confronto tra promesso e realizzato, obiettivo per obiettivo.",
+        "source": "",
+        "source_id": "openbdap",
+        "period": {
+          "start": 2018,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "bdap",
+          "note-integrative",
+          "programmazione",
+          "indicatori",
+          "target"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "bilancio-pubblico",
+        "clean_rows": 3110,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bilancio-pubblico/bdap_ni_indicatori/*/bdap_ni_indicatori_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "fase",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stp",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "amministrazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "missione_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "missione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "programma_code",
+            "description": ""
+          },
+          {
+            "name": "programma_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "programma",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "programma_code",
+            "description": ""
+          },
+          {
+            "name": "cdr_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cdr",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "obiettivo_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "obiettivo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "indicatore_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "indicatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "indicatore_code",
+            "description": ""
+          },
+          {
+            "name": "descrizione_indicatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_indicatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_misura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unita_misura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "metodo_calcolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fonte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "target_anno1",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "target_anno2",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "target_anno3",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "target_anno1_operatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "target_anno1_valore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "target_anno1_unita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valore_rendiconto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valore_rendiconto_valore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valore_rendiconto_unita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nota_mancanza_target",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nota_mancata_consuntivazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nota_scostamento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valore_riferimento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_provenienza",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "indicatore_trasversale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_osservazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "bdap_ni_indicatori__mart_indicatori_anno"
+        ]
+      },
+      {
+        "slug": "bdap_ni_obiettivi",
+        "url_slug": "bdap-ni-obiettivi",
+        "name": "Bdap Ni Obiettivi",
+        "description": "Note Integrative \u2014 Obiettivi strategici e strutturali delle amministrazioni centrali, collegati a missione, programma, azione e priorit\u00e0 politica, per anno e fase.",
+        "source": "",
+        "source_id": "openbdap",
+        "period": {
+          "start": 2018,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "bdap",
+          "note-integrative",
+          "programmazione",
+          "obiettivi"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "bilancio-pubblico",
+        "clean_rows": 1182,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bilancio-pubblico/bdap_ni_obiettivi/*/bdap_ni_obiettivi_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "fase",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stp",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "amministrazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "missione_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "missione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "programma_code",
+            "description": ""
+          },
+          {
+            "name": "programma_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "programma",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "programma_code",
+            "description": ""
+          },
+          {
+            "name": "cdr_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cdr",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "obiettivo_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "obiettivo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_obiettivo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "obiettivo_code",
+            "description": ""
+          },
+          {
+            "name": "natura_obiettivo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "priorita_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "priorita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "azione_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "azione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nota_illustrativa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "obiettivo_trasversale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_osservazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "bdap_ni_obiettivi__mart_obiettivi_anno"
+        ]
+      },
+      {
+        "slug": "bdap_ni_priorita",
+        "url_slug": "bdap-ni-priorita",
+        "name": "Bdap Ni Priorita",
+        "description": "Note Integrative \u2014 Priorit\u00e0 politiche delle amministrazioni centrali: il testo con cui ogni ministero dichiara cosa intende fare, per anno e per fase (disegno di legge, legge, rendiconto).",
+        "source": "",
+        "source_id": "openbdap",
+        "period": {
+          "start": 2018,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "finanza-pubblica",
+          "bdap",
+          "note-integrative",
+          "programmazione",
+          "priorita-politiche"
+        ],
+        "category": "finanza-pubblica",
+        "registry_source": "bilancio-pubblico",
+        "clean_rows": 223,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bilancio-pubblico/bdap_ni_priorita/*/bdap_ni_priorita_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "fase",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stp",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "amministrazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_priorita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "priorita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "contenuto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_osservazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "bdap_ni_priorita__mart_priorita_anno"
+        ]
+      },
+      {
         "slug": "bdap_pagamenti_stato",
         "url_slug": "bdap-pagamenti-stato",
         "name": "Bdap Pagamenti Stato",
@@ -8337,7 +9176,7 @@
         "source_id": "openbdap",
         "period": {
           "start": 2010,
-          "end": 2023
+          "end": 2024
         },
         "stage": "published",
         "tags": [
@@ -8347,7 +9186,7 @@
         ],
         "category": "welfare-lavoro",
         "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "clean_rows": 40521,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/dipendenti_pubblici/*/dipendenti_pubblici_*_clean.parquet",
@@ -8378,8 +9217,8 @@
           {
             "name": "codice_ente_bdap",
             "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
+            "role": "dimension",
+            "semantic_type": "siope_code",
             "description": "Codice ente BDAP"
           },
           {
@@ -61295,7 +62134,7 @@
         ],
         "category": "politica",
         "registry_source": "open-politica",
-        "clean_rows": 7811946,
+        "clean_rows": 8084985,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-politica/camera_voti/2026/camera_voti_2026_clean.parquet",
@@ -62564,7 +63403,7 @@
         ],
         "category": "politica",
         "registry_source": "open-politica",
-        "clean_rows": 1210487,
+        "clean_rows": 1224676,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-politica/senato_votazioni/2026/senato_votazioni_2026_clean.parquet",
@@ -69518,6 +70357,10 @@
         "bdap_entrate_stato",
         "bdap_lb_spese_missione",
         "bdap_lb_spese_serie",
+        "bdap_ni_azioni",
+        "bdap_ni_indicatori",
+        "bdap_ni_obiettivi",
+        "bdap_ni_priorita",
         "bdap_pagamenti_stato",
         "bdap_rnd_entrate_articolo",
         "bdap_rnd_spese_capitolo",
@@ -69653,7 +70496,7 @@
         "ted_contract_notices",
         "wb_financial"
       ],
-      "dataset_count": 160
+      "dataset_count": 164
     },
     {
       "slug": "sanita",
@@ -70018,6 +70861,10 @@
         "bdap_entrate_stato",
         "bdap_lb_spese_missione",
         "bdap_lb_spese_serie",
+        "bdap_ni_azioni",
+        "bdap_ni_indicatori",
+        "bdap_ni_obiettivi",
+        "bdap_ni_priorita",
         "bdap_pagamenti_stato",
         "bdap_rnd_entrate_articolo",
         "bdap_rnd_spese_capitolo",
@@ -71026,6 +71873,11 @@
       "bdap_entrate_stato",
       "bdap_lb_spese_missione",
       "bdap_lb_spese_serie",
+      "bdap_ni_amministrazioni",
+      "bdap_ni_azioni",
+      "bdap_ni_indicatori",
+      "bdap_ni_obiettivi",
+      "bdap_ni_priorita",
       "bdap_pagamenti_stato",
       "bdap_rnd_entrate_articolo",
       "bdap_rnd_spese_capitolo",
@@ -71641,6 +72493,10 @@
       "bdap_entrate_stato",
       "bdap_lb_spese_missione",
       "bdap_lb_spese_serie",
+      "bdap_ni_azioni",
+      "bdap_ni_indicatori",
+      "bdap_ni_obiettivi",
+      "bdap_ni_priorita",
       "bdap_pagamenti_stato",
       "bdap_rnd_entrate_articolo",
       "bdap_rnd_spese_capitolo",
@@ -72286,6 +73142,88 @@
         "serie-storica"
       ],
       "description": "Legge di Bilancio Pubblicata \u2014 Spese per Amministrazione/Missione/Programma/Macroaggregato, serie storica. Previsioni iniziali su tre annualit\u00e0 (A1 = anno di bilancio, A2/A3 = anni successivi). Missione e programma sono vuoti negli anni pi\u00f9 vecchi."
+    },
+    "bdap_ni_amministrazioni": {
+      "name": "Bdap Ni Amministrazioni",
+      "stage": "incubating",
+      "source_id": "openbdap",
+      "registry_source": "bilancio-pubblico",
+      "domain": null,
+      "category": "support",
+      "tags": [
+        "finanza-pubblica",
+        "bdap",
+        "note-integrative",
+        "anagrafica",
+        "support"
+      ],
+      "description": "Anagrafica delle amministrazioni centrali delle Note Integrative: codice STP, denominazione e forma breve, per anno e fase."
+    },
+    "bdap_ni_azioni": {
+      "name": "Bdap Ni Azioni",
+      "stage": "incubating",
+      "source_id": "openbdap",
+      "registry_source": "bilancio-pubblico",
+      "domain": "finanza-pubblica",
+      "category": "finanza-pubblica",
+      "tags": [
+        "finanza-pubblica",
+        "bdap",
+        "note-integrative",
+        "programmazione",
+        "azioni",
+        "stanziamenti"
+      ],
+      "description": "Note Integrative \u2014 Azioni di bilancio con stanziamento triennale di competenza e cassa (disegno di legge, legge) e consuntivo di gestione (rendiconto)."
+    },
+    "bdap_ni_indicatori": {
+      "name": "Bdap Ni Indicatori",
+      "stage": "incubating",
+      "source_id": "openbdap",
+      "registry_source": "bilancio-pubblico",
+      "domain": "finanza-pubblica",
+      "category": "finanza-pubblica",
+      "tags": [
+        "finanza-pubblica",
+        "bdap",
+        "note-integrative",
+        "programmazione",
+        "indicatori",
+        "target"
+      ],
+      "description": "Note Integrative \u2014 Indicatori di risultato con target triennale e valore a rendiconto: il confronto tra promesso e realizzato, obiettivo per obiettivo."
+    },
+    "bdap_ni_obiettivi": {
+      "name": "Bdap Ni Obiettivi",
+      "stage": "incubating",
+      "source_id": "openbdap",
+      "registry_source": "bilancio-pubblico",
+      "domain": "finanza-pubblica",
+      "category": "finanza-pubblica",
+      "tags": [
+        "finanza-pubblica",
+        "bdap",
+        "note-integrative",
+        "programmazione",
+        "obiettivi"
+      ],
+      "description": "Note Integrative \u2014 Obiettivi strategici e strutturali delle amministrazioni centrali, collegati a missione, programma, azione e priorit\u00e0 politica, per anno e fase."
+    },
+    "bdap_ni_priorita": {
+      "name": "Bdap Ni Priorita",
+      "stage": "incubating",
+      "source_id": "openbdap",
+      "registry_source": "bilancio-pubblico",
+      "domain": "finanza-pubblica",
+      "category": "finanza-pubblica",
+      "tags": [
+        "finanza-pubblica",
+        "bdap",
+        "note-integrative",
+        "programmazione",
+        "priorita-politiche"
+      ],
+      "description": "Note Integrative \u2014 Priorit\u00e0 politiche delle amministrazioni centrali: il testo con cui ogni ministero dichiara cosa intende fare, per anno e per fase (disegno di legge, legge, rendiconto)."
     },
     "bdap_pagamenti_stato": {
       "name": "Bdap Pagamenti Stato",
