@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T23:17:08.016176",
+  "generated_at": "2026-11-05T05:27:32.353823",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -69,6 +69,13 @@
       "category": "other"
     },
     {
+      "number": 43,
+      "title": "feat(note-integrative): programmazione per obiettivi \u2014 4 dataset",
+      "repo": "bilancio-pubblico",
+      "url": "https://github.com/dataciviclab/bilancio-pubblico/pull/43",
+      "category": "other"
+    },
+    {
       "number": 913,
       "title": "feat(sanita): intake ISTAT ospiti presidi residenziali (RSA, DBnomics)",
       "repo": "dataset-incubator",
@@ -108,13 +115,6 @@
       "title": "refactor(pnrr): migra i 7 dataset da script a http_file",
       "repo": "open-pnrr",
       "url": "https://github.com/dataciviclab/open-pnrr/pull/11",
-      "category": "other"
-    },
-    {
-      "number": 102,
-      "title": "chore(post-merge): aggiorna registry (schedule)",
-      "repo": "open-politica",
-      "url": "https://github.com/dataciviclab/open-politica/pull/102",
       "category": "other"
     },
     {
@@ -8926,12 +8926,12 @@
       "repo": "open-politica",
       "available": true,
       "source_repo": "dataciviclab/open-politica",
-      "updated_at": "2026-11-04",
+      "updated_at": "2026-11-05",
       "datasets": 34,
       "marts": 67,
       "signals": 34,
       "codelists": 0,
-      "entities": 8,
+      "entities": 5,
       "gcs": 34,
       "reason": "",
       "signals_detail": [
@@ -8942,11 +8942,11 @@
           "label": "decreti_legge",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261030T225923Z_28e86bbd",
+            "run_id": "20261105T000543Z_e615491d",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-30T22:59:23.087759+00:00",
-            "finished_at": "2026-10-30T22:59:31.443277+00:00"
+            "started_at": "2026-11-05T00:05:43.245411+00:00",
+            "finished_at": "2026-11-05T00:05:47.222707+00:00"
           }
         },
         {
@@ -8956,11 +8956,11 @@
           "label": "osservatorio_parlamento",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261003T144118Z_cf52878a",
+            "run_id": "20261105T000547Z_bec1683c",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-03T14:41:18.449403+00:00",
-            "finished_at": "2026-10-03T14:41:37.223514+00:00"
+            "started_at": "2026-11-05T00:05:47.770813+00:00",
+            "finished_at": "2026-11-05T00:06:02.989726+00:00"
           }
         },
         {
@@ -8970,11 +8970,11 @@
           "label": "ponti_parlamento",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261003T173017Z_b4ae6743",
+            "run_id": "20261105T000603Z_958a1231",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-03T17:30:17.903441+00:00",
-            "finished_at": "2026-10-03T17:30:30.517746+00:00"
+            "started_at": "2026-11-05T00:06:03.510294+00:00",
+            "finished_at": "2026-11-05T00:06:13.325768+00:00"
           }
         },
         {
@@ -8984,11 +8984,11 @@
           "label": "profilo_politico",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261003T144137Z_d75171a4",
+            "run_id": "20261105T000613Z_a842b2a1",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-03T14:41:37.455034+00:00",
-            "finished_at": "2026-10-03T14:42:03.505333+00:00"
+            "started_at": "2026-11-05T00:06:13.866797+00:00",
+            "finished_at": "2026-11-05T00:06:37.772092+00:00"
           }
         },
         {
@@ -8998,11 +8998,11 @@
           "label": "senato_corpus_parlamento",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261003T144203Z_a0d60408",
+            "run_id": "20261105T000638Z_f0697179",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-03T14:42:03.728158+00:00",
-            "finished_at": "2026-10-03T14:42:07.723629+00:00"
+            "started_at": "2026-11-05T00:06:38.303115+00:00",
+            "finished_at": "2026-11-05T00:06:42.416239+00:00"
           }
         },
         {
@@ -9012,11 +9012,11 @@
           "label": "voti_ddl_dettaglio",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261003T173030Z_67b41b0c",
+            "run_id": "20261105T000642Z_3a76e4e8",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-03T17:30:30.732260+00:00",
-            "finished_at": "2026-10-03T17:30:36.064781+00:00"
+            "started_at": "2026-11-05T00:06:42.950539+00:00",
+            "finished_at": "2026-11-05T00:06:46.441873+00:00"
           }
         },
         {
@@ -9026,11 +9026,11 @@
           "label": "camera_atti_dibattito",
           "detail": "anni 15-19 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T205112Z_c3fe5183",
+            "run_id": "20261104T233141Z_7223dd13",
             "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T20:51:12.147846+00:00",
-            "finished_at": "2026-10-01T20:51:16.459917+00:00"
+            "started_at": "2026-11-04T23:31:41.820781+00:00",
+            "finished_at": "2026-11-04T23:31:45.866711+00:00"
           }
         },
         {
@@ -9040,11 +9040,11 @@
           "label": "camera_commissioni",
           "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20261003T103015Z_bbdd1414",
+            "run_id": "20261104T233151Z_abbc2087",
             "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-10-03T10:30:15.450234+00:00",
-            "finished_at": "2026-10-03T10:30:16.656745+00:00"
+            "started_at": "2026-11-04T23:31:51.103390+00:00",
+            "finished_at": "2026-11-04T23:31:51.763062+00:00"
           }
         },
         {
@@ -9054,11 +9054,11 @@
           "label": "camera_ddl",
           "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20261103T093535Z_22f4d4d8",
+            "run_id": "20261104T233204Z_f9874a93",
             "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-11-03T09:35:35.298387+00:00",
-            "finished_at": "2026-11-03T09:35:37.358957+00:00"
+            "started_at": "2026-11-04T23:32:04.026970+00:00",
+            "finished_at": "2026-11-04T23:32:05.428987+00:00"
           }
         },
         {
@@ -9068,11 +9068,11 @@
           "label": "camera_deputati_legislature",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261017T133748Z_489b0f4b",
+            "run_id": "20261104T233205Z_851e0b04",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-17T13:37:48.735510+00:00",
-            "finished_at": "2026-10-17T13:37:59.174447+00:00"
+            "started_at": "2026-11-04T23:32:05.867546+00:00",
+            "finished_at": "2026-11-04T23:32:15.192269+00:00"
           }
         },
         {
@@ -9082,11 +9082,11 @@
           "label": "camera_firmatari",
           "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T205246Z_d0890285",
+            "run_id": "20261104T233323Z_c58a3c0f",
             "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T20:52:46.247203+00:00",
-            "finished_at": "2026-10-01T20:52:54.179307+00:00"
+            "started_at": "2026-11-04T23:33:23.779927+00:00",
+            "finished_at": "2026-11-04T23:33:29.667339+00:00"
           }
         },
         {
@@ -9096,11 +9096,11 @@
           "label": "camera_gruppi",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260928T084356Z_1f8f6375",
+            "run_id": "20261104T233330Z_18d27b0f",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-28T08:43:56.886783+00:00",
-            "finished_at": "2026-09-28T08:43:57.841698+00:00"
+            "started_at": "2026-11-04T23:33:30.088436+00:00",
+            "finished_at": "2026-11-04T23:33:30.751398+00:00"
           }
         },
         {
@@ -9110,11 +9110,11 @@
           "label": "camera_incarichi",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260928T084358Z_d3eba35f",
+            "run_id": "20261104T233331Z_7e131756",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-28T08:43:58.171772+00:00",
-            "finished_at": "2026-09-28T08:44:00.082470+00:00"
+            "started_at": "2026-11-04T23:33:31.164297+00:00",
+            "finished_at": "2026-11-04T23:33:32.999578+00:00"
           }
         },
         {
@@ -9124,11 +9124,11 @@
           "label": "camera_interventi",
           "detail": "anni 2022-2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260928T084519Z_64f114a9",
+            "run_id": "20261104T233449Z_09262e3c",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-28T08:45:19.484044+00:00",
-            "finished_at": "2026-09-28T08:45:26.975731+00:00"
+            "started_at": "2026-11-04T23:34:49.691653+00:00",
+            "finished_at": "2026-11-04T23:34:56.635755+00:00"
           }
         },
         {
@@ -9138,11 +9138,11 @@
           "label": "camera_iter",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261020T111659Z_a8b31f0c",
+            "run_id": "20261104T230718Z_635f9bde",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-20T11:16:59.673847+00:00",
-            "finished_at": "2026-10-20T11:22:54.988662+00:00"
+            "started_at": "2026-11-04T23:07:18.809260+00:00",
+            "finished_at": "2026-11-04T23:16:03.853983+00:00"
           }
         },
         {
@@ -9152,11 +9152,11 @@
           "label": "camera_leggi",
           "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20261002T200948Z_9d77562d",
+            "run_id": "20261104T233510Z_d87ffaf4",
             "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-10-02T20:09:48.006753+00:00",
-            "finished_at": "2026-10-02T20:09:49.768273+00:00"
+            "started_at": "2026-11-04T23:35:10.399112+00:00",
+            "finished_at": "2026-11-04T23:35:12.080015+00:00"
           }
         },
         {
@@ -9166,11 +9166,11 @@
           "label": "camera_relatori",
           "detail": "anni 16-19 \u2014 mart: si",
           "run": {
-            "run_id": "20261008T181459Z_609d1c9a",
+            "run_id": "20261104T233522Z_f2310475",
             "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-10-08T18:14:59.356366+00:00",
-            "finished_at": "2026-10-08T18:15:03.332843+00:00"
+            "started_at": "2026-11-04T23:35:22.415681+00:00",
+            "finished_at": "2026-11-04T23:35:24.463511+00:00"
           }
         },
         {
@@ -9180,11 +9180,11 @@
           "label": "camera_sindisp",
           "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20261103T093939Z_3269f72f",
+            "run_id": "20261104T235019Z_1414421f",
             "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-11-03T09:39:39.104681+00:00",
-            "finished_at": "2026-11-03T09:40:19.466608+00:00"
+            "started_at": "2026-11-04T23:50:19.229596+00:00",
+            "finished_at": "2026-11-04T23:50:53.340427+00:00"
           }
         },
         {
@@ -9194,11 +9194,11 @@
           "label": "camera_sindisp_destinatari",
           "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20261103T100149Z_3b0d5b8e",
+            "run_id": "20261104T233637Z_065552a1",
             "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-11-03T10:01:49.306195+00:00",
-            "finished_at": "2026-11-03T10:01:56.457970+00:00"
+            "started_at": "2026-11-04T23:36:37.377501+00:00",
+            "finished_at": "2026-11-04T23:36:43.574892+00:00"
           }
         },
         {
@@ -9208,11 +9208,11 @@
           "label": "camera_sindisp_firmatari",
           "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20261103T095441Z_3a7b9164",
+            "run_id": "20261104T234441Z_0b7f4ed3",
             "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-11-03T09:54:41.969902+00:00",
-            "finished_at": "2026-11-03T09:55:39.472156+00:00"
+            "started_at": "2026-11-04T23:44:41.639961+00:00",
+            "finished_at": "2026-11-04T23:45:30.437766+00:00"
           }
         },
         {
@@ -9222,11 +9222,11 @@
           "label": "camera_votazioni_sparql",
           "detail": "anni 2018-2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260928T084609Z_0b0737fd",
+            "run_id": "20261104T235118Z_f000ac4d",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-28T08:46:09.424175+00:00",
-            "finished_at": "2026-09-28T08:46:12.776159+00:00"
+            "started_at": "2026-11-04T23:51:18.356677+00:00",
+            "finished_at": "2026-11-04T23:51:21.074896+00:00"
           }
         },
         {
@@ -9250,11 +9250,11 @@
           "label": "membri_governo",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20260928T084915Z_49aa4896",
+            "run_id": "20261104T235121Z_6edd6e6e",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-09-28T08:49:15.664612+00:00",
-            "finished_at": "2026-09-28T08:49:21.464397+00:00"
+            "started_at": "2026-11-04T23:51:21.537438+00:00",
+            "finished_at": "2026-11-04T23:51:24.206733+00:00"
           }
         },
         {
@@ -9264,11 +9264,11 @@
           "label": "ponte_persona",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261017T133811Z_9ea08a6b",
+            "run_id": "20261104T235138Z_14e020ab",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-17T13:38:11.527530+00:00",
-            "finished_at": "2026-10-17T13:38:12.131293+00:00"
+            "started_at": "2026-11-04T23:51:38.160978+00:00",
+            "finished_at": "2026-11-04T23:51:38.857761+00:00"
           }
         },
         {
@@ -9278,11 +9278,11 @@
           "label": "senato_anagrafica",
           "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20261017T133810Z_5a690f69",
+            "run_id": "20261104T235144Z_4088460d",
             "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-10-17T13:38:10.325100+00:00",
-            "finished_at": "2026-10-17T13:38:11.526227+00:00"
+            "started_at": "2026-11-04T23:51:44.181014+00:00",
+            "finished_at": "2026-11-04T23:51:44.687811+00:00"
           }
         },
         {
@@ -9292,11 +9292,11 @@
           "label": "senato_commissioni",
           "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20261003T103126Z_086c5fdb",
+            "run_id": "20261104T235204Z_3fe0e9dc",
             "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-10-03T10:31:26.194887+00:00",
-            "finished_at": "2026-10-03T10:31:28.189534+00:00"
+            "started_at": "2026-11-04T23:52:04.440799+00:00",
+            "finished_at": "2026-11-04T23:52:06.930640+00:00"
           }
         },
         {
@@ -9306,11 +9306,11 @@
           "label": "senato_ddl",
           "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20261002T182651Z_3c77ad40",
+            "run_id": "20261104T235412Z_ecf004f2",
             "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-10-02T18:26:51.418289+00:00",
-            "finished_at": "2026-10-02T18:27:05.031906+00:00"
+            "started_at": "2026-11-04T23:54:12.739537+00:00",
+            "finished_at": "2026-11-04T23:54:34.148888+00:00"
           }
         },
         {
@@ -9320,11 +9320,11 @@
           "label": "senato_firmatari",
           "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20261003T103521Z_1060eeef",
+            "run_id": "20261104T235727Z_21109d5a",
             "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-10-03T10:35:21.823310+00:00",
-            "finished_at": "2026-10-03T10:35:53.650775+00:00"
+            "started_at": "2026-11-04T23:57:27.856022+00:00",
+            "finished_at": "2026-11-04T23:57:51.231211+00:00"
           }
         },
         {
@@ -9334,11 +9334,11 @@
           "label": "senato_gruppi",
           "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20261003T103610Z_087f5c25",
+            "run_id": "20261104T235808Z_913565a1",
             "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-10-03T10:36:10.126553+00:00",
-            "finished_at": "2026-10-03T10:36:12.422501+00:00"
+            "started_at": "2026-11-04T23:58:08.408802+00:00",
+            "finished_at": "2026-11-04T23:58:10.085428+00:00"
           }
         },
         {
@@ -9348,11 +9348,11 @@
           "label": "senato_interventi",
           "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20261003T103847Z_7a15fcd5",
+            "run_id": "20261105T000029Z_154b65cb",
             "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-10-03T10:38:47.148063+00:00",
-            "finished_at": "2026-10-03T10:39:06.474800+00:00"
+            "started_at": "2026-11-05T00:00:29.863099+00:00",
+            "finished_at": "2026-11-05T00:00:48.157423+00:00"
           }
         },
         {
@@ -9362,11 +9362,11 @@
           "label": "senato_relatori",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T201133Z_85582646",
+            "run_id": "20261105T000048Z_4f5ae5e9",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T20:11:33.594241+00:00",
-            "finished_at": "2026-10-01T20:12:01.735869+00:00"
+            "started_at": "2026-11-05T00:00:48.607774+00:00",
+            "finished_at": "2026-11-05T00:01:17.530097+00:00"
           }
         },
         {
@@ -9376,11 +9376,11 @@
           "label": "senato_sindisp",
           "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20261003T100539Z_9ae4713e",
+            "run_id": "20261105T000421Z_d725f69c",
             "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-10-03T10:05:39.898249+00:00",
-            "finished_at": "2026-10-03T10:06:13.737861+00:00"
+            "started_at": "2026-11-05T00:04:21.215663+00:00",
+            "finished_at": "2026-11-05T00:04:46.429391+00:00"
           }
         },
         {
@@ -9404,11 +9404,11 @@
           "label": "senato_votazioni_oggetto",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T201201Z_271df151",
+            "run_id": "20261105T000446Z_ec822764",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T20:12:01.796264+00:00",
-            "finished_at": "2026-10-01T20:12:41.935992+00:00"
+            "started_at": "2026-11-05T00:04:46.902440+00:00",
+            "finished_at": "2026-11-05T00:05:42.241774+00:00"
           }
         }
       ]

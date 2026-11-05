@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-11-04T23:17:08.016176
+**Generated**: 2026-11-05T05:27:32.353823
 
 ## Stato
 
@@ -10,9 +10,9 @@ Radar: 36 fonti GREEN 34 · Registry: 43 repo · 520 dataset
 
 - [PR] appalti-pubblici#20: feat(anac-smartcig): intake affidamenti diretti sotto soglia (#2)
 - [PR] appalti-pubblici#19: feat(anac-cross): codice IPA della stazione appaltante (#13)
+- [PR] bilancio-pubblico#43: feat(note-integrative): programmazione per obiettivi — 4 dataset
 - [PR] dataset-incubator#913: feat(sanita): intake ISTAT ospiti presidi residenziali (RSA, DBnomics)
 - [PR] dataset-incubator#911: feat(sanita): intake ISTAT presidi residenziali socio-assistenziali (RSA)
-- [PR] dataset-incubator#885: feat(candidates): eu-call-open + catena FTS call_id/project_id
 
 ## Analisi pubbliche (45)
 
