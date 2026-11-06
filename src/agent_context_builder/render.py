@@ -5,6 +5,8 @@ from __future__ import annotations
 from datetime import datetime
 from typing import Any
 
+from lab_connectors.registry import to_url_slug
+
 from .config import Config
 from .discussions import DiscussionCollector
 from .git_local import GitLocalCollector
@@ -259,7 +261,7 @@ class Renderer:
 
                 entry: dict[str, Any] = {
                     "slug": ds.slug,
-                    "url_slug": ds.slug.replace("_", "-"),
+                    "url_slug": to_url_slug(ds.slug),
                     "name": ds.name or ds.slug,
                     "description": ds.description,
                     "source": ds.source,
