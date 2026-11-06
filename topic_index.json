@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-05T14:06:17.471219",
+  "generated_at": "2026-11-06T05:26:30.402499",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -435,7 +435,7 @@
       "url": "https://github.com/dataciviclab/open-politica",
       "role": "dati",
       "domain": "politica",
-      "n_datasets": 34,
+      "n_datasets": 35,
       "n_published": 0,
       "sources": [
         "dataciviclab_composite",
@@ -16061,12 +16061,12 @@
         "slug": "ispra_consumo_suolo",
         "url_slug": "ispra-consumo-suolo",
         "name": "Ispra Consumo Suolo",
-        "description": "",
+        "description": "Consumo di suolo in Italia per comune (2006-2025). Serie per periodo da ISPRA/SNPA: incrementi netti/lordi, ripristini e stock di suolo consumato.",
         "source": "",
         "source_id": "ispra",
         "period": {
-          "start": 2024,
-          "end": 2024
+          "start": 2006,
+          "end": 2025
         },
         "stage": "incubating",
         "tags": [
@@ -16077,10 +16077,10 @@
         ],
         "category": "ambiente",
         "registry_source": "open-ispra",
-        "clean_rows": 86856,
+        "clean_rows": 94752,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/open-ispra/ispra_consumo_suolo/2024/ispra_consumo_suolo_2024_clean.parquet",
+          "path": "gs://dataciviclab-clean/open-ispra/ispra_consumo_suolo/2025/ispra_consumo_suolo_2025_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -39901,7 +39901,7 @@
         ],
         "category": "normativa",
         "registry_source": "gu-monitor",
-        "clean_rows": 26139,
+        "clean_rows": 26177,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/gu-monitor/gu_atti/2026/gu_atti_2026_clean.parquet",
@@ -42116,7 +42116,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 1922,
+        "clean_rows": 1920,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_bandi_open/2026/inpa_bandi_open_2026_clean.parquet",
@@ -42335,7 +42335,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 6410,
+        "clean_rows": 6465,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_comunicazioni/2026/inpa_comunicazioni_2026_clean.parquet",
@@ -42879,7 +42879,7 @@
         "source": "",
         "source_id": "oecd",
         "period": {
-          "start": 2000,
+          "start": 1990,
           "end": 2024
         },
         "stage": "incubating",
@@ -42955,7 +42955,7 @@
         "source_id": "oecd",
         "period": {
           "start": 2000,
-          "end": 2023
+          "end": 2025
         },
         "stage": "incubating",
         "tags": [
@@ -42965,7 +42965,7 @@
         ],
         "category": "educazione",
         "registry_source": "oecd-benchmark",
-        "clean_rows": 338381,
+        "clean_rows": 328485,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/oecd-benchmark/oecd_education_attainment/2026/oecd_education_attainment_2026_clean.parquet",
@@ -43064,6 +43064,20 @@
             "description": ""
           },
           {
+            "name": "operazione_statistica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "operazione_statistica_label",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "unita",
             "type": "VARCHAR",
             "role": "dimension",
@@ -43098,8 +43112,8 @@
         "source": "",
         "source_id": "oecd",
         "period": {
-          "start": 2000,
-          "end": 2024
+          "start": 1950,
+          "end": 2015
         },
         "stage": "incubating",
         "tags": [
@@ -43263,8 +43277,8 @@
         "source": "",
         "source_id": "oecd",
         "period": {
-          "start": 2005,
-          "end": 2023
+          "start": 1990,
+          "end": 2024
         },
         "stage": "incubating",
         "tags": [
@@ -43277,7 +43291,7 @@
         ],
         "category": "ambiente",
         "registry_source": "oecd-benchmark",
-        "clean_rows": 1586970,
+        "clean_rows": 1592640,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/oecd-benchmark/oecd_fua_ghg/2026/oecd_fua_ghg_2026_clean.parquet",
@@ -43361,7 +43375,7 @@
         "source": "",
         "source_id": "oecd",
         "period": {
-          "start": 2000,
+          "start": 1990,
           "end": 2024
         },
         "stage": "incubating",
@@ -43373,7 +43387,7 @@
         ],
         "category": "ambiente",
         "registry_source": "oecd-benchmark",
-        "clean_rows": 1239,
+        "clean_rows": 1150,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/oecd-benchmark/oecd_green_transition/2026/oecd_green_transition_2026_clean.parquet",
@@ -43428,8 +43442,8 @@
         "source": "",
         "source_id": "oecd",
         "period": {
-          "start": 2000,
-          "end": 2023
+          "start": 1970,
+          "end": 2025
         },
         "stage": "incubating",
         "tags": [
@@ -43439,7 +43453,7 @@
         ],
         "category": "salute",
         "registry_source": "oecd-benchmark",
-        "clean_rows": 71240,
+        "clean_rows": 2466028,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/oecd-benchmark/oecd_health_expenditure/2026/oecd_health_expenditure_2026_clean.parquet",
@@ -43510,6 +43524,20 @@
             "description": ""
           },
           {
+            "name": "financing_scheme_rev",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "financing_scheme_rev_label",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "function_code",
             "type": "VARCHAR",
             "role": "dimension",
@@ -43524,6 +43552,20 @@
             "description": ""
           },
           {
+            "name": "mode_provision",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "mode_provision_label",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "provider",
             "type": "VARCHAR",
             "role": "dimension",
@@ -43532,6 +43574,48 @@
           },
           {
             "name": "provider_label",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "factor_provision",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "factor_provision_label",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "asset_type",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "asset_type_label",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "price_base",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "price_base_label",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
@@ -43558,8 +43642,8 @@
         "source": "",
         "source_id": "oecd",
         "period": {
-          "start": 2000,
-          "end": 2023
+          "start": 1980,
+          "end": 2025
         },
         "stage": "incubating",
         "tags": [
@@ -43570,7 +43654,7 @@
         ],
         "category": "economia",
         "registry_source": "oecd-benchmark",
-        "clean_rows": 971125,
+        "clean_rows": 966046,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/oecd-benchmark/oecd_regional_gdp/2026/oecd_regional_gdp_2026_clean.parquet",
@@ -43704,7 +43788,7 @@
         ],
         "category": "economia",
         "registry_source": "oecd-benchmark",
-        "clean_rows": 4663,
+        "clean_rows": 4669,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/oecd-benchmark/oecd_share_prices/2026/oecd_share_prices_2026_clean.parquet",
@@ -43920,7 +44004,7 @@
         "source_id": "oecd",
         "period": {
           "start": 2000,
-          "end": 2023
+          "end": 2025
         },
         "stage": "incubating",
         "tags": [
@@ -44002,6 +44086,34 @@
             "description": ""
           },
           {
+            "name": "reddito_secondo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "reddito_secondo_label",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stato_civile",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stato_civile_label",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "unita",
             "type": "VARCHAR",
             "role": "dimension",
@@ -44036,8 +44148,8 @@
         "source": "",
         "source_id": "oecd",
         "period": {
-          "start": 2000,
-          "end": 2025
+          "start": 1953,
+          "end": 2026
         },
         "stage": "incubating",
         "tags": [
@@ -44047,7 +44159,7 @@
         ],
         "category": "economia",
         "registry_source": "oecd-benchmark",
-        "clean_rows": 322949,
+        "clean_rows": 323577,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/oecd-benchmark/oecd_unemployment/2026/oecd_unemployment_2026_clean.parquet",
@@ -44091,6 +44203,20 @@
           },
           {
             "name": "misura_label",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "trasformazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "aggiustamento",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
@@ -53766,7 +53892,7 @@
         "source": "",
         "source_id": "ispra_linked_data",
         "period": {
-          "start": 2024,
+          "start": 1990,
           "end": 2024
         },
         "stage": "incubating",
@@ -53835,7 +53961,7 @@
         "source": "",
         "source_id": "ispra_linked_data",
         "period": {
-          "start": 2021,
+          "start": 2018,
           "end": 2021
         },
         "stage": "incubating",
@@ -53848,7 +53974,7 @@
         ],
         "category": "ambiente",
         "registry_source": "open-ispra",
-        "clean_rows": 9831558,
+        "clean_rows": 10803775,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-ispra/ispra_pest/2021/ispra_pest_2021_clean.parquet",
@@ -53903,7 +54029,7 @@
         "source": "",
         "source_id": "ispra_linked_data",
         "period": {
-          "start": 2021,
+          "start": 2018,
           "end": 2021
         },
         "stage": "incubating",
@@ -53995,6 +54121,13 @@
             "role": "dimension",
             "semantic_type": "",
             "description": ""
+          },
+          {
+            "name": "livello",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
           }
         ],
         "mart_refs": [
@@ -54009,8 +54142,8 @@
         "source": "",
         "source_id": "ispra_linked_data",
         "period": {
-          "start": 2023,
-          "end": 2023
+          "start": 2010,
+          "end": 2022
         },
         "stage": "incubating",
         "tags": [
@@ -54079,8 +54212,8 @@
         "source": "",
         "source_id": "ispra_linked_data",
         "period": {
-          "start": 2018,
-          "end": 2018
+          "start": 1970,
+          "end": 2019
         },
         "stage": "incubating",
         "tags": [
@@ -54128,6 +54261,13 @@
           },
           {
             "name": "unita_misura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "livello",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
@@ -62869,6 +63009,124 @@
         ]
       },
       {
+        "slug": "senato_emendamenti_lod",
+        "url_slug": "senato-emendamenti-lod",
+        "name": "Senato Emendamenti Lod",
+        "description": "",
+        "source": "",
+        "source_id": "dati_senato",
+        "period": {
+          "start": 1996,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "politica",
+          "senato",
+          "emendamenti",
+          "registro",
+          "iter"
+        ],
+        "category": "politica",
+        "registry_source": "open-politica",
+        "clean_rows": 131335,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-politica/senato_emendamenti_lod/*/senato_emendamenti_lod_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "emend_uri_id",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "emend_id",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_commissione",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ramo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "atto_num",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "ddl_id",
+            "description": ""
+          },
+          {
+            "name": "n_atti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "oggetto_id",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "url_testo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "url_testo_xml",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "legislatura",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "senato_emendamenti_lod__mart_sintesi",
+          "senato_emendamenti_lod__mart_per_atto"
+        ]
+      },
+      {
         "slug": "senato_firmatari",
         "url_slug": "senato-firmatari",
         "name": "Senato Firmatari",
@@ -63931,7 +64189,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "open-siope",
-        "clean_rows": 18108,
+        "clean_rows": 18164,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/siope/siope_anag_enti_seed/2026/siope_anag_enti_seed_2026_clean.parquet",
@@ -64148,7 +64406,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "open-siope",
-        "clean_rows": 1249602,
+        "clean_rows": 1279660,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/siope/siope_bilancio_unificato/*/siope_bilancio_unificato_*_clean.parquet",
@@ -64324,7 +64582,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "open-siope",
-        "clean_rows": 3422045,
+        "clean_rows": 3448027,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/siope/siope_entrate/*/siope_entrate_*_clean.parquet",
@@ -64498,7 +64756,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "open-siope",
-        "clean_rows": 7163869,
+        "clean_rows": 7190211,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/siope/siope_uscite/*/siope_uscite_*_clean.parquet",
@@ -66770,7 +67028,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "rna-aiuti-stato",
-        "clean_rows": 831819,
+        "clean_rows": 1001955,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/rna_aiuti_stato/*/rna_aiuti_stato_*_clean.parquet",
@@ -67030,7 +67288,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "rna-aiuti-stato",
-        "clean_rows": 20914,
+        "clean_rows": 21030,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/rna_misure/2027/rna_misure_2027_clean.parquet",
@@ -70732,6 +70990,7 @@
         "senato_ddl",
         "senato_dibattito",
         "senato_emendamenti",
+        "senato_emendamenti_lod",
         "senato_firmatari",
         "senato_gruppi",
         "senato_interventi",
@@ -70741,7 +71000,7 @@
         "senato_votazioni_oggetto",
         "voti_ddl_dettaglio"
       ],
-      "dataset_count": 45
+      "dataset_count": 46
     }
   ],
   "explorer_themes": [
@@ -71180,6 +71439,7 @@
         "senato_ddl",
         "senato_dibattito",
         "senato_emendamenti",
+        "senato_emendamenti_lod",
         "senato_firmatari",
         "senato_gruppi",
         "senato_interventi",
@@ -72360,6 +72620,7 @@
       "senato_commissioni",
       "senato_corpus_parlamento",
       "senato_ddl",
+      "senato_emendamenti_lod",
       "senato_firmatari",
       "senato_gruppi",
       "senato_interventi",
@@ -72704,6 +72965,7 @@
       "senato_ddl",
       "senato_dibattito",
       "senato_emendamenti",
+      "senato_emendamenti_lod",
       "senato_firmatari",
       "senato_gruppi",
       "senato_interventi",
@@ -78787,7 +79049,7 @@
         "consumo",
         "suolo"
       ],
-      "description": ""
+      "description": "Consumo di suolo in Italia per comune (2006-2025). Serie per periodo da ISPRA/SNPA: incrementi netti/lordi, ripristini e stock di suolo consumato."
     },
     "ispra_iffi": {
       "name": "Ispra Iffi",
@@ -79952,6 +80214,22 @@
         "iter-legislativo"
       ],
       "description": "Iter legislativo dei disegni di legge del Senato (Leg13\u2013Leg19): stato, tempi, esiti."
+    },
+    "senato_emendamenti_lod": {
+      "name": "Senato Emendamenti Lod",
+      "stage": "incubating",
+      "source_id": "dati_senato",
+      "registry_source": "open-politica",
+      "domain": "politica",
+      "category": "politica",
+      "tags": [
+        "politica",
+        "senato",
+        "emendamenti",
+        "registro",
+        "iter"
+      ],
+      "description": ""
     },
     "senato_firmatari": {
       "name": "Senato Firmatari",
