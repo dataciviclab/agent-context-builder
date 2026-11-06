@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T13:50:19.404341",
+  "generated_at": "2026-11-06T20:59:10.308485",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -52,7 +52,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 12,
+  "open_prs": 20,
   "prs": [
     {
       "number": 20,
@@ -66,6 +66,13 @@
       "title": "feat(anac-cross): codice IPA della stazione appaltante (#13)",
       "repo": "appalti-pubblici",
       "url": "https://github.com/dataciviclab/appalti-pubblici/pull/19",
+      "category": "other"
+    },
+    {
+      "number": 284,
+      "title": "refactor(data): location_urls da lab-connectors, via gcs_manifest",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/284",
       "category": "other"
     },
     {
@@ -97,10 +104,31 @@
       "category": "other"
     },
     {
-      "number": 21,
-      "title": "chore(post-merge): aggiorna registry (schedule)",
-      "repo": "gu-monitor",
-      "url": "https://github.com/dataciviclab/gu-monitor/pull/21",
+      "number": 99,
+      "title": "feat(sql_page): template SQL opzionali",
+      "repo": "lab-connectors",
+      "url": "https://github.com/dataciviclab/lab-connectors/pull/99",
+      "category": "other"
+    },
+    {
+      "number": 98,
+      "title": "feat(formatters): fmt_usd",
+      "repo": "lab-connectors",
+      "url": "https://github.com/dataciviclab/lab-connectors/pull/98",
+      "category": "other"
+    },
+    {
+      "number": 16,
+      "title": "fix(dashboard): apply_branding standard",
+      "repo": "open-consip",
+      "url": "https://github.com/dataciviclab/open-consip/pull/16",
+      "category": "other"
+    },
+    {
+      "number": 20,
+      "title": "refactor(dashboard): fmt_it delega a fmt_num",
+      "repo": "open-inps",
+      "url": "https://github.com/dataciviclab/open-inps/pull/20",
       "category": "other"
     },
     {
@@ -111,10 +139,38 @@
       "category": "other"
     },
     {
+      "number": 12,
+      "title": "refactor(dashboard): fmt_eur canonico lab-connectors",
+      "repo": "open-pnrr",
+      "url": "https://github.com/dataciviclab/open-pnrr/pull/12",
+      "category": "other"
+    },
+    {
       "number": 11,
       "title": "refactor(pnrr): migra i 7 dataset da script a http_file",
       "repo": "open-pnrr",
       "url": "https://github.com/dataciviclab/open-pnrr/pull/11",
+      "category": "other"
+    },
+    {
+      "number": 27,
+      "title": "refactor(dashboard): fmt_eur canonico lab-connectors",
+      "repo": "opere-pubbliche",
+      "url": "https://github.com/dataciviclab/opere-pubbliche/pull/27",
+      "category": "other"
+    },
+    {
+      "number": 8,
+      "title": "refactor(dashboard): fmt_num/fmt_eur da lab-connectors",
+      "repo": "patrimonio-territorio",
+      "url": "https://github.com/dataciviclab/patrimonio-territorio/pull/8",
+      "category": "other"
+    },
+    {
+      "number": 444,
+      "title": "refactor(so): rimuove codice morto e corregge le metriche",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/444",
       "category": "other"
     },
     {
@@ -139,7 +195,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 59,
+  "open_issues": 58,
   "issues": [
     {
       "number": 13,
@@ -315,6 +371,13 @@
       "repo": "giustizia-statistiche",
       "url": "https://github.com/dataciviclab/giustizia-statistiche/issues/17",
       "category": "intake"
+    },
+    {
+      "number": 112,
+      "title": "[data] allegati.parquet (indice) non \u00e8 su GCS: i 5.492 md pubblicati sono irraggiungibili dai consumer",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/issues/112",
+      "category": "other"
     },
     {
       "number": 111,
@@ -499,20 +562,6 @@
       "category": "other"
     },
     {
-      "number": 434,
-      "title": "html collector: extraction mode per portali ad albero con export a query-string (MEF analisi_stat)",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/434",
-      "category": "other"
-    },
-    {
-      "number": 424,
-      "title": "opencivitas: fonte centrale punta al vecchio /it/open-data (404) \u2014 aggiornare a docs.opencivitas.it",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/issues/424",
-      "category": "other"
-    },
-    {
       "number": 540,
       "title": "[Bug] raw.sources[].client.headers fa crashare 5 plugin su 7 (TypeError)",
       "repo": "toolkit",
@@ -555,8 +604,15 @@
       "category": "other"
     }
   ],
-  "open_discussions": 205,
+  "open_discussions": 206,
   "discussions": [
+    {
+      "number": 46,
+      "title": "Cosa promette lo Stato, obiettivo per obiettivo? La misurazione si ferma dove la spesa \u00e8 pi\u00f9 alta",
+      "repo": "bilancio-pubblico",
+      "url": "https://github.com/dataciviclab/bilancio-pubblico/discussions/46",
+      "category": "Domande"
+    },
     {
       "number": 30,
       "title": "A cosa va ogni euro dello Stato? Breakdown della spesa per tipo (2020-2025)",
@@ -2389,15 +2445,15 @@
     }
   },
   "warnings": [
-    "Many open PRs: 12"
+    "Many open PRs: 20"
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-10-28T09:34:30.349376+00:00",
-    "probe_date": "2026-10-28",
+    "generated_at": "2026-11-06T18:14:20.111833+00:00",
+    "probe_date": "2026-11-06",
     "sources_total": 36,
-    "green": 34,
-    "yellow": 2,
+    "green": 35,
+    "yellow": 1,
     "red": 0,
     "persistent_red": 0,
     "sources": [
@@ -2467,10 +2523,10 @@
       },
       {
         "id": "dati_cultura",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "sparql",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
@@ -2691,14 +2747,6 @@
       }
     ],
     "unhealthy": [
-      {
-        "id": "dati_cultura",
-        "status": "YELLOW",
-        "protocol": "sparql",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
       {
         "id": "opencivitas",
         "status": "YELLOW",
@@ -6164,7 +6212,7 @@
       "repo": "gu-monitor",
       "available": true,
       "source_repo": "dataciviclab/gu-monitor",
-      "updated_at": "2026-11-05",
+      "updated_at": "2026-11-06",
       "datasets": 1,
       "marts": 3,
       "signals": 1,
@@ -6180,11 +6228,11 @@
           "label": "gu_atti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261105T135529Z_2dfbe14d",
+            "run_id": "20261106T134115Z_f4b5fcb5",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-05T13:55:29.310074+00:00",
-            "finished_at": "2026-11-05T13:55:29.577776+00:00"
+            "started_at": "2026-11-06T13:41:15.462095+00:00",
+            "finished_at": "2026-11-06T13:41:15.815505+00:00"
           }
         }
       ]
@@ -6475,7 +6523,7 @@
       "repo": "inpa-reclutamento",
       "available": true,
       "source_repo": "dataciviclab/inpa-reclutamento",
-      "updated_at": "2026-11-05",
+      "updated_at": "2026-11-06",
       "datasets": 4,
       "marts": 12,
       "signals": 4,
@@ -6519,11 +6567,11 @@
           "label": "inpa_bandi_open",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261105T141435Z_9fa34107",
+            "run_id": "20261106T135443Z_90bbcef3",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-05T14:14:35.030089+00:00",
-            "finished_at": "2026-11-05T14:14:49.450202+00:00"
+            "started_at": "2026-11-06T13:54:43.324773+00:00",
+            "finished_at": "2026-11-06T13:54:58.662147+00:00"
           }
         },
         {
@@ -6533,11 +6581,11 @@
           "label": "inpa_comunicazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261105T141449Z_c7909481",
+            "run_id": "20261106T135459Z_e3cb63bf",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-05T14:14:49.936833+00:00",
-            "finished_at": "2026-11-05T14:15:26.913284+00:00"
+            "started_at": "2026-11-06T13:54:59.097286+00:00",
+            "finished_at": "2026-11-06T13:55:35.247680+00:00"
           }
         }
       ]
@@ -9031,7 +9079,7 @@
       "repo": "open-politica",
       "available": true,
       "source_repo": "dataciviclab/open-politica",
-      "updated_at": "2026-11-05",
+      "updated_at": "2026-11-06",
       "datasets": 35,
       "marts": 69,
       "signals": 35,
@@ -9243,11 +9291,11 @@
           "label": "camera_iter",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261104T230718Z_635f9bde",
+            "run_id": "20261106T143213Z_200d02cd",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-04T23:07:18.809260+00:00",
-            "finished_at": "2026-11-04T23:16:03.853983+00:00"
+            "started_at": "2026-11-06T14:32:13.752405+00:00",
+            "finished_at": "2026-11-06T14:40:13.585200+00:00"
           }
         },
         {
@@ -9341,11 +9389,11 @@
           "label": "camera_voti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261105T101828Z_e095d5ce",
+            "run_id": "20261106T135907Z_dc630ca2",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-05T10:18:28.807407+00:00",
-            "finished_at": "2026-11-05T10:48:55.551828+00:00"
+            "started_at": "2026-11-06T13:59:07.164991+00:00",
+            "finished_at": "2026-11-06T14:29:32.119034+00:00"
           }
         },
         {
@@ -9509,11 +9557,11 @@
           "label": "senato_votazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261105T112346Z_e13bd985",
+            "run_id": "20261106T142932Z_48659d6e",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-05T11:23:46.273968+00:00",
-            "finished_at": "2026-11-05T11:51:25.413582+00:00"
+            "started_at": "2026-11-06T14:29:32.436438+00:00",
+            "finished_at": "2026-11-06T14:32:13.422713+00:00"
           }
         },
         {

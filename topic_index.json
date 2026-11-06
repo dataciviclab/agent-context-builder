@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-06T13:50:19.404341",
+  "generated_at": "2026-11-06T20:59:10.308485",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -6230,7 +6230,7 @@
       },
       {
         "slug": "bdap_entrate_stato",
-        "url_slug": "bdap-entrate-stato",
+        "url_slug": "entrate-stato",
         "name": "Bdap Entrate Stato",
         "description": "Entrate dello Stato per Titolo/Natura/Tipologia/Provento \u2014 Previsioni Definitive CP/CS. Serie storica 2008-2024.",
         "source": "",
@@ -11307,7 +11307,7 @@
     "aifa": [
       {
         "slug": "aifa_spesa_consumo",
-        "url_slug": "aifa-spesa-consumo",
+        "url_slug": "spesa-farmaceutica",
         "name": "AIFA Spesa Farmaceutica Convenzionata",
         "description": "Spesa e consumo farmaceutico convenzionato SSN per regione, mese, categoria ATC \u2014 AIFA 2018-2024",
         "source": "AIFA \u2014 Open Data Spesa e Consumo Farmaceutico",
@@ -13866,7 +13866,7 @@
     "inps": [
       {
         "slug": "inps_pensioni_trimestrale",
-        "url_slug": "inps-pensioni-trimestrale",
+        "url_slug": "pensioni-inps",
         "name": "INPS Pensioni \u2014 trimestrale",
         "description": "Numero di pensioni INPS per gestione, regione, classe eta e importo (2020-2024)",
         "source": "https://www.inps.it/gestione-previdenziale",
@@ -17517,7 +17517,7 @@
       },
       {
         "slug": "istat_housing_crowding",
-        "url_slug": "istat-housing-crowding",
+        "url_slug": "housing-crowding",
         "name": "Istat Housing Crowding",
         "description": "Indice di densita abitativa (componenti per 100 mq) per titolo di godimento. Serie storica 2004-2025, ISTAT SDMX 33_179",
         "source": "ISTAT \u2014 Dataflow 33_179 (Housing conditions), SDMX-CSV",
@@ -18015,7 +18015,7 @@
       },
       {
         "slug": "popolazione_istat_comunale_2019_2025",
-        "url_slug": "popolazione-istat-comunale-2019-2025",
+        "url_slug": "popolazione-istat",
         "name": "Popolazione ISTAT Comunale",
         "description": "Popolazione residente italiana per comune, sesso, classe di et\u00e0 \u2014 POSAS ISTAT 2019-2025",
         "source": "ISTAT - demo.posas (Popolazione residente per sesso, et\u00e0 e comune)",
@@ -19044,7 +19044,7 @@
     "mit_opendata": [
       {
         "slug": "mit_incidentalita_mensile",
-        "url_slug": "mit-incidentalita-mensile",
+        "url_slug": "mit-incidentalita",
         "name": "MIT Incidentalit\u00e0 Stradale Mensile",
         "description": "Serie mensile di incidenti stradali, morti, feriti e indicatori di mortalit\u00e0/gravit\u00e0/lesivit\u00e0 \u2014 Italia 2001-2018, 216 mesi",
         "source": "MIT \u2014 Ministero delle Infrastrutture e dei Trasporti, portale open data",
@@ -35798,7 +35798,7 @@
       },
       {
         "slug": "terna_capacita_rinnovabile",
-        "url_slug": "terna-capacita-rinnovabile",
+        "url_slug": "capacita-rinnovabile",
         "name": "Terna Capacita Rinnovabile",
         "description": "",
         "source": "",
@@ -38121,7 +38121,7 @@
     "giustizia_statistiche": [
       {
         "slug": "civile_flussi",
-        "url_slug": "civile-flussi",
+        "url_slug": "flussi-giustizia-civile",
         "name": "Civile Flussi",
         "description": "",
         "source": "",
@@ -39901,7 +39901,7 @@
         ],
         "category": "normativa",
         "registry_source": "gu-monitor",
-        "clean_rows": 26177,
+        "clean_rows": 26413,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/gu-monitor/gu_atti/2026/gu_atti_2026_clean.parquet",
@@ -42116,7 +42116,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 1920,
+        "clean_rows": 1923,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_bandi_open/2026/inpa_bandi_open_2026_clean.parquet",
@@ -42335,7 +42335,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 6465,
+        "clean_rows": 6518,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_comunicazioni/2026/inpa_comunicazioni_2026_clean.parquet",
@@ -54958,7 +54958,7 @@
       },
       {
         "slug": "ispra_ru_base",
-        "url_slug": "ispra-ru-base",
+        "url_slug": "rifiuti-urbani",
         "name": "Ispra Ru Base",
         "description": "",
         "source": "",
@@ -61011,7 +61011,7 @@
       },
       {
         "slug": "camera_deputati_legislature",
-        "url_slug": "camera-deputati-legislature",
+        "url_slug": "camera-deputati",
         "name": "Camera Deputati Legislature",
         "description": "",
         "source": "",
@@ -61353,7 +61353,7 @@
       },
       {
         "slug": "camera_interventi",
-        "url_slug": "camera-interventi",
+        "url_slug": "attivita-aula",
         "name": "Camera Interventi",
         "description": "",
         "source": "",
@@ -61443,7 +61443,7 @@
         ],
         "category": "politica",
         "registry_source": "open-politica",
-        "clean_rows": 127066,
+        "clean_rows": 127127,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-politica/camera_iter/2026/camera_iter_2026_clean.parquet",
@@ -62111,7 +62111,7 @@
       },
       {
         "slug": "camera_votazioni_sparql",
-        "url_slug": "camera-votazioni-sparql",
+        "url_slug": "votazioni-camera",
         "name": "Camera Votazioni Sparql",
         "description": "",
         "source": "",
@@ -62255,7 +62255,7 @@
       },
       {
         "slug": "camera_voti",
-        "url_slug": "camera-voti",
+        "url_slug": "voti-deputati",
         "name": "Camera Voti",
         "description": "",
         "source": "",
@@ -62274,7 +62274,7 @@
         ],
         "category": "politica",
         "registry_source": "open-politica",
-        "clean_rows": 8084985,
+        "clean_rows": 8137786,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-politica/camera_voti/2026/camera_voti_2026_clean.parquet",
@@ -65477,7 +65477,7 @@
       },
       {
         "slug": "opencivitas_fsc_rso",
-        "url_slug": "opencivitas-fsc-rso",
+        "url_slug": "opencivitas-fsc-2025",
         "name": "Opencivitas Fsc Rso",
         "description": "Finanza comunale FSC: capacit\u00e0 fiscale, fondo perequativo e dotazione finale per comune RSO.",
         "source": "https://www.opencivitas.it/",
@@ -68885,7 +68885,7 @@
     "ade": [
       {
         "slug": "ade_cinque_per_mille",
-        "url_slug": "ade-cinque-per-mille",
+        "url_slug": "cinque-per-mille",
         "name": "Ade Cinque Per Mille",
         "description": "",
         "source": "",
