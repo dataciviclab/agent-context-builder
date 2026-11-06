@@ -25,7 +25,7 @@ v7 è il **navigation index** del Lab: aggiunge layer di navigazione (domains, r
     "ispra": [
       {
         "slug": "ispra_ru_base",
-        "url_slug": "ispra-ru-base",
+        "url_slug": "rifiuti-urbani",
         "name": "Rifiuti Urbani",
         "description": "...",
         "source": "ISPRA",
