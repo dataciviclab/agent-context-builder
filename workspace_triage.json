@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T05:26:30.402499",
+  "generated_at": "2026-11-06T13:50:19.404341",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -98,6 +98,13 @@
     },
     {
       "number": 21,
+      "title": "chore(post-merge): aggiorna registry (schedule)",
+      "repo": "gu-monitor",
+      "url": "https://github.com/dataciviclab/gu-monitor/pull/21",
+      "category": "other"
+    },
+    {
+      "number": 21,
       "title": "feat(compose): finanziamento universitario (SIOPE + BDAP)",
       "repo": "open-mur",
       "url": "https://github.com/dataciviclab/open-mur/pull/21",
@@ -108,13 +115,6 @@
       "title": "refactor(pnrr): migra i 7 dataset da script a http_file",
       "repo": "open-pnrr",
       "url": "https://github.com/dataciviclab/open-pnrr/pull/11",
-      "category": "other"
-    },
-    {
-      "number": 13,
-      "title": "feat: migra i consumer OpenCivitas al portale Liferay (docs dismesso)",
-      "repo": "opencivitas",
-      "url": "https://github.com/dataciviclab/opencivitas/pull/13",
       "category": "other"
     },
     {
@@ -139,7 +139,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 58,
+  "open_issues": 59,
   "issues": [
     {
       "number": 13,
@@ -314,6 +314,13 @@
       "title": "Intake: modalit\u00e0 di definizione penale \u2014 prescrizioni e archiviazioni (richiesta dati in corso)",
       "repo": "giustizia-statistiche",
       "url": "https://github.com/dataciviclab/giustizia-statistiche/issues/17",
+      "category": "intake"
+    },
+    {
+      "number": 111,
+      "title": "[data] Pubblicare il testo come dataset: 20.782 atti correnti, 0,38 GB",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/issues/111",
       "category": "intake"
     },
     {
@@ -9684,7 +9691,7 @@
       "repo": "opencivitas",
       "available": true,
       "source_repo": "dataciviclab/opencivitas",
-      "updated_at": "2026-10-13",
+      "updated_at": "2026-11-06",
       "datasets": 7,
       "marts": 8,
       "signals": 7,
@@ -9698,13 +9705,13 @@
           "source_id": "opencivitas",
           "status": "ok",
           "label": "opencivitas_determinanti",
-          "detail": "anni 2015-2022 \u2014 mart: si",
+          "detail": "anni 2017-2023 \u2014 mart: si",
           "run": {
-            "run_id": "20261013T102531Z_f79a0935",
-            "year": 2022,
+            "run_id": "20261106T102920Z_945a9f8f",
+            "year": 2023,
             "status": "SUCCESS",
-            "started_at": "2026-10-13T10:25:31.690428+00:00",
-            "finished_at": "2026-10-13T10:25:36.202133+00:00"
+            "started_at": "2026-11-06T10:29:20.176793+00:00",
+            "finished_at": "2026-11-06T10:29:42.038824+00:00"
           }
         },
         {
@@ -9714,11 +9721,11 @@
           "label": "opencivitas_fprcm",
           "detail": "anni 2022-2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261013T102702Z_d697332b",
+            "run_id": "20261106T103103Z_689ba456",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-13T10:27:02.323524+00:00",
-            "finished_at": "2026-10-13T10:27:03.502694+00:00"
+            "started_at": "2026-11-06T10:31:03.659693+00:00",
+            "finished_at": "2026-11-06T10:31:04.736035+00:00"
           }
         },
         {
@@ -9728,11 +9735,11 @@
           "label": "opencivitas_fsc_rso",
           "detail": "anni 2017-2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261013T102646Z_f486b368",
+            "run_id": "20261106T103049Z_8b043459",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-13T10:26:46.480323+00:00",
-            "finished_at": "2026-10-13T10:26:55.588746+00:00"
+            "started_at": "2026-11-06T10:30:49.580797+00:00",
+            "finished_at": "2026-11-06T10:30:57.673923+00:00"
           }
         },
         {
@@ -9740,13 +9747,13 @@
           "source_id": "opencivitas",
           "status": "ok",
           "label": "opencivitas_indicatori",
-          "detail": "anni 2015-2023 \u2014 mart: si",
+          "detail": "anni 2017-2023 \u2014 mart: si",
           "run": {
-            "run_id": "20261013T103147Z_ee207f62",
+            "run_id": "20261106T104438Z_b176afe8",
             "year": 2023,
             "status": "SUCCESS",
-            "started_at": "2026-10-13T10:31:47.292054+00:00",
-            "finished_at": "2026-10-13T10:34:21.570250+00:00"
+            "started_at": "2026-11-06T10:44:38.602989+00:00",
+            "finished_at": "2026-11-06T10:47:07.941682+00:00"
           }
         },
         {
@@ -9756,11 +9763,11 @@
           "label": "opencivitas_fprcm_enti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261013T102312Z_502307ce",
+            "run_id": "20261106T102708Z_6b8738c6",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-13T10:23:12.745707+00:00",
-            "finished_at": "2026-10-13T10:23:13.892092+00:00"
+            "started_at": "2026-11-06T10:27:08.102735+00:00",
+            "finished_at": "2026-11-06T10:27:09.244700+00:00"
           }
         },
         {
@@ -9770,11 +9777,11 @@
           "label": "opencivitas_fsc_enti_rso",
           "detail": "anno 2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261013T102307Z_db5025f0",
+            "run_id": "20261106T102704Z_20a09847",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-10-13T10:23:07.907410+00:00",
-            "finished_at": "2026-10-13T10:23:11.662486+00:00"
+            "started_at": "2026-11-06T10:27:04.656407+00:00",
+            "finished_at": "2026-11-06T10:27:07.092795+00:00"
           }
         },
         {
@@ -9782,13 +9789,13 @@
           "source_id": "opencivitas",
           "status": "ok",
           "label": "opencivitas_glossario",
-          "detail": "anni 2015-2023 \u2014 mart: si",
+          "detail": "anni 2017-2023 \u2014 mart: si",
           "run": {
-            "run_id": "20261013T102454Z_de5afb9b",
+            "run_id": "20261106T102732Z_09dc648d",
             "year": 2023,
             "status": "SUCCESS",
-            "started_at": "2026-10-13T10:24:54.335571+00:00",
-            "finished_at": "2026-10-13T10:24:59.102400+00:00"
+            "started_at": "2026-11-06T10:27:32.549705+00:00",
+            "finished_at": "2026-11-06T10:27:37.032605+00:00"
           }
         }
       ]

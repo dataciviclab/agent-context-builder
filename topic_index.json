@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-06T05:26:30.402499",
+  "generated_at": "2026-11-06T13:50:19.404341",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -64926,8 +64926,8 @@
         "source": "https://www.opencivitas.it/",
         "source_id": "opencivitas",
         "period": {
-          "start": 2015,
-          "end": 2022
+          "start": 2017,
+          "end": 2023
         },
         "stage": "incubating",
         "tags": [
@@ -65174,6 +65174,13 @@
             "name": "det_fattore_contesto",
             "type": "DOUBLE",
             "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "livello_territoriale",
+            "type": "VARCHAR",
+            "role": "dimension",
             "semantic_type": "",
             "description": ""
           },
@@ -65579,6 +65586,13 @@
             "description": ""
           },
           {
+            "name": "livello_territoriale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "join_enti_ok",
             "type": "BOOLEAN",
             "role": "dimension",
@@ -65598,7 +65612,7 @@
         "source": "https://www.opencivitas.it/",
         "source_id": "opencivitas",
         "period": {
-          "start": 2015,
+          "start": 2017,
           "end": 2023
         },
         "stage": "incubating",
@@ -65685,7 +65699,7 @@
         "source": "https://www.opencivitas.it/",
         "source_id": "opencivitas",
         "period": {
-          "start": 2015,
+          "start": 2017,
           "end": 2023
         },
         "stage": "incubating",
@@ -65792,6 +65806,13 @@
             "type": "INTEGER",
             "role": "dimension",
             "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "livello_territoriale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
             "description": ""
           },
           {
