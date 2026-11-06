@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-06T20:59:10.308485",
+  "generated_at": "2026-11-06T22:46:37.206623",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -12534,7 +12534,7 @@
         ],
         "category": "sanita",
         "registry_source": "dataset-incubator",
-        "clean_rows": null,
+        "clean_rows": 18756,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/personale_ssn/2021/personale_ssn_2021_clean.parquet",
@@ -12646,6 +12646,9 @@
             "semantic_type": "",
             "description": "Personale in servizio al 31/12 dell'anno di riferimento \u2014 donne"
           }
+        ],
+        "mart_refs": [
+          "personale_ssn__mart_personale_ssn_serie"
         ]
       },
       {

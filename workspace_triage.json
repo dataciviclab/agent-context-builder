@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T20:59:10.308485",
+  "generated_at": "2026-11-06T22:46:37.206623",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -52,7 +52,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 20,
+  "open_prs": 11,
   "prs": [
     {
       "number": 20,
@@ -66,13 +66,6 @@
       "title": "feat(anac-cross): codice IPA della stazione appaltante (#13)",
       "repo": "appalti-pubblici",
       "url": "https://github.com/dataciviclab/appalti-pubblici/pull/19",
-      "category": "other"
-    },
-    {
-      "number": 284,
-      "title": "refactor(data): location_urls da lab-connectors, via gcs_manifest",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/284",
       "category": "other"
     },
     {
@@ -104,34 +97,6 @@
       "category": "other"
     },
     {
-      "number": 99,
-      "title": "feat(sql_page): template SQL opzionali",
-      "repo": "lab-connectors",
-      "url": "https://github.com/dataciviclab/lab-connectors/pull/99",
-      "category": "other"
-    },
-    {
-      "number": 98,
-      "title": "feat(formatters): fmt_usd",
-      "repo": "lab-connectors",
-      "url": "https://github.com/dataciviclab/lab-connectors/pull/98",
-      "category": "other"
-    },
-    {
-      "number": 16,
-      "title": "fix(dashboard): apply_branding standard",
-      "repo": "open-consip",
-      "url": "https://github.com/dataciviclab/open-consip/pull/16",
-      "category": "other"
-    },
-    {
-      "number": 20,
-      "title": "refactor(dashboard): fmt_it delega a fmt_num",
-      "repo": "open-inps",
-      "url": "https://github.com/dataciviclab/open-inps/pull/20",
-      "category": "other"
-    },
-    {
       "number": 21,
       "title": "feat(compose): finanziamento universitario (SIOPE + BDAP)",
       "repo": "open-mur",
@@ -139,38 +104,10 @@
       "category": "other"
     },
     {
-      "number": 12,
-      "title": "refactor(dashboard): fmt_eur canonico lab-connectors",
-      "repo": "open-pnrr",
-      "url": "https://github.com/dataciviclab/open-pnrr/pull/12",
-      "category": "other"
-    },
-    {
       "number": 11,
       "title": "refactor(pnrr): migra i 7 dataset da script a http_file",
       "repo": "open-pnrr",
       "url": "https://github.com/dataciviclab/open-pnrr/pull/11",
-      "category": "other"
-    },
-    {
-      "number": 27,
-      "title": "refactor(dashboard): fmt_eur canonico lab-connectors",
-      "repo": "opere-pubbliche",
-      "url": "https://github.com/dataciviclab/opere-pubbliche/pull/27",
-      "category": "other"
-    },
-    {
-      "number": 8,
-      "title": "refactor(dashboard): fmt_num/fmt_eur da lab-connectors",
-      "repo": "patrimonio-territorio",
-      "url": "https://github.com/dataciviclab/patrimonio-territorio/pull/8",
-      "category": "other"
-    },
-    {
-      "number": 444,
-      "title": "refactor(so): rimuove codice morto e corregge le metriche",
-      "repo": "source-observatory",
-      "url": "https://github.com/dataciviclab/source-observatory/pull/444",
       "category": "other"
     },
     {
@@ -2445,7 +2382,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 20"
+    "Many open PRs: 11"
   ],
   "radar": {
     "available": true,
@@ -2766,7 +2703,7 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-11-05",
+    "generated_at": "2026-11-06",
     "summary": {
       "total": 54,
       "by_status": {
@@ -3396,7 +3333,7 @@
       "repo": "dataset-incubator",
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
-      "updated_at": "2026-11-05",
+      "updated_at": "2026-11-06",
       "datasets": 53,
       "marts": 104,
       "signals": 54,
@@ -3566,11 +3503,11 @@
           "label": "ispra_emissioni_ghg",
           "detail": "anno 2023 \u2014 mart: si",
           "run": {
-            "run_id": "20260801T103200Z_4dc2cbf5",
+            "run_id": "20261106T213703Z_9ecfe5f1",
             "year": 2023,
             "status": "SUCCESS",
-            "started_at": "2026-08-01T10:32:00.800427+00:00",
-            "finished_at": "2026-08-01T10:32:02.250921+00:00"
+            "started_at": "2026-11-06T21:37:03.112534+00:00",
+            "finished_at": "2026-11-06T21:37:04.999144+00:00"
           }
         },
         {
@@ -3914,7 +3851,14 @@
           "source_id": "ministero_salute",
           "status": "ok",
           "label": "personale_ssn",
-          "detail": "anno 2021 \u2014 mart: si"
+          "detail": "anno 2021 \u2014 mart: si",
+          "run": {
+            "run_id": "20261106T221255Z_01da3123",
+            "year": 2021,
+            "status": "SUCCESS",
+            "started_at": "2026-11-06T22:12:55.630136+00:00",
+            "finished_at": "2026-11-06T22:13:08.648587+00:00"
+          }
         },
         {
           "id": "posti_letto_stabilimento",
@@ -7854,7 +7798,7 @@
       "repo": "open-elezioni",
       "available": true,
       "source_repo": "dataciviclab/open-elezioni",
-      "updated_at": "2026-11-04",
+      "updated_at": "2026-11-06",
       "datasets": 12,
       "marts": 20,
       "signals": 12,
@@ -7870,11 +7814,11 @@
           "label": "dait_amministratori_locali",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261104T180428Z_4d35882e",
+            "run_id": "20261106T220104Z_f08f1844",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-04T18:04:28.661156+00:00",
-            "finished_at": "2026-11-04T18:04:32.611688+00:00"
+            "started_at": "2026-11-06T22:01:04.749121+00:00",
+            "finished_at": "2026-11-06T22:01:09.357093+00:00"
           }
         },
         {
@@ -7884,11 +7828,11 @@
           "label": "dait_amministratori_storico",
           "detail": "anno 2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261104T180432Z_6b17bb82",
+            "run_id": "20261106T220109Z_539bc52f",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-11-04T18:04:32.944200+00:00",
-            "finished_at": "2026-11-04T18:08:04.193805+00:00"
+            "started_at": "2026-11-06T22:01:09.898960+00:00",
+            "finished_at": "2026-11-06T22:05:52.639139+00:00"
           }
         },
         {
@@ -7898,11 +7842,11 @@
           "label": "elezioni_comunali",
           "detail": "anni 1964-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261104T181001Z_794f8a5e",
+            "run_id": "20261106T220801Z_0ebb2c0f",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-11-04T18:10:01.920184+00:00",
-            "finished_at": "2026-11-04T18:10:04.323939+00:00"
+            "started_at": "2026-11-06T22:08:01.249492+00:00",
+            "finished_at": "2026-11-06T22:08:03.951678+00:00"
           }
         },
         {
@@ -7912,11 +7856,11 @@
           "label": "elezioni_europee",
           "detail": "anni 1979-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261104T181034Z_531608b8",
+            "run_id": "20261106T220843Z_cae8979a",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-11-04T18:10:34.361909+00:00",
-            "finished_at": "2026-11-04T18:10:42.103942+00:00"
+            "started_at": "2026-11-06T22:08:43.276339+00:00",
+            "finished_at": "2026-11-06T22:08:50.276899+00:00"
           }
         },
         {
@@ -7926,11 +7870,11 @@
           "label": "elezioni_politiche",
           "detail": "anno 2022 \u2014 mart: si",
           "run": {
-            "run_id": "20261104T181042Z_f8f951e1",
+            "run_id": "20261106T220850Z_c82694cf",
             "year": 2022,
             "status": "SUCCESS",
-            "started_at": "2026-11-04T18:10:42.382584+00:00",
-            "finished_at": "2026-11-04T18:12:01.284296+00:00"
+            "started_at": "2026-11-06T22:08:50.712294+00:00",
+            "finished_at": "2026-11-06T22:10:32.107580+00:00"
           }
         },
         {
@@ -7940,11 +7884,11 @@
           "label": "elezioni_referendum",
           "detail": "anni 1974-2022 \u2014 mart: si",
           "run": {
-            "run_id": "20261104T181229Z_7c780244",
+            "run_id": "20261106T221104Z_764ef63f",
             "year": 2022,
             "status": "SUCCESS",
-            "started_at": "2026-11-04T18:12:29.341338+00:00",
-            "finished_at": "2026-11-04T18:12:31.502721+00:00"
+            "started_at": "2026-11-06T22:11:04.997065+00:00",
+            "finished_at": "2026-11-06T22:11:07.901807+00:00"
           }
         },
         {
@@ -7954,11 +7898,11 @@
           "label": "elezioni_regionali",
           "detail": "anni 1970-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261104T181319Z_f6d53c7a",
+            "run_id": "20261106T221205Z_a7643e0f",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-11-04T18:13:19.858037+00:00",
-            "finished_at": "2026-11-04T18:13:21.304425+00:00"
+            "started_at": "2026-11-06T22:12:05.957673+00:00",
+            "finished_at": "2026-11-06T22:12:07.643427+00:00"
           }
         },
         {
@@ -7968,11 +7912,11 @@
           "label": "elezioni_provinciali",
           "detail": "anni 2004-2011 \u2014 mart: si",
           "run": {
-            "run_id": "20261104T181340Z_558412d6",
+            "run_id": "20261106T221230Z_caac18bb",
             "year": 2011,
             "status": "SUCCESS",
-            "started_at": "2026-11-04T18:13:40.165081+00:00",
-            "finished_at": "2026-11-04T18:13:42.044255+00:00"
+            "started_at": "2026-11-06T22:12:30.749192+00:00",
+            "finished_at": "2026-11-06T22:12:33.027322+00:00"
           }
         },
         {
@@ -7982,11 +7926,11 @@
           "label": "sut_codici_comuni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261104T180411Z_410e19bf",
+            "run_id": "20261106T220046Z_aaa2d4d5",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-04T18:04:11.750009+00:00",
-            "finished_at": "2026-11-04T18:04:12.741313+00:00"
+            "started_at": "2026-11-06T22:00:46.082383+00:00",
+            "finished_at": "2026-11-06T22:00:47.158349+00:00"
           }
         },
         {
@@ -7996,11 +7940,11 @@
           "label": "sut_collegi_camera_comuni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261104T180415Z_f35d37f3",
+            "run_id": "20261106T220050Z_6f5c68d4",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-04T18:04:15.102678+00:00",
-            "finished_at": "2026-11-04T18:04:15.951230+00:00"
+            "started_at": "2026-11-06T22:00:50.013716+00:00",
+            "finished_at": "2026-11-06T22:00:51.037297+00:00"
           }
         },
         {
@@ -8010,11 +7954,11 @@
           "label": "sut_collegi_senato_comuni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261104T180418Z_c3f2b4a1",
+            "run_id": "20261106T220054Z_b21cb1f0",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-04T18:04:18.387637+00:00",
-            "finished_at": "2026-11-04T18:04:19.271996+00:00"
+            "started_at": "2026-11-06T22:00:54.038923+00:00",
+            "finished_at": "2026-11-06T22:00:55.000389+00:00"
           }
         },
         {
@@ -8024,11 +7968,11 @@
           "label": "sut_comuni_bridge",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261104T180419Z_c1158c7b",
+            "run_id": "20261106T220055Z_33619d4a",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-04T18:04:19.572666+00:00",
-            "finished_at": "2026-11-04T18:04:24.526194+00:00"
+            "started_at": "2026-11-06T22:00:55.427149+00:00",
+            "finished_at": "2026-11-06T22:01:00.040088+00:00"
           }
         }
       ]
@@ -8332,7 +8276,7 @@
       "repo": "open-ispra",
       "available": true,
       "source_repo": "dataciviclab/open-ispra",
-      "updated_at": "2026-11-05",
+      "updated_at": "2026-11-06",
       "datasets": 8,
       "marts": 13,
       "signals": 8,
@@ -8376,11 +8320,11 @@
           "label": "ispra_iffi",
           "detail": "anno 2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261105T144452Z_cf97e376",
+            "run_id": "20261106T213215Z_37b4d401",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-11-05T14:44:52.853051+00:00",
-            "finished_at": "2026-11-05T14:45:05.953370+00:00"
+            "started_at": "2026-11-06T21:32:15.349357+00:00",
+            "finished_at": "2026-11-06T21:32:27.325506+00:00"
           }
         },
         {
@@ -8432,11 +8376,11 @@
           "label": "ispra_pest_stations",
           "detail": "anno 2021 \u2014 mart: si",
           "run": {
-            "run_id": "20261105T152317Z_35607eb7",
+            "run_id": "20261106T213206Z_ae86ef1e",
             "year": 2021,
             "status": "SUCCESS",
-            "started_at": "2026-11-05T15:23:17.847475+00:00",
-            "finished_at": "2026-11-05T15:23:25.181229+00:00"
+            "started_at": "2026-11-06T21:32:06.547465+00:00",
+            "finished_at": "2026-11-06T21:32:12.685159+00:00"
           }
         },
         {
@@ -8446,11 +8390,11 @@
           "label": "ispra_places",
           "detail": "anno 2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261105T152325Z_0d0c0ac2",
+            "run_id": "20261106T213212Z_fbb4dee1",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-11-05T15:23:25.623633+00:00",
-            "finished_at": "2026-11-05T15:23:27.878498+00:00"
+            "started_at": "2026-11-06T21:32:12.971208+00:00",
+            "finished_at": "2026-11-06T21:32:15.081196+00:00"
           }
         }
       ]
