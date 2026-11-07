@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T12:33:39.315682",
+  "generated_at": "2026-11-07T21:30:38.219133",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -52,7 +52,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 14,
+  "open_prs": 13,
   "prs": [
     {
       "number": 20,
@@ -66,13 +66,6 @@
       "title": "feat(anac-cross): codice IPA della stazione appaltante (#13)",
       "repo": "appalti-pubblici",
       "url": "https://github.com/dataciviclab/appalti-pubblici/pull/19",
-      "category": "other"
-    },
-    {
-      "number": 463,
-      "title": "docs(open-inps): conteggi e perimetro allineati al registry (20 dataset, 58 mart)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/dataciviclab/dataciviclab/pull/463",
       "category": "other"
     },
     {
@@ -104,17 +97,17 @@
       "category": "other"
     },
     {
-      "number": 23,
-      "title": "chore(post-merge): aggiorna registry (schedule)",
-      "repo": "gu-monitor",
-      "url": "https://github.com/dataciviclab/gu-monitor/pull/23",
+      "number": 26,
+      "title": "refactor(raw): source CKAN native al posto di prefetch.py",
+      "repo": "giustizia-amministrativa",
+      "url": "https://github.com/dataciviclab/giustizia-amministrativa/pull/26",
       "category": "other"
     },
     {
-      "number": 21,
-      "title": "fix: unit\u00e0 e mensilit\u00e0 della spesa pensioni + allineamento conteggi",
+      "number": 28,
+      "title": "fix(make): dataset prima del compose nel batch post-merge",
       "repo": "open-inps",
-      "url": "https://github.com/dataciviclab/open-inps/pull/21",
+      "url": "https://github.com/dataciviclab/open-inps/pull/28",
       "category": "other"
     },
     {
@@ -2403,7 +2396,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 14"
+    "Many open PRs: 13"
   ],
   "radar": {
     "available": true,
@@ -6185,7 +6178,7 @@
       "repo": "gu-monitor",
       "available": true,
       "source_repo": "dataciviclab/gu-monitor",
-      "updated_at": "2026-11-06",
+      "updated_at": "2026-11-07",
       "datasets": 1,
       "marts": 3,
       "signals": 1,
@@ -6201,11 +6194,11 @@
           "label": "gu_atti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261106T134115Z_f4b5fcb5",
+            "run_id": "20261107T122208Z_017af4f7",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-06T13:41:15.462095+00:00",
-            "finished_at": "2026-11-06T13:41:15.815505+00:00"
+            "started_at": "2026-11-07T12:22:08.497440+00:00",
+            "finished_at": "2026-11-07T12:22:08.788483+00:00"
           }
         }
       ]
@@ -6496,7 +6489,7 @@
       "repo": "inpa-reclutamento",
       "available": true,
       "source_repo": "dataciviclab/inpa-reclutamento",
-      "updated_at": "2026-11-06",
+      "updated_at": "2026-11-07",
       "datasets": 4,
       "marts": 12,
       "signals": 4,
@@ -6540,11 +6533,11 @@
           "label": "inpa_bandi_open",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261106T135443Z_90bbcef3",
+            "run_id": "20261107T203653Z_729e602f",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-06T13:54:43.324773+00:00",
-            "finished_at": "2026-11-06T13:54:58.662147+00:00"
+            "started_at": "2026-11-07T20:36:53.902058+00:00",
+            "finished_at": "2026-11-07T20:37:04.148872+00:00"
           }
         },
         {
@@ -6554,11 +6547,11 @@
           "label": "inpa_comunicazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261106T135459Z_e3cb63bf",
+            "run_id": "20261107T203704Z_57295ced",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-06T13:54:59.097286+00:00",
-            "finished_at": "2026-11-06T13:55:35.247680+00:00"
+            "started_at": "2026-11-07T20:37:04.570709+00:00",
+            "finished_at": "2026-11-07T20:37:59.234554+00:00"
           }
         }
       ]
@@ -8010,13 +8003,13 @@
       "repo": "open-inps",
       "available": true,
       "source_repo": "dataciviclab/open-inps",
-      "updated_at": "2026-11-01",
-      "datasets": 20,
-      "marts": 58,
-      "signals": 20,
+      "updated_at": "2026-11-07",
+      "datasets": 21,
+      "marts": 63,
+      "signals": 21,
       "codelists": 0,
       "entities": 4,
-      "gcs": 20,
+      "gcs": 21,
       "reason": "",
       "signals_detail": [
         {
@@ -8068,11 +8061,11 @@
           "label": "inps_bilancio_gestionale",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T171227Z_23fe26c5",
+            "run_id": "20261107T174619Z_99f4d99b",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T17:12:27.725296+00:00",
-            "finished_at": "2026-11-01T17:12:34.655496+00:00"
+            "started_at": "2026-11-07T17:46:19.749833+00:00",
+            "finished_at": "2026-11-07T17:46:29.209509+00:00"
           }
         },
         {
@@ -8143,6 +8136,20 @@
             "status": "SUCCESS",
             "started_at": "2026-11-01T17:13:15.734211+00:00",
             "finished_at": "2026-11-01T17:14:25.325992+00:00"
+          }
+        },
+        {
+          "id": "inps_invalidi_civili",
+          "source_id": "inps",
+          "status": "ok",
+          "label": "inps_invalidi_civili",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261107T142051Z_b3c2e0c2",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-07T14:20:51.344899+00:00",
+            "finished_at": "2026-11-07T14:21:12.383373+00:00"
           }
         },
         {

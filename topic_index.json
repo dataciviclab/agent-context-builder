@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-07T12:33:39.315682",
+  "generated_at": "2026-11-07T21:30:38.219133",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -362,11 +362,11 @@
       ]
     },
     "open-inps": {
-      "description": "17 dataset INPS aperti: pensioni, mercato del lavoro, welfare (NASpI, RdC/PdC, DIS-COLL) in parquet, con compose e dashboard.",
+      "description": "20 dataset INPS aperti: pensioni, mercato del lavoro, welfare (NASpI, RdC/PdC, DIS-COLL) in parquet, con compose e dashboard.",
       "url": "https://github.com/dataciviclab/open-inps",
       "role": "dati",
       "domain": null,
-      "n_datasets": 20,
+      "n_datasets": 21,
       "n_published": 0,
       "sources": [
         "dataciviclab_composite",
@@ -14391,7 +14391,8 @@
         "mart_refs": [
           "inps_bilancio_gestionale__mart_rg_top_entrate",
           "inps_bilancio_gestionale__mart_rg_top_uscite",
-          "inps_bilancio_gestionale__mart_rg_contributi_lavoratori"
+          "inps_bilancio_gestionale__mart_rg_contributi_lavoratori",
+          "inps_bilancio_gestionale__mart_rg_incentivi"
         ]
       },
       {
@@ -14850,6 +14851,112 @@
         "mart_refs": [
           "inps_flussi_settore__mart_flussi_settore",
           "inps_flussi_settore__mart_flussi_settore_regione"
+        ]
+      },
+      {
+        "slug": "inps_invalidi_civili",
+        "url_slug": "inps-invalidi-civili",
+        "name": "Inps Invalidi Civili",
+        "description": "Prestazioni agli invalidi civili (obs 381/383/384): ciechi, sordomuti, invalidi totali e parziali. Numero e importo medio per anno, sesso, et\u00e0, categoria e regione; serie storica 2002-2026.",
+        "source": "",
+        "source_id": "inps",
+        "period": {
+          "start": 2002,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "welfare",
+          "inps",
+          "invalidi-civili",
+          "assistenza",
+          "disabilita"
+        ],
+        "category": "welfare",
+        "registry_source": "open-inps",
+        "clean_rows": 460,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-inps/inps_invalidi_civili/2026/inps_invalidi_civili_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "dimensione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sesso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sottocategoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "classe_eta",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "tipo_prestazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_prestazioni",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_medio_mensile_eur",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "inps_invalidi_civili__mart_invalidi_categoria",
+          "inps_invalidi_civili__mart_invalidi_eta",
+          "inps_invalidi_civili__mart_invalidi_regione",
+          "inps_invalidi_civili__mart_invalidi_serie"
         ]
       },
       {
@@ -39904,7 +40011,7 @@
         ],
         "category": "normativa",
         "registry_source": "gu-monitor",
-        "clean_rows": 26413,
+        "clean_rows": 26656,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/gu-monitor/gu_atti/2026/gu_atti_2026_clean.parquet",
@@ -42119,7 +42226,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 1923,
+        "clean_rows": 1903,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_bandi_open/2026/inpa_bandi_open_2026_clean.parquet",
@@ -42338,7 +42445,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 6518,
+        "clean_rows": 6533,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_comunicazioni/2026/inpa_comunicazioni_2026_clean.parquet",
@@ -72547,6 +72654,7 @@
       "inps_dipendenti_pubblici",
       "inps_dis_coll",
       "inps_flussi_settore",
+      "inps_invalidi_civili",
       "inps_lavoratori_pubblici",
       "inps_lavoratori_redditi",
       "inps_naspi",
@@ -78872,6 +78980,22 @@
         "mercato-lavoro"
       ],
       "description": "Assunzioni e cessazioni per settore NACE Rev.2/2.1, nazionale (obs 407/406/528/530, 2014-2026)."
+    },
+    "inps_invalidi_civili": {
+      "name": "Inps Invalidi Civili",
+      "stage": "incubating",
+      "source_id": "inps",
+      "registry_source": "open-inps",
+      "domain": null,
+      "category": "welfare",
+      "tags": [
+        "welfare",
+        "inps",
+        "invalidi-civili",
+        "assistenza",
+        "disabilita"
+      ],
+      "description": "Prestazioni agli invalidi civili (obs 381/383/384): ciechi, sordomuti, invalidi totali e parziali. Numero e importo medio per anno, sesso, et\u00e0, categoria e regione; serie storica 2002-2026."
     },
     "inps_lavoratori_pubblici": {
       "name": "Inps Lavoratori Pubblici",
