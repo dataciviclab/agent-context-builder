@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T22:46:37.206623",
+  "generated_at": "2026-11-07T04:54:53.755456",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -52,7 +52,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 11,
+  "open_prs": 14,
   "prs": [
     {
       "number": 20,
@@ -97,6 +97,13 @@
       "category": "other"
     },
     {
+      "number": 18,
+      "title": "chore(post-merge): aggiorna registry (schedule)",
+      "repo": "open-consip",
+      "url": "https://github.com/dataciviclab/open-consip/pull/18",
+      "category": "other"
+    },
+    {
       "number": 21,
       "title": "feat(compose): finanziamento universitario (SIOPE + BDAP)",
       "repo": "open-mur",
@@ -108,6 +115,20 @@
       "title": "refactor(pnrr): migra i 7 dataset da script a http_file",
       "repo": "open-pnrr",
       "url": "https://github.com/dataciviclab/open-pnrr/pull/11",
+      "category": "other"
+    },
+    {
+      "number": 449,
+      "title": "chore(so): log live e timeout nei workflow",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/449",
+      "category": "other"
+    },
+    {
+      "number": 448,
+      "title": "fix(so): semantica validate, inventory e metriche",
+      "repo": "source-observatory",
+      "url": "https://github.com/dataciviclab/source-observatory/pull/448",
       "category": "other"
     },
     {
@@ -2382,7 +2403,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 11"
+    "Many open PRs: 14"
   ],
   "radar": {
     "available": true,
@@ -2696,8 +2717,8 @@
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-11-02T11:38:24+00:00",
-    "sources_checked": 36,
+    "captured_at": "2026-11-07T00:04:39+00:00",
+    "sources_checked": 35,
     "regressions": [],
     "alerts": []
   },
