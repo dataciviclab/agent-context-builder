@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T04:47:15.000782",
+  "generated_at": "2026-11-08T12:51:46.757120",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -52,7 +52,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 13,
+  "open_prs": 14,
   "prs": [
     {
       "number": 20,
@@ -101,6 +101,13 @@
       "title": "refactor(raw): source CKAN native al posto di prefetch.py",
       "repo": "giustizia-amministrativa",
       "url": "https://github.com/dataciviclab/giustizia-amministrativa/pull/26",
+      "category": "other"
+    },
+    {
+      "number": 24,
+      "title": "chore(post-merge): aggiorna registry (schedule)",
+      "repo": "gu-monitor",
+      "url": "https://github.com/dataciviclab/gu-monitor/pull/24",
       "category": "other"
     },
     {
@@ -2396,24 +2403,24 @@
     }
   },
   "warnings": [
-    "Many open PRs: 13"
+    "Many open PRs: 14"
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-11-07T09:59:23.366387+00:00",
-    "probe_date": "2026-11-07",
+    "generated_at": "2026-11-08T10:17:38.082502+00:00",
+    "probe_date": "2026-11-08",
     "sources_total": 35,
-    "green": 32,
+    "green": 31,
     "yellow": 3,
-    "red": 0,
+    "red": 1,
     "persistent_red": 0,
     "sources": [
       {
         "id": "istat_sdmx",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "sdmx",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
@@ -2530,10 +2537,10 @@
       },
       {
         "id": "aifa",
-        "status": "YELLOW",
+        "status": "RED",
         "protocol": "html",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "502",
+        "note": null,
         "red_streak": 0
       },
       {
@@ -2691,6 +2698,14 @@
     ],
     "unhealthy": [
       {
+        "id": "istat_sdmx",
+        "status": "YELLOW",
+        "protocol": "sdmx",
+        "http_code": "-",
+        "note": "Timeout (ReadTimeout)",
+        "red_streak": 0
+      },
+      {
         "id": "anac",
         "status": "YELLOW",
         "protocol": "ckan",
@@ -2708,28 +2723,28 @@
       },
       {
         "id": "aifa",
-        "status": "YELLOW",
+        "status": "RED",
         "protocol": "html",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "502",
+        "note": null,
         "red_streak": 0
       }
     ]
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-11-07T09:40:03+00:00",
+    "captured_at": "2026-11-08T12:27:39+00:00",
     "sources_checked": 35,
     "regressions": [],
     "alerts": []
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-11-06",
+    "generated_at": "2026-11-08",
     "summary": {
-      "total": 54,
+      "total": 55,
       "by_status": {
-        "ok": 54
+        "ok": 55
       }
     },
     "actionable": []
@@ -2949,7 +2964,7 @@
       "repo": "bilancio-pubblico",
       "available": true,
       "source_repo": "dataciviclab/bilancio-pubblico",
-      "updated_at": "2026-11-05",
+      "updated_at": "2026-11-08",
       "datasets": 16,
       "marts": 38,
       "signals": 16,
@@ -3019,13 +3034,13 @@
           "source_id": "openbdap",
           "status": "ok",
           "label": "bdap_ni_azioni",
-          "detail": "anni 2018-2025 \u2014 mart: si",
+          "detail": "anni 2018-2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261105T100447Z_0762197d",
-            "year": 2025,
+            "run_id": "20261108T113239Z_f0839f6f",
+            "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-05T10:04:47.347902+00:00",
-            "finished_at": "2026-11-05T10:04:55.816403+00:00"
+            "started_at": "2026-11-08T11:32:39.603345+00:00",
+            "finished_at": "2026-11-08T11:32:45.269118+00:00"
           }
         },
         {
@@ -3033,13 +3048,13 @@
           "source_id": "openbdap",
           "status": "ok",
           "label": "bdap_ni_indicatori",
-          "detail": "anni 2018-2025 \u2014 mart: si",
+          "detail": "anni 2018-2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261105T100604Z_c304a9b8",
-            "year": 2025,
+            "run_id": "20261108T113359Z_600d9bd0",
+            "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-05T10:06:04.711688+00:00",
-            "finished_at": "2026-11-05T10:06:14.459527+00:00"
+            "started_at": "2026-11-08T11:33:59.657698+00:00",
+            "finished_at": "2026-11-08T11:34:05.700305+00:00"
           }
         },
         {
@@ -3047,13 +3062,13 @@
           "source_id": "openbdap",
           "status": "ok",
           "label": "bdap_ni_obiettivi",
-          "detail": "anni 2018-2025 \u2014 mart: si",
+          "detail": "anni 2018-2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261105T100653Z_42f2a3bb",
-            "year": 2025,
+            "run_id": "20261108T111102Z_b46f21d6",
+            "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-05T10:06:53.725378+00:00",
-            "finished_at": "2026-11-05T10:06:58.712001+00:00"
+            "started_at": "2026-11-08T11:11:02.946441+00:00",
+            "finished_at": "2026-11-08T11:11:08.226536+00:00"
           }
         },
         {
@@ -3355,13 +3370,13 @@
       "repo": "dataset-incubator",
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
-      "updated_at": "2026-11-06",
-      "datasets": 53,
-      "marts": 104,
-      "signals": 54,
+      "updated_at": "2026-11-08",
+      "datasets": 54,
+      "marts": 105,
+      "signals": 55,
       "codelists": 2,
       "entities": 12,
-      "gcs": 52,
+      "gcs": 53,
       "reason": "",
       "signals_detail": [
         {
@@ -3446,6 +3461,20 @@
             "status": "DRY_RUN",
             "started_at": "2026-07-31T16:37:44.040306+00:00",
             "finished_at": "2026-07-31T16:37:44.044617+00:00"
+          }
+        },
+        {
+          "id": "bdap_ssn_conto_economico",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "bdap_ssn_conto_economico",
+          "detail": "anni 2012-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20261108T115832Z_5d54d30b",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-11-08T11:58:32.576088+00:00",
+            "finished_at": "2026-11-08T11:58:37.679176+00:00"
           }
         },
         {

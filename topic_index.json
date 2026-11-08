@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-08T04:47:15.000782",
+  "generated_at": "2026-11-08T12:51:46.757120",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -71,7 +71,7 @@
       "url": "https://github.com/dataciviclab/dataset-incubator",
       "role": "infra",
       "domain": "finanza-pubblica",
-      "n_datasets": 53,
+      "n_datasets": 54,
       "n_published": 28,
       "sources": [
         "adm_opendata",
@@ -6703,7 +6703,7 @@
         "source_id": "openbdap",
         "period": {
           "start": 2018,
-          "end": 2025
+          "end": 2026
         },
         "stage": "incubating",
         "tags": [
@@ -6716,7 +6716,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "bilancio-pubblico",
-        "clean_rows": 2457,
+        "clean_rows": 823,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/bilancio-pubblico/bdap_ni_azioni/*/bdap_ni_azioni_*_clean.parquet",
@@ -6919,7 +6919,7 @@
         "source_id": "openbdap",
         "period": {
           "start": 2018,
-          "end": 2025
+          "end": 2026
         },
         "stage": "incubating",
         "tags": [
@@ -6932,7 +6932,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "bilancio-pubblico",
-        "clean_rows": 3110,
+        "clean_rows": 1035,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/bilancio-pubblico/bdap_ni_indicatori/*/bdap_ni_indicatori_*_clean.parquet",
@@ -7205,7 +7205,7 @@
         "source_id": "openbdap",
         "period": {
           "start": 2018,
-          "end": 2025
+          "end": 2026
         },
         "stage": "incubating",
         "tags": [
@@ -7217,7 +7217,7 @@
         ],
         "category": "finanza-pubblica",
         "registry_source": "bilancio-pubblico",
-        "clean_rows": 1182,
+        "clean_rows": 593,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/bilancio-pubblico/bdap_ni_obiettivi/*/bdap_ni_obiettivi_*_clean.parquet",
@@ -9165,6 +9165,116 @@
             "semantic_type": "",
             "description": "Importo totale della voce"
           }
+        ]
+      },
+      {
+        "slug": "bdap_ssn_conto_economico",
+        "url_slug": "bdap-ssn-conto-economico",
+        "name": "Bdap Ssn Conto Economico",
+        "description": "",
+        "source": "",
+        "source_id": "openbdap",
+        "period": {
+          "start": 2012,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "sanita",
+          "bdap",
+          "ssn",
+          "conto-economico",
+          "bilanci"
+        ],
+        "category": "sanita",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 8144,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bdap_ssn_conto_economico/*/bdap_ssn_conto_economico_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "codice_regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "descrizione_regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_voce",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_voce",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sezione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "riga_sintesi",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "livello",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "voce_livello1",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_aggiornamento",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "bdap_ssn_conto_economico__mart_composizione_regionale"
         ]
       },
       {
@@ -70902,6 +71012,7 @@
       "datasets": [
         "aifa_spesa_consumo",
         "bdap_lea",
+        "bdap_ssn_conto_economico",
         "eurostat_hospital_beds_nuts2",
         "eurostat_ltc_beds",
         "eurostat_physicians_nuts2",
@@ -70913,7 +71024,7 @@
         "strutture_asl",
         "strutture_ricovero_asl"
       ],
-      "dataset_count": 12
+      "dataset_count": 13
     },
     {
       "slug": "welfare-lavoro",
@@ -71397,6 +71508,7 @@
       "datasets": [
         "aifa_spesa_consumo",
         "bdap_lea",
+        "bdap_ssn_conto_economico",
         "eurostat_hospital_beds_nuts2",
         "eurostat_ltc_beds",
         "eurostat_physicians_nuts2",
@@ -72296,6 +72408,7 @@
       "art_taxi_ncc",
       "bdap_anagrafe_enti",
       "bdap_lea",
+      "bdap_ssn_conto_economico",
       "centri_accoglienza_italia",
       "comuni_master",
       "dipendenti_pubblici",
@@ -73110,6 +73223,7 @@
     "sanita": [
       "aifa_spesa_consumo",
       "bdap_lea",
+      "bdap_ssn_conto_economico",
       "eurostat_hospital_beds_nuts2",
       "eurostat_ltc_beds",
       "eurostat_physicians_nuts2",
@@ -73978,6 +74092,22 @@
         "lea"
       ],
       "description": "Spesa sanitaria enti SSN per regione \u2014 Modello LEA (BDAP RGS MEF). Consumi, personale, servizi e altre voci di costo delle ASL italiane."
+    },
+    "bdap_ssn_conto_economico": {
+      "name": "Bdap Ssn Conto Economico",
+      "stage": "incubating",
+      "source_id": "openbdap",
+      "registry_source": "dataset-incubator",
+      "domain": "sanita",
+      "category": "sanita",
+      "tags": [
+        "sanita",
+        "bdap",
+        "ssn",
+        "conto-economico",
+        "bilanci"
+      ],
+      "description": ""
     },
     "centri_accoglienza_italia": {
       "name": "Centri di accoglienza migranti \u2014 CAS, CPA, Hotspot (2018-2024)",
