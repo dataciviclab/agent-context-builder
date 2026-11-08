@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T21:45:29.710510",
+  "generated_at": "2026-11-08T22:35:54.955199",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -52,7 +52,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 16,
+  "open_prs": 12,
   "prs": [
     {
       "number": 20,
@@ -97,24 +97,10 @@
       "category": "other"
     },
     {
-      "number": 55,
-      "title": "fix(clean): rimuove ignore_errors dove inerte o non necessario",
-      "repo": "dichiarazioni-italia",
-      "url": "https://github.com/dataciviclab/dichiarazioni-italia/pull/55",
-      "category": "other"
-    },
-    {
       "number": 26,
       "title": "refactor(raw): source CKAN native al posto di prefetch.py",
       "repo": "giustizia-amministrativa",
       "url": "https://github.com/dataciviclab/giustizia-amministrativa/pull/26",
-      "category": "other"
-    },
-    {
-      "number": 115,
-      "title": "refactor(datasets): staging vs contratti + atti_api + mart riferimenti URN + abroga",
-      "repo": "italia-corpus",
-      "url": "https://github.com/dataciviclab/italia-corpus/pull/115",
       "category": "other"
     },
     {
@@ -136,20 +122,6 @@
       "title": "refactor(pnrr): migra i 7 dataset da script a http_file",
       "repo": "open-pnrr",
       "url": "https://github.com/dataciviclab/open-pnrr/pull/11",
-      "category": "other"
-    },
-    {
-      "number": 542,
-      "title": "fix(clean): riporta le righe scartate da ignore_errors",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/542",
-      "category": "other"
-    },
-    {
-      "number": 537,
-      "title": "docs(advanced): incrementale disponibile ma non usato; non sostituisce lo script-level",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/537",
       "category": "other"
     },
     {
@@ -2417,7 +2389,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 16"
+    "Many open PRs: 12"
   ],
   "radar": {
     "available": true,
@@ -4479,7 +4451,7 @@
       "repo": "dichiarazioni-italia",
       "available": true,
       "source_repo": "dataciviclab/dichiarazioni-italia",
-      "updated_at": "2026-11-01",
+      "updated_at": "2026-11-08",
       "datasets": 18,
       "marts": 34,
       "signals": 18,
@@ -4495,11 +4467,11 @@
           "label": "abpf_titolari_piva_regione",
           "detail": "anni 2016-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T121531Z_86e4ab44",
+            "run_id": "20261108T215720Z_bf560afb",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T12:15:31.469392+00:00",
-            "finished_at": "2026-11-01T12:15:32.596470+00:00"
+            "started_at": "2026-11-08T21:57:20.370973+00:00",
+            "finished_at": "2026-11-08T21:57:21.851707+00:00"
           }
         },
         {
@@ -4509,11 +4481,11 @@
           "label": "acsp_imprese_regione",
           "detail": "anni 2015-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T121557Z_76e2eebd",
+            "run_id": "20261108T215756Z_65077807",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T12:15:57.223567+00:00",
-            "finished_at": "2026-11-01T12:15:57.985526+00:00"
+            "started_at": "2026-11-08T21:57:56.718116+00:00",
+            "finished_at": "2026-11-08T21:57:58.007797+00:00"
           }
         },
         {
@@ -4523,11 +4495,11 @@
           "label": "acsp_professionisti_regione",
           "detail": "anni 2019-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T121611Z_88d7a7bb",
+            "run_id": "20261108T215816Z_df02721e",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T12:16:11.820328+00:00",
-            "finished_at": "2026-11-01T12:16:12.583968+00:00"
+            "started_at": "2026-11-08T21:58:16.860574+00:00",
+            "finished_at": "2026-11-08T21:58:17.774055+00:00"
           }
         },
         {
@@ -4537,11 +4509,11 @@
           "label": "acsp_tutte_classi_reddito",
           "detail": "anni 2014-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T121637Z_427ecbdb",
+            "run_id": "20261108T215847Z_6ce4a6ab",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T12:16:37.360113+00:00",
-            "finished_at": "2026-11-01T12:16:38.101669+00:00"
+            "started_at": "2026-11-08T21:58:47.938708+00:00",
+            "finished_at": "2026-11-08T21:58:48.861009+00:00"
           }
         },
         {
@@ -4551,11 +4523,11 @@
           "label": "acsp_tutte_classi_volume",
           "detail": "anni 2014-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T121702Z_4afdb4f1",
+            "run_id": "20261108T215918Z_fb872989",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T12:17:02.950787+00:00",
-            "finished_at": "2026-11-01T12:17:03.737793+00:00"
+            "started_at": "2026-11-08T21:59:18.363240+00:00",
+            "finished_at": "2026-11-08T21:59:19.284444+00:00"
           }
         },
         {
@@ -4565,11 +4537,11 @@
           "label": "acsp_tutte_regione",
           "detail": "anni 2014-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T121728Z_7f8769a5",
+            "run_id": "20261108T215950Z_8d9e4611",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T12:17:28.238249+00:00",
-            "finished_at": "2026-11-01T12:17:28.962314+00:00"
+            "started_at": "2026-11-08T21:59:50.132948+00:00",
+            "finished_at": "2026-11-08T21:59:51.092387+00:00"
           }
         },
         {
@@ -4579,11 +4551,11 @@
           "label": "irap_imposta_pa_regione",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T121748Z_1f4a7054",
+            "run_id": "20261108T220015Z_f08347e9",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T12:17:48.773499+00:00",
-            "finished_at": "2026-11-01T12:17:49.498638+00:00"
+            "started_at": "2026-11-08T22:00:15.971967+00:00",
+            "finished_at": "2026-11-08T22:00:16.877068+00:00"
           }
         },
         {
@@ -4593,11 +4565,11 @@
           "label": "irap_imposta_regione",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T121809Z_72a79b88",
+            "run_id": "20261108T220040Z_98cd4ca2",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T12:18:09.002240+00:00",
-            "finished_at": "2026-11-01T12:18:09.716431+00:00"
+            "started_at": "2026-11-08T22:00:40.256050+00:00",
+            "finished_at": "2026-11-08T22:00:41.165301+00:00"
           }
         },
         {
@@ -4607,11 +4579,11 @@
           "label": "irap_imposta_settore",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T121829Z_4ddc4322",
+            "run_id": "20261108T220106Z_86fc999e",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T12:18:29.262242+00:00",
-            "finished_at": "2026-11-01T12:18:29.968627+00:00"
+            "started_at": "2026-11-08T22:01:06.698432+00:00",
+            "finished_at": "2026-11-08T22:01:07.589795+00:00"
           }
         },
         {
@@ -4621,11 +4593,11 @@
           "label": "irap_italia_estero",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T121853Z_da9c30be",
+            "run_id": "20261108T220132Z_de6c6a91",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T12:18:53.471465+00:00",
-            "finished_at": "2026-11-01T12:18:54.329620+00:00"
+            "started_at": "2026-11-08T22:01:32.704779+00:00",
+            "finished_at": "2026-11-08T22:01:33.589536+00:00"
           }
         },
         {
@@ -4635,11 +4607,11 @@
           "label": "irap_vp_regime",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T121925Z_97f875c1",
+            "run_id": "20261108T220221Z_936bea48",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T12:19:25.554309+00:00",
-            "finished_at": "2026-11-01T12:19:27.024261+00:00"
+            "started_at": "2026-11-08T22:02:21.312031+00:00",
+            "finished_at": "2026-11-08T22:02:24.160471+00:00"
           }
         },
         {
@@ -4649,11 +4621,11 @@
           "label": "ires_redditi_regione",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T121947Z_f6a34cc0",
+            "run_id": "20261108T220248Z_1ed48d24",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T12:19:47.175681+00:00",
-            "finished_at": "2026-11-01T12:19:47.921089+00:00"
+            "started_at": "2026-11-08T22:02:48.098287+00:00",
+            "finished_at": "2026-11-08T22:02:49.007826+00:00"
           }
         },
         {
@@ -4663,11 +4635,11 @@
           "label": "irpef_calcolo_tipologia",
           "detail": "anni 2014-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T122204Z_6eab54e6",
+            "run_id": "20261108T220534Z_fcf72f4d",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T12:22:04.127266+00:00",
-            "finished_at": "2026-11-01T12:22:08.153017+00:00"
+            "started_at": "2026-11-08T22:05:34.487061+00:00",
+            "finished_at": "2026-11-08T22:05:40.659258+00:00"
           }
         },
         {
@@ -4677,11 +4649,11 @@
           "label": "irpef_comunale",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T122234Z_6fc7255a",
+            "run_id": "20261108T220617Z_ea426296",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T12:22:34.943398+00:00",
-            "finished_at": "2026-11-01T12:22:37.788171+00:00"
+            "started_at": "2026-11-08T22:06:17.855318+00:00",
+            "finished_at": "2026-11-08T22:06:20.948695+00:00"
           }
         },
         {
@@ -4691,11 +4663,11 @@
           "label": "irpef_imposta_tipologia",
           "detail": "anni 2013-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T122320Z_510e72f6",
+            "run_id": "20261108T220719Z_b2258958",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T12:23:20.990978+00:00",
-            "finished_at": "2026-11-01T12:23:22.478085+00:00"
+            "started_at": "2026-11-08T22:07:19.168422+00:00",
+            "finished_at": "2026-11-08T22:07:21.722542+00:00"
           }
         },
         {
@@ -4705,11 +4677,11 @@
           "label": "iva_regionale",
           "detail": "anni 2015-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T122345Z_9a2942b9",
+            "run_id": "20261108T220748Z_76d4b2d5",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T12:23:45.599099+00:00",
-            "finished_at": "2026-11-01T12:23:46.401637+00:00"
+            "started_at": "2026-11-08T22:07:48.522308+00:00",
+            "finished_at": "2026-11-08T22:07:49.491367+00:00"
           }
         },
         {
@@ -4719,11 +4691,11 @@
           "label": "iva_sez_attivita",
           "detail": "anni 2015-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T122408Z_210f79df",
+            "run_id": "20261108T220815Z_652d12a7",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T12:24:08.952973+00:00",
-            "finished_at": "2026-11-01T12:24:09.737740+00:00"
+            "started_at": "2026-11-08T22:08:15.862084+00:00",
+            "finished_at": "2026-11-08T22:08:16.787216+00:00"
           }
         },
         {
@@ -4733,11 +4705,11 @@
           "label": "mef_irpef_regionale",
           "detail": "anni 2017-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T122434Z_76e90c2a",
+            "run_id": "20261108T220849Z_913e4562",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T12:24:34.775244+00:00",
-            "finished_at": "2026-11-01T12:24:36.057088+00:00"
+            "started_at": "2026-11-08T22:08:49.041268+00:00",
+            "finished_at": "2026-11-08T22:08:50.543576+00:00"
           }
         }
       ]
@@ -6604,12 +6576,12 @@
       "available": true,
       "source_repo": "dataciviclab/italia-corpus",
       "updated_at": "2026-11-08",
-      "datasets": 5,
-      "marts": 11,
-      "signals": 5,
+      "datasets": 6,
+      "marts": 13,
+      "signals": 6,
       "codelists": 0,
       "entities": 2,
-      "gcs": 5,
+      "gcs": 6,
       "reason": "",
       "signals_detail": [
         {
@@ -6619,11 +6591,11 @@
           "label": "akn_act_meta",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261108T200534Z_39d91659",
+            "run_id": "20261108T220109Z_01d87c8c",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-08T20:05:34.580815+00:00",
-            "finished_at": "2026-11-08T20:05:34.870213+00:00"
+            "started_at": "2026-11-08T22:01:09.863715+00:00",
+            "finished_at": "2026-11-08T22:01:10.043214+00:00"
           }
         },
         {
@@ -6633,11 +6605,25 @@
           "label": "akn_relations",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261108T200535Z_c189bdbd",
+            "run_id": "20261108T220110Z_512b6716",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-08T20:05:35.276179+00:00",
-            "finished_at": "2026-11-08T20:05:37.016991+00:00"
+            "started_at": "2026-11-08T22:01:10.288246+00:00",
+            "finished_at": "2026-11-08T22:01:11.506779+00:00"
+          }
+        },
+        {
+          "id": "atti_api",
+          "source_id": "italia_corpus",
+          "status": "ok",
+          "label": "atti_api",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261108T220111Z_f75f8d31",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-08T22:01:11.742539+00:00",
+            "finished_at": "2026-11-08T22:01:11.846218+00:00"
           }
         },
         {
@@ -6647,11 +6633,11 @@
           "label": "atti_index",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261108T200537Z_f9bf86f6",
+            "run_id": "20261108T220112Z_6932acce",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-08T20:05:37.427553+00:00",
-            "finished_at": "2026-11-08T20:05:38.546672+00:00"
+            "started_at": "2026-11-08T22:01:12.074321+00:00",
+            "finished_at": "2026-11-08T22:01:12.801959+00:00"
           }
         },
         {
@@ -6661,11 +6647,11 @@
           "label": "normativa",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261108T200538Z_ac55260b",
+            "run_id": "20261108T220113Z_fe2d4b31",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-08T20:05:38.940605+00:00",
-            "finished_at": "2026-11-08T20:05:39.327622+00:00"
+            "started_at": "2026-11-08T22:01:13.033584+00:00",
+            "finished_at": "2026-11-08T22:01:13.278641+00:00"
           }
         },
         {
@@ -6675,11 +6661,11 @@
           "label": "riferimenti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261108T200539Z_ad8963ab",
+            "run_id": "20261108T220113Z_83014cdb",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-08T20:05:39.755469+00:00",
-            "finished_at": "2026-11-08T20:05:40.982187+00:00"
+            "started_at": "2026-11-08T22:01:13.529961+00:00",
+            "finished_at": "2026-11-08T22:01:14.576110+00:00"
           }
         }
       ]
