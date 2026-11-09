@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T22:35:54.955199",
+  "generated_at": "2026-11-09T04:56:15.490454",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -52,7 +52,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 12,
+  "open_prs": 13,
   "prs": [
     {
       "number": 20,
@@ -66,6 +66,13 @@
       "title": "feat(anac-cross): codice IPA della stazione appaltante (#13)",
       "repo": "appalti-pubblici",
       "url": "https://github.com/dataciviclab/appalti-pubblici/pull/19",
+      "category": "other"
+    },
+    {
+      "number": 924,
+      "title": "feat(candidate): bdap-ssn-stato-patrimoniale",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/924",
       "category": "other"
     },
     {
@@ -2389,7 +2396,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 12"
+    "Many open PRs: 13"
   ],
   "radar": {
     "available": true,
@@ -6575,13 +6582,13 @@
       "repo": "italia-corpus",
       "available": true,
       "source_repo": "dataciviclab/italia-corpus",
-      "updated_at": "2026-11-08",
-      "datasets": 6,
-      "marts": 13,
-      "signals": 6,
+      "updated_at": "2026-11-09",
+      "datasets": 7,
+      "marts": 14,
+      "signals": 7,
       "codelists": 0,
       "entities": 2,
-      "gcs": 6,
+      "gcs": 7,
       "reason": "",
       "signals_detail": [
         {
@@ -6591,11 +6598,11 @@
           "label": "akn_act_meta",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261108T220109Z_01d87c8c",
+            "run_id": "20261109T002352Z_58fdc349",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-08T22:01:09.863715+00:00",
-            "finished_at": "2026-11-08T22:01:10.043214+00:00"
+            "started_at": "2026-11-09T00:23:52.538603+00:00",
+            "finished_at": "2026-11-09T00:23:52.782332+00:00"
           }
         },
         {
@@ -6605,11 +6612,11 @@
           "label": "akn_relations",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261108T220110Z_512b6716",
+            "run_id": "20261109T002353Z_426701ba",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-08T22:01:10.288246+00:00",
-            "finished_at": "2026-11-08T22:01:11.506779+00:00"
+            "started_at": "2026-11-09T00:23:53.120857+00:00",
+            "finished_at": "2026-11-09T00:23:54.669702+00:00"
           }
         },
         {
@@ -6619,11 +6626,11 @@
           "label": "atti_api",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261108T220111Z_f75f8d31",
+            "run_id": "20261109T002355Z_e412eb1f",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-08T22:01:11.742539+00:00",
-            "finished_at": "2026-11-08T22:01:11.846218+00:00"
+            "started_at": "2026-11-09T00:23:55.002962+00:00",
+            "finished_at": "2026-11-09T00:23:55.255026+00:00"
           }
         },
         {
@@ -6633,11 +6640,11 @@
           "label": "atti_index",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261108T220112Z_6932acce",
+            "run_id": "20261109T002355Z_8ae47681",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-08T22:01:12.074321+00:00",
-            "finished_at": "2026-11-08T22:01:12.801959+00:00"
+            "started_at": "2026-11-09T00:23:55.592802+00:00",
+            "finished_at": "2026-11-09T00:23:56.590937+00:00"
           }
         },
         {
@@ -6647,11 +6654,11 @@
           "label": "normativa",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261108T220113Z_fe2d4b31",
+            "run_id": "20261109T002356Z_d801210d",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-08T22:01:13.033584+00:00",
-            "finished_at": "2026-11-08T22:01:13.278641+00:00"
+            "started_at": "2026-11-09T00:23:56.925397+00:00",
+            "finished_at": "2026-11-09T00:23:57.288634+00:00"
           }
         },
         {
@@ -6661,11 +6668,25 @@
           "label": "riferimenti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261108T220113Z_83014cdb",
+            "run_id": "20261109T002357Z_870791b3",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-08T22:01:13.529961+00:00",
-            "finished_at": "2026-11-08T22:01:14.576110+00:00"
+            "started_at": "2026-11-09T00:23:57.643736+00:00",
+            "finished_at": "2026-11-09T00:23:59.139767+00:00"
+          }
+        },
+        {
+          "id": "testi",
+          "source_id": "italia_corpus",
+          "status": "ok",
+          "label": "testi",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261109T002359Z_798735ab",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-09T00:23:59.503264+00:00",
+            "finished_at": "2026-11-09T00:24:03.991783+00:00"
           }
         }
       ]
@@ -9088,9 +9109,9 @@
       "repo": "open-politica",
       "available": true,
       "source_repo": "dataciviclab/open-politica",
-      "updated_at": "2026-11-06",
+      "updated_at": "2026-11-09",
       "datasets": 35,
-      "marts": 69,
+      "marts": 70,
       "signals": 35,
       "codelists": 0,
       "entities": 5,
@@ -9098,17 +9119,17 @@
       "reason": "",
       "signals_detail": [
         {
-          "id": "compose:decreti_legge",
+          "id": "compose:atti",
           "source_id": "dataciviclab_composite",
           "status": "ok",
-          "label": "decreti_legge",
+          "label": "atti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261105T000543Z_e615491d",
+            "run_id": "20261109T000520Z_7fd38691",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-05T00:05:43.245411+00:00",
-            "finished_at": "2026-11-05T00:05:47.222707+00:00"
+            "started_at": "2026-11-09T00:05:20.341710+00:00",
+            "finished_at": "2026-11-09T00:05:37.114185+00:00"
           }
         },
         {
@@ -9118,11 +9139,11 @@
           "label": "osservatorio_parlamento",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261105T000547Z_bec1683c",
+            "run_id": "20261109T001103Z_df84584c",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-05T00:05:47.770813+00:00",
-            "finished_at": "2026-11-05T00:06:02.989726+00:00"
+            "started_at": "2026-11-09T00:11:03.489101+00:00",
+            "finished_at": "2026-11-09T00:11:29.339721+00:00"
           }
         },
         {
