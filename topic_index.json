@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-09T04:56:15.490454",
+  "generated_at": "2026-11-09T15:23:38.465369",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -70,8 +70,8 @@
       "description": "Incubazione dei dataset del Lab \u2014 intake, verifica e promozione dei filoni dati.",
       "url": "https://github.com/dataciviclab/dataset-incubator",
       "role": "infra",
-      "domain": "finanza-pubblica",
-      "n_datasets": 54,
+      "domain": "sanita",
+      "n_datasets": 56,
       "n_published": 28,
       "sources": [
         "adm_opendata",
@@ -252,7 +252,7 @@
       "url": "https://github.com/dataciviclab/italia-corpus",
       "role": "dati",
       "domain": null,
-      "n_datasets": 7,
+      "n_datasets": 8,
       "n_published": 0,
       "sources": [
         "italia_corpus"
@@ -435,7 +435,7 @@
       "url": "https://github.com/dataciviclab/open-politica",
       "role": "dati",
       "domain": "politica",
-      "n_datasets": 35,
+      "n_datasets": 36,
       "n_published": 0,
       "sources": [
         "dataciviclab_composite",
@@ -4629,6 +4629,152 @@
         ],
         "mart_refs": [
           "osservatorio_parlamento__mart_kpi"
+        ]
+      },
+      {
+        "slug": "persone",
+        "url_slug": "persone",
+        "name": "Persone",
+        "description": "Dimensione persona del Parlamento: una riga per persona \u00d7 legislatura \u00d7 ramo, con chiave stabile (`persona_key`), anagrafica (nome, nascita, gender), il ponte Camera\u2194Senato e la provenienza dei dati. Perimetro: Repubblica Leg13-19, lo stesso delle relazioni del grafo.\n",
+        "source": "",
+        "source_id": "dataciviclab_composite",
+        "period": {
+          "start": 1996,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "politica",
+          "parlamento",
+          "persone",
+          "anagrafica",
+          "dimensione"
+        ],
+        "category": "politica",
+        "registry_source": "open-politica",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-politica/persone/2026/persone_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "persona_key",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ramo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sistema",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "legislatura",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "persona_id",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "person_id",
+            "description": ""
+          },
+          {
+            "name": "senatore_id",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "senator_id",
+            "description": ""
+          },
+          {
+            "name": "deputato_uri",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cognome",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_completo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "gender",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_nascita",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "luogo_nascita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fonte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_fonti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ponte",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "persone__mart_persone",
+          "persone__mart_profilo"
         ]
       },
       {
@@ -9358,6 +9504,269 @@
         ]
       },
       {
+        "slug": "bdap_ssn_sp_per_ente",
+        "url_slug": "bdap-ssn-sp-per-ente",
+        "name": "Bdap Ssn Sp Per Ente",
+        "description": "Stato Patrimoniale delle singole aziende sanitarie: attivo, patrimonio netto e debiti per ente, regione e anno. Include le righe di consolidamento regionale (ente regione e totale).",
+        "source": "",
+        "source_id": "openbdap",
+        "period": {
+          "start": 2012,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "sanita",
+          "bdap",
+          "ssn",
+          "stato-patrimoniale",
+          "bilanci",
+          "enti"
+        ],
+        "category": "sanita",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 36097,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bdap_ssn_sp_per_ente/*/bdap_ssn_sp_per_ente_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "codice_regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "descrizione_regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_ente_ssn",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "ssn_code",
+            "description": ""
+          },
+          {
+            "name": "codice_ente_bdap",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "siope_code",
+            "description": ""
+          },
+          {
+            "name": "descrizione_ente",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_riga",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_voce",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_voce",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "prospetto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sezione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "riga_sintesi",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "livello",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "voce_livello1",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_aggiornamento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "bdap_ssn_sp_per_ente__mart_patrimonio_ente"
+        ]
+      },
+      {
+        "slug": "bdap_ssn_stato_patrimoniale",
+        "url_slug": "bdap-ssn-stato-patrimoniale",
+        "name": "Bdap Ssn Stato Patrimoniale",
+        "description": "Stato Patrimoniale degli enti del SSN a livello regionale: attivo, patrimonio netto e debiti delle aziende sanitarie, per regione e anno.",
+        "source": "",
+        "source_id": "openbdap",
+        "period": {
+          "start": 2012,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "sanita",
+          "bdap",
+          "ssn",
+          "stato-patrimoniale",
+          "bilanci"
+        ],
+        "category": "sanita",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 4014,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bdap_ssn_stato_patrimoniale/*/bdap_ssn_stato_patrimoniale_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "codice_regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "descrizione_regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_voce",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_voce",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "prospetto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sezione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "riga_sintesi",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "livello",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "voce_livello1",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_aggiornamento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "bdap_ssn_stato_patrimoniale__mart_patrimonio_regionale"
+        ]
+      },
+      {
         "slug": "dipendenti_pubblici",
         "url_slug": "dipendenti-pubblici",
         "name": "Dipendenti Pubblici - Occupazione e Turnover",
@@ -11057,6 +11466,194 @@
         ]
       },
       {
+        "slug": "direttive_ue",
+        "url_slug": "direttive-ue",
+        "name": "Direttive Ue",
+        "description": "Direttive UE citate dalle leggi italiane, con identit\u00e0 CELEX e metadati minimi da CELLAR (titolo, data, scadenza di recepimento) e misure nazionali italiane per il ritardo di recepimento. Una riga per direttiva (CELEX); le due grafie URN di Normattiva collassano su `urn_varianti`. Nessun testo: il link resta su EUR-Lex.\n",
+        "source": "",
+        "source_id": "italia_corpus",
+        "period": {
+          "start": 1958,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "ue",
+          "direttive",
+          "eur-lex",
+          "cellar",
+          "recepimento",
+          "celex"
+        ],
+        "category": "normativa",
+        "registry_source": "italia-corpus",
+        "clean_rows": 2672,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/italia-corpus/direttive_ue/2026/direttive_ue_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "celex",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "urn_varianti",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_citazioni",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "motivo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "work_uri",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "titolo_ita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "titolo_eng",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "titolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "scadenze",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "scadenza_recepimento",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_scadenze",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "in_vigore",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_misure_ita",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "prima_notifica_ita",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "prima_misura_ita_data",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ritardo_recepimento_giorni",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ritardo_plausibile",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "misura_ita_titolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "eurlex_url",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "eli_url",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "direttive_ue__mart_direttive_per_anno"
+        ]
+      },
+      {
         "slug": "normativa",
         "url_slug": "normativa",
         "name": "Normativa",
@@ -11404,7 +12001,7 @@
         ],
         "category": "normativa",
         "registry_source": "italia-corpus",
-        "clean_rows": 396077,
+        "clean_rows": 367544,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia-corpus/riferimenti/2026/riferimenti_2026_clean.parquet",
@@ -71313,6 +71910,8 @@
         "aifa_spesa_consumo",
         "bdap_lea",
         "bdap_ssn_conto_economico",
+        "bdap_ssn_sp_per_ente",
+        "bdap_ssn_stato_patrimoniale",
         "eurostat_hospital_beds_nuts2",
         "eurostat_ltc_beds",
         "eurostat_physicians_nuts2",
@@ -71324,7 +71923,7 @@
         "strutture_asl",
         "strutture_ricovero_asl"
       ],
-      "dataset_count": 13
+      "dataset_count": 15
     },
     {
       "slug": "welfare-lavoro",
@@ -71522,6 +72121,7 @@
         "elezioni_regionali",
         "membri_governo",
         "osservatorio_parlamento",
+        "persone",
         "ponte_persona",
         "ponti_parlamento",
         "profilo_politico",
@@ -71542,7 +72142,7 @@
         "senato_votazioni_oggetto",
         "voti_ddl_dettaglio"
       ],
-      "dataset_count": 46
+      "dataset_count": 47
     }
   ],
   "explorer_themes": [
@@ -71809,6 +72409,8 @@
         "aifa_spesa_consumo",
         "bdap_lea",
         "bdap_ssn_conto_economico",
+        "bdap_ssn_sp_per_ente",
+        "bdap_ssn_stato_patrimoniale",
         "eurostat_hospital_beds_nuts2",
         "eurostat_ltc_beds",
         "eurostat_physicians_nuts2",
@@ -71972,6 +72574,7 @@
         "elezioni_regionali",
         "membri_governo",
         "osservatorio_parlamento",
+        "persone",
         "ponte_persona",
         "ponti_parlamento",
         "profilo_politico",
@@ -72709,6 +73312,8 @@
       "bdap_anagrafe_enti",
       "bdap_lea",
       "bdap_ssn_conto_economico",
+      "bdap_ssn_sp_per_ente",
+      "bdap_ssn_stato_patrimoniale",
       "centri_accoglienza_italia",
       "comuni_master",
       "dipendenti_pubblici",
@@ -72952,6 +73557,7 @@
       "akn_relations",
       "atti_api",
       "atti_index",
+      "direttive_ue",
       "normativa",
       "riferimenti",
       "testi"
@@ -73160,6 +73766,7 @@
       "camera_voti",
       "membri_governo",
       "osservatorio_parlamento",
+      "persone",
       "ponte_persona",
       "ponti_parlamento",
       "profilo_politico",
@@ -73502,6 +74109,7 @@
       "elezioni_regionali",
       "membri_governo",
       "osservatorio_parlamento",
+      "persone",
       "ponte_persona",
       "ponti_parlamento",
       "profilo_politico",
@@ -73526,6 +74134,8 @@
       "aifa_spesa_consumo",
       "bdap_lea",
       "bdap_ssn_conto_economico",
+      "bdap_ssn_sp_per_ente",
+      "bdap_ssn_stato_patrimoniale",
       "eurostat_hospital_beds_nuts2",
       "eurostat_ltc_beds",
       "eurostat_physicians_nuts2",
@@ -74410,6 +75020,39 @@
         "bilanci"
       ],
       "description": ""
+    },
+    "bdap_ssn_sp_per_ente": {
+      "name": "Bdap Ssn Sp Per Ente",
+      "stage": "incubating",
+      "source_id": "openbdap",
+      "registry_source": "dataset-incubator",
+      "domain": "sanita",
+      "category": "sanita",
+      "tags": [
+        "sanita",
+        "bdap",
+        "ssn",
+        "stato-patrimoniale",
+        "bilanci",
+        "enti"
+      ],
+      "description": "Stato Patrimoniale delle singole aziende sanitarie: attivo, patrimonio netto e debiti per ente, regione e anno. Include le righe di consolidamento regionale (ente regione e totale)."
+    },
+    "bdap_ssn_stato_patrimoniale": {
+      "name": "Bdap Ssn Stato Patrimoniale",
+      "stage": "incubating",
+      "source_id": "openbdap",
+      "registry_source": "dataset-incubator",
+      "domain": "sanita",
+      "category": "sanita",
+      "tags": [
+        "sanita",
+        "bdap",
+        "ssn",
+        "stato-patrimoniale",
+        "bilanci"
+      ],
+      "description": "Stato Patrimoniale degli enti del SSN a livello regionale: attivo, patrimonio netto e debiti delle aziende sanitarie, per regione e anno."
     },
     "centri_accoglienza_italia": {
       "name": "Centri di accoglienza migranti \u2014 CAS, CPA, Hotspot (2018-2024)",
@@ -77863,6 +78506,23 @@
       ],
       "description": "Catalogo ufficiale Normattiva (una riga per atto, ~205k): identit\u00e0 (codice_redazionale + data GU), stato dalla classe ufficiale (3 = lista abrogati), appartenenza al corpus (in_corpus) e URN quando determinabile. Serve a dire quanto manca e ad agganciare le citazioni a un'identit\u00e0. Metadati, nessun testo.\n"
     },
+    "direttive_ue": {
+      "name": "Direttive Ue",
+      "stage": "incubating",
+      "source_id": "italia_corpus",
+      "registry_source": "italia-corpus",
+      "domain": null,
+      "category": "normativa",
+      "tags": [
+        "ue",
+        "direttive",
+        "eur-lex",
+        "cellar",
+        "recepimento",
+        "celex"
+      ],
+      "description": "Direttive UE citate dalle leggi italiane, con identit\u00e0 CELEX e metadati minimi da CELLAR (titolo, data, scadenza di recepimento) e misure nazionali italiane per il ritardo di recepimento. Una riga per direttiva (CELEX); le due grafie URN di Normattiva collassano su `urn_varianti`. Nessun testo: il link resta su EUR-Lex.\n"
+    },
     "normativa": {
       "name": "Normativa",
       "stage": "incubating",
@@ -80718,6 +81378,22 @@
         "benchmark"
       ],
       "description": ""
+    },
+    "persone": {
+      "name": "Persone",
+      "stage": "incubating",
+      "source_id": "dataciviclab_composite",
+      "registry_source": "open-politica",
+      "domain": "politica",
+      "category": "politica",
+      "tags": [
+        "politica",
+        "parlamento",
+        "persone",
+        "anagrafica",
+        "dimensione"
+      ],
+      "description": "Dimensione persona del Parlamento: una riga per persona \u00d7 legislatura \u00d7 ramo, con chiave stabile (`persona_key`), anagrafica (nome, nascita, gender), il ponte Camera\u2194Senato e la provenienza dei dati. Perimetro: Repubblica Leg13-19, lo stesso delle relazioni del grafo.\n"
     },
     "ponte_persona": {
       "name": "Ponte Persona",

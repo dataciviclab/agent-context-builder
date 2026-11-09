@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T04:56:15.490454",
+  "generated_at": "2026-11-09T15:23:38.465369",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -52,7 +52,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 13,
+  "open_prs": 15,
   "prs": [
     {
       "number": 20,
@@ -69,10 +69,17 @@
       "category": "other"
     },
     {
-      "number": 924,
-      "title": "feat(candidate): bdap-ssn-stato-patrimoniale",
+      "number": 929,
+      "title": "fix(bdap-lea): serie 2012-2024, totali sommabili e mart per ente",
       "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/924",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/929",
+      "category": "other"
+    },
+    {
+      "number": 928,
+      "title": "feat(candidate): bdap-ssn-ce-per-ente",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/928",
       "category": "other"
     },
     {
@@ -111,6 +118,13 @@
       "category": "other"
     },
     {
+      "number": 25,
+      "title": "chore(post-merge): aggiorna registry (schedule)",
+      "repo": "gu-monitor",
+      "url": "https://github.com/dataciviclab/gu-monitor/pull/25",
+      "category": "other"
+    },
+    {
       "number": 28,
       "title": "fix(make): dataset prima del compose nel batch post-merge",
       "repo": "open-inps",
@@ -146,7 +160,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 58,
+  "open_issues": 54,
   "issues": [
     {
       "number": 13,
@@ -324,20 +338,6 @@
       "category": "intake"
     },
     {
-      "number": 112,
-      "title": "[data] allegati.parquet (indice) non \u00e8 su GCS: i 5.492 md pubblicati sono irraggiungibili dai consumer",
-      "repo": "italia-corpus",
-      "url": "https://github.com/dataciviclab/italia-corpus/issues/112",
-      "category": "other"
-    },
-    {
-      "number": 111,
-      "title": "[data] Pubblicare il testo come dataset: 20.782 atti correnti, 0,38 GB",
-      "repo": "italia-corpus",
-      "url": "https://github.com/dataciviclab/italia-corpus/issues/111",
-      "category": "intake"
-    },
-    {
       "number": 109,
       "title": "[data] Riferimenti AKN senza contesto: 76.311/105.226 righe scrivono 'akn:ref'",
       "repo": "italia-corpus",
@@ -352,24 +352,10 @@
       "category": "other"
     },
     {
-      "number": 86,
-      "title": "T0: alias URN + indice identit\u00e0 + edge esterni (copertura edge 17,4% \u2192 ~39% senza nuovi byte)",
-      "repo": "italia-corpus",
-      "url": "https://github.com/dataciviclab/italia-corpus/issues/86",
-      "category": "other"
-    },
-    {
       "number": 81,
       "title": "materia: gap di tassonomia, natura dell'atto e multi-etichetta (dati dall'audit 2026-10-28)",
       "repo": "italia-corpus",
       "url": "https://github.com/dataciviclab/italia-corpus/issues/81",
-      "category": "other"
-    },
-    {
-      "number": 63,
-      "title": "chore(lab_tools): riordino script \u2014 separare library da eseguibili",
-      "repo": "italia-corpus",
-      "url": "https://github.com/dataciviclab/italia-corpus/issues/63",
       "category": "other"
     },
     {
@@ -2396,24 +2382,24 @@
     }
   },
   "warnings": [
-    "Many open PRs: 13"
+    "Many open PRs: 15"
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-11-08T10:17:38.082502+00:00",
-    "probe_date": "2026-11-08",
+    "generated_at": "2026-11-09T11:24:07.319985+00:00",
+    "probe_date": "2026-11-09",
     "sources_total": 35,
-    "green": 31,
-    "yellow": 3,
-    "red": 1,
+    "green": 33,
+    "yellow": 2,
+    "red": 0,
     "persistent_red": 0,
     "sources": [
       {
         "id": "istat_sdmx",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "sdmx",
-        "http_code": "-",
-        "note": "Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
@@ -2530,9 +2516,9 @@
       },
       {
         "id": "aifa",
-        "status": "RED",
+        "status": "GREEN",
         "protocol": "html",
-        "http_code": "502",
+        "http_code": "200",
         "note": null,
         "red_streak": 0
       },
@@ -2691,14 +2677,6 @@
     ],
     "unhealthy": [
       {
-        "id": "istat_sdmx",
-        "status": "YELLOW",
-        "protocol": "sdmx",
-        "http_code": "-",
-        "note": "Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
-      {
         "id": "anac",
         "status": "YELLOW",
         "protocol": "ckan",
@@ -2713,31 +2691,23 @@
         "http_code": "-",
         "note": "Retry timeout/connection: Timeout (ConnectTimeout)",
         "red_streak": 0
-      },
-      {
-        "id": "aifa",
-        "status": "RED",
-        "protocol": "html",
-        "http_code": "502",
-        "note": null,
-        "red_streak": 0
       }
     ]
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-11-08T12:27:39+00:00",
+    "captured_at": "2026-11-09T12:17:49+00:00",
     "sources_checked": 35,
     "regressions": [],
     "alerts": []
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-11-08",
+    "generated_at": "2026-11-09",
     "summary": {
-      "total": 55,
+      "total": 57,
       "by_status": {
-        "ok": 55
+        "ok": 57
       }
     },
     "actionable": []
@@ -3363,13 +3333,13 @@
       "repo": "dataset-incubator",
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
-      "updated_at": "2026-11-08",
-      "datasets": 54,
-      "marts": 105,
-      "signals": 55,
+      "updated_at": "2026-11-09",
+      "datasets": 56,
+      "marts": 107,
+      "signals": 57,
       "codelists": 2,
       "entities": 12,
-      "gcs": 53,
+      "gcs": 55,
       "reason": "",
       "signals_detail": [
         {
@@ -3468,6 +3438,34 @@
             "status": "SUCCESS",
             "started_at": "2026-11-08T11:58:32.576088+00:00",
             "finished_at": "2026-11-08T11:58:37.679176+00:00"
+          }
+        },
+        {
+          "id": "bdap_ssn_sp_per_ente",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "bdap_ssn_sp_per_ente",
+          "detail": "anni 2012-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20261109T143906Z_62310b0b",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-11-09T14:39:06.825568+00:00",
+            "finished_at": "2026-11-09T14:39:16.309890+00:00"
+          }
+        },
+        {
+          "id": "bdap_ssn_stato_patrimoniale",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "bdap_ssn_stato_patrimoniale",
+          "detail": "anni 2012-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20261109T112026Z_b04fb6fe",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-11-09T11:20:26.520373+00:00",
+            "finished_at": "2026-11-09T11:20:29.535393+00:00"
           }
         },
         {
@@ -6583,12 +6581,12 @@
       "available": true,
       "source_repo": "dataciviclab/italia-corpus",
       "updated_at": "2026-11-09",
-      "datasets": 7,
-      "marts": 14,
-      "signals": 7,
+      "datasets": 8,
+      "marts": 15,
+      "signals": 8,
       "codelists": 0,
       "entities": 2,
-      "gcs": 7,
+      "gcs": 8,
       "reason": "",
       "signals_detail": [
         {
@@ -6598,11 +6596,11 @@
           "label": "akn_act_meta",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261109T002352Z_58fdc349",
+            "run_id": "20261109T144445Z_151d6bb2",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-09T00:23:52.538603+00:00",
-            "finished_at": "2026-11-09T00:23:52.782332+00:00"
+            "started_at": "2026-11-09T14:44:45.705543+00:00",
+            "finished_at": "2026-11-09T14:44:45.923826+00:00"
           }
         },
         {
@@ -6612,11 +6610,11 @@
           "label": "akn_relations",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261109T002353Z_426701ba",
+            "run_id": "20261109T144446Z_91548743",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-09T00:23:53.120857+00:00",
-            "finished_at": "2026-11-09T00:23:54.669702+00:00"
+            "started_at": "2026-11-09T14:44:46.197821+00:00",
+            "finished_at": "2026-11-09T14:44:47.422004+00:00"
           }
         },
         {
@@ -6626,11 +6624,11 @@
           "label": "atti_api",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261109T002355Z_e412eb1f",
+            "run_id": "20261109T144447Z_bcced36f",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-09T00:23:55.002962+00:00",
-            "finished_at": "2026-11-09T00:23:55.255026+00:00"
+            "started_at": "2026-11-09T14:44:47.680957+00:00",
+            "finished_at": "2026-11-09T14:44:47.798286+00:00"
           }
         },
         {
@@ -6640,11 +6638,25 @@
           "label": "atti_index",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261109T002355Z_8ae47681",
+            "run_id": "20261109T144448Z_ff0162cc",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-09T00:23:55.592802+00:00",
-            "finished_at": "2026-11-09T00:23:56.590937+00:00"
+            "started_at": "2026-11-09T14:44:48.048186+00:00",
+            "finished_at": "2026-11-09T14:44:48.816648+00:00"
+          }
+        },
+        {
+          "id": "direttive_ue",
+          "source_id": "italia_corpus",
+          "status": "ok",
+          "label": "direttive_ue",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261109T144449Z_43f3a1a0",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-09T14:44:49.062267+00:00",
+            "finished_at": "2026-11-09T14:44:49.213698+00:00"
           }
         },
         {
@@ -6654,11 +6666,11 @@
           "label": "normativa",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261109T002356Z_d801210d",
+            "run_id": "20261109T144449Z_8a41f4bb",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-09T00:23:56.925397+00:00",
-            "finished_at": "2026-11-09T00:23:57.288634+00:00"
+            "started_at": "2026-11-09T14:44:49.464103+00:00",
+            "finished_at": "2026-11-09T14:44:49.735654+00:00"
           }
         },
         {
@@ -6668,11 +6680,11 @@
           "label": "riferimenti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261109T002357Z_870791b3",
+            "run_id": "20261109T144450Z_6a4478f2",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-09T00:23:57.643736+00:00",
-            "finished_at": "2026-11-09T00:23:59.139767+00:00"
+            "started_at": "2026-11-09T14:44:50.011232+00:00",
+            "finished_at": "2026-11-09T14:44:51.157506+00:00"
           }
         },
         {
@@ -6682,11 +6694,11 @@
           "label": "testi",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261109T002359Z_798735ab",
+            "run_id": "20261109T144451Z_c6721638",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-09T00:23:59.503264+00:00",
-            "finished_at": "2026-11-09T00:24:03.991783+00:00"
+            "started_at": "2026-11-09T14:44:51.433824+00:00",
+            "finished_at": "2026-11-09T14:44:54.996479+00:00"
           }
         }
       ]
@@ -9110,12 +9122,12 @@
       "available": true,
       "source_repo": "dataciviclab/open-politica",
       "updated_at": "2026-11-09",
-      "datasets": 35,
-      "marts": 70,
+      "datasets": 36,
+      "marts": 71,
       "signals": 35,
       "codelists": 0,
       "entities": 5,
-      "gcs": 35,
+      "gcs": 36,
       "reason": "",
       "signals_detail": [
         {
@@ -9147,6 +9159,20 @@
           }
         },
         {
+          "id": "compose:persone",
+          "source_id": "dataciviclab_composite",
+          "status": "ok",
+          "label": "persone",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261109T103739Z_5d73603d",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-09T10:37:39.912511+00:00",
+            "finished_at": "2026-11-09T10:38:39.045707+00:00"
+          }
+        },
+        {
           "id": "compose:ponti_parlamento",
           "source_id": "dataciviclab_composite",
           "status": "ok",
@@ -9158,20 +9184,6 @@
             "status": "SUCCESS",
             "started_at": "2026-11-05T00:06:03.510294+00:00",
             "finished_at": "2026-11-05T00:06:13.325768+00:00"
-          }
-        },
-        {
-          "id": "compose:profilo_politico",
-          "source_id": "dataciviclab_composite",
-          "status": "ok",
-          "label": "profilo_politico",
-          "detail": "anno 2026 \u2014 mart: si",
-          "run": {
-            "run_id": "20261105T000613Z_a842b2a1",
-            "year": 2026,
-            "status": "SUCCESS",
-            "started_at": "2026-11-05T00:06:13.866797+00:00",
-            "finished_at": "2026-11-05T00:06:37.772092+00:00"
           }
         },
         {
