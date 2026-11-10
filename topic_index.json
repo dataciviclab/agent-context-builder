@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-10T14:26:53.638557",
+  "generated_at": "2026-11-10T22:54:32.406713",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -38,7 +38,7 @@
       "description": "La Costituzione italiana, le sue revisioni e la giurisprudenza costituzionale \u2014 in formato aperto e interrogabile.",
       "url": "https://github.com/dataciviclab/costituzione-italiana",
       "role": "dati",
-      "domain": null,
+      "domain": "giustizia",
       "n_datasets": 9,
       "n_published": 0,
       "sources": [
@@ -2507,10 +2507,11 @@
         },
         "stage": "incubating",
         "tags": [
+          "normativa",
           "costituzione",
           "parlamento",
           "ddl",
-          "revisione_costituzionale",
+          "revisione-costituzionale",
           "compose"
         ],
         "category": "normativa",
@@ -11070,7 +11071,7 @@
         "slug": "articoli_costituzione",
         "url_slug": "articoli-costituzione",
         "name": "Articoli Costituzione",
-        "description": "",
+        "description": "Testo vigente della Costituzione: 139 articoli e 18 disposizioni transitorie, con heading, parte, titolo, sezione, commi e testo.\n",
         "source": "",
         "source_id": "costituzione_italiana",
         "period": {
@@ -11079,6 +11080,7 @@
         },
         "stage": "incubating",
         "tags": [
+          "normativa",
           "costituzione",
           "diritti",
           "ordinamento"
@@ -11159,23 +11161,24 @@
         "slug": "atti_promovimento_corte_costituzionale",
         "url_slug": "atti-promovimento-corte-costituzionale",
         "name": "Atti Promovimento Corte Costituzionale",
-        "description": "",
+        "description": "Atti di promovimento PENDENTI davanti alla Corte costituzionale: parametri costituzionali evocati dalle ordinanze, dai ricorsi e dai ricorsi per conflitto tra enti/poteri ancora in attesa di decisione. \u00c8 uno snapshot, non una serie storica: la fonte open data pubblica solo i registri dei giudizi pendenti (oggi 2024\u20132026).\n",
         "source": "",
         "source_id": "corte_costituzionale",
         "period": {
-          "start": 1956,
+          "start": 2024,
           "end": 2026
         },
         "stage": "incubating",
         "tags": [
+          "giustizia",
           "costituzione",
           "giurisprudenza",
-          "corte_costituzionale",
+          "corte-costituzionale",
           "promovimento"
         ],
-        "category": "giurisprudenza",
+        "category": "giustizia",
         "registry_source": "costituzione-italiana",
-        "clean_rows": 1082,
+        "clean_rows": 993,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/costituzione-italiana/atti_promovimento_corte_costituzionale/2026/atti_promovimento_corte_costituzionale_2026_clean.parquet",
@@ -11269,7 +11272,7 @@
         "slug": "giudici_corte_costituzionale",
         "url_slug": "giudici-corte-costituzionale",
         "name": "Giudici Corte Costituzionale",
-        "description": "",
+        "description": "Anagrafica dei giudici costituzionali: elezione, date di nomina, giuramento e cessazione, nota biografica. Include le voci collettive presenti nell'anagrafica ufficiale.\n",
         "source": "",
         "source_id": "corte_costituzionale",
         "period": {
@@ -11278,14 +11281,15 @@
         },
         "stage": "incubating",
         "tags": [
+          "giustizia",
           "costituzione",
           "giurisprudenza",
-          "corte_costituzionale",
+          "corte-costituzionale",
           "giudici"
         ],
-        "category": "giurisprudenza",
+        "category": "giustizia",
         "registry_source": "costituzione-italiana",
-        "clean_rows": 133,
+        "clean_rows": 136,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/costituzione-italiana/giudici_corte_costituzionale/2026/giudici_corte_costituzionale_2026_clean.parquet",
@@ -11364,7 +11368,7 @@
         "slug": "massime_corte_costituzionale",
         "url_slug": "massime-corte-costituzionale",
         "name": "Massime Corte Costituzionale",
-        "description": "",
+        "description": "Massime delle pronunce dal 1956: esito, parametri costituzionali evocati e norme impugnate, una riga per massima. Parametri e norme sono due liste indipendenti, esposte dai mart `mart_massime_parametri`/`mart_massime_norme`.\n",
         "source": "",
         "source_id": "corte_costituzionale",
         "period": {
@@ -11373,14 +11377,15 @@
         },
         "stage": "incubating",
         "tags": [
+          "giustizia",
           "costituzione",
           "giurisprudenza",
-          "corte_costituzionale",
+          "corte-costituzionale",
           "massime"
         ],
-        "category": "giurisprudenza",
+        "category": "giustizia",
         "registry_source": "costituzione-italiana",
-        "clean_rows": 267525,
+        "clean_rows": 46665,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/costituzione-italiana/massime_corte_costituzionale/2026/massime_corte_costituzionale_2026_clean.parquet",
@@ -11458,86 +11463,30 @@
             "description": ""
           },
           {
-            "name": "parametro_codice",
+            "name": "parametri",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
             "description": ""
           },
           {
-            "name": "parametro_descrizione",
+            "name": "norme",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
             "description": ""
           },
           {
-            "name": "parametro_articolo",
+            "name": "n_parametri",
             "type": "INTEGER",
             "role": "metric",
             "semantic_type": "",
             "description": ""
           },
           {
-            "name": "parametro_comma",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "norma_codice",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "norma_descrizione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "norma_numero",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "norma_data",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "norma_articolo",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "norma_specificazione_articolo",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "norma_comma",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "norma_specificazione_comma",
-            "type": "VARCHAR",
-            "role": "dimension",
+            "name": "n_norme",
+            "type": "INTEGER",
+            "role": "metric",
             "semantic_type": "",
             "description": ""
           }
@@ -11545,14 +11494,16 @@
         "mart_refs": [
           "massime_corte_costituzionale__mart_sentenze_per_annuale",
           "massime_corte_costituzionale__mart_parametri_per_annuale",
-          "massime_corte_costituzionale__mart_esiti_per_giudizio"
+          "massime_corte_costituzionale__mart_esiti_per_giudizio",
+          "massime_corte_costituzionale__mart_massime_parametri",
+          "massime_corte_costituzionale__mart_massime_norme"
         ]
       },
       {
         "slug": "pronunce_corte_costituzionale",
         "url_slug": "pronunce-corte-costituzionale",
         "name": "Pronunce Corte Costituzionale",
-        "description": "",
+        "description": "Pronunce della Corte costituzionale dal 1956: presidente, relatore, collegio, epigrafe, testo integrale (quando disponibile) e dispositivo.\n",
         "source": "",
         "source_id": "corte_costituzionale",
         "period": {
@@ -11561,14 +11512,15 @@
         },
         "stage": "incubating",
         "tags": [
+          "giustizia",
           "costituzione",
           "giurisprudenza",
-          "corte_costituzionale",
+          "corte-costituzionale",
           "pronunce"
         ],
-        "category": "giurisprudenza",
+        "category": "giustizia",
         "registry_source": "costituzione-italiana",
-        "clean_rows": 22414,
+        "clean_rows": 22428,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/costituzione-italiana/pronunce_corte_costituzionale/2026/pronunce_corte_costituzionale_2026_clean.parquet",
@@ -11639,6 +11591,13 @@
             "description": ""
           },
           {
+            "name": "epigrafe",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "collegio",
             "type": "VARCHAR",
             "role": "dimension",
@@ -11678,13 +11637,14 @@
         },
         "stage": "incubating",
         "tags": [
+          "giustizia",
           "costituzione",
           "giurisprudenza",
-          "corte_costituzionale",
+          "corte-costituzionale",
           "sentenze",
           "compose"
         ],
-        "category": "giurisprudenza",
+        "category": "giustizia",
         "registry_source": "costituzione-italiana",
         "clean_rows": null,
         "location": {
@@ -11771,6 +11731,13 @@
             "description": ""
           },
           {
+            "name": "id_massima",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "esito",
             "type": "VARCHAR",
             "role": "dimension",
@@ -11785,28 +11752,14 @@
             "description": ""
           },
           {
-            "name": "parametro_articolo",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "parametro_comma",
+            "name": "parametri",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
             "description": ""
           },
           {
-            "name": "norma_descrizione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "norma_articolo",
+            "name": "norme",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
@@ -11866,7 +11819,7 @@
         "slug": "citazioni_costituzionali",
         "url_slug": "citazioni-costituzionali",
         "name": "Citazioni Costituzionali",
-        "description": "",
+        "description": "Citazioni della Costituzione nelle collezioni normative di italia-corpus: una riga per atto e articolo, con il numero di occorrenze (`peso`).\n",
         "source": "",
         "source_id": "italia_corpus",
         "period": {
@@ -11875,13 +11828,14 @@
         },
         "stage": "incubating",
         "tags": [
+          "normativa",
           "costituzione",
           "legislazione",
           "citazioni"
         ],
         "category": "normativa",
         "registry_source": "costituzione-italiana",
-        "clean_rows": 16163,
+        "clean_rows": 9993,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/costituzione-italiana/citazioni_costituzionali/2026/citazioni_costituzionali_2026_clean.parquet",
@@ -11929,6 +11883,13 @@
             "role": "dimension",
             "semantic_type": "",
             "description": ""
+          },
+          {
+            "name": "peso",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
           }
         ],
         "mart_refs": [
@@ -11939,7 +11900,7 @@
         "slug": "revisioni_costituzionali",
         "url_slug": "revisioni-costituzionali",
         "name": "Revisioni Costituzionali",
-        "description": "",
+        "description": "Leggi costituzionali dal 1947 (collezione italia-corpus): revisioni, statuti speciali e altre leggi costituzionali, con URN, data, titolo e articoli modificati. Include 3 leggi pre-costituzionali del 1947 che la fonte classifica come leggi costituzionali.\n",
         "source": "",
         "source_id": "italia_corpus",
         "period": {
@@ -11948,9 +11909,10 @@
         },
         "stage": "incubating",
         "tags": [
+          "normativa",
           "costituzione",
           "revisioni",
-          "leggi_costituzionali"
+          "leggi-costituzionali"
         ],
         "category": "normativa",
         "registry_source": "costituzione-italiana",
@@ -12415,7 +12377,7 @@
         ],
         "category": "normativa",
         "registry_source": "italia-corpus",
-        "clean_rows": 205119,
+        "clean_rows": 205120,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia-corpus/atti_index/2026/atti_index_2026_clean.parquet",
@@ -12775,7 +12737,7 @@
         ],
         "category": "normativa",
         "registry_source": "italia-corpus",
-        "clean_rows": 22410,
+        "clean_rows": 22411,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia-corpus/normativa/2026/normativa_2026_clean.parquet",
@@ -13103,7 +13065,7 @@
         ],
         "category": "normativa",
         "registry_source": "italia-corpus",
-        "clean_rows": 367524,
+        "clean_rows": 377476,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia-corpus/riferimenti/2026/riferimenti_2026_clean.parquet",
@@ -13153,6 +13115,13 @@
             "description": ""
           },
           {
+            "name": "fonte_tipo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "bersaglio_filename",
             "type": "VARCHAR",
             "role": "dimension",
@@ -13161,6 +13130,13 @@
           },
           {
             "name": "bersaglio_urn",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "bersaglio_id",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
@@ -13255,7 +13231,8 @@
           "riferimenti__mart_riferimenti_urn",
           "riferimenti__mart_debt_legale",
           "riferimenti__mart_citazioni_per_origine",
-          "riferimenti__mart_top_bersagli"
+          "riferimenti__mart_top_bersagli",
+          "riferimenti__mart_citazioni_costituzionali"
         ]
       },
       {
@@ -13278,7 +13255,7 @@
         ],
         "category": "normativa",
         "registry_source": "italia-corpus",
-        "clean_rows": 22410,
+        "clean_rows": 22411,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia-corpus/testi/2026/testi_2026_clean.parquet",
@@ -42120,7 +42097,7 @@
         ],
         "category": "normativa",
         "registry_source": "gu-monitor",
-        "clean_rows": 26656,
+        "clean_rows": 26714,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/gu-monitor/gu_atti/2026/gu_atti_2026_clean.parquet",
@@ -44335,7 +44312,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 1887,
+        "clean_rows": 1893,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_bandi_open/2026/inpa_bandi_open_2026_clean.parquet",
@@ -44554,7 +44531,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 6574,
+        "clean_rows": 6628,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_comunicazioni/2026/inpa_comunicazioni_2026_clean.parquet",
@@ -73118,11 +73095,13 @@
         "giustizia"
       ],
       "repos": [
+        "costituzione-italiana",
         "eurostat",
         "giustizia-amministrativa",
         "giustizia-statistiche"
       ],
       "datasets": [
+        "atti_promovimento_corte_costituzionale",
         "civile_flussi",
         "durata_civile",
         "durata_penale_classi",
@@ -73140,23 +73119,27 @@
         "ga_ricorsi_tipo_decisione",
         "ga_sentenze",
         "ga_sentenze_brevi",
+        "giudici_corte_costituzionale",
         "giustizia_civile_indicatori",
         "giustizia_penale_indicatori",
         "intercettazioni",
+        "massime_corte_costituzionale",
         "mediazione_civile",
         "monitoraggio_mensile_civile",
         "monitoraggio_occ",
         "monitoraggio_pnrr_giustizia",
         "openga_ricorsi_appalto",
         "penale_flussi",
+        "pronunce_corte_costituzionale",
         "quadro_distretto",
+        "sentenze_complete",
         "sorveglianza_esecuzione",
         "sorveglianza_misure",
         "spese_giustizia",
         "ucp_dettaglio",
         "ucp_numero"
       ],
-      "dataset_count": 32
+      "dataset_count": 37
     },
     {
       "slug": "terzo-settore",
@@ -73599,6 +73582,7 @@
       "slug": "giustizia",
       "name": "Giustizia",
       "datasets": [
+        "atti_promovimento_corte_costituzionale",
         "civile_flussi",
         "durata_civile",
         "durata_penale_classi",
@@ -73616,16 +73600,20 @@
         "ga_ricorsi_tipo_decisione",
         "ga_sentenze",
         "ga_sentenze_brevi",
+        "giudici_corte_costituzionale",
         "giustizia_civile_indicatori",
         "giustizia_penale_indicatori",
         "intercettazioni",
+        "massime_corte_costituzionale",
         "mediazione_civile",
         "monitoraggio_mensile_civile",
         "monitoraggio_occ",
         "monitoraggio_pnrr_giustizia",
         "openga_ricorsi_appalto",
         "penale_flussi",
+        "pronunce_corte_costituzionale",
         "quadro_distretto",
+        "sentenze_complete",
         "sorveglianza_esecuzione",
         "sorveglianza_misure",
         "spese_giustizia",
@@ -75161,6 +75149,7 @@
       "wb_financial"
     ],
     "giustizia": [
+      "atti_promovimento_corte_costituzionale",
       "civile_flussi",
       "durata_civile",
       "durata_penale_classi",
@@ -75178,16 +75167,20 @@
       "ga_ricorsi_tipo_decisione",
       "ga_sentenze",
       "ga_sentenze_brevi",
+      "giudici_corte_costituzionale",
       "giustizia_civile_indicatori",
       "giustizia_penale_indicatori",
       "intercettazioni",
+      "massime_corte_costituzionale",
       "mediazione_civile",
       "monitoraggio_mensile_civile",
       "monitoraggio_occ",
       "monitoraggio_pnrr_giustizia",
       "openga_ricorsi_appalto",
       "penale_flussi",
+      "pronunce_corte_costituzionale",
       "quadro_distretto",
+      "sentenze_complete",
       "sorveglianza_esecuzione",
       "sorveglianza_misure",
       "spese_giustizia",
@@ -75921,26 +75914,28 @@
       "domain": null,
       "category": "normativa",
       "tags": [
+        "normativa",
         "costituzione",
         "diritti",
         "ordinamento"
       ],
-      "description": ""
+      "description": "Testo vigente della Costituzione: 139 articoli e 18 disposizioni transitorie, con heading, parte, titolo, sezione, commi e testo.\n"
     },
     "atti_promovimento_corte_costituzionale": {
       "name": "Atti Promovimento Corte Costituzionale",
       "stage": "incubating",
       "source_id": "corte_costituzionale",
       "registry_source": "costituzione-italiana",
-      "domain": null,
-      "category": "giurisprudenza",
+      "domain": "giustizia",
+      "category": "giustizia",
       "tags": [
+        "giustizia",
         "costituzione",
         "giurisprudenza",
-        "corte_costituzionale",
+        "corte-costituzionale",
         "promovimento"
       ],
-      "description": ""
+      "description": "Atti di promovimento PENDENTI davanti alla Corte costituzionale: parametri costituzionali evocati dalle ordinanze, dai ricorsi e dai ricorsi per conflitto tra enti/poteri ancora in attesa di decisione. \u00c8 uno snapshot, non una serie storica: la fonte open data pubblica solo i registri dei giudizi pendenti (oggi 2024\u20132026).\n"
     },
     "citazioni_costituzionali": {
       "name": "Citazioni Costituzionali",
@@ -75950,26 +75945,28 @@
       "domain": null,
       "category": "normativa",
       "tags": [
+        "normativa",
         "costituzione",
         "legislazione",
         "citazioni"
       ],
-      "description": ""
+      "description": "Citazioni della Costituzione nelle collezioni normative di italia-corpus: una riga per atto e articolo, con il numero di occorrenze (`peso`).\n"
     },
     "giudici_corte_costituzionale": {
       "name": "Giudici Corte Costituzionale",
       "stage": "incubating",
       "source_id": "corte_costituzionale",
       "registry_source": "costituzione-italiana",
-      "domain": null,
-      "category": "giurisprudenza",
+      "domain": "giustizia",
+      "category": "giustizia",
       "tags": [
+        "giustizia",
         "costituzione",
         "giurisprudenza",
-        "corte_costituzionale",
+        "corte-costituzionale",
         "giudici"
       ],
-      "description": ""
+      "description": "Anagrafica dei giudici costituzionali: elezione, date di nomina, giuramento e cessazione, nota biografica. Include le voci collettive presenti nell'anagrafica ufficiale.\n"
     },
     "iter_costituzionale": {
       "name": "Iter Costituzionale",
@@ -75979,10 +75976,11 @@
       "domain": null,
       "category": "normativa",
       "tags": [
+        "normativa",
         "costituzione",
         "parlamento",
         "ddl",
-        "revisione_costituzionale",
+        "revisione-costituzionale",
         "compose"
       ],
       "description": "Iter delle proposte di revisione costituzionale: DDL Camera/Senato (natura costituzionale) joinate alle leggi di revisione promulgate. Join tri-tier: high = chiavi strutturate (URN camera / data+numero reale), medium = titolo. Il clean \u00e8 DDL-centrico: raw = revisioni locali.\n"
@@ -75992,30 +75990,32 @@
       "stage": "incubating",
       "source_id": "corte_costituzionale",
       "registry_source": "costituzione-italiana",
-      "domain": null,
-      "category": "giurisprudenza",
+      "domain": "giustizia",
+      "category": "giustizia",
       "tags": [
+        "giustizia",
         "costituzione",
         "giurisprudenza",
-        "corte_costituzionale",
+        "corte-costituzionale",
         "massime"
       ],
-      "description": ""
+      "description": "Massime delle pronunce dal 1956: esito, parametri costituzionali evocati e norme impugnate, una riga per massima. Parametri e norme sono due liste indipendenti, esposte dai mart `mart_massime_parametri`/`mart_massime_norme`.\n"
     },
     "pronunce_corte_costituzionale": {
       "name": "Pronunce Corte Costituzionale",
       "stage": "incubating",
       "source_id": "corte_costituzionale",
       "registry_source": "costituzione-italiana",
-      "domain": null,
-      "category": "giurisprudenza",
+      "domain": "giustizia",
+      "category": "giustizia",
       "tags": [
+        "giustizia",
         "costituzione",
         "giurisprudenza",
-        "corte_costituzionale",
+        "corte-costituzionale",
         "pronunce"
       ],
-      "description": ""
+      "description": "Pronunce della Corte costituzionale dal 1956: presidente, relatore, collegio, epigrafe, testo integrale (quando disponibile) e dispositivo.\n"
     },
     "revisioni_costituzionali": {
       "name": "Revisioni Costituzionali",
@@ -76025,23 +76025,25 @@
       "domain": null,
       "category": "normativa",
       "tags": [
+        "normativa",
         "costituzione",
         "revisioni",
-        "leggi_costituzionali"
+        "leggi-costituzionali"
       ],
-      "description": ""
+      "description": "Leggi costituzionali dal 1947 (collezione italia-corpus): revisioni, statuti speciali e altre leggi costituzionali, con URN, data, titolo e articoli modificati. Include 3 leggi pre-costituzionali del 1947 che la fonte classifica come leggi costituzionali.\n"
     },
     "sentenze_complete": {
       "name": "Sentenze Complete",
       "stage": "incubating",
       "source_id": "corte_costituzionale",
       "registry_source": "costituzione-italiana",
-      "domain": null,
-      "category": "giurisprudenza",
+      "domain": "giustizia",
+      "category": "giustizia",
       "tags": [
+        "giustizia",
         "costituzione",
         "giurisprudenza",
-        "corte_costituzionale",
+        "corte-costituzionale",
         "sentenze",
         "compose"
       ],
