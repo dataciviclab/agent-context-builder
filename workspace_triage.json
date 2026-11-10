@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T15:23:38.465369",
+  "generated_at": "2026-11-10T01:14:32.013756",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -52,7 +52,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 15,
+  "open_prs": 12,
   "prs": [
     {
       "number": 20,
@@ -66,20 +66,6 @@
       "title": "feat(anac-cross): codice IPA della stazione appaltante (#13)",
       "repo": "appalti-pubblici",
       "url": "https://github.com/dataciviclab/appalti-pubblici/pull/19",
-      "category": "other"
-    },
-    {
-      "number": 929,
-      "title": "fix(bdap-lea): serie 2012-2024, totali sommabili e mart per ente",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/929",
-      "category": "other"
-    },
-    {
-      "number": 928,
-      "title": "feat(candidate): bdap-ssn-ce-per-ente",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/928",
       "category": "other"
     },
     {
@@ -118,13 +104,6 @@
       "category": "other"
     },
     {
-      "number": 25,
-      "title": "chore(post-merge): aggiorna registry (schedule)",
-      "repo": "gu-monitor",
-      "url": "https://github.com/dataciviclab/gu-monitor/pull/25",
-      "category": "other"
-    },
-    {
       "number": 28,
       "title": "fix(make): dataset prima del compose nel batch post-merge",
       "repo": "open-inps",
@@ -160,7 +139,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 54,
+  "open_issues": 57,
   "issues": [
     {
       "number": 13,
@@ -175,6 +154,27 @@
       "repo": "appalti-pubblici",
       "url": "https://github.com/dataciviclab/appalti-pubblici/issues/2",
       "category": "intake"
+    },
+    {
+      "number": 55,
+      "title": "Valutare: saldi DLB serie storica (2003-2027)",
+      "repo": "bilancio-pubblico",
+      "url": "https://github.com/dataciviclab/bilancio-pubblico/issues/55",
+      "category": "other"
+    },
+    {
+      "number": 54,
+      "title": "Valutare: DLB piano di gestione (2017-2027)",
+      "repo": "bilancio-pubblico",
+      "url": "https://github.com/dataciviclab/bilancio-pubblico/issues/54",
+      "category": "other"
+    },
+    {
+      "number": 932,
+      "title": "Valutare: SSN Conto Economico trimestrale (56 package)",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/932",
+      "category": "other"
     },
     {
       "number": 912,
@@ -541,8 +541,29 @@
       "category": "other"
     }
   ],
-  "open_discussions": 206,
+  "open_discussions": 207,
   "discussions": [
+    {
+      "number": 58,
+      "title": "Manovra 2027: sposta 43,7 miliardi per un saldo di \u22121,8. E l'anno dopo ne aggiunge 23,2",
+      "repo": "bilancio-pubblico",
+      "url": "https://github.com/dataciviclab/bilancio-pubblico/discussions/58",
+      "category": "Domande"
+    },
+    {
+      "number": 17,
+      "title": "Quanto paga lo Stato ogni anno in interessi sul debito?",
+      "repo": "bilancio-pubblico",
+      "url": "https://github.com/dataciviclab/bilancio-pubblico/discussions/17",
+      "category": "Domande"
+    },
+    {
+      "number": 29,
+      "title": "Promesse vs Realt\u00e0: il governo spende sempre pi\u00f9 di quanto previsto in Legge di Bilancio?",
+      "repo": "bilancio-pubblico",
+      "url": "https://github.com/dataciviclab/bilancio-pubblico/discussions/29",
+      "category": "Domande"
+    },
     {
       "number": 46,
       "title": "Cosa promette lo Stato, obiettivo per obiettivo? La misurazione si ferma dove la spesa \u00e8 pi\u00f9 alta",
@@ -558,13 +579,6 @@
       "category": "Domande"
     },
     {
-      "number": 29,
-      "title": "Promesse vs Realt\u00e0: il governo spende sempre pi\u00f9 di quanto previsto in Legge di Bilancio?",
-      "repo": "bilancio-pubblico",
-      "url": "https://github.com/dataciviclab/bilancio-pubblico/discussions/29",
-      "category": "Domande"
-    },
-    {
       "number": 28,
       "title": "Dove va la spesa dello Stato? Le 10 missioni pi\u00f9 costose (2008-2025)",
       "repo": "bilancio-pubblico",
@@ -576,13 +590,6 @@
       "title": "[Domanda] Le Spese Correnti stanno comprimendo gli investimenti?",
       "repo": "bilancio-pubblico",
       "url": "https://github.com/dataciviclab/bilancio-pubblico/discussions/10",
-      "category": "Domande"
-    },
-    {
-      "number": 17,
-      "title": "Quanto paga lo Stato ogni anno in interessi sul debito?",
-      "repo": "bilancio-pubblico",
-      "url": "https://github.com/dataciviclab/bilancio-pubblico/discussions/17",
       "category": "Domande"
     },
     {
@@ -2382,7 +2389,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 15"
+    "Many open PRs: 16"
   ],
   "radar": {
     "available": true,
@@ -2705,9 +2712,9 @@
     "available": true,
     "generated_at": "2026-11-09",
     "summary": {
-      "total": 57,
+      "total": 58,
       "by_status": {
-        "ok": 57
+        "ok": 58
       }
     },
     "actionable": []
@@ -2927,15 +2934,43 @@
       "repo": "bilancio-pubblico",
       "available": true,
       "source_repo": "dataciviclab/bilancio-pubblico",
-      "updated_at": "2026-11-08",
-      "datasets": 16,
-      "marts": 38,
-      "signals": 16,
+      "updated_at": "2026-11-09",
+      "datasets": 18,
+      "marts": 47,
+      "signals": 18,
       "codelists": 0,
       "entities": 4,
-      "gcs": 16,
+      "gcs": 18,
       "reason": "",
       "signals_detail": [
+        {
+          "id": "bdap_dlb_entrate_articolo",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "bdap_dlb_entrate_articolo",
+          "detail": "anni 2017-2027 \u2014 mart: si",
+          "run": {
+            "run_id": "20261109T184610Z_32c1d5b7",
+            "year": 2027,
+            "status": "SUCCESS",
+            "started_at": "2026-11-09T18:46:10.815618+00:00",
+            "finished_at": "2026-11-09T18:46:15.423012+00:00"
+          }
+        },
+        {
+          "id": "bdap_dlb_spese_capitolo",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "bdap_dlb_spese_capitolo",
+          "detail": "anni 2017-2027 \u2014 mart: si",
+          "run": {
+            "run_id": "20261109T172953Z_2a55c4ed",
+            "year": 2027,
+            "status": "SUCCESS",
+            "started_at": "2026-11-09T17:29:53.009479+00:00",
+            "finished_at": "2026-11-09T17:30:01.381979+00:00"
+          }
+        },
         {
           "id": "bdap_dlb_spese_serie",
           "source_id": "openbdap",
@@ -3334,12 +3369,12 @@
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
       "updated_at": "2026-11-09",
-      "datasets": 56,
-      "marts": 107,
-      "signals": 57,
+      "datasets": 57,
+      "marts": 109,
+      "signals": 58,
       "codelists": 2,
       "entities": 12,
-      "gcs": 55,
+      "gcs": 56,
       "reason": "",
       "signals_detail": [
         {
@@ -3417,13 +3452,27 @@
           "source_id": "openbdap",
           "status": "ok",
           "label": "bdap_lea",
-          "detail": "anni 2019-2024 \u2014 mart: si",
+          "detail": "anni 2012-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20260731T163744Z_3e42196f",
+            "run_id": "20261109T160453Z_1ba1cea1",
             "year": 2024,
-            "status": "DRY_RUN",
-            "started_at": "2026-07-31T16:37:44.040306+00:00",
-            "finished_at": "2026-07-31T16:37:44.044617+00:00"
+            "status": "SUCCESS",
+            "started_at": "2026-11-09T16:04:53.655023+00:00",
+            "finished_at": "2026-11-09T16:05:04.781369+00:00"
+          }
+        },
+        {
+          "id": "bdap_ssn_ce_per_ente",
+          "source_id": "openbdap",
+          "status": "ok",
+          "label": "bdap_ssn_ce_per_ente",
+          "detail": "anni 2012-2024 \u2014 mart: si",
+          "run": {
+            "run_id": "20261109T155825Z_b187e93e",
+            "year": 2024,
+            "status": "SUCCESS",
+            "started_at": "2026-11-09T15:58:25.966125+00:00",
+            "finished_at": "2026-11-09T15:58:49.755459+00:00"
           }
         },
         {
@@ -6198,7 +6247,7 @@
       "repo": "gu-monitor",
       "available": true,
       "source_repo": "dataciviclab/gu-monitor",
-      "updated_at": "2026-11-08",
+      "updated_at": "2026-11-09",
       "datasets": 1,
       "marts": 3,
       "signals": 1,
@@ -6214,11 +6263,11 @@
           "label": "gu_atti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261108T124115Z_cf8ce597",
+            "run_id": "20261109T150057Z_438c7915",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-08T12:41:15.821210+00:00",
-            "finished_at": "2026-11-08T12:41:16.173696+00:00"
+            "started_at": "2026-11-09T15:00:57.989873+00:00",
+            "finished_at": "2026-11-09T15:00:58.238433+00:00"
           }
         }
       ]
@@ -6509,7 +6558,7 @@
       "repo": "inpa-reclutamento",
       "available": true,
       "source_repo": "dataciviclab/inpa-reclutamento",
-      "updated_at": "2026-11-08",
+      "updated_at": "2026-11-09",
       "datasets": 4,
       "marts": 12,
       "signals": 4,
@@ -6553,11 +6602,11 @@
           "label": "inpa_bandi_open",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261108T125623Z_c80b5030",
+            "run_id": "20261109T153226Z_b1cf5d90",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-08T12:56:23.565254+00:00",
-            "finished_at": "2026-11-08T12:56:36.137916+00:00"
+            "started_at": "2026-11-09T15:32:26.451120+00:00",
+            "finished_at": "2026-11-09T15:32:37.649570+00:00"
           }
         },
         {
@@ -6567,11 +6616,11 @@
           "label": "inpa_comunicazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261108T125636Z_73cc1f95",
+            "run_id": "20261109T153238Z_0f8b21a6",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-08T12:56:36.616868+00:00",
-            "finished_at": "2026-11-08T12:57:38.329296+00:00"
+            "started_at": "2026-11-09T15:32:38.057203+00:00",
+            "finished_at": "2026-11-09T15:33:47.767303+00:00"
           }
         }
       ]
