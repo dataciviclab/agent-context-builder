@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-11T04:58:03.087859",
+  "generated_at": "2026-11-11T13:40:41.185511",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -12142,7 +12142,7 @@
         ],
         "category": "normativa",
         "registry_source": "italia-corpus",
-        "clean_rows": 501631,
+        "clean_rows": 466356,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia-corpus/akn_relations/2026/akn_relations_2026_clean.parquet",
@@ -12193,6 +12193,20 @@
           },
           {
             "name": "detail",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "locator",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "articolo",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
@@ -12737,7 +12751,7 @@
         ],
         "category": "normativa",
         "registry_source": "italia-corpus",
-        "clean_rows": 22411,
+        "clean_rows": 22415,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia-corpus/normativa/2026/normativa_2026_clean.parquet",
@@ -13065,7 +13079,7 @@
         ],
         "category": "normativa",
         "registry_source": "italia-corpus",
-        "clean_rows": 377476,
+        "clean_rows": 377654,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia-corpus/riferimenti/2026/riferimenti_2026_clean.parquet",
@@ -13255,7 +13269,7 @@
         ],
         "category": "normativa",
         "registry_source": "italia-corpus",
-        "clean_rows": 22411,
+        "clean_rows": 22415,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia-corpus/testi/2026/testi_2026_clean.parquet",
@@ -42097,7 +42111,7 @@
         ],
         "category": "normativa",
         "registry_source": "gu-monitor",
-        "clean_rows": 26714,
+        "clean_rows": 26862,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/gu-monitor/gu_atti/2026/gu_atti_2026_clean.parquet",
