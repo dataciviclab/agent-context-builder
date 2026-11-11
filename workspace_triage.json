@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T22:54:32.406713",
+  "generated_at": "2026-11-11T04:58:03.087859",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -52,7 +52,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 12,
+  "open_prs": 13,
   "prs": [
     {
       "number": 20,
@@ -104,6 +104,13 @@
       "category": "other"
     },
     {
+      "number": 143,
+      "title": "feat(akn): canonicalizza gli URN degli archi AKN (#142)",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/pull/143",
+      "category": "other"
+    },
+    {
       "number": 28,
       "title": "fix(make): dataset prima del compose nel batch post-merge",
       "repo": "open-inps",
@@ -139,7 +146,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 57,
+  "open_issues": 59,
   "issues": [
     {
       "number": 13,
@@ -167,6 +174,13 @@
       "title": "Valutare: DLB piano di gestione (2017-2027)",
       "repo": "bilancio-pubblico",
       "url": "https://github.com/dataciviclab/bilancio-pubblico/issues/54",
+      "category": "other"
+    },
+    {
+      "number": 44,
+      "title": "[data] Mart massime: date tipizzate (norma_data/parametro_data)",
+      "repo": "costituzione-italiana",
+      "url": "https://github.com/dataciviclab/costituzione-italiana/issues/44",
       "category": "other"
     },
     {
@@ -338,17 +352,24 @@
       "category": "intake"
     },
     {
+      "number": 142,
+      "title": "[data] akn_relations: URN canonici e locator delle textualMod",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/issues/142",
+      "category": "other"
+    },
+    {
+      "number": 141,
+      "title": "[data] Allegati: copertura delle collezioni oltre i codici",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/issues/141",
+      "category": "other"
+    },
+    {
       "number": 109,
       "title": "[data] Riferimenti AKN senza contesto: 76.311/105.226 righe scrivono 'akn:ref'",
       "repo": "italia-corpus",
       "url": "https://github.com/dataciviclab/italia-corpus/issues/109",
-      "category": "other"
-    },
-    {
-      "number": 94,
-      "title": "[data] I codici sono gusci: il testo sta negli <attachments> e il parser lo ignora (16/40)",
-      "repo": "italia-corpus",
-      "url": "https://github.com/dataciviclab/italia-corpus/issues/94",
       "category": "other"
     },
     {
@@ -2389,7 +2410,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 16"
+    "Many open PRs: 17"
   ],
   "radar": {
     "available": true,
