@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T14:44:13.667071",
+  "generated_at": "2026-11-12T23:16:24.528247",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -52,7 +52,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 14,
+  "open_prs": 13,
   "prs": [
     {
       "number": 20,
@@ -108,13 +108,6 @@
       "title": "refactor(raw): source CKAN native al posto di prefetch.py",
       "repo": "giustizia-amministrativa",
       "url": "https://github.com/dataciviclab/giustizia-amministrativa/pull/26",
-      "category": "other"
-    },
-    {
-      "number": 28,
-      "title": "chore(post-merge): aggiorna registry (schedule)",
-      "repo": "gu-monitor",
-      "url": "https://github.com/dataciviclab/gu-monitor/pull/28",
       "category": "other"
     },
     {
@@ -2410,7 +2403,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 18"
+    "Many open PRs: 17"
   ],
   "radar": {
     "available": true,
@@ -6316,7 +6309,7 @@
       "repo": "gu-monitor",
       "available": true,
       "source_repo": "dataciviclab/gu-monitor",
-      "updated_at": "2026-11-11",
+      "updated_at": "2026-11-12",
       "datasets": 1,
       "marts": 3,
       "signals": 1,
@@ -6332,11 +6325,11 @@
           "label": "gu_atti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261111T132918Z_f5be571f",
+            "run_id": "20261112T143314Z_ba789f99",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-11T13:29:18.737591+00:00",
-            "finished_at": "2026-11-11T13:29:19.112903+00:00"
+            "started_at": "2026-11-12T14:33:14.062019+00:00",
+            "finished_at": "2026-11-12T14:33:14.425710+00:00"
           }
         }
       ]
@@ -6627,7 +6620,7 @@
       "repo": "inpa-reclutamento",
       "available": true,
       "source_repo": "dataciviclab/inpa-reclutamento",
-      "updated_at": "2026-11-11",
+      "updated_at": "2026-11-12",
       "datasets": 4,
       "marts": 12,
       "signals": 4,
@@ -6671,11 +6664,11 @@
           "label": "inpa_bandi_open",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261111T134603Z_18d88fff",
+            "run_id": "20261112T144951Z_90fb6471",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-11T13:46:03.514227+00:00",
-            "finished_at": "2026-11-11T13:46:17.742480+00:00"
+            "started_at": "2026-11-12T14:49:51.739333+00:00",
+            "finished_at": "2026-11-12T14:50:06.615799+00:00"
           }
         },
         {
@@ -6685,11 +6678,11 @@
           "label": "inpa_comunicazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261111T134618Z_df56d90a",
+            "run_id": "20261112T145007Z_83ad8a70",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-11T13:46:18.092023+00:00",
-            "finished_at": "2026-11-11T13:47:18.027474+00:00"
+            "started_at": "2026-11-12T14:50:07.165244+00:00",
+            "finished_at": "2026-11-12T14:51:11.634268+00:00"
           }
         }
       ]
@@ -6714,11 +6707,11 @@
           "label": "akn_act_meta",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261112T122904Z_750b2a6d",
+            "run_id": "20261112T163010Z_c7aa9517",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-12T12:29:04.918964+00:00",
-            "finished_at": "2026-11-12T12:29:05.204140+00:00"
+            "started_at": "2026-11-12T16:30:10.900531+00:00",
+            "finished_at": "2026-11-12T16:30:11.130258+00:00"
           }
         },
         {
@@ -6728,11 +6721,11 @@
           "label": "akn_relations",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261112T122905Z_228545c8",
+            "run_id": "20261112T163011Z_559cd896",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-12T12:29:05.673325+00:00",
-            "finished_at": "2026-11-12T12:29:07.274345+00:00"
+            "started_at": "2026-11-12T16:30:11.511276+00:00",
+            "finished_at": "2026-11-12T16:30:13.113772+00:00"
           }
         },
         {
@@ -6742,11 +6735,11 @@
           "label": "atti_api",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261112T122907Z_ff168d02",
+            "run_id": "20261112T163013Z_70e5d209",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-12T12:29:07.739949+00:00",
-            "finished_at": "2026-11-12T12:29:07.923442+00:00"
+            "started_at": "2026-11-12T16:30:13.492899+00:00",
+            "finished_at": "2026-11-12T16:30:13.632860+00:00"
           }
         },
         {
@@ -6756,11 +6749,11 @@
           "label": "atti_index",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261112T122908Z_9d8e800f",
+            "run_id": "20261112T163013Z_8e203676",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-12T12:29:08.365649+00:00",
-            "finished_at": "2026-11-12T12:29:09.445925+00:00"
+            "started_at": "2026-11-12T16:30:13.999181+00:00",
+            "finished_at": "2026-11-12T16:30:14.943337+00:00"
           }
         },
         {
@@ -6770,11 +6763,11 @@
           "label": "direttive_ue",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261112T122909Z_3774f6c2",
+            "run_id": "20261112T163015Z_863315f2",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-12T12:29:09.883931+00:00",
-            "finished_at": "2026-11-12T12:29:10.135323+00:00"
+            "started_at": "2026-11-12T16:30:15.314579+00:00",
+            "finished_at": "2026-11-12T16:30:15.487701+00:00"
           }
         },
         {
@@ -6784,11 +6777,11 @@
           "label": "normativa",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261112T122910Z_eda8aa21",
+            "run_id": "20261112T163015Z_001fbf1c",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-12T12:29:10.579002+00:00",
-            "finished_at": "2026-11-12T12:29:10.972449+00:00"
+            "started_at": "2026-11-12T16:30:15.861777+00:00",
+            "finished_at": "2026-11-12T16:30:16.184740+00:00"
           }
         },
         {
@@ -6798,11 +6791,11 @@
           "label": "riferimenti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261112T122911Z_e0064bec",
+            "run_id": "20261112T163016Z_1ef57215",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-12T12:29:11.464334+00:00",
-            "finished_at": "2026-11-12T12:29:13.279184+00:00"
+            "started_at": "2026-11-12T16:30:16.585491+00:00",
+            "finished_at": "2026-11-12T16:30:18.269755+00:00"
           }
         },
         {
@@ -6812,11 +6805,11 @@
           "label": "testi",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261112T122913Z_326814f6",
+            "run_id": "20261112T163018Z_60ed1094",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-12T12:29:13.798367+00:00",
-            "finished_at": "2026-11-12T12:29:18.578344+00:00"
+            "started_at": "2026-11-12T16:30:18.688367+00:00",
+            "finished_at": "2026-11-12T16:30:23.071715+00:00"
           }
         }
       ]
