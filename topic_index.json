@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-11T13:40:41.185511",
+  "generated_at": "2026-11-12T00:08:16.332234",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -12142,7 +12142,7 @@
         ],
         "category": "normativa",
         "registry_source": "italia-corpus",
-        "clean_rows": 466356,
+        "clean_rows": 461953,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia-corpus/akn_relations/2026/akn_relations_2026_clean.parquet",
@@ -18066,7 +18066,7 @@
         "source_id": "inps",
         "period": {
           "start": 2014,
-          "end": 2023
+          "end": 2024
         },
         "stage": "incubating",
         "tags": [
@@ -18078,7 +18078,7 @@
         ],
         "category": "lavoro",
         "registry_source": "open-inps",
-        "clean_rows": 720,
+        "clean_rows": 804,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-inps/inps_retribuzioni/2026/inps_retribuzioni_2026_clean.parquet",
@@ -18195,13 +18195,13 @@
       {
         "slug": "ispra_emissioni_ghg",
         "url_slug": "ispra-emissioni-ghg",
-        "name": "ISPRA \u2014 Emissioni GHG da processi energetici per settore (1990-2023)",
+        "name": "ISPRA \u2014 Emissioni GHG da processi energetici per settore (1990-2024)",
         "description": "Emissioni di gas serra da processi energetici in Italia, per settore economico (industrie energetiche, manifatturiere, residenziale, trasporti). Fonte ISPRA Inventario Nazionale UNFCCC/EEA. Mt CO\u2082 equivalente.",
         "source": "ISPRA \u2014 Indicatori Ambientali",
         "source_id": "ispra",
         "period": {
           "start": 1990,
-          "end": 2023
+          "end": 2024
         },
         "stage": "published",
         "tags": [
@@ -18212,10 +18212,10 @@
         ],
         "category": "ambiente",
         "registry_source": "dataset-incubator",
-        "clean_rows": 34,
+        "clean_rows": 35,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/ispra_emissioni_ghg/2023/ispra_emissioni_ghg_2023_clean.parquet",
+          "path": "gs://dataciviclab-clean/ispra_emissioni_ghg/2024/ispra_emissioni_ghg_2024_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -18530,199 +18530,6 @@
         ],
         "mart_refs": [
           "istat_asia_imprese_addetti__mart_asia_imprese_anno"
-        ]
-      },
-      {
-        "slug": "istat_asia_ul",
-        "url_slug": "istat-asia-ul",
-        "name": "Istat Asia Ul",
-        "description": "Unit\u00c3  Locali delle imprese attive (ASIA UL) per comune e sezione ATECO (2018-2020). Fonte: ISTAT via DBnomics.",
-        "source": "ISTAT \u2014 ASIA UL (Archivio Statistico Imprese Attive - Unit\u00c3  Locali)",
-        "source_id": "istat_dbnomics",
-        "period": {
-          "start": 2018,
-          "end": 2020
-        },
-        "stage": "published",
-        "tags": [
-          "economia",
-          "istat",
-          "asia",
-          "ul",
-          "comuni"
-        ],
-        "category": "economia",
-        "registry_source": "dataset-incubator",
-        "clean_rows": 662890,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/istat_asia_ul/2020/istat_asia_ul_2020_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "data_type",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codice_comune",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "municipality_code",
-            "description": "Codice ISTAT del comune (6 cifre)"
-          },
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": "Anno di riferimento"
-          },
-          {
-            "name": "ateco_sezione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Sezione ATECO 2007 (lettera o codice aggregato)"
-          },
-          {
-            "name": "valore",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "denominazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "regione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "region_code",
-            "description": ""
-          },
-          {
-            "name": "sigla_provincia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "province_code",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "istat_asia_ul__mart_asia_ul_comuni"
-        ]
-      },
-      {
-        "slug": "istat_cittadinanze",
-        "url_slug": "istat-cittadinanze",
-        "name": "Istat Cittadinanze",
-        "description": "",
-        "source": "",
-        "source_id": "istat_dbnomics",
-        "period": {
-          "start": 2012,
-          "end": 2023
-        },
-        "stage": "incubating",
-        "tags": [
-          "immigrazione",
-          "cittadinanza",
-          "istat",
-          "regioni"
-        ],
-        "category": "immigrazione",
-        "registry_source": "dataset-incubator",
-        "clean_rows": 5927,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/istat_cittadinanze/2026/istat_cittadinanze_2026_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "territorio_codice",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "territorio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "livello",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "cittadinanza_codice",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "cittadinanza",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "processo_codice",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "processo",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "aggregato",
-            "type": "BOOLEAN",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "acquisizioni",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "istat_cittadinanze__mart_cittadinanze",
-          "istat_cittadinanze__mart_cittadinanze_processo",
-          "istat_cittadinanze__mart_cittadinanze_serie"
         ]
       },
       {
@@ -19525,133 +19332,200 @@
         ]
       }
     ],
-    "istat_situas": [
+    "istat_sdmx": [
       {
-        "slug": "istat_elenco_comuni",
-        "url_slug": "istat-elenco-comuni",
-        "name": "Elenco comuni italiani (codici ISTAT, catastali, superficie km\u00b2)",
-        "description": "Elenco completo dei 7.894 comuni italiani con codici ISTAT (6 cifre), codici catastali Belfiore, superficie territoriale in km\u00b2, popolazione residente e legale, e caratteristiche geografiche (regione, provincia, zona altimetrica, altitudine, litoraneit\u00e0/insularit\u00e0). Fonte: ISTAT SITUAS.",
-        "source": "ISTAT SITUAS (via opensituas)",
-        "source_id": "istat_situas",
+        "slug": "istat_asia_ul",
+        "url_slug": "istat-asia-ul",
+        "name": "Istat Asia Ul",
+        "description": "Unit\u00e0 Locali delle imprese attive (ASIA UL) per comune e sezione ATECO (2018-2024). Fonte: ISTAT via SDMX.",
+        "source": "ISTAT \u2014 ASIA UL (Archivio Statistico Imprese Attive - Unit\u00c3  Locali)",
+        "source_id": "istat_sdmx",
         "period": {
-          "start": 2026,
-          "end": 2026
+          "start": 2018,
+          "end": 2024
         },
         "stage": "published",
         "tags": [
-          "pa",
+          "economia",
           "istat",
-          "elenco",
+          "asia",
+          "ul",
           "comuni"
         ],
-        "category": "pa",
+        "category": "economia",
         "registry_source": "dataset-incubator",
-        "clean_rows": 7894,
+        "clean_rows": 1558872,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/istat_elenco_comuni/2026/istat_elenco_comuni_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/istat_asia_ul/2024/istat_asia_ul_2024_clean.parquet",
           "multi_file": false
         },
         "columns": [
           {
-            "name": "codice_istat",
+            "name": "data_type",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_comune",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "municipality_code",
-            "description": "Codice ISTAT del comune (6 caratteri: codice regione + provincia + comune)"
+            "description": "Codice ISTAT del comune (6 cifre)"
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": "Anno di riferimento"
+          },
+          {
+            "name": "ateco_sezione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Sezione ATECO 2007 (lettera o codice aggregato)"
+          },
+          {
+            "name": "valore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
           },
           {
             "name": "denominazione",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
-            "description": "Denominazione ufficiale del comune in italiano"
-          },
-          {
-            "name": "codice_catastale",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "cadastral_code",
-            "description": "Codice catastale Belfiore (4-5 caratteri, es. A074 per Agli\u00e8)"
-          },
-          {
-            "name": "superficie_km2",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Superficie territoriale del comune in km\u00b2"
-          },
-          {
-            "name": "popolazione_residente",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Popolazione residente al momento dello snapshot"
-          },
-          {
-            "name": "popolazione_legale",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Popolazione legale (censita) al momento dello snapshot"
+            "description": ""
           },
           {
             "name": "regione",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "region_code",
-            "description": "Nome della regione di appartenenza"
-          },
-          {
-            "name": "provincia",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "province_code",
-            "description": "Nome della provincia (denominazione UTS) di appartenenza"
+            "description": ""
           },
           {
             "name": "sigla_provincia",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "province_code",
-            "description": "Sigla automobilistica della provincia (2 caratteri)"
-          },
-          {
-            "name": "zona_altimetrica",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Codice zona altimetrica ISTAT: 1=Montagna, 2=Collina, 3=Pianura"
-          },
-          {
-            "name": "altitudine",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": "Altitudine del comune in metri sul livello del mare"
-          },
-          {
-            "name": "comune_litoraneo",
-            "type": "BOOLEAN",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Indica se il comune \u00e8 bagnato dal mare (vero/falso)"
-          },
-          {
-            "name": "comune_isolano",
-            "type": "BOOLEAN",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": "Indica se il comune \u00e8 situato su un'isola (vero/falso)"
+            "description": ""
           }
         ],
         "mart_refs": [
-          "istat_elenco_comuni__mart_superficie",
-          "istat_elenco_comuni__mart_codici_catastali"
+          "istat_asia_ul__mart_asia_ul_comuni"
         ]
-      }
-    ],
-    "istat_sdmx": [
+      },
+      {
+        "slug": "istat_cittadinanze",
+        "url_slug": "istat-cittadinanze",
+        "name": "Istat Cittadinanze",
+        "description": "Acquisizioni di cittadinanza italiana per territorio, ex-cittadinanza e processo (2012-2025). ISTAT 29_849 via SDMX.",
+        "source": "ISTAT \u2014 Acquisizioni di cittadinanza (29_849)",
+        "source_id": "istat_sdmx",
+        "period": {
+          "start": 2012,
+          "end": 2025
+        },
+        "stage": "incubating",
+        "tags": [
+          "immigrazione",
+          "cittadinanza",
+          "istat",
+          "regioni"
+        ],
+        "category": "immigrazione",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 6923,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/istat_cittadinanze/2026/istat_cittadinanze_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "territorio_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "territorio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "livello",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cittadinanza_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cittadinanza",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "processo_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "processo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "aggregato",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "acquisizioni",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "istat_cittadinanze__mart_cittadinanze",
+          "istat_cittadinanze__mart_cittadinanze_processo",
+          "istat_cittadinanze__mart_cittadinanze_serie"
+        ]
+      },
       {
         "slug": "istat_gini_regionale",
         "url_slug": "istat-gini-regionale",
@@ -20502,6 +20376,132 @@
         "mart_refs": [
           "istat_prezzi_agricoli__mart_prezzi_mensili",
           "istat_prezzi_agricoli__mart_ragione_scambio"
+        ]
+      }
+    ],
+    "istat_situas": [
+      {
+        "slug": "istat_elenco_comuni",
+        "url_slug": "istat-elenco-comuni",
+        "name": "Elenco comuni italiani (codici ISTAT, catastali, superficie km\u00b2)",
+        "description": "Elenco completo dei 7.894 comuni italiani con codici ISTAT (6 cifre), codici catastali Belfiore, superficie territoriale in km\u00b2, popolazione residente e legale, e caratteristiche geografiche (regione, provincia, zona altimetrica, altitudine, litoraneit\u00e0/insularit\u00e0). Fonte: ISTAT SITUAS.",
+        "source": "ISTAT SITUAS (via opensituas)",
+        "source_id": "istat_situas",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "published",
+        "tags": [
+          "pa",
+          "istat",
+          "elenco",
+          "comuni"
+        ],
+        "category": "pa",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 7894,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/istat_elenco_comuni/2026/istat_elenco_comuni_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "codice_istat",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_code",
+            "description": "Codice ISTAT del comune (6 caratteri: codice regione + provincia + comune)"
+          },
+          {
+            "name": "denominazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Denominazione ufficiale del comune in italiano"
+          },
+          {
+            "name": "codice_catastale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cadastral_code",
+            "description": "Codice catastale Belfiore (4-5 caratteri, es. A074 per Agli\u00e8)"
+          },
+          {
+            "name": "superficie_km2",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Superficie territoriale del comune in km\u00b2"
+          },
+          {
+            "name": "popolazione_residente",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Popolazione residente al momento dello snapshot"
+          },
+          {
+            "name": "popolazione_legale",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Popolazione legale (censita) al momento dello snapshot"
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": "Nome della regione di appartenenza"
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": "Nome della provincia (denominazione UTS) di appartenenza"
+          },
+          {
+            "name": "sigla_provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": "Sigla automobilistica della provincia (2 caratteri)"
+          },
+          {
+            "name": "zona_altimetrica",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Codice zona altimetrica ISTAT: 1=Montagna, 2=Collina, 3=Pianura"
+          },
+          {
+            "name": "altitudine",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": "Altitudine del comune in metri sul livello del mare"
+          },
+          {
+            "name": "comune_litoraneo",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Indica se il comune \u00e8 bagnato dal mare (vero/falso)"
+          },
+          {
+            "name": "comune_isolano",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": "Indica se il comune \u00e8 situato su un'isola (vero/falso)"
+          }
+        ],
+        "mart_refs": [
+          "istat_elenco_comuni__mart_superficie",
+          "istat_elenco_comuni__mart_codici_catastali"
         ]
       }
     ],
@@ -44326,7 +44326,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 1893,
+        "clean_rows": 1942,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_bandi_open/2026/inpa_bandi_open_2026_clean.parquet",
@@ -44545,7 +44545,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 6628,
+        "clean_rows": 6688,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_comunicazioni/2026/inpa_comunicazioni_2026_clean.parquet",
@@ -76339,7 +76339,7 @@
       "description": "Numero di pensioni INPS per gestione, regione, classe eta e importo (2020-2024)"
     },
     "ispra_emissioni_ghg": {
-      "name": "ISPRA \u2014 Emissioni GHG da processi energetici per settore (1990-2023)",
+      "name": "ISPRA \u2014 Emissioni GHG da processi energetici per settore (1990-2024)",
       "stage": "published",
       "source_id": "ispra",
       "registry_source": "dataset-incubator",
@@ -76374,7 +76374,7 @@
     "istat_asia_ul": {
       "name": "Istat Asia Ul",
       "stage": "published",
-      "source_id": "istat_dbnomics",
+      "source_id": "istat_sdmx",
       "registry_source": "dataset-incubator",
       "domain": "finanza-pubblica",
       "category": "economia",
@@ -76385,12 +76385,12 @@
         "ul",
         "comuni"
       ],
-      "description": "Unit\u00c3  Locali delle imprese attive (ASIA UL) per comune e sezione ATECO (2018-2020). Fonte: ISTAT via DBnomics."
+      "description": "Unit\u00e0 Locali delle imprese attive (ASIA UL) per comune e sezione ATECO (2018-2024). Fonte: ISTAT via SDMX."
     },
     "istat_cittadinanze": {
       "name": "Istat Cittadinanze",
       "stage": "incubating",
-      "source_id": "istat_dbnomics",
+      "source_id": "istat_sdmx",
       "registry_source": "dataset-incubator",
       "domain": null,
       "category": "immigrazione",
@@ -76400,7 +76400,7 @@
         "istat",
         "regioni"
       ],
-      "description": ""
+      "description": "Acquisizioni di cittadinanza italiana per territorio, ex-cittadinanza e processo (2012-2025). ISTAT 29_849 via SDMX."
     },
     "istat_elenco_comuni": {
       "name": "Elenco comuni italiani (codici ISTAT, catastali, superficie km\u00b2)",
