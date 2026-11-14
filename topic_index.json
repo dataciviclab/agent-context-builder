@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-14T05:13:55.549496",
+  "generated_at": "2026-11-14T13:03:39.934425",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -12142,7 +12142,7 @@
         ],
         "category": "normativa",
         "registry_source": "italia-corpus",
-        "clean_rows": 509722,
+        "clean_rows": 384661,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia-corpus/akn_relations/2026/akn_relations_2026_clean.parquet",
@@ -13079,7 +13079,7 @@
         ],
         "category": "normativa",
         "registry_source": "italia-corpus",
-        "clean_rows": 385299,
+        "clean_rows": 398805,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia-corpus/riferimenti/2026/riferimenti_2026_clean.parquet",
@@ -13150,6 +13150,13 @@
             "description": ""
           },
           {
+            "name": "bersaglio_celex",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "bersaglio_id",
             "type": "VARCHAR",
             "role": "dimension",
@@ -13158,6 +13165,13 @@
           },
           {
             "name": "fonte_anno",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fonte_anno_espressione",
             "type": "INTEGER",
             "role": "metric",
             "semantic_type": "",
@@ -13213,6 +13227,20 @@
             "description": ""
           },
           {
+            "name": "dominio_bersaglio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "esito",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "origine",
             "type": "VARCHAR",
             "role": "dimension",
@@ -13246,7 +13274,9 @@
           "riferimenti__mart_debt_legale",
           "riferimenti__mart_citazioni_per_origine",
           "riferimenti__mart_top_bersagli",
-          "riferimenti__mart_citazioni_costituzionali"
+          "riferimenti__mart_citazioni_costituzionali",
+          "riferimenti__mart_frontiera",
+          "riferimenti__mart_frontiera_epoca"
         ]
       },
       {
