@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-15T13:31:48.172168",
+  "generated_at": "2026-11-15T22:32:10.848878",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -614,7 +614,7 @@
         ],
         "category": "appalti",
         "registry_source": "appalti-pubblici",
-        "clean_rows": 5437334,
+        "clean_rows": 6455228,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/appalti_pubblici/anac_aggiudicatari/2026/anac_aggiudicatari_2026_clean.parquet",
@@ -687,7 +687,7 @@
         ],
         "category": "appalti",
         "registry_source": "appalti-pubblici",
-        "clean_rows": 4817672,
+        "clean_rows": 5786635,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/appalti_pubblici/anac_aggiudicazioni/2026/anac_aggiudicazioni_2026_clean.parquet",
@@ -917,7 +917,7 @@
         ],
         "category": "appalti",
         "registry_source": "appalti-pubblici",
-        "clean_rows": 1925829,
+        "clean_rows": 2406857,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/appalti_pubblici/anac_avvio_contratto/2026/anac_avvio_contratto_2026_clean.parquet",
@@ -1026,7 +1026,7 @@
         ],
         "category": "appalti",
         "registry_source": "appalti-pubblici",
-        "clean_rows": 1475581,
+        "clean_rows": 1071679,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/appalti_pubblici/anac_bandi_gara/*/anac_bandi_gara_*_clean.parquet",
@@ -1104,6 +1104,13 @@
             "description": ""
           },
           {
+            "name": "flag_importo_sospetto",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "oggetto_principale_contratto",
             "type": "VARCHAR",
             "role": "dimension",
@@ -1154,8 +1161,8 @@
           },
           {
             "name": "cod_tipo_scelta_contraente",
-            "type": "BIGINT",
-            "role": "metric",
+            "type": "VARCHAR",
+            "role": "dimension",
             "semantic_type": "",
             "description": ""
           },
@@ -1168,8 +1175,8 @@
           },
           {
             "name": "cod_modalita_realizzazione",
-            "type": "BIGINT",
-            "role": "metric",
+            "type": "VARCHAR",
+            "role": "dimension",
             "semantic_type": "",
             "description": ""
           },
@@ -1273,8 +1280,8 @@
           },
           {
             "name": "COD_MODALITA_INDIZIONE_SPECIALI",
-            "type": "DOUBLE",
-            "role": "metric",
+            "type": "VARCHAR",
+            "role": "dimension",
             "semantic_type": "",
             "description": ""
           },
@@ -1287,8 +1294,8 @@
           },
           {
             "name": "COD_MODALITA_INDIZIONE_SERVIZI",
-            "type": "DOUBLE",
-            "role": "metric",
+            "type": "VARCHAR",
+            "role": "dimension",
             "semantic_type": "",
             "description": ""
           },
@@ -1308,8 +1315,8 @@
           },
           {
             "name": "COD_STRUMENTO_SVOLGIMENTO",
-            "type": "DOUBLE",
-            "role": "metric",
+            "type": "VARCHAR",
+            "role": "dimension",
             "semantic_type": "",
             "description": ""
           },
@@ -1322,8 +1329,8 @@
           },
           {
             "name": "COD_MOTIVO_URGENZA",
-            "type": "DOUBLE",
-            "role": "metric",
+            "type": "VARCHAR",
+            "role": "dimension",
             "semantic_type": "",
             "description": ""
           },
@@ -1378,8 +1385,8 @@
           },
           {
             "name": "COD_ESITO",
-            "type": "DOUBLE",
-            "role": "metric",
+            "type": "VARCHAR",
+            "role": "dimension",
             "semantic_type": "",
             "description": ""
           },
@@ -1461,7 +1468,7 @@
         ],
         "category": "appalti",
         "registry_source": "appalti-pubblici",
-        "clean_rows": 648862,
+        "clean_rows": 730502,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/appalti_pubblici/anac_collaudo/2026/anac_collaudo_2026_clean.parquet",
@@ -1576,7 +1583,7 @@
         ],
         "category": "appalti",
         "registry_source": "appalti-pubblici",
-        "clean_rows": 7228216,
+        "clean_rows": 7237211,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/appalti_pubblici/anac_cup/2026/anac_cup_2026_clean.parquet",
@@ -1623,7 +1630,7 @@
         ],
         "category": "appalti",
         "registry_source": "appalti-pubblici",
-        "clean_rows": 1070254,
+        "clean_rows": 1293773,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/appalti_pubblici/anac_fine_contratto/2026/anac_fine_contratto_2026_clean.parquet",
@@ -1718,7 +1725,7 @@
         ],
         "category": "appalti",
         "registry_source": "appalti-pubblici",
-        "clean_rows": 8044052,
+        "clean_rows": 9561800,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/appalti_pubblici/anac_partecipanti/2026/anac_partecipanti_2026_clean.parquet",
@@ -1786,7 +1793,7 @@
         ],
         "category": "appalti",
         "registry_source": "appalti-pubblici",
-        "clean_rows": 227747,
+        "clean_rows": 249385,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/appalti_pubblici/anac_sospensioni/2026/anac_sospensioni_2026_clean.parquet",
@@ -1853,7 +1860,7 @@
         ],
         "category": "appalti",
         "registry_source": "appalti-pubblici",
-        "clean_rows": 1274801,
+        "clean_rows": 1543585,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/appalti_pubblici/anac_stati_avanzamento/2026/anac_stati_avanzamento_2026_clean.parquet",
@@ -1975,7 +1982,7 @@
         ],
         "category": "appalti",
         "registry_source": "appalti-pubblici",
-        "clean_rows": 334301,
+        "clean_rows": 373296,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/appalti_pubblici/anac_subappalti/2026/anac_subappalti_2026_clean.parquet",
@@ -2113,7 +2120,7 @@
         ],
         "category": "appalti",
         "registry_source": "appalti-pubblici",
-        "clean_rows": 321294,
+        "clean_rows": 365945,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/appalti_pubblici/anac_varianti/2026/anac_varianti_2026_clean.parquet",
@@ -2204,294 +2211,14 @@
         "category": "appalti",
         "registry_source": "appalti-pubblici",
         "clean_rows": null,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/appalti_pubblici/anac_cross/2026/anac_cross_2026_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "cig",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "cig_code",
-            "description": ""
-          },
-          {
-            "name": "n_aggiudicazioni",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "importo_totale_agg",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "data_ultima_agg",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "ha_subappalto_flag",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "totale_offerenti",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "totale_offerte_ammesse",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "n_aggiudicatari",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "aggiudicatari",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "n_partecipanti",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "n_subappalti",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "n_subappaltatori",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "n_sal",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "importo_totale_sal",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "sal_in_ritardo",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "n_serie_sal",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "n_serie_anomale",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "esito_collaudo",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "data_cert_collaudo",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "riserve_avanzate",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "importo_contenz_risolto",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "cup",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "cup_code",
-            "description": ""
-          },
-          {
-            "name": "n_cup",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "cups",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "data_stipula_contratto",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "data_inizio_effettiva",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "data_termine_contrattuale",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "giorni_aggiudicazione_stipula",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "giorni_stipula_inizio",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "data_effettiva_ultimazione",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "motivo_risoluzione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "motivo_interruzione_anticipata",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "giorni_scostamento_termine",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "n_sospensioni",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "giorni_sospensione",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "n_sospensioni_senza_ripresa",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "n_varianti",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "n_varianti_distinte",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "n_varianti_con_proroga",
-            "type": "BIGINT",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
         "mart_refs": [
           "anac_cross__mart_panoramica",
-          "anac_cross__mart_lifecycle",
           "anac_cross__mart_imprese",
           "anac_cross__mart_ritardi_per_sa",
           "anac_cross__mart_competitivita",
           "anac_cross__mart_esecuzione",
-          "anac_cross__mart_ritardi_contratto"
+          "anac_cross__mart_ritardi_contratto",
+          "anac_cross__mart_collaudo_ritardo"
         ]
       },
       {
@@ -44356,7 +44083,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 1932,
+        "clean_rows": 1884,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_bandi_open/2026/inpa_bandi_open_2026_clean.parquet",
@@ -44575,7 +44302,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 6805,
+        "clean_rows": 6806,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_comunicazioni/2026/inpa_comunicazioni_2026_clean.parquet",
@@ -68097,7 +67824,7 @@
         ],
         "category": "support",
         "registry_source": "opere-pubbliche",
-        "clean_rows": 22965419,
+        "clean_rows": 23124795,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/opere_pubbliche/opencup_fonti/2026/opencup_fonti_2026_clean.parquet",
@@ -68151,7 +67878,7 @@
         ],
         "category": "support",
         "registry_source": "opere-pubbliche",
-        "clean_rows": 13691455,
+        "clean_rows": 13791246,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/opere_pubbliche/opencup_localizzazione/2026/opencup_localizzazione_2026_clean.parquet",
@@ -68253,7 +67980,7 @@
         ],
         "category": "appalti",
         "registry_source": "opere-pubbliche",
-        "clean_rows": 12031370,
+        "clean_rows": 12124230,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/opere_pubbliche/opencup_progetti/2026/opencup_progetti_2026_clean.parquet",
@@ -68405,7 +68132,7 @@
         ],
         "category": "support",
         "registry_source": "opere-pubbliche",
-        "clean_rows": 54605,
+        "clean_rows": 54805,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/opere_pubbliche/opencup_soggetti/2026/opencup_soggetti_2026_clean.parquet",
