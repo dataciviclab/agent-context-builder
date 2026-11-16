@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-16T05:04:15.989957",
+  "generated_at": "2026-11-16T14:59:05.952155",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -16,7 +16,7 @@
       "url": "https://github.com/dataciviclab/appalti-pubblici",
       "role": "dati",
       "domain": "finanza-pubblica",
-      "n_datasets": 13,
+      "n_datasets": 15,
       "n_published": 0,
       "sources": [
         "anac",
@@ -1773,6 +1773,124 @@
         ]
       },
       {
+        "slug": "anac_quadro_economico",
+        "url_slug": "anac-quadro-economico",
+        "name": "Anac Quadro Economico",
+        "description": "ANAC quadro economico: importi per CIG a base d'asta, consuntivo e varianti. E' la fonte degli importi che manca a `varianti`: permette di misurare lo scostamento tra importo a base e consuntivo.",
+        "source": "",
+        "source_id": "anac",
+        "period": {
+          "start": 2000,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "appalti",
+          "anac",
+          "quadro-economico",
+          "importi",
+          "varianti"
+        ],
+        "category": "appalti",
+        "registry_source": "appalti-pubblici",
+        "clean_rows": 6933965,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/appalti_pubblici/anac_quadro_economico/2026/anac_quadro_economico_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "cig",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cig_code",
+            "description": ""
+          },
+          {
+            "name": "id_aggiudicazione",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "descrizione_evento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "dettaglio_evento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_lavori",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_servizi",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_forniture",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_progettazione",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_sicurezza",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "somme_a_disposizione",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ulteriori_oneri_non_soggetti_ribasso",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "anac_quadro_economico__mart_cig",
+          "anac_quadro_economico__mart_eventi"
+        ]
+      },
+      {
         "slug": "anac_sospensioni",
         "url_slug": "anac-sospensioni",
         "name": "Anac Sospensioni",
@@ -1961,6 +2079,158 @@
         ],
         "mart_refs": [
           "anac_stati_avanzamento__mart_sal"
+        ]
+      },
+      {
+        "slug": "anac_stazioni_appaltanti",
+        "url_slug": "anac-stazioni-appaltanti",
+        "name": "Anac Stazioni Appaltanti",
+        "description": "Anagrafica ANAC delle stazioni appaltanti (1 riga per codice fiscale): natura giuridica, AUSA, localizzazione, stato. Chiave di join su cf_amministrazione_appaltante di tutti gli altri dataset.",
+        "source": "",
+        "source_id": "anac",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "appalti",
+          "anac",
+          "stazioni-appaltanti",
+          "anagrafica"
+        ],
+        "category": "appalti",
+        "registry_source": "appalti-pubblici",
+        "clean_rows": 48040,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/appalti_pubblici/anac_stazioni_appaltanti/2026/anac_stazioni_appaltanti_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "codice_fiscale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "partita_iva",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "denominazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_ausa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "ausa_code",
+            "description": ""
+          },
+          {
+            "name": "natura_giuridica_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "natura_giuridica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "soggetto_estero",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_inhouse",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_partecipata",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provincia_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "citta_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "citta",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "indirizzo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cap",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "data_inizio",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "anac_stazioni_appaltanti__mart_natura",
+          "anac_stazioni_appaltanti__mart_territorio"
         ]
       },
       {
@@ -2218,7 +2488,8 @@
           "anac_cross__mart_competitivita",
           "anac_cross__mart_esecuzione",
           "anac_cross__mart_ritardi_contratto",
-          "anac_cross__mart_collaudo_ritardo"
+          "anac_cross__mart_collaudo_ritardo",
+          "anac_cross__mart_sforamento"
         ]
       },
       {
@@ -72608,8 +72879,10 @@
         "anac_cup",
         "anac_fine_contratto",
         "anac_partecipanti",
+        "anac_quadro_economico",
         "anac_sospensioni",
         "anac_stati_avanzamento",
+        "anac_stazioni_appaltanti",
         "anac_subappalti",
         "anac_varianti",
         "banche_unified",
@@ -72758,7 +73031,7 @@
         "ted_contract_notices",
         "wb_financial"
       ],
-      "dataset_count": 166
+      "dataset_count": 168
     },
     {
       "slug": "sanita",
@@ -73126,8 +73399,10 @@
         "anac_cup",
         "anac_fine_contratto",
         "anac_partecipanti",
+        "anac_quadro_economico",
         "anac_sospensioni",
         "anac_stati_avanzamento",
+        "anac_stazioni_appaltanti",
         "anac_subappalti",
         "anac_varianti",
         "banche_unified",
@@ -74150,8 +74425,10 @@
       "anac_cup",
       "anac_fine_contratto",
       "anac_partecipanti",
+      "anac_quadro_economico",
       "anac_sospensioni",
       "anac_stati_avanzamento",
+      "anac_stazioni_appaltanti",
       "anac_subappalti",
       "anac_varianti"
     ],
@@ -74783,8 +75060,10 @@
       "anac_cup",
       "anac_fine_contratto",
       "anac_partecipanti",
+      "anac_quadro_economico",
       "anac_sospensioni",
       "anac_stati_avanzamento",
+      "anac_stazioni_appaltanti",
       "anac_subappalti",
       "anac_varianti",
       "banche_unified",
@@ -75329,6 +75608,22 @@
       ],
       "description": ""
     },
+    "anac_quadro_economico": {
+      "name": "Anac Quadro Economico",
+      "stage": "incubating",
+      "source_id": "anac",
+      "registry_source": "appalti-pubblici",
+      "domain": "finanza-pubblica",
+      "category": "appalti",
+      "tags": [
+        "appalti",
+        "anac",
+        "quadro-economico",
+        "importi",
+        "varianti"
+      ],
+      "description": "ANAC quadro economico: importi per CIG a base d'asta, consuntivo e varianti. E' la fonte degli importi che manca a `varianti`: permette di misurare lo scostamento tra importo a base e consuntivo."
+    },
     "anac_sospensioni": {
       "name": "Anac Sospensioni",
       "stage": "incubating",
@@ -75359,6 +75654,21 @@
         "avanzamento"
       ],
       "description": ""
+    },
+    "anac_stazioni_appaltanti": {
+      "name": "Anac Stazioni Appaltanti",
+      "stage": "incubating",
+      "source_id": "anac",
+      "registry_source": "appalti-pubblici",
+      "domain": "finanza-pubblica",
+      "category": "appalti",
+      "tags": [
+        "appalti",
+        "anac",
+        "stazioni-appaltanti",
+        "anagrafica"
+      ],
+      "description": "Anagrafica ANAC delle stazioni appaltanti (1 riga per codice fiscale): natura giuridica, AUSA, localizzazione, stato. Chiave di join su cf_amministrazione_appaltante di tutti gli altri dataset."
     },
     "anac_subappalti": {
       "name": "Anac Subappalti",

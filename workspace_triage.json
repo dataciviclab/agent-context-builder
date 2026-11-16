@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T05:04:15.989957",
+  "generated_at": "2026-11-16T14:59:05.952155",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -52,7 +52,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 13,
+  "open_prs": 25,
   "prs": [
     {
       "number": 20,
@@ -104,6 +104,27 @@
       "category": "other"
     },
     {
+      "number": 58,
+      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
+      "repo": "dichiarazioni-italia",
+      "url": "https://github.com/dataciviclab/dichiarazioni-italia/pull/58",
+      "category": "other"
+    },
+    {
+      "number": 164,
+      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/pull/164",
+      "category": "other"
+    },
+    {
+      "number": 28,
+      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
+      "repo": "giustizia-amministrativa",
+      "url": "https://github.com/dataciviclab/giustizia-amministrativa/pull/28",
+      "category": "other"
+    },
+    {
       "number": 26,
       "title": "refactor(raw): source CKAN native al posto di prefetch.py",
       "repo": "giustizia-amministrativa",
@@ -111,10 +132,52 @@
       "category": "other"
     },
     {
+      "number": 32,
+      "title": "chore(post-merge): aggiorna registry (schedule)",
+      "repo": "gu-monitor",
+      "url": "https://github.com/dataciviclab/gu-monitor/pull/32",
+      "category": "other"
+    },
+    {
+      "number": 19,
+      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
+      "repo": "indice-pa",
+      "url": "https://github.com/dataciviclab/indice-pa/pull/19",
+      "category": "other"
+    },
+    {
+      "number": 168,
+      "title": "chore(post-merge): aggiorna registry (schedule)",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/pull/168",
+      "category": "other"
+    },
+    {
+      "number": 21,
+      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
+      "repo": "oecd-benchmark",
+      "url": "https://github.com/dataciviclab/oecd-benchmark/pull/21",
+      "category": "other"
+    },
+    {
+      "number": 20,
+      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
+      "repo": "open-consip",
+      "url": "https://github.com/dataciviclab/open-consip/pull/20",
+      "category": "other"
+    },
+    {
       "number": 28,
       "title": "fix(make): dataset prima del compose nel batch post-merge",
       "repo": "open-inps",
       "url": "https://github.com/dataciviclab/open-inps/pull/28",
+      "category": "other"
+    },
+    {
+      "number": 28,
+      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
+      "repo": "open-mur",
+      "url": "https://github.com/dataciviclab/open-mur/pull/28",
       "category": "other"
     },
     {
@@ -132,6 +195,27 @@
       "category": "other"
     },
     {
+      "number": 30,
+      "title": "feat(op-cup-lab): costi dell'opera dal quadro economico ANAC",
+      "repo": "opere-pubbliche",
+      "url": "https://github.com/dataciviclab/opere-pubbliche/pull/30",
+      "category": "other"
+    },
+    {
+      "number": 18,
+      "title": "chore(post-merge): aggiorna registry (17)",
+      "repo": "rifiuti-urbani",
+      "url": "https://github.com/dataciviclab/rifiuti-urbani/pull/18",
+      "category": "other"
+    },
+    {
+      "number": 22,
+      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
+      "repo": "sistema-bancario",
+      "url": "https://github.com/dataciviclab/sistema-bancario/pull/22",
+      "category": "other"
+    },
+    {
       "number": 532,
       "title": "fix(sdmx,clean): streaming per cubi grandi (unpivot, export, union_by_name)",
       "repo": "toolkit",
@@ -146,8 +230,15 @@
       "category": "other"
     }
   ],
-  "open_issues": 58,
+  "open_issues": 59,
   "issues": [
+    {
+      "number": 33,
+      "title": "mart_cig: importo_base nullo nel 62% dei CIG (COALESCE mancante su lavori+servizi+forniture)",
+      "repo": "appalti-pubblici",
+      "url": "https://github.com/dataciviclab/appalti-pubblici/issues/33",
+      "category": "other"
+    },
     {
       "number": 13,
       "title": "feat(anac_cross): arricchisci con codice IPA della stazione appaltante",
@@ -2403,12 +2494,12 @@
     }
   },
   "warnings": [
-    "Many open PRs: 17"
+    "Many open PRs: 29"
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-11-15T10:46:07.215124+00:00",
-    "probe_date": "2026-11-15",
+    "generated_at": "2026-11-16T11:05:38.193478+00:00",
+    "probe_date": "2026-11-16",
     "sources_total": 39,
     "green": 35,
     "yellow": 4,
@@ -2765,8 +2856,8 @@
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-11-09T12:17:49+00:00",
-    "sources_checked": 35,
+    "captured_at": "2026-11-16T12:13:54+00:00",
+    "sources_checked": 39,
     "regressions": [],
     "alerts": []
   },
@@ -2799,13 +2890,13 @@
       "repo": "appalti-pubblici",
       "available": true,
       "source_repo": "dataciviclab/appalti-pubblici",
-      "updated_at": "2026-11-15",
-      "datasets": 13,
-      "marts": 26,
-      "signals": 13,
+      "updated_at": "2026-11-16",
+      "datasets": 15,
+      "marts": 31,
+      "signals": 15,
       "codelists": 0,
       "entities": 8,
-      "gcs": 12,
+      "gcs": 14,
       "reason": "",
       "signals_detail": [
         {
@@ -2815,11 +2906,11 @@
           "label": "anac_cross",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261115T221411Z_73137c4b",
+            "run_id": "20261116T110423Z_54b3bef8",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-15T22:14:11.848879+00:00",
-            "finished_at": "2026-11-15T22:14:50.068159+00:00"
+            "started_at": "2026-11-16T11:04:23.014089+00:00",
+            "finished_at": "2026-11-16T11:05:17.974086+00:00"
           }
         },
         {
@@ -2829,11 +2920,11 @@
           "label": "anac_aggiudicatari",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261115T214400Z_94e25c65",
+            "run_id": "20261116T103106Z_31354618",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-15T21:44:00.379823+00:00",
-            "finished_at": "2026-11-15T21:45:53.315340+00:00"
+            "started_at": "2026-11-16T10:31:06.933553+00:00",
+            "finished_at": "2026-11-16T10:33:12.237991+00:00"
           }
         },
         {
@@ -2843,11 +2934,11 @@
           "label": "anac_aggiudicazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261115T214554Z_d1fbe299",
+            "run_id": "20261116T103313Z_a28f3d8f",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-15T21:45:54.913342+00:00",
-            "finished_at": "2026-11-15T21:47:55.204356+00:00"
+            "started_at": "2026-11-16T10:33:13.749947+00:00",
+            "finished_at": "2026-11-16T10:35:22.567686+00:00"
           }
         },
         {
@@ -2857,11 +2948,11 @@
           "label": "anac_avvio_contratto",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261115T214756Z_6751f7d6",
+            "run_id": "20261116T103524Z_cbba7761",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-15T21:47:56.811663+00:00",
-            "finished_at": "2026-11-15T21:48:46.689176+00:00"
+            "started_at": "2026-11-16T10:35:24.200878+00:00",
+            "finished_at": "2026-11-16T10:36:15.490977+00:00"
           }
         },
         {
@@ -2871,11 +2962,11 @@
           "label": "anac_bandi_gara",
           "detail": "anni 2007-2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261115T220414Z_a41b9420",
+            "run_id": "20261116T105200Z_9a6e01b5",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-15T22:04:14.715170+00:00",
-            "finished_at": "2026-11-15T22:08:25.046504+00:00"
+            "started_at": "2026-11-16T10:52:00.715065+00:00",
+            "finished_at": "2026-11-16T10:56:28.022484+00:00"
           }
         },
         {
@@ -2885,11 +2976,11 @@
           "label": "anac_collaudo",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261115T220826Z_aa1e730a",
+            "run_id": "20261116T105629Z_8de1734a",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-15T22:08:26.880667+00:00",
-            "finished_at": "2026-11-15T22:08:49.229811+00:00"
+            "started_at": "2026-11-16T10:56:29.970409+00:00",
+            "finished_at": "2026-11-16T10:56:52.553270+00:00"
           }
         },
         {
@@ -2899,11 +2990,11 @@
           "label": "anac_cup",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261115T220850Z_bc513bc9",
+            "run_id": "20261116T105654Z_3c776e8b",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-15T22:08:50.503664+00:00",
-            "finished_at": "2026-11-15T22:09:15.274152+00:00"
+            "started_at": "2026-11-16T10:56:54.258810+00:00",
+            "finished_at": "2026-11-16T10:57:25.429622+00:00"
           }
         },
         {
@@ -2913,11 +3004,11 @@
           "label": "anac_fine_contratto",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261115T220916Z_05cdb2be",
+            "run_id": "20261116T105727Z_6d41fd42",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-15T22:09:16.549076+00:00",
-            "finished_at": "2026-11-15T22:09:43.442324+00:00"
+            "started_at": "2026-11-16T10:57:27.157465+00:00",
+            "finished_at": "2026-11-16T10:57:52.792634+00:00"
           }
         },
         {
@@ -2927,11 +3018,25 @@
           "label": "anac_partecipanti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261115T220944Z_b2d36a8a",
+            "run_id": "20261116T105754Z_6b95867e",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-15T22:09:44.741440+00:00",
-            "finished_at": "2026-11-15T22:12:09.725186+00:00"
+            "started_at": "2026-11-16T10:57:54.077932+00:00",
+            "finished_at": "2026-11-16T11:00:26.861715+00:00"
+          }
+        },
+        {
+          "id": "anac_quadro_economico",
+          "source_id": "anac",
+          "status": "ok",
+          "label": "anac_quadro_economico",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261116T110028Z_8c327e81",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-16T11:00:28.595936+00:00",
+            "finished_at": "2026-11-16T11:02:18.670745+00:00"
           }
         },
         {
@@ -2941,11 +3046,11 @@
           "label": "anac_sospensioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261115T221211Z_a5c3f7c5",
+            "run_id": "20261116T110220Z_398917f9",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-15T22:12:11.502864+00:00",
-            "finished_at": "2026-11-15T22:12:28.674382+00:00"
+            "started_at": "2026-11-16T11:02:20.353711+00:00",
+            "finished_at": "2026-11-16T11:02:36.268091+00:00"
           }
         },
         {
@@ -2955,11 +3060,25 @@
           "label": "anac_stati_avanzamento",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261115T221229Z_6c7d87d0",
+            "run_id": "20261116T110237Z_24fa0d7c",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-15T22:12:29.931954+00:00",
-            "finished_at": "2026-11-15T22:13:11.012318+00:00"
+            "started_at": "2026-11-16T11:02:37.505097+00:00",
+            "finished_at": "2026-11-16T11:03:19.846208+00:00"
+          }
+        },
+        {
+          "id": "anac_stazioni_appaltanti",
+          "source_id": "anac",
+          "status": "ok",
+          "label": "anac_stazioni_appaltanti",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261116T110321Z_bc89f97b",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-16T11:03:21.128403+00:00",
+            "finished_at": "2026-11-16T11:03:25.032038+00:00"
           }
         },
         {
@@ -2969,11 +3088,11 @@
           "label": "anac_subappalti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261115T221312Z_56f2b9ed",
+            "run_id": "20261116T110326Z_f07367e8",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-15T22:13:12.280219+00:00",
-            "finished_at": "2026-11-15T22:13:45.173996+00:00"
+            "started_at": "2026-11-16T11:03:26.714228+00:00",
+            "finished_at": "2026-11-16T11:03:59.545815+00:00"
           }
         },
         {
@@ -2983,11 +3102,11 @@
           "label": "anac_varianti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261115T221346Z_2a72fa9b",
+            "run_id": "20261116T110400Z_8f3dbfc1",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-15T22:13:46.433851+00:00",
-            "finished_at": "2026-11-15T22:14:11.384105+00:00"
+            "started_at": "2026-11-16T11:04:00.817782+00:00",
+            "finished_at": "2026-11-16T11:04:22.389581+00:00"
           }
         }
       ]
