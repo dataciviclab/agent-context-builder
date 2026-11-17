@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-16T14:59:05.952155",
+  "generated_at": "2026-11-17T01:39:38.154536",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -16,7 +16,7 @@
       "url": "https://github.com/dataciviclab/appalti-pubblici",
       "role": "dati",
       "domain": "finanza-pubblica",
-      "n_datasets": 15,
+      "n_datasets": 16,
       "n_published": 0,
       "sources": [
         "anac",
@@ -182,7 +182,7 @@
       "url": "https://github.com/dataciviclab/giustizia-amministrativa",
       "role": "dati",
       "domain": "giustizia",
-      "n_datasets": 13,
+      "n_datasets": 15,
       "n_published": 0,
       "sources": [
         "dataciviclab_composite",
@@ -1707,6 +1707,171 @@
         ]
       },
       {
+        "slug": "anac_fonti_finanziamento",
+        "url_slug": "anac-fonti-finanziamento",
+        "name": "Anac Fonti Finanziamento",
+        "description": "ANAC fonti di finanziamento: per ogni CIG e aggiudicazione, le 13 voci con cui l'opera \u00e8 finanziata (bilancio SA, bilancio amministrazione competente, UE, Stato, mutuo, capitali privati...). Risponde a \u00aba carico di chi\u00bb.",
+        "source": "",
+        "source_id": "anac",
+        "period": {
+          "start": 2000,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "appalti",
+          "anac",
+          "finanziamento",
+          "fonti"
+        ],
+        "category": "appalti",
+        "registry_source": "appalti-pubblici",
+        "clean_rows": 2960932,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/appalti_pubblici/anac_fonti_finanziamento/2026/anac_fonti_finanziamento_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "cig",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cig_code",
+            "description": ""
+          },
+          {
+            "name": "id_aggiudicazione",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "entrate_vincolate_regionali",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "trasferimento_immobili",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fondi_bilancio_amministrazione",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "mutuo",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "entrate_vincolate_statali",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "entrate_vincolate_locali",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "altro",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "entrate_vincolate_altri",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "capitali_privati",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sfruttamento_economico",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fondi_bilancio_sa",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "entrate_vincolate_ue",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "entrate_vincolate_privati",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "totale_fonti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_fonti",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fonte_prevalente",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flag_fonti_sospette",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "anac_fonti_finanziamento__mart_fonti"
+        ]
+      },
+      {
         "slug": "anac_partecipanti",
         "url_slug": "anac-partecipanti",
         "name": "Anac Partecipanti",
@@ -2489,7 +2654,8 @@
           "anac_cross__mart_esecuzione",
           "anac_cross__mart_ritardi_contratto",
           "anac_cross__mart_collaudo_ritardo",
-          "anac_cross__mart_sforamento"
+          "anac_cross__mart_sforamento",
+          "anac_cross__mart_chi_paga"
         ]
       },
       {
@@ -3126,6 +3292,355 @@
         ]
       },
       {
+        "slug": "ga_appalti_contenzioso",
+        "url_slug": "ga-appalti-contenzioso",
+        "name": "Ga Appalti Contenzioso",
+        "description": "Compose: ricorsi OpenGA in materia di appalti collegati agli atti che li definiscono (esito, durata) e al contesto di gara (settore, importo, stazione appaltante, provincia).",
+        "source": "",
+        "source_id": "dataciviclab_composite",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "giustizia",
+          "giustizia-amministrativa",
+          "appalti",
+          "contenzioso",
+          "compose"
+        ],
+        "category": "giustizia",
+        "registry_source": "giustizia-amministrativa",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia-amministrativa/ga_appalti_contenzioso/2026/ga_appalti_contenzioso_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "codice_sede",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_ricorso",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "ricorso_number",
+            "description": ""
+          },
+          {
+            "name": "classificazione_ricorso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_cig",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_gare",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_lotti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_gara",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_lotti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "settore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "cf_amministrazione_appaltante",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "fiscal_code",
+            "description": ""
+          },
+          {
+            "name": "denominazione_amministrazione_appaltante",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_deposito_ricorso",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_atti",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "n_atti_definitori",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ha_decisione",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "esito_decisione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_decisione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "durata_giorni",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ga_appalti_contenzioso__mart_esiti_settore",
+          "ga_appalti_contenzioso__mart_esiti_provincia"
+        ]
+      },
+      {
+        "slug": "ga_atti",
+        "url_slug": "ga-atti",
+        "name": "Ga Atti",
+        "description": "Compose GA: un provvedimento pubblicato per riga (sentenza, ordinanza, decreto, parere) con la durata del ricorso dalla data di deposito alla pubblicazione dell'atto che lo definisce.",
+        "source": "",
+        "source_id": "dataciviclab_composite",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "giustizia",
+          "ga",
+          "compose",
+          "atti",
+          "durata"
+        ],
+        "category": "giustizia",
+        "registry_source": "giustizia-amministrativa",
+        "clean_rows": null,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/giustizia-amministrativa/ga_atti/2026/ga_atti_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "codice_sede",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_atto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_sezione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_sezione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_provvedimento",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "ricorso_number",
+            "description": ""
+          },
+          {
+            "name": "numero_ricorso",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "ricorso_number",
+            "description": ""
+          },
+          {
+            "name": "data_pubblicazione",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "mese_pubblicazione",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "esito_provvedimento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flg_definisce",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_deposito_ricorso",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "oggetto_ricorso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_ricorso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_udienza",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "num_membri_collegio",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_provvedimento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "durata_giorni",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ga_atti__mart_durata_sede",
+          "ga_atti__mart_durata_anno",
+          "ga_atti__mart_esiti_per_tipo_atto"
+        ]
+      },
+      {
         "slug": "ga_cross",
         "url_slug": "ga-cross",
         "name": "Ga Cross",
@@ -3174,6 +3689,13 @@
             "description": ""
           },
           {
+            "name": "tipo_sede",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "classificazione_ricorso",
             "type": "VARCHAR",
             "role": "dimension",
@@ -3189,6 +3711,13 @@
           },
           {
             "name": "definiti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "esiti_interlocutori",
             "type": "DOUBLE",
             "role": "metric",
             "semantic_type": "",
@@ -3255,7 +3784,8 @@
           "ga_cross__mart_panoramica",
           "ga_cross__mart_sede_flusso",
           "ga_cross__mart_esiti",
-          "ga_cross__mart_sede_stock"
+          "ga_cross__mart_sede_stock",
+          "ga_cross__mart_panoramica_tipo_sede"
         ]
       },
       {
@@ -3358,6 +3888,13 @@
           },
           {
             "name": "rd_definiti",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "rd_esiti_interlocutori",
             "type": "DOUBLE",
             "role": "metric",
             "semantic_type": "",
@@ -5610,6 +6147,104 @@
             "description": ""
           },
           {
+            "name": "anac_importo_base",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anac_importo_consuntivo",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anac_importo_base_appaiata",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anac_importo_consuntivo_appaiato",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anac_n_cig_con_base",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anac_n_cig_con_consuntivo",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anac_n_cig_appaiati",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anac_n_cig_base_sospetta",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anac_n_cig_consuntivo_zero",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anac_n_cig_base_grande",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anac_base_sospetta",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anac_scostamento_pct",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anac_n_varianti_qe",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anac_data_ultima_agg",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "anac_sal_in_ritardo",
             "type": "BIGINT",
             "role": "metric",
@@ -5710,7 +6345,8 @@
         ],
         "mart_refs": [
           "op_cup_lab__mart_territorio",
-          "op_cup_lab__mart_fonti"
+          "op_cup_lab__mart_fonti",
+          "op_cup_lab__mart_costi"
         ]
       },
       {
@@ -5845,6 +6481,20 @@
           },
           {
             "name": "ctot_euro_ab",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "costo_totale_mln",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pop_costi",
             "type": "DOUBLE",
             "role": "metric",
             "semantic_type": "",
@@ -6019,35 +6669,56 @@
             "description": ""
           },
           {
-            "name": "import_t",
+            "name": "import_estero_t",
             "type": "DOUBLE",
             "role": "metric",
             "semantic_type": "",
             "description": ""
           },
           {
-            "name": "export_t",
+            "name": "export_estero_t",
             "type": "DOUBLE",
             "role": "metric",
             "semantic_type": "",
             "description": ""
           },
           {
-            "name": "saldo_export_import_t",
+            "name": "saldo_estero_t",
             "type": "DOUBLE",
             "role": "metric",
             "semantic_type": "",
             "description": ""
           },
           {
-            "name": "export_su_prodotto_pct",
+            "name": "export_estero_su_prodotto_pct",
             "type": "DOUBLE",
             "role": "metric",
             "semantic_type": "",
             "description": ""
           },
           {
-            "name": "flussi_extraregionali_t",
+            "name": "flussi_organico_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flussi_incenerimento_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "flussi_discarica_t",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "somma_flussi_fuori_regione_su_prodotto_pct",
             "type": "DOUBLE",
             "role": "metric",
             "semantic_type": "",
@@ -11995,7 +12666,7 @@
         ],
         "category": "normativa",
         "registry_source": "italia-corpus",
-        "clean_rows": 20807,
+        "clean_rows": 20808,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia-corpus/akn_act_meta/2026/akn_act_meta_2026_clean.parquet",
@@ -12140,7 +12811,7 @@
         ],
         "category": "normativa",
         "registry_source": "italia-corpus",
-        "clean_rows": 384661,
+        "clean_rows": 384757,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia-corpus/akn_relations/2026/akn_relations_2026_clean.parquet",
@@ -12389,7 +13060,7 @@
         ],
         "category": "normativa",
         "registry_source": "italia-corpus",
-        "clean_rows": 205124,
+        "clean_rows": 205125,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia-corpus/atti_index/2026/atti_index_2026_clean.parquet",
@@ -12749,7 +13420,7 @@
         ],
         "category": "normativa",
         "registry_source": "italia-corpus",
-        "clean_rows": 22410,
+        "clean_rows": 22409,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia-corpus/normativa/2026/normativa_2026_clean.parquet",
@@ -13077,7 +13748,7 @@
         ],
         "category": "normativa",
         "registry_source": "italia-corpus",
-        "clean_rows": 398805,
+        "clean_rows": 398869,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia-corpus/riferimenti/2026/riferimenti_2026_clean.parquet",
@@ -13297,7 +13968,7 @@
         ],
         "category": "normativa",
         "registry_source": "italia-corpus",
-        "clean_rows": 22410,
+        "clean_rows": 22409,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia-corpus/testi/2026/testi_2026_clean.parquet",
@@ -39683,6 +40354,13 @@
             "role": "metric",
             "semantic_type": "",
             "description": ""
+          },
+          {
+            "name": "esito_definitorio",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
           }
         ],
         "mart_refs": [
@@ -44354,7 +45032,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 1884,
+        "clean_rows": 1862,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_bandi_open/2026/inpa_bandi_open_2026_clean.parquet",
@@ -44573,7 +45251,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 6806,
+        "clean_rows": 6858,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_comunicazioni/2026/inpa_comunicazioni_2026_clean.parquet",
@@ -56536,7 +57214,7 @@
         ],
         "category": "ambiente",
         "registry_source": "rifiuti-urbani",
-        "clean_rows": 21,
+        "clean_rows": 89,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/rifiuti-urbani/ispra_rs_export/*/ispra_rs_export_*_clean.parquet",
@@ -56551,10 +57229,17 @@
             "description": ""
           },
           {
-            "name": "regione",
+            "name": "dimensione",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "region_code",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "territorio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
             "description": ""
           },
           {
@@ -56949,7 +57634,7 @@
         ],
         "category": "ambiente",
         "registry_source": "rifiuti-urbani",
-        "clean_rows": 19,
+        "clean_rows": 142,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/rifiuti-urbani/ispra_rs_import/*/ispra_rs_import_*_clean.parquet",
@@ -56964,10 +57649,17 @@
             "description": ""
           },
           {
-            "name": "regione",
+            "name": "dimensione",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "region_code",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "territorio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
             "description": ""
           },
           {
@@ -57689,7 +58381,7 @@
         ],
         "category": "ambiente",
         "registry_source": "rifiuti-urbani",
-        "clean_rows": 21,
+        "clean_rows": 56,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/rifiuti-urbani/ispra_ru_export/*/ispra_ru_export_*_clean.parquet",
@@ -57704,10 +58396,17 @@
             "description": ""
           },
           {
-            "name": "regione",
+            "name": "dimensione",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "region_code",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "territorio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
             "description": ""
           },
           {
@@ -57763,7 +58462,7 @@
         ],
         "category": "ambiente",
         "registry_source": "rifiuti-urbani",
-        "clean_rows": 21,
+        "clean_rows": 63,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/rifiuti-urbani/ispra_ru_flussi/*/ispra_ru_flussi_*_clean.parquet",
@@ -57782,6 +58481,13 @@
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "tipo_flusso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
             "description": ""
           },
           {
@@ -58147,7 +58853,7 @@
         ],
         "category": "ambiente",
         "registry_source": "rifiuti-urbani",
-        "clean_rows": 17,
+        "clean_rows": 71,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/rifiuti-urbani/ispra_ru_import/*/ispra_ru_import_*_clean.parquet",
@@ -58162,10 +58868,17 @@
             "description": ""
           },
           {
-            "name": "regione",
+            "name": "dimensione",
             "type": "VARCHAR",
             "role": "dimension",
-            "semantic_type": "region_code",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "territorio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
             "description": ""
           },
           {
@@ -64512,7 +65225,7 @@
         ],
         "category": "politica",
         "registry_source": "open-politica",
-        "clean_rows": 8137786,
+        "clean_rows": 8183441,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-politica/camera_voti/2026/camera_voti_2026_clean.parquet",
@@ -72878,6 +73591,7 @@
         "anac_cross",
         "anac_cup",
         "anac_fine_contratto",
+        "anac_fonti_finanziamento",
         "anac_partecipanti",
         "anac_quadro_economico",
         "anac_sospensioni",
@@ -73031,7 +73745,7 @@
         "ted_contract_notices",
         "wb_financial"
       ],
-      "dataset_count": 168
+      "dataset_count": 169
     },
     {
       "slug": "sanita",
@@ -73165,6 +73879,8 @@
         "durata_penale_classi",
         "durata_penale_medie",
         "eurostat_crime_nuts3",
+        "ga_appalti_contenzioso",
+        "ga_atti",
         "ga_cross",
         "ga_decreti",
         "ga_definizioni",
@@ -73197,7 +73913,7 @@
         "ucp_dettaglio",
         "ucp_numero"
       ],
-      "dataset_count": 37
+      "dataset_count": 39
     },
     {
       "slug": "terzo-settore",
@@ -73398,6 +74114,7 @@
         "anac_cross",
         "anac_cup",
         "anac_fine_contratto",
+        "anac_fonti_finanziamento",
         "anac_partecipanti",
         "anac_quadro_economico",
         "anac_sospensioni",
@@ -73648,6 +74365,8 @@
         "durata_penale_classi",
         "durata_penale_medie",
         "eurostat_crime_nuts3",
+        "ga_appalti_contenzioso",
+        "ga_atti",
         "ga_cross",
         "ga_decreti",
         "ga_definizioni",
@@ -74424,6 +75143,7 @@
       "anac_cross",
       "anac_cup",
       "anac_fine_contratto",
+      "anac_fonti_finanziamento",
       "anac_partecipanti",
       "anac_quadro_economico",
       "anac_sospensioni",
@@ -74648,6 +75368,8 @@
       "rica_area_redditi"
     ],
     "giustizia-amministrativa": [
+      "ga_appalti_contenzioso",
+      "ga_atti",
       "ga_cross",
       "ga_decreti",
       "ga_definizioni",
@@ -75059,6 +75781,7 @@
       "anac_cross",
       "anac_cup",
       "anac_fine_contratto",
+      "anac_fonti_finanziamento",
       "anac_partecipanti",
       "anac_quadro_economico",
       "anac_sospensioni",
@@ -75219,6 +75942,8 @@
       "durata_penale_classi",
       "durata_penale_medie",
       "eurostat_crime_nuts3",
+      "ga_appalti_contenzioso",
+      "ga_atti",
       "ga_cross",
       "ga_decreti",
       "ga_definizioni",
@@ -75593,6 +76318,21 @@
         "esecuzione"
       ],
       "description": ""
+    },
+    "anac_fonti_finanziamento": {
+      "name": "Anac Fonti Finanziamento",
+      "stage": "incubating",
+      "source_id": "anac",
+      "registry_source": "appalti-pubblici",
+      "domain": "finanza-pubblica",
+      "category": "appalti",
+      "tags": [
+        "appalti",
+        "anac",
+        "finanziamento",
+        "fonti"
+      ],
+      "description": "ANAC fonti di finanziamento: per ogni CIG e aggiudicazione, le 13 voci con cui l'opera \u00e8 finanziata (bilancio SA, bilancio amministrazione competente, UE, Stato, mutuo, capitali privati...). Risponde a \u00aba carico di chi\u00bb."
     },
     "anac_partecipanti": {
       "name": "Anac Partecipanti",
@@ -78872,6 +79612,38 @@
         "territori"
       ],
       "description": "RICA/AREA (CREA-PB): risultati economici medi delle aziende agricole italiane, 2008-2024. Redditi, valore aggiunto, costi e aiuti per anno, OTE, dimensione economica e regione. Universo e campione separati."
+    },
+    "ga_appalti_contenzioso": {
+      "name": "Ga Appalti Contenzioso",
+      "stage": "incubating",
+      "source_id": "dataciviclab_composite",
+      "registry_source": "giustizia-amministrativa",
+      "domain": "giustizia",
+      "category": "giustizia",
+      "tags": [
+        "giustizia",
+        "giustizia-amministrativa",
+        "appalti",
+        "contenzioso",
+        "compose"
+      ],
+      "description": "Compose: ricorsi OpenGA in materia di appalti collegati agli atti che li definiscono (esito, durata) e al contesto di gara (settore, importo, stazione appaltante, provincia)."
+    },
+    "ga_atti": {
+      "name": "Ga Atti",
+      "stage": "incubating",
+      "source_id": "dataciviclab_composite",
+      "registry_source": "giustizia-amministrativa",
+      "domain": "giustizia",
+      "category": "giustizia",
+      "tags": [
+        "giustizia",
+        "ga",
+        "compose",
+        "atti",
+        "durata"
+      ],
+      "description": "Compose GA: un provvedimento pubblicato per riga (sentenza, ordinanza, decreto, parere) con la durata del ricorso dalla data di deposito alla pubblicazione dell'atto che lo definisce."
     },
     "ga_cross": {
       "name": "Ga Cross",

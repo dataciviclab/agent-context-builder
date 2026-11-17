@@ -1,10 +1,10 @@
 # Session Bootstrap
 
-**Generated**: 2026-11-16T14:59:05.952155
+**Generated**: 2026-11-17T01:39:38.154536
 
 ## Stato
 
-Radar: 39 fonti GREEN 35 · Registry: 43 repo · 539 dataset
+Radar: 39 fonti GREEN 35 · Registry: 43 repo · 542 dataset
 
 ## Richiede attenzione
 
@@ -13,7 +13,7 @@ Radar: 39 fonti GREEN 35 · Registry: 43 repo · 539 dataset
 - [PR] dataset-incubator#938: registry: aggiungi dataset mortalita_istat_evitabile (published)
 - [PR] dataset-incubator#913: feat(sanita): intake ISTAT ospiti presidi residenziali (RSA, DBnomics)
 - [PR] dataset-incubator#911: feat(sanita): intake ISTAT presidi residenziali socio-assistenziali (RSA)
-- [PR] 4 dependabot bump (skipped)
+- [PR] 5 dependabot bump (skipped)
 
 ## Analisi pubbliche (45)
 
