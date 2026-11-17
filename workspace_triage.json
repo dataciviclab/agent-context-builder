@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T01:39:38.154536",
+  "generated_at": "2026-11-17T15:35:58.770244",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -52,7 +52,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 19,
+  "open_prs": 24,
   "prs": [
     {
       "number": 20,
@@ -66,6 +66,20 @@
       "title": "feat(anac-cross): codice IPA della stazione appaltante (#13)",
       "repo": "appalti-pubblici",
       "url": "https://github.com/dataciviclab/appalti-pubblici/pull/19",
+      "category": "other"
+    },
+    {
+      "number": 296,
+      "title": "fix(geo-utils): riconosce le P.A. Trentino in tutte le grafie delle fonti",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/296",
+      "category": "other"
+    },
+    {
+      "number": 941,
+      "title": "feat(aifa-spesa-consumo): serie 2016-2025, encoding cp1252, mart sintesi e trend",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/pull/941",
       "category": "other"
     },
     {
@@ -104,6 +118,20 @@
       "category": "other"
     },
     {
+      "number": 60,
+      "title": "fix(abpf-titolari-piva-regione): normalizza le etichette del Trentino",
+      "repo": "dichiarazioni-italia",
+      "url": "https://github.com/dataciviclab/dichiarazioni-italia/pull/60",
+      "category": "other"
+    },
+    {
+      "number": 59,
+      "title": "fix(irpef-comunale): esclude la pseudo-regione dai mart e normalizza il Trentino",
+      "repo": "dichiarazioni-italia",
+      "url": "https://github.com/dataciviclab/dichiarazioni-italia/pull/59",
+      "category": "other"
+    },
+    {
       "number": 58,
       "title": "chore(post-catalog): aggiorna source catalog (schedule)",
       "repo": "dichiarazioni-italia",
@@ -122,6 +150,13 @@
       "title": "refactor(raw): source CKAN native al posto di prefetch.py",
       "repo": "giustizia-amministrativa",
       "url": "https://github.com/dataciviclab/giustizia-amministrativa/pull/26",
+      "category": "other"
+    },
+    {
+      "number": 33,
+      "title": "chore(post-merge): aggiorna registry (schedule)",
+      "repo": "gu-monitor",
+      "url": "https://github.com/dataciviclab/gu-monitor/pull/33",
       "category": "other"
     },
     {
@@ -188,7 +223,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 58,
+  "open_issues": 62,
   "issues": [
     {
       "number": 13,
@@ -223,6 +258,13 @@
       "title": "[data] Mart massime: date tipizzate (norma_data/parametro_data)",
       "repo": "costituzione-italiana",
       "url": "https://github.com/dataciviclab/costituzione-italiana/issues/44",
+      "category": "other"
+    },
+    {
+      "number": 295,
+      "title": "[Bug] irpef-regioni: il loader include la pseudo-regione 'Mancante/errata' nei grafici",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/295",
       "category": "other"
     },
     {
@@ -527,6 +569,20 @@
       "category": "intake"
     },
     {
+      "number": 37,
+      "title": "SILOS: ingerire le cinque edizioni disponibili (2019-2024) per avere una serie storica",
+      "repo": "opere-pubbliche",
+      "url": "https://github.com/dataciviclab/opere-pubbliche/issues/37",
+      "category": "other"
+    },
+    {
+      "number": 34,
+      "title": "op-cup-lab: l'attribuzione CIG\u2192CUP usa un tie-break alfabetico (MIN) e sposta contratti fra opere",
+      "repo": "opere-pubbliche",
+      "url": "https://github.com/dataciviclab/opere-pubbliche/issues/34",
+      "category": "other"
+    },
+    {
       "number": 25,
       "title": "feat(op_cup_lab): arricchisci con codice IPA e metadati ente dal soggetto titolare",
       "repo": "opere-pubbliche",
@@ -552,6 +608,13 @@
       "title": "validate: redigere i parametri sensibili delle query-string negli artifact tracciati",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/436",
+      "category": "other"
+    },
+    {
+      "number": 548,
+      "title": "[Bug] preflight non applica url_suffix_by_year: falsi negativi su fonti con suffisso per anno",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/548",
       "category": "other"
     },
     {
@@ -597,7 +660,7 @@
       "category": "other"
     }
   ],
-  "open_discussions": 207,
+  "open_discussions": 209,
   "discussions": [
     {
       "number": 58,
@@ -678,24 +741,24 @@
     },
     {
       "number": 460,
-      "title": "I codici dei contratti abrogati (2006, 2016) sono ancora citati da 523 atti vigenti",
+      "title": "I codici dei contratti abrogati (2006, 2016) sono ancora citati da 515 atti vigenti",
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/460",
       "category": "Analisi"
     },
     {
       "number": 459,
-      "title": "Perch\u00e9 1.088 atti vigenti citano ancora la riforma PA del 1993 (abrogata)?",
+      "title": "Perch\u00e9 1.059 atti vigenti citano ancora la riforma PA del 1993 (abrogata)?",
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/459",
       "category": "Analisi"
     },
     {
-      "number": 462,
-      "title": "Gas naturale \u2014 da dove arriva il gas che consumiamo? 9 domande su 34 anni di import e consumi (1990-2024)",
+      "number": 457,
+      "title": "[Dataset] ANAC Piattaforma Pubblicit\u00e0 Legale (PVL): avvisi e bandi del giorno, con CIG",
       "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/462",
-      "category": "Domanda"
+      "url": "https://github.com/orgs/dataciviclab/discussions/457",
+      "category": "Datasets"
     },
     {
       "number": 461,
@@ -705,18 +768,39 @@
       "category": "Metodo"
     },
     {
+      "number": 441,
+      "title": "IRPEF Comunale \u2014 11 domande su redditi e imposta comune per comune (2019-2024)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/441",
+      "category": "Domanda"
+    },
+    {
+      "number": 462,
+      "title": "Gas naturale \u2014 da dove arriva il gas che consumiamo? 9 domande su 34 anni di import e consumi (1990-2024)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/462",
+      "category": "Domanda"
+    },
+    {
+      "number": 442,
+      "title": "AIFA Spesa Farmaceutica \u2014 11 domande su 10 miliardi di farmaci convenzionati (2018-2024)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/442",
+      "category": "Domanda"
+    },
+    {
+      "number": 99,
+      "title": "[Progetto] Malasanit\u00e0 in Italia \u2014 Analisi dati su errori medici, sinistri e responsabilit\u00e0 sanitaria",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/99",
+      "category": "Proposte"
+    },
+    {
       "number": 458,
       "title": "[Analisi] Una norma vigente su quattro cita norme gi\u00e0 abrogate",
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/458",
       "category": "Analisi"
-    },
-    {
-      "number": 457,
-      "title": "[Dataset] ANAC Piattaforma Pubblicit\u00e0 Legale (PVL): avvisi e bandi del giorno, con CIG",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/457",
-      "category": "Datasets"
     },
     {
       "number": 115,
@@ -817,13 +901,6 @@
       "category": "Domanda"
     },
     {
-      "number": 442,
-      "title": "AIFA Spesa Farmaceutica \u2014 11 domande su 10 miliardi di farmaci convenzionati (2018-2024)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/442",
-      "category": "Domanda"
-    },
-    {
       "number": 443,
       "title": "ISPRA Rifiuti Urbani \u2014 11 domande su differenziata e produzione comune per comune (2010-2024)",
       "repo": "dataciviclab",
@@ -835,13 +912,6 @@
       "title": "MEF Partecipate \u2014 11 domande su 101mila incarichi e compensi dei rappresentanti PA (2018-2023)",
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/406",
-      "category": "Domanda"
-    },
-    {
-      "number": 441,
-      "title": "IRPEF Comunale \u2014 11 domande su redditi e imposta comune per comune (2019-2024)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/441",
       "category": "Domanda"
     },
     {
@@ -1146,13 +1216,6 @@
       "category": "Domanda"
     },
     {
-      "number": 99,
-      "title": "[Progetto] Malasanit\u00e0 in Italia \u2014 Analisi dati su errori medici, sinistri e responsabilit\u00e0 sanitaria",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/99",
-      "category": "Proposte"
-    },
-    {
       "number": 75,
       "title": "[Progetto] Mobilit\u00e0, Trasporto Pubblico & Qualit\u00e0 dell'Aria",
       "repo": "dataciviclab",
@@ -1272,6 +1335,13 @@
       "category": "Announcements"
     },
     {
+      "number": 42,
+      "title": "Il crollo del 37% dei dichiaranti IRAP non \u00e8 una crisi: \u00e8 una legge del 2021",
+      "repo": "dichiarazioni-italia",
+      "url": "https://github.com/dataciviclab/dichiarazioni-italia/discussions/42",
+      "category": "Analisi"
+    },
+    {
       "number": 47,
       "title": "12 domande sui 18 dataset delle dichiarazioni fiscali",
       "repo": "dichiarazioni-italia",
@@ -1304,13 +1374,6 @@
       "title": "Lo Stato paga un terzo dell'IRAP a se stesso \u2014 e in Lazio due terzi",
       "repo": "dichiarazioni-italia",
       "url": "https://github.com/dataciviclab/dichiarazioni-italia/discussions/43",
-      "category": "Analisi"
-    },
-    {
-      "number": 42,
-      "title": "Il crollo del 37% dei dichiaranti IRAP non \u00e8 una crisi: \u00e8 una legge del 2021",
-      "repo": "dichiarazioni-italia",
-      "url": "https://github.com/dataciviclab/dichiarazioni-italia/discussions/42",
       "category": "Analisi"
     },
     {
@@ -1503,6 +1566,13 @@
       "category": "Announcements"
     },
     {
+      "number": 12,
+      "title": "Roma ha triplicato il clearance rate civile \u2014 da 1,10 a 3,40 in 11 anni",
+      "repo": "giustizia-statistiche",
+      "url": "https://github.com/dataciviclab/giustizia-statistiche/discussions/12",
+      "category": "Analisi"
+    },
+    {
       "number": 13,
       "title": "Milano \u00e8 ferma a 1,01 \u2014 1.412 giorni di disposition time, il pi\u00f9 alto d'Italia",
       "repo": "giustizia-statistiche",
@@ -1528,13 +1598,6 @@
       "title": "Le intercettazioni sono calate del 32% dal 2014 \u2014 137,6k \u2192 93,6k bersagli",
       "repo": "giustizia-statistiche",
       "url": "https://github.com/dataciviclab/giustizia-statistiche/discussions/14",
-      "category": "Analisi"
-    },
-    {
-      "number": 12,
-      "title": "Roma ha triplicato il clearance rate civile \u2014 da 1,10 a 3,40 in 11 anni",
-      "repo": "giustizia-statistiche",
-      "url": "https://github.com/dataciviclab/giustizia-statistiche/discussions/12",
       "category": "Analisi"
     },
     {
@@ -1972,10 +2035,17 @@
       "category": "Sanit\u00e0 (SAN)"
     },
     {
-      "number": 23,
-      "title": "AVR Salerno-Reggio e Metropolitana Torino: due grandi opere, due profili opposti",
+      "number": 35,
+      "title": "Brennero e Torino-Lione: stesso anno, stessi miliardi, 2,7 mld di copertura che non torna",
       "repo": "opere-pubbliche",
-      "url": "https://github.com/dataciviclab/opere-pubbliche/discussions/23",
+      "url": "https://github.com/dataciviclab/opere-pubbliche/discussions/35",
+      "category": "Analisi"
+    },
+    {
+      "number": 36,
+      "title": "Pedemontana Lombarda: 4,1 mld, gap zero, 94% gi\u00e0 aggiudicato \u2014 il modello concessione",
+      "repo": "opere-pubbliche",
+      "url": "https://github.com/dataciviclab/opere-pubbliche/discussions/36",
       "category": "Analisi"
     },
     {
@@ -1993,31 +2063,10 @@
       "category": "Analisi"
     },
     {
-      "number": 20,
-      "title": "PNRR MISE: \u20ac3,2 miliardi \"In Corso\", 0 gare, \u20ac0 pagati",
-      "repo": "opere-pubbliche",
-      "url": "https://github.com/dataciviclab/opere-pubbliche/discussions/20",
-      "category": "Analisi"
-    },
-    {
-      "number": 19,
-      "title": "MM Milano: il 77-87% dei SAL \u00e8 in ritardo su acquedotti e ascensori",
-      "repo": "opere-pubbliche",
-      "url": "https://github.com/dataciviclab/opere-pubbliche/discussions/19",
-      "category": "Analisi"
-    },
-    {
       "number": 18,
-      "title": "Stretto di Messina: \u20ac13,5 miliardi, 93 gare, \u20ac6,5 milioni aggiudicati",
+      "title": "Stretto di Messina: \u20ac13,5 miliardi, 120 gare, \u20ac8,05 milioni aggiudicati",
       "repo": "opere-pubbliche",
       "url": "https://github.com/dataciviclab/opere-pubbliche/discussions/18",
-      "category": "Analisi"
-    },
-    {
-      "number": 17,
-      "title": "Torino-Lione: 2.077 CIG, 186 gare, \u20ac12,6 mld \u2014 l'opera transfrontaliera pi\u00f9 frammentata",
-      "repo": "opere-pubbliche",
-      "url": "https://github.com/dataciviclab/opere-pubbliche/discussions/17",
       "category": "Analisi"
     },
     {
@@ -2028,10 +2077,38 @@
       "category": "Analisi"
     },
     {
+      "number": 23,
+      "title": "AVR Salerno-Reggio e Metropolitana Torino: due grandi opere, due profili opposti",
+      "repo": "opere-pubbliche",
+      "url": "https://github.com/dataciviclab/opere-pubbliche/discussions/23",
+      "category": "Analisi"
+    },
+    {
+      "number": 17,
+      "title": "Torino-Lione: 2.077 CIG, 186 gare, \u20ac12,6 mld \u2014 l'opera transfrontaliera pi\u00f9 frammentata",
+      "repo": "opere-pubbliche",
+      "url": "https://github.com/dataciviclab/opere-pubbliche/discussions/17",
+      "category": "Analisi"
+    },
+    {
+      "number": 19,
+      "title": "MM Milano: il 77-87% dei SAL \u00e8 in ritardo su acquedotti e ascensori",
+      "repo": "opere-pubbliche",
+      "url": "https://github.com/dataciviclab/opere-pubbliche/discussions/19",
+      "category": "Analisi"
+    },
+    {
       "number": 14,
       "title": "Il Sud prende pi\u00f9 del Nord: 1.816 mld vs 1.634 mld di opere pubbliche",
       "repo": "opere-pubbliche",
       "url": "https://github.com/dataciviclab/opere-pubbliche/discussions/14",
+      "category": "Analisi"
+    },
+    {
+      "number": 20,
+      "title": "PNRR MISE: \u20ac3,2 miliardi \"In Corso\", 0 gare, \u20ac0 pagati",
+      "repo": "opere-pubbliche",
+      "url": "https://github.com/dataciviclab/opere-pubbliche/discussions/20",
       "category": "Analisi"
     },
     {
@@ -2445,24 +2522,24 @@
     }
   },
   "warnings": [
-    "Many open PRs: 24"
+    "Many open PRs: 29"
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-11-16T11:05:38.193478+00:00",
-    "probe_date": "2026-11-16",
+    "generated_at": "2026-11-17T11:50:07.002442+00:00",
+    "probe_date": "2026-11-17",
     "sources_total": 39,
-    "green": 35,
-    "yellow": 4,
-    "red": 0,
+    "green": 32,
+    "yellow": 6,
+    "red": 1,
     "persistent_red": 0,
     "sources": [
       {
         "id": "istat_sdmx",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "sdmx",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
@@ -2475,10 +2552,10 @@
       },
       {
         "id": "inps",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "ckan",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
@@ -2603,9 +2680,9 @@
       },
       {
         "id": "mit_opendata",
-        "status": "GREEN",
+        "status": "RED",
         "protocol": "ckan",
-        "http_code": "200",
+        "http_code": "502",
         "note": null,
         "red_streak": 0
       },
@@ -2772,11 +2849,27 @@
     ],
     "unhealthy": [
       {
+        "id": "istat_sdmx",
+        "status": "YELLOW",
+        "protocol": "sdmx",
+        "http_code": "-",
+        "note": "Timeout (ReadTimeout)",
+        "red_streak": 0
+      },
+      {
         "id": "anac",
         "status": "YELLOW",
         "protocol": "ckan",
         "http_code": "403",
         "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "inps",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
@@ -2792,6 +2885,14 @@
         "status": "YELLOW",
         "protocol": "html",
         "http_code": "403",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "mit_opendata",
+        "status": "RED",
+        "protocol": "ckan",
+        "http_code": "502",
         "note": null,
         "red_streak": 0
       },
