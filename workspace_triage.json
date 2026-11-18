@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T15:12:37.669467",
+  "generated_at": "2026-11-18T23:57:04.664289",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -52,7 +52,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 18,
+  "open_prs": 17,
   "prs": [
     {
       "number": 20,
@@ -97,13 +97,6 @@
       "category": "other"
     },
     {
-      "number": 70,
-      "title": "chore(post-merge): aggiorna registry (69)",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/pull/70",
-      "category": "other"
-    },
-    {
       "number": 164,
       "title": "chore(post-catalog): aggiorna source catalog (schedule)",
       "repo": "eurostat",
@@ -118,10 +111,10 @@
       "category": "other"
     },
     {
-      "number": 34,
+      "number": 36,
       "title": "chore(post-merge): aggiorna registry (schedule)",
       "repo": "gu-monitor",
-      "url": "https://github.com/dataciviclab/gu-monitor/pull/34",
+      "url": "https://github.com/dataciviclab/gu-monitor/pull/36",
       "category": "other"
     },
     {
@@ -181,7 +174,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 61,
+  "open_issues": 62,
   "issues": [
     {
       "number": 13,
@@ -378,6 +371,13 @@
       "repo": "giustizia-statistiche",
       "url": "https://github.com/dataciviclab/giustizia-statistiche/issues/17",
       "category": "intake"
+    },
+    {
+      "number": 170,
+      "title": "[data] Delega: estrarre la legge delegante dal preambolo, non dal titolo",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/issues/170",
+      "category": "other"
     },
     {
       "number": 158,
@@ -611,7 +611,7 @@
       "category": "other"
     }
   ],
-  "open_discussions": 209,
+  "open_discussions": 210,
   "discussions": [
     {
       "number": 58,
@@ -1216,17 +1216,38 @@
       "category": "Proposte"
     },
     {
-      "number": 47,
-      "title": "\ud83e\udde9 Il blocco economia di Bologna: la fragilit\u00e0 segue il reddito (-0,76), ma il commercio sta nel centro \u2014 ovunque",
+      "number": 71,
+      "title": "\ud83d\udcd0 Come sono fatti i dati di Bologna: copertura reale e trappole (novembre 2026)",
       "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/47",
-      "category": "Idee analisi"
+      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/71",
+      "category": "Generale"
     },
     {
       "number": 44,
       "title": "\ud83c\udf5d Il tessuto commerciale di Bologna: 1 bar su 24 sopravvive agli anni '90 \u2014 non desertificazione, ma ricambio",
       "repo": "dcl-bologna",
       "url": "https://github.com/dataciviclab/dcl-bologna/discussions/44",
+      "category": "Idee analisi"
+    },
+    {
+      "number": 23,
+      "title": "\ud83d\ude97 Meno auto in ZTL: il traffico \u00e8 calato del 22% \u2014 ma \u00e8 sparito o si \u00e8 spostato?",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/23",
+      "category": "Idee analisi"
+    },
+    {
+      "number": 29,
+      "title": "\ud83d\udee3\ufe0f Fuori dalla cerchia: il traffico cala (-11,7%) ma la met\u00e0 che in ZTL \u2014 e 120 spire sono state spente",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/29",
+      "category": "Idee analisi"
+    },
+    {
+      "number": 47,
+      "title": "\ud83e\udde9 Il blocco economia di Bologna: la fragilit\u00e0 segue il reddito (-0,76), ma il commercio sta nel centro \u2014 ovunque",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/47",
       "category": "Idee analisi"
     },
     {
@@ -1251,24 +1272,10 @@
       "category": "Idee analisi"
     },
     {
-      "number": 29,
-      "title": "\ud83d\udee3\ufe0f Fuori dalla cerchia: il traffico cala (-11,7%) ma la met\u00e0 che in ZTL \u2014 e 120 spire sono state spente",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/29",
-      "category": "Idee analisi"
-    },
-    {
       "number": 26,
       "title": "\ud83c\udf21\ufe0f Bologna si scalda: +1,25\u00b0C in 25 anni \u2014 ma l'afa \u00e8 raddoppiata",
       "repo": "dcl-bologna",
       "url": "https://github.com/dataciviclab/dcl-bologna/discussions/26",
-      "category": "Idee analisi"
-    },
-    {
-      "number": 23,
-      "title": "\ud83d\ude97 Meno auto in ZTL: il traffico \u00e8 calato del 22% \u2014 ma \u00e8 sparito o si \u00e8 spostato?",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/23",
       "category": "Idee analisi"
     },
     {
@@ -2473,7 +2480,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 23"
+    "Many open PRs: 22"
   ],
   "radar": {
     "available": true,
@@ -4322,11 +4329,11 @@
           "label": "centraline_aria",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261118T103537Z_d06ebfb1",
+            "run_id": "20261118T145912Z_309d5a02",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-18T10:35:37.723781+00:00",
-            "finished_at": "2026-11-18T10:37:13.637492+00:00"
+            "started_at": "2026-11-18T14:59:12.810027+00:00",
+            "finished_at": "2026-11-18T15:00:45.653325+00:00"
           }
         },
         {
@@ -4378,11 +4385,11 @@
           "label": "esercizi_somministrazione",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261117T222235Z_0102b180",
+            "run_id": "20261118T154805Z_4b42ff0f",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-17T22:22:35.455094+00:00",
-            "finished_at": "2026-11-17T22:22:38.815345+00:00"
+            "started_at": "2026-11-18T15:48:05.382803+00:00",
+            "finished_at": "2026-11-18T15:48:08.841854+00:00"
           }
         },
         {
@@ -4476,11 +4483,11 @@
           "label": "rifter_archi",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261118T133129Z_7b1f53c8",
+            "run_id": "20261118T154809Z_38a7029b",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-18T13:31:29.301197+00:00",
-            "finished_at": "2026-11-18T13:31:32.093056+00:00"
+            "started_at": "2026-11-18T15:48:09.331007+00:00",
+            "finished_at": "2026-11-18T15:48:12.213606+00:00"
           }
         },
         {
@@ -4490,11 +4497,11 @@
           "label": "rifter_civici",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261118T133132Z_d77f5ccf",
+            "run_id": "20261118T150049Z_30f79faa",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-18T13:31:32.606094+00:00",
-            "finished_at": "2026-11-18T13:31:55.709459+00:00"
+            "started_at": "2026-11-18T15:00:49.759469+00:00",
+            "finished_at": "2026-11-18T15:01:12.513985+00:00"
           }
         },
         {
@@ -4504,11 +4511,11 @@
           "label": "spire_traffico",
           "detail": "anni 2022-2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261117T222619Z_cc95ebe0",
+            "run_id": "20261118T150452Z_28eca969",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-17T22:26:19.372681+00:00",
-            "finished_at": "2026-11-17T22:27:04.028782+00:00"
+            "started_at": "2026-11-18T15:04:52.507907+00:00",
+            "finished_at": "2026-11-18T15:05:37.290719+00:00"
           }
         },
         {
@@ -4532,11 +4539,11 @@
           "label": "varchi_ztl",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261118T103816Z_4b3d56c1",
+            "run_id": "20261118T150537Z_adba03c2",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-18T10:38:16.185458+00:00",
-            "finished_at": "2026-11-18T10:38:37.962850+00:00"
+            "started_at": "2026-11-18T15:05:37.961220+00:00",
+            "finished_at": "2026-11-18T15:06:29.170451+00:00"
           }
         }
       ]
@@ -6484,7 +6491,7 @@
       "repo": "gu-monitor",
       "available": true,
       "source_repo": "dataciviclab/gu-monitor",
-      "updated_at": "2026-11-17",
+      "updated_at": "2026-11-18",
       "datasets": 1,
       "marts": 3,
       "signals": 1,
@@ -6500,11 +6507,11 @@
           "label": "gu_atti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261117T152652Z_5c21b0e1",
+            "run_id": "20261118T193423Z_74825730",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-17T15:26:52.488466+00:00",
-            "finished_at": "2026-11-17T15:26:52.839522+00:00"
+            "started_at": "2026-11-18T19:34:23.938020+00:00",
+            "finished_at": "2026-11-18T19:34:24.247413+00:00"
           }
         }
       ]
@@ -6795,7 +6802,7 @@
       "repo": "inpa-reclutamento",
       "available": true,
       "source_repo": "dataciviclab/inpa-reclutamento",
-      "updated_at": "2026-11-17",
+      "updated_at": "2026-11-18",
       "datasets": 4,
       "marts": 12,
       "signals": 4,
@@ -6839,11 +6846,11 @@
           "label": "inpa_bandi_open",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261117T154022Z_fa1511dd",
+            "run_id": "20261118T151845Z_52ebe4c0",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-17T15:40:22.176380+00:00",
-            "finished_at": "2026-11-17T15:40:32.720279+00:00"
+            "started_at": "2026-11-18T15:18:45.880874+00:00",
+            "finished_at": "2026-11-18T15:19:00.754665+00:00"
           }
         },
         {
@@ -6853,11 +6860,11 @@
           "label": "inpa_comunicazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261117T154033Z_25c69cd6",
+            "run_id": "20261118T151901Z_c3308a5f",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-17T15:40:33.240609+00:00",
-            "finished_at": "2026-11-17T15:41:41.941045+00:00"
+            "started_at": "2026-11-18T15:19:01.295120+00:00",
+            "finished_at": "2026-11-18T15:19:58.904209+00:00"
           }
         }
       ]
