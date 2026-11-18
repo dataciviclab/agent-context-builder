@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-18T00:37:34.743976",
+  "generated_at": "2026-11-18T15:12:37.669467",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -104,7 +104,7 @@
       "url": "https://github.com/dataciviclab/dcl-bologna",
       "role": "dati",
       "domain": "territorio-ambiente",
-      "n_datasets": 15,
+      "n_datasets": 17,
       "n_published": 0,
       "sources": [
         "comune_bologna_opendata"
@@ -23311,7 +23311,7 @@
         ],
         "category": "ambiente",
         "registry_source": "dcl-bologna",
-        "clean_rows": 763032,
+        "clean_rows": 763015,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/bologna/centraline_aria/2026/centraline_aria_2026_clean.parquet",
@@ -23401,7 +23401,7 @@
         ],
         "category": "trasporti",
         "registry_source": "dcl-bologna",
-        "clean_rows": 570224,
+        "clean_rows": 580928,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/bologna/colonnine_bici/2026/colonnine_bici_2026_clean.parquet",
@@ -23444,11 +23444,39 @@
             "description": "Zona"
           },
           {
+            "name": "area_statistica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "zona_prossimita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "via",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
             "description": "Via della colonnina"
+          },
+          {
+            "name": "civico",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "distanza_civico_m",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
           },
           {
             "name": "direzione_centro",
@@ -24546,6 +24574,286 @@
         ]
       },
       {
+        "slug": "rifter_archi",
+        "url_slug": "rifter-archi",
+        "name": "Rifter Archi",
+        "description": "",
+        "source": "",
+        "source_id": "comune_bologna_opendata",
+        "period": {
+          "start": 1990,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "territorio",
+          "strade",
+          "toponomastica",
+          "quartiere",
+          "rifter",
+          "bologna"
+        ],
+        "category": "territorio",
+        "registry_source": "dcl-bologna",
+        "clean_rows": 8048,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bologna/rifter_archi/2026/rifter_archi_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno_run",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codarco",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codvia",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nome_via",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "quartiere",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "num_quartiere",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "lunghezza_m",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "civico_min",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "civico_max",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "da_via",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "a_via",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nodo_da",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nodo_a",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice_ans",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "lat",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "lon",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "rifter_archi__mart_via_quartiere",
+          "rifter_archi__mart_quartiere_archi"
+        ]
+      },
+      {
+        "slug": "rifter_civici",
+        "url_slug": "rifter-civici",
+        "name": "Rifter Civici",
+        "description": "",
+        "source": "",
+        "source_id": "comune_bologna_opendata",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "territorio",
+          "civici",
+          "toponomastica",
+          "quartiere",
+          "zona",
+          "area-statistica",
+          "bologna"
+        ],
+        "category": "territorio",
+        "registry_source": "dcl-bologna",
+        "clean_rows": 77618,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/bologna/rifter_civici/2026/rifter_civici_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno_run",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "civkey",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codvia",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "civico",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "subciv",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "via",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "quartiere",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "zona_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "zona",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "area_statistica",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "zona_prossimita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "bacino_scuola",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "lat",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "lon",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "rifter_civici__mart_zona_civici"
+        ]
+      },
+      {
         "slug": "spire_traffico",
         "url_slug": "spire-traffico",
         "name": "Traffico fuori ZTL (spire)",
@@ -24780,7 +25088,7 @@
         ],
         "category": "trasporti",
         "registry_source": "dcl-bologna",
-        "clean_rows": 19337091,
+        "clean_rows": 19574931,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/bologna/varchi_ztl/2026/varchi_ztl_2026_clean.parquet",
@@ -42982,7 +43290,7 @@
         ],
         "category": "normativa",
         "registry_source": "gu-monitor",
-        "clean_rows": 27271,
+        "clean_rows": 27325,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/gu-monitor/gu_atti/2026/gu_atti_2026_clean.parquet",
@@ -75423,6 +75731,8 @@
       "popolazione_quartiere",
       "precipitazioni_bologna",
       "reddito_mediano",
+      "rifter_archi",
+      "rifter_civici",
       "spire_traffico",
       "temperature_bologna",
       "varchi_ztl"
@@ -78126,6 +78436,41 @@
         "bologna"
       ],
       "description": "Reddito imponibile mediano e numero contribuenti per area statistica (2016-2024)"
+    },
+    "rifter_archi": {
+      "name": "Rifter Archi",
+      "stage": "incubating",
+      "source_id": "comune_bologna_opendata",
+      "registry_source": "dcl-bologna",
+      "domain": null,
+      "category": "territorio",
+      "tags": [
+        "territorio",
+        "strade",
+        "toponomastica",
+        "quartiere",
+        "rifter",
+        "bologna"
+      ],
+      "description": ""
+    },
+    "rifter_civici": {
+      "name": "Rifter Civici",
+      "stage": "incubating",
+      "source_id": "comune_bologna_opendata",
+      "registry_source": "dcl-bologna",
+      "domain": null,
+      "category": "territorio",
+      "tags": [
+        "territorio",
+        "civici",
+        "toponomastica",
+        "quartiere",
+        "zona",
+        "area-statistica",
+        "bologna"
+      ],
+      "description": ""
     },
     "spire_traffico": {
       "name": "Traffico fuori ZTL (spire)",
