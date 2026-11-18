@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T15:35:58.770244",
+  "generated_at": "2026-11-18T00:37:34.743976",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -52,7 +52,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 24,
+  "open_prs": 18,
   "prs": [
     {
       "number": 20,
@@ -66,27 +66,6 @@
       "title": "feat(anac-cross): codice IPA della stazione appaltante (#13)",
       "repo": "appalti-pubblici",
       "url": "https://github.com/dataciviclab/appalti-pubblici/pull/19",
-      "category": "other"
-    },
-    {
-      "number": 296,
-      "title": "fix(geo-utils): riconosce le P.A. Trentino in tutte le grafie delle fonti",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/296",
-      "category": "other"
-    },
-    {
-      "number": 941,
-      "title": "feat(aifa-spesa-consumo): serie 2016-2025, encoding cp1252, mart sintesi e trend",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/941",
-      "category": "other"
-    },
-    {
-      "number": 938,
-      "title": "registry: aggiungi dataset mortalita_istat_evitabile (published)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/938",
       "category": "other"
     },
     {
@@ -115,27 +94,6 @@
       "title": "feat(candidates): bootstrap gse_cer_elenco candidate",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/836",
-      "category": "other"
-    },
-    {
-      "number": 60,
-      "title": "fix(abpf-titolari-piva-regione): normalizza le etichette del Trentino",
-      "repo": "dichiarazioni-italia",
-      "url": "https://github.com/dataciviclab/dichiarazioni-italia/pull/60",
-      "category": "other"
-    },
-    {
-      "number": 59,
-      "title": "fix(irpef-comunale): esclude la pseudo-regione dai mart e normalizza il Trentino",
-      "repo": "dichiarazioni-italia",
-      "url": "https://github.com/dataciviclab/dichiarazioni-italia/pull/59",
-      "category": "other"
-    },
-    {
-      "number": 58,
-      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
-      "repo": "dichiarazioni-italia",
-      "url": "https://github.com/dataciviclab/dichiarazioni-italia/pull/58",
       "category": "other"
     },
     {
@@ -223,7 +181,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 62,
+  "open_issues": 61,
   "issues": [
     {
       "number": 13,
@@ -258,13 +216,6 @@
       "title": "[data] Mart massime: date tipizzate (norma_data/parametro_data)",
       "repo": "costituzione-italiana",
       "url": "https://github.com/dataciviclab/costituzione-italiana/issues/44",
-      "category": "other"
-    },
-    {
-      "number": 295,
-      "title": "[Bug] irpef-regioni: il loader include la pseudo-regione 'Mancante/errata' nei grafici",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/issues/295",
       "category": "other"
     },
     {
@@ -329,13 +280,6 @@
       "repo": "dcl-bologna",
       "url": "https://github.com/dataciviclab/dcl-bologna/issues/5",
       "category": "intake"
-    },
-    {
-      "number": 40,
-      "title": "[QA] irpef_comunale \u2014 la riga \"Mancante/errata\" entra come 22\u00aa regione in mart_sintesi",
-      "repo": "dichiarazioni-italia",
-      "url": "https://github.com/dataciviclab/dichiarazioni-italia/issues/40",
-      "category": "other"
     },
     {
       "number": 25,
@@ -611,6 +555,13 @@
       "category": "other"
     },
     {
+      "number": 550,
+      "title": "[Bug] run all: readiness per anno calcolata prima del mart multi-year \u2192 needs-review (7/8) su run pulito",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/550",
+      "category": "other"
+    },
+    {
       "number": 548,
       "title": "[Bug] preflight non applica url_suffix_by_year: falsi negativi su fonti con suffisso per anno",
       "repo": "toolkit",
@@ -740,6 +691,41 @@
       "category": "Domande"
     },
     {
+      "number": 457,
+      "title": "[Dataset] ANAC Piattaforma Pubblicit\u00e0 Legale (PVL): avvisi e bandi del giorno, con CIG",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/457",
+      "category": "Datasets"
+    },
+    {
+      "number": 441,
+      "title": "IRPEF Comunale \u2014 11 domande su redditi e imposta comune per comune (2019-2024)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/441",
+      "category": "Domanda"
+    },
+    {
+      "number": 461,
+      "title": "RFI: 42.572 lotti, 16.832 km \u2014 e nessun dato pubblico sullo stato delle tratte",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/461",
+      "category": "Metodo"
+    },
+    {
+      "number": 462,
+      "title": "Gas naturale \u2014 da dove arriva il gas che consumiamo? 9 domande su 34 anni di import e consumi (1990-2024)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/462",
+      "category": "Domanda"
+    },
+    {
+      "number": 442,
+      "title": "AIFA Spesa Farmaceutica \u2014 11 domande su 10 miliardi di farmaci convenzionati (2016-2025)",
+      "repo": "dataciviclab",
+      "url": "https://github.com/orgs/dataciviclab/discussions/442",
+      "category": "Domanda"
+    },
+    {
       "number": 460,
       "title": "I codici dei contratti abrogati (2006, 2016) sono ancora citati da 515 atti vigenti",
       "repo": "dataciviclab",
@@ -752,41 +738,6 @@
       "repo": "dataciviclab",
       "url": "https://github.com/orgs/dataciviclab/discussions/459",
       "category": "Analisi"
-    },
-    {
-      "number": 457,
-      "title": "[Dataset] ANAC Piattaforma Pubblicit\u00e0 Legale (PVL): avvisi e bandi del giorno, con CIG",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/457",
-      "category": "Datasets"
-    },
-    {
-      "number": 461,
-      "title": "RFI: 42.618 gare, 624 opere, 16.832 km \u2014 e nessun dato pubblico sullo stato delle tratte",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/461",
-      "category": "Metodo"
-    },
-    {
-      "number": 441,
-      "title": "IRPEF Comunale \u2014 11 domande su redditi e imposta comune per comune (2019-2024)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/441",
-      "category": "Domanda"
-    },
-    {
-      "number": 462,
-      "title": "Gas naturale \u2014 da dove arriva il gas che consumiamo? 9 domande su 34 anni di import e consumi (1990-2024)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/462",
-      "category": "Domanda"
-    },
-    {
-      "number": 442,
-      "title": "AIFA Spesa Farmaceutica \u2014 11 domande su 10 miliardi di farmaci convenzionati (2018-2024)",
-      "repo": "dataciviclab",
-      "url": "https://github.com/orgs/dataciviclab/discussions/442",
-      "category": "Domanda"
     },
     {
       "number": 99,
@@ -2522,7 +2473,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 29"
+    "Many open PRs: 23"
   ],
   "radar": {
     "available": true,
@@ -2915,7 +2866,7 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-11-13",
+    "generated_at": "2026-11-17",
     "summary": {
       "total": 58,
       "by_status": {
@@ -3615,13 +3566,13 @@
       "repo": "dataset-incubator",
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
-      "updated_at": "2026-11-13",
-      "datasets": 57,
-      "marts": 109,
+      "updated_at": "2026-11-17",
+      "datasets": 58,
+      "marts": 111,
       "signals": 58,
       "codelists": 2,
       "entities": 12,
-      "gcs": 56,
+      "gcs": 57,
       "reason": "",
       "signals_detail": [
         {
@@ -3643,13 +3594,13 @@
           "source_id": "aifa",
           "status": "ok",
           "label": "aifa_spesa_consumo",
-          "detail": "anni 2018-2024 \u2014 mart: si",
+          "detail": "anni 2016-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20260730T084948Z_d12bb7c2",
-            "year": 2024,
+            "run_id": "20261117T174942Z_11072710",
+            "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-07-30T08:49:48.164156+00:00",
-            "finished_at": "2026-07-30T08:50:08.017957+00:00"
+            "started_at": "2026-11-17T17:49:42.081652+00:00",
+            "finished_at": "2026-11-17T17:49:46.893777+00:00"
           }
         },
         {
@@ -4172,10 +4123,17 @@
         },
         {
           "id": "mortalita_istat_evitabile",
-          "source_id": "istat_situas",
+          "source_id": "istat_sdmx",
           "status": "ok",
           "label": "mortalita_istat_evitabile",
-          "detail": "anno 2022 \u2014 mart: si"
+          "detail": "anno 2022 \u2014 mart: si",
+          "run": {
+            "run_id": "20261117T180515Z_742994a4",
+            "year": 2022,
+            "status": "SUCCESS",
+            "started_at": "2026-11-17T18:05:15.152275+00:00",
+            "finished_at": "2026-11-17T18:05:26.741600+00:00"
+          }
         },
         {
           "id": "pensioni_pa_dag",
@@ -4358,9 +4316,9 @@
       "repo": "dcl-bologna",
       "available": true,
       "source_repo": "dataciviclab/dcl-bologna",
-      "updated_at": "2026-11-01",
+      "updated_at": "2026-11-17",
       "datasets": 15,
-      "marts": 29,
+      "marts": 30,
       "signals": 15,
       "codelists": 0,
       "entities": 3,
@@ -4388,11 +4346,11 @@
           "label": "centraline_aria",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T125801Z_877c700a",
+            "run_id": "20261117T222102Z_6f9e8da3",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T12:58:01.461424+00:00",
-            "finished_at": "2026-11-01T12:58:09.071384+00:00"
+            "started_at": "2026-11-17T22:21:02.244602+00:00",
+            "finished_at": "2026-11-17T22:22:34.754351+00:00"
           }
         },
         {
@@ -4444,11 +4402,11 @@
           "label": "esercizi_somministrazione",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T125937Z_de56e2ba",
+            "run_id": "20261117T222235Z_0102b180",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T12:59:37.683166+00:00",
-            "finished_at": "2026-11-01T12:59:42.260933+00:00"
+            "started_at": "2026-11-17T22:22:35.455094+00:00",
+            "finished_at": "2026-11-17T22:22:38.815345+00:00"
           }
         },
         {
@@ -4540,13 +4498,13 @@
           "source_id": "comune_bologna_opendata",
           "status": "ok",
           "label": "spire_traffico",
-          "detail": "anni 2022-2025 \u2014 mart: si",
+          "detail": "anni 2022-2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T130406Z_60f40d0b",
-            "year": 2025,
+            "run_id": "20261117T222619Z_cc95ebe0",
+            "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T13:04:06.072037+00:00",
-            "finished_at": "2026-11-01T13:05:17.214047+00:00"
+            "started_at": "2026-11-17T22:26:19.372681+00:00",
+            "finished_at": "2026-11-17T22:27:04.028782+00:00"
           }
         },
         {
@@ -4752,7 +4710,7 @@
       "repo": "dichiarazioni-italia",
       "available": true,
       "source_repo": "dataciviclab/dichiarazioni-italia",
-      "updated_at": "2026-11-08",
+      "updated_at": "2026-11-17",
       "datasets": 18,
       "marts": 34,
       "signals": 18,
@@ -4768,11 +4726,11 @@
           "label": "abpf_titolari_piva_regione",
           "detail": "anni 2016-2025 \u2014 mart: si",
           "run": {
-            "run_id": "20261108T215720Z_bf560afb",
+            "run_id": "20261117T180355Z_e52be111",
             "year": 2025,
             "status": "SUCCESS",
-            "started_at": "2026-11-08T21:57:20.370973+00:00",
-            "finished_at": "2026-11-08T21:57:21.851707+00:00"
+            "started_at": "2026-11-17T18:03:55.959225+00:00",
+            "finished_at": "2026-11-17T18:03:57.437463+00:00"
           }
         },
         {
@@ -4950,11 +4908,11 @@
           "label": "irpef_comunale",
           "detail": "anni 2015-2024 \u2014 mart: si",
           "run": {
-            "run_id": "20261108T220617Z_ea426296",
+            "run_id": "20261117T180657Z_ee7bb339",
             "year": 2024,
             "status": "SUCCESS",
-            "started_at": "2026-11-08T22:06:17.855318+00:00",
-            "finished_at": "2026-11-08T22:06:20.948695+00:00"
+            "started_at": "2026-11-17T18:06:57.525885+00:00",
+            "finished_at": "2026-11-17T18:07:00.179330+00:00"
           }
         },
         {
@@ -6833,7 +6791,7 @@
       "repo": "inpa-reclutamento",
       "available": true,
       "source_repo": "dataciviclab/inpa-reclutamento",
-      "updated_at": "2026-11-16",
+      "updated_at": "2026-11-17",
       "datasets": 4,
       "marts": 12,
       "signals": 4,
@@ -6877,11 +6835,11 @@
           "label": "inpa_bandi_open",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261116T150931Z_bf748e87",
+            "run_id": "20261117T154022Z_fa1511dd",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-16T15:09:31.918912+00:00",
-            "finished_at": "2026-11-16T15:09:42.163674+00:00"
+            "started_at": "2026-11-17T15:40:22.176380+00:00",
+            "finished_at": "2026-11-17T15:40:32.720279+00:00"
           }
         },
         {
@@ -6891,11 +6849,11 @@
           "label": "inpa_comunicazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261116T150942Z_be2cac64",
+            "run_id": "20261117T154033Z_25c69cd6",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-16T15:09:42.755761+00:00",
-            "finished_at": "2026-11-16T15:10:39.424285+00:00"
+            "started_at": "2026-11-17T15:40:33.240609+00:00",
+            "finished_at": "2026-11-17T15:41:41.941045+00:00"
           }
         }
       ]

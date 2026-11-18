@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-17T15:35:58.770244",
+  "generated_at": "2026-11-18T00:37:34.743976",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -71,7 +71,7 @@
       "url": "https://github.com/dataciviclab/dataset-incubator",
       "role": "infra",
       "domain": "sanita",
-      "n_datasets": 57,
+      "n_datasets": 58,
       "n_published": 28,
       "sources": [
         "adm_opendata",
@@ -14112,23 +14112,25 @@
         "source": "AIFA \u2014 Open Data Spesa e Consumo Farmaceutico",
         "source_id": "aifa",
         "period": {
-          "start": 2018,
-          "end": 2024
+          "start": 2016,
+          "end": 2025
         },
         "stage": "published",
         "tags": [
           "sanita",
           "aifa",
           "spesa",
-          "consumo"
+          "consumo",
+          "farmaceutica",
+          "serie-storica"
         ],
         "category": "sanita",
         "registry_source": "dataset-incubator",
-        "clean_rows": 177500,
+        "clean_rows": 177635,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/aifa_spesa_consumo/2024/aifa_spesa_consumo_2024_clean.parquet",
-          "multi_file": false
+          "path": "gs://dataciviclab-clean/aifa_spesa_consumo/*/aifa_spesa_consumo_*_clean.parquet",
+          "multi_file": true
         },
         "columns": [
           {
@@ -14252,7 +14254,9 @@
           }
         ],
         "mart_refs": [
-          "aifa_spesa_consumo__mart_mensile_regione_atc4"
+          "aifa_spesa_consumo__mart_mensile_regione_atc4",
+          "aifa_spesa_consumo__mart_sintesi_regione_anno",
+          "aifa_spesa_consumo__mart_trend_regione"
         ]
       }
     ],
@@ -20797,6 +20801,138 @@
         ]
       },
       {
+        "slug": "mortalita_istat_evitabile",
+        "url_slug": "mortalita-istat-evitabile",
+        "name": "Mortalita Istat Evitabile",
+        "description": "",
+        "source": "",
+        "source_id": "istat_sdmx",
+        "period": {
+          "start": 2022,
+          "end": 2022
+        },
+        "stage": "incubating",
+        "tags": [
+          "sanita",
+          "mortalita",
+          "istat",
+          "evitabile"
+        ],
+        "category": "sanita",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 31522,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/mortalita_istat_evitabile/2022/mortalita_istat_evitabile_2022_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "cod_territorio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "territorio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cod_sesso",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sesso",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cod_classe_eta",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "classe_eta",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cod_titolo_studio",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "titolo_studio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cod_causa",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "causa",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pop_media",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "decessi",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tasso_std_10000",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mortalita_istat_evitabile__mart_regioni_v1",
+          "mortalita_istat_evitabile__mart_regioni_v2",
+          "mortalita_istat_evitabile__mart_regioni_v3"
+        ]
+      },
+      {
         "slug": "popolazione_istat_comunale_2019_2025",
         "url_slug": "popolazione-istat",
         "name": "Popolazione ISTAT Comunale",
@@ -23163,7 +23299,7 @@
         "source": "OpenData Comune di Bologna \u2014 Arpae",
         "source_id": "comune_bologna_opendata",
         "period": {
-          "start": 2025,
+          "start": 2017,
           "end": 2026
         },
         "stage": "incubating",
@@ -23175,7 +23311,7 @@
         ],
         "category": "ambiente",
         "registry_source": "dcl-bologna",
-        "clean_rows": 63908,
+        "clean_rows": 763032,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/bologna/centraline_aria/2026/centraline_aria_2026_clean.parquet",
@@ -23216,11 +23352,33 @@
             "role": "metric",
             "semantic_type": "",
             "description": "Concentrazione rilevata"
+          },
+          {
+            "name": "um",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "misura_affidabile",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fonte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
           }
         ],
         "mart_refs": [
           "centraline_aria__mart_aria_stazione",
-          "centraline_aria__mart_aria_ora"
+          "centraline_aria__mart_aria_ora",
+          "centraline_aria__mart_aria_mese"
         ]
       },
       {
@@ -24396,7 +24554,7 @@
         "source_id": "comune_bologna_opendata",
         "period": {
           "start": 2022,
-          "end": 2025
+          "end": 2026
         },
         "stage": "incubating",
         "tags": [
@@ -24408,7 +24566,7 @@
         ],
         "category": "trasporti",
         "registry_source": "dcl-bologna",
-        "clean_rows": 7315776,
+        "clean_rows": 6310560,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/bologna/spire_traffico/*/spire_traffico_*_clean.parquet",
@@ -24435,6 +24593,13 @@
             "role": "metric",
             "semantic_type": "",
             "description": "Identificativo spira"
+          },
+          {
+            "name": "id_spira",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
           },
           {
             "name": "chiave",
@@ -45032,7 +45197,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 1862,
+        "clean_rows": 1868,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_bandi_open/2026/inpa_bandi_open_2026_clean.parquet",
@@ -45251,7 +45416,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 6858,
+        "clean_rows": 6903,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_comunicazioni/2026/inpa_comunicazioni_2026_clean.parquet",
@@ -73771,13 +73936,14 @@
         "eurostat_physicians_nuts2",
         "farmacie",
         "malasanita_compose",
+        "mortalita_istat_evitabile",
         "personale_ssn",
         "posti_letto_stabilimento",
         "reparti_ricovero",
         "strutture_asl",
         "strutture_ricovero_asl"
       ],
-      "dataset_count": 16
+      "dataset_count": 17
     },
     {
       "slug": "welfare-lavoro",
@@ -74284,6 +74450,7 @@
         "eurostat_physicians_nuts2",
         "farmacie",
         "malasanita_compose",
+        "mortalita_istat_evitabile",
         "personale_ssn",
         "posti_letto_stabilimento",
         "reparti_ricovero",
@@ -75230,6 +75397,7 @@
       "minlavoro_flussi",
       "mit_incidentalita_mensile",
       "mit_opere_incompiute_2020",
+      "mortalita_istat_evitabile",
       "pensioni_pa_dag",
       "personale_ssn",
       "popolazione_istat_comunale_2019_2025",
@@ -76037,6 +76205,7 @@
       "eurostat_physicians_nuts2",
       "farmacie",
       "malasanita_compose",
+      "mortalita_istat_evitabile",
       "personale_ssn",
       "posti_letto_stabilimento",
       "reparti_ricovero",
@@ -76912,7 +77081,9 @@
         "sanita",
         "aifa",
         "spesa",
-        "consumo"
+        "consumo",
+        "farmaceutica",
+        "serie-storica"
       ],
       "description": "Spesa e consumo farmaceutico convenzionato SSN per regione, mese, categoria ATC \u2014 AIFA 2018-2024"
     },
@@ -77605,6 +77776,21 @@
         "incompiute"
       ],
       "description": "Opere pubbliche incompiute al 31/12/2020 \u2014 Italia, 405 opere con CUP, stato, cause e importi"
+    },
+    "mortalita_istat_evitabile": {
+      "name": "Mortalita Istat Evitabile",
+      "stage": "incubating",
+      "source_id": "istat_sdmx",
+      "registry_source": "dataset-incubator",
+      "domain": "sanita",
+      "category": "sanita",
+      "tags": [
+        "sanita",
+        "mortalita",
+        "istat",
+        "evitabile"
+      ],
+      "description": ""
     },
     "pensioni_pa_dag": {
       "name": "Pensioni Pa Dag",
