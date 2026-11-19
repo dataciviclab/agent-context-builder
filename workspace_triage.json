@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T06:41:25.278746",
+  "generated_at": "2026-11-19T20:02:00.348550",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -52,7 +52,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 17,
+  "open_prs": 16,
   "prs": [
     {
       "number": 20,
@@ -108,13 +108,6 @@
       "title": "refactor(raw): source CKAN native al posto di prefetch.py",
       "repo": "giustizia-amministrativa",
       "url": "https://github.com/dataciviclab/giustizia-amministrativa/pull/26",
-      "category": "other"
-    },
-    {
-      "number": 36,
-      "title": "chore(post-merge): aggiorna registry (schedule)",
-      "repo": "gu-monitor",
-      "url": "https://github.com/dataciviclab/gu-monitor/pull/36",
       "category": "other"
     },
     {
@@ -174,7 +167,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 62,
+  "open_issues": 63,
   "issues": [
     {
       "number": 13,
@@ -371,6 +364,13 @@
       "repo": "giustizia-statistiche",
       "url": "https://github.com/dataciviclab/giustizia-statistiche/issues/17",
       "category": "intake"
+    },
+    {
+      "number": 171,
+      "title": "[data] akn_relations: articolo \u00e8 l'unione per coppia, e un eId numerico diventa un articolo",
+      "repo": "italia-corpus",
+      "url": "https://github.com/dataciviclab/italia-corpus/issues/171",
+      "category": "other"
     },
     {
       "number": 170,
@@ -1216,6 +1216,13 @@
       "category": "Proposte"
     },
     {
+      "number": 29,
+      "title": "\ud83d\udee3\ufe0f Fuori dalla cerchia: il traffico cala (-11,7%) ma la met\u00e0 che in ZTL \u2014 e 120 spire sono state spente",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/29",
+      "category": "Idee analisi"
+    },
+    {
       "number": 71,
       "title": "\ud83d\udcd0 Come sono fatti i dati di Bologna: copertura reale e trappole (novembre 2026)",
       "repo": "dcl-bologna",
@@ -1234,13 +1241,6 @@
       "title": "\ud83d\ude97 Meno auto in ZTL: il traffico \u00e8 calato del 22% \u2014 ma \u00e8 sparito o si \u00e8 spostato?",
       "repo": "dcl-bologna",
       "url": "https://github.com/dataciviclab/dcl-bologna/discussions/23",
-      "category": "Idee analisi"
-    },
-    {
-      "number": 29,
-      "title": "\ud83d\udee3\ufe0f Fuori dalla cerchia: il traffico cala (-11,7%) ma la met\u00e0 che in ZTL \u2014 e 120 spire sono state spente",
-      "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/discussions/29",
       "category": "Idee analisi"
     },
     {
@@ -2480,23 +2480,23 @@
     }
   },
   "warnings": [
-    "Many open PRs: 22"
+    "Many open PRs: 21"
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-11-18T11:34:06.357632+00:00",
-    "probe_date": "2026-11-18",
+    "generated_at": "2026-11-19T11:31:58.238890+00:00",
+    "probe_date": "2026-11-19",
     "sources_total": 39,
-    "green": 35,
-    "yellow": 4,
-    "red": 0,
+    "green": 33,
+    "yellow": 5,
+    "red": 1,
     "persistent_red": 0,
     "sources": [
       {
         "id": "istat_sdmx",
-        "status": "GREEN",
+        "status": "RED",
         "protocol": "sdmx",
-        "http_code": "200",
+        "http_code": "500",
         "note": null,
         "red_streak": 0
       },
@@ -2614,10 +2614,10 @@
       },
       {
         "id": "aifa",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "html",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
@@ -2807,6 +2807,14 @@
     ],
     "unhealthy": [
       {
+        "id": "istat_sdmx",
+        "status": "RED",
+        "protocol": "sdmx",
+        "http_code": "500",
+        "note": null,
+        "red_streak": 0
+      },
+      {
         "id": "anac",
         "status": "YELLOW",
         "protocol": "ckan",
@@ -2828,6 +2836,14 @@
         "protocol": "html",
         "http_code": "403",
         "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "aifa",
+        "status": "YELLOW",
+        "protocol": "html",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
@@ -4299,13 +4315,13 @@
       "repo": "dcl-bologna",
       "available": true,
       "source_repo": "dataciviclab/dcl-bologna",
-      "updated_at": "2026-11-18",
-      "datasets": 17,
-      "marts": 33,
-      "signals": 17,
+      "updated_at": "2026-11-19",
+      "datasets": 18,
+      "marts": 35,
+      "signals": 18,
       "codelists": 0,
       "entities": 3,
-      "gcs": 17,
+      "gcs": 18,
       "reason": "",
       "signals_detail": [
         {
@@ -4432,6 +4448,20 @@
             "status": "SUCCESS",
             "started_at": "2026-11-01T12:59:51.561451+00:00",
             "finished_at": "2026-11-01T12:59:52.694896+00:00"
+          }
+        },
+        {
+          "id": "lavori_pubblici",
+          "source_id": "comune_bologna_opendata",
+          "status": "ok",
+          "label": "lavori_pubblici",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261119T182028Z_c2e8f05a",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-19T18:20:28.427775+00:00",
+            "finished_at": "2026-11-19T18:20:30.843291+00:00"
           }
         },
         {
@@ -6491,7 +6521,7 @@
       "repo": "gu-monitor",
       "available": true,
       "source_repo": "dataciviclab/gu-monitor",
-      "updated_at": "2026-11-18",
+      "updated_at": "2026-11-19",
       "datasets": 1,
       "marts": 3,
       "signals": 1,
@@ -6507,11 +6537,11 @@
           "label": "gu_atti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261118T193423Z_74825730",
+            "run_id": "20261119T150936Z_750dc97b",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-18T19:34:23.938020+00:00",
-            "finished_at": "2026-11-18T19:34:24.247413+00:00"
+            "started_at": "2026-11-19T15:09:36.879384+00:00",
+            "finished_at": "2026-11-19T15:09:37.294243+00:00"
           }
         }
       ]
@@ -6802,7 +6832,7 @@
       "repo": "inpa-reclutamento",
       "available": true,
       "source_repo": "dataciviclab/inpa-reclutamento",
-      "updated_at": "2026-11-18",
+      "updated_at": "2026-11-19",
       "datasets": 4,
       "marts": 12,
       "signals": 4,
@@ -6846,11 +6876,11 @@
           "label": "inpa_bandi_open",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261118T151845Z_52ebe4c0",
+            "run_id": "20261119T152528Z_ef1e64ad",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-18T15:18:45.880874+00:00",
-            "finished_at": "2026-11-18T15:19:00.754665+00:00"
+            "started_at": "2026-11-19T15:25:28.474583+00:00",
+            "finished_at": "2026-11-19T15:25:46.626268+00:00"
           }
         },
         {
@@ -6860,11 +6890,11 @@
           "label": "inpa_comunicazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261118T151901Z_c3308a5f",
+            "run_id": "20261119T152547Z_4caa3b70",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-18T15:19:01.295120+00:00",
-            "finished_at": "2026-11-18T15:19:58.904209+00:00"
+            "started_at": "2026-11-19T15:25:47.013042+00:00",
+            "finished_at": "2026-11-19T15:26:52.390028+00:00"
           }
         }
       ]
@@ -9414,7 +9444,7 @@
       "repo": "open-politica",
       "available": true,
       "source_repo": "dataciviclab/open-politica",
-      "updated_at": "2026-11-16",
+      "updated_at": "2026-11-19",
       "datasets": 36,
       "marts": 71,
       "signals": 35,
@@ -9626,11 +9656,11 @@
           "label": "camera_iter",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261116T163531Z_d937e860",
+            "run_id": "20261119T180457Z_f589ca44",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-16T16:35:31.290010+00:00",
-            "finished_at": "2026-11-16T16:35:40.806388+00:00"
+            "started_at": "2026-11-19T18:04:57.375456+00:00",
+            "finished_at": "2026-11-19T18:05:04.283643+00:00"
           }
         },
         {
@@ -9724,11 +9754,11 @@
           "label": "camera_voti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261116T151645Z_ed4faeea",
+            "run_id": "20261119T180312Z_0827ed67",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-16T15:16:45.661846+00:00",
-            "finished_at": "2026-11-16T15:17:24.676347+00:00"
+            "started_at": "2026-11-19T18:03:12.686105+00:00",
+            "finished_at": "2026-11-19T18:03:38.821117+00:00"
           }
         },
         {
@@ -9892,11 +9922,11 @@
           "label": "senato_votazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261116T151725Z_791f5a3f",
+            "run_id": "20261119T180339Z_c9654c27",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-16T15:17:25.143441+00:00",
-            "finished_at": "2026-11-16T16:35:30.816776+00:00"
+            "started_at": "2026-11-19T18:03:39.137155+00:00",
+            "finished_at": "2026-11-19T18:04:57.057971+00:00"
           }
         },
         {
