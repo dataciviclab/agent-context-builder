@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T05:58:40.329711",
+  "generated_at": "2026-11-20T15:16:21.195021",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -52,7 +52,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 16,
+  "open_prs": 17,
   "prs": [
     {
       "number": 20,
@@ -111,6 +111,20 @@
       "category": "other"
     },
     {
+      "number": 38,
+      "title": "chore(post-merge): aggiorna registry (schedule)",
+      "repo": "gu-monitor",
+      "url": "https://github.com/dataciviclab/gu-monitor/pull/38",
+      "category": "other"
+    },
+    {
+      "number": 54,
+      "title": "chore(post-merge): aggiorna registry (schedule)",
+      "repo": "inpa-reclutamento",
+      "url": "https://github.com/dataciviclab/inpa-reclutamento/pull/54",
+      "category": "other"
+    },
+    {
       "number": 21,
       "title": "chore(post-catalog): aggiorna source catalog (schedule)",
       "repo": "oecd-benchmark",
@@ -136,13 +150,6 @@
       "title": "feat(compose): finanziamento universitario (SIOPE + BDAP)",
       "repo": "open-mur",
       "url": "https://github.com/dataciviclab/open-mur/pull/21",
-      "category": "other"
-    },
-    {
-      "number": 11,
-      "title": "refactor(pnrr): migra i 7 dataset da script a http_file",
-      "repo": "open-pnrr",
-      "url": "https://github.com/dataciviclab/open-pnrr/pull/11",
       "category": "other"
     },
     {
@@ -2480,23 +2487,23 @@
     }
   },
   "warnings": [
-    "Many open PRs: 21"
+    "Many open PRs: 22"
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-11-19T11:31:58.238890+00:00",
-    "probe_date": "2026-11-19",
+    "generated_at": "2026-11-20T11:28:34.249613+00:00",
+    "probe_date": "2026-11-20",
     "sources_total": 39,
-    "green": 33,
-    "yellow": 5,
-    "red": 1,
+    "green": 35,
+    "yellow": 4,
+    "red": 0,
     "persistent_red": 0,
     "sources": [
       {
         "id": "istat_sdmx",
-        "status": "RED",
+        "status": "GREEN",
         "protocol": "sdmx",
-        "http_code": "500",
+        "http_code": "200",
         "note": null,
         "red_streak": 0
       },
@@ -2614,10 +2621,10 @@
       },
       {
         "id": "aifa",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "html",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
@@ -2807,14 +2814,6 @@
     ],
     "unhealthy": [
       {
-        "id": "istat_sdmx",
-        "status": "RED",
-        "protocol": "sdmx",
-        "http_code": "500",
-        "note": null,
-        "red_streak": 0
-      },
-      {
         "id": "anac",
         "status": "YELLOW",
         "protocol": "ckan",
@@ -2836,14 +2835,6 @@
         "protocol": "html",
         "http_code": "403",
         "note": null,
-        "red_streak": 0
-      },
-      {
-        "id": "aifa",
-        "status": "YELLOW",
-        "protocol": "html",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
@@ -9331,7 +9322,7 @@
       "repo": "open-pnrr",
       "available": true,
       "source_repo": "dataciviclab/open-pnrr",
-      "updated_at": "2026-10-01",
+      "updated_at": "2026-11-20",
       "datasets": 7,
       "marts": 13,
       "signals": 7,
@@ -9347,11 +9338,11 @@
           "label": "pnrr_avanzamento_indicatori",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T123123Z_9c6772b4",
+            "run_id": "20261120T111049Z_aa83a33a",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:31:23.833014+00:00",
-            "finished_at": "2026-10-01T12:31:26.515695+00:00"
+            "started_at": "2026-11-20T11:10:49.548248+00:00",
+            "finished_at": "2026-11-20T11:10:52.241308+00:00"
           }
         },
         {
@@ -9361,11 +9352,11 @@
           "label": "pnrr_gare",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T123126Z_ff6055a9",
+            "run_id": "20261120T111054Z_78b043c3",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:31:26.568929+00:00",
-            "finished_at": "2026-10-01T12:31:33.287294+00:00"
+            "started_at": "2026-11-20T11:10:54.818418+00:00",
+            "finished_at": "2026-11-20T11:11:04.866922+00:00"
           }
         },
         {
@@ -9375,11 +9366,11 @@
           "label": "pnrr_indicatori_target",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T123133Z_e419db2b",
+            "run_id": "20261120T111107Z_10118325",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:31:33.340513+00:00",
-            "finished_at": "2026-10-01T12:31:39.299449+00:00"
+            "started_at": "2026-11-20T11:11:07.374665+00:00",
+            "finished_at": "2026-11-20T11:11:17.846951+00:00"
           }
         },
         {
@@ -9389,11 +9380,11 @@
           "label": "pnrr_pagamenti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T123139Z_c53783c5",
+            "run_id": "20261120T111120Z_afe14816",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:31:39.354588+00:00",
-            "finished_at": "2026-10-01T12:31:50.295587+00:00"
+            "started_at": "2026-11-20T11:11:20.373929+00:00",
+            "finished_at": "2026-11-20T11:11:28.809062+00:00"
           }
         },
         {
@@ -9403,11 +9394,11 @@
           "label": "pnrr_progetti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T123150Z_a37e47a2",
+            "run_id": "20261120T111131Z_5da8c670",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:31:50.354023+00:00",
-            "finished_at": "2026-10-01T12:32:06.836713+00:00"
+            "started_at": "2026-11-20T11:11:31.668218+00:00",
+            "finished_at": "2026-11-20T11:11:59.079653+00:00"
           }
         },
         {
@@ -9417,11 +9408,11 @@
           "label": "pnrr_quadro_finanziario",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T123206Z_f47df44c",
+            "run_id": "20261120T111201Z_38ea813d",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:32:06.896393+00:00",
-            "finished_at": "2026-10-01T12:32:07.837551+00:00"
+            "started_at": "2026-11-20T11:12:01.788338+00:00",
+            "finished_at": "2026-11-20T11:12:03.451193+00:00"
           }
         },
         {
@@ -9431,11 +9422,11 @@
           "label": "pnrr_tag_clima_digitale",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261001T123207Z_78134d12",
+            "run_id": "20261120T111205Z_518d71f7",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-10-01T12:32:07.888558+00:00",
-            "finished_at": "2026-10-01T12:32:08.740418+00:00"
+            "started_at": "2026-11-20T11:12:05.959648+00:00",
+            "finished_at": "2026-11-20T11:12:07.576630+00:00"
           }
         }
       ]
