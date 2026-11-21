@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T14:18:43.679562",
+  "generated_at": "2026-11-21T22:50:18.997293",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -52,7 +52,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 16,
+  "open_prs": 15,
   "prs": [
     {
       "number": 20,
@@ -108,13 +108,6 @@
       "title": "refactor(raw): source CKAN native al posto di prefetch.py",
       "repo": "giustizia-amministrativa",
       "url": "https://github.com/dataciviclab/giustizia-amministrativa/pull/26",
-      "category": "other"
-    },
-    {
-      "number": 39,
-      "title": "chore(post-merge): aggiorna registry (schedule)",
-      "repo": "gu-monitor",
-      "url": "https://github.com/dataciviclab/gu-monitor/pull/39",
       "category": "other"
     },
     {
@@ -2487,7 +2480,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 21"
+    "Many open PRs: 20"
   ],
   "radar": {
     "available": true,
@@ -6520,7 +6513,7 @@
       "repo": "gu-monitor",
       "available": true,
       "source_repo": "dataciviclab/gu-monitor",
-      "updated_at": "2026-11-20",
+      "updated_at": "2026-11-21",
       "datasets": 1,
       "marts": 3,
       "signals": 1,
@@ -6536,11 +6529,11 @@
           "label": "gu_atti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261120T145033Z_f2b5cd8e",
+            "run_id": "20261121T140708Z_c94ef935",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-20T14:50:33.891300+00:00",
-            "finished_at": "2026-11-20T14:50:34.230214+00:00"
+            "started_at": "2026-11-21T14:07:08.055291+00:00",
+            "finished_at": "2026-11-21T14:07:08.380805+00:00"
           }
         }
       ]
@@ -6831,7 +6824,7 @@
       "repo": "inpa-reclutamento",
       "available": true,
       "source_repo": "dataciviclab/inpa-reclutamento",
-      "updated_at": "2026-11-20",
+      "updated_at": "2026-11-21",
       "datasets": 4,
       "marts": 12,
       "signals": 4,
@@ -6875,11 +6868,11 @@
           "label": "inpa_bandi_open",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261120T150214Z_8c2b82bb",
+            "run_id": "20261121T142350Z_a23d8174",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-20T15:02:14.793229+00:00",
-            "finished_at": "2026-11-20T15:02:30.595369+00:00"
+            "started_at": "2026-11-21T14:23:50.692081+00:00",
+            "finished_at": "2026-11-21T14:24:04.980447+00:00"
           }
         },
         {
@@ -6889,11 +6882,11 @@
           "label": "inpa_comunicazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261120T150231Z_435220d8",
+            "run_id": "20261121T142405Z_3abd4bb0",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-20T15:02:31.190696+00:00",
-            "finished_at": "2026-11-20T15:03:45.623542+00:00"
+            "started_at": "2026-11-21T14:24:05.492178+00:00",
+            "finished_at": "2026-11-21T14:25:05.307559+00:00"
           }
         }
       ]
@@ -9443,7 +9436,7 @@
       "repo": "open-politica",
       "available": true,
       "source_repo": "dataciviclab/open-politica",
-      "updated_at": "2026-11-19",
+      "updated_at": "2026-11-21",
       "datasets": 36,
       "marts": 71,
       "signals": 35,
@@ -9655,11 +9648,11 @@
           "label": "camera_iter",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261119T180457Z_f589ca44",
+            "run_id": "20261121T142945Z_497dbf8a",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-19T18:04:57.375456+00:00",
-            "finished_at": "2026-11-19T18:05:04.283643+00:00"
+            "started_at": "2026-11-21T14:29:45.296278+00:00",
+            "finished_at": "2026-11-21T14:29:54.279349+00:00"
           }
         },
         {
@@ -9753,11 +9746,11 @@
           "label": "camera_voti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261119T180312Z_0827ed67",
+            "run_id": "20261121T142651Z_7db985af",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-19T18:03:12.686105+00:00",
-            "finished_at": "2026-11-19T18:03:38.821117+00:00"
+            "started_at": "2026-11-21T14:26:51.699150+00:00",
+            "finished_at": "2026-11-21T14:27:31.188251+00:00"
           }
         },
         {
@@ -9921,11 +9914,11 @@
           "label": "senato_votazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261119T180339Z_c9654c27",
+            "run_id": "20261121T142731Z_49edae14",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-19T18:03:39.137155+00:00",
-            "finished_at": "2026-11-19T18:04:57.057971+00:00"
+            "started_at": "2026-11-21T14:27:31.684304+00:00",
+            "finished_at": "2026-11-21T14:29:44.827490+00:00"
           }
         },
         {
