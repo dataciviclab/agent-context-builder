@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T05:53:05.308674",
+  "generated_at": "2026-11-21T14:18:43.679562",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -52,7 +52,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 17,
+  "open_prs": 16,
   "prs": [
     {
       "number": 20,
@@ -111,17 +111,10 @@
       "category": "other"
     },
     {
-      "number": 38,
+      "number": 39,
       "title": "chore(post-merge): aggiorna registry (schedule)",
       "repo": "gu-monitor",
-      "url": "https://github.com/dataciviclab/gu-monitor/pull/38",
-      "category": "other"
-    },
-    {
-      "number": 54,
-      "title": "chore(post-merge): aggiorna registry (schedule)",
-      "repo": "inpa-reclutamento",
-      "url": "https://github.com/dataciviclab/inpa-reclutamento/pull/54",
+      "url": "https://github.com/dataciviclab/gu-monitor/pull/39",
       "category": "other"
     },
     {
@@ -2494,15 +2487,15 @@
     }
   },
   "warnings": [
-    "Many open PRs: 22"
+    "Many open PRs: 21"
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-11-20T11:28:34.249613+00:00",
-    "probe_date": "2026-11-20",
+    "generated_at": "2026-11-21T10:56:23.367940+00:00",
+    "probe_date": "2026-11-21",
     "sources_total": 39,
-    "green": 35,
-    "yellow": 4,
+    "green": 34,
+    "yellow": 5,
     "red": 0,
     "persistent_red": 0,
     "sources": [
@@ -2628,10 +2621,10 @@
       },
       {
         "id": "aifa",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "html",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
@@ -2842,6 +2835,14 @@
         "protocol": "html",
         "http_code": "403",
         "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "aifa",
+        "status": "YELLOW",
+        "protocol": "html",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
@@ -6519,7 +6520,7 @@
       "repo": "gu-monitor",
       "available": true,
       "source_repo": "dataciviclab/gu-monitor",
-      "updated_at": "2026-11-19",
+      "updated_at": "2026-11-20",
       "datasets": 1,
       "marts": 3,
       "signals": 1,
@@ -6535,11 +6536,11 @@
           "label": "gu_atti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261119T150936Z_750dc97b",
+            "run_id": "20261120T145033Z_f2b5cd8e",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-19T15:09:36.879384+00:00",
-            "finished_at": "2026-11-19T15:09:37.294243+00:00"
+            "started_at": "2026-11-20T14:50:33.891300+00:00",
+            "finished_at": "2026-11-20T14:50:34.230214+00:00"
           }
         }
       ]
@@ -6830,7 +6831,7 @@
       "repo": "inpa-reclutamento",
       "available": true,
       "source_repo": "dataciviclab/inpa-reclutamento",
-      "updated_at": "2026-11-19",
+      "updated_at": "2026-11-20",
       "datasets": 4,
       "marts": 12,
       "signals": 4,
@@ -6874,11 +6875,11 @@
           "label": "inpa_bandi_open",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261119T152528Z_ef1e64ad",
+            "run_id": "20261120T150214Z_8c2b82bb",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-19T15:25:28.474583+00:00",
-            "finished_at": "2026-11-19T15:25:46.626268+00:00"
+            "started_at": "2026-11-20T15:02:14.793229+00:00",
+            "finished_at": "2026-11-20T15:02:30.595369+00:00"
           }
         },
         {
@@ -6888,11 +6889,11 @@
           "label": "inpa_comunicazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261119T152547Z_4caa3b70",
+            "run_id": "20261120T150231Z_435220d8",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-19T15:25:47.013042+00:00",
-            "finished_at": "2026-11-19T15:26:52.390028+00:00"
+            "started_at": "2026-11-20T15:02:31.190696+00:00",
+            "finished_at": "2026-11-20T15:03:45.623542+00:00"
           }
         }
       ]
