@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-22T14:10:02.228639",
+  "generated_at": "2026-11-22T23:18:10.436583",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -71,7 +71,7 @@
       "url": "https://github.com/dataciviclab/dataset-incubator",
       "role": "infra",
       "domain": "sanita",
-      "n_datasets": 58,
+      "n_datasets": 59,
       "n_published": 28,
       "sources": [
         "adm_opendata",
@@ -19136,412 +19136,33 @@
         ]
       }
     ],
-    "istat_dbnomics": [
+    "istat_sdmx": [
       {
-        "slug": "istat_asia_imprese_addetti",
-        "url_slug": "istat-asia-imprese-addetti",
-        "name": "Istat Asia Imprese Addetti",
+        "slug": "istat_abitazioni_censimento",
+        "url_slug": "istat-abitazioni-censimento",
+        "name": "Istat Abitazioni Censimento",
         "description": "",
         "source": "",
-        "source_id": "istat_dbnomics",
-        "period": {
-          "start": 2012,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "economia",
-          "istat",
-          "asia",
-          "imprese",
-          "addetti",
-          "nace",
-          "nuts1"
-        ],
-        "category": "economia",
-        "registry_source": "dataset-incubator",
-        "clean_rows": 10296,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/istat_asia_imprese_addetti/2024/istat_asia_imprese_addetti_2024_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "territorio_codice",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "territorio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "livello",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "nace_codice",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "nace",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "indicatore_codice",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "indicatore",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "indicatore_code",
-            "description": ""
-          },
-          {
-            "name": "valore",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "istat_asia_imprese_addetti__mart_asia_imprese_anno"
-        ]
-      },
-      {
-        "slug": "istat_migrazioni",
-        "url_slug": "istat-migrazioni",
-        "name": "Istat Migrazioni",
-        "description": "",
-        "source": "",
-        "source_id": "istat_dbnomics",
-        "period": {
-          "start": 2002,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "immigrazione",
-          "flussi",
-          "istat",
-          "province"
-        ],
-        "category": "immigrazione",
-        "registry_source": "dataset-incubator",
-        "clean_rows": 3179,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/istat_migrazioni/2026/istat_migrazioni_2026_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "territorio_codice",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "territorio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "livello",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "aggregato",
-            "type": "BOOLEAN",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "immigrazioni",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "istat_migrazioni__mart_migrazioni",
-          "istat_migrazioni__mart_migrazioni_serie"
-        ]
-      },
-      {
-        "slug": "istat_permessi",
-        "url_slug": "istat-permessi",
-        "name": "Istat Permessi",
-        "description": "",
-        "source": "",
-        "source_id": "istat_dbnomics",
-        "period": {
-          "start": 2008,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "immigrazione",
-          "permessi-soggiorno",
-          "istat",
-          "province"
-        ],
-        "category": "immigrazione",
-        "registry_source": "dataset-incubator",
-        "clean_rows": 145006,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/istat_permessi/2026/istat_permessi_2026_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "territorio_codice",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "territorio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "livello",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "cittadinanza_codice",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "cittadinanza",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "aggregato",
-            "type": "BOOLEAN",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "permessi",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "istat_permessi__mart_permessi",
-          "istat_permessi__mart_permessi_serie"
-        ]
-      },
-      {
-        "slug": "istat_sbs_imprese",
-        "url_slug": "istat-sbs-imprese",
-        "name": "Istat Sbs Imprese",
-        "description": "",
-        "source": "",
-        "source_id": "istat_dbnomics",
-        "period": {
-          "start": 2008,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "economia",
-          "istat",
-          "sbs",
-          "imprese",
-          "fatturato",
-          "valore-aggiunto",
-          "ore-lavorate",
-          "costo-lavoro",
-          "classi-dimensionali",
-          "quartili"
-        ],
-        "category": "economia",
-        "registry_source": "dataset-incubator",
-        "clean_rows": 48201,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/istat_sbs_imprese/2024/istat_sbs_imprese_2024_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "territorio_codice",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "territorio",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "grain",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "nace_codice",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "nace",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "indicatore_codice",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "indicatore",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "indicatore_code",
-            "description": ""
-          },
-          {
-            "name": "valore",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "unita_misura",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "size_class",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "istat_sbs_imprese__mart_sbs_anno",
-          "istat_sbs_imprese__mart_sbs_settore",
-          "istat_sbs_imprese__mart_sbs_filiere",
-          "istat_sbs_imprese__mart_sbs_size",
-          "istat_sbs_imprese__mart_sbs_distribuzione"
-        ]
-      },
-      {
-        "slug": "istat_stranieri_residenti",
-        "url_slug": "istat-stranieri-residenti",
-        "name": "Istat Stranieri Residenti",
-        "description": "",
-        "source": "",
-        "source_id": "istat_dbnomics",
+        "source_id": "istat_sdmx",
         "period": {
           "start": 2019,
           "end": 2023
         },
         "stage": "incubating",
         "tags": [
-          "immigrazione",
-          "popolazione-straniera",
+          "welfare-lavoro",
           "istat",
-          "province"
+          "housing",
+          "censimento",
+          "sfitto",
+          "abitazioni"
         ],
-        "category": "immigrazione",
+        "category": "welfare-lavoro",
         "registry_source": "dataset-incubator",
-        "clean_rows": 104619,
+        "clean_rows": 96464,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/istat_stranieri_residenti/2026/istat_stranieri_residenti_2026_clean.parquet",
+          "path": "gs://dataciviclab-clean/istat_abitazioni_censimento/2026/istat_abitazioni_censimento_2026_clean.parquet",
           "multi_file": false
         },
         "columns": [
@@ -19560,133 +19181,42 @@
             "description": ""
           },
           {
-            "name": "territorio",
+            "name": "livello_geografico",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
             "description": ""
           },
           {
-            "name": "livello",
+            "name": "misura_codice",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
             "description": ""
           },
           {
-            "name": "cittadinanza_codice",
+            "name": "misura",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
             "description": ""
           },
           {
-            "name": "cittadinanza",
+            "name": "titolo_possesso_codice",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
             "description": ""
           },
           {
-            "name": "aggregato",
-            "type": "BOOLEAN",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "residenti",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "istat_stranieri_residenti__mart_stranieri_residenti",
-          "istat_stranieri_residenti__mart_stranieri_residenti_serie"
-        ]
-      },
-      {
-        "slug": "istat_trasporto_ferroviario",
-        "url_slug": "istat-trasporto-ferroviario",
-        "name": "Istat Trasporto Ferroviario",
-        "description": "ISTAT 117_1057 via DBnomics",
-        "source": "",
-        "source_id": "istat_dbnomics",
-        "period": {
-          "start": 2004,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "trasporti",
-          "ferrovia",
-          "merci",
-          "intermodale",
-          "istat",
-          "dbnomics"
-        ],
-        "category": "trasporti",
-        "registry_source": "dataset-incubator",
-        "clean_rows": 4114,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/istat_trasporto_ferroviario/2026/istat_trasporto_ferroviario_2026_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "area",
+            "name": "titolo_possesso",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
             "description": ""
           },
           {
-            "name": "unita",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "merce_nst",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "unita_carico",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "paese_origine",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "paese_destinazione",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "categoria_trasporto",
+            "name": "tipo_rilevazione",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
@@ -19701,341 +19231,11 @@
           }
         ],
         "mart_refs": [
-          "istat_trasporto_ferroviario__mart_ferrovia_intermodale"
+          "istat_abitazioni_censimento__mart_comuni_sfitto",
+          "istat_abitazioni_censimento__mart_italia_serie",
+          "istat_abitazioni_censimento__mart_affitto_2019"
         ]
       },
-      {
-        "slug": "istat_trasporto_merci_strada",
-        "url_slug": "istat-trasporto-merci-strada",
-        "name": "Istat Trasporto Merci Strada",
-        "description": "ISTAT 121_330 via DBnomics \u2014 tonnellate-km per regione di carico e scarico",
-        "source": "",
-        "source_id": "istat_dbnomics",
-        "period": {
-          "start": 2008,
-          "end": 2024
-        },
-        "stage": "incubating",
-        "tags": [
-          "trasporti",
-          "merci",
-          "strada",
-          "istat",
-          "dbnomics",
-          "origine-destinazione"
-        ],
-        "category": "trasporti",
-        "registry_source": "dataset-incubator",
-        "clean_rows": 93899,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/istat_trasporto_merci_strada/2026/istat_trasporto_merci_strada_2026_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "regione_carico",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "regione_scarico",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "merce_nst",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "tipo_trasporto",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "unita",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "classe_distanza",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "valore",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "istat_trasporto_merci_strada__mart_merci_per_direttrice"
-        ]
-      },
-      {
-        "slug": "istat_va_branca",
-        "url_slug": "istat-va-branca",
-        "name": "Istat Va Branca",
-        "description": "",
-        "source": "",
-        "source_id": "istat_dbnomics",
-        "period": {
-          "start": 1995,
-          "end": 2023
-        },
-        "stage": "incubating",
-        "tags": [
-          "economia",
-          "istat",
-          "va",
-          "pil",
-          "branca",
-          "nace",
-          "conti-territoriali"
-        ],
-        "category": "economia",
-        "registry_source": "dataset-incubator",
-        "clean_rows": 49770,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/istat_va_branca/2023/istat_va_branca_2023_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "territorio_codice",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "territorio_nome",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "livello",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "nace_codice",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "tipo_dato_codice",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "tipo_dato",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "valutazione_codice",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "valore_mln_eu",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "istat_va_branca__mart_va_branca",
-          "istat_va_branca__mart_va_branca_share"
-        ]
-      },
-      {
-        "slug": "istat_nic_prezzi_consumo",
-        "url_slug": "istat-nic-prezzi-consumo",
-        "name": "Istat Nic Prezzi Consumo",
-        "description": "Indici NIC dei prezzi al consumo per le categorie alimentari ECOICOP, Italia. Base 2015 (2016-2025) e base 2025 (2026+) tenute separate. Fonte ISTAT via DBnomics.",
-        "source": "",
-        "source_id": "istat_dbnomics",
-        "period": {
-          "start": 2016,
-          "end": 2026
-        },
-        "stage": "incubating",
-        "tags": [
-          "economia",
-          "agricoltura",
-          "prezzi",
-          "consumo",
-          "istat",
-          "nic",
-          "ecoicop"
-        ],
-        "category": "economia",
-        "registry_source": "filiere-agroalimentari",
-        "clean_rows": 780,
-        "location": {
-          "type": "gcs",
-          "path": "gs://dataciviclab-clean/filiere-agroalimentari/istat_nic_prezzi_consumo/2026/istat_nic_prezzi_consumo_2026_clean.parquet",
-          "multi_file": false
-        },
-        "columns": [
-          {
-            "name": "base_anno",
-            "type": "INTEGER",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "anno",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "year",
-            "description": ""
-          },
-          {
-            "name": "mese",
-            "type": "INTEGER",
-            "role": "dimension",
-            "semantic_type": "month",
-            "description": ""
-          },
-          {
-            "name": "data",
-            "type": "DATE",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "codice",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "categoria",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "indice",
-            "type": "DOUBLE",
-            "role": "metric",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "unita",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "serie_id",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "fonte_id",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "metodo_calcolo",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "qualita",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "copertura",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "limitazioni",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          },
-          {
-            "name": "fonte",
-            "type": "VARCHAR",
-            "role": "dimension",
-            "semantic_type": "",
-            "description": ""
-          }
-        ],
-        "mart_refs": [
-          "istat_nic_prezzi_consumo__mart_prezzi_consumo",
-          "istat_nic_prezzi_consumo__mart_sintesi"
-        ]
-      }
-    ],
-    "istat_sdmx": [
       {
         "slug": "istat_asia_ul",
         "url_slug": "istat-asia-ul",
@@ -21211,6 +20411,905 @@
         "mart_refs": [
           "istat_prezzi_agricoli__mart_prezzi_mensili",
           "istat_prezzi_agricoli__mart_ragione_scambio"
+        ]
+      }
+    ],
+    "istat_dbnomics": [
+      {
+        "slug": "istat_asia_imprese_addetti",
+        "url_slug": "istat-asia-imprese-addetti",
+        "name": "Istat Asia Imprese Addetti",
+        "description": "",
+        "source": "",
+        "source_id": "istat_dbnomics",
+        "period": {
+          "start": 2012,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "economia",
+          "istat",
+          "asia",
+          "imprese",
+          "addetti",
+          "nace",
+          "nuts1"
+        ],
+        "category": "economia",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 10296,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/istat_asia_imprese_addetti/2024/istat_asia_imprese_addetti_2024_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "territorio_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "territorio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "livello",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nace_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nace",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "indicatore_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "indicatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "indicatore_code",
+            "description": ""
+          },
+          {
+            "name": "valore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "istat_asia_imprese_addetti__mart_asia_imprese_anno"
+        ]
+      },
+      {
+        "slug": "istat_migrazioni",
+        "url_slug": "istat-migrazioni",
+        "name": "Istat Migrazioni",
+        "description": "",
+        "source": "",
+        "source_id": "istat_dbnomics",
+        "period": {
+          "start": 2002,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "immigrazione",
+          "flussi",
+          "istat",
+          "province"
+        ],
+        "category": "immigrazione",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 3179,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/istat_migrazioni/2026/istat_migrazioni_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "territorio_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "territorio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "livello",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "aggregato",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "immigrazioni",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "istat_migrazioni__mart_migrazioni",
+          "istat_migrazioni__mart_migrazioni_serie"
+        ]
+      },
+      {
+        "slug": "istat_permessi",
+        "url_slug": "istat-permessi",
+        "name": "Istat Permessi",
+        "description": "",
+        "source": "",
+        "source_id": "istat_dbnomics",
+        "period": {
+          "start": 2008,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "immigrazione",
+          "permessi-soggiorno",
+          "istat",
+          "province"
+        ],
+        "category": "immigrazione",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 145006,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/istat_permessi/2026/istat_permessi_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "territorio_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "territorio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "livello",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cittadinanza_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cittadinanza",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "aggregato",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "permessi",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "istat_permessi__mart_permessi",
+          "istat_permessi__mart_permessi_serie"
+        ]
+      },
+      {
+        "slug": "istat_sbs_imprese",
+        "url_slug": "istat-sbs-imprese",
+        "name": "Istat Sbs Imprese",
+        "description": "",
+        "source": "",
+        "source_id": "istat_dbnomics",
+        "period": {
+          "start": 2008,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "economia",
+          "istat",
+          "sbs",
+          "imprese",
+          "fatturato",
+          "valore-aggiunto",
+          "ore-lavorate",
+          "costo-lavoro",
+          "classi-dimensionali",
+          "quartili"
+        ],
+        "category": "economia",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 48201,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/istat_sbs_imprese/2024/istat_sbs_imprese_2024_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "territorio_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "territorio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "grain",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nace_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "nace",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "indicatore_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "indicatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "indicatore_code",
+            "description": ""
+          },
+          {
+            "name": "valore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unita_misura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "size_class",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "istat_sbs_imprese__mart_sbs_anno",
+          "istat_sbs_imprese__mart_sbs_settore",
+          "istat_sbs_imprese__mart_sbs_filiere",
+          "istat_sbs_imprese__mart_sbs_size",
+          "istat_sbs_imprese__mart_sbs_distribuzione"
+        ]
+      },
+      {
+        "slug": "istat_stranieri_residenti",
+        "url_slug": "istat-stranieri-residenti",
+        "name": "Istat Stranieri Residenti",
+        "description": "",
+        "source": "",
+        "source_id": "istat_dbnomics",
+        "period": {
+          "start": 2019,
+          "end": 2023
+        },
+        "stage": "incubating",
+        "tags": [
+          "immigrazione",
+          "popolazione-straniera",
+          "istat",
+          "province"
+        ],
+        "category": "immigrazione",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 104619,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/istat_stranieri_residenti/2026/istat_stranieri_residenti_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "territorio_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "territorio",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "livello",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cittadinanza_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cittadinanza",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "aggregato",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "residenti",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "istat_stranieri_residenti__mart_stranieri_residenti",
+          "istat_stranieri_residenti__mart_stranieri_residenti_serie"
+        ]
+      },
+      {
+        "slug": "istat_trasporto_ferroviario",
+        "url_slug": "istat-trasporto-ferroviario",
+        "name": "Istat Trasporto Ferroviario",
+        "description": "ISTAT 117_1057 via DBnomics",
+        "source": "",
+        "source_id": "istat_dbnomics",
+        "period": {
+          "start": 2004,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "trasporti",
+          "ferrovia",
+          "merci",
+          "intermodale",
+          "istat",
+          "dbnomics"
+        ],
+        "category": "trasporti",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 4114,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/istat_trasporto_ferroviario/2026/istat_trasporto_ferroviario_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "area",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "merce_nst",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unita_carico",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "paese_origine",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "paese_destinazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria_trasporto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "istat_trasporto_ferroviario__mart_ferrovia_intermodale"
+        ]
+      },
+      {
+        "slug": "istat_trasporto_merci_strada",
+        "url_slug": "istat-trasporto-merci-strada",
+        "name": "Istat Trasporto Merci Strada",
+        "description": "ISTAT 121_330 via DBnomics \u2014 tonnellate-km per regione di carico e scarico",
+        "source": "",
+        "source_id": "istat_dbnomics",
+        "period": {
+          "start": 2008,
+          "end": 2024
+        },
+        "stage": "incubating",
+        "tags": [
+          "trasporti",
+          "merci",
+          "strada",
+          "istat",
+          "dbnomics",
+          "origine-destinazione"
+        ],
+        "category": "trasporti",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 93899,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/istat_trasporto_merci_strada/2026/istat_trasporto_merci_strada_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "regione_carico",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "regione_scarico",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "merce_nst",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_trasporto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "classe_distanza",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valore",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "istat_trasporto_merci_strada__mart_merci_per_direttrice"
+        ]
+      },
+      {
+        "slug": "istat_va_branca",
+        "url_slug": "istat-va-branca",
+        "name": "Istat Va Branca",
+        "description": "",
+        "source": "",
+        "source_id": "istat_dbnomics",
+        "period": {
+          "start": 1995,
+          "end": 2023
+        },
+        "stage": "incubating",
+        "tags": [
+          "economia",
+          "istat",
+          "va",
+          "pil",
+          "branca",
+          "nace",
+          "conti-territoriali"
+        ],
+        "category": "economia",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 49770,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/istat_va_branca/2023/istat_va_branca_2023_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "territorio_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "territorio_nome",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "livello",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "nace_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_dato_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_dato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valutazione_codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "valore_mln_eu",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "istat_va_branca__mart_va_branca",
+          "istat_va_branca__mart_va_branca_share"
+        ]
+      },
+      {
+        "slug": "istat_nic_prezzi_consumo",
+        "url_slug": "istat-nic-prezzi-consumo",
+        "name": "Istat Nic Prezzi Consumo",
+        "description": "Indici NIC dei prezzi al consumo per le categorie alimentari ECOICOP, Italia. Base 2015 (2016-2025) e base 2025 (2026+) tenute separate. Fonte ISTAT via DBnomics.",
+        "source": "",
+        "source_id": "istat_dbnomics",
+        "period": {
+          "start": 2016,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "economia",
+          "agricoltura",
+          "prezzi",
+          "consumo",
+          "istat",
+          "nic",
+          "ecoicop"
+        ],
+        "category": "economia",
+        "registry_source": "filiere-agroalimentari",
+        "clean_rows": 780,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/filiere-agroalimentari/istat_nic_prezzi_consumo/2026/istat_nic_prezzi_consumo_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "base_anno",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year",
+            "description": ""
+          },
+          {
+            "name": "mese",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "month",
+            "description": ""
+          },
+          {
+            "name": "data",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "codice",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "categoria",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "indice",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "unita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "serie_id",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fonte_id",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "metodo_calcolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "qualita",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "copertura",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "limitazioni",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "fonte",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "istat_nic_prezzi_consumo__mart_prezzi_consumo",
+          "istat_nic_prezzi_consumo__mart_sintesi"
         ]
       }
     ],
@@ -74859,6 +74958,7 @@
         "inail_malattie_professionali",
         "indici_fragilita",
         "inps_pensioni_trimestrale",
+        "istat_abitazioni_censimento",
         "istat_housing_crowding",
         "istat_ipab_aree",
         "istat_occupazione_provinciale",
@@ -74891,7 +74991,7 @@
         "popolazione_quartiere",
         "scuola_base"
       ],
-      "dataset_count": 58
+      "dataset_count": 59
     },
     {
       "slug": "giustizia",
@@ -75359,6 +75459,7 @@
         "inail_malattie_professionali",
         "indici_fragilita",
         "inps_pensioni_trimestrale",
+        "istat_abitazioni_censimento",
         "istat_housing_crowding",
         "istat_ipab_aree",
         "istat_occupazione_provinciale",
@@ -76240,6 +76341,7 @@
       "inail_malattie_professionali",
       "inps_pensioni_trimestrale",
       "ispra_emissioni_ghg",
+      "istat_abitazioni_censimento",
       "istat_asia_imprese_addetti",
       "istat_asia_ul",
       "istat_cittadinanze",
@@ -77210,6 +77312,7 @@
       "inail_malattie_professionali",
       "indici_fragilita",
       "inps_pensioni_trimestrale",
+      "istat_abitazioni_censimento",
       "istat_housing_crowding",
       "istat_ipab_aree",
       "istat_occupazione_provinciale",
@@ -78218,6 +78321,23 @@
         "ghg"
       ],
       "description": "Emissioni di gas serra da processi energetici in Italia, per settore economico (industrie energetiche, manifatturiere, residenziale, trasporti). Fonte ISPRA Inventario Nazionale UNFCCC/EEA. Mt CO\u2082 equivalente."
+    },
+    "istat_abitazioni_censimento": {
+      "name": "Istat Abitazioni Censimento",
+      "stage": "incubating",
+      "source_id": "istat_sdmx",
+      "registry_source": "dataset-incubator",
+      "domain": "welfare-lavoro",
+      "category": "welfare-lavoro",
+      "tags": [
+        "welfare-lavoro",
+        "istat",
+        "housing",
+        "censimento",
+        "sfitto",
+        "abitazioni"
+      ],
+      "description": ""
     },
     "istat_asia_imprese_addetti": {
       "name": "Istat Asia Imprese Addetti",

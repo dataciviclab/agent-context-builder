@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T14:10:02.228639",
+  "generated_at": "2026-11-22T23:18:10.436583",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -52,7 +52,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 16,
+  "open_prs": 14,
   "prs": [
     {
       "number": 20,
@@ -97,13 +97,6 @@
       "category": "other"
     },
     {
-      "number": 164,
-      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
-      "repo": "eurostat",
-      "url": "https://github.com/dataciviclab/eurostat/pull/164",
-      "category": "other"
-    },
-    {
       "number": 26,
       "title": "refactor(raw): source CKAN native al posto di prefetch.py",
       "repo": "giustizia-amministrativa",
@@ -118,17 +111,17 @@
       "category": "other"
     },
     {
-      "number": 21,
-      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
-      "repo": "oecd-benchmark",
-      "url": "https://github.com/dataciviclab/oecd-benchmark/pull/21",
+      "number": 56,
+      "title": "chore(post-merge): aggiorna registry (schedule)",
+      "repo": "inpa-reclutamento",
+      "url": "https://github.com/dataciviclab/inpa-reclutamento/pull/56",
       "category": "other"
     },
     {
-      "number": 20,
-      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
-      "repo": "open-consip",
-      "url": "https://github.com/dataciviclab/open-consip/pull/20",
+      "number": 13,
+      "title": "chore(post-merge): aggiorna registry (12)",
+      "repo": "open-ccnl",
+      "url": "https://github.com/dataciviclab/open-ccnl/pull/13",
       "category": "other"
     },
     {
@@ -146,13 +139,6 @@
       "category": "other"
     },
     {
-      "number": 22,
-      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
-      "repo": "sistema-bancario",
-      "url": "https://github.com/dataciviclab/sistema-bancario/pull/22",
-      "category": "other"
-    },
-    {
       "number": 532,
       "title": "fix(sdmx,clean): streaming per cubi grandi (unpivot, export, union_by_name)",
       "repo": "toolkit",
@@ -167,7 +153,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 64,
+  "open_issues": 65,
   "issues": [
     {
       "number": 13,
@@ -203,6 +189,13 @@
       "repo": "costituzione-italiana",
       "url": "https://github.com/dataciviclab/costituzione-italiana/issues/44",
       "category": "other"
+    },
+    {
+      "number": 947,
+      "title": "intake: mit_erp_interventi \u2014 alloggi pubblici: finanziato, realizzato, assegnato per comune",
+      "repo": "dataset-incubator",
+      "url": "https://github.com/dataciviclab/dataset-incubator/issues/947",
+      "category": "intake"
     },
     {
       "number": 932,
@@ -2487,7 +2480,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 21"
+    "Many open PRs: 19"
   ],
   "radar": {
     "available": true,
@@ -2856,11 +2849,11 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-11-17",
+    "generated_at": "2026-11-22",
     "summary": {
-      "total": 58,
+      "total": 59,
       "by_status": {
-        "ok": 58
+        "ok": 59
       }
     },
     "actionable": []
@@ -3556,13 +3549,13 @@
       "repo": "dataset-incubator",
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
-      "updated_at": "2026-11-17",
-      "datasets": 58,
-      "marts": 111,
-      "signals": 58,
+      "updated_at": "2026-11-22",
+      "datasets": 59,
+      "marts": 114,
+      "signals": 59,
       "codelists": 2,
       "entities": 12,
-      "gcs": 57,
+      "gcs": 58,
       "reason": "",
       "signals_detail": [
         {
@@ -3787,6 +3780,20 @@
             "status": "SUCCESS",
             "started_at": "2026-11-11T13:51:40.358020+00:00",
             "finished_at": "2026-11-11T13:51:42.043104+00:00"
+          }
+        },
+        {
+          "id": "istat_abitazioni_censimento",
+          "source_id": "istat_sdmx",
+          "status": "ok",
+          "label": "istat_abitazioni_censimento",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261122T221940Z_7987f12e",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-22T22:19:40.348159+00:00",
+            "finished_at": "2026-11-22T22:21:50.012092+00:00"
           }
         },
         {
