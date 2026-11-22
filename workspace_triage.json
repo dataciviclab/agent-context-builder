@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T05:26:37.518917",
+  "generated_at": "2026-11-22T14:10:02.228639",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -52,7 +52,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 15,
+  "open_prs": 16,
   "prs": [
     {
       "number": 20,
@@ -108,6 +108,13 @@
       "title": "refactor(raw): source CKAN native al posto di prefetch.py",
       "repo": "giustizia-amministrativa",
       "url": "https://github.com/dataciviclab/giustizia-amministrativa/pull/26",
+      "category": "other"
+    },
+    {
+      "number": 40,
+      "title": "chore(post-merge): aggiorna registry (schedule)",
+      "repo": "gu-monitor",
+      "url": "https://github.com/dataciviclab/gu-monitor/pull/40",
       "category": "other"
     },
     {
@@ -2480,15 +2487,15 @@
     }
   },
   "warnings": [
-    "Many open PRs: 20"
+    "Many open PRs: 21"
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-11-21T10:56:23.367940+00:00",
-    "probe_date": "2026-11-21",
+    "generated_at": "2026-11-22T11:12:52.874028+00:00",
+    "probe_date": "2026-11-22",
     "sources_total": 39,
-    "green": 34,
-    "yellow": 5,
+    "green": 35,
+    "yellow": 4,
     "red": 0,
     "persistent_red": 0,
     "sources": [
@@ -2614,10 +2621,10 @@
       },
       {
         "id": "aifa",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "html",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
@@ -2828,14 +2835,6 @@
         "protocol": "html",
         "http_code": "403",
         "note": null,
-        "red_streak": 0
-      },
-      {
-        "id": "aifa",
-        "status": "YELLOW",
-        "protocol": "html",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
