@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T06:02:34.360985",
+  "generated_at": "2026-11-23T23:28:22.225476",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -52,8 +52,15 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 14,
+  "open_prs": 21,
   "prs": [
+    {
+      "number": 37,
+      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
+      "repo": "appalti-pubblici",
+      "url": "https://github.com/dataciviclab/appalti-pubblici/pull/37",
+      "category": "other"
+    },
     {
       "number": 20,
       "title": "feat(anac-smartcig): intake affidamenti diretti sotto soglia (#2)",
@@ -97,6 +104,27 @@
       "category": "other"
     },
     {
+      "number": 64,
+      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
+      "repo": "dichiarazioni-italia",
+      "url": "https://github.com/dataciviclab/dichiarazioni-italia/pull/64",
+      "category": "other"
+    },
+    {
+      "number": 165,
+      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/pull/165",
+      "category": "other"
+    },
+    {
+      "number": 32,
+      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
+      "repo": "giustizia-amministrativa",
+      "url": "https://github.com/dataciviclab/giustizia-amministrativa/pull/32",
+      "category": "other"
+    },
+    {
       "number": 26,
       "title": "refactor(raw): source CKAN native al posto di prefetch.py",
       "repo": "giustizia-amministrativa",
@@ -111,6 +139,13 @@
       "category": "other"
     },
     {
+      "number": 20,
+      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
+      "repo": "indice-pa",
+      "url": "https://github.com/dataciviclab/indice-pa/pull/20",
+      "category": "other"
+    },
+    {
       "number": 56,
       "title": "chore(post-merge): aggiorna registry (schedule)",
       "repo": "inpa-reclutamento",
@@ -118,10 +153,17 @@
       "category": "other"
     },
     {
-      "number": 13,
-      "title": "chore(post-merge): aggiorna registry (12)",
-      "repo": "open-ccnl",
-      "url": "https://github.com/dataciviclab/open-ccnl/pull/13",
+      "number": 22,
+      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
+      "repo": "oecd-benchmark",
+      "url": "https://github.com/dataciviclab/oecd-benchmark/pull/22",
+      "category": "other"
+    },
+    {
+      "number": 21,
+      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
+      "repo": "open-consip",
+      "url": "https://github.com/dataciviclab/open-consip/pull/21",
       "category": "other"
     },
     {
@@ -129,6 +171,13 @@
       "title": "fix(make): dataset prima del compose nel batch post-merge",
       "repo": "open-inps",
       "url": "https://github.com/dataciviclab/open-inps/pull/28",
+      "category": "other"
+    },
+    {
+      "number": 29,
+      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
+      "repo": "open-mur",
+      "url": "https://github.com/dataciviclab/open-mur/pull/29",
       "category": "other"
     },
     {
@@ -153,7 +202,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 65,
+  "open_issues": 64,
   "issues": [
     {
       "number": 13,
@@ -189,13 +238,6 @@
       "repo": "costituzione-italiana",
       "url": "https://github.com/dataciviclab/costituzione-italiana/issues/44",
       "category": "other"
-    },
-    {
-      "number": 947,
-      "title": "intake: mit_erp_interventi \u2014 alloggi pubblici: finanziato, realizzato, assegnato per comune",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/947",
-      "category": "intake"
     },
     {
       "number": 932,
@@ -611,7 +653,7 @@
       "category": "other"
     }
   ],
-  "open_discussions": 210,
+  "open_discussions": 211,
   "discussions": [
     {
       "number": 58,
@@ -1734,6 +1776,13 @@
       "category": "Idee"
     },
     {
+      "number": 17,
+      "title": "La frammentazione \u00e8 numerica, non di peso \u2014 1.040 CCNL coprono il 2% dei lavoratori",
+      "repo": "open-ccnl",
+      "url": "https://github.com/dataciviclab/open-ccnl/discussions/17",
+      "category": "Analisi"
+    },
+    {
       "number": 8,
       "title": "Pubblici Esercizi +9,9%, Quadri -7,0% \u2014 i settori che crescono e quelli che collassano",
       "repo": "open-ccnl",
@@ -2480,15 +2529,15 @@
     }
   },
   "warnings": [
-    "Many open PRs: 19"
+    "Many open PRs: 26"
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-11-22T11:12:52.874028+00:00",
-    "probe_date": "2026-11-22",
+    "generated_at": "2026-11-23T12:23:51.101895+00:00",
+    "probe_date": "2026-11-23",
     "sources_total": 39,
-    "green": 35,
-    "yellow": 4,
+    "green": 34,
+    "yellow": 5,
     "red": 0,
     "persistent_red": 0,
     "sources": [
@@ -2510,10 +2559,10 @@
       },
       {
         "id": "inps",
-        "status": "GREEN",
+        "status": "YELLOW",
         "protocol": "ckan",
-        "http_code": "200",
-        "note": null,
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
         "red_streak": 0
       },
       {
@@ -2815,6 +2864,14 @@
         "red_streak": 0
       },
       {
+        "id": "inps",
+        "status": "YELLOW",
+        "protocol": "ckan",
+        "http_code": "-",
+        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "red_streak": 0
+      },
+      {
         "id": "mur_ustat",
         "status": "YELLOW",
         "protocol": "ckan",
@@ -2842,18 +2899,18 @@
   },
   "source_health": {
     "available": true,
-    "captured_at": "2026-11-16T12:13:54+00:00",
+    "captured_at": "2026-11-23T13:43:09+00:00",
     "sources_checked": 39,
     "regressions": [],
     "alerts": []
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-11-22",
+    "generated_at": "2026-11-23",
     "summary": {
-      "total": 59,
+      "total": 61,
       "by_status": {
-        "ok": 59
+        "ok": 61
       }
     },
     "actionable": []
@@ -3549,13 +3606,13 @@
       "repo": "dataset-incubator",
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
-      "updated_at": "2026-11-22",
-      "datasets": 59,
-      "marts": 114,
-      "signals": 59,
+      "updated_at": "2026-11-23",
+      "datasets": 61,
+      "marts": 119,
+      "signals": 61,
       "codelists": 2,
       "entities": 12,
-      "gcs": 58,
+      "gcs": 60,
       "reason": "",
       "signals_detail": [
         {
@@ -3909,6 +3966,20 @@
           }
         },
         {
+          "id": "istat_pendolarismo_od",
+          "source_id": "istat_sdmx",
+          "status": "ok",
+          "label": "istat_pendolarismo_od",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261123T124514Z_24b27da7",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-23T12:45:14.019025+00:00",
+            "finished_at": "2026-11-23T12:45:22.223558+00:00"
+          }
+        },
+        {
           "id": "istat_permessi",
           "source_id": "istat_dbnomics",
           "status": "ok",
@@ -4102,6 +4173,20 @@
             "status": "SUCCESS",
             "started_at": "2026-10-12T10:39:59.059592+00:00",
             "finished_at": "2026-10-12T10:41:05.345209+00:00"
+          }
+        },
+        {
+          "id": "mit_erp_interventi",
+          "source_id": "mit_opendata",
+          "status": "ok",
+          "label": "mit_erp_interventi",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261123T112214Z_a5347676",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-23T11:22:14.608664+00:00",
+            "finished_at": "2026-11-23T11:22:18.409778+00:00"
           }
         },
         {
@@ -6901,7 +6986,7 @@
       "repo": "italia-corpus",
       "available": true,
       "source_repo": "dataciviclab/italia-corpus",
-      "updated_at": "2026-11-16",
+      "updated_at": "2026-11-23",
       "datasets": 8,
       "marts": 18,
       "signals": 8,
@@ -6917,11 +7002,11 @@
           "label": "akn_act_meta",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261116T122902Z_ac780bf6",
+            "run_id": "20261123T141336Z_f4927ed1",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-16T12:29:02.263824+00:00",
-            "finished_at": "2026-11-16T12:29:02.532217+00:00"
+            "started_at": "2026-11-23T14:13:36.164705+00:00",
+            "finished_at": "2026-11-23T14:13:36.368068+00:00"
           }
         },
         {
@@ -6931,11 +7016,11 @@
           "label": "akn_relations",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261116T122903Z_483552b3",
+            "run_id": "20261123T141336Z_6c148374",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-16T12:29:03.173748+00:00",
-            "finished_at": "2026-11-16T12:29:04.817985+00:00"
+            "started_at": "2026-11-23T14:13:36.834003+00:00",
+            "finished_at": "2026-11-23T14:13:38.147248+00:00"
           }
         },
         {
@@ -6945,11 +7030,11 @@
           "label": "atti_api",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261116T122905Z_01ad12e4",
+            "run_id": "20261123T141338Z_513de362",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-16T12:29:05.502503+00:00",
-            "finished_at": "2026-11-16T12:29:05.669788+00:00"
+            "started_at": "2026-11-23T14:13:38.612317+00:00",
+            "finished_at": "2026-11-23T14:13:38.742118+00:00"
           }
         },
         {
@@ -6959,11 +7044,11 @@
           "label": "atti_index",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261116T122906Z_52592e8b",
+            "run_id": "20261123T141339Z_2b3ee160",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-16T12:29:06.277753+00:00",
-            "finished_at": "2026-11-16T12:29:07.281318+00:00"
+            "started_at": "2026-11-23T14:13:39.195042+00:00",
+            "finished_at": "2026-11-23T14:13:40.024349+00:00"
           }
         },
         {
@@ -6973,11 +7058,11 @@
           "label": "direttive_ue",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261116T122907Z_080b4ec7",
+            "run_id": "20261123T141340Z_e7dfd60b",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-16T12:29:07.881017+00:00",
-            "finished_at": "2026-11-16T12:29:08.273796+00:00"
+            "started_at": "2026-11-23T14:13:40.478390+00:00",
+            "finished_at": "2026-11-23T14:13:40.636457+00:00"
           }
         },
         {
@@ -6987,11 +7072,11 @@
           "label": "normativa",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261116T122908Z_d40d057f",
+            "run_id": "20261123T141341Z_3e9663b4",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-16T12:29:08.880407+00:00",
-            "finished_at": "2026-11-16T12:29:09.231992+00:00"
+            "started_at": "2026-11-23T14:13:41.094391+00:00",
+            "finished_at": "2026-11-23T14:13:41.382401+00:00"
           }
         },
         {
@@ -7001,11 +7086,11 @@
           "label": "riferimenti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261116T122909Z_eb71fe34",
+            "run_id": "20261123T141341Z_7e4e521f",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-16T12:29:09.899566+00:00",
-            "finished_at": "2026-11-16T12:29:11.957949+00:00"
+            "started_at": "2026-11-23T14:13:41.878089+00:00",
+            "finished_at": "2026-11-23T14:13:43.567437+00:00"
           }
         },
         {
@@ -7015,11 +7100,11 @@
           "label": "testi",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261116T122912Z_f7a8aa60",
+            "run_id": "20261123T141344Z_989ee926",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-16T12:29:12.653575+00:00",
-            "finished_at": "2026-11-16T12:29:17.149928+00:00"
+            "started_at": "2026-11-23T14:13:44.093812+00:00",
+            "finished_at": "2026-11-23T14:13:47.979341+00:00"
           }
         }
       ]
@@ -7464,13 +7549,13 @@
       "repo": "open-ccnl",
       "available": true,
       "source_repo": "dataciviclab/open-ccnl",
-      "updated_at": "2026-11-01",
-      "datasets": 6,
-      "marts": 16,
-      "signals": 6,
+      "updated_at": "2026-11-23",
+      "datasets": 7,
+      "marts": 22,
+      "signals": 7,
       "codelists": 0,
       "entities": 5,
-      "gcs": 5,
+      "gcs": 6,
       "reason": "",
       "signals_detail": [
         {
@@ -7480,11 +7565,11 @@
           "label": "ccnl_analisi",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T125539Z_b8dc36ee",
+            "run_id": "20261123T125701Z_ef9a594f",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T12:55:39.726794+00:00",
-            "finished_at": "2026-11-01T12:55:39.814836+00:00"
+            "started_at": "2026-11-23T12:57:01.508552+00:00",
+            "finished_at": "2026-11-23T12:57:01.609634+00:00"
           }
         },
         {
@@ -7494,11 +7579,11 @@
           "label": "ccnl_applicazione",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T124402Z_71813fee",
+            "run_id": "20261123T124507Z_ba0f49f1",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T12:44:02.488855+00:00",
-            "finished_at": "2026-11-01T12:44:04.714372+00:00"
+            "started_at": "2026-11-23T12:45:07.427335+00:00",
+            "finished_at": "2026-11-23T12:45:08.990990+00:00"
           }
         },
         {
@@ -7508,11 +7593,11 @@
           "label": "ccnl_argomenti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T124405Z_dd0a5dce",
+            "run_id": "20261123T124509Z_da8fdbf2",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T12:44:05.116088+00:00",
-            "finished_at": "2026-11-01T12:55:17.984054+00:00"
+            "started_at": "2026-11-23T12:45:09.443368+00:00",
+            "finished_at": "2026-11-23T12:56:38.369228+00:00"
           }
         },
         {
@@ -7522,11 +7607,11 @@
           "label": "ccnl_confluenze",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T125518Z_282924b9",
+            "run_id": "20261123T125638Z_00b6fcec",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T12:55:18.290029+00:00",
-            "finished_at": "2026-11-01T12:55:19.953079+00:00"
+            "started_at": "2026-11-23T12:56:38.814721+00:00",
+            "finished_at": "2026-11-23T12:56:39.938829+00:00"
           }
         },
         {
@@ -7536,11 +7621,25 @@
           "label": "ccnl_metadata",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T125520Z_14372c03",
+            "run_id": "20261123T125640Z_12e54394",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T12:55:20.249230+00:00",
-            "finished_at": "2026-11-01T12:55:33.961473+00:00"
+            "started_at": "2026-11-23T12:56:40.373999+00:00",
+            "finished_at": "2026-11-23T12:56:55.039143+00:00"
+          }
+        },
+        {
+          "id": "ccnl_registro",
+          "source_id": "cnel_archivio",
+          "status": "ok",
+          "label": "ccnl_registro",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261123T125655Z_65f0c9e9",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-23T12:56:55.424022+00:00",
+            "finished_at": "2026-11-23T12:56:56.474433+00:00"
           }
         },
         {
@@ -7550,11 +7649,11 @@
           "label": "ccnl_territorio",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261101T125534Z_ecaba08a",
+            "run_id": "20261123T125656Z_91ec0bbd",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-01T12:55:34.276536+00:00",
-            "finished_at": "2026-11-01T12:55:39.366501+00:00"
+            "started_at": "2026-11-23T12:56:56.861150+00:00",
+            "finished_at": "2026-11-23T12:57:01.140375+00:00"
           }
         }
       ]
@@ -9329,15 +9428,29 @@
       "repo": "open-pnrr",
       "available": true,
       "source_repo": "dataciviclab/open-pnrr",
-      "updated_at": "2026-11-20",
-      "datasets": 7,
-      "marts": 13,
-      "signals": 7,
+      "updated_at": "2026-11-23",
+      "datasets": 8,
+      "marts": 19,
+      "signals": 8,
       "codelists": 0,
       "entities": 8,
       "gcs": 7,
       "reason": "",
       "signals_detail": [
+        {
+          "id": "compose:pinqua",
+          "source_id": "dataciviclab_composite",
+          "status": "ok",
+          "label": "pinqua",
+          "detail": "anno 2026 \u2014 mart: si",
+          "run": {
+            "run_id": "20261123T192701Z_b6f394a6",
+            "year": 2026,
+            "status": "SUCCESS",
+            "started_at": "2026-11-23T19:27:01.346034+00:00",
+            "finished_at": "2026-11-23T19:29:59.084492+00:00"
+          }
+        },
         {
           "id": "pnrr_avanzamento_indicatori",
           "source_id": "italiadomani",

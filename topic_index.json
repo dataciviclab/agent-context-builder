@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-23T06:02:34.360985",
+  "generated_at": "2026-11-23T23:28:22.225476",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -71,7 +71,7 @@
       "url": "https://github.com/dataciviclab/dataset-incubator",
       "role": "infra",
       "domain": "sanita",
-      "n_datasets": 59,
+      "n_datasets": 61,
       "n_published": 28,
       "sources": [
         "adm_opendata",
@@ -308,7 +308,7 @@
       "url": "https://github.com/dataciviclab/open-ccnl",
       "role": "dati",
       "domain": "welfare-lavoro",
-      "n_datasets": 6,
+      "n_datasets": 7,
       "n_published": 0,
       "sources": [
         "cnel_archivio"
@@ -424,9 +424,10 @@
       "url": "https://github.com/dataciviclab/open-pnrr",
       "role": "dati",
       "domain": "finanza-pubblica",
-      "n_datasets": 7,
+      "n_datasets": 8,
       "n_published": 0,
       "sources": [
+        "dataciviclab_composite",
         "italiadomani"
       ]
     },
@@ -4899,6 +4900,37 @@
         "mart_refs": [
           "scuola_base__mart_scuola_ordine",
           "scuola_base__mart_scuola_provincia"
+        ]
+      },
+      {
+        "slug": "pinqua",
+        "url_slug": "pinqua",
+        "name": "Pinqua",
+        "description": "PINQuA (PNRR M5C2I2.3): finanziato, appaltato e pagato per intervento, comune e regione. Compose mart-only su pnrr_progetti + pnrr_gare + pnrr_pagamenti + opencup_localizzazione.",
+        "source": "",
+        "source_id": "dataciviclab_composite",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "housing",
+          "pnrr",
+          "pinqua",
+          "edilizia-pubblica",
+          "compose"
+        ],
+        "category": "welfare-lavoro",
+        "registry_source": "open-pnrr",
+        "clean_rows": null,
+        "mart_refs": [
+          "pinqua__mart_pinqua_interventi",
+          "pinqua__mart_pinqua_comuni",
+          "pinqua__mart_pinqua_regioni",
+          "pinqua__mart_pinqua_catena",
+          "pinqua__mart_pinqua_gare",
+          "pinqua__mart_pinqua_fisico"
         ]
       },
       {
@@ -12666,7 +12698,7 @@
         ],
         "category": "normativa",
         "registry_source": "italia-corpus",
-        "clean_rows": 20808,
+        "clean_rows": 20811,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia-corpus/akn_act_meta/2026/akn_act_meta_2026_clean.parquet",
@@ -12811,7 +12843,7 @@
         ],
         "category": "normativa",
         "registry_source": "italia-corpus",
-        "clean_rows": 384757,
+        "clean_rows": 384935,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia-corpus/akn_relations/2026/akn_relations_2026_clean.parquet",
@@ -13060,7 +13092,7 @@
         ],
         "category": "normativa",
         "registry_source": "italia-corpus",
-        "clean_rows": 205125,
+        "clean_rows": 205128,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia-corpus/atti_index/2026/atti_index_2026_clean.parquet",
@@ -13420,7 +13452,7 @@
         ],
         "category": "normativa",
         "registry_source": "italia-corpus",
-        "clean_rows": 22409,
+        "clean_rows": 22412,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia-corpus/normativa/2026/normativa_2026_clean.parquet",
@@ -13748,7 +13780,7 @@
         ],
         "category": "normativa",
         "registry_source": "italia-corpus",
-        "clean_rows": 398869,
+        "clean_rows": 398693,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia-corpus/riferimenti/2026/riferimenti_2026_clean.parquet",
@@ -13968,7 +14000,7 @@
         ],
         "category": "normativa",
         "registry_source": "italia-corpus",
-        "clean_rows": 22409,
+        "clean_rows": 22412,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia-corpus/testi/2026/testi_2026_clean.parquet",
@@ -19906,6 +19938,69 @@
         ]
       },
       {
+        "slug": "istat_pendolarismo_od",
+        "url_slug": "istat-pendolarismo-od",
+        "name": "Istat Pendolarismo Od",
+        "description": "Spostamenti giornalieri casa-lavoro e casa-studio tra comuni: matrice origine-destinazione del censimento permanente 2021.",
+        "source": "",
+        "source_id": "istat_sdmx",
+        "period": {
+          "start": 2021,
+          "end": 2021
+        },
+        "stage": "incubating",
+        "tags": [
+          "welfare-lavoro",
+          "istat",
+          "pendolarismo",
+          "mobilita",
+          "lavoro",
+          "censimento"
+        ],
+        "category": "welfare-lavoro",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 665175,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/istat_pendolarismo_od/2026/istat_pendolarismo_od_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "motivo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "comune_residenza",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "comune_destinazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "pendolari",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "istat_pendolarismo_od__mart_comuni_pendolarismo",
+          "istat_pendolarismo_od__mart_flussi_top"
+        ]
+      },
+      {
         "slug": "istat_pil_territoriale",
         "url_slug": "istat-pil-territoriale",
         "name": "PIL regionale e provinciale",
@@ -22186,6 +22281,188 @@
       }
     ],
     "mit_opendata": [
+      {
+        "slug": "mit_erp_interventi",
+        "url_slug": "mit-erp-interventi",
+        "name": "Mit Erp Interventi",
+        "description": "Edilizia residenziale pubblica: interventi finanziati, alloggi previsti, lavori e alloggi assegnati per comune (programma DL 47/2014, monitoraggio MIT).",
+        "source": "",
+        "source_id": "mit_opendata",
+        "period": {
+          "start": 2014,
+          "end": 2020
+        },
+        "stage": "incubating",
+        "tags": [
+          "welfare-lavoro",
+          "housing",
+          "erp",
+          "edilizia-pubblica",
+          "mit"
+        ],
+        "category": "welfare-lavoro",
+        "registry_source": "dataset-incubator",
+        "clean_rows": 5560,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/mit_erp_interventi/2026/mit_erp_interventi_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "codice_intervento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "periodo_monitoraggio",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "annualita_programma",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "linea_intervento",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "attuatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_attuatore",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "stato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code",
+            "description": ""
+          },
+          {
+            "name": "codice_catastale",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "cadastral_code",
+            "description": ""
+          },
+          {
+            "name": "comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_name",
+            "description": ""
+          },
+          {
+            "name": "codice_istat_comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_code",
+            "description": ""
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code",
+            "description": ""
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code",
+            "description": ""
+          },
+          {
+            "name": "localizzazione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "importo_intervento",
+            "type": "DOUBLE",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "numero_alloggi",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_inizio_lavori",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "data_fine_lavori",
+            "type": "DATE",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "date_incoerenti",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "durata_lavori_giorni",
+            "type": "BIGINT",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "alloggi_assegnati",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "alloggi_sfratto",
+            "type": "INTEGER",
+            "role": "metric",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "mit_erp_interventi__mart_comuni_erp",
+          "mit_erp_interventi__mart_regioni_erp",
+          "mit_erp_interventi__mart_stati_intervento"
+        ]
+      },
       {
         "slug": "mit_incidentalita_mensile",
         "url_slug": "mit-incidentalita",
@@ -49166,7 +49443,8 @@
         "mart_refs": [
           "ccnl_analisi__mart_ccnl_intelligence",
           "ccnl_analisi__mart_ccnl_settori",
-          "ccnl_analisi__mart_ccnl_geo"
+          "ccnl_analisi__mart_ccnl_geo",
+          "ccnl_analisi__mart_ccnl_firmatari"
         ]
       },
       {
@@ -49289,6 +49567,13 @@
             "description": ""
           },
           {
+            "name": "is_conto_annuale_ppaa",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
             "name": "fonte_note",
             "type": "VARCHAR",
             "role": "dimension",
@@ -49299,7 +49584,9 @@
         "mart_refs": [
           "ccnl_applicazione__mart_ccnl_serie",
           "ccnl_applicazione__mart_ccnl_top",
-          "ccnl_applicazione__mart_ccnl_mercati"
+          "ccnl_applicazione__mart_ccnl_mercati",
+          "ccnl_applicazione__mart_ccnl_totali_anno",
+          "ccnl_applicazione__mart_ccnl_classifica"
         ]
       },
       {
@@ -49310,7 +49597,7 @@
         "source": "",
         "source_id": "cnel_archivio",
         "period": {
-          "start": 1980,
+          "start": 1952,
           "end": 2026
         },
         "stage": "incubating",
@@ -49547,7 +49834,7 @@
         "source": "",
         "source_id": "cnel_archivio",
         "period": {
-          "start": 1990,
+          "start": 1946,
           "end": 2026
         },
         "stage": "incubating",
@@ -49560,7 +49847,7 @@
         ],
         "category": "welfare-lavoro",
         "registry_source": "open-ccnl",
-        "clean_rows": 7717,
+        "clean_rows": 7797,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-ccnl/ccnl_metadata/2026/ccnl_metadata_2026_clean.parquet",
@@ -49745,7 +50032,182 @@
         ],
         "mart_refs": [
           "ccnl_metadata__mart_ccnl_codici",
-          "ccnl_metadata__mart_ccnl_ateco"
+          "ccnl_metadata__mart_ccnl_ateco",
+          "ccnl_metadata__mart_ccnl_rinnovi"
+        ]
+      },
+      {
+        "slug": "ccnl_registro",
+        "url_slug": "ccnl-registro",
+        "name": "Ccnl Registro",
+        "description": "Registro CNEL: status, tipo, sottosezione e firmatari normalizzati per 1.659 CCNL/AEC.",
+        "source": "",
+        "source_id": "cnel_archivio",
+        "period": {
+          "start": 2026,
+          "end": 2026
+        },
+        "stage": "incubating",
+        "tags": [
+          "welfare-lavoro",
+          "ccnl",
+          "cnel",
+          "registro",
+          "firmatari"
+        ],
+        "category": "welfare-lavoro",
+        "registry_source": "open-ccnl",
+        "clean_rows": 1659,
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/open-ccnl/ccnl_registro/2026/ccnl_registro_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "codice_ccnl",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "sottosezione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "status",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "tipo_ccnl",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "titolo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "firmatari_datoriali",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "firmatari_sindacali",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "firmatari_sindacali_tavolo_separato",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "firmatari_sindacali_adesione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "is_dirigenti",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "confindustria",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "confapi",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "confcommercio",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "confesercenti",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "confartigianato_cna_casa",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "legacoop_confcooperative_agci",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cgil_cisl_uil",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "confsal",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "cisal",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "ugl",
+            "type": "BOOLEAN",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          }
+        ],
+        "mart_refs": [
+          "ccnl_registro__mart_ccnl_registro",
+          "ccnl_registro__mart_firmatari_stats"
         ]
       },
       {
@@ -74928,7 +75390,8 @@
         "eurostat",
         "open-ccnl",
         "open-mim",
-        "open-mur"
+        "open-mur",
+        "open-pnrr"
       ],
       "datasets": [
         "ccnl_analisi",
@@ -74936,6 +75399,7 @@
         "ccnl_argomenti",
         "ccnl_confluenze",
         "ccnl_metadata",
+        "ccnl_registro",
         "ccnl_territorio",
         "convivenze",
         "dipendenti_pubblici",
@@ -74962,6 +75426,7 @@
         "istat_housing_crowding",
         "istat_ipab_aree",
         "istat_occupazione_provinciale",
+        "istat_pendolarismo_od",
         "istat_proiezioni_demografiche",
         "mim_alunni_corso_eta",
         "mim_anagrafica_scuole_statali",
@@ -74972,6 +75437,7 @@
         "mim_scuola_infanzia",
         "minlavoro_agevolazioni",
         "minlavoro_flussi",
+        "mit_erp_interventi",
         "mur_afam_diplomati",
         "mur_afam_iscritti",
         "mur_afam_personale",
@@ -74987,11 +75453,12 @@
         "mur_personale_ateneo",
         "pensioni_pa_dag",
         "personale_scuola",
+        "pinqua",
         "popolazione_istat_comunale_2019_2025",
         "popolazione_quartiere",
         "scuola_base"
       ],
-      "dataset_count": 59
+      "dataset_count": 63
     },
     {
       "slug": "giustizia",
@@ -75437,6 +75904,7 @@
         "ccnl_argomenti",
         "ccnl_confluenze",
         "ccnl_metadata",
+        "ccnl_registro",
         "ccnl_territorio",
         "convivenze",
         "dipendenti_pubblici",
@@ -75463,6 +75931,7 @@
         "istat_housing_crowding",
         "istat_ipab_aree",
         "istat_occupazione_provinciale",
+        "istat_pendolarismo_od",
         "istat_proiezioni_demografiche",
         "mim_alunni_corso_eta",
         "mim_anagrafica_scuole_statali",
@@ -75473,6 +75942,7 @@
         "mim_scuola_infanzia",
         "minlavoro_agevolazioni",
         "minlavoro_flussi",
+        "mit_erp_interventi",
         "mur_afam_diplomati",
         "mur_afam_iscritti",
         "mur_afam_personale",
@@ -75488,6 +75958,7 @@
         "mur_personale_ateneo",
         "pensioni_pa_dag",
         "personale_scuola",
+        "pinqua",
         "popolazione_istat_comunale_2019_2025",
         "popolazione_quartiere",
         "scuola_base"
@@ -76351,6 +76822,7 @@
       "istat_ipab_aree",
       "istat_migrazioni",
       "istat_occupazione_provinciale",
+      "istat_pendolarismo_od",
       "istat_permessi",
       "istat_pil_territoriale",
       "istat_proiezioni_demografiche",
@@ -76367,6 +76839,7 @@
       "mase_prezzi_carburanti_settimanali",
       "minlavoro_agevolazioni",
       "minlavoro_flussi",
+      "mit_erp_interventi",
       "mit_incidentalita_mensile",
       "mit_opere_incompiute_2020",
       "mortalita_istat_evitabile",
@@ -76627,6 +77100,7 @@
       "ccnl_argomenti",
       "ccnl_confluenze",
       "ccnl_metadata",
+      "ccnl_registro",
       "ccnl_territorio"
     ],
     "open-coesione": [
@@ -76764,6 +77238,7 @@
       "noipa_ritenute_previdenziali"
     ],
     "open-pnrr": [
+      "pinqua",
       "pnrr_avanzamento_indicatori",
       "pnrr_gare",
       "pnrr_indicatori_target",
@@ -77290,6 +77765,7 @@
       "ccnl_argomenti",
       "ccnl_confluenze",
       "ccnl_metadata",
+      "ccnl_registro",
       "ccnl_territorio",
       "convivenze",
       "dipendenti_pubblici",
@@ -77316,6 +77792,7 @@
       "istat_housing_crowding",
       "istat_ipab_aree",
       "istat_occupazione_provinciale",
+      "istat_pendolarismo_od",
       "istat_proiezioni_demografiche",
       "mim_alunni_corso_eta",
       "mim_anagrafica_scuole_statali",
@@ -77326,6 +77803,7 @@
       "mim_scuola_infanzia",
       "minlavoro_agevolazioni",
       "minlavoro_flussi",
+      "mit_erp_interventi",
       "mur_afam_diplomati",
       "mur_afam_iscritti",
       "mur_afam_personale",
@@ -77341,6 +77819,7 @@
       "mur_personale_ateneo",
       "pensioni_pa_dag",
       "personale_scuola",
+      "pinqua",
       "popolazione_istat_comunale_2019_2025",
       "popolazione_quartiere",
       "scuola_base"
@@ -78476,6 +78955,23 @@
       ],
       "description": "Tasso di occupazione (EMP_R) per provincia italiana: serie annuale 2018-2025, per sesso e classe et\u00e0. Fonte ISTAT SDMX flow 150_915. 105 province, 6 classi et\u00e0."
     },
+    "istat_pendolarismo_od": {
+      "name": "Istat Pendolarismo Od",
+      "stage": "incubating",
+      "source_id": "istat_sdmx",
+      "registry_source": "dataset-incubator",
+      "domain": "welfare-lavoro",
+      "category": "welfare-lavoro",
+      "tags": [
+        "welfare-lavoro",
+        "istat",
+        "pendolarismo",
+        "mobilita",
+        "lavoro",
+        "censimento"
+      ],
+      "description": "Spostamenti giornalieri casa-lavoro e casa-studio tra comuni: matrice origine-destinazione del censimento permanente 2021."
+    },
     "istat_permessi": {
       "name": "Istat Permessi",
       "stage": "incubating",
@@ -78741,6 +79237,22 @@
         "somministrazione"
       ],
       "description": "Comunicazioni obbligatorie MinLavoro: attivazioni, cessazioni, trasformazioni, tirocini e somministrazione. Fonde Nota trimestrale (2019-2023) e Rapporto Annuale (2021-2023) in schema long unico."
+    },
+    "mit_erp_interventi": {
+      "name": "Mit Erp Interventi",
+      "stage": "incubating",
+      "source_id": "mit_opendata",
+      "registry_source": "dataset-incubator",
+      "domain": "welfare-lavoro",
+      "category": "welfare-lavoro",
+      "tags": [
+        "welfare-lavoro",
+        "housing",
+        "erp",
+        "edilizia-pubblica",
+        "mit"
+      ],
+      "description": "Edilizia residenziale pubblica: interventi finanziati, alloggi previsti, lavori e alloggi assegnati per comune (programma DL 47/2014, monitoraggio MIT)."
     },
     "mit_incidentalita_mensile": {
       "name": "MIT Incidentalit\u00e0 Stradale Mensile",
@@ -82370,6 +82882,22 @@
       ],
       "description": "Anagrafica CCNL CNEL: archivio corrente e storico (codici, tipologie, date, firmatari, ATECO)."
     },
+    "ccnl_registro": {
+      "name": "Ccnl Registro",
+      "stage": "incubating",
+      "source_id": "cnel_archivio",
+      "registry_source": "open-ccnl",
+      "domain": "welfare-lavoro",
+      "category": "welfare-lavoro",
+      "tags": [
+        "welfare-lavoro",
+        "ccnl",
+        "cnel",
+        "registro",
+        "firmatari"
+      ],
+      "description": "Registro CNEL: status, tipo, sottosezione e firmatari normalizzati per 1.659 CCNL/AEC."
+    },
     "ccnl_territorio": {
       "name": "Ccnl Territorio",
       "stage": "incubating",
@@ -84235,6 +84763,22 @@
         "noipa"
       ],
       "description": "Ritenute previdenziali personale PA \u2014 contributi INPS dipendente/datore per tipo, comune, amministrazione, genere, eta'. Dati NoiPA/MEF (2019-2026).\n"
+    },
+    "pinqua": {
+      "name": "Pinqua",
+      "stage": "incubating",
+      "source_id": "dataciviclab_composite",
+      "registry_source": "open-pnrr",
+      "domain": "welfare-lavoro",
+      "category": "welfare-lavoro",
+      "tags": [
+        "housing",
+        "pnrr",
+        "pinqua",
+        "edilizia-pubblica",
+        "compose"
+      ],
+      "description": "PINQuA (PNRR M5C2I2.3): finanziato, appaltato e pagato per intervento, comune e regione. Compose mart-only su pnrr_progetti + pnrr_gare + pnrr_pagamenti + opencup_localizzazione."
     },
     "pnrr_avanzamento_indicatori": {
       "name": "Pnrr Avanzamento Indicatori",
