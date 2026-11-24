@@ -1,6 +1,6 @@
 {
   "schema_version": 7,
-  "generated_at": "2026-11-24T08:43:18.827035",
+  "generated_at": "2026-11-24T21:58:30.191729",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -1015,8 +1015,8 @@
         "source": "",
         "source_id": "anac",
         "period": {
-          "start": 2016,
-          "end": 2025
+          "start": 2007,
+          "end": 2026
         },
         "stage": "incubating",
         "tags": [
@@ -4921,7 +4921,7 @@
           "edilizia-pubblica",
           "compose"
         ],
-        "category": "welfare-lavoro",
+        "category": "finanza-pubblica",
         "registry_source": "open-pnrr",
         "clean_rows": null,
         "mart_refs": [
@@ -13780,7 +13780,7 @@
         ],
         "category": "normativa",
         "registry_source": "italia-corpus",
-        "clean_rows": 398693,
+        "clean_rows": 401172,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/italia-corpus/riferimenti/2026/riferimenti_2026_clean.parquet",
@@ -13957,6 +13957,13 @@
           },
           {
             "name": "contesto",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "",
+            "description": ""
+          },
+          {
+            "name": "articolo",
             "type": "VARCHAR",
             "role": "dimension",
             "semantic_type": "",
@@ -44213,7 +44220,7 @@
         "source": "",
         "source_id": "gazzetta_ufficiale",
         "period": {
-          "start": 2026,
+          "start": 2024,
           "end": 2026
         },
         "stage": "incubating",
@@ -44229,8 +44236,8 @@
         "clean_rows": 27911,
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/gu-monitor/gu_atti/2026/gu_atti_2026_clean.parquet",
-          "multi_file": false
+          "path": "gs://dataciviclab-clean/gu-monitor/gu_atti/*/gu_atti_*_clean.parquet",
+          "multi_file": true
         },
         "columns": [
           {
@@ -46441,7 +46448,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 1924,
+        "clean_rows": 1920,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_bandi_open/2026/inpa_bandi_open_2026_clean.parquet",
@@ -46660,7 +46667,7 @@
         ],
         "category": "pa",
         "registry_source": "inpa-reclutamento",
-        "clean_rows": 7067,
+        "clean_rows": 7124,
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inpa-reclutamento/inpa_comunicazioni/2026/inpa_comunicazioni_2026_clean.parquet",
@@ -75315,6 +75322,7 @@
         "opencoesione_soggetti",
         "opencup_progetti",
         "pil_intelligence",
+        "pinqua",
         "pnrr_avanzamento_indicatori",
         "pnrr_gare",
         "pnrr_indicatori_target",
@@ -75340,7 +75348,7 @@
         "ted_contract_notices",
         "wb_financial"
       ],
-      "dataset_count": 169
+      "dataset_count": 170
     },
     {
       "slug": "sanita",
@@ -75390,8 +75398,7 @@
         "eurostat",
         "open-ccnl",
         "open-mim",
-        "open-mur",
-        "open-pnrr"
+        "open-mur"
       ],
       "datasets": [
         "ccnl_analisi",
@@ -75453,12 +75460,11 @@
         "mur_personale_ateneo",
         "pensioni_pa_dag",
         "personale_scuola",
-        "pinqua",
         "popolazione_istat_comunale_2019_2025",
         "popolazione_quartiere",
         "scuola_base"
       ],
-      "dataset_count": 63
+      "dataset_count": 62
     },
     {
       "slug": "giustizia",
@@ -75846,6 +75852,7 @@
         "opencoesione_soggetti",
         "opencup_progetti",
         "pil_intelligence",
+        "pinqua",
         "pnrr_avanzamento_indicatori",
         "pnrr_gare",
         "pnrr_indicatori_target",
@@ -75958,7 +75965,6 @@
         "mur_personale_ateneo",
         "pensioni_pa_dag",
         "personale_scuola",
-        "pinqua",
         "popolazione_istat_comunale_2019_2025",
         "popolazione_quartiere",
         "scuola_base"
@@ -77528,6 +77534,7 @@
       "opencoesione_soggetti",
       "opencup_progetti",
       "pil_intelligence",
+      "pinqua",
       "pnrr_avanzamento_indicatori",
       "pnrr_gare",
       "pnrr_indicatori_target",
@@ -77819,7 +77826,6 @@
       "mur_personale_ateneo",
       "pensioni_pa_dag",
       "personale_scuola",
-      "pinqua",
       "popolazione_istat_comunale_2019_2025",
       "popolazione_quartiere",
       "scuola_base"
@@ -84769,8 +84775,8 @@
       "stage": "incubating",
       "source_id": "dataciviclab_composite",
       "registry_source": "open-pnrr",
-      "domain": "welfare-lavoro",
-      "category": "welfare-lavoro",
+      "domain": "finanza-pubblica",
+      "category": "finanza-pubblica",
       "tags": [
         "housing",
         "pnrr",

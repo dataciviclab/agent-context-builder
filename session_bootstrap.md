@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-11-24T08:43:18.827035
+**Generated**: 2026-11-24T21:58:30.191729
 
 ## Stato
 
@@ -8,7 +8,7 @@ Radar: 39 fonti GREEN 34 · Registry: 43 repo · 551 dataset
 
 ## Richiede attenzione
 
-- [PR] appalti-pubblici#37: chore(post-catalog): aggiorna source catalog (schedule)
+- [PR] agent-context-builder#103: chore: auto-discover registries (2026-11-24)
 - [PR] appalti-pubblici#20: feat(anac-smartcig): intake affidamenti diretti sotto soglia (#2)
 - [PR] appalti-pubblici#19: feat(anac-cross): codice IPA della stazione appaltante (#13)
 - [PR] dataset-incubator#913: feat(sanita): intake ISTAT ospiti presidi residenziali (RSA, DBnomics)

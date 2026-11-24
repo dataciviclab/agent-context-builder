@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T08:43:18.827035",
+  "generated_at": "2026-11-24T21:58:30.191729",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -52,13 +52,13 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 21,
+  "open_prs": 15,
   "prs": [
     {
-      "number": 37,
-      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
-      "repo": "appalti-pubblici",
-      "url": "https://github.com/dataciviclab/appalti-pubblici/pull/37",
+      "number": 103,
+      "title": "chore: auto-discover registries (2026-11-24)",
+      "repo": "agent-context-builder",
+      "url": "https://github.com/dataciviclab/agent-context-builder/pull/103",
       "category": "other"
     },
     {
@@ -104,27 +104,6 @@
       "category": "other"
     },
     {
-      "number": 64,
-      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
-      "repo": "dichiarazioni-italia",
-      "url": "https://github.com/dataciviclab/dichiarazioni-italia/pull/64",
-      "category": "other"
-    },
-    {
-      "number": 165,
-      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
-      "repo": "eurostat",
-      "url": "https://github.com/dataciviclab/eurostat/pull/165",
-      "category": "other"
-    },
-    {
-      "number": 32,
-      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
-      "repo": "giustizia-amministrativa",
-      "url": "https://github.com/dataciviclab/giustizia-amministrativa/pull/32",
-      "category": "other"
-    },
-    {
       "number": 26,
       "title": "refactor(raw): source CKAN native al posto di prefetch.py",
       "repo": "giustizia-amministrativa",
@@ -132,10 +111,10 @@
       "category": "other"
     },
     {
-      "number": 40,
+      "number": 43,
       "title": "chore(post-merge): aggiorna registry (schedule)",
       "repo": "gu-monitor",
-      "url": "https://github.com/dataciviclab/gu-monitor/pull/40",
+      "url": "https://github.com/dataciviclab/gu-monitor/pull/43",
       "category": "other"
     },
     {
@@ -146,24 +125,10 @@
       "category": "other"
     },
     {
-      "number": 56,
+      "number": 57,
       "title": "chore(post-merge): aggiorna registry (schedule)",
       "repo": "inpa-reclutamento",
-      "url": "https://github.com/dataciviclab/inpa-reclutamento/pull/56",
-      "category": "other"
-    },
-    {
-      "number": 22,
-      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
-      "repo": "oecd-benchmark",
-      "url": "https://github.com/dataciviclab/oecd-benchmark/pull/22",
-      "category": "other"
-    },
-    {
-      "number": 21,
-      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
-      "repo": "open-consip",
-      "url": "https://github.com/dataciviclab/open-consip/pull/21",
+      "url": "https://github.com/dataciviclab/inpa-reclutamento/pull/57",
       "category": "other"
     },
     {
@@ -171,13 +136,6 @@
       "title": "fix(make): dataset prima del compose nel batch post-merge",
       "repo": "open-inps",
       "url": "https://github.com/dataciviclab/open-inps/pull/28",
-      "category": "other"
-    },
-    {
-      "number": 29,
-      "title": "chore(post-catalog): aggiorna source catalog (schedule)",
-      "repo": "open-mur",
-      "url": "https://github.com/dataciviclab/open-mur/pull/29",
       "category": "other"
     },
     {
@@ -2529,12 +2487,12 @@
     }
   },
   "warnings": [
-    "Many open PRs: 26"
+    "Many open PRs: 20"
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-11-23T12:23:51.101895+00:00",
-    "probe_date": "2026-11-23",
+    "generated_at": "2026-11-24T13:36:02.345856+00:00",
+    "probe_date": "2026-11-24",
     "sources_total": 39,
     "green": 34,
     "yellow": 5,
@@ -6604,7 +6562,7 @@
       "repo": "gu-monitor",
       "available": true,
       "source_repo": "dataciviclab/gu-monitor",
-      "updated_at": "2026-11-21",
+      "updated_at": "2026-11-24",
       "datasets": 1,
       "marts": 3,
       "signals": 1,
@@ -6618,13 +6576,13 @@
           "source_id": "gazzetta_ufficiale",
           "status": "ok",
           "label": "gu_atti",
-          "detail": "anno 2026 \u2014 mart: si",
+          "detail": "anni 2024-2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261121T140708Z_c94ef935",
+            "run_id": "20261124T134942Z_65b04734",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-21T14:07:08.055291+00:00",
-            "finished_at": "2026-11-21T14:07:08.380805+00:00"
+            "started_at": "2026-11-24T13:49:42.758058+00:00",
+            "finished_at": "2026-11-24T13:49:43.169360+00:00"
           }
         }
       ]
@@ -6915,7 +6873,7 @@
       "repo": "inpa-reclutamento",
       "available": true,
       "source_repo": "dataciviclab/inpa-reclutamento",
-      "updated_at": "2026-11-21",
+      "updated_at": "2026-11-23",
       "datasets": 4,
       "marts": 12,
       "signals": 4,
@@ -6959,11 +6917,11 @@
           "label": "inpa_bandi_open",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261121T142350Z_a23d8174",
+            "run_id": "20261123T173828Z_de0a68ce",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-21T14:23:50.692081+00:00",
-            "finished_at": "2026-11-21T14:24:04.980447+00:00"
+            "started_at": "2026-11-23T17:38:28.092414+00:00",
+            "finished_at": "2026-11-23T17:38:42.947463+00:00"
           }
         },
         {
@@ -6973,11 +6931,11 @@
           "label": "inpa_comunicazioni",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261121T142405Z_3abd4bb0",
+            "run_id": "20261123T173843Z_8ad98802",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-21T14:24:05.492178+00:00",
-            "finished_at": "2026-11-21T14:25:05.307559+00:00"
+            "started_at": "2026-11-23T17:38:43.496836+00:00",
+            "finished_at": "2026-11-23T17:39:42.842541+00:00"
           }
         }
       ]
@@ -6986,7 +6944,7 @@
       "repo": "italia-corpus",
       "available": true,
       "source_repo": "dataciviclab/italia-corpus",
-      "updated_at": "2026-11-23",
+      "updated_at": "2026-11-24",
       "datasets": 8,
       "marts": 18,
       "signals": 8,
@@ -7086,11 +7044,11 @@
           "label": "riferimenti",
           "detail": "anno 2026 \u2014 mart: si",
           "run": {
-            "run_id": "20261123T141341Z_7e4e521f",
+            "run_id": "20261124T112710Z_908969f1",
             "year": 2026,
             "status": "SUCCESS",
-            "started_at": "2026-11-23T14:13:41.878089+00:00",
-            "finished_at": "2026-11-23T14:13:43.567437+00:00"
+            "started_at": "2026-11-24T11:27:10.892001+00:00",
+            "finished_at": "2026-11-24T11:27:12.601240+00:00"
           }
         },
         {
@@ -9555,7 +9513,7 @@
       "repo": "open-politica",
       "available": true,
       "source_repo": "dataciviclab/open-politica",
-      "updated_at": "2026-11-21",
+      "updated_at": "2026-11-24",
       "datasets": 36,
       "marts": 71,
       "signals": 35,
@@ -9963,11 +9921,11 @@
           "label": "senato_firmatari",
           "detail": "anni 13-19 \u2014 mart: si",
           "run": {
-            "run_id": "20261104T235727Z_21109d5a",
+            "run_id": "20261124T132938Z_f361ca32",
             "year": 19,
             "status": "SUCCESS",
-            "started_at": "2026-11-04T23:57:27.856022+00:00",
-            "finished_at": "2026-11-04T23:57:51.231211+00:00"
+            "started_at": "2026-11-24T13:29:38.887869+00:00",
+            "finished_at": "2026-11-24T13:29:57.207678+00:00"
           }
         },
         {
