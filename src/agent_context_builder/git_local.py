@@ -4,6 +4,8 @@ import subprocess
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from .workspace import resolve_repo_path
+
 
 @dataclass
 class GitState:
@@ -46,7 +48,12 @@ class GitLocalCollector:
             }
         states = {}
         for repo in repos:
-            repo_path = self.workspace_root / repo
+            repo_path = resolve_repo_path(self.workspace_root, repo)
+            if repo_path is None:
+                states[repo] = GitState(
+                    available=False, reason="path_not_found", dirty=None, current_branch=None
+                )
+                continue
             states[repo] = self._get_repo_state(repo_path)
         return states
 

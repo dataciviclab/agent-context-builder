@@ -57,7 +57,9 @@ class Renderer:
         self.fixed_timestamp = fixed_timestamp or datetime.now().isoformat()
         self._so_fetcher = SourceObservatoryFetcher(self.github_collector)
         self._explorer_fetcher = ExplorerFetcher(self.github_collector)
-        self._registry_fetcher = RegistryFetcher(self.github_collector)
+        self._registry_fetcher = RegistryFetcher(
+            self.github_collector, local_root=self.config.workspace_root
+        )
 
     def render_session_bootstrap(self) -> str:
         """Render session_bootstrap.md — compact signal-oriented overview.

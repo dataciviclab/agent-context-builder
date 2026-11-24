@@ -9,6 +9,10 @@
 # Usage (with local checkout):
 #   agent-context build --config dataciviclab.config.yml --out generated/ \
 #     --workspace-root ~/dev/dataciviclab-workspace
+#
+# Con --workspace-root i registry/registry.json locali (anche annidati:
+# {dominio}/{repo}) hanno priorità su GitHub: è la modalità per validare
+# modifiche ai registry prima del merge. Senza, build GitHub-only.
 
 github_org: dataciviclab
 
