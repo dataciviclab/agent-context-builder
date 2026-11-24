@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T23:24:58.237256",
+  "generated_at": "2026-11-24T23:43:31.649008",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -24,6 +24,7 @@
     "italia-corpus",
     "italia-dipendenze",
     "lab-connectors",
+    "legal-graph",
     "oecd-benchmark",
     "open-aci",
     "open-ccnl",
@@ -52,15 +53,8 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 17,
+  "open_prs": 15,
   "prs": [
-    {
-      "number": 103,
-      "title": "chore: auto-discover registries (2026-11-24)",
-      "repo": "agent-context-builder",
-      "url": "https://github.com/dataciviclab/agent-context-builder/pull/103",
-      "category": "other"
-    },
     {
       "number": 38,
       "title": "chore(registry): schema v2 \u2014 catalogo derivato (partitions, last_run)",
@@ -80,13 +74,6 @@
       "title": "feat(anac-cross): codice IPA della stazione appaltante (#13)",
       "repo": "appalti-pubblici",
       "url": "https://github.com/dataciviclab/appalti-pubblici/pull/19",
-      "category": "other"
-    },
-    {
-      "number": 301,
-      "title": "feat(schede): schede dataset generate da catalogo + mart, con contratto _views",
-      "repo": "data-explorer",
-      "url": "https://github.com/dataciviclab/data-explorer/pull/301",
       "category": "other"
     },
     {
@@ -174,7 +161,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 64,
+  "open_issues": 68,
   "issues": [
     {
       "number": 13,
@@ -415,6 +402,34 @@
       "category": "other"
     },
     {
+      "number": 91,
+      "title": "[data] `converte_decreto_legge`: l'esito non \u00e8 confortato dalla Gazzetta (3 casi su 4 sbagliati)",
+      "repo": "legal-graph",
+      "url": "https://github.com/dataciviclab/legal-graph/issues/91",
+      "category": "other"
+    },
+    {
+      "number": 85,
+      "title": "[feature] Esporre conf_evidence nelle viste curate (overview/chain)",
+      "repo": "legal-graph",
+      "url": "https://github.com/dataciviclab/legal-graph/issues/85",
+      "category": "other"
+    },
+    {
+      "number": 69,
+      "title": "[product] Monitor mensile del grafo (5 domande fisse)",
+      "repo": "legal-graph",
+      "url": "https://github.com/dataciviclab/legal-graph/issues/69",
+      "category": "other"
+    },
+    {
+      "number": 68,
+      "title": "[feature] Validit\u00e0 temporale degli atti (valid_from/to, query as-of)",
+      "repo": "legal-graph",
+      "url": "https://github.com/dataciviclab/legal-graph/issues/68",
+      "category": "other"
+    },
+    {
       "number": 5,
       "title": "intake: as-sda-banditi \u2014 appalti su SDAPA",
       "repo": "open-consip",
@@ -625,7 +640,7 @@
       "category": "other"
     }
   ],
-  "open_discussions": 211,
+  "open_discussions": 213,
   "discussions": [
     {
       "number": 58,
@@ -1748,6 +1763,20 @@
       "category": "Idee"
     },
     {
+      "number": 1,
+      "title": "Legal Graph \u2014 mappa copertura e bank di analisi",
+      "repo": "legal-graph",
+      "url": "https://github.com/dataciviclab/legal-graph/discussions/1",
+      "category": "General"
+    },
+    {
+      "number": 5,
+      "title": "Come usare questo forum di analisi",
+      "repo": "legal-graph",
+      "url": "https://github.com/dataciviclab/legal-graph/discussions/5",
+      "category": "General"
+    },
+    {
       "number": 17,
       "title": "La frammentazione \u00e8 numerica, non di peso \u2014 1.040 CCNL coprono il 2% dei lavoratori",
       "repo": "open-ccnl",
@@ -2283,6 +2312,14 @@
       "branches_ahead": [],
       "untracked_files": 0
     },
+    "legal-graph": {
+      "available": false,
+      "reason": "local_disabled",
+      "dirty": null,
+      "current_branch": null,
+      "branches_ahead": [],
+      "untracked_files": 0
+    },
     "oecd-benchmark": {
       "available": false,
       "reason": "local_disabled",
@@ -2501,7 +2538,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 22"
+    "Many open PRs: 20"
   ],
   "radar": {
     "available": true,
@@ -3034,7 +3071,7 @@
       "repo": "filiere-agroalimentari",
       "available": true,
       "source_repo": "dataciviclab/filiere-agroalimentari",
-      "updated_at": "2026-11-01",
+      "updated_at": "2026-11-24",
       "datasets": 7,
       "marts": 15,
       "checks": 0,
@@ -3151,6 +3188,18 @@
       "reason": "registry_not_found"
     },
     {
+      "repo": "legal-graph",
+      "available": true,
+      "source_repo": "dataciviclab/legal-graph",
+      "updated_at": "2026-11-24",
+      "datasets": 2,
+      "marts": 13,
+      "checks": 0,
+      "codelists": 0,
+      "gcs": 0,
+      "reason": ""
+    },
+    {
       "repo": "oecd-benchmark",
       "available": true,
       "source_repo": "dataciviclab/oecd-benchmark",
@@ -3166,7 +3215,7 @@
       "repo": "open-aci",
       "available": true,
       "source_repo": "dataciviclab/open-aci",
-      "updated_at": "2026-11-01",
+      "updated_at": "2026-11-24",
       "datasets": 10,
       "marts": 23,
       "checks": 0,
@@ -3358,7 +3407,7 @@
       "repo": "partecipate-monitor",
       "available": true,
       "source_repo": "dataciviclab/partecipate-monitor",
-      "updated_at": "2026-11-01",
+      "updated_at": "2026-11-24",
       "datasets": 3,
       "marts": 3,
       "checks": 0,

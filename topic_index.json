@@ -1,6 +1,6 @@
 {
   "schema_version": 8,
-  "generated_at": "2026-11-24T23:24:58.237256",
+  "generated_at": "2026-11-24T23:43:31.649008",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -185,7 +185,7 @@
         "istat_sdmx",
         "rica_crea"
       ],
-      "updated_at": "2026-11-01"
+      "updated_at": "2026-11-24"
     },
     "giustizia-amministrativa": {
       "description": "Contenzioso, sentenze e provvedimenti della Giustizia Amministrativa italiana \u2014 31 sedi, 2017-2026",
@@ -299,6 +299,18 @@
       "n_published": 0,
       "sources": []
     },
+    "legal-graph": {
+      "description": "Il diritto italiano come sistema interrogabile \u2014 916k nodi e 1,41M relazioni tra leggi, decreti, DDL, sentenze e Costituzione.",
+      "url": "https://github.com/dataciviclab/legal-graph",
+      "role": "dati",
+      "domain": null,
+      "n_datasets": 2,
+      "n_published": 0,
+      "sources": [
+        "dataciviclab_composite"
+      ],
+      "updated_at": "2026-11-24"
+    },
     "oecd-benchmark": {
       "description": "Dataset OECD per benchmark internazionale: emissioni, PIL, salute, istruzione, lavoro, fisco",
       "url": "https://github.com/dataciviclab/oecd-benchmark",
@@ -321,7 +333,7 @@
       "sources": [
         "aci"
       ],
-      "updated_at": "2026-11-01"
+      "updated_at": "2026-11-24"
     },
     "open-ccnl": {
       "description": "Archivio nazionale CCNL: anagrafica, metriche Uniemens, territorio e confluenze (CNEL open data)",
@@ -524,7 +536,7 @@
       "sources": [
         "mef_tesoro"
       ],
-      "updated_at": "2026-11-01"
+      "updated_at": "2026-11-24"
     },
     "patrimonio-territorio": {
       "description": "3,25 milioni di immobili pubblici, 100% georeferenziati. Quanto \u00e8 utilizzato, quanto \u00e8 abbandonato?",
@@ -2907,7 +2919,7 @@
         ],
         "category": "economia",
         "last_run": {
-          "at": "2026-11-01T12:09:56.183816+00:00",
+          "at": "2026-11-24T23:38:16.084278+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -3952,6 +3964,76 @@
           "resource_dependency_compose__mart_resource_dependency",
           "resource_dependency_compose__mart_energy_vs_trade",
           "resource_dependency_compose__mart_refined_dependency"
+        ]
+      },
+      {
+        "slug": "legal_graph",
+        "url_slug": "legal-graph",
+        "name": "Legal Graph",
+        "source_id": "dataciviclab_composite",
+        "period": {
+          "start": 1874,
+          "end": 2026
+        },
+        "registry_source": "legal-graph",
+        "published": false,
+        "description": "Legal Knowledge Graph: nodi unici e relazioni legislative/materiali unificati da italia-corpus, costituzione-italiana, gu-monitor, senato-akn e open-politica. Fonti lette da rete (GCS/GitHub).\n",
+        "tags": [
+          "diritto",
+          "normativa",
+          "legal-graph",
+          "compose",
+          "knowledge-graph"
+        ],
+        "category": "normativa",
+        "last_run": {
+          "at": "2026-11-24T17:13:50.708253+00:00",
+          "year": 2026,
+          "status": "SUCCESS"
+        },
+        "mart_refs": [
+          "legal_graph__mart_legal_nodes",
+          "legal_graph__mart_legal_edges",
+          "legal_graph__mart_legal_entity_alias",
+          "legal_graph__mart_legal_relation_type",
+          "legal_graph__mart_legal_edges_in",
+          "legal_graph__mart_legal_coverage",
+          "legal_graph__mart_legal_node_metrics",
+          "legal_graph__mart_legal_search_keys",
+          "legal_graph__mart_legal_node_rel",
+          "legal_graph__mart_legal_emend_leg",
+          "legal_graph__mart_legal_texts",
+          "legal_graph__mart_legal_massime"
+        ]
+      },
+      {
+        "slug": "legal_index",
+        "url_slug": "legal-index",
+        "name": "Legal Index",
+        "source_id": "dataciviclab_composite",
+        "period": {
+          "start": 1874,
+          "end": 2026
+        },
+        "registry_source": "legal-graph",
+        "published": false,
+        "description": "Indice lessicale BM25 sugli atti del Legal Knowledge Graph: una riga per (atto, termine) con peso precalcolato. Alimenta `legal_search` per tema. Derivato da legal-graph (search_keys) + italia-corpus (testi).\n",
+        "tags": [
+          "diritto",
+          "normativa",
+          "legal-graph",
+          "indice",
+          "bm25",
+          "compose"
+        ],
+        "category": "normativa",
+        "last_run": {
+          "at": "2026-11-23T21:57:55.597269+00:00",
+          "year": 2026,
+          "status": "SUCCESS"
+        },
+        "mart_refs": [
+          "legal_index__mart_legal_search_terms"
         ]
       },
       {
@@ -17475,9 +17557,12 @@
           "output"
         ],
         "category": "economia",
+        "partitions": {
+          "2026": 4290
+        },
         "clean_rows": 4290,
         "last_run": {
-          "at": "2026-11-01T12:07:13.867837+00:00",
+          "at": "2026-11-24T23:35:23.470865+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -18215,9 +18300,12 @@
           "ecoicop"
         ],
         "category": "economia",
+        "partitions": {
+          "2026": 780
+        },
         "clean_rows": 780,
         "last_run": {
-          "at": "2026-11-01T12:07:10.158024+00:00",
+          "at": "2026-11-24T23:35:04.924767+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -28871,9 +28959,12 @@
           "coicop"
         ],
         "category": "economia",
+        "partitions": {
+          "2025": 720
+        },
         "clean_rows": 720,
         "last_run": {
-          "at": "2026-11-01T12:07:01.115452+00:00",
+          "at": "2026-11-24T23:34:55.147740+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -28987,9 +29078,12 @@
           "filiera"
         ],
         "category": "economia",
+        "partitions": {
+          "2024": 554
+        },
         "clean_rows": 554,
         "last_run": {
-          "at": "2026-11-01T12:07:04.991533+00:00",
+          "at": "2026-11-24T23:34:59.672308+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -29748,9 +29842,15 @@
           "tusp"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 11365,
+        "partitions": {
+          "2020": 13364,
+          "2021": 13246,
+          "2022": 13236,
+          "2023": 11365
+        },
+        "clean_rows": 51211,
         "last_run": {
-          "at": "2026-11-01T12:15:36.576359+00:00",
+          "at": "2026-11-24T23:35:46.429717+00:00",
           "year": 2023,
           "status": "SUCCESS"
         },
@@ -29860,9 +29960,15 @@
           "partecipate"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 53656,
+        "partitions": {
+          "2020": 51983,
+          "2021": 51956,
+          "2022": 52550,
+          "2023": 53656
+        },
+        "clean_rows": 210145,
         "last_run": {
-          "at": "2026-11-01T12:16:30.599110+00:00",
+          "at": "2026-11-24T23:36:20.772638+00:00",
           "year": 2023,
           "status": "SUCCESS"
         },
@@ -30324,9 +30430,17 @@
           "partecipate"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 16785,
+        "partitions": {
+          "2018": 16610,
+          "2019": 16930,
+          "2020": 16712,
+          "2021": 17192,
+          "2022": 17305,
+          "2023": 16785
+        },
+        "clean_rows": 101534,
         "last_run": {
-          "at": "2026-11-01T12:17:09.901555+00:00",
+          "at": "2026-11-24T23:36:49.762928+00:00",
           "year": 2023,
           "status": "SUCCESS"
         },
@@ -34590,9 +34704,12 @@
           "eurostat"
         ],
         "category": "economia",
+        "partitions": {
+          "2024": 135
+        },
         "clean_rows": 135,
         "last_run": {
-          "at": "2026-11-01T12:07:08.051507+00:00",
+          "at": "2026-11-24T23:35:02.846220+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -34704,9 +34821,12 @@
           "territori"
         ],
         "category": "economia",
+        "partitions": {
+          "2024": 9673
+        },
         "clean_rows": 9673,
         "last_run": {
-          "at": "2026-11-01T12:07:30.036539+00:00",
+          "at": "2026-11-24T23:35:43.985072+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -41148,9 +41268,18 @@
           "parco-auto"
         ],
         "category": "trasporti",
-        "clean_rows": 3852,
+        "partitions": {
+          "2019": 3852,
+          "2020": 3852,
+          "2021": 3852,
+          "2022": 3852,
+          "2023": 3852,
+          "2024": 3852,
+          "2025": 3852
+        },
+        "clean_rows": 26964,
         "last_run": {
-          "at": "2026-11-01T18:30:41.713305+00:00",
+          "at": "2026-11-24T23:35:05.781954+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -41223,9 +41352,13 @@
           "autoritratto"
         ],
         "category": "trasporti",
-        "clean_rows": 69385,
+        "partitions": {
+          "2024": 69389,
+          "2025": 69385
+        },
+        "clean_rows": 138774,
         "last_run": {
-          "at": "2026-11-01T18:31:30.533688+00:00",
+          "at": "2026-11-24T23:36:08.594540+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -41314,9 +41447,13 @@
           "autoritratto"
         ],
         "category": "trasporti",
-        "clean_rows": 89798,
+        "partitions": {
+          "2024": 89375,
+          "2025": 89798
+        },
+        "clean_rows": 179173,
         "last_run": {
-          "at": "2026-11-01T18:31:00.437612+00:00",
+          "at": "2026-11-24T23:35:28.542821+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -41393,9 +41530,12 @@
           "anzianita"
         ],
         "category": "trasporti",
+        "partitions": {
+          "2025": 856
+        },
         "clean_rows": 856,
         "last_run": {
-          "at": "2026-11-01T18:31:44.771987+00:00",
+          "at": "2026-11-24T23:36:28.504836+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -41461,9 +41601,13 @@
           "famiglie"
         ],
         "category": "trasporti",
-        "clean_rows": 107,
+        "partitions": {
+          "2024": 107,
+          "2025": 107
+        },
+        "clean_rows": 214,
         "last_run": {
-          "at": "2026-11-01T18:32:04.831431+00:00",
+          "at": "2026-11-24T23:36:59.880468+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -41541,9 +41685,14 @@
           "nuts2"
         ],
         "category": "trasporti",
-        "clean_rows": 1293,
+        "partitions": {
+          "2021": 1334,
+          "2022": 1334,
+          "2023": 1293
+        },
+        "clean_rows": 3961,
         "last_run": {
-          "at": "2026-11-01T18:32:25.771933+00:00",
+          "at": "2026-11-24T23:37:28.736706+00:00",
           "year": 2023,
           "status": "SUCCESS"
         },
@@ -41608,9 +41757,13 @@
           "elettrica"
         ],
         "category": "trasporti",
-        "clean_rows": 14,
+        "partitions": {
+          "2024": 13,
+          "2025": 14
+        },
+        "clean_rows": 27,
         "last_run": {
-          "at": "2026-11-01T18:32:38.956929+00:00",
+          "at": "2026-11-24T23:37:49.094133+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -41663,9 +41816,20 @@
           "parco-auto"
         ],
         "category": "trasporti",
-        "clean_rows": 37678,
+        "partitions": {
+          "2017": 30037,
+          "2018": 31698,
+          "2019": 35519,
+          "2020": 38393,
+          "2021": 41640,
+          "2022": 39054,
+          "2023": 38682,
+          "2024": 38949,
+          "2025": 37678
+        },
+        "clean_rows": 331650,
         "last_run": {
-          "at": "2026-11-01T18:33:34.221106+00:00",
+          "at": "2026-11-24T23:39:12.054494+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -41748,9 +41912,20 @@
           "parco-auto"
         ],
         "category": "trasporti",
-        "clean_rows": 43286,
+        "partitions": {
+          "2017": 44052,
+          "2018": 44736,
+          "2019": 44984,
+          "2020": 43598,
+          "2021": 44719,
+          "2022": 42379,
+          "2023": 41873,
+          "2024": 43761,
+          "2025": 43286
+        },
+        "clean_rows": 393388,
         "last_run": {
-          "at": "2026-11-01T18:34:24.437956+00:00",
+          "at": "2026-11-24T23:40:27.907784+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -41833,9 +42008,13 @@
           "minivolture"
         ],
         "category": "trasporti",
-        "clean_rows": 10,
+        "partitions": {
+          "2024": 10,
+          "2025": 10
+        },
+        "clean_rows": 20,
         "last_run": {
-          "at": "2026-11-01T18:34:32.354398+00:00",
+          "at": "2026-11-24T23:40:39.357679+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -65306,6 +65485,10 @@
       "fao_fertilizer_consumption",
       "resource_dependency_compose"
     ],
+    "legal-graph": [
+      "legal_graph",
+      "legal_index"
+    ],
     "oecd-benchmark": [
       "oecd_air_emissions",
       "oecd_education_attainment",
@@ -70673,6 +70856,39 @@
         "agricoltura"
       ],
       "description": "Italy Resource & Dependency Map \u2014 joins energy balance, bilateral trade, and fertilizer consumption"
+    },
+    "legal_graph": {
+      "name": "Legal Graph",
+      "published": false,
+      "source_id": "dataciviclab_composite",
+      "registry_source": "legal-graph",
+      "domain": null,
+      "category": "normativa",
+      "tags": [
+        "diritto",
+        "normativa",
+        "legal-graph",
+        "compose",
+        "knowledge-graph"
+      ],
+      "description": "Legal Knowledge Graph: nodi unici e relazioni legislative/materiali unificati da italia-corpus, costituzione-italiana, gu-monitor, senato-akn e open-politica. Fonti lette da rete (GCS/GitHub).\n"
+    },
+    "legal_index": {
+      "name": "Legal Index",
+      "published": false,
+      "source_id": "dataciviclab_composite",
+      "registry_source": "legal-graph",
+      "domain": null,
+      "category": "normativa",
+      "tags": [
+        "diritto",
+        "normativa",
+        "legal-graph",
+        "indice",
+        "bm25",
+        "compose"
+      ],
+      "description": "Indice lessicale BM25 sugli atti del Legal Knowledge Graph: una riga per (atto, termine) con peso precalcolato. Alimenta `legal_search` per tema. Derivato da legal-graph (search_keys) + italia-corpus (testi).\n"
     },
     "oecd_air_emissions": {
       "name": "Oecd Air Emissions",
