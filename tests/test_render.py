@@ -391,9 +391,9 @@ def test_render_triage_registry_summary_cross_repo():
     assert repo2["available"] is True
     assert repo2["datasets"] == 1
     assert repo2["marts"] == 1
-    assert repo2["signals"] == 1
+    # v2: niente signals/entities nel summary; le anomalie sono `checks`
+    assert repo2["checks"] == 0
     assert repo2["codelists"] == 1
-    assert repo2["entities"] == 1
     assert repo2["gcs"] == 1
 
 
@@ -507,7 +507,6 @@ def _nav_registry_json() -> str:
                 {
                     "slug": "irpef_comunale",
                     "name": "IRPEF Comunale",
-                    "stage": "published",
                     "category": "finanza-pubblica",
                     "source_id": "mef",
                     "source": "MEF",
@@ -516,7 +515,6 @@ def _nav_registry_json() -> str:
                 {
                     "slug": "aifa_spesa_consumo",
                     "name": "AIFA Spesa",
-                    "stage": "incubating",
                     "category": "sanita",
                     "source_id": "aifa",
                     "source": "AIFA",
@@ -530,7 +528,7 @@ def _nav_registry_json() -> str:
 
 
 def test_render_topic_index_v7_with_analyses():
-    """Topic index v7: analyses from data-explorer + navigation sections."""
+    """Topic index v8: analyses from data-explorer + navigation sections."""
     config = _cfg(repos=["repo1", "data-explorer"])
     gh = make_github_mock(
         list_files=["irpef-comunale.md", "aifa-spesa-consumo.md", "TEMPLATE-x.md"]
@@ -549,7 +547,7 @@ def test_render_topic_index_v7_with_analyses():
     gh.get_raw_file.side_effect = _raw_file_side_effect
     result = _r(config, gh=gh).render_topic_index()
 
-    assert result["schema_version"] == 7
+    assert result["schema_version"] == 8
     assert "analyses" in result
     assert "analyses_by_dataset" in result
     assert "domains" in result
@@ -576,7 +574,9 @@ def test_render_topic_index_v7_with_analyses():
     repo_card = result["repos"]["repo1"]
     assert repo_card["role"] == "dati"
     assert repo_card["n_datasets"] == 2
-    assert repo_card["n_published"] == 1
+    # published = ha una pagina Explorer (entrambi i dataset ne hanno una;
+    # il vecchio `stage` del registry non conta più)
+    assert repo_card["n_published"] == 2
     assert repo_card["domain"] in ("finanza-pubblica", "sanita")
     assert set(repo_card["sources"]) == {"mef", "aifa"}
 
@@ -585,7 +585,7 @@ def test_render_topic_index_v7_with_analyses():
 
 
 def test_render_topic_index_v7_without_analyses_still_navigation():
-    """Schema v7 always includes navigation keys even without analyses."""
+    """Schema v8 always includes navigation keys even without analyses."""
     config = _cfg(repos=["repo1"])
     gh = make_github_mock(list_files=[])
 
@@ -597,7 +597,7 @@ def test_render_topic_index_v7_without_analyses_still_navigation():
     gh.get_raw_file.side_effect = _raw_file_side_effect
     result = _r(config, gh=gh).render_topic_index()
 
-    assert result["schema_version"] == 7
+    assert result["schema_version"] == 8
     assert result["analyses"] == []
     assert result["analyses_by_dataset"] == {}
     assert "domains" in result
@@ -629,3 +629,38 @@ def test_render_topic_index_consumer_contract_keys():
     assert "registry_source" in flat[0]
     # lab-dashboard Grafo expects explorer_themes list
     assert isinstance(result["explorer_themes"], list)
+
+
+def test_topic_index_last_run_from_v1_compose_signal():
+    """v1: il run di un signal compose finisce sul dataset (id prefissato)."""
+    config = _cfg(repos=["repo1"])
+    gh = make_github_mock(list_files=[])
+
+    registry = json.loads(_nav_registry_json())
+    registry["signals"] = [
+        {
+            "id": "compose:irpef_comunale",
+            "label": "irpef_comunale",
+            "status": "ok",
+            "run": {
+                "run_id": "r1",
+                "year": 2024,
+                "status": "SUCCESS",
+                "started_at": "2026-11-17T18:06:57Z",
+            },
+        }
+    ]
+
+    def _raw_file_side_effect(repo, path, ref="main"):
+        if path == "registry/registry.json":
+            return json.dumps(registry)
+        return None
+
+    gh.get_raw_file.side_effect = _raw_file_side_effect
+    result = _r(config, gh=gh).render_topic_index()
+    ds = next(d for v in result["datasets"].values() for d in v if d["slug"] == "irpef_comunale")
+    assert ds["last_run"] == {
+        "at": "2026-11-17T18:06:57Z",
+        "year": 2024,
+        "status": "SUCCESS",
+    }

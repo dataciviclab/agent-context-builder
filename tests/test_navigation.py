@@ -43,7 +43,7 @@ FLAT: list[dict[str, Any]] = [
     {
         "slug": "ispra_ru_base",
         "name": "Rifiuti Urbani",
-        "stage": "published",
+        "published": True,
         "source_id": "ispra",
         "registry_source": "rifiuti-urbani",
         "category": "ambiente",
@@ -51,7 +51,7 @@ FLAT: list[dict[str, Any]] = [
     {
         "slug": "bdap_entrate_stato",
         "name": "Entrate Stato",
-        "stage": "incubating",
+        "published": False,
         "source_id": "bdap",
         "registry_source": "open-conto-annuale",
         "category": "finanza-pubblica",
@@ -59,7 +59,7 @@ FLAT: list[dict[str, Any]] = [
     {
         "slug": "anac_bandi_gara",
         "name": "Anac Bandi Gara",
-        "stage": "published",
+        "published": True,
         "source_id": "anac",
         "registry_source": "appalti-pubblici",
         "category": "appalti",

@@ -22,21 +22,26 @@ Pubblicato su branch `context`. Consumato da `lab-dashboard` e agenti MCP.
     "unhealthy": [{"id": "...", "status": "RED", "note": "..."}]
   },
   "source_health": {"available": true, "sources_checked": 36, "regressions": [], "alerts": []},
-  "pipeline_state": {"available": true, "summary": {"total": 100, "by_status": {"ok": 100}}},
+  "pipeline_state": {"available": true, "summary": {"total": 0, "by_status": {}}, "actionable": []},
   "registry_summary": [
     {
       "repo": "dataset-incubator",
       "available": true,
-      "datasets": 92, "marts": 149, "signals": 100,
-      "signals_detail": [
-        {"id": "...", "source_id": "...", "status": "ok", "label": "...", "detail": "..."}
-      ]
+      "datasets": 92, "marts": 149, "checks": 0, "codelists": 2, "gcs": 90
     }
   ],
   "git_state": {"repo": {"available": true, "branch": "main", "dirty": false}},
   "warnings": ["..."]
 }
 ```
+
+## v2 (registry) — cosa cambia
+
+- `registry_summary[]`: niente più `signals`/`signals_detail`/`entities`. La
+  freschezza per dataset vive in `topic_index.datasets[].last_run`
+  (~190 KB in meno nel triage, che dcl-mcp strippava comunque).
+- `pipeline_state` deriva dai `checks` del registry (anomalie), non più da una
+  riga `signals` per dataset.
 
 ## MCP output
 

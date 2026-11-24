@@ -1,14 +1,16 @@
-# topic_index.json — Schema v7
+# topic_index.json — Schema v8
 
 Pubblicato su branch `context`. Consumato da `data-explorer`, `lab-dashboard` e agenti MCP.
 
-v7 è il **navigation index** del Lab: aggiunge layer di navigazione (domains, repo cards, reverse index) senza rompere il flat registry v6.
+v8 allinea il catalogo al **registry v2** dei repo: `published` derivato dalle pagine
+Explorer, `partitions`/`last_run` per dataset, `clean_rows` = somma delle partizioni,
+`checks` a livello root. La navigazione (domains, repo cards, reverse index) è quella di v7.
 
 ## Struttura
 
 ```json
 {
-  "schema_version": 7,
+  "schema_version": 8,
   "generated_at": "2026-10-07T04:40:00",
   "repos": {
     "rifiuti-urbani": {
@@ -31,11 +33,13 @@ v7 è il **navigation index** del Lab: aggiunge layer di navigazione (domains, r
         "source": "ISPRA",
         "source_id": "ispra",
         "period": {"start": 2006, "end": 2024},
-        "stage": "published",
+        "published": true,
         "tags": ["ambiente"],
         "category": "ambiente",
         "registry_source": "rifiuti-urbani",
-        "clean_rows": 12345,
+        "partitions": {"2023": 1200, "2024": 1234},
+        "last_run": {"at": "2026-11-17T17:01:24Z", "year": 2024, "status": "SUCCESS"},
+        "clean_rows": 2434,
         "location": {"type": "gcs", "path": "gs://...", "multi_file": true},
         "columns": [{"name": "anno", "type": "INTEGER", "role": "dimension", "semantic_type": "", "description": "..."}]
       }
@@ -71,12 +75,13 @@ v7 è il **navigation index** del Lab: aggiunge layer di navigazione (domains, r
     }
   ],
   "analyses_by_dataset": {"ispra_ru_base": ["rifiuti-urbani"]},
+  "checks": [],
   "by_repo": {"rifiuti-urbani": ["ispra_ru_base"]},
   "by_domain": {"territorio-ambiente": ["ispra_ru_base"]},
   "by_slug": {
     "ispra_ru_base": {
       "name": "Rifiuti Urbani",
-      "stage": "published",
+      "published": true,
       "source_id": "ispra",
       "registry_source": "rifiuti-urbani",
       "domain": "territorio-ambiente",
@@ -96,15 +101,15 @@ domain (tema editoriale da data-explorer/catalog/themes.json)
                     └── analysis / signal
 ```
 
-## Campi v7 (additivi)
+## Campi v8
 
 | Campo | Tipo | Descrizione |
 |---|---|---|
-| `schema_version` | int | Sempre `7` |
+| `schema_version` | int | Sempre `8` |
 | `repos.*.role` | string | `dati` \| `infra` \| `editoriale` \| `osservatorio` |
 | `repos.*.domain` | string\|null | Domain primario (categoria più frequente dei suoi dataset) |
 | `repos.*.n_datasets` | int | Conteggio dataset del repo |
-| `repos.*.n_published` | int | Conteggio con stage `published` |
+| `repos.*.n_published` | int | Conteggio dataset con pagina Explorer (`published`) |
 | `repos.*.sources` | list[string] | source_id distinti |
 | `domains[]` | list | Temi editoriali con repos/datasets collegati |
 | `explorer_themes[]` | list | Temi compatti per lab-dashboard Grafo (`slug`, `name`, `datasets`) |
@@ -112,10 +117,16 @@ domain (tema editoriale da data-explorer/catalog/themes.json)
 | `by_repo` | object | slug repo → dataset slugs |
 | `by_domain` | object | slug domain → dataset slugs |
 | `by_slug` | object | dataset slug → card di navigazione |
+| `checks[]` | list | Anomalie di struttura dai registry (`repo`, `id`, `status`, `detail`, `action`); vuoto = tutto a posto |
+| `datasets.*.published` | bool | Il dataset ha una pagina Explorer (`analyses_by_dataset`), non un campo editoriale del repo |
+| `datasets.*.partitions` | object | Partizione pubblicata → righe clean (assente per mart-only / non rieseguiti) |
+| `datasets.*.last_run` | object | `{at, year, status}` dell'esecuzione più recente su tutte le partizioni |
+| `datasets.*.clean_rows` | int | Somma delle righe clean delle partizioni |
 
 ## Backward compatibility
 
-- `datasets` resta **raggruppato per source_id** con gli stessi campi di v6 (`registry_source`, `location`, `columns`, …) — invariato per `data-explorer/src/data/_registry.py` e `lab-dashboard/sources.py`.
+- `datasets` resta **raggruppato per source_id** con gli stessi campi di v7 (`registry_source`, `location`, `columns`, …) — `location` continua a essere materializzata per i consumer. `stage` non c'è più: usare `published`.
+- I repo non ancora migrati a registry v2 restano letti: `last_run` e `clean_rows` arrivano dai `signals` v1.
 - `repos` mantiene `description` e `url`; i campi nuovi sono aggiuntivi.
 - `explorer_themes` è il formato atteso da `lab-dashboard/pages/08_Grafo.py`.
 
