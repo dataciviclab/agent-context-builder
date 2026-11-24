@@ -148,7 +148,7 @@ def build_repo_cards(
             url = getattr(info, "url", "") or ""
 
         datasets = by_repo.get(name, [])
-        n_published = sum(1 for d in datasets if d.get("stage") == "published")
+        n_published = sum(1 for d in datasets if d.get("published"))
         sources = sorted({d.get("source_id") or d.get("source") or "" for d in datasets} - {""})
 
         domain_counts: Counter[str] = Counter()
@@ -193,7 +193,7 @@ def build_reverse_indexes(
             by_domain[domain].append(slug)
         by_slug[slug] = {
             "name": ds.get("name") or slug,
-            "stage": ds.get("stage") or "incubating",
+            "published": bool(ds.get("published")),
             "source_id": ds.get("source_id") or ds.get("source"),
             "registry_source": repo,
             "domain": domain,

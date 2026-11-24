@@ -88,7 +88,7 @@ class Renderer:
             if radar.red > 0:
                 status_parts[-1] += f" · RED {radar.red}"
 
-        # Pipeline (from registry signals)
+        # Pipeline (dal registry: datasets + anomalie/checks)
         registry_summaries = self._registry_fetcher.fetch(self.config.repos)
         available_repos = [r for r, reg in registry_summaries.items() if reg is not None]
         total_datasets = sum(len(reg.datasets) for _, reg in registry_summaries.items() if reg)
@@ -124,14 +124,21 @@ class Renderer:
                 )
                 actionable_items.append(f"- [Fonte] {alert.source}: {alert.signal_type}{action}")
 
-        # Open issues with problems (pipeline errors from registry signals)
+        # Anomalie di struttura dai registry (v2 `checks`; v1 `signals`)
         for repo, reg in registry_summaries.items():
             if reg is None:
                 continue
-            for sig in reg.signals:
-                if sig.status in ("error", "warn"):
+            checks = reg.checks or [
+                {"id": sig.id, "status": sig.status, "detail": sig.detail}
+                for sig in reg.signals
+                if sig.status in ("error", "warn")
+            ]
+            for check in checks:
+                status = check.get("status")
+                if status in ("error", "warn"):
+                    detail = check.get("detail", "")
                     actionable_items.append(
-                        f"- [Pipeline] {repo}/{sig.id}: {sig.status} — {sig.detail}"
+                        f"- [Pipeline] {repo}/{check.get('id')}: {status} — {detail}"
                     )
 
         if actionable_items:
@@ -200,31 +207,46 @@ class Renderer:
 
     def _fetch_di_registry(
         self,
-    ) -> tuple[DIRegistry, dict[str, str]] | None:
-        """Fetch and merge registries from ALL repos.
+    ) -> tuple[DIRegistry, dict[str, str], list[dict[str, Any]], dict[str, str]] | None:
+        """Fetch and merge registries from ALL repos (v1 e v2).
 
-        Returns (merged_registry, slug_to_repo) or None if no datasets.
-        slug_to_repo maps dataset slug → repo name (for registry_source).
+        Returns (merged_registry, slug_to_repo, checks, repo_updated) or None.
+        slug_to_repo maps dataset slug → repo name (for registry_source);
+        ``checks`` sono le anomalie (v2) arricchite col repo di provenienza;
+        ``repo_updated`` è la data di aggiornamento del registry per repo.
         """
         registries = self._registry_fetcher.fetch(self.config.repos)
         merged = DIRegistry(schema_version=1, repo="merged")
         slug_to_repo: dict[str, str] = {}
+        checks: list[dict[str, Any]] = []
+        repo_updated: dict[str, str] = {}
         for repo_name, reg in registries.items():
             if reg is None:
                 continue
+            if reg.updated_at:
+                repo_updated[repo_name] = reg.updated_at
             for ds in reg.datasets:
                 slug_to_repo[ds.slug] = repo_name
             merged.datasets.extend(reg.datasets)
             merged.marts.extend(reg.marts)
             merged.signals.extend(reg.signals)
+            if isinstance(reg.checks, list):
+                checks.extend({**check, "repo": repo_name} for check in reg.checks)
             if isinstance(reg.entities, dict):
                 merged.entities.update(reg.entities)
             if isinstance(reg.codelists, list):
                 merged.codelists.extend(reg.codelists)
-        return (merged, slug_to_repo) if merged.datasets else None
+        if not merged.datasets:
+            return None
+        return merged, slug_to_repo, checks, repo_updated
 
     def render_topic_index(self) -> dict[str, Any]:
-        """Render topic_index.json (schema v7 — navigation index).
+        """Render topic_index.json (schema v8 — navigation index).
+
+        Novità v8 (registry v2): niente ``stage`` (``published`` = il dataset ha
+        una pagina Explorer, derivato da ``analyses_by_dataset``), ``partitions``
+        e ``last_run`` per dataset, ``clean_rows`` = somma delle partizioni,
+        ``checks`` a livello root.
 
         Returns:
             - repos: description/url + role, domain, dataset counts, sources
@@ -234,87 +256,16 @@ class Renderer:
             - operational_topics: YAML-defined topics for agent navigation
             - analyses: public pages from data-explorer src/dataset/
             - analyses_by_dataset: reverse lookup dataset → analyses
+            - checks: anomalie di struttura (vuoto = tutto a posto)
             - by_repo / by_domain / by_slug: precomputed reverse indexes
         """
         # Repos with description from GitHub
         repos_info = self.github_collector.get_repos_info(self.config.repos)
 
-        # Datasets grouped by source — full details for downstream consumers
-        result_catalog = self._fetch_di_registry()
-        datasets_by_source: dict[str, list[dict[str, Any]]] = {}
-        flat_datasets: list[dict[str, Any]] = []
-        if result_catalog:
-            catalog, slug_to_repo = result_catalog
-            signals_by_id: dict[str, Any] = {}
-            for sig in catalog.signals:
-                if sig.run is not None:
-                    signals_by_id[sig.id] = sig.run
-
-            for ds in catalog.datasets:
-                source = ds.source_id or ds.source or "unknown"
-                run = signals_by_id.get(ds.slug)
-                clean_rows = None
-                if run is not None:
-                    clean_rows = (
-                        run.output_rows.get("clean") if hasattr(run, "output_rows") else None
-                    )
-
-                entry: dict[str, Any] = {
-                    "slug": ds.slug,
-                    "url_slug": to_url_slug(ds.slug),
-                    "name": ds.name or ds.slug,
-                    "description": ds.description,
-                    "source": ds.source,
-                    "source_id": ds.source_id,
-                    "period": ds.period,
-                    "stage": ds.stage or "incubating",
-                    "tags": ds.tags,
-                    "category": ds.category,
-                    "registry_source": slug_to_repo.get(ds.slug, ""),
-                    "clean_rows": clean_rows,
-                }
-                if ds.location and ds.location.path:
-                    entry["location"] = {
-                        "type": ds.location.type,
-                        "path": ds.location.path,
-                        "multi_file": ds.location.multi_file,
-                    }
-                if ds.columns:
-                    entry["columns"] = [
-                        {
-                            "name": c.name,
-                            "type": c.type,
-                            "role": c.role,
-                            "semantic_type": c.semantic_type or "",
-                            "description": c.description,
-                        }
-                        for c in ds.columns
-                    ]
-                if ds.mart_refs:
-                    entry["mart_refs"] = ds.mart_refs
-                datasets_by_source.setdefault(source, []).append(entry)
-                flat_datasets.append(entry)
-
-        # Editorial themes + navigation graph
-        themes = self._explorer_fetcher.fetch_themes()
-        cat_map = category_to_domain(themes)
-        domains = build_domains(themes, flat_datasets, cat_map)
-        explorer_themes = build_explorer_themes(themes, flat_datasets, cat_map)
-        repo_cards = build_repo_cards(
-            repos_info, flat_datasets, cat_map, config_repos=self.config.repos
-        )
-        reverse = build_reverse_indexes(flat_datasets, cat_map)
-
-        # YAML-defined operational topics (agent navigation hints)
-        operational_topics = {}
-        for topic_name, topic in self.config.topics.items():
-            operational_topics[topic_name] = {
-                "summary": topic.summary,
-                "repos": topic.repos,
-                "next": topic.next,
-            }
-
         # ── Analyses / public pages from data-explorer ───────────────────
+        # Prima dei dataset: `published` è definito dalla presenza di una
+        # pagina Explorer (il vecchio `stage` del registry era editoriale e
+        # stale: 33 published su 547 con parquet leggibile).
         analyses_list: list[dict[str, Any]] = []
         analyses_by_dataset: dict[str, list[str]] = {}
         analyses = self._fetch_explorer_analyses()
@@ -339,8 +290,101 @@ class Renderer:
             for ds_slug in a.datasets:
                 analyses_by_dataset.setdefault(ds_slug, []).append(a.slug)
 
+        # Datasets grouped by source — full details for downstream consumers
+        result_catalog = self._fetch_di_registry()
+        datasets_by_source: dict[str, list[dict[str, Any]]] = {}
+        flat_datasets: list[dict[str, Any]] = []
+        checks: list[dict[str, Any]] = []
+        repo_updated: dict[str, str] = {}
+        if result_catalog:
+            catalog, slug_to_repo, checks, repo_updated = result_catalog
+            # Compat v1: `last_run`/righe stavano nei signals; ora nel dataset.
+            legacy_run = {sig.id: sig.run for sig in catalog.signals if sig.run is not None}
+
+            for ds in catalog.datasets:
+                source = ds.source_id or ds.source or "unknown"
+                run = ds.last_run or legacy_run.get(ds.slug)
+                clean_rows = ds.clean_rows
+                if clean_rows is None:
+                    legacy = legacy_run.get(ds.slug)
+                    if legacy is not None:
+                        clean_rows = legacy.output_rows.get("clean")
+
+                entry: dict[str, Any] = {
+                    "slug": ds.slug,
+                    "url_slug": to_url_slug(ds.slug),
+                    "name": ds.name or ds.slug,
+                    "source_id": ds.source_id,
+                    "period": ds.period,
+                    "registry_source": slug_to_repo.get(ds.slug, ""),
+                    "published": bool(analyses_by_dataset.get(ds.slug)),
+                }
+                # Omit-if-empty: il topic_index è un artefatto distribuito,
+                # i campi vuoti si pagano su ogni consumer (regola registry v2).
+                for key, value in (
+                    ("description", ds.description),
+                    ("source", ds.source),
+                    ("tags", ds.tags),
+                    ("category", ds.category),
+                ):
+                    if value:
+                        entry[key] = value
+                if ds.partitions:
+                    entry["partitions"] = dict(ds.partitions)
+                if clean_rows is not None:
+                    entry["clean_rows"] = clean_rows
+                if run is not None:
+                    entry["last_run"] = {
+                        "at": run.started_at,
+                        "year": run.year,
+                        "status": run.status,
+                    }
+                if ds.location and ds.location.path:
+                    entry["location"] = {
+                        "type": ds.location.type,
+                        "path": ds.location.path,
+                        "multi_file": ds.location.multi_file,
+                    }
+                if ds.columns:
+                    columns: list[dict[str, Any]] = []
+                    for c in ds.columns:
+                        col: dict[str, Any] = {"name": c.name, "type": c.type, "role": c.role}
+                        if c.semantic_type:
+                            col["semantic_type"] = c.semantic_type
+                        if c.description:
+                            col["description"] = c.description
+                        columns.append(col)
+                    entry["columns"] = columns
+                if ds.mart_refs:
+                    entry["mart_refs"] = ds.mart_refs
+                datasets_by_source.setdefault(source, []).append(entry)
+                flat_datasets.append(entry)
+
+        # Editorial themes + navigation graph
+        themes = self._explorer_fetcher.fetch_themes()
+        cat_map = category_to_domain(themes)
+        domains = build_domains(themes, flat_datasets, cat_map)
+        explorer_themes = build_explorer_themes(themes, flat_datasets, cat_map)
+        repo_cards = build_repo_cards(
+            repos_info, flat_datasets, cat_map, config_repos=self.config.repos
+        )
+        # Freschezza del registry per repo (dcl-mcp: repo_updated_at nella card).
+        for repo_name, updated_at in repo_updated.items():
+            if repo_name in repo_cards:
+                repo_cards[repo_name]["updated_at"] = updated_at
+        reverse = build_reverse_indexes(flat_datasets, cat_map)
+
+        # YAML-defined operational topics (agent navigation hints)
+        operational_topics = {}
+        for topic_name, topic in self.config.topics.items():
+            operational_topics[topic_name] = {
+                "summary": topic.summary,
+                "repos": topic.repos,
+                "next": topic.next,
+            }
+
         result: dict[str, Any] = {
-            "schema_version": 7,
+            "schema_version": 8,
             "generated_at": self.fixed_timestamp,
             "repos": repo_cards,
             "datasets": datasets_by_source,
@@ -349,6 +393,7 @@ class Renderer:
             "operational_topics": operational_topics,
             "analyses": analyses_list,
             "analyses_by_dataset": analyses_by_dataset,
+            "checks": checks,
             "by_repo": reverse["by_repo"],
             "by_domain": reverse["by_domain"],
             "by_slug": reverse["by_slug"],

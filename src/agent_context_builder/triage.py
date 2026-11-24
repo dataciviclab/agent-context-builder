@@ -194,10 +194,10 @@ def _build_pipeline_state_dict(
     fetcher: RegistryFetcher,
     github_collector: GitHubCollector,
 ) -> dict[str, Any]:
-    """Build pipeline_state from the dataset-incubator registry signals.
+    """Build pipeline_state from the dataset-incubator registry checks.
 
-    The registry.json embeds the same signals that the legacy
-    pipeline_signals.json projection exposed (id/status/detail/action).
+    Il registry v2 non ha più la sezione ``signals`` (una riga "ok" per ogni
+    dataset): restano le anomalie in ``checks`` (vuoto = tutto a posto).
     """
     registry = fetcher.fetch_repo("dataset-incubator")
     if registry is None:
@@ -205,24 +205,25 @@ def _build_pipeline_state_dict(
             "available": False,
             "errors": {k: v for k, v in github_collector.fetch_errors.items() if "registry" in k},
         }
-    signals = registry.signals
+    checks = registry.checks or []
     by_status: dict[str, int] = {}
-    for s in signals:
-        by_status[s.status] = by_status.get(s.status, 0) + 1
+    for check in checks:
+        status = str(check.get("status") or "")
+        by_status[status] = by_status.get(status, 0) + 1
     actionable = [
         {
-            "id": s.id,
-            "status": s.status,
-            "detail": s.detail,
-            "action": s.action,
+            "id": check.get("id", ""),
+            "status": check.get("status", ""),
+            "detail": check.get("detail", ""),
+            "action": check.get("action", ""),
         }
-        for s in signals
-        if s.status in ("warn", "error")
+        for check in checks
+        if check.get("status") in ("warn", "error")
     ]
     return {
         "available": True,
         "generated_at": registry.updated_at,
-        "summary": {"total": len(signals), "by_status": by_status},
+        "summary": {"total": len(checks), "by_status": by_status},
         "actionable": actionable,
     }
 
@@ -242,7 +243,11 @@ def _build_registry_summary_dict(
 
 
 def _registry_summary_item(repo: str, registry: DIRegistry | None) -> dict[str, Any]:
-    """Serialize a single repo registry into the compact summary entry."""
+    """Serialize a single repo registry into the compact summary entry.
+
+    Nessun ``signals_detail``: la freschezza per dataset è in
+    ``topic_index.datasets[].last_run`` (dcl-mcp e lab-dashboard leggono da lì).
+    """
     if registry is None:
         return {
             "repo": repo,
@@ -251,60 +256,28 @@ def _registry_summary_item(repo: str, registry: DIRegistry | None) -> dict[str, 
             "updated_at": "",
             "datasets": 0,
             "marts": 0,
-            "signals": 0,
+            "checks": 0,
             "codelists": 0,
-            "entities": 0,
             "gcs": 0,
             "reason": "registry_not_found",
         }
-    # Compute GCS count from datasets with GCS location (non-empty path)
-    gcs = sum(
-        1
-        for ds in registry.datasets
-        if hasattr(ds, "location")
-        and getattr(ds.location, "type", "") == "gcs"
-        and getattr(ds.location, "path", "")
-    )
-    # codelists/entities may be dicts with nested structure — count inner items
+
+    # Dataset con parquet GCS dichiarato (location v1 o derivata in v2).
+    gcs = sum(1 for ds in registry.datasets if getattr(ds.location, "path", ""))
     codelists = _count_section(registry.codelists, "codelists")
-    entities = _count_section(registry.entities, "entities")
 
-    # Signals with run details (for downstream dashboards)
-    signals_detail = []
-    for sig in registry.signals:
-        sig_entry: dict[str, Any] = {
-            "id": sig.id,
-            "source_id": sig.source_id,
-            "status": sig.status,
-            "label": sig.label,
-            "detail": sig.detail,
-        }
-        if sig.run is not None:
-            sig_entry["run"] = {
-                "run_id": sig.run.run_id,
-                "year": sig.run.year,
-                "status": sig.run.status,
-                "started_at": sig.run.started_at,
-                "finished_at": sig.run.finished_at,
-            }
-        signals_detail.append(sig_entry)
-
-    result: dict[str, Any] = {
+    return {
         "repo": repo,
         "available": True,
         "source_repo": registry.source_repo or registry.repo,
         "updated_at": registry.updated_at,
         "datasets": len(registry.datasets),
         "marts": len(registry.marts),
-        "signals": len(registry.signals),
+        "checks": len(registry.checks or []),
         "codelists": codelists,
-        "entities": entities,
         "gcs": gcs,
         "reason": "",
     }
-    if signals_detail:
-        result["signals_detail"] = signals_detail
-    return result
 
 
 def _count_section(section: Any, inner_key: str) -> int:
