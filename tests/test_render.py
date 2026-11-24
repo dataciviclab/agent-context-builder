@@ -629,3 +629,38 @@ def test_render_topic_index_consumer_contract_keys():
     assert "registry_source" in flat[0]
     # lab-dashboard Grafo expects explorer_themes list
     assert isinstance(result["explorer_themes"], list)
+
+
+def test_topic_index_last_run_from_v1_compose_signal():
+    """v1: il run di un signal compose finisce sul dataset (id prefissato)."""
+    config = _cfg(repos=["repo1"])
+    gh = make_github_mock(list_files=[])
+
+    registry = json.loads(_nav_registry_json())
+    registry["signals"] = [
+        {
+            "id": "compose:irpef_comunale",
+            "label": "irpef_comunale",
+            "status": "ok",
+            "run": {
+                "run_id": "r1",
+                "year": 2024,
+                "status": "SUCCESS",
+                "started_at": "2026-11-17T18:06:57Z",
+            },
+        }
+    ]
+
+    def _raw_file_side_effect(repo, path, ref="main"):
+        if path == "registry/registry.json":
+            return json.dumps(registry)
+        return None
+
+    gh.get_raw_file.side_effect = _raw_file_side_effect
+    result = _r(config, gh=gh).render_topic_index()
+    ds = next(d for v in result["datasets"].values() for d in v if d["slug"] == "irpef_comunale")
+    assert ds["last_run"] == {
+        "at": "2026-11-17T18:06:57Z",
+        "year": 2024,
+        "status": "SUCCESS",
+    }

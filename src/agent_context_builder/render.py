@@ -301,7 +301,15 @@ class Renderer:
         if result_catalog:
             catalog, slug_to_repo, checks, repo_updated = result_catalog
             # Compat v1: `last_run`/righe stavano nei signals; ora nel dataset.
-            legacy_run = {sig.id: sig.run for sig in catalog.signals if sig.run is not None}
+            # Chiave = slug del dataset: gli id dei signals compose sono
+            # prefissati (`compose:anac_cross`) e senza lo strip restavano
+            # 46 dataset senza freschezza.
+            legacy_run: dict[str, Any] = {}
+            for sig in catalog.signals:
+                if sig.run is None:
+                    continue
+                key = str(sig.label or sig.id).rsplit(":", 1)[-1]
+                legacy_run.setdefault(key, sig.run)
 
             for ds in catalog.datasets:
                 source = ds.source_id or ds.source or "unknown"
