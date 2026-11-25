@@ -1,6 +1,6 @@
 {
   "schema_version": 8,
-  "generated_at": "2026-11-25T07:16:53.561693",
+  "generated_at": "2026-11-25T09:20:59.014023",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -75,7 +75,7 @@
       "role": "infra",
       "domain": "sanita",
       "n_datasets": 61,
-      "n_published": 17,
+      "n_published": 18,
       "sources": [
         "adm_opendata",
         "aifa",
@@ -168,7 +168,7 @@
       "sources": [
         "eurostat"
       ],
-      "updated_at": "2026-11-04"
+      "updated_at": "2026-11-25"
     },
     "filiere-agroalimentari": {
       "description": "Prezzi, redditi e aiuti della filiera agroalimentare italiana",
@@ -211,7 +211,7 @@
         "dataciviclab_composite",
         "giustizia_statistiche"
       ],
-      "updated_at": "2026-11-01"
+      "updated_at": "2026-11-25"
     },
     "gu-monitor": {
       "description": "La Gazzetta Ufficiale italiana monitorata in tempo reale: cosa decide lo Stato, quando lo decide, chi lo decide.",
@@ -236,7 +236,7 @@
         "camcom-marche",
         "dataciviclab_composite"
       ],
-      "updated_at": "2026-11-01"
+      "updated_at": "2026-11-25"
     },
     "indice-pa": {
       "description": "Chi \u00e8 la Pubblica Amministrazione italiana, come \u00e8 organizzata, e chi la governa?",
@@ -261,7 +261,7 @@
       "sources": [
         "inpa_reclutamento"
       ],
-      "updated_at": "2026-11-23"
+      "updated_at": "2026-11-25"
     },
     "italia-corpus": {
       "description": "La legislazione italiana a portata di ricerca \u2014 20.807 atti (22.409 espressioni) da Normattiva in formato aperto.",
@@ -435,7 +435,7 @@
         "dataciviclab_composite",
         "mim_opendata"
       ],
-      "updated_at": "2026-11-03"
+      "updated_at": "2026-11-25"
     },
     "open-mur": {
       "description": "Iscritti, laureati, personale, contribuzione studentesca \u2014 puliti, arricchiti e pronti per l'analisi.",
@@ -548,7 +548,7 @@
       "sources": [
         "mef_de"
       ],
-      "updated_at": "2026-11-01"
+      "updated_at": "2026-11-25"
     },
     "pil-intelligence": {
       "description": "Come sta realmente l'economia italiana? Le province convergono o divergono?",
@@ -573,7 +573,7 @@
         "dataciviclab_composite",
         "ispra_linked_data"
       ],
-      "updated_at": "2026-11-16"
+      "updated_at": "2026-11-25"
     },
     "rna-aiuti-stato": {
       "description": "17 milioni di aiuti pubblici alle imprese italiane \u2014 il Registro Nazionale Aiuti di Stato aperto e interrogabile.",
@@ -612,7 +612,7 @@
         "ecb",
         "worldbank"
       ],
-      "updated_at": "2026-11-02"
+      "updated_at": "2026-11-25"
     },
     "source-observatory": {
       "description": "Osservatorio delle fonti pubbliche \u2014 radar, monitoraggio e scouting di dataset aperti.",
@@ -3488,9 +3488,12 @@
           "cross"
         ],
         "category": "giustizia",
+        "partitions": {
+          "2025": 26
+        },
         "clean_rows": 26,
         "last_run": {
-          "at": "2026-11-01T12:43:51.525608+00:00",
+          "at": "2026-11-25T08:30:15.927381+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -3635,7 +3638,7 @@
         ],
         "category": "economia",
         "last_run": {
-          "at": "2026-11-01T12:25:59.238532+00:00",
+          "at": "2026-11-25T08:29:02.392238+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -4279,7 +4282,7 @@
         ],
         "category": "istruzione",
         "last_run": {
-          "at": "2026-11-03T19:13:55.081297+00:00",
+          "at": "2026-11-25T08:36:06.865768+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -4311,7 +4314,7 @@
         ],
         "category": "istruzione",
         "last_run": {
-          "at": "2026-11-03T19:13:55.566362+00:00",
+          "at": "2026-11-25T08:36:07.316197+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -5581,9 +5584,18 @@
           "regione"
         ],
         "category": "ambiente",
-        "clean_rows": 20,
+        "partitions": {
+          "2018": 20,
+          "2019": 20,
+          "2020": 20,
+          "2021": 20,
+          "2022": 20,
+          "2023": 20,
+          "2024": 20
+        },
+        "clean_rows": 140,
         "last_run": {
-          "at": "2026-11-16T15:59:28.258995+00:00",
+          "at": "2026-11-25T08:32:00.590257+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -5875,9 +5887,18 @@
           "unified"
         ],
         "category": "ambiente",
-        "clean_rows": 7782,
+        "partitions": {
+          "2018": 7802,
+          "2019": 7753,
+          "2020": 7751,
+          "2021": 7740,
+          "2022": 7749,
+          "2023": 7785,
+          "2024": 7782
+        },
+        "clean_rows": 54362,
         "last_run": {
-          "at": "2026-11-16T15:59:25.119592+00:00",
+          "at": "2026-11-25T08:31:57.140143+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -17170,7 +17191,7 @@
           "end": 2024
         },
         "registry_source": "dataset-incubator",
-        "published": false,
+        "published": true,
         "description": "PIL, Valore Aggiunto e Imposte nette per nazione, macro-aree, regioni e province. Fonte: ISTAT Conti economici territoriali (DCCN_PILT). Serie 1995-2024.",
         "source": "ISTAT \u2014 Conti economici territoriali",
         "tags": [
@@ -22758,9 +22779,12 @@
           "nuts3"
         ],
         "category": "ambiente",
+        "partitions": {
+          "2026": 65240
+        },
         "clean_rows": 65240,
         "last_run": {
-          "at": "2026-11-01T16:29:01.491471+00:00",
+          "at": "2026-11-25T08:41:19.034706+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -22882,9 +22906,12 @@
           "nuts3"
         ],
         "category": "economia",
+        "partitions": {
+          "2026": 4391569
+        },
         "clean_rows": 4391569,
         "last_run": {
-          "at": "2026-11-01T16:29:05.591520+00:00",
+          "at": "2026-11-25T08:41:22.377636+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -23006,9 +23033,12 @@
           "nuts3"
         ],
         "category": "economia",
+        "partitions": {
+          "2026": 1693965
+        },
         "clean_rows": 1693965,
         "last_run": {
-          "at": "2026-11-01T16:29:52.171211+00:00",
+          "at": "2026-11-25T08:41:59.300257+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -23140,9 +23170,12 @@
           "nuts3"
         ],
         "category": "giustizia",
+        "partitions": {
+          "2026": 436118
+        },
         "clean_rows": 436118,
         "last_run": {
-          "at": "2026-11-01T16:30:13.560689+00:00",
+          "at": "2026-11-25T08:42:17.746782+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -23264,9 +23297,12 @@
           "nuts3"
         ],
         "category": "welfare-lavoro",
+        "partitions": {
+          "2026": 631314
+        },
         "clean_rows": 631314,
         "last_run": {
-          "at": "2026-11-01T16:30:20.507063+00:00",
+          "at": "2026-11-25T08:42:23.627132+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -23377,9 +23413,12 @@
           "nuts3"
         ],
         "category": "welfare-lavoro",
+        "partitions": {
+          "2026": 322968
+        },
         "clean_rows": 322968,
         "last_run": {
-          "at": "2026-11-01T16:30:28.601432+00:00",
+          "at": "2026-11-25T08:42:29.915207+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -23500,9 +23539,12 @@
           "nuts3"
         ],
         "category": "welfare-lavoro",
+        "partitions": {
+          "2026": 1618596
+        },
         "clean_rows": 1618596,
         "last_run": {
-          "at": "2026-11-01T16:30:33.671321+00:00",
+          "at": "2026-11-25T08:42:34.192250+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -23634,9 +23676,12 @@
           "nuts3"
         ],
         "category": "welfare-lavoro",
+        "partitions": {
+          "2026": 1685556
+        },
         "clean_rows": 1685556,
         "last_run": {
-          "at": "2026-11-01T16:30:51.569313+00:00",
+          "at": "2026-11-25T08:42:49.437027+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -23767,9 +23812,12 @@
           "nuts2"
         ],
         "category": "istruzione",
+        "partitions": {
+          "2026": 39936
+        },
         "clean_rows": 39936,
         "last_run": {
-          "at": "2026-11-01T16:31:14.229656+00:00",
+          "at": "2026-11-25T08:43:08.220634+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -23901,9 +23949,12 @@
           "nuts3"
         ],
         "category": "economia",
+        "partitions": {
+          "2026": 1541975
+        },
         "clean_rows": 1541975,
         "last_run": {
-          "at": "2026-11-01T16:31:16.661439+00:00",
+          "at": "2026-11-25T08:43:10.083107+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -24036,9 +24087,12 @@
           "nuts2"
         ],
         "category": "economia",
+        "partitions": {
+          "2026": 497664
+        },
         "clean_rows": 497664,
         "last_run": {
-          "at": "2026-11-01T16:31:35.862256+00:00",
+          "at": "2026-11-25T08:43:25.989753+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -24170,9 +24224,12 @@
           "nuts2"
         ],
         "category": "welfare-lavoro",
+        "partitions": {
+          "2026": 1855
+        },
         "clean_rows": 1855,
         "last_run": {
-          "at": "2026-11-01T16:31:43.028598+00:00",
+          "at": "2026-11-25T08:43:31.727555+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -24284,9 +24341,12 @@
           "nuts3"
         ],
         "category": "welfare-lavoro",
+        "partitions": {
+          "2026": 76392
+        },
         "clean_rows": 76392,
         "last_run": {
-          "at": "2026-11-01T16:31:44.243717+00:00",
+          "at": "2026-11-25T08:43:32.658505+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -24407,9 +24467,12 @@
           "nuts3"
         ],
         "category": "economia",
+        "partitions": {
+          "2026": 308950
+        },
         "clean_rows": 308950,
         "last_run": {
-          "at": "2026-11-01T16:31:46.871000+00:00",
+          "at": "2026-11-25T08:43:35.788728+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -24521,9 +24584,12 @@
           "nuts2"
         ],
         "category": "economia",
+        "partitions": {
+          "2026": 311800
+        },
         "clean_rows": 311800,
         "last_run": {
-          "at": "2026-11-01T16:31:52.375479+00:00",
+          "at": "2026-11-25T08:43:40.266172+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -24643,9 +24709,12 @@
           "nuts3"
         ],
         "category": "economia",
+        "partitions": {
+          "2026": 1339200
+        },
         "clean_rows": 1339200,
         "last_run": {
-          "at": "2026-11-01T16:31:57.795380+00:00",
+          "at": "2026-11-25T08:43:44.306829+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -24767,9 +24836,12 @@
           "nuts2"
         ],
         "category": "sanita",
+        "partitions": {
+          "2026": 26829
+        },
         "clean_rows": 26829,
         "last_run": {
-          "at": "2026-11-04T19:11:05.022669+00:00",
+          "at": "2026-11-25T08:44:21.826292+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -24881,9 +24953,12 @@
           "nuts2"
         ],
         "category": "welfare-lavoro",
+        "partitions": {
+          "2026": 8602
+        },
         "clean_rows": 8602,
         "last_run": {
-          "at": "2026-11-01T16:32:44.340563+00:00",
+          "at": "2026-11-25T08:44:23.179154+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -24995,9 +25070,12 @@
           "trimestrale"
         ],
         "category": "welfare-lavoro",
+        "partitions": {
+          "2026": 724260
+        },
         "clean_rows": 724260,
         "last_run": {
-          "at": "2026-11-01T16:32:45.623498+00:00",
+          "at": "2026-11-25T08:44:24.964657+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -25113,9 +25191,12 @@
           "nuts3"
         ],
         "category": "economia",
+        "partitions": {
+          "2026": 121725
+        },
         "clean_rows": 121725,
         "last_run": {
-          "at": "2026-11-01T16:32:57.917371+00:00",
+          "at": "2026-11-25T08:44:35.257987+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -25238,9 +25319,12 @@
           "paesi"
         ],
         "category": "sanita",
+        "partitions": {
+          "2026": 5106
+        },
         "clean_rows": 5106,
         "last_run": {
-          "at": "2026-11-04T19:17:57.547613+00:00",
+          "at": "2026-11-25T08:44:37.903569+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -25352,9 +25436,12 @@
           "benchmark"
         ],
         "category": "immigrazione",
-        "clean_rows": 297135,
+        "partitions": {
+          "2026": 297297
+        },
+        "clean_rows": 297297,
         "last_run": {
-          "at": "2026-11-03T15:04:51.647600+00:00",
+          "at": "2026-11-25T08:44:41.380179+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -25505,9 +25592,12 @@
           "benchmark"
         ],
         "category": "immigrazione",
+        "partitions": {
+          "2026": 374508
+        },
         "clean_rows": 374508,
         "last_run": {
-          "at": "2026-11-04T14:31:14.841808+00:00",
+          "at": "2026-11-25T08:44:49.748611+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -25659,9 +25749,12 @@
           "benchmark"
         ],
         "category": "immigrazione",
+        "partitions": {
+          "2026": 756432
+        },
         "clean_rows": 756432,
         "last_run": {
-          "at": "2026-11-04T14:31:22.111738+00:00",
+          "at": "2026-11-25T08:44:54.934167+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -25813,9 +25906,12 @@
           "benchmark"
         ],
         "category": "immigrazione",
+        "partitions": {
+          "2026": 213552
+        },
         "clean_rows": 213552,
         "last_run": {
-          "at": "2026-11-03T15:05:00.172379+00:00",
+          "at": "2026-11-25T08:45:04.329970+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -25966,9 +26062,12 @@
           "benchmark"
         ],
         "category": "immigrazione",
+        "partitions": {
+          "2026": 233280
+        },
         "clean_rows": 233280,
         "last_run": {
-          "at": "2026-11-03T15:05:05.620565+00:00",
+          "at": "2026-11-25T08:45:07.954349+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -26119,9 +26218,12 @@
           "benchmark"
         ],
         "category": "immigrazione",
-        "clean_rows": 261009,
+        "partitions": {
+          "2026": 260982
+        },
+        "clean_rows": 260982,
         "last_run": {
-          "at": "2026-11-03T15:05:11.715327+00:00",
+          "at": "2026-11-25T08:45:16.100951+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -26272,9 +26374,12 @@
           "benchmark"
         ],
         "category": "immigrazione",
+        "partitions": {
+          "2026": 236208
+        },
         "clean_rows": 236208,
         "last_run": {
-          "at": "2026-11-03T15:05:17.741647+00:00",
+          "at": "2026-11-25T08:45:23.614750+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -26414,9 +26519,12 @@
           "benchmark"
         ],
         "category": "immigrazione",
+        "partitions": {
+          "2026": 2242440
+        },
         "clean_rows": 2242440,
         "last_run": {
-          "at": "2026-11-03T15:05:24.914124+00:00",
+          "at": "2026-11-25T08:45:30.964038+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -26556,9 +26664,12 @@
           "benchmark"
         ],
         "category": "immigrazione",
+        "partitions": {
+          "2026": 2967552
+        },
         "clean_rows": 2967552,
         "last_run": {
-          "at": "2026-11-03T15:05:51.503706+00:00",
+          "at": "2026-11-25T08:45:48.728301+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -26699,9 +26810,12 @@
           "nazionale"
         ],
         "category": "economia",
+        "partitions": {
+          "2026": 1808358
+        },
         "clean_rows": 1808358,
         "last_run": {
-          "at": "2026-11-01T16:33:01.253387+00:00",
+          "at": "2026-11-25T08:46:13.586456+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -26821,9 +26935,12 @@
           "nuts2"
         ],
         "category": "economia",
+        "partitions": {
+          "2026": 13158405
+        },
         "clean_rows": 13158405,
         "last_run": {
-          "at": "2026-11-01T16:33:19.912704+00:00",
+          "at": "2026-11-25T08:46:29.875750+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -26953,9 +27070,12 @@
           "nuts3"
         ],
         "category": "ambiente",
+        "partitions": {
+          "2026": 165600
+        },
         "clean_rows": 165600,
         "last_run": {
-          "at": "2026-11-01T16:35:38.500414+00:00",
+          "at": "2026-11-25T08:48:18.892192+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -27078,9 +27198,12 @@
           "nuts3"
         ],
         "category": "ambiente",
+        "partitions": {
+          "2026": 1987200
+        },
         "clean_rows": 1987200,
         "last_run": {
-          "at": "2026-11-01T16:32:17.682658+00:00",
+          "at": "2026-11-25T08:43:59.739879+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -27212,9 +27335,12 @@
           "nuts2"
         ],
         "category": "sanita",
+        "partitions": {
+          "2026": 28182
+        },
         "clean_rows": 28182,
         "last_run": {
-          "at": "2026-11-04T19:11:07.177216+00:00",
+          "at": "2026-11-25T08:48:21.973169+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -27326,9 +27452,12 @@
           "nuts3"
         ],
         "category": "welfare-lavoro",
+        "partitions": {
+          "2026": 73010
+        },
         "clean_rows": 73010,
         "last_run": {
-          "at": "2026-11-01T16:35:44.332698+00:00",
+          "at": "2026-11-25T08:48:23.298792+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -27440,9 +27569,12 @@
           "nuts3"
         ],
         "category": "welfare-lavoro",
+        "partitions": {
+          "2026": 5911164
+        },
         "clean_rows": 5911164,
         "last_run": {
-          "at": "2026-11-01T16:35:46.751482+00:00",
+          "at": "2026-11-25T08:48:25.200791+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -27574,9 +27706,12 @@
           "nuts3"
         ],
         "category": "welfare-lavoro",
+        "partitions": {
+          "2026": 1327452
+        },
         "clean_rows": 1327452,
         "last_run": {
-          "at": "2026-11-01T16:36:50.952516+00:00",
+          "at": "2026-11-25T08:49:18.158940+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -27697,9 +27832,12 @@
           "nuts2"
         ],
         "category": "welfare-lavoro",
+        "partitions": {
+          "2026": 9775
+        },
         "clean_rows": 9775,
         "last_run": {
-          "at": "2026-11-01T16:37:09.239368+00:00",
+          "at": "2026-11-25T08:49:35.421287+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -27811,9 +27949,12 @@
           "nuts2"
         ],
         "category": "economia",
+        "partitions": {
+          "2026": 911340
+        },
         "clean_rows": 911340,
         "last_run": {
-          "at": "2026-11-01T16:37:11.055485+00:00",
+          "at": "2026-11-25T08:49:36.822595+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -27935,9 +28076,12 @@
           "nuts3"
         ],
         "category": "ambiente",
+        "partitions": {
+          "2026": 523200
+        },
         "clean_rows": 523200,
         "last_run": {
-          "at": "2026-11-01T16:37:21.319586+00:00",
+          "at": "2026-11-25T08:49:46.672814+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -28068,9 +28212,12 @@
           "nuts2"
         ],
         "category": "istruzione",
+        "partitions": {
+          "2026": 12276
+        },
         "clean_rows": 12276,
         "last_run": {
-          "at": "2026-11-01T16:37:31.102379+00:00",
+          "at": "2026-11-25T08:49:55.116235+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -28212,9 +28359,12 @@
           "nuts3"
         ],
         "category": "economia",
+        "partitions": {
+          "2026": 1206432
+        },
         "clean_rows": 1206432,
         "last_run": {
-          "at": "2026-11-01T16:37:33.873403+00:00",
+          "at": "2026-11-25T08:49:57.575776+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -28348,9 +28498,12 @@
           "benchmark"
         ],
         "category": "trasporti",
+        "partitions": {
+          "2026": 2480
+        },
         "clean_rows": 2480,
         "last_run": {
-          "at": "2026-11-03T08:44:47.957597+00:00",
+          "at": "2026-11-25T08:50:09.119283+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -28472,9 +28625,12 @@
           "benchmark"
         ],
         "category": "trasporti",
+        "partitions": {
+          "2026": 5180
+        },
         "clean_rows": 5180,
         "last_run": {
-          "at": "2026-11-03T08:44:49.922665+00:00",
+          "at": "2026-11-25T08:50:11.956737+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -28596,9 +28752,12 @@
           "nuts2"
         ],
         "category": "trasporti",
-        "clean_rows": 136115,
+        "partitions": {
+          "2026": 140940
+        },
+        "clean_rows": 140940,
         "last_run": {
-          "at": "2026-11-03T08:44:51.801824+00:00",
+          "at": "2026-11-25T08:50:13.370494+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -28721,9 +28880,12 @@
           "nuts2"
         ],
         "category": "trasporti",
-        "clean_rows": 190295,
+        "partitions": {
+          "2026": 195804
+        },
+        "clean_rows": 195804,
         "last_run": {
-          "at": "2026-11-03T08:44:54.998148+00:00",
+          "at": "2026-11-25T08:50:16.514639+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -28844,9 +29006,12 @@
           "nuts3"
         ],
         "category": "trasporti",
+        "partitions": {
+          "2026": 111280
+        },
         "clean_rows": 111280,
         "last_run": {
-          "at": "2026-11-01T16:37:47.623351+00:00",
+          "at": "2026-11-25T08:50:22.625271+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -36295,9 +36460,12 @@
           "statistiche-giudiziarie"
         ],
         "category": "giustizia",
+        "partitions": {
+          "2025": 123203
+        },
         "clean_rows": 123203,
         "last_run": {
-          "at": "2026-11-01T12:42:30.138148+00:00",
+          "at": "2026-11-25T08:28:54.122809+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -36393,9 +36561,12 @@
           "statistiche-giudiziarie"
         ],
         "category": "giustizia",
+        "partitions": {
+          "2025": 21840
+        },
         "clean_rows": 21840,
         "last_run": {
-          "at": "2026-11-01T12:42:47.463391+00:00",
+          "at": "2026-11-25T08:29:10.611884+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -36481,9 +36652,12 @@
           "statistiche-giudiziarie"
         ],
         "category": "giustizia",
+        "partitions": {
+          "2025": 45600
+        },
         "clean_rows": 45600,
         "last_run": {
-          "at": "2026-11-01T12:42:52.883138+00:00",
+          "at": "2026-11-25T08:29:16.487239+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -36553,9 +36727,12 @@
           "statistiche-giudiziarie"
         ],
         "category": "giustizia",
+        "partitions": {
+          "2025": 16697
+        },
         "clean_rows": 16697,
         "last_run": {
-          "at": "2026-11-01T12:42:57.579433+00:00",
+          "at": "2026-11-25T08:29:21.015505+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -36625,9 +36802,12 @@
           "statistiche-giudiziarie"
         ],
         "category": "giustizia",
+        "partitions": {
+          "2025": 76799
+        },
         "clean_rows": 76799,
         "last_run": {
-          "at": "2026-11-01T12:43:00.152883+00:00",
+          "at": "2026-11-25T08:29:23.561882+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -36705,9 +36885,12 @@
           "statistiche-giudiziarie"
         ],
         "category": "giustizia",
+        "partitions": {
+          "2025": 10478
+        },
         "clean_rows": 10478,
         "last_run": {
-          "at": "2026-11-01T12:43:04.769581+00:00",
+          "at": "2026-11-25T08:29:29.606672+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -36775,9 +36958,12 @@
           "statistiche-giudiziarie"
         ],
         "category": "giustizia",
+        "partitions": {
+          "2025": 3952
+        },
         "clean_rows": 3952,
         "last_run": {
-          "at": "2026-11-01T12:43:07.129202+00:00",
+          "at": "2026-11-25T08:29:32.358330+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -36837,9 +37023,12 @@
           "statistiche-giudiziarie"
         ],
         "category": "giustizia",
+        "partitions": {
+          "2026": 8756
+        },
         "clean_rows": 8756,
         "last_run": {
-          "at": "2026-11-01T12:43:08.354410+00:00",
+          "at": "2026-11-25T08:29:33.580734+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -36932,9 +37121,12 @@
           "statistiche-giudiziarie"
         ],
         "category": "giustizia",
+        "partitions": {
+          "2025": 146291
+        },
         "clean_rows": 146291,
         "last_run": {
-          "at": "2026-11-01T12:43:11.055830+00:00",
+          "at": "2026-11-25T08:29:36.293705+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -37025,9 +37217,12 @@
           "statistiche-giudiziarie"
         ],
         "category": "giustizia",
+        "partitions": {
+          "2025": 216
+        },
         "clean_rows": 216,
         "last_run": {
-          "at": "2026-11-01T12:43:32.775282+00:00",
+          "at": "2026-11-25T08:29:57.385360+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -37148,9 +37343,12 @@
           "statistiche-giudiziarie"
         ],
         "category": "giustizia",
+        "partitions": {
+          "2026": 2720
+        },
         "clean_rows": 2720,
         "last_run": {
-          "at": "2026-11-01T12:43:33.928418+00:00",
+          "at": "2026-11-25T08:29:58.169870+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -37259,9 +37457,12 @@
           "statistiche-giudiziarie"
         ],
         "category": "giustizia",
+        "partitions": {
+          "2025": 17652
+        },
         "clean_rows": 17652,
         "last_run": {
-          "at": "2026-11-01T12:43:36.576758+00:00",
+          "at": "2026-11-25T08:30:00.755956+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -37337,9 +37538,12 @@
           "statistiche-giudiziarie"
         ],
         "category": "giustizia",
+        "partitions": {
+          "2025": 11148
+        },
         "clean_rows": 11148,
         "last_run": {
-          "at": "2026-11-01T12:43:41.122311+00:00",
+          "at": "2026-11-25T08:30:05.183054+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -37414,9 +37618,12 @@
           "statistiche-giudiziarie"
         ],
         "category": "giustizia",
+        "partitions": {
+          "2025": 45411
+        },
         "clean_rows": 45411,
         "last_run": {
-          "at": "2026-11-01T12:43:44.328544+00:00",
+          "at": "2026-11-25T08:30:08.406500+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -37499,9 +37706,12 @@
           "statistiche-giudiziarie"
         ],
         "category": "giustizia",
+        "partitions": {
+          "2025": 6594
+        },
         "clean_rows": 6594,
         "last_run": {
-          "at": "2026-11-01T12:43:46.851991+00:00",
+          "at": "2026-11-25T08:30:10.873856+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -37562,9 +37772,12 @@
           "statistiche-giudiziarie"
         ],
         "category": "giustizia",
+        "partitions": {
+          "2025": 741
+        },
         "clean_rows": 741,
         "last_run": {
-          "at": "2026-11-01T12:43:48.207919+00:00",
+          "at": "2026-11-25T08:30:12.257002+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -37715,9 +37928,12 @@
           "statistiche-giudiziarie"
         ],
         "category": "giustizia",
+        "partitions": {
+          "2025": 700
+        },
         "clean_rows": 700,
         "last_run": {
-          "at": "2026-11-01T12:43:50.740478+00:00",
+          "at": "2026-11-25T08:30:15.030224+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -37894,9 +38110,12 @@
           "cessazioni"
         ],
         "category": "economia",
-        "clean_rows": 54432,
+        "partitions": {
+          "2026": 57456
+        },
+        "clean_rows": 57456,
         "last_run": {
-          "at": "2026-11-01T12:25:37.827325+00:00",
+          "at": "2026-11-25T08:28:39.069695+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -37953,9 +38172,12 @@
           "nuove-imprese"
         ],
         "category": "economia",
-        "clean_rows": 54432,
+        "partitions": {
+          "2026": 57456
+        },
+        "clean_rows": 57456,
         "last_run": {
-          "at": "2026-11-01T12:25:40.999398+00:00",
+          "at": "2026-11-25T08:28:41.999475+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -38011,9 +38233,12 @@
           "camcom"
         ],
         "category": "economia",
-        "clean_rows": 54432,
+        "partitions": {
+          "2026": 57456
+        },
+        "clean_rows": 57456,
         "last_run": {
-          "at": "2026-11-01T12:25:43.541184+00:00",
+          "at": "2026-11-25T08:28:45.568698+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -38071,9 +38296,12 @@
           "micro"
         ],
         "category": "economia",
+        "partitions": {
+          "2026": 113206
+        },
         "clean_rows": 113206,
         "last_run": {
-          "at": "2026-11-01T12:25:47.310142+00:00",
+          "at": "2026-11-25T08:28:50.164046+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -38148,9 +38376,12 @@
           "comunale"
         ],
         "category": "economia",
-        "clean_rows": 98064,
+        "partitions": {
+          "2026": 103512
+        },
+        "clean_rows": 103512,
         "last_run": {
-          "at": "2026-11-01T12:25:51.147358+00:00",
+          "at": "2026-11-25T08:28:54.239564+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -38209,9 +38440,12 @@
           "comunale"
         ],
         "category": "economia",
+        "partitions": {
+          "2026": 34172
+        },
         "clean_rows": 34172,
         "last_run": {
-          "at": "2026-11-01T12:25:54.851124+00:00",
+          "at": "2026-11-25T08:28:57.855452+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -38285,9 +38519,12 @@
           "variazione-yoy"
         ],
         "category": "economia",
-        "clean_rows": 18217,
+        "partitions": {
+          "2026": 21007
+        },
+        "clean_rows": 21007,
         "last_run": {
-          "at": "2026-11-01T12:25:57.849134+00:00",
+          "at": "2026-11-25T08:29:01.179037+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -39501,9 +39738,12 @@
           "archivio"
         ],
         "category": "pa",
-        "clean_rows": 75157,
+        "partitions": {
+          "2026": 78138
+        },
+        "clean_rows": 78138,
         "last_run": {
-          "at": "2026-10-15T15:08:15.682209+00:00",
+          "at": "2026-11-25T08:25:22.443223+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -39669,9 +39909,12 @@
           "lavoro"
         ],
         "category": "pa",
-        "clean_rows": 1920,
+        "partitions": {
+          "2026": 1935
+        },
+        "clean_rows": 1935,
         "last_run": {
-          "at": "2026-11-23T17:38:28.092414+00:00",
+          "at": "2026-11-25T08:25:07.138351+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -39842,9 +40085,12 @@
           "esiti"
         ],
         "category": "pa",
-        "clean_rows": 7124,
+        "partitions": {
+          "2026": 7183
+        },
+        "clean_rows": 7183,
         "last_run": {
-          "at": "2026-11-23T17:38:43.496836+00:00",
+          "at": "2026-11-25T08:32:07.760092+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -39919,9 +40165,12 @@
           "compose"
         ],
         "category": "pa",
-        "clean_rows": 75157,
+        "partitions": {
+          "2026": 78138
+        },
+        "clean_rows": 78138,
         "last_run": {
-          "at": "2026-10-15T15:27:40.005185+00:00",
+          "at": "2026-11-25T08:33:10.723009+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -50084,10 +50333,19 @@
           "rs_export"
         ],
         "category": "ambiente",
-        "clean_rows": 89,
+        "partitions": {
+          "2018": 82,
+          "2019": 93,
+          "2020": 92,
+          "2021": 84,
+          "2022": 84,
+          "2023": 84,
+          "2024": 89
+        },
+        "clean_rows": 608,
         "last_run": {
-          "at": "2026-11-16T15:58:46.131413+00:00",
-          "year": 2024,
+          "at": "2026-11-25T08:31:21.398380+00:00",
+          "year": 2023,
           "status": "SUCCESS"
         },
         "location": {
@@ -50156,10 +50414,19 @@
           "gestione"
         ],
         "category": "ambiente",
-        "clean_rows": 276,
+        "partitions": {
+          "2018": 276,
+          "2019": 276,
+          "2020": 276,
+          "2021": 276,
+          "2022": 276,
+          "2023": 276,
+          "2024": 276
+        },
+        "clean_rows": 1932,
         "last_run": {
-          "at": "2026-11-16T15:58:48.318130+00:00",
-          "year": 2024,
+          "at": "2026-11-25T08:31:23.118210+00:00",
+          "year": 2021,
           "status": "SUCCESS"
         },
         "location": {
@@ -50229,10 +50496,23 @@
           "regione"
         ],
         "category": "ambiente",
-        "clean_rows": 1449,
+        "partitions": {
+          "2014": 1449,
+          "2015": 1449,
+          "2016": 1449,
+          "2017": 1449,
+          "2018": 1449,
+          "2019": 1449,
+          "2020": 1449,
+          "2021": 1449,
+          "2022": 1449,
+          "2023": 1449,
+          "2024": 1449
+        },
+        "clean_rows": 15939,
         "last_run": {
-          "at": "2026-11-16T15:58:52.181723+00:00",
-          "year": 2024,
+          "at": "2026-11-25T08:31:27.090022+00:00",
+          "year": 2023,
           "status": "SUCCESS"
         },
         "location": {
@@ -50301,10 +50581,19 @@
           "impianti"
         ],
         "category": "ambiente",
-        "clean_rows": 55,
+        "partitions": {
+          "2018": 39,
+          "2019": 39,
+          "2020": 39,
+          "2021": 39,
+          "2022": 38,
+          "2023": 55,
+          "2024": 55
+        },
+        "clean_rows": 304,
         "last_run": {
-          "at": "2026-11-16T15:58:54.345422+00:00",
-          "year": 2024,
+          "at": "2026-11-25T08:31:29.126340+00:00",
+          "year": 2022,
           "status": "SUCCESS"
         },
         "location": {
@@ -50379,10 +50668,19 @@
           "regione"
         ],
         "category": "ambiente",
-        "clean_rows": 240,
+        "partitions": {
+          "2018": 159,
+          "2019": 155,
+          "2020": 152,
+          "2021": 148,
+          "2022": 151,
+          "2023": 241,
+          "2024": 240
+        },
+        "clean_rows": 1246,
         "last_run": {
-          "at": "2026-11-16T15:58:56.505449+00:00",
-          "year": 2024,
+          "at": "2026-11-25T08:31:31.033738+00:00",
+          "year": 2021,
           "status": "SUCCESS"
         },
         "location": {
@@ -50454,10 +50752,19 @@
           "rs_import"
         ],
         "category": "ambiente",
-        "clean_rows": 142,
+        "partitions": {
+          "2018": 136,
+          "2019": 132,
+          "2020": 133,
+          "2021": 134,
+          "2022": 148,
+          "2023": 138,
+          "2024": 142
+        },
+        "clean_rows": 963,
         "last_run": {
-          "at": "2026-11-16T15:58:58.654702+00:00",
-          "year": 2024,
+          "at": "2026-11-25T08:31:33.314819+00:00",
+          "year": 2022,
           "status": "SUCCESS"
         },
         "location": {
@@ -50526,9 +50833,22 @@
           "produzione"
         ],
         "category": "ambiente",
-        "clean_rows": 1244,
+        "partitions": {
+          "2014": 1248,
+          "2015": 1248,
+          "2016": 1264,
+          "2017": 1248,
+          "2018": 1244,
+          "2019": 1256,
+          "2020": 1256,
+          "2021": 1256,
+          "2022": 1256,
+          "2023": 1256,
+          "2024": 1244
+        },
+        "clean_rows": 13776,
         "last_run": {
-          "at": "2026-11-16T15:59:02.868760+00:00",
+          "at": "2026-11-25T08:31:37.369006+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -50609,10 +50929,23 @@
           "regione"
         ],
         "category": "ambiente",
-        "clean_rows": 21,
+        "partitions": {
+          "2014": 21,
+          "2015": 21,
+          "2016": 21,
+          "2017": 21,
+          "2018": 21,
+          "2019": 21,
+          "2020": 21,
+          "2021": 21,
+          "2022": 21,
+          "2023": 21,
+          "2024": 21
+        },
+        "clean_rows": 231,
         "last_run": {
-          "at": "2026-11-16T15:59:06.010362+00:00",
-          "year": 2024,
+          "at": "2026-11-25T08:31:40.009534+00:00",
+          "year": 2023,
           "status": "SUCCESS"
         },
         "location": {
@@ -50688,9 +51021,26 @@
           "rifiuti"
         ],
         "category": "ambiente",
-        "clean_rows": 7782,
+        "partitions": {
+          "2010": 7988,
+          "2011": 7821,
+          "2012": 6914,
+          "2013": 7000,
+          "2014": 7805,
+          "2015": 7804,
+          "2016": 7751,
+          "2017": 7830,
+          "2018": 7802,
+          "2019": 7753,
+          "2020": 7751,
+          "2021": 7740,
+          "2022": 7749,
+          "2023": 7785,
+          "2024": 7782
+        },
+        "clean_rows": 115275,
         "last_run": {
-          "at": "2026-11-16T15:58:32.148395+00:00",
+          "at": "2026-11-25T08:31:08.000410+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -50871,9 +51221,18 @@
           "kg"
         ],
         "category": "ambiente",
-        "clean_rows": 6647,
+        "partitions": {
+          "2018": 4336,
+          "2019": 4431,
+          "2020": 4525,
+          "2021": 4811,
+          "2022": 5629,
+          "2023": 6402,
+          "2024": 6647
+        },
+        "clean_rows": 36781,
         "last_run": {
-          "at": "2026-11-16T15:58:39.718362+00:00",
+          "at": "2026-11-25T08:31:15.262466+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -50970,9 +51329,18 @@
           "procapite"
         ],
         "category": "ambiente",
-        "clean_rows": 6647,
+        "partitions": {
+          "2018": 4336,
+          "2019": 4431,
+          "2020": 4525,
+          "2021": 4811,
+          "2022": 5629,
+          "2023": 6402,
+          "2024": 6647
+        },
+        "clean_rows": 36781,
         "last_run": {
-          "at": "2026-11-16T15:58:43.743975+00:00",
+          "at": "2026-11-25T08:31:19.219792+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -51077,9 +51445,18 @@
           "ru_export"
         ],
         "category": "ambiente",
-        "clean_rows": 56,
+        "partitions": {
+          "2018": 56,
+          "2019": 61,
+          "2020": 56,
+          "2021": 57,
+          "2022": 53,
+          "2023": 55,
+          "2024": 56
+        },
+        "clean_rows": 394,
         "last_run": {
-          "at": "2026-11-16T15:59:08.143180+00:00",
+          "at": "2026-11-25T08:31:42.096896+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -51148,9 +51525,18 @@
           "flussi"
         ],
         "category": "ambiente",
-        "clean_rows": 63,
+        "partitions": {
+          "2018": 42,
+          "2019": 42,
+          "2020": 63,
+          "2021": 63,
+          "2022": 63,
+          "2023": 63,
+          "2024": 63
+        },
+        "clean_rows": 399,
         "last_run": {
-          "at": "2026-11-16T15:59:10.398565+00:00",
+          "at": "2026-11-25T08:31:44.031639+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -51212,10 +51598,22 @@
           "gestione"
         ],
         "category": "ambiente",
-        "clean_rows": 28,
+        "partitions": {
+          "2015": 27,
+          "2016": 27,
+          "2017": 27,
+          "2018": 27,
+          "2019": 27,
+          "2020": 27,
+          "2021": 27,
+          "2022": 28,
+          "2023": 28,
+          "2024": 28
+        },
+        "clean_rows": 273,
         "last_run": {
-          "at": "2026-11-16T15:59:13.310457+00:00",
-          "year": 2024,
+          "at": "2026-11-25T08:31:46.326185+00:00",
+          "year": 2023,
           "status": "SUCCESS"
         },
         "location": {
@@ -51301,10 +51699,22 @@
           "comune"
         ],
         "category": "ambiente",
-        "clean_rows": 580,
+        "partitions": {
+          "2015": 603,
+          "2016": 611,
+          "2017": 601,
+          "2018": 599,
+          "2019": 610,
+          "2020": 613,
+          "2021": 599,
+          "2022": 594,
+          "2023": 600,
+          "2024": 580
+        },
+        "clean_rows": 6010,
         "last_run": {
-          "at": "2026-11-16T15:59:16.939274+00:00",
-          "year": 2024,
+          "at": "2026-11-25T08:31:49.406827+00:00",
+          "year": 2023,
           "status": "SUCCESS"
         },
         "location": {
@@ -51403,10 +51813,22 @@
           "regione"
         ],
         "category": "ambiente",
-        "clean_rows": 108,
+        "partitions": {
+          "2015": 101,
+          "2016": 102,
+          "2017": 104,
+          "2018": 105,
+          "2019": 109,
+          "2020": 109,
+          "2021": 105,
+          "2022": 105,
+          "2023": 107,
+          "2024": 108
+        },
+        "clean_rows": 1055,
         "last_run": {
-          "at": "2026-11-16T15:59:19.972614+00:00",
-          "year": 2024,
+          "at": "2026-11-25T08:31:52.096699+00:00",
+          "year": 2023,
           "status": "SUCCESS"
         },
         "location": {
@@ -51488,9 +51910,18 @@
           "ru_import"
         ],
         "category": "ambiente",
-        "clean_rows": 71,
+        "partitions": {
+          "2018": 81,
+          "2019": 79,
+          "2020": 81,
+          "2021": 61,
+          "2022": 68,
+          "2023": 77,
+          "2024": 71
+        },
+        "clean_rows": 518,
         "last_run": {
-          "at": "2026-11-16T15:59:22.119905+00:00",
+          "at": "2026-11-25T08:31:54.199774+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -51562,9 +51993,21 @@
           "eta"
         ],
         "category": "istruzione",
-        "clean_rows": 301840,
+        "partitions": {
+          "2016": 332558,
+          "2017": 330000,
+          "2018": 326304,
+          "2019": 321234,
+          "2020": 317224,
+          "2021": 305946,
+          "2022": 308482,
+          "2023": 306996,
+          "2024": 305139,
+          "2025": 301840
+        },
+        "clean_rows": 3155723,
         "last_run": {
-          "at": "2026-11-03T19:12:35.030550+00:00",
+          "at": "2026-11-25T08:34:55.001674+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -51686,9 +52129,21 @@
           "statali"
         ],
         "category": "istruzione",
-        "clean_rows": 50515,
+        "partitions": {
+          "2015": 51122,
+          "2016": 51112,
+          "2017": 51216,
+          "2018": 51194,
+          "2019": 51164,
+          "2020": 51174,
+          "2021": 51185,
+          "2022": 51157,
+          "2023": 51077,
+          "2024": 50515
+        },
+        "clean_rows": 510916,
         "last_run": {
-          "at": "2026-11-03T19:09:50.096967+00:00",
+          "at": "2026-11-25T08:32:17.953613+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -51798,9 +52253,20 @@
           "territorio"
         ],
         "category": "istruzione",
-        "clean_rows": 9989,
+        "partitions": {
+          "2016": 4606,
+          "2017": 4980,
+          "2018": 5236,
+          "2019": 5358,
+          "2020": 5797,
+          "2021": 5979,
+          "2022": 5929,
+          "2023": 10922,
+          "2024": 9989
+        },
+        "clean_rows": 58796,
         "last_run": {
-          "at": "2026-11-03T19:13:05.639981+00:00",
+          "at": "2026-11-25T08:35:23.384058+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -51901,9 +52367,20 @@
           "territorio"
         ],
         "category": "istruzione",
-        "clean_rows": 3292,
+        "partitions": {
+          "2016": 3334,
+          "2017": 3312,
+          "2018": 3217,
+          "2019": 3232,
+          "2020": 3215,
+          "2021": 3236,
+          "2022": 3292,
+          "2023": 3298,
+          "2024": 3292
+        },
+        "clean_rows": 29428,
         "last_run": {
-          "at": "2026-11-03T19:13:20.409579+00:00",
+          "at": "2026-11-25T08:35:36.465052+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -51987,10 +52464,21 @@
           "territorio"
         ],
         "category": "istruzione",
-        "clean_rows": 416,
+        "partitions": {
+          "2016": 417,
+          "2017": 415,
+          "2018": 411,
+          "2019": 410,
+          "2020": 415,
+          "2021": 416,
+          "2022": 416,
+          "2023": 416,
+          "2024": 416
+        },
+        "clean_rows": 3732,
         "last_run": {
-          "at": "2026-11-03T19:13:40.060941+00:00",
-          "year": 2024,
+          "at": "2026-11-25T08:35:52.281721+00:00",
+          "year": 2023,
           "status": "SUCCESS"
         },
         "location": {
@@ -52063,9 +52551,20 @@
           "territorio"
         ],
         "category": "istruzione",
-        "clean_rows": 828,
+        "partitions": {
+          "2016": 778,
+          "2017": 792,
+          "2018": 805,
+          "2019": 810,
+          "2020": 817,
+          "2021": 823,
+          "2022": 830,
+          "2023": 826,
+          "2024": 828
+        },
+        "clean_rows": 7309,
         "last_run": {
-          "at": "2026-11-03T19:13:31.561284+00:00",
+          "at": "2026-11-25T08:35:45.457674+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -52143,9 +52642,19 @@
           "infanzia"
         ],
         "category": "istruzione",
-        "clean_rows": 13027,
+        "partitions": {
+          "2018": 13141,
+          "2019": 13192,
+          "2020": 12945,
+          "2021": 12968,
+          "2022": 13152,
+          "2023": 13144,
+          "2024": 13093,
+          "2025": 13027
+        },
+        "clean_rows": 104662,
         "last_run": {
-          "at": "2026-11-03T19:13:53.117153+00:00",
+          "at": "2026-11-25T08:36:05.043214+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -60287,9 +60796,12 @@
           "canoni"
         ],
         "category": "finanza-pubblica",
+        "partitions": {
+          "2023": 564003
+        },
         "clean_rows": 564003,
         "last_run": {
-          "at": "2026-11-01T12:40:53.087933+00:00",
+          "at": "2026-11-25T08:31:08.438232+00:00",
           "year": 2023,
           "status": "SUCCESS"
         },
@@ -60457,9 +60969,12 @@
           "adempimento"
         ],
         "category": "finanza-pubblica",
+        "partitions": {
+          "2023": 11326
+        },
         "clean_rows": 11326,
         "last_run": {
-          "at": "2026-11-01T12:41:38.939442+00:00",
+          "at": "2026-11-25T08:31:50.309229+00:00",
           "year": 2023,
           "status": "SUCCESS"
         },
@@ -60594,9 +61109,12 @@
           "geolocalizzazione"
         ],
         "category": "finanza-pubblica",
+        "partitions": {
+          "2023": 3257044
+        },
         "clean_rows": 3257044,
         "last_run": {
-          "at": "2026-11-01T12:41:40.477254+00:00",
+          "at": "2026-11-25T08:31:52.070657+00:00",
           "year": 2023,
           "status": "SUCCESS"
         },
@@ -61686,9 +62204,12 @@
           "panorama"
         ],
         "category": "economia",
-        "clean_rows": 1235,
+        "partitions": {
+          "2026": 1262
+        },
+        "clean_rows": 1262,
         "last_run": {
-          "at": "2026-11-02T19:59:02.060033+00:00",
+          "at": "2026-11-25T08:27:10.626309+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -61819,9 +62340,12 @@
           "esposizioni"
         ],
         "category": "economia",
+        "partitions": {
+          "2025": 1100357
+        },
         "clean_rows": 1100357,
         "last_run": {
-          "at": "2026-11-02T19:58:09.765925+00:00",
+          "at": "2026-11-25T08:26:11.478070+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -61966,9 +62490,12 @@
           "sistema-bancario"
         ],
         "category": "economia",
+        "partitions": {
+          "2026": 23858
+        },
         "clean_rows": 23858,
         "last_run": {
-          "at": "2026-11-02T19:58:21.913274+00:00",
+          "at": "2026-11-25T08:26:25.428226+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -62063,9 +62590,12 @@
           "europa"
         ],
         "category": "economia",
+        "partitions": {
+          "2026": 31313
+        },
         "clean_rows": 31313,
         "last_run": {
-          "at": "2026-11-02T19:58:31.128982+00:00",
+          "at": "2026-11-25T08:26:38.074738+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -62162,9 +62692,12 @@
           "kpi"
         ],
         "category": "economia",
-        "clean_rows": 19212,
+        "partitions": {
+          "2026": 19651
+        },
+        "clean_rows": 19651,
         "last_run": {
-          "at": "2026-11-02T19:58:41.847229+00:00",
+          "at": "2026-11-25T08:26:49.626364+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -62261,9 +62794,12 @@
           "sistema-bancario"
         ],
         "category": "economia",
+        "partitions": {
+          "2026": 72951
+        },
         "clean_rows": 72951,
         "last_run": {
-          "at": "2026-11-02T19:58:50.824669+00:00",
+          "at": "2026-11-25T08:27:02.431105+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -62362,9 +62898,12 @@
           "storico"
         ],
         "category": "economia",
+        "partitions": {
+          "2025": 33293
+        },
         "clean_rows": 33293,
         "last_run": {
-          "at": "2026-11-02T19:58:58.532679+00:00",
+          "at": "2026-11-25T08:27:06.317497+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -67717,7 +68256,7 @@
     },
     "istat_pil_territoriale": {
       "name": "PIL regionale e provinciale",
-      "published": false,
+      "published": true,
       "source_id": "istat_sdmx",
       "registry_source": "dataset-incubator",
       "domain": "finanza-pubblica",

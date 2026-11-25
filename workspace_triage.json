@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T07:16:53.561693",
+  "generated_at": "2026-11-25T09:20:59.014023",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -105,13 +105,6 @@
       "category": "other"
     },
     {
-      "number": 166,
-      "title": "chore(registry): schema v2 \u2014 catalogo derivato (partitions, last_run)",
-      "repo": "eurostat",
-      "url": "https://github.com/dataciviclab/eurostat/pull/166",
-      "category": "other"
-    },
-    {
       "number": 26,
       "title": "refactor(raw): source CKAN native al posto di prefetch.py",
       "repo": "giustizia-amministrativa",
@@ -126,13 +119,6 @@
       "category": "other"
     },
     {
-      "number": 57,
-      "title": "chore(post-merge): aggiorna registry (schedule)",
-      "repo": "inpa-reclutamento",
-      "url": "https://github.com/dataciviclab/inpa-reclutamento/pull/57",
-      "category": "other"
-    },
-    {
       "number": 28,
       "title": "fix(make): dataset prima del compose nel batch post-merge",
       "repo": "open-inps",
@@ -144,6 +130,20 @@
       "title": "feat(compose): finanziamento universitario (SIOPE + BDAP)",
       "repo": "open-mur",
       "url": "https://github.com/dataciviclab/open-mur/pull/21",
+      "category": "other"
+    },
+    {
+      "number": 90,
+      "title": "chore(post-merge): aggiorna registry (schedule)",
+      "repo": "open-siope",
+      "url": "https://github.com/dataciviclab/open-siope/pull/90",
+      "category": "other"
+    },
+    {
+      "number": 54,
+      "title": "chore(post-merge): aggiorna registry (schedule)",
+      "repo": "senato-akn",
+      "url": "https://github.com/dataciviclab/senato-akn/pull/54",
       "category": "other"
     },
     {
@@ -3059,7 +3059,7 @@
       "repo": "eurostat",
       "available": true,
       "source_repo": "dataciviclab/eurostat",
-      "updated_at": "2026-11-04",
+      "updated_at": "2026-11-25",
       "datasets": 48,
       "marts": 128,
       "checks": 0,
@@ -3095,7 +3095,7 @@
       "repo": "giustizia-statistiche",
       "available": true,
       "source_repo": "dataciviclab/giustizia-statistiche",
-      "updated_at": "2026-11-01",
+      "updated_at": "2026-11-25",
       "datasets": 18,
       "marts": 29,
       "checks": 0,
@@ -3119,7 +3119,7 @@
       "repo": "imprese-italia",
       "available": true,
       "source_repo": "dataciviclab/imprese-italia",
-      "updated_at": "2026-11-01",
+      "updated_at": "2026-11-25",
       "datasets": 8,
       "marts": 21,
       "checks": 0,
@@ -3143,7 +3143,7 @@
       "repo": "inpa-reclutamento",
       "available": true,
       "source_repo": "dataciviclab/inpa-reclutamento",
-      "updated_at": "2026-11-23",
+      "updated_at": "2026-11-25",
       "datasets": 4,
       "marts": 12,
       "checks": 0,
@@ -3311,7 +3311,7 @@
       "repo": "open-mim",
       "available": true,
       "source_repo": "dataciviclab/open-mim",
-      "updated_at": "2026-11-03",
+      "updated_at": "2026-11-25",
       "datasets": 9,
       "marts": 27,
       "checks": 0,
@@ -3419,7 +3419,7 @@
       "repo": "patrimonio-territorio",
       "available": true,
       "source_repo": "dataciviclab/patrimonio-territorio",
-      "updated_at": "2026-11-01",
+      "updated_at": "2026-11-25",
       "datasets": 3,
       "marts": 4,
       "checks": 0,
@@ -3443,7 +3443,7 @@
       "repo": "rifiuti-urbani",
       "available": true,
       "source_repo": "dataciviclab/rifiuti-urbani",
-      "updated_at": "2026-11-16",
+      "updated_at": "2026-11-25",
       "datasets": 19,
       "marts": 23,
       "checks": 0,
@@ -3479,7 +3479,7 @@
       "repo": "sistema-bancario",
       "available": true,
       "source_repo": "dataciviclab/sistema-bancario",
-      "updated_at": "2026-11-02",
+      "updated_at": "2026-11-25",
       "datasets": 7,
       "marts": 21,
       "checks": 0,
