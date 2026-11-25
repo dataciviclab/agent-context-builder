@@ -174,3 +174,52 @@ def test_fetch_analyses_and_themes_independent_caches():
     assert len(fetcher.fetch_themes()) == 1
     assert len(fetcher.fetch_analyses()) == 1
     assert len(fetcher.fetch_themes()) == 1
+
+
+# ── fetch_schede ────────────────────────────────────────────────────────────
+
+
+@pytest.mark.contract
+def test_fetch_schede_from_cards():
+    raw_map = {
+        "catalog/cards/istat-pil-territoriale.yml": (
+            "dataset: istat_pil_territoriale\n\ntitle: PIL\n"
+        ),
+        "catalog/cards/anac-bandi-gara.yml": "dataset: 'anac_bandi_gara'\n",
+    }
+    collector = _mock_collector(
+        files=["istat-pil-territoriale.yml", "anac-bandi-gara.yml"], raw_map=raw_map
+    )
+    assert ExplorerFetcher(collector).fetch_schede() == {
+        "istat_pil_territoriale",
+        "anac_bandi_gara",
+    }
+
+
+@pytest.mark.contract
+def test_fetch_schede_listing_unavailable():
+    assert ExplorerFetcher(_mock_collector(files=None)).fetch_schede() == set()
+
+
+@pytest.mark.contract
+def test_fetch_schede_dataset_not_first_key():
+    """`dataset:` vale anche se non è la prima chiave (yaml non ordina)."""
+    raw = "title: PIL territoriale\ndescription: x\ndataset: istat_pil_territoriale\n"
+    collector = _mock_collector(files=["pil.yml"], raw_map={"catalog/cards/pil.yml": raw})
+    assert ExplorerFetcher(collector).fetch_schede() == {"istat_pil_territoriale"}
+
+
+@pytest.mark.contract
+def test_fetch_schede_ignores_nested_dataset_key():
+    """Una chiave annidata (`blocks[].dataset`) non è il dataset della card."""
+    raw = "title: x\nblocks:\n  - type: kpi\n    dataset: non_questo\n"
+    collector = _mock_collector(files=["rotto.yml"], raw_map={"catalog/cards/rotto.yml": raw})
+    assert ExplorerFetcher(collector).fetch_schede() == set()
+
+
+@pytest.mark.contract
+def test_fetch_schede_skips_cards_without_dataset():
+    collector = _mock_collector(
+        files=["rotto.yml"], raw_map={"catalog/cards/rotto.yml": "title: senza dataset\n"}
+    )
+    assert ExplorerFetcher(collector).fetch_schede() == set()

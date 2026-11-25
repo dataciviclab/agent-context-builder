@@ -664,3 +664,43 @@ def test_topic_index_last_run_from_v1_compose_signal():
         "year": 2024,
         "status": "SUCCESS",
     }
+
+
+def test_topic_index_published_includes_schede():
+    """`published` = pagina dataset OR scheda (`/schede/{slug}`)."""
+    config = _cfg(repos=["repo1"])
+    gh = make_github_mock()
+
+    registry = {
+        "schema_version": 2,
+        "repo": "repo1",
+        "datasets": [
+            {
+                "slug": "istat_pil_territoriale",
+                "name": "PIL",
+                "period": {"start": 2020, "end": 2024},
+            },
+            {"slug": "senza_pagina", "name": "X", "period": {"start": 2020, "end": 2024}},
+        ],
+        "marts": [],
+    }
+
+    def _list_files(repo, path, ref="main", suffix=""):
+        if path == "catalog/cards":
+            return ["istat-pil-territoriale.yml"]
+        return []
+
+    def _raw_file(repo, path, ref="main"):
+        if path == "registry/registry.json":
+            return json.dumps(registry)
+        if path == "catalog/cards/istat-pil-territoriale.yml":
+            return "dataset: istat_pil_territoriale\n"
+        return None
+
+    gh.list_files.side_effect = _list_files
+    gh.get_raw_file.side_effect = _raw_file
+
+    result = _r(config, gh=gh).render_topic_index()
+    rows = {d["slug"]: d for v in result["datasets"].values() for d in v}
+    assert rows["istat_pil_territoriale"]["published"] is True
+    assert rows["senza_pagina"]["published"] is False
