@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T13:50:13.531128",
+  "generated_at": "2026-11-25T21:09:32.664881",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -53,7 +53,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 13,
+  "open_prs": 17,
   "prs": [
     {
       "number": 38,
@@ -77,17 +77,17 @@
       "category": "other"
     },
     {
+      "number": 308,
+      "title": "perf(ci): loader in parallelo prima del build (4 worker)",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/pull/308",
+      "category": "other"
+    },
+    {
       "number": 913,
       "title": "feat(sanita): intake ISTAT ospiti presidi residenziali (RSA, DBnomics)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/pull/913",
-      "category": "other"
-    },
-    {
-      "number": 911,
-      "title": "feat(sanita): intake ISTAT presidi residenziali socio-assistenziali (RSA)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/911",
       "category": "other"
     },
     {
@@ -98,10 +98,24 @@
       "category": "other"
     },
     {
-      "number": 836,
-      "title": "feat(candidates): bootstrap gse_cer_elenco candidate",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/pull/836",
+      "number": 170,
+      "title": "feat: dataset eurostat-road-freight-nuts3 (ROAD_GO_NA_RU3G)",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/pull/170",
+      "category": "other"
+    },
+    {
+      "number": 169,
+      "title": "feat(dataset): aggiunge eurostat-internet-access-nace-nuts2 (ISOC_R_CI_IN_EN2)",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/pull/169",
+      "category": "other"
+    },
+    {
+      "number": 168,
+      "title": "feat: add eurostat-cultural-employment-nuts2 (CULT_EMP_REG)",
+      "repo": "eurostat",
+      "url": "https://github.com/dataciviclab/eurostat/pull/168",
       "category": "other"
     },
     {
@@ -112,10 +126,10 @@
       "category": "other"
     },
     {
-      "number": 43,
+      "number": 58,
       "title": "chore(post-merge): aggiorna registry (schedule)",
-      "repo": "gu-monitor",
-      "url": "https://github.com/dataciviclab/gu-monitor/pull/43",
+      "repo": "inpa-reclutamento",
+      "url": "https://github.com/dataciviclab/inpa-reclutamento/pull/58",
       "category": "other"
     },
     {
@@ -133,6 +147,20 @@
       "category": "other"
     },
     {
+      "number": 559,
+      "title": "fix(run): calcola la readiness dopo il mart multi-year",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/559",
+      "category": "other"
+    },
+    {
+      "number": 556,
+      "title": "fix(dry-run): valida contro lo schema noto + preflight --sql-check",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/556",
+      "category": "other"
+    },
+    {
       "number": 532,
       "title": "fix(sdmx,clean): streaming per cubi grandi (unpivot, export, union_by_name)",
       "repo": "toolkit",
@@ -147,7 +175,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 68,
+  "open_issues": 70,
   "issues": [
     {
       "number": 13,
@@ -185,6 +213,20 @@
       "category": "other"
     },
     {
+      "number": 310,
+      "title": "perf(data): pagina opencoesione-progetti sui 3 mart esistenti (\u2212186 MB per build)",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/310",
+      "category": "other"
+    },
+    {
+      "number": 309,
+      "title": "perf(data): pagina rna-aiuti-stato sui 6 mart esistenti (\u2212675 MB per build)",
+      "repo": "data-explorer",
+      "url": "https://github.com/dataciviclab/data-explorer/issues/309",
+      "category": "other"
+    },
+    {
       "number": 932,
       "title": "Valutare: SSN Conto Economico trimestrale (56 package)",
       "repo": "dataset-incubator",
@@ -196,20 +238,6 @@
       "title": "intake: ISTAT ospiti presidi residenziali (RSA, DBnomics)",
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/912",
-      "category": "intake"
-    },
-    {
-      "number": 908,
-      "title": "intake: ISTAT presidi residenziali socio-assistenziali e socio-sanitari (RSA)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/908",
-      "category": "intake"
-    },
-    {
-      "number": 720,
-      "title": "intake: gse_cer_elenco \u2014 Elenco nazionale Comunit\u00e0 Energetiche Rinnovabili (2025)",
-      "repo": "dataset-incubator",
-      "url": "https://github.com/dataciviclab/dataset-incubator/issues/720",
       "category": "intake"
     },
     {
@@ -225,6 +253,13 @@
       "repo": "dataset-incubator",
       "url": "https://github.com/dataciviclab/dataset-incubator/issues/663",
       "category": "intake"
+    },
+    {
+      "number": 77,
+      "title": "\ud83d\udc1b Bug: 4 dataset demografici in 404, fonti rimosse da OpenData Bologna",
+      "repo": "dcl-bologna",
+      "url": "https://github.com/dataciviclab/dcl-bologna/issues/77",
+      "category": "bug"
     },
     {
       "number": 8,
@@ -567,6 +602,13 @@
       "title": "validate: redigere i parametri sensibili delle query-string negli artifact tracciati",
       "repo": "source-observatory",
       "url": "https://github.com/dataciviclab/source-observatory/issues/436",
+      "category": "other"
+    },
+    {
+      "number": 557,
+      "title": "[Task] Scanner commenti quote-aware per il check {support.NOME} (prima del gate bloccante in CI)",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/issues/557",
       "category": "other"
     },
     {
@@ -2524,7 +2566,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 13"
+    "Many open PRs: 17"
   ],
   "radar": {
     "available": true,
@@ -2885,7 +2927,7 @@
   },
   "pipeline_state": {
     "available": true,
-    "generated_at": "2026-11-23",
+    "generated_at": "2026-11-25",
     "summary": {
       "total": 0,
       "by_status": {}
@@ -2969,12 +3011,12 @@
       "repo": "dataset-incubator",
       "available": true,
       "source_repo": "dataciviclab/dataset-incubator",
-      "updated_at": "2026-11-23",
-      "datasets": 61,
-      "marts": 119,
+      "updated_at": "2026-11-25",
+      "datasets": 63,
+      "marts": 123,
       "checks": 0,
       "codelists": 2,
-      "gcs": 60,
+      "gcs": 62,
       "reason": ""
     },
     {
@@ -3077,7 +3119,7 @@
       "repo": "gu-monitor",
       "available": true,
       "source_repo": "dataciviclab/gu-monitor",
-      "updated_at": "2026-11-24",
+      "updated_at": "2026-11-25",
       "datasets": 1,
       "marts": 3,
       "checks": 0,
@@ -3245,7 +3287,7 @@
       "repo": "open-elezioni",
       "available": true,
       "source_repo": "dataciviclab/open-elezioni",
-      "updated_at": "2026-11-06",
+      "updated_at": "2026-11-25",
       "datasets": 12,
       "marts": 20,
       "checks": 0,

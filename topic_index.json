@@ -1,6 +1,6 @@
 {
   "schema_version": 8,
-  "generated_at": "2026-11-25T13:50:13.531128",
+  "generated_at": "2026-11-25T21:09:32.664881",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -74,7 +74,7 @@
       "url": "https://github.com/dataciviclab/dataset-incubator",
       "role": "infra",
       "domain": "sanita",
-      "n_datasets": 61,
+      "n_datasets": 63,
       "n_published": 18,
       "sources": [
         "adm_opendata",
@@ -85,6 +85,7 @@
         "dataciviclab_composite",
         "ec_ameco",
         "fts",
+        "gse_opendata",
         "inail_opendata",
         "inps",
         "ispra",
@@ -101,7 +102,7 @@
         "openbdap",
         "ted"
       ],
-      "updated_at": "2026-11-23"
+      "updated_at": "2026-11-25"
     },
     "dcl-bologna": {
       "description": "Bologna in dati \u2014 analisi e dataset aperti sul Comune di Bologna.",
@@ -223,7 +224,7 @@
       "sources": [
         "gazzetta_ufficiale"
       ],
-      "updated_at": "2026-11-24"
+      "updated_at": "2026-11-25"
     },
     "imprese-italia": {
       "description": "Demografia d'impresa italiana: stock, flussi, variazioni e specializzazione territoriale dal Registro delle Imprese",
@@ -397,7 +398,7 @@
         "dait_sut",
         "eligendo"
       ],
-      "updated_at": "2026-11-06"
+      "updated_at": "2026-11-25"
     },
     "open-inps": {
       "description": "20 dataset INPS aperti: pensioni, mercato del lavoro, welfare (NASpI, RdC/PdC, DIS-COLL) in parquet, con compose e dashboard.",
@@ -2554,14 +2555,12 @@
         "registry_source": "dataset-incubator",
         "published": false,
         "description": "Golden record dei comuni italiani: codici ISTAT, catastale (Belfiore), IPA, fiscale, superficie, popolazione, NUTS 2021/2024, ripartizione geografica, flag capoluogo, tipologia UTS, codici storici 103/107/110 province, indirizzo e contatti. Fusione di istat-elenco-comuni (ISTAT SITUAS), ISTAT CSV (codici amministrativi) e ipa-enti (AgID IPA).",
-        "source": "ISTAT SITUAS + ISTAT (Elenco codici unit\u00e0 amministrative) + AgID IPA",
         "tags": [
           "pa",
           "comuni",
           "master"
         ],
         "category": "pa",
-        "clean_rows": 7894,
         "last_run": {
           "at": "2026-11-13T15:15:39.866538+00:00",
           "year": 2026,
@@ -2570,7 +2569,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/comuni_master/2026/comuni_master_2026_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -8982,7 +8981,6 @@
         "registry_source": "dataset-incubator",
         "published": false,
         "description": "Anagrafe completa degli enti pubblici italiani. 63 colonne, ~38k enti. Mappa codici IPA, SIOPE, ISTAT, MIUR, SSN, catastale. Usata come bridge table per join cross-dataset nel joinability scan.",
-        "source": "MEF \u2014 Ragioneria Generale dello Stato / OpenBDAP",
         "tags": [
           "pa",
           "bdap",
@@ -8993,7 +8991,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/bdap_anagrafe_enti/2026/bdap_anagrafe_enti_2026_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -9399,14 +9397,12 @@
         "registry_source": "dataset-incubator",
         "published": true,
         "description": "Spesa sanitaria enti SSN per regione \u2014 Modello LEA (BDAP RGS MEF). Consumi, personale, servizi e altre voci di costo delle ASL italiane.",
-        "source": "BDAP LEA \u2014 Ragioneria Generale dello Stato (MEF)",
         "tags": [
           "sanita",
           "bdap",
           "lea"
         ],
         "category": "sanita",
-        "clean_rows": 24813,
         "last_run": {
           "at": "2026-11-09T16:04:53.655023+00:00",
           "year": 2024,
@@ -9597,7 +9593,6 @@
           "enti"
         ],
         "category": "sanita",
-        "clean_rows": 76124,
         "last_run": {
           "at": "2026-11-09T15:58:25.966125+00:00",
           "year": 2024,
@@ -9717,7 +9712,6 @@
           "bilanci"
         ],
         "category": "sanita",
-        "clean_rows": 8144,
         "last_run": {
           "at": "2026-11-08T11:58:32.576088+00:00",
           "year": 2024,
@@ -9812,7 +9806,6 @@
           "enti"
         ],
         "category": "sanita",
-        "clean_rows": 36097,
         "last_run": {
           "at": "2026-11-09T14:39:06.825568+00:00",
           "year": 2024,
@@ -9933,7 +9926,6 @@
           "bilanci"
         ],
         "category": "sanita",
-        "clean_rows": 4014,
         "last_run": {
           "at": "2026-11-09T11:20:26.520373+00:00",
           "year": 2024,
@@ -10024,14 +10016,12 @@
         "registry_source": "dataset-incubator",
         "published": true,
         "description": "Dipendenti pubblici per ente, comparto, categoria, genere e tipo di orario (2010-2023)",
-        "source": "MEF-BDAP",
         "tags": [
           "welfare-lavoro",
           "dipendenti",
           "pubblici"
         ],
         "category": "welfare-lavoro",
-        "clean_rows": 40521,
         "last_run": {
           "at": "2026-11-05T12:52:03.393705+00:00",
           "year": 2024,
@@ -12089,7 +12079,6 @@
           "regioni"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 713,
         "last_run": {
           "at": "2026-10-11T12:08:16.711204+00:00",
           "year": 2024,
@@ -12098,7 +12087,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/adm_accertato_accise/2024/adm_accertato_accise_2024_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -12169,7 +12158,6 @@
         "registry_source": "dataset-incubator",
         "published": true,
         "description": "Spesa e consumo farmaceutico convenzionato SSN per regione, mese, categoria ATC \u2014 AIFA 2018-2024",
-        "source": "AIFA \u2014 Open Data Spesa e Consumo Farmaceutico",
         "tags": [
           "sanita",
           "aifa",
@@ -12179,7 +12167,6 @@
           "serie-storica"
         ],
         "category": "sanita",
-        "clean_rows": 177635,
         "last_run": {
           "at": "2026-11-17T17:49:42.081652+00:00",
           "year": 2025,
@@ -12325,7 +12312,6 @@
           "ameco"
         ],
         "category": "economia",
-        "clean_rows": 1475,
         "last_run": {
           "at": "2026-10-11T20:10:02.198630+00:00",
           "year": 2026,
@@ -12334,7 +12320,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/ameco/2026/ameco_2026_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -12398,7 +12384,6 @@
         "registry_source": "dataset-incubator",
         "published": false,
         "description": "Flussi mensili di cambio residenza tra regioni italiane, da ANPR (Anagrafe Nazionale della Popolazione Residente). Serie mensile 2022-2026, aggiornata quasi in tempo reale via GitHub Actions.",
-        "source": "ANPR \u2014 Anagrafe Nazionale della Popolazione Residente (PCM)",
         "tags": [
           "pa",
           "anpr",
@@ -12406,7 +12391,6 @@
           "residenziale"
         ],
         "category": "pa",
-        "clean_rows": 23447,
         "last_run": {
           "at": "2026-10-15T18:24:38.266719+00:00",
           "year": 2026,
@@ -12415,7 +12399,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/anpr_mobilita_residenziale/2026/anpr_mobilita_residenziale_2026_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -12489,7 +12473,6 @@
           "comuni"
         ],
         "category": "mobilita",
-        "clean_rows": 176,
         "last_run": {
           "at": "2026-09-19T14:57:53.271286+00:00",
           "year": 2024,
@@ -12498,7 +12481,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/art_taxi_ncc/2024/art_taxi_ncc_2024_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -12547,14 +12530,12 @@
         "registry_source": "dataset-incubator",
         "published": false,
         "description": "Centri di accoglienza straordinaria (CAS), Centri di Prima Accoglienza (CPA) e Hotspot per migranti in Italia. Singolo centro con ente gestore, capienza, presenze, costo giornaliero per ospite, procedura affidamento, operativit\u00e0. Fonte: Centri d'Italia (ActionAid/Openpolis), CC-BY 4.0.",
-        "source": "Centri d'Italia \u2014 ActionAid Italia / Fondazione Openpolis",
         "tags": [
           "immigrazione",
           "centri",
           "accoglienza"
         ],
         "category": "immigrazione",
-        "clean_rows": 47213,
         "last_run": {
           "at": "2026-11-04T10:53:56.108771+00:00",
           "year": 2026,
@@ -12563,7 +12544,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/centri_accoglienza_italia/2026/centri_accoglienza_italia_2026_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -12763,14 +12744,12 @@
         "registry_source": "dataset-incubator",
         "published": false,
         "description": "Progetti del Sistema Accoglienza e Integrazione (SAI) per migranti in Italia. Ogni riga \u00e8 un progetto finanziato a un ente locale, con tipologia (ordinario, minori, dimissioni), capienza, presenze e geografia. Fonte: Centri d'Italia (ActionAid/Openpolis), CC-BY 4.0.",
-        "source": "Centri d'Italia \u2014 ActionAid Italia / Fondazione Openpolis",
         "tags": [
           "immigrazione",
           "sai",
           "progetti"
         ],
         "category": "immigrazione",
-        "clean_rows": 6103,
         "last_run": {
           "at": "2026-11-04T10:54:02.227574+00:00",
           "year": 2026,
@@ -12779,7 +12758,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/sai_progetti_italia/2026/sai_progetti_italia_2026_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -12931,14 +12910,12 @@
         "registry_source": "dataset-incubator",
         "published": false,
         "description": "Strutture del Sistema Accoglienza e Integrazione (SAI) per migranti in Italia: appartamenti, comunit\u00e0 alloggio e centri collettivi. Ogni riga \u00e8 una rilevazione di una singola struttura, con capienza, presenze, tipologia e progetto SAI di appartenenza. Fonte: Centri d'Italia (ActionAid/Openpolis), CC-BY 4.0.",
-        "source": "Centri d'Italia \u2014 ActionAid Italia / Fondazione Openpolis",
         "tags": [
           "immigrazione",
           "sai",
           "strutture"
         ],
         "category": "immigrazione",
-        "clean_rows": 46299,
         "last_run": {
           "at": "2026-11-04T10:54:07.221172+00:00",
           "year": 2026,
@@ -12947,7 +12924,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/sai_strutture_italia/2026/sai_strutture_italia_2026_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -13131,7 +13108,6 @@
         "registry_source": "dataset-incubator",
         "published": true,
         "description": "Anagrafica delle farmacie italiane: indirizzo, comune, provincia, regione, coordinate geografiche, tipologia e periodo di validit\u00e0. Fonte Ministero della Salute.",
-        "source": "Ministero della Salute \u2014 Open Data",
         "tags": [
           "sanita",
           "farmacie"
@@ -13140,7 +13116,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/farmacie/2026/farmacie_2026_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -13300,14 +13276,12 @@
         "registry_source": "dataset-incubator",
         "published": false,
         "description": "Personale dipendente a tempo indeterminato del SSN (ASL/AO/IRCCS pubblici) per regione, ruolo, genere e regime orario (2010-2021). Fonte: Ministero della Salute.",
-        "source": "Ministero della Salute \u2014 Dati del Personale SSN",
         "tags": [
           "sanita",
           "personale",
           "ssn"
         ],
         "category": "sanita",
-        "clean_rows": 18756,
         "last_run": {
           "at": "2026-11-06T22:12:55.630136+00:00",
           "year": 2021,
@@ -13316,7 +13290,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/personale_ssn/2021/personale_ssn_2021_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -13428,7 +13402,6 @@
         "registry_source": "dataset-incubator",
         "published": true,
         "description": "Dati di struttura e attivit\u00e0 dei reparti di ricovero \u2014 posti letto, dimessi, discipline, degenza per struttura \u2014 Ministero della Salute 2022",
-        "source": "Ministero della Salute \u2014 Open Data Dati di struttura e attivit\u00e0 dei reparti di ricovero",
         "tags": [
           "sanita",
           "reparti",
@@ -13438,7 +13411,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/reparti_ricovero/2022/reparti_ricovero_2022_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -13610,14 +13583,12 @@
         "registry_source": "dataset-incubator",
         "published": true,
         "description": "Strutture e attivit\u00e0 delle ASL \u2014 medici di base, pediatri, popolazione residente, servizi territoriali e presidi per regione \u2014 Ministero della Salute 2022",
-        "source": "Ministero della Salute \u2014 Open Data Strutture e attivit\u00e0 ASL",
         "tags": [
           "sanita",
           "strutture",
           "asl"
         ],
         "category": "sanita",
-        "clean_rows": 106,
         "last_run": {
           "at": "2026-07-31T20:04:02.821252+00:00",
           "year": 2022,
@@ -13626,7 +13597,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/strutture_asl/2022/strutture_asl_2022_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -13878,7 +13849,6 @@
         "registry_source": "dataset-incubator",
         "published": true,
         "description": "Strutture di ricovero pubbliche presenti nel territorio della ASL \u2014 personale, posti letto, ricoveri per struttura \u2014 Ministero della Salute 2022",
-        "source": "Ministero della Salute \u2014 Open Data Strutture di ricovero per ASL",
         "tags": [
           "sanita",
           "strutture",
@@ -13889,7 +13859,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/strutture_ricovero_asl/2022/strutture_ricovero_asl_2022_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -14069,7 +14039,6 @@
         "registry_source": "dataset-incubator",
         "published": true,
         "description": "Tutti i finanziamenti UE erogati a beneficiari italiani secondo il Financial Transparency System della Commissione Europea. Per ogni grant: beneficiario (nome, citt\u00e0, tipo), programma (Horizon Europe, Erasmus+, DEP, LIFE, CERV...), importo contrattato e consumato, dipartimento responsabile. Fonte: ec.europa.eu/budget, 2020-2024.",
-        "source": "Commissione Europea \u2014 Financial Transparency System (FTS)",
         "tags": [
           "finanza-pubblica",
           "fts",
@@ -14333,6 +14302,110 @@
         ]
       }
     ],
+    "gse_opendata": [
+      {
+        "slug": "gse_cer_elenco",
+        "url_slug": "gse-cer-elenco",
+        "name": "Gse Cer Elenco",
+        "source_id": "gse_opendata",
+        "period": {
+          "start": 2025,
+          "end": 2025
+        },
+        "registry_source": "dataset-incubator",
+        "published": false,
+        "tags": [
+          "energia",
+          "cer",
+          "comunita-energetiche",
+          "rinnovabili",
+          "pnrr"
+        ],
+        "category": "energia",
+        "partitions": {
+          "2025": 903
+        },
+        "clean_rows": 903,
+        "last_run": {
+          "at": "2026-11-25T18:14:40.545904+00:00",
+          "year": 2025,
+          "status": "SUCCESS"
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/gse_cer_elenco/2025/gse_cer_elenco_2025_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "denominazione",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "potenza_kw",
+            "type": "DOUBLE",
+            "role": "metric"
+          },
+          {
+            "name": "n_impianti",
+            "type": "INTEGER",
+            "role": "metric"
+          },
+          {
+            "name": "n_utenze",
+            "type": "INTEGER",
+            "role": "metric"
+          },
+          {
+            "name": "comune",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "municipality_name"
+          },
+          {
+            "name": "provincia",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "province_code"
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code"
+          },
+          {
+            "name": "latitudine",
+            "type": "DOUBLE",
+            "role": "metric"
+          },
+          {
+            "name": "longitudine",
+            "type": "DOUBLE",
+            "role": "metric"
+          },
+          {
+            "name": "area_convenzionale",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "distributore",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "data_aggiornamento",
+            "type": "TIMESTAMP",
+            "role": "metric"
+          }
+        ],
+        "mart_refs": [
+          "gse_cer_elenco__mart_cer_riepilogo"
+        ]
+      }
+    ],
     "inail_opendata": [
       {
         "slug": "inail_malattie_professionali",
@@ -14355,7 +14428,6 @@
           "icd10"
         ],
         "category": "welfare-lavoro",
-        "clean_rows": 375046,
         "last_run": {
           "at": "2026-10-12T17:10:21.920145+00:00",
           "year": 2026,
@@ -14364,7 +14436,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inail_malattie_professionali/2026/inail_malattie_professionali_2026_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -14499,7 +14571,6 @@
         "registry_source": "dataset-incubator",
         "published": true,
         "description": "Numero di pensioni INPS per gestione, regione, classe eta e importo (2020-2024)",
-        "source": "https://www.inps.it/gestione-previdenziale",
         "tags": [
           "welfare-lavoro",
           "inps",
@@ -14509,7 +14580,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inps_pensioni_trimestrale/2024/inps_pensioni_trimestrale_2024_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -14594,7 +14665,6 @@
         "registry_source": "dataset-incubator",
         "published": true,
         "description": "Pensioni PA: importi pensionistici per gestione, categoria e caratteristiche pensionato",
-        "source": "INPS - OpenData",
         "tags": [
           "welfare-lavoro",
           "pensioni",
@@ -14605,7 +14675,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/pensioni_pa_dag/2024/pensioni_pa_dag_2024_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -16458,7 +16528,6 @@
         "registry_source": "dataset-incubator",
         "published": true,
         "description": "Emissioni di gas serra da processi energetici in Italia, per settore economico (industrie energetiche, manifatturiere, residenziale, trasporti). Fonte ISPRA Inventario Nazionale UNFCCC/EEA. Mt CO\u2082 equivalente.",
-        "source": "ISPRA \u2014 Indicatori Ambientali",
         "tags": [
           "ambiente",
           "ispra",
@@ -16466,7 +16535,6 @@
           "ghg"
         ],
         "category": "ambiente",
-        "clean_rows": 35,
         "last_run": {
           "at": "2026-11-11T13:51:40.358020+00:00",
           "year": 2024,
@@ -16475,7 +16543,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/ispra_emissioni_ghg/2024/ispra_emissioni_ghg_2024_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -16696,7 +16764,6 @@
           "abitazioni"
         ],
         "category": "welfare-lavoro",
-        "clean_rows": 96464,
         "last_run": {
           "at": "2026-11-22T22:19:40.348159+00:00",
           "year": 2026,
@@ -16705,7 +16772,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_abitazioni_censimento/2026/istat_abitazioni_censimento_2026_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -16773,7 +16840,6 @@
         "registry_source": "dataset-incubator",
         "published": false,
         "description": "Unit\u00e0 Locali delle imprese attive (ASIA UL) per comune e sezione ATECO (2018-2024). Fonte: ISTAT via SDMX.",
-        "source": "ISTAT \u2014 ASIA UL (Archivio Statistico Imprese Attive - Unit\u00c3  Locali)",
         "tags": [
           "economia",
           "istat",
@@ -16782,7 +16848,6 @@
           "comuni"
         ],
         "category": "economia",
-        "clean_rows": 1558872,
         "last_run": {
           "at": "2026-11-11T13:51:42.987612+00:00",
           "year": 2024,
@@ -16791,7 +16856,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_asia_ul/2024/istat_asia_ul_2024_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -16858,7 +16923,6 @@
         "registry_source": "dataset-incubator",
         "published": false,
         "description": "Acquisizioni di cittadinanza italiana per territorio, ex-cittadinanza e processo (2012-2025). ISTAT 29_849 via SDMX.",
-        "source": "ISTAT \u2014 Acquisizioni di cittadinanza (29_849)",
         "tags": [
           "immigrazione",
           "cittadinanza",
@@ -16866,7 +16930,6 @@
           "regioni"
         ],
         "category": "immigrazione",
-        "clean_rows": 6923,
         "last_run": {
           "at": "2026-11-11T14:00:09.473051+00:00",
           "year": 2026,
@@ -16875,7 +16938,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_cittadinanze/2026/istat_cittadinanze_2026_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -16948,14 +17011,12 @@
         "registry_source": "dataset-incubator",
         "published": true,
         "description": "Indice di Gini sul reddito netto regionale, con serie storica annuale 2003-2024",
-        "source": "ISTAT \u2014 Dataflow 32_221 (Omogeneita del reddito regionale), SDMX-CSV",
         "tags": [
           "finanza-pubblica",
           "istat",
           "gini"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 968,
         "last_run": {
           "at": "2026-10-11T18:43:30.225986+00:00",
           "year": 2023,
@@ -16964,7 +17025,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_gini_regionale/2023/istat_gini_regionale_2023_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -17023,7 +17084,6 @@
         "registry_source": "dataset-incubator",
         "published": true,
         "description": "Indice di densita abitativa (componenti per 100 mq) per titolo di godimento. Serie storica 2004-2025, ISTAT SDMX 33_179",
-        "source": "ISTAT \u2014 Dataflow 33_179 (Housing conditions), SDMX-CSV",
         "tags": [
           "welfare-lavoro",
           "istat",
@@ -17031,7 +17091,6 @@
           "crowding"
         ],
         "category": "welfare-lavoro",
-        "clean_rows": 990,
         "last_run": {
           "at": "2026-10-11T20:51:53.373119+00:00",
           "year": 2024,
@@ -17040,7 +17099,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_housing_crowding/2024/istat_housing_crowding_2024_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -17210,7 +17269,6 @@
         "registry_source": "dataset-incubator",
         "published": true,
         "description": "ISTAT \u2014 Indice dei prezzi delle abitazioni (IPAB) trimestrale: prezzi per tipo di abitazione (nuove costruzioni, esistenti) e area geografica, base 2015=100, serie 2010-2025.",
-        "source": "ISTAT \u2014 Dataflow 33_292 (IPAB trimestrale), SDMX-CSV",
         "tags": [
           "welfare-lavoro",
           "istat",
@@ -17218,7 +17276,6 @@
           "aree"
         ],
         "category": "welfare-lavoro",
-        "clean_rows": 1024,
         "last_run": {
           "at": "2026-10-11T18:43:34.708034+00:00",
           "year": 2024,
@@ -17227,7 +17284,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_ipab_aree/2024/istat_ipab_aree_2024_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -17289,14 +17346,12 @@
         "registry_source": "dataset-incubator",
         "published": false,
         "description": "Tasso di occupazione (EMP_R) per provincia italiana: serie annuale 2018-2025, per sesso e classe et\u00e0. Fonte ISTAT SDMX flow 150_915. 105 province, 6 classi et\u00e0.",
-        "source": "ISTAT \u2014 SDMX (DCCV_TAXOCCU1)",
         "tags": [
           "welfare-lavoro",
           "istat",
           "occupazione"
         ],
         "category": "welfare-lavoro",
-        "clean_rows": 15118,
         "last_run": {
           "at": "2026-10-11T21:03:07.643067+00:00",
           "year": 2025,
@@ -17305,7 +17360,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_occupazione_provinciale/2025/istat_occupazione_provinciale_2025_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -17390,7 +17445,6 @@
           "censimento"
         ],
         "category": "welfare-lavoro",
-        "clean_rows": 665175,
         "last_run": {
           "at": "2026-11-23T12:45:14.019025+00:00",
           "year": 2026,
@@ -17399,7 +17453,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_pendolarismo_od/2026/istat_pendolarismo_od_2026_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -17440,7 +17494,6 @@
         "registry_source": "dataset-incubator",
         "published": true,
         "description": "PIL, Valore Aggiunto e Imposte nette per nazione, macro-aree, regioni e province. Fonte: ISTAT Conti economici territoriali (DCCN_PILT). Serie 1995-2024.",
-        "source": "ISTAT \u2014 Conti economici territoriali",
         "tags": [
           "economia",
           "istat",
@@ -17448,7 +17501,6 @@
           "territoriale"
         ],
         "category": "economia",
-        "clean_rows": 10584,
         "last_run": {
           "at": "2026-10-11T21:03:21.839119+00:00",
           "year": 2024,
@@ -17457,7 +17509,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_pil_territoriale/2024/istat_pil_territoriale_2024_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -17521,6 +17573,160 @@
         ]
       },
       {
+        "slug": "istat_presidi_residenziali",
+        "url_slug": "istat-presidi-residenziali",
+        "name": "Istat Presidi Residenziali",
+        "source_id": "istat_sdmx",
+        "period": {
+          "start": 2009,
+          "end": 2023
+        },
+        "registry_source": "dataset-incubator",
+        "published": false,
+        "tags": [
+          "sanita",
+          "rsa",
+          "anziani",
+          "presidi-residenziali",
+          "posti-letto",
+          "istat"
+        ],
+        "category": "sanita",
+        "partitions": {
+          "2023": 29694
+        },
+        "clean_rows": 29694,
+        "last_run": {
+          "at": "2026-11-25T18:52:27.156161+00:00",
+          "year": 2023,
+          "status": "SUCCESS"
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/istat_presidi_residenziali/2023/istat_presidi_residenziali_2023_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year"
+          },
+          {
+            "name": "ref_area_codice",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code"
+          },
+          {
+            "name": "tipo_dato_codice",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_dato",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_utenza_codice",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_utenza",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "livello_assistenza_codice",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "livello_assistenza",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_residenzialita_codice",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_residenzialita",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "funzione_protezione_sociale_codice",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "funzione_protezione_sociale",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "natura_giuridica_codice",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "natura_giuridica",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_gestore_codice",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_gestore",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "finanziamento_pubblico_codice",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "finanziamento_pubblico",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "professione_codice",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "professione",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "valore",
+            "type": "DOUBLE",
+            "role": "metric"
+          }
+        ],
+        "mart_refs": [
+          "istat_presidi_residenziali__mart_sintesi_regione",
+          "istat_presidi_residenziali__mart_posti_letto_regione",
+          "istat_presidi_residenziali__mart_trend"
+        ]
+      },
+      {
         "slug": "mortalita_istat_evitabile",
         "url_slug": "mortalita-istat-evitabile",
         "name": "Mortalita Istat Evitabile",
@@ -17538,7 +17744,6 @@
           "evitabile"
         ],
         "category": "sanita",
-        "clean_rows": 31522,
         "last_run": {
           "at": "2026-11-17T18:05:15.152275+00:00",
           "year": 2022,
@@ -17547,7 +17752,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/mortalita_istat_evitabile/2022/mortalita_istat_evitabile_2022_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -17640,14 +17845,12 @@
         "registry_source": "dataset-incubator",
         "published": true,
         "description": "Popolazione residente italiana per comune, sesso, classe di et\u00e0 \u2014 POSAS ISTAT 2019-2025",
-        "source": "ISTAT - demo.posas (Popolazione residente per sesso, et\u00e0 e comune)",
         "tags": [
           "welfare-lavoro",
           "popolazione",
           "istat"
         ],
         "category": "welfare-lavoro",
-        "clean_rows": 797496,
         "last_run": {
           "at": "2026-07-30T18:27:19.148801+00:00",
           "year": 2025,
@@ -17911,7 +18114,6 @@
           "nuts1"
         ],
         "category": "economia",
-        "clean_rows": 10296,
         "last_run": {
           "at": "2026-10-13T09:03:25.808511+00:00",
           "year": 2024,
@@ -17920,7 +18122,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_asia_imprese_addetti/2024/istat_asia_imprese_addetti_2024_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -17993,7 +18195,6 @@
           "province"
         ],
         "category": "immigrazione",
-        "clean_rows": 3179,
         "last_run": {
           "at": "2026-11-04T17:31:56.136255+00:00",
           "year": 2026,
@@ -18002,7 +18203,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_migrazioni/2026/istat_migrazioni_2026_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -18060,7 +18261,6 @@
           "province"
         ],
         "category": "immigrazione",
-        "clean_rows": 145006,
         "last_run": {
           "at": "2026-11-04T17:31:59.875295+00:00",
           "year": 2026,
@@ -18069,7 +18269,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_permessi/2026/istat_permessi_2026_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -18143,7 +18343,6 @@
           "quartili"
         ],
         "category": "economia",
-        "clean_rows": 48201,
         "last_run": {
           "at": "2026-10-20T18:27:04.565319+00:00",
           "year": 2024,
@@ -18152,7 +18351,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_sbs_imprese/2024/istat_sbs_imprese_2024_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -18239,7 +18438,6 @@
           "province"
         ],
         "category": "immigrazione",
-        "clean_rows": 104619,
         "last_run": {
           "at": "2026-11-04T17:33:23.132812+00:00",
           "year": 2026,
@@ -18248,7 +18446,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_stranieri_residenti/2026/istat_stranieri_residenti_2026_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -18319,7 +18517,6 @@
           "dbnomics"
         ],
         "category": "trasporti",
-        "clean_rows": 4114,
         "last_run": {
           "at": "2026-11-04T21:59:02.276293+00:00",
           "year": 2026,
@@ -18328,7 +18525,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_trasporto_ferroviario/2026/istat_trasporto_ferroviario_2026_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -18403,7 +18600,6 @@
           "origine-destinazione"
         ],
         "category": "trasporti",
-        "clean_rows": 93899,
         "last_run": {
           "at": "2026-11-04T21:59:07.440112+00:00",
           "year": 2026,
@@ -18412,7 +18608,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_trasporto_merci_strada/2026/istat_trasporto_merci_strada_2026_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -18482,7 +18678,6 @@
           "conti-territoriali"
         ],
         "category": "economia",
-        "clean_rows": 49770,
         "last_run": {
           "at": "2026-10-13T09:03:51.427682+00:00",
           "year": 2023,
@@ -18491,7 +18686,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_va_branca/2023/istat_va_branca_2023_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -18680,7 +18875,6 @@
         "registry_source": "dataset-incubator",
         "published": false,
         "description": "Elenco completo dei 7.894 comuni italiani con codici ISTAT (6 cifre), codici catastali Belfiore, superficie territoriale in km\u00b2, popolazione residente e legale, e caratteristiche geografiche (regione, provincia, zona altimetrica, altitudine, litoraneit\u00e0/insularit\u00e0). Fonte: ISTAT SITUAS.",
-        "source": "ISTAT SITUAS (via opensituas)",
         "tags": [
           "pa",
           "istat",
@@ -18688,7 +18882,6 @@
           "comuni"
         ],
         "category": "pa",
-        "clean_rows": 7894,
         "last_run": {
           "at": "2026-08-02T14:46:46.836471+00:00",
           "year": 2026,
@@ -18697,7 +18890,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_elenco_comuni/2026/istat_elenco_comuni_2026_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -18811,7 +19004,6 @@
           "forecast"
         ],
         "category": "welfare-lavoro",
-        "clean_rows": 413952,
         "last_run": {
           "at": "2026-10-15T09:51:50.803428+00:00",
           "year": 2025,
@@ -18820,7 +19012,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_proiezioni_demografiche/2025/istat_proiezioni_demografiche_2025_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -18876,7 +19068,6 @@
           "serie-storica"
         ],
         "category": "energia",
-        "clean_rows": 2304,
         "last_run": {
           "at": "2026-11-04T15:29:03.653488+00:00",
           "year": 2025,
@@ -18885,7 +19076,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/mase_consumi_petroliferi/2025/mase_consumi_petroliferi_2025_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -18938,7 +19129,6 @@
           "serie-storica"
         ],
         "category": "energia",
-        "clean_rows": 7104,
         "last_run": {
           "at": "2026-11-04T15:29:42.046256+00:00",
           "year": 2025,
@@ -18947,7 +19137,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/mase_gas_consumi/2025/mase_gas_consumi_2025_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -19005,7 +19195,6 @@
           "serie-storica"
         ],
         "category": "energia",
-        "clean_rows": 3984,
         "last_run": {
           "at": "2026-11-04T15:30:19.409461+00:00",
           "year": 2024,
@@ -19014,7 +19203,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/mase_gas_import/2024/mase_gas_import_2024_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -19072,7 +19261,6 @@
           "serie-storica"
         ],
         "category": "energia",
-        "clean_rows": 2282,
         "last_run": {
           "at": "2026-10-11T13:08:24.435544+00:00",
           "year": 2026,
@@ -19081,7 +19269,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/mase_prezzi_carburanti_mensili/2026/mase_prezzi_carburanti_mensili_2026_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -19160,7 +19348,6 @@
           "fiscalita"
         ],
         "category": "energia",
-        "clean_rows": 6880,
         "last_run": {
           "at": "2026-10-11T13:08:31.866126+00:00",
           "year": 2026,
@@ -19169,7 +19356,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/mase_prezzi_carburanti_settimanali/2026/mase_prezzi_carburanti_settimanali_2026_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -19246,7 +19433,6 @@
           "incentivi"
         ],
         "category": "welfare-lavoro",
-        "clean_rows": 2868,
         "last_run": {
           "at": "2026-10-12T10:39:03.514901+00:00",
           "year": 2024,
@@ -19255,7 +19441,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/minlavoro_agevolazioni/2024/minlavoro_agevolazioni_2024_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -19340,7 +19526,6 @@
           "somministrazione"
         ],
         "category": "welfare-lavoro",
-        "clean_rows": 23598,
         "last_run": {
           "at": "2026-10-12T10:39:59.059592+00:00",
           "year": 2023,
@@ -19349,7 +19534,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/minlavoro_flussi/2023/minlavoro_flussi_2023_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -19470,7 +19655,6 @@
           "mit"
         ],
         "category": "welfare-lavoro",
-        "clean_rows": 5560,
         "last_run": {
           "at": "2026-11-23T11:22:14.608664+00:00",
           "year": 2026,
@@ -19479,7 +19663,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/mit_erp_interventi/2026/mit_erp_interventi_2026_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -19612,7 +19796,6 @@
         "registry_source": "dataset-incubator",
         "published": true,
         "description": "Serie mensile di incidenti stradali, morti, feriti e indicatori di mortalit\u00e0/gravit\u00e0/lesivit\u00e0 \u2014 Italia 2001-2018, 216 mesi",
-        "source": "MIT \u2014 Ministero delle Infrastrutture e dei Trasporti, portale open data",
         "tags": [
           "ambiente",
           "mit",
@@ -19622,7 +19805,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/mit_incidentalita_mensile/2001/mit_incidentalita_mensile_2001_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -19737,7 +19920,6 @@
         "registry_source": "dataset-incubator",
         "published": false,
         "description": "Opere pubbliche incompiute al 31/12/2020 \u2014 Italia, 405 opere con CUP, stato, cause e importi",
-        "source": "MIT \u2014 Ministero delle Infrastrutture e dei Trasporti, portale open data",
         "tags": [
           "appalti",
           "mit",
@@ -19748,7 +19930,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/mit_opere_incompiute_2020/2020/mit_opere_incompiute_2020_2020_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -19932,7 +20114,6 @@
         "registry_source": "dataset-incubator",
         "published": true,
         "description": "Posti letto per stabilimento ospedaliero, disciplina e regime di degenza (ordinaria, day hospital, day surgery). Dati del Ministero della Salute.",
-        "source": "Ministero della Salute \u2014 Banca Dati Posti Letto",
         "tags": [
           "sanita",
           "posti",
@@ -20105,14 +20286,12 @@
         "registry_source": "dataset-incubator",
         "published": false,
         "description": "Arrivi giornalieri di migranti via mare in Italia (2019-2025). Dati estratti da PDF del Ministero dell'Interno.",
-        "source": "onData \u2014 liberiamoli-tutti",
         "tags": [
           "immigrazione",
           "migranti",
           "sbarchi"
         ],
         "category": "immigrazione",
-        "clean_rows": 2465,
         "last_run": {
           "at": "2026-11-04T10:54:11.090447+00:00",
           "year": 2026,
@@ -20121,7 +20300,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/sbarchi_migranti_italia/2026/sbarchi_migranti_italia_2026_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -20167,7 +20346,6 @@
         "registry_source": "dataset-incubator",
         "published": false,
         "description": "Bandi di gara pubblici sopra soglia UE pubblicati da stazioni appaltanti italiane su TED (Tenders Electronic Daily). Per ogni bando: stazione appaltante, oggetto, CPV, valore stimato, tipo procedura, localizzazione NUTS, criteri di aggiudicazione, flag fondi UE, accordo quadro. Fonte: data.europa.eu, 2020-2023.",
-        "source": "data.europa.eu \u2014 TED (Tenders Electronic Daily)",
         "tags": [
           "appalti",
           "ted",
@@ -38474,9 +38652,14 @@
           "monitoraggio"
         ],
         "category": "normativa",
-        "clean_rows": 27911,
+        "partitions": {
+          "2024": 38166,
+          "2025": 32687,
+          "2026": 28140
+        },
+        "clean_rows": 98993,
         "last_run": {
-          "at": "2026-11-24T13:49:42.758058+00:00",
+          "at": "2026-11-25T16:44:07.413170+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -49242,9 +49425,12 @@
           "locali"
         ],
         "category": "politica",
+        "partitions": {
+          "2026": 127805
+        },
         "clean_rows": 127805,
         "last_run": {
-          "at": "2026-11-06T22:01:04.749121+00:00",
+          "at": "2026-11-25T14:58:37.918973+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -49419,9 +49605,12 @@
           "serie-storica"
         ],
         "category": "politica",
+        "partitions": {
+          "2025": 6075430
+        },
         "clean_rows": 6075430,
         "last_run": {
-          "at": "2026-11-06T22:01:09.898960+00:00",
+          "at": "2026-11-25T14:58:42.482519+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -49630,7 +49819,7 @@
         "source_id": "eligendo",
         "period": {
           "start": 1964,
-          "end": 2024
+          "end": 2026
         },
         "registry_source": "open-elezioni",
         "published": true,
@@ -49639,10 +49828,54 @@
           "elezioni"
         ],
         "category": "politica",
-        "clean_rows": 10343,
+        "partitions": {
+          "1964": 20517,
+          "1970": 19972,
+          "1975": 19227,
+          "1980": 20223,
+          "1985": 21445,
+          "1989": 1250,
+          "1990": 21566,
+          "1991": 563,
+          "1992": 1282,
+          "1993": 5489,
+          "1994": 3068,
+          "1995": 15757,
+          "1996": 1411,
+          "1997": 7317,
+          "1998": 4532,
+          "1999": 13424,
+          "2000": 2776,
+          "2001": 5229,
+          "2002": 5019,
+          "2003": 2932,
+          "2004": 14211,
+          "2005": 2661,
+          "2006": 5384,
+          "2007": 5209,
+          "2008": 2419,
+          "2009": 13467,
+          "2010": 2970,
+          "2011": 6230,
+          "2012": 5507,
+          "2013": 3581,
+          "2014": 13218,
+          "2015": 3599,
+          "2016": 5880,
+          "2017": 4894,
+          "2018": 3464,
+          "2019": 11199,
+          "2020": 3548,
+          "2021": 4886,
+          "2022": 3964,
+          "2023": 3080,
+          "2024": 10343,
+          "2026": 3383
+        },
+        "clean_rows": 326096,
         "last_run": {
-          "at": "2026-11-06T22:08:01.249492+00:00",
-          "year": 2024,
+          "at": "2026-11-25T15:05:30.736123+00:00",
+          "year": 2026,
           "status": "SUCCESS"
         },
         "location": {
@@ -49773,9 +50006,21 @@
           "europee"
         ],
         "category": "politica",
-        "clean_rows": 93984,
+        "partitions": {
+          "1979": 98357,
+          "1984": 82361,
+          "1989": 101657,
+          "1994": 135741,
+          "1999": 172829,
+          "2004": 180760,
+          "2009": 109577,
+          "2014": 90096,
+          "2019": 124515,
+          "2024": 93984
+        },
+        "clean_rows": 1189877,
         "last_run": {
-          "at": "2026-11-06T22:08:43.276339+00:00",
+          "at": "2026-11-25T15:06:15.979646+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -49882,9 +50127,12 @@
           "politiche"
         ],
         "category": "politica",
+        "partitions": {
+          "2022": 3784837
+        },
         "clean_rows": 3784837,
         "last_run": {
-          "at": "2026-11-06T22:08:50.712294+00:00",
+          "at": "2026-11-25T15:06:22.242549+00:00",
           "year": 2022,
           "status": "SUCCESS"
         },
@@ -50048,9 +50296,19 @@
           "provinciali"
         ],
         "category": "politica",
-        "clean_rows": 21786,
+        "partitions": {
+          "2004": 157009,
+          "2005": 13308,
+          "2006": 13474,
+          "2007": 14391,
+          "2008": 17092,
+          "2009": 138390,
+          "2010": 17991,
+          "2011": 21786
+        },
+        "clean_rows": 393441,
         "last_run": {
-          "at": "2026-11-06T22:12:30.749192+00:00",
+          "at": "2026-11-25T15:10:45.951369+00:00",
           "year": 2011,
           "status": "SUCCESS"
         },
@@ -50172,7 +50430,7 @@
         "source_id": "eligendo",
         "period": {
           "start": 1974,
-          "end": 2022
+          "end": 2026
         },
         "registry_source": "open-elezioni",
         "published": true,
@@ -50182,10 +50440,36 @@
           "referendum"
         ],
         "category": "politica",
-        "clean_rows": 39515,
+        "partitions": {
+          "1974": 8059,
+          "1978": 16145,
+          "1981": 40425,
+          "1985": 8090,
+          "1987": 475,
+          "1989": 95,
+          "1990": 285,
+          "1991": 95,
+          "1993": 760,
+          "1995": 1236,
+          "1997": 721,
+          "1999": 103,
+          "2000": 721,
+          "2001": 103,
+          "2003": 206,
+          "2005": 440,
+          "2006": 110,
+          "2009": 24300,
+          "2011": 32368,
+          "2016": 15998,
+          "2020": 7903,
+          "2022": 39515,
+          "2025": 39480,
+          "2026": 7895
+        },
+        "clean_rows": 245528,
         "last_run": {
-          "at": "2026-11-06T22:11:04.997065+00:00",
-          "year": 2022,
+          "at": "2026-11-25T15:08:40.156576+00:00",
+          "year": 2026,
           "status": "SUCCESS"
         },
         "location": {
@@ -50302,7 +50586,7 @@
         "source_id": "eligendo",
         "period": {
           "start": 1970,
-          "end": 2024
+          "end": 2025
         },
         "registry_source": "open-elezioni",
         "published": true,
@@ -50311,10 +50595,34 @@
           "elezioni"
         ],
         "category": "politica",
-        "clean_rows": 15266,
+        "partitions": {
+          "1970": 59077,
+          "1975": 53835,
+          "1980": 64051,
+          "1985": 76266,
+          "1990": 91672,
+          "1995": 77628,
+          "2000": 103120,
+          "2001": 7871,
+          "2005": 100670,
+          "2006": 2124,
+          "2008": 4114,
+          "2010": 94234,
+          "2013": 39605,
+          "2014": 34180,
+          "2015": 35999,
+          "2018": 35060,
+          "2019": 24645,
+          "2020": 10299,
+          "2021": 8484,
+          "2023": 24125,
+          "2024": 31055,
+          "2025": 31851
+        },
+        "clean_rows": 1009965,
         "last_run": {
-          "at": "2026-11-06T22:12:05.957673+00:00",
-          "year": 2024,
+          "at": "2026-11-25T15:10:00.794645+00:00",
+          "year": 2025,
           "status": "SUCCESS"
         },
         "location": {
@@ -50435,9 +50743,12 @@
           "istat"
         ],
         "category": "support",
+        "partitions": {
+          "2026": 7894
+        },
         "clean_rows": 7894,
         "last_run": {
-          "at": "2026-11-06T22:00:46.082383+00:00",
+          "at": "2026-11-25T14:58:21.664093+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -50505,9 +50816,12 @@
           "elezioni"
         ],
         "category": "support",
+        "partitions": {
+          "2026": 7906
+        },
         "clean_rows": 7906,
         "last_run": {
-          "at": "2026-11-06T22:00:50.013716+00:00",
+          "at": "2026-11-25T14:58:25.925304+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -50579,9 +50893,12 @@
           "elezioni"
         ],
         "category": "support",
+        "partitions": {
+          "2026": 7898
+        },
         "clean_rows": 7898,
         "last_run": {
-          "at": "2026-11-06T22:00:54.038923+00:00",
+          "at": "2026-11-25T14:58:29.314112+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -50654,9 +50971,12 @@
           "bridge"
         ],
         "category": "support",
+        "partitions": {
+          "2026": 7894
+        },
         "clean_rows": 7894,
         "last_run": {
-          "at": "2026-11-06T22:00:55.427149+00:00",
+          "at": "2026-11-25T14:58:30.615059+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -65243,6 +65563,7 @@
         "eurostat_tran_r_vehst",
         "eurostat_tran_sf_roadnu",
         "gme_pun_storico",
+        "gse_cer_elenco",
         "irena_costi_tecnologia",
         "irena_lcoe",
         "ispra_bathw",
@@ -65299,7 +65620,7 @@
         "terna_storage_accumuli",
         "varchi_ztl"
       ],
-      "dataset_count": 81
+      "dataset_count": 82
     },
     {
       "slug": "finanza-pubblica",
@@ -65531,6 +65852,7 @@
         "eurostat_ltc_beds",
         "eurostat_physicians_nuts2",
         "farmacie",
+        "istat_presidi_residenziali",
         "malasanita_compose",
         "mortalita_istat_evitabile",
         "personale_ssn",
@@ -65539,7 +65861,7 @@
         "strutture_asl",
         "strutture_ricovero_asl"
       ],
-      "dataset_count": 17
+      "dataset_count": 18
     },
     {
       "slug": "welfare-lavoro",
@@ -65804,6 +66126,7 @@
         "eurostat_tran_r_vehst",
         "eurostat_tran_sf_roadnu",
         "gme_pun_storico",
+        "gse_cer_elenco",
         "irena_costi_tecnologia",
         "irena_lcoe",
         "ispra_bathw",
@@ -66051,6 +66374,7 @@
         "eurostat_ltc_beds",
         "eurostat_physicians_nuts2",
         "farmacie",
+        "istat_presidi_residenziali",
         "malasanita_compose",
         "mortalita_istat_evitabile",
         "personale_ssn",
@@ -66502,7 +66826,7 @@
       "status": "published",
       "description": "Emissioni di gas serra da processi energetici per settore \u2014 ISPRA Inventario Nazionale UNFCCC/EEA, 1990-2023",
       "source": "ISPRA \u2014 Indicatori Ambientali",
-      "period": "1990\u20132023"
+      "period": "1990\u20132024"
     },
     {
       "slug": "istat-gini-regionale",
@@ -66612,7 +66936,7 @@
       "status": "published",
       "description": "Gare d'appalto dei progetti PNRR (fonte ReGiS): collegamento CUP\u2192CIG, importi, procedura e submisura",
       "source": "MEF \u2014 Italia Domani (italiadomani.gov.it)",
-      "period": "2018\u20132025"
+      "period": "2018\u20132026"
     },
     {
       "slug": "pnrr-pagamenti",
@@ -66974,6 +67298,7 @@
       "dipendenti_pubblici",
       "farmacie",
       "fts_eu_grants",
+      "gse_cer_elenco",
       "inail_malattie_professionali",
       "inps_pensioni_trimestrale",
       "ispra_emissioni_ghg",
@@ -66990,6 +67315,7 @@
       "istat_pendolarismo_od",
       "istat_permessi",
       "istat_pil_territoriale",
+      "istat_presidi_residenziali",
       "istat_proiezioni_demografiche",
       "istat_sbs_imprese",
       "istat_stranieri_residenti",
@@ -67825,6 +68151,7 @@
       "eurostat_ltc_beds",
       "eurostat_physicians_nuts2",
       "farmacie",
+      "istat_presidi_residenziali",
       "malasanita_compose",
       "mortalita_istat_evitabile",
       "personale_ssn",
@@ -67860,6 +68187,7 @@
       "eurostat_tran_r_vehst",
       "eurostat_tran_sf_roadnu",
       "gme_pun_storico",
+      "gse_cer_elenco",
       "irena_costi_tecnologia",
       "irena_lcoe",
       "ispra_bathw",
@@ -68925,6 +69253,22 @@
       ],
       "description": "Tutti i finanziamenti UE erogati a beneficiari italiani secondo il Financial Transparency System della Commissione Europea. Per ogni grant: beneficiario (nome, citt\u00e0, tipo), programma (Horizon Europe, Erasmus+, DEP, LIFE, CERV...), importo contrattato e consumato, dipartimento responsabile. Fonte: ec.europa.eu/budget, 2020-2024."
     },
+    "gse_cer_elenco": {
+      "name": "Gse Cer Elenco",
+      "published": false,
+      "source_id": "gse_opendata",
+      "registry_source": "dataset-incubator",
+      "domain": "territorio-ambiente",
+      "category": "energia",
+      "tags": [
+        "energia",
+        "cer",
+        "comunita-energetiche",
+        "rinnovabili",
+        "pnrr"
+      ],
+      "description": null
+    },
     "inail_malattie_professionali": {
       "name": "Inail Malattie Professionali",
       "published": false,
@@ -69171,6 +69515,23 @@
         "territoriale"
       ],
       "description": "PIL, Valore Aggiunto e Imposte nette per nazione, macro-aree, regioni e province. Fonte: ISTAT Conti economici territoriali (DCCN_PILT). Serie 1995-2024."
+    },
+    "istat_presidi_residenziali": {
+      "name": "Istat Presidi Residenziali",
+      "published": false,
+      "source_id": "istat_sdmx",
+      "registry_source": "dataset-incubator",
+      "domain": "sanita",
+      "category": "sanita",
+      "tags": [
+        "sanita",
+        "rsa",
+        "anziani",
+        "presidi-residenziali",
+        "posti-letto",
+        "istat"
+      ],
+      "description": null
     },
     "istat_proiezioni_demografiche": {
       "name": "Istat Proiezioni Demografiche",
