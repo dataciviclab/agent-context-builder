@@ -1,6 +1,6 @@
 # Session Bootstrap
 
-**Generated**: 2026-11-24T23:43:31.649008
+**Generated**: 2026-11-25T07:16:53.561693
 
 ## Stato
 
@@ -13,7 +13,7 @@ Radar: 39 fonti GREEN 34 · Registry: 44 repo · 553 dataset
 - [PR] appalti-pubblici#19: feat(anac-cross): codice IPA della stazione appaltante (#13)
 - [PR] dataset-incubator#913: feat(sanita): intake ISTAT ospiti presidi residenziali (RSA, DBnomics)
 - [PR] dataset-incubator#911: feat(sanita): intake ISTAT presidi residenziali socio-assistenziali (RSA)
-- [PR] 5 dependabot bump (skipped)
+- [PR] 4 dependabot bump (skipped)
 
 ## Analisi pubbliche (45)
 

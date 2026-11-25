@@ -1,6 +1,6 @@
 {
   "schema_version": 8,
-  "generated_at": "2026-11-24T23:43:31.649008",
+  "generated_at": "2026-11-25T07:16:53.561693",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -141,7 +141,7 @@
       "sources": [
         "mef_finanze"
       ],
-      "updated_at": "2026-11-17"
+      "updated_at": "2026-11-25"
     },
     "energia-italia": {
       "description": "Intelligence sul sistema elettrico italiano: produzione, mix energetico, prezzi, emissioni e confronti EU",
@@ -321,7 +321,7 @@
       "sources": [
         "oecd"
       ],
-      "updated_at": "2026-11-05"
+      "updated_at": "2026-11-25"
     },
     "open-aci": {
       "description": "Parco auto italiano aperto: immatricolazioni, radiazioni, stock e usato ACI.",
@@ -357,7 +357,7 @@
       "sources": [
         "opencoesione"
       ],
-      "updated_at": "2026-11-01"
+      "updated_at": "2026-11-25"
     },
     "open-consip": {
       "description": "Come la PA italiana acquista beni e servizi via Consip, e con quali differenze territoriali?",
@@ -472,7 +472,7 @@
         "dataciviclab_composite",
         "italiadomani"
       ],
-      "updated_at": "2026-11-23"
+      "updated_at": "2026-11-24"
     },
     "open-politica": {
       "description": "La politica italiana in dati aperti: chi vota, come vota, cosa decide. Parlamento, elezioni e governo in parquet pronti per l'analisi.",
@@ -4341,7 +4341,7 @@
         ],
         "category": "finanza-pubblica",
         "last_run": {
-          "at": "2026-11-23T19:27:01.346034+00:00",
+          "at": "2026-11-24T23:44:09.779475+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -30695,9 +30695,21 @@
           "imposta"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 21,
+        "partitions": {
+          "2016": 21,
+          "2017": 21,
+          "2018": 21,
+          "2019": 21,
+          "2020": 21,
+          "2021": 21,
+          "2022": 21,
+          "2023": 21,
+          "2024": 21,
+          "2025": 21
+        },
+        "clean_rows": 210,
         "last_run": {
-          "at": "2026-11-17T18:03:55.959225+00:00",
+          "at": "2026-11-24T23:59:34.824383+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -31226,9 +31238,22 @@
           "redditi"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 21,
+        "partitions": {
+          "2015": 21,
+          "2016": 21,
+          "2017": 21,
+          "2018": 21,
+          "2019": 21,
+          "2020": 21,
+          "2021": 21,
+          "2022": 21,
+          "2023": 21,
+          "2024": 21,
+          "2025": 21
+        },
+        "clean_rows": 231,
         "last_run": {
-          "at": "2026-11-08T21:57:56.718116+00:00",
+          "at": "2026-11-25T00:00:07.068862+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -31507,9 +31532,18 @@
           "redditi"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 21,
+        "partitions": {
+          "2019": 21,
+          "2020": 21,
+          "2021": 21,
+          "2022": 21,
+          "2023": 21,
+          "2024": 21,
+          "2025": 21
+        },
+        "clean_rows": 147,
         "last_run": {
-          "at": "2026-11-08T21:58:16.860574+00:00",
+          "at": "2026-11-25T00:00:25.927829+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -31697,9 +31731,23 @@
           "redditi"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 33,
+        "partitions": {
+          "2014": 33,
+          "2015": 33,
+          "2016": 33,
+          "2017": 33,
+          "2018": 33,
+          "2019": 33,
+          "2020": 33,
+          "2021": 33,
+          "2022": 33,
+          "2023": 33,
+          "2024": 33,
+          "2025": 33
+        },
+        "clean_rows": 396,
         "last_run": {
-          "at": "2026-11-08T21:58:47.938708+00:00",
+          "at": "2026-11-25T00:00:55.310891+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -31875,9 +31923,23 @@
           "redditi"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 38,
+        "partitions": {
+          "2014": 38,
+          "2015": 38,
+          "2016": 38,
+          "2017": 38,
+          "2018": 38,
+          "2019": 38,
+          "2020": 38,
+          "2021": 38,
+          "2022": 38,
+          "2023": 38,
+          "2024": 38,
+          "2025": 38
+        },
+        "clean_rows": 456,
         "last_run": {
-          "at": "2026-11-08T21:59:18.363240+00:00",
+          "at": "2026-11-25T00:01:24.795706+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -32053,9 +32115,23 @@
           "redditi"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 21,
+        "partitions": {
+          "2014": 21,
+          "2015": 21,
+          "2016": 21,
+          "2017": 21,
+          "2018": 21,
+          "2019": 21,
+          "2020": 21,
+          "2021": 21,
+          "2022": 21,
+          "2023": 21,
+          "2024": 21,
+          "2025": 21
+        },
+        "clean_rows": 252,
         "last_run": {
-          "at": "2026-11-08T21:59:50.132948+00:00",
+          "at": "2026-11-25T00:01:53.688721+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -32235,9 +32311,21 @@
           "pubblica-amministrazione"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 21,
+        "partitions": {
+          "2015": 21,
+          "2016": 21,
+          "2017": 21,
+          "2018": 21,
+          "2019": 21,
+          "2020": 21,
+          "2021": 21,
+          "2022": 21,
+          "2023": 21,
+          "2024": 21
+        },
+        "clean_rows": 210,
         "last_run": {
-          "at": "2026-11-08T22:00:15.971967+00:00",
+          "at": "2026-11-25T00:02:17.553315+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -32322,9 +32410,21 @@
           "base-imponibile"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 21,
+        "partitions": {
+          "2015": 21,
+          "2016": 21,
+          "2017": 21,
+          "2018": 21,
+          "2019": 21,
+          "2020": 21,
+          "2021": 21,
+          "2022": 21,
+          "2023": 21,
+          "2024": 21
+        },
+        "clean_rows": 210,
         "last_run": {
-          "at": "2026-11-08T22:00:40.256050+00:00",
+          "at": "2026-11-25T00:02:41.021772+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -32404,9 +32504,21 @@
           "imposta"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 22,
+        "partitions": {
+          "2015": 22,
+          "2016": 22,
+          "2017": 22,
+          "2018": 22,
+          "2019": 22,
+          "2020": 22,
+          "2021": 22,
+          "2022": 22,
+          "2023": 22,
+          "2024": 22
+        },
+        "clean_rows": 220,
         "last_run": {
-          "at": "2026-11-08T22:01:06.698432+00:00",
+          "at": "2026-11-25T00:03:04.672568+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -32482,9 +32594,21 @@
           "estero"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 21,
+        "partitions": {
+          "2015": 21,
+          "2016": 21,
+          "2017": 21,
+          "2018": 21,
+          "2019": 21,
+          "2020": 21,
+          "2021": 21,
+          "2022": 21,
+          "2023": 21,
+          "2024": 21
+        },
+        "clean_rows": 210,
         "last_run": {
-          "at": "2026-11-08T22:01:32.704779+00:00",
+          "at": "2026-11-25T00:03:28.041419+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -32570,9 +32694,21 @@
           "valore-produzione"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 21,
+        "partitions": {
+          "2015": 21,
+          "2016": 21,
+          "2017": 21,
+          "2018": 21,
+          "2019": 21,
+          "2020": 21,
+          "2021": 21,
+          "2022": 21,
+          "2023": 21,
+          "2024": 21
+        },
+        "clean_rows": 210,
         "last_run": {
-          "at": "2026-11-08T22:02:21.312031+00:00",
+          "at": "2026-11-25T00:03:57.296667+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -32698,9 +32834,21 @@
           "reddito-impresa"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 21,
+        "partitions": {
+          "2015": 21,
+          "2016": 21,
+          "2017": 21,
+          "2018": 21,
+          "2019": 21,
+          "2020": 21,
+          "2021": 21,
+          "2022": 21,
+          "2023": 21,
+          "2024": 21
+        },
+        "clean_rows": 210,
         "last_run": {
-          "at": "2026-11-08T22:02:48.098287+00:00",
+          "at": "2026-11-25T00:04:23.644288+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -32793,9 +32941,23 @@
           "calcolo"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 126,
+        "partitions": {
+          "2014": 126,
+          "2015": 126,
+          "2016": 126,
+          "2017": 126,
+          "2018": 126,
+          "2019": 126,
+          "2020": 126,
+          "2021": 126,
+          "2022": 126,
+          "2023": 126,
+          "2024": 126,
+          "2025": 126
+        },
+        "clean_rows": 1512,
         "last_run": {
-          "at": "2026-11-08T22:05:34.487061+00:00",
+          "at": "2026-11-25T00:07:01.411373+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -32910,9 +33072,21 @@
           "irpef"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 7897,
+        "partitions": {
+          "2015": 8000,
+          "2016": 7979,
+          "2017": 7955,
+          "2018": 7915,
+          "2019": 7904,
+          "2020": 7904,
+          "2021": 7905,
+          "2022": 7901,
+          "2023": 7897,
+          "2024": 7897
+        },
+        "clean_rows": 79257,
         "last_run": {
-          "at": "2026-11-17T18:06:57.525885+00:00",
+          "at": "2026-11-25T00:07:37.150955+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -33216,9 +33390,24 @@
           "nazionale"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 16,
+        "partitions": {
+          "2013": 15,
+          "2014": 15,
+          "2015": 15,
+          "2016": 15,
+          "2017": 15,
+          "2018": 15,
+          "2019": 16,
+          "2020": 16,
+          "2021": 16,
+          "2022": 16,
+          "2023": 16,
+          "2024": 16,
+          "2025": 16
+        },
+        "clean_rows": 202,
         "last_run": {
-          "at": "2026-11-08T22:07:19.168422+00:00",
+          "at": "2026-11-25T00:08:16.409662+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -33277,9 +33466,22 @@
           "regionale"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 21,
+        "partitions": {
+          "2015": 21,
+          "2016": 21,
+          "2017": 21,
+          "2018": 21,
+          "2019": 21,
+          "2020": 21,
+          "2021": 21,
+          "2022": 21,
+          "2023": 21,
+          "2024": 21,
+          "2025": 21
+        },
+        "clean_rows": 231,
         "last_run": {
-          "at": "2026-11-08T22:07:48.522308+00:00",
+          "at": "2026-11-25T00:08:43.676995+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -33387,9 +33589,22 @@
           "ateaco"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 23,
+        "partitions": {
+          "2015": 22,
+          "2016": 22,
+          "2017": 22,
+          "2018": 22,
+          "2019": 22,
+          "2020": 22,
+          "2021": 22,
+          "2022": 22,
+          "2023": 22,
+          "2024": 22,
+          "2025": 23
+        },
+        "clean_rows": 243,
         "last_run": {
-          "at": "2026-11-08T22:08:15.862084+00:00",
+          "at": "2026-11-25T00:09:10.023743+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -33492,9 +33707,20 @@
           "irpef"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 714,
+        "partitions": {
+          "2017": 714,
+          "2018": 714,
+          "2019": 714,
+          "2020": 714,
+          "2021": 714,
+          "2022": 714,
+          "2023": 714,
+          "2024": 714,
+          "2025": 714
+        },
+        "clean_rows": 6426,
         "last_run": {
-          "at": "2026-11-08T22:08:49.041268+00:00",
+          "at": "2026-11-25T00:09:38.721553+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -40080,9 +40306,12 @@
           "oecd"
         ],
         "category": "ambiente",
+        "partitions": {
+          "2026": 3920
+        },
         "clean_rows": 3920,
         "last_run": {
-          "at": "2026-11-05T21:25:16.615569+00:00",
+          "at": "2026-11-24T23:59:42.165032+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -40145,9 +40374,12 @@
           "oecd"
         ],
         "category": "educazione",
+        "partitions": {
+          "2026": 328485
+        },
         "clean_rows": 328485,
         "last_run": {
-          "at": "2026-11-05T21:24:33.809015+00:00",
+          "at": "2026-11-24T23:58:49.319085+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -40273,9 +40505,12 @@
           "oecd"
         ],
         "category": "ambiente",
+        "partitions": {
+          "2026": 49
+        },
         "clean_rows": 49,
         "last_run": {
-          "at": "2026-11-05T21:25:18.366149+00:00",
+          "at": "2026-11-24T23:59:43.934311+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -40337,9 +40572,12 @@
           "oecd"
         ],
         "category": "economia",
+        "partitions": {
+          "2026": 57331
+        },
         "clean_rows": 57331,
         "last_run": {
-          "at": "2026-11-05T21:25:21.332687+00:00",
+          "at": "2026-11-24T23:59:46.729220+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -40421,9 +40659,12 @@
           "oecd"
         ],
         "category": "ambiente",
+        "partitions": {
+          "2026": 1592640
+        },
         "clean_rows": 1592640,
         "last_run": {
-          "at": "2026-11-05T21:25:25.820675+00:00",
+          "at": "2026-11-24T23:59:50.004264+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -40503,9 +40744,12 @@
           "oecd"
         ],
         "category": "ambiente",
+        "partitions": {
+          "2026": 1150
+        },
         "clean_rows": 1150,
         "last_run": {
-          "at": "2026-11-05T21:25:19.775951+00:00",
+          "at": "2026-11-24T23:59:45.166935+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -40564,9 +40808,12 @@
           "oecd"
         ],
         "category": "salute",
+        "partitions": {
+          "2026": 2466028
+        },
         "clean_rows": 2466028,
         "last_run": {
-          "at": "2026-11-05T21:27:07.121582+00:00",
+          "at": "2026-11-25T00:00:51.538061+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -40722,9 +40969,12 @@
           "oecd"
         ],
         "category": "economia",
-        "clean_rows": 966046,
+        "partitions": {
+          "2026": 966741
+        },
+        "clean_rows": 966741,
         "last_run": {
-          "at": "2026-11-05T21:29:10.156056+00:00",
+          "at": "2026-11-25T00:02:30.904945+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -40834,9 +41084,12 @@
           "benchmark"
         ],
         "category": "economia",
+        "partitions": {
+          "2026": 4669
+        },
         "clean_rows": 4669,
         "last_run": {
-          "at": "2026-11-05T21:29:49.460526+00:00",
+          "at": "2026-11-25T00:03:05.876788+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -40919,9 +41172,12 @@
           "oecd"
         ],
         "category": "economia",
+        "partitions": {
+          "2026": 1496211
+        },
         "clean_rows": 1496211,
         "last_run": {
-          "at": "2026-11-05T21:29:51.405448+00:00",
+          "at": "2026-11-25T00:03:08.123505+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -41027,9 +41283,12 @@
           "oecd"
         ],
         "category": "economia",
+        "partitions": {
+          "2026": 123968
+        },
         "clean_rows": 123968,
         "last_run": {
-          "at": "2026-11-05T21:31:16.275407+00:00",
+          "at": "2026-11-25T00:04:22.558698+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -41144,9 +41403,12 @@
           "oecd"
         ],
         "category": "economia",
-        "clean_rows": 323577,
+        "partitions": {
+          "2026": 323703
+        },
+        "clean_rows": 323703,
         "last_run": {
-          "at": "2026-11-05T21:31:21.813533+00:00",
+          "at": "2026-11-25T00:04:28.096002+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -42809,9 +43071,12 @@
           "avanzamento"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 4904826,
+        "partitions": {
+          "2026": 4922602
+        },
+        "clean_rows": 4922602,
         "last_run": {
-          "at": "2026-11-01T12:43:53.482036+00:00",
+          "at": "2026-11-25T00:21:28.146230+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -42892,9 +43157,12 @@
           "serie-storica"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 2741488,
+        "partitions": {
+          "2026": 2751345
+        },
+        "clean_rows": 2751345,
         "last_run": {
-          "at": "2026-11-01T12:44:01.947435+00:00",
+          "at": "2026-11-25T00:21:37.231531+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -42954,9 +43222,12 @@
           "valutazione"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 3690525,
+        "partitions": {
+          "2026": 3711947
+        },
+        "clean_rows": 3711947,
         "last_run": {
-          "at": "2026-11-01T12:44:06.982951+00:00",
+          "at": "2026-11-25T00:21:42.221785+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -43037,9 +43308,12 @@
           "geolocalizzazione"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 2442456,
+        "partitions": {
+          "2026": 2458097
+        },
+        "clean_rows": 2458097,
         "last_run": {
-          "at": "2026-11-01T12:44:12.561084+00:00",
+          "at": "2026-11-25T00:21:48.140346+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -43152,9 +43426,12 @@
           "flussi-cassa"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 5632379,
+        "partitions": {
+          "2026": 5656051
+        },
+        "clean_rows": 5656051,
         "last_run": {
-          "at": "2026-11-01T12:44:22.478675+00:00",
+          "at": "2026-11-25T00:21:59.257885+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -43237,9 +43514,12 @@
           "hub"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 2331215,
+        "partitions": {
+          "2026": 2341583
+        },
+        "clean_rows": 2341583,
         "last_run": {
-          "at": "2026-11-01T12:44:36.516689+00:00",
+          "at": "2026-11-25T00:22:14.749180+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -43579,9 +43859,12 @@
           "esteso"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 130462,
+        "partitions": {
+          "2026": 131350
+        },
+        "clean_rows": 131350,
         "last_run": {
-          "at": "2026-11-01T12:44:31.679576+00:00",
+          "at": "2026-11-25T00:22:08.812780+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -44014,9 +44297,12 @@
           "beneficiari"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 7219748,
+        "partitions": {
+          "2026": 7234741
+        },
+        "clean_rows": 7234741,
         "last_run": {
-          "at": "2026-11-01T12:44:58.886211+00:00",
+          "at": "2026-11-25T00:22:37.241780+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -54108,9 +54394,12 @@
           "target"
         ],
         "category": "finanza-pubblica",
+        "partitions": {
+          "2026": 6030
+        },
         "clean_rows": 6030,
         "last_run": {
-          "at": "2026-11-20T11:10:49.548248+00:00",
+          "at": "2026-11-24T23:46:22.214957+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -54260,9 +54549,12 @@
           "gare"
         ],
         "category": "finanza-pubblica",
+        "partitions": {
+          "2026": 282655
+        },
         "clean_rows": 282655,
         "last_run": {
-          "at": "2026-11-20T11:10:54.818418+00:00",
+          "at": "2026-11-24T23:46:27.215208+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -54400,9 +54692,12 @@
           "target"
         ],
         "category": "finanza-pubblica",
+        "partitions": {
+          "2026": 357183
+        },
         "clean_rows": 357183,
         "last_run": {
-          "at": "2026-11-20T11:11:07.374665+00:00",
+          "at": "2026-11-24T23:46:40.349651+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -54517,9 +54812,12 @@
           "rendicontazione"
         ],
         "category": "finanza-pubblica",
+        "partitions": {
+          "2026": 211901
+        },
         "clean_rows": 211901,
         "last_run": {
-          "at": "2026-11-20T11:11:20.373929+00:00",
+          "at": "2026-11-24T23:46:53.014006+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -54669,9 +54967,12 @@
           "progetti"
         ],
         "category": "finanza-pubblica",
+        "partitions": {
+          "2026": 291398
+        },
         "clean_rows": 291398,
         "last_run": {
-          "at": "2026-11-20T11:11:31.668218+00:00",
+          "at": "2026-11-24T23:47:03.249612+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -55027,9 +55328,12 @@
           "misure"
         ],
         "category": "finanza-pubblica",
+        "partitions": {
+          "2026": 304
+        },
         "clean_rows": 304,
         "last_run": {
-          "at": "2026-11-20T11:12:01.788338+00:00",
+          "at": "2026-11-24T23:47:33.166875+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -55164,9 +55468,12 @@
           "tag"
         ],
         "category": "finanza-pubblica",
+        "partitions": {
+          "2026": 375
+        },
         "clean_rows": 375,
         "last_run": {
-          "at": "2026-11-20T11:12:05.959648+00:00",
+          "at": "2026-11-24T23:47:37.420862+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
