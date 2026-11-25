@@ -246,7 +246,8 @@ class Renderer:
         """Render topic_index.json (schema v8 — navigation index).
 
         Novità v8 (registry v2): niente ``stage`` (``published`` = il dataset ha
-        una pagina Explorer, derivato da ``analyses_by_dataset``), ``partitions``
+        una pagina Explorer — ``src/dataset/`` o una scheda ``catalog/cards/``),
+        ``partitions``
         e ``last_run`` per dataset, ``clean_rows`` = somma delle partizioni,
         ``checks`` a livello root.
 
@@ -270,6 +271,11 @@ class Renderer:
         # stale: 33 published su 547 con parquet leggibile).
         analyses_list: list[dict[str, Any]] = []
         analyses_by_dataset: dict[str, list[str]] = {}
+        # Pubblicato = pagina dataset (analyses) **o** scheda (`/schede/{slug}`):
+        # le due superfici di data-explorer. Senza le schede, dataset come
+        # `istat_pil_territoriale` risultavano non pubblicati mentre hanno una
+        # pagina pubblica (e la dashboard ne contava meno).
+        schede = self._explorer_fetcher.fetch_schede()
         analyses = self._fetch_explorer_analyses()
         for a in analyses:
             ae: dict[str, Any] = {
@@ -327,7 +333,7 @@ class Renderer:
                     "source_id": ds.source_id,
                     "period": ds.period,
                     "registry_source": slug_to_repo.get(ds.slug, ""),
-                    "published": bool(analyses_by_dataset.get(ds.slug)),
+                    "published": bool(analyses_by_dataset.get(ds.slug) or ds.slug in schede),
                 }
                 # Omit-if-empty: il topic_index è un artefatto distribuito,
                 # i campi vuoti si pagano su ogni consumer (regola registry v2).

@@ -5,6 +5,8 @@ The public analysis/dataset pages live in ``data-explorer``:
 - ``src/dataset/*.md`` — dataset pages with YAML frontmatter
   (``title``, ``description``, ``dataset_slug``, ``source``, ``period``,
   ``data_driven``). Discovered via file listing (no manual registry).
+- ``catalog/cards/*.yml`` — schede dataset: una pagina pubblica per dataset
+  (``/schede/{slug}``). Ogni card dichiara ``dataset:`` come prima chiave.
 - ``catalog/themes.json`` — editorial themes mapping ``categories[]`` to
   domain slugs. Single source of truth for the Lab navigation domains.
 
@@ -22,8 +24,10 @@ from ..signals import Analysis
 
 _EXPLORER_REPO = "data-explorer"
 _DATASET_DIR = "src/dataset"
+_CARDS_DIR = "catalog/cards"
 _THEMES_PATH = "catalog/themes.json"
 _PAGE_SUFFIX = ".md"
+_CARD_SUFFIX = ".yml"
 
 
 @dataclass
@@ -44,6 +48,7 @@ class ExplorerFetcher:
         self.collector = collector
         self._analyses: list[Analysis] | None = None
         self._themes: list[ExplorerTheme] | None = None
+        self._schede: set[str] | None = None
 
     def fetch_analyses(self) -> list[Analysis]:
         """Parse dataset pages from ``data-explorer/src/dataset/*.md``.
@@ -98,6 +103,29 @@ class ExplorerFetcher:
         self._analyses = analyses
         return analyses
 
+    def fetch_schede(self) -> set[str]:
+        """Slug dei dataset con una scheda pubblica (``catalog/cards/*.yml``).
+
+        Le schede sono la seconda superficie pubblica di data-explorer
+        (``/schede/{slug}``): un dataset può essere pubblicato senza una
+        pagina ``src/dataset/`` (es. ``istat_pil_territoriale``). Il contratto
+        letto qui è la chiave ``dataset:`` della card.
+        """
+        if self._schede is not None:
+            return self._schede
+
+        files = self.collector.list_files(_EXPLORER_REPO, _CARDS_DIR, suffix=_CARD_SUFFIX)
+        schede: set[str] = set()
+        for filename in files or []:
+            raw = self.collector.get_raw_file(_EXPLORER_REPO, f"{_CARDS_DIR}/{filename}")
+            if not raw:
+                continue
+            slug = _card_dataset(raw)
+            if slug:
+                schede.add(slug)
+        self._schede = schede
+        return schede
+
     def fetch_themes(self) -> list[ExplorerTheme]:
         """Parse ``catalog/themes.json`` from data-explorer."""
         if self._themes is not None:
@@ -107,6 +135,20 @@ class ExplorerFetcher:
         themes = _parse_themes(raw) if raw else []
         self._themes = themes
         return themes
+
+
+def _card_dataset(raw: str) -> str:
+    """Slug del dataset da una card (``dataset:`` in testa, virgolette tolte)."""
+    for line in raw.splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#"):
+            continue
+        key, sep, value = stripped.partition(":")
+        if sep and key.strip() == "dataset":
+            return _strip_yaml_quotes(value.strip())
+        # `dataset:` è la prima chiave dichiarata: oltre non serve scorrere.
+        return ""
+    return ""
 
 
 def _parse_frontmatter(raw: str) -> dict[str, Any]:
