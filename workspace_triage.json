@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T09:20:59.014023",
+  "generated_at": "2026-11-25T13:50:13.531128",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -53,7 +53,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 15,
+  "open_prs": 13,
   "prs": [
     {
       "number": 38,
@@ -130,20 +130,6 @@
       "title": "feat(compose): finanziamento universitario (SIOPE + BDAP)",
       "repo": "open-mur",
       "url": "https://github.com/dataciviclab/open-mur/pull/21",
-      "category": "other"
-    },
-    {
-      "number": 90,
-      "title": "chore(post-merge): aggiorna registry (schedule)",
-      "repo": "open-siope",
-      "url": "https://github.com/dataciviclab/open-siope/pull/90",
-      "category": "other"
-    },
-    {
-      "number": 54,
-      "title": "chore(post-merge): aggiorna registry (schedule)",
-      "repo": "senato-akn",
-      "url": "https://github.com/dataciviclab/senato-akn/pull/54",
       "category": "other"
     },
     {
@@ -2538,15 +2524,15 @@
     }
   },
   "warnings": [
-    "Many open PRs: 19"
+    "Many open PRs: 13"
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-11-24T13:36:02.345856+00:00",
-    "probe_date": "2026-11-24",
+    "generated_at": "2026-11-25T12:45:08.186987+00:00",
+    "probe_date": "2026-11-25",
     "sources_total": 39,
-    "green": 34,
-    "yellow": 5,
+    "green": 36,
+    "yellow": 3,
     "red": 0,
     "persistent_red": 0,
     "sources": [
@@ -2560,18 +2546,18 @@
       },
       {
         "id": "anac",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "ckan",
-        "http_code": "403",
+        "http_code": "200",
         "note": null,
         "red_streak": 0
       },
       {
         "id": "inps",
-        "status": "YELLOW",
+        "status": "GREEN",
         "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
+        "http_code": "200",
+        "note": null,
         "red_streak": 0
       },
       {
@@ -2865,22 +2851,6 @@
     ],
     "unhealthy": [
       {
-        "id": "anac",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "403",
-        "note": null,
-        "red_streak": 0
-      },
-      {
-        "id": "inps",
-        "status": "YELLOW",
-        "protocol": "ckan",
-        "http_code": "-",
-        "note": "Retry timeout/connection: Timeout (ReadTimeout)",
-        "red_streak": 0
-      },
-      {
         "id": "mur_ustat",
         "status": "YELLOW",
         "protocol": "ckan",
@@ -2951,7 +2921,7 @@
       "repo": "bilancio-pubblico",
       "available": true,
       "source_repo": "dataciviclab/bilancio-pubblico",
-      "updated_at": "2026-11-09",
+      "updated_at": "2026-11-25",
       "datasets": 18,
       "marts": 47,
       "checks": 0,
@@ -2963,7 +2933,7 @@
       "repo": "costituzione-italiana",
       "available": true,
       "source_repo": "dataciviclab/costituzione-italiana",
-      "updated_at": "2026-11-10",
+      "updated_at": "2026-11-25",
       "datasets": 9,
       "marts": 18,
       "checks": 0,
@@ -3047,7 +3017,7 @@
       "repo": "energia-italia",
       "available": true,
       "source_repo": "dataciviclab/energia-italia",
-      "updated_at": "2026-11-01",
+      "updated_at": "2026-11-25",
       "datasets": 14,
       "marts": 28,
       "checks": 0,
@@ -3083,7 +3053,7 @@
       "repo": "giustizia-amministrativa",
       "available": true,
       "source_repo": "dataciviclab/giustizia-amministrativa",
-      "updated_at": "2026-11-16",
+      "updated_at": "2026-11-25",
       "datasets": 15,
       "marts": 35,
       "checks": 0,
@@ -3227,7 +3197,7 @@
       "repo": "open-ccnl",
       "available": true,
       "source_repo": "dataciviclab/open-ccnl",
-      "updated_at": "2026-11-23",
+      "updated_at": "2026-11-25",
       "datasets": 7,
       "marts": 22,
       "checks": 0,
@@ -3251,7 +3221,7 @@
       "repo": "open-consip",
       "available": true,
       "source_repo": "dataciviclab/open-consip",
-      "updated_at": "2026-11-07",
+      "updated_at": "2026-11-25",
       "datasets": 11,
       "marts": 16,
       "checks": 0,
@@ -3263,8 +3233,8 @@
       "repo": "open-conto-annuale",
       "available": true,
       "source_repo": "dataciviclab/open-conto-annuale",
-      "updated_at": "2026-10-09",
-      "datasets": 23,
+      "updated_at": "2026-11-25",
+      "datasets": 24,
       "marts": 56,
       "checks": 0,
       "codelists": 0,
@@ -3371,7 +3341,7 @@
       "repo": "open-siope",
       "available": true,
       "source_repo": "dataciviclab/open-siope",
-      "updated_at": "2026-11-05",
+      "updated_at": "2026-11-25",
       "datasets": 10,
       "marts": 15,
       "checks": 0,
@@ -3383,7 +3353,7 @@
       "repo": "opencivitas",
       "available": true,
       "source_repo": "dataciviclab/opencivitas",
-      "updated_at": "2026-11-06",
+      "updated_at": "2026-11-25",
       "datasets": 7,
       "marts": 8,
       "checks": 0,
@@ -3431,7 +3401,7 @@
       "repo": "pil-intelligence",
       "available": true,
       "source_repo": "dataciviclab/pil-intelligence",
-      "updated_at": "2026-11-02",
+      "updated_at": "2026-11-25",
       "datasets": 1,
       "marts": 10,
       "checks": 0,
@@ -3455,7 +3425,7 @@
       "repo": "rna-aiuti-stato",
       "available": true,
       "source_repo": "dataciviclab/rna-aiuti-stato",
-      "updated_at": "2026-11-05",
+      "updated_at": "2026-11-25",
       "datasets": 2,
       "marts": 16,
       "checks": 0,
@@ -3467,7 +3437,7 @@
       "repo": "senato-akn",
       "available": true,
       "source_repo": "dataciviclab/senato-akn",
-      "updated_at": "2026-11-13",
+      "updated_at": "2026-11-25",
       "datasets": 3,
       "marts": 8,
       "checks": 0,

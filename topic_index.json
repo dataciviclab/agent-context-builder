@@ -1,6 +1,6 @@
 {
   "schema_version": 8,
-  "generated_at": "2026-11-25T09:20:59.014023",
+  "generated_at": "2026-11-25T13:50:13.531128",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -34,7 +34,7 @@
       "sources": [
         "openbdap"
       ],
-      "updated_at": "2026-11-09"
+      "updated_at": "2026-11-25"
     },
     "costituzione-italiana": {
       "description": "La Costituzione italiana, le sue revisioni e la giurisprudenza costituzionale \u2014 in formato aperto e interrogabile.",
@@ -49,7 +49,7 @@
         "dataciviclab_composite",
         "italia_corpus"
       ],
-      "updated_at": "2026-11-10"
+      "updated_at": "2026-11-25"
     },
     "data-explorer": {
       "description": "Esplora i dati del DataCivicLab \u2014 catalogo pubblico, query e visualizzazioni.",
@@ -156,7 +156,7 @@
         "irena",
         "terna_opendata"
       ],
-      "updated_at": "2026-11-01"
+      "updated_at": "2026-11-25"
     },
     "eurostat": {
       "description": "European regional data at your fingertips \u2014 GDP, population, crime and more at NUTS2/NUTS3 level.",
@@ -198,7 +198,7 @@
         "dataciviclab_composite",
         "openga"
       ],
-      "updated_at": "2026-11-16"
+      "updated_at": "2026-11-25"
     },
     "giustizia-statistiche": {
       "description": "Statistiche giudiziarie Ministero Giustizia: flussi civile/penale, indicatori, intercettazioni, spese",
@@ -345,7 +345,7 @@
       "sources": [
         "cnel_archivio"
       ],
-      "updated_at": "2026-11-23"
+      "updated_at": "2026-11-25"
     },
     "open-coesione": {
       "description": "346 miliardi di politiche di coesione, aperti e interrogabili",
@@ -370,19 +370,20 @@
         "consip_open_data",
         "dataciviclab_composite"
       ],
-      "updated_at": "2026-11-07"
+      "updated_at": "2026-11-25"
     },
     "open-conto-annuale": {
       "description": "1,8 milioni di microdati sul personale della PA italiana \u2014 chi lavora nel pubblico, dove e con quali ruoli.",
       "url": "https://github.com/dataciviclab/open-conto-annuale",
       "role": "dati",
       "domain": null,
-      "n_datasets": 23,
+      "n_datasets": 24,
       "n_published": 0,
       "sources": [
-        "conto_annuale"
+        "conto_annuale",
+        "dataciviclab_composite"
       ],
-      "updated_at": "2026-10-09"
+      "updated_at": "2026-11-25"
     },
     "open-elezioni": {
       "description": "Elezioni italiane e amministratori locali: risultati Eligendo e DAIT, con codici territoriali SUT. Parquet aperti e interrogabili.",
@@ -498,7 +499,7 @@
       "sources": [
         "siope"
       ],
-      "updated_at": "2026-11-05"
+      "updated_at": "2026-11-25"
     },
     "opencivitas": {
       "description": "OpenCivitas Intelligence \u2014 FSC x servizi dei comuni italiani, aperti e interrogabili",
@@ -510,7 +511,7 @@
       "sources": [
         "opencivitas"
       ],
-      "updated_at": "2026-11-06"
+      "updated_at": "2026-11-25"
     },
     "opere-pubbliche": {
       "description": "Dove vanno i soldi delle opere pubbliche in Italia - 11,8 milioni di CUP interrogabili",
@@ -560,7 +561,7 @@
       "sources": [
         "dataciviclab_composite"
       ],
-      "updated_at": "2026-11-02"
+      "updated_at": "2026-11-25"
     },
     "rifiuti-urbani": {
       "description": "Quali sono le dinamiche di produzione, gestione e movimentazione dei rifiuti urbani e speciali in Italia?",
@@ -585,7 +586,7 @@
       "sources": [
         "mimit_rna"
       ],
-      "updated_at": "2026-11-05"
+      "updated_at": "2026-11-25"
     },
     "senato-akn": {
       "description": "I lavori del Senato italiano in formato strutturato \u2014 progetti di legge, emendamenti e iter legislativo.",
@@ -597,7 +598,7 @@
       "sources": [
         "senato_akn"
       ],
-      "updated_at": "2026-11-13"
+      "updated_at": "2026-11-25"
     },
     "sistema-bancario": {
       "description": "I bilanci delle banche europee, interrogabili \u2014 dati EBA, BCE e World Bank in un'unica dashboard.",
@@ -2382,9 +2383,12 @@
           "compose"
         ],
         "category": "normativa",
+        "partitions": {
+          "2026": 2763
+        },
         "clean_rows": 2763,
         "last_run": {
-          "at": "2026-11-10T22:28:53.801249+00:00",
+          "at": "2026-11-25T10:37:31.599172+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -2885,7 +2889,7 @@
         ],
         "category": "energia",
         "last_run": {
-          "at": "2026-11-01T12:42:54.201791+00:00",
+          "at": "2026-11-25T09:44:31.741277+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -2948,9 +2952,12 @@
           "compose"
         ],
         "category": "giustizia",
-        "clean_rows": 29029,
+        "partitions": {
+          "2026": 29210
+        },
+        "clean_rows": 29210,
         "last_run": {
-          "at": "2026-11-16T19:37:25.332116+00:00",
+          "at": "2026-11-25T10:07:13.840623+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -3095,9 +3102,12 @@
           "durata"
         ],
         "category": "giustizia",
-        "clean_rows": 1099522,
+        "partitions": {
+          "2026": 1108743
+        },
+        "clean_rows": 1108743,
         "last_run": {
-          "at": "2026-11-16T19:37:25.931367+00:00",
+          "at": "2026-11-25T10:07:14.824753+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -3231,9 +3241,12 @@
           "cross"
         ],
         "category": "giustizia",
-        "clean_rows": 94329,
+        "partitions": {
+          "2026": 94683
+        },
+        "clean_rows": 94683,
         "last_run": {
-          "at": "2026-11-16T19:37:27.775852+00:00",
+          "at": "2026-11-25T10:07:17.629404+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -3353,9 +3366,12 @@
           "mezzi"
         ],
         "category": "giustizia",
+        "partitions": {
+          "2026": 330
+        },
         "clean_rows": 330,
         "last_run": {
-          "at": "2026-11-16T19:37:28.472317+00:00",
+          "at": "2026-11-25T10:07:18.730650+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -4189,6 +4205,38 @@
         ],
         "mart_refs": [
           "consip_composto__mart_riepilogo"
+        ]
+      },
+      {
+        "slug": "contorno_comparti",
+        "url_slug": "contorno-comparti",
+        "name": "Contorno Comparti",
+        "source_id": "dataciviclab_composite",
+        "period": {
+          "start": 2011,
+          "end": 2024
+        },
+        "registry_source": "open-conto-annuale",
+        "published": false,
+        "description": "Compose del Conto Annuale: un paniere di metriche per comparto x anno (occupazione, costo del lavoro, assenze, retribuzioni, flessibilita', contrattazione) da mart_sintesi dei dataset base. Grano: (anno, codi_comparto). PK unica su tutti i mart_sintesi 2011-2024 (6 comparti x 14 anni).\n",
+        "tags": [
+          "pa",
+          "conto-annuale",
+          "compose",
+          "comparti",
+          "personale",
+          "costo-lavoro",
+          "intelligence"
+        ],
+        "category": "pa",
+        "last_run": {
+          "at": "2026-11-25T09:26:57.362301+00:00",
+          "year": 2026,
+          "status": "SUCCESS"
+        },
+        "mart_refs": [
+          "contorno_comparti__mart_contorno_comparti",
+          "contorno_comparti__mart_contorno_italia"
         ]
       },
       {
@@ -5546,7 +5594,7 @@
         ],
         "category": "economia",
         "last_run": {
-          "at": "2026-11-02T16:52:34.698082+00:00",
+          "at": "2026-11-25T11:56:43.707015+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -6094,9 +6142,22 @@
           "bilancio-stato"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 2117,
+        "partitions": {
+          "2017": 1778,
+          "2018": 1796,
+          "2019": 1803,
+          "2020": 1839,
+          "2021": 1875,
+          "2022": 1937,
+          "2023": 1982,
+          "2024": 2003,
+          "2025": 2033,
+          "2026": 2070,
+          "2027": 2117
+        },
+        "clean_rows": 21233,
         "last_run": {
-          "at": "2026-11-09T18:46:10.815618+00:00",
+          "at": "2026-11-25T09:41:54.826590+00:00",
           "year": 2027,
           "status": "SUCCESS"
         },
@@ -6417,9 +6478,22 @@
           "bilancio-stato"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 5181,
+        "partitions": {
+          "2017": 4602,
+          "2018": 4463,
+          "2019": 4162,
+          "2020": 4235,
+          "2021": 4488,
+          "2022": 4655,
+          "2023": 4703,
+          "2024": 5093,
+          "2025": 5103,
+          "2026": 5192,
+          "2027": 5181
+        },
+        "clean_rows": 51877,
         "last_run": {
-          "at": "2026-11-09T17:29:53.009479+00:00",
+          "at": "2026-11-25T09:44:40.550161+00:00",
           "year": 2027,
           "status": "SUCCESS"
         },
@@ -6799,9 +6873,12 @@
           "serie-storica"
         ],
         "category": "finanza-pubblica",
+        "partitions": {
+          "2026": 39531
+        },
         "clean_rows": 39531,
         "last_run": {
-          "at": "2026-11-01T20:43:36.117230+00:00",
+          "at": "2026-11-25T09:44:50.949764+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -6885,9 +6962,12 @@
           "bilancio-stato"
         ],
         "category": "finanza-pubblica",
+        "partitions": {
+          "2025": 1490
+        },
         "clean_rows": 1490,
         "last_run": {
-          "at": "2026-11-01T20:43:57.512152+00:00",
+          "at": "2026-11-25T09:45:03.189617+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -6980,9 +7060,21 @@
           "previsione"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 7481,
+        "partitions": {
+          "2017": 5188,
+          "2018": 5459,
+          "2019": 5651,
+          "2020": 5820,
+          "2021": 6287,
+          "2022": 6685,
+          "2023": 6948,
+          "2024": 7064,
+          "2025": 7283,
+          "2026": 7481
+        },
+        "clean_rows": 63866,
         "last_run": {
-          "at": "2026-11-01T20:45:57.459500+00:00",
+          "at": "2026-11-25T09:46:29.466254+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -7134,9 +7226,12 @@
           "serie-storica"
         ],
         "category": "finanza-pubblica",
+        "partitions": {
+          "2026": 41625
+        },
         "clean_rows": 41625,
         "last_run": {
-          "at": "2026-11-01T20:46:15.728626+00:00",
+          "at": "2026-11-25T09:46:43.645826+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -7221,9 +7316,19 @@
           "support"
         ],
         "category": "support",
-        "clean_rows": 15,
+        "partitions": {
+          "2018": 13,
+          "2019": 13,
+          "2020": 13,
+          "2021": 15,
+          "2022": 15,
+          "2023": 15,
+          "2024": 15,
+          "2025": 15
+        },
+        "clean_rows": 114,
         "last_run": {
-          "at": "2026-11-05T10:07:17.578165+00:00",
+          "at": "2026-11-25T09:40:32.993761+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -7285,9 +7390,20 @@
           "stanziamenti"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 823,
+        "partitions": {
+          "2018": 2397,
+          "2019": 2392,
+          "2020": 2380,
+          "2021": 2409,
+          "2022": 2444,
+          "2023": 2438,
+          "2024": 2434,
+          "2025": 2457,
+          "2026": 823
+        },
+        "clean_rows": 20174,
         "last_run": {
-          "at": "2026-11-08T11:32:39.603345+00:00",
+          "at": "2026-11-25T09:47:49.572013+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -7456,9 +7572,20 @@
           "target"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 1035,
+        "partitions": {
+          "2018": 2696,
+          "2019": 2800,
+          "2020": 2674,
+          "2021": 2729,
+          "2022": 2846,
+          "2023": 2973,
+          "2024": 3102,
+          "2025": 3110,
+          "2026": 1035
+        },
+        "clean_rows": 23965,
         "last_run": {
-          "at": "2026-11-08T11:33:59.657698+00:00",
+          "at": "2026-11-25T09:49:44.643061+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -7677,9 +7804,20 @@
           "obiettivi"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 593,
+        "partitions": {
+          "2018": 1148,
+          "2019": 1138,
+          "2020": 1138,
+          "2021": 1148,
+          "2022": 1169,
+          "2023": 1174,
+          "2024": 1165,
+          "2025": 1182,
+          "2026": 593
+        },
+        "clean_rows": 9855,
         "last_run": {
-          "at": "2026-11-08T11:11:02.946441+00:00",
+          "at": "2026-11-25T09:56:04.523557+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -7823,9 +7961,19 @@
           "priorita-politiche"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 223,
+        "partitions": {
+          "2018": 147,
+          "2019": 156,
+          "2020": 158,
+          "2021": 185,
+          "2022": 184,
+          "2023": 216,
+          "2024": 214,
+          "2025": 223
+        },
+        "clean_rows": 1483,
         "last_run": {
-          "at": "2026-11-05T10:07:48.847458+00:00",
+          "at": "2026-11-25T09:57:39.791924+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -7901,9 +8049,23 @@
           "bilancio-stato"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 542,
+        "partitions": {
+          "2014": 557,
+          "2015": 545,
+          "2016": 542,
+          "2017": 503,
+          "2018": 501,
+          "2019": 513,
+          "2020": 518,
+          "2021": 536,
+          "2022": 543,
+          "2023": 546,
+          "2024": 548,
+          "2025": 542
+        },
+        "clean_rows": 6394,
         "last_run": {
-          "at": "2026-11-01T21:04:43.105020+00:00",
+          "at": "2026-11-25T09:59:25.936170+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -8024,9 +8186,26 @@
           "bilancio-stato"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 2068,
+        "partitions": {
+          "2011": 1468,
+          "2012": 1509,
+          "2013": 1644,
+          "2014": 1697,
+          "2015": 1749,
+          "2016": 1774,
+          "2017": 1798,
+          "2018": 1819,
+          "2019": 1842,
+          "2020": 1857,
+          "2021": 1940,
+          "2022": 1980,
+          "2023": 2002,
+          "2024": 2043,
+          "2025": 2068
+        },
+        "clean_rows": 27190,
         "last_run": {
-          "at": "2026-11-01T20:48:18.972681+00:00",
+          "at": "2026-11-25T10:01:45.776742+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -8178,9 +8357,26 @@
           "bilancio-stato"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 5395,
+        "partitions": {
+          "2011": 3755,
+          "2012": 3663,
+          "2013": 3667,
+          "2014": 3702,
+          "2015": 3757,
+          "2016": 3788,
+          "2017": 4421,
+          "2018": 4521,
+          "2019": 4638,
+          "2020": 4847,
+          "2021": 5210,
+          "2022": 5290,
+          "2023": 5331,
+          "2024": 5362,
+          "2025": 5395
+        },
+        "clean_rows": 67347,
         "last_run": {
-          "at": "2026-11-01T20:50:41.303318+00:00",
+          "at": "2026-11-25T10:03:45.042771+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -8354,9 +8550,12 @@
           "serie-storica"
         ],
         "category": "finanza-pubblica",
+        "partitions": {
+          "2025": 12609
+        },
         "clean_rows": 12609,
         "last_run": {
-          "at": "2026-11-01T20:50:58.460201+00:00",
+          "at": "2026-11-25T10:03:58.514909+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -8442,9 +8641,12 @@
           "bilancio-stato"
         ],
         "category": "finanza-pubblica",
+        "partitions": {
+          "2025": 23
+        },
         "clean_rows": 23,
         "last_run": {
-          "at": "2026-11-01T20:51:09.134398+00:00",
+          "at": "2026-11-25T10:04:06.883463+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -8593,9 +8795,27 @@
           "bilancio-stato"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 20268,
+        "partitions": {
+          "2008": 20352,
+          "2009": 20400,
+          "2010": 20296,
+          "2011": 20712,
+          "2012": 20248,
+          "2013": 20392,
+          "2014": 20168,
+          "2015": 20356,
+          "2016": 20428,
+          "2017": 18816,
+          "2018": 18328,
+          "2019": 18708,
+          "2020": 19356,
+          "2021": 19872,
+          "2022": 20260,
+          "2023": 20268
+        },
+        "clean_rows": 318960,
         "last_run": {
-          "at": "2026-11-01T20:53:46.507064+00:00",
+          "at": "2026-11-25T10:06:14.383789+00:00",
           "year": 2023,
           "status": "SUCCESS"
         },
@@ -8678,9 +8898,12 @@
           "bilancio-stato"
         ],
         "category": "finanza-pubblica",
+        "partitions": {
+          "2025": 10889
+        },
         "clean_rows": 10889,
         "last_run": {
-          "at": "2026-11-01T20:54:01.237613+00:00",
+          "at": "2026-11-25T10:06:29.004651+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -9990,9 +10213,12 @@
           "ordinamento"
         ],
         "category": "normativa",
+        "partitions": {
+          "2026": 157
+        },
         "clean_rows": 157,
         "last_run": {
-          "at": "2026-11-10T22:27:31.052302+00:00",
+          "at": "2026-11-25T10:36:29.812830+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -10069,9 +10295,12 @@
           "promovimento"
         ],
         "category": "giustizia",
-        "clean_rows": 993,
+        "partitions": {
+          "2026": 880
+        },
+        "clean_rows": 880,
         "last_run": {
-          "at": "2026-11-10T22:27:32.185060+00:00",
+          "at": "2026-11-25T10:36:30.555667+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -10163,9 +10392,12 @@
           "giudici"
         ],
         "category": "giustizia",
-        "clean_rows": 136,
+        "partitions": {
+          "2026": 137
+        },
+        "clean_rows": 137,
         "last_run": {
-          "at": "2026-11-10T22:27:38.094329+00:00",
+          "at": "2026-11-25T10:36:36.474909+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -10245,9 +10477,12 @@
           "massime"
         ],
         "category": "giustizia",
-        "clean_rows": 46665,
+        "partitions": {
+          "2026": 46685
+        },
+        "clean_rows": 46685,
         "last_run": {
-          "at": "2026-11-10T22:27:39.517394+00:00",
+          "at": "2026-11-25T10:36:37.754991+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -10356,9 +10591,12 @@
           "pronunce"
         ],
         "category": "giustizia",
-        "clean_rows": 22428,
+        "partitions": {
+          "2026": 22442
+        },
+        "clean_rows": 22442,
         "last_run": {
-          "at": "2026-11-10T22:27:59.275317+00:00",
+          "at": "2026-11-25T10:36:50.415226+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -10460,9 +10698,12 @@
           "compose"
         ],
         "category": "giustizia",
-        "clean_rows": 46718,
+        "partitions": {
+          "2026": 46746
+        },
+        "clean_rows": 46746,
         "last_run": {
-          "at": "2026-11-10T22:29:16.234343+00:00",
+          "at": "2026-11-25T10:37:51.842513+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -10609,9 +10850,12 @@
           "citazioni"
         ],
         "category": "normativa",
-        "clean_rows": 9993,
+        "partitions": {
+          "2026": 10060
+        },
+        "clean_rows": 10060,
         "last_run": {
-          "at": "2026-11-10T22:27:36.020146+00:00",
+          "at": "2026-11-25T10:36:34.187062+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -10680,9 +10924,12 @@
           "leggi-costituzionali"
         ],
         "category": "normativa",
+        "partitions": {
+          "2026": 50
+        },
         "clean_rows": 50,
         "last_run": {
-          "at": "2026-11-10T22:28:42.907120+00:00",
+          "at": "2026-11-25T10:37:20.886364+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -34134,9 +34381,12 @@
           "mercato"
         ],
         "category": "energia",
+        "partitions": {
+          "2026": 78
+        },
         "clean_rows": 78,
         "last_run": {
-          "at": "2026-11-01T12:33:01.588376+00:00",
+          "at": "2026-11-25T09:35:07.601006+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -34221,9 +34471,12 @@
           "confronti-internazionali"
         ],
         "category": "energia",
+        "partitions": {
+          "2024": 7
+        },
         "clean_rows": 7,
         "last_run": {
-          "at": "2026-11-01T12:33:05.253246+00:00",
+          "at": "2026-11-25T09:35:09.775636+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -34307,9 +34560,12 @@
           "confronti-internazionali"
         ],
         "category": "energia",
+        "partitions": {
+          "2024": 104
+        },
         "clean_rows": 104,
         "last_run": {
-          "at": "2026-11-01T12:33:07.268781+00:00",
+          "at": "2026-11-25T09:35:11.531736+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -34361,9 +34617,13 @@
           "confronti-internazionali"
         ],
         "category": "energia",
-        "clean_rows": 209,
+        "partitions": {
+          "2022": 209,
+          "2023": 209
+        },
+        "clean_rows": 418,
         "last_run": {
-          "at": "2026-11-01T12:33:11.711833+00:00",
+          "at": "2026-11-25T09:35:16.831869+00:00",
           "year": 2023,
           "status": "SUCCESS"
         },
@@ -34453,9 +34713,36 @@
           "fonti-rinnovabili"
         ],
         "category": "energia",
-        "clean_rows": 1070,
+        "partitions": {
+          "2000": 832,
+          "2001": 836,
+          "2002": 854,
+          "2003": 854,
+          "2004": 858,
+          "2005": 858,
+          "2006": 862,
+          "2007": 912,
+          "2008": 942,
+          "2009": 938,
+          "2010": 1018,
+          "2011": 1040,
+          "2012": 1046,
+          "2013": 1062,
+          "2014": 1068,
+          "2015": 1068,
+          "2016": 1072,
+          "2017": 1105,
+          "2018": 1084,
+          "2019": 1126,
+          "2020": 1134,
+          "2021": 1134,
+          "2022": 1154,
+          "2023": 1160,
+          "2024": 1070
+        },
+        "clean_rows": 25087,
         "last_run": {
-          "at": "2026-11-01T12:33:55.761749+00:00",
+          "at": "2026-11-25T09:36:00.421378+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -34522,9 +34809,31 @@
           "regioni"
         ],
         "category": "energia",
-        "clean_rows": 180,
+        "partitions": {
+          "2005": 160,
+          "2006": 160,
+          "2007": 160,
+          "2008": 160,
+          "2009": 160,
+          "2010": 160,
+          "2011": 160,
+          "2012": 160,
+          "2013": 160,
+          "2014": 160,
+          "2015": 160,
+          "2016": 160,
+          "2017": 160,
+          "2018": 160,
+          "2019": 160,
+          "2020": 180,
+          "2021": 180,
+          "2022": 180,
+          "2023": 180,
+          "2024": 180
+        },
+        "clean_rows": 3300,
         "last_run": {
-          "at": "2026-11-01T12:34:23.359228+00:00",
+          "at": "2026-11-25T09:36:29.808881+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -34581,9 +34890,36 @@
           "mix-energetico"
         ],
         "category": "ambiente",
-        "clean_rows": 900,
+        "partitions": {
+          "2000": 416,
+          "2001": 430,
+          "2002": 442,
+          "2003": 446,
+          "2004": 446,
+          "2005": 452,
+          "2006": 476,
+          "2007": 674,
+          "2008": 684,
+          "2009": 704,
+          "2010": 762,
+          "2011": 794,
+          "2012": 800,
+          "2013": 818,
+          "2014": 830,
+          "2015": 830,
+          "2016": 842,
+          "2017": 820,
+          "2018": 832,
+          "2019": 844,
+          "2020": 848,
+          "2021": 850,
+          "2022": 844,
+          "2023": 868,
+          "2024": 900
+        },
+        "clean_rows": 17652,
         "last_run": {
-          "at": "2026-11-01T12:35:02.480226+00:00",
+          "at": "2026-11-25T09:37:08.473330+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -34649,9 +34985,36 @@
           "settore"
         ],
         "category": "energia",
-        "clean_rows": 428,
+        "partitions": {
+          "2000": 412,
+          "2001": 412,
+          "2002": 412,
+          "2003": 412,
+          "2004": 412,
+          "2005": 412,
+          "2006": 428,
+          "2007": 428,
+          "2008": 428,
+          "2009": 438,
+          "2010": 440,
+          "2011": 440,
+          "2012": 440,
+          "2013": 440,
+          "2014": 440,
+          "2015": 440,
+          "2016": 440,
+          "2017": 428,
+          "2018": 428,
+          "2019": 428,
+          "2020": 428,
+          "2021": 428,
+          "2022": 428,
+          "2023": 428,
+          "2024": 428
+        },
+        "clean_rows": 10698,
         "last_run": {
-          "at": "2026-11-01T12:37:45.642452+00:00",
+          "at": "2026-11-25T09:38:39.573273+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -34713,9 +35076,36 @@
           "regioni"
         ],
         "category": "energia",
-        "clean_rows": 100,
+        "partitions": {
+          "2000": 86,
+          "2001": 84,
+          "2002": 86,
+          "2003": 85,
+          "2004": 84,
+          "2005": 84,
+          "2006": 85,
+          "2007": 84,
+          "2008": 85,
+          "2009": 85,
+          "2010": 86,
+          "2011": 90,
+          "2012": 92,
+          "2013": 92,
+          "2014": 93,
+          "2015": 94,
+          "2016": 94,
+          "2017": 94,
+          "2018": 94,
+          "2019": 94,
+          "2020": 93,
+          "2021": 100,
+          "2022": 100,
+          "2023": 100,
+          "2024": 100
+        },
+        "clean_rows": 2264,
         "last_run": {
-          "at": "2026-11-01T12:38:19.904453+00:00",
+          "at": "2026-11-25T09:39:07.582916+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -34778,9 +35168,18 @@
           "mix-energetico"
         ],
         "category": "energia",
-        "clean_rows": 210204,
+        "partitions": {
+          "2019": 52548,
+          "2020": 52704,
+          "2021": 52560,
+          "2022": 52560,
+          "2023": 52560,
+          "2024": 52704,
+          "2025": 210204
+        },
+        "clean_rows": 525840,
         "last_run": {
-          "at": "2026-11-01T12:38:47.487210+00:00",
+          "at": "2026-11-25T09:39:29.299371+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -34842,9 +35241,36 @@
           "fonti-rinnovabili"
         ],
         "category": "energia",
-        "clean_rows": 448,
+        "partitions": {
+          "2000": 342,
+          "2001": 342,
+          "2002": 346,
+          "2003": 348,
+          "2004": 348,
+          "2005": 348,
+          "2006": 358,
+          "2007": 358,
+          "2008": 360,
+          "2009": 366,
+          "2010": 384,
+          "2011": 398,
+          "2012": 400,
+          "2013": 410,
+          "2014": 416,
+          "2015": 414,
+          "2016": 422,
+          "2017": 418,
+          "2018": 418,
+          "2019": 420,
+          "2020": 422,
+          "2021": 448,
+          "2022": 448,
+          "2023": 448,
+          "2024": 448
+        },
+        "clean_rows": 9830,
         "last_run": {
-          "at": "2026-11-01T12:39:29.657891+00:00",
+          "at": "2026-11-25T09:40:05.310454+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -34912,9 +35338,18 @@
           "oraria"
         ],
         "category": "energia",
-        "clean_rows": 560640,
+        "partitions": {
+          "2019": 245224,
+          "2020": 245952,
+          "2021": 560638,
+          "2022": 560640,
+          "2023": 560640,
+          "2024": 562176,
+          "2025": 560640
+        },
+        "clean_rows": 3295910,
         "last_run": {
-          "at": "2026-11-01T12:42:24.906452+00:00",
+          "at": "2026-11-25T09:43:59.439014+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -34989,9 +35424,12 @@
           "flessibilit\u00e0"
         ],
         "category": "energia",
-        "clean_rows": 1700,
+        "partitions": {
+          "2024": 1699
+        },
+        "clean_rows": 1699,
         "last_run": {
-          "at": "2026-11-01T12:42:52.463887+00:00",
+          "at": "2026-11-25T09:44:30.156216+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -35355,9 +35793,12 @@
           "contenzioso"
         ],
         "category": "giustizia",
-        "clean_rows": 273418,
+        "partitions": {
+          "2026": 274690
+        },
+        "clean_rows": 274690,
         "last_run": {
-          "at": "2026-11-16T19:17:52.473117+00:00",
+          "at": "2026-11-25T09:43:24.073205+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -35478,9 +35919,12 @@
           "contenzioso"
         ],
         "category": "giustizia",
-        "clean_rows": 301580,
+        "partitions": {
+          "2026": 304165
+        },
+        "clean_rows": 304165,
         "last_run": {
-          "at": "2026-11-16T19:20:16.293614+00:00",
+          "at": "2026-11-25T09:46:16.137837+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -35602,9 +36046,12 @@
           "consultivo"
         ],
         "category": "giustizia",
+        "partitions": {
+          "2026": 22993
+        },
         "clean_rows": 22993,
         "last_run": {
-          "at": "2026-11-16T19:22:26.577106+00:00",
+          "at": "2026-11-25T09:49:32.554439+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -35725,9 +36172,12 @@
           "contenzioso"
         ],
         "category": "giustizia",
-        "clean_rows": 29676,
+        "partitions": {
+          "2026": 29896
+        },
+        "clean_rows": 29896,
         "last_run": {
-          "at": "2026-11-16T19:22:37.918680+00:00",
+          "at": "2026-11-25T09:49:48.604203+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -35817,9 +36267,12 @@
           "contenzioso"
         ],
         "category": "giustizia",
-        "clean_rows": 423463,
+        "partitions": {
+          "2026": 427040
+        },
+        "clean_rows": 427040,
         "last_run": {
-          "at": "2026-11-16T19:26:02.007877+00:00",
+          "at": "2026-11-25T09:53:56.802078+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -35897,9 +36350,12 @@
           "stock"
         ],
         "category": "giustizia",
-        "clean_rows": 2178,
+        "partitions": {
+          "2026": 2203
+        },
+        "clean_rows": 2203,
         "last_run": {
-          "at": "2026-11-16T19:28:11.830970+00:00",
+          "at": "2026-11-25T09:56:29.622885+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -35959,9 +36415,12 @@
           "contenzioso"
         ],
         "category": "giustizia",
-        "clean_rows": 205881,
+        "partitions": {
+          "2026": 207719
+        },
+        "clean_rows": 207719,
         "last_run": {
-          "at": "2026-11-16T19:29:30.149414+00:00",
+          "at": "2026-11-25T09:58:01.804415+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -36026,9 +36485,12 @@
           "definizioni"
         ],
         "category": "giustizia",
-        "clean_rows": 3874,
+        "partitions": {
+          "2026": 3901
+        },
+        "clean_rows": 3901,
         "last_run": {
-          "at": "2026-11-16T19:31:29.782036+00:00",
+          "at": "2026-11-25T10:00:18.823088+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -36103,9 +36565,12 @@
           "contenzioso"
         ],
         "category": "giustizia",
-        "clean_rows": 501531,
+        "partitions": {
+          "2026": 506895
+        },
+        "clean_rows": 506895,
         "last_run": {
-          "at": "2026-11-16T19:35:03.571398+00:00",
+          "at": "2026-11-25T10:04:03.237435+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -36227,9 +36692,12 @@
           "sentenze-brevi"
         ],
         "category": "giustizia",
-        "clean_rows": 191955,
+        "partitions": {
+          "2026": 193740
+        },
+        "clean_rows": 193740,
         "last_run": {
-          "at": "2026-11-16T19:32:56.358340+00:00",
+          "at": "2026-11-25T10:01:50.193520+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -36299,9 +36767,12 @@
           "contenzioso"
         ],
         "category": "giustizia",
-        "clean_rows": 35116,
+        "partitions": {
+          "2026": 35323
+        },
+        "clean_rows": 35323,
         "last_run": {
-          "at": "2026-11-16T19:24:17.475947+00:00",
+          "at": "2026-11-25T09:51:45.429275+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -42590,7 +43061,7 @@
         ],
         "category": "welfare-lavoro",
         "last_run": {
-          "at": "2026-11-23T12:57:01.508552+00:00",
+          "at": "2026-11-25T12:02:33.072436+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -42621,9 +43092,12 @@
           "headcount"
         ],
         "category": "welfare-lavoro",
+        "partitions": {
+          "2026": 13184
+        },
         "clean_rows": 13184,
         "last_run": {
-          "at": "2026-11-23T12:45:07.427335+00:00",
+          "at": "2026-11-25T11:52:40.023473+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -42738,9 +43212,12 @@
           "argomenti"
         ],
         "category": "welfare-lavoro",
+        "partitions": {
+          "2026": 95899
+        },
         "clean_rows": 95899,
         "last_run": {
-          "at": "2026-11-23T12:45:09.443368+00:00",
+          "at": "2026-11-25T11:52:43.242143+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -42847,9 +43324,12 @@
           "grafo-storico"
         ],
         "category": "welfare-lavoro",
+        "partitions": {
+          "2026": 611
+        },
         "clean_rows": 611,
         "last_run": {
-          "at": "2026-11-23T12:56:38.814721+00:00",
+          "at": "2026-11-25T12:02:06.610766+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -42936,9 +43416,12 @@
           "anagrafica"
         ],
         "category": "welfare-lavoro",
-        "clean_rows": 7797,
+        "partitions": {
+          "2026": 7798
+        },
+        "clean_rows": 7798,
         "last_run": {
-          "at": "2026-11-23T12:56:40.373999+00:00",
+          "at": "2026-11-25T12:02:09.196112+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -43101,9 +43584,12 @@
           "firmatari"
         ],
         "category": "welfare-lavoro",
+        "partitions": {
+          "2026": 1659
+        },
         "clean_rows": 1659,
         "last_run": {
-          "at": "2026-11-23T12:56:55.424022+00:00",
+          "at": "2026-11-25T12:02:23.552222+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -43240,9 +43726,12 @@
           "uniemens"
         ],
         "category": "welfare-lavoro",
+        "partitions": {
+          "2026": 166507
+        },
         "clean_rows": 166507,
         "last_run": {
-          "at": "2026-11-23T12:56:56.861150+00:00",
+          "at": "2026-11-25T12:02:25.233917+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -44698,9 +45187,14 @@
           "support"
         ],
         "category": "pa",
-        "clean_rows": 25515,
+        "partitions": {
+          "2024": 24960,
+          "2025": 25338,
+          "2026": 25515
+        },
+        "clean_rows": 75813,
         "last_run": {
-          "at": "2026-11-06T22:43:34.955594+00:00",
+          "at": "2026-11-25T11:58:15.719728+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -44799,9 +45293,14 @@
           "appalti"
         ],
         "category": "appalti",
-        "clean_rows": 1854,
+        "partitions": {
+          "2024": 1823,
+          "2025": 1938,
+          "2026": 1854
+        },
+        "clean_rows": 5615,
         "last_run": {
-          "at": "2026-11-06T22:47:42.194228+00:00",
+          "at": "2026-11-25T12:00:28.565306+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -44987,9 +45486,14 @@
           "cpv"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 279476,
+        "partitions": {
+          "2024": 711073,
+          "2025": 494745,
+          "2026": 279476
+        },
+        "clean_rows": 1485294,
         "last_run": {
-          "at": "2026-11-06T23:01:39.642600+00:00",
+          "at": "2026-11-25T12:09:49.006535+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -45088,9 +45592,14 @@
           "convenzione"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 6208,
+        "partitions": {
+          "2024": 8048,
+          "2025": 7115,
+          "2026": 6208
+        },
+        "clean_rows": 21371,
         "last_run": {
-          "at": "2026-11-06T23:06:05.099371+00:00",
+          "at": "2026-11-25T12:16:07.229270+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -45187,9 +45696,14 @@
           "geolocalizzato"
         ],
         "category": "appalti",
-        "clean_rows": 21907,
+        "partitions": {
+          "2024": 15930,
+          "2025": 19590,
+          "2026": 21907
+        },
+        "clean_rows": 57427,
         "last_run": {
-          "at": "2026-11-06T23:10:28.853140+00:00",
+          "at": "2026-11-25T12:18:23.935400+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -45349,9 +45863,14 @@
           "operatori-economici"
         ],
         "category": "economia",
-        "clean_rows": 321290,
+        "partitions": {
+          "2024": 243744,
+          "2025": 294618,
+          "2026": 321290
+        },
+        "clean_rows": 859652,
         "last_run": {
-          "at": "2026-11-06T23:19:50.587644+00:00",
+          "at": "2026-11-25T12:24:43.621446+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -45463,9 +45982,14 @@
           "spesa"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 13181,
+        "partitions": {
+          "2024": 20578,
+          "2025": 17853,
+          "2026": 13181
+        },
+        "clean_rows": 51612,
         "last_run": {
-          "at": "2026-11-06T23:23:09.220649+00:00",
+          "at": "2026-11-25T12:29:36.903374+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -45582,9 +46106,14 @@
           "spesa"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 83908,
+        "partitions": {
+          "2024": 124556,
+          "2025": 119195,
+          "2026": 83908
+        },
+        "clean_rows": 327659,
         "last_run": {
-          "at": "2026-11-06T23:33:13.581762+00:00",
+          "at": "2026-11-25T12:33:30.897319+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -45702,9 +46231,14 @@
           "partecipazioni"
         ],
         "category": "appalti",
-        "clean_rows": 1039750,
+        "partitions": {
+          "2024": 811313,
+          "2025": 955039,
+          "2026": 1039750
+        },
+        "clean_rows": 2806102,
         "last_run": {
-          "at": "2026-11-06T23:56:33.390934+00:00",
+          "at": "2026-11-25T13:02:47.913452+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -45806,9 +46340,14 @@
           "competizione"
         ],
         "category": "appalti",
-        "clean_rows": 14571,
+        "partitions": {
+          "2024": 17956,
+          "2025": 18364,
+          "2026": 14571
+        },
+        "clean_rows": 50891,
         "last_run": {
-          "at": "2026-11-07T00:09:42.833898+00:00",
+          "at": "2026-11-25T13:20:20.737702+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -45923,7 +46462,7 @@
         "name": "Anzianita",
         "source_id": "conto_annuale",
         "period": {
-          "start": 2017,
+          "start": 2011,
           "end": 2024
         },
         "registry_source": "open-conto-annuale",
@@ -45936,9 +46475,25 @@
           "dipendenti-pubblici"
         ],
         "category": "pa",
-        "clean_rows": 155657,
+        "partitions": {
+          "2011": 246940,
+          "2012": 243386,
+          "2013": 242611,
+          "2014": 240545,
+          "2015": 235659,
+          "2016": 226463,
+          "2017": 223365,
+          "2018": 216653,
+          "2019": 216457,
+          "2020": 212184,
+          "2021": 210343,
+          "2022": 208903,
+          "2023": 160122,
+          "2024": 155657
+        },
+        "clean_rows": 3039288,
         "last_run": {
-          "at": "2026-10-09T13:34:37.942669+00:00",
+          "at": "2026-11-25T09:25:17.845679+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -46073,7 +46628,7 @@
         "name": "Assenze",
         "source_id": "conto_annuale",
         "period": {
-          "start": 2017,
+          "start": 2011,
           "end": 2024
         },
         "registry_source": "open-conto-annuale",
@@ -46086,9 +46641,25 @@
           "dipendenti-pubblici"
         ],
         "category": "pa",
-        "clean_rows": 196647,
+        "partitions": {
+          "2011": 364521,
+          "2012": 347823,
+          "2013": 340029,
+          "2014": 341433,
+          "2015": 327819,
+          "2016": 330754,
+          "2017": 316379,
+          "2018": 306984,
+          "2019": 313692,
+          "2020": 309531,
+          "2021": 316839,
+          "2022": 337881,
+          "2023": 188248,
+          "2024": 196647
+        },
+        "clean_rows": 4338580,
         "last_run": {
-          "at": "2026-10-09T13:32:54.393588+00:00",
+          "at": "2026-11-25T09:23:50.079440+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -46252,9 +46823,12 @@
           "support"
         ],
         "category": "pa",
+        "partitions": {
+          "2024": 29
+        },
         "clean_rows": 29,
         "last_run": {
-          "at": "2026-10-09T13:32:26.612773+00:00",
+          "at": "2026-11-25T09:23:27.179782+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -46315,9 +46889,12 @@
           "support"
         ],
         "category": "pa",
+        "partitions": {
+          "2024": 47
+        },
         "clean_rows": 47,
         "last_run": {
-          "at": "2026-10-09T13:32:24.124931+00:00",
+          "at": "2026-11-25T09:23:24.959544+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -46388,9 +46965,12 @@
           "support"
         ],
         "category": "pa",
+        "partitions": {
+          "2024": 12843
+        },
         "clean_rows": 12843,
         "last_run": {
-          "at": "2026-10-09T13:32:23.020867+00:00",
+          "at": "2026-11-25T09:23:24.007950+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -46462,9 +47042,12 @@
           "support"
         ],
         "category": "pa",
+        "partitions": {
+          "2024": 304
+        },
         "clean_rows": 304,
         "last_run": {
-          "at": "2026-10-09T13:32:30.095547+00:00",
+          "at": "2026-11-25T09:23:30.225673+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -46545,9 +47128,12 @@
           "support"
         ],
         "category": "pa",
+        "partitions": {
+          "2024": 1465
+        },
         "clean_rows": 1465,
         "last_run": {
-          "at": "2026-10-09T13:32:24.905395+00:00",
+          "at": "2026-11-25T09:23:25.660374+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -46623,9 +47209,12 @@
           "support"
         ],
         "category": "pa",
+        "partitions": {
+          "2024": 7901
+        },
         "clean_rows": 7901,
         "last_run": {
-          "at": "2026-10-09T13:32:27.378204+00:00",
+          "at": "2026-11-25T09:23:27.863635+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -46703,9 +47292,12 @@
           "support"
         ],
         "category": "pa",
+        "partitions": {
+          "2024": 6
+        },
         "clean_rows": 6,
         "last_run": {
-          "at": "2026-10-09T13:32:28.430818+00:00",
+          "at": "2026-11-25T09:23:28.748199+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -46756,9 +47348,12 @@
           "support"
         ],
         "category": "pa",
+        "partitions": {
+          "2024": 1485
+        },
         "clean_rows": 1485,
         "last_run": {
-          "at": "2026-10-09T13:32:29.199698+00:00",
+          "at": "2026-11-25T09:23:29.451876+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -46829,9 +47424,12 @@
           "support"
         ],
         "category": "pa",
+        "partitions": {
+          "2024": 178
+        },
         "clean_rows": 178,
         "last_run": {
-          "at": "2026-10-09T13:32:25.824087+00:00",
+          "at": "2026-11-25T09:23:26.481707+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -46883,7 +47481,7 @@
         "name": "Comandati",
         "source_id": "conto_annuale",
         "period": {
-          "start": 2017,
+          "start": 2011,
           "end": 2024
         },
         "registry_source": "open-conto-annuale",
@@ -46896,10 +47494,26 @@
           "dipendenti-pubblici"
         ],
         "category": "pa",
-        "clean_rows": 16263,
+        "partitions": {
+          "2011": 16376,
+          "2012": 17594,
+          "2013": 18098,
+          "2014": 17097,
+          "2015": 18650,
+          "2016": 19867,
+          "2017": 21080,
+          "2018": 20176,
+          "2019": 20027,
+          "2020": 20326,
+          "2021": 21261,
+          "2022": 21240,
+          "2023": 17082,
+          "2024": 16263
+        },
+        "clean_rows": 265137,
         "last_run": {
-          "at": "2026-10-09T13:35:12.562854+00:00",
-          "year": 2024,
+          "at": "2026-11-25T09:25:43.258612+00:00",
+          "year": 2023,
           "status": "SUCCESS"
         },
         "location": {
@@ -46992,7 +47606,7 @@
         "name": "Composizione Retribuzione",
         "source_id": "conto_annuale",
         "period": {
-          "start": 2017,
+          "start": 2011,
           "end": 2024
         },
         "registry_source": "open-conto-annuale",
@@ -47006,9 +47620,25 @@
           "dipendenti-pubblici"
         ],
         "category": "pa",
-        "clean_rows": 550897,
+        "partitions": {
+          "2011": 1030838,
+          "2012": 982184,
+          "2013": 956094,
+          "2014": 942220,
+          "2015": 920865,
+          "2016": 931726,
+          "2017": 898348,
+          "2018": 1031716,
+          "2019": 976510,
+          "2020": 983988,
+          "2021": 986365,
+          "2022": 1080074,
+          "2023": 576142,
+          "2024": 550897
+        },
+        "clean_rows": 12847967,
         "last_run": {
-          "at": "2026-10-09T13:33:36.613783+00:00",
+          "at": "2026-11-25T09:24:27.118286+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -47154,7 +47784,7 @@
         "name": "Contrattazione",
         "source_id": "conto_annuale",
         "period": {
-          "start": 2017,
+          "start": 2011,
           "end": 2024
         },
         "registry_source": "open-conto-annuale",
@@ -47167,9 +47797,25 @@
           "dipendenti-pubblici"
         ],
         "category": "pa",
-        "clean_rows": 215242,
+        "partitions": {
+          "2011": 147343,
+          "2012": 146926,
+          "2013": 144219,
+          "2014": 140548,
+          "2015": 134254,
+          "2016": 122672,
+          "2017": 130359,
+          "2018": 123076,
+          "2019": 144951,
+          "2020": 178034,
+          "2021": 170647,
+          "2022": 180766,
+          "2023": 211692,
+          "2024": 215242
+        },
+        "clean_rows": 2190729,
         "last_run": {
-          "at": "2026-10-09T13:35:29.540731+00:00",
+          "at": "2026-11-25T09:25:57.436146+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -47264,7 +47910,7 @@
         "name": "Costo Lavoro",
         "source_id": "conto_annuale",
         "period": {
-          "start": 2017,
+          "start": 2011,
           "end": 2024
         },
         "registry_source": "open-conto-annuale",
@@ -47278,9 +47924,25 @@
           "dipendenti-pubblici"
         ],
         "category": "pa",
-        "clean_rows": 259961,
+        "partitions": {
+          "2011": 245277,
+          "2012": 239367,
+          "2013": 235320,
+          "2014": 237024,
+          "2015": 231504,
+          "2016": 235577,
+          "2017": 230789,
+          "2018": 247521,
+          "2019": 247185,
+          "2020": 246328,
+          "2021": 248444,
+          "2022": 258947,
+          "2023": 255130,
+          "2024": 259961
+        },
+        "clean_rows": 3418374,
         "last_run": {
-          "at": "2026-10-09T13:33:56.587165+00:00",
+          "at": "2026-11-25T09:24:43.747451+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -47395,7 +48057,7 @@
         "name": "Distribuzione",
         "source_id": "conto_annuale",
         "period": {
-          "start": 2017,
+          "start": 2011,
           "end": 2024
         },
         "registry_source": "open-conto-annuale",
@@ -47409,9 +48071,25 @@
           "dipendenti-pubblici"
         ],
         "category": "pa",
-        "clean_rows": 62765,
+        "partitions": {
+          "2011": 127214,
+          "2012": 126417,
+          "2013": 125387,
+          "2014": 125313,
+          "2015": 124037,
+          "2016": 120208,
+          "2017": 117377,
+          "2018": 113170,
+          "2019": 115804,
+          "2020": 115972,
+          "2021": 116478,
+          "2022": 116620,
+          "2023": 64507,
+          "2024": 62765
+        },
+        "clean_rows": 1571269,
         "last_run": {
-          "at": "2026-10-09T13:36:08.103530+00:00",
+          "at": "2026-11-25T09:26:25.663233+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -47502,7 +48180,7 @@
         "name": "Flessibili",
         "source_id": "conto_annuale",
         "period": {
-          "start": 2017,
+          "start": 2011,
           "end": 2024
         },
         "registry_source": "open-conto-annuale",
@@ -47515,9 +48193,25 @@
           "dipendenti-pubblici"
         ],
         "category": "pa",
-        "clean_rows": 11306,
+        "partitions": {
+          "2011": 13257,
+          "2012": 12654,
+          "2013": 12014,
+          "2014": 11991,
+          "2015": 12127,
+          "2016": 12019,
+          "2017": 12297,
+          "2018": 12320,
+          "2019": 12244,
+          "2020": 11678,
+          "2021": 11635,
+          "2022": 11813,
+          "2023": 11461,
+          "2024": 11306
+        },
+        "clean_rows": 168816,
         "last_run": {
-          "at": "2026-10-09T13:35:42.128014+00:00",
+          "at": "2026-11-25T09:26:06.151536+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -47631,7 +48325,7 @@
         "name": "Modalita Flessibile",
         "source_id": "conto_annuale",
         "period": {
-          "start": 2021,
+          "start": 2011,
           "end": 2024
         },
         "registry_source": "open-conto-annuale",
@@ -47645,10 +48339,26 @@
           "dipendenti-pubblici"
         ],
         "category": "pa",
-        "clean_rows": 8169,
+        "partitions": {
+          "2011": 7209,
+          "2012": 7329,
+          "2013": 7391,
+          "2014": 7326,
+          "2015": 7216,
+          "2016": 6985,
+          "2017": 6838,
+          "2018": 6782,
+          "2019": 6656,
+          "2020": 10564,
+          "2021": 8693,
+          "2022": 8278,
+          "2023": 7943,
+          "2024": 8169
+        },
+        "clean_rows": 107379,
         "last_run": {
-          "at": "2026-10-09T13:36:33.071081+00:00",
-          "year": 2024,
+          "at": "2026-11-25T09:26:42.398821+00:00",
+          "year": 2023,
           "status": "SUCCESS"
         },
         "location": {
@@ -47761,7 +48471,7 @@
         "name": "Occupazione",
         "source_id": "conto_annuale",
         "period": {
-          "start": 2017,
+          "start": 2011,
           "end": 2024
         },
         "registry_source": "open-conto-annuale",
@@ -47776,9 +48486,25 @@
           "dipendenti-pubblici"
         ],
         "category": "pa",
-        "clean_rows": 52913,
+        "partitions": {
+          "2011": 112673,
+          "2012": 111652,
+          "2013": 110928,
+          "2014": 109502,
+          "2015": 107637,
+          "2016": 104834,
+          "2017": 103568,
+          "2018": 99718,
+          "2019": 102054,
+          "2020": 101994,
+          "2021": 102786,
+          "2022": 103081,
+          "2023": 54426,
+          "2024": 52913
+        },
+        "clean_rows": 1377766,
         "last_run": {
-          "at": "2026-10-09T13:36:50.258353+00:00",
+          "at": "2026-11-25T09:26:56.133304+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -47882,7 +48608,7 @@
         "name": "Passaggi",
         "source_id": "conto_annuale",
         "period": {
-          "start": 2017,
+          "start": 2011,
           "end": 2024
         },
         "registry_source": "open-conto-annuale",
@@ -47895,10 +48621,26 @@
           "dipendenti-pubblici"
         ],
         "category": "pa",
-        "clean_rows": 17131,
+        "partitions": {
+          "2011": 15698,
+          "2012": 6545,
+          "2013": 4916,
+          "2014": 4972,
+          "2015": 8561,
+          "2016": 15705,
+          "2017": 16539,
+          "2018": 15828,
+          "2019": 21830,
+          "2020": 22491,
+          "2021": 25563,
+          "2022": 27440,
+          "2023": 13269,
+          "2024": 17131
+        },
+        "clean_rows": 216488,
         "last_run": {
-          "at": "2026-10-09T13:35:52.703441+00:00",
-          "year": 2024,
+          "at": "2026-11-25T09:26:13.126299+00:00",
+          "year": 2023,
           "status": "SUCCESS"
         },
         "location": {
@@ -48017,7 +48759,7 @@
         "name": "Personale",
         "source_id": "conto_annuale",
         "period": {
-          "start": 2017,
+          "start": 2011,
           "end": 2024
         },
         "registry_source": "open-conto-annuale",
@@ -48031,9 +48773,25 @@
           "dipendenti-pubblici"
         ],
         "category": "pa",
-        "clean_rows": 174758,
+        "partitions": {
+          "2011": 262661,
+          "2012": 258556,
+          "2013": 255964,
+          "2014": 251700,
+          "2015": 245020,
+          "2016": 237588,
+          "2017": 233163,
+          "2018": 227528,
+          "2019": 229799,
+          "2020": 229276,
+          "2021": 232598,
+          "2022": 235906,
+          "2023": 177194,
+          "2024": 174758
+        },
+        "clean_rows": 3251711,
         "last_run": {
-          "at": "2026-10-09T13:34:17.867683+00:00",
+          "at": "2026-11-25T09:25:01.723314+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -48174,7 +48932,7 @@
         "name": "Retribuzione Media",
         "source_id": "conto_annuale",
         "period": {
-          "start": 2017,
+          "start": 2011,
           "end": 2024
         },
         "registry_source": "open-conto-annuale",
@@ -48187,10 +48945,26 @@
           "dipendenti-pubblici"
         ],
         "category": "pa",
-        "clean_rows": 33619,
+        "partitions": {
+          "2011": 36152,
+          "2012": 35928,
+          "2013": 35874,
+          "2014": 35349,
+          "2015": 34945,
+          "2016": 33820,
+          "2017": 33631,
+          "2018": 33027,
+          "2019": 33178,
+          "2020": 32803,
+          "2021": 33539,
+          "2022": 33172,
+          "2023": 33954,
+          "2024": 33619
+        },
+        "clean_rows": 478991,
         "last_run": {
-          "at": "2026-10-09T13:36:21.250478+00:00",
-          "year": 2024,
+          "at": "2026-11-25T09:26:34.349329+00:00",
+          "year": 2023,
           "status": "SUCCESS"
         },
         "location": {
@@ -48288,7 +49062,7 @@
         "name": "Titoli Studio",
         "source_id": "conto_annuale",
         "period": {
-          "start": 2017,
+          "start": 2011,
           "end": 2024
         },
         "registry_source": "open-conto-annuale",
@@ -48301,9 +49075,25 @@
           "dipendenti-pubblici"
         ],
         "category": "pa",
-        "clean_rows": 91943,
+        "partitions": {
+          "2011": 165241,
+          "2012": 164134,
+          "2013": 163577,
+          "2014": 161648,
+          "2015": 158973,
+          "2016": 154838,
+          "2017": 153085,
+          "2018": 148420,
+          "2019": 150584,
+          "2020": 150152,
+          "2021": 151136,
+          "2022": 151678,
+          "2023": 95112,
+          "2024": 91943
+        },
+        "clean_rows": 2060521,
         "last_run": {
-          "at": "2026-10-09T13:34:56.205169+00:00",
+          "at": "2026-11-25T09:25:32.556243+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -58756,9 +59546,12 @@
           "entrate"
         ],
         "category": "finanza-pubblica",
+        "partitions": {
+          "2026": 18066
+        },
         "clean_rows": 18066,
         "last_run": {
-          "at": "2026-11-05T14:20:19.332270+00:00",
+          "at": "2026-11-25T08:30:49.525761+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -58828,9 +59621,12 @@
           "uscite"
         ],
         "category": "finanza-pubblica",
+        "partitions": {
+          "2026": 21343
+        },
         "clean_rows": 21343,
         "last_run": {
-          "at": "2026-11-05T14:20:22.230350+00:00",
+          "at": "2026-11-25T08:30:52.911807+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -58904,9 +59700,12 @@
           "comparti"
         ],
         "category": "finanza-pubblica",
+        "partitions": {
+          "2026": 24
+        },
         "clean_rows": 24,
         "last_run": {
-          "at": "2026-11-05T14:20:09.159000+00:00",
+          "at": "2026-11-25T08:30:39.864385+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -58950,9 +59749,12 @@
           "comuni"
         ],
         "category": "finanza-pubblica",
+        "partitions": {
+          "2026": 8226
+        },
         "clean_rows": 8226,
         "last_run": {
-          "at": "2026-11-05T14:20:30.770421+00:00",
+          "at": "2026-11-25T08:30:59.134814+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -59004,9 +59806,12 @@
           "enti"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 18164,
+        "partitions": {
+          "2026": 18214
+        },
+        "clean_rows": 18214,
         "last_run": {
-          "at": "2026-11-05T14:20:16.432260+00:00",
+          "at": "2026-11-25T08:30:46.356962+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -59091,9 +59896,12 @@
           "province"
         ],
         "category": "finanza-pubblica",
+        "partitions": {
+          "2026": 110
+        },
         "clean_rows": 110,
         "last_run": {
-          "at": "2026-11-05T14:20:27.712000+00:00",
+          "at": "2026-11-25T08:30:56.121708+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -59156,9 +59964,12 @@
           "sottocomparti"
         ],
         "category": "finanza-pubblica",
+        "partitions": {
+          "2026": 75
+        },
         "clean_rows": 75,
         "last_run": {
-          "at": "2026-11-05T14:20:13.303271+00:00",
+          "at": "2026-11-25T08:30:43.572184+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -59207,9 +60018,17 @@
           "unificato"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 1279660,
+        "partitions": {
+          "2021": 1247347,
+          "2022": 1257281,
+          "2023": 1212841,
+          "2024": 1317172,
+          "2025": 1343726,
+          "2026": 1302541
+        },
+        "clean_rows": 7680908,
         "last_run": {
-          "at": "2026-11-05T14:36:35.207523+00:00",
+          "at": "2026-11-25T08:47:18.796724+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -59353,9 +60172,17 @@
           "enti-pubblici"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 3448027,
+        "partitions": {
+          "2021": 4072951,
+          "2022": 4060149,
+          "2023": 3983152,
+          "2024": 4261540,
+          "2025": 4290734,
+          "2026": 3871124
+        },
+        "clean_rows": 24539650,
         "last_run": {
-          "at": "2026-11-05T14:24:28.136024+00:00",
+          "at": "2026-11-25T08:34:54.660909+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -59498,9 +60325,17 @@
           "enti-pubblici"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 7190211,
+        "partitions": {
+          "2021": 7980508,
+          "2022": 8084463,
+          "2023": 7855196,
+          "2024": 8507789,
+          "2025": 8714561,
+          "2026": 8091751
+        },
+        "clean_rows": 49234268,
         "last_run": {
-          "at": "2026-11-05T14:32:42.316059+00:00",
+          "at": "2026-11-25T08:43:22.020077+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -59642,7 +60477,6 @@
         "registry_source": "opencivitas",
         "published": false,
         "description": "Spesa standard vs storica, performance scores e determinanti demografiche per comune RSO \u2014 il TOT aggregato dal RDF OpenCivitas.",
-        "source": "https://www.opencivitas.it/",
         "tags": [
           "finanza-pubblica",
           "opencivitas",
@@ -59651,9 +60485,17 @@
           "performance"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 6587,
+        "partitions": {
+          "2017": 6657,
+          "2018": 6636,
+          "2019": 6597,
+          "2021": 6595,
+          "2022": 6585,
+          "2023": 6587
+        },
+        "clean_rows": 39657,
         "last_run": {
-          "at": "2026-11-06T10:29:20.176793+00:00",
+          "at": "2026-11-25T11:56:09.233793+00:00",
           "year": 2023,
           "status": "SUCCESS"
         },
@@ -59867,9 +60709,16 @@
           "province"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 86,
+        "partitions": {
+          "2022": 86,
+          "2023": 86,
+          "2024": 86,
+          "2025": 86,
+          "2026": 86
+        },
+        "clean_rows": 430,
         "last_run": {
-          "at": "2026-11-06T10:31:03.659693+00:00",
+          "at": "2026-11-25T11:58:04.380172+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -59978,9 +60827,12 @@
           "province"
         ],
         "category": "finanza-pubblica",
+        "partitions": {
+          "2026": 86
+        },
         "clean_rows": 86,
         "last_run": {
-          "at": "2026-11-06T10:27:08.102735+00:00",
+          "at": "2026-11-25T11:53:45.261260+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -60046,7 +60898,6 @@
         "registry_source": "opencivitas",
         "published": false,
         "description": "Anagrafica enti RSO con codice Sogei, provincia e regione \u2014 tavola di supporto per join con dataset principali.",
-        "source": "https://www.opencivitas.it/",
         "tags": [
           "finanza-pubblica",
           "opencivitas",
@@ -60054,9 +60905,12 @@
           "enti"
         ],
         "category": "finanza-pubblica",
+        "partitions": {
+          "2025": 6573
+        },
         "clean_rows": 6573,
         "last_run": {
-          "at": "2026-11-06T10:27:04.656407+00:00",
+          "at": "2026-11-25T11:53:41.985709+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -60112,16 +60966,26 @@
         "registry_source": "opencivitas",
         "published": true,
         "description": "Finanza comunale FSC: capacit\u00e0 fiscale, fondo perequativo e dotazione finale per comune RSO.",
-        "source": "https://www.opencivitas.it/",
         "tags": [
           "finanza-pubblica",
           "opencivitas",
           "fsc"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 6572,
+        "partitions": {
+          "2017": 6581,
+          "2018": 6581,
+          "2020": 6581,
+          "2021": 6581,
+          "2022": 6581,
+          "2023": 6578,
+          "2024": 6578,
+          "2025": 6573,
+          "2026": 6572
+        },
+        "clean_rows": 59206,
         "last_run": {
-          "at": "2026-11-06T10:30:49.580797+00:00",
+          "at": "2026-11-25T11:57:48.448362+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -60224,16 +61088,23 @@
         "registry_source": "opencivitas",
         "published": false,
         "description": "Metadati indicatori OpenCivitas: codice, descrizione, tipo, categoria e funzione per ogni indicatore.",
-        "source": "https://www.opencivitas.it/",
         "tags": [
           "finanza-pubblica",
           "opencivitas",
           "glossario"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 578,
+        "partitions": {
+          "2017": 625,
+          "2018": 524,
+          "2019": 626,
+          "2021": 602,
+          "2022": 582,
+          "2023": 578
+        },
+        "clean_rows": 3537,
         "last_run": {
-          "at": "2026-11-06T10:27:32.549705+00:00",
+          "at": "2026-11-25T11:54:10.507443+00:00",
           "year": 2023,
           "status": "SUCCESS"
         },
@@ -60302,16 +61173,23 @@
         "registry_source": "opencivitas",
         "published": false,
         "description": "Indicatori di servizio dei comuni RSO su 7 ambiti (rifiuti, istruzione, sociale, viabilit\u00e0, amministrazione) \u2014 formato EAV.",
-        "source": "https://www.opencivitas.it/",
         "tags": [
           "finanza-pubblica",
           "opencivitas",
           "indicatori"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 2677968,
+        "partitions": {
+          "2017": 2866682,
+          "2018": 2897045,
+          "2019": 2907288,
+          "2021": 2726971,
+          "2022": 2670752,
+          "2023": 2677968
+        },
+        "clean_rows": 16746706,
         "last_run": {
-          "at": "2026-11-06T10:44:38.602989+00:00",
+          "at": "2026-11-25T12:13:22.344750+00:00",
           "year": 2023,
           "status": "SUCCESS"
         },
@@ -61415,9 +62293,21 @@
           "aiuti"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 1001955,
+        "partitions": {
+          "2017": 216933,
+          "2018": 696529,
+          "2019": 524509,
+          "2020": 2538138,
+          "2021": 2722248,
+          "2022": 2134540,
+          "2023": 2946545,
+          "2024": 2413137,
+          "2025": 2137462,
+          "2026": 1341065
+        },
+        "clean_rows": 17671106,
         "last_run": {
-          "at": "2026-11-05T20:58:57.709809+00:00",
+          "at": "2026-11-25T12:34:03.027984+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -61622,9 +62512,12 @@
           "misure"
         ],
         "category": "finanza-pubblica",
-        "clean_rows": 21030,
+        "partitions": {
+          "2027": 21156
+        },
+        "clean_rows": 21156,
         "last_run": {
-          "at": "2026-11-05T20:59:09.667337+00:00",
+          "at": "2026-11-25T12:34:17.929050+00:00",
           "year": 2027,
           "status": "SUCCESS"
         },
@@ -61765,9 +62658,12 @@
           "legislativo"
         ],
         "category": "politica",
-        "clean_rows": 10026,
+        "partitions": {
+          "2026": 10047
+        },
+        "clean_rows": 10047,
         "last_run": {
-          "at": "2026-11-13T12:41:21.395708+00:00",
+          "at": "2026-11-25T08:42:00.708351+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -61947,9 +62843,12 @@
           "oratori"
         ],
         "category": "politica",
-        "clean_rows": 372131,
+        "partitions": {
+          "2026": 375098
+        },
+        "clean_rows": 375098,
         "last_run": {
-          "at": "2026-11-13T12:41:23.993632+00:00",
+          "at": "2026-11-25T08:42:02.568015+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -62059,9 +62958,12 @@
           "intensita"
         ],
         "category": "politica",
-        "clean_rows": 764941,
+        "partitions": {
+          "2026": 766605
+        },
+        "clean_rows": 766605,
         "last_run": {
-          "at": "2026-11-13T12:41:31.239913+00:00",
+          "at": "2026-11-25T08:42:08.558088+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -66407,6 +67309,7 @@
       "ca_anag_voci_spesa_seed",
       "comandati",
       "composizione_retribuzione",
+      "contorno_comparti",
       "contrattazione",
       "costo_lavoro",
       "distribuzione",
@@ -72717,6 +73620,24 @@
         "dipendenti-pubblici"
       ],
       "description": "Importi retributivi per voce di spesa e qualifica del personale delle PA italiane (2020-2024), arricchiti con anagrafica enti, comparti, qualifiche e voci di spesa."
+    },
+    "contorno_comparti": {
+      "name": "Contorno Comparti",
+      "published": false,
+      "source_id": "dataciviclab_composite",
+      "registry_source": "open-conto-annuale",
+      "domain": null,
+      "category": "pa",
+      "tags": [
+        "pa",
+        "conto-annuale",
+        "compose",
+        "comparti",
+        "personale",
+        "costo-lavoro",
+        "intelligence"
+      ],
+      "description": "Compose del Conto Annuale: un paniere di metriche per comparto x anno (occupazione, costo del lavoro, assenze, retribuzioni, flessibilita', contrattazione) da mart_sintesi dei dataset base. Grano: (anno, codi_comparto). PK unica su tutti i mart_sintesi 2011-2024 (6 comparti x 14 anni).\n"
     },
     "contrattazione": {
       "name": "Contrattazione",
