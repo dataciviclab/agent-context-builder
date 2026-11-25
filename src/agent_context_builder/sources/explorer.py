@@ -138,16 +138,19 @@ class ExplorerFetcher:
 
 
 def _card_dataset(raw: str) -> str:
-    """Slug del dataset da una card (``dataset:`` in testa, virgolette tolte)."""
+    """Slug del dataset da una card: ``dataset:`` a livello top (dovunque).
+
+    Il produttore (``build_cards.py``) e il validatore dell'Explorer leggono il
+    file con ``yaml.safe_load``: la posizione della chiave non conta. Qui si
+    accetta ``dataset:`` su qualunque riga non indentata (le chiavi annidate
+    sotto ``blocks:`` sono indentate), così una card con ``title:`` prima di
+    ``dataset:`` non diventa invisibile.
+    """
     for line in raw.splitlines():
-        stripped = line.strip()
-        if not stripped or stripped.startswith("#"):
-            continue
-        key, sep, value = stripped.partition(":")
-        if sep and key.strip() == "dataset":
-            return _strip_yaml_quotes(value.strip())
-        # `dataset:` è la prima chiave dichiarata: oltre non serve scorrere.
-        return ""
+        if line.startswith("dataset:"):
+            key, _, value = line.partition(":")
+            if key.strip() == "dataset":
+                return _strip_yaml_quotes(value.strip())
     return ""
 
 
