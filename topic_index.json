@@ -1,6 +1,6 @@
 {
   "schema_version": 8,
-  "generated_at": "2026-11-26T07:06:19.239541",
+  "generated_at": "2026-11-26T21:00:01.828397",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -74,7 +74,7 @@
       "url": "https://github.com/dataciviclab/dataset-incubator",
       "role": "infra",
       "domain": "sanita",
-      "n_datasets": 63,
+      "n_datasets": 66,
       "n_published": 18,
       "sources": [
         "adm_opendata",
@@ -96,13 +96,15 @@
         "lavoro_opendata",
         "liberiamoli_tutti",
         "mase_dgsaie",
+        "mef_dag",
         "ministero_salute",
         "ministero_salute_posti_letto",
         "mit_opendata",
         "openbdap",
+        "sedia",
         "ted"
       ],
-      "updated_at": "2026-11-25"
+      "updated_at": "2026-11-26"
     },
     "dcl-bologna": {
       "description": "Bologna in dati \u2014 analisi e dataset aperti sul Comune di Bologna.",
@@ -164,12 +166,12 @@
       "url": "https://github.com/dataciviclab/eurostat",
       "role": "dati",
       "domain": "welfare-lavoro",
-      "n_datasets": 48,
+      "n_datasets": 50,
       "n_published": 0,
       "sources": [
         "eurostat"
       ],
-      "updated_at": "2026-11-25"
+      "updated_at": "2026-11-26"
     },
     "filiere-agroalimentari": {
       "description": "Prezzi, redditi e aiuti della filiera agroalimentare italiana",
@@ -224,7 +226,7 @@
       "sources": [
         "gazzetta_ufficiale"
       ],
-      "updated_at": "2026-11-25"
+      "updated_at": "2026-11-26"
     },
     "imprese-italia": {
       "description": "Demografia d'impresa italiana: stock, flussi, variazioni e specializzazione territoriale dal Registro delle Imprese",
@@ -262,7 +264,7 @@
       "sources": [
         "inpa_reclutamento"
       ],
-      "updated_at": "2026-11-25"
+      "updated_at": "2026-11-26"
     },
     "italia-corpus": {
       "description": "La legislazione italiana a portata di ricerca \u2014 20.807 atti (22.409 espressioni) da Normattiva in formato aperto.",
@@ -274,7 +276,7 @@
       "sources": [
         "italia_corpus"
       ],
-      "updated_at": "2026-11-24"
+      "updated_at": "2026-11-26"
     },
     "italia-dipendenze": {
       "description": "Quanto dipende l'Italia dall'estero per le risorse che tiene in funzione?",
@@ -424,7 +426,7 @@
         "ispra",
         "ispra_linked_data"
       ],
-      "updated_at": "2026-11-06"
+      "updated_at": "2026-11-26"
     },
     "open-mim": {
       "description": "Scuola statale italiana: docenti, ATA e alunni dai dati MIM",
@@ -488,7 +490,7 @@
         "dati_camera",
         "dati_senato"
       ],
-      "updated_at": "2026-11-24"
+      "updated_at": "2026-11-26"
     },
     "open-siope": {
       "description": "La spesa pubblica italiana \u2014 comuni, ASL, regioni, universit\u00e0. Dati SIOPE aperti e interrogabili.",
@@ -2561,15 +2563,19 @@
           "master"
         ],
         "category": "pa",
+        "partitions": {
+          "2026": 7894
+        },
+        "clean_rows": 7894,
         "last_run": {
-          "at": "2026-11-13T15:15:39.866538+00:00",
+          "at": "2026-11-26T12:39:46.071003+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/comuni_master/2026/comuni_master_2026_clean.parquet",
-          "multi_file": true
+          "multi_file": false
         },
         "columns": [
           {
@@ -4426,9 +4432,12 @@
           "dimensione"
         ],
         "category": "politica",
+        "partitions": {
+          "2026": 68854
+        },
         "clean_rows": 68854,
         "last_run": {
-          "at": "2026-11-09T00:05:20.341710+00:00",
+          "at": "2026-11-26T10:34:06.774245+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -4583,9 +4592,12 @@
           "benchmark"
         ],
         "category": "politica",
+        "partitions": {
+          "2026": 210
+        },
         "clean_rows": 210,
         "last_run": {
-          "at": "2026-11-09T00:11:03.489101+00:00",
+          "at": "2026-11-26T10:34:16.943597+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -4646,9 +4658,12 @@
           "dimensione"
         ],
         "category": "politica",
+        "partitions": {
+          "2026": 6761
+        },
         "clean_rows": 6761,
         "last_run": {
-          "at": "2026-11-09T10:37:39.912511+00:00",
+          "at": "2026-11-26T10:34:41.062848+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -4764,9 +4779,12 @@
           "persona"
         ],
         "category": "politica",
+        "partitions": {
+          "2026": 504
+        },
         "clean_rows": 504,
         "last_run": {
-          "at": "2026-11-04T23:51:38.160978+00:00",
+          "at": "2026-11-26T09:56:02.335834+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -4817,9 +4835,12 @@
           "catena-legislativa"
         ],
         "category": "politica",
+        "partitions": {
+          "2026": 21
+        },
         "clean_rows": 21,
         "last_run": {
-          "at": "2026-11-05T00:06:03.510294+00:00",
+          "at": "2026-11-26T10:35:15.224810+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -4876,7 +4897,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open-politica/profilo_politico/2026/profilo_politico_2026_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -4999,9 +5020,12 @@
           "peso-documentale"
         ],
         "category": "politica",
-        "clean_rows": 7762,
+        "partitions": {
+          "2026": 7781
+        },
+        "clean_rows": 7781,
         "last_run": {
-          "at": "2026-11-05T00:06:38.303115+00:00",
+          "at": "2026-11-26T10:35:28.508737+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -5130,9 +5154,12 @@
           "catena-legislativa"
         ],
         "category": "politica",
-        "clean_rows": 349439,
+        "partitions": {
+          "2026": 361103
+        },
+        "clean_rows": 361103,
         "last_run": {
-          "at": "2026-11-05T00:06:42.950539+00:00",
+          "at": "2026-11-26T10:35:33.839559+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -8988,16 +9015,25 @@
           "enti"
         ],
         "category": "pa",
+        "partitions": {
+          "2026": 38325
+        },
+        "clean_rows": 38325,
+        "last_run": {
+          "at": "2026-11-26T12:39:56.133467+00:00",
+          "year": 2026,
+          "status": "SUCCESS"
+        },
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/bdap_anagrafe_enti/2026/bdap_anagrafe_enti_2026_clean.parquet",
-          "multi_file": true
+          "multi_file": false
         },
         "columns": [
           {
             "name": "id_ente",
             "type": "BIGINT",
-            "role": "dimension",
+            "role": "metric",
             "description": "Identificativo univoco ente (chiave primaria)"
           },
           {
@@ -9048,7 +9084,7 @@
           {
             "name": "codice_forma_giuridica",
             "type": "BIGINT",
-            "role": "dimension",
+            "role": "metric",
             "description": "Codice forma giuridica"
           },
           {
@@ -9168,7 +9204,7 @@
           {
             "name": "codice_zona",
             "type": "BIGINT",
-            "role": "dimension",
+            "role": "metric",
             "description": "Codice zona geografica"
           },
           {
@@ -9187,12 +9223,13 @@
             "name": "codice_ente_siope",
             "type": "VARCHAR",
             "role": "dimension",
+            "semantic_type": "siope_code",
             "description": "Codice SIOPE ente (chiave join BDAP)"
           },
           {
             "name": "id_tipologia_siope",
             "type": "BIGINT",
-            "role": "dimension",
+            "role": "metric",
             "description": "ID tipologia SIOPE"
           },
           {
@@ -9223,12 +9260,13 @@
             "name": "codice_ente_ipa",
             "type": "VARCHAR",
             "role": "dimension",
+            "semantic_type": "ipa_code",
             "description": "Codice IPA ente (chiave join PA)"
           },
           {
             "name": "id_categoria_ipa",
             "type": "BIGINT",
-            "role": "dimension",
+            "role": "metric",
             "description": "ID categoria IPA"
           },
           {
@@ -9277,7 +9315,7 @@
           {
             "name": "id_tipologia_miur",
             "type": "BIGINT",
-            "role": "dimension",
+            "role": "metric",
             "description": "ID tipologia MIUR"
           },
           {
@@ -9295,13 +9333,13 @@
           {
             "name": "id_tipologia_dt",
             "type": "BIGINT",
-            "role": "dimension",
+            "role": "metric",
             "description": "ID tipologia DT"
           },
           {
             "name": "codice_tipologia_dt",
             "type": "BIGINT",
-            "role": "dimension",
+            "role": "metric",
             "description": "Codice tipologia DT"
           },
           {
@@ -9320,19 +9358,19 @@
           {
             "name": "codice_ente_istat_s13",
             "type": "BIGINT",
-            "role": "dimension",
+            "role": "metric",
             "description": "Codice ISTAT S13 ente"
           },
           {
             "name": "id_tipologia_istat_s13",
             "type": "BIGINT",
-            "role": "dimension",
+            "role": "metric",
             "description": "ID tipologia ISTAT S13"
           },
           {
             "name": "codice_tipologia_istat_s13",
             "type": "BIGINT",
-            "role": "dimension",
+            "role": "metric",
             "description": "Codice tipologia ISTAT S13"
           },
           {
@@ -9356,7 +9394,7 @@
           {
             "name": "id_tipologia_dlgs_118_2011",
             "type": "BIGINT",
-            "role": "dimension",
+            "role": "metric",
             "description": "ID tipologia DLGS 118/2011"
           },
           {
@@ -9383,6 +9421,9 @@
             "role": "dimension",
             "description": "Data esclusione DLGS 118/2011"
           }
+        ],
+        "mart_refs": [
+          "bdap_anagrafe_enti__mart_anagrafe_enti"
         ]
       },
       {
@@ -10988,9 +11029,12 @@
           "eiv"
         ],
         "category": "normativa",
-        "clean_rows": 20811,
+        "partitions": {
+          "2026": 20812
+        },
+        "clean_rows": 20812,
         "last_run": {
-          "at": "2026-11-23T14:13:36.164705+00:00",
+          "at": "2026-11-26T13:55:49.221003+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -11105,9 +11149,12 @@
           "relazioni"
         ],
         "category": "normativa",
-        "clean_rows": 384935,
+        "partitions": {
+          "2026": 384951
+        },
+        "clean_rows": 384951,
         "last_run": {
-          "at": "2026-11-23T14:13:36.834003+00:00",
+          "at": "2026-11-26T13:55:49.909082+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -11193,9 +11240,12 @@
           "fuori-collezione"
         ],
         "category": "normativa",
+        "partitions": {
+          "2026": 171
+        },
         "clean_rows": 171,
         "last_run": {
-          "at": "2026-11-23T14:13:38.612317+00:00",
+          "at": "2026-11-26T13:55:52.024760+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -11312,9 +11362,12 @@
           "normattiva"
         ],
         "category": "normativa",
-        "clean_rows": 205128,
+        "partitions": {
+          "2026": 205133
+        },
+        "clean_rows": 205133,
         "last_run": {
-          "at": "2026-11-23T14:13:39.195042+00:00",
+          "at": "2026-11-26T13:55:52.592861+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -11452,9 +11505,12 @@
           "celex"
         ],
         "category": "normativa",
+        "partitions": {
+          "2026": 2672
+        },
         "clean_rows": 2672,
         "last_run": {
-          "at": "2026-11-23T14:13:40.478390+00:00",
+          "at": "2026-11-26T13:55:54.154153+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -11599,9 +11655,12 @@
           "italia"
         ],
         "category": "normativa",
+        "partitions": {
+          "2026": 22412
+        },
         "clean_rows": 22412,
         "last_run": {
-          "at": "2026-11-23T14:13:41.094391+00:00",
+          "at": "2026-11-26T13:55:54.780261+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -11848,9 +11907,12 @@
           "riferimenti"
         ],
         "category": "normativa",
-        "clean_rows": 401172,
+        "partitions": {
+          "2026": 400822
+        },
+        "clean_rows": 400822,
         "last_run": {
-          "at": "2026-11-24T11:27:10.892001+00:00",
+          "at": "2026-11-26T13:55:55.596724+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -12025,9 +12087,12 @@
           "corpus"
         ],
         "category": "normativa",
+        "partitions": {
+          "2026": 22412
+        },
         "clean_rows": 22412,
         "last_run": {
-          "at": "2026-11-23T14:13:44.093812+00:00",
+          "at": "2026-11-26T13:55:58.310821+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -12472,16 +12537,20 @@
           "trasporti",
           "comuni"
         ],
-        "category": "mobilita",
+        "category": "trasporti",
+        "partitions": {
+          "2024": 176
+        },
+        "clean_rows": 176,
         "last_run": {
-          "at": "2026-09-19T14:57:53.271286+00:00",
+          "at": "2026-11-26T12:26:51.403162+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/art_taxi_ncc/2024/art_taxi_ncc_2024_clean.parquet",
-          "multi_file": true
+          "multi_file": false
         },
         "columns": [
           {
@@ -13095,6 +13164,140 @@
         ]
       }
     ],
+    "sedia": [
+      {
+        "slug": "eu_call_open",
+        "url_slug": "eu-call-open",
+        "name": "Eu Call Open",
+        "source_id": "sedia",
+        "period": {
+          "start": 2021,
+          "end": 2027
+        },
+        "registry_source": "dataset-incubator",
+        "published": false,
+        "description": "Call UE aperte e in arrivo (Funding & Tenders Portal / SEDIA) con deadline e budget",
+        "tags": [
+          "finanza-pubblica",
+          "eu",
+          "grants",
+          "bandi",
+          "sedia",
+          "funding-tenders"
+        ],
+        "category": "finanza-pubblica",
+        "partitions": {
+          "2026": 965
+        },
+        "clean_rows": 965,
+        "last_run": {
+          "at": "2026-11-26T11:47:50.624080+00:00",
+          "year": 2026,
+          "status": "SUCCESS"
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/eu_call_open/2026/eu_call_open_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "identifier",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "call_identifier",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "call_title",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "title",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "status",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "status_label",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "framework_programme",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "framework_label",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "programme_period",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "types_of_action",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "start_date",
+            "type": "DATE",
+            "role": "dimension"
+          },
+          {
+            "name": "deadline_date",
+            "type": "DATE",
+            "role": "dimension"
+          },
+          {
+            "name": "deadline_model",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "budget_total_eur",
+            "type": "DOUBLE",
+            "role": "metric"
+          },
+          {
+            "name": "expected_grants",
+            "type": "BIGINT",
+            "role": "metric"
+          },
+          {
+            "name": "url",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "giorni_alla_scadenza",
+            "type": "BIGINT",
+            "role": "metric"
+          },
+          {
+            "name": "ha_scadenza_futura",
+            "type": "BOOLEAN",
+            "role": "dimension"
+          }
+        ],
+        "mart_refs": [
+          "eu_call_open__mart_scadenze",
+          "eu_call_open__mart_per_programma"
+        ]
+      }
+    ],
     "ministero_salute": [
       {
         "slug": "farmacie",
@@ -13113,10 +13316,19 @@
           "farmacie"
         ],
         "category": "sanita",
+        "partitions": {
+          "2026": 59309
+        },
+        "clean_rows": 59309,
+        "last_run": {
+          "at": "2026-11-26T10:09:46.193764+00:00",
+          "year": 2026,
+          "status": "SUCCESS"
+        },
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/farmacie/2026/farmacie_2026_clean.parquet",
-          "multi_file": true
+          "multi_file": false
         },
         "columns": [
           {
@@ -14046,9 +14258,18 @@
           "grants"
         ],
         "category": "finanza-pubblica",
+        "partitions": {
+          "2020": 8480,
+          "2021": 6127,
+          "2022": 10323,
+          "2023": 8559,
+          "2024": 6934,
+          "2025": 6764
+        },
+        "clean_rows": 47187,
         "last_run": {
-          "at": "2026-08-03T14:26:18.297828+00:00",
-          "year": 2025,
+          "at": "2026-11-26T11:51:11.396178+00:00",
+          "year": 2020,
           "status": "SUCCESS"
         },
         "location": {
@@ -14092,6 +14313,7 @@
             "name": "beneficiario_partita_iva",
             "type": "VARCHAR",
             "role": "dimension",
+            "semantic_type": "fiscal_code",
             "description": "Partita IVA/codice fiscale del beneficiario"
           },
           {
@@ -14292,13 +14514,24 @@
             "type": "VARCHAR",
             "role": "dimension",
             "description": "Paese beneficiario del contributo"
+          },
+          {
+            "name": "call_id",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "project_id",
+            "type": "VARCHAR",
+            "role": "dimension"
           }
         ],
         "mart_refs": [
           "fts_eu_grants__mart_trend_anno",
           "fts_eu_grants__mart_sintesi_programma",
           "fts_eu_grants__mart_sintesi_beneficiario",
-          "fts_eu_grants__mart_top_beneficiari"
+          "fts_eu_grants__mart_top_beneficiari",
+          "fts_eu_grants__mart_top_call"
         ]
       }
     ],
@@ -14577,10 +14810,19 @@
           "pensioni"
         ],
         "category": "welfare-lavoro",
+        "partitions": {
+          "2024": 161561
+        },
+        "clean_rows": 161561,
+        "last_run": {
+          "at": "2026-11-26T10:09:57.069530+00:00",
+          "year": 2024,
+          "status": "SUCCESS"
+        },
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/inps_pensioni_trimestrale/2024/inps_pensioni_trimestrale_2024_clean.parquet",
-          "multi_file": true
+          "multi_file": false
         },
         "columns": [
           {
@@ -14594,6 +14836,7 @@
             "name": "trimestre",
             "type": "INTEGER",
             "role": "dimension",
+            "semantic_type": "quarter",
             "description": "Trimestre (1-4)"
           },
           {
@@ -14651,6 +14894,9 @@
             "role": "metric",
             "description": "Numero di pensioni"
           }
+        ],
+        "mart_refs": [
+          "inps_pensioni_trimestrale__mart_pensioni_regione_importo"
         ]
       },
       {
@@ -14660,7 +14906,7 @@
         "source_id": "inps",
         "period": {
           "start": 2017,
-          "end": 2022
+          "end": 2025
         },
         "registry_source": "dataset-incubator",
         "published": true,
@@ -14669,12 +14915,30 @@
           "welfare-lavoro",
           "pensioni",
           "pa",
-          "dag"
+          "dag",
+          "mef"
         ],
         "category": "welfare-lavoro",
+        "partitions": {
+          "2017": 7525,
+          "2018": 7216,
+          "2019": 6876,
+          "2020": 6604,
+          "2021": 6256,
+          "2022": 5877,
+          "2023": 5587,
+          "2024": 5328,
+          "2025": 5078
+        },
+        "clean_rows": 56347,
+        "last_run": {
+          "at": "2026-11-26T14:02:14.050396+00:00",
+          "year": 2025,
+          "status": "SUCCESS"
+        },
         "location": {
           "type": "gcs",
-          "path": "gs://dataciviclab-clean/pensioni_pa_dag/2024/pensioni_pa_dag_2024_clean.parquet",
+          "path": "gs://dataciviclab-clean/pensioni_pa_dag/*/pensioni_pa_dag_*_clean.parquet",
           "multi_file": true
         },
         "columns": [
@@ -14790,6 +15054,9 @@
             "role": "metric",
             "description": "Importi mensili pagati in euro"
           }
+        ],
+        "mart_refs": [
+          "pensioni_pa_dag__mart_territori_dicembre"
         ]
       },
       {
@@ -16608,9 +16875,12 @@
           "suolo"
         ],
         "category": "ambiente",
+        "partitions": {
+          "2025": 94752
+        },
         "clean_rows": 94752,
         "last_run": {
-          "at": "2026-11-05T14:18:43.139669+00:00",
+          "at": "2026-11-26T16:15:40.560392+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -16707,9 +16977,12 @@
           "idrogeologico"
         ],
         "category": "ambiente",
+        "partitions": {
+          "2024": 20
+        },
         "clean_rows": 20,
         "last_run": {
-          "at": "2026-11-06T21:32:15.349357+00:00",
+          "at": "2026-11-26T16:15:46.685771+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -18195,15 +18468,19 @@
           "province"
         ],
         "category": "immigrazione",
+        "partitions": {
+          "2026": 3179
+        },
+        "clean_rows": 3179,
         "last_run": {
-          "at": "2026-11-04T17:31:56.136255+00:00",
+          "at": "2026-11-26T12:26:51.730155+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_migrazioni/2026/istat_migrazioni_2026_clean.parquet",
-          "multi_file": true
+          "multi_file": false
         },
         "columns": [
           {
@@ -18244,6 +18521,110 @@
         ]
       },
       {
+        "slug": "istat_ospiti_presidi",
+        "url_slug": "istat-ospiti-presidi",
+        "name": "Istat Ospiti Presidi",
+        "source_id": "istat_dbnomics",
+        "period": {
+          "start": 2009,
+          "end": 2023
+        },
+        "registry_source": "dataset-incubator",
+        "published": false,
+        "tags": [
+          "sanita",
+          "rsa",
+          "anziani",
+          "ospiti",
+          "presidi-residenziali",
+          "istat"
+        ],
+        "category": "sanita",
+        "partitions": {
+          "2023": 7137
+        },
+        "clean_rows": 7137,
+        "last_run": {
+          "at": "2026-11-26T11:53:54.164294+00:00",
+          "year": 2023,
+          "status": "SUCCESS"
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/istat_ospiti_presidi/2023/istat_ospiti_presidi_2023_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year"
+          },
+          {
+            "name": "ref_area_codice",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "regione",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "region_code"
+          },
+          {
+            "name": "tipo_dato_codice",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "tipo_dato",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "eta_codice",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "eta",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "bisogno_codice",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "bisogno",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "livello_assistenza_codice",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "livello_assistenza",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "ospiti",
+            "type": "INTEGER",
+            "role": "metric"
+          }
+        ],
+        "mart_refs": [
+          "istat_ospiti_presidi__mart_sintesi_regione",
+          "istat_ospiti_presidi__mart_anziani_livello",
+          "istat_ospiti_presidi__mart_trend"
+        ]
+      },
+      {
         "slug": "istat_permessi",
         "url_slug": "istat-permessi",
         "name": "Istat Permessi",
@@ -18261,15 +18642,19 @@
           "province"
         ],
         "category": "immigrazione",
+        "partitions": {
+          "2026": 145006
+        },
+        "clean_rows": 145006,
         "last_run": {
-          "at": "2026-11-04T17:31:59.875295+00:00",
+          "at": "2026-11-26T12:26:54.819670+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_permessi/2026/istat_permessi_2026_clean.parquet",
-          "multi_file": true
+          "multi_file": false
         },
         "columns": [
           {
@@ -18438,15 +18823,19 @@
           "province"
         ],
         "category": "immigrazione",
+        "partitions": {
+          "2026": 104619
+        },
+        "clean_rows": 104619,
         "last_run": {
-          "at": "2026-11-04T17:33:23.132812+00:00",
+          "at": "2026-11-26T12:29:07.556299+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_stranieri_residenti/2026/istat_stranieri_residenti_2026_clean.parquet",
-          "multi_file": true
+          "multi_file": false
         },
         "columns": [
           {
@@ -18517,15 +18906,19 @@
           "dbnomics"
         ],
         "category": "trasporti",
+        "partitions": {
+          "2026": 4114
+        },
+        "clean_rows": 4114,
         "last_run": {
-          "at": "2026-11-04T21:59:02.276293+00:00",
+          "at": "2026-11-26T12:37:21.531587+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_trasporto_ferroviario/2026/istat_trasporto_ferroviario_2026_clean.parquet",
-          "multi_file": true
+          "multi_file": false
         },
         "columns": [
           {
@@ -18600,15 +18993,19 @@
           "origine-destinazione"
         ],
         "category": "trasporti",
+        "partitions": {
+          "2026": 93899
+        },
+        "clean_rows": 93899,
         "last_run": {
-          "at": "2026-11-04T21:59:07.440112+00:00",
+          "at": "2026-11-26T12:37:28.793292+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_trasporto_merci_strada/2026/istat_trasporto_merci_strada_2026_clean.parquet",
-          "multi_file": true
+          "multi_file": false
         },
         "columns": [
           {
@@ -18882,15 +19279,19 @@
           "comuni"
         ],
         "category": "pa",
+        "partitions": {
+          "2026": 7894
+        },
+        "clean_rows": 7894,
         "last_run": {
-          "at": "2026-08-02T14:46:46.836471+00:00",
+          "at": "2026-11-26T12:40:26.434679+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/istat_elenco_comuni/2026/istat_elenco_comuni_2026_clean.parquet",
-          "multi_file": true
+          "multi_file": false
         },
         "columns": [
           {
@@ -20098,6 +20499,126 @@
             "role": "dimension",
             "description": "Livello di sviluppo (d.m. 42/2013, art. 4)"
           }
+        ]
+      }
+    ],
+    "mef_dag": [
+      {
+        "slug": "oneri_pensioni_pa",
+        "url_slug": "oneri-pensioni-pa",
+        "name": "Oneri Pensioni Pa",
+        "source_id": "mef_dag",
+        "period": {
+          "start": 2017,
+          "end": 2025
+        },
+        "registry_source": "dataset-incubator",
+        "published": false,
+        "description": "Oneri pensionistici DAG per amministrazione, capitolo di bilancio e RTS",
+        "tags": [
+          "welfare-lavoro",
+          "pensioni",
+          "pa",
+          "dag",
+          "mef",
+          "oneri",
+          "bilancio"
+        ],
+        "category": "welfare-lavoro",
+        "partitions": {
+          "2017": 411,
+          "2018": 412,
+          "2019": 409,
+          "2020": 401,
+          "2021": 398,
+          "2022": 396,
+          "2023": 386,
+          "2024": 389,
+          "2025": 384
+        },
+        "clean_rows": 3586,
+        "last_run": {
+          "at": "2026-11-26T14:01:40.516825+00:00",
+          "year": 2025,
+          "status": "SUCCESS"
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/oneri_pensioni_pa/*/oneri_pensioni_pa_*_clean.parquet",
+          "multi_file": true
+        },
+        "columns": [
+          {
+            "name": "anno",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year"
+          },
+          {
+            "name": "mese",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "month"
+          },
+          {
+            "name": "ministero",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "capitolo_bilancio",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "piano_gestione",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_capitolo",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "rts",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "descrizione_rts",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "numero_partite",
+            "type": "INTEGER",
+            "role": "metric"
+          },
+          {
+            "name": "importi_arretrati_eur",
+            "type": "DOUBLE",
+            "role": "metric"
+          },
+          {
+            "name": "importi_ratei_eur",
+            "type": "DOUBLE",
+            "role": "metric"
+          },
+          {
+            "name": "importi_tredicesima_eur",
+            "type": "DOUBLE",
+            "role": "metric"
+          },
+          {
+            "name": "importi_totale_eur",
+            "type": "DOUBLE",
+            "role": "metric"
+          }
+        ],
+        "mart_refs": [
+          "oneri_pensioni_pa__mart_oneri_per_ministero",
+          "oneri_pensioni_pa__mart_oneri_per_rts"
         ]
       }
     ],
@@ -23702,6 +24223,122 @@
         ]
       },
       {
+        "slug": "eurostat_cultural_employment_nuts2",
+        "url_slug": "eurostat-cultural-employment-nuts2",
+        "name": "Eurostat Cultural Employment Nuts2",
+        "source_id": "eurostat",
+        "period": {
+          "start": 2014,
+          "end": 2024
+        },
+        "registry_source": "eurostat",
+        "published": false,
+        "description": "Cultural employment by NUTS 2 region",
+        "tags": [
+          "cultura",
+          "occupazione",
+          "eurostat",
+          "benchmark",
+          "nuts2"
+        ],
+        "category": "cultura",
+        "partitions": {
+          "2026": 10010
+        },
+        "clean_rows": 10010,
+        "last_run": {
+          "at": "2026-11-26T14:49:07.455155+00:00",
+          "year": 2026,
+          "status": "SUCCESS"
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/eurostat/eurostat_cultural_employment_nuts2/2026/eurostat_cultural_employment_nuts2_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "freq",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "unit",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "geo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "nuts_code"
+          },
+          {
+            "name": "year",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year"
+          },
+          {
+            "name": "freq_label_en",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "unit_label_en",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "geo_label_en",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "nuts_level",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "country",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code"
+          },
+          {
+            "name": "nuts_parent_code",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "nuts_code"
+          },
+          {
+            "name": "nuts_parent_label_en",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "value",
+            "type": "DOUBLE",
+            "role": "metric"
+          },
+          {
+            "name": "flag",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_desc_en",
+            "type": "VARCHAR",
+            "role": "dimension"
+          }
+        ],
+        "mart_refs": [
+          "eurostat_cultural_employment_nuts2__mart_geo_benchmark",
+          "eurostat_cultural_employment_nuts2__mart_sintesi",
+          "eurostat_cultural_employment_nuts2__mart_trend"
+        ]
+      },
+      {
         "slug": "eurostat_demo_balance_nuts3",
         "url_slug": "eurostat-demo-balance-nuts3",
         "name": "Eurostat Demo Balance Nuts3",
@@ -25472,6 +26109,152 @@
           "eurostat_income_inequality_nuts2__mart_geo_benchmark",
           "eurostat_income_inequality_nuts2__mart_sintesi",
           "eurostat_income_inequality_nuts2__mart_trend"
+        ]
+      },
+      {
+        "slug": "eurostat_internet_access_nace_nuts2",
+        "url_slug": "eurostat-internet-access-nace-nuts2",
+        "name": "Eurostat Internet Access Nace Nuts2",
+        "source_id": "eurostat",
+        "period": {
+          "start": 2023,
+          "end": 2025
+        },
+        "registry_source": "eurostat",
+        "published": false,
+        "description": "Enterprise internet access (share of persons employed with access) by NACE activity and NUTS 2 region",
+        "tags": [
+          "digitale",
+          "internet",
+          "imprese",
+          "eurostat",
+          "benchmark",
+          "nuts2"
+        ],
+        "category": "digitale",
+        "partitions": {
+          "2026": 27807
+        },
+        "clean_rows": 27807,
+        "last_run": {
+          "at": "2026-11-26T17:24:15.306370+00:00",
+          "year": 2026,
+          "status": "SUCCESS"
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/eurostat/eurostat_internet_access_nace_nuts2/2026/eurostat_internet_access_nace_nuts2_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "freq",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "size_emp",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "indic_is",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "unit",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "nace_r2",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "geo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "nuts_code"
+          },
+          {
+            "name": "year",
+            "type": "BIGINT",
+            "role": "dimension",
+            "semantic_type": "year"
+          },
+          {
+            "name": "freq_label_en",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "size_emp_label_en",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "indic_is_label_en",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "unit_label_en",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "nace_r2_label_en",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "geo_label_en",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "nuts_level",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "country",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code"
+          },
+          {
+            "name": "nuts_parent_code",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "nuts_code"
+          },
+          {
+            "name": "nuts_parent_label_en",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "value",
+            "type": "DOUBLE",
+            "role": "metric"
+          },
+          {
+            "name": "flag",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_desc_en",
+            "type": "VARCHAR",
+            "role": "dimension"
+          }
+        ],
+        "mart_refs": [
+          "eurostat_internet_access_nace_nuts2__mart_geo_benchmark",
+          "eurostat_internet_access_nace_nuts2__mart_sintesi"
         ]
       },
       {
@@ -38655,11 +39438,11 @@
         "partitions": {
           "2024": 38166,
           "2025": 32687,
-          "2026": 28140
+          "2026": 28169
         },
-        "clean_rows": 98993,
+        "clean_rows": 99022,
         "last_run": {
-          "at": "2026-11-25T16:44:07.413170+00:00",
+          "at": "2026-11-26T16:17:24.169761+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -40564,11 +41347,11 @@
         ],
         "category": "pa",
         "partitions": {
-          "2026": 1935
+          "2026": 1952
         },
-        "clean_rows": 1935,
+        "clean_rows": 1952,
         "last_run": {
-          "at": "2026-11-25T08:25:07.138351+00:00",
+          "at": "2026-11-26T16:34:43.486873+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -40740,11 +41523,11 @@
         ],
         "category": "pa",
         "partitions": {
-          "2026": 7183
+          "2026": 7274
         },
-        "clean_rows": 7183,
+        "clean_rows": 7274,
         "last_run": {
-          "at": "2026-11-25T08:32:07.760092+00:00",
+          "at": "2026-11-26T16:34:59.153037+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -51073,9 +51856,12 @@
           "qualita"
         ],
         "category": "ambiente",
+        "partitions": {
+          "2024": 173074
+        },
         "clean_rows": 173074,
         "last_run": {
-          "at": "2026-11-05T14:43:37.425535+00:00",
+          "at": "2026-11-26T16:14:38.139463+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -51138,9 +51924,12 @@
           "inquinamento"
         ],
         "category": "ambiente",
-        "clean_rows": 10803775,
+        "partitions": {
+          "2021": 8631558
+        },
+        "clean_rows": 8631558,
         "last_run": {
-          "at": "2026-11-05T14:45:06.014184+00:00",
+          "at": "2026-11-26T16:15:58.421770+00:00",
           "year": 2021,
           "status": "SUCCESS"
         },
@@ -51200,9 +51989,12 @@
           "stazioni"
         ],
         "category": "support",
+        "partitions": {
+          "2021": 16507
+        },
         "clean_rows": 16507,
         "last_run": {
-          "at": "2026-11-06T21:32:06.547465+00:00",
+          "at": "2026-11-26T16:14:27.484816+00:00",
           "year": 2021,
           "status": "SUCCESS"
         },
@@ -51257,9 +52049,12 @@
           "comuni"
         ],
         "category": "support",
+        "partitions": {
+          "2024": 9530
+        },
         "clean_rows": 9530,
         "last_run": {
-          "at": "2026-11-06T21:32:12.971208+00:00",
+          "at": "2026-11-26T16:14:35.359193+00:00",
           "year": 2024,
           "status": "SUCCESS"
         },
@@ -51311,9 +52106,12 @@
           "clima"
         ],
         "category": "ambiente",
+        "partitions": {
+          "2023": 29229815
+        },
         "clean_rows": 29229815,
         "last_run": {
-          "at": "2026-11-05T15:23:28.286951+00:00",
+          "at": "2026-11-26T16:25:23.710008+00:00",
           "year": 2023,
           "status": "SUCCESS"
         },
@@ -51375,9 +52173,12 @@
           "comuni"
         ],
         "category": "ambiente",
+        "partitions": {
+          "2018": 201446
+        },
         "clean_rows": 201446,
         "last_run": {
-          "at": "2026-11-05T15:13:50.731601+00:00",
+          "at": "2026-11-26T16:40:46.843330+00:00",
           "year": 2018,
           "status": "SUCCESS"
         },
@@ -57210,9 +58011,16 @@
           "accountability"
         ],
         "category": "politica",
-        "clean_rows": 20724,
+        "partitions": {
+          "15": 2618,
+          "16": 40978,
+          "17": 55341,
+          "18": 22206,
+          "19": 21167
+        },
+        "clean_rows": 142310,
         "last_run": {
-          "at": "2026-11-04T23:31:41.820781+00:00",
+          "at": "2026-11-26T09:35:05.920904+00:00",
           "year": 19,
           "status": "SUCCESS"
         },
@@ -57276,9 +58084,18 @@
           "iter"
         ],
         "category": "politica",
-        "clean_rows": 781,
+        "partitions": {
+          "13": 378,
+          "14": 574,
+          "15": 511,
+          "16": 598,
+          "17": 854,
+          "18": 793,
+          "19": 786
+        },
+        "clean_rows": 4494,
         "last_run": {
-          "at": "2026-11-04T23:31:51.103390+00:00",
+          "at": "2026-11-26T09:35:16.928976+00:00",
           "year": 19,
           "status": "SUCCESS"
         },
@@ -57348,9 +58165,18 @@
           "iter-legislativo"
         ],
         "category": "politica",
-        "clean_rows": 3174,
+        "partitions": {
+          "13": 7091,
+          "14": 6365,
+          "15": 3444,
+          "16": 5714,
+          "17": 4822,
+          "18": 3705,
+          "19": 3194
+        },
+        "clean_rows": 34335,
         "last_run": {
-          "at": "2026-11-04T23:32:04.026970+00:00",
+          "at": "2026-11-26T09:35:32.533914+00:00",
           "year": 19,
           "status": "SUCCESS"
         },
@@ -57433,9 +58259,12 @@
           "legislature"
         ],
         "category": "politica",
-        "clean_rows": 27765,
+        "partitions": {
+          "2026": 27766
+        },
+        "clean_rows": 27766,
         "last_run": {
-          "at": "2026-11-04T23:32:05.867546+00:00",
+          "at": "2026-11-26T09:35:35.401778+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -57521,9 +58350,18 @@
           "accountability"
         ],
         "category": "politica",
-        "clean_rows": 24011,
+        "partitions": {
+          "13": 53459,
+          "14": 58567,
+          "15": 30707,
+          "16": 58919,
+          "17": 54203,
+          "18": 45483,
+          "19": 24109
+        },
+        "clean_rows": 325447,
         "last_run": {
-          "at": "2026-11-04T23:33:23.779927+00:00",
+          "at": "2026-11-26T09:37:19.423411+00:00",
           "year": 19,
           "status": "SUCCESS"
         },
@@ -57598,9 +58436,12 @@
           "parlamentari"
         ],
         "category": "politica",
+        "partitions": {
+          "2026": 239
+        },
         "clean_rows": 239,
         "last_run": {
-          "at": "2026-11-04T23:33:30.088436+00:00",
+          "at": "2026-11-26T09:37:27.684427+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -57649,9 +58490,12 @@
           "gruppi-parlamentari"
         ],
         "category": "politica",
+        "partitions": {
+          "2026": 2864
+        },
         "clean_rows": 2864,
         "last_run": {
-          "at": "2026-11-04T23:33:31.164297+00:00",
+          "at": "2026-11-26T09:37:29.061857+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -57733,9 +58577,16 @@
           "parlamento"
         ],
         "category": "politica",
-        "clean_rows": 7481,
+        "partitions": {
+          "2022": 4970,
+          "2023": 27037,
+          "2024": 29815,
+          "2025": 25039,
+          "2026": 7818
+        },
+        "clean_rows": 94679,
         "last_run": {
-          "at": "2026-11-04T23:34:49.691653+00:00",
+          "at": "2026-11-26T09:38:50.537812+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -57798,9 +58649,12 @@
           "accountability"
         ],
         "category": "politica",
+        "partitions": {
+          "2026": 127127
+        },
         "clean_rows": 127127,
         "last_run": {
-          "at": "2026-11-21T14:29:45.296278+00:00",
+          "at": "2026-11-26T16:40:51.020511+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -57916,9 +58770,18 @@
           "gazzetta-ufficiale"
         ],
         "category": "politica",
-        "clean_rows": 387,
+        "partitions": {
+          "13": 904,
+          "14": 682,
+          "15": 112,
+          "16": 387,
+          "17": 378,
+          "18": 314,
+          "19": 402
+        },
+        "clean_rows": 3179,
         "last_run": {
-          "at": "2026-11-04T23:35:10.399112+00:00",
+          "at": "2026-11-26T09:39:15.295165+00:00",
           "year": 19,
           "status": "SUCCESS"
         },
@@ -58026,9 +58889,15 @@
           "produzione"
         ],
         "category": "politica",
-        "clean_rows": 8479,
+        "partitions": {
+          "16": 1651,
+          "17": 17022,
+          "18": 12770,
+          "19": 10520
+        },
+        "clean_rows": 41963,
         "last_run": {
-          "at": "2026-11-04T23:35:22.415681+00:00",
+          "at": "2026-11-26T09:39:30.100779+00:00",
           "year": 19,
           "status": "SUCCESS"
         },
@@ -58111,9 +58980,18 @@
           "accountability"
         ],
         "category": "politica",
-        "clean_rows": 31533,
+        "partitions": {
+          "13": 60130,
+          "14": 42218,
+          "15": 14796,
+          "16": 44304,
+          "17": 58161,
+          "18": 40491,
+          "19": 32041
+        },
+        "clean_rows": 292141,
         "last_run": {
-          "at": "2026-11-04T23:50:19.229596+00:00",
+          "at": "2026-11-26T09:54:58.023780+00:00",
           "year": 19,
           "status": "SUCCESS"
         },
@@ -58237,9 +59115,18 @@
           "accountability"
         ],
         "category": "politica",
-        "clean_rows": 28066,
+        "partitions": {
+          "13": 82505,
+          "14": 41167,
+          "15": 14509,
+          "16": 46521,
+          "17": 55818,
+          "18": 39514,
+          "19": 29156
+        },
+        "clean_rows": 309190,
         "last_run": {
-          "at": "2026-11-04T23:36:37.377501+00:00",
+          "at": "2026-11-26T09:40:54.570447+00:00",
           "year": 19,
           "status": "SUCCESS"
         },
@@ -58303,9 +59190,18 @@
           "accountability"
         ],
         "category": "politica",
-        "clean_rows": 133879,
+        "partitions": {
+          "13": 160077,
+          "14": 140856,
+          "15": 83607,
+          "16": 207368,
+          "17": 258670,
+          "18": 205642,
+          "19": 135566
+        },
+        "clean_rows": 1191786,
         "last_run": {
-          "at": "2026-11-04T23:44:41.639961+00:00",
+          "at": "2026-11-26T09:49:34.562180+00:00",
           "year": 19,
           "status": "SUCCESS"
         },
@@ -58370,9 +59266,20 @@
           "sparql"
         ],
         "category": "politica",
-        "clean_rows": 4170,
+        "partitions": {
+          "2018": 2144,
+          "2019": 2484,
+          "2020": 2166,
+          "2021": 2325,
+          "2022": 2122,
+          "2023": 4661,
+          "2024": 6004,
+          "2025": 5036,
+          "2026": 4659
+        },
+        "clean_rows": 31601,
         "last_run": {
-          "at": "2026-11-05T12:12:57.478714+00:00",
+          "at": "2026-11-26T09:55:41.455273+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -58486,9 +59393,12 @@
           "accountability"
         ],
         "category": "politica",
-        "clean_rows": 8279118,
+        "partitions": {
+          "2026": 8323296
+        },
+        "clean_rows": 8323296,
         "last_run": {
-          "at": "2026-11-21T14:26:51.699150+00:00",
+          "at": "2026-11-26T16:38:51.377641+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -58554,9 +59464,12 @@
           "legislature"
         ],
         "category": "politica",
+        "partitions": {
+          "2026": 7579
+        },
         "clean_rows": 7579,
         "last_run": {
-          "at": "2026-11-04T23:51:21.537438+00:00",
+          "at": "2026-11-26T09:55:45.473198+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -58771,9 +59684,18 @@
           "senatori"
         ],
         "category": "politica",
-        "clean_rows": 212,
+        "partitions": {
+          "13": 338,
+          "14": 338,
+          "15": 335,
+          "16": 346,
+          "17": 341,
+          "18": 336,
+          "19": 212
+        },
+        "clean_rows": 2246,
         "last_run": {
-          "at": "2026-11-04T23:51:44.181014+00:00",
+          "at": "2026-11-26T09:56:08.087184+00:00",
           "year": 19,
           "status": "SUCCESS"
         },
@@ -58839,9 +59761,18 @@
           "iter"
         ],
         "category": "politica",
-        "clean_rows": 1057,
+        "partitions": {
+          "13": 1959,
+          "14": 1506,
+          "15": 1071,
+          "16": 1456,
+          "17": 1661,
+          "18": 1586,
+          "19": 1061
+        },
+        "clean_rows": 10300,
         "last_run": {
-          "at": "2026-11-04T23:52:04.440799+00:00",
+          "at": "2026-11-26T09:56:35.035571+00:00",
           "year": 19,
           "status": "SUCCESS"
         },
@@ -58922,9 +59853,18 @@
           "iter-legislativo"
         ],
         "category": "politica",
-        "clean_rows": 5237,
+        "partitions": {
+          "13": 5283,
+          "14": 5244,
+          "15": 5092,
+          "16": 5160,
+          "17": 5205,
+          "18": 5176,
+          "19": 5236
+        },
+        "clean_rows": 36396,
         "last_run": {
-          "at": "2026-11-04T23:54:12.739537+00:00",
+          "at": "2026-11-26T09:59:17.577681+00:00",
           "year": 19,
           "status": "SUCCESS"
         },
@@ -59116,9 +60056,18 @@
           "iter"
         ],
         "category": "politica",
-        "clean_rows": 131335,
+        "partitions": {
+          "13": 709,
+          "14": 86144,
+          "15": 33646,
+          "16": 116908,
+          "17": 253384,
+          "18": 151262,
+          "19": 133772
+        },
+        "clean_rows": 775825,
         "last_run": {
-          "at": "2026-11-05T15:08:39.970777+00:00",
+          "at": "2026-11-26T10:18:28.101243+00:00",
           "year": 19,
           "status": "SUCCESS"
         },
@@ -59214,9 +60163,18 @@
           "iter-legislativo"
         ],
         "category": "politica",
-        "clean_rows": 39380,
+        "partitions": {
+          "13": 39297,
+          "14": 39429,
+          "15": 40000,
+          "16": 39677,
+          "17": 39672,
+          "18": 39554,
+          "19": 39379
+        },
+        "clean_rows": 277008,
         "last_run": {
-          "at": "2026-11-24T13:29:38.887869+00:00",
+          "at": "2026-11-26T10:24:36.569953+00:00",
           "year": 19,
           "status": "SUCCESS"
         },
@@ -59303,9 +60261,18 @@
           "compattezza"
         ],
         "category": "politica",
-        "clean_rows": 291,
+        "partitions": {
+          "13": 645,
+          "14": 472,
+          "15": 444,
+          "16": 465,
+          "17": 810,
+          "18": 630,
+          "19": 295
+        },
+        "clean_rows": 3761,
         "last_run": {
-          "at": "2026-11-04T23:58:08.408802+00:00",
+          "at": "2026-11-26T10:25:15.774639+00:00",
           "year": 19,
           "status": "SUCCESS"
         },
@@ -59381,9 +60348,18 @@
           "parlamento"
         ],
         "category": "politica",
-        "clean_rows": 38285,
+        "partitions": {
+          "13": 54056,
+          "14": 55921,
+          "15": 16018,
+          "16": 49257,
+          "17": 54549,
+          "18": 36030,
+          "19": 39145
+        },
+        "clean_rows": 304976,
         "last_run": {
-          "at": "2026-11-05T00:00:29.863099+00:00",
+          "at": "2026-11-26T10:27:57.057224+00:00",
           "year": 19,
           "status": "SUCCESS"
         },
@@ -59444,9 +60420,12 @@
           "accountability"
         ],
         "category": "politica",
-        "clean_rows": 30429,
+        "partitions": {
+          "2026": 30489
+        },
+        "clean_rows": 30489,
         "last_run": {
-          "at": "2026-11-05T00:00:48.607774+00:00",
+          "at": "2026-11-26T10:28:20.732980+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -59534,9 +60513,18 @@
           "mozioni"
         ],
         "category": "politica",
-        "clean_rows": 37317,
+        "partitions": {
+          "13": 539,
+          "14": 35567,
+          "15": 14560,
+          "16": 50002,
+          "17": 96682,
+          "18": 68899,
+          "19": 37920
+        },
+        "clean_rows": 304169,
         "last_run": {
-          "at": "2026-11-05T00:04:21.215663+00:00",
+          "at": "2026-11-26T10:32:44.946132+00:00",
           "year": 19,
           "status": "SUCCESS"
         },
@@ -59652,9 +60640,12 @@
           "accountability"
         ],
         "category": "politica",
-        "clean_rows": 1239247,
+        "partitions": {
+          "2026": 1240942
+        },
+        "clean_rows": 1240942,
         "last_run": {
-          "at": "2026-11-21T14:27:31.684304+00:00",
+          "at": "2026-11-26T16:39:23.620019+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -59771,9 +60762,12 @@
           "accountability"
         ],
         "category": "politica",
-        "clean_rows": 29335,
+        "partitions": {
+          "2026": 29460
+        },
+        "clean_rows": 29460,
         "last_run": {
-          "at": "2026-11-05T00:04:46.902440+00:00",
+          "at": "2026-11-26T10:33:17.812808+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -65547,6 +66541,7 @@
         "aci_prime_iscrizioni_autovetture",
         "aci_radiazioni_classe_euro",
         "aci_usato_proprieta",
+        "art_taxi_ncc",
         "bolognawifi_matrice",
         "centraline_aria",
         "colonnine_bici",
@@ -65620,7 +66615,7 @@
         "terna_storage_accumuli",
         "varchi_ztl"
       ],
-      "dataset_count": 82
+      "dataset_count": 83
     },
     {
       "slug": "finanza-pubblica",
@@ -65723,6 +66718,7 @@
         "ecb_cbd2",
         "ecb_mir",
         "esercizi_somministrazione",
+        "eu_call_open",
         "eurostat_bd_hgnace2_r3_nuts3",
         "eurostat_business_demography_nuts3",
         "eurostat_debito_pil",
@@ -65827,7 +66823,7 @@
         "ted_contract_notices",
         "wb_financial"
       ],
-      "dataset_count": 170
+      "dataset_count": 171
     },
     {
       "slug": "sanita",
@@ -65852,6 +66848,7 @@
         "eurostat_ltc_beds",
         "eurostat_physicians_nuts2",
         "farmacie",
+        "istat_ospiti_presidi",
         "istat_presidi_residenziali",
         "malasanita_compose",
         "mortalita_istat_evitabile",
@@ -65861,7 +66858,7 @@
         "strutture_asl",
         "strutture_ricovero_asl"
       ],
-      "dataset_count": 18
+      "dataset_count": 19
     },
     {
       "slug": "welfare-lavoro",
@@ -65938,13 +66935,14 @@
         "mur_laureati_voto",
         "mur_personale",
         "mur_personale_ateneo",
+        "oneri_pensioni_pa",
         "pensioni_pa_dag",
         "personale_scuola",
         "popolazione_istat_comunale_2019_2025",
         "popolazione_quartiere",
         "scuola_base"
       ],
-      "dataset_count": 62
+      "dataset_count": 63
     },
     {
       "slug": "giustizia",
@@ -66110,6 +67108,7 @@
         "aci_prime_iscrizioni_autovetture",
         "aci_radiazioni_classe_euro",
         "aci_usato_proprieta",
+        "art_taxi_ncc",
         "bolognawifi_matrice",
         "centraline_aria",
         "colonnine_bici",
@@ -66255,6 +67254,7 @@
         "ecb_cbd2",
         "ecb_mir",
         "esercizi_somministrazione",
+        "eu_call_open",
         "eurostat_bd_hgnace2_r3_nuts3",
         "eurostat_business_demography_nuts3",
         "eurostat_debito_pil",
@@ -66374,6 +67374,7 @@
         "eurostat_ltc_beds",
         "eurostat_physicians_nuts2",
         "farmacie",
+        "istat_ospiti_presidi",
         "istat_presidi_residenziali",
         "malasanita_compose",
         "mortalita_istat_evitabile",
@@ -66445,6 +67446,7 @@
         "mur_laureati_voto",
         "mur_personale",
         "mur_personale_ateneo",
+        "oneri_pensioni_pa",
         "pensioni_pa_dag",
         "personale_scuola",
         "popolazione_istat_comunale_2019_2025",
@@ -67296,6 +68298,7 @@
       "centri_accoglienza_italia",
       "comuni_master",
       "dipendenti_pubblici",
+      "eu_call_open",
       "farmacie",
       "fts_eu_grants",
       "gse_cer_elenco",
@@ -67312,6 +68315,7 @@
       "istat_ipab_aree",
       "istat_migrazioni",
       "istat_occupazione_provinciale",
+      "istat_ospiti_presidi",
       "istat_pendolarismo_od",
       "istat_permessi",
       "istat_pil_territoriale",
@@ -67334,6 +68338,7 @@
       "mit_incidentalita_mensile",
       "mit_opere_incompiute_2020",
       "mortalita_istat_evitabile",
+      "oneri_pensioni_pa",
       "pensioni_pa_dag",
       "personale_ssn",
       "popolazione_istat_comunale_2019_2025",
@@ -67420,6 +68425,7 @@
       "eurostat_bd_hgnace2_r3_nuts3",
       "eurostat_business_demography_nuts3",
       "eurostat_crime_nuts3",
+      "eurostat_cultural_employment_nuts2",
       "eurostat_demo_balance_nuts3",
       "eurostat_demo_r_fagec3_nuts3",
       "eurostat_demo_r_magec3_nuts3",
@@ -67434,6 +68440,7 @@
       "eurostat_gva_nuts3",
       "eurostat_hospital_beds_nuts2",
       "eurostat_income_inequality_nuts2",
+      "eurostat_internet_access_nace_nuts2",
       "eurostat_jvs_nace2",
       "eurostat_labour_productivity_nuts3",
       "eurostat_ltc_beds",
@@ -67946,6 +68953,7 @@
       "ecb_cbd2",
       "ecb_mir",
       "esercizi_somministrazione",
+      "eu_call_open",
       "eurostat_bd_hgnace2_r3_nuts3",
       "eurostat_business_demography_nuts3",
       "eurostat_debito_pil",
@@ -68151,6 +69159,7 @@
       "eurostat_ltc_beds",
       "eurostat_physicians_nuts2",
       "farmacie",
+      "istat_ospiti_presidi",
       "istat_presidi_residenziali",
       "malasanita_compose",
       "mortalita_istat_evitabile",
@@ -68171,6 +69180,7 @@
       "aci_prime_iscrizioni_autovetture",
       "aci_radiazioni_classe_euro",
       "aci_usato_proprieta",
+      "art_taxi_ncc",
       "bolognawifi_matrice",
       "centraline_aria",
       "colonnine_bici",
@@ -68316,6 +69326,7 @@
       "mur_laureati_voto",
       "mur_personale",
       "mur_personale_ateneo",
+      "oneri_pensioni_pa",
       "pensioni_pa_dag",
       "personale_scuola",
       "popolazione_istat_comunale_2019_2025",
@@ -69078,8 +70089,8 @@
       "published": false,
       "source_id": "art_opendata",
       "registry_source": "dataset-incubator",
-      "domain": null,
-      "category": "mobilita",
+      "domain": "territorio-ambiente",
+      "category": "trasporti",
       "tags": [
         "mobilita",
         "taxi",
@@ -69224,6 +70235,23 @@
         "pubblici"
       ],
       "description": "Dipendenti pubblici per ente, comparto, categoria, genere e tipo di orario (2010-2023)"
+    },
+    "eu_call_open": {
+      "name": "Eu Call Open",
+      "published": false,
+      "source_id": "sedia",
+      "registry_source": "dataset-incubator",
+      "domain": "finanza-pubblica",
+      "category": "finanza-pubblica",
+      "tags": [
+        "finanza-pubblica",
+        "eu",
+        "grants",
+        "bandi",
+        "sedia",
+        "funding-tenders"
+      ],
+      "description": "Call UE aperte e in arrivo (Funding & Tenders Portal / SEDIA) con deadline e budget"
     },
     "farmacie": {
       "name": "Farmacie \u2014 Anagrafica farmacie italiane (Ministero Salute)",
@@ -69468,6 +70496,23 @@
         "occupazione"
       ],
       "description": "Tasso di occupazione (EMP_R) per provincia italiana: serie annuale 2018-2025, per sesso e classe et\u00e0. Fonte ISTAT SDMX flow 150_915. 105 province, 6 classi et\u00e0."
+    },
+    "istat_ospiti_presidi": {
+      "name": "Istat Ospiti Presidi",
+      "published": false,
+      "source_id": "istat_dbnomics",
+      "registry_source": "dataset-incubator",
+      "domain": "sanita",
+      "category": "sanita",
+      "tags": [
+        "sanita",
+        "rsa",
+        "anziani",
+        "ospiti",
+        "presidi-residenziali",
+        "istat"
+      ],
+      "description": null
     },
     "istat_pendolarismo_od": {
       "name": "Istat Pendolarismo Od",
@@ -69829,6 +70874,24 @@
       ],
       "description": null
     },
+    "oneri_pensioni_pa": {
+      "name": "Oneri Pensioni Pa",
+      "published": false,
+      "source_id": "mef_dag",
+      "registry_source": "dataset-incubator",
+      "domain": "welfare-lavoro",
+      "category": "welfare-lavoro",
+      "tags": [
+        "welfare-lavoro",
+        "pensioni",
+        "pa",
+        "dag",
+        "mef",
+        "oneri",
+        "bilancio"
+      ],
+      "description": "Oneri pensionistici DAG per amministrazione, capitolo di bilancio e RTS"
+    },
     "pensioni_pa_dag": {
       "name": "Pensioni Pa Dag",
       "published": true,
@@ -69840,7 +70903,8 @@
         "welfare-lavoro",
         "pensioni",
         "pa",
-        "dag"
+        "dag",
+        "mef"
       ],
       "description": "Pensioni PA: importi pensionistici per gestione, categoria e caratteristiche pensionato"
     },
@@ -71015,6 +72079,22 @@
       ],
       "description": "Police-recorded offences by NUTS 3 region"
     },
+    "eurostat_cultural_employment_nuts2": {
+      "name": "Eurostat Cultural Employment Nuts2",
+      "published": false,
+      "source_id": "eurostat",
+      "registry_source": "eurostat",
+      "domain": null,
+      "category": "cultura",
+      "tags": [
+        "cultura",
+        "occupazione",
+        "eurostat",
+        "benchmark",
+        "nuts2"
+      ],
+      "description": "Cultural employment by NUTS 2 region"
+    },
     "eurostat_demo_balance_nuts3": {
       "name": "Eurostat Demo Balance Nuts3",
       "published": false,
@@ -71248,6 +72328,23 @@
         "nuts2"
       ],
       "description": "Income quintile share ratio S80/S20 by NUTS 2 region"
+    },
+    "eurostat_internet_access_nace_nuts2": {
+      "name": "Eurostat Internet Access Nace Nuts2",
+      "published": false,
+      "source_id": "eurostat",
+      "registry_source": "eurostat",
+      "domain": null,
+      "category": "digitale",
+      "tags": [
+        "digitale",
+        "internet",
+        "imprese",
+        "eurostat",
+        "benchmark",
+        "nuts2"
+      ],
+      "description": "Enterprise internet access (share of persons employed with access) by NACE activity and NUTS 2 region"
     },
     "eurostat_jvs_nace2": {
       "name": "Eurostat Jvs Nace2",
