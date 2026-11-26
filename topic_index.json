@@ -1,6 +1,6 @@
 {
   "schema_version": 8,
-  "generated_at": "2026-11-25T21:09:32.664881",
+  "generated_at": "2026-11-26T07:06:19.239541",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -150,7 +150,7 @@
       "role": "dati",
       "domain": "territorio-ambiente",
       "n_datasets": 14,
-      "n_published": 1,
+      "n_published": 2,
       "sources": [
         "dataciviclab_composite",
         "gme",
@@ -469,7 +469,7 @@
       "role": "dati",
       "domain": "finanza-pubblica",
       "n_datasets": 8,
-      "n_published": 2,
+      "n_published": 3,
       "sources": [
         "dataciviclab_composite",
         "italiadomani"
@@ -35059,7 +35059,7 @@
           "end": 2024
         },
         "registry_source": "energia-italia",
-        "published": false,
+        "published": true,
         "tags": [
           "energia",
           "elettricit\u00e0",
@@ -56579,7 +56579,7 @@
           "end": 2026
         },
         "registry_source": "open-pnrr",
-        "published": false,
+        "published": true,
         "tags": [
           "finanza-pubblica",
           "pnrr",
@@ -66953,7 +66953,7 @@
       "slug": "pnrr-progetti",
       "name": "PNRR Progetti \u2014 Italia Domani",
       "datasets": [
-        "pnrr-progetti"
+        "pnrr_progetti"
       ],
       "status": "published",
       "description": "Progetti PNRR: stato di avanzamento, finanziamento e cronoprogramma",
@@ -66981,17 +66981,6 @@
       "description": "Serie storica dei posti letto ospedalieri italiani per stabilimento, disciplina e regime di degenza, 2020-2023",
       "source": "Ministero della Salute \u2014 Banca Dati Posti Letto",
       "period": "2020\u20132023"
-    },
-    {
-      "slug": "produzione-elettrica-fonti",
-      "name": "Produzione elettrica per fonte",
-      "datasets": [
-        "terna_electricity_by_source"
-      ],
-      "status": "published",
-      "description": "Produzione netta di energia elettrica per fonte e regione, 2015-2024 \u2014 il mix cambia: rinnovabili in salita (Terna)",
-      "source": "Terna S.p.A. \u2014 dati.terna.it",
-      "period": "2015\u20132024"
     },
     {
       "slug": "reparti-ricovero",
@@ -67069,6 +67058,17 @@
       "description": "Ospedali pubblici, IRCCS e case di cura del Servizio Sanitario Nazionale \u2014 personale, posti letto, ricoveri per struttura, 2022",
       "source": "Ministero della Salute",
       "period": "2022"
+    },
+    {
+      "slug": "terna-elettricita-per-fonte",
+      "name": "Produzione elettrica per fonte",
+      "datasets": [
+        "terna_elettricita_per_fonte"
+      ],
+      "status": "published",
+      "description": "Produzione netta di energia elettrica per fonte e regione, 2015-2024 \u2014 il mix cambia: rinnovabili in salita (Terna)",
+      "source": "Terna S.p.A. \u2014 dati.terna.it",
+      "period": "2015\u20132024"
     },
     {
       "slug": "votazioni-camera",
@@ -67190,7 +67190,7 @@
     "pnrr_pagamenti": [
       "pnrr-pagamenti"
     ],
-    "pnrr-progetti": [
+    "pnrr_progetti": [
       "pnrr-progetti"
     ],
     "popolazione_istat_comunale_2019_2025": [
@@ -67198,9 +67198,6 @@
     ],
     "posti_letto_stabilimento": [
       "posti-letto-stabilimento"
-    ],
-    "terna_electricity_by_source": [
-      "produzione-elettrica-fonti"
     ],
     "reparti_ricovero": [
       "reparti-ricovero"
@@ -67222,6 +67219,9 @@
     ],
     "strutture_ricovero_asl": [
       "strutture-ricovero-asl"
+    ],
+    "terna_elettricita_per_fonte": [
+      "terna-elettricita-per-fonte"
     ],
     "camera_votazioni_sparql": [
       "votazioni-camera"
@@ -70839,7 +70839,7 @@
     },
     "terna_elettricita_per_fonte": {
       "name": "Terna Elettricita Per Fonte",
-      "published": false,
+      "published": true,
       "source_id": "terna_opendata",
       "registry_source": "energia-italia",
       "domain": "territorio-ambiente",
@@ -75425,7 +75425,7 @@
     },
     "pnrr_progetti": {
       "name": "Pnrr Progetti",
-      "published": false,
+      "published": true,
       "source_id": "italiadomani",
       "registry_source": "open-pnrr",
       "domain": "finanza-pubblica",
