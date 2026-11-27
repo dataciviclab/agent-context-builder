@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T07:00:51.464960",
+  "generated_at": "2026-11-27T20:45:21.675669",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -53,7 +53,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 19,
+  "open_prs": 20,
   "prs": [
     {
       "number": 38,
@@ -84,10 +84,10 @@
       "category": "other"
     },
     {
-      "number": 78,
-      "title": "ci: config check sui soli dataset cambiati in PR",
+      "number": 80,
+      "title": "ci(pipeline): escludi temporaneamente i 4 dataset con fonti rimosse (#77)",
       "repo": "dcl-bologna",
-      "url": "https://github.com/dataciviclab/dcl-bologna/pull/78",
+      "url": "https://github.com/dataciviclab/dcl-bologna/pull/80",
       "category": "other"
     },
     {
@@ -95,13 +95,6 @@
       "title": "ci: config check sui soli dataset cambiati in PR",
       "repo": "debito-pubblico-intelligence",
       "url": "https://github.com/dataciviclab/debito-pubblico-intelligence/pull/32",
-      "category": "other"
-    },
-    {
-      "number": 170,
-      "title": "feat: dataset eurostat-road-freight-nuts3 (ROAD_GO_NA_RU3G)",
-      "repo": "eurostat",
-      "url": "https://github.com/dataciviclab/eurostat/pull/170",
       "category": "other"
     },
     {
@@ -175,6 +168,20 @@
       "category": "other"
     },
     {
+      "number": 55,
+      "title": "feat(mart): mart_emendamenti a grano emendamento",
+      "repo": "senato-akn",
+      "url": "https://github.com/dataciviclab/senato-akn/pull/55",
+      "category": "other"
+    },
+    {
+      "number": 567,
+      "title": "feat(mart): mart.tables[].internal per lo staging dei compose",
+      "repo": "toolkit",
+      "url": "https://github.com/dataciviclab/toolkit/pull/567",
+      "category": "other"
+    },
+    {
       "number": 532,
       "title": "fix(sdmx,clean): streaming per cubi grandi (unpivot, export, union_by_name)",
       "repo": "toolkit",
@@ -189,7 +196,7 @@
       "category": "other"
     }
   ],
-  "open_issues": 66,
+  "open_issues": 65,
   "issues": [
     {
       "number": 13,
@@ -302,13 +309,6 @@
       "repo": "dichiarazioni-italia",
       "url": "https://github.com/dataciviclab/dichiarazioni-italia/issues/18",
       "category": "other"
-    },
-    {
-      "number": 66,
-      "title": "dataset: National road freight transport by region of unloading NUTS3 (ROAD_GO_NA_RU3G)",
-      "repo": "eurostat",
-      "url": "https://github.com/dataciviclab/eurostat/issues/66",
-      "category": "intake"
     },
     {
       "number": 6,
@@ -2552,14 +2552,14 @@
     }
   },
   "warnings": [
-    "Many open PRs: 19"
+    "Many open PRs: 20"
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-11-26T12:20:17.380594+00:00",
-    "probe_date": "2026-11-26",
-    "sources_total": 39,
-    "green": 34,
+    "generated_at": "2026-11-27T12:07:54.722103+00:00",
+    "probe_date": "2026-11-27",
+    "sources_total": 40,
+    "green": 35,
     "yellow": 5,
     "red": 0,
     "persistent_red": 0,
@@ -2665,6 +2665,14 @@
         "status": "YELLOW",
         "protocol": "html",
         "http_code": "403",
+        "note": null,
+        "red_streak": 0
+      },
+      {
+        "id": "mef_dag",
+        "status": "GREEN",
+        "protocol": "html",
+        "http_code": "200",
         "note": null,
         "red_streak": 0
       },
@@ -3025,7 +3033,7 @@
       "repo": "dcl-bologna",
       "available": true,
       "source_repo": "dataciviclab/dcl-bologna",
-      "updated_at": "2026-11-19",
+      "updated_at": "2026-11-27",
       "datasets": 18,
       "marts": 35,
       "checks": 0,
@@ -3073,12 +3081,12 @@
       "repo": "eurostat",
       "available": true,
       "source_repo": "dataciviclab/eurostat",
-      "updated_at": "2026-11-26",
-      "datasets": 50,
-      "marts": 133,
+      "updated_at": "2026-11-27",
+      "datasets": 51,
+      "marts": 136,
       "checks": 0,
       "codelists": 16,
-      "gcs": 50,
+      "gcs": 51,
       "reason": ""
     },
     {
@@ -3121,7 +3129,7 @@
       "repo": "gu-monitor",
       "available": true,
       "source_repo": "dataciviclab/gu-monitor",
-      "updated_at": "2026-11-26",
+      "updated_at": "2026-11-27",
       "datasets": 1,
       "marts": 3,
       "checks": 0,
@@ -3157,7 +3165,7 @@
       "repo": "inpa-reclutamento",
       "available": true,
       "source_repo": "dataciviclab/inpa-reclutamento",
-      "updated_at": "2026-11-26",
+      "updated_at": "2026-11-27",
       "datasets": 4,
       "marts": 12,
       "checks": 0,

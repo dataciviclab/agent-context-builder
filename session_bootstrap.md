@@ -1,10 +1,10 @@
 # Session Bootstrap
 
-**Generated**: 2026-11-27T07:00:51.464960
+**Generated**: 2026-11-27T20:45:21.675669
 
 ## Stato
 
-Radar: 39 fonti GREEN 34 · Registry: 44 repo · 561 dataset
+Radar: 40 fonti GREEN 35 · Registry: 44 repo · 562 dataset
 
 ## Richiede attenzione
 
@@ -12,7 +12,7 @@ Radar: 39 fonti GREEN 34 · Registry: 44 repo · 561 dataset
 - [PR] appalti-pubblici#20: feat(anac-smartcig): intake affidamenti diretti sotto soglia (#2)
 - [PR] appalti-pubblici#19: feat(anac-cross): codice IPA della stazione appaltante (#13)
 - [PR] data-explorer#308: perf(ci): loader in parallelo prima del build (4 worker)
-- [PR] dcl-bologna#78: ci: config check sui soli dataset cambiati in PR
+- [PR] dcl-bologna#80: ci(pipeline): escludi temporaneamente i 4 dataset con fonti rimosse (#77)
 
 ## Analisi pubbliche (45)
 

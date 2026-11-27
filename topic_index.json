@@ -1,6 +1,6 @@
 {
   "schema_version": 8,
-  "generated_at": "2026-11-27T07:00:51.464960",
+  "generated_at": "2026-11-27T20:45:21.675669",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -116,7 +116,7 @@
       "sources": [
         "comune_bologna_opendata"
       ],
-      "updated_at": "2026-11-19"
+      "updated_at": "2026-11-27"
     },
     "debito-pubblico-intelligence": {
       "description": "Intelligence sul debito pubblico italiano \u2014 riconciliazione multi-fonte, segnali e mart queryabile",
@@ -166,12 +166,12 @@
       "url": "https://github.com/dataciviclab/eurostat",
       "role": "dati",
       "domain": "welfare-lavoro",
-      "n_datasets": 50,
+      "n_datasets": 51,
       "n_published": 0,
       "sources": [
         "eurostat"
       ],
-      "updated_at": "2026-11-26"
+      "updated_at": "2026-11-27"
     },
     "filiere-agroalimentari": {
       "description": "Prezzi, redditi e aiuti della filiera agroalimentare italiana",
@@ -226,7 +226,7 @@
       "sources": [
         "gazzetta_ufficiale"
       ],
-      "updated_at": "2026-11-26"
+      "updated_at": "2026-11-27"
     },
     "imprese-italia": {
       "description": "Demografia d'impresa italiana: stock, flussi, variazioni e specializzazione territoriale dal Registro delle Imprese",
@@ -264,7 +264,7 @@
       "sources": [
         "inpa_reclutamento"
       ],
-      "updated_at": "2026-11-26"
+      "updated_at": "2026-11-27"
     },
     "italia-corpus": {
       "description": "La legislazione italiana a portata di ricerca \u2014 20.807 atti (22.409 espressioni) da Normattiva in formato aperto.",
@@ -21350,7 +21350,6 @@
         "registry_source": "dcl-bologna",
         "published": false,
         "description": "Flussi di spostamento tra zone WiFi pubbliche (2021-2025) \u2014 proxy della mobilit\u00e0 pedonale per zona e ora",
-        "source": "OpenData Comune di Bologna \u2014 BolognaWiFi",
         "tags": [
           "mobilita",
           "pedoni",
@@ -21359,9 +21358,12 @@
           "bologna"
         ],
         "category": "trasporti",
+        "partitions": {
+          "2026": 1469826
+        },
         "clean_rows": 1469826,
         "last_run": {
-          "at": "2026-11-01T12:55:46.457830+00:00",
+          "at": "2026-11-27T11:07:37.595582+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -21457,7 +21459,6 @@
         "registry_source": "dcl-bologna",
         "published": false,
         "description": "Rilevazioni orarie degli inquinanti atmosferici per stazione di monitoraggio",
-        "source": "OpenData Comune di Bologna \u2014 Arpae",
         "tags": [
           "ambiente",
           "aria",
@@ -21465,9 +21466,12 @@
           "bologna"
         ],
         "category": "ambiente",
-        "clean_rows": 763186,
+        "partitions": {
+          "2026": 764218
+        },
+        "clean_rows": 764218,
         "last_run": {
-          "at": "2026-11-18T14:59:12.810027+00:00",
+          "at": "2026-11-27T11:09:24.896263+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -21542,7 +21546,6 @@
         "registry_source": "dcl-bologna",
         "published": false,
         "description": "Passaggi di biciclette rilevati dalle colonnine conta-bici, per via e direzione",
-        "source": "OpenData Comune di Bologna \u2014 Mobilit\u00e0 sostenibile",
         "tags": [
           "trasporti",
           "mobilita",
@@ -21550,9 +21553,12 @@
           "bologna"
         ],
         "category": "trasporti",
-        "clean_rows": 580928,
+        "partitions": {
+          "2026": 585032
+        },
+        "clean_rows": 585032,
         "last_run": {
-          "at": "2026-11-18T13:30:29.396687+00:00",
+          "at": "2026-11-27T11:10:25.194351+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -21666,14 +21672,12 @@
         "registry_source": "dcl-bologna",
         "published": false,
         "description": "Residenti in convivenza (case di riposo, studentati, istituti) per quartiere e tipologia",
-        "source": "OpenData Comune di Bologna \u2014 Ufficio di Statistica",
         "tags": [
           "demografia",
           "convivenze",
           "bologna"
         ],
         "category": "welfare-lavoro",
-        "clean_rows": 92633,
         "last_run": {
           "at": "2026-11-01T12:59:20.227708+00:00",
           "year": 2024,
@@ -21682,7 +21686,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/bologna/convivenze/2024/convivenze_2024_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -21764,14 +21768,12 @@
         "registry_source": "dcl-bologna",
         "published": false,
         "description": "Emigrati dal Comune per quartiere e destinazione (comune, regione, estero)",
-        "source": "OpenData Comune di Bologna \u2014 Ufficio di Statistica",
         "tags": [
           "demografia",
           "emigrazione",
           "bologna"
         ],
         "category": "welfare-lavoro",
-        "clean_rows": 81806,
         "last_run": {
           "at": "2026-11-01T12:59:29.523746+00:00",
           "year": 2024,
@@ -21780,7 +21782,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/bologna/emigrati_destinazione/2024/emigrati_destinazione_2024_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -21848,9 +21850,12 @@
           "bologna"
         ],
         "category": "economia",
+        "partitions": {
+          "2026": 17981
+        },
         "clean_rows": 17981,
         "last_run": {
-          "at": "2026-11-18T15:48:05.382803+00:00",
+          "at": "2026-11-27T11:11:01.494491+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -21964,14 +21969,12 @@
         "registry_source": "dcl-bologna",
         "published": false,
         "description": "Famiglie per tipologia, quartiere e caratteristiche del capofamiglia",
-        "source": "OpenData Comune di Bologna \u2014 Ufficio di Statistica",
         "tags": [
           "demografia",
           "famiglie",
           "bologna"
         ],
         "category": "welfare-lavoro",
-        "clean_rows": 78270,
         "last_run": {
           "at": "2026-11-01T12:59:42.796867+00:00",
           "year": 2024,
@@ -21980,7 +21983,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/bologna/famiglie_tipologia/2024/famiglie_tipologia_2024_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -22050,7 +22053,6 @@
         "registry_source": "dcl-bologna",
         "published": false,
         "description": "Incarichi di collaborazione, consulenza e lavoro del Comune di Bologna",
-        "source": "OpenData Comune di Bologna \u2014 Amministrazione trasparente",
         "tags": [
           "pa",
           "incarichi",
@@ -22058,9 +22060,12 @@
           "bologna"
         ],
         "category": "pa",
-        "clean_rows": 758,
+        "partitions": {
+          "2026": 762
+        },
+        "clean_rows": 762,
         "last_run": {
-          "at": "2026-11-01T12:59:49.820521+00:00",
+          "at": "2026-11-27T11:11:05.283577+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -22208,7 +22213,6 @@
         "registry_source": "dcl-bologna",
         "published": false,
         "description": "Indici sintetici di fragilit\u00e0 demografica, sociale ed economica per area statistica",
-        "source": "OpenData Comune di Bologna \u2014 Ufficio di Statistica",
         "tags": [
           "demografia",
           "welfare",
@@ -22216,9 +22220,12 @@
           "bologna"
         ],
         "category": "welfare-lavoro",
+        "partitions": {
+          "2026": 270
+        },
         "clean_rows": 270,
         "last_run": {
-          "at": "2026-11-01T12:59:51.561451+00:00",
+          "at": "2026-11-27T11:11:06.917686+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -22415,9 +22422,12 @@
           "bologna"
         ],
         "category": "trasporti",
-        "clean_rows": 1813,
+        "partitions": {
+          "2026": 1814
+        },
+        "clean_rows": 1814,
         "last_run": {
-          "at": "2026-11-19T18:20:28.427775+00:00",
+          "at": "2026-11-27T11:11:08.644845+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -22570,14 +22580,12 @@
         "registry_source": "dcl-bologna",
         "published": false,
         "description": "Popolazione residente per quartiere, zona, et\u00e0 e cittadinanza (serie 1986-2024)",
-        "source": "OpenData Comune di Bologna \u2014 Ufficio di Statistica",
         "tags": [
           "demografia",
           "popolazione",
           "bologna"
         ],
         "category": "welfare-lavoro",
-        "clean_rows": 239075,
         "last_run": {
           "at": "2026-11-01T12:59:53.774554+00:00",
           "year": 2024,
@@ -22586,7 +22594,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/bologna/popolazione_quartiere/2024/popolazione_quartiere_2024_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -22666,7 +22674,6 @@
         "registry_source": "dcl-bologna",
         "published": false,
         "description": "Precipitazioni giornaliere in millimetri, con stagione di riferimento",
-        "source": "OpenData Comune di Bologna \u2014 Arpae",
         "tags": [
           "ambiente",
           "meteo",
@@ -22674,9 +22681,12 @@
           "bologna"
         ],
         "category": "ambiente",
-        "clean_rows": 9435,
+        "partitions": {
+          "2026": 9460
+        },
+        "clean_rows": 9460,
         "last_run": {
-          "at": "2026-11-01T13:00:25.769386+00:00",
+          "at": "2026-11-27T11:11:11.136648+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -22721,7 +22731,6 @@
         "registry_source": "dcl-bologna",
         "published": false,
         "description": "Reddito imponibile mediano e numero contribuenti per area statistica (2016-2024)",
-        "source": "OpenData Comune di Bologna \u2014 Ufficio di Statistica",
         "tags": [
           "economia",
           "reddito",
@@ -22729,9 +22738,12 @@
           "bologna"
         ],
         "category": "finanza-pubblica",
+        "partitions": {
+          "2026": 817
+        },
         "clean_rows": 817,
         "last_run": {
-          "at": "2026-11-01T13:00:28.128053+00:00",
+          "at": "2026-11-27T11:11:12.884576+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -22791,9 +22803,12 @@
           "bologna"
         ],
         "category": "territorio",
+        "partitions": {
+          "2026": 8048
+        },
         "clean_rows": 8048,
         "last_run": {
-          "at": "2026-11-18T15:48:09.331007+00:00",
+          "at": "2026-11-27T11:11:13.962808+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -22950,9 +22965,12 @@
           "bologna"
         ],
         "category": "territorio",
-        "clean_rows": 77618,
+        "partitions": {
+          "2026": 77617
+        },
+        "clean_rows": 77617,
         "last_run": {
-          "at": "2026-11-18T15:00:49.759469+00:00",
+          "at": "2026-11-27T11:11:17.462694+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -23174,7 +23192,6 @@
         "registry_source": "dcl-bologna",
         "published": false,
         "description": "Passaggi veicolari sulle strade fuori ZTL rilevati dalle spire, per via e fascia oraria",
-        "source": "OpenData Comune di Bologna \u2014 Mobilit\u00e0 sostenibile",
         "tags": [
           "trasporti",
           "mobilita",
@@ -23183,9 +23200,16 @@
           "bologna"
         ],
         "category": "trasporti",
-        "clean_rows": 6310560,
+        "partitions": {
+          "2022": 7268928,
+          "2023": 7513608,
+          "2024": 7429464,
+          "2025": 7315776,
+          "2026": 6310560
+        },
+        "clean_rows": 35838336,
         "last_run": {
-          "at": "2026-11-18T15:04:52.507907+00:00",
+          "at": "2026-11-27T11:15:17.818887+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -23351,7 +23375,6 @@
         "registry_source": "dcl-bologna",
         "published": false,
         "description": "Temperature media, minima e massima giornaliera, con stagione di riferimento",
-        "source": "OpenData Comune di Bologna \u2014 Arpae",
         "tags": [
           "ambiente",
           "meteo",
@@ -23359,9 +23382,12 @@
           "bologna"
         ],
         "category": "ambiente",
-        "clean_rows": 9435,
+        "partitions": {
+          "2026": 9460
+        },
+        "clean_rows": 9460,
         "last_run": {
-          "at": "2026-11-01T13:05:18.351152+00:00",
+          "at": "2026-11-27T11:16:09.071384+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -23418,7 +23444,6 @@
         "registry_source": "dcl-bologna",
         "published": false,
         "description": "Passaggi veicolari ai varchi ZTL per tipologia veicolo, direzione e ora",
-        "source": "OpenData Comune di Bologna \u2014 Mobilit\u00e0 sostenibile",
         "tags": [
           "trasporti",
           "mobilita",
@@ -23427,9 +23452,12 @@
           "bologna"
         ],
         "category": "trasporti",
+        "partitions": {
+          "2026": 19574931
+        },
         "clean_rows": 19574931,
         "last_run": {
-          "at": "2026-11-18T15:05:37.961220+00:00",
+          "at": "2026-11-27T11:16:10.604066+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -29330,6 +29358,133 @@
           "eurostat_rd_expenditure_nuts2__mart_geo_benchmark",
           "eurostat_rd_expenditure_nuts2__mart_sintesi",
           "eurostat_rd_expenditure_nuts2__mart_trend"
+        ]
+      },
+      {
+        "slug": "eurostat_road_freight_nuts3",
+        "url_slug": "eurostat-road-freight-nuts3",
+        "name": "Eurostat Road Freight Nuts3",
+        "source_id": "eurostat",
+        "period": {
+          "start": 2008,
+          "end": 2025
+        },
+        "registry_source": "eurostat",
+        "published": false,
+        "description": "Trasporto merci su strada nazionale per regione di scarico (NUTS3) e tipo di merce NST 2007",
+        "tags": [
+          "trasporti",
+          "merci",
+          "autotrasporto",
+          "eurostat",
+          "benchmark",
+          "nuts3"
+        ],
+        "category": "trasporti",
+        "partitions": {
+          "2026": 819252
+        },
+        "clean_rows": 819252,
+        "last_run": {
+          "at": "2026-11-27T16:44:43.489967+00:00",
+          "year": 2026,
+          "status": "SUCCESS"
+        },
+        "location": {
+          "type": "gcs",
+          "path": "gs://dataciviclab-clean/eurostat/eurostat_road_freight_nuts3/2026/eurostat_road_freight_nuts3_2026_clean.parquet",
+          "multi_file": false
+        },
+        "columns": [
+          {
+            "name": "freq",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "nst07",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "unit",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "geo",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "nuts_code"
+          },
+          {
+            "name": "year",
+            "type": "INTEGER",
+            "role": "dimension",
+            "semantic_type": "year"
+          },
+          {
+            "name": "freq_label_en",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "nst07_label_en",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "unit_label_en",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "geo_label_en",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "nuts_level",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "country",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "country_code"
+          },
+          {
+            "name": "nuts_parent_code",
+            "type": "VARCHAR",
+            "role": "dimension",
+            "semantic_type": "nuts_code"
+          },
+          {
+            "name": "nuts_parent_label_en",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "value",
+            "type": "DOUBLE",
+            "role": "metric"
+          },
+          {
+            "name": "flag",
+            "type": "VARCHAR",
+            "role": "dimension"
+          },
+          {
+            "name": "flag_desc_en",
+            "type": "VARCHAR",
+            "role": "dimension"
+          }
+        ],
+        "mart_refs": [
+          "eurostat_road_freight_nuts3__mart_geo_benchmark",
+          "eurostat_road_freight_nuts3__mart_sintesi",
+          "eurostat_road_freight_nuts3__mart_trend"
         ]
       },
       {
@@ -39507,11 +39662,11 @@
         "partitions": {
           "2024": 38166,
           "2025": 32687,
-          "2026": 28169
+          "2026": 28322
         },
-        "clean_rows": 99022,
+        "clean_rows": 99175,
         "last_run": {
-          "at": "2026-11-26T16:17:24.169761+00:00",
+          "at": "2026-11-27T16:02:33.382917+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -41416,11 +41571,11 @@
         ],
         "category": "pa",
         "partitions": {
-          "2026": 1952
+          "2026": 1956
         },
-        "clean_rows": 1952,
+        "clean_rows": 1956,
         "last_run": {
-          "at": "2026-11-26T16:34:43.486873+00:00",
+          "at": "2026-11-27T16:20:13.513277+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -41592,11 +41747,11 @@
         ],
         "category": "pa",
         "partitions": {
-          "2026": 7274
+          "2026": 7311
         },
-        "clean_rows": 7274,
+        "clean_rows": 7311,
         "last_run": {
-          "at": "2026-11-26T16:34:59.153037+00:00",
+          "at": "2026-11-27T16:20:29.014571+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -66620,6 +66775,7 @@
         "eurostat_nrg_bal_c",
         "eurostat_nrg_chddr2_a_nuts3",
         "eurostat_nrg_chddr2_m_nuts3",
+        "eurostat_road_freight_nuts3",
         "eurostat_soil_erosion_nuts3",
         "eurostat_tran_hv_frmod",
         "eurostat_tran_hv_psmod",
@@ -66684,7 +66840,7 @@
         "terna_storage_accumuli",
         "varchi_ztl"
       ],
-      "dataset_count": 83
+      "dataset_count": 84
     },
     {
       "slug": "finanza-pubblica",
@@ -67187,6 +67343,7 @@
         "eurostat_nrg_bal_c",
         "eurostat_nrg_chddr2_a_nuts3",
         "eurostat_nrg_chddr2_m_nuts3",
+        "eurostat_road_freight_nuts3",
         "eurostat_soil_erosion_nuts3",
         "eurostat_tran_hv_frmod",
         "eurostat_tran_hv_psmod",
@@ -68532,6 +68689,7 @@
       "eurostat_pop_structure_nuts3",
       "eurostat_poverty_risk_nuts2",
       "eurostat_rd_expenditure_nuts2",
+      "eurostat_road_freight_nuts3",
       "eurostat_soil_erosion_nuts3",
       "eurostat_tertiary_education_nuts2",
       "eurostat_tourism_nuts3",
@@ -69259,6 +69417,7 @@
       "eurostat_nrg_bal_c",
       "eurostat_nrg_chddr2_a_nuts3",
       "eurostat_nrg_chddr2_m_nuts3",
+      "eurostat_road_freight_nuts3",
       "eurostat_soil_erosion_nuts3",
       "eurostat_tran_hv_frmod",
       "eurostat_tran_hv_psmod",
@@ -72786,6 +72945,23 @@
         "nuts2"
       ],
       "description": "GERD by sector of performance and NUTS 2 region"
+    },
+    "eurostat_road_freight_nuts3": {
+      "name": "Eurostat Road Freight Nuts3",
+      "published": false,
+      "source_id": "eurostat",
+      "registry_source": "eurostat",
+      "domain": "territorio-ambiente",
+      "category": "trasporti",
+      "tags": [
+        "trasporti",
+        "merci",
+        "autotrasporto",
+        "eurostat",
+        "benchmark",
+        "nuts3"
+      ],
+      "description": "Trasporto merci su strada nazionale per regione di scarico (NUTS3) e tipo di merce NST 2007"
     },
     "eurostat_soil_erosion_nuts3": {
       "name": "Eurostat Soil Erosion Nuts3",
