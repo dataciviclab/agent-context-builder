@@ -1,6 +1,6 @@
 {
   "schema_version": 8,
-  "generated_at": "2026-11-26T21:00:01.828397",
+  "generated_at": "2026-11-27T07:00:51.464960",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -413,7 +413,7 @@
         "dataciviclab_composite",
         "inps"
       ],
-      "updated_at": "2026-11-11"
+      "updated_at": "2026-11-26"
     },
     "open-ispra": {
       "description": "Dati ambientali ISPRA: acque, suolo, mari, pesticidi, frane. Open data italiani in formato standardizzato.",
@@ -4250,7 +4250,7 @@
         "name": "Inps Analisi",
         "source_id": "dataciviclab_composite",
         "period": {
-          "start": 2026,
+          "start": 1998,
           "end": 2026
         },
         "registry_source": "open-inps",
@@ -4265,9 +4265,12 @@
           "analisi"
         ],
         "category": "welfare",
-        "clean_rows": 4377,
+        "partitions": {
+          "2026": 4433
+        },
+        "clean_rows": 4433,
         "last_run": {
-          "at": "2026-11-01T17:31:54.865311+00:00",
+          "at": "2026-11-26T22:47:03.532702+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -15078,9 +15081,12 @@
           "famiglia"
         ],
         "category": "welfare",
+        "partitions": {
+          "2026": 220
+        },
         "clean_rows": 220,
         "last_run": {
-          "at": "2026-11-01T17:11:45.971635+00:00",
+          "at": "2026-11-26T22:03:20.859202+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -15154,9 +15160,12 @@
           "gias"
         ],
         "category": "bilancio",
+        "partitions": {
+          "2026": 615
+        },
         "clean_rows": 615,
         "last_run": {
-          "at": "2026-11-01T17:12:11.194812+00:00",
+          "at": "2026-11-26T22:07:29.173461+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -15216,9 +15225,12 @@
           "spese"
         ],
         "category": "bilancio",
+        "partitions": {
+          "2026": 1897
+        },
         "clean_rows": 1897,
         "last_run": {
-          "at": "2026-11-07T17:46:19.749833+00:00",
+          "at": "2026-11-26T22:11:32.358168+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -15318,9 +15330,12 @@
           "welfare"
         ],
         "category": "bilancio",
+        "partitions": {
+          "2026": 132
+        },
         "clean_rows": 132,
         "last_run": {
-          "at": "2026-11-01T17:12:39.426407+00:00",
+          "at": "2026-11-26T22:15:36.928778+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -15395,9 +15410,12 @@
           "ammortizzatori"
         ],
         "category": "lavoro",
+        "partitions": {
+          "2026": 389
+        },
         "clean_rows": 389,
         "last_run": {
-          "at": "2026-11-01T17:12:43.248159+00:00",
+          "at": "2026-11-26T22:17:52.673126+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -15471,9 +15489,12 @@
           "dipendenti-pubblici"
         ],
         "category": "lavoro",
+        "partitions": {
+          "2026": 450
+        },
         "clean_rows": 450,
         "last_run": {
-          "at": "2026-11-01T17:12:57.571740+00:00",
+          "at": "2026-11-26T22:19:22.942453+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -15551,9 +15572,12 @@
           "parasubordinati"
         ],
         "category": "welfare",
+        "partitions": {
+          "2026": 22
+        },
         "clean_rows": 22,
         "last_run": {
-          "at": "2026-11-01T17:13:07.339309+00:00",
+          "at": "2026-11-26T22:19:52.535262+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -15629,9 +15653,12 @@
           "mercato-lavoro"
         ],
         "category": "lavoro",
+        "partitions": {
+          "2026": 9241
+        },
         "clean_rows": 9241,
         "last_run": {
-          "at": "2026-11-01T17:13:15.734211+00:00",
+          "at": "2026-11-26T22:21:03.464526+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -15724,9 +15751,12 @@
           "disabilita"
         ],
         "category": "welfare",
+        "partitions": {
+          "2026": 460
+        },
         "clean_rows": 460,
         "last_run": {
-          "at": "2026-11-07T14:20:51.344899+00:00",
+          "at": "2026-11-26T22:24:56.969326+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -15816,9 +15846,12 @@
           "pa"
         ],
         "category": "lavoro",
+        "partitions": {
+          "2026": 2810
+        },
         "clean_rows": 2810,
         "last_run": {
-          "at": "2026-11-01T17:14:25.753439+00:00",
+          "at": "2026-11-26T22:25:34.189584+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -15918,9 +15951,12 @@
           "mercato-lavoro"
         ],
         "category": "lavoro",
+        "partitions": {
+          "2026": 1105
+        },
         "clean_rows": 1105,
         "last_run": {
-          "at": "2026-11-01T17:15:17.429028+00:00",
+          "at": "2026-11-26T22:26:44.597609+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -16015,9 +16051,12 @@
           "politiche-passive"
         ],
         "category": "lavoro",
+        "partitions": {
+          "2026": 550
+        },
         "clean_rows": 550,
         "last_run": {
-          "at": "2026-11-01T17:16:07.716643+00:00",
+          "at": "2026-11-26T22:27:33.084524+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -16096,9 +16135,12 @@
           "trimestrale"
         ],
         "category": "pensioni",
+        "partitions": {
+          "2026": 2088
+        },
         "clean_rows": 2088,
         "last_run": {
-          "at": "2026-11-01T17:16:20.982216+00:00",
+          "at": "2026-11-26T22:28:17.099718+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -16122,7 +16164,8 @@
           {
             "name": "trimestre",
             "type": "VARCHAR",
-            "role": "dimension"
+            "role": "dimension",
+            "semantic_type": "quarter"
           },
           {
             "name": "sesso",
@@ -16159,6 +16202,11 @@
             "name": "importo_medio_decorrenza_eur",
             "type": "DOUBLE",
             "role": "metric"
+          },
+          {
+            "name": "is_totale",
+            "type": "BOOLEAN",
+            "role": "dimension"
           }
         ],
         "mart_refs": [
@@ -16186,9 +16234,12 @@
           "welfare"
         ],
         "category": "pensioni",
+        "partitions": {
+          "2026": 470
+        },
         "clean_rows": 470,
         "last_run": {
-          "at": "2026-11-01T17:17:35.305886+00:00",
+          "at": "2026-11-26T22:30:28.069426+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -16260,9 +16311,12 @@
           "serie-storica"
         ],
         "category": "pensioni",
+        "partitions": {
+          "2026": 3602
+        },
         "clean_rows": 3602,
         "last_run": {
-          "at": "2026-11-01T17:17:48.187122+00:00",
+          "at": "2026-11-26T22:30:40.988951+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -16350,9 +16404,12 @@
           "welfare"
         ],
         "category": "pensioni",
+        "partitions": {
+          "2026": 620
+        },
         "clean_rows": 620,
         "last_run": {
-          "at": "2026-11-01T17:18:29.088262+00:00",
+          "at": "2026-11-26T22:31:34.070178+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -16400,7 +16457,7 @@
             "role": "metric"
           },
           {
-            "name": "importo_totale_migliaia_eur",
+            "name": "importo_totale_eur",
             "type": "BIGINT",
             "role": "metric"
           },
@@ -16435,9 +16492,12 @@
           "mercato-lavoro"
         ],
         "category": "lavoro",
+        "partitions": {
+          "2026": 27300
+        },
         "clean_rows": 27300,
         "last_run": {
-          "at": "2026-11-01T17:19:05.468573+00:00",
+          "at": "2026-11-26T22:32:15.970344+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -16516,9 +16576,12 @@
           "mercato-lavoro"
         ],
         "category": "lavoro",
+        "partitions": {
+          "2026": 6734
+        },
         "clean_rows": 6734,
         "last_run": {
-          "at": "2026-11-01T17:22:50.305653+00:00",
+          "at": "2026-11-26T22:35:43.302834+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -16598,9 +16661,12 @@
           "reddito-cittadinanza"
         ],
         "category": "welfare",
+        "partitions": {
+          "2026": 311
+        },
         "clean_rows": 311,
         "last_run": {
-          "at": "2026-11-01T17:23:27.572748+00:00",
+          "at": "2026-11-26T22:36:23.707300+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -16677,7 +16743,7 @@
         "source_id": "inps",
         "period": {
           "start": 2014,
-          "end": 2024
+          "end": 2025
         },
         "registry_source": "open-inps",
         "published": false,
@@ -16690,9 +16756,12 @@
           "privato"
         ],
         "category": "lavoro",
-        "clean_rows": 804,
+        "partitions": {
+          "2026": 890
+        },
+        "clean_rows": 890,
         "last_run": {
-          "at": "2026-11-11T13:56:20.124184+00:00",
+          "at": "2026-11-26T22:36:43.906218+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
