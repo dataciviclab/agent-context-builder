@@ -1,6 +1,6 @@
 {
   "schema_version": 8,
-  "generated_at": "2026-11-28T06:35:41.611883",
+  "generated_at": "2026-11-28T19:37:19.323979",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -451,7 +451,7 @@
       "sources": [
         "mur_ustat"
       ],
-      "updated_at": "2026-11-02"
+      "updated_at": "2026-11-28"
     },
     "open-noipa": {
       "description": "Personale PA italiana \u2014 dati NoiPA/MEF 2019-2026 (stipendi, contributi, pendolarismo, assenze)",
@@ -54931,9 +54931,12 @@
           "conservatori"
         ],
         "category": "istruzione",
-        "clean_rows": 66166,
+        "partitions": {
+          "2025": 65703
+        },
+        "clean_rows": 65703,
         "last_run": {
-          "at": "2026-11-02T18:03:32.528669+00:00",
+          "at": "2026-11-28T15:12:19.985467+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -55050,9 +55053,12 @@
           "conservatori"
         ],
         "category": "istruzione",
-        "clean_rows": 122580,
+        "partitions": {
+          "2025": 122583
+        },
+        "clean_rows": 122583,
         "last_run": {
-          "at": "2026-11-02T18:05:31.139104+00:00",
+          "at": "2026-11-28T15:14:25.267823+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -55171,9 +55177,12 @@
           "support"
         ],
         "category": "support",
+        "partitions": {
+          "2025": 204
+        },
         "clean_rows": 204,
         "last_run": {
-          "at": "2026-11-02T18:24:53.313992+00:00",
+          "at": "2026-11-28T15:19:29.073501+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -55301,7 +55310,7 @@
         "name": "Mur Afam Personale",
         "source_id": "mur_ustat",
         "period": {
-          "start": 2010,
+          "start": 2017,
           "end": 2025
         },
         "registry_source": "open-mur",
@@ -55316,9 +55325,12 @@
           "conservatori"
         ],
         "category": "istruzione",
+        "partitions": {
+          "2025": 18755
+        },
         "clean_rows": 18755,
         "last_run": {
-          "at": "2026-11-02T18:08:36.809696+00:00",
+          "at": "2026-11-28T15:17:45.725550+00:00",
           "year": 2025,
           "status": "SUCCESS"
         },
@@ -55421,7 +55433,6 @@
           "support"
         ],
         "category": "support",
-        "clean_rows": 112,
         "last_run": {
           "at": "2026-11-02T19:27:01.608501+00:00",
           "year": 2025,
@@ -55430,7 +55441,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open_mur/mur_anagrafica_atenei/2025/mur_anagrafica_atenei_2025_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -55519,7 +55530,6 @@
           "universitaria"
         ],
         "category": "istruzione",
-        "clean_rows": 1100,
         "last_run": {
           "at": "2026-11-02T18:14:05.694420+00:00",
           "year": 2024,
@@ -55588,7 +55598,6 @@
           "support"
         ],
         "category": "support",
-        "clean_rows": 334,
         "last_run": {
           "at": "2026-11-02T18:15:10.740378+00:00",
           "year": 2025,
@@ -55597,7 +55606,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open_mur/mur_crosswalk_stem/2025/mur_crosswalk_stem_2025_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -55675,7 +55684,6 @@
           "universita"
         ],
         "category": "istruzione",
-        "clean_rows": 1435,
         "last_run": {
           "at": "2026-11-02T19:37:53.420783+00:00",
           "year": 2025,
@@ -55780,7 +55788,6 @@
           "universita"
         ],
         "category": "istruzione",
-        "clean_rows": 3381,
         "last_run": {
           "at": "2026-11-02T18:16:48.060328+00:00",
           "year": 2025,
@@ -55789,7 +55796,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open_mur/mur_formazione_post_laurea/2025/mur_formazione_post_laurea_2025_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -55860,7 +55867,6 @@
           "immatricolati"
         ],
         "category": "istruzione",
-        "clean_rows": 3233,
         "last_run": {
           "at": "2026-11-02T18:18:25.037700+00:00",
           "year": 2025,
@@ -55869,7 +55875,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open_mur/mur_immatricolati/2025/mur_immatricolati_2025_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -55923,7 +55929,6 @@
           "universita"
         ],
         "category": "istruzione",
-        "clean_rows": 2982,
         "last_run": {
           "at": "2026-11-02T19:44:57.688529+00:00",
           "year": 2025,
@@ -56024,7 +56029,6 @@
           "iscritti"
         ],
         "category": "istruzione",
-        "clean_rows": 4362,
         "last_run": {
           "at": "2026-11-02T18:19:29.675973+00:00",
           "year": 2025,
@@ -56033,7 +56037,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open_mur/mur_iscritti/2025/mur_iscritti_2025_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -56102,7 +56106,6 @@
           "universita"
         ],
         "category": "istruzione",
-        "clean_rows": 4283,
         "last_run": {
           "at": "2026-11-02T18:20:34.253294+00:00",
           "year": 2025,
@@ -56111,7 +56114,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open_mur/mur_laureati/2025/mur_laureati_2025_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -56181,7 +56184,6 @@
           "qualita"
         ],
         "category": "istruzione",
-        "clean_rows": 2841,
         "last_run": {
           "at": "2026-11-02T18:21:38.832206+00:00",
           "year": 2025,
@@ -56190,7 +56192,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open_mur/mur_laureati_voto/2025/mur_laureati_voto_2025_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -56268,7 +56270,6 @@
           "support"
         ],
         "category": "support",
-        "clean_rows": 5228,
         "last_run": {
           "at": "2026-11-02T18:27:02.101338+00:00",
           "year": 2025,
@@ -56277,7 +56278,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open_mur/mur_offerta_formativa/2025/mur_offerta_formativa_2025_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -56352,7 +56353,6 @@
           "universita"
         ],
         "category": "istruzione",
-        "clean_rows": 314,
         "last_run": {
           "at": "2026-11-02T18:22:43.035209+00:00",
           "year": 2025,
@@ -56361,7 +56361,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open_mur/mur_personale/2025/mur_personale_2025_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -56416,7 +56416,6 @@
           "bilancio-genere"
         ],
         "category": "istruzione",
-        "clean_rows": 27030,
         "last_run": {
           "at": "2026-11-02T18:23:47.208155+00:00",
           "year": 2025,
@@ -56425,7 +56424,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open_mur/mur_personale_ateneo/2025/mur_personale_ateneo_2025_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {
@@ -56506,7 +56505,6 @@
           "support"
         ],
         "category": "support",
-        "clean_rows": 14,
         "last_run": {
           "at": "2026-11-02T18:28:06.994516+00:00",
           "year": 2025,
@@ -56515,7 +56513,7 @@
         "location": {
           "type": "gcs",
           "path": "gs://dataciviclab-clean/open_mur/mur_tasso_abbandono/2025/mur_tasso_abbandono_2025_clean.parquet",
-          "multi_file": false
+          "multi_file": true
         },
         "columns": [
           {

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T06:35:41.611883",
+  "generated_at": "2026-11-28T19:37:19.323979",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -53,7 +53,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 19,
+  "open_prs": 21,
   "prs": [
     {
       "number": 38,
@@ -112,10 +112,24 @@
       "category": "other"
     },
     {
+      "number": 46,
+      "title": "chore(post-merge): aggiorna registry (schedule)",
+      "repo": "gu-monitor",
+      "url": "https://github.com/dataciviclab/gu-monitor/pull/46",
+      "category": "other"
+    },
+    {
       "number": 20,
       "title": "ci: config check sui soli dataset cambiati in PR",
       "repo": "imprese-italia",
       "url": "https://github.com/dataciviclab/imprese-italia/pull/20",
+      "category": "other"
+    },
+    {
+      "number": 61,
+      "title": "chore(post-merge): aggiorna registry (schedule)",
+      "repo": "inpa-reclutamento",
+      "url": "https://github.com/dataciviclab/inpa-reclutamento/pull/61",
       "category": "other"
     },
     {
@@ -2545,12 +2559,12 @@
     }
   },
   "warnings": [
-    "Many open PRs: 19"
+    "Many open PRs: 21"
   ],
   "radar": {
     "available": true,
-    "generated_at": "2026-11-27T12:07:54.722103+00:00",
-    "probe_date": "2026-11-27",
+    "generated_at": "2026-11-28T11:40:13.333437+00:00",
+    "probe_date": "2026-11-28",
     "sources_total": 40,
     "green": 35,
     "yellow": 5,
@@ -3338,7 +3352,7 @@
       "repo": "open-mur",
       "available": true,
       "source_repo": "dataciviclab/open-mur",
-      "updated_at": "2026-11-02",
+      "updated_at": "2026-11-28",
       "datasets": 18,
       "marts": 23,
       "checks": 0,
