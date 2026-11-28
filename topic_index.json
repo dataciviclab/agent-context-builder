@@ -1,6 +1,6 @@
 {
   "schema_version": 8,
-  "generated_at": "2026-11-27T20:45:21.675669",
+  "generated_at": "2026-11-28T06:35:41.611883",
   "repos": {
     "agent-context-builder": {
       "description": "Contesto operativo per gli strumenti AI del Lab \u2014 snapshot, triage e indici da GitHub.",
@@ -307,12 +307,12 @@
       "url": "https://github.com/dataciviclab/legal-graph",
       "role": "dati",
       "domain": null,
-      "n_datasets": 2,
+      "n_datasets": 3,
       "n_published": 0,
       "sources": [
         "dataciviclab_composite"
       ],
-      "updated_at": "2026-11-24"
+      "updated_at": "2026-11-27"
     },
     "oecd-benchmark": {
       "description": "Dataset OECD per benchmark internazionale: emissioni, PIL, salute, istruzione, lavoro, fisco",
@@ -601,7 +601,7 @@
       "sources": [
         "senato_akn"
       ],
-      "updated_at": "2026-11-25"
+      "updated_at": "2026-11-27"
     },
     "sistema-bancario": {
       "description": "I bilanci delle banche europee, interrogabili \u2014 dati EBA, BCE e World Bank in un'unica dashboard.",
@@ -4011,7 +4011,7 @@
         ],
         "category": "normativa",
         "last_run": {
-          "at": "2026-11-24T17:13:50.708253+00:00",
+          "at": "2026-11-27T22:36:40.846774+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -4025,9 +4025,7 @@
           "legal_graph__mart_legal_node_metrics",
           "legal_graph__mart_legal_search_keys",
           "legal_graph__mart_legal_node_rel",
-          "legal_graph__mart_legal_emend_leg",
-          "legal_graph__mart_legal_texts",
-          "legal_graph__mart_legal_massime"
+          "legal_graph__mart_legal_emend_leg"
         ]
       },
       {
@@ -4052,12 +4050,43 @@
         ],
         "category": "normativa",
         "last_run": {
-          "at": "2026-11-23T21:57:55.597269+00:00",
+          "at": "2026-11-27T22:38:41.466163+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
         "mart_refs": [
           "legal_index__mart_legal_search_terms"
+        ]
+      },
+      {
+        "slug": "legal_texts",
+        "url_slug": "legal-texts",
+        "name": "Legal Texts",
+        "source_id": "dataciviclab_composite",
+        "period": {
+          "start": 1948,
+          "end": 2026
+        },
+        "registry_source": "legal-graph",
+        "published": false,
+        "description": "Testi e massime del Legal Knowledge Graph: articoli della Costituzione, pronunce della Corte costituzionale (testo e dispositivo) e massime con le chiavi di parametro/norma. Dataset fratello di legal-graph, separato per payload e picco di memoria; nessuna dipendenza dai nodi o dagli archi.\n",
+        "tags": [
+          "diritto",
+          "normativa",
+          "legal-graph",
+          "testi",
+          "massime",
+          "compose"
+        ],
+        "category": "normativa",
+        "last_run": {
+          "at": "2026-11-27T22:38:31.075358+00:00",
+          "year": 2026,
+          "status": "SUCCESS"
+        },
+        "mart_refs": [
+          "legal_texts__mart_legal_texts",
+          "legal_texts__mart_legal_massime"
         ]
       },
       {
@@ -64197,11 +64226,11 @@
         ],
         "category": "politica",
         "partitions": {
-          "2026": 10047
+          "2026": 10048
         },
-        "clean_rows": 10047,
+        "clean_rows": 10048,
         "last_run": {
-          "at": "2026-11-25T08:42:00.708351+00:00",
+          "at": "2026-11-27T21:33:04.748350+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -64386,7 +64415,7 @@
         },
         "clean_rows": 375098,
         "last_run": {
-          "at": "2026-11-25T08:42:02.568015+00:00",
+          "at": "2026-11-27T21:33:07.303789+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -64501,7 +64530,7 @@
         },
         "clean_rows": 766605,
         "last_run": {
-          "at": "2026-11-25T08:42:08.558088+00:00",
+          "at": "2026-11-27T21:33:14.465984+00:00",
           "year": 2026,
           "status": "SUCCESS"
         },
@@ -64619,6 +64648,7 @@
           }
         ],
         "mart_refs": [
+          "senato_emendamenti__mart_emendamenti",
           "senato_emendamenti__mart_emendamenti_per_atto",
           "senato_emendamenti__mart_emendamenti_per_fase"
         ]
@@ -68795,7 +68825,8 @@
     ],
     "legal-graph": [
       "legal_graph",
-      "legal_index"
+      "legal_index",
+      "legal_texts"
     ],
     "oecd-benchmark": [
       "oecd_air_emissions",
@@ -74341,6 +74372,23 @@
         "compose"
       ],
       "description": "Indice lessicale BM25 sugli atti del Legal Knowledge Graph: una riga per (atto, termine) con peso precalcolato. Alimenta `legal_search` per tema. Derivato da legal-graph (search_keys) + italia-corpus (testi).\n"
+    },
+    "legal_texts": {
+      "name": "Legal Texts",
+      "published": false,
+      "source_id": "dataciviclab_composite",
+      "registry_source": "legal-graph",
+      "domain": null,
+      "category": "normativa",
+      "tags": [
+        "diritto",
+        "normativa",
+        "legal-graph",
+        "testi",
+        "massime",
+        "compose"
+      ],
+      "description": "Testi e massime del Legal Knowledge Graph: articoli della Costituzione, pronunce della Corte costituzionale (testo e dispositivo) e massime con le chiavi di parametro/norma. Dataset fratello di legal-graph, separato per payload e picco di memoria; nessuna dipendenza dai nodi o dagli archi.\n"
     },
     "oecd_air_emissions": {
       "name": "Oecd Air Emissions",

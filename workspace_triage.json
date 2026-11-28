@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T20:45:21.675669",
+  "generated_at": "2026-11-28T06:35:41.611883",
   "workspace_root": null,
   "repos": [
     "agent-context-builder",
@@ -53,7 +53,7 @@
     "terzo-settore",
     "toolkit"
   ],
-  "open_prs": 20,
+  "open_prs": 19,
   "prs": [
     {
       "number": 38,
@@ -126,6 +126,13 @@
       "category": "other"
     },
     {
+      "number": 105,
+      "title": "perf(mart): row group 8192/16384 \u2014 il footer dominava i lookup",
+      "repo": "legal-graph",
+      "url": "https://github.com/dataciviclab/legal-graph/pull/105",
+      "category": "other"
+    },
+    {
       "number": 30,
       "title": "ci: config check sui soli dataset cambiati in PR",
       "repo": "open-conto-annuale",
@@ -165,20 +172,6 @@
       "title": "ci: config check sui soli dataset cambiati in PR",
       "repo": "open-siope",
       "url": "https://github.com/dataciviclab/open-siope/pull/91",
-      "category": "other"
-    },
-    {
-      "number": 55,
-      "title": "feat(mart): mart_emendamenti a grano emendamento",
-      "repo": "senato-akn",
-      "url": "https://github.com/dataciviclab/senato-akn/pull/55",
-      "category": "other"
-    },
-    {
-      "number": 567,
-      "title": "feat(mart): mart.tables[].internal per lo staging dei compose",
-      "repo": "toolkit",
-      "url": "https://github.com/dataciviclab/toolkit/pull/567",
       "category": "other"
     },
     {
@@ -2552,7 +2545,7 @@
     }
   },
   "warnings": [
-    "Many open PRs: 20"
+    "Many open PRs: 19"
   ],
   "radar": {
     "available": true,
@@ -3213,8 +3206,8 @@
       "repo": "legal-graph",
       "available": true,
       "source_repo": "dataciviclab/legal-graph",
-      "updated_at": "2026-11-24",
-      "datasets": 2,
+      "updated_at": "2026-11-27",
+      "datasets": 3,
       "marts": 13,
       "checks": 0,
       "codelists": 0,
@@ -3489,9 +3482,9 @@
       "repo": "senato-akn",
       "available": true,
       "source_repo": "dataciviclab/senato-akn",
-      "updated_at": "2026-11-25",
+      "updated_at": "2026-11-27",
       "datasets": 3,
-      "marts": 8,
+      "marts": 9,
       "checks": 0,
       "codelists": 0,
       "gcs": 3,
